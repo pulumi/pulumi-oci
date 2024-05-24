@@ -58,12 +58,15 @@ public final class AppFirewallPolicyAction {
      */
     private @Nullable List<AppFirewallPolicyActionHeader> headers;
     /**
-     * @return (Updatable) Rule name. Must be unique within the module.
+     * @return (Updatable) Action name. Can be used to reference the action.
      * 
      */
     private String name;
     /**
-     * @return (Updatable) Type of WebAppFirewallPolicyRule.
+     * @return (Updatable)
+     * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+     * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+     * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
      * 
      */
     private String type;
@@ -117,14 +120,17 @@ public final class AppFirewallPolicyAction {
         return this.headers == null ? List.of() : this.headers;
     }
     /**
-     * @return (Updatable) Rule name. Must be unique within the module.
+     * @return (Updatable) Action name. Can be used to reference the action.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return (Updatable) Type of WebAppFirewallPolicyRule.
+     * @return (Updatable)
+     * * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+     * * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+     * * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
      * 
      */
     public String type() {

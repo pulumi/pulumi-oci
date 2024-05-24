@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagementStationRefreshManagement = new ManagementStationRefreshManagement("testManagementStationRefreshManagement", ManagementStationRefreshManagementArgs.builder()        
+ *         var testManagementStationRefreshManagement = new ManagementStationRefreshManagement("testManagementStationRefreshManagement", ManagementStationRefreshManagementArgs.builder()
  *             .managementStationId(testManagementStation.id())
  *             .build());
  * 

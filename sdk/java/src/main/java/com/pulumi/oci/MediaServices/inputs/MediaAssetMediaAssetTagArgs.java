@@ -17,20 +17,14 @@ public final class MediaAssetMediaAssetTagArgs extends com.pulumi.resources.Reso
     public static final MediaAssetMediaAssetTagArgs Empty = new MediaAssetMediaAssetTagArgs();
 
     /**
-     * (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the tag.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the tag.
      * 
      */
     public Optional<Output<String>> type() {
@@ -78,10 +72,7 @@ public final class MediaAssetMediaAssetTagArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type (Updatable) The type of the media asset.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the tag.
          * 
          * @return builder
          * 
@@ -92,10 +83,7 @@ public final class MediaAssetMediaAssetTagArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type (Updatable) The type of the media asset.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the tag.
          * 
          * @return builder
          * 

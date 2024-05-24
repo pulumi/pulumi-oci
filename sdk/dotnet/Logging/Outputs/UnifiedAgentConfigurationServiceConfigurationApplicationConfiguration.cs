@@ -14,23 +14,23 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration
     {
         /// <summary>
-        /// (Updatable) Unified monitoring agent operational metrics destination object.
+        /// (Updatable) Kubernetes destination object.
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination Destination;
         /// <summary>
-        /// (Updatable) Unified monitoring agent operational metrics source object.
+        /// (Updatable) Kubernetes source object.
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource? Source;
         /// <summary>
-        /// (Updatable) Unified schema logging source type.
+        /// (Updatable) Type of source of metrics
         /// </summary>
         public readonly string SourceType;
         /// <summary>
-        /// (Updatable) Logging source object.
+        /// (Updatable) Tail log source objects.
         /// </summary>
         public readonly ImmutableArray<Outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource> Sources;
         /// <summary>
-        /// (Updatable) Logging filter object.
+        /// (Updatable) Kubernetes filter object
         /// </summary>
         public readonly Outputs.UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter? UnifiedAgentConfigurationFilter;
 

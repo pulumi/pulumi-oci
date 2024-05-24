@@ -635,16 +635,18 @@ namespace Pulumi.Oci.Identity
         public Output<string> Issuer { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Locale
+        /// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        /// * caseExact: false
+        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
         /// * idcsCanonicalValueSourceResourceType: AllowedValue
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Output("locale")]
         public Output<string> Locale { get; private set; } = null!;
@@ -1541,16 +1543,18 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Issuer { get; set; }
 
         /// <summary>
-        /// (Updatable) Locale
+        /// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        /// * caseExact: false
+        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
         /// * idcsCanonicalValueSourceResourceType: AllowedValue
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }
@@ -2599,16 +2603,18 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Issuer { get; set; }
 
         /// <summary>
-        /// (Updatable) Locale
+        /// (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        /// * caseExact: false
+        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
         /// * idcsCanonicalValueSourceResourceType: AllowedValue
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
+        /// * uniqueness: none
         /// </summary>
         [Input("locale")]
         public Input<string>? Locale { get; set; }

@@ -74,7 +74,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User-friendly name.
+        /// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -288,7 +288,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) User-friendly name.
+        /// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -428,7 +428,7 @@ namespace Pulumi.Oci.OsManagementHub
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) User-friendly name.
+        /// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

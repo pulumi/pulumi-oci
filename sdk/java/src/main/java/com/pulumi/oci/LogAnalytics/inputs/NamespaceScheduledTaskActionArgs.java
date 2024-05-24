@@ -109,14 +109,14 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
     }
 
     /**
-     * The ManagementSavedSearch id [OCID] to be accelerated.
+     * The ManagementSavedSearch id [OCID] utilized in the action.
      * 
      */
     @Import(name="savedSearchId")
     private @Nullable Output<String> savedSearchId;
 
     /**
-     * @return The ManagementSavedSearch id [OCID] to be accelerated.
+     * @return The ManagementSavedSearch id [OCID] utilized in the action.
      * 
      */
     public Optional<Output<String>> savedSearchId() {
@@ -124,14 +124,14 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Schedule type discriminator.
+     * Action type discriminator.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Schedule type discriminator.
+     * @return Action type discriminator.
      * 
      */
     public Output<String> type() {
@@ -296,7 +296,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param savedSearchId The ManagementSavedSearch id [OCID] to be accelerated.
+         * @param savedSearchId The ManagementSavedSearch id [OCID] utilized in the action.
          * 
          * @return builder
          * 
@@ -307,7 +307,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param savedSearchId The ManagementSavedSearch id [OCID] to be accelerated.
+         * @param savedSearchId The ManagementSavedSearch id [OCID] utilized in the action.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type (Updatable) Schedule type discriminator.
+         * @param type Action type discriminator.
          * 
          * @return builder
          * 
@@ -328,7 +328,7 @@ public final class NamespaceScheduledTaskActionArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type (Updatable) Schedule type discriminator.
+         * @param type Action type discriminator.
          * 
          * @return builder
          * 

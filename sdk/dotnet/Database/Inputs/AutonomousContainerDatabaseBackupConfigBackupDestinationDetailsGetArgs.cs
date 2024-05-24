@@ -13,19 +13,19 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Proxy URL to connect to object store.
+        /// (Updatable) Proxy URL to connect to object store.
         /// </summary>
         [Input("internetProxy")]
         public Input<string>? InternetProxy { get; set; }
 
         /// <summary>
-        /// Type of the database backup destination.
+        /// (Updatable) Type of the database backup destination.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Database.Inputs
         private Input<string>? _vpcPassword;
 
         /// <summary>
-        /// For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+        /// (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
         /// </summary>
         public Input<string>? VpcPassword
         {
@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+        /// (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
         /// </summary>
         [Input("vpcUser")]
         public Input<string>? VpcUser { get; set; }

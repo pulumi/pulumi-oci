@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudVmCluster = new CloudVmCluster("testCloudVmCluster", CloudVmClusterArgs.builder()        
+ *         var testCloudVmCluster = new CloudVmCluster("testCloudVmCluster", CloudVmClusterArgs.builder()
  *             .backupSubnetId(testSubnet.id())
  *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
  *             .compartmentId(compartmentId)

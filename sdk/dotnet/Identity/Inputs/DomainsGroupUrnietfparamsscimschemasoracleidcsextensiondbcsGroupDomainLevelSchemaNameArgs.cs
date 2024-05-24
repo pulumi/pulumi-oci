@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> DomainName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        /// (Updatable) The DBCS schema-name granted to this group in the DB domain that 'domainName' specifies.
         /// 
         /// **Added In:** 18.2.4
         /// 

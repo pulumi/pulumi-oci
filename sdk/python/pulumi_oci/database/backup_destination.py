@@ -33,7 +33,7 @@ class BackupDestinationArgs:
         :param pulumi.Input[str] connection_string: (Updatable) The connection string for connecting to the Recovery Appliance.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        :param pulumi.Input[str] local_mount_point_path: (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         :param pulumi.Input['BackupDestinationMountTypeDetailsArgs'] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
                
@@ -136,7 +136,7 @@ class BackupDestinationArgs:
     @pulumi.getter(name="localMountPointPath")
     def local_mount_point_path(self) -> Optional[pulumi.Input[str]]:
         """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         """
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
@@ -204,11 +204,11 @@ class _BackupDestinationState:
         :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        :param pulumi.Input[str] local_mount_point_path: (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         :param pulumi.Input['BackupDestinationMountTypeDetailsArgs'] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[str] nfs_mount_type: NFS Mount type for backup destination.
         :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: IP addresses for NFS Auto mount.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.
         :param pulumi.Input[str] state: The current lifecycle state of the backup destination.
         :param pulumi.Input[str] time_created: The date and time the backup destination was created.
         :param pulumi.Input[str] type: Type of the backup destination.
@@ -342,7 +342,7 @@ class _BackupDestinationState:
     @pulumi.getter(name="localMountPointPath")
     def local_mount_point_path(self) -> Optional[pulumi.Input[str]]:
         """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         """
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
@@ -393,7 +393,7 @@ class _BackupDestinationState:
     @pulumi.getter(name="nfsServers")
     def nfs_servers(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        IP addresses for NFS Auto mount.
+        Host names or IP addresses for NFS Auto mount.
         """
         return pulumi.get(self, "nfs_servers")
 
@@ -514,7 +514,7 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        :param pulumi.Input[str] local_mount_point_path: (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         :param pulumi.Input[pulumi.InputType['BackupDestinationMountTypeDetailsArgs']] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[str] type: Type of the backup destination.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] vpc_users: (Updatable) The Virtual Private Catalog (VPC) users that are used to access the Recovery Appliance.
@@ -662,11 +662,11 @@ class BackupDestination(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: The user-provided name of the backup destination.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[str] lifecycle_details: A descriptive text associated with the lifecycleState. Typically contains additional displayable text
-        :param pulumi.Input[str] local_mount_point_path: The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        :param pulumi.Input[str] local_mount_point_path: (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         :param pulumi.Input[pulumi.InputType['BackupDestinationMountTypeDetailsArgs']] mount_type_details: Mount type details for backup destination.
         :param pulumi.Input[str] nfs_mount_type: NFS Mount type for backup destination.
         :param pulumi.Input[str] nfs_server_export: Specifies the directory on which to mount the file system
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: IP addresses for NFS Auto mount.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] nfs_servers: Host names or IP addresses for NFS Auto mount.
         :param pulumi.Input[str] state: The current lifecycle state of the backup destination.
         :param pulumi.Input[str] time_created: The date and time the backup destination was created.
         :param pulumi.Input[str] type: Type of the backup destination.
@@ -758,7 +758,7 @@ class BackupDestination(pulumi.CustomResource):
     @pulumi.getter(name="localMountPointPath")
     def local_mount_point_path(self) -> pulumi.Output[str]:
         """
-        The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
+        (Updatable) **Deprecated.** The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes. This field is deprecated. Use the mountTypeDetails field instead to specify the mount type for NFS.
         """
         warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
         pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
@@ -793,7 +793,7 @@ class BackupDestination(pulumi.CustomResource):
     @pulumi.getter(name="nfsServers")
     def nfs_servers(self) -> pulumi.Output[Sequence[str]]:
         """
-        IP addresses for NFS Auto mount.
+        Host names or IP addresses for NFS Auto mount.
         """
         return pulumi.get(self, "nfs_servers")
 

@@ -11,14 +11,14 @@ import java.util.Objects;
 @CustomType
 public final class AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek {
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) Name of the day of the week.
      * 
      */
     private String name;
 
     private AutonomousExadataInfrastructureMaintenanceWindowDetailsDaysOfWeek() {}
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) Name of the day of the week.
      * 
      */
     public String name() {

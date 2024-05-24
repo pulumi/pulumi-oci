@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOdaInstance = new OdaInstance("testOdaInstance", OdaInstanceArgs.builder()        
+ *         var testOdaInstance = new OdaInstance("testOdaInstance", OdaInstanceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .shapeName("DEVELOPMENT")
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

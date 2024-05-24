@@ -29,6 +29,8 @@ public final class GetOpaInstancesOpaInstanceCollectionItemAttachment {
     private String targetInstanceUrl;
     /**
      * @return The role of the target attachment.
+     * * `PARENT` - The target instance is the parent of this attachment.
+     * * `CHILD` - The target instance is the child of this attachment.
      * 
      */
     private String targetRole;
@@ -63,6 +65,8 @@ public final class GetOpaInstancesOpaInstanceCollectionItemAttachment {
     }
     /**
      * @return The role of the target attachment.
+     * * `PARENT` - The target instance is the parent of this attachment.
+     * * `CHILD` - The target instance is the child of this attachment.
      * 
      */
     public String targetRole() {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Opsi.Inputs
     public sealed class OpsiConfigurationConfigItemMetadataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Type of configuration item.
+        /// Type of configuration item.
         /// </summary>
         [Input("configItemType")]
         public Input<string>? ConfigItemType { get; set; }

@@ -22,13 +22,9 @@ type BackendSetBackend struct {
 	IsDrain *bool `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
-	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	//
-	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-	//
-	// Example: `exampleBackendSet`
+	// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
 	Name *string `pulumi:"name"`
-	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	// (Updatable) The communication port for the backend server.  Example: `8080`
 	Port int `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId *string `pulumi:"targetId"`
@@ -56,13 +52,9 @@ type BackendSetBackendArgs struct {
 	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
-	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	//
-	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-	//
-	// Example: `exampleBackendSet`
+	// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	// (Updatable) The communication port for the backend server.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
@@ -141,16 +133,12 @@ func (o BackendSetBackendOutput) IsOffline() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *bool { return v.IsOffline }).(pulumi.BoolPtrOutput)
 }
 
-// A user-friendly name for the backend set that must be unique and cannot be changed.
-//
-// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-//
-// Example: `exampleBackendSet`
+// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
 func (o BackendSetBackendOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BackendSetBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+// (Updatable) The communication port for the backend server.  Example: `8080`
 func (o BackendSetBackendOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v BackendSetBackend) int { return v.Port }).(pulumi.IntOutput)
 }
@@ -726,7 +714,7 @@ func (o BackendSetHealthCheckerDnsPtrOutput) TransportProtocol() pulumi.StringPt
 }
 
 type NetworkLoadBalancerIpAddress struct {
-	// The IP address of the backend server. Example: `10.0.0.3`
+	// An IP address.  Example: `192.168.0.3`
 	IpAddress *string `pulumi:"ipAddress"`
 	// IP version associated with the listener.
 	IpVersion *string `pulumi:"ipVersion"`
@@ -748,7 +736,7 @@ type NetworkLoadBalancerIpAddressInput interface {
 }
 
 type NetworkLoadBalancerIpAddressArgs struct {
-	// The IP address of the backend server. Example: `10.0.0.3`
+	// An IP address.  Example: `192.168.0.3`
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
 	// IP version associated with the listener.
 	IpVersion pulumi.StringPtrInput `pulumi:"ipVersion"`
@@ -809,7 +797,7 @@ func (o NetworkLoadBalancerIpAddressOutput) ToNetworkLoadBalancerIpAddressOutput
 	return o
 }
 
-// The IP address of the backend server. Example: `10.0.0.3`
+// An IP address.  Example: `192.168.0.3`
 func (o NetworkLoadBalancerIpAddressOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancerIpAddress) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
@@ -1076,13 +1064,9 @@ type NetworkLoadBalancersBackendSetsUnifiedBackend struct {
 	IsDrain *bool `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline *bool `pulumi:"isOffline"`
-	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	//
-	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-	//
-	// Example: `exampleBackendSet`
+	// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
 	Name *string `pulumi:"name"`
-	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	// (Updatable) The communication port for the backend server.  Example: `8080`
 	Port int `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId *string `pulumi:"targetId"`
@@ -1110,13 +1094,9 @@ type NetworkLoadBalancersBackendSetsUnifiedBackendArgs struct {
 	IsDrain pulumi.BoolPtrInput `pulumi:"isDrain"`
 	// (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
 	IsOffline pulumi.BoolPtrInput `pulumi:"isOffline"`
-	// A user-friendly name for the backend set that must be unique and cannot be changed.
-	//
-	// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-	//
-	// Example: `exampleBackendSet`
+	// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+	// (Updatable) The communication port for the backend server.  Example: `8080`
 	Port pulumi.IntInput `pulumi:"port"`
 	// (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
 	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
@@ -1195,16 +1175,12 @@ func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) IsOffline() pulumi.
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *bool { return v.IsOffline }).(pulumi.BoolPtrOutput)
 }
 
-// A user-friendly name for the backend set that must be unique and cannot be changed.
-//
-// Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-//
-// Example: `exampleBackendSet`
+// (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+// (Updatable) The communication port for the backend server.  Example: `8080`
 func (o NetworkLoadBalancersBackendSetsUnifiedBackendOutput) Port() pulumi.IntOutput {
 	return o.ApplyT(func(v NetworkLoadBalancersBackendSetsUnifiedBackend) int { return v.Port }).(pulumi.IntOutput)
 }

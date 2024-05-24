@@ -160,19 +160,16 @@ type DomainsMyOauth2clientCredential struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyOauth2clientCredentialMetaArrayOutput `pulumi:"metas"`
-	// (Updatable) The username.
+	// Name
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
 	Name pulumi.StringOutput `pulumi:"name"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -180,9 +177,9 @@ type DomainsMyOauth2clientCredential struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
@@ -434,19 +431,16 @@ type domainsMyOauth2clientCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsMyOauth2clientCredentialMeta `pulumi:"metas"`
-	// (Updatable) The username.
+	// Name
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
 	Name *string `pulumi:"name"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -454,9 +448,9 @@ type domainsMyOauth2clientCredentialState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -670,19 +664,16 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMyOauth2clientCredentialMetaArrayInput
-	// (Updatable) The username.
+	// Name
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
 	Name pulumi.StringPtrInput
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -690,9 +681,9 @@ type DomainsMyOauth2clientCredentialState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -819,19 +810,16 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	IsResetSecret *bool `pulumi:"isResetSecret"`
-	// (Updatable) The username.
+	// Name
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
 	Name *string `pulumi:"name"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -839,9 +827,9 @@ type domainsMyOauth2clientCredentialArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -953,19 +941,16 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	IsResetSecret pulumi.BoolPtrInput
-	// (Updatable) The username.
+	// Name
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: false
-	// * idcsSearchable: false
-	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * mutability: readWrite
+	// * required: true
+	// * returned: default
 	Name pulumi.StringPtrInput
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -973,9 +958,9 @@ type DomainsMyOauth2clientCredentialArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -1308,22 +1293,19 @@ func (o DomainsMyOauth2clientCredentialOutput) Metas() DomainsMyOauth2clientCred
 	}).(DomainsMyOauth2clientCredentialMetaArrayOutput)
 }
 
-// (Updatable) The username.
+// Name
 //
 // **SCIM++ Properties:**
 // * caseExact: false
-// * idcsSearchable: false
-// * multiValued: false
-// * mutability: readOnly
-// * required: false
-// * returned: default
 // * type: string
-// * uniqueness: none
+// * mutability: readWrite
+// * required: true
+// * returned: default
 func (o DomainsMyOauth2clientCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyOauth2clientCredential) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }
 
-// The user's OCID.
+// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1331,9 +1313,9 @@ func (o DomainsMyOauth2clientCredentialOutput) Name() pulumi.StringOutput {
 // * multiValued: false
 // * mutability: immutable
 // * required: false
-// * returned: always
+// * returned: default
 // * type: string
-// * uniqueness: none
+// * uniqueness: global
 func (o DomainsMyOauth2clientCredentialOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMyOauth2clientCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }

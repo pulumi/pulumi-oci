@@ -18,12 +18,13 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     public static final DomainsUserPhoneNumberArgs Empty = new DomainsUserPhoneNumberArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) A human-readable name, primarily used for display purposes. READ ONLY
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -34,12 +35,13 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human-readable name, primarily used for display purposes. READ ONLY
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -51,10 +53,11 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred phone number or primary phone number. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -67,10 +70,11 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     private @Nullable Output<Boolean> primary;
 
     /**
-     * @return (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+     * @return (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred phone number or primary phone number. The primary attribute value &#39;true&#39; MUST appear no more than once.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
@@ -84,13 +88,14 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) A label that indicates the attribute&#39;s function- for example, &#39;work&#39;, &#39;home&#39;, or &#39;mobile&#39;
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -100,13 +105,14 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     private Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label that indicates the attribute&#39;s function- for example, &#39;work&#39;, &#39;home&#39;, or &#39;mobile&#39;
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -117,38 +123,34 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) User&#39;s phone number
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) User&#39;s phone number
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -219,12 +221,13 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human-readable name, primarily used for display purposes. READ ONLY
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -239,12 +242,13 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human-readable name, primarily used for display purposes. READ ONLY
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -258,10 +262,11 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * @param primary (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred phone number or primary phone number. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -278,10 +283,11 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param primary (Updatable) A Boolean value indicating the &#39;primary&#39; or preferred attribute value for this attribute. The primary attribute value &#39;true&#39; MUST appear no more than once.
+         * @param primary (Updatable) A Boolean value that indicates the &#39;primary&#39; or preferred attribute value for this attribute--for example, the preferred phone number or primary phone number. The primary attribute value &#39;true&#39; MUST appear no more than once.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
@@ -297,13 +303,14 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label that indicates the attribute&#39;s function- for example, &#39;work&#39;, &#39;home&#39;, or &#39;mobile&#39;
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -317,13 +324,14 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) A label that indicates the attribute&#39;s function- for example, &#39;work&#39;, &#39;home&#39;, or &#39;mobile&#39;
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -336,19 +344,17 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) User&#39;s phone number
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -359,19 +365,17 @@ public final class DomainsUserPhoneNumberArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) User&#39;s phone number
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

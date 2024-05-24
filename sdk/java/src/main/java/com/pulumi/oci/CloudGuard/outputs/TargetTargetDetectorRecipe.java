@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipe {
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -82,7 +82,7 @@ public final class TargetTargetDetectorRecipe {
 
     private TargetTargetDetectorRecipe() {}
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<String> compartmentId() {

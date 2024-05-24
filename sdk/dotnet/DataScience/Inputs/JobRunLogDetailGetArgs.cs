@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class JobRunLogDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The log group id for where log objects are for job runs.
+        /// The log group id for where log objects will be for job runs.
         /// </summary>
         [Input("logGroupId")]
         public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
-        /// The log id the job run will push logs too.
+        /// The log id of the log object the job run logs will be shipped to.
         /// </summary>
         [Input("logId")]
         public Input<string>? LogId { get; set; }

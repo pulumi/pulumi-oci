@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuditProfileManagement = new AuditProfileManagement("testAuditProfileManagement", AuditProfileManagementArgs.builder()        
+ *         var testAuditProfileManagement = new AuditProfileManagement("testAuditProfileManagement", AuditProfileManagementArgs.builder()
  *             .compartmentId(compartmentId)
  *             .targetId(testTargetDatabase.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

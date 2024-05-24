@@ -22,14 +22,14 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
     public static final MediaWorkflowConfigurationArgs Empty = new MediaWorkflowConfigurationArgs();
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -155,7 +155,7 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -166,7 +166,7 @@ public final class MediaWorkflowConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 

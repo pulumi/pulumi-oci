@@ -74,7 +74,7 @@ type Rrset struct {
 
 	// (Updatable) The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// The fully qualified domain name where the record can be located.
+	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringOutput `pulumi:"domain"`
 	// (Updatable)
 	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
@@ -134,7 +134,7 @@ func GetRrset(ctx *pulumi.Context,
 type rrsetState struct {
 	// (Updatable) The OCID of the compartment the resource belongs to.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The fully qualified domain name where the record can be located.
+	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain *string `pulumi:"domain"`
 	// (Updatable)
 	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
@@ -156,7 +156,7 @@ type rrsetState struct {
 type RrsetState struct {
 	// (Updatable) The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringPtrInput
-	// The fully qualified domain name where the record can be located.
+	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringPtrInput
 	// (Updatable)
 	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
@@ -182,7 +182,7 @@ func (RrsetState) ElementType() reflect.Type {
 type rrsetArgs struct {
 	// (Updatable) The OCID of the compartment the resource belongs to.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// The fully qualified domain name where the record can be located.
+	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain string `pulumi:"domain"`
 	// (Updatable)
 	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
@@ -205,7 +205,7 @@ type rrsetArgs struct {
 type RrsetArgs struct {
 	// (Updatable) The OCID of the compartment the resource belongs to.
 	CompartmentId pulumi.StringPtrInput
-	// The fully qualified domain name where the record can be located.
+	// The target fully-qualified domain name (FQDN) within the target zone.
 	Domain pulumi.StringInput
 	// (Updatable)
 	// **NOTE** Omitting `items` at time of create, will delete any existing records in the RRSet
@@ -316,7 +316,7 @@ func (o RrsetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The fully qualified domain name where the record can be located.
+// The target fully-qualified domain name (FQDN) within the target zone.
 func (o RrsetOutput) Domain() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rrset) pulumi.StringOutput { return v.Domain }).(pulumi.StringOutput)
 }

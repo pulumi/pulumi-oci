@@ -50,7 +50,7 @@ public final class InstanceLaunchVolumeAttachment {
      */
     private @Nullable InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails launchCreateVolumeDetails;
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
      * 
      */
     private String type;
@@ -116,7 +116,7 @@ public final class InstanceLaunchVolumeAttachment {
         return Optional.ofNullable(this.launchCreateVolumeDetails);
     }
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
      * 
      */
     public String type() {

@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SubscriptionPaymentGateway {
     /**
-     * @return (Updatable) Merchant details.
+     * @return Merchant details.
      * 
      */
     private @Nullable List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas;
 
     private SubscriptionPaymentGateway() {}
     /**
-     * @return (Updatable) Merchant details.
+     * @return Merchant details.
      * 
      */
     public List<SubscriptionPaymentGatewayMerchantDefinedData> merchantDefinedDatas() {

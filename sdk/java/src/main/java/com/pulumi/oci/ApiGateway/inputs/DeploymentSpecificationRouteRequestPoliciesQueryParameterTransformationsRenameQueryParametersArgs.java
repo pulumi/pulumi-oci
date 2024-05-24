@@ -16,14 +16,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     public static final DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs Empty = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersArgs();
 
     /**
-     * (Updatable) The list of headers.
+     * (Updatable) The list of query parameters.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs>> items;
 
     /**
-     * @return (Updatable) The list of headers.
+     * @return (Updatable) The list of query parameters.
      * 
      */
     public Output<List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs>> items() {
@@ -55,7 +55,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param items (Updatable) The list of headers.
+         * @param items (Updatable) The list of query parameters.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param items (Updatable) The list of headers.
+         * @param items (Updatable) The list of query parameters.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param items (Updatable) The list of headers.
+         * @param items (Updatable) The list of query parameters.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MonitoredResourceAdditionalAliasCredentialGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string> Service { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;

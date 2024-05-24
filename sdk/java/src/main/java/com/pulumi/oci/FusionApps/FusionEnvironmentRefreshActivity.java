@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentRefreshActivity = new FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity", FusionEnvironmentRefreshActivityArgs.builder()        
+ *         var testFusionEnvironmentRefreshActivity = new FusionEnvironmentRefreshActivity("testFusionEnvironmentRefreshActivity", FusionEnvironmentRefreshActivityArgs.builder()
  *             .fusionEnvironmentId(testFusionEnvironment.id())
  *             .sourceFusionEnvironmentId(testFusionEnvironment.id())
  *             .build());

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<Inputs.WorkspaceTaskParameterConfigValuesGetArgs>? ConfigValues { get; set; }
 
         /// <summary>
-        /// (Updatable) A default value for the vairable.
+        /// (Updatable) The default value of the parameter.
         /// </summary>
         [Input("defaultValue")]
         public Input<string>? DefaultValue { get; set; }
@@ -85,13 +85,13 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<Inputs.WorkspaceTaskParameterParentRefGetArgs>? ParentRef { get; set; }
 
         /// <summary>
-        /// (Updatable) A base class for all model types, including First Class and its contained objects.
+        /// (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
         /// </summary>
         [Input("rootObjectDefaultValue")]
         public Input<string>? RootObjectDefaultValue { get; set; }
 
         /// <summary>
-        /// (Updatable) The object type.
+        /// (Updatable) This can either be a string value referencing the type or a BaseType object.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

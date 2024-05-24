@@ -82,7 +82,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMountTarget = new MountTarget("testMountTarget", MountTargetArgs.builder()        
+ *         var testMountTarget = new MountTarget("testMountTarget", MountTargetArgs.builder()
  *             .availabilityDomain(mountTargetAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .subnetId(testSubnet.id())

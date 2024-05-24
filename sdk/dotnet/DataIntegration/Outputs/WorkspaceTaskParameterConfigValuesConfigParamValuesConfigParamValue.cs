@@ -14,27 +14,27 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValue
     {
         /// <summary>
-        /// (Updatable) An integer value of the parameter.
+        /// An integer value of the parameter.
         /// </summary>
         public readonly int? IntValue;
         /// <summary>
-        /// (Updatable) An object value of the parameter.
+        /// An object value of the parameter.
         /// </summary>
         public readonly string? ObjectValue;
         /// <summary>
-        /// (Updatable) Reference to the parameter by its key.
+        /// Reference to the parameter by its key.
         /// </summary>
         public readonly string? ParameterValue;
         /// <summary>
-        /// (Updatable) The root object reference value.
+        /// The root object reference value.
         /// </summary>
         public readonly Outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue? RefValue;
         /// <summary>
-        /// (Updatable) The root object value, used in custom parameters.
+        /// The root object value, used in custom parameters.
         /// </summary>
         public readonly Outputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValue? RootObjectValue;
         /// <summary>
-        /// (Updatable) A string value of the parameter.
+        /// A string value of the parameter.
         /// </summary>
         public readonly string? StringValue;
 

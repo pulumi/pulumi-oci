@@ -100,7 +100,7 @@ namespace Pulumi.Oci.StackMonitoring
     public partial class MetricExtension : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Type of possible collection methods.
+        /// Type of possible collection methods.
         /// </summary>
         [Output("collectionMethod")]
         public Output<string> CollectionMethod { get; private set; } = null!;
@@ -130,7 +130,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Display name of the metric.
+        /// (Updatable) Metric Extension display name.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -160,7 +160,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<ImmutableArray<Outputs.MetricExtensionMetricList>> MetricLists { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the script file
+        /// Metric Extension Resource name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -288,7 +288,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Display name of the metric.
+        /// (Updatable) Metric Extension display name.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -306,7 +306,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// (Updatable) Name of the script file
+        /// Metric Extension Resource name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -342,7 +342,7 @@ namespace Pulumi.Oci.StackMonitoring
     public sealed class MetricExtensionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Type of possible collection methods.
+        /// Type of possible collection methods.
         /// </summary>
         [Input("collectionMethod")]
         public Input<string>? CollectionMethod { get; set; }
@@ -372,7 +372,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Display name of the metric.
+        /// (Updatable) Metric Extension display name.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -414,7 +414,7 @@ namespace Pulumi.Oci.StackMonitoring
         }
 
         /// <summary>
-        /// (Updatable) Name of the script file
+        /// Metric Extension Resource name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

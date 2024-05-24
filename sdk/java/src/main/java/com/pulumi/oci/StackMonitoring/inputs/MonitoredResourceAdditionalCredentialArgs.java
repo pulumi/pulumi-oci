@@ -69,14 +69,14 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Property Name.
+     * (Updatable) The name of the credential, within the context of the source.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the credential, within the context of the source.
      * 
      */
     public Optional<Output<String>> name() {
@@ -84,14 +84,14 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) List of monitored resource properties.
+     * (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
      * 
      */
     @Import(name="properties")
     private @Nullable Output<List<MonitoredResourceAdditionalCredentialPropertyArgs>> properties;
 
     /**
-     * @return (Updatable) List of monitored resource properties.
+     * @return (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
      * 
      */
     public Optional<Output<List<MonitoredResourceAdditionalCredentialPropertyArgs>>> properties() {
@@ -114,20 +114,14 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
     }
 
     /**
-     * Monitored Resource Type.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Monitored Resource Type.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
      * 
      */
     public Optional<Output<String>> type() {
@@ -234,7 +228,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the credential, within the context of the source.
          * 
          * @return builder
          * 
@@ -245,7 +239,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the credential, within the context of the source.
          * 
          * @return builder
          * 
@@ -255,7 +249,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties.
+         * @param properties (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
          * 
          * @return builder
          * 
@@ -266,7 +260,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties.
+         * @param properties (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
          * 
          * @return builder
          * 
@@ -276,7 +270,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param properties (Updatable) List of monitored resource properties.
+         * @param properties (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
          * 
          * @return builder
          * 
@@ -307,10 +301,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param type Monitored Resource Type.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
          * 
          * @return builder
          * 
@@ -321,10 +312,7 @@ public final class MonitoredResourceAdditionalCredentialArgs extends com.pulumi.
         }
 
         /**
-         * @param type Monitored Resource Type.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
          * 
          * @return builder
          * 

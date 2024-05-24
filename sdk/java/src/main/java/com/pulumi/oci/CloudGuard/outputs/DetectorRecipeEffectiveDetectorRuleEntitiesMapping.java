@@ -19,12 +19,12 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) Possible type of entity
+     * @return Possible type of entity
      * 
      */
     private @Nullable String entityType;
     /**
-     * @return (Updatable) The entity value mapped to a data source query
+     * @return The entity value mapped to a data source query
      * 
      */
     private @Nullable String queryField;
@@ -40,14 +40,14 @@ public final class DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) Possible type of entity
+     * @return Possible type of entity
      * 
      */
     public Optional<String> entityType() {
         return Optional.ofNullable(this.entityType);
     }
     /**
-     * @return (Updatable) The entity value mapped to a data source query
+     * @return The entity value mapped to a data source query
      * 
      */
     public Optional<String> queryField() {

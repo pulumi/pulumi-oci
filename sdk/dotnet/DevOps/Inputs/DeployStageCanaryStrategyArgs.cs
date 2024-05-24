@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<string> IngressName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+        /// Canary namespace to be used for Kubernetes canary deployment.
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;

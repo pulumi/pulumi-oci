@@ -59,8 +59,6 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * (Updatable) The date and time that the current resource was locked.
      * 
-     * **Added In:** 19.1.4
-     * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
@@ -78,8 +76,6 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     /**
      * @return (Updatable) The date and time that the current resource was locked.
      * 
-     * **Added In:** 19.1.4
-     * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
@@ -96,9 +92,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     }
 
     /**
-     * (Updatable) Indicates that the recovery is locked.
-     * 
-     * **Added In:** 19.1.4
+     * (Updatable) Indicates that the account is locked.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -106,6 +100,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * multiValued: false
      * * mutability: readWrite
      * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -116,9 +111,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
     private @Nullable Output<Boolean> on;
 
     /**
-     * @return (Updatable) Indicates that the recovery is locked.
-     * 
-     * **Added In:** 19.1.4
+     * @return (Updatable) Indicates that the account is locked.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -126,6 +119,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
      * * multiValued: false
      * * mutability: readWrite
      * * idcsRequiresWriteForAccessFlows: true
+     * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
      * * required: false
      * * returned: default
      * * type: boolean
@@ -248,8 +242,6 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lockDate (Updatable) The date and time that the current resource was locked.
          * 
-         * **Added In:** 19.1.4
-         * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
@@ -271,8 +263,6 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         /**
          * @param lockDate (Updatable) The date and time that the current resource was locked.
          * 
-         * **Added In:** 19.1.4
-         * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
@@ -291,9 +281,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param on (Updatable) Indicates that the recovery is locked.
-         * 
-         * **Added In:** 19.1.4
+         * @param on (Updatable) Indicates that the account is locked.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -301,6 +289,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * multiValued: false
          * * mutability: readWrite
          * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean
@@ -315,9 +304,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
         }
 
         /**
-         * @param on (Updatable) Indicates that the recovery is locked.
-         * 
-         * **Added In:** 19.1.4
+         * @param on (Updatable) Indicates that the account is locked.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -325,6 +312,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserSta
          * * multiValued: false
          * * mutability: readWrite
          * * idcsRequiresWriteForAccessFlows: true
+         * * idcsRequiresImmediateReadAfterWriteForAccessFlows: true
          * * required: false
          * * returned: default
          * * type: boolean

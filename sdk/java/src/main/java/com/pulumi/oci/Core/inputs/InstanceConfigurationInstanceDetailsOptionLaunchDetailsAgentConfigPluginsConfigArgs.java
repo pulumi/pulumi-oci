@@ -18,16 +18,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentC
     /**
      * Whether the plugin should be enabled or disabled.
      * 
-     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-     * 
      */
     @Import(name="desiredState")
     private @Nullable Output<String> desiredState;
 
     /**
      * @return Whether the plugin should be enabled or disabled.
-     * 
-     * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
      * 
      */
     public Optional<Output<String>> desiredState() {
@@ -77,8 +73,6 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentC
         /**
          * @param desiredState Whether the plugin should be enabled or disabled.
          * 
-         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
-         * 
          * @return builder
          * 
          */
@@ -89,8 +83,6 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsAgentC
 
         /**
          * @param desiredState Whether the plugin should be enabled or disabled.
-         * 
-         * To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
          * 
          * @return builder
          * 

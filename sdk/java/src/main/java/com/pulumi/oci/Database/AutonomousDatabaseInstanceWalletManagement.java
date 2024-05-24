@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseInstanceWalletManagement = new AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", AutonomousDatabaseInstanceWalletManagementArgs.builder()        
+ *         var testAutonomousDatabaseInstanceWalletManagement = new AutonomousDatabaseInstanceWalletManagement("testAutonomousDatabaseInstanceWalletManagement", AutonomousDatabaseInstanceWalletManagementArgs.builder()
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .gracePeriod(autonomousDatabaseInstanceWalletManagementGracePeriod)
  *             .shouldRotate(autonomousDatabaseInstanceWalletManagementShouldRotate)

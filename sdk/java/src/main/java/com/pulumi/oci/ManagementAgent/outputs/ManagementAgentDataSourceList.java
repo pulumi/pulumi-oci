@@ -21,32 +21,12 @@ public final class ManagementAgentDataSourceList {
     private @Nullable Boolean isDaemonSet;
     private @Nullable String key;
     private @Nullable List<ManagementAgentDataSourceListMetricDimension> metricDimensions;
-    /**
-     * @return Name of the property
-     * 
-     */
     private @Nullable String name;
     private @Nullable String namespace;
     private @Nullable String proxyUrl;
-    /**
-     * @return Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
-     * 
-     */
     private @Nullable Integer readDataLimit;
-    /**
-     * @return Number in milliseconds. The timeout for reading the response from the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     private @Nullable Integer readTimeout;
-    /**
-     * @return Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-     * 
-     */
     private @Nullable String resourceGroup;
-    /**
-     * @return Number in minutes. The scraping occurs at the specified interval.
-     * 
-     */
     private @Nullable Integer scheduleMins;
     /**
      * @return The current state of managementAgent
@@ -63,15 +43,7 @@ public final class ManagementAgentDataSourceList {
      * 
      */
     private @Nullable String timeUpdated;
-    /**
-     * @return The type of the DataSource.
-     * 
-     */
     private @Nullable String type;
-    /**
-     * @return The url through which the Prometheus Exporter publishes its metrics. (http only)
-     * 
-     */
     private @Nullable String url;
 
     private ManagementAgentDataSourceList() {}
@@ -93,10 +65,6 @@ public final class ManagementAgentDataSourceList {
     public List<ManagementAgentDataSourceListMetricDimension> metricDimensions() {
         return this.metricDimensions == null ? List.of() : this.metricDimensions;
     }
-    /**
-     * @return Name of the property
-     * 
-     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
@@ -106,31 +74,15 @@ public final class ManagementAgentDataSourceList {
     public Optional<String> proxyUrl() {
         return Optional.ofNullable(this.proxyUrl);
     }
-    /**
-     * @return Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
-     * 
-     */
     public Optional<Integer> readDataLimit() {
         return Optional.ofNullable(this.readDataLimit);
     }
-    /**
-     * @return Number in milliseconds. The timeout for reading the response from the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     public Optional<Integer> readTimeout() {
         return Optional.ofNullable(this.readTimeout);
     }
-    /**
-     * @return Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-     * 
-     */
     public Optional<String> resourceGroup() {
         return Optional.ofNullable(this.resourceGroup);
     }
-    /**
-     * @return Number in minutes. The scraping occurs at the specified interval.
-     * 
-     */
     public Optional<Integer> scheduleMins() {
         return Optional.ofNullable(this.scheduleMins);
     }
@@ -155,17 +107,9 @@ public final class ManagementAgentDataSourceList {
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
-    /**
-     * @return The type of the DataSource.
-     * 
-     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
-    /**
-     * @return The url through which the Prometheus Exporter publishes its metrics. (http only)
-     * 
-     */
     public Optional<String> url() {
         return Optional.ofNullable(this.url);
     }

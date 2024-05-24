@@ -15,16 +15,15 @@ public final class DomainsAppEditableAttributeArgs extends com.pulumi.resources.
     public static final DomainsAppEditableAttributeArgs Empty = new DomainsAppEditableAttributeArgs();
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * (Updatable) Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -35,16 +34,15 @@ public final class DomainsAppEditableAttributeArgs extends com.pulumi.resources.
     private Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -80,16 +78,15 @@ public final class DomainsAppEditableAttributeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -104,16 +101,15 @@ public final class DomainsAppEditableAttributeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

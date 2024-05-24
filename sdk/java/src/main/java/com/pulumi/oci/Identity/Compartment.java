@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCompartment = new Compartment("testCompartment", CompartmentArgs.builder()        
+ *         var testCompartment = new Compartment("testCompartment", CompartmentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .description(compartmentDescription)
  *             .name(compartmentName)

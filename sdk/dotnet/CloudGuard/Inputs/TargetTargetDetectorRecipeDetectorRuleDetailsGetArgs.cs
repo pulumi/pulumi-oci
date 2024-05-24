@@ -28,7 +28,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationGetArgs>? _configurations;
 
         /// <summary>
-        /// (Updatable) Configurations associated with the ResponderRule
+        /// ResponderRule configurations
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationGetArgs> Configurations
         {

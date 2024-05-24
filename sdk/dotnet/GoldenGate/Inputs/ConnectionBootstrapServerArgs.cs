@@ -13,8 +13,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
     public sealed class ConnectionBootstrapServerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
-        /// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
+        /// (Updatable) The name or address of a host.
         /// </summary>
         [Input("host")]
         public Input<string>? Host { get; set; }

@@ -38,7 +38,7 @@ class MigrationArgs:
                  vault_details: Optional[pulumi.Input['MigrationVaultDetailsArgs']] = None):
         """
         The set of arguments for constructing a Migration resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[str] source_database_connection_id: (Updatable) The OCID of the Source Database Connection.
         :param pulumi.Input[str] target_database_connection_id: (Updatable) The OCID of the Target Database Connection.
         :param pulumi.Input[str] type: (Updatable) Migration type.
@@ -100,7 +100,7 @@ class MigrationArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 
@@ -373,7 +373,7 @@ class _MigrationState:
         Input properties used for looking up and filtering Migration resources.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
@@ -488,7 +488,7 @@ class _MigrationState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1009,7 +1009,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsV2Args']] data_transfer_medium_details_v2: (Updatable) Optional additional properties for dump transfer in source or target host.
@@ -1333,7 +1333,7 @@ class Migration(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] agent_id: (Updatable) The OCID of the registered ODMS Agent. Only valid for Offline Logical Migrations.
-        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        :param pulumi.Input[str] compartment_id: (Updatable) OCID of the compartment
         :param pulumi.Input[str] credentials_secret_id: OCID of the Secret in the Oracle Cloud Infrastructure vault containing the Migration credentials. Used to store GoldenGate administrator user credentials.
         :param pulumi.Input[str] csv_text: Database objects to exclude/include from migration in CSV format. The excludeObjects and includeObjects fields will be ignored if this field is not null.
         :param pulumi.Input[pulumi.InputType['MigrationDataTransferMediumDetailsArgs']] data_transfer_medium_details: (Updatable) Data Transfer Medium details for the Migration. If not specified, it will default to Database Link. Only one type of data transfer medium can be specified.
@@ -1416,7 +1416,7 @@ class Migration(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+        (Updatable) OCID of the compartment
         """
         return pulumi.get(self, "compartment_id")
 

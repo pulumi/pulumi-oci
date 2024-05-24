@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testArtifactByPath = new ArtifactByPath("testArtifactByPath", ArtifactByPathArgs.builder()        
+ *         var testArtifactByPath = new ArtifactByPath("testArtifactByPath", ArtifactByPathArgs.builder()
  *             .artifactPath(artifactPath)
  *             .repositoryId(testRepository.id())
  *             .version(version)

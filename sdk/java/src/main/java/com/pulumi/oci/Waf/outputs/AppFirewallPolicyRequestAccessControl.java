@@ -21,7 +21,7 @@ public final class AppFirewallPolicyRequestAccessControl {
      */
     private String defaultActionName;
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
      * 
      */
     private @Nullable List<AppFirewallPolicyRequestAccessControlRule> rules;
@@ -37,7 +37,7 @@ public final class AppFirewallPolicyRequestAccessControl {
         return this.defaultActionName;
     }
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
      * 
      */
     public List<AppFirewallPolicyRequestAccessControlRule> rules() {

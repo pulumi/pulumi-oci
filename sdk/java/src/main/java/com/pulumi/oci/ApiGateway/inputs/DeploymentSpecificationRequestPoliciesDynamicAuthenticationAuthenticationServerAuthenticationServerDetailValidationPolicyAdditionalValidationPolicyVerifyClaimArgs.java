@@ -33,14 +33,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * (Updatable) Name of the claim.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) Name of the claim.
      * 
      */
     public Optional<Output<String>> key() {
@@ -48,14 +48,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -110,7 +110,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
+         * @param key (Updatable) Name of the claim.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
+         * @param key (Updatable) Name of the claim.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) The list of acceptable values for a given claim. If this value is &#34;null&#34; or empty and &#34;isRequired&#34; set to &#34;true&#34;, then the presence of this claim in the JWT is validated.
          * 
          * @return builder
          * 

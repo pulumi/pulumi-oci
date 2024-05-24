@@ -20,14 +20,14 @@ public final class NetworkAddressListState extends com.pulumi.resources.Resource
     public static final NetworkAddressListState Empty = new NetworkAddressListState();
 
     /**
-     * (Updatable) A private IP address or CIDR IP address range.
+     * (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
      * 
      */
     @Import(name="addresses")
     private @Nullable Output<List<String>> addresses;
 
     /**
-     * @return (Updatable) A private IP address or CIDR IP address range.
+     * @return (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
      * 
      */
     public Optional<Output<List<String>>> addresses() {
@@ -235,7 +235,7 @@ public final class NetworkAddressListState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param addresses (Updatable) A private IP address or CIDR IP address range.
+         * @param addresses (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
          * 
          * @return builder
          * 
@@ -246,7 +246,7 @@ public final class NetworkAddressListState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param addresses (Updatable) A private IP address or CIDR IP address range.
+         * @param addresses (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
          * 
          * @return builder
          * 
@@ -256,7 +256,7 @@ public final class NetworkAddressListState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param addresses (Updatable) A private IP address or CIDR IP address range.
+         * @param addresses (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
          * 
          * @return builder
          * 

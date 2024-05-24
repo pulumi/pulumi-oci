@@ -179,7 +179,7 @@ type DrProtectionGroup struct {
 	PeerId pulumi.StringOutput `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringOutput `pulumi:"peerRegion"`
-	// The role of the DR protection group.  Example: `STANDBY`
+	// The role of the DR protection group.
 	Role pulumi.StringOutput `pulumi:"role"`
 	// The current state of the DR protection group.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -257,7 +257,7 @@ type drProtectionGroupState struct {
 	PeerId *string `pulumi:"peerId"`
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion *string `pulumi:"peerRegion"`
-	// The role of the DR protection group.  Example: `STANDBY`
+	// The role of the DR protection group.
 	Role *string `pulumi:"role"`
 	// The current state of the DR protection group.
 	State *string `pulumi:"state"`
@@ -297,7 +297,7 @@ type DrProtectionGroupState struct {
 	PeerId pulumi.StringPtrInput
 	// The region of the peer DR protection group.  Example: `us-ashburn-1`
 	PeerRegion pulumi.StringPtrInput
-	// The role of the DR protection group.  Example: `STANDBY`
+	// The role of the DR protection group.
 	Role pulumi.StringPtrInput
 	// The current state of the DR protection group.
 	State pulumi.StringPtrInput
@@ -508,7 +508,7 @@ func (o DrProtectionGroupOutput) PeerRegion() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.PeerRegion }).(pulumi.StringOutput)
 }
 
-// The role of the DR protection group.  Example: `STANDBY`
+// The role of the DR protection group.
 func (o DrProtectionGroupOutput) Role() pulumi.StringOutput {
 	return o.ApplyT(func(v *DrProtectionGroup) pulumi.StringOutput { return v.Role }).(pulumi.StringOutput)
 }

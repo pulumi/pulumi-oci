@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testClusterCompleteCredentialRotationManagement = new ClusterCompleteCredentialRotationManagement("testClusterCompleteCredentialRotationManagement", ClusterCompleteCredentialRotationManagementArgs.builder()        
+ *         var testClusterCompleteCredentialRotationManagement = new ClusterCompleteCredentialRotationManagement("testClusterCompleteCredentialRotationManagement", ClusterCompleteCredentialRotationManagementArgs.builder()
  *             .clusterId(testCluster.id())
  *             .build(), CustomResourceOptions.builder()
  *                 .dependsOn(testClusterStartCredentialRotationManagement)

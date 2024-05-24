@@ -29,53 +29,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsMyApiKey;
- * import com.pulumi.oci.Identity.DomainsMyApiKeyArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyApiKeyTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMyApiKeyUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testMyApiKey = new DomainsMyApiKey("testMyApiKey", DomainsMyApiKeyArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .key(myApiKeyKey)
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
- *             .authorization(myApiKeyAuthorization)
- *             .description(myApiKeyDescription)
- *             .id(myApiKeyId)
- *             .ocid(myApiKeyOcid)
- *             .resourceTypeSchemaVersion(myApiKeyResourceTypeSchemaVersion)
- *             .tags(DomainsMyApiKeyTagArgs.builder()
- *                 .key(myApiKeyTagsKey)
- *                 .value(myApiKeyTagsValue)
- *                 .build())
- *             .user(DomainsMyApiKeyUserArgs.builder()
- *                 .ocid(myApiKeyUserOcid)
- *                 .value(myApiKeyUserValue)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -412,34 +365,34 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
         return this.idcsPreventedOperations;
     }
     /**
-     * Key or name of the tag.
+     * Key
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return Key or name of the tag.
+     * @return Key
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -480,7 +433,7 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -488,16 +441,16 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -505,9 +458,9 @@ public class DomainsMyApiKey extends com.pulumi.resources.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Output<String> ocid() {

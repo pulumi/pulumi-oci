@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ContainerInstanceContainerHealthCheckHeader {
     /**
-     * @return The name of the volume. This must be unique within a single container instance.
+     * @return Container HTTP header Key.
      * 
      */
     private @Nullable String name;
@@ -24,7 +24,7 @@ public final class ContainerInstanceContainerHealthCheckHeader {
 
     private ContainerInstanceContainerHealthCheckHeader() {}
     /**
-     * @return The name of the volume. This must be unique within a single container instance.
+     * @return Container HTTP header Key.
      * 
      */
     public Optional<String> name() {

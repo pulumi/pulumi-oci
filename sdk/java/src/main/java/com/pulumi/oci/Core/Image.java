@@ -74,7 +74,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImage = new Image("testImage", ImageArgs.builder()        
+ *         var testImage = new Image("testImage", ImageArgs.builder()
  *             .compartmentId(compartmentId)
  *             .instanceId(testInstance.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
@@ -114,7 +114,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImage = new Image("testImage", ImageArgs.builder()        
+ *         var testImage = new Image("testImage", ImageArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(imageDisplayName)
  *             .launchMode(imageLaunchMode)
@@ -160,7 +160,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testImage = new Image("testImage", ImageArgs.builder()        
+ *         var testImage = new Image("testImage", ImageArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(imageDisplayName)
  *             .launchMode(imageLaunchMode)
@@ -332,6 +332,13 @@ public class Image extends com.pulumi.resources.CustomResource {
     }
     /**
      * Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Export(name="launchMode", refs={String.class}, tree="[0]")
@@ -339,6 +346,13 @@ public class Image extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> launchMode() {

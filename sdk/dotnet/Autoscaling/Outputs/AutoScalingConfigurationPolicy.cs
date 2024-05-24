@@ -17,13 +17,16 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// The capacity requirements of the autoscaling policy.
         /// </summary>
         public readonly Outputs.AutoScalingConfigurationPolicyCapacity? Capacity;
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// </summary>
         public readonly string? DisplayName;
         /// <summary>
         /// An execution schedule for an autoscaling policy.
         /// </summary>
         public readonly Outputs.AutoScalingConfigurationPolicyExecutionSchedule? ExecutionSchedule;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        /// ID of the condition that is assigned after creation.
         /// </summary>
         public readonly string? Id;
         /// <summary>

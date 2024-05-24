@@ -29,16 +29,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? AdminRole { get; set; }
 
         /// <summary>
-        /// (Updatable) App identifier
+        /// (Updatable) ID of parent App. READ-ONLY.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsAddedSinceVersion: 3
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -62,15 +61,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? AppName { get; set; }
 
         /// <summary>
-        /// (Updatable) The displayName of the User or App who modified this Resource
+        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -93,15 +92,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? LegacyGroupName { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) The URI of the corresponding appRole resource to which the user belongs
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: reference
         /// * uniqueness: none
         /// </summary>
@@ -109,18 +108,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag value
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) The identifier of the appRole
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * required: true
-        /// * idcsReturnEmptyWhenNull: true
-        /// * mutability: readWrite
-        /// * returned: default
-        /// * type: string
+        /// * caseExact: true
         /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]

@@ -28,14 +28,14 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Days during the week when maintenance should be performed.
+     * Days during the week when maintenance should be performed.
      * 
      */
     @Import(name="daysOfWeeks")
     private @Nullable Output<List<AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs>> daysOfWeeks;
 
     /**
-     * @return (Updatable) Days during the week when maintenance should be performed.
+     * @return Days during the week when maintenance should be performed.
      * 
      */
     public Optional<Output<List<AutonomousVmClusterMaintenanceWindowDaysOfWeekArgs>>> daysOfWeeks() {
@@ -43,7 +43,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+     * The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
@@ -51,7 +51,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
     private @Nullable Output<List<Integer>> hoursOfDays;
 
     /**
-     * @return (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+     * @return The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
      * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
      * 
      */
@@ -74,14 +74,14 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     * Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
     @Import(name="leadTimeInWeeks")
     private @Nullable Output<Integer> leadTimeInWeeks;
 
     /**
-     * @return (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+     * @return Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
      * 
      */
     public Optional<Output<Integer>> leadTimeInWeeks() {
@@ -89,48 +89,36 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Months during the year when maintenance should be performed.
+     * Months during the year when maintenance should be performed.
      * 
      */
     @Import(name="months")
     private @Nullable Output<List<AutonomousVmClusterMaintenanceWindowMonthArgs>> months;
 
     /**
-     * @return (Updatable) Months during the year when maintenance should be performed.
+     * @return Months during the year when maintenance should be performed.
      * 
      */
     public Optional<Output<List<AutonomousVmClusterMaintenanceWindowMonthArgs>>> months() {
         return Optional.ofNullable(this.months);
     }
 
-    /**
-     * (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-     * 
-     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-     * 
-     */
     @Import(name="patchingMode")
     private @Nullable Output<String> patchingMode;
 
-    /**
-     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-     * 
-     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-     * 
-     */
     public Optional<Output<String>> patchingMode() {
         return Optional.ofNullable(this.patchingMode);
     }
 
     /**
-     * (Updatable) The maintenance window scheduling preference.
+     * The maintenance window scheduling preference.
      * 
      */
     @Import(name="preference")
     private @Nullable Output<String> preference;
 
     /**
-     * @return (Updatable) The maintenance window scheduling preference.
+     * @return The maintenance window scheduling preference.
      * 
      */
     public Optional<Output<String>> preference() {
@@ -145,14 +133,14 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
     }
 
     /**
-     * (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+     * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
      */
     @Import(name="weeksOfMonths")
     private @Nullable Output<List<Integer>> weeksOfMonths;
 
     /**
-     * @return (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+     * @return Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
      * 
      */
     public Optional<Output<List<Integer>>> weeksOfMonths() {
@@ -203,7 +191,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfWeeks (Updatable) Days during the week when maintenance should be performed.
+         * @param daysOfWeeks Days during the week when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -214,7 +202,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfWeeks (Updatable) Days during the week when maintenance should be performed.
+         * @param daysOfWeeks Days during the week when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -224,7 +212,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param daysOfWeeks (Updatable) Days during the week when maintenance should be performed.
+         * @param daysOfWeeks Days during the week when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -234,7 +222,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param hoursOfDays (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
@@ -246,7 +234,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param hoursOfDays (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
@@ -257,7 +245,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param hoursOfDays (Updatable) The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
+         * @param hoursOfDays The window of hours during the day when maintenance should be performed. The window is a 4 hour slot. Valid values are
          * * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
          * 
          * @return builder
@@ -286,7 +274,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param leadTimeInWeeks (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         * @param leadTimeInWeeks Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          * 
          * @return builder
          * 
@@ -297,7 +285,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param leadTimeInWeeks (Updatable) Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
+         * @param leadTimeInWeeks Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
          * 
          * @return builder
          * 
@@ -307,7 +295,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param months (Updatable) Months during the year when maintenance should be performed.
+         * @param months Months during the year when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -318,7 +306,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param months (Updatable) Months during the year when maintenance should be performed.
+         * @param months Months during the year when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -328,7 +316,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param months (Updatable) Months during the year when maintenance should be performed.
+         * @param months Months during the year when maintenance should be performed.
          * 
          * @return builder
          * 
@@ -337,33 +325,17 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
             return months(List.of(months));
         }
 
-        /**
-         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-         * 
-         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder patchingMode(@Nullable Output<String> patchingMode) {
             $.patchingMode = patchingMode;
             return this;
         }
 
-        /**
-         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
-         * 
-         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
-         * 
-         * @return builder
-         * 
-         */
         public Builder patchingMode(String patchingMode) {
             return patchingMode(Output.of(patchingMode));
         }
 
         /**
-         * @param preference (Updatable) The maintenance window scheduling preference.
+         * @param preference The maintenance window scheduling preference.
          * 
          * @return builder
          * 
@@ -374,7 +346,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param preference (Updatable) The maintenance window scheduling preference.
+         * @param preference The maintenance window scheduling preference.
          * 
          * @return builder
          * 
@@ -397,7 +369,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param weeksOfMonths (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * @param weeksOfMonths Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          * 
          * @return builder
          * 
@@ -408,7 +380,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param weeksOfMonths (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * @param weeksOfMonths Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          * 
          * @return builder
          * 
@@ -418,7 +390,7 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         }
 
         /**
-         * @param weeksOfMonths (Updatable) Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
+         * @param weeksOfMonths Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
          * 
          * @return builder
          * 

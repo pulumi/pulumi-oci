@@ -30,9 +30,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) The URI of the corresponding Support Account resource to which the user belongs
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 2103141444
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -77,20 +77,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? UserProvider;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The identifier of the User's support Account.
+        /// 
+        /// **Added In:** 2103141444
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? Value;
 

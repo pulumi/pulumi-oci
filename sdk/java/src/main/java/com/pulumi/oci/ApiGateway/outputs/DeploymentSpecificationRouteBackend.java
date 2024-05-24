@@ -40,7 +40,7 @@ public final class DeploymentSpecificationRouteBackend {
      */
     private @Nullable String functionId;
     /**
-     * @return (Updatable)
+     * @return (Updatable) The headers of the stock response from the mock backend.
      * 
      */
     private @Nullable List<DeploymentSpecificationRouteBackendHeader> headers;
@@ -80,10 +80,7 @@ public final class DeploymentSpecificationRouteBackend {
      */
     private @Nullable Integer status;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the API backend.
      * 
      */
     private String type;
@@ -123,7 +120,7 @@ public final class DeploymentSpecificationRouteBackend {
         return Optional.ofNullable(this.functionId);
     }
     /**
-     * @return (Updatable)
+     * @return (Updatable) The headers of the stock response from the mock backend.
      * 
      */
     public List<DeploymentSpecificationRouteBackendHeader> headers() {
@@ -179,10 +176,7 @@ public final class DeploymentSpecificationRouteBackend {
         return Optional.ofNullable(this.status);
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the API backend.
      * 
      */
     public String type() {

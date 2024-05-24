@@ -31,14 +31,14 @@ public final class ProcessorJobInputLocationObjectLocationArgs extends com.pulum
     }
 
     /**
-     * The Object Storage namespace.
+     * The Object Storage namespace name.
      * 
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
-     * @return The Object Storage namespace.
+     * @return The Object Storage namespace name.
      * 
      */
     public Optional<Output<String>> namespace() {
@@ -108,7 +108,7 @@ public final class ProcessorJobInputLocationObjectLocationArgs extends com.pulum
         }
 
         /**
-         * @param namespace The Object Storage namespace.
+         * @param namespace The Object Storage namespace name.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class ProcessorJobInputLocationObjectLocationArgs extends com.pulum
         }
 
         /**
-         * @param namespace The Object Storage namespace.
+         * @param namespace The Object Storage namespace name.
          * 
          * @return builder
          * 

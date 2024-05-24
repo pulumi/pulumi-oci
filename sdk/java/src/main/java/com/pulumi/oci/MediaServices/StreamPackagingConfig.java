@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamPackagingConfig = new StreamPackagingConfig("testStreamPackagingConfig", StreamPackagingConfigArgs.builder()        
+ *         var testStreamPackagingConfig = new StreamPackagingConfig("testStreamPackagingConfig", StreamPackagingConfigArgs.builder()
  *             .displayName(streamPackagingConfigDisplayName)
  *             .distributionChannelId(testChannel.id())
  *             .segmentTimeInSeconds(streamPackagingConfigSegmentTimeInSeconds)
@@ -256,14 +256,14 @@ public class StreamPackagingConfig extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * When the lock was created.
+     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

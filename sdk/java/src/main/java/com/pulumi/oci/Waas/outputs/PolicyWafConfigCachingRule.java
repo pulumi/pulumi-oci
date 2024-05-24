@@ -16,7 +16,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PolicyWafConfigCachingRule {
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take when the criteria of a caching rule are met.
+     * * **CACHE:** Caches requested content when the criteria of the rule are met.
+     * * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      * 
      */
     private String action;
@@ -31,7 +33,7 @@ public final class PolicyWafConfigCachingRule {
      */
     private @Nullable String clientCachingDuration;
     /**
-     * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     * @return (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
      * 
      */
     private List<PolicyWafConfigCachingRuleCriteria> criterias;
@@ -46,17 +48,16 @@ public final class PolicyWafConfigCachingRule {
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the caching rule.
      * 
      */
     private String name;
 
     private PolicyWafConfigCachingRule() {}
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take when the criteria of a caching rule are met.
+     * * **CACHE:** Caches requested content when the criteria of the rule are met.
+     * * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      * 
      */
     public String action() {
@@ -77,7 +78,7 @@ public final class PolicyWafConfigCachingRule {
         return Optional.ofNullable(this.clientCachingDuration);
     }
     /**
-     * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     * @return (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
      * 
      */
     public List<PolicyWafConfigCachingRuleCriteria> criterias() {
@@ -98,10 +99,7 @@ public final class PolicyWafConfigCachingRule {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the caching rule.
      * 
      */
     public String name() {

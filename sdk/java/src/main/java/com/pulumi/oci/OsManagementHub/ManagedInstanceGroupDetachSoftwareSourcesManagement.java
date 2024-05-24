@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceGroupDetachSoftwareSourcesManagement = new ManagedInstanceGroupDetachSoftwareSourcesManagement("testManagedInstanceGroupDetachSoftwareSourcesManagement", ManagedInstanceGroupDetachSoftwareSourcesManagementArgs.builder()        
+ *         var testManagedInstanceGroupDetachSoftwareSourcesManagement = new ManagedInstanceGroupDetachSoftwareSourcesManagement("testManagedInstanceGroupDetachSoftwareSourcesManagement", ManagedInstanceGroupDetachSoftwareSourcesManagementArgs.builder()
  *             .managedInstanceGroupId(testManagedInstanceGroup.id())
  *             .softwareSources(managedInstanceGroupDetachSoftwareSourcesManagementSoftwareSources)
  *             .workRequestDetails(ManagedInstanceGroupDetachSoftwareSourcesManagementWorkRequestDetailsArgs.builder()

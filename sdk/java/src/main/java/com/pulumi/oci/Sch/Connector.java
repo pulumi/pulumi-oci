@@ -72,7 +72,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testServiceConnector = new Connector("testServiceConnector", ConnectorArgs.builder()        
+ *         var testServiceConnector = new Connector("testServiceConnector", ConnectorArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(serviceConnectorDisplayName)
  *             .source(ConnectorSourceArgs.builder()
@@ -159,14 +159,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Sch/connector:Connector")
 public class Connector extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the comparment to create the connector in.
      * 
      */
     public Output<String> compartmentId() {

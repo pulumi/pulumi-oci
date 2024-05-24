@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBastion = new Bastion("testBastion", BastionArgs.builder()        
+ *         var testBastion = new Bastion("testBastion", BastionArgs.builder()
  *             .bastionType(bastionBastionType)
  *             .compartmentId(compartmentId)
  *             .targetSubnetId(testSubnet.id())

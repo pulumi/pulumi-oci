@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class JobRunLogDetail {
     /**
-     * @return The log group id for where log objects are for job runs.
+     * @return The log group id for where log objects will be for job runs.
      * 
      */
     private @Nullable String logGroupId;
     /**
-     * @return The log id the job run will push logs too.
+     * @return The log id of the log object the job run logs will be shipped to.
      * 
      */
     private @Nullable String logId;
 
     private JobRunLogDetail() {}
     /**
-     * @return The log group id for where log objects are for job runs.
+     * @return The log group id for where log objects will be for job runs.
      * 
      */
     public Optional<String> logGroupId() {
         return Optional.ofNullable(this.logGroupId);
     }
     /**
-     * @return The log id the job run will push logs too.
+     * @return The log id of the log object the job run logs will be shipped to.
      * 
      */
     public Optional<String> logId() {

@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOauthPartnerCertificate = new DomainsOauthPartnerCertificate("testOauthPartnerCertificate", DomainsOauthPartnerCertificateArgs.builder()        
+ *         var testOauthPartnerCertificate = new DomainsOauthPartnerCertificate("testOauthPartnerCertificate", DomainsOauthPartnerCertificateArgs.builder()
  *             .certificateAlias(oauthPartnerCertificateCertificateAlias)
  *             .idcsEndpoint(testDomain.url())
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:OAuthPartnerCertificate")

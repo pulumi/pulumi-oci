@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPathAnalyzerTest = new PathAnalyzerTest("testPathAnalyzerTest", PathAnalyzerTestArgs.builder()        
+ *         var testPathAnalyzerTest = new PathAnalyzerTest("testPathAnalyzerTest", PathAnalyzerTestArgs.builder()
  *             .compartmentId(compartmentId)
  *             .destinationEndpoint(PathAnalyzerTestDestinationEndpointArgs.builder()
  *                 .type(pathAnalyzerTestDestinationEndpointType)

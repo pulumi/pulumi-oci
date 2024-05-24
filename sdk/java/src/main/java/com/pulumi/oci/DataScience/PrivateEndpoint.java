@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataSciencePrivateEndpoint = new PrivateEndpoint("testDataSciencePrivateEndpoint", PrivateEndpointArgs.builder()        
+ *         var testDataSciencePrivateEndpoint = new PrivateEndpoint("testDataSciencePrivateEndpoint", PrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dataScienceResourceType(dataSciencePrivateEndpointDataScienceResourceType)
  *             .subnetId(testSubnet.id())

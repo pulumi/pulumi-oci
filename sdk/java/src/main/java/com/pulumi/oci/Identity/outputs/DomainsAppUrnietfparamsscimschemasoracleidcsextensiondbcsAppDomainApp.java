@@ -13,21 +13,25 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) DB Domain App display name
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) DB Domain App URI
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -41,33 +45,35 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppD
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) DB Domain App identifier
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppDomainApp() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) DB Domain App display name
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -76,7 +82,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppD
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) DB Domain App URI
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -92,19 +100,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensiondbcsAppD
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) DB Domain App identifier
+     * 
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

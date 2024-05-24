@@ -18,14 +18,14 @@ public final class DeploymentDeployPipelineArtifactItemArgs extends com.pulumi.r
     public static final DeploymentDeployPipelineArtifactItemArgs Empty = new DeploymentDeployPipelineArtifactItemArgs();
 
     /**
-     * The OCID of the artifact to which this parameter applies.
+     * The OCID of an artifact
      * 
      */
     @Import(name="deployArtifactId")
     private @Nullable Output<String> deployArtifactId;
 
     /**
-     * @return The OCID of the artifact to which this parameter applies.
+     * @return The OCID of an artifact
      * 
      */
     public Optional<Output<String>> deployArtifactId() {
@@ -89,7 +89,7 @@ public final class DeploymentDeployPipelineArtifactItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param deployArtifactId The OCID of the artifact to which this parameter applies.
+         * @param deployArtifactId The OCID of an artifact
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class DeploymentDeployPipelineArtifactItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param deployArtifactId The OCID of the artifact to which this parameter applies.
+         * @param deployArtifactId The OCID of an artifact
          * 
          * @return builder
          * 

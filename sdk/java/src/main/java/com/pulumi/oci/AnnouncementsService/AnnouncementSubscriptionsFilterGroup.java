@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnnouncementSubscriptionsFilterGroup = new AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", AnnouncementSubscriptionsFilterGroupArgs.builder()        
+ *         var testAnnouncementSubscriptionsFilterGroup = new AnnouncementSubscriptionsFilterGroup("testAnnouncementSubscriptionsFilterGroup", AnnouncementSubscriptionsFilterGroupArgs.builder()
  *             .announcementSubscriptionId(testAnnouncementSubscription.id())
  *             .filters(AnnouncementSubscriptionsFilterGroupFilterArgs.builder()
  *                 .type(announcementSubscriptionsFilterGroupFiltersType)

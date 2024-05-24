@@ -48,14 +48,14 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
     }
 
     /**
-     * Bucket Name for influx connection
+     * Object storage bucket name
      * 
      */
     @Import(name="bucket")
     private @Nullable Output<String> bucket;
 
     /**
-     * @return Bucket Name for influx connection
+     * @return Object storage bucket name
      * 
      */
     public Optional<Output<String>> bucket() {
@@ -93,14 +93,14 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
     }
 
     /**
-     * DB Name for influx connection
+     * atp database name
      * 
      */
     @Import(name="databaseName")
     private @Nullable Output<String> databaseName;
 
     /**
-     * @return DB Name for influx connection
+     * @return atp database name
      * 
      */
     public Optional<Output<String>> databaseName() {
@@ -403,7 +403,7 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param bucket Bucket Name for influx connection
+         * @param bucket Object storage bucket name
          * 
          * @return builder
          * 
@@ -414,7 +414,7 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param bucket Bucket Name for influx connection
+         * @param bucket Object storage bucket name
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param databaseName DB Name for influx connection
+         * @param databaseName atp database name
          * 
          * @return builder
          * 
@@ -477,7 +477,7 @@ public final class DataAssetDataSourceDetailsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param databaseName DB Name for influx connection
+         * @param databaseName atp database name
          * 
          * @return builder
          * 

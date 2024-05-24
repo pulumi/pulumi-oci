@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class ProfileTargetCompartments {
     /**
-     * @return (Updatable) The list of tags specified in the current profile override.
+     * @return (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
      * 
      */
     private List<String> items;
 
     private ProfileTargetCompartments() {}
     /**
-     * @return (Updatable) The list of tags specified in the current profile override.
+     * @return (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
      * 
      */
     public List<String> items() {

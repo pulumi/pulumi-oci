@@ -49,20 +49,14 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
      * 
      */
     public Optional<Output<String>> name() {
@@ -154,10 +148,7 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
          * 
          * @return builder
          * 
@@ -168,10 +159,7 @@ public final class LoadBalancerRoutingPolicyArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name The name for this list of routing rules. It must be unique and it cannot be changed. Avoid entering confidential information.  Example: `example_routing_rules`
          * 
          * @return builder
          * 

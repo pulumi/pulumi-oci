@@ -1262,8 +1262,8 @@ class JobRunLogDetail(dict):
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
         """
-        :param str log_group_id: The log group id for where log objects are for job runs.
-        :param str log_id: The log id the job run will push logs too.
+        :param str log_group_id: The log group id for where log objects will be for job runs.
+        :param str log_id: The log id of the log object the job run logs will be shipped to.
         """
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
@@ -1274,7 +1274,7 @@ class JobRunLogDetail(dict):
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
         """
-        The log group id for where log objects are for job runs.
+        The log group id for where log objects will be for job runs.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -1282,7 +1282,7 @@ class JobRunLogDetail(dict):
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
         """
-        The log id the job run will push logs too.
+        The log id of the log object the job run logs will be shipped to.
         """
         return pulumi.get(self, "log_id")
 
@@ -1296,7 +1296,7 @@ class ModelCustomMetadataList(dict):
                  value: Optional[str] = None):
         """
         :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: (Updatable) A short description of the model.
+        :param str description: (Updatable) Description of model metadata
         :param str key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
                * libraryName
@@ -1329,7 +1329,7 @@ class ModelCustomMetadataList(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A short description of the model.
+        (Updatable) Description of model metadata
         """
         return pulumi.get(self, "description")
 
@@ -1367,7 +1367,7 @@ class ModelDefinedMetadataList(dict):
                  value: Optional[str] = None):
         """
         :param str category: (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
-        :param str description: (Updatable) A short description of the model.
+        :param str description: (Updatable) Description of model metadata
         :param str key: (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
                * useCaseType
                * libraryName
@@ -1400,7 +1400,7 @@ class ModelDefinedMetadataList(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) A short description of the model.
+        (Updatable) Description of model metadata
         """
         return pulumi.get(self, "description")
 
@@ -2170,6 +2170,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         :param str metric_expression_rule_type: (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
                
                The following values are supported:
+               * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+               * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleInConfigurationArgs' scale_in_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
         :param 'ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleScaleOutConfigurationArgs' scale_out_configuration: (Updatable) The scaling configuration for the predefined metric expression rule.
         :param str metric_type: (Updatable) Metric type
@@ -2187,6 +2189,8 @@ class ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetail
         (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
 
         The following values are supported:
+        * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+        * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
         """
         return pulumi.get(self, "metric_expression_rule_type")
 
@@ -2513,11 +2517,11 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
                  private_endpoint_id: Optional[str] = None,
                  subnet_id: Optional[str] = None):
         """
-        :param str shape: (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
-        :param int block_storage_size_in_gbs: (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
-        :param 'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: (Updatable) Details for the notebook session shape configuration.
-        :param str private_endpoint_id: (Updatable) The OCID of a Data Science private endpoint.
-        :param str subnet_id: (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+        :param str shape: The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+        :param int block_storage_size_in_gbs: A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+        :param 'NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs' notebook_session_shape_config_details: Details for the notebook session shape configuration.
+        :param str private_endpoint_id: The OCID of a Data Science private endpoint.
+        :param str subnet_id: A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
         pulumi.set(__self__, "shape", shape)
         if block_storage_size_in_gbs is not None:
@@ -2533,7 +2537,7 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
     @pulumi.getter
     def shape(self) -> str:
         """
-        (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+        The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         """
         return pulumi.get(self, "shape")
 
@@ -2541,7 +2545,7 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> Optional[int]:
         """
-        (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+        A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
@@ -2549,7 +2553,7 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
     @pulumi.getter(name="notebookSessionShapeConfigDetails")
     def notebook_session_shape_config_details(self) -> Optional['outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails']:
         """
-        (Updatable) Details for the notebook session shape configuration.
+        Details for the notebook session shape configuration.
         """
         return pulumi.get(self, "notebook_session_shape_config_details")
 
@@ -2557,7 +2561,7 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of a Data Science private endpoint.
+        The OCID of a Data Science private endpoint.
         """
         return pulumi.get(self, "private_endpoint_id")
 
@@ -2565,7 +2569,7 @@ class NotebookSessionNotebookSessionConfigDetails(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> Optional[str]:
         """
-        (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+        A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -2593,8 +2597,8 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
-        :param float ocpus: (Updatable) The total number of OCPUs available to the notebook session instance.
+        :param float memory_in_gbs: The total amount of memory available to the notebook session instance, in gigabytes.
+        :param float ocpus: The total number of OCPUs available to the notebook session instance.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -2605,7 +2609,7 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+        The total amount of memory available to the notebook session instance, in gigabytes.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -2613,7 +2617,7 @@ class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetai
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        (Updatable) The total number of OCPUs available to the notebook session instance.
+        The total number of OCPUs available to the notebook session instance.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3014,9 +3018,9 @@ class PipelineConfigurationDetails(dict):
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str type: (Updatable) The type of pipeline.
-        :param str command_line_arguments: (Updatable) The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the step.
+        :param str command_line_arguments: (Updatable) The command line arguments to set for steps in the pipeline.
+        :param Mapping[str, Any] environment_variables: (Updatable) Environment variables to set for steps in the pipeline.
+        :param str maximum_runtime_in_minutes: (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         pulumi.set(__self__, "type", type)
         if command_line_arguments is not None:
@@ -3038,7 +3042,7 @@ class PipelineConfigurationDetails(dict):
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
         """
-        (Updatable) The command line arguments to set for step.
+        (Updatable) The command line arguments to set for steps in the pipeline.
         """
         return pulumi.get(self, "command_line_arguments")
 
@@ -3046,7 +3050,7 @@ class PipelineConfigurationDetails(dict):
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
         """
-        (Updatable) Environment variables to set for step.
+        (Updatable) Environment variables to set for steps in the pipeline.
         """
         return pulumi.get(self, "environment_variables")
 
@@ -3054,7 +3058,7 @@ class PipelineConfigurationDetails(dict):
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
         """
-        (Updatable) A time bound for the execution of the step.
+        (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
@@ -3353,9 +3357,9 @@ class PipelineRunConfigurationOverrideDetails(dict):
                  maximum_runtime_in_minutes: Optional[str] = None):
         """
         :param str type: The type of pipeline.
-        :param str command_line_arguments: The command line arguments to set for step.
-        :param Mapping[str, Any] environment_variables: Environment variables to set for step.
-        :param str maximum_runtime_in_minutes: A time bound for the execution of the step.
+        :param str command_line_arguments: The command line arguments to set for steps in the pipeline.
+        :param Mapping[str, Any] environment_variables: Environment variables to set for steps in the pipeline.
+        :param str maximum_runtime_in_minutes: A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         pulumi.set(__self__, "type", type)
         if command_line_arguments is not None:
@@ -3377,7 +3381,7 @@ class PipelineRunConfigurationOverrideDetails(dict):
     @pulumi.getter(name="commandLineArguments")
     def command_line_arguments(self) -> Optional[str]:
         """
-        The command line arguments to set for step.
+        The command line arguments to set for steps in the pipeline.
         """
         return pulumi.get(self, "command_line_arguments")
 
@@ -3385,7 +3389,7 @@ class PipelineRunConfigurationOverrideDetails(dict):
     @pulumi.getter(name="environmentVariables")
     def environment_variables(self) -> Optional[Mapping[str, Any]]:
         """
-        Environment variables to set for step.
+        Environment variables to set for steps in the pipeline.
         """
         return pulumi.get(self, "environment_variables")
 
@@ -3393,7 +3397,7 @@ class PipelineRunConfigurationOverrideDetails(dict):
     @pulumi.getter(name="maximumRuntimeInMinutes")
     def maximum_runtime_in_minutes(self) -> Optional[str]:
         """
-        A time bound for the execution of the step.
+        A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
 
@@ -3501,8 +3505,8 @@ class PipelineRunLogDetail(dict):
                  log_group_id: Optional[str] = None,
                  log_id: Optional[str] = None):
         """
-        :param str log_group_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
-        :param str log_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        :param str log_group_id: The log group id for where log objects will be for pipeline runs.
+        :param str log_id: The log id of the log object the pipeline run logs will be shipped to.
         """
         if log_group_id is not None:
             pulumi.set(__self__, "log_group_id", log_group_id)
@@ -3513,7 +3517,7 @@ class PipelineRunLogDetail(dict):
     @pulumi.getter(name="logGroupId")
     def log_group_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        The log group id for where log objects will be for pipeline runs.
         """
         return pulumi.get(self, "log_group_id")
 
@@ -3521,7 +3525,7 @@ class PipelineRunLogDetail(dict):
     @pulumi.getter(name="logId")
     def log_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        The log id of the log object the pipeline run logs will be shipped to.
         """
         return pulumi.get(self, "log_id")
 
@@ -3793,7 +3797,7 @@ class PipelineStepArtifact(dict):
                  artifact_content_md5: Optional[str] = None,
                  artifact_last_modified: Optional[str] = None):
         """
-        :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
         pulumi.set(__self__, "artifact_content_length", artifact_content_length)
         pulumi.set(__self__, "pipeline_step_artifact", pipeline_step_artifact)
@@ -3819,7 +3823,7 @@ class PipelineStepArtifact(dict):
     @pulumi.getter(name="stepName")
     def step_name(self) -> str:
         """
-        (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         """
         return pulumi.get(self, "step_name")
 

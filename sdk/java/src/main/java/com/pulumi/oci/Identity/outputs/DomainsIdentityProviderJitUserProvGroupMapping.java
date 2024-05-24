@@ -41,17 +41,16 @@ public final class DomainsIdentityProviderJitUserProvGroupMapping {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Domain Group
+     * 
+     * **Added In:** 2205120021
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * idcsSearchable: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     private String value;
@@ -90,17 +89,16 @@ public final class DomainsIdentityProviderJitUserProvGroupMapping {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Domain Group
+     * 
+     * **Added In:** 2205120021
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * idcsSearchable: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     public String value() {

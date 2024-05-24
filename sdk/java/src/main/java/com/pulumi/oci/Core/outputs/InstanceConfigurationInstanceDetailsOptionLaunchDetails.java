@@ -49,7 +49,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
      */
     private @Nullable String clusterPlacementGroupId;
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      * 
      */
     private @Nullable String compartmentId;
@@ -61,42 +61,30 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
-     * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-     * 
      */
     private @Nullable String dedicatedVmHostId;
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
-     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-     * 
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     * 
      */
     private @Nullable Map<String,Object> extendedMetadata;
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
-     * If you do not specify the fault domain, the system selects one for you.
-     * 
-     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-     * 
-     * Example: `FAULT-DOMAIN-1`
-     * 
      */
     private @Nullable String faultDomain;
     /**
-     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     private @Nullable Map<String,Object> freeformTags;
@@ -108,16 +96,6 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return This is an advanced option.
      * 
-     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-     * 
-     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-     * 
-     * The default iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     * 
-     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     * 
-     * For more information about iPXE, see http://ipxe.org.
-     * 
      */
     private @Nullable String ipxeScript;
     /**
@@ -127,6 +105,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
     private @Nullable String launchMode;
@@ -138,38 +120,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
-     * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-     * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-     * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-     * 
-     * **Providing Cloud-Init Metadata**
-     * 
-     * You can use the following metadata key names to provide information to Cloud-Init:
-     * 
-     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-     * 
-     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-     * 
-     * **Metadata Example**
-     * 
-     * &#34;metadata&#34; : { &#34;quake_bot_level&#34; : &#34;Severe&#34;, &#34;ssh_authorized_keys&#34; : &#34;ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227&#34;, &#34;user_data&#34; : &#34;&lt;your_public_SSH_key&gt;==&#34; } **Getting Metadata on the Instance**
-     * 
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     * 
-     * curl -H &#34;Authorization: Bearer Oracle&#34; http://169.254.169.254/opc/v2/instance/ curl -H &#34;Authorization: Bearer Oracle&#34; http://169.254.169.254/opc/v2/instance/metadata/ curl -H &#34;Authorization: Bearer Oracle&#34; http://169.254.169.254/opc/v2/instance/metadata/&lt;any-key-name&gt;
-     * 
-     * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     * 
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     * 
      */
     private @Nullable Map<String,Object> metadata;
     /**
      * @return The platform configuration requested for the instance.
-     * 
-     * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      * 
      */
     private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig platformConfig;
@@ -180,22 +134,18 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsPreemptibleInstanceConfig preemptibleInstanceConfig;
     /**
      * @return The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+     * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+     * * `REBOOT` - Run maintenance using a reboot.
      * 
      */
     private @Nullable String preferredMaintenanceAction;
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
-     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-     * 
      */
     private @Nullable String shape;
     /**
      * @return The shape configuration requested for the instance.
-     * 
-     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      * 
      */
     private @Nullable InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig shapeConfig;
@@ -238,7 +188,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
         return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      * 
      */
     public Optional<String> compartmentId() {
@@ -254,21 +204,19 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return The OCID of the dedicated virtual machine host to place the instance on.
      * 
-     * Dedicated VM hosts can be used when launching individual instances from an instance configuration. They cannot be used to launch instance pools.
-     * 
      */
     public Optional<String> dedicatedVmHostId() {
         return Optional.ofNullable(this.dedicatedVmHostId);
     }
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -277,10 +225,6 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return Additional metadata key/value pairs that you provide. They serve the same purpose and functionality as fields in the `metadata` object.
      * 
-     * They are distinguished from `metadata` fields in that these can be nested JSON objects (whereas `metadata` fields are string/string maps only).
-     * 
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     * 
      */
     public Map<String,Object> extendedMetadata() {
         return this.extendedMetadata == null ? Map.of() : this.extendedMetadata;
@@ -288,18 +232,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains let you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
-     * If you do not specify the fault domain, the system selects one for you.
-     * 
-     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-     * 
-     * Example: `FAULT-DOMAIN-1`
-     * 
      */
     public Optional<String> faultDomain() {
         return Optional.ofNullable(this.faultDomain);
     }
     /**
-     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
@@ -315,16 +253,6 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return This is an advanced option.
      * 
-     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-     * 
-     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots; however, you should be aware that the same iPXE script will run every time an instance boots; not only after the initial LaunchInstance call.
-     * 
-     * The default iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI the same way as the default iPXE script, you should use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     * 
-     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     * 
-     * For more information about iPXE, see http://ipxe.org.
-     * 
      */
     public Optional<String> ipxeScript() {
         return Optional.ofNullable(this.ipxeScript);
@@ -338,6 +266,10 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     }
     /**
      * @return Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+     * * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+     * * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+     * * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
      * 
      */
     public Optional<String> launchMode() {
@@ -353,40 +285,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return Custom metadata key/value pairs that you provide, such as the SSH public key required to connect to the instance.
      * 
-     * A metadata service runs on every launched instance. The service is an HTTP endpoint listening on 169.254.169.254. You can use the service to:
-     * * Provide information to [Cloud-Init](https://cloudinit.readthedocs.org/en/latest/) to be used for various system initialization tasks.
-     * * Get information about the instance, including the custom metadata that you provide when you launch the instance.
-     * 
-     * **Providing Cloud-Init Metadata**
-     * 
-     * You can use the following metadata key names to provide information to Cloud-Init:
-     * 
-     * **&#34;ssh_authorized_keys&#34;** - Provide one or more public SSH keys to be included in the `~/.ssh/authorized_keys` file for the default user on the instance. Use a newline character to separate multiple keys. The SSH keys must be in the format necessary for the `authorized_keys` file, as shown in the example below.
-     * 
-     * **&#34;user_data&#34;** - Provide your own base64-encoded data to be used by Cloud-Init to run custom scripts or provide custom Cloud-Init configuration. For information about how to take advantage of user data, see the [Cloud-Init Documentation](http://cloudinit.readthedocs.org/en/latest/topics/format.html).
-     * 
-     * **Metadata Example**
-     * 
-     * &#34;metadata&#34; : { &#34;quake_bot_level&#34; : &#34;Severe&#34;, &#34;ssh_authorized_keys&#34; : &#34;ssh-rsa &lt;your_public_SSH_key&gt;== rsa-key-20160227&#34;, &#34;user_data&#34; : &#34;&lt;your_public_SSH_key&gt;==&#34; } **Getting Metadata on the Instance**
-     * 
-     * To get information about your instance, connect to the instance using SSH and issue any of the following GET requests:
-     * 
-     * curl -H &#34;Authorization: Bearer Oracle&#34; http://169.254.169.254/opc/v2/instance/ curl -H &#34;Authorization: Bearer Oracle&#34; http://169.254.169.254/opc/v2/instance/metadata/ curl -H &#34;Authorization: Bearer Oracle&#34; http://169.254.169.254/opc/v2/instance/metadata/&lt;any-key-name&gt;
-     * 
-     * You&#39;ll get back a response that includes all the instance information; only the metadata information; or the metadata information for the specified key name, respectively.
-     * 
-     * The combined size of the `metadata` and `extendedMetadata` objects can be a maximum of 32,000 bytes.
-     * 
      */
     public Map<String,Object> metadata() {
         return this.metadata == null ? Map.of() : this.metadata;
     }
     /**
      * @return The platform configuration requested for the instance.
-     * 
-     * If you provide the parameter, the instance is created with the platform configuration that you specify. For any values that you omit, the instance uses the default configuration values for the `shape` that you specify. If you don&#39;t provide the parameter, the default values for the `shape` are used.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      * 
      */
     public Optional<InstanceConfigurationInstanceDetailsOptionLaunchDetailsPlatformConfig> platformConfig() {
@@ -401,6 +305,8 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     }
     /**
      * @return The preferred maintenance action for an instance. The default is LIVE_MIGRATE, if live migration is supported.
+     * * `LIVE_MIGRATE` - Run maintenance using a live migration.
+     * * `REBOOT` - Run maintenance using a reboot.
      * 
      */
     public Optional<String> preferredMaintenanceAction() {
@@ -409,18 +315,12 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetails {
     /**
      * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
-     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
-     * 
      */
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
     /**
      * @return The shape configuration requested for the instance.
-     * 
-     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
      * 
      */
     public Optional<InstanceConfigurationInstanceDetailsOptionLaunchDetailsShapeConfig> shapeConfig() {

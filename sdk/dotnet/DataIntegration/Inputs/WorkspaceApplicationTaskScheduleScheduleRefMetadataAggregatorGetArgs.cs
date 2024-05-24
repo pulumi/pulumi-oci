@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        /// (Updatable) The name of the aggregator.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

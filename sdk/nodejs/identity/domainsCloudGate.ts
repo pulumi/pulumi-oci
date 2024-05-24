@@ -146,19 +146,19 @@ export class DomainsCloudGate extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) Display name of upstream server
+     * (Updatable) Display name/Host identifier for this Cloud Gate
      *
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -592,19 +592,19 @@ export interface DomainsCloudGateState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Display name of upstream server
+     * (Updatable) Display name/Host identifier for this Cloud Gate
      *
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -925,19 +925,19 @@ export interface DomainsCloudGateArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Display name of upstream server
+     * (Updatable) Display name/Host identifier for this Cloud Gate
      *
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      */
     displayName: pulumi.Input<string>;
     /**

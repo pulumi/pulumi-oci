@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsageStatementEmailRecipientsGroup = new UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", UsageStatementEmailRecipientsGroupArgs.builder()        
+ *         var testUsageStatementEmailRecipientsGroup = new UsageStatementEmailRecipientsGroup("testUsageStatementEmailRecipientsGroup", UsageStatementEmailRecipientsGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .recipientsLists(UsageStatementEmailRecipientsGroupRecipientsListArgs.builder()
  *                 .emailId(testEmail.id())
@@ -109,14 +109,14 @@ public class UsageStatementEmailRecipientsGroup extends com.pulumi.resources.Cus
         return this.recipientsLists;
     }
     /**
-     * (Updatable) The email recipient lifecycle state.
+     * The email recipient group lifecycle state.
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return (Updatable) The email recipient lifecycle state.
+     * @return The email recipient group lifecycle state.
      * 
      */
     public Output<String> state() {

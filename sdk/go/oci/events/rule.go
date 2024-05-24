@@ -74,7 +74,7 @@ import (
 type Rule struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) A list of one or more ActionDetails objects.
+	// (Updatable) A list of ActionDetails objects to create for a rule.
 	Actions RuleActionsOutput `pulumi:"actions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
@@ -158,7 +158,7 @@ func GetRule(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Rule resources.
 type ruleState struct {
-	// (Updatable) A list of one or more ActionDetails objects.
+	// (Updatable) A list of ActionDetails objects to create for a rule.
 	Actions *RuleActions `pulumi:"actions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId *string `pulumi:"compartmentId"`
@@ -198,7 +198,7 @@ type ruleState struct {
 }
 
 type RuleState struct {
-	// (Updatable) A list of one or more ActionDetails objects.
+	// (Updatable) A list of ActionDetails objects to create for a rule.
 	Actions RuleActionsPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringPtrInput
@@ -242,7 +242,7 @@ func (RuleState) ElementType() reflect.Type {
 }
 
 type ruleArgs struct {
-	// (Updatable) A list of one or more ActionDetails objects.
+	// (Updatable) A list of ActionDetails objects to create for a rule.
 	Actions RuleActions `pulumi:"actions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId string `pulumi:"compartmentId"`
@@ -277,7 +277,7 @@ type ruleArgs struct {
 
 // The set of arguments for constructing a Rule resource.
 type RuleArgs struct {
-	// (Updatable) A list of one or more ActionDetails objects.
+	// (Updatable) A list of ActionDetails objects to create for a rule.
 	Actions RuleActionsInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to which this rule belongs.
 	CompartmentId pulumi.StringInput
@@ -397,7 +397,7 @@ func (o RuleOutput) ToRuleOutputWithContext(ctx context.Context) RuleOutput {
 	return o
 }
 
-// (Updatable) A list of one or more ActionDetails objects.
+// (Updatable) A list of ActionDetails objects to create for a rule.
 func (o RuleOutput) Actions() RuleActionsOutput {
 	return o.ApplyT(func(v *Rule) RuleActionsOutput { return v.Actions }).(RuleActionsOutput)
 }

@@ -18,7 +18,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     public static final DomainsCloudGateUpstreamServerGroupArgs Empty = new DomainsCloudGateUpstreamServerGroupArgs();
 
     /**
-     * (Updatable) Display name of upstream server
+     * (Updatable) Display name of upstream
      * 
      * **Added In:** 20.1.3
      * 
@@ -27,7 +27,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -37,7 +37,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of upstream server
+     * @return (Updatable) Display name of upstream
      * 
      * **Added In:** 20.1.3
      * 
@@ -46,7 +46,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -57,7 +57,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Any additional settings for this upstream server in nginx configuration form
+     * (Updatable) Any additional settings in nginx configuration form
      * 
      * **Added In:** 20.1.3
      * 
@@ -76,7 +76,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     private @Nullable Output<String> nginxSettings;
 
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
+     * @return (Updatable) Any additional settings in nginx configuration form
      * 
      * **Added In:** 20.1.3
      * 
@@ -96,7 +96,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) URI of the upstream server
+     * (Updatable) URI of the upstream server groups
      * 
      * **Added In:** 20.1.3
      * 
@@ -115,7 +115,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the upstream server
+     * @return (Updatable) URI of the upstream server groups
      * 
      * **Added In:** 20.1.3
      * 
@@ -174,7 +174,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) ID of the upstream server
+     * (Updatable) Name for the Upstream Block
      * 
      * **Added In:** 20.1.3
      * 
@@ -187,16 +187,13 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the upstream server
+     * @return (Updatable) Name for the Upstream Block
      * 
      * **Added In:** 20.1.3
      * 
@@ -209,9 +206,6 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -247,7 +241,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param displayName (Updatable) Display name of upstream server
+         * @param displayName (Updatable) Display name of upstream
          * 
          * **Added In:** 20.1.3
          * 
@@ -256,7 +250,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -270,7 +264,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param displayName (Updatable) Display name of upstream server
+         * @param displayName (Updatable) Display name of upstream
          * 
          * **Added In:** 20.1.3
          * 
@@ -279,7 +273,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -292,7 +286,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param nginxSettings (Updatable) Any additional settings for this upstream server in nginx configuration form
+         * @param nginxSettings (Updatable) Any additional settings in nginx configuration form
          * 
          * **Added In:** 20.1.3
          * 
@@ -315,7 +309,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param nginxSettings (Updatable) Any additional settings for this upstream server in nginx configuration form
+         * @param nginxSettings (Updatable) Any additional settings in nginx configuration form
          * 
          * **Added In:** 20.1.3
          * 
@@ -337,7 +331,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param ref (Updatable) URI of the upstream server
+         * @param ref (Updatable) URI of the upstream server groups
          * 
          * **Added In:** 20.1.3
          * 
@@ -360,7 +354,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param ref (Updatable) URI of the upstream server
+         * @param ref (Updatable) URI of the upstream server groups
          * 
          * **Added In:** 20.1.3
          * 
@@ -427,7 +421,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param value (Updatable) ID of the upstream server
+         * @param value (Updatable) Name for the Upstream Block
          * 
          * **Added In:** 20.1.3
          * 
@@ -440,9 +434,6 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -453,7 +444,7 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
         }
 
         /**
-         * @param value (Updatable) ID of the upstream server
+         * @param value (Updatable) Name for the Upstream Block
          * 
          * **Added In:** 20.1.3
          * 
@@ -466,9 +457,6 @@ public final class DomainsCloudGateUpstreamServerGroupArgs extends com.pulumi.re
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

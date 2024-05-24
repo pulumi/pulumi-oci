@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<bool> IsPrimary { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the month of the year.
+        /// (Updatable) The name of the Exadata Infrastructure contact.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

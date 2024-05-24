@@ -13,11 +13,11 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsMyAuthTokenIdcsLastModifiedByArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The user's display name.
+        /// The displayName of the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * caseExact: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -29,15 +29,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// The user's OCID.
+        /// The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -45,7 +44,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI that corresponds to the user linked to this credential
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -77,21 +76,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// The user's ID.
+        /// The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

@@ -18,14 +18,14 @@ public final class IngressGatewayRouteTableRouteRuleDestinationArgs extends com.
     public static final IngressGatewayRouteTableRouteRuleDestinationArgs Empty = new IngressGatewayRouteTableRouteRuleDestinationArgs();
 
     /**
-     * (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+     * (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+     * @return (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -89,7 +89,7 @@ public final class IngressGatewayRouteTableRouteRuleDestinationArgs extends com.
         }
 
         /**
-         * @param port (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         * @param port (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
          * 
          * @return builder
          * 
@@ -100,7 +100,7 @@ public final class IngressGatewayRouteTableRouteRuleDestinationArgs extends com.
         }
 
         /**
-         * @param port (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+         * @param port (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
          * 
          * @return builder
          * 

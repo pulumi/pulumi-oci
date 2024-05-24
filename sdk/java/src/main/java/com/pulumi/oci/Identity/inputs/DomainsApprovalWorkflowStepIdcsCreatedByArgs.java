@@ -17,7 +17,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     public static final DomainsApprovalWorkflowStepIdcsCreatedByArgs Empty = new DomainsApprovalWorkflowStepIdcsCreatedByArgs();
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -34,7 +34,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -52,34 +52,32 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -87,7 +85,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -122,40 +120,34 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     }
 
     /**
-     * Type of ApprovalWorkflowStep
+     * The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Type of ApprovalWorkflowStep
+     * @return The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> type() {
@@ -163,13 +155,13 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     }
 
     /**
-     * Value of the tag.
+     * The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -180,13 +172,13 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -226,7 +218,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -247,7 +239,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -267,17 +259,16 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -288,17 +279,16 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -308,7 +298,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -329,7 +319,7 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -349,20 +339,17 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param type Type of ApprovalWorkflowStep
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -373,20 +360,17 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param type Type of ApprovalWorkflowStep
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -396,13 +380,13 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -417,13 +401,13 @@ public final class DomainsApprovalWorkflowStepIdcsCreatedByArgs extends com.pulu
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

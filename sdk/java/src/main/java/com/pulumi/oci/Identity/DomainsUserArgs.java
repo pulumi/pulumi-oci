@@ -46,14 +46,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainsUserArgs Empty = new DomainsUserArgs();
 
     /**
-     * (Updatable) Status of the account
-     * 
-     * **Added In:** 17.4.6
+     * (Updatable) User status
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Active
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: boolean
@@ -64,14 +65,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<Boolean> active;
 
     /**
-     * @return (Updatable) Status of the account
-     * 
-     * **Added In:** 17.4.6
+     * @return (Updatable) User status
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsCsvAttributeName: Active
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: boolean
@@ -206,12 +208,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
+     * (Updatable) Display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+     * * idcsPii: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -222,12 +228,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
+     * @return (Updatable) Display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsCsvAttributeName: Display Name
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+     * * idcsPii: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -309,14 +319,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-     * 
-     * **Added In:** 2011192329
+     * (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+     * * idcsPii: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -327,14 +338,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> externalId;
 
     /**
-     * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+     * * idcsPii: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -435,18 +447,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Name of the account assigned to the User.
-     * 
-     * **Added In:** 17.4.6
+     * (Updatable) A complex attribute that contains attributes representing the name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+     * * idcsPii: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
-     * * type: string
+     * * type: complex
      * * uniqueness: none
      * 
      */
@@ -454,18 +464,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<DomainsUserNameArgs> name;
 
     /**
-     * @return (Updatable) Name of the account assigned to the User.
-     * 
-     * **Added In:** 17.4.6
+     * @return (Updatable) A complex attribute that contains attributes representing the name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+     * * idcsPii: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
-     * * type: string
+     * * type: complex
      * * uniqueness: none
      * 
      */
@@ -515,38 +523,34 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the user&#39;s support account.
-     * 
-     * **Added In:** 2103141444
+     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
-     * 
-     * **Added In:** 2103141444
+     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -1389,14 +1393,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param active (Updatable) Status of the account
-         * 
-         * **Added In:** 17.4.6
+         * @param active (Updatable) User status
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Active
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: boolean
@@ -1411,14 +1416,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param active (Updatable) Status of the account
-         * 
-         * **Added In:** 17.4.6
+         * @param active (Updatable) User status
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsCsvAttributeName: Active
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Active]]
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: boolean
@@ -1616,12 +1622,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
+         * @param displayName (Updatable) Display name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsCsvAttributeName: Display Name
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+         * * idcsPii: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -1636,12 +1646,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) The displayName of the User&#39;s manager. OPTIONAL and READ-ONLY.
+         * @param displayName (Updatable) Display name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsCsvAttributeName: Display Name
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Display Name]]
+         * * idcsPii: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -1777,14 +1791,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-         * 
-         * **Added In:** 2011192329
+         * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+         * * idcsPii: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -1799,14 +1814,15 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. READ-ONLY.
-         * 
-         * **Added In:** 2011192329
+         * @param externalId (Updatable) An identifier for the Resource as defined by the Service Consumer. The externalId may simplify identification of the Resource between Service Consumer and Service Provider by allowing the Consumer to refer to the Resource with its own identifier, obviating the need to store a local mapping between the local identifier of the Resource and the identifier used by the Service Provider. Each Resource MAY include a non-empty externalId value. The value of the externalId attribute is always issued by the Service Consumer and can never be specified by the Service Provider. The Service Provider MUST always interpret the externalId as scoped to the Service Consumer&#39;s tenant.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:External Id]]
+         * * idcsPii: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -1947,18 +1963,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Name of the account assigned to the User.
-         * 
-         * **Added In:** 17.4.6
+         * @param name (Updatable) A complex attribute that contains attributes representing the name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+         * * idcsPii: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
-         * * type: string
+         * * type: complex
          * * uniqueness: none
          * 
          * @return builder
@@ -1970,18 +1984,16 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Name of the account assigned to the User.
-         * 
-         * **Added In:** 17.4.6
+         * @param name (Updatable) A complex attribute that contains attributes representing the name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsCsvAttributeNameMappings: [[columnHeaderName:Formatted Name, mapsTo:name.formatted], [columnHeaderName:Honorific Prefix, mapsTo:name.honorificPrefix], [columnHeaderName:First Name, mapsTo:name.givenName], [columnHeaderName:Middle Name, mapsTo:name.middleName], [columnHeaderName:Last Name, mapsTo:name.familyName], [columnHeaderName:Honorific Suffix, mapsTo:name.honorificSuffix]]
+         * * idcsPii: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
-         * * type: string
+         * * type: complex
          * * uniqueness: none
          * 
          * @return builder
@@ -2039,19 +2051,17 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
-         * 
-         * **Added In:** 2103141444
+         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 
@@ -2062,19 +2072,17 @@ public final class DomainsUserArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
-         * 
-         * **Added In:** 2103141444
+         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: global
          * 
          * @return builder
          * 

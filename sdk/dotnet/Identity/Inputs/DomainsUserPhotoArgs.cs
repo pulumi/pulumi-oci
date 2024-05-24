@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute, e.g., the preferred photo or thumbnail. The primary attribute value 'true' MUST appear no more than once.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -43,13 +43,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? Primary { get; set; }
 
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) A label indicating the attribute's function; e.g., 'photo' or 'thumbnail'.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) URL of a photo for the User
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -66,12 +66,8 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: reference
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRule = new Rule("testRule", RuleArgs.builder()        
+ *         var testRule = new Rule("testRule", RuleArgs.builder()
  *             .actions(RuleActionsArgs.builder()
  *                 .actions(RuleActionsActionArgs.builder()
  *                     .actionType(ruleActionsActionsActionType)
@@ -86,14 +86,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Events/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) A list of one or more ActionDetails objects.
+     * (Updatable) A list of ActionDetails objects to create for a rule.
      * 
      */
     @Export(name="actions", refs={RuleActions.class}, tree="[0]")
     private Output<RuleActions> actions;
 
     /**
-     * @return (Updatable) A list of one or more ActionDetails objects.
+     * @return (Updatable) A list of ActionDetails objects to create for a rule.
      * 
      */
     public Output<RuleActions> actions() {

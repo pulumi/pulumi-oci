@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) The name of the custom section
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputMap<object>? _params;
 
         /// <summary>
-        /// (Updatable) Parameters of the custom filter
+        /// (Updatable) Parameters in the custom section
         /// </summary>
         public InputMap<object> Params
         {

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly Outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetail AuthenticationServerDetail;
         /// <summary>
-        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
+        /// (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
         /// </summary>
         public readonly Outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKey Key;
 

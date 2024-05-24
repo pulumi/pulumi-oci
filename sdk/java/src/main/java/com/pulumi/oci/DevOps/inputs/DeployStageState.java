@@ -127,14 +127,14 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+     * The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+     * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -1306,7 +1306,7 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+         * @param compartmentId The OCID of the compartment where the ContainerInstance will be created.
          * 
          * @return builder
          * 
@@ -1317,7 +1317,7 @@ public final class DeployStageState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+         * @param compartmentId The OCID of the compartment where the ContainerInstance will be created.
          * 
          * @return builder
          * 

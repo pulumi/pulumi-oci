@@ -51,8 +51,8 @@ class ConfigDimension(dict):
                  name: Optional[str] = None,
                  value_source: Optional[str] = None):
         """
-        :param str name: (Updatable) The name of the metric. This must be a known metric name.
-        :param str value_source: (Updatable) This must not be set.
+        :param str name: (Updatable) The name of the dimension.
+        :param str value_source: (Updatable) The source to populate the dimension. This must not be specified.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -63,7 +63,7 @@ class ConfigDimension(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) The name of the metric. This must be a known metric name.
+        (Updatable) The name of the dimension.
         """
         return pulumi.get(self, "name")
 
@@ -71,7 +71,7 @@ class ConfigDimension(dict):
     @pulumi.getter(name="valueSource")
     def value_source(self) -> Optional[str]:
         """
-        (Updatable) This must not be set.
+        (Updatable) The source to populate the dimension. This must not be specified.
         """
         return pulumi.get(self, "value_source")
 

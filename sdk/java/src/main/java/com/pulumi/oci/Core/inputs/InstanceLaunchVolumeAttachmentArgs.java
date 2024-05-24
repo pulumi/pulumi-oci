@@ -124,14 +124,14 @@ public final class InstanceLaunchVolumeAttachmentArgs extends com.pulumi.resourc
     }
 
     /**
-     * The type of action to run when the instance is interrupted for eviction.
+     * The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
      * 
      */
     public Output<String> type() {
@@ -349,7 +349,7 @@ public final class InstanceLaunchVolumeAttachmentArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
          * 
          * @return builder
          * 
@@ -360,7 +360,7 @@ public final class InstanceLaunchVolumeAttachmentArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type of volume. Currently, the only supported value is &#34;iscsi&#34;.
          * 
          * @return builder
          * 

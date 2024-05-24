@@ -44,6 +44,14 @@ public final class EventDataContent {
     private @Nullable Integer size;
     /**
      * @return Event type:
+     * * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+     * * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+     * * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+     * * `SOFTWARE_UPDATE` - Software updates - Packages
+     * * `KSPLICE_UPDATE` - Ksplice updates
+     * * `SOFTWARE_SOURCE` - Software source
+     * * `AGENT` - Agent
+     * * `MANAGEMENT_STATION` - Management Station
      * 
      */
     private @Nullable String type;
@@ -91,6 +99,14 @@ public final class EventDataContent {
     }
     /**
      * @return Event type:
+     * * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+     * * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+     * * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+     * * `SOFTWARE_UPDATE` - Software updates - Packages
+     * * `KSPLICE_UPDATE` - Ksplice updates
+     * * `SOFTWARE_SOURCE` - Software source
+     * * `AGENT` - Agent
+     * * `MANAGEMENT_STATION` - Management Station
      * 
      */
     public Optional<String> type() {

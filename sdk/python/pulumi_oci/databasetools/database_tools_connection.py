@@ -313,7 +313,7 @@ class _DatabaseToolsConnectionState:
         :param pulumi.Input[str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[str] state: The current state of the Database Tools connection.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
         :param pulumi.Input[str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
@@ -547,7 +547,7 @@ class _DatabaseToolsConnectionState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        When the lock was created.
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -813,7 +813,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
         :param pulumi.Input[str] runtime_support: Specifies whether this connection is supported by the Database Tools Runtime.
         :param pulumi.Input[str] state: The current state of the Database Tools connection.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the DatabaseToolsConnection was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] type: (Updatable) The DatabaseToolsConnection type.
         :param pulumi.Input[str] url: (Updatable) The JDBC URL used to connect to the Generic JDBC database system.
@@ -971,7 +971,7 @@ class DatabaseToolsConnection(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        When the lock was created.
+        The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 

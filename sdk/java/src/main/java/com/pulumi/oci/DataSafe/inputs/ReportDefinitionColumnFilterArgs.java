@@ -32,14 +32,14 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Name of the column that must be sorted.
+     * (Updatable) Name of the column on which the filter must be applied.
      * 
      */
     @Import(name="fieldName", required=true)
     private Output<String> fieldName;
 
     /**
-     * @return (Updatable) Name of the column that must be sorted.
+     * @return (Updatable) Name of the column on which the filter must be applied.
      * 
      */
     public Output<String> fieldName() {
@@ -62,14 +62,14 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * (Updatable) Indicates whether the filter is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     @Import(name="isHidden", required=true)
     private Output<Boolean> isHidden;
 
     /**
-     * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates whether the filter is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Output<Boolean> isHidden() {
@@ -151,7 +151,7 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         /**
-         * @param fieldName (Updatable) Name of the column that must be sorted.
+         * @param fieldName (Updatable) Name of the column on which the filter must be applied.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         /**
-         * @param fieldName (Updatable) Name of the column that must be sorted.
+         * @param fieldName (Updatable) Name of the column on which the filter must be applied.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         /**
-         * @param isHidden (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * @param isHidden (Updatable) Indicates whether the filter is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class ReportDefinitionColumnFilterArgs extends com.pulumi.resources
         }
 
         /**
-         * @param isHidden (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * @param isHidden (Updatable) Indicates whether the filter is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
          * 
          * @return builder
          * 

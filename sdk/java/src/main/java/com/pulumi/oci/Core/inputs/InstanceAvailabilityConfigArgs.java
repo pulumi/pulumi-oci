@@ -33,6 +33,8 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
 
     /**
      * (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+     * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+     * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
      * 
      */
     @Import(name="recoveryAction")
@@ -40,6 +42,8 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
 
     /**
      * @return (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+     * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+     * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
      * 
      */
     public Optional<Output<String>> recoveryAction() {
@@ -94,6 +98,8 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param recoveryAction (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
          * 
          * @return builder
          * 
@@ -105,6 +111,8 @@ public final class InstanceAvailabilityConfigArgs extends com.pulumi.resources.R
 
         /**
          * @param recoveryAction (Updatable) The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+         * * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+         * * `STOP_INSTANCE` - The instance is recovered in the stopped state.
          * 
          * @return builder
          * 

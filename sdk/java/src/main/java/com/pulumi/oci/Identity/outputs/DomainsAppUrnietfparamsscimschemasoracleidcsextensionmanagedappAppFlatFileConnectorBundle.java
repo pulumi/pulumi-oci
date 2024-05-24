@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) ConnectorBundle display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,7 +27,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) ConnectorBundle URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -41,19 +41,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ConnectorBundle identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -77,7 +75,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundle() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) ConnectorBundle display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -93,7 +91,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) ConnectorBundle URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -109,19 +107,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ConnectorBundle identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

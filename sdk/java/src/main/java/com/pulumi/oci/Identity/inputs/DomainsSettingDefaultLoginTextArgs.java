@@ -17,11 +17,13 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
     /**
      * (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -33,11 +35,13 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
     /**
      * @return (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -48,34 +52,34 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Custom claim value
+     * (Updatable) Login text
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * idcsSanitize: true
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Login text
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * idcsSanitize: true
      * 
      */
     public Output<String> value() {
@@ -110,11 +114,13 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
         /**
          * @param locale (Updatable) Locale
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
          * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
          * * idcsCanonicalValueSourceResourceType: AllowedValue
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -130,11 +136,13 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
         /**
          * @param locale (Updatable) Locale
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
          * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
          * * idcsCanonicalValueSourceResourceType: AllowedValue
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -147,17 +155,17 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param value (Updatable) Custom claim value
+         * @param value (Updatable) Login text
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * idcsSanitize: true
          * 
          * @return builder
          * 
@@ -168,17 +176,17 @@ public final class DomainsSettingDefaultLoginTextArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param value (Updatable) Custom claim value
+         * @param value (Updatable) Login text
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * idcsSanitize: true
          * 
          * @return builder
          * 

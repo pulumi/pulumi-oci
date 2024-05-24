@@ -185,11 +185,11 @@ func (o AgentPluginListArrayOutput) Index(i pulumi.IntInput) AgentPluginListOutp
 type AssetCompute struct {
 	// (Updatable) Number of connected networks.
 	ConnectedNetworks *int `pulumi:"connectedNetworks"`
-	// (Updatable) Number of GPU cores.
+	// (Updatable) Number of CPUs.
 	CoresCount *int `pulumi:"coresCount"`
 	// (Updatable) CPU model name.
 	CpuModel *string `pulumi:"cpuModel"`
-	// (Updatable) The tag description.
+	// (Updatable) Information about the asset.
 	Description *string `pulumi:"description"`
 	// (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
 	Disks []AssetComputeDisk `pulumi:"disks"`
@@ -257,11 +257,11 @@ type AssetComputeInput interface {
 type AssetComputeArgs struct {
 	// (Updatable) Number of connected networks.
 	ConnectedNetworks pulumi.IntPtrInput `pulumi:"connectedNetworks"`
-	// (Updatable) Number of GPU cores.
+	// (Updatable) Number of CPUs.
 	CoresCount pulumi.IntPtrInput `pulumi:"coresCount"`
 	// (Updatable) CPU model name.
 	CpuModel pulumi.StringPtrInput `pulumi:"cpuModel"`
-	// (Updatable) The tag description.
+	// (Updatable) Information about the asset.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Lists the set of disks belonging to the virtual machine. This list is unordered.
 	Disks AssetComputeDiskArrayInput `pulumi:"disks"`
@@ -397,7 +397,7 @@ func (o AssetComputeOutput) ConnectedNetworks() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetCompute) *int { return v.ConnectedNetworks }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Number of GPU cores.
+// (Updatable) Number of CPUs.
 func (o AssetComputeOutput) CoresCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetCompute) *int { return v.CoresCount }).(pulumi.IntPtrOutput)
 }
@@ -407,7 +407,7 @@ func (o AssetComputeOutput) CpuModel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetCompute) *string { return v.CpuModel }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The tag description.
+// (Updatable) Information about the asset.
 func (o AssetComputeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetCompute) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -571,7 +571,7 @@ func (o AssetComputePtrOutput) ConnectedNetworks() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Number of GPU cores.
+// (Updatable) Number of CPUs.
 func (o AssetComputePtrOutput) CoresCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *AssetCompute) *int {
 		if v == nil {
@@ -591,7 +591,7 @@ func (o AssetComputePtrOutput) CpuModel() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The tag description.
+// (Updatable) Information about the asset.
 func (o AssetComputePtrOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AssetCompute) *string {
 		if v == nil {
@@ -856,7 +856,7 @@ type AssetComputeDisk struct {
 	BootOrder *int `pulumi:"bootOrder"`
 	// (Updatable) Location of the boot/data volume.
 	Location *string `pulumi:"location"`
-	// (Updatable) The tag name.
+	// (Updatable) Disk name.
 	Name *string `pulumi:"name"`
 	// (Updatable) The disk persistent mode.
 	PersistentMode *string `pulumi:"persistentMode"`
@@ -884,7 +884,7 @@ type AssetComputeDiskArgs struct {
 	BootOrder pulumi.IntPtrInput `pulumi:"bootOrder"`
 	// (Updatable) Location of the boot/data volume.
 	Location pulumi.StringPtrInput `pulumi:"location"`
-	// (Updatable) The tag name.
+	// (Updatable) Disk name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The disk persistent mode.
 	PersistentMode pulumi.StringPtrInput `pulumi:"persistentMode"`
@@ -957,7 +957,7 @@ func (o AssetComputeDiskOutput) Location() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeDisk) *string { return v.Location }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The tag name.
+// (Updatable) Disk name.
 func (o AssetComputeDiskOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeDisk) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1005,13 +1005,13 @@ func (o AssetComputeDiskArrayOutput) Index(i pulumi.IntInput) AssetComputeDiskOu
 type AssetComputeGpuDevice struct {
 	// (Updatable) Number of GPU cores.
 	CoresCount *int `pulumi:"coresCount"`
-	// (Updatable) The tag description.
+	// (Updatable) GPU device description.
 	Description *string `pulumi:"description"`
 	// (Updatable) The manufacturer of GPU.
 	Manufacturer *string `pulumi:"manufacturer"`
-	// (Updatable) Memory size in MBs.
+	// (Updatable) GPU memory size in MBs.
 	MemoryInMbs *string `pulumi:"memoryInMbs"`
-	// (Updatable) The tag name.
+	// (Updatable) GPU device name.
 	Name *string `pulumi:"name"`
 }
 
@@ -1029,13 +1029,13 @@ type AssetComputeGpuDeviceInput interface {
 type AssetComputeGpuDeviceArgs struct {
 	// (Updatable) Number of GPU cores.
 	CoresCount pulumi.IntPtrInput `pulumi:"coresCount"`
-	// (Updatable) The tag description.
+	// (Updatable) GPU device description.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The manufacturer of GPU.
 	Manufacturer pulumi.StringPtrInput `pulumi:"manufacturer"`
-	// (Updatable) Memory size in MBs.
+	// (Updatable) GPU memory size in MBs.
 	MemoryInMbs pulumi.StringPtrInput `pulumi:"memoryInMbs"`
-	// (Updatable) The tag name.
+	// (Updatable) GPU device name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -1095,7 +1095,7 @@ func (o AssetComputeGpuDeviceOutput) CoresCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetComputeGpuDevice) *int { return v.CoresCount }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The tag description.
+// (Updatable) GPU device description.
 func (o AssetComputeGpuDeviceOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeGpuDevice) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -1105,12 +1105,12 @@ func (o AssetComputeGpuDeviceOutput) Manufacturer() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeGpuDevice) *string { return v.Manufacturer }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Memory size in MBs.
+// (Updatable) GPU memory size in MBs.
 func (o AssetComputeGpuDeviceOutput) MemoryInMbs() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeGpuDevice) *string { return v.MemoryInMbs }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The tag name.
+// (Updatable) GPU device name.
 func (o AssetComputeGpuDeviceOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeGpuDevice) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1282,7 +1282,7 @@ type AssetComputeNvdimm struct {
 	ControllerKey *int `pulumi:"controllerKey"`
 	// (Updatable) Provides a label and summary information for the device.
 	Label *string `pulumi:"label"`
-	// (Updatable) The unit number of the SCSI controller.
+	// (Updatable) The unit number of NVDIMM.
 	UnitNumber *int `pulumi:"unitNumber"`
 }
 
@@ -1302,7 +1302,7 @@ type AssetComputeNvdimmArgs struct {
 	ControllerKey pulumi.IntPtrInput `pulumi:"controllerKey"`
 	// (Updatable) Provides a label and summary information for the device.
 	Label pulumi.StringPtrInput `pulumi:"label"`
-	// (Updatable) The unit number of the SCSI controller.
+	// (Updatable) The unit number of NVDIMM.
 	UnitNumber pulumi.IntPtrInput `pulumi:"unitNumber"`
 }
 
@@ -1367,7 +1367,7 @@ func (o AssetComputeNvdimmOutput) Label() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AssetComputeNvdimm) *string { return v.Label }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The unit number of the SCSI controller.
+// (Updatable) The unit number of NVDIMM.
 func (o AssetComputeNvdimmOutput) UnitNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v AssetComputeNvdimm) *int { return v.UnitNumber }).(pulumi.IntPtrOutput)
 }
@@ -1726,7 +1726,7 @@ func (o AssetComputeScsiControllerPtrOutput) UnitNumber() pulumi.IntPtrOutput {
 type AssetSourceDiscoveryCredentials struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 	SecretId string `pulumi:"secretId"`
-	// (Updatable) Asset source type.
+	// (Updatable) Authentication type
 	Type string `pulumi:"type"`
 }
 
@@ -1744,7 +1744,7 @@ type AssetSourceDiscoveryCredentialsInput interface {
 type AssetSourceDiscoveryCredentialsArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
-	// (Updatable) Asset source type.
+	// (Updatable) Authentication type
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1830,7 +1830,7 @@ func (o AssetSourceDiscoveryCredentialsOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceDiscoveryCredentials) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Asset source type.
+// (Updatable) Authentication type
 func (o AssetSourceDiscoveryCredentialsOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceDiscoveryCredentials) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1869,7 +1869,7 @@ func (o AssetSourceDiscoveryCredentialsPtrOutput) SecretId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Asset source type.
+// (Updatable) Authentication type
 func (o AssetSourceDiscoveryCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AssetSourceDiscoveryCredentials) *string {
 		if v == nil {
@@ -1882,7 +1882,7 @@ func (o AssetSourceDiscoveryCredentialsPtrOutput) Type() pulumi.StringPtrOutput 
 type AssetSourceReplicationCredentials struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 	SecretId string `pulumi:"secretId"`
-	// (Updatable) Asset source type.
+	// (Updatable) Authentication type
 	Type string `pulumi:"type"`
 }
 
@@ -1900,7 +1900,7 @@ type AssetSourceReplicationCredentialsInput interface {
 type AssetSourceReplicationCredentialsArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret in a vault. If the the type of the credentials is BASIC` , the secret must contain the username and password in JSON format, which is in the form of  `{ "username": "<VMwareUser>", "password": "<VMwarePassword>" }`.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
-	// (Updatable) Asset source type.
+	// (Updatable) Authentication type
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1986,7 +1986,7 @@ func (o AssetSourceReplicationCredentialsOutput) SecretId() pulumi.StringOutput 
 	return o.ApplyT(func(v AssetSourceReplicationCredentials) string { return v.SecretId }).(pulumi.StringOutput)
 }
 
-// (Updatable) Asset source type.
+// (Updatable) Authentication type
 func (o AssetSourceReplicationCredentialsOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AssetSourceReplicationCredentials) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -2025,7 +2025,7 @@ func (o AssetSourceReplicationCredentialsPtrOutput) SecretId() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Asset source type.
+// (Updatable) Authentication type
 func (o AssetSourceReplicationCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AssetSourceReplicationCredentials) *string {
 		if v == nil {

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class ContainerInstanceContainerHealthCheckHeader
     {
         /// <summary>
-        /// The name of the volume. This must be unique within a single container instance.
+        /// Container HTTP header Key.
         /// </summary>
         public readonly string? Name;
         /// <summary>

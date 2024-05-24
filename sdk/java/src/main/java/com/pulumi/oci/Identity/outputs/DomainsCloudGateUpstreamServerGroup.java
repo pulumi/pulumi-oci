@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsCloudGateUpstreamServerGroup {
     /**
-     * @return (Updatable) Display name of upstream server
+     * @return (Updatable) Display name of upstream
      * 
      * **Added In:** 20.1.3
      * 
@@ -23,7 +23,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -31,7 +31,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
      */
     private String displayName;
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
+     * @return (Updatable) Any additional settings in nginx configuration form
      * 
      * **Added In:** 20.1.3
      * 
@@ -48,7 +48,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
      */
     private @Nullable String nginxSettings;
     /**
-     * @return (Updatable) URI of the upstream server
+     * @return (Updatable) URI of the upstream server groups
      * 
      * **Added In:** 20.1.3
      * 
@@ -82,7 +82,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
      */
     private @Nullable Boolean ssl;
     /**
-     * @return (Updatable) ID of the upstream server
+     * @return (Updatable) Name for the Upstream Block
      * 
      * **Added In:** 20.1.3
      * 
@@ -96,15 +96,12 @@ public final class DomainsCloudGateUpstreamServerGroup {
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
 
     private DomainsCloudGateUpstreamServerGroup() {}
     /**
-     * @return (Updatable) Display name of upstream server
+     * @return (Updatable) Display name of upstream
      * 
      * **Added In:** 20.1.3
      * 
@@ -113,7 +110,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -123,7 +120,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
         return this.displayName;
     }
     /**
-     * @return (Updatable) Any additional settings for this upstream server in nginx configuration form
+     * @return (Updatable) Any additional settings in nginx configuration form
      * 
      * **Added In:** 20.1.3
      * 
@@ -142,7 +139,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
         return Optional.ofNullable(this.nginxSettings);
     }
     /**
-     * @return (Updatable) URI of the upstream server
+     * @return (Updatable) URI of the upstream server groups
      * 
      * **Added In:** 20.1.3
      * 
@@ -180,7 +177,7 @@ public final class DomainsCloudGateUpstreamServerGroup {
         return Optional.ofNullable(this.ssl);
     }
     /**
-     * @return (Updatable) ID of the upstream server
+     * @return (Updatable) Name for the Upstream Block
      * 
      * **Added In:** 20.1.3
      * 
@@ -193,9 +190,6 @@ public final class DomainsCloudGateUpstreamServerGroup {
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

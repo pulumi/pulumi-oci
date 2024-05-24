@@ -1823,7 +1823,7 @@ func (o ScheduleQueryPropertiesDateRangePtrOutput) TimeUsageStarted() pulumi.Str
 type ScheduleQueryPropertiesGroupByTag struct {
 	// The tag key.
 	Key *string `pulumi:"key"`
-	// (Updatable) The namespace needed to determine the object storage bucket.
+	// The tag namespace.
 	Namespace *string `pulumi:"namespace"`
 	// The tag value.
 	Value *string `pulumi:"value"`
@@ -1843,7 +1843,7 @@ type ScheduleQueryPropertiesGroupByTagInput interface {
 type ScheduleQueryPropertiesGroupByTagArgs struct {
 	// The tag key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The namespace needed to determine the object storage bucket.
+	// The tag namespace.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The tag value.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -1905,7 +1905,7 @@ func (o ScheduleQueryPropertiesGroupByTagOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The namespace needed to determine the object storage bucket.
+// The tag namespace.
 func (o ScheduleQueryPropertiesGroupByTagOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScheduleQueryPropertiesGroupByTag) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }

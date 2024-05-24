@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Optimizer.Outputs
     public sealed class ProfileTargetCompartments
     {
         /// <summary>
-        /// (Updatable) The list of tags specified in the current profile override.
+        /// (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
         /// </summary>
         public readonly ImmutableArray<string> Items;
 

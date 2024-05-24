@@ -29,7 +29,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
      */
     private String format;
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) The content of the PEM-encoded public key.
      * 
      */
     private @Nullable String key;
@@ -82,7 +82,7 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationValidatio
         return this.format;
     }
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) The content of the PEM-encoded public key.
      * 
      */
     public Optional<String> key() {

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Waf.Inputs
     public sealed class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Unique key of referenced protection capability.
+        /// (Updatable) Unique key of collaborative capability for which weight will be overridden.
         /// </summary>
         [Input("key", required: true)]
         public Input<string> Key { get; set; } = null!;

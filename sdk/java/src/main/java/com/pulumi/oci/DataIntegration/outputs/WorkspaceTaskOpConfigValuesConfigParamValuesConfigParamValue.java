@@ -15,74 +15,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue {
     /**
-     * @return (Updatable) An integer value of the parameter.
+     * @return An integer value of the parameter.
      * 
      */
     private @Nullable Integer intValue;
     /**
-     * @return (Updatable) An object value of the parameter.
+     * @return An object value of the parameter.
      * 
      */
     private @Nullable String objectValue;
     /**
-     * @return (Updatable) Reference to the parameter by its key.
+     * @return Reference to the parameter by its key.
      * 
      */
     private @Nullable String parameterValue;
     /**
-     * @return (Updatable) The root object reference value.
+     * @return The root object reference value.
      * 
      */
     private @Nullable WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue refValue;
     /**
-     * @return (Updatable) The root object value, used in custom parameters.
+     * @return The root object value, used in custom parameters.
      * 
      */
     private @Nullable WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue rootObjectValue;
     /**
-     * @return (Updatable) A string value of the parameter.
+     * @return A string value of the parameter.
      * 
      */
     private @Nullable String stringValue;
 
     private WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue() {}
     /**
-     * @return (Updatable) An integer value of the parameter.
+     * @return An integer value of the parameter.
      * 
      */
     public Optional<Integer> intValue() {
         return Optional.ofNullable(this.intValue);
     }
     /**
-     * @return (Updatable) An object value of the parameter.
+     * @return An object value of the parameter.
      * 
      */
     public Optional<String> objectValue() {
         return Optional.ofNullable(this.objectValue);
     }
     /**
-     * @return (Updatable) Reference to the parameter by its key.
+     * @return Reference to the parameter by its key.
      * 
      */
     public Optional<String> parameterValue() {
         return Optional.ofNullable(this.parameterValue);
     }
     /**
-     * @return (Updatable) The root object reference value.
+     * @return The root object reference value.
      * 
      */
     public Optional<WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValue> refValue() {
         return Optional.ofNullable(this.refValue);
     }
     /**
-     * @return (Updatable) The root object value, used in custom parameters.
+     * @return The root object value, used in custom parameters.
      * 
      */
     public Optional<WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValue> rootObjectValue() {
         return Optional.ofNullable(this.rootObjectValue);
     }
     /**
-     * @return (Updatable) A string value of the parameter.
+     * @return A string value of the parameter.
      * 
      */
     public Optional<String> stringValue() {

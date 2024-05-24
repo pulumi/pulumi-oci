@@ -40,11 +40,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? ReturnGroovy;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Attribute value of some attribute to be returned.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true

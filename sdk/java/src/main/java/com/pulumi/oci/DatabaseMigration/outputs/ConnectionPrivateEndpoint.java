@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectionPrivateEndpoint {
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
      * 
      */
     private String compartmentId;
@@ -35,7 +35,7 @@ public final class ConnectionPrivateEndpoint {
 
     private ConnectionPrivateEndpoint() {}
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
      * 
      */
     public String compartmentId() {

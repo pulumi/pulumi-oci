@@ -104,9 +104,6 @@ type VirtualNodePool struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayOutput `pulumi:"initialVirtualNodeLabels"`
@@ -114,7 +111,7 @@ type VirtualNodePool struct {
 	KubernetesVersion pulumi.StringOutput `pulumi:"kubernetesVersion"`
 	// Details about the state of the Virtual Node Pool.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
 	PlacementConfigurations VirtualNodePoolPlacementConfigurationArrayOutput `pulumi:"placementConfigurations"`
@@ -193,9 +190,6 @@ type virtualNodePoolState struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels []VirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
@@ -203,7 +197,7 @@ type virtualNodePoolState struct {
 	KubernetesVersion *string `pulumi:"kubernetesVersion"`
 	// Details about the state of the Virtual Node Pool.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
 	PlacementConfigurations []VirtualNodePoolPlacementConfiguration `pulumi:"placementConfigurations"`
@@ -235,9 +229,6 @@ type VirtualNodePoolState struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayInput
@@ -245,7 +236,7 @@ type VirtualNodePoolState struct {
 	KubernetesVersion pulumi.StringPtrInput
 	// Details about the state of the Virtual Node Pool.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
 	PlacementConfigurations VirtualNodePoolPlacementConfigurationArrayInput
@@ -281,13 +272,10 @@ type virtualNodePoolArgs struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels []VirtualNodePoolInitialVirtualNodeLabel `pulumi:"initialVirtualNodeLabels"`
-	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
 	PlacementConfigurations []VirtualNodePoolPlacementConfiguration `pulumi:"placementConfigurations"`
@@ -312,13 +300,10 @@ type VirtualNodePoolArgs struct {
 	// (Updatable) Display name of the virtual node pool. This is a non-unique value.
 	DisplayName pulumi.StringInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	FreeformTags pulumi.MapInput
 	// (Updatable) Initial labels that will be added to the Kubernetes Virtual Node object when it registers.
 	InitialVirtualNodeLabels VirtualNodePoolInitialVirtualNodeLabelArrayInput
-	// (Updatable) List of network security group IDs applied to the Pod VNIC.
+	// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The list of placement configurations which determines where Virtual Nodes will be provisioned across as it relates to the subnet and availability domains. The size attribute determines how many we evenly spread across these placement configurations
 	PlacementConfigurations VirtualNodePoolPlacementConfigurationArrayInput
@@ -440,9 +425,6 @@ func (o VirtualNodePoolOutput) DisplayName() pulumi.StringOutput {
 }
 
 // (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o VirtualNodePoolOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *VirtualNodePool) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -464,7 +446,7 @@ func (o VirtualNodePoolOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) List of network security group IDs applied to the Pod VNIC.
+// (Updatable) List of network security group id's applied to the Virtual Node VNIC.
 func (o VirtualNodePoolOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *VirtualNodePool) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
 }

@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<int>? MinApplyParallelism { get; set; }
 
         /// <summary>
-        /// (Updatable) Extract performance.
+        /// Extract performance.
         /// </summary>
         [Input("performanceProfile")]
         public Input<string>? PerformanceProfile { get; set; }

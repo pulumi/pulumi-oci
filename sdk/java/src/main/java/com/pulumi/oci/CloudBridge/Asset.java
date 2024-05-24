@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAsset = new Asset("testAsset", AssetArgs.builder()        
+ *         var testAsset = new Asset("testAsset", AssetArgs.builder()
  *             .assetType(assetAssetType)
  *             .compartmentId(compartmentId)
  *             .externalAssetKey(assetExternalAssetKey)

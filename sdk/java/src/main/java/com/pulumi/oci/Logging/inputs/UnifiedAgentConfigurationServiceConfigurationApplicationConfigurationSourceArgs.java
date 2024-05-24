@@ -34,14 +34,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
     }
 
     /**
-     * (Updatable) The name key to tag this Grok pattern.
+     * (Updatable) Unique name for the source.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the source.
      * 
      */
     public Optional<Output<String>> name() {
@@ -143,7 +143,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) Unique name for the source.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         }
 
         /**
-         * @param name (Updatable) The name key to tag this Grok pattern.
+         * @param name (Updatable) Unique name for the source.
          * 
          * @return builder
          * 

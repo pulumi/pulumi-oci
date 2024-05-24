@@ -45,14 +45,14 @@ public final class MigrationDatapumpSettingsMetadataRemapArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) Migration type.
+     * (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Migration type.
+     * @return (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
      * 
      */
     public Output<String> type() {
@@ -128,7 +128,7 @@ public final class MigrationDatapumpSettingsMetadataRemapArgs extends com.pulumi
         }
 
         /**
-         * @param type (Updatable) Migration type.
+         * @param type (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class MigrationDatapumpSettingsMetadataRemapArgs extends com.pulumi
         }
 
         /**
-         * @param type (Updatable) Migration type.
+         * @param type (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
          * 
          * @return builder
          * 

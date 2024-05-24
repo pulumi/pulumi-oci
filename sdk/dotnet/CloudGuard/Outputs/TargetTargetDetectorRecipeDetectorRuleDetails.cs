@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> ConditionGroups;
         /// <summary>
-        /// (Updatable) Configurations associated with the ResponderRule
+        /// ResponderRule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> Configurations;
         /// <summary>

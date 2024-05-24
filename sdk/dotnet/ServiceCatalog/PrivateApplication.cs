@@ -110,7 +110,7 @@ namespace Pulumi.Oci.ServiceCatalog
         public Output<Outputs.PrivateApplicationPackageDetails> PackageDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The package's type.
+        /// Type of packages within this private application.
         /// </summary>
         [Output("packageType")]
         public Output<string> PackageType { get; private set; } = null!;
@@ -328,7 +328,7 @@ namespace Pulumi.Oci.ServiceCatalog
         public Input<Inputs.PrivateApplicationPackageDetailsGetArgs>? PackageDetails { get; set; }
 
         /// <summary>
-        /// The package's type.
+        /// Type of packages within this private application.
         /// </summary>
         [Input("packageType")]
         public Input<string>? PackageType { get; set; }

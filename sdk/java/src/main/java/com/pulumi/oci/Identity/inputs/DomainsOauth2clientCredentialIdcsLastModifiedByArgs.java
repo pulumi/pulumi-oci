@@ -17,11 +17,11 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     public static final DomainsOauth2clientCredentialIdcsLastModifiedByArgs Empty = new DomainsOauth2clientCredentialIdcsLastModifiedByArgs();
 
     /**
-     * (Updatable) The user&#39;s display name.
+     * The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -34,11 +34,11 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) The user&#39;s display name.
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -52,15 +52,14 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     }
 
     /**
-     * The user&#39;s OCID.
+     * The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -69,15 +68,14 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     private @Nullable Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -87,7 +85,7 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     }
 
     /**
-     * (Updatable) The URI that corresponds to the user linked to this credential.
+     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential.
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -157,40 +155,34 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
     }
 
     /**
-     * The user&#39;s ID.
+     * The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return The user&#39;s ID.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -226,11 +218,11 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param display (Updatable) The user&#39;s display name.
+         * @param display The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -247,11 +239,11 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param display (Updatable) The user&#39;s display name.
+         * @param display The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
+         * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -267,15 +259,14 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -288,15 +279,14 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param ocid The user&#39;s OCID.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -308,7 +298,7 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this credential.
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -329,7 +319,7 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param ref (Updatable) The URI that corresponds to the user linked to this credential.
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -390,20 +380,17 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param value The user&#39;s ID.
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -414,20 +401,17 @@ public final class DomainsOauth2clientCredentialIdcsLastModifiedByArgs extends c
         }
 
         /**
-         * @param value The user&#39;s ID.
+         * @param value The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
-         * * returned: always
+         * * mutability: readOnly
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<int>? ConnectedNetworks { get; set; }
 
         /// <summary>
-        /// (Updatable) Number of GPU cores.
+        /// (Updatable) Number of CPUs.
         /// </summary>
         [Input("coresCount")]
         public Input<int>? CoresCount { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<string>? CpuModel { get; set; }
 
         /// <summary>
-        /// (Updatable) The tag description.
+        /// (Updatable) Information about the asset.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

@@ -14,107 +14,107 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class SubscriptionBillingAddress
     {
         /// <summary>
-        /// (Updatable) Address identifier.
+        /// Address identifier.
         /// </summary>
         public readonly string? AddressKey;
         /// <summary>
-        /// (Updatable) Name of the city.
+        /// Name of the city.
         /// </summary>
         public readonly string? City;
         /// <summary>
-        /// (Updatable) Name of the customer company.
+        /// Name of the customer company.
         /// </summary>
         public readonly string? CompanyName;
         /// <summary>
-        /// (Updatable) Contributor class of the customer company.
+        /// Contributor class of the customer company.
         /// </summary>
         public readonly string? ContributorClass;
         /// <summary>
-        /// (Updatable) Country of the address.
+        /// Country of the address.
         /// </summary>
         public readonly string? Country;
         /// <summary>
-        /// (Updatable) County of the address.
+        /// County of the address.
         /// </summary>
         public readonly string? County;
         /// <summary>
-        /// (Updatable) Department name of the customer company.
+        /// Department name of the customer company.
         /// </summary>
         public readonly string? DepartmentName;
         /// <summary>
-        /// (Updatable) The email address of the paypal user.
+        /// The email address of the paypal user.
         /// </summary>
         public readonly string? EmailAddress;
         /// <summary>
-        /// (Updatable) First name of the paypal user.
+        /// First name of the paypal user.
         /// </summary>
         public readonly string? FirstName;
         /// <summary>
-        /// (Updatable) Internal number of the customer company.
+        /// Internal number of the customer company.
         /// </summary>
         public readonly string? InternalNumber;
         /// <summary>
-        /// (Updatable) Job title of the contact person.
+        /// Job title of the contact person.
         /// </summary>
         public readonly string? JobTitle;
         /// <summary>
-        /// (Updatable) Last name of the paypal user.
+        /// Last name of the paypal user.
         /// </summary>
         public readonly string? LastName;
         /// <summary>
-        /// (Updatable) Address line 1.
+        /// Address line 1.
         /// </summary>
         public readonly string? Line1;
         /// <summary>
-        /// (Updatable) Address line 2.
+        /// Address line 2.
         /// </summary>
         public readonly string? Line2;
         /// <summary>
-        /// (Updatable) Address line 3.
+        /// Address line 3.
         /// </summary>
         public readonly string? Line3;
         /// <summary>
-        /// (Updatable) Address line 4.
+        /// Address line 4.
         /// </summary>
         public readonly string? Line4;
         /// <summary>
-        /// (Updatable) Middle name of the contact person.
+        /// Middle name of the contact person.
         /// </summary>
         public readonly string? MiddleName;
         /// <summary>
-        /// (Updatable) Municipal Inscription.
+        /// Municipal Inscription.
         /// </summary>
         public readonly string? MunicipalInscription;
         /// <summary>
-        /// (Updatable) Phone country code of the contact person.
+        /// Phone country code of the contact person.
         /// </summary>
         public readonly string? PhoneCountryCode;
         /// <summary>
-        /// (Updatable) Phone number of the contact person.
+        /// Phone number of the contact person.
         /// </summary>
         public readonly string? PhoneNumber;
         /// <summary>
-        /// (Updatable) Post code of the address.
+        /// Post code of the address.
         /// </summary>
         public readonly string? PostalCode;
         /// <summary>
-        /// (Updatable) Province of the address.
+        /// Province of the address.
         /// </summary>
         public readonly string? Province;
         /// <summary>
-        /// (Updatable) State of the address.
+        /// State of the address.
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// (Updatable) State Inscription.
+        /// State Inscription.
         /// </summary>
         public readonly string? StateInscription;
         /// <summary>
-        /// (Updatable) Street name of the address.
+        /// Street name of the address.
         /// </summary>
         public readonly string? StreetName;
         /// <summary>
-        /// (Updatable) Street number of the address.
+        /// Street number of the address.
         /// </summary>
         public readonly string? StreetNumber;
 

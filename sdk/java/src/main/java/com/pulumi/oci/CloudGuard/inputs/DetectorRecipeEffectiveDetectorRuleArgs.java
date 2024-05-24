@@ -35,14 +35,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) The id of the attached DataSource.
+     * The id of the attached DataSource.
      * 
      */
     @Import(name="dataSourceId")
     private @Nullable Output<String> dataSourceId;
 
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return The id of the attached DataSource.
      * 
      */
     public Optional<Output<String>> dataSourceId() {
@@ -50,14 +50,18 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -65,14 +69,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+     * Details of a Detector Rule
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailArgs>> details;
 
     /**
-     * @return (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+     * @return Details of a Detector Rule
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleDetailArgs>>> details() {
@@ -95,14 +99,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) DetectorRecipeRule Identifier
+     * The unique identifier of the detector rule.
      * 
      */
     @Import(name="detectorRuleId")
     private @Nullable Output<String> detectorRuleId;
 
     /**
-     * @return (Updatable) DetectorRecipeRule Identifier
+     * @return The unique identifier of the detector rule.
      * 
      */
     public Optional<Output<String>> detectorRuleId() {
@@ -129,14 +133,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Data Source entities mapping for a Detector Rule
+     * Data Source entities mapping for a Detector Rule
      * 
      */
     @Import(name="entitiesMappings")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>> entitiesMappings;
 
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return Data Source entities mapping for a Detector Rule
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>>> entitiesMappings() {
@@ -174,14 +178,14 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * Recommendation for DetectorRecipeDetectorRule
      * 
      */
     @Import(name="recommendation")
     private @Nullable Output<String> recommendation;
 
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
     public Optional<Output<String>> recommendation() {
@@ -334,7 +338,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * @param dataSourceId The id of the attached DataSource.
          * 
          * @return builder
          * 
@@ -345,7 +349,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param dataSourceId (Updatable) The id of the attached DataSource.
+         * @param dataSourceId The id of the attached DataSource.
          * 
          * @return builder
          * 
@@ -355,7 +359,9 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -366,7 +372,9 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -376,7 +384,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param details (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+         * @param details Details of a Detector Rule
          * 
          * @return builder
          * 
@@ -387,7 +395,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param details (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+         * @param details Details of a Detector Rule
          * 
          * @return builder
          * 
@@ -397,7 +405,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param details (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+         * @param details Details of a Detector Rule
          * 
          * @return builder
          * 
@@ -428,7 +436,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param detectorRuleId (Updatable) DetectorRecipeRule Identifier
+         * @param detectorRuleId The unique identifier of the detector rule.
          * 
          * @return builder
          * 
@@ -439,7 +447,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param detectorRuleId (Updatable) DetectorRecipeRule Identifier
+         * @param detectorRuleId The unique identifier of the detector rule.
          * 
          * @return builder
          * 
@@ -474,7 +482,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
          * 
          * @return builder
          * 
@@ -485,7 +493,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
          * 
          * @return builder
          * 
@@ -495,7 +503,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param entitiesMappings (Updatable) Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data Source entities mapping for a Detector Rule
          * 
          * @return builder
          * 
@@ -557,7 +565,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule
          * 
          * @return builder
          * 
@@ -568,7 +576,7 @@ public final class DetectorRecipeEffectiveDetectorRuleArgs extends com.pulumi.re
         }
 
         /**
-         * @param recommendation (Updatable) Recommendation for DetectorRecipeDetectorRule
+         * @param recommendation Recommendation for DetectorRecipeDetectorRule
          * 
          * @return builder
          * 

@@ -16,14 +16,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
     public static final NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs Empty = new NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs();
 
     /**
-     * (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+     * The total amount of memory available to the notebook session instance, in gigabytes.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+     * @return The total amount of memory available to the notebook session instance, in gigabytes.
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -31,14 +31,14 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
     }
 
     /**
-     * (Updatable) The total number of OCPUs available to the notebook session instance.
+     * The total number of OCPUs available to the notebook session instance.
      * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Double> ocpus;
 
     /**
-     * @return (Updatable) The total number of OCPUs available to the notebook session instance.
+     * @return The total number of OCPUs available to the notebook session instance.
      * 
      */
     public Optional<Output<Double>> ocpus() {
@@ -71,7 +71,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
         }
 
         /**
-         * @param memoryInGbs (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+         * @param memoryInGbs The total amount of memory available to the notebook session instance, in gigabytes.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
         }
 
         /**
-         * @param memoryInGbs (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+         * @param memoryInGbs The total amount of memory available to the notebook session instance, in gigabytes.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
         }
 
         /**
-         * @param ocpus (Updatable) The total number of OCPUs available to the notebook session instance.
+         * @param ocpus The total number of OCPUs available to the notebook session instance.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NotebookSessionNotebookSessionConfigDetailsNotebookSessionSha
         }
 
         /**
-         * @param ocpus (Updatable) The total number of OCPUs available to the notebook session instance.
+         * @param ocpus The total number of OCPUs available to the notebook session instance.
          * 
          * @return builder
          * 

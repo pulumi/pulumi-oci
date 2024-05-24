@@ -22,14 +22,14 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
     public static final VolumeGroupState Empty = new VolumeGroupState();
 
     /**
-     * (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume group.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume group.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -315,7 +315,7 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the volume group.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class VolumeGroupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The availability domain of the volume group.
          * 
          * @return builder
          * 

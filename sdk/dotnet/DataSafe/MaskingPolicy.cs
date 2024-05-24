@@ -92,7 +92,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<int?> AddMaskingColumnsFromSdmTrigger { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The source of masking columns.
+        /// (Updatable) Details to associate a column source with a masking policy.
         /// </summary>
         [Output("columnSources")]
         public Output<ImmutableArray<Outputs.MaskingPolicyColumnSource>> ColumnSources { get; private set; } = null!;
@@ -253,7 +253,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<Inputs.MaskingPolicyColumnSourceArgs>? _columnSources;
 
         /// <summary>
-        /// (Updatable) The source of masking columns.
+        /// (Updatable) Details to associate a column source with a masking policy.
         /// </summary>
         public InputList<Inputs.MaskingPolicyColumnSourceArgs> ColumnSources
         {
@@ -373,7 +373,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<Inputs.MaskingPolicyColumnSourceGetArgs>? _columnSources;
 
         /// <summary>
-        /// (Updatable) The source of masking columns.
+        /// (Updatable) Details to associate a column source with a masking policy.
         /// </summary>
         public InputList<Inputs.MaskingPolicyColumnSourceGetArgs> ColumnSources
         {

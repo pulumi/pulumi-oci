@@ -13,32 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails {
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the Uri detail.
      * 
      */
     private String type;
     /**
-     * @return (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+     * @return (Updatable) The discovery URI for the auth server.
      * 
      */
     private @Nullable String uri;
 
     private DeploymentSpecificationRequestPoliciesAuthenticationValidationPolicySourceUriDetails() {}
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the Uri detail.
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return (Updatable) The uri from which to retrieve the key. It must be accessible without authentication.
+     * @return (Updatable) The discovery URI for the auth server.
      * 
      */
     public Optional<String> uri() {

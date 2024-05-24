@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkAddressList = new NetworkAddressList("testNetworkAddressList", NetworkAddressListArgs.builder()        
+ *         var testNetworkAddressList = new NetworkAddressList("testNetworkAddressList", NetworkAddressListArgs.builder()
  *             .compartmentId(compartmentId)
  *             .type(networkAddressListType)
  *             .addresses(networkAddressListAddresses)
@@ -81,14 +81,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Waf/networkAddressList:NetworkAddressList")
 public class NetworkAddressList extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) A private IP address or CIDR IP address range.
+     * (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
      * 
      */
     @Export(name="addresses", refs={List.class,String.class}, tree="[0,1]")
     private Output</* @Nullable */ List<String>> addresses;
 
     /**
-     * @return (Updatable) A private IP address or CIDR IP address range.
+     * @return (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use &#34;0.0.0.0/0&#34; for IPv4 and &#34;::/0&#34; for IPv6.
      * 
      */
     public Output<Optional<List<String>>> addresses() {

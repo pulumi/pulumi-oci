@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppIdentityProvider {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Display-name of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,7 +27,7 @@ public final class DomainsAppIdentityProvider {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -41,26 +41,23 @@ public final class DomainsAppIdentityProvider {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ID of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppIdentityProvider() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Display-name of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -76,7 +73,7 @@ public final class DomainsAppIdentityProvider {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -92,19 +89,16 @@ public final class DomainsAppIdentityProvider {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ID of the IdentityProvider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

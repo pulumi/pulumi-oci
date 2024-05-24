@@ -14,33 +14,30 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsDynamicResourceGroupTag
     {
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag key
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) Key or name of the tag.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * type: string
-        /// * required: true
-        /// * mutability: readWrite
-        /// * returned: default
         /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag value
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * required: true
-        /// * idcsReturnEmptyWhenNull: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
         /// * mutability: readWrite
+        /// * required: true
         /// * returned: default
         /// * type: string
-        /// * idcsSearchable: true
         /// * uniqueness: none
         /// </summary>
         public readonly string Value;

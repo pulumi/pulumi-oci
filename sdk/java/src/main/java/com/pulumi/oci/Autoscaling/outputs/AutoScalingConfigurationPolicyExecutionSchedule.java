@@ -29,7 +29,7 @@ public final class AutoScalingConfigurationPolicyExecutionSchedule {
      */
     private String timezone;
     /**
-     * @return The type of action to take.
+     * @return The type of execution schedule.
      * 
      */
     private String type;
@@ -58,7 +58,7 @@ public final class AutoScalingConfigurationPolicyExecutionSchedule {
         return this.timezone;
     }
     /**
-     * @return The type of action to take.
+     * @return The type of execution schedule.
      * 
      */
     public String type() {

@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPrivateIp = new PrivateIp("testPrivateIp", PrivateIpArgs.builder()        
+ *         var testPrivateIp = new PrivateIp("testPrivateIp", PrivateIpArgs.builder()
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(privateIpDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))

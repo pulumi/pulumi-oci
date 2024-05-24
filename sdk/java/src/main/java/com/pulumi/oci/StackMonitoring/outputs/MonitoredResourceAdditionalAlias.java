@@ -17,12 +17,12 @@ public final class MonitoredResourceAdditionalAlias {
      */
     private MonitoredResourceAdditionalAliasCredential credential;
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the alias, within the context of the source.
      * 
      */
     private String name;
     /**
-     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
      * 
      */
     private String source;
@@ -36,14 +36,14 @@ public final class MonitoredResourceAdditionalAlias {
         return this.credential;
     }
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the alias, within the context of the source.
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public String source() {

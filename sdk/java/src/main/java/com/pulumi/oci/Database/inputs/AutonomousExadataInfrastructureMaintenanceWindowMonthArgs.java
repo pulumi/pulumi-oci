@@ -16,14 +16,14 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs ext
     public static final AutonomousExadataInfrastructureMaintenanceWindowMonthArgs Empty = new AutonomousExadataInfrastructureMaintenanceWindowMonthArgs();
 
     /**
-     * (Updatable) Name of the month of the year.
+     * Name of the month of the year.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return Name of the month of the year.
      * 
      */
     public Optional<Output<String>> name() {
@@ -55,7 +55,7 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs ext
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name Name of the month of the year.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class AutonomousExadataInfrastructureMaintenanceWindowMonthArgs ext
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name Name of the month of the year.
          * 
          * @return builder
          * 

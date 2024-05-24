@@ -21,17 +21,19 @@ public final class DetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return The id of the attached DataSource.
      * 
      */
     private @Nullable String dataSourceId;
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+     * @return Details of a Detector Rule
      * 
      */
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetail> details;
@@ -41,7 +43,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String detector;
     /**
-     * @return (Updatable) DetectorRecipeRule Identifier
+     * @return The unique identifier of the detector rule.
      * 
      */
     private @Nullable String detectorRuleId;
@@ -53,7 +55,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return Data Source entities mapping for a Detector Rule
      * 
      */
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
@@ -68,7 +70,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable List<String> managedListTypes;
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
     private @Nullable String recommendation;
@@ -107,21 +109,23 @@ public final class DetectorRecipeEffectiveDetectorRule {
         return this.candidateResponderRules == null ? List.of() : this.candidateResponderRules;
     }
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return The id of the attached DataSource.
      * 
      */
     public Optional<String> dataSourceId() {
         return Optional.ofNullable(this.dataSourceId);
     }
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+     * @return Details of a Detector Rule
      * 
      */
     public List<DetectorRecipeEffectiveDetectorRuleDetail> details() {
@@ -135,7 +139,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.detector);
     }
     /**
-     * @return (Updatable) DetectorRecipeRule Identifier
+     * @return The unique identifier of the detector rule.
      * 
      */
     public Optional<String> detectorRuleId() {
@@ -151,7 +155,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return Data Source entities mapping for a Detector Rule
      * 
      */
     public List<DetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -172,7 +176,7 @@ public final class DetectorRecipeEffectiveDetectorRule {
         return this.managedListTypes == null ? List.of() : this.managedListTypes;
     }
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
     public Optional<String> recommendation() {

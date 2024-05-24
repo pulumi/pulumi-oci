@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<string> SecretId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Asset source type.
+        /// (Updatable) Authentication type
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

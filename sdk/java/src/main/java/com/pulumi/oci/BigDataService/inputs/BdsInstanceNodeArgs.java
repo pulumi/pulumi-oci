@@ -139,14 +139,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The total amount of memory available to the node, in gigabytes
+     * The total amount of memory available to the node, in gigabytes.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Integer> memoryInGbs;
 
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     public Optional<Output<Integer>> memoryInGbs() {
@@ -199,14 +199,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * Shape of the node
+     * (Updatable) Shape of the node.
      * 
      */
     @Import(name="shape")
     private @Nullable Output<String> shape;
 
     /**
-     * @return Shape of the node
+     * @return (Updatable) Shape of the node.
      * 
      */
     public Optional<Output<String>> shape() {
@@ -244,14 +244,14 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The OCID of the subnet in which the node should be created
+     * The OCID of the subnet in which the node will be created.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return The OCID of the subnet in which the node should be created
+     * @return The OCID of the subnet in which the node will be created.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -508,7 +508,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
          * 
@@ -519,7 +519,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
          * 
@@ -592,7 +592,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param shape Shape of the node
+         * @param shape (Updatable) Shape of the node.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param shape Shape of the node
+         * @param shape (Updatable) Shape of the node.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which the node should be created
+         * @param subnetId The OCID of the subnet in which the node will be created.
          * 
          * @return builder
          * 
@@ -666,7 +666,7 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param subnetId The OCID of the subnet in which the node should be created
+         * @param subnetId The OCID of the subnet in which the node will be created.
          * 
          * @return builder
          * 

@@ -37,7 +37,7 @@ public final class BdsInstanceCloudSqlDetail {
      */
     private @Nullable List<BdsInstanceCloudSqlDetailKerberosDetail> kerberosDetails;
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     private @Nullable Integer memoryInGbs;
@@ -87,7 +87,7 @@ public final class BdsInstanceCloudSqlDetail {
         return this.kerberosDetails == null ? List.of() : this.kerberosDetails;
     }
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     public Optional<Integer> memoryInGbs() {

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamDistributionChannel = new StreamDistributionChannel("testStreamDistributionChannel", StreamDistributionChannelArgs.builder()        
+ *         var testStreamDistributionChannel = new StreamDistributionChannel("testStreamDistributionChannel", StreamDistributionChannelArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(streamDistributionChannelDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -81,14 +81,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/streamDistributionChannel:StreamDistributionChannel")
 public class StreamDistributionChannel extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -199,14 +199,14 @@ public class StreamDistributionChannel extends com.pulumi.resources.CustomResour
         return this.systemTags;
     }
     /**
-     * When the lock was created.
+     * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

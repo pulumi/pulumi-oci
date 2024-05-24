@@ -19,31 +19,31 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public Input<string>? Giro { get; set; }
 
         /// <summary>
-        /// (Updatable) Tax exemption reason code.
+        /// Tax exemption reason code.
         /// </summary>
         [Input("noTaxReasonCode")]
         public Input<string>? NoTaxReasonCode { get; set; }
 
         /// <summary>
-        /// (Updatable) Tax exemption reason description.
+        /// Tax exemption reason description.
         /// </summary>
         [Input("noTaxReasonCodeDetails")]
         public Input<string>? NoTaxReasonCodeDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Brazilian companies' CNPJ number.
+        /// Brazilian companies' CNPJ number.
         /// </summary>
         [Input("taxCnpj")]
         public Input<string>? TaxCnpj { get; set; }
 
         /// <summary>
-        /// (Updatable) Tay payer identifier.
+        /// Tay payer identifier.
         /// </summary>
         [Input("taxPayerId")]
         public Input<string>? TaxPayerId { get; set; }
 
         /// <summary>
-        /// (Updatable) Tax registration number.
+        /// Tax registration number.
         /// </summary>
         [Input("taxRegNumber")]
         public Input<string>? TaxRegNumber { get; set; }

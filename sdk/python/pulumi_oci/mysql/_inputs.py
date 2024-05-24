@@ -2899,20 +2899,24 @@ class MysqlDbSystemBackupPolicyArgs:
                  retention_in_days: Optional[pulumi.Input[int]] = None,
                  window_start_time: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+               
+               Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+               
+               Example: `{"foo-namespace.bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+               
+               Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+               
+               Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if automatic backups are enabled.
         :param pulumi.Input['MysqlDbSystemBackupPolicyPitrPolicyArgs'] pitr_policy: (Updatable) The PITR policy for the DB System.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain an automatic backup.
-        :param pulumi.Input[str] window_start_time: (Updatable) The start of the 2 hour maintenance window.
+        :param pulumi.Input[str] window_start_time: (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
                
-               This string is of the format: "{day-of-week} {time-of-day}".
+               This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
                
-               "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-               
-               "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-               
-               If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+               At some point in the window, the system may incur a brief service disruption as the backup is performed.
         """
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
@@ -2931,7 +2935,11 @@ class MysqlDbSystemBackupPolicyArgs:
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+
+        Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+
+        Example: `{"foo-namespace.bar-key": "value"}`
         """
         return pulumi.get(self, "defined_tags")
 
@@ -2943,7 +2951,11 @@ class MysqlDbSystemBackupPolicyArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+
+        Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+
+        Example: `{"bar-key": "value"}`
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -2955,7 +2967,7 @@ class MysqlDbSystemBackupPolicyArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies if PITR is enabled or disabled.
+        (Updatable) Specifies if automatic backups are enabled.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -2991,15 +3003,11 @@ class MysqlDbSystemBackupPolicyArgs:
     @pulumi.getter(name="windowStartTime")
     def window_start_time(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The start of the 2 hour maintenance window.
+        (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
 
-        This string is of the format: "{day-of-week} {time-of-day}".
+        This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
 
-        "{day-of-week}" is a case-insensitive string like "mon", "tue", &c.
-
-        "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-
-        If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+        At some point in the window, the system may incur a brief service disruption as the backup is performed.
         """
         return pulumi.get(self, "window_start_time")
 
@@ -3052,7 +3060,7 @@ class MysqlDbSystemChannelArgs:
         :param pulumi.Input[str] display_name: (Updatable) The user-friendly name for the DB System. It does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] id: The OCID of the DB System.
-        :param pulumi.Input[bool] is_enabled: (Updatable) Specifies if PITR is enabled or disabled.
+        :param pulumi.Input[bool] is_enabled: Whether the Channel has been enabled by the user.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycleState.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlDbSystemChannelSourceArgs']]] sources: Parameters detailing how to provision the initial data of the system.
         :param pulumi.Input[str] state: (Updatable) The target state for the DB System. Could be set to `ACTIVE` or `INACTIVE`.
@@ -3149,7 +3157,7 @@ class MysqlDbSystemChannelArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies if PITR is enabled or disabled.
+        Whether the Channel has been enabled by the user.
         """
         return pulumi.get(self, "is_enabled")
 

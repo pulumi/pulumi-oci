@@ -26,22 +26,17 @@ public final class DomainsCloudGateMappingTag {
      */
     private String key;
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -65,22 +60,17 @@ public final class DomainsCloudGateMappingTag {
         return this.key;
     }
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

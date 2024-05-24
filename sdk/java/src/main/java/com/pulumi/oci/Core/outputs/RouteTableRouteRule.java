@@ -43,6 +43,8 @@ public final class RouteTableRouteRule {
     private @Nullable String destination;
     /**
      * @return (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
     private @Nullable String destinationType;
@@ -95,6 +97,8 @@ public final class RouteTableRouteRule {
     }
     /**
      * @return (Updatable) Type of destination for the rule. Required if you provide a `destination`.
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
     public Optional<String> destinationType() {

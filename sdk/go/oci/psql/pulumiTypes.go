@@ -120,7 +120,7 @@ func (o BackupDbSystemDetailArrayOutput) Index(i pulumi.IntInput) BackupDbSystem
 }
 
 type ConfigurationConfigurationDetail struct {
-	// List of configuration overridden values.
+	// List of ConfigParms object.
 	Items []ConfigurationConfigurationDetailItem `pulumi:"items"`
 }
 
@@ -136,7 +136,7 @@ type ConfigurationConfigurationDetailInput interface {
 }
 
 type ConfigurationConfigurationDetailArgs struct {
-	// List of configuration overridden values.
+	// List of ConfigParms object.
 	Items ConfigurationConfigurationDetailItemArrayInput `pulumi:"items"`
 }
 
@@ -191,7 +191,7 @@ func (o ConfigurationConfigurationDetailOutput) ToConfigurationConfigurationDeta
 	return o
 }
 
-// List of configuration overridden values.
+// List of ConfigParms object.
 func (o ConfigurationConfigurationDetailOutput) Items() ConfigurationConfigurationDetailItemArrayOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetail) []ConfigurationConfigurationDetailItem { return v.Items }).(ConfigurationConfigurationDetailItemArrayOutput)
 }
@@ -219,7 +219,7 @@ func (o ConfigurationConfigurationDetailArrayOutput) Index(i pulumi.IntInput) Co
 type ConfigurationConfigurationDetailItem struct {
 	// Range or list of allowed values.
 	AllowedValues *string `pulumi:"allowedValues"`
-	// Configuration variable name.
+	// The configuration variable name.
 	ConfigKey *string `pulumi:"configKey"`
 	// Data type of the variable.
 	DataType *string `pulumi:"dataType"`
@@ -231,7 +231,7 @@ type ConfigurationConfigurationDetailItem struct {
 	IsOverridable *bool `pulumi:"isOverridable"`
 	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired *bool `pulumi:"isRestartRequired"`
-	// User-selected variable value.
+	// User-selected configuration variable value.
 	OverridenConfigValue *string `pulumi:"overridenConfigValue"`
 }
 
@@ -249,7 +249,7 @@ type ConfigurationConfigurationDetailItemInput interface {
 type ConfigurationConfigurationDetailItemArgs struct {
 	// Range or list of allowed values.
 	AllowedValues pulumi.StringPtrInput `pulumi:"allowedValues"`
-	// Configuration variable name.
+	// The configuration variable name.
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
 	// Data type of the variable.
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
@@ -261,7 +261,7 @@ type ConfigurationConfigurationDetailItemArgs struct {
 	IsOverridable pulumi.BoolPtrInput `pulumi:"isOverridable"`
 	// If true, modifying this configuration value will require a restart of the database.
 	IsRestartRequired pulumi.BoolPtrInput `pulumi:"isRestartRequired"`
-	// User-selected variable value.
+	// User-selected configuration variable value.
 	OverridenConfigValue pulumi.StringPtrInput `pulumi:"overridenConfigValue"`
 }
 
@@ -321,7 +321,7 @@ func (o ConfigurationConfigurationDetailItemOutput) AllowedValues() pulumi.Strin
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.AllowedValues }).(pulumi.StringPtrOutput)
 }
 
-// Configuration variable name.
+// The configuration variable name.
 func (o ConfigurationConfigurationDetailItemOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
 }
@@ -351,7 +351,7 @@ func (o ConfigurationConfigurationDetailItemOutput) IsRestartRequired() pulumi.B
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *bool { return v.IsRestartRequired }).(pulumi.BoolPtrOutput)
 }
 
-// User-selected variable value.
+// User-selected configuration variable value.
 func (o ConfigurationConfigurationDetailItemOutput) OverridenConfigValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigurationConfigurationDetailItem) *string { return v.OverridenConfigValue }).(pulumi.StringPtrOutput)
 }
@@ -974,9 +974,9 @@ func (o DbSystemCredentialsPasswordDetailsPtrOutput) SecretVersion() pulumi.Stri
 type DbSystemInstance struct {
 	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description *string `pulumi:"description"`
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// A unique identifier for the database instance node. Immutable on creation.
 	Id *string `pulumi:"id"`
@@ -1004,9 +1004,9 @@ type DbSystemInstanceInput interface {
 type DbSystemInstanceArgs struct {
 	// Specifies the availability domain of AD-local storage. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
-	// A user-provided description of the database instance node.
+	// (Updatable) A user-provided description of a database system.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// Display name of the database instance node. Avoid entering confidential information.
+	// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// A unique identifier for the database instance node. Immutable on creation.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -1076,12 +1076,12 @@ func (o DbSystemInstanceOutput) AvailabilityDomain() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
-// A user-provided description of the database instance node.
+// (Updatable) A user-provided description of a database system.
 func (o DbSystemInstanceOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// Display name of the database instance node. Avoid entering confidential information.
+// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
 func (o DbSystemInstanceOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DbSystemInstance) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -2106,9 +2106,6 @@ type DbSystemStorageDetails struct {
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable bool `pulumi:"isRegionallyDurable"`
 	// Type of the database system.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemType string `pulumi:"systemType"`
 }
 
@@ -2131,9 +2128,6 @@ type DbSystemStorageDetailsArgs struct {
 	// Specifies if the block volume used for the database system is regional or AD-local. If not specified, it will be set to false. If `isRegionallyDurable` is set to true, `availabilityDomain` should not be specified. If `isRegionallyDurable` is set to false, `availabilityDomain` must be specified.
 	IsRegionallyDurable pulumi.BoolInput `pulumi:"isRegionallyDurable"`
 	// Type of the database system.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SystemType pulumi.StringInput `pulumi:"systemType"`
 }
 
@@ -2230,9 +2224,6 @@ func (o DbSystemStorageDetailsOutput) IsRegionallyDurable() pulumi.BoolOutput {
 }
 
 // Type of the database system.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemStorageDetailsOutput) SystemType() pulumi.StringOutput {
 	return o.ApplyT(func(v DbSystemStorageDetails) string { return v.SystemType }).(pulumi.StringOutput)
 }
@@ -2292,9 +2283,6 @@ func (o DbSystemStorageDetailsPtrOutput) IsRegionallyDurable() pulumi.BoolPtrOut
 }
 
 // Type of the database system.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DbSystemStorageDetailsPtrOutput) SystemType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DbSystemStorageDetails) *string {
 		if v == nil {

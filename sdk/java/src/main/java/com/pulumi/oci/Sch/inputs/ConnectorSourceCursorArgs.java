@@ -16,14 +16,14 @@ public final class ConnectorSourceCursorArgs extends com.pulumi.resources.Resour
     public static final ConnectorSourceCursorArgs Empty = new ConnectorSourceCursorArgs();
 
     /**
-     * (Updatable) The type descriminator.
+     * (Updatable) The type discriminator.
      * 
      */
     @Import(name="kind")
     private @Nullable Output<String> kind;
 
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     public Optional<Output<String>> kind() {
@@ -55,7 +55,7 @@ public final class ConnectorSourceCursorArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type discriminator.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class ConnectorSourceCursorArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type discriminator.
          * 
          * @return builder
          * 

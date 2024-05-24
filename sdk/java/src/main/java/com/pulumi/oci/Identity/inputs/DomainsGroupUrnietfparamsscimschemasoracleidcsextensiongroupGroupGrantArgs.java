@@ -92,9 +92,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -110,9 +108,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -129,16 +125,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -148,16 +142,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -283,9 +275,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) Grant URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -305,9 +295,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) Grant URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -326,16 +314,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Grant identifier
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -349,16 +335,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Grant identifier
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none

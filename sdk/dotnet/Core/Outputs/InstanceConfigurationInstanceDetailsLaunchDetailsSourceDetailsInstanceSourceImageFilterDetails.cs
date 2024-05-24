@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class InstanceConfigurationInstanceDetailsLaunchDetailsSourceDetailsInstanceSourceImageFilterDetails
     {
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

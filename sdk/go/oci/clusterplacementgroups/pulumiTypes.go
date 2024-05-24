@@ -151,7 +151,7 @@ func (o ClusterPlacementGroupCapabilitiesPtrOutput) Items() ClusterPlacementGrou
 }
 
 type ClusterPlacementGroupCapabilitiesItem struct {
-	// The friendly name of the cluster placement group.
+	// The type of resource.
 	Name string `pulumi:"name"`
 	// The service that the resource is part of.
 	Service string `pulumi:"service"`
@@ -169,7 +169,7 @@ type ClusterPlacementGroupCapabilitiesItemInput interface {
 }
 
 type ClusterPlacementGroupCapabilitiesItemArgs struct {
-	// The friendly name of the cluster placement group.
+	// The type of resource.
 	Name pulumi.StringInput `pulumi:"name"`
 	// The service that the resource is part of.
 	Service pulumi.StringInput `pulumi:"service"`
@@ -226,7 +226,7 @@ func (o ClusterPlacementGroupCapabilitiesItemOutput) ToClusterPlacementGroupCapa
 	return o
 }
 
-// The friendly name of the cluster placement group.
+// The type of resource.
 func (o ClusterPlacementGroupCapabilitiesItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ClusterPlacementGroupCapabilitiesItem) string { return v.Name }).(pulumi.StringOutput)
 }

@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRule = new DomainsRule("testRule", DomainsRuleArgs.builder()        
+ *         var testRule = new DomainsRule("testRule", DomainsRuleArgs.builder()
  *             .condition(ruleCondition)
  *             .idcsEndpoint(testDomain.url())
  *             .name(ruleName)
@@ -626,14 +626,15 @@ public class DomainsRule extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * (Updatable) Attribute name of an individual value to be returned.
+     * (Updatable) Rule name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -642,14 +643,15 @@ public class DomainsRule extends com.pulumi.resources.CustomResource {
     private Output<String> name;
 
     /**
-     * @return (Updatable) Attribute name of an individual value to be returned.
+     * @return (Updatable) Rule name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

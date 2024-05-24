@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApmConfig.Inputs
     public sealed class ConfigDimensionGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the metric. This must be a known metric name.
+        /// (Updatable) The name of the dimension.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) This must not be set.
+        /// (Updatable) The source to populate the dimension. This must not be specified.
         /// </summary>
         [Input("valueSource")]
         public Input<string>? ValueSource { get; set; }

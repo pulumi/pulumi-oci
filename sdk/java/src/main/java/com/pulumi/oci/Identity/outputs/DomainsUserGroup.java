@@ -28,12 +28,12 @@ public final class DomainsUserGroup {
      */
     private @Nullable String dateAdded;
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -90,9 +90,9 @@ public final class DomainsUserGroup {
      */
     private @Nullable String nonUniqueDisplay;
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
+     * @return (Updatable) The OCID of the User&#39;s group.
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -100,16 +100,14 @@ public final class DomainsUserGroup {
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding Group resource to which the user belongs
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -123,33 +121,31 @@ public final class DomainsUserGroup {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;direct&#39; or &#39;indirect&#39;.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The identifier of the User&#39;s group.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -173,12 +169,12 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.dateAdded);
     }
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -243,9 +239,9 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.nonUniqueDisplay);
     }
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
+     * @return (Updatable) The OCID of the User&#39;s group.
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2102181953
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -253,7 +249,7 @@ public final class DomainsUserGroup {
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -262,9 +258,7 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding Group resource to which the user belongs
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -280,14 +274,14 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label indicating the attribute&#39;s function; e.g., &#39;direct&#39; or &#39;indirect&#39;.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -296,19 +290,17 @@ public final class DomainsUserGroup {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The identifier of the User&#39;s group.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

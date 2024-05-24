@@ -109,7 +109,7 @@ type DatabaseToolsPrivateEndpoint struct {
 	SubnetId pulumi.StringOutput `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -196,7 +196,7 @@ type databaseToolsPrivateEndpointState struct {
 	SubnetId *string `pulumi:"subnetId"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -242,7 +242,7 @@ type DatabaseToolsPrivateEndpointState struct {
 	SubnetId pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// When the lock was created.
+	// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
@@ -484,7 +484,7 @@ func (o DatabaseToolsPrivateEndpointOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// When the lock was created.
+// The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
 func (o DatabaseToolsPrivateEndpointOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseToolsPrivateEndpoint) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

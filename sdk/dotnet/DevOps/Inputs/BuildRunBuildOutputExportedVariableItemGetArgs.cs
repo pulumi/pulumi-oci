@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class BuildRunBuildOutputExportedVariableItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        /// Name of the step.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

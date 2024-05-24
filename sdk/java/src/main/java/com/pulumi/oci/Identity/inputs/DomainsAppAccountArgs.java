@@ -17,12 +17,14 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     public static final DomainsAppAccountArgs Empty = new DomainsAppAccountArgs();
 
     /**
-     * (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+     * (Updatable) Status of the account
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: boolean
@@ -33,12 +35,14 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     private @Nullable Output<Boolean> active;
 
     /**
-     * @return (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+     * @return (Updatable) Status of the account
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: boolean
@@ -50,17 +54,16 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * (Updatable) Name of the account
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -70,17 +73,16 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Name of the account
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -126,7 +128,7 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) AccountMgmtInfo URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -142,7 +144,7 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) AccountMgmtInfo URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -159,38 +161,34 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Account identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Account identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -226,12 +224,14 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param active (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+         * @param active (Updatable) Status of the account
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: boolean
@@ -246,12 +246,14 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param active (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+         * @param active (Updatable) Status of the account
+         * 
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: boolean
@@ -265,17 +267,16 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Name of the account
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -289,17 +290,16 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Name of the account
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 17.4.6
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -353,7 +353,7 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) AccountMgmtInfo URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -373,7 +373,7 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) AccountMgmtInfo URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -392,19 +392,17 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Account identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
-         * * returned: default
+         * * required: false
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -415,19 +413,17 @@ public final class DomainsAppAccountArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Account identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
-         * * returned: default
+         * * required: false
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

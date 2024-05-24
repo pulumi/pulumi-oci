@@ -78,14 +78,14 @@ public final class PathAnalyzerTestProtocolParametersArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The type of the `Endpoint`.
+     * (Updatable) The type of the `ProtocolParameters` object.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of the `Endpoint`.
+     * @return (Updatable) The type of the `ProtocolParameters` object.
      * 
      */
     public Output<String> type() {
@@ -205,7 +205,7 @@ public final class PathAnalyzerTestProtocolParametersArgs extends com.pulumi.res
         }
 
         /**
-         * @param type (Updatable) The type of the `Endpoint`.
+         * @param type (Updatable) The type of the `ProtocolParameters` object.
          * 
          * @return builder
          * 
@@ -216,7 +216,7 @@ public final class PathAnalyzerTestProtocolParametersArgs extends com.pulumi.res
         }
 
         /**
-         * @param type (Updatable) The type of the `Endpoint`.
+         * @param type (Updatable) The type of the `ProtocolParameters` object.
          * 
          * @return builder
          * 

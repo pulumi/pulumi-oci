@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspace = new Workspace("testWorkspace", WorkspaceArgs.builder()        
+ *         var testWorkspace = new Workspace("testWorkspace", WorkspaceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(workspaceDisplayName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

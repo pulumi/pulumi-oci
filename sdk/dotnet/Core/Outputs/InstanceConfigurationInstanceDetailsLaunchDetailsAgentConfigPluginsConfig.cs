@@ -15,7 +15,6 @@ namespace Pulumi.Oci.Core.Outputs
     {
         /// <summary>
         /// Whether the plugin should be enabled or disabled.
-        /// 
         /// To enable the monitoring and management plugins, the `isMonitoringDisabled` and `isManagementDisabled` attributes must also be set to false.
         /// </summary>
         public readonly string? DesiredState;

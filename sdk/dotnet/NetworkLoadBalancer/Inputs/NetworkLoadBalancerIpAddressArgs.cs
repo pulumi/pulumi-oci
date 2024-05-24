@@ -13,7 +13,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Inputs
     public sealed class NetworkLoadBalancerIpAddressArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The IP address of the backend server. Example: `10.0.0.3`
+        /// An IP address.  Example: `192.168.0.3`
         /// </summary>
         [Input("ipAddress")]
         public Input<string>? IpAddress { get; set; }

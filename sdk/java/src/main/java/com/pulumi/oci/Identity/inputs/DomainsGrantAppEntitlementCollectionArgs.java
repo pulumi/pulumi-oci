@@ -17,10 +17,11 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
     public static final DomainsGrantAppEntitlementCollectionArgs Empty = new DomainsGrantAppEntitlementCollectionArgs();
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) Application Entitlement Collection URI
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -34,10 +35,11 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Application Entitlement Collection URI
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -52,13 +54,15 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
     }
 
     /**
-     * Value of the tag.
+     * Application Entitlement Collection identifier
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -69,13 +73,15 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return Application Entitlement Collection identifier
+     * 
+     * **Added In:** 18.2.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -112,10 +118,11 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Application Entitlement Collection URI
+         * 
+         * **Added In:** 18.2.4
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -133,10 +140,11 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Application Entitlement Collection URI
+         * 
+         * **Added In:** 18.2.4
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -153,13 +161,15 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Application Entitlement Collection identifier
+         * 
+         * **Added In:** 18.2.4
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -174,13 +184,15 @@ public final class DomainsGrantAppEntitlementCollectionArgs extends com.pulumi.r
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Application Entitlement Collection identifier
+         * 
+         * **Added In:** 18.2.4
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

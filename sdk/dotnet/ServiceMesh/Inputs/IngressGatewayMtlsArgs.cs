@@ -13,7 +13,7 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
     public sealed class IngressGatewayMtlsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The OCID of the leaf certificate resource.
+        /// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         /// </summary>
         [Input("certificateId")]
         public Input<string>? CertificateId { get; set; }

@@ -28,7 +28,7 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<string> StepArtifact { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+        /// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         /// </summary>
         [Input("stepName", required: true)]
         public Input<string> StepName { get; set; } = null!;

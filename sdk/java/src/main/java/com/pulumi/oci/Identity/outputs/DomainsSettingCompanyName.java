@@ -14,7 +14,7 @@ public final class DomainsSettingCompanyName {
      * @return (Updatable) Locale
      * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
@@ -25,9 +25,7 @@ public final class DomainsSettingCompanyName {
      */
     private String locale;
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Company name
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
@@ -35,7 +33,6 @@ public final class DomainsSettingCompanyName {
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     private String value;
@@ -45,7 +42,7 @@ public final class DomainsSettingCompanyName {
      * @return (Updatable) Locale
      * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
@@ -58,9 +55,7 @@ public final class DomainsSettingCompanyName {
         return this.locale;
     }
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Company name
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
@@ -68,7 +63,6 @@ public final class DomainsSettingCompanyName {
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     public String value() {

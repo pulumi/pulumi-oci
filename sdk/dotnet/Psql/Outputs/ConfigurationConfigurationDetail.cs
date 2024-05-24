@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Psql.Outputs
     public sealed class ConfigurationConfigurationDetail
     {
         /// <summary>
-        /// List of configuration overridden values.
+        /// List of ConfigParms object.
         /// </summary>
         public readonly ImmutableArray<Outputs.ConfigurationConfigurationDetailItem> Items;
 

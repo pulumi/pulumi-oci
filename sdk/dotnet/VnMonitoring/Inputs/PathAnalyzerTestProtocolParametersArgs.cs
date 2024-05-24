@@ -37,7 +37,7 @@ namespace Pulumi.Oci.VnMonitoring.Inputs
         public Input<int>? SourcePort { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the `Endpoint`.
+        /// (Updatable) The type of the `ProtocolParameters` object.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

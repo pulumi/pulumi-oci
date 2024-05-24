@@ -13,27 +13,29 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsIdentityProviderJitUserProvAttributes {
     /**
-     * @return (Updatable) Group URI
+     * @return (Updatable) Mapped Attribute URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * idcsSearchable: false
+     * * mutability: immutable
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -44,29 +46,31 @@ public final class DomainsIdentityProviderJitUserProvAttributes {
 
     private DomainsIdentityProviderJitUserProvAttributes() {}
     /**
-     * @return (Updatable) Group URI
+     * @return (Updatable) Mapped Attribute URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * idcsSearchable: false
+     * * mutability: immutable
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

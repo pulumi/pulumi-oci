@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testModelProvenance = new ModelProvenance("testModelProvenance", ModelProvenanceArgs.builder()        
+ *         var testModelProvenance = new ModelProvenance("testModelProvenance", ModelProvenanceArgs.builder()
  *             .modelId(testModel.id())
  *             .gitBranch(modelProvenanceGitBranch)
  *             .gitCommit(modelProvenanceGitCommit)

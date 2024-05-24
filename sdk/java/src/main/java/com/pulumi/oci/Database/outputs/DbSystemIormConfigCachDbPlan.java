@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DbSystemIormConfigCachDbPlan {
     /**
-     * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
     private @Nullable String dbName;
@@ -30,7 +30,7 @@ public final class DbSystemIormConfigCachDbPlan {
 
     private DbSystemIormConfigCachDbPlan() {}
     /**
-     * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
     public Optional<String> dbName() {

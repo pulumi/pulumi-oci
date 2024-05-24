@@ -457,17 +457,15 @@ public final class DomainsPolicyState extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Rule name
-     * 
-     * **Added In:** 17.4.2
+     * (Updatable) Policy name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -476,17 +474,15 @@ public final class DomainsPolicyState extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Rule name
-     * 
-     * **Added In:** 17.4.2
+     * @return (Updatable) Policy name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -1413,17 +1409,15 @@ public final class DomainsPolicyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param name (Updatable) Rule name
-         * 
-         * **Added In:** 17.4.2
+         * @param name (Updatable) Policy name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: request
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -1436,17 +1430,15 @@ public final class DomainsPolicyState extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param name (Updatable) Rule name
-         * 
-         * **Added In:** 17.4.2
+         * @param name (Updatable) Policy name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: request
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

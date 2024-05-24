@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
     public sealed class TargetDatabasePeerTargetDatabase
     {
         /// <summary>
-        /// Details of the database for the registration in Data Safe.
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetDatabasePeerTargetDatabaseDatabaseDetail> DatabaseDetails;
         /// <summary>
@@ -22,15 +22,15 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? DatabaseUniqueName;
         /// <summary>
-        /// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+        /// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
         /// </summary>
         public readonly string? DataguardAssociationId;
         /// <summary>
-        /// The description of the peer target database in Data Safe.
+        /// (Updatable) The description of the target database in Data Safe.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

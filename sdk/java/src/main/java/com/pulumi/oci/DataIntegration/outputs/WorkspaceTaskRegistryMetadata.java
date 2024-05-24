@@ -26,7 +26,7 @@ public final class WorkspaceTaskRegistryMetadata {
      */
     private @Nullable Boolean isFavorite;
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) The identifying key for the object.
      * 
      */
     private @Nullable String key;
@@ -57,7 +57,7 @@ public final class WorkspaceTaskRegistryMetadata {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) The identifying key for the object.
      * 
      */
     public Optional<String> key() {

@@ -30,7 +30,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string? FunctionId;
         /// <summary>
-        /// (Updatable)
+        /// (Updatable) The headers of the stock response from the mock backend.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteBackendHeader> Headers;
         /// <summary>
@@ -62,11 +62,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly int? Status;
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the API backend.
         /// </summary>
         public readonly string Type;
         /// <summary>

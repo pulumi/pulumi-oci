@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFleet = new Fleet("testFleet", FleetArgs.builder()        
+ *         var testFleet = new Fleet("testFleet", FleetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(fleetDisplayName)
  *             .inventoryLog(FleetInventoryLogArgs.builder()

@@ -17,31 +17,23 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs
     public static final WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs Empty = new WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs();
 
     /**
-     * (Updatable) The root object value, used in custom parameters.
+     * The root object value, used in custom parameters.
      * 
      */
     @Import(name="rootObjectValue")
     private @Nullable Output<WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs> rootObjectValue;
 
     /**
-     * @return (Updatable) The root object value, used in custom parameters.
+     * @return The root object value, used in custom parameters.
      * 
      */
     public Optional<Output<WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs>> rootObjectValue() {
         return Optional.ofNullable(this.rootObjectValue);
     }
 
-    /**
-     * A simple value for the parameter.
-     * 
-     */
     @Import(name="simpleValue")
     private @Nullable Output<String> simpleValue;
 
-    /**
-     * @return A simple value for the parameter.
-     * 
-     */
     public Optional<Output<String>> simpleValue() {
         return Optional.ofNullable(this.simpleValue);
     }
@@ -72,7 +64,7 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs
         }
 
         /**
-         * @param rootObjectValue (Updatable) The root object value, used in custom parameters.
+         * @param rootObjectValue The root object value, used in custom parameters.
          * 
          * @return builder
          * 
@@ -83,7 +75,7 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs
         }
 
         /**
-         * @param rootObjectValue (Updatable) The root object value, used in custom parameters.
+         * @param rootObjectValue The root object value, used in custom parameters.
          * 
          * @return builder
          * 
@@ -92,23 +84,11 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs
             return rootObjectValue(Output.of(rootObjectValue));
         }
 
-        /**
-         * @param simpleValue A simple value for the parameter.
-         * 
-         * @return builder
-         * 
-         */
         public Builder simpleValue(@Nullable Output<String> simpleValue) {
             $.simpleValue = simpleValue;
             return this;
         }
 
-        /**
-         * @param simpleValue A simple value for the parameter.
-         * 
-         * @return builder
-         * 
-         */
         public Builder simpleValue(String simpleValue) {
             return simpleValue(Output.of(simpleValue));
         }

@@ -19,13 +19,13 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<Inputs.MonitoredResourceAliasesCredentialGetArgs> Credential { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the alias, within the context of the source.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         [Input("source", required: true)]
         public Input<string> Source { get; set; } = null!;

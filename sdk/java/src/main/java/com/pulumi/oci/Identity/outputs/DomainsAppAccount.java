@@ -13,12 +13,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppAccount {
     /**
-     * @return (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+     * @return (Updatable) Status of the account
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: boolean
@@ -27,17 +29,16 @@ public final class DomainsAppAccount {
      */
     private @Nullable Boolean active;
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Name of the account
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -60,7 +61,7 @@ public final class DomainsAppAccount {
      */
     private @Nullable String ownerId;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) AccountMgmtInfo URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -74,31 +75,31 @@ public final class DomainsAppAccount {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Account identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
 
     private DomainsAppAccount() {}
     /**
-     * @return (Updatable) If true, this App is able to participate in runtime services, such as automatic-login, OAuth, and SAML. If false, all runtime services are disabled for this App, and only administrative operations can be performed.
+     * @return (Updatable) Status of the account
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: boolean
@@ -109,17 +110,16 @@ public final class DomainsAppAccount {
         return Optional.ofNullable(this.active);
     }
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Name of the account
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -146,7 +146,7 @@ public final class DomainsAppAccount {
         return Optional.ofNullable(this.ownerId);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) AccountMgmtInfo URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -162,19 +162,17 @@ public final class DomainsAppAccount {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Account identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

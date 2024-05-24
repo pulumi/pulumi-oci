@@ -80,7 +80,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLoadBalancer = new LoadBalancer("testLoadBalancer", LoadBalancerArgs.builder()        
+ *         var testLoadBalancer = new LoadBalancer("testLoadBalancer", LoadBalancerArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(loadBalancerDisplayName)
  *             .shape(loadBalancerShape)

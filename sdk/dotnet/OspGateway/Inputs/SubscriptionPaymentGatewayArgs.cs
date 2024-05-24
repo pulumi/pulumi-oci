@@ -16,7 +16,7 @@ namespace Pulumi.Oci.OspGateway.Inputs
         private InputList<Inputs.SubscriptionPaymentGatewayMerchantDefinedDataArgs>? _merchantDefinedDatas;
 
         /// <summary>
-        /// (Updatable) Merchant details.
+        /// Merchant details.
         /// </summary>
         public InputList<Inputs.SubscriptionPaymentGatewayMerchantDefinedDataArgs> MerchantDefinedDatas
         {

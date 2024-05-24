@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Name of the column that must be sorted.
+        /// (Updatable) Name of the column on which the filter must be applied.
         /// </summary>
         [Input("fieldName", required: true)]
         public Input<string> FieldName { get; set; } = null!;
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+        /// (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
         /// </summary>
         [Input("isHidden", required: true)]
         public Input<bool> IsHidden { get; set; } = null!;

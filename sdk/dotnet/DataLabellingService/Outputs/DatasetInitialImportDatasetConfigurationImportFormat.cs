@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataLabellingService.Outputs
     public sealed class DatasetInitialImportDatasetConfigurationImportFormat
     {
         /// <summary>
-        /// An unique name for a label within its dataset.
+        /// Name of import format
         /// </summary>
         public readonly string Name;
         /// <summary>

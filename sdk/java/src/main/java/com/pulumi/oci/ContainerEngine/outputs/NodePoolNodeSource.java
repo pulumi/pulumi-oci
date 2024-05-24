@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNodeSource {
     /**
-     * @return (Updatable) The OCID of the image used to boot the node.
+     * @return The OCID of the image used to boot the node.
      * 
      */
     private @Nullable String imageId;
@@ -22,14 +22,14 @@ public final class NodePoolNodeSource {
      */
     private @Nullable String sourceName;
     /**
-     * @return (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+     * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
     private @Nullable String sourceType;
 
     private NodePoolNodeSource() {}
     /**
-     * @return (Updatable) The OCID of the image used to boot the node.
+     * @return The OCID of the image used to boot the node.
      * 
      */
     public Optional<String> imageId() {
@@ -43,7 +43,7 @@ public final class NodePoolNodeSource {
         return Optional.ofNullable(this.sourceName);
     }
     /**
-     * @return (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+     * @return The source type for the node. Use `IMAGE` when specifying an OCID of an image.
      * 
      */
     public Optional<String> sourceType() {

@@ -26,7 +26,7 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of UpdateResponderRuleDetails.
+     * @return Details of ResponderRule.
      * 
      */
     private @Nullable List<ResponderRecipeEffectiveResponderRuleDetail> details;
@@ -48,7 +48,7 @@ public final class ResponderRecipeEffectiveResponderRule {
      */
     private @Nullable List<String> policies;
     /**
-     * @return (Updatable) ResponderRecipeRule Identifier
+     * @return Identifier for ResponderRule.
      * 
      */
     private @Nullable String responderRuleId;
@@ -96,7 +96,7 @@ public final class ResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of UpdateResponderRuleDetails.
+     * @return Details of ResponderRule.
      * 
      */
     public List<ResponderRecipeEffectiveResponderRuleDetail> details() {
@@ -126,7 +126,7 @@ public final class ResponderRecipeEffectiveResponderRule {
         return this.policies == null ? List.of() : this.policies;
     }
     /**
-     * @return (Updatable) ResponderRecipeRule Identifier
+     * @return Identifier for ResponderRule.
      * 
      */
     public Optional<String> responderRuleId() {

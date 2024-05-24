@@ -67,14 +67,14 @@ public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<List<AppFirewallPolicyRequestProtectionRuleArgs>> rules;
 
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
      * 
      */
     public Optional<Output<List<AppFirewallPolicyRequestProtectionRuleArgs>>> rules() {
@@ -168,7 +168,7 @@ public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
          * 
          * @return builder
          * 
@@ -189,7 +189,7 @@ public final class AppFirewallPolicyRequestProtectionArgs extends com.pulumi.res
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
          * 
          * @return builder
          * 

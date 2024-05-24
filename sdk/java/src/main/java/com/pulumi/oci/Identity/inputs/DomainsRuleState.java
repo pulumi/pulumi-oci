@@ -561,14 +561,15 @@ public final class DomainsRuleState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Attribute name of an individual value to be returned.
+     * (Updatable) Rule name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -577,14 +578,15 @@ public final class DomainsRuleState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Attribute name of an individual value to be returned.
+     * @return (Updatable) Rule name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -1637,14 +1639,15 @@ public final class DomainsRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Attribute name of an individual value to be returned.
+         * @param name (Updatable) Rule name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -1657,14 +1660,15 @@ public final class DomainsRuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) Attribute name of an individual value to be returned.
+         * @param name (Updatable) Rule name
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

@@ -31,14 +31,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
      * 
      */
     @Import(name="key", required=true)
     private Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs> key;
 
     /**
-     * @return (Updatable) Information around the values for selector of an authentication/ routing branch.
+     * @return (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
      * 
      */
     public Output<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs> key() {
@@ -92,7 +92,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
+         * @param key (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param key (Updatable) Information around the values for selector of an authentication/ routing branch.
+         * @param key (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
          * 
          * @return builder
          * 

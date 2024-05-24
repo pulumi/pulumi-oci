@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testFusionEnvironmentServiceAttachment = new FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment", FusionEnvironmentServiceAttachmentArgs.builder()        
+ *         var testFusionEnvironmentServiceAttachment = new FusionEnvironmentServiceAttachment("testFusionEnvironmentServiceAttachment", FusionEnvironmentServiceAttachmentArgs.builder()
  *             .fusionEnvironmentId(testFusionEnvironment.id())
  *             .serviceInstanceId(testInstance.id())
  *             .serviceInstanceType(fusionEnvironmentServiceAttachmentServiceInstanceType)

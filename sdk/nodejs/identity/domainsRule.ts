@@ -293,14 +293,15 @@ export class DomainsRule extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsRuleMeta[]>;
     /**
-     * (Updatable) Attribute name of an individual value to be returned.
+     * (Updatable) Rule name
      *
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      */
@@ -711,14 +712,15 @@ export interface DomainsRuleState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsRuleMeta>[]>;
     /**
-     * (Updatable) Attribute name of an individual value to be returned.
+     * (Updatable) Rule name
      *
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      */
@@ -933,14 +935,15 @@ export interface DomainsRuleArgs {
      */
     locked?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Attribute name of an individual value to be returned.
+     * (Updatable) Rule name
      *
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      */

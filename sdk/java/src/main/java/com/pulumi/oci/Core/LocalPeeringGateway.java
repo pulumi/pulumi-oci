@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLocalPeeringGateway = new LocalPeeringGateway("testLocalPeeringGateway", LocalPeeringGatewayArgs.builder()        
+ *         var testLocalPeeringGateway = new LocalPeeringGateway("testLocalPeeringGateway", LocalPeeringGatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -18,7 +18,7 @@ public final class ConfigurationConfigurationDetailItem {
      */
     private @Nullable String allowedValues;
     /**
-     * @return Configuration variable name.
+     * @return The configuration variable name.
      * 
      */
     private @Nullable String configKey;
@@ -48,7 +48,7 @@ public final class ConfigurationConfigurationDetailItem {
      */
     private @Nullable Boolean isRestartRequired;
     /**
-     * @return User-selected variable value.
+     * @return User-selected configuration variable value.
      * 
      */
     private @Nullable String overridenConfigValue;
@@ -62,7 +62,7 @@ public final class ConfigurationConfigurationDetailItem {
         return Optional.ofNullable(this.allowedValues);
     }
     /**
-     * @return Configuration variable name.
+     * @return The configuration variable name.
      * 
      */
     public Optional<String> configKey() {
@@ -104,7 +104,7 @@ public final class ConfigurationConfigurationDetailItem {
         return Optional.ofNullable(this.isRestartRequired);
     }
     /**
-     * @return User-selected variable value.
+     * @return User-selected configuration variable value.
      * 
      */
     public Optional<String> overridenConfigValue() {

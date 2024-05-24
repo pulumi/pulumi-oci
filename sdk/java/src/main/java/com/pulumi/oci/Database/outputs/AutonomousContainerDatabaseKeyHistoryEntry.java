@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AutonomousContainerDatabaseKeyHistoryEntry {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     private @Nullable String id;
@@ -34,7 +34,7 @@ public final class AutonomousContainerDatabaseKeyHistoryEntry {
 
     private AutonomousContainerDatabaseKeyHistoryEntry() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     public Optional<String> id() {

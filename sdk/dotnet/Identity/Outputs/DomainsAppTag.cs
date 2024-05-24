@@ -14,35 +14,31 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppTag
     {
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag key
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) Key or name of the tag.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * type: string
-        /// * required: true
-        /// * mutability: readWrite
-        /// * returned: default
         /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

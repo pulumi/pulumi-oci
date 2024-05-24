@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var switchover = new AutonomousContainerDatabaseDataguardAssociationOperation("switchover", AutonomousContainerDatabaseDataguardAssociationOperationArgs.builder()        
+ *         var switchover = new AutonomousContainerDatabaseDataguardAssociationOperation("switchover", AutonomousContainerDatabaseDataguardAssociationOperationArgs.builder()
  *             .operation("switchover")
  *             .autonomousContainerDatabaseId(dataguardAssociations.autonomousContainerDatabaseDataguardAssociations()[0].autonomous_container_database_id())
  *             .autonomousContainerDatabaseDataguardAssociationId(dataguardAssociations.autonomousContainerDatabaseDataguardAssociations()[0].id())

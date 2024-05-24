@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCluster = new Cluster("testCluster", ClusterArgs.builder()        
+ *         var testCluster = new Cluster("testCluster", ClusterArgs.builder()
  *             .computeAvailabilityDomain(clusterComputeAvailabilityDomain)
  *             .esxiHostsCount(clusterEsxiHostsCount)
  *             .networkConfiguration(ClusterNetworkConfigurationArgs.builder()

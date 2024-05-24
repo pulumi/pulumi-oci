@@ -30,16 +30,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string LastUpdateTimestamp;
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) Risk Provider Profile URI: URI that corresponds to risk source identifier.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.1.6
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: always
         /// * type: reference
         /// * uniqueness: none
         /// </summary>
@@ -94,7 +95,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Source;
         /// <summary>
-        /// (Updatable) A supplemental status indicating the reason why a user is disabled
+        /// (Updatable) Risk Provider Profile status
+        /// 
+        /// **Added In:** 18.1.6
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -102,26 +105,25 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: request
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Status;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) Risk Provider Profile: Identifier for the provider service from which the risk score was received.
+        /// 
+        /// **Added In:** 18.1.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

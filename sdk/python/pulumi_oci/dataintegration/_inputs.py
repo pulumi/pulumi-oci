@@ -170,7 +170,7 @@ class WorkspaceApplicationDependentObjectMetadataArgs:
         """
         :param pulumi.Input[str] action: The patch action indicating if object was created, updated, or deleted.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] name_path: The fully qualified path of the published object, which would include its project and folder.
         :param pulumi.Input[int] object_version: The object version.
@@ -219,7 +219,7 @@ class WorkspaceApplicationDependentObjectMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        (Updatable) Currently not used on application creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 
@@ -294,7 +294,7 @@ class WorkspaceApplicationMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: The owning object's key for this object.
+        :param pulumi.Input[str] aggregator_key: The owning object key for this object.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationMetadataCountStatisticArgs']]] count_statistics: A count statistics.
         :param pulumi.Input[str] created_by: The user that created the object.
@@ -302,8 +302,8 @@ class WorkspaceApplicationMetadataArgs:
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: The registry version.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version of the object.
         :param pulumi.Input[str] time_created: The date and time the application was created, in the timestamp format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the application was updated, in the timestamp format defined by RFC3339. example: 2019-08-25T21:10:29.41Z
         :param pulumi.Input[str] updated_by: The user that updated the object.
@@ -342,7 +342,7 @@ class WorkspaceApplicationMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        The owning object's key for this object.
+        The owning object key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -438,7 +438,7 @@ class WorkspaceApplicationMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -450,7 +450,7 @@ class WorkspaceApplicationMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        The registry version.
+        The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
 
@@ -518,7 +518,7 @@ class WorkspaceApplicationMetadataAggregatorArgs:
         """
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: The type of the object in patch.
         """
@@ -561,7 +561,7 @@ class WorkspaceApplicationMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        (Updatable) Currently not used on application creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 
@@ -708,7 +708,7 @@ class WorkspaceApplicationPatchDependentObjectMetadataArgs:
         """
         :param pulumi.Input[str] action: The patch action indicating if object was created, updated, or deleted.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[str] name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] name_path: The fully qualified path of the published object, which would include its project and folder.
         :param pulumi.Input[int] object_version: The object version.
@@ -757,7 +757,7 @@ class WorkspaceApplicationPatchDependentObjectMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        The object's key.
         """
         return pulumi.get(self, "key")
 
@@ -832,7 +832,7 @@ class WorkspaceApplicationPatchMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: The owning object's key for this object.
+        :param pulumi.Input[str] aggregator_key: The owning object key for this object.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataCountStatisticArgs']]] count_statistics: A count statistics.
         :param pulumi.Input[str] created_by: The user that created the object.
@@ -840,8 +840,8 @@ class WorkspaceApplicationPatchMetadataArgs:
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
         :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: The registry version.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version of the object.
         :param pulumi.Input[str] time_created: The date and time that the object was created.
         :param pulumi.Input[str] time_updated: The date and time that the object was updated.
         :param pulumi.Input[str] updated_by: The user that updated the object.
@@ -880,7 +880,7 @@ class WorkspaceApplicationPatchMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        The owning object's key for this object.
+        The owning object key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -976,7 +976,7 @@ class WorkspaceApplicationPatchMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -988,7 +988,7 @@ class WorkspaceApplicationPatchMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        The registry version.
+        The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
 
@@ -1056,7 +1056,7 @@ class WorkspaceApplicationPatchMetadataAggregatorArgs:
         """
         :param pulumi.Input[str] description: Detailed description for the object.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[str] name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: The type of the object in patch.
         """
@@ -1099,7 +1099,7 @@ class WorkspaceApplicationPatchMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        The object's key.
         """
         return pulumi.get(self, "key")
 
@@ -1246,7 +1246,7 @@ class WorkspaceApplicationPatchPatchObjectMetadataArgs:
         """
         :param pulumi.Input[str] action: The patch action indicating if object was created, updated, or deleted.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[str] name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] name_path: The fully qualified path of the published object, which would include its project and folder.
         :param pulumi.Input[int] object_version: The object version.
@@ -1295,7 +1295,7 @@ class WorkspaceApplicationPatchPatchObjectMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        The object's key.
         """
         return pulumi.get(self, "key")
 
@@ -1452,7 +1452,7 @@ class WorkspaceApplicationPublishedObjectMetadataArgs:
         """
         :param pulumi.Input[str] action: The patch action indicating if object was created, updated, or deleted.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on application creation. Reserved for future.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] name_path: The fully qualified path of the published object, which would include its project and folder.
         :param pulumi.Input[int] object_version: The object version.
@@ -1501,7 +1501,7 @@ class WorkspaceApplicationPublishedObjectMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        (Updatable) Currently not used on application creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 
@@ -1852,16 +1852,16 @@ class WorkspaceApplicationScheduleMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
+        :param pulumi.Input[str] aggregator_key: The owning object key for this object.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationScheduleMetadataCountStatisticArgs']]] count_statistics: A count statistics.
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
+        :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version of the object.
         :param pulumi.Input[str] time_created: The date and time that the object was created.
         :param pulumi.Input[str] time_updated: The date and time that the object was updated.
         :param pulumi.Input[str] updated_by: The user that updated the object.
@@ -1900,7 +1900,7 @@ class WorkspaceApplicationScheduleMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The owning object's key for this object.
+        The owning object key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -1984,7 +1984,7 @@ class WorkspaceApplicationScheduleMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite or not.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -1996,7 +1996,7 @@ class WorkspaceApplicationScheduleMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2008,7 +2008,7 @@ class WorkspaceApplicationScheduleMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The registry version.
+        The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
 
@@ -2076,7 +2076,7 @@ class WorkspaceApplicationScheduleMetadataAggregatorArgs:
         """
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: The type of the aggregator.
         """
@@ -2119,7 +2119,7 @@ class WorkspaceApplicationScheduleMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -2353,11 +2353,7 @@ class WorkspaceApplicationSourceApplicationInfoArgs:
         :param pulumi.Input[str] application_version: The source application version of the application.
         :param pulumi.Input[str] copy_type: Parameter to specify the link between SOURCE and TARGET application after copying. CONNECTED    - Indicate that TARGET application is conneced to SOURCE and can be synced after copy. DISCONNECTED - Indicate that TARGET application is not conneced to SOURCE and can evolve independently.
         :param pulumi.Input[str] last_patch_key: The last patch key for the application.
-        :param pulumi.Input[str] workspace_id: The workspace ID.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] workspace_id: The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
         """
         if application_key is not None:
             pulumi.set(__self__, "application_key", application_key)
@@ -2422,11 +2418,7 @@ class WorkspaceApplicationSourceApplicationInfoArgs:
     @pulumi.getter(name="workspaceId")
     def workspace_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The workspace ID.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
         """
         return pulumi.get(self, "workspace_id")
 
@@ -2449,11 +2441,11 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
                  object_version: Optional[pulumi.Input[int]] = None,
                  parent_reves: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleLastRunDetailParentRefArgs']]]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         :param pulumi.Input[str] last_run_time_millis: Time in milliseconds for the pervious schedule.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the object.
+        :param pulumi.Input[str] model_type: The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
@@ -2485,7 +2477,7 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the aggregator.
+        (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2497,7 +2489,7 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifier of the aggregator.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2509,7 +2501,7 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -2533,7 +2525,7 @@ class WorkspaceApplicationTaskScheduleLastRunDetailArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the object.
+        The type of the object.
         """
         return pulumi.get(self, "model_type")
 
@@ -2659,20 +2651,20 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object key for this object.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgs']]] aggregators: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs']]] count_statistics: (Updatable) A count statistics.
-        :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
-        :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: (Updatable) The registry version of the object.
-        :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
-        :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by: (Updatable) The user that updated the object.
-        :param pulumi.Input[str] updated_by_name: (Updatable) The user that updated the object.
+        :param pulumi.Input[str] aggregator_key: The owning object key for this object.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs']]] count_statistics: A count statistics.
+        :param pulumi.Input[str] created_by: The user that created the object.
+        :param pulumi.Input[str] created_by_name: The user that created the object.
+        :param pulumi.Input[str] identifier_path: The full path to identify this object.
+        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version of the object.
+        :param pulumi.Input[str] time_created: The date and time that the object was created.
+        :param pulumi.Input[str] time_updated: The date and time that the object was updated.
+        :param pulumi.Input[str] updated_by: The user that updated the object.
+        :param pulumi.Input[str] updated_by_name: The user that updated the object.
         """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -2707,7 +2699,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The owning object key for this object.
+        The owning object key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -2719,7 +2711,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter
     def aggregators(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataAggregatorArgs']]]]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -2731,7 +2723,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="countStatistics")
     def count_statistics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs']]]]:
         """
-        (Updatable) A count statistics.
+        A count statistics.
         """
         return pulumi.get(self, "count_statistics")
 
@@ -2743,7 +2735,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that created the object.
+        The user that created the object.
         """
         return pulumi.get(self, "created_by")
 
@@ -2755,7 +2747,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="createdByName")
     def created_by_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that created the object.
+        The user that created the object.
         """
         return pulumi.get(self, "created_by_name")
 
@@ -2767,7 +2759,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        The full path to identify this object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -2779,7 +2771,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="infoFields")
     def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Information property fields.
+        Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
@@ -2791,7 +2783,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite or not.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -2803,7 +2795,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -2815,7 +2807,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The registry version of the object.
+        The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
 
@@ -2827,7 +2819,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The date and time that the object was created.
+        The date and time that the object was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -2839,7 +2831,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The date and time that the object was updated.
+        The date and time that the object was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -2851,7 +2843,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that updated the object.
+        The user that updated the object.
         """
         return pulumi.get(self, "updated_by")
 
@@ -2863,7 +2855,7 @@ class WorkspaceApplicationTaskScheduleMetadataArgs:
     @pulumi.getter(name="updatedByName")
     def updated_by_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that updated the object.
+        The user that updated the object.
         """
         return pulumi.get(self, "updated_by_name")
 
@@ -2881,11 +2873,11 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[str] type: (Updatable) The type of the aggregator.
+        :param pulumi.Input[str] type: The type of the aggregator.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -2902,7 +2894,7 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the aggregator.
+        (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -2914,7 +2906,7 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifier of the aggregator.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -2926,7 +2918,7 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -2950,7 +2942,7 @@ class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the aggregator.
+        The type of the aggregator.
         """
         return pulumi.get(self, "type")
 
@@ -2964,7 +2956,7 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs:
     def __init__(__self__, *,
                  object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs']]] object_type_count_lists: (Updatable) The array of statistics.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs']]] object_type_count_lists: The array of statistics.
         """
         if object_type_count_lists is not None:
             pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
@@ -2973,7 +2965,7 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs:
     @pulumi.getter(name="objectTypeCountLists")
     def object_type_count_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListArgs']]]]:
         """
-        (Updatable) The array of statistics.
+        The array of statistics.
         """
         return pulumi.get(self, "object_type_count_lists")
 
@@ -2988,8 +2980,8 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListA
                  object_count: Optional[pulumi.Input[str]] = None,
                  object_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] object_count: (Updatable) The value for the count statistic object.
-        :param pulumi.Input[str] object_type: (Updatable) The type of object for the count statistic object.
+        :param pulumi.Input[str] object_count: The value for the count statistic object.
+        :param pulumi.Input[str] object_type: The type of object for the count statistic object.
         """
         if object_count is not None:
             pulumi.set(__self__, "object_count", object_count)
@@ -3000,7 +2992,7 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListA
     @pulumi.getter(name="objectCount")
     def object_count(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The value for the count statistic object.
+        The value for the count statistic object.
         """
         return pulumi.get(self, "object_count")
 
@@ -3012,7 +3004,7 @@ class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountListA
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of object for the count statistic object.
+        The type of object for the count statistic object.
         """
         return pulumi.get(self, "object_type")
 
@@ -3069,11 +3061,11 @@ class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
                  labels: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  registry_version: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object key for this object.
+        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: (Updatable) The registry version of the object.
+        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -3090,7 +3082,7 @@ class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The owning object key for this object.
+        (Updatable) The owning object's key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -3114,7 +3106,7 @@ class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) The identifying key for the object.
         """
         return pulumi.get(self, "key")
 
@@ -3126,7 +3118,7 @@ class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -3138,7 +3130,7 @@ class WorkspaceApplicationTaskScheduleRegistryMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The registry version of the object.
+        (Updatable) The registry version.
         """
         return pulumi.get(self, "registry_version")
 
@@ -3164,11 +3156,11 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgs:
                  parent_ref: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefParentRefArgs']] = None,
                  timezone: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
+        :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs'] frequency_details: (Updatable) The model that holds the frequency details.
-        :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
+        :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[bool] is_daylight_adjustment_enabled: (Updatable) A flag to indicate daylight saving.
-        :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         :param pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefMetadataArgs'] metadata: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: (Updatable) The type of the object.
         :param pulumi.Input[str] model_version: (Updatable) This is a version number that is used by the service to upgrade objects if needed through releases of the service.
@@ -3209,7 +3201,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The description of the aggregator.
+        (Updatable) Detailed description for the object.
         """
         return pulumi.get(self, "description")
 
@@ -3233,7 +3225,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgs:
     @pulumi.getter
     def identifier(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifier of the aggregator.
+        (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         """
         return pulumi.get(self, "identifier")
 
@@ -3257,7 +3249,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the aggregator object.
+        (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -3374,7 +3366,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs:
                  time: Optional[pulumi.Input['WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsTimeArgs']] = None,
                  week_of_month: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] model_type: (Updatable) The type of the object.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the model
         :param pulumi.Input[str] custom_expression: (Updatable) This holds the complete cron expression for this schedule, for example, 10 0/5 * * * ? that fires every 5 minutes, at 10 seconds after the minute (i.e. 10:00:10 am, 10:05:10 am, etc.)
         :param pulumi.Input[str] day_of_week: (Updatable) This holds the day of the week on which the schedule should be triggered.
         :param pulumi.Input[Sequence[pulumi.Input[int]]] days: (Updatable) A list of days of the month to be scheduled. i.e. excute every 2nd,3rd, 10th of the month.
@@ -3403,7 +3395,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of the object.
+        (Updatable) The type of the model
         """
         return pulumi.get(self, "model_type")
 
@@ -3794,7 +3786,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the aggregator.
         :param pulumi.Input[str] identifier: (Updatable) The identifier of the aggregator.
         :param pulumi.Input[str] key: (Updatable) The key of the aggregator object.
-        :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        :param pulumi.Input[str] name: (Updatable) The name of the aggregator.
         :param pulumi.Input[str] type: (Updatable) The type of the aggregator.
         """
         if description is not None:
@@ -3848,7 +3840,7 @@ class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregatorArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+        (Updatable) The name of the aggregator.
         """
         return pulumi.get(self, "name")
 
@@ -4122,16 +4114,16 @@ class WorkspaceFolderMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
+        :param pulumi.Input[str] aggregator_key: The owning object key for this object.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceFolderMetadataCountStatisticArgs']]] count_statistics: A count statistics.
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
+        :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version of the object.
         :param pulumi.Input[str] time_created: The date and time that the object was created.
         :param pulumi.Input[str] time_updated: The date and time that the object was updated.
         :param pulumi.Input[str] updated_by: The user that updated the object.
@@ -4170,7 +4162,7 @@ class WorkspaceFolderMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The owning object's key for this object.
+        The owning object key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -4254,7 +4246,7 @@ class WorkspaceFolderMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite or not.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4266,7 +4258,7 @@ class WorkspaceFolderMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -4278,7 +4270,7 @@ class WorkspaceFolderMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The registry version.
+        The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
 
@@ -4346,7 +4338,7 @@ class WorkspaceFolderMetadataAggregatorArgs:
         """
         :param pulumi.Input[str] description: (Updatable) A user defined description for the folder.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Currently not used on folder creation. Reserved for future.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: The type of the aggregator.
         """
@@ -4389,7 +4381,7 @@ class WorkspaceFolderMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Currently not used on folder creation. Reserved for future.
         """
         return pulumi.get(self, "key")
 
@@ -4849,16 +4841,16 @@ class WorkspaceProjectMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
+        :param pulumi.Input[str] aggregator_key: The owning object key for this object.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceProjectMetadataCountStatisticArgs']]] count_statistics: A count statistics.
         :param pulumi.Input[str] created_by: The user that created the object.
         :param pulumi.Input[str] created_by_name: The user that created the object.
         :param pulumi.Input[str] identifier_path: The full path to identify this object.
         :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
+        :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version of the object.
         :param pulumi.Input[str] time_created: The date and time that the object was created.
         :param pulumi.Input[str] time_updated: The date and time that the object was updated.
         :param pulumi.Input[str] updated_by: The user that updated the object.
@@ -4897,7 +4889,7 @@ class WorkspaceProjectMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The owning object's key for this object.
+        The owning object key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -4981,7 +4973,7 @@ class WorkspaceProjectMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite or not.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -4993,7 +4985,7 @@ class WorkspaceProjectMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -5005,7 +4997,7 @@ class WorkspaceProjectMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The registry version.
+        The registry version of the object.
         """
         return pulumi.get(self, "registry_version")
 
@@ -5073,7 +5065,7 @@ class WorkspaceProjectMetadataAggregatorArgs:
         """
         :param pulumi.Input[str] description: (Updatable) A user defined description for the project.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify project.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[str] type: The type of the aggregator.
         """
@@ -5116,7 +5108,7 @@ class WorkspaceProjectMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The identifying key for the object.
+        (Updatable) Generated key that can be used in API calls to identify project.
         """
         return pulumi.get(self, "key")
 
@@ -5346,8 +5338,8 @@ class WorkspaceTaskAuthConfigArgs:
                  parent_ref: Optional[pulumi.Input['WorkspaceTaskAuthConfigParentRefArgs']] = None,
                  resource_principal_source: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify this object.
+        :param pulumi.Input[str] model_type: (Updatable) The specific authentication configuration to be used for Generic REST invocation.
         :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
         :param pulumi.Input['WorkspaceTaskAuthConfigParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
         :param pulumi.Input[str] resource_principal_source: (Updatable) The Oracle Cloud Infrastructure resource type that will supply the authentication token
@@ -5367,7 +5359,7 @@ class WorkspaceTaskAuthConfigArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify this object.
         """
         return pulumi.get(self, "key")
 
@@ -5379,7 +5371,7 @@ class WorkspaceTaskAuthConfigArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The specific authentication configuration to be used for Generic REST invocation.
         """
         return pulumi.get(self, "model_type")
 
@@ -5473,9 +5465,9 @@ class WorkspaceTaskCancelRestCallConfigArgs:
                  request_headers: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] method_type: (Updatable) The REST method to use.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[Mapping[str, Any]] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
@@ -5505,7 +5497,7 @@ class WorkspaceTaskCancelRestCallConfigArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5529,7 +5521,7 @@ class WorkspaceTaskCancelRestCallConfigArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -5624,8 +5616,8 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
                  parameter_value: Optional[pulumi.Input[str]] = None,
                  ref_value: Optional[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']] = None):
         """
-        :param pulumi.Input[str] parameter_value: (Updatable) Reference to the parameter by its key.
-        :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs'] ref_value: (Updatable) The root object reference value.
+        :param pulumi.Input[str] parameter_value: Reference to the parameter by its key.
+        :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs'] ref_value: The root object reference value.
         """
         if parameter_value is not None:
             pulumi.set(__self__, "parameter_value", parameter_value)
@@ -5636,7 +5628,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter(name="parameterValue")
     def parameter_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Reference to the parameter by its key.
+        Reference to the parameter by its key.
         """
         return pulumi.get(self, "parameter_value")
 
@@ -5648,7 +5640,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter(name="refValue")
     def ref_value(self) -> Optional[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']]:
         """
-        (Updatable) The root object reference value.
+        The root object reference value.
         """
         return pulumi.get(self, "ref_value")
 
@@ -5664,9 +5656,9 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
                  key: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -5679,7 +5671,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter(name="configValues")
     def config_values(self) -> Optional[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs']]:
         """
-        (Updatable) Configuration values can be string, objects, or parameters.
+        Configuration values can be string, objects, or parameters.
         """
         return pulumi.get(self, "config_values")
 
@@ -5691,7 +5683,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5703,7 +5695,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -5717,7 +5709,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     def __init__(__self__, *,
                  config_param_values: Optional[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']] = None):
         """
-        :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs'] config_param_values: (Updatable) The configuration parameter values.
+        :param pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs'] config_param_values: The configuration parameter values.
         """
         if config_param_values is not None:
             pulumi.set(__self__, "config_param_values", config_param_values)
@@ -5726,7 +5718,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter(name="configParamValues")
     def config_param_values(self) -> Optional[pulumi.Input['WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']]:
         """
-        (Updatable) The configuration parameter values.
+        The configuration parameter values.
         """
         return pulumi.get(self, "config_param_values")
 
@@ -5757,7 +5749,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -5766,7 +5758,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPaylo
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -5780,7 +5772,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlAr
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -5789,7 +5781,7 @@ class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestUrlAr
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -5866,7 +5858,7 @@ class WorkspaceTaskConfigProviderDelegateBindingArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  parameter_values: Optional[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs']] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -5877,7 +5869,7 @@ class WorkspaceTaskConfigProviderDelegateBindingArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5901,8 +5893,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
                  root_object_value: Optional[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs']] = None,
                  simple_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs'] root_object_value: (Updatable) The root object value, used in custom parameters.
-        :param pulumi.Input[str] simple_value: A simple value for the parameter.
+        :param pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs'] root_object_value: The root object value, used in custom parameters.
         """
         if root_object_value is not None:
             pulumi.set(__self__, "root_object_value", root_object_value)
@@ -5913,7 +5904,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
     @pulumi.getter(name="rootObjectValue")
     def root_object_value(self) -> Optional[pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs']]:
         """
-        (Updatable) The root object value, used in custom parameters.
+        The root object value, used in custom parameters.
         """
         return pulumi.get(self, "root_object_value")
 
@@ -5924,9 +5915,6 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
     @property
     @pulumi.getter(name="simpleValue")
     def simple_value(self) -> Optional[pulumi.Input[str]]:
-        """
-        A simple value for the parameter.
-        """
         return pulumi.get(self, "simple_value")
 
     @simple_value.setter
@@ -5942,9 +5930,9 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueAr
                  model_version: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         if key is not None:
@@ -5960,7 +5948,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueAr
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -5972,7 +5960,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueAr
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -5984,7 +5972,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueAr
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -6015,9 +6003,9 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
                  request_headers: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] method_type: (Updatable) The REST method to use.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[Mapping[str, Any]] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
@@ -6047,7 +6035,7 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -6071,7 +6059,7 @@ class WorkspaceTaskExecuteRestCallConfigArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -6166,8 +6154,8 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
                  parameter_value: Optional[pulumi.Input[str]] = None,
                  ref_value: Optional[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']] = None):
         """
-        :param pulumi.Input[str] parameter_value: (Updatable) Reference to the parameter by its key.
-        :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs'] ref_value: (Updatable) The root object reference value.
+        :param pulumi.Input[str] parameter_value: Reference to the parameter by its key.
+        :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs'] ref_value: The root object reference value.
         """
         if parameter_value is not None:
             pulumi.set(__self__, "parameter_value", parameter_value)
@@ -6178,7 +6166,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter(name="parameterValue")
     def parameter_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Reference to the parameter by its key.
+        Reference to the parameter by its key.
         """
         return pulumi.get(self, "parameter_value")
 
@@ -6190,7 +6178,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter(name="refValue")
     def ref_value(self) -> Optional[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']]:
         """
-        (Updatable) The root object reference value.
+        The root object reference value.
         """
         return pulumi.get(self, "ref_value")
 
@@ -6206,9 +6194,9 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
                  key: Optional[pulumi.Input[str]] = None,
                  model_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         """
         if config_values is not None:
             pulumi.set(__self__, "config_values", config_values)
@@ -6221,7 +6209,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter(name="configValues")
     def config_values(self) -> Optional[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs']]:
         """
-        (Updatable) Configuration values can be string, objects, or parameters.
+        Configuration values can be string, objects, or parameters.
         """
         return pulumi.get(self, "config_values")
 
@@ -6233,7 +6221,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -6245,7 +6233,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -6259,7 +6247,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     def __init__(__self__, *,
                  config_param_values: Optional[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']] = None):
         """
-        :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs'] config_param_values: (Updatable) The configuration parameter values.
+        :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs'] config_param_values: The configuration parameter values.
         """
         if config_param_values is not None:
             pulumi.set(__self__, "config_param_values", config_param_values)
@@ -6268,7 +6256,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter(name="configParamValues")
     def config_param_values(self) -> Optional[pulumi.Input['WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']]:
         """
-        (Updatable) The configuration parameter values.
+        The configuration parameter values.
         """
         return pulumi.get(self, "config_param_values")
 
@@ -6299,7 +6287,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -6308,7 +6296,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayl
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -6322,7 +6310,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlA
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -6331,7 +6319,7 @@ class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestUrlA
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -6783,20 +6771,20 @@ class WorkspaceTaskMetadataArgs:
                  updated_by: Optional[pulumi.Input[str]] = None,
                  updated_by_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgs']]] aggregators: (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgs']]] count_statistics: (Updatable) A count statistics.
-        :param pulumi.Input[str] created_by: (Updatable) The user that created the object.
-        :param pulumi.Input[str] created_by_name: (Updatable) The user that created the object.
-        :param pulumi.Input[str] identifier_path: (Updatable) The full path to identify this object.
-        :param pulumi.Input[Mapping[str, Any]] info_fields: (Updatable) Information property fields.
-        :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
-        :param pulumi.Input[int] registry_version: (Updatable) The registry version.
-        :param pulumi.Input[str] time_created: (Updatable) The date and time that the object was created.
-        :param pulumi.Input[str] time_updated: (Updatable) The date and time that the object was updated.
-        :param pulumi.Input[str] updated_by: (Updatable) The user that updated the object.
-        :param pulumi.Input[str] updated_by_name: (Updatable) The user that updated the object.
+        :param pulumi.Input[str] aggregator_key: The owning object's key for this object.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgs']]] aggregators: A summary type containing information about the object's aggregator including its type, key, name and description.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgs']]] count_statistics: A count statistics.
+        :param pulumi.Input[str] created_by: The user that created the object.
+        :param pulumi.Input[str] created_by_name: The user that created the object.
+        :param pulumi.Input[str] identifier_path: The full path to identify this object.
+        :param pulumi.Input[Mapping[str, Any]] info_fields: Information property fields.
+        :param pulumi.Input[bool] is_favorite: Specifies whether this object is a favorite or not.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        :param pulumi.Input[int] registry_version: The registry version.
+        :param pulumi.Input[str] time_created: The date and time that the object was created.
+        :param pulumi.Input[str] time_updated: The date and time that the object was updated.
+        :param pulumi.Input[str] updated_by: The user that updated the object.
+        :param pulumi.Input[str] updated_by_name: The user that updated the object.
         """
         if aggregator_key is not None:
             pulumi.set(__self__, "aggregator_key", aggregator_key)
@@ -6831,7 +6819,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="aggregatorKey")
     def aggregator_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The owning object's key for this object.
+        The owning object's key for this object.
         """
         return pulumi.get(self, "aggregator_key")
 
@@ -6843,7 +6831,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter
     def aggregators(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataAggregatorArgs']]]]:
         """
-        (Updatable) A summary type containing information about the object's aggregator including its type, key, name and description.
+        A summary type containing information about the object's aggregator including its type, key, name and description.
         """
         return pulumi.get(self, "aggregators")
 
@@ -6855,7 +6843,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="countStatistics")
     def count_statistics(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticArgs']]]]:
         """
-        (Updatable) A count statistics.
+        A count statistics.
         """
         return pulumi.get(self, "count_statistics")
 
@@ -6867,7 +6855,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="createdBy")
     def created_by(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that created the object.
+        The user that created the object.
         """
         return pulumi.get(self, "created_by")
 
@@ -6879,7 +6867,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="createdByName")
     def created_by_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that created the object.
+        The user that created the object.
         """
         return pulumi.get(self, "created_by_name")
 
@@ -6891,7 +6879,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="identifierPath")
     def identifier_path(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The full path to identify this object.
+        The full path to identify this object.
         """
         return pulumi.get(self, "identifier_path")
 
@@ -6903,7 +6891,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="infoFields")
     def info_fields(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Information property fields.
+        Information property fields.
         """
         return pulumi.get(self, "info_fields")
 
@@ -6915,7 +6903,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="isFavorite")
     def is_favorite(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) Specifies whether this object is a favorite or not.
+        Specifies whether this object is a favorite or not.
         """
         return pulumi.get(self, "is_favorite")
 
@@ -6927,7 +6915,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter
     def labels(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         """
         return pulumi.get(self, "labels")
 
@@ -6939,7 +6927,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="registryVersion")
     def registry_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The registry version.
+        The registry version.
         """
         return pulumi.get(self, "registry_version")
 
@@ -6951,7 +6939,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The date and time that the object was created.
+        The date and time that the object was created.
         """
         return pulumi.get(self, "time_created")
 
@@ -6963,7 +6951,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The date and time that the object was updated.
+        The date and time that the object was updated.
         """
         return pulumi.get(self, "time_updated")
 
@@ -6975,7 +6963,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="updatedBy")
     def updated_by(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that updated the object.
+        The user that updated the object.
         """
         return pulumi.get(self, "updated_by")
 
@@ -6987,7 +6975,7 @@ class WorkspaceTaskMetadataArgs:
     @pulumi.getter(name="updatedByName")
     def updated_by_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The user that updated the object.
+        The user that updated the object.
         """
         return pulumi.get(self, "updated_by_name")
 
@@ -7007,9 +6995,9 @@ class WorkspaceTaskMetadataAggregatorArgs:
         """
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
-        :param pulumi.Input[str] type: (Updatable) The object type.
+        :param pulumi.Input[str] type: The object type.
         """
         if description is not None:
             pulumi.set(__self__, "description", description)
@@ -7050,7 +7038,7 @@ class WorkspaceTaskMetadataAggregatorArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -7074,7 +7062,7 @@ class WorkspaceTaskMetadataAggregatorArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object type.
+        The object type.
         """
         return pulumi.get(self, "type")
 
@@ -7088,7 +7076,7 @@ class WorkspaceTaskMetadataCountStatisticArgs:
     def __init__(__self__, *,
                  object_type_count_lists: Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs']]]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs']]] object_type_count_lists: (Updatable) The array of statistics.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs']]] object_type_count_lists: The array of statistics.
         """
         if object_type_count_lists is not None:
             pulumi.set(__self__, "object_type_count_lists", object_type_count_lists)
@@ -7097,7 +7085,7 @@ class WorkspaceTaskMetadataCountStatisticArgs:
     @pulumi.getter(name="objectTypeCountLists")
     def object_type_count_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs']]]]:
         """
-        (Updatable) The array of statistics.
+        The array of statistics.
         """
         return pulumi.get(self, "object_type_count_lists")
 
@@ -7112,8 +7100,8 @@ class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs:
                  object_count: Optional[pulumi.Input[str]] = None,
                  object_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] object_count: (Updatable) The value for the count statistic object.
-        :param pulumi.Input[str] object_type: (Updatable) The type of object for the count statistic object.
+        :param pulumi.Input[str] object_count: The value for the count statistic object.
+        :param pulumi.Input[str] object_type: The type of object for the count statistic object.
         """
         if object_count is not None:
             pulumi.set(__self__, "object_count", object_count)
@@ -7124,7 +7112,7 @@ class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs:
     @pulumi.getter(name="objectCount")
     def object_count(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The value for the count statistic object.
+        The value for the count statistic object.
         """
         return pulumi.get(self, "object_count")
 
@@ -7136,7 +7124,7 @@ class WorkspaceTaskMetadataCountStatisticObjectTypeCountListArgs:
     @pulumi.getter(name="objectType")
     def object_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of object for the count statistic object.
+        The type of object for the count statistic object.
         """
         return pulumi.get(self, "object_type")
 
@@ -7190,7 +7178,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesArgs:
                  config_param_value: Optional[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs']] = None,
                  key: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         if config_param_value is not None:
             pulumi.set(__self__, "config_param_value", config_param_value)
@@ -7210,7 +7198,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -7229,12 +7217,12 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
                  root_object_value: Optional[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs']] = None,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[int] int_value: (Updatable) An integer value of the parameter.
-        :param pulumi.Input[str] object_value: (Updatable) An object value of the parameter.
-        :param pulumi.Input[str] parameter_value: (Updatable) Reference to the parameter by its key.
-        :param pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs'] ref_value: (Updatable) The root object reference value.
-        :param pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs'] root_object_value: (Updatable) The root object value, used in custom parameters.
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[int] int_value: An integer value of the parameter.
+        :param pulumi.Input[str] object_value: An object value of the parameter.
+        :param pulumi.Input[str] parameter_value: Reference to the parameter by its key.
+        :param pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs'] ref_value: The root object reference value.
+        :param pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs'] root_object_value: The root object value, used in custom parameters.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if int_value is not None:
             pulumi.set(__self__, "int_value", int_value)
@@ -7253,7 +7241,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="intValue")
     def int_value(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) An integer value of the parameter.
+        An integer value of the parameter.
         """
         return pulumi.get(self, "int_value")
 
@@ -7265,7 +7253,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="objectValue")
     def object_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) An object value of the parameter.
+        An object value of the parameter.
         """
         return pulumi.get(self, "object_value")
 
@@ -7277,7 +7265,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="parameterValue")
     def parameter_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Reference to the parameter by its key.
+        Reference to the parameter by its key.
         """
         return pulumi.get(self, "parameter_value")
 
@@ -7289,7 +7277,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="refValue")
     def ref_value(self) -> Optional[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs']]:
         """
-        (Updatable) The root object reference value.
+        The root object reference value.
         """
         return pulumi.get(self, "ref_value")
 
@@ -7301,7 +7289,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="rootObjectValue")
     def root_object_value(self) -> Optional[pulumi.Input['WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs']]:
         """
-        (Updatable) The root object value, used in custom parameters.
+        The root object value, used in custom parameters.
         """
         return pulumi.get(self, "root_object_value")
 
@@ -7313,7 +7301,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -7331,9 +7319,9 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
                  name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
@@ -7352,7 +7340,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -7364,7 +7352,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -7376,7 +7364,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRefValueArgs:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -7417,9 +7405,9 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValu
                  model_version: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         if key is not None:
@@ -7435,7 +7423,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValu
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -7447,7 +7435,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValu
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -7459,7 +7447,7 @@ class WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValueRootObjectValu
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -7927,7 +7915,7 @@ class WorkspaceTaskParameterArgs:
         """
         :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
         :param pulumi.Input['WorkspaceTaskParameterConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] default_value: (Updatable) A default value for the vairable.
+        :param pulumi.Input[str] default_value: (Updatable) The default value of the parameter.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[bool] is_input: (Updatable) Specifies whether the parameter is input value.
         :param pulumi.Input[bool] is_output: (Updatable) Specifies whether the parameter is output value.
@@ -7937,8 +7925,8 @@ class WorkspaceTaskParameterArgs:
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[str] output_aggregation_type: (Updatable) The output aggregation type.
         :param pulumi.Input['WorkspaceTaskParameterParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
-        :param pulumi.Input[str] root_object_default_value: (Updatable) A base class for all model types, including First Class and its contained objects.
-        :param pulumi.Input[str] type: (Updatable) The object type.
+        :param pulumi.Input[str] root_object_default_value: (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
+        :param pulumi.Input[str] type: (Updatable) This can either be a string value referencing the type or a BaseType object.
         :param pulumi.Input[str] type_name: (Updatable) The type of value the parameter was created for.
         :param pulumi.Input[str] used_for: (Updatable) The param name for which parameter is created for for eg. driver Shape, Operation etc.
         """
@@ -8002,7 +7990,7 @@ class WorkspaceTaskParameterArgs:
     @pulumi.getter(name="defaultValue")
     def default_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A default value for the vairable.
+        (Updatable) The default value of the parameter.
         """
         return pulumi.get(self, "default_value")
 
@@ -8122,7 +8110,7 @@ class WorkspaceTaskParameterArgs:
     @pulumi.getter(name="rootObjectDefaultValue")
     def root_object_default_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A base class for all model types, including First Class and its contained objects.
+        (Updatable) The default value of the parameter which can be an object in DIS, such as a data entity.
         """
         return pulumi.get(self, "root_object_default_value")
 
@@ -8134,7 +8122,7 @@ class WorkspaceTaskParameterArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The object type.
+        (Updatable) This can either be a string value referencing the type or a BaseType object.
         """
         return pulumi.get(self, "type")
 
@@ -8212,7 +8200,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesArgs:
                  config_param_value: Optional[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs']] = None,
                  key: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         if config_param_value is not None:
             pulumi.set(__self__, "config_param_value", config_param_value)
@@ -8232,7 +8220,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -8251,12 +8239,12 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
                  root_object_value: Optional[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs']] = None,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[int] int_value: (Updatable) An integer value of the parameter.
-        :param pulumi.Input[str] object_value: (Updatable) An object value of the parameter.
-        :param pulumi.Input[str] parameter_value: (Updatable) Reference to the parameter by its key.
-        :param pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs'] ref_value: (Updatable) The root object reference value.
-        :param pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs'] root_object_value: (Updatable) The root object value, used in custom parameters.
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[int] int_value: An integer value of the parameter.
+        :param pulumi.Input[str] object_value: An object value of the parameter.
+        :param pulumi.Input[str] parameter_value: Reference to the parameter by its key.
+        :param pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs'] ref_value: The root object reference value.
+        :param pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs'] root_object_value: The root object value, used in custom parameters.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if int_value is not None:
             pulumi.set(__self__, "int_value", int_value)
@@ -8275,7 +8263,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="intValue")
     def int_value(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) An integer value of the parameter.
+        An integer value of the parameter.
         """
         return pulumi.get(self, "int_value")
 
@@ -8287,7 +8275,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="objectValue")
     def object_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) An object value of the parameter.
+        An object value of the parameter.
         """
         return pulumi.get(self, "object_value")
 
@@ -8299,7 +8287,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="parameterValue")
     def parameter_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Reference to the parameter by its key.
+        Reference to the parameter by its key.
         """
         return pulumi.get(self, "parameter_value")
 
@@ -8311,7 +8299,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="refValue")
     def ref_value(self) -> Optional[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs']]:
         """
-        (Updatable) The root object reference value.
+        The root object reference value.
         """
         return pulumi.get(self, "ref_value")
 
@@ -8323,7 +8311,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="rootObjectValue")
     def root_object_value(self) -> Optional[pulumi.Input['WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObjectValueArgs']]:
         """
-        (Updatable) The root object value, used in custom parameters.
+        The root object value, used in custom parameters.
         """
         return pulumi.get(self, "root_object_value")
 
@@ -8335,7 +8323,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs:
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -8353,9 +8341,9 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValu
                  name: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
@@ -8374,7 +8362,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValu
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -8386,7 +8374,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValu
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -8398,7 +8386,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValu
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -8439,9 +8427,9 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObj
                  model_version: Optional[pulumi.Input[str]] = None,
                  object_status: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         """
         if key is not None:
@@ -8457,7 +8445,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObj
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -8469,7 +8457,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObj
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -8481,7 +8469,7 @@ class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRootObj
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -8629,9 +8617,9 @@ class WorkspaceTaskPollRestCallConfigArgs:
                  request_headers: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         :param pulumi.Input[str] method_type: (Updatable) The REST method to use.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[Mapping[str, Any]] request_headers: (Updatable) The headers for the REST call.
         """
         if config_values is not None:
@@ -8661,7 +8649,7 @@ class WorkspaceTaskPollRestCallConfigArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -8685,7 +8673,7 @@ class WorkspaceTaskPollRestCallConfigArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -8840,8 +8828,8 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionA
                  parameter_value: Optional[pulumi.Input[str]] = None,
                  ref_value: Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs']] = None):
         """
-        :param pulumi.Input[str] parameter_value: (Updatable) Reference to the parameter by its key.
-        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs'] ref_value: (Updatable) The root object reference value.
+        :param pulumi.Input[str] parameter_value: Reference to the parameter by its key.
+        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs'] ref_value: The root object reference value.
         """
         if parameter_value is not None:
             pulumi.set(__self__, "parameter_value", parameter_value)
@@ -8852,7 +8840,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionA
     @pulumi.getter(name="parameterValue")
     def parameter_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Reference to the parameter by its key.
+        Reference to the parameter by its key.
         """
         return pulumi.get(self, "parameter_value")
 
@@ -8864,7 +8852,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionA
     @pulumi.getter(name="refValue")
     def ref_value(self) -> Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs']]:
         """
-        (Updatable) The root object reference value.
+        The root object reference value.
         """
         return pulumi.get(self, "ref_value")
 
@@ -8881,9 +8869,9 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionR
                  model_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] expr_string: (Updatable) The expression string for the object.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input[str] expr_string: The expression string for the object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         if expr_string is not None:
@@ -8899,7 +8887,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionR
     @pulumi.getter(name="exprString")
     def expr_string(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The expression string for the object.
+        The expression string for the object.
         """
         return pulumi.get(self, "expr_string")
 
@@ -8911,7 +8899,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionR
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -8923,7 +8911,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionR
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -8949,7 +8937,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalAr
     def __init__(__self__, *,
                  object_value: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] object_value: (Updatable) An object value of the parameter.
+        :param pulumi.Input[float] object_value: An object value of the parameter.
         """
         if object_value is not None:
             pulumi.set(__self__, "object_value", object_value)
@@ -8958,7 +8946,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalAr
     @pulumi.getter(name="objectValue")
     def object_value(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) An object value of the parameter.
+        An object value of the parameter.
         """
         return pulumi.get(self, "object_value")
 
@@ -8972,7 +8960,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUn
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -8981,7 +8969,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalUn
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -8995,7 +8983,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuratio
     def __init__(__self__, *,
                  object_value: Optional[pulumi.Input[float]] = None):
         """
-        :param pulumi.Input[float] object_value: (Updatable) An object value of the parameter.
+        :param pulumi.Input[float] object_value: An object value of the parameter.
         """
         if object_value is not None:
             pulumi.set(__self__, "object_value", object_value)
@@ -9004,7 +8992,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuratio
     @pulumi.getter(name="objectValue")
     def object_value(self) -> Optional[pulumi.Input[float]]:
         """
-        (Updatable) An object value of the parameter.
+        An object value of the parameter.
         """
         return pulumi.get(self, "object_value")
 
@@ -9018,7 +9006,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuratio
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -9027,7 +9015,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuratio
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -9042,8 +9030,8 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
                  parameter_value: Optional[pulumi.Input[str]] = None,
                  ref_value: Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']] = None):
         """
-        :param pulumi.Input[str] parameter_value: (Updatable) Reference to the parameter by its key.
-        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs'] ref_value: (Updatable) The root object reference value.
+        :param pulumi.Input[str] parameter_value: Reference to the parameter by its key.
+        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs'] ref_value: The root object reference value.
         """
         if parameter_value is not None:
             pulumi.set(__self__, "parameter_value", parameter_value)
@@ -9054,7 +9042,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter(name="parameterValue")
     def parameter_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Reference to the parameter by its key.
+        Reference to the parameter by its key.
         """
         return pulumi.get(self, "parameter_value")
 
@@ -9066,7 +9054,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter(name="refValue")
     def ref_value(self) -> Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueArgs']]:
         """
-        (Updatable) The root object reference value.
+        The root object reference value.
         """
         return pulumi.get(self, "ref_value")
 
@@ -9083,9 +9071,9 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
                  model_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs'] config_values: (Updatable) Configuration values can be string, objects, or parameters.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs'] config_values: Configuration values can be string, objects, or parameters.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         """
         if config_values is not None:
@@ -9101,7 +9089,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter(name="configValues")
     def config_values(self) -> Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesArgs']]:
         """
-        (Updatable) Configuration values can be string, objects, or parameters.
+        Configuration values can be string, objects, or parameters.
         """
         return pulumi.get(self, "config_values")
 
@@ -9113,7 +9101,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -9125,7 +9113,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -9151,7 +9139,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     def __init__(__self__, *,
                  config_param_values: Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']] = None):
         """
-        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs'] config_param_values: (Updatable) The configuration parameter values.
+        :param pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs'] config_param_values: The configuration parameter values.
         """
         if config_param_values is not None:
             pulumi.set(__self__, "config_param_values", config_param_values)
@@ -9160,7 +9148,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter(name="configParamValues")
     def config_param_values(self) -> Optional[pulumi.Input['WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesArgs']]:
         """
-        (Updatable) The configuration parameter values.
+        The configuration parameter values.
         """
         return pulumi.get(self, "config_param_values")
 
@@ -9191,7 +9179,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -9200,7 +9188,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestPayload
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -9214,7 +9202,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs
     def __init__(__self__, *,
                  string_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] string_value: (Updatable) A string value of the parameter.
+        :param pulumi.Input[str] string_value: A string value of the parameter.
         """
         if string_value is not None:
             pulumi.set(__self__, "string_value", string_value)
@@ -9223,7 +9211,7 @@ class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRequestUrlArgs
     @pulumi.getter(name="stringValue")
     def string_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A string value of the parameter.
+        A string value of the parameter.
         """
         return pulumi.get(self, "string_value")
 
@@ -9282,7 +9270,7 @@ class WorkspaceTaskRegistryMetadataArgs:
         """
         :param pulumi.Input[str] aggregator_key: (Updatable) The owning object's key for this object.
         :param pulumi.Input[bool] is_favorite: (Updatable) Specifies whether this object is a favorite or not.
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
+        :param pulumi.Input[str] key: (Updatable) The identifying key for the object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] labels: (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         :param pulumi.Input[int] registry_version: (Updatable) The registry version.
         """
@@ -9324,7 +9312,7 @@ class WorkspaceTaskRegistryMetadataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) The identifying key for the object.
         """
         return pulumi.get(self, "key")
 
@@ -9597,7 +9585,7 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs:
     def __init__(__self__, *,
                  int_value: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[int] int_value: (Updatable) An integer value of the parameter.
+        :param pulumi.Input[int] int_value: An integer value of the parameter.
         """
         if int_value is not None:
             pulumi.set(__self__, "int_value", int_value)
@@ -9606,7 +9594,7 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLengthArgs:
     @pulumi.getter(name="intValue")
     def int_value(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) An integer value of the parameter.
+        An integer value of the parameter.
         """
         return pulumi.get(self, "int_value")
 
@@ -9620,7 +9608,7 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgs:
     def __init__(__self__, *,
                  int_value: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[int] int_value: (Updatable) An integer value of the parameter.
+        :param pulumi.Input[int] int_value: An integer value of the parameter.
         """
         if int_value is not None:
             pulumi.set(__self__, "int_value", int_value)
@@ -9629,7 +9617,7 @@ class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesScaleArgs:
     @pulumi.getter(name="intValue")
     def int_value(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) An integer value of the parameter.
+        An integer value of the parameter.
         """
         return pulumi.get(self, "int_value")
 

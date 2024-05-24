@@ -142,9 +142,6 @@ type AccessPolicyRuleDestination struct {
 	// (Updatable) Traffic type of the target.
 	Type string `pulumi:"type"`
 	// (Updatable) The OCID of the virtual service resource.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId *string `pulumi:"virtualServiceId"`
 }
 
@@ -173,9 +170,6 @@ type AccessPolicyRuleDestinationArgs struct {
 	// (Updatable) Traffic type of the target.
 	Type pulumi.StringInput `pulumi:"type"`
 	// (Updatable) The OCID of the virtual service resource.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	VirtualServiceId pulumi.StringPtrInput `pulumi:"virtualServiceId"`
 }
 
@@ -236,9 +230,6 @@ func (o AccessPolicyRuleDestinationOutput) Type() pulumi.StringOutput {
 }
 
 // (Updatable) The OCID of the virtual service resource.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o AccessPolicyRuleDestinationOutput) VirtualServiceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AccessPolicyRuleDestination) *string { return v.VirtualServiceId }).(pulumi.StringPtrOutput)
 }
@@ -500,10 +491,7 @@ type IngressGatewayHost struct {
 	Hostnames []string `pulumi:"hostnames"`
 	// (Updatable) The listeners for the ingress gateway.
 	Listeners []IngressGatewayHostListener `pulumi:"listeners"`
-	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
 	Name string `pulumi:"name"`
 }
 
@@ -523,10 +511,7 @@ type IngressGatewayHostArgs struct {
 	Hostnames pulumi.StringArrayInput `pulumi:"hostnames"`
 	// (Updatable) The listeners for the ingress gateway.
 	Listeners IngressGatewayHostListenerArrayInput `pulumi:"listeners"`
-	// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -591,10 +576,7 @@ func (o IngressGatewayHostOutput) Listeners() IngressGatewayHostListenerArrayOut
 	return o.ApplyT(func(v IngressGatewayHost) []IngressGatewayHostListener { return v.Listeners }).(IngressGatewayHostListenerArrayOutput)
 }
 
-// A user-friendly name. The name has to be unique within the same service mesh and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) A user-friendly name for the host. The name must be unique within the same ingress gateway. This name can be used in the ingress gateway route table resource to attach a route to this host.  Example: `MyExampleHost`
 func (o IngressGatewayHostOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v IngressGatewayHost) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1074,7 +1056,7 @@ func (o IngressGatewayHostListenerTlsClientValidationPtrOutput) TrustedCaBundle(
 type IngressGatewayHostListenerTlsClientValidationTrustedCaBundle struct {
 	// (Updatable) The OCID of the CA Bundle resource.
 	CaBundleId *string `pulumi:"caBundleId"`
-	// (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+	// (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
 	SecretName *string `pulumi:"secretName"`
 	// (Updatable) Type of certificate.
 	Type string `pulumi:"type"`
@@ -1094,7 +1076,7 @@ type IngressGatewayHostListenerTlsClientValidationTrustedCaBundleInput interface
 type IngressGatewayHostListenerTlsClientValidationTrustedCaBundleArgs struct {
 	// (Updatable) The OCID of the CA Bundle resource.
 	CaBundleId pulumi.StringPtrInput `pulumi:"caBundleId"`
-	// (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+	// (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
 	SecretName pulumi.StringPtrInput `pulumi:"secretName"`
 	// (Updatable) Type of certificate.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -1182,7 +1164,7 @@ func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput) CaBu
 	return o.ApplyT(func(v IngressGatewayHostListenerTlsClientValidationTrustedCaBundle) *string { return v.CaBundleId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+// (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
 func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundleOutput) SecretName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IngressGatewayHostListenerTlsClientValidationTrustedCaBundle) *string { return v.SecretName }).(pulumi.StringPtrOutput)
 }
@@ -1226,7 +1208,7 @@ func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput) C
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+// (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
 func (o IngressGatewayHostListenerTlsClientValidationTrustedCaBundlePtrOutput) SecretName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IngressGatewayHostListenerTlsClientValidationTrustedCaBundle) *string {
 		if v == nil {
@@ -1422,7 +1404,7 @@ func (o IngressGatewayHostListenerTlsServerCertificatePtrOutput) Type() pulumi.S
 }
 
 type IngressGatewayMtls struct {
-	// (Updatable) The OCID of the leaf certificate resource.
+	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
 	CertificateId *string `pulumi:"certificateId"`
 	// (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
 	MaximumValidity *int `pulumi:"maximumValidity"`
@@ -1440,7 +1422,7 @@ type IngressGatewayMtlsInput interface {
 }
 
 type IngressGatewayMtlsArgs struct {
-	// (Updatable) The OCID of the leaf certificate resource.
+	// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
 	CertificateId pulumi.StringPtrInput `pulumi:"certificateId"`
 	// (Updatable) The number of days the mTLS certificate is valid.  This value should be less than the Maximum Validity Duration  for Certificates (Days) setting on the Certificate Authority associated with this Mesh.  The certificate will be automatically renewed after 2/3 of the validity period, so a certificate with a maximum validity of 45 days will be renewed every 30 days.
 	MaximumValidity pulumi.IntPtrInput `pulumi:"maximumValidity"`
@@ -1523,7 +1505,7 @@ func (o IngressGatewayMtlsOutput) ToIngressGatewayMtlsPtrOutputWithContext(ctx c
 	}).(IngressGatewayMtlsPtrOutput)
 }
 
-// (Updatable) The OCID of the leaf certificate resource.
+// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
 func (o IngressGatewayMtlsOutput) CertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v IngressGatewayMtls) *string { return v.CertificateId }).(pulumi.StringPtrOutput)
 }
@@ -1557,7 +1539,7 @@ func (o IngressGatewayMtlsPtrOutput) Elem() IngressGatewayMtlsOutput {
 	}).(IngressGatewayMtlsOutput)
 }
 
-// (Updatable) The OCID of the leaf certificate resource.
+// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
 func (o IngressGatewayMtlsPtrOutput) CertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IngressGatewayMtls) *string {
 		if v == nil {
@@ -1760,7 +1742,7 @@ func (o IngressGatewayRouteTableRouteRuleArrayOutput) Index(i pulumi.IntInput) I
 }
 
 type IngressGatewayRouteTableRouteRuleDestination struct {
-	// (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+	// (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
 	Port *int `pulumi:"port"`
 	// (Updatable) The OCID of the virtual service where the request will be routed.
 	VirtualServiceId string `pulumi:"virtualServiceId"`
@@ -1780,7 +1762,7 @@ type IngressGatewayRouteTableRouteRuleDestinationInput interface {
 }
 
 type IngressGatewayRouteTableRouteRuleDestinationArgs struct {
-	// (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+	// (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// (Updatable) The OCID of the virtual service where the request will be routed.
 	VirtualServiceId pulumi.StringInput `pulumi:"virtualServiceId"`
@@ -1839,7 +1821,7 @@ func (o IngressGatewayRouteTableRouteRuleDestinationOutput) ToIngressGatewayRout
 	return o
 }
 
-// (Updatable) The port of the ingress gateway host listener. Leave empty to match all ports for the host.
+// (Updatable) The port on the virtual service to target. Mandatory if the virtual deployments are listening on multiple ports.
 func (o IngressGatewayRouteTableRouteRuleDestinationOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v IngressGatewayRouteTableRouteRuleDestination) *int { return v.Port }).(pulumi.IntPtrOutput)
 }

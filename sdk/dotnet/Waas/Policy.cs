@@ -68,7 +68,7 @@ namespace Pulumi.Oci.Waas
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+        /// The web application domain that the WAAS policy protects.
         /// </summary>
         [Output("domain")]
         public Output<string> Domain { get; private set; } = null!;
@@ -198,7 +198,7 @@ namespace Pulumi.Oci.Waas
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+        /// The web application domain that the WAAS policy protects.
         /// </summary>
         [Input("domain", required: true)]
         public Input<string> Domain { get; set; } = null!;
@@ -302,7 +302,7 @@ namespace Pulumi.Oci.Waas
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+        /// The web application domain that the WAAS policy protects.
         /// </summary>
         [Input("domain")]
         public Input<string>? Domain { get; set; }

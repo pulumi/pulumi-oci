@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNotificationTopic = new NotificationTopic("testNotificationTopic", NotificationTopicArgs.builder()        
+ *         var testNotificationTopic = new NotificationTopic("testNotificationTopic", NotificationTopicArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(notificationTopicName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -27,7 +27,7 @@ public final class ConnectorTarget {
      */
     private @Nullable Integer batchRolloverTimeInMs;
     /**
-     * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * @return (Updatable) The batch rollover size in kilobytes.
      * 
      */
     private @Nullable Integer batchSizeInKbs;
@@ -37,7 +37,7 @@ public final class ConnectorTarget {
      */
     private @Nullable Integer batchSizeInNum;
     /**
-     * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * @return (Updatable) The batch rollover time in seconds.
      * 
      */
     private @Nullable Integer batchTimeInSec;
@@ -62,12 +62,12 @@ public final class ConnectorTarget {
      */
     private @Nullable Boolean enableFormattedMessaging;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      * 
      */
     private @Nullable String functionId;
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     private String kind;
@@ -128,7 +128,7 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.batchRolloverTimeInMs);
     }
     /**
-     * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * @return (Updatable) The batch rollover size in kilobytes.
      * 
      */
     public Optional<Integer> batchSizeInKbs() {
@@ -142,7 +142,7 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.batchSizeInNum);
     }
     /**
-     * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * @return (Updatable) The batch rollover time in seconds.
      * 
      */
     public Optional<Integer> batchTimeInSec() {
@@ -177,14 +177,14 @@ public final class ConnectorTarget {
         return Optional.ofNullable(this.enableFormattedMessaging);
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      * 
      */
     public Optional<String> functionId() {
         return Optional.ofNullable(this.functionId);
     }
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     public String kind() {

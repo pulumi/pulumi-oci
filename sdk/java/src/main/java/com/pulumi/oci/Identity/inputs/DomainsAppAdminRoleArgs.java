@@ -127,9 +127,6 @@ public final class DomainsAppAdminRoleArgs extends com.pulumi.resources.Resource
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
@@ -145,9 +142,6 @@ public final class DomainsAppAdminRoleArgs extends com.pulumi.resources.Resource
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -310,9 +304,6 @@ public final class DomainsAppAdminRoleArgs extends com.pulumi.resources.Resource
          * * type: string
          * * uniqueness: none
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -332,9 +323,6 @@ public final class DomainsAppAdminRoleArgs extends com.pulumi.resources.Resource
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

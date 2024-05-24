@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSecurityAssessment = new SecurityAssessment("testSecurityAssessment", SecurityAssessmentArgs.builder()        
+ *         var testSecurityAssessment = new SecurityAssessment("testSecurityAssessment", SecurityAssessmentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .targetId(testTarget.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

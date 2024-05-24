@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBlockchainPlatform = new BlockchainPlatform("testBlockchainPlatform", BlockchainPlatformArgs.builder()        
+ *         var testBlockchainPlatform = new BlockchainPlatform("testBlockchainPlatform", BlockchainPlatformArgs.builder()
  *             .compartmentId(compartmentId)
  *             .computeShape(blockchainPlatformComputeShape)
  *             .displayName(blockchainPlatformDisplayName)

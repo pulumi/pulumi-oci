@@ -14,7 +14,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class BdsInstanceComputeOnlyWorkerNodeShapeConfig
     {
         /// <summary>
-        /// The total amount of memory available to the node, in gigabytes
+        /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
         public readonly int? MemoryInGbs;
         /// <summary>

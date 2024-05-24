@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrg = new Drg("testDrg", DrgArgs.builder()        
+ *         var testDrg = new Drg("testDrg", DrgArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(drgDisplayName)

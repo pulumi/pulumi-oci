@@ -108,7 +108,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<bool> IsDaylightAdjustmentEnabled { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<ImmutableArray<Outputs.WorkspaceApplicationScheduleMetadata>> Metadatas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The type of the model
+        /// The type of the object.
         /// </summary>
         [Output("modelType")]
         public Output<string> ModelType { get; private set; } = null!;
@@ -254,7 +254,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<bool>? IsDaylightAdjustmentEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -344,7 +344,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<bool>? IsDaylightAdjustmentEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifying key for the object.
+        /// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -362,7 +362,7 @@ namespace Pulumi.Oci.DataIntegration
         }
 
         /// <summary>
-        /// (Updatable) The type of the model
+        /// The type of the object.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }

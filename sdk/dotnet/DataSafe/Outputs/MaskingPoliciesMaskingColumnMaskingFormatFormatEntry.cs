@@ -78,7 +78,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string? ReplaceWith;
         /// <summary>
-        /// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+        /// (Updatable) The name of the schema that contains the substitution column.
         /// </summary>
         public readonly string? SchemaName;
         /// <summary>

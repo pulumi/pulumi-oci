@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMediaWorkflowConfiguration = new MediaWorkflowConfiguration("testMediaWorkflowConfiguration", MediaWorkflowConfigurationArgs.builder()        
+ *         var testMediaWorkflowConfiguration = new MediaWorkflowConfiguration("testMediaWorkflowConfiguration", MediaWorkflowConfigurationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(mediaWorkflowConfigurationDisplayName)
  *             .parameters(mediaWorkflowConfigurationParameters)
@@ -82,14 +82,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/mediaWorkflowConfiguration:MediaWorkflowConfiguration")
 public class MediaWorkflowConfiguration extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -220,14 +220,14 @@ public class MediaWorkflowConfiguration extends com.pulumi.resources.CustomResou
         return this.systemTags;
     }
     /**
-     * When the lock was created.
+     * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

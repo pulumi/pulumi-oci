@@ -97,14 +97,14 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) Specifies if PITR is enabled or disabled.
+     * Whether the Channel has been enabled by the user.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Specifies if PITR is enabled or disabled.
+     * @return Whether the Channel has been enabled by the user.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -342,7 +342,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
+         * @param isEnabled Whether the Channel has been enabled by the user.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class MysqlDbSystemChannelArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param isEnabled (Updatable) Specifies if PITR is enabled or disabled.
+         * @param isEnabled Whether the Channel has been enabled by the user.
          * 
          * @return builder
          * 

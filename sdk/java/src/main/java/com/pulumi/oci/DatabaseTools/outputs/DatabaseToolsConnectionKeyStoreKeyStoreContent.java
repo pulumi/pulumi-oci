@@ -13,32 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatabaseToolsConnectionKeyStoreKeyStoreContent {
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
      * 
      */
     private @Nullable String secretId;
     /**
-     * @return (Updatable) The value type of the user password.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The value type of the key store content.
      * 
      */
     private String valueType;
 
     private DatabaseToolsConnectionKeyStoreKeyStoreContent() {}
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
      * 
      */
     public Optional<String> secretId() {
         return Optional.ofNullable(this.secretId);
     }
     /**
-     * @return (Updatable) The value type of the user password.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The value type of the key store content.
      * 
      */
     public String valueType() {

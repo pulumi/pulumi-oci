@@ -34,7 +34,7 @@ public final class PathAnalyzerTestProtocolParameters {
      */
     private @Nullable Integer sourcePort;
     /**
-     * @return (Updatable) The type of the `Endpoint`.
+     * @return (Updatable) The type of the `ProtocolParameters` object.
      * 
      */
     private String type;
@@ -69,7 +69,7 @@ public final class PathAnalyzerTestProtocolParameters {
         return Optional.ofNullable(this.sourcePort);
     }
     /**
-     * @return (Updatable) The type of the `Endpoint`.
+     * @return (Updatable) The type of the `ProtocolParameters` object.
      * 
      */
     public String type() {

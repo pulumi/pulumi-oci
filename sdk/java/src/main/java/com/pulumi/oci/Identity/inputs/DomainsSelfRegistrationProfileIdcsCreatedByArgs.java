@@ -17,7 +17,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     public static final DomainsSelfRegistrationProfileIdcsCreatedByArgs Empty = new DomainsSelfRegistrationProfileIdcsCreatedByArgs();
 
     /**
-     * (Updatable) The displayName of the User or App who modified this Resource
+     * (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -34,7 +34,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -52,34 +52,32 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -87,7 +85,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -122,7 +120,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     }
 
     /**
-     * (Updatable) The type of resource, User or App, that modified this Resource
+     * (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -139,7 +137,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of resource, User or App, that modified this Resource
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -157,40 +155,34 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
     }
 
     /**
-     * (Updatable) name of the attribute
+     * (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -226,7 +218,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -247,7 +239,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -267,17 +259,16 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -288,17 +279,16 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -308,7 +298,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -329,7 +319,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -349,7 +339,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param type (Updatable) The type of resource, User or App, that modified this Resource
+         * @param type (Updatable) The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -370,7 +360,7 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param type (Updatable) The type of resource, User or App, that modified this Resource
+         * @param type (Updatable) The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -390,20 +380,17 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -414,20 +401,17 @@ public final class DomainsSelfRegistrationProfileIdcsCreatedByArgs extends com.p
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

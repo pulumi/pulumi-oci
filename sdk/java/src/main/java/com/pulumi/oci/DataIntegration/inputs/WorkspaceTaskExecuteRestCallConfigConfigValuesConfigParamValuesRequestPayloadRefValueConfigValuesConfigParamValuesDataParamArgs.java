@@ -16,14 +16,14 @@ public final class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValu
     public static final WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs Empty = new WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParamArgs();
 
     /**
-     * (Updatable) A string value of the parameter.
+     * A string value of the parameter.
      * 
      */
     @Import(name="stringValue")
     private @Nullable Output<String> stringValue;
 
     /**
-     * @return (Updatable) A string value of the parameter.
+     * @return A string value of the parameter.
      * 
      */
     public Optional<Output<String>> stringValue() {
@@ -55,7 +55,7 @@ public final class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValu
         }
 
         /**
-         * @param stringValue (Updatable) A string value of the parameter.
+         * @param stringValue A string value of the parameter.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValu
         }
 
         /**
-         * @param stringValue (Updatable) A string value of the parameter.
+         * @param stringValue A string value of the parameter.
          * 
          * @return builder
          * 

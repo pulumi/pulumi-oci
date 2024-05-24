@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOperationsInsightsWarehouseUser = new OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", OperationsInsightsWarehouseUserArgs.builder()        
+ *         var testOperationsInsightsWarehouseUser = new OperationsInsightsWarehouseUser("testOperationsInsightsWarehouseUser", OperationsInsightsWarehouseUserArgs.builder()
  *             .compartmentId(compartmentId)
  *             .connectionPassword(operationsInsightsWarehouseUserConnectionPassword)
  *             .isAwrDataAccess(operationsInsightsWarehouseUserIsAwrDataAccess)

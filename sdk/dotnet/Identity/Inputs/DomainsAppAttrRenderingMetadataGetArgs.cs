@@ -118,14 +118,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? MinSize { get; set; }
 
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-        /// 
-        /// **Deprecated Since: 18.2.2**
+        /// (Updatable) Name of the attribute.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
@@ -137,10 +134,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Display sequence of the bundle configuration property.
+        /// (Updatable) Data type of the attribute.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readWrite
@@ -153,16 +149,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<int>? Order { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, indicates that this value must be protected.
-        /// 
-        /// **Added In:** 18.2.2
+        /// (Updatable) Is the attribute readOnly.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
-        /// * returned: request
+        /// * returned: default
         /// * type: boolean
         /// * uniqueness: none
         /// </summary>
@@ -185,13 +179,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Regexp { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, this flatfile bundle configuration property is required to connect to the target connected managed app. This attribute maps to \"isRequired\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) Attribute is required or optional.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: true
+        /// * mutability: readWrite
+        /// * required: false
         /// * returned: default
         /// * type: boolean
         /// * uniqueness: none

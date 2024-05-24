@@ -16,7 +16,7 @@ public final class DeployStageCanaryStrategy {
      */
     private String ingressName;
     /**
-     * @return (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * @return Canary namespace to be used for Kubernetes canary deployment.
      * 
      */
     private String namespace;
@@ -35,7 +35,7 @@ public final class DeployStageCanaryStrategy {
         return this.ingressName;
     }
     /**
-     * @return (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+     * @return Canary namespace to be used for Kubernetes canary deployment.
      * 
      */
     public String namespace() {

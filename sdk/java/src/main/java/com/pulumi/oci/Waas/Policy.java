@@ -78,7 +78,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWaasPolicy = new Policy("testWaasPolicy", PolicyArgs.builder()        
+ *         var testWaasPolicy = new Policy("testWaasPolicy", PolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .domain(waasPolicyDomain)
  *             .additionalDomains(waasPolicyAdditionalDomains)
@@ -378,14 +378,14 @@ public class Policy extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * The web application domain that the WAAS policy protects.
      * 
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
-     * @return (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * @return The web application domain that the WAAS policy protects.
      * 
      */
     public Output<String> domain() {

@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIntegrationInstance = new IntegrationInstance("testIntegrationInstance", IntegrationInstanceArgs.builder()        
+ *         var testIntegrationInstance = new IntegrationInstance("testIntegrationInstance", IntegrationInstanceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(integrationInstanceDisplayName)
  *             .integrationInstanceType(integrationInstanceIntegrationInstanceType)

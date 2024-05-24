@@ -46,14 +46,14 @@ public final class WorkspaceTaskMetadataAggregatorArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -76,14 +76,14 @@ public final class WorkspaceTaskMetadataAggregatorArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) The object type.
+     * The object type.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The object type.
+     * @return The object type.
      * 
      */
     public Optional<Output<String>> type() {
@@ -161,7 +161,7 @@ public final class WorkspaceTaskMetadataAggregatorArgs extends com.pulumi.resour
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class WorkspaceTaskMetadataAggregatorArgs extends com.pulumi.resour
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class WorkspaceTaskMetadataAggregatorArgs extends com.pulumi.resour
         }
 
         /**
-         * @param type (Updatable) The object type.
+         * @param type The object type.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class WorkspaceTaskMetadataAggregatorArgs extends com.pulumi.resour
         }
 
         /**
-         * @param type (Updatable) The object type.
+         * @param type The object type.
          * 
          * @return builder
          * 

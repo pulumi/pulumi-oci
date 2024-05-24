@@ -17,7 +17,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
      */
     private @Nullable String dbrsPolicyId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
     private @Nullable String id;
@@ -37,7 +37,7 @@ public final class DatabaseDbBackupConfigBackupDestinationDetail {
         return Optional.ofNullable(this.dbrsPolicyId);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
      * 
      */
     public Optional<String> id() {

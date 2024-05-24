@@ -77,7 +77,7 @@ class DomainsUserDbCredentialArgs:
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -85,9 +85,9 @@ class DomainsUserDbCredentialArgs:
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[str] status: User credential status
                
@@ -290,7 +290,7 @@ class DomainsUserDbCredentialArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's OCID.
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -298,9 +298,9 @@ class DomainsUserDbCredentialArgs:
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -579,18 +579,17 @@ class _DomainsUserDbCredentialState:
                * mutability: readOnly
                * returned: default
                * required: false
-        :param pulumi.Input[str] name: (Updatable) The username.
+        :param pulumi.Input[str] name: (Updatable) Name
+               
+               **Added In:** 2109090424
                
                **SCIM++ Properties:**
                * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
+               * type: string
                * mutability: readOnly
                * required: false
                * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -598,9 +597,9 @@ class _DomainsUserDbCredentialState:
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[str] salt: (Updatable) The salt of the password.
                
@@ -1084,17 +1083,16 @@ class _DomainsUserDbCredentialState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The username.
+        (Updatable) Name
+
+        **Added In:** 2109090424
 
         **SCIM++ Properties:**
         * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
+        * type: string
         * mutability: readOnly
         * required: false
         * returned: default
-        * type: string
-        * uniqueness: none
         """
         return pulumi.get(self, "name")
 
@@ -1106,7 +1104,7 @@ class _DomainsUserDbCredentialState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's OCID.
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1114,9 +1112,9 @@ class _DomainsUserDbCredentialState:
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1349,7 +1347,7 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1357,9 +1355,9 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1693,18 +1691,17 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                * mutability: readOnly
                * returned: default
                * required: false
-        :param pulumi.Input[str] name: (Updatable) The username.
+        :param pulumi.Input[str] name: (Updatable) Name
+               
+               **Added In:** 2109090424
                
                **SCIM++ Properties:**
                * caseExact: false
-               * idcsSearchable: false
-               * multiValued: false
+               * type: string
                * mutability: readOnly
                * required: false
                * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1712,9 +1709,9 @@ class DomainsUserDbCredential(pulumi.CustomResource):
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[str] salt: (Updatable) The salt of the password.
                
@@ -2098,17 +2095,16 @@ class DomainsUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The username.
+        (Updatable) Name
+
+        **Added In:** 2109090424
 
         **SCIM++ Properties:**
         * caseExact: false
-        * idcsSearchable: false
-        * multiValued: false
+        * type: string
         * mutability: readOnly
         * required: false
         * returned: default
-        * type: string
-        * uniqueness: none
         """
         return pulumi.get(self, "name")
 
@@ -2116,7 +2112,7 @@ class DomainsUserDbCredential(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        The user's OCID.
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -2124,9 +2120,9 @@ class DomainsUserDbCredential(pulumi.CustomResource):
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 

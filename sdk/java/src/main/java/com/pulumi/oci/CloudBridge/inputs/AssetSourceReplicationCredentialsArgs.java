@@ -30,14 +30,14 @@ public final class AssetSourceReplicationCredentialsArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) Asset source type.
+     * (Updatable) Authentication type
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Asset source type.
+     * @return (Updatable) Authentication type
      * 
      */
     public Output<String> type() {
@@ -91,7 +91,7 @@ public final class AssetSourceReplicationCredentialsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param type (Updatable) Asset source type.
+         * @param type (Updatable) Authentication type
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AssetSourceReplicationCredentialsArgs extends com.pulumi.reso
         }
 
         /**
-         * @param type (Updatable) Asset source type.
+         * @param type (Updatable) Authentication type
          * 
          * @return builder
          * 

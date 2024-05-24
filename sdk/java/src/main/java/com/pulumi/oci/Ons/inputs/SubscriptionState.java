@@ -130,6 +130,15 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
      * The protocol used for the subscription.
      * 
      * Allowed values:
+     * * `CUSTOM_HTTPS`
+     * * `EMAIL`
+     * * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+     * * `ORACLE_FUNCTIONS`
+     * * `PAGERDUTY`
+     * * `SLACK`
+     * * `SMS`
+     * 
+     * For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      * 
      */
     @Import(name="protocol")
@@ -139,6 +148,15 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
      * @return The protocol used for the subscription.
      * 
      * Allowed values:
+     * * `CUSTOM_HTTPS`
+     * * `EMAIL`
+     * * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+     * * `ORACLE_FUNCTIONS`
+     * * `PAGERDUTY`
+     * * `SLACK`
+     * * `SMS`
+     * 
+     * For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      * 
      */
     public Optional<Output<String>> protocol() {
@@ -369,6 +387,15 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
          * @param protocol The protocol used for the subscription.
          * 
          * Allowed values:
+         * * `CUSTOM_HTTPS`
+         * * `EMAIL`
+         * * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+         * * `ORACLE_FUNCTIONS`
+         * * `PAGERDUTY`
+         * * `SLACK`
+         * * `SMS`
+         * 
+         * For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          * 
          * @return builder
          * 
@@ -382,6 +409,15 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
          * @param protocol The protocol used for the subscription.
          * 
          * Allowed values:
+         * * `CUSTOM_HTTPS`
+         * * `EMAIL`
+         * * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+         * * `ORACLE_FUNCTIONS`
+         * * `PAGERDUTY`
+         * * `SLACK`
+         * * `SMS`
+         * 
+         * For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
          * 
          * @return builder
          * 

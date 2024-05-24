@@ -55,14 +55,14 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) OCID of the compartment
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -458,7 +458,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+         * @param compartmentId (Updatable) OCID of the compartment
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+         * @param compartmentId (Updatable) OCID of the compartment
          * 
          * @return builder
          * 

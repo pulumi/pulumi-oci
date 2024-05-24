@@ -13,31 +13,31 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class NotebookSessionNotebookSessionConfigDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+        /// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         /// </summary>
         [Input("blockStorageSizeInGbs")]
         public Input<int>? BlockStorageSizeInGbs { get; set; }
 
         /// <summary>
-        /// (Updatable) Details for the notebook session shape configuration.
+        /// Details for the notebook session shape configuration.
         /// </summary>
         [Input("notebookSessionShapeConfigDetails")]
         public Input<Inputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsGetArgs>? NotebookSessionShapeConfigDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of a Data Science private endpoint.
+        /// The OCID of a Data Science private endpoint.
         /// </summary>
         [Input("privateEndpointId")]
         public Input<string>? PrivateEndpointId { get; set; }
 
         /// <summary>
-        /// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+        /// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         /// </summary>
         [Input("shape", required: true)]
         public Input<string> Shape { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+        /// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

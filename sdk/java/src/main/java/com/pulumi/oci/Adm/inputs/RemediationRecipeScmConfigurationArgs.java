@@ -93,14 +93,14 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+     * (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
      * 
      */
     @Import(name="patSecretId")
     private @Nullable Output<String> patSecretId;
 
     /**
-     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
      * 
      */
     public Optional<Output<String>> patSecretId() {
@@ -108,14 +108,14 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
      * 
      */
     @Import(name="repositoryUrl")
     private @Nullable Output<String> repositoryUrl;
 
     /**
-     * @return (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
      * 
      */
     public Optional<Output<String>> repositoryUrl() {
@@ -138,14 +138,14 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The username that will be used to authenticate with Jenkins.
+     * (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
      * 
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
-     * @return (Updatable) The username that will be used to authenticate with Jenkins.
+     * @return (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
      * 
      */
     public Optional<Output<String>> username() {
@@ -290,7 +290,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param patSecretId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+         * @param patSecretId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param patSecretId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+         * @param patSecretId (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
          * 
          * @return builder
          * 
@@ -311,7 +311,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param repositoryUrl (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * @param repositoryUrl (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param repositoryUrl (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+         * @param repositoryUrl (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param username (Updatable) The username that will be used to authenticate with Jenkins.
+         * @param username (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class RemediationRecipeScmConfigurationArgs extends com.pulumi.reso
         }
 
         /**
-         * @param username (Updatable) The username that will be used to authenticate with Jenkins.
+         * @param username (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
          * 
          * @return builder
          * 

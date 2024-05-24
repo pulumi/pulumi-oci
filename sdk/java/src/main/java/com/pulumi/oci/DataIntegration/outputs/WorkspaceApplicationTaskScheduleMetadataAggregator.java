@@ -12,17 +12,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationTaskScheduleMetadataAggregator {
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     private @Nullable String identifier;
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -32,28 +32,28 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregator {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) The type of the aggregator.
+     * @return The type of the aggregator.
      * 
      */
     private @Nullable String type;
 
     private WorkspaceApplicationTaskScheduleMetadataAggregator() {}
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<String> identifier() {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -67,7 +67,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregator {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) The type of the aggregator.
+     * @return The type of the aggregator.
      * 
      */
     public Optional<String> type() {

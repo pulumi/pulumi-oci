@@ -13,21 +13,19 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
     public sealed class TargetAssetRecommendedSpecShapeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-        /// 
-        /// The following values are supported:
+        /// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
         /// </summary>
         [Input("baselineOcpuUtilization")]
         public Input<string>? BaselineOcpuUtilization { get; set; }
 
         /// <summary>
-        /// (Updatable) The total amount of memory in gigabytes that is available to the instance.
+        /// The total amount of memory in gigabytes that is available to the instance.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<double>? MemoryInGbs { get; set; }
 
         /// <summary>
-        /// (Updatable) The total number of OCPUs available to the instance.
+        /// The total number of OCPUs available to the instance.
         /// </summary>
         [Input("ocpus")]
         public Input<double>? Ocpus { get; set; }

@@ -23,7 +23,7 @@ public final class GatewayCaBundle {
      */
     private @Nullable String certificateAuthorityId;
     /**
-     * @return (Updatable) Type of the Response Cache.
+     * @return (Updatable) Type of the CA bundle
      * 
      */
     private String type;
@@ -44,7 +44,7 @@ public final class GatewayCaBundle {
         return Optional.ofNullable(this.certificateAuthorityId);
     }
     /**
-     * @return (Updatable) Type of the Response Cache.
+     * @return (Updatable) Type of the CA bundle
      * 
      */
     public String type() {

@@ -88,7 +88,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVcn = new Vcn("testVcn", VcnArgs.builder()        
+ *         var testVcn = new Vcn("testVcn", VcnArgs.builder()
  *             .compartmentId(compartmentId)
  *             .byoipv6cidrDetails(VcnByoipv6cidrDetailArgs.builder()
  *                 .byoipv6rangeId(testByoipv6range.id())

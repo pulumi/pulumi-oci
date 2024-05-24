@@ -18,13 +18,13 @@ type DataAssetDataSourceDetails struct {
 	AtpPasswordSecretId *string `pulumi:"atpPasswordSecretId"`
 	// atp db user name
 	AtpUserName *string `pulumi:"atpUserName"`
-	// Bucket Name for influx connection
+	// Object storage bucket name
 	Bucket *string `pulumi:"bucket"`
 	// OCID of the secret containing the containers certificates of ATP wallet
 	CwalletFileSecretId *string `pulumi:"cwalletFileSecretId"`
 	// Data source type where actually data asset is being stored
 	DataSourceType string `pulumi:"dataSourceType"`
-	// DB Name for influx connection
+	// atp database name
 	DatabaseName *string `pulumi:"databaseName"`
 	// OCID of the secret containing the PDB'S certificates of ATP wallet
 	EwalletFileSecretId *string `pulumi:"ewalletFileSecretId"`
@@ -72,13 +72,13 @@ type DataAssetDataSourceDetailsArgs struct {
 	AtpPasswordSecretId pulumi.StringPtrInput `pulumi:"atpPasswordSecretId"`
 	// atp db user name
 	AtpUserName pulumi.StringPtrInput `pulumi:"atpUserName"`
-	// Bucket Name for influx connection
+	// Object storage bucket name
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
 	// OCID of the secret containing the containers certificates of ATP wallet
 	CwalletFileSecretId pulumi.StringPtrInput `pulumi:"cwalletFileSecretId"`
 	// Data source type where actually data asset is being stored
 	DataSourceType pulumi.StringInput `pulumi:"dataSourceType"`
-	// DB Name for influx connection
+	// atp database name
 	DatabaseName pulumi.StringPtrInput `pulumi:"databaseName"`
 	// OCID of the secret containing the PDB'S certificates of ATP wallet
 	EwalletFileSecretId pulumi.StringPtrInput `pulumi:"ewalletFileSecretId"`
@@ -197,7 +197,7 @@ func (o DataAssetDataSourceDetailsOutput) AtpUserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataAssetDataSourceDetails) *string { return v.AtpUserName }).(pulumi.StringPtrOutput)
 }
 
-// Bucket Name for influx connection
+// Object storage bucket name
 func (o DataAssetDataSourceDetailsOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataAssetDataSourceDetails) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
@@ -212,7 +212,7 @@ func (o DataAssetDataSourceDetailsOutput) DataSourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v DataAssetDataSourceDetails) string { return v.DataSourceType }).(pulumi.StringOutput)
 }
 
-// DB Name for influx connection
+// atp database name
 func (o DataAssetDataSourceDetailsOutput) DatabaseName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DataAssetDataSourceDetails) *string { return v.DatabaseName }).(pulumi.StringPtrOutput)
 }
@@ -333,7 +333,7 @@ func (o DataAssetDataSourceDetailsPtrOutput) AtpUserName() pulumi.StringPtrOutpu
 	}).(pulumi.StringPtrOutput)
 }
 
-// Bucket Name for influx connection
+// Object storage bucket name
 func (o DataAssetDataSourceDetailsPtrOutput) Bucket() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataAssetDataSourceDetails) *string {
 		if v == nil {
@@ -363,7 +363,7 @@ func (o DataAssetDataSourceDetailsPtrOutput) DataSourceType() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// DB Name for influx connection
+// atp database name
 func (o DataAssetDataSourceDetailsPtrOutput) DatabaseName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DataAssetDataSourceDetails) *string {
 		if v == nil {
@@ -1080,7 +1080,7 @@ func (o DetectAnomalyJobInputDetailsDataArrayOutput) Index(i pulumi.IntInput) De
 type DetectAnomalyJobInputDetailsObjectLocation struct {
 	// Object Storage bucket name.
 	Bucket *string `pulumi:"bucket"`
-	// Object Storage namespace.
+	// Object Storage namespace name.
 	Namespace *string `pulumi:"namespace"`
 	// Object Storage object name.
 	Object *string `pulumi:"object"`
@@ -1100,7 +1100,7 @@ type DetectAnomalyJobInputDetailsObjectLocationInput interface {
 type DetectAnomalyJobInputDetailsObjectLocationArgs struct {
 	// Object Storage bucket name.
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
-	// Object Storage namespace.
+	// Object Storage namespace name.
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// Object Storage object name.
 	Object pulumi.StringPtrInput `pulumi:"object"`
@@ -1162,7 +1162,7 @@ func (o DetectAnomalyJobInputDetailsObjectLocationOutput) Bucket() pulumi.String
 	return o.ApplyT(func(v DetectAnomalyJobInputDetailsObjectLocation) *string { return v.Bucket }).(pulumi.StringPtrOutput)
 }
 
-// Object Storage namespace.
+// Object Storage namespace name.
 func (o DetectAnomalyJobInputDetailsObjectLocationOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectAnomalyJobInputDetailsObjectLocation) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
@@ -1198,6 +1198,7 @@ type DetectAnomalyJobOutputDetails struct {
 	// Object Storage namespace.
 	Namespace string `pulumi:"namespace"`
 	// The type of output location. Allowed values are:
+	// * `OBJECT_STORAGE`: Object store output location.
 	OutputType string `pulumi:"outputType"`
 	// Object Storage folder name.
 	Prefix *string `pulumi:"prefix"`
@@ -1220,6 +1221,7 @@ type DetectAnomalyJobOutputDetailsArgs struct {
 	// Object Storage namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The type of output location. Allowed values are:
+	// * `OBJECT_STORAGE`: Object store output location.
 	OutputType pulumi.StringInput `pulumi:"outputType"`
 	// Object Storage folder name.
 	Prefix pulumi.StringPtrInput `pulumi:"prefix"`
@@ -1313,6 +1315,7 @@ func (o DetectAnomalyJobOutputDetailsOutput) Namespace() pulumi.StringOutput {
 }
 
 // The type of output location. Allowed values are:
+// * `OBJECT_STORAGE`: Object store output location.
 func (o DetectAnomalyJobOutputDetailsOutput) OutputType() pulumi.StringOutput {
 	return o.ApplyT(func(v DetectAnomalyJobOutputDetails) string { return v.OutputType }).(pulumi.StringOutput)
 }
@@ -1367,6 +1370,7 @@ func (o DetectAnomalyJobOutputDetailsPtrOutput) Namespace() pulumi.StringPtrOutp
 }
 
 // The type of output location. Allowed values are:
+// * `OBJECT_STORAGE`: Object store output location.
 func (o DetectAnomalyJobOutputDetailsPtrOutput) OutputType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DetectAnomalyJobOutputDetails) *string {
 		if v == nil {
@@ -1615,7 +1619,7 @@ type ModelModelTrainingResult struct {
 	SignalDetails []ModelModelTrainingResultSignalDetail `pulumi:"signalDetails"`
 	// A warning message to explain the reason when targetFap cannot be achieved for trained model
 	Warning *string `pulumi:"warning"`
-	// This value would determine the window size of the training algorithm.
+	// Window size defined during training or deduced by the algorithm.
 	WindowSize *int `pulumi:"windowSize"`
 }
 
@@ -1646,7 +1650,7 @@ type ModelModelTrainingResultArgs struct {
 	SignalDetails ModelModelTrainingResultSignalDetailArrayInput `pulumi:"signalDetails"`
 	// A warning message to explain the reason when targetFap cannot be achieved for trained model
 	Warning pulumi.StringPtrInput `pulumi:"warning"`
-	// This value would determine the window size of the training algorithm.
+	// Window size defined during training or deduced by the algorithm.
 	WindowSize pulumi.IntPtrInput `pulumi:"windowSize"`
 }
 
@@ -1745,7 +1749,7 @@ func (o ModelModelTrainingResultOutput) Warning() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelModelTrainingResult) *string { return v.Warning }).(pulumi.StringPtrOutput)
 }
 
-// This value would determine the window size of the training algorithm.
+// Window size defined during training or deduced by the algorithm.
 func (o ModelModelTrainingResultOutput) WindowSize() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ModelModelTrainingResult) *int { return v.WindowSize }).(pulumi.IntPtrOutput)
 }
@@ -2487,6 +2491,8 @@ type GetDetectAnomalyJobInputDetail struct {
 	ContentType string                               `pulumi:"contentType"`
 	Datas       []GetDetectAnomalyJobInputDetailData `pulumi:"datas"`
 	// The type of input location Allowed values are:
+	// * `INLINE`: Inline input data.
+	// * `OBJECT_LIST`: Object store output location.
 	InputType string `pulumi:"inputType"`
 	// Inline input details.
 	Message string `pulumi:"message"`
@@ -2511,6 +2517,8 @@ type GetDetectAnomalyJobInputDetailArgs struct {
 	ContentType pulumi.StringInput                           `pulumi:"contentType"`
 	Datas       GetDetectAnomalyJobInputDetailDataArrayInput `pulumi:"datas"`
 	// The type of input location Allowed values are:
+	// * `INLINE`: Inline input data.
+	// * `OBJECT_LIST`: Object store output location.
 	InputType pulumi.StringInput `pulumi:"inputType"`
 	// Inline input details.
 	Message pulumi.StringInput `pulumi:"message"`
@@ -2583,6 +2591,8 @@ func (o GetDetectAnomalyJobInputDetailOutput) Datas() GetDetectAnomalyJobInputDe
 }
 
 // The type of input location Allowed values are:
+// * `INLINE`: Inline input data.
+// * `OBJECT_LIST`: Object store output location.
 func (o GetDetectAnomalyJobInputDetailOutput) InputType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectAnomalyJobInputDetail) string { return v.InputType }).(pulumi.StringOutput)
 }
@@ -2844,6 +2854,7 @@ type GetDetectAnomalyJobOutputDetail struct {
 	// Object Storage namespace.
 	Namespace string `pulumi:"namespace"`
 	// The type of output location Allowed values are:
+	// * `OBJECT_STORAGE`: Object store output location.
 	OutputType string `pulumi:"outputType"`
 	// Object Storage folder name.
 	Prefix string `pulumi:"prefix"`
@@ -2866,6 +2877,7 @@ type GetDetectAnomalyJobOutputDetailArgs struct {
 	// Object Storage namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The type of output location Allowed values are:
+	// * `OBJECT_STORAGE`: Object store output location.
 	OutputType pulumi.StringInput `pulumi:"outputType"`
 	// Object Storage folder name.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
@@ -2933,6 +2945,7 @@ func (o GetDetectAnomalyJobOutputDetailOutput) Namespace() pulumi.StringOutput {
 }
 
 // The type of output location Allowed values are:
+// * `OBJECT_STORAGE`: Object store output location.
 func (o GetDetectAnomalyJobOutputDetailOutput) OutputType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectAnomalyJobOutputDetail) string { return v.OutputType }).(pulumi.StringOutput)
 }
@@ -3312,6 +3325,8 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail struct {
 	ContentType string                                                              `pulumi:"contentType"`
 	Datas       []GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailData `pulumi:"datas"`
 	// The type of input location Allowed values are:
+	// * `INLINE`: Inline input data.
+	// * `OBJECT_LIST`: Object store output location.
 	InputType string `pulumi:"inputType"`
 	// Inline input details.
 	Message string `pulumi:"message"`
@@ -3336,6 +3351,8 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailArgs struct {
 	ContentType pulumi.StringInput                                                          `pulumi:"contentType"`
 	Datas       GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailDataArrayInput `pulumi:"datas"`
 	// The type of input location Allowed values are:
+	// * `INLINE`: Inline input data.
+	// * `OBJECT_LIST`: Object store output location.
 	InputType pulumi.StringInput `pulumi:"inputType"`
 	// Inline input details.
 	Message pulumi.StringInput `pulumi:"message"`
@@ -3410,6 +3427,8 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) Dat
 }
 
 // The type of input location Allowed values are:
+// * `INLINE`: Inline input data.
+// * `OBJECT_LIST`: Object store output location.
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetailOutput) InputType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemInputDetail) string { return v.InputType }).(pulumi.StringOutput)
 }
@@ -3677,6 +3696,7 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail struct {
 	// Object Storage namespace.
 	Namespace string `pulumi:"namespace"`
 	// The type of output location Allowed values are:
+	// * `OBJECT_STORAGE`: Object store output location.
 	OutputType string `pulumi:"outputType"`
 	// Object Storage folder name.
 	Prefix string `pulumi:"prefix"`
@@ -3699,6 +3719,7 @@ type GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailArgs struct {
 	// Object Storage namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// The type of output location Allowed values are:
+	// * `OBJECT_STORAGE`: Object store output location.
 	OutputType pulumi.StringInput `pulumi:"outputType"`
 	// Object Storage folder name.
 	Prefix pulumi.StringInput `pulumi:"prefix"`
@@ -3766,6 +3787,7 @@ func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) Na
 }
 
 // The type of output location Allowed values are:
+// * `OBJECT_STORAGE`: Object store output location.
 func (o GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetailOutput) OutputType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDetectAnomalyJobsDetectAnomalyJobCollectionItemOutputDetail) string { return v.OutputType }).(pulumi.StringOutput)
 }

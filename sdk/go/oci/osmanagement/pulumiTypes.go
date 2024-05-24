@@ -432,9 +432,6 @@ type ManagedInstanceManagementChildSoftwareSource struct {
 	// software source identifier
 	Id *string `pulumi:"id"`
 	// software source name
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name *string `pulumi:"name"`
 }
 
@@ -453,9 +450,6 @@ type ManagedInstanceManagementChildSoftwareSourceArgs struct {
 	// software source identifier
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// software source name
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -516,9 +510,6 @@ func (o ManagedInstanceManagementChildSoftwareSourceOutput) Id() pulumi.StringPt
 }
 
 // software source name
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ManagedInstanceManagementChildSoftwareSourceOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedInstanceManagementChildSoftwareSource) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -546,7 +537,7 @@ func (o ManagedInstanceManagementChildSoftwareSourceArrayOutput) Index(i pulumi.
 type ManagedInstanceManagementManagedInstanceGroup struct {
 	// User friendly name
 	DisplayName *string `pulumi:"displayName"`
-	// software source identifier
+	// unique identifier that is immutable on creation
 	Id *string `pulumi:"id"`
 }
 
@@ -564,7 +555,7 @@ type ManagedInstanceManagementManagedInstanceGroupInput interface {
 type ManagedInstanceManagementManagedInstanceGroupArgs struct {
 	// User friendly name
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// software source identifier
+	// unique identifier that is immutable on creation
 	Id pulumi.StringPtrInput `pulumi:"id"`
 }
 
@@ -624,7 +615,7 @@ func (o ManagedInstanceManagementManagedInstanceGroupOutput) DisplayName() pulum
 	return o.ApplyT(func(v ManagedInstanceManagementManagedInstanceGroup) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// software source identifier
+// unique identifier that is immutable on creation
 func (o ManagedInstanceManagementManagedInstanceGroupOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagedInstanceManagementManagedInstanceGroup) *string { return v.Id }).(pulumi.StringPtrOutput)
 }

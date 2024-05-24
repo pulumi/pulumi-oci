@@ -83,34 +83,32 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Domain Group
+     * 
+     * **Added In:** 2205120021
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * idcsSearchable: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Domain Group
+     * 
+     * **Added In:** 2205120021
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * idcsSearchable: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -222,17 +220,16 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Domain Group
+         * 
+         * **Added In:** 2205120021
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * idcsSearchable: true
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -243,17 +240,16 @@ public final class DomainsIdentityProviderJitUserProvGroupMappingArgs extends co
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Domain Group
+         * 
+         * **Added In:** 2205120021
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * idcsSearchable: true
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 

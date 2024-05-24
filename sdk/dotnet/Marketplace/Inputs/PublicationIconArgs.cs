@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Marketplace.Inputs
         public Input<string>? MimeType { get; set; }
 
         /// <summary>
-        /// (Updatable) The name of the contact.
+        /// (Updatable) The name of the publication, which is also used in the listing.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

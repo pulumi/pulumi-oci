@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()        
+ *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()
  *             .catalogId(testCatalog.id())
  *             .dataAssetKey(connectionDataAssetKey)
  *             .displayName(connectionDisplayName)

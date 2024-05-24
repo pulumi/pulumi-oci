@@ -46,16 +46,14 @@ public final class DeploymentDeployArtifactOverrideArgumentsItemArgs extends com
     }
 
     /**
-     * value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * Value of the parameter.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return value of the argument.
-     * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+     * @return Value of the parameter.
      * 
      */
     public Optional<Output<String>> value() {
@@ -131,8 +129,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsItemArgs extends com
         }
 
         /**
-         * @param value value of the argument.
-         * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+         * @param value Value of the parameter.
          * 
          * @return builder
          * 
@@ -143,8 +140,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsItemArgs extends com
         }
 
         /**
-         * @param value value of the argument.
-         * *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+         * @param value Value of the parameter.
          * 
          * @return builder
          * 

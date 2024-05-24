@@ -148,11 +148,11 @@ export class DbSystem extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * A user-provided description of the database instance node.
+     * (Updatable) A user-provided description of a database system.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * Display name of the database instance node. Avoid entering confidential information.
+     * (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -358,11 +358,11 @@ export interface DbSystemState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * A user-provided description of the database instance node.
+     * (Updatable) A user-provided description of a database system.
      */
     description?: pulumi.Input<string>;
     /**
-     * Display name of the database instance node. Avoid entering confidential information.
+     * (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -472,11 +472,11 @@ export interface DbSystemArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * A user-provided description of the database instance node.
+     * (Updatable) A user-provided description of a database system.
      */
     description?: pulumi.Input<string>;
     /**
-     * Display name of the database instance node. Avoid entering confidential information.
+     * (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**

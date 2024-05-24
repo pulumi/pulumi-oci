@@ -851,9 +851,9 @@ func (o ConfigConfigurationClientCertificateDetailsPtrOutput) PrivateKey() Confi
 }
 
 type ConfigConfigurationClientCertificateDetailsClientCertificate struct {
-	// (Updatable) Content of the private key file.
+	// (Updatable) Content of the client certificate file.
 	Content *string `pulumi:"content"`
-	// (Updatable) Name of the private key file.
+	// (Updatable) Name of the certificate file. The name should not contain any confidential information.
 	FileName *string `pulumi:"fileName"`
 }
 
@@ -869,9 +869,9 @@ type ConfigConfigurationClientCertificateDetailsClientCertificateInput interface
 }
 
 type ConfigConfigurationClientCertificateDetailsClientCertificateArgs struct {
-	// (Updatable) Content of the private key file.
+	// (Updatable) Content of the client certificate file.
 	Content pulumi.StringPtrInput `pulumi:"content"`
-	// (Updatable) Name of the private key file.
+	// (Updatable) Name of the certificate file. The name should not contain any confidential information.
 	FileName pulumi.StringPtrInput `pulumi:"fileName"`
 }
 
@@ -952,12 +952,12 @@ func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) ToCo
 	}).(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput)
 }
 
-// (Updatable) Content of the private key file.
+// (Updatable) Content of the client certificate file.
 func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsClientCertificate) *string { return v.Content }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the private key file.
+// (Updatable) Name of the certificate file. The name should not contain any confidential information.
 func (o ConfigConfigurationClientCertificateDetailsClientCertificateOutput) FileName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationClientCertificateDetailsClientCertificate) *string { return v.FileName }).(pulumi.StringPtrOutput)
 }
@@ -986,7 +986,7 @@ func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) E
 	}).(ConfigConfigurationClientCertificateDetailsClientCertificateOutput)
 }
 
-// (Updatable) Content of the private key file.
+// (Updatable) Content of the client certificate file.
 func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsClientCertificate) *string {
 		if v == nil {
@@ -996,7 +996,7 @@ func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) C
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the private key file.
+// (Updatable) Name of the certificate file. The name should not contain any confidential information.
 func (o ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput) FileName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfigurationClientCertificateDetailsClientCertificate) *string {
 		if v == nil {
@@ -2016,9 +2016,9 @@ func (o ConfigConfigurationRequestHeaderArrayOutput) Index(i pulumi.IntInput) Co
 }
 
 type ConfigConfigurationRequestQueryParam struct {
-	// (Updatable) Name of the parameter.
+	// (Updatable) Name of request query parameter.
 	ParamName *string `pulumi:"paramName"`
-	// (Updatable) Value of the parameter.
+	// (Updatable) Value of request query parameter.
 	ParamValue *string `pulumi:"paramValue"`
 }
 
@@ -2034,9 +2034,9 @@ type ConfigConfigurationRequestQueryParamInput interface {
 }
 
 type ConfigConfigurationRequestQueryParamArgs struct {
-	// (Updatable) Name of the parameter.
+	// (Updatable) Name of request query parameter.
 	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
-	// (Updatable) Value of the parameter.
+	// (Updatable) Value of request query parameter.
 	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
@@ -2091,12 +2091,12 @@ func (o ConfigConfigurationRequestQueryParamOutput) ToConfigConfigurationRequest
 	return o
 }
 
-// (Updatable) Name of the parameter.
+// (Updatable) Name of request query parameter.
 func (o ConfigConfigurationRequestQueryParamOutput) ParamName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationRequestQueryParam) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value of the parameter.
+// (Updatable) Value of request query parameter.
 func (o ConfigConfigurationRequestQueryParamOutput) ParamValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfigurationRequestQueryParam) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
@@ -2510,9 +2510,9 @@ func (o ConfigScriptParameterArrayOutput) Index(i pulumi.IntInput) ConfigScriptP
 }
 
 type ConfigScriptParameterMonitorScriptParameter struct {
-	// (Updatable) Name of the parameter.
+	// Name of the parameter.
 	ParamName *string `pulumi:"paramName"`
-	// (Updatable) Value of the parameter.
+	// Value of the parameter.
 	ParamValue *string `pulumi:"paramValue"`
 }
 
@@ -2528,9 +2528,9 @@ type ConfigScriptParameterMonitorScriptParameterInput interface {
 }
 
 type ConfigScriptParameterMonitorScriptParameterArgs struct {
-	// (Updatable) Name of the parameter.
+	// Name of the parameter.
 	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
-	// (Updatable) Value of the parameter.
+	// Value of the parameter.
 	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
@@ -2585,12 +2585,12 @@ func (o ConfigScriptParameterMonitorScriptParameterOutput) ToConfigScriptParamet
 	return o
 }
 
-// (Updatable) Name of the parameter.
+// Name of the parameter.
 func (o ConfigScriptParameterMonitorScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigScriptParameterMonitorScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value of the parameter.
+// Value of the parameter.
 func (o ConfigScriptParameterMonitorScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigScriptParameterMonitorScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }
@@ -3921,14 +3921,11 @@ func (o ScriptParameterArrayOutput) Index(i pulumi.IntInput) ScriptParameterOutp
 }
 
 type ScriptParameterScriptParameter struct {
-	// (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
 	IsSecret *bool `pulumi:"isSecret"`
-	// (Updatable) Name of the parameter.
+	// Name of the parameter.
 	ParamName *string `pulumi:"paramName"`
-	// (Updatable) Value of the parameter.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Value of the parameter.
 	ParamValue *string `pulumi:"paramValue"`
 }
 
@@ -3944,14 +3941,11 @@ type ScriptParameterScriptParameterInput interface {
 }
 
 type ScriptParameterScriptParameterArgs struct {
-	// (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+	// If the parameter value is secret and should be kept confidential, then set isSecret to true.
 	IsSecret pulumi.BoolPtrInput `pulumi:"isSecret"`
-	// (Updatable) Name of the parameter.
+	// Name of the parameter.
 	ParamName pulumi.StringPtrInput `pulumi:"paramName"`
-	// (Updatable) Value of the parameter.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Value of the parameter.
 	ParamValue pulumi.StringPtrInput `pulumi:"paramValue"`
 }
 
@@ -4006,20 +4000,17 @@ func (o ScriptParameterScriptParameterOutput) ToScriptParameterScriptParameterOu
 	return o
 }
 
-// (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+// If the parameter value is secret and should be kept confidential, then set isSecret to true.
 func (o ScriptParameterScriptParameterOutput) GetIsSecret() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ScriptParameterScriptParameter) *bool { return v.IsSecret }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Name of the parameter.
+// Name of the parameter.
 func (o ScriptParameterScriptParameterOutput) ParamName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScriptParameterScriptParameter) *string { return v.ParamName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Value of the parameter.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Value of the parameter.
 func (o ScriptParameterScriptParameterOutput) ParamValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ScriptParameterScriptParameter) *string { return v.ParamValue }).(pulumi.StringPtrOutput)
 }

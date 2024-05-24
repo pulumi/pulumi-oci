@@ -13,17 +13,17 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsIdentityPropagationTrustImpersonationServiceUserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the Service User.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -47,10 +47,10 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Rule { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The ID of the Service User.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

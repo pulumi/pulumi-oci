@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolNode {
     /**
-     * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+     * @return The name of the availability domain in which this node is placed.
      * 
      */
     private @Nullable String availabilityDomain;
@@ -81,14 +81,14 @@ public final class NodePoolNode {
      */
     private @Nullable String state;
     /**
-     * @return (Updatable) The OCID of the subnet in which to place nodes.
+     * @return The OCID of the subnet in which this node is placed.
      * 
      */
     private @Nullable String subnetId;
 
     private NodePoolNode() {}
     /**
-     * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+     * @return The name of the availability domain in which this node is placed.
      * 
      */
     public Optional<String> availabilityDomain() {
@@ -179,7 +179,7 @@ public final class NodePoolNode {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return (Updatable) The OCID of the subnet in which to place nodes.
+     * @return The OCID of the subnet in which this node is placed.
      * 
      */
     public Optional<String> subnetId() {

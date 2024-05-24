@@ -60,14 +60,14 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) OCID of the compartment
      * 
      */
     public Output<String> compartmentId() {
@@ -415,7 +415,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+         * @param compartmentId (Updatable) OCID of the compartment
          * 
          * @return builder
          * 
@@ -426,7 +426,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+         * @param compartmentId (Updatable) OCID of the compartment
          * 
          * @return builder
          * 

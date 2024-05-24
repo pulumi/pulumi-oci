@@ -114,7 +114,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableArray<string>> ChildColumns { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The name of the substitution column.
+        /// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         /// </summary>
         [Output("columnName")]
         public Output<string> ColumnName { get; private set; } = null!;
@@ -254,7 +254,7 @@ namespace Pulumi.Oci.DataSafe
     public sealed class MaskingPoliciesMaskingColumnArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The name of the substitution column.
+        /// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         /// </summary>
         [Input("columnName", required: true)]
         public Input<string> ColumnName { get; set; } = null!;
@@ -338,7 +338,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// (Updatable) The name of the substitution column.
+        /// The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
         /// </summary>
         [Input("columnName")]
         public Input<string>? ColumnName { get; set; }

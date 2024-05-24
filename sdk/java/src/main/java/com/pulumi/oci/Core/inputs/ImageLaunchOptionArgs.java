@@ -18,6 +18,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Emulation type for the boot volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     @Import(name="bootVolumeType")
@@ -25,6 +30,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * @return Emulation type for the boot volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     public Optional<Output<String>> bootVolumeType() {
@@ -33,6 +43,8 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Firmware used to boot VM. Select the option that matches your operating system.
+     * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+     * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
      * 
      */
     @Import(name="firmware")
@@ -40,6 +52,8 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * @return Firmware used to boot VM. Select the option that matches your operating system.
+     * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+     * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
      * 
      */
     public Optional<Output<String>> firmware() {
@@ -78,6 +92,9 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Emulation type for the physical network interface card (NIC).
+     * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * 
      */
     @Import(name="networkType")
@@ -85,6 +102,9 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * @return Emulation type for the physical network interface card (NIC).
+     * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+     * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+     * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
      * 
      */
     public Optional<Output<String>> networkType() {
@@ -93,6 +113,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Emulation type for volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     @Import(name="remoteDataVolumeType")
@@ -100,6 +125,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * @return Emulation type for volume.
+     * * `ISCSI` - ISCSI attached block storage device.
+     * * `SCSI` - Emulated SCSI disk.
+     * * `IDE` - Emulated IDE disk.
+     * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+     * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
      * 
      */
     public Optional<Output<String>> remoteDataVolumeType() {
@@ -137,6 +167,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bootVolumeType Emulation type for the boot volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          * 
          * @return builder
          * 
@@ -148,6 +183,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bootVolumeType Emulation type for the boot volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          * 
          * @return builder
          * 
@@ -158,6 +198,8 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param firmware Firmware used to boot VM. Select the option that matches your operating system.
+         * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+         * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
          * 
          * @return builder
          * 
@@ -169,6 +211,8 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param firmware Firmware used to boot VM. Select the option that matches your operating system.
+         * * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+         * * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
          * 
          * @return builder
          * 
@@ -221,6 +265,9 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param networkType Emulation type for the physical network interface card (NIC).
+         * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
          * 
          * @return builder
          * 
@@ -232,6 +279,9 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param networkType Emulation type for the physical network interface card (NIC).
+         * * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+         * * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+         * * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
          * 
          * @return builder
          * 
@@ -242,6 +292,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param remoteDataVolumeType Emulation type for volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          * 
          * @return builder
          * 
@@ -253,6 +308,11 @@ public final class ImageLaunchOptionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param remoteDataVolumeType Emulation type for volume.
+         * * `ISCSI` - ISCSI attached block storage device.
+         * * `SCSI` - Emulated SCSI disk.
+         * * `IDE` - Emulated IDE disk.
+         * * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+         * * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
          * 
          * @return builder
          * 

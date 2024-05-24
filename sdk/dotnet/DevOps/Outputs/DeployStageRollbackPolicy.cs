@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeployStageRollbackPolicy
     {
         /// <summary>
-        /// (Updatable) The type of policy used for rolling out a deployment stage.
+        /// (Updatable) Specifies type of the deployment stage rollback policy.
         /// </summary>
         public readonly string? PolicyType;
 

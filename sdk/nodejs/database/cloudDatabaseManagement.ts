@@ -84,6 +84,8 @@ export class CloudDatabaseManagement extends pulumi.CustomResource {
     /**
      * (Updatable) Specifies database management type
      * enum:
+     * - `BASIC`
+     * - `ADVANCED`
      */
     public readonly managementType!: pulumi.Output<string>;
     /**
@@ -189,6 +191,8 @@ export interface CloudDatabaseManagementState {
     /**
      * (Updatable) Specifies database management type
      * enum:
+     * - `BASIC`
+     * - `ADVANCED`
      */
     managementType?: pulumi.Input<string>;
     /**
@@ -236,6 +240,8 @@ export interface CloudDatabaseManagementArgs {
     /**
      * (Updatable) Specifies database management type
      * enum:
+     * - `BASIC`
+     * - `ADVANCED`
      */
     managementType: pulumi.Input<string>;
     /**

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     public sealed class MigrationDataTransferMediumDetailsDatabaseLinkDetails
     {
         /// <summary>
-        /// (Updatable) Name of directory object in database
+        /// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         /// </summary>
         public readonly string? Name;
         /// <summary>

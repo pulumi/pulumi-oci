@@ -19,14 +19,14 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
     public static final PipelineRunConfigurationOverrideDetailsArgs Empty = new PipelineRunConfigurationOverrideDetailsArgs();
 
     /**
-     * The command line arguments to set for step.
+     * The command line arguments to set for steps in the pipeline.
      * 
      */
     @Import(name="commandLineArguments")
     private @Nullable Output<String> commandLineArguments;
 
     /**
-     * @return The command line arguments to set for step.
+     * @return The command line arguments to set for steps in the pipeline.
      * 
      */
     public Optional<Output<String>> commandLineArguments() {
@@ -34,14 +34,14 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
     }
 
     /**
-     * Environment variables to set for step.
+     * Environment variables to set for steps in the pipeline.
      * 
      */
     @Import(name="environmentVariables")
     private @Nullable Output<Map<String,Object>> environmentVariables;
 
     /**
-     * @return Environment variables to set for step.
+     * @return Environment variables to set for steps in the pipeline.
      * 
      */
     public Optional<Output<Map<String,Object>>> environmentVariables() {
@@ -49,14 +49,14 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
     }
 
     /**
-     * A time bound for the execution of the step.
+     * A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * 
      */
     @Import(name="maximumRuntimeInMinutes")
     private @Nullable Output<String> maximumRuntimeInMinutes;
 
     /**
-     * @return A time bound for the execution of the step.
+     * @return A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * 
      */
     public Optional<Output<String>> maximumRuntimeInMinutes() {
@@ -106,7 +106,7 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         /**
-         * @param commandLineArguments The command line arguments to set for step.
+         * @param commandLineArguments The command line arguments to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         /**
-         * @param commandLineArguments The command line arguments to set for step.
+         * @param commandLineArguments The command line arguments to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         /**
-         * @param environmentVariables Environment variables to set for step.
+         * @param environmentVariables Environment variables to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         /**
-         * @param environmentVariables Environment variables to set for step.
+         * @param environmentVariables Environment variables to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         /**
-         * @param maximumRuntimeInMinutes A time bound for the execution of the step.
+         * @param maximumRuntimeInMinutes A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class PipelineRunConfigurationOverrideDetailsArgs extends com.pulum
         }
 
         /**
-         * @param maximumRuntimeInMinutes A time bound for the execution of the step.
+         * @param maximumRuntimeInMinutes A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          * 
          * @return builder
          * 

@@ -14,110 +14,110 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetDatabasePeerTargetDatabaseDatabaseDetail {
     /**
-     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     private @Nullable String autonomousDatabaseId;
     /**
-     * @return The database type.
+     * @return (Updatable) The database type.
      * 
      */
     private @Nullable String databaseType;
     /**
-     * @return The OCID of the cloud database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     private @Nullable String dbSystemId;
     /**
-     * @return The infrastructure type the database is running on.
+     * @return (Updatable) The infrastructure type the database is running on.
      * 
      */
     private @Nullable String infrastructureType;
     /**
-     * @return The OCID of the compute instance on which the database is running.
+     * @return (Updatable) The OCID of the compute instance on which the database is running.
      * 
      */
     private @Nullable String instanceId;
     /**
-     * @return The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+     * @return (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
     private @Nullable List<String> ipAddresses;
     /**
-     * @return The port number of the database listener.
+     * @return (Updatable) The port number of the database listener.
      * 
      */
     private @Nullable Integer listenerPort;
     /**
-     * @return The service name of the database registered as target database.
+     * @return (Updatable) The service name of the database registered as target database.
      * 
      */
     private @Nullable String serviceName;
     /**
-     * @return The OCID of the VM cluster in which the database is running.
+     * @return (Updatable) The OCID of the VM cluster in which the database is running.
      * 
      */
     private @Nullable String vmClusterId;
 
     private TargetDatabasePeerTargetDatabaseDatabaseDetail() {}
     /**
-     * @return The OCID of the Autonomous Database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
      * 
      */
     public Optional<String> autonomousDatabaseId() {
         return Optional.ofNullable(this.autonomousDatabaseId);
     }
     /**
-     * @return The database type.
+     * @return (Updatable) The database type.
      * 
      */
     public Optional<String> databaseType() {
         return Optional.ofNullable(this.databaseType);
     }
     /**
-     * @return The OCID of the cloud database registered as a target database in Data Safe.
+     * @return (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
      * 
      */
     public Optional<String> dbSystemId() {
         return Optional.ofNullable(this.dbSystemId);
     }
     /**
-     * @return The infrastructure type the database is running on.
+     * @return (Updatable) The infrastructure type the database is running on.
      * 
      */
     public Optional<String> infrastructureType() {
         return Optional.ofNullable(this.infrastructureType);
     }
     /**
-     * @return The OCID of the compute instance on which the database is running.
+     * @return (Updatable) The OCID of the compute instance on which the database is running.
      * 
      */
     public Optional<String> instanceId() {
         return Optional.ofNullable(this.instanceId);
     }
     /**
-     * @return The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
+     * @return (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is &#39;ONPREM_CONNECTOR&#39;.
      * 
      */
     public List<String> ipAddresses() {
         return this.ipAddresses == null ? List.of() : this.ipAddresses;
     }
     /**
-     * @return The port number of the database listener.
+     * @return (Updatable) The port number of the database listener.
      * 
      */
     public Optional<Integer> listenerPort() {
         return Optional.ofNullable(this.listenerPort);
     }
     /**
-     * @return The service name of the database registered as target database.
+     * @return (Updatable) The service name of the database registered as target database.
      * 
      */
     public Optional<String> serviceName() {
         return Optional.ofNullable(this.serviceName);
     }
     /**
-     * @return The OCID of the VM cluster in which the database is running.
+     * @return (Updatable) The OCID of the VM cluster in which the database is running.
      * 
      */
     public Optional<String> vmClusterId() {

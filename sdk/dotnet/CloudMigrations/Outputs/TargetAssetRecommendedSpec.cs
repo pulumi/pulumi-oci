@@ -14,100 +14,73 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
     public sealed class TargetAssetRecommendedSpec
     {
         /// <summary>
-        /// (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+        /// Configuration options for the Oracle Cloud Agent software running on the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetRecommendedSpecAgentConfig> AgentConfigs;
         /// <summary>
-        /// (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+        /// The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
         /// </summary>
         public readonly string? CapacityReservationId;
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// The OCID of the compartment.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+        /// Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetRecommendedSpecCreateVnicDetail> CreateVnicDetails;
         /// <summary>
-        /// (Updatable) The OCID of the dedicated VM host.
+        /// The OCID of the dedicated VM host.
         /// </summary>
         public readonly string? DedicatedVmHostId;
         /// <summary>
-        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-        /// 
-        /// If you do not specify the fault domain, the system selects one for you.
-        /// 
-        /// To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-        /// 
-        /// Example: `FAULT-DOMAIN-1`
+        /// A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
         /// </summary>
         public readonly string? FaultDomain;
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
+        /// Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
-        /// (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+        /// Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         /// </summary>
         public readonly string? HostnameLabel;
         /// <summary>
-        /// (Updatable) Optional mutable instance options
+        /// Optional mutable instance options
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetRecommendedSpecInstanceOption> InstanceOptions;
         /// <summary>
-        /// (Updatable) This is an advanced option.
-        /// 
-        /// When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-        /// 
-        /// If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-        /// 
-        /// By default, the iPXE script connects to the instance's local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance's local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-        /// 
-        /// If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-        /// 
-        /// For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-        /// 
-        /// For more information about iPXE, see http://ipxe.org.
+        /// This is an advanced option.
         /// </summary>
         public readonly string? IpxeScript;
         /// <summary>
-        /// (Updatable) Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
         /// </summary>
         public readonly bool? IsPvEncryptionInTransitEnabled;
         /// <summary>
-        /// (Updatable) Configuration options for preemptible instances.
+        /// Configuration options for preemptible instances.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetRecommendedSpecPreemptibleInstanceConfig> PreemptibleInstanceConfigs;
         /// <summary>
-        /// (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-        /// 
-        /// You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+        /// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         /// </summary>
         public readonly string? Shape;
         /// <summary>
-        /// (Updatable) The shape configuration requested for the instance.
-        /// 
-        /// If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-        /// 
-        /// Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+        /// The shape configuration requested for the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetRecommendedSpecShapeConfig> ShapeConfigs;
-        /// <summary>
-        /// (Updatable)
-        /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetRecommendedSpecSourceDetail> SourceDetails;
 
         [OutputConstructor]

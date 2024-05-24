@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DatabaseInsightConnectionDetailsHost> Hosts;
         /// <summary>
-        /// Listener port number used for connection requests for rivate endpoint accessed db resource.
+        /// Listener port number used for connection requests.
         /// </summary>
         public readonly int? Port;
         /// <summary>

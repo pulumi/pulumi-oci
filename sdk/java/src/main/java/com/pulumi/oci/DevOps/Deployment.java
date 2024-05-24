@@ -125,14 +125,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.deployPipelineId;
     }
     /**
-     * The OCID of the stage.
+     * Specifies the OCID of the stage to be redeployed.
      * 
      */
     @Export(name="deployStageId", refs={String.class}, tree="[0]")
     private Output<String> deployStageId;
 
     /**
-     * @return The OCID of the stage.
+     * @return Specifies the OCID of the stage to be redeployed.
      * 
      */
     public Output<String> deployStageId() {

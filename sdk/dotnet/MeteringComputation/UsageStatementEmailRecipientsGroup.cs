@@ -70,7 +70,7 @@ namespace Pulumi.Oci.MeteringComputation
         public Output<ImmutableArray<Outputs.UsageStatementEmailRecipientsGroupRecipientsList>> RecipientsLists { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The email recipient lifecycle state.
+        /// The email recipient group lifecycle state.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -192,7 +192,7 @@ namespace Pulumi.Oci.MeteringComputation
         }
 
         /// <summary>
-        /// (Updatable) The email recipient lifecycle state.
+        /// The email recipient group lifecycle state.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Core.Outputs
     public sealed class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas
     {
         /// <summary>
-        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
         /// </summary>
         public readonly string? DisplayName;
 

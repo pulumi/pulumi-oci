@@ -224,7 +224,7 @@ class KeyExternalKeyReferenceDetailArgs:
                  external_key_id: Optional[pulumi.Input[str]] = None,
                  external_key_version_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        :param pulumi.Input[str] external_key_id: ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         :param pulumi.Input[str] external_key_version_id: Key version ID associated with the external key.
         """
         if external_key_id is not None:
@@ -236,7 +236,7 @@ class KeyExternalKeyReferenceDetailArgs:
     @pulumi.getter(name="externalKeyId")
     def external_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         """
         return pulumi.get(self, "external_key_id")
 
@@ -652,9 +652,9 @@ class VaultExternalKeyManagerMetadataSummaryArgs:
                  private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  vendor: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] external_vault_endpoint_url: URI of the vault on external key manager.
+        :param pulumi.Input[str] external_vault_endpoint_url: URL of the vault on external key manager.
         :param pulumi.Input[Sequence[pulumi.Input['VaultExternalKeyManagerMetadataSummaryOauthMetadataSummaryArgs']]] oauth_metadata_summaries: Summary about authorization to be returned to the customer as a response.
-        :param pulumi.Input[str] private_endpoint_id: OCID of private endpoint created by customer.
+        :param pulumi.Input[str] private_endpoint_id: OCID of the private endpoint.
         :param pulumi.Input[str] vendor: Vendor of the external key manager.
         """
         if external_vault_endpoint_url is not None:
@@ -670,7 +670,7 @@ class VaultExternalKeyManagerMetadataSummaryArgs:
     @pulumi.getter(name="externalVaultEndpointUrl")
     def external_vault_endpoint_url(self) -> Optional[pulumi.Input[str]]:
         """
-        URI of the vault on external key manager.
+        URL of the vault on external key manager.
         """
         return pulumi.get(self, "external_vault_endpoint_url")
 
@@ -694,7 +694,7 @@ class VaultExternalKeyManagerMetadataSummaryArgs:
     @pulumi.getter(name="privateEndpointId")
     def private_endpoint_id(self) -> Optional[pulumi.Input[str]]:
         """
-        OCID of private endpoint created by customer.
+        OCID of the private endpoint.
         """
         return pulumi.get(self, "private_endpoint_id")
 

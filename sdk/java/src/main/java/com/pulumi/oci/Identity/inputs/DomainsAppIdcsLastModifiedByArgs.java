@@ -17,9 +17,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     public static final DomainsAppIdcsLastModifiedByArgs Empty = new DomainsAppIdcsLastModifiedByArgs();
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -33,9 +34,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -50,34 +52,32 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -85,9 +85,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -101,9 +102,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -118,17 +120,14 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * (Updatable) The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -138,17 +137,14 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-     * 
-     * **Added In:** 18.1.6
+     * @return (Updatable) The type of resource, User or App, that modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
-     * * idcsSearchable: true
+     * * caseExact: false
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: immutable
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -159,38 +155,34 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -226,9 +218,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -246,9 +239,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) The displayName of the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -265,17 +259,16 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -286,17 +279,16 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -306,9 +298,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -326,9 +319,10 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -345,17 +339,14 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-         * 
-         * **Added In:** 18.1.6
+         * @param type (Updatable) The type of resource, User or App, that modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsDefaultValue: AccountObjectClass
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -369,17 +360,14 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
-         * 
-         * **Added In:** 18.1.6
+         * @param type (Updatable) The type of resource, User or App, that modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsDefaultValue: AccountObjectClass
-         * * idcsSearchable: true
+         * * caseExact: false
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: immutable
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -392,19 +380,17 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -415,19 +401,17 @@ public final class DomainsAppIdcsLastModifiedByArgs extends com.pulumi.resources
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

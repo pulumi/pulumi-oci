@@ -70,7 +70,7 @@ type Replica struct {
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	// The OCID of the Configuration to be used by the read replica.
 	ConfigurationId pulumi.StringOutput `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
@@ -90,7 +90,7 @@ type Replica struct {
 	IsDeleteProtected pulumi.BoolOutput `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) The MySQL version to be used by the read replica.
+	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntOutput `pulumi:"port"`
@@ -100,10 +100,7 @@ type Replica struct {
 	ReplicaOverrides ReplicaReplicaOverridesOutput `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections ReplicaSecureConnectionArrayOutput `pulumi:"secureConnections"`
-	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
 	// The state of the read replica.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -150,7 +147,7 @@ type replicaState struct {
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	// The OCID of the Configuration to be used by the read replica.
 	ConfigurationId *string `pulumi:"configurationId"`
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId *string `pulumi:"dbSystemId"`
@@ -170,7 +167,7 @@ type replicaState struct {
 	IsDeleteProtected *bool `pulumi:"isDeleteProtected"`
 	// A message describing the state of the read replica.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) The MySQL version to be used by the read replica.
+	// The MySQL version to be used by the read replica.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
 	// The port the read replica is configured to listen on.
 	Port *int `pulumi:"port"`
@@ -180,10 +177,7 @@ type replicaState struct {
 	ReplicaOverrides *ReplicaReplicaOverrides `pulumi:"replicaOverrides"`
 	// Secure connection configuration details.
 	SecureConnections []ReplicaSecureConnection `pulumi:"secureConnections"`
-	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName *string `pulumi:"shapeName"`
 	// The state of the read replica.
 	State *string `pulumi:"state"`
@@ -198,7 +192,7 @@ type ReplicaState struct {
 	AvailabilityDomain pulumi.StringPtrInput
 	// The OCID of the compartment that contains the read replica.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The OCID of the Configuration to be used by the read replica.
+	// The OCID of the Configuration to be used by the read replica.
 	ConfigurationId pulumi.StringPtrInput
 	// The OCID of the DB System the read replica is associated with.
 	DbSystemId pulumi.StringPtrInput
@@ -218,7 +212,7 @@ type ReplicaState struct {
 	IsDeleteProtected pulumi.BoolPtrInput
 	// A message describing the state of the read replica.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) The MySQL version to be used by the read replica.
+	// The MySQL version to be used by the read replica.
 	MysqlVersion pulumi.StringPtrInput
 	// The port the read replica is configured to listen on.
 	Port pulumi.IntPtrInput
@@ -228,10 +222,7 @@ type ReplicaState struct {
 	ReplicaOverrides ReplicaReplicaOverridesPtrInput
 	// Secure connection configuration details.
 	SecureConnections ReplicaSecureConnectionArrayInput
-	// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 	ShapeName pulumi.StringPtrInput
 	// The state of the read replica.
 	State pulumi.StringPtrInput
@@ -377,7 +368,7 @@ func (o ReplicaOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the Configuration to be used by the read replica.
+// The OCID of the Configuration to be used by the read replica.
 func (o ReplicaOutput) ConfigurationId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.ConfigurationId }).(pulumi.StringOutput)
 }
@@ -427,7 +418,7 @@ func (o ReplicaOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) The MySQL version to be used by the read replica.
+// The MySQL version to be used by the read replica.
 func (o ReplicaOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
 }
@@ -452,10 +443,7 @@ func (o ReplicaOutput) SecureConnections() ReplicaSecureConnectionArrayOutput {
 	return o.ApplyT(func(v *Replica) ReplicaSecureConnectionArrayOutput { return v.SecureConnections }).(ReplicaSecureConnectionArrayOutput)
 }
 
-// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
 func (o ReplicaOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Replica) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
 }

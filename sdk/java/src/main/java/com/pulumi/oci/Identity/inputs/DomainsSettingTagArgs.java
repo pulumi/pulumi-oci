@@ -50,11 +50,11 @@ public final class DomainsSettingTagArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -67,11 +67,11 @@ public final class DomainsSettingTagArgs extends com.pulumi.resources.ResourceAr
     private Output<String> value;
 
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -151,11 +151,11 @@ public final class DomainsSettingTagArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) Custom claim value
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -172,11 +172,11 @@ public final class DomainsSettingTagArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param value (Updatable) Custom claim value
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true

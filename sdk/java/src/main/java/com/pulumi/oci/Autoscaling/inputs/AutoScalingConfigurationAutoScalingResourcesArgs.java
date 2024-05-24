@@ -30,14 +30,14 @@ public final class AutoScalingConfigurationAutoScalingResourcesArgs extends com.
     }
 
     /**
-     * The type of action to take.
+     * The type of resource.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to take.
+     * @return The type of resource.
      * 
      */
     public Output<String> type() {
@@ -91,7 +91,7 @@ public final class AutoScalingConfigurationAutoScalingResourcesArgs extends com.
         }
 
         /**
-         * @param type The type of action to take.
+         * @param type The type of resource.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AutoScalingConfigurationAutoScalingResourcesArgs extends com.
         }
 
         /**
-         * @param type The type of action to take.
+         * @param type The type of resource.
          * 
          * @return builder
          * 

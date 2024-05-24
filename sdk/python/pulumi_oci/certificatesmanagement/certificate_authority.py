@@ -197,12 +197,12 @@ class _CertificateAuthorityState:
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCertificateAuthorityRuleArgs']]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
         :param pulumi.Input['CertificateAuthorityCertificateRevocationListDetailsArgs'] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[str] config_type: (Updatable) The origin of the CA.
+        :param pulumi.Input[str] config_type: The origin of the CA.
         :param pulumi.Input[Sequence[pulumi.Input['CertificateAuthorityCurrentVersionArgs']]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] issuer_certificate_authority_id: The OCID of the private CA.
+        :param pulumi.Input[str] issuer_certificate_authority_id: The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -305,7 +305,7 @@ class _CertificateAuthorityState:
     @pulumi.getter(name="configType")
     def config_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The origin of the CA.
+        The origin of the CA.
         """
         return pulumi.get(self, "config_type")
 
@@ -365,7 +365,7 @@ class _CertificateAuthorityState:
     @pulumi.getter(name="issuerCertificateAuthorityId")
     def issuer_certificate_authority_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the private CA.
+        The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         """
         return pulumi.get(self, "issuer_certificate_authority_id")
 
@@ -633,12 +633,12 @@ class CertificateAuthority(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateAuthorityRuleArgs']]]] certificate_authority_rules: (Updatable) A list of rules that control how the CA is used and managed.
         :param pulumi.Input[pulumi.InputType['CertificateAuthorityCertificateRevocationListDetailsArgs']] certificate_revocation_list_details: (Updatable) The details of the certificate revocation list (CRL).
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment in which you want to create the CA.
-        :param pulumi.Input[str] config_type: (Updatable) The origin of the CA.
+        :param pulumi.Input[str] config_type: The origin of the CA.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['CertificateAuthorityCurrentVersionArgs']]]] current_versions: The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) A brief description of the CA.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] issuer_certificate_authority_id: The OCID of the private CA.
+        :param pulumi.Input[str] issuer_certificate_authority_id: The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         :param pulumi.Input[str] kms_key_id: The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
         :param pulumi.Input[str] lifecycle_details: Additional information about the current CA lifecycle state.
         :param pulumi.Input[str] name: A user-friendly name for the CA. Names are unique within a compartment. Avoid entering confidential information. Valid characters include uppercase or lowercase letters, numbers, hyphens, underscores, and periods.
@@ -712,7 +712,7 @@ class CertificateAuthority(pulumi.CustomResource):
     @pulumi.getter(name="configType")
     def config_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The origin of the CA.
+        The origin of the CA.
         """
         return pulumi.get(self, "config_type")
 
@@ -752,7 +752,7 @@ class CertificateAuthority(pulumi.CustomResource):
     @pulumi.getter(name="issuerCertificateAuthorityId")
     def issuer_certificate_authority_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the private CA.
+        The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
         """
         return pulumi.get(self, "issuer_certificate_authority_id")
 

@@ -29,7 +29,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable Boolean active;
     /**
-     * @return (Updatable) The ID of the App in this Grant.
+     * @return (Updatable) The ID of the App to which this Account gives access.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -61,9 +61,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the Account assigned to the User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -77,19 +75,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The Id of the Account assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
@@ -114,7 +110,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.active);
     }
     /**
-     * @return (Updatable) The ID of the App in this Grant.
+     * @return (Updatable) The ID of the App to which this Account gives access.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -150,9 +146,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the Account assigned to the User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -168,19 +162,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The Id of the Account assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

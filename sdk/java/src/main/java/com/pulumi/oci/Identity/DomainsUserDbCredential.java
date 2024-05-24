@@ -30,61 +30,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsUserDbCredential;
- * import com.pulumi.oci.Identity.DomainsUserDbCredentialArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsUserDbCredentialTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsUserDbCredentialUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testUserDbCredential = new DomainsUserDbCredential("testUserDbCredential", DomainsUserDbCredentialArgs.builder()        
- *             .dbPassword(userDbCredentialDbPassword)
- *             .idcsEndpoint(testDomain.url())
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:UserDbCredentials")
- *             .attributeSets()
- *             .attributes("")
- *             .authorization(userDbCredentialAuthorization)
- *             .description(userDbCredentialDescription)
- *             .expiresOn(userDbCredentialExpiresOn)
- *             .id(userDbCredentialId)
- *             .ocid(userDbCredentialOcid)
- *             .resourceTypeSchemaVersion(userDbCredentialResourceTypeSchemaVersion)
- *             .status(userDbCredentialStatus)
- *             .tags(DomainsUserDbCredentialTagArgs.builder()
- *                 .key(userDbCredentialTagsKey)
- *                 .value(userDbCredentialTagsValue)
- *                 .build())
- *             .urnietfparamsscimschemasoracleidcsextensionselfChangeUser(DomainsUserDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs.builder()
- *                 .allowSelfChange(userDbCredentialUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
- *                 .build())
- *             .user(DomainsUserDbCredentialUserArgs.builder()
- *                 .value(testUser.id())
- *                 .ocid(testUser.ocid())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -613,41 +558,39 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
         return this.mixedSalt;
     }
     /**
-     * (Updatable) The username.
+     * (Updatable) Name
+     * 
+     * **Added In:** 2109090424
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * type: string
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) The username.
+     * @return (Updatable) Name
+     * 
+     * **Added In:** 2109090424
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * type: string
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -655,16 +598,16 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -672,9 +615,9 @@ public class DomainsUserDbCredential extends com.pulumi.resources.CustomResource
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Output<String> ocid() {

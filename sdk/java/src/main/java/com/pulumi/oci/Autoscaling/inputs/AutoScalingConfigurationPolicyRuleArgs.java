@@ -41,14 +41,14 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     * ID of the condition that is assigned after creation.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     * @return ID of the condition that is assigned after creation.
      * 
      */
     public Optional<Output<String>> id() {
@@ -128,7 +128,7 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+         * @param id ID of the condition that is assigned after creation.
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class AutoScalingConfigurationPolicyRuleArgs extends com.pulumi.res
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+         * @param id ID of the condition that is assigned after creation.
          * 
          * @return builder
          * 

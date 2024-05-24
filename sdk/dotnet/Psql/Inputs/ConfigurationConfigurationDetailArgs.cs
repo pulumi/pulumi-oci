@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Psql.Inputs
         private InputList<Inputs.ConfigurationConfigurationDetailItemArgs>? _items;
 
         /// <summary>
-        /// List of configuration overridden values.
+        /// List of ConfigParms object.
         /// </summary>
         public InputList<Inputs.ConfigurationConfigurationDetailItemArgs> Items
         {

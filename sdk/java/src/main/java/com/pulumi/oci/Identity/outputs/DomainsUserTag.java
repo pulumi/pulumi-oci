@@ -11,53 +11,47 @@ import java.util.Objects;
 @CustomType
 public final class DomainsUserTag {
     /**
-     * @return (Updatable) The user&#39;s API key value.
-     * 
-     * **Added In:** 2106240046
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
     private String key;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsUserTag() {}
     /**
-     * @return (Updatable) The user&#39;s API key value.
-     * 
-     * **Added In:** 2106240046
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -66,19 +60,17 @@ public final class DomainsUserTag {
         return this.key;
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

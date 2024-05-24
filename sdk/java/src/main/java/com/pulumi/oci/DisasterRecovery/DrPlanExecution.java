@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrPlanExecution = new DrPlanExecution("testDrPlanExecution", DrPlanExecutionArgs.builder()        
+ *         var testDrPlanExecution = new DrPlanExecution("testDrPlanExecution", DrPlanExecutionArgs.builder()
  *             .executionOptions(DrPlanExecutionExecutionOptionsArgs.builder()
  *                 .planExecutionType(drPlanExecutionExecutionOptionsPlanExecutionType)
  *                 .arePrechecksEnabled(drPlanExecutionExecutionOptionsArePrechecksEnabled)
@@ -249,14 +249,14 @@ public class DrPlanExecution extends com.pulumi.resources.CustomResource {
         return this.peerRegion;
     }
     /**
-     * The type of the plan execution.
+     * The type of the DR plan executed.
      * 
      */
     @Export(name="planExecutionType", refs={String.class}, tree="[0]")
     private Output<String> planExecutionType;
 
     /**
-     * @return The type of the plan execution.
+     * @return The type of the DR plan executed.
      * 
      */
     public Output<String> planExecutionType() {

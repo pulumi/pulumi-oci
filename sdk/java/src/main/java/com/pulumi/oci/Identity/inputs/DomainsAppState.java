@@ -62,16 +62,15 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
     public static final DomainsAppState Empty = new DomainsAppState();
 
     /**
-     * (Updatable) Access token expiry
+     * (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
      * * returned: default
-     * * type: dateTime
+     * * type: integer
      * * uniqueness: none
      * 
      */
@@ -79,16 +78,15 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<Integer> accessTokenExpiry;
 
     /**
-     * @return (Updatable) Access token expiry
+     * @return (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
      * * required: false
      * * returned: default
-     * * type: dateTime
+     * * type: integer
      * * uniqueness: none
      * 
      */
@@ -1200,12 +1198,13 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The description of the AppRole.
+     * (Updatable) Description of the application.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -1216,12 +1215,13 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) Description of the application.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -1270,34 +1270,34 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
-     * * returned: default
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
-     * * returned: default
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -2778,40 +2778,34 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: immutable
+     * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * @return Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: immutable
+     * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     public Optional<Output<String>> name() {
@@ -4099,16 +4093,15 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessTokenExpiry (Updatable) Access token expiry
+         * @param accessTokenExpiry (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
          * * returned: default
-         * * type: dateTime
+         * * type: integer
          * * uniqueness: none
          * 
          * @return builder
@@ -4120,16 +4113,15 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessTokenExpiry (Updatable) Access token expiry
+         * @param accessTokenExpiry (Updatable) Expiry-time in seconds for an Access Token. Any token that allows access to this App will expire after the specified duration.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readWrite
          * * required: false
          * * returned: default
-         * * type: dateTime
+         * * type: integer
          * * uniqueness: none
          * 
          * @return builder
@@ -5699,12 +5691,13 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) The description of the AppRole.
+         * @param description (Updatable) Description of the application.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -5719,12 +5712,13 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) The description of the AppRole.
+         * @param description (Updatable) Description of the application.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
@@ -5781,17 +5775,17 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+         * @param displayName (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
-         * * returned: default
+         * * required: true
+         * * returned: always
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -5802,17 +5796,17 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+         * @param displayName (Updatable) Display name of the application. Display name is intended to be user-friendly, and an administrator can change the value at any time.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
-         * * returned: default
+         * * required: true
+         * * returned: always
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -7711,20 +7705,17 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: immutable
+         * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -7735,20 +7726,17 @@ public final class DomainsAppState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name Name of the application. Also serves as username if the application authenticates to Oracle Public Cloud infrastructure. This name may not be user-friendly and cannot be changed once an App is created.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: immutable
+         * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: server
          * 
          * @return builder
          * 

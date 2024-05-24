@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DisasterRecovery.Outputs
         /// </summary>
         public readonly string? BlockVolumeId;
         /// <summary>
-        /// (Updatable) The details for creating a file system mount.
+        /// (Updatable) The details for creating a mount for a file system on a block volume.
         /// </summary>
         public readonly Outputs.DrProtectionGroupMemberBlockVolumeOperationMountDetails? MountDetails;
 

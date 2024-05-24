@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVbInstance = new VbInstance("testVbInstance", VbInstanceArgs.builder()        
+ *         var testVbInstance = new VbInstance("testVbInstance", VbInstanceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(vbInstanceDisplayName)
  *             .nodeCount(vbInstanceNodeCount)

@@ -13,17 +13,16 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+        /// (Updatable) Name of the IdentityBridge associated with the App.
         /// 
-        /// **Deprecated Since: 18.2.2**
+        /// **Added In:** 19.1.4
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -32,7 +31,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) The URI of the IdentityBridge associated with the App.
+        /// 
+        /// **Added In:** 19.1.4
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -47,20 +48,19 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) The Id of the IdentityBridge associated with the App.
+        /// 
+        /// **Added In:** 19.1.4
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
-        /// * returned: default
+        /// * required: false
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

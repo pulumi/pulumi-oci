@@ -41,7 +41,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// </summary>
         public readonly string? Warning;
         /// <summary>
-        /// This value would determine the window size of the training algorithm.
+        /// Window size defined during training or deduced by the algorithm.
         /// </summary>
         public readonly int? WindowSize;
 

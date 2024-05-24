@@ -56,24 +56,24 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      */
     private @Nullable String initialCommitment;
     /**
-     * @return (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
     private @Nullable Double initialHostOcpuCount;
     /**
-     * @return (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return The initial compute shape of the Cluster&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     private @Nullable String initialHostShapeName;
     /**
-     * @return (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+     * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
-     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+     * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      * 
      */
     private @Nullable String instanceDisplayNamePrefix;
     /**
-     * @return (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return Indicates whether shielded instance is enabled for this Cluster.
      * 
      */
     private @Nullable Boolean isShieldedInstanceEnabled;
@@ -88,10 +88,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
      */
     private String vsphereType;
     /**
-     * @return (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      * 
      */
     private @Nullable String workloadNetworkCidr;
@@ -149,30 +146,30 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         return Optional.ofNullable(this.initialCommitment);
     }
     /**
-     * @return (Optional) The initial OCPU count of the SDDC&#39;s ESXi hosts. **Deprecated**. Please use `initial_host_ocpu_count` of `initial_cluster_configurations` instead.
+     * @return The initial OCPU count of the Cluster&#39;s ESXi hosts.
      * 
      */
     public Optional<Double> initialHostOcpuCount() {
         return Optional.ofNullable(this.initialHostOcpuCount);
     }
     /**
-     * @return (Optional) The initial compute shape of the SDDC&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes). **Deprecated**. Please use `initial_host_shape_name` of `initial_cluster_configurations` instead.
+     * @return The initial compute shape of the Cluster&#39;s ESXi hosts. [ListSupportedHostShapes](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedHostShapes/ListSupportedHostShapes).
      * 
      */
     public Optional<String> initialHostShapeName() {
         return Optional.ofNullable(this.initialHostShapeName);
     }
     /**
-     * @return (Optional) A prefix used in the name of each ESXi host and Compute instance in the SDDC. If this isn&#39;t set, the SDDC&#39;s `displayName` is used as the prefix.
+     * @return A prefix used in the name of each ESXi host and Compute instance in the Cluster. If this isn&#39;t set, the Cluster&#39;s `displayName` is used as the prefix.
      * 
-     * For example, if the value is `mySDDC`, the ESXi hosts are named `mySDDC-1`, `mySDDC-2`, and so on. **Deprecated**. Please use  `instance_display_name_prefix` of `initial_cluster_configurations` instead.
+     * For example, if the value is `myCluster`, the ESXi hosts are named `myCluster-1`, `myCluster-2`, and so on.
      * 
      */
     public Optional<String> instanceDisplayNamePrefix() {
         return Optional.ofNullable(this.instanceDisplayNamePrefix);
     }
     /**
-     * @return (Optional) Indicates whether shielded instance is enabled for this SDDC. **Deprecated**. Please use `is_shielded_instance_enabled` of `initial_cluster_configurations` instead.
+     * @return Indicates whether shielded instance is enabled for this Cluster.
      * 
      */
     public Optional<Boolean> isShieldedInstanceEnabled() {
@@ -193,10 +190,7 @@ public final class SddcInitialConfigurationInitialClusterConfiguration {
         return this.vsphereType;
     }
     /**
-     * @return (Optional) The CIDR block for the IP addresses that VMware VMs in the SDDC use to run application workloads.  **Deprecated**. Please use `workload_network_cidr` of `initial_cluster_configurations` instead.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The CIDR block for the IP addresses that VMware VMs in the Cluster use to run application workloads.
      * 
      */
     public Optional<String> workloadNetworkCidr() {

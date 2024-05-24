@@ -14,16 +14,15 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppEditableAttribute
     {
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+        /// (Updatable) Name of the attribute. The attribute name will be qualified by schema name if any extension schema defines the attribute. The attribute name will not be qualified by schema name if the base schema defines the attribute.
         /// 
-        /// **Deprecated Since: 18.2.2**
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
         /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

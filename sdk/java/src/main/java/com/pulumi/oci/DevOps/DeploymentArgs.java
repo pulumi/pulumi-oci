@@ -68,14 +68,14 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The OCID of the stage.
+     * Specifies the OCID of the stage to be redeployed.
      * 
      */
     @Import(name="deployStageId")
     private @Nullable Output<String> deployStageId;
 
     /**
-     * @return The OCID of the stage.
+     * @return Specifies the OCID of the stage to be redeployed.
      * 
      */
     public Optional<Output<String>> deployStageId() {
@@ -293,7 +293,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployStageId The OCID of the stage.
+         * @param deployStageId Specifies the OCID of the stage to be redeployed.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deployStageId The OCID of the stage.
+         * @param deployStageId Specifies the OCID of the stage to be redeployed.
          * 
          * @return builder
          * 

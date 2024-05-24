@@ -18,7 +18,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthentication {
      */
     private List<DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer> authenticationServers;
     /**
-     * @return (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * @return (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
      * 
      */
     private DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource selectionSource;
@@ -32,7 +32,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthentication {
         return this.authenticationServers;
     }
     /**
-     * @return (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+     * @return (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
      * 
      */
     public DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource selectionSource() {

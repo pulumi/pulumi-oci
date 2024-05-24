@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWebAppAcceleration = new AppAcceleration("testWebAppAcceleration", AppAccelerationArgs.builder()        
+ *         var testWebAppAcceleration = new AppAcceleration("testWebAppAcceleration", AppAccelerationArgs.builder()
  *             .backendType(webAppAccelerationBackendType)
  *             .compartmentId(compartmentId)
  *             .loadBalancerId(testLoadBalancer.id())

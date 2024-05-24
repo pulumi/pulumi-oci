@@ -21,14 +21,30 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     public static final PolicyWafConfigAccessRuleArgs Empty = new PolicyWafConfigAccessRuleArgs();
 
     /**
-     * (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+     * * **ALLOW:** Takes no action, just logs the request.
+     * * **DETECT:** Takes no action, but creates an alert for the request.
+     * * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+     * * **BYPASS:** Bypasses some or all challenges.
+     * * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+     * * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+     * 
+     * Regardless of action, no further rules are processed once a rule is matched.
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+     * * **ALLOW:** Takes no action, just logs the request.
+     * * **DETECT:** Takes no action, but creates an alert for the request.
+     * * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+     * * **BYPASS:** Bypasses some or all challenges.
+     * * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+     * * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+     * 
+     * Regardless of action, no further rules are processed once a rule is matched.
      * 
      */
     public Output<String> action() {
@@ -36,14 +52,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+     * (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
     @Import(name="blockAction")
     private @Nullable Output<String> blockAction;
 
     /**
-     * @return (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+     * @return (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
      * 
      */
     public Optional<Output<String>> blockAction() {
@@ -51,14 +67,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+     * (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access rules&#39;.
      * 
      */
     @Import(name="blockErrorPageCode")
     private @Nullable Output<String> blockErrorPageCode;
 
     /**
-     * @return (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+     * @return (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access rules&#39;.
      * 
      */
     public Optional<Output<String>> blockErrorPageCode() {
@@ -66,14 +82,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+     * (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access blocked by website owner. Please contact support.&#39;
      * 
      */
     @Import(name="blockErrorPageDescription")
     private @Nullable Output<String> blockErrorPageDescription;
 
     /**
-     * @return (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+     * @return (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access blocked by website owner. Please contact support.&#39;
      * 
      */
     public Optional<Output<String>> blockErrorPageDescription() {
@@ -81,14 +97,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
+     * (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
     @Import(name="blockErrorPageMessage")
     private @Nullable Output<String> blockErrorPageMessage;
 
     /**
-     * @return (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
+     * @return (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
      * 
      */
     public Optional<Output<String>> blockErrorPageMessage() {
@@ -96,14 +112,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+     * (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
     @Import(name="blockResponseCode")
     private @Nullable Output<Integer> blockResponseCode;
 
     /**
-     * @return (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+     * @return (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
     public Optional<Output<Integer>> blockResponseCode() {
@@ -134,14 +150,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+     * (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     @Import(name="captchaFooter")
     private @Nullable Output<String> captchaFooter;
 
     /**
-     * @return (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+     * @return (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     public Optional<Output<String>> captchaFooter() {
@@ -149,14 +165,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+     * (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     @Import(name="captchaHeader")
     private @Nullable Output<String> captchaHeader;
 
     /**
-     * @return (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+     * @return (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     public Optional<Output<String>> captchaHeader() {
@@ -164,14 +180,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+     * (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     @Import(name="captchaSubmitLabel")
     private @Nullable Output<String> captchaSubmitLabel;
 
     /**
-     * @return (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+     * @return (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     public Optional<Output<String>> captchaSubmitLabel() {
@@ -179,14 +195,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+     * (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     @Import(name="captchaTitle")
     private @Nullable Output<String> captchaTitle;
 
     /**
-     * @return (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+     * @return (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
      * 
      */
     public Optional<Output<String>> captchaTitle() {
@@ -194,14 +210,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     * (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
      * 
      */
     @Import(name="criterias", required=true)
     private Output<List<PolicyWafConfigAccessRuleCriteriaArgs>> criterias;
 
     /**
-     * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     * @return (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
      * 
      */
     public Output<List<PolicyWafConfigAccessRuleCriteriaArgs>> criterias() {
@@ -209,20 +225,14 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The unique name of the access rule.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The unique name of the access rule.
      * 
      */
     public Output<String> name() {
@@ -318,7 +328,15 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+         * * **ALLOW:** Takes no action, just logs the request.
+         * * **DETECT:** Takes no action, but creates an alert for the request.
+         * * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+         * * **BYPASS:** Bypasses some or all challenges.
+         * * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+         * * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+         * 
+         * Regardless of action, no further rules are processed once a rule is matched.
          * 
          * @return builder
          * 
@@ -329,7 +347,15 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+         * * **ALLOW:** Takes no action, just logs the request.
+         * * **DETECT:** Takes no action, but creates an alert for the request.
+         * * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+         * * **BYPASS:** Bypasses some or all challenges.
+         * * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+         * * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+         * 
+         * Regardless of action, no further rules are processed once a rule is matched.
          * 
          * @return builder
          * 
@@ -339,7 +365,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockAction (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+         * @param blockAction (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
          * 
          * @return builder
          * 
@@ -350,7 +376,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockAction (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+         * @param blockAction (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
          * 
          * @return builder
          * 
@@ -360,7 +386,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockErrorPageCode (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+         * @param blockErrorPageCode (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access rules&#39;.
          * 
          * @return builder
          * 
@@ -371,7 +397,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockErrorPageCode (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+         * @param blockErrorPageCode (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access rules&#39;.
          * 
          * @return builder
          * 
@@ -381,7 +407,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockErrorPageDescription (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+         * @param blockErrorPageDescription (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access blocked by website owner. Please contact support.&#39;
          * 
          * @return builder
          * 
@@ -392,7 +418,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockErrorPageDescription (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+         * @param blockErrorPageDescription (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access blocked by website owner. Please contact support.&#39;
          * 
          * @return builder
          * 
@@ -402,7 +428,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockErrorPageMessage (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
+         * @param blockErrorPageMessage (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
          * 
          * @return builder
          * 
@@ -413,7 +439,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockErrorPageMessage (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
+         * @param blockErrorPageMessage (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to &#39;Access to the website is blocked.&#39;
          * 
          * @return builder
          * 
@@ -423,7 +449,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockResponseCode (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+         * @param blockResponseCode (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
          * 
          * @return builder
          * 
@@ -434,7 +460,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param blockResponseCode (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+         * @param blockResponseCode (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
          * 
          * @return builder
          * 
@@ -487,7 +513,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaFooter (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+         * @param captchaFooter (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -498,7 +524,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaFooter (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+         * @param captchaFooter (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -508,7 +534,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaHeader (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+         * @param captchaHeader (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -519,7 +545,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaHeader (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+         * @param captchaHeader (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -529,7 +555,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaSubmitLabel (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+         * @param captchaSubmitLabel (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -540,7 +566,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaSubmitLabel (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+         * @param captchaSubmitLabel (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -550,7 +576,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaTitle (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+         * @param captchaTitle (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -561,7 +587,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param captchaTitle (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+         * @param captchaTitle (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
          * 
          * @return builder
          * 
@@ -571,7 +597,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param criterias (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+         * @param criterias (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
          * 
          * @return builder
          * 
@@ -582,7 +608,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param criterias (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+         * @param criterias (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
          * 
          * @return builder
          * 
@@ -592,7 +618,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param criterias (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+         * @param criterias (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
          * 
          * @return builder
          * 
@@ -602,10 +628,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The unique name of the access rule.
          * 
          * @return builder
          * 
@@ -616,10 +639,7 @@ public final class PolicyWafConfigAccessRuleArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The unique name of the access rule.
          * 
          * @return builder
          * 

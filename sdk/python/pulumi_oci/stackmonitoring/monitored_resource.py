@@ -55,7 +55,7 @@ class MonitoredResourceArgs:
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
         :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
+        :param pulumi.Input[str] name: Monitored Resource Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         """
@@ -282,7 +282,7 @@ class MonitoredResourceArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Name.
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
@@ -359,7 +359,7 @@ class _MonitoredResourceState:
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
         :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
+        :param pulumi.Input[str] name: Monitored Resource Name.
         :param pulumi.Input[Sequence[pulumi.Input['MonitoredResourcePropertyArgs']]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_category: Resource Category to indicate the kind of resource type.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -598,7 +598,7 @@ class _MonitoredResourceState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Property Name.
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 
@@ -866,7 +866,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
         :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
+        :param pulumi.Input[str] name: Monitored Resource Name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
         :param pulumi.Input[str] type: Monitored Resource Type. 
@@ -1103,7 +1103,7 @@ class MonitoredResource(pulumi.CustomResource):
         :param pulumi.Input[str] host_name: (Updatable) Host name of the monitored resource.
         :param pulumi.Input[str] license: (Updatable) License edition of the monitored resource. If not provided  the default license type for the compartment will be used.
         :param pulumi.Input[str] management_agent_id: Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-        :param pulumi.Input[str] name: (Updatable) Property Name.
+        :param pulumi.Input[str] name: Monitored Resource Name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MonitoredResourcePropertyArgs']]]] properties: (Updatable) List of monitored resource properties.
         :param pulumi.Input[str] resource_category: Resource Category to indicate the kind of resource type.
         :param pulumi.Input[str] resource_time_zone: (Updatable) Time zone in the form of tz database canonical zone ID. Specifies the preference with a value that uses the IANA Time Zone Database format (x-obmcs-time-zone). For example - America/Los_Angeles
@@ -1266,7 +1266,7 @@ class MonitoredResource(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Property Name.
+        Monitored Resource Name.
         """
         return pulumi.get(self, "name")
 

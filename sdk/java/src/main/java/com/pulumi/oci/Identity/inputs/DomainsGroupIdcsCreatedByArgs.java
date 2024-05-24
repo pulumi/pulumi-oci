@@ -17,12 +17,11 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     public static final DomainsGroupIdcsCreatedByArgs Empty = new DomainsGroupIdcsCreatedByArgs();
 
     /**
-     * (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -35,12 +34,11 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -54,34 +52,32 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -89,11 +85,10 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -107,11 +102,10 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -126,16 +120,14 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -145,16 +137,14 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -165,9 +155,7 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -184,9 +172,7 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
     private Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -232,12 +218,11 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param display (Updatable) App Display Name
-         * 
-         * **Added In:** 18.4.2
+         * @param display (Updatable) The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -254,12 +239,11 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param display (Updatable) App Display Name
-         * 
-         * **Added In:** 18.4.2
+         * @param display (Updatable) The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
+         * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -275,17 +259,16 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -296,17 +279,16 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -316,11 +298,10 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -338,11 +319,10 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -359,16 +339,14 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type (Updatable) The type of the entity that created this Group.
-         * 
-         * **Added In:** 18.4.2
+         * @param type (Updatable) The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
-         * * idcsDefaultValue: App
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -382,16 +360,14 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type (Updatable) The type of the entity that created this Group.
-         * 
-         * **Added In:** 18.4.2
+         * @param type (Updatable) The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
-         * * idcsDefaultValue: App
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -404,9 +380,7 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -427,9 +401,7 @@ public final class DomainsGroupIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true

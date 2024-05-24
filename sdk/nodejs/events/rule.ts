@@ -79,7 +79,7 @@ export class Rule extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) A list of one or more ActionDetails objects.
+     * (Updatable) A list of ActionDetails objects to create for a rule.
      */
     public readonly actions!: pulumi.Output<outputs.Events.RuleActions>;
     /**
@@ -202,7 +202,7 @@ export class Rule extends pulumi.CustomResource {
  */
 export interface RuleState {
     /**
-     * (Updatable) A list of one or more ActionDetails objects.
+     * (Updatable) A list of ActionDetails objects to create for a rule.
      */
     actions?: pulumi.Input<inputs.Events.RuleActions>;
     /**
@@ -268,7 +268,7 @@ export interface RuleState {
  */
 export interface RuleArgs {
     /**
-     * (Updatable) A list of one or more ActionDetails objects.
+     * (Updatable) A list of ActionDetails objects to create for a rule.
      */
     actions: pulumi.Input<inputs.Events.RuleActions>;
     /**

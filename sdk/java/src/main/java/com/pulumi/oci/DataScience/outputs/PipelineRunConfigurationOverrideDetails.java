@@ -15,17 +15,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineRunConfigurationOverrideDetails {
     /**
-     * @return The command line arguments to set for step.
+     * @return The command line arguments to set for steps in the pipeline.
      * 
      */
     private @Nullable String commandLineArguments;
     /**
-     * @return Environment variables to set for step.
+     * @return Environment variables to set for steps in the pipeline.
      * 
      */
     private @Nullable Map<String,Object> environmentVariables;
     /**
-     * @return A time bound for the execution of the step.
+     * @return A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * 
      */
     private @Nullable String maximumRuntimeInMinutes;
@@ -37,21 +37,21 @@ public final class PipelineRunConfigurationOverrideDetails {
 
     private PipelineRunConfigurationOverrideDetails() {}
     /**
-     * @return The command line arguments to set for step.
+     * @return The command line arguments to set for steps in the pipeline.
      * 
      */
     public Optional<String> commandLineArguments() {
         return Optional.ofNullable(this.commandLineArguments);
     }
     /**
-     * @return Environment variables to set for step.
+     * @return Environment variables to set for steps in the pipeline.
      * 
      */
     public Map<String,Object> environmentVariables() {
         return this.environmentVariables == null ? Map.of() : this.environmentVariables;
     }
     /**
-     * @return A time bound for the execution of the step.
+     * @return A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * 
      */
     public Optional<String> maximumRuntimeInMinutes() {

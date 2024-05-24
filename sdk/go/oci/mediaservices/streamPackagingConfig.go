@@ -100,7 +100,7 @@ type StreamPackagingConfig struct {
 	StreamPackagingFormat pulumi.StringOutput `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -174,7 +174,7 @@ type streamPackagingConfigState struct {
 	StreamPackagingFormat *string `pulumi:"streamPackagingFormat"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// When the lock was created.
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -207,7 +207,7 @@ type StreamPackagingConfigState struct {
 	StreamPackagingFormat pulumi.StringPtrInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// When the lock was created.
+	// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// The time when the Packaging Configuration was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
@@ -413,7 +413,7 @@ func (o StreamPackagingConfigOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// When the lock was created.
+// The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
 func (o StreamPackagingConfigOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *StreamPackagingConfig) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

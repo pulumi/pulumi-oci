@@ -14,62 +14,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return Unique name of the configuration
      * 
      */
     private @Nullable String configKey;
     /**
-     * @return (Updatable) configuration data type
+     * @return configuration data type
      * 
      */
     private @Nullable String dataType;
     /**
-     * @return (Updatable) configuration name
+     * @return configuration name
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     private @Nullable String value;
     /**
-     * @return (Updatable) List of configuration values
+     * @return List of configuration values
      * 
      */
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values;
 
     private DetectorRecipeEffectiveDetectorRuleDetailConfiguration() {}
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return Unique name of the configuration
      * 
      */
     public Optional<String> configKey() {
         return Optional.ofNullable(this.configKey);
     }
     /**
-     * @return (Updatable) configuration data type
+     * @return configuration data type
      * 
      */
     public Optional<String> dataType() {
         return Optional.ofNullable(this.dataType);
     }
     /**
-     * @return (Updatable) configuration name
+     * @return configuration name
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<String> value() {
         return Optional.ofNullable(this.value);
     }
     /**
-     * @return (Updatable) List of configuration values
+     * @return List of configuration values
      * 
      */
     public List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> values() {

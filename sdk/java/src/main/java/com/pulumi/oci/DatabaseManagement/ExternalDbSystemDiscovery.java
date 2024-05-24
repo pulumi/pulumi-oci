@@ -29,47 +29,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DatabaseManagement.ExternalDbSystemDiscovery;
- * import com.pulumi.oci.DatabaseManagement.ExternalDbSystemDiscoveryArgs;
- * import com.pulumi.oci.DatabaseManagement.inputs.ExternalDbSystemDiscoveryPatchOperationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testExternalDbSystemDiscovery = new ExternalDbSystemDiscovery("testExternalDbSystemDiscovery", ExternalDbSystemDiscoveryArgs.builder()        
- *             .agentId(testAgent.id())
- *             .compartmentId(compartmentId)
- *             .externalDbSystemDiscoveryId(externalDbSystemDiscoveryExternalDbSystemDiscoveryId)
- *             .definedTags(Map.of("Operations.CostCenter", "42"))
- *             .displayName(externalDbSystemDiscoveryDisplayName)
- *             .freeformTags(Map.of("Department", "Finance"))
- *             .patchOperations(ExternalDbSystemDiscoveryPatchOperationArgs.builder()
- *                 .operation(externalDbSystemDiscoveryPatchOperationsOperation)
- *                 .selection(externalDbSystemDiscoveryPatchOperationsSelection)
- *                 .value(externalDbSystemDiscoveryPatchOperationsValue[0])
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

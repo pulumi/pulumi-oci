@@ -123,7 +123,7 @@ namespace Pulumi.Oci.DataIntegration
         public Output<string> Identifier { get; private set; } = null!;
 
         /// <summary>
-        /// The identifying key for the object.
+        /// (Updatable) Currently not used on application creation. Reserved for future.
         /// </summary>
         [Output("key")]
         public Output<string> Key { get; private set; } = null!;
@@ -317,7 +317,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string> Identifier { get; set; } = null!;
 
         /// <summary>
-        /// The identifying key for the object.
+        /// (Updatable) Currently not used on application creation. Reserved for future.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -449,7 +449,7 @@ namespace Pulumi.Oci.DataIntegration
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// The identifying key for the object.
+        /// (Updatable) Currently not used on application creation. Reserved for future.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

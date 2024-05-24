@@ -50,13 +50,13 @@ public final class DomainsRulePolicyTypeArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) PolicyType identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -67,13 +67,13 @@ public final class DomainsRulePolicyTypeArgs extends com.pulumi.resources.Resour
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) PolicyType identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -149,13 +149,13 @@ public final class DomainsRulePolicyTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) PolicyType identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -170,13 +170,13 @@ public final class DomainsRulePolicyTypeArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) PolicyType identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

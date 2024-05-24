@@ -197,7 +197,7 @@ class _ModelState:
         :param pulumi.Input[str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input['ModelTrainingDatasetArgs'] training_dataset: Possible data set type
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        :param pulumi.Input[str] version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -416,7 +416,7 @@ class _ModelState:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 
@@ -711,7 +711,7 @@ class Model(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The time the the model was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the model was updated. An RFC3339 formatted datetime string.
         :param pulumi.Input[pulumi.InputType['ModelTrainingDatasetArgs']] training_dataset: Possible data set type
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        :param pulumi.Input[str] version: For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -859,7 +859,7 @@ class Model(pulumi.CustomResource):
     @pulumi.getter
     def version(self) -> pulumi.Output[str]:
         """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        For pre trained models this will identify model type version used for model creation For custom identifying the model by model id is difficult. This param provides ease of use for end customer. <<service>>::<<service-name>>_<<model-type-version>>::<<custom model on which this training has to be done>> ex: ai-lang::NER_V1::CUSTOM-V0
         """
         return pulumi.get(self, "version")
 

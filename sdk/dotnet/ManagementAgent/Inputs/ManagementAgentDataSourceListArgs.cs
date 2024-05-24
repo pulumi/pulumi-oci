@@ -35,9 +35,6 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
             set => _metricDimensions = value;
         }
 
-        /// <summary>
-        /// Name of the property
-        /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
@@ -47,27 +44,15 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         [Input("proxyUrl")]
         public Input<string>? ProxyUrl { get; set; }
 
-        /// <summary>
-        /// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
-        /// </summary>
         [Input("readDataLimit")]
         public Input<int>? ReadDataLimit { get; set; }
 
-        /// <summary>
-        /// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
-        /// </summary>
         [Input("readTimeout")]
         public Input<int>? ReadTimeout { get; set; }
 
-        /// <summary>
-        /// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-        /// </summary>
         [Input("resourceGroup")]
         public Input<string>? ResourceGroup { get; set; }
 
-        /// <summary>
-        /// Number in minutes. The scraping occurs at the specified interval.
-        /// </summary>
         [Input("scheduleMins")]
         public Input<int>? ScheduleMins { get; set; }
 
@@ -89,15 +74,9 @@ namespace Pulumi.Oci.ManagementAgent.Inputs
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
-        /// <summary>
-        /// The type of the DataSource.
-        /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }
 
-        /// <summary>
-        /// The url through which the Prometheus Exporter publishes its metrics. (http only)
-        /// </summary>
         [Input("url")]
         public Input<string>? Url { get; set; }
 

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly string SecretId;
         /// <summary>
-        /// (Updatable) Asset source type.
+        /// (Updatable) Authentication type
         /// </summary>
         public readonly string Type;
 

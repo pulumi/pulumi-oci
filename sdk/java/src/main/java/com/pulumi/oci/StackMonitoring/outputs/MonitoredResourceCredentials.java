@@ -32,12 +32,12 @@ public final class MonitoredResourceCredentials {
      */
     private @Nullable String keyId;
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the credential, within the context of the source.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) List of monitored resource properties.
+     * @return (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
      * 
      */
     private @Nullable List<MonitoredResourceCredentialsProperty> properties;
@@ -47,10 +47,7 @@ public final class MonitoredResourceCredentials {
      */
     private @Nullable String source;
     /**
-     * @return Monitored Resource Type.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
      * 
      */
     private @Nullable String type;
@@ -81,14 +78,14 @@ public final class MonitoredResourceCredentials {
         return Optional.ofNullable(this.keyId);
     }
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the credential, within the context of the source.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) List of monitored resource properties.
+     * @return (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
      * 
      */
     public List<MonitoredResourceCredentialsProperty> properties() {
@@ -102,10 +99,7 @@ public final class MonitoredResourceCredentials {
         return Optional.ofNullable(this.source);
     }
     /**
-     * @return Monitored Resource Type.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
      * 
      */
     public Optional<String> type() {

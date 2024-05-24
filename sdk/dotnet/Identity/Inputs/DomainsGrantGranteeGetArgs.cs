@@ -13,15 +13,14 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsGrantGranteeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// (Updatable) Grantee display name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -29,10 +28,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) Grantee URI
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -45,14 +43,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// The type of resource, User or App, that modified this Resource
+        /// Grantee resource type. Allowed values are User, Group, App and DynamicResourceGroup.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsCsvAttributeName: Member Type
+        /// * idcsDefaultValue: User
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
+        /// * mutability: immutable
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -61,13 +61,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Value of the tag.
+        /// Grantee identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
+        /// * idcsCsvAttributeName: Member
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

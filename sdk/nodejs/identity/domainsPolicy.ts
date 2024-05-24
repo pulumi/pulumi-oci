@@ -245,17 +245,15 @@ export class DomainsPolicy extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsPolicyMeta[]>;
     /**
-     * (Updatable) Rule name
-     *
-     * **Added In:** 17.4.2
+     * (Updatable) Policy name
      *
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      */
@@ -612,17 +610,15 @@ export interface DomainsPolicyState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsPolicyMeta>[]>;
     /**
-     * (Updatable) Rule name
-     *
-     * **Added In:** 17.4.2
+     * (Updatable) Policy name
      *
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      */
@@ -795,17 +791,15 @@ export interface DomainsPolicyArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * (Updatable) Rule name
-     *
-     * **Added In:** 17.4.2
+     * (Updatable) Policy name
      *
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      */

@@ -44,17 +44,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<Inputs.DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfileGetArgs> SelfRegistrationProfile { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) User token returned if userFlowControlledByExternalClient is true
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) User token used for auto-login.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
         /// * returned: default
-        /// * type: complex
+        /// * type: string
         /// * uniqueness: none
         /// </summary>
         [Input("userToken")]

@@ -15,8 +15,6 @@ namespace Pulumi.Oci.Core.Outputs
     {
         /// <summary>
         /// The baseline OCPU utilization for a subcore burstable VM instance. Leave this attribute blank for a non-burstable instance, or explicitly specify non-burstable with `BASELINE_1_1`.
-        /// 
-        /// The following values are supported:
         /// </summary>
         public readonly string? BaselineOcpuUtilization;
         /// <summary>

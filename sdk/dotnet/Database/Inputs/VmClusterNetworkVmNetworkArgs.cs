@@ -13,25 +13,25 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class VmClusterNetworkVmNetworkArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The network domain name.
+        /// The network domain name.
         /// </summary>
         [Input("domainName")]
         public Input<string>? DomainName { get; set; }
 
         /// <summary>
-        /// (Updatable) The network gateway.
+        /// The network gateway.
         /// </summary>
         [Input("gateway")]
         public Input<string>? Gateway { get; set; }
 
         /// <summary>
-        /// (Updatable) The network netmask.
+        /// The network netmask.
         /// </summary>
         [Input("netmask")]
         public Input<string>? Netmask { get; set; }
 
         /// <summary>
-        /// (Updatable) The network type.
+        /// The network type.
         /// </summary>
         [Input("networkType", required: true)]
         public Input<string> NetworkType { get; set; } = null!;
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Database.Inputs
         private InputList<Inputs.VmClusterNetworkVmNetworkNodeArgs>? _nodes;
 
         /// <summary>
-        /// (Updatable) The list of node details.
+        /// The list of node details.
         /// </summary>
         public InputList<Inputs.VmClusterNetworkVmNetworkNodeArgs> Nodes
         {
@@ -49,11 +49,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The network VLAN ID.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The network VLAN ID.
         /// </summary>
         [Input("vlanId")]
         public Input<string>? VlanId { get; set; }

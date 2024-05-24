@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
     public sealed class TargetAssetMigrationAsset
     {
         /// <summary>
-        /// (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// (Updatable) The OCID of the compartment.
+        /// The OCID of the compartment.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly ImmutableArray<string> DependsOns;
         /// <summary>
-        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
@@ -94,7 +94,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// </summary>
         public readonly string? TimeUpdated;
         /// <summary>
-        /// (Updatable) The type of action to run when the instance is interrupted for eviction.
+        /// (Updatable) The type of target asset.
         /// </summary>
         public readonly string? Type;
 

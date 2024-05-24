@@ -19,14 +19,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     public static final TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs Empty = new TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs();
 
     /**
-     * (Updatable) Base condition object
+     * Base condition object
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     public Optional<Output<String>> condition() {
@@ -34,14 +34,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     }
 
     /**
-     * (Updatable) Configurations associated with the ResponderRule
+     * ResponderRule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs>>> configurations() {
@@ -64,14 +64,14 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
     }
 
     /**
-     * (Updatable) Execution Mode for ResponderRule
+     * Execution Mode for ResponderRule
      * 
      */
     @Import(name="mode")
     private @Nullable Output<String> mode;
 
     /**
-     * @return (Updatable) Execution Mode for ResponderRule
+     * @return Execution Mode for ResponderRule
      * 
      */
     public Optional<Output<String>> mode() {
@@ -106,7 +106,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition Base condition object
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition Base condition object
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param mode (Updatable) Execution Mode for ResponderRule
+         * @param mode Execution Mode for ResponderRule
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs e
         }
 
         /**
-         * @param mode (Updatable) Execution Mode for ResponderRule
+         * @param mode Execution Mode for ResponderRule
          * 
          * @return builder
          * 

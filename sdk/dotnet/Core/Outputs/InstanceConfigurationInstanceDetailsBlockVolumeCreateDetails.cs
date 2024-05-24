@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy> AutotunePolicies;
         /// <summary>
-        /// The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+        /// The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? ClusterPlacementGroupId;
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// The OCID of the compartment that contains the volume.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

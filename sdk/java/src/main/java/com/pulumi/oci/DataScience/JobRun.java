@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testJobRun = new JobRun("testJobRun", JobRunArgs.builder()        
+ *         var testJobRun = new JobRun("testJobRun", JobRunArgs.builder()
  *             .compartmentId(compartmentId)
  *             .jobId(testJob.id())
  *             .projectId(testProject.id())

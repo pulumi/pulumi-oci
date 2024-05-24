@@ -14,7 +14,7 @@ namespace Pulumi.Oci.NetworkLoadBalancer.Outputs
     public sealed class NetworkLoadBalancerIpAddress
     {
         /// <summary>
-        /// The IP address of the backend server. Example: `10.0.0.3`
+        /// An IP address.  Example: `192.168.0.3`
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>

@@ -46,9 +46,12 @@ type AppFirewallPolicyAction struct {
 	// * Transfer-Encoding
 	// * Upgrade
 	Headers []AppFirewallPolicyActionHeader `pulumi:"headers"`
-	// (Updatable) Rule name. Must be unique within the module.
+	// (Updatable) Action name. Can be used to reference the action.
 	Name string `pulumi:"name"`
-	// (Updatable) Type of WebAppFirewallPolicyRule.
+	// (Updatable)
+	// * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+	// * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+	// * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
 	Type string `pulumi:"type"`
 }
 
@@ -96,9 +99,12 @@ type AppFirewallPolicyActionArgs struct {
 	// * Transfer-Encoding
 	// * Upgrade
 	Headers AppFirewallPolicyActionHeaderArrayInput `pulumi:"headers"`
-	// (Updatable) Rule name. Must be unique within the module.
+	// (Updatable) Action name. Can be used to reference the action.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) Type of WebAppFirewallPolicyRule.
+	// (Updatable)
+	// * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+	// * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+	// * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -194,12 +200,15 @@ func (o AppFirewallPolicyActionOutput) Headers() AppFirewallPolicyActionHeaderAr
 	return o.ApplyT(func(v AppFirewallPolicyAction) []AppFirewallPolicyActionHeader { return v.Headers }).(AppFirewallPolicyActionHeaderArrayOutput)
 }
 
-// (Updatable) Rule name. Must be unique within the module.
+// (Updatable) Action name. Can be used to reference the action.
 func (o AppFirewallPolicyActionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyAction) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) Type of WebAppFirewallPolicyRule.
+// (Updatable)
+// * **CHECK** is a non-terminating action that does not stop the execution of rules in current module, just emits a log message documenting result of rule execution.
+// * **ALLOW** is a non-terminating action which upon matching rule skips all remaining rules in the current module.
+// * **RETURN_HTTP_RESPONSE** is a terminating action which is executed immediately, returns a defined HTTP response.
 func (o AppFirewallPolicyActionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyAction) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -227,7 +236,7 @@ func (o AppFirewallPolicyActionArrayOutput) Index(i pulumi.IntInput) AppFirewall
 type AppFirewallPolicyActionBody struct {
 	// (Updatable) Static response body text.
 	Text string `pulumi:"text"`
-	// (Updatable) Type of WebAppFirewallPolicyRule.
+	// (Updatable) Type of HttpResponseBody.
 	Type string `pulumi:"type"`
 }
 
@@ -245,7 +254,7 @@ type AppFirewallPolicyActionBodyInput interface {
 type AppFirewallPolicyActionBodyArgs struct {
 	// (Updatable) Static response body text.
 	Text pulumi.StringInput `pulumi:"text"`
-	// (Updatable) Type of WebAppFirewallPolicyRule.
+	// (Updatable) Type of HttpResponseBody.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -331,7 +340,7 @@ func (o AppFirewallPolicyActionBodyOutput) Text() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyActionBody) string { return v.Text }).(pulumi.StringOutput)
 }
 
-// (Updatable) Type of WebAppFirewallPolicyRule.
+// (Updatable) Type of HttpResponseBody.
 func (o AppFirewallPolicyActionBodyOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyActionBody) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -370,7 +379,7 @@ func (o AppFirewallPolicyActionBodyPtrOutput) Text() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Type of WebAppFirewallPolicyRule.
+// (Updatable) Type of HttpResponseBody.
 func (o AppFirewallPolicyActionBodyPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyActionBody) *string {
 		if v == nil {
@@ -381,7 +390,7 @@ func (o AppFirewallPolicyActionBodyPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type AppFirewallPolicyActionHeader struct {
-	// (Updatable) Rule name. Must be unique within the module.
+	// (Updatable) The name of the header field.
 	Name *string `pulumi:"name"`
 	// (Updatable) The value of the header field.
 	Value *string `pulumi:"value"`
@@ -399,7 +408,7 @@ type AppFirewallPolicyActionHeaderInput interface {
 }
 
 type AppFirewallPolicyActionHeaderArgs struct {
-	// (Updatable) Rule name. Must be unique within the module.
+	// (Updatable) The name of the header field.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The value of the header field.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -456,7 +465,7 @@ func (o AppFirewallPolicyActionHeaderOutput) ToAppFirewallPolicyActionHeaderOutp
 	return o
 }
 
-// (Updatable) Rule name. Must be unique within the module.
+// (Updatable) The name of the header field.
 func (o AppFirewallPolicyActionHeaderOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v AppFirewallPolicyActionHeader) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -491,7 +500,7 @@ type AppFirewallPolicyRequestAccessControl struct {
 	// * **ALLOW** continues execution of other modules and their rules.
 	// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
 	DefaultActionName string `pulumi:"defaultActionName"`
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 	Rules []AppFirewallPolicyRequestAccessControlRule `pulumi:"rules"`
 }
 
@@ -511,7 +520,7 @@ type AppFirewallPolicyRequestAccessControlArgs struct {
 	// * **ALLOW** continues execution of other modules and their rules.
 	// * **RETURN_HTTP_RESPONSE** terminates further execution of modules and rules and returns defined HTTP response.
 	DefaultActionName pulumi.StringInput `pulumi:"defaultActionName"`
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 	Rules AppFirewallPolicyRequestAccessControlRuleArrayInput `pulumi:"rules"`
 }
 
@@ -599,7 +608,7 @@ func (o AppFirewallPolicyRequestAccessControlOutput) DefaultActionName() pulumi.
 	return o.ApplyT(func(v AppFirewallPolicyRequestAccessControl) string { return v.DefaultActionName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 func (o AppFirewallPolicyRequestAccessControlOutput) Rules() AppFirewallPolicyRequestAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestAccessControl) []AppFirewallPolicyRequestAccessControlRule {
 		return v.Rules
@@ -642,7 +651,7 @@ func (o AppFirewallPolicyRequestAccessControlPtrOutput) DefaultActionName() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 func (o AppFirewallPolicyRequestAccessControlPtrOutput) Rules() AppFirewallPolicyRequestAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyRequestAccessControl) []AppFirewallPolicyRequestAccessControlRule {
 		if v == nil {
@@ -653,7 +662,7 @@ func (o AppFirewallPolicyRequestAccessControlPtrOutput) Rules() AppFirewallPolic
 }
 
 type AppFirewallPolicyRequestAccessControlRule struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName string `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition *string `pulumi:"condition"`
@@ -678,7 +687,7 @@ type AppFirewallPolicyRequestAccessControlRuleInput interface {
 }
 
 type AppFirewallPolicyRequestAccessControlRuleArgs struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
@@ -742,7 +751,7 @@ func (o AppFirewallPolicyRequestAccessControlRuleOutput) ToAppFirewallPolicyRequ
 	return o
 }
 
-// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 func (o AppFirewallPolicyRequestAccessControlRuleOutput) ActionName() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestAccessControlRule) string { return v.ActionName }).(pulumi.StringOutput)
 }
@@ -802,7 +811,7 @@ type AppFirewallPolicyRequestProtection struct {
 	//
 	// For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
 	BodyInspectionSizeLimitInBytes *int `pulumi:"bodyInspectionSizeLimitInBytes"`
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
 	Rules []AppFirewallPolicyRequestProtectionRule `pulumi:"rules"`
 }
 
@@ -831,7 +840,7 @@ type AppFirewallPolicyRequestProtectionArgs struct {
 	//
 	// For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm).
 	BodyInspectionSizeLimitInBytes pulumi.IntPtrInput `pulumi:"bodyInspectionSizeLimitInBytes"`
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
 	Rules AppFirewallPolicyRequestProtectionRuleArrayInput `pulumi:"rules"`
 }
 
@@ -931,7 +940,7 @@ func (o AppFirewallPolicyRequestProtectionOutput) BodyInspectionSizeLimitInBytes
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) *int { return v.BodyInspectionSizeLimitInBytes }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyRequestProtectionOutput) Rules() AppFirewallPolicyRequestProtectionRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtection) []AppFirewallPolicyRequestProtectionRule { return v.Rules }).(AppFirewallPolicyRequestProtectionRuleArrayOutput)
 }
@@ -989,7 +998,7 @@ func (o AppFirewallPolicyRequestProtectionPtrOutput) BodyInspectionSizeLimitInBy
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection Capabilities of REQUEST_PROTECTION_CAPABILITY type.
 func (o AppFirewallPolicyRequestProtectionPtrOutput) Rules() AppFirewallPolicyRequestProtectionRuleArrayOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyRequestProtection) []AppFirewallPolicyRequestProtectionRule {
 		if v == nil {
@@ -1000,7 +1009,7 @@ func (o AppFirewallPolicyRequestProtectionPtrOutput) Rules() AppFirewallPolicyRe
 }
 
 type AppFirewallPolicyRequestProtectionRule struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName string `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition *string `pulumi:"condition"`
@@ -1031,7 +1040,7 @@ type AppFirewallPolicyRequestProtectionRuleInput interface {
 }
 
 type AppFirewallPolicyRequestProtectionRuleArgs struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
@@ -1101,7 +1110,7 @@ func (o AppFirewallPolicyRequestProtectionRuleOutput) ToAppFirewallPolicyRequest
 	return o
 }
 
-// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 func (o AppFirewallPolicyRequestProtectionRuleOutput) ActionName() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRule) string { return v.ActionName }).(pulumi.StringOutput)
 }
@@ -1315,7 +1324,7 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityArrayOutput) I
 }
 
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight struct {
-	// (Updatable) Unique key of referenced protection capability.
+	// (Updatable) Unique key of collaborative capability for which weight will be overridden.
 	Key string `pulumi:"key"`
 	// (Updatable) The value of weight to set.
 	Weight int `pulumi:"weight"`
@@ -1333,7 +1342,7 @@ type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeig
 }
 
 type AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs struct {
-	// (Updatable) Unique key of referenced protection capability.
+	// (Updatable) Unique key of collaborative capability for which weight will be overridden.
 	Key pulumi.StringInput `pulumi:"key"`
 	// (Updatable) The value of weight to set.
 	Weight pulumi.IntInput `pulumi:"weight"`
@@ -1390,7 +1399,7 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeW
 	return o
 }
 
-// (Updatable) Unique key of referenced protection capability.
+// (Updatable) Unique key of collaborative capability for which weight will be overridden.
 func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeight) string {
 		return v.Key
@@ -1827,7 +1836,7 @@ func (o AppFirewallPolicyRequestProtectionRuleProtectionCapabilitySettingsPtrOut
 }
 
 type AppFirewallPolicyRequestRateLimiting struct {
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
 	Rules []AppFirewallPolicyRequestRateLimitingRule `pulumi:"rules"`
 }
 
@@ -1843,7 +1852,7 @@ type AppFirewallPolicyRequestRateLimitingInput interface {
 }
 
 type AppFirewallPolicyRequestRateLimitingArgs struct {
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
 	Rules AppFirewallPolicyRequestRateLimitingRuleArrayInput `pulumi:"rules"`
 }
 
@@ -1924,7 +1933,7 @@ func (o AppFirewallPolicyRequestRateLimitingOutput) ToAppFirewallPolicyRequestRa
 	}).(AppFirewallPolicyRequestRateLimitingPtrOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
 func (o AppFirewallPolicyRequestRateLimitingOutput) Rules() AppFirewallPolicyRequestRateLimitingRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestRateLimiting) []AppFirewallPolicyRequestRateLimitingRule {
 		return v.Rules
@@ -1955,7 +1964,7 @@ func (o AppFirewallPolicyRequestRateLimitingPtrOutput) Elem() AppFirewallPolicyR
 	}).(AppFirewallPolicyRequestRateLimitingOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
 func (o AppFirewallPolicyRequestRateLimitingPtrOutput) Rules() AppFirewallPolicyRequestRateLimitingRuleArrayOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyRequestRateLimiting) []AppFirewallPolicyRequestRateLimitingRule {
 		if v == nil {
@@ -1966,7 +1975,7 @@ func (o AppFirewallPolicyRequestRateLimitingPtrOutput) Rules() AppFirewallPolicy
 }
 
 type AppFirewallPolicyRequestRateLimitingRule struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName string `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition *string `pulumi:"condition"`
@@ -1993,7 +2002,7 @@ type AppFirewallPolicyRequestRateLimitingRuleInput interface {
 }
 
 type AppFirewallPolicyRequestRateLimitingRuleArgs struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
@@ -2059,7 +2068,7 @@ func (o AppFirewallPolicyRequestRateLimitingRuleOutput) ToAppFirewallPolicyReque
 	return o
 }
 
-// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 func (o AppFirewallPolicyRequestRateLimitingRuleOutput) ActionName() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyRequestRateLimitingRule) string { return v.ActionName }).(pulumi.StringOutput)
 }
@@ -2228,7 +2237,7 @@ func (o AppFirewallPolicyRequestRateLimitingRuleConfigurationArrayOutput) Index(
 }
 
 type AppFirewallPolicyResponseAccessControl struct {
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 	Rules []AppFirewallPolicyResponseAccessControlRule `pulumi:"rules"`
 }
 
@@ -2244,7 +2253,7 @@ type AppFirewallPolicyResponseAccessControlInput interface {
 }
 
 type AppFirewallPolicyResponseAccessControlArgs struct {
-	// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+	// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 	Rules AppFirewallPolicyResponseAccessControlRuleArrayInput `pulumi:"rules"`
 }
 
@@ -2325,7 +2334,7 @@ func (o AppFirewallPolicyResponseAccessControlOutput) ToAppFirewallPolicyRespons
 	}).(AppFirewallPolicyResponseAccessControlPtrOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 func (o AppFirewallPolicyResponseAccessControlOutput) Rules() AppFirewallPolicyResponseAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseAccessControl) []AppFirewallPolicyResponseAccessControlRule {
 		return v.Rules
@@ -2356,7 +2365,7 @@ func (o AppFirewallPolicyResponseAccessControlPtrOutput) Elem() AppFirewallPolic
 	}).(AppFirewallPolicyResponseAccessControlOutput)
 }
 
-// (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+// (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
 func (o AppFirewallPolicyResponseAccessControlPtrOutput) Rules() AppFirewallPolicyResponseAccessControlRuleArrayOutput {
 	return o.ApplyT(func(v *AppFirewallPolicyResponseAccessControl) []AppFirewallPolicyResponseAccessControlRule {
 		if v == nil {
@@ -2367,7 +2376,7 @@ func (o AppFirewallPolicyResponseAccessControlPtrOutput) Rules() AppFirewallPoli
 }
 
 type AppFirewallPolicyResponseAccessControlRule struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName string `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition *string `pulumi:"condition"`
@@ -2392,7 +2401,7 @@ type AppFirewallPolicyResponseAccessControlRuleInput interface {
 }
 
 type AppFirewallPolicyResponseAccessControlRuleArgs struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
@@ -2456,7 +2465,7 @@ func (o AppFirewallPolicyResponseAccessControlRuleOutput) ToAppFirewallPolicyRes
 	return o
 }
 
-// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 func (o AppFirewallPolicyResponseAccessControlRuleOutput) ActionName() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseAccessControlRule) string { return v.ActionName }).(pulumi.StringOutput)
 }
@@ -2640,7 +2649,7 @@ func (o AppFirewallPolicyResponseProtectionPtrOutput) Rules() AppFirewallPolicyR
 }
 
 type AppFirewallPolicyResponseProtectionRule struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName string `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition *string `pulumi:"condition"`
@@ -2671,7 +2680,7 @@ type AppFirewallPolicyResponseProtectionRuleInput interface {
 }
 
 type AppFirewallPolicyResponseProtectionRuleArgs struct {
-	// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+	// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 	ActionName pulumi.StringInput `pulumi:"actionName"`
 	// (Updatable) An expression that determines whether or not the rule action should be executed.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
@@ -2741,7 +2750,7 @@ func (o AppFirewallPolicyResponseProtectionRuleOutput) ToAppFirewallPolicyRespon
 	return o
 }
 
-// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
 func (o AppFirewallPolicyResponseProtectionRuleOutput) ActionName() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRule) string { return v.ActionName }).(pulumi.StringOutput)
 }
@@ -2955,7 +2964,7 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityArrayOutput) 
 }
 
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight struct {
-	// (Updatable) Unique key of referenced protection capability.
+	// (Updatable) Unique key of collaborative capability for which weight will be overridden.
 	Key string `pulumi:"key"`
 	// (Updatable) The value of weight to set.
 	Weight int `pulumi:"weight"`
@@ -2973,7 +2982,7 @@ type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWei
 }
 
 type AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightArgs struct {
-	// (Updatable) Unique key of referenced protection capability.
+	// (Updatable) Unique key of collaborative capability for which weight will be overridden.
 	Key pulumi.StringInput `pulumi:"key"`
 	// (Updatable) The value of weight to set.
 	Weight pulumi.IntInput `pulumi:"weight"`
@@ -3030,7 +3039,7 @@ func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborative
 	return o
 }
 
-// (Updatable) Unique key of referenced protection capability.
+// (Updatable) Unique key of collaborative capability for which weight will be overridden.
 func (o AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeightOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v AppFirewallPolicyResponseProtectionRuleProtectionCapabilityCollaborativeWeight) string {
 		return v.Key

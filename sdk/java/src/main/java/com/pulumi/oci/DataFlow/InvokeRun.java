@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInvokeRun = new InvokeRun("testInvokeRun", InvokeRunArgs.builder()        
+ *         var testInvokeRun = new InvokeRun("testInvokeRun", InvokeRunArgs.builder()
  *             .compartmentId(compartmentId)
  *             .applicationId(testApplication.id())
  *             .applicationLogConfig(InvokeRunApplicationLogConfigArgs.builder()

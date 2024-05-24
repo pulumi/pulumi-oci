@@ -30,14 +30,14 @@ public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Type of WebAppFirewallPolicyRule.
+     * (Updatable) Type of HttpResponseBody.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of WebAppFirewallPolicyRule.
+     * @return (Updatable) Type of HttpResponseBody.
      * 
      */
     public Output<String> type() {
@@ -91,7 +91,7 @@ public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type (Updatable) Type of WebAppFirewallPolicyRule.
+         * @param type (Updatable) Type of HttpResponseBody.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class AppFirewallPolicyActionBodyArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type (Updatable) Type of WebAppFirewallPolicyRule.
+         * @param type (Updatable) Type of HttpResponseBody.
          * 
          * @return builder
          * 

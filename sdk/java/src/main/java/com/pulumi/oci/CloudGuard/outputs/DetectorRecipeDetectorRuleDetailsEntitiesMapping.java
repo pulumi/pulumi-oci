@@ -13,9 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
     /**
-     * @return (Updatable) Detector recipe display name.
-     * 
-     * Avoid entering confidential information.
+     * @return (Updatable) The display name of entity
      * 
      */
     private @Nullable String displayName;
@@ -32,9 +30,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMapping {
 
     private DetectorRecipeDetectorRuleDetailsEntitiesMapping() {}
     /**
-     * @return (Updatable) Detector recipe display name.
-     * 
-     * Avoid entering confidential information.
+     * @return (Updatable) The display name of entity
      * 
      */
     public Optional<String> displayName() {

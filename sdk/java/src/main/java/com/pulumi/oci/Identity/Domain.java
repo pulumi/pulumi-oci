@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDomain = new Domain("testDomain", DomainArgs.builder()        
+ *         var testDomain = new Domain("testDomain", DomainArgs.builder()
  *             .compartmentId(compartmentId)
  *             .description(domainDescription)
  *             .displayName(domainDisplayName)

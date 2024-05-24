@@ -49,7 +49,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
         public Input<string>? MetricCategory { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the script file
+        /// (Updatable) Name of the metric.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

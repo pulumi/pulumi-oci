@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAddressActionVerification = new AddressActionVerification("testAddressActionVerification", AddressActionVerificationArgs.builder()        
+ *         var testAddressActionVerification = new AddressActionVerification("testAddressActionVerification", AddressActionVerificationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .ospHomeRegion(addressActionVerificationOspHomeRegion)
  *             .addressKey(addressActionVerificationAddressKey)

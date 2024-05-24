@@ -15,14 +15,14 @@ public final class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs e
     public static final SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs Empty = new SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs();
 
     /**
-     * (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+     * (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
     @Import(name="max", required=true)
     private Output<Integer> max;
 
     /**
-     * @return (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+     * @return (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
      * 
      */
     public Output<Integer> max() {
@@ -30,14 +30,14 @@ public final class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs e
     }
 
     /**
-     * (Updatable) The minimum port number, which must not be greater than the maximum port number.
+     * (Updatable) The minimum port number. Must not be greater than the maximum port number.
      * 
      */
     @Import(name="min", required=true)
     private Output<Integer> min;
 
     /**
-     * @return (Updatable) The minimum port number, which must not be greater than the maximum port number.
+     * @return (Updatable) The minimum port number. Must not be greater than the maximum port number.
      * 
      */
     public Output<Integer> min() {
@@ -70,7 +70,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs e
         }
 
         /**
-         * @param max (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         * @param max (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs e
         }
 
         /**
-         * @param max (Updatable) The maximum port number, which must not be less than the minimum port number. To specify a single port number, set both the min and max to the same value.
+         * @param max (Updatable) The maximum port number. Must not be lower than the minimum port number. To specify a single port number, set both the min and max to the same value.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs e
         }
 
         /**
-         * @param min (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * @param min (Updatable) The minimum port number. Must not be greater than the maximum port number.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class SecurityListEgressSecurityRuleUdpOptionsSourcePortRangeArgs e
         }
 
         /**
-         * @param min (Updatable) The minimum port number, which must not be greater than the maximum port number.
+         * @param min (Updatable) The minimum port number. Must not be greater than the maximum port number.
          * 
          * @return builder
          * 

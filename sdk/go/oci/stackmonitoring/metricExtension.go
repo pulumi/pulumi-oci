@@ -100,7 +100,7 @@ import (
 type MetricExtension struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Type of possible collection methods.
+	// Type of possible collection methods.
 	CollectionMethod pulumi.StringOutput `pulumi:"collectionMethod"`
 	// (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
 	CollectionRecurrences pulumi.StringOutput `pulumi:"collectionRecurrences"`
@@ -110,7 +110,7 @@ type MetricExtension struct {
 	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Description of the metric extension.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) Display name of the metric.
+	// (Updatable) Metric Extension display name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// List of resource objects on which this metric extension is enabled.
 	EnabledOnResources MetricExtensionEnabledOnResourceArrayOutput `pulumi:"enabledOnResources"`
@@ -120,7 +120,7 @@ type MetricExtension struct {
 	LastUpdatedBy pulumi.StringOutput `pulumi:"lastUpdatedBy"`
 	// (Updatable) List of metrics which are part of this metric extension
 	MetricLists MetricExtensionMetricListArrayOutput `pulumi:"metricLists"`
-	// (Updatable) Name of the script file
+	// Metric Extension Resource name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
 	//
@@ -193,7 +193,7 @@ func GetMetricExtension(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MetricExtension resources.
 type metricExtensionState struct {
-	// (Updatable) Type of possible collection methods.
+	// Type of possible collection methods.
 	CollectionMethod *string `pulumi:"collectionMethod"`
 	// (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
 	CollectionRecurrences *string `pulumi:"collectionRecurrences"`
@@ -203,7 +203,7 @@ type metricExtensionState struct {
 	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Description of the metric extension.
 	Description *string `pulumi:"description"`
-	// (Updatable) Display name of the metric.
+	// (Updatable) Metric Extension display name.
 	DisplayName *string `pulumi:"displayName"`
 	// List of resource objects on which this metric extension is enabled.
 	EnabledOnResources []MetricExtensionEnabledOnResource `pulumi:"enabledOnResources"`
@@ -213,7 +213,7 @@ type metricExtensionState struct {
 	LastUpdatedBy *string `pulumi:"lastUpdatedBy"`
 	// (Updatable) List of metrics which are part of this metric extension
 	MetricLists []MetricExtensionMetricList `pulumi:"metricLists"`
-	// (Updatable) Name of the script file
+	// Metric Extension Resource name.
 	Name *string `pulumi:"name"`
 	// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
 	//
@@ -239,7 +239,7 @@ type metricExtensionState struct {
 }
 
 type MetricExtensionState struct {
-	// (Updatable) Type of possible collection methods.
+	// Type of possible collection methods.
 	CollectionMethod pulumi.StringPtrInput
 	// (Updatable) Schedule of metric extension should use RFC 5545 format i.e. recur-rule-part = "FREQ";INTERVAL where FREQ rule part identifies the type of recurrence rule. Valid values are "MINUTELY","HOURLY","DAILY" to specify repeating events based on an interval of a minute, an hour and a day or more. Example- FREQ=DAILY;INTERVAL=1
 	CollectionRecurrences pulumi.StringPtrInput
@@ -249,7 +249,7 @@ type MetricExtensionState struct {
 	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Description of the metric extension.
 	Description pulumi.StringPtrInput
-	// (Updatable) Display name of the metric.
+	// (Updatable) Metric Extension display name.
 	DisplayName pulumi.StringPtrInput
 	// List of resource objects on which this metric extension is enabled.
 	EnabledOnResources MetricExtensionEnabledOnResourceArrayInput
@@ -259,7 +259,7 @@ type MetricExtensionState struct {
 	LastUpdatedBy pulumi.StringPtrInput
 	// (Updatable) List of metrics which are part of this metric extension
 	MetricLists MetricExtensionMetricListArrayInput
-	// (Updatable) Name of the script file
+	// Metric Extension Resource name.
 	Name pulumi.StringPtrInput
 	// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
 	//
@@ -295,11 +295,11 @@ type metricExtensionArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Description of the metric extension.
 	Description *string `pulumi:"description"`
-	// (Updatable) Display name of the metric.
+	// (Updatable) Metric Extension display name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) List of metrics which are part of this metric extension
 	MetricLists []MetricExtensionMetricList `pulumi:"metricLists"`
-	// (Updatable) Name of the script file
+	// Metric Extension Resource name.
 	Name *string `pulumi:"name"`
 	// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
 	//
@@ -320,11 +320,11 @@ type MetricExtensionArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Description of the metric extension.
 	Description pulumi.StringPtrInput
-	// (Updatable) Display name of the metric.
+	// (Updatable) Metric Extension display name.
 	DisplayName pulumi.StringInput
 	// (Updatable) List of metrics which are part of this metric extension
 	MetricLists MetricExtensionMetricListArrayInput
-	// (Updatable) Name of the script file
+	// Metric Extension Resource name.
 	Name pulumi.StringPtrInput
 	// (Updatable) An optional property when set to `true` triggers Publish of a metric extension. Once set to `true`, it cannot be changed back to `false`. Update of publishTrigger cannot be combined with other updates in the same request. A metric extension cannot be tested and its definition cannot be updated once it is marked published or publishTrigger is updated to `true`.
 	//
@@ -424,7 +424,7 @@ func (o MetricExtensionOutput) ToMetricExtensionOutputWithContext(ctx context.Co
 	return o
 }
 
-// (Updatable) Type of possible collection methods.
+// Type of possible collection methods.
 func (o MetricExtensionOutput) CollectionMethod() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.CollectionMethod }).(pulumi.StringOutput)
 }
@@ -449,7 +449,7 @@ func (o MetricExtensionOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) Display name of the metric.
+// (Updatable) Metric Extension display name.
 func (o MetricExtensionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -474,7 +474,7 @@ func (o MetricExtensionOutput) MetricLists() MetricExtensionMetricListArrayOutpu
 	return o.ApplyT(func(v *MetricExtension) MetricExtensionMetricListArrayOutput { return v.MetricLists }).(MetricExtensionMetricListArrayOutput)
 }
 
-// (Updatable) Name of the script file
+// Metric Extension Resource name.
 func (o MetricExtensionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *MetricExtension) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

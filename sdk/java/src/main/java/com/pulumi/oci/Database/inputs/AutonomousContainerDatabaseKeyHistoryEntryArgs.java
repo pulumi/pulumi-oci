@@ -16,14 +16,14 @@ public final class AutonomousContainerDatabaseKeyHistoryEntryArgs extends com.pu
     public static final AutonomousContainerDatabaseKeyHistoryEntryArgs Empty = new AutonomousContainerDatabaseKeyHistoryEntryArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
      * 
      */
     public Optional<Output<String>> id() {
@@ -103,7 +103,7 @@ public final class AutonomousContainerDatabaseKeyHistoryEntryArgs extends com.pu
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          * 
          * @return builder
          * 
@@ -114,7 +114,7 @@ public final class AutonomousContainerDatabaseKeyHistoryEntryArgs extends com.pu
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
          * 
          * @return builder
          * 

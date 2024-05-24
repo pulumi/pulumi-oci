@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class BuildPipelineStageBuildPipelineStagePredecessorCollection {
     /**
-     * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return (Updatable) A list of build pipeline stage predecessors for a stage.
      * 
      */
     private List<BuildPipelineStageBuildPipelineStagePredecessorCollectionItem> items;
 
     private BuildPipelineStageBuildPipelineStagePredecessorCollection() {}
     /**
-     * @return (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+     * @return (Updatable) A list of build pipeline stage predecessors for a stage.
      * 
      */
     public List<BuildPipelineStageBuildPipelineStagePredecessorCollectionItem> items() {

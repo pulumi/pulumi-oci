@@ -155,7 +155,7 @@ func (o BuildPipelineBuildPipelineParametersPtrOutput) Items() BuildPipelineBuil
 type BuildPipelineBuildPipelineParametersItem struct {
 	// (Updatable) Default value of the parameter.
 	DefaultValue string `pulumi:"defaultValue"`
-	// (Updatable) Optional description about the build pipeline.
+	// (Updatable) Description of the parameter.
 	Description *string `pulumi:"description"`
 	// (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
 	Name string `pulumi:"name"`
@@ -175,7 +175,7 @@ type BuildPipelineBuildPipelineParametersItemInput interface {
 type BuildPipelineBuildPipelineParametersItemArgs struct {
 	// (Updatable) Default value of the parameter.
 	DefaultValue pulumi.StringInput `pulumi:"defaultValue"`
-	// (Updatable) Optional description about the build pipeline.
+	// (Updatable) Description of the parameter.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
 	Name pulumi.StringInput `pulumi:"name"`
@@ -237,7 +237,7 @@ func (o BuildPipelineBuildPipelineParametersItemOutput) DefaultValue() pulumi.St
 	return o.ApplyT(func(v BuildPipelineBuildPipelineParametersItem) string { return v.DefaultValue }).(pulumi.StringOutput)
 }
 
-// (Updatable) Optional description about the build pipeline.
+// (Updatable) Description of the parameter.
 func (o BuildPipelineBuildPipelineParametersItemOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildPipelineBuildPipelineParametersItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -268,7 +268,7 @@ func (o BuildPipelineBuildPipelineParametersItemArrayOutput) Index(i pulumi.IntI
 }
 
 type BuildPipelineStageBuildPipelineStagePredecessorCollection struct {
-	// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+	// (Updatable) A list of build pipeline stage predecessors for a stage.
 	Items []BuildPipelineStageBuildPipelineStagePredecessorCollectionItem `pulumi:"items"`
 }
 
@@ -284,7 +284,7 @@ type BuildPipelineStageBuildPipelineStagePredecessorCollectionInput interface {
 }
 
 type BuildPipelineStageBuildPipelineStagePredecessorCollectionArgs struct {
-	// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+	// (Updatable) A list of build pipeline stage predecessors for a stage.
 	Items BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -365,7 +365,7 @@ func (o BuildPipelineStageBuildPipelineStagePredecessorCollectionOutput) ToBuild
 	}).(BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrOutput)
 }
 
-// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+// (Updatable) A list of build pipeline stage predecessors for a stage.
 func (o BuildPipelineStageBuildPipelineStagePredecessorCollectionOutput) Items() BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v BuildPipelineStageBuildPipelineStagePredecessorCollection) []BuildPipelineStageBuildPipelineStagePredecessorCollectionItem {
 		return v.Items
@@ -396,7 +396,7 @@ func (o BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrOutput) Elem
 	}).(BuildPipelineStageBuildPipelineStagePredecessorCollectionOutput)
 }
 
-// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+// (Updatable) A list of build pipeline stage predecessors for a stage.
 func (o BuildPipelineStageBuildPipelineStagePredecessorCollectionPtrOutput) Items() BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v *BuildPipelineStageBuildPipelineStagePredecessorCollection) []BuildPipelineStageBuildPipelineStagePredecessorCollectionItem {
 		if v == nil {
@@ -679,7 +679,7 @@ func (o BuildPipelineStageBuildRunnerShapeConfigPtrOutput) Ocpus() pulumi.IntPtr
 }
 
 type BuildPipelineStageBuildSourceCollection struct {
-	// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+	// (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
 	Items []BuildPipelineStageBuildSourceCollectionItem `pulumi:"items"`
 }
 
@@ -695,7 +695,7 @@ type BuildPipelineStageBuildSourceCollectionInput interface {
 }
 
 type BuildPipelineStageBuildSourceCollectionArgs struct {
-	// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+	// (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
 	Items BuildPipelineStageBuildSourceCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -776,7 +776,7 @@ func (o BuildPipelineStageBuildSourceCollectionOutput) ToBuildPipelineStageBuild
 	}).(BuildPipelineStageBuildSourceCollectionPtrOutput)
 }
 
-// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+// (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
 func (o BuildPipelineStageBuildSourceCollectionOutput) Items() BuildPipelineStageBuildSourceCollectionItemArrayOutput {
 	return o.ApplyT(func(v BuildPipelineStageBuildSourceCollection) []BuildPipelineStageBuildSourceCollectionItem {
 		return v.Items
@@ -807,7 +807,7 @@ func (o BuildPipelineStageBuildSourceCollectionPtrOutput) Elem() BuildPipelineSt
 	}).(BuildPipelineStageBuildSourceCollectionOutput)
 }
 
-// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+// (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
 func (o BuildPipelineStageBuildSourceCollectionPtrOutput) Items() BuildPipelineStageBuildSourceCollectionItemArrayOutput {
 	return o.ApplyT(func(v *BuildPipelineStageBuildSourceCollection) []BuildPipelineStageBuildSourceCollectionItem {
 		if v == nil {
@@ -1676,7 +1676,7 @@ func (o BuildRunBuildOutputArrayOutput) Index(i pulumi.IntInput) BuildRunBuildOu
 }
 
 type BuildRunBuildOutputArtifactOverrideParameter struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items []BuildRunBuildOutputArtifactOverrideParameterItem `pulumi:"items"`
 }
 
@@ -1692,7 +1692,7 @@ type BuildRunBuildOutputArtifactOverrideParameterInput interface {
 }
 
 type BuildRunBuildOutputArtifactOverrideParameterArgs struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items BuildRunBuildOutputArtifactOverrideParameterItemArrayInput `pulumi:"items"`
 }
 
@@ -1747,7 +1747,7 @@ func (o BuildRunBuildOutputArtifactOverrideParameterOutput) ToBuildRunBuildOutpu
 	return o
 }
 
-// List of arguments provided at the time of running the build.
+// List of exported variables.
 func (o BuildRunBuildOutputArtifactOverrideParameterOutput) Items() BuildRunBuildOutputArtifactOverrideParameterItemArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildOutputArtifactOverrideParameter) []BuildRunBuildOutputArtifactOverrideParameterItem {
 		return v.Items
@@ -1777,7 +1777,7 @@ func (o BuildRunBuildOutputArtifactOverrideParameterArrayOutput) Index(i pulumi.
 type BuildRunBuildOutputArtifactOverrideParameterItem struct {
 	// The OCID of the deployment artifact definition.
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
-	// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+	// Name of the step.
 	Name *string `pulumi:"name"`
 	// Value of the argument.
 	Value *string `pulumi:"value"`
@@ -1797,7 +1797,7 @@ type BuildRunBuildOutputArtifactOverrideParameterItemInput interface {
 type BuildRunBuildOutputArtifactOverrideParameterItemArgs struct {
 	// The OCID of the deployment artifact definition.
 	DeployArtifactId pulumi.StringPtrInput `pulumi:"deployArtifactId"`
-	// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+	// Name of the step.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Value of the argument.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -1859,7 +1859,7 @@ func (o BuildRunBuildOutputArtifactOverrideParameterItemOutput) DeployArtifactId
 	return o.ApplyT(func(v BuildRunBuildOutputArtifactOverrideParameterItem) *string { return v.DeployArtifactId }).(pulumi.StringPtrOutput)
 }
 
-// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+// Name of the step.
 func (o BuildRunBuildOutputArtifactOverrideParameterItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildRunBuildOutputArtifactOverrideParameterItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -1890,7 +1890,7 @@ func (o BuildRunBuildOutputArtifactOverrideParameterItemArrayOutput) Index(i pul
 }
 
 type BuildRunBuildOutputDeliveredArtifact struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items []BuildRunBuildOutputDeliveredArtifactItem `pulumi:"items"`
 }
 
@@ -1906,7 +1906,7 @@ type BuildRunBuildOutputDeliveredArtifactInput interface {
 }
 
 type BuildRunBuildOutputDeliveredArtifactArgs struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items BuildRunBuildOutputDeliveredArtifactItemArrayInput `pulumi:"items"`
 }
 
@@ -1961,7 +1961,7 @@ func (o BuildRunBuildOutputDeliveredArtifactOutput) ToBuildRunBuildOutputDeliver
 	return o
 }
 
-// List of arguments provided at the time of running the build.
+// List of exported variables.
 func (o BuildRunBuildOutputDeliveredArtifactOutput) Items() BuildRunBuildOutputDeliveredArtifactItemArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildOutputDeliveredArtifact) []BuildRunBuildOutputDeliveredArtifactItem {
 		return v.Items
@@ -2158,7 +2158,7 @@ func (o BuildRunBuildOutputDeliveredArtifactItemArrayOutput) Index(i pulumi.IntI
 }
 
 type BuildRunBuildOutputExportedVariable struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items []BuildRunBuildOutputExportedVariableItem `pulumi:"items"`
 }
 
@@ -2174,7 +2174,7 @@ type BuildRunBuildOutputExportedVariableInput interface {
 }
 
 type BuildRunBuildOutputExportedVariableArgs struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items BuildRunBuildOutputExportedVariableItemArrayInput `pulumi:"items"`
 }
 
@@ -2229,7 +2229,7 @@ func (o BuildRunBuildOutputExportedVariableOutput) ToBuildRunBuildOutputExported
 	return o
 }
 
-// List of arguments provided at the time of running the build.
+// List of exported variables.
 func (o BuildRunBuildOutputExportedVariableOutput) Items() BuildRunBuildOutputExportedVariableItemArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildOutputExportedVariable) []BuildRunBuildOutputExportedVariableItem { return v.Items }).(BuildRunBuildOutputExportedVariableItemArrayOutput)
 }
@@ -2255,7 +2255,7 @@ func (o BuildRunBuildOutputExportedVariableArrayOutput) Index(i pulumi.IntInput)
 }
 
 type BuildRunBuildOutputExportedVariableItem struct {
-	// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+	// Name of the step.
 	Name *string `pulumi:"name"`
 	// Value of the argument.
 	Value *string `pulumi:"value"`
@@ -2273,7 +2273,7 @@ type BuildRunBuildOutputExportedVariableItemInput interface {
 }
 
 type BuildRunBuildOutputExportedVariableItemArgs struct {
-	// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+	// Name of the step.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// Value of the argument.
 	Value pulumi.StringPtrInput `pulumi:"value"`
@@ -2330,7 +2330,7 @@ func (o BuildRunBuildOutputExportedVariableItemOutput) ToBuildRunBuildOutputExpo
 	return o
 }
 
-// Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+// Name of the step.
 func (o BuildRunBuildOutputExportedVariableItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BuildRunBuildOutputExportedVariableItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2361,7 +2361,7 @@ func (o BuildRunBuildOutputExportedVariableItemArrayOutput) Index(i pulumi.IntIn
 }
 
 type BuildRunBuildOutputVulnerabilityAuditSummaryCollection struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items []BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem `pulumi:"items"`
 }
 
@@ -2377,7 +2377,7 @@ type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionInput interface {
 }
 
 type BuildRunBuildOutputVulnerabilityAuditSummaryCollectionArgs struct {
-	// List of arguments provided at the time of running the build.
+	// List of exported variables.
 	Items BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -2432,7 +2432,7 @@ func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) ToBuildRun
 	return o
 }
 
-// List of arguments provided at the time of running the build.
+// List of exported variables.
 func (o BuildRunBuildOutputVulnerabilityAuditSummaryCollectionOutput) Items() BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArrayOutput {
 	return o.ApplyT(func(v BuildRunBuildOutputVulnerabilityAuditSummaryCollection) []BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem {
 		return v.Items
@@ -5206,7 +5206,7 @@ func (o DeployEnvironmentNetworkChannelPtrOutput) SubnetId() pulumi.StringPtrOut
 }
 
 type DeployPipelineDeployPipelineArtifact struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items []DeployPipelineDeployPipelineArtifactItem `pulumi:"items"`
 }
 
@@ -5222,7 +5222,7 @@ type DeployPipelineDeployPipelineArtifactInput interface {
 }
 
 type DeployPipelineDeployPipelineArtifactArgs struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items DeployPipelineDeployPipelineArtifactItemArrayInput `pulumi:"items"`
 }
 
@@ -5277,7 +5277,7 @@ func (o DeployPipelineDeployPipelineArtifactOutput) ToDeployPipelineDeployPipeli
 	return o
 }
 
-// (Updatable) List of parameters defined for a deployment pipeline.
+// List of parameters defined for a deployment pipeline.
 func (o DeployPipelineDeployPipelineArtifactOutput) Items() DeployPipelineDeployPipelineArtifactItemArrayOutput {
 	return o.ApplyT(func(v DeployPipelineDeployPipelineArtifact) []DeployPipelineDeployPipelineArtifactItem {
 		return v.Items
@@ -5422,7 +5422,7 @@ func (o DeployPipelineDeployPipelineArtifactItemArrayOutput) Index(i pulumi.IntI
 }
 
 type DeployPipelineDeployPipelineArtifactItemDeployPipelineStage struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items []DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem `pulumi:"items"`
 }
 
@@ -5438,7 +5438,7 @@ type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageInput interface 
 }
 
 type DeployPipelineDeployPipelineArtifactItemDeployPipelineStageArgs struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayInput `pulumi:"items"`
 }
 
@@ -5493,7 +5493,7 @@ func (o DeployPipelineDeployPipelineArtifactItemDeployPipelineStageOutput) ToDep
 	return o
 }
 
-// (Updatable) List of parameters defined for a deployment pipeline.
+// List of parameters defined for a deployment pipeline.
 func (o DeployPipelineDeployPipelineArtifactItemDeployPipelineStageOutput) Items() DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput {
 	return o.ApplyT(func(v DeployPipelineDeployPipelineArtifactItemDeployPipelineStage) []DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem {
 		return v.Items
@@ -5629,7 +5629,7 @@ func (o DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArrayOutp
 }
 
 type DeployPipelineDeployPipelineEnvironment struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items []DeployPipelineDeployPipelineEnvironmentItem `pulumi:"items"`
 }
 
@@ -5645,7 +5645,7 @@ type DeployPipelineDeployPipelineEnvironmentInput interface {
 }
 
 type DeployPipelineDeployPipelineEnvironmentArgs struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items DeployPipelineDeployPipelineEnvironmentItemArrayInput `pulumi:"items"`
 }
 
@@ -5700,7 +5700,7 @@ func (o DeployPipelineDeployPipelineEnvironmentOutput) ToDeployPipelineDeployPip
 	return o
 }
 
-// (Updatable) List of parameters defined for a deployment pipeline.
+// List of parameters defined for a deployment pipeline.
 func (o DeployPipelineDeployPipelineEnvironmentOutput) Items() DeployPipelineDeployPipelineEnvironmentItemArrayOutput {
 	return o.ApplyT(func(v DeployPipelineDeployPipelineEnvironment) []DeployPipelineDeployPipelineEnvironmentItem {
 		return v.Items
@@ -5845,7 +5845,7 @@ func (o DeployPipelineDeployPipelineEnvironmentItemArrayOutput) Index(i pulumi.I
 }
 
 type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items []DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem `pulumi:"items"`
 }
 
@@ -5861,7 +5861,7 @@ type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageInput interfa
 }
 
 type DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageArgs struct {
-	// (Updatable) List of parameters defined for a deployment pipeline.
+	// List of parameters defined for a deployment pipeline.
 	Items DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput `pulumi:"items"`
 }
 
@@ -5916,7 +5916,7 @@ func (o DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageOutput) To
 	return o
 }
 
-// (Updatable) List of parameters defined for a deployment pipeline.
+// List of parameters defined for a deployment pipeline.
 func (o DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageOutput) Items() DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput {
 	return o.ApplyT(func(v DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage) []DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem {
 		return v.Items
@@ -6195,7 +6195,7 @@ func (o DeployPipelineDeployPipelineParametersPtrOutput) Items() DeployPipelineD
 type DeployPipelineDeployPipelineParametersItem struct {
 	// (Updatable) Default value of the parameter.
 	DefaultValue *string `pulumi:"defaultValue"`
-	// (Updatable) Optional description about the deployment pipeline.
+	// (Updatable) Description of the parameter.
 	Description *string `pulumi:"description"`
 	// (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
 	Name string `pulumi:"name"`
@@ -6215,7 +6215,7 @@ type DeployPipelineDeployPipelineParametersItemInput interface {
 type DeployPipelineDeployPipelineParametersItemArgs struct {
 	// (Updatable) Default value of the parameter.
 	DefaultValue pulumi.StringPtrInput `pulumi:"defaultValue"`
-	// (Updatable) Optional description about the deployment pipeline.
+	// (Updatable) Description of the parameter.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
 	Name pulumi.StringInput `pulumi:"name"`
@@ -6277,7 +6277,7 @@ func (o DeployPipelineDeployPipelineParametersItemOutput) DefaultValue() pulumi.
 	return o.ApplyT(func(v DeployPipelineDeployPipelineParametersItem) *string { return v.DefaultValue }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Optional description about the deployment pipeline.
+// (Updatable) Description of the parameter.
 func (o DeployPipelineDeployPipelineParametersItemOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployPipelineDeployPipelineParametersItem) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -6464,7 +6464,7 @@ func (o DeployStageApprovalPolicyPtrOutput) NumberOfApprovalsRequired() pulumi.I
 }
 
 type DeployStageBlueBackendIps struct {
-	// (Updatable) List of parameters defined to set helm value.
+	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 	Items []string `pulumi:"items"`
 }
 
@@ -6480,7 +6480,7 @@ type DeployStageBlueBackendIpsInput interface {
 }
 
 type DeployStageBlueBackendIpsArgs struct {
-	// (Updatable) List of parameters defined to set helm value.
+	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -6561,7 +6561,7 @@ func (o DeployStageBlueBackendIpsOutput) ToDeployStageBlueBackendIpsPtrOutputWit
 	}).(DeployStageBlueBackendIpsPtrOutput)
 }
 
-// (Updatable) List of parameters defined to set helm value.
+// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 func (o DeployStageBlueBackendIpsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DeployStageBlueBackendIps) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -6590,7 +6590,7 @@ func (o DeployStageBlueBackendIpsPtrOutput) Elem() DeployStageBlueBackendIpsOutp
 	}).(DeployStageBlueBackendIpsOutput)
 }
 
-// (Updatable) List of parameters defined to set helm value.
+// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 func (o DeployStageBlueBackendIpsPtrOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DeployStageBlueBackendIps) []string {
 		if v == nil {
@@ -6607,7 +6607,7 @@ type DeployStageBlueGreenStrategy struct {
 	NamespaceA string `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB string `pulumi:"namespaceB"`
-	// Canary strategy type.
+	// Blue Green strategy type
 	StrategyType string `pulumi:"strategyType"`
 }
 
@@ -6629,7 +6629,7 @@ type DeployStageBlueGreenStrategyArgs struct {
 	NamespaceA pulumi.StringInput `pulumi:"namespaceA"`
 	// Second Namespace for deployment.
 	NamespaceB pulumi.StringInput `pulumi:"namespaceB"`
-	// Canary strategy type.
+	// Blue Green strategy type
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
 }
 
@@ -6725,7 +6725,7 @@ func (o DeployStageBlueGreenStrategyOutput) NamespaceB() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageBlueGreenStrategy) string { return v.NamespaceB }).(pulumi.StringOutput)
 }
 
-// Canary strategy type.
+// Blue Green strategy type
 func (o DeployStageBlueGreenStrategyOutput) StrategyType() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageBlueGreenStrategy) string { return v.StrategyType }).(pulumi.StringOutput)
 }
@@ -6784,7 +6784,7 @@ func (o DeployStageBlueGreenStrategyPtrOutput) NamespaceB() pulumi.StringPtrOutp
 	}).(pulumi.StringPtrOutput)
 }
 
-// Canary strategy type.
+// Blue Green strategy type
 func (o DeployStageBlueGreenStrategyPtrOutput) StrategyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageBlueGreenStrategy) *string {
 		if v == nil {
@@ -6797,7 +6797,7 @@ func (o DeployStageBlueGreenStrategyPtrOutput) StrategyType() pulumi.StringPtrOu
 type DeployStageCanaryStrategy struct {
 	// Name of the Ingress resource.
 	IngressName string `pulumi:"ingressName"`
-	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+	// Canary namespace to be used for Kubernetes canary deployment.
 	Namespace string `pulumi:"namespace"`
 	// Canary strategy type.
 	StrategyType string `pulumi:"strategyType"`
@@ -6817,7 +6817,7 @@ type DeployStageCanaryStrategyInput interface {
 type DeployStageCanaryStrategyArgs struct {
 	// Name of the Ingress resource.
 	IngressName pulumi.StringInput `pulumi:"ingressName"`
-	// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+	// Canary namespace to be used for Kubernetes canary deployment.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Canary strategy type.
 	StrategyType pulumi.StringInput `pulumi:"strategyType"`
@@ -6905,7 +6905,7 @@ func (o DeployStageCanaryStrategyOutput) IngressName() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageCanaryStrategy) string { return v.IngressName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+// Canary namespace to be used for Kubernetes canary deployment.
 func (o DeployStageCanaryStrategyOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageCanaryStrategy) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -6949,7 +6949,7 @@ func (o DeployStageCanaryStrategyPtrOutput) IngressName() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+// Canary namespace to be used for Kubernetes canary deployment.
 func (o DeployStageCanaryStrategyPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageCanaryStrategy) *string {
 		if v == nil {
@@ -7533,7 +7533,7 @@ func (o DeployStageContainerConfigShapeConfigPtrOutput) Ocpus() pulumi.Float64Pt
 }
 
 type DeployStageDeployStagePredecessorCollection struct {
-	// (Updatable) List of parameters defined to set helm value.
+	// (Updatable) A list of stage predecessors for a stage.
 	Items []DeployStageDeployStagePredecessorCollectionItem `pulumi:"items"`
 }
 
@@ -7549,7 +7549,7 @@ type DeployStageDeployStagePredecessorCollectionInput interface {
 }
 
 type DeployStageDeployStagePredecessorCollectionArgs struct {
-	// (Updatable) List of parameters defined to set helm value.
+	// (Updatable) A list of stage predecessors for a stage.
 	Items DeployStageDeployStagePredecessorCollectionItemArrayInput `pulumi:"items"`
 }
 
@@ -7630,7 +7630,7 @@ func (o DeployStageDeployStagePredecessorCollectionOutput) ToDeployStageDeploySt
 	}).(DeployStageDeployStagePredecessorCollectionPtrOutput)
 }
 
-// (Updatable) List of parameters defined to set helm value.
+// (Updatable) A list of stage predecessors for a stage.
 func (o DeployStageDeployStagePredecessorCollectionOutput) Items() DeployStageDeployStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v DeployStageDeployStagePredecessorCollection) []DeployStageDeployStagePredecessorCollectionItem {
 		return v.Items
@@ -7661,7 +7661,7 @@ func (o DeployStageDeployStagePredecessorCollectionPtrOutput) Elem() DeployStage
 	}).(DeployStageDeployStagePredecessorCollectionOutput)
 }
 
-// (Updatable) List of parameters defined to set helm value.
+// (Updatable) A list of stage predecessors for a stage.
 func (o DeployStageDeployStagePredecessorCollectionPtrOutput) Items() DeployStageDeployStagePredecessorCollectionItemArrayOutput {
 	return o.ApplyT(func(v *DeployStageDeployStagePredecessorCollection) []DeployStageDeployStagePredecessorCollectionItem {
 		if v == nil {
@@ -7773,7 +7773,7 @@ type DeployStageFailurePolicy struct {
 	FailureCount *int `pulumi:"failureCount"`
 	// (Updatable) The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
 	FailurePercentage *int `pulumi:"failurePercentage"`
-	// (Updatable) The type of policy used for rolling out a deployment stage.
+	// (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
 	PolicyType string `pulumi:"policyType"`
 }
 
@@ -7793,7 +7793,7 @@ type DeployStageFailurePolicyArgs struct {
 	FailureCount pulumi.IntPtrInput `pulumi:"failureCount"`
 	// (Updatable) The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
 	FailurePercentage pulumi.IntPtrInput `pulumi:"failurePercentage"`
-	// (Updatable) The type of policy used for rolling out a deployment stage.
+	// (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
 	PolicyType pulumi.StringInput `pulumi:"policyType"`
 }
 
@@ -7884,7 +7884,7 @@ func (o DeployStageFailurePolicyOutput) FailurePercentage() pulumi.IntPtrOutput 
 	return o.ApplyT(func(v DeployStageFailurePolicy) *int { return v.FailurePercentage }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The type of policy used for rolling out a deployment stage.
+// (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
 func (o DeployStageFailurePolicyOutput) PolicyType() pulumi.StringOutput {
 	return o.ApplyT(func(v DeployStageFailurePolicy) string { return v.PolicyType }).(pulumi.StringOutput)
 }
@@ -7933,7 +7933,7 @@ func (o DeployStageFailurePolicyPtrOutput) FailurePercentage() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The type of policy used for rolling out a deployment stage.
+// (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
 func (o DeployStageFailurePolicyPtrOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageFailurePolicy) *string {
 		if v == nil {
@@ -7944,7 +7944,7 @@ func (o DeployStageFailurePolicyPtrOutput) PolicyType() pulumi.StringPtrOutput {
 }
 
 type DeployStageGreenBackendIps struct {
-	// (Updatable) List of parameters defined to set helm value.
+	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 	Items []string `pulumi:"items"`
 }
 
@@ -7960,7 +7960,7 @@ type DeployStageGreenBackendIpsInput interface {
 }
 
 type DeployStageGreenBackendIpsArgs struct {
-	// (Updatable) List of parameters defined to set helm value.
+	// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -8041,7 +8041,7 @@ func (o DeployStageGreenBackendIpsOutput) ToDeployStageGreenBackendIpsPtrOutputW
 	}).(DeployStageGreenBackendIpsPtrOutput)
 }
 
-// (Updatable) List of parameters defined to set helm value.
+// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 func (o DeployStageGreenBackendIpsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DeployStageGreenBackendIps) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -8070,7 +8070,7 @@ func (o DeployStageGreenBackendIpsPtrOutput) Elem() DeployStageGreenBackendIpsOu
 	}).(DeployStageGreenBackendIpsOutput)
 }
 
-// (Updatable) List of parameters defined to set helm value.
+// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
 func (o DeployStageGreenBackendIpsPtrOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DeployStageGreenBackendIps) []string {
 		if v == nil {
@@ -8275,11 +8275,11 @@ func (o DeployStageLoadBalancerConfigPtrOutput) State() pulumi.StringPtrOutput {
 }
 
 type DeployStageProductionLoadBalancerConfig struct {
-	// (Updatable) Listen port for the backend server.
+	// Listen port for the backend server.
 	BackendPort *int `pulumi:"backendPort"`
-	// (Updatable) Name of the load balancer listener.
+	// Name of the load balancer listener.
 	ListenerName *string `pulumi:"listenerName"`
-	// (Updatable) The OCID of the load balancer.
+	// The OCID of the load balancer.
 	LoadBalancerId *string `pulumi:"loadBalancerId"`
 	// The current state of the deployment stage.
 	State *string `pulumi:"state"`
@@ -8297,11 +8297,11 @@ type DeployStageProductionLoadBalancerConfigInput interface {
 }
 
 type DeployStageProductionLoadBalancerConfigArgs struct {
-	// (Updatable) Listen port for the backend server.
+	// Listen port for the backend server.
 	BackendPort pulumi.IntPtrInput `pulumi:"backendPort"`
-	// (Updatable) Name of the load balancer listener.
+	// Name of the load balancer listener.
 	ListenerName pulumi.StringPtrInput `pulumi:"listenerName"`
-	// (Updatable) The OCID of the load balancer.
+	// The OCID of the load balancer.
 	LoadBalancerId pulumi.StringPtrInput `pulumi:"loadBalancerId"`
 	// The current state of the deployment stage.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -8384,17 +8384,17 @@ func (o DeployStageProductionLoadBalancerConfigOutput) ToDeployStageProductionLo
 	}).(DeployStageProductionLoadBalancerConfigPtrOutput)
 }
 
-// (Updatable) Listen port for the backend server.
+// Listen port for the backend server.
 func (o DeployStageProductionLoadBalancerConfigOutput) BackendPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DeployStageProductionLoadBalancerConfig) *int { return v.BackendPort }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Name of the load balancer listener.
+// Name of the load balancer listener.
 func (o DeployStageProductionLoadBalancerConfigOutput) ListenerName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployStageProductionLoadBalancerConfig) *string { return v.ListenerName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the load balancer.
+// The OCID of the load balancer.
 func (o DeployStageProductionLoadBalancerConfigOutput) LoadBalancerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployStageProductionLoadBalancerConfig) *string { return v.LoadBalancerId }).(pulumi.StringPtrOutput)
 }
@@ -8428,7 +8428,7 @@ func (o DeployStageProductionLoadBalancerConfigPtrOutput) Elem() DeployStageProd
 	}).(DeployStageProductionLoadBalancerConfigOutput)
 }
 
-// (Updatable) Listen port for the backend server.
+// Listen port for the backend server.
 func (o DeployStageProductionLoadBalancerConfigPtrOutput) BackendPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DeployStageProductionLoadBalancerConfig) *int {
 		if v == nil {
@@ -8438,7 +8438,7 @@ func (o DeployStageProductionLoadBalancerConfigPtrOutput) BackendPort() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Name of the load balancer listener.
+// Name of the load balancer listener.
 func (o DeployStageProductionLoadBalancerConfigPtrOutput) ListenerName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageProductionLoadBalancerConfig) *string {
 		if v == nil {
@@ -8448,7 +8448,7 @@ func (o DeployStageProductionLoadBalancerConfigPtrOutput) ListenerName() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The OCID of the load balancer.
+// The OCID of the load balancer.
 func (o DeployStageProductionLoadBalancerConfigPtrOutput) LoadBalancerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageProductionLoadBalancerConfig) *string {
 		if v == nil {
@@ -8469,7 +8469,7 @@ func (o DeployStageProductionLoadBalancerConfigPtrOutput) State() pulumi.StringP
 }
 
 type DeployStageRollbackPolicy struct {
-	// (Updatable) The type of policy used for rolling out a deployment stage.
+	// (Updatable) Specifies type of the deployment stage rollback policy.
 	PolicyType *string `pulumi:"policyType"`
 }
 
@@ -8485,7 +8485,7 @@ type DeployStageRollbackPolicyInput interface {
 }
 
 type DeployStageRollbackPolicyArgs struct {
-	// (Updatable) The type of policy used for rolling out a deployment stage.
+	// (Updatable) Specifies type of the deployment stage rollback policy.
 	PolicyType pulumi.StringPtrInput `pulumi:"policyType"`
 }
 
@@ -8566,7 +8566,7 @@ func (o DeployStageRollbackPolicyOutput) ToDeployStageRollbackPolicyPtrOutputWit
 	}).(DeployStageRollbackPolicyPtrOutput)
 }
 
-// (Updatable) The type of policy used for rolling out a deployment stage.
+// (Updatable) Specifies type of the deployment stage rollback policy.
 func (o DeployStageRollbackPolicyOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeployStageRollbackPolicy) *string { return v.PolicyType }).(pulumi.StringPtrOutput)
 }
@@ -8595,7 +8595,7 @@ func (o DeployStageRollbackPolicyPtrOutput) Elem() DeployStageRollbackPolicyOutp
 	}).(DeployStageRollbackPolicyOutput)
 }
 
-// (Updatable) The type of policy used for rolling out a deployment stage.
+// (Updatable) Specifies type of the deployment stage rollback policy.
 func (o DeployStageRollbackPolicyPtrOutput) PolicyType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeployStageRollbackPolicy) *string {
 		if v == nil {
@@ -9667,7 +9667,7 @@ func (o DeployStageWaitCriteriaPtrOutput) WaitType() pulumi.StringPtrOutput {
 }
 
 type DeploymentDeployArtifactOverrideArguments struct {
-	// List of arguments provided at the time of deployment.
+	// List of artifact override arguments at the time of deployment.
 	Items []DeploymentDeployArtifactOverrideArgumentsItem `pulumi:"items"`
 }
 
@@ -9683,7 +9683,7 @@ type DeploymentDeployArtifactOverrideArgumentsInput interface {
 }
 
 type DeploymentDeployArtifactOverrideArgumentsArgs struct {
-	// List of arguments provided at the time of deployment.
+	// List of artifact override arguments at the time of deployment.
 	Items DeploymentDeployArtifactOverrideArgumentsItemArrayInput `pulumi:"items"`
 }
 
@@ -9764,7 +9764,7 @@ func (o DeploymentDeployArtifactOverrideArgumentsOutput) ToDeploymentDeployArtif
 	}).(DeploymentDeployArtifactOverrideArgumentsPtrOutput)
 }
 
-// List of arguments provided at the time of deployment.
+// List of artifact override arguments at the time of deployment.
 func (o DeploymentDeployArtifactOverrideArgumentsOutput) Items() DeploymentDeployArtifactOverrideArgumentsItemArrayOutput {
 	return o.ApplyT(func(v DeploymentDeployArtifactOverrideArguments) []DeploymentDeployArtifactOverrideArgumentsItem {
 		return v.Items
@@ -9795,7 +9795,7 @@ func (o DeploymentDeployArtifactOverrideArgumentsPtrOutput) Elem() DeploymentDep
 	}).(DeploymentDeployArtifactOverrideArgumentsOutput)
 }
 
-// List of arguments provided at the time of deployment.
+// List of artifact override arguments at the time of deployment.
 func (o DeploymentDeployArtifactOverrideArgumentsPtrOutput) Items() DeploymentDeployArtifactOverrideArgumentsItemArrayOutput {
 	return o.ApplyT(func(v *DeploymentDeployArtifactOverrideArguments) []DeploymentDeployArtifactOverrideArgumentsItem {
 		if v == nil {
@@ -9810,8 +9810,7 @@ type DeploymentDeployArtifactOverrideArgumentsItem struct {
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// Name of the parameter (case-sensitive).
 	Name *string `pulumi:"name"`
-	// value of the argument.
-	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+	// Value of the parameter.
 	Value *string `pulumi:"value"`
 }
 
@@ -9831,8 +9830,7 @@ type DeploymentDeployArtifactOverrideArgumentsItemArgs struct {
 	DeployArtifactId pulumi.StringPtrInput `pulumi:"deployArtifactId"`
 	// Name of the parameter (case-sensitive).
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// value of the argument.
-	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+	// Value of the parameter.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9897,8 +9895,7 @@ func (o DeploymentDeployArtifactOverrideArgumentsItemOutput) Name() pulumi.Strin
 	return o.ApplyT(func(v DeploymentDeployArtifactOverrideArgumentsItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// value of the argument.
-// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+// Value of the parameter.
 func (o DeploymentDeployArtifactOverrideArgumentsItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployArtifactOverrideArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9924,7 +9921,7 @@ func (o DeploymentDeployArtifactOverrideArgumentsItemArrayOutput) Index(i pulumi
 }
 
 type DeploymentDeployPipelineArtifact struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items []DeploymentDeployPipelineArtifactItem `pulumi:"items"`
 }
 
@@ -9940,7 +9937,7 @@ type DeploymentDeployPipelineArtifactInput interface {
 }
 
 type DeploymentDeployPipelineArtifactArgs struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items DeploymentDeployPipelineArtifactItemArrayInput `pulumi:"items"`
 }
 
@@ -9995,7 +9992,7 @@ func (o DeploymentDeployPipelineArtifactOutput) ToDeploymentDeployPipelineArtifa
 	return o
 }
 
-// List of arguments provided at the time of deployment.
+// A list of stage predecessors for a stage.
 func (o DeploymentDeployPipelineArtifactOutput) Items() DeploymentDeployPipelineArtifactItemArrayOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineArtifact) []DeploymentDeployPipelineArtifactItem { return v.Items }).(DeploymentDeployPipelineArtifactItemArrayOutput)
 }
@@ -10021,7 +10018,7 @@ func (o DeploymentDeployPipelineArtifactArrayOutput) Index(i pulumi.IntInput) De
 }
 
 type DeploymentDeployPipelineArtifactItem struct {
-	// The OCID of the artifact to which this parameter applies.
+	// The OCID of an artifact
 	DeployArtifactId *string `pulumi:"deployArtifactId"`
 	// List of stages.
 	DeployPipelineStages []DeploymentDeployPipelineArtifactItemDeployPipelineStage `pulumi:"deployPipelineStages"`
@@ -10041,7 +10038,7 @@ type DeploymentDeployPipelineArtifactItemInput interface {
 }
 
 type DeploymentDeployPipelineArtifactItemArgs struct {
-	// The OCID of the artifact to which this parameter applies.
+	// The OCID of an artifact
 	DeployArtifactId pulumi.StringPtrInput `pulumi:"deployArtifactId"`
 	// List of stages.
 	DeployPipelineStages DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayInput `pulumi:"deployPipelineStages"`
@@ -10100,7 +10097,7 @@ func (o DeploymentDeployPipelineArtifactItemOutput) ToDeploymentDeployPipelineAr
 	return o
 }
 
-// The OCID of the artifact to which this parameter applies.
+// The OCID of an artifact
 func (o DeploymentDeployPipelineArtifactItemOutput) DeployArtifactId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineArtifactItem) *string { return v.DeployArtifactId }).(pulumi.StringPtrOutput)
 }
@@ -10138,7 +10135,7 @@ func (o DeploymentDeployPipelineArtifactItemArrayOutput) Index(i pulumi.IntInput
 }
 
 type DeploymentDeployPipelineArtifactItemDeployPipelineStage struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items []DeploymentDeployPipelineArtifactItemDeployPipelineStageItem `pulumi:"items"`
 }
 
@@ -10154,7 +10151,7 @@ type DeploymentDeployPipelineArtifactItemDeployPipelineStageInput interface {
 }
 
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayInput `pulumi:"items"`
 }
 
@@ -10209,7 +10206,7 @@ func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageOutput) ToDeploym
 	return o
 }
 
-// List of arguments provided at the time of deployment.
+// A list of stage predecessors for a stage.
 func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageOutput) Items() DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineArtifactItemDeployPipelineStage) []DeploymentDeployPipelineArtifactItemDeployPipelineStageItem {
 		return v.Items
@@ -10237,7 +10234,7 @@ func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageArrayOutput) Inde
 }
 
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageItem struct {
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -10255,7 +10252,7 @@ type DeploymentDeployPipelineArtifactItemDeployPipelineStageItemInput interface 
 }
 
 type DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs struct {
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
@@ -10312,7 +10309,7 @@ func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageItemOutput) ToDep
 	return o
 }
 
-// The OCID of the stage.
+// Specifies the OCID of the stage to be redeployed.
 func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageItemOutput) DeployStageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineArtifactItemDeployPipelineStageItem) *string { return v.DeployStageId }).(pulumi.StringPtrOutput)
 }
@@ -10343,7 +10340,7 @@ func (o DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArrayOutput) 
 }
 
 type DeploymentDeployPipelineEnvironment struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items []DeploymentDeployPipelineEnvironmentItem `pulumi:"items"`
 }
 
@@ -10359,7 +10356,7 @@ type DeploymentDeployPipelineEnvironmentInput interface {
 }
 
 type DeploymentDeployPipelineEnvironmentArgs struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items DeploymentDeployPipelineEnvironmentItemArrayInput `pulumi:"items"`
 }
 
@@ -10414,7 +10411,7 @@ func (o DeploymentDeployPipelineEnvironmentOutput) ToDeploymentDeployPipelineEnv
 	return o
 }
 
-// List of arguments provided at the time of deployment.
+// A list of stage predecessors for a stage.
 func (o DeploymentDeployPipelineEnvironmentOutput) Items() DeploymentDeployPipelineEnvironmentItemArrayOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineEnvironment) []DeploymentDeployPipelineEnvironmentItem { return v.Items }).(DeploymentDeployPipelineEnvironmentItemArrayOutput)
 }
@@ -10557,7 +10554,7 @@ func (o DeploymentDeployPipelineEnvironmentItemArrayOutput) Index(i pulumi.IntIn
 }
 
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStage struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items []DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem `pulumi:"items"`
 }
 
@@ -10573,7 +10570,7 @@ type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageInput interface {
 }
 
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArgs struct {
-	// List of arguments provided at the time of deployment.
+	// A list of stage predecessors for a stage.
 	Items DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayInput `pulumi:"items"`
 }
 
@@ -10628,7 +10625,7 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageOutput) ToDepl
 	return o
 }
 
-// List of arguments provided at the time of deployment.
+// A list of stage predecessors for a stage.
 func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageOutput) Items() DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineEnvironmentItemDeployPipelineStage) []DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem {
 		return v.Items
@@ -10656,7 +10653,7 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageArrayOutput) I
 }
 
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem struct {
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
@@ -10674,7 +10671,7 @@ type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemInput interfa
 }
 
 type DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs struct {
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
 	// (Updatable) Deployment display name. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
@@ -10731,7 +10728,7 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput) To
 	return o
 }
 
-// The OCID of the stage.
+// Specifies the OCID of the stage to be redeployed.
 func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemOutput) DeployStageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem) *string { return v.DeployStageId }).(pulumi.StringPtrOutput)
 }
@@ -10762,7 +10759,7 @@ func (o DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArrayOutpu
 }
 
 type DeploymentDeployStageOverrideArguments struct {
-	// List of arguments provided at the time of deployment.
+	// List of stage override arguments at the time of deployment.
 	Items []DeploymentDeployStageOverrideArgumentsItem `pulumi:"items"`
 }
 
@@ -10778,7 +10775,7 @@ type DeploymentDeployStageOverrideArgumentsInput interface {
 }
 
 type DeploymentDeployStageOverrideArgumentsArgs struct {
-	// List of arguments provided at the time of deployment.
+	// List of stage override arguments at the time of deployment.
 	Items DeploymentDeployStageOverrideArgumentsItemArrayInput `pulumi:"items"`
 }
 
@@ -10859,7 +10856,7 @@ func (o DeploymentDeployStageOverrideArgumentsOutput) ToDeploymentDeployStageOve
 	}).(DeploymentDeployStageOverrideArgumentsPtrOutput)
 }
 
-// List of arguments provided at the time of deployment.
+// List of stage override arguments at the time of deployment.
 func (o DeploymentDeployStageOverrideArgumentsOutput) Items() DeploymentDeployStageOverrideArgumentsItemArrayOutput {
 	return o.ApplyT(func(v DeploymentDeployStageOverrideArguments) []DeploymentDeployStageOverrideArgumentsItem {
 		return v.Items
@@ -10890,7 +10887,7 @@ func (o DeploymentDeployStageOverrideArgumentsPtrOutput) Elem() DeploymentDeploy
 	}).(DeploymentDeployStageOverrideArgumentsOutput)
 }
 
-// List of arguments provided at the time of deployment.
+// List of stage override arguments at the time of deployment.
 func (o DeploymentDeployStageOverrideArgumentsPtrOutput) Items() DeploymentDeployStageOverrideArgumentsItemArrayOutput {
 	return o.ApplyT(func(v *DeploymentDeployStageOverrideArguments) []DeploymentDeployStageOverrideArgumentsItem {
 		if v == nil {
@@ -10905,8 +10902,7 @@ type DeploymentDeployStageOverrideArgumentsItem struct {
 	DeployStageId *string `pulumi:"deployStageId"`
 	// Name of the parameter (case-sensitive).
 	Name *string `pulumi:"name"`
-	// value of the argument.
-	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+	// Value of the parameter.
 	Value *string `pulumi:"value"`
 }
 
@@ -10926,8 +10922,7 @@ type DeploymentDeployStageOverrideArgumentsItemArgs struct {
 	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
 	// Name of the parameter (case-sensitive).
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// value of the argument.
-	// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+	// Value of the parameter.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -10992,8 +10987,7 @@ func (o DeploymentDeployStageOverrideArgumentsItemOutput) Name() pulumi.StringPt
 	return o.ApplyT(func(v DeploymentDeployStageOverrideArgumentsItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// value of the argument.
-// *  To retrieve Helm Diff for Helm stages in the pipeline add deploymentArguments with name=PLAN_DRY_RUN and value=true
+// Value of the parameter.
 func (o DeploymentDeployStageOverrideArgumentsItemOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeployStageOverrideArgumentsItem) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -11386,7 +11380,7 @@ type DeploymentDeploymentExecutionProgressDeployStageExecutionProgress struct {
 	DeployStageDisplayName *string `pulumi:"deployStageDisplayName"`
 	// Details about stage execution for all the target environments.
 	DeployStageExecutionProgressDetails []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail `pulumi:"deployStageExecutionProgressDetails"`
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// Collection containing the predecessors of a stage.
 	DeployStagePredecessors []DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessor `pulumi:"deployStagePredecessors"`
@@ -11416,7 +11410,7 @@ type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressArgs struc
 	DeployStageDisplayName pulumi.StringPtrInput `pulumi:"deployStageDisplayName"`
 	// Details about stage execution for all the target environments.
 	DeployStageExecutionProgressDetails DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayInput `pulumi:"deployStageExecutionProgressDetails"`
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId pulumi.StringPtrInput `pulumi:"deployStageId"`
 	// Collection containing the predecessors of a stage.
 	DeployStagePredecessors DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArrayInput `pulumi:"deployStagePredecessors"`
@@ -11495,7 +11489,7 @@ func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput)
 	}).(DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArrayOutput)
 }
 
-// The OCID of the stage.
+// Specifies the OCID of the stage to be redeployed.
 func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressOutput) DeployStageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgress) *string {
 		return v.DeployStageId
@@ -11688,7 +11682,7 @@ func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployS
 }
 
 type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep struct {
-	// Name of the parameter (case-sensitive).
+	// Name of the step.
 	Name *string `pulumi:"name"`
 	// The current state of the deployment.
 	State *string `pulumi:"state"`
@@ -11710,7 +11704,7 @@ type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStag
 }
 
 type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepArgs struct {
-	// Name of the parameter (case-sensitive).
+	// Name of the step.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The current state of the deployment.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -11771,7 +11765,7 @@ func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployS
 	return o
 }
 
-// Name of the parameter (case-sensitive).
+// Name of the step.
 func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStepOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailRollbackStep) *string {
 		return v.Name
@@ -11820,7 +11814,7 @@ func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployS
 }
 
 type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep struct {
-	// Name of the parameter (case-sensitive).
+	// Name of the step.
 	Name *string `pulumi:"name"`
 	// The current state of the deployment.
 	State *string `pulumi:"state"`
@@ -11842,7 +11836,7 @@ type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStag
 }
 
 type DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepArgs struct {
-	// Name of the parameter (case-sensitive).
+	// Name of the step.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// The current state of the deployment.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -11903,7 +11897,7 @@ func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployS
 	return o
 }
 
-// Name of the parameter (case-sensitive).
+// Name of the step.
 func (o DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStep) *string {
 		return v.Name
@@ -12652,9 +12646,6 @@ type TriggerActionFilter struct {
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include *TriggerActionFilterInclude `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource string `pulumi:"triggerSource"`
 }
 
@@ -12677,9 +12668,6 @@ type TriggerActionFilterArgs struct {
 	// (Updatable) Attributes to filter GitLab self-hosted server events.
 	Include TriggerActionFilterIncludePtrInput `pulumi:"include"`
 	// (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	TriggerSource pulumi.StringInput `pulumi:"triggerSource"`
 }
 
@@ -12776,9 +12764,6 @@ func (o TriggerActionFilterOutput) Include() TriggerActionFilterIncludePtrOutput
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerActionFilterOutput) TriggerSource() pulumi.StringOutput {
 	return o.ApplyT(func(v TriggerActionFilter) string { return v.TriggerSource }).(pulumi.StringOutput)
 }
@@ -12838,9 +12823,6 @@ func (o TriggerActionFilterPtrOutput) Include() TriggerActionFilterIncludePtrOut
 }
 
 // (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o TriggerActionFilterPtrOutput) TriggerSource() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TriggerActionFilter) *string {
 		if v == nil {

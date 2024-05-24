@@ -64,7 +64,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class StreamDistributionChannel : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -115,7 +115,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// When the lock was created.
+        /// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -173,7 +173,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class StreamDistributionChannelArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -232,7 +232,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class StreamDistributionChannelState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -307,7 +307,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// When the lock was created.
+        /// The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

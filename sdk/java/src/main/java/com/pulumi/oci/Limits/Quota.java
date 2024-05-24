@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testQuota = new Quota("testQuota", QuotaArgs.builder()        
+ *         var testQuota = new Quota("testQuota", QuotaArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(quotaDescription)
  *             .name(quotaName)

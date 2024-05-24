@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testView = new View("testView", ViewArgs.builder()        
+ *         var testView = new View("testView", ViewArgs.builder()
  *             .compartmentId(compartmentId)
  *             .scope("PRIVATE")
  *             .definedTags(viewDefinedTags)

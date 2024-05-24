@@ -18,14 +18,14 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
     public static final ExadataInsightMemberVmClusterDetailArgs Empty = new ExadataInsightMemberVmClusterDetailArgs();
 
     /**
-     * (Updatable) Compartment Identifier of database
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier of database
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -121,7 +121,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of database
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class ExadataInsightMemberVmClusterDetailArgs extends com.pulumi.re
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier of database
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          * 
          * @return builder
          * 

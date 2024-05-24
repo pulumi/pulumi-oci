@@ -16,14 +16,14 @@ public final class PluggableDatabaseRefreshableCloneConfigArgs extends com.pulum
     public static final PluggableDatabaseRefreshableCloneConfigArgs Empty = new PluggableDatabaseRefreshableCloneConfigArgs();
 
     /**
-     * Indicates whether Pluggable Database is a refreshable clone.
+     * Indicates whether the Pluggable Database is a refreshable clone.
      * 
      */
     @Import(name="isRefreshableClone")
     private @Nullable Output<Boolean> isRefreshableClone;
 
     /**
-     * @return Indicates whether Pluggable Database is a refreshable clone.
+     * @return Indicates whether the Pluggable Database is a refreshable clone.
      * 
      */
     public Optional<Output<Boolean>> isRefreshableClone() {
@@ -55,7 +55,7 @@ public final class PluggableDatabaseRefreshableCloneConfigArgs extends com.pulum
         }
 
         /**
-         * @param isRefreshableClone Indicates whether Pluggable Database is a refreshable clone.
+         * @param isRefreshableClone Indicates whether the Pluggable Database is a refreshable clone.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class PluggableDatabaseRefreshableCloneConfigArgs extends com.pulum
         }
 
         /**
-         * @param isRefreshableClone Indicates whether Pluggable Database is a refreshable clone.
+         * @param isRefreshableClone Indicates whether the Pluggable Database is a refreshable clone.
          * 
          * @return builder
          * 

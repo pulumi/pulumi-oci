@@ -14,17 +14,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppAllowedTag {
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag key
+     * @return (Updatable) Key or name of the allowed tag.
      * 
-     * **Added In:** 2011192329
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -46,36 +47,37 @@ public final class DomainsAppAllowedTag {
      */
     private @Nullable Boolean readOnly;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Value of the allowed tag.
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppAllowedTag() {}
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag key
+     * @return (Updatable) Key or name of the allowed tag.
      * 
-     * **Added In:** 2011192329
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -101,19 +103,19 @@ public final class DomainsAppAllowedTag {
         return Optional.ofNullable(this.readOnly);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Value of the allowed tag.
+     * 
+     * **Added In:** 17.4.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

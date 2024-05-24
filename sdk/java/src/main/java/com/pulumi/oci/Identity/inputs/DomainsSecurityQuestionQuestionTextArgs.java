@@ -90,7 +90,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
     }
 
     /**
-     * Value of the tag.
+     * The question text
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -98,7 +98,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -107,7 +107,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The question text
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -115,7 +115,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -235,7 +235,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The question text
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -243,7 +243,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -256,7 +256,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The question text
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -264,7 +264,7 @@ public final class DomainsSecurityQuestionQuestionTextArgs extends com.pulumi.re
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

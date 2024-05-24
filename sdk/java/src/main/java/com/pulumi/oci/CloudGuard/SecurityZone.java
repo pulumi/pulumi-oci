@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSecurityZone = new SecurityZone("testSecurityZone", SecurityZoneArgs.builder()        
+ *         var testSecurityZone = new SecurityZone("testSecurityZone", SecurityZoneArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(securityZoneDisplayName)
  *             .securityZoneRecipeId(testSecurityZoneRecipe.id())

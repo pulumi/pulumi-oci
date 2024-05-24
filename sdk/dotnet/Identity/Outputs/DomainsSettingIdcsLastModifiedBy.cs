@@ -14,28 +14,30 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsSettingIdcsLastModifiedBy
     {
         /// <summary>
-        /// (Updatable) A human-readable name, primarily used for display purposes
+        /// (Updatable) The displayName of the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
@@ -53,24 +55,27 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) Indicates the image type
+        /// (Updatable) The type of resource, User or App, that modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

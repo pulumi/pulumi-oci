@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailArgs> AuthenticationServerDetail { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
+        /// (Updatable) Base policy for defining how to match the context variable in an incoming request with selection keys when dynamically routing and dynamically authenticating requests.
         /// </summary>
         [Input("key", required: true)]
         public Input<Inputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerKeyArgs> Key { get; set; } = null!;

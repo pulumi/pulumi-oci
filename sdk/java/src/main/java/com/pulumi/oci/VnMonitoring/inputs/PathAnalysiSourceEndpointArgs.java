@@ -114,20 +114,14 @@ public final class PathAnalysiSourceEndpointArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The type of the `PathAnalysis` query.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The type of the `Endpoint`.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of the `PathAnalysis` query.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The type of the `Endpoint`.
      * 
      */
     public Output<String> type() {
@@ -333,10 +327,7 @@ public final class PathAnalysiSourceEndpointArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type The type of the `PathAnalysis` query.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type The type of the `Endpoint`.
          * 
          * @return builder
          * 
@@ -347,10 +338,7 @@ public final class PathAnalysiSourceEndpointArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type The type of the `PathAnalysis` query.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type The type of the `Endpoint`.
          * 
          * @return builder
          * 

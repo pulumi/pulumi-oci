@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new PluggabledatabasePluggableDatabaseDbmFeaturesManagement("testPluggabledatabasePluggableDatabaseDbmFeaturesManagement", PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs.builder()        
+ *         var testPluggabledatabasePluggableDatabaseDbmFeaturesManagement = new PluggabledatabasePluggableDatabaseDbmFeaturesManagement("testPluggabledatabasePluggableDatabaseDbmFeaturesManagement", PluggabledatabasePluggableDatabaseDbmFeaturesManagementArgs.builder()
  *             .pluggableDatabaseId(testPluggableDatabase.id())
  *             .enablePluggableDatabaseDbmFeature(enablePluggableDatabaseDbmFeature)
  *             .featureDetails(PluggabledatabasePluggableDatabaseDbmFeaturesManagementFeatureDetailsArgs.builder()

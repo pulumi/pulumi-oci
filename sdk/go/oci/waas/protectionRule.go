@@ -32,7 +32,7 @@ type ProtectionRule struct {
 	Action pulumi.StringOutput `pulumi:"action"`
 	// The description of the protection rule.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions ProtectionRuleExclusionArrayOutput `pulumi:"exclusions"`
 	// (Updatable) The unique key of the protection rule.
 	Key pulumi.StringOutput `pulumi:"key"`
@@ -86,7 +86,7 @@ type protectionRuleState struct {
 	Action *string `pulumi:"action"`
 	// The description of the protection rule.
 	Description *string `pulumi:"description"`
-	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions []ProtectionRuleExclusion `pulumi:"exclusions"`
 	// (Updatable) The unique key of the protection rule.
 	Key *string `pulumi:"key"`
@@ -105,7 +105,7 @@ type ProtectionRuleState struct {
 	Action pulumi.StringPtrInput
 	// The description of the protection rule.
 	Description pulumi.StringPtrInput
-	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions ProtectionRuleExclusionArrayInput
 	// (Updatable) The unique key of the protection rule.
 	Key pulumi.StringPtrInput
@@ -126,7 +126,7 @@ func (ProtectionRuleState) ElementType() reflect.Type {
 type protectionRuleArgs struct {
 	// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
 	Action *string `pulumi:"action"`
-	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions []ProtectionRuleExclusion `pulumi:"exclusions"`
 	// (Updatable) The unique key of the protection rule.
 	Key string `pulumi:"key"`
@@ -138,7 +138,7 @@ type protectionRuleArgs struct {
 type ProtectionRuleArgs struct {
 	// (Updatable) The action to take when the traffic is detected as malicious. If unspecified, defaults to `OFF`.
 	Action pulumi.StringPtrInput
-	// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions ProtectionRuleExclusionArrayInput
 	// (Updatable) The unique key of the protection rule.
 	Key pulumi.StringInput
@@ -243,7 +243,7 @@ func (o ProtectionRuleOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *ProtectionRule) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+// (Updatable)
 func (o ProtectionRuleOutput) Exclusions() ProtectionRuleExclusionArrayOutput {
 	return o.ApplyT(func(v *ProtectionRule) ProtectionRuleExclusionArrayOutput { return v.Exclusions }).(ProtectionRuleExclusionArrayOutput)
 }

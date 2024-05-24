@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) ConnectorBundle display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,7 +27,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) ConnectorBundle URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -41,13 +41,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+     * @return (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
      * 
-     * **Added In:** 18.1.6
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
+     * * idcsDefaultValue: ConnectorBundle
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -59,26 +59,24 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
      */
     private String type;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ConnectorBundle identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private String value;
     /**
-     * @return (Updatable) Unique well-known identifier used to reference connector bundle.
+     * @return (Updatable) Unique Well-known identifier used to reference connector bundle.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -95,7 +93,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundle() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) ConnectorBundle display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -111,7 +109,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) ConnectorBundle URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -127,13 +125,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+     * @return (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
      * 
-     * **Added In:** 18.1.6
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
+     * * idcsDefaultValue: ConnectorBundle
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -147,28 +145,26 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         return this.type;
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ConnectorBundle identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return (Updatable) Unique well-known identifier used to reference connector bundle.
+     * @return (Updatable) Unique Well-known identifier used to reference connector bundle.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

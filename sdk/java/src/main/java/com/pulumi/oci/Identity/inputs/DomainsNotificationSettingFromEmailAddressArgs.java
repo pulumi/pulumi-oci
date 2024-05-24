@@ -120,34 +120,28 @@ public final class DomainsNotificationSettingFromEmailAddressArgs extends com.pu
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Value of the From email address
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Value of the From email address
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -303,17 +297,14 @@ public final class DomainsNotificationSettingFromEmailAddressArgs extends com.pu
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Value of the From email address
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -324,17 +315,14 @@ public final class DomainsNotificationSettingFromEmailAddressArgs extends com.pu
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Value of the From email address
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 

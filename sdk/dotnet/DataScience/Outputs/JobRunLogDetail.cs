@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class JobRunLogDetail
     {
         /// <summary>
-        /// The log group id for where log objects are for job runs.
+        /// The log group id for where log objects will be for job runs.
         /// </summary>
         public readonly string? LogGroupId;
         /// <summary>
-        /// The log id the job run will push logs too.
+        /// The log id of the log object the job run logs will be shipped to.
         /// </summary>
         public readonly string? LogId;
 

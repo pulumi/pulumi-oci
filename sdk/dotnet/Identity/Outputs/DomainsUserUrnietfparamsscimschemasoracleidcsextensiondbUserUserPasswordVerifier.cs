@@ -14,33 +14,36 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensiondbUserUserPasswordVerifier
     {
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) Type of database password verifier (for example, MR-SHA512 or SSHA).
+        /// 
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: false
+        /// * mutability: readOnly
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) Hash value of database password verifier.
+        /// 
+        /// **Added In:** 18.2.2
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
+        /// * idcsSensitive: none
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

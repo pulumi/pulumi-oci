@@ -65,14 +65,14 @@ public final class WorkspaceApplicationPatchArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The identifying key for the object.
+     * The object&#39;s key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return The identifying key for the object.
+     * @return The object&#39;s key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -288,7 +288,7 @@ public final class WorkspaceApplicationPatchArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param key The identifying key for the object.
+         * @param key The object&#39;s key.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class WorkspaceApplicationPatchArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param key The identifying key for the object.
+         * @param key The object&#39;s key.
          * 
          * @return builder
          * 

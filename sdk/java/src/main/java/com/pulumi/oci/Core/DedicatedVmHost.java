@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDedicatedVmHost = new DedicatedVmHost("testDedicatedVmHost", DedicatedVmHostArgs.builder()        
+ *         var testDedicatedVmHost = new DedicatedVmHost("testDedicatedVmHost", DedicatedVmHostArgs.builder()
  *             .availabilityDomain(dedicatedVmHostAvailabilityDomain)
  *             .compartmentId(compartmentId)
  *             .dedicatedVmHostShape(dedicatedVmHostDedicatedVmHostShape)

@@ -14,17 +14,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppAllowedScope {
     /**
-     * @return (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
+     * @return (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: readWrite
+     * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: server
+     * * uniqueness: none
      * 
      */
     private String fqs;
@@ -53,7 +53,7 @@ public final class DomainsAppAllowedScope {
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: boolean
      * * uniqueness: none
      * 
@@ -62,17 +62,17 @@ public final class DomainsAppAllowedScope {
 
     private DomainsAppAllowedScope() {}
     /**
-     * @return (Updatable) The fully qualified value of this scope within this App. A fully qualified scope combines the &#39;value&#39; of each scope with the value of &#39;audience&#39;. Each value of &#39;fqs&#39; must be unique across the system. Used only when this App acts as an OAuth Resource.
+     * @return (Updatable) A fully qualified scope that this App is allowed to access when it acts as an OAuthClient.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: readWrite
+     * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: server
+     * * uniqueness: none
      * 
      */
     public String fqs() {
@@ -105,7 +105,7 @@ public final class DomainsAppAllowedScope {
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: boolean
      * * uniqueness: none
      * 

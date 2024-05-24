@@ -29,11 +29,12 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Direction;
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) Mapped Attribute URI
+        /// 
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
-        /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
         /// * returned: default
@@ -42,20 +43,18 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Mapped Attribute identifier
+        /// 
+        /// **Added In:** 18.2.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

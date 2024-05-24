@@ -17,14 +17,14 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
     public static final TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs Empty = new TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs();
 
     /**
-     * (Updatable) The format of the certificate store.
+     * The format of the certificate store.
      * 
      */
     @Import(name="certificateStoreType")
     private @Nullable Output<String> certificateStoreType;
 
     /**
-     * @return (Updatable) The format of the certificate store.
+     * @return The format of the certificate store.
      * 
      */
     public Optional<Output<String>> certificateStoreType() {
@@ -32,14 +32,14 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
     }
 
     /**
-     * (Updatable) Base64 encoded string of key store file content.
+     * Base64 encoded string of key store file content.
      * 
      */
     @Import(name="keyStoreContent")
     private @Nullable Output<String> keyStoreContent;
 
     /**
-     * @return (Updatable) Base64 encoded string of key store file content.
+     * @return Base64 encoded string of key store file content.
      * 
      */
     public Optional<Output<String>> keyStoreContent() {
@@ -47,14 +47,14 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
     }
 
     /**
-     * (Updatable) Status to represent whether the database connection is TLS enabled or not.
+     * Status to represent whether the database connection is TLS enabled or not.
      * 
      */
     @Import(name="status", required=true)
     private Output<String> status;
 
     /**
-     * @return (Updatable) Status to represent whether the database connection is TLS enabled or not.
+     * @return Status to represent whether the database connection is TLS enabled or not.
      * 
      */
     public Output<String> status() {
@@ -62,14 +62,14 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
     }
 
     /**
-     * (Updatable) The password to read the trust store and key store files, if they are password protected.
+     * The password to read the trust store and key store files, if they are password protected.
      * 
      */
     @Import(name="storePassword")
     private @Nullable Output<String> storePassword;
 
     /**
-     * @return (Updatable) The password to read the trust store and key store files, if they are password protected.
+     * @return The password to read the trust store and key store files, if they are password protected.
      * 
      */
     public Optional<Output<String>> storePassword() {
@@ -77,20 +77,14 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
     }
 
     /**
-     * (Updatable) Base64 encoded string of trust store file content.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Base64 encoded string of trust store file content.
      * 
      */
     @Import(name="trustStoreContent")
     private @Nullable Output<String> trustStoreContent;
 
     /**
-     * @return (Updatable) Base64 encoded string of trust store file content.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Base64 encoded string of trust store file content.
      * 
      */
     public Optional<Output<String>> trustStoreContent() {
@@ -126,7 +120,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param certificateStoreType (Updatable) The format of the certificate store.
+         * @param certificateStoreType The format of the certificate store.
          * 
          * @return builder
          * 
@@ -137,7 +131,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param certificateStoreType (Updatable) The format of the certificate store.
+         * @param certificateStoreType The format of the certificate store.
          * 
          * @return builder
          * 
@@ -147,7 +141,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param keyStoreContent (Updatable) Base64 encoded string of key store file content.
+         * @param keyStoreContent Base64 encoded string of key store file content.
          * 
          * @return builder
          * 
@@ -158,7 +152,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param keyStoreContent (Updatable) Base64 encoded string of key store file content.
+         * @param keyStoreContent Base64 encoded string of key store file content.
          * 
          * @return builder
          * 
@@ -168,7 +162,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param status (Updatable) Status to represent whether the database connection is TLS enabled or not.
+         * @param status Status to represent whether the database connection is TLS enabled or not.
          * 
          * @return builder
          * 
@@ -179,7 +173,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param status (Updatable) Status to represent whether the database connection is TLS enabled or not.
+         * @param status Status to represent whether the database connection is TLS enabled or not.
          * 
          * @return builder
          * 
@@ -189,7 +183,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param storePassword (Updatable) The password to read the trust store and key store files, if they are password protected.
+         * @param storePassword The password to read the trust store and key store files, if they are password protected.
          * 
          * @return builder
          * 
@@ -200,7 +194,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param storePassword (Updatable) The password to read the trust store and key store files, if they are password protected.
+         * @param storePassword The password to read the trust store and key store files, if they are password protected.
          * 
          * @return builder
          * 
@@ -210,10 +204,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param trustStoreContent (Updatable) Base64 encoded string of trust store file content.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param trustStoreContent Base64 encoded string of trust store file content.
          * 
          * @return builder
          * 
@@ -224,10 +215,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs extends c
         }
 
         /**
-         * @param trustStoreContent (Updatable) Base64 encoded string of trust store file content.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param trustStoreContent Base64 encoded string of trust store file content.
          * 
          * @return builder
          * 

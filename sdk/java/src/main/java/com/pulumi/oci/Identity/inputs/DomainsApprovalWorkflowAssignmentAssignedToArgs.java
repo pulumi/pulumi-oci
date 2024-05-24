@@ -52,15 +52,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     }
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * (Updatable) Display name of the resource for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -69,15 +69,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Display name of the resource for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -87,34 +87,34 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * Ocid of the resource for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return Ocid of the resource for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -122,15 +122,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     }
 
     /**
-     * The type of resource, User or App, that modified this Resource
+     * Type of the resource (stripe and non-stripe) for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -139,15 +139,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     private Output<String> type;
 
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return Type of the resource (stripe and non-stripe) for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -157,15 +157,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     }
 
     /**
-     * Value of the tag.
+     * Identifier of the resource for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -174,15 +174,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return Identifier of the resource for which Approval Workflow is assigned
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -261,15 +261,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Display name of the resource for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -282,15 +282,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Display name of the resource for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
-         * * returned: default
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -302,17 +302,17 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid Ocid of the resource for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -323,17 +323,17 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid Ocid of the resource for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
-         * * returned: default
+         * * returned: always
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -343,15 +343,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type Type of the resource (stripe and non-stripe) for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -364,15 +364,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type Type of the resource (stripe and non-stripe) for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -384,15 +384,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Identifier of the resource for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -405,15 +405,15 @@ public final class DomainsApprovalWorkflowAssignmentAssignedToArgs extends com.p
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value Identifier of the resource for which Approval Workflow is assigned
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

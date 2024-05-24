@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApplication = new Application("testApplication", ApplicationArgs.builder()        
+ *         var testApplication = new Application("testApplication", ApplicationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(applicationDisplayName)
  *             .driverShape(applicationDriverShape)

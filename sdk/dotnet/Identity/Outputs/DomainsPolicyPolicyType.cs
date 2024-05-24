@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsPolicyPolicyType
     {
         /// <summary>
-        /// (Updatable) Rule URI
+        /// (Updatable) PolicyType URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -27,13 +27,13 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) PolicyType identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

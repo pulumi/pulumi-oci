@@ -158,16 +158,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \&#34;name\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -178,16 +175,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * @return (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \&#34;name\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -267,38 +261,36 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * idcsSensitive: encrypt
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * idcsSensitive: encrypt
+     * * multiValued: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -499,16 +491,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \&#34;name\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -523,16 +512,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name (Updatable) Name of the flatfile bundle configuration property. This attribute maps to \&#34;name\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -626,19 +612,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param values (Updatable) ID of the AppRole.
+         * @param values (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * idcsSensitive: encrypt
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -649,19 +634,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param values (Updatable) ID of the AppRole.
+         * @param values (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * idcsSensitive: encrypt
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -671,19 +655,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param values (Updatable) ID of the AppRole.
+         * @param values (Updatable) Value of the flatfile bundle configuration property. This attribute maps to \&#34;value\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * idcsSensitive: encrypt
+         * * multiValued: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

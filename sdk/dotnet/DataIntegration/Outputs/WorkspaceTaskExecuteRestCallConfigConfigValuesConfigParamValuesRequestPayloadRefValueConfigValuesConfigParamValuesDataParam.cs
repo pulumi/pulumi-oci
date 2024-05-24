@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValuesDataParam
     {
         /// <summary>
-        /// (Updatable) A string value of the parameter.
+        /// A string value of the parameter.
         /// </summary>
         public readonly string? StringValue;
 

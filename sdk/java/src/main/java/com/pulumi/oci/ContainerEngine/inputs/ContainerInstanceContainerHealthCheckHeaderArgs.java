@@ -16,14 +16,14 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
     public static final ContainerInstanceContainerHealthCheckHeaderArgs Empty = new ContainerInstanceContainerHealthCheckHeaderArgs();
 
     /**
-     * The name of the volume. This must be unique within a single container instance.
+     * Container HTTP header Key.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return The name of the volume. This must be unique within a single container instance.
+     * @return Container HTTP header Key.
      * 
      */
     public Optional<Output<String>> name() {
@@ -71,7 +71,7 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
         }
 
         /**
-         * @param name The name of the volume. This must be unique within a single container instance.
+         * @param name Container HTTP header Key.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ContainerInstanceContainerHealthCheckHeaderArgs extends com.p
         }
 
         /**
-         * @param name The name of the volume. This must be unique within a single container instance.
+         * @param name Container HTTP header Key.
          * 
          * @return builder
          * 

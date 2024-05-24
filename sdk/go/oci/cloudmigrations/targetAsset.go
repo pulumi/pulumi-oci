@@ -127,13 +127,13 @@ type TargetAsset struct {
 
 	// (Updatable) Performance of the block volumes.
 	BlockVolumesPerformance pulumi.IntOutput `pulumi:"blockVolumesPerformance"`
-	// (Updatable) The OCID of the compartment.
+	// The OCID of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// Messages about the compatibility issues.
 	CompatibilityMessages TargetAssetCompatibilityMessageArrayOutput `pulumi:"compatibilityMessages"`
 	// Created resource identifier
 	CreatedResourceId pulumi.StringOutput `pulumi:"createdResourceId"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Cost estimation description
 	EstimatedCosts TargetAssetEstimatedCostArrayOutput `pulumi:"estimatedCosts"`
@@ -161,7 +161,7 @@ type TargetAsset struct {
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time when the target asset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
-	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	// (Updatable) The type of target asset.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	UserSpec TargetAssetUserSpecOutput `pulumi:"userSpec"`
@@ -214,13 +214,13 @@ func GetTargetAsset(ctx *pulumi.Context,
 type targetAssetState struct {
 	// (Updatable) Performance of the block volumes.
 	BlockVolumesPerformance *int `pulumi:"blockVolumesPerformance"`
-	// (Updatable) The OCID of the compartment.
+	// The OCID of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Messages about the compatibility issues.
 	CompatibilityMessages []TargetAssetCompatibilityMessage `pulumi:"compatibilityMessages"`
 	// Created resource identifier
 	CreatedResourceId *string `pulumi:"createdResourceId"`
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// Cost estimation description
 	EstimatedCosts []TargetAssetEstimatedCost `pulumi:"estimatedCosts"`
@@ -248,7 +248,7 @@ type targetAssetState struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time when the target asset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	// (Updatable) The type of target asset.
 	Type *string `pulumi:"type"`
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	UserSpec *TargetAssetUserSpec `pulumi:"userSpec"`
@@ -257,13 +257,13 @@ type targetAssetState struct {
 type TargetAssetState struct {
 	// (Updatable) Performance of the block volumes.
 	BlockVolumesPerformance pulumi.IntPtrInput
-	// (Updatable) The OCID of the compartment.
+	// The OCID of the compartment.
 	CompartmentId pulumi.StringPtrInput
 	// Messages about the compatibility issues.
 	CompatibilityMessages TargetAssetCompatibilityMessageArrayInput
 	// Created resource identifier
 	CreatedResourceId pulumi.StringPtrInput
-	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// Cost estimation description
 	EstimatedCosts TargetAssetEstimatedCostArrayInput
@@ -291,7 +291,7 @@ type TargetAssetState struct {
 	TimeCreated pulumi.StringPtrInput
 	// The time when the target asset was updated. An RFC3339 formatted datetime string.
 	TimeUpdated pulumi.StringPtrInput
-	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	// (Updatable) The type of target asset.
 	Type pulumi.StringPtrInput
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	UserSpec TargetAssetUserSpecPtrInput
@@ -312,7 +312,7 @@ type targetAssetArgs struct {
 	MsLicense *string `pulumi:"msLicense"`
 	// (Updatable) Preferred VM shape type that you provide.
 	PreferredShapeType string `pulumi:"preferredShapeType"`
-	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	// (Updatable) The type of target asset.
 	Type string `pulumi:"type"`
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	UserSpec TargetAssetUserSpec `pulumi:"userSpec"`
@@ -330,7 +330,7 @@ type TargetAssetArgs struct {
 	MsLicense pulumi.StringPtrInput
 	// (Updatable) Preferred VM shape type that you provide.
 	PreferredShapeType pulumi.StringInput
-	// (Updatable) The type of action to run when the instance is interrupted for eviction.
+	// (Updatable) The type of target asset.
 	Type pulumi.StringInput
 	// (Updatable) Instance launch details. Use the `sourceDetails` parameter to specify whether a boot volume or an image should be used to launch a new instance.
 	UserSpec TargetAssetUserSpecInput
@@ -428,7 +428,7 @@ func (o TargetAssetOutput) BlockVolumesPerformance() pulumi.IntOutput {
 	return o.ApplyT(func(v *TargetAsset) pulumi.IntOutput { return v.BlockVolumesPerformance }).(pulumi.IntOutput)
 }
 
-// (Updatable) The OCID of the compartment.
+// The OCID of the compartment.
 func (o TargetAssetOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -443,7 +443,7 @@ func (o TargetAssetOutput) CreatedResourceId() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.CreatedResourceId }).(pulumi.StringOutput)
 }
 
-// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 func (o TargetAssetOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -513,7 +513,7 @@ func (o TargetAssetOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }
 
-// (Updatable) The type of action to run when the instance is interrupted for eviction.
+// (Updatable) The type of target asset.
 func (o TargetAssetOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *TargetAsset) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

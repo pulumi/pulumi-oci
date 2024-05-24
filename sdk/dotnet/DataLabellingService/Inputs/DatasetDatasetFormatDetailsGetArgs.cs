@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataLabellingService.Inputs
     public sealed class DatasetDatasetFormatDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// It defines the format type of text files.
+        /// The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
         /// </summary>
         [Input("formatType", required: true)]
         public Input<string> FormatType { get; set; } = null!;

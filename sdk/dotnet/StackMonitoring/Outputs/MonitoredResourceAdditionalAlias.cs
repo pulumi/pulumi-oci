@@ -18,11 +18,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
         /// </summary>
         public readonly Outputs.MonitoredResourceAdditionalAliasCredential Credential;
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the alias, within the context of the source.
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        /// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         /// </summary>
         public readonly string Source;
 

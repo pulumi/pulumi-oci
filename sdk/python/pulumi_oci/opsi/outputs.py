@@ -236,7 +236,7 @@ class DatabaseInsightConnectionDetails(dict):
         """
         :param str host_name: Name of the listener host that will be used to create the connect string to the database.
         :param Sequence['DatabaseInsightConnectionDetailsHostArgs'] hosts: List of hosts and port for private endpoint accessed database resource.
-        :param int port: Listener port number used for connection requests for rivate endpoint accessed db resource.
+        :param int port: Listener port number used for connection requests.
         :param str protocol: Protocol used for connection requests for private endpoint accssed database resource.
         :param str service_name: Database service name used for connection requests.
         """
@@ -271,7 +271,7 @@ class DatabaseInsightConnectionDetails(dict):
     @pulumi.getter
     def port(self) -> Optional[int]:
         """
-        Listener port number used for connection requests for rivate endpoint accessed db resource.
+        Listener port number used for connection requests.
         """
         return pulumi.get(self, "port")
 
@@ -477,7 +477,7 @@ class ExadataInsightMemberVmClusterDetail(dict):
                  opsi_private_endpoint_id: Optional[str] = None,
                  vmcluster_id: Optional[str] = None):
         """
-        :param str compartment_id: (Updatable) Compartment Identifier of database
+        :param str compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param str dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
         :param Sequence['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs'] member_database_details: The databases that belong to the VM Cluster
         :param str opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -498,7 +498,7 @@ class ExadataInsightMemberVmClusterDetail(dict):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[str]:
         """
-        (Updatable) Compartment Identifier of database
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -1204,7 +1204,7 @@ class OpsiConfigurationConfigItemMetadata(dict):
                  unit_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataUnitDetail']] = None,
                  value_input_details: Optional[Sequence['outputs.OpsiConfigurationConfigItemMetadataValueInputDetail']] = None):
         """
-        :param str config_item_type: (Updatable) Type of configuration item.
+        :param str config_item_type: Type of configuration item.
         :param str data_type: Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
         :param str description: (Updatable) Description of OPSI configuration.
         :param str display_name: (Updatable) User-friendly display name for the OPSI configuration. The name does not have to be unique.
@@ -1228,7 +1228,7 @@ class OpsiConfigurationConfigItemMetadata(dict):
     @pulumi.getter(name="configItemType")
     def config_item_type(self) -> Optional[str]:
         """
-        (Updatable) Type of configuration item.
+        Type of configuration item.
         """
         return pulumi.get(self, "config_item_type")
 

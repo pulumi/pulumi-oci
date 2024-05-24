@@ -14,15 +14,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters
     {
         /// <summary>
-        /// (Updatable) The list of headers.
+        /// (Updatable) The list of query parameters.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> Items;
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
         /// </summary>
         public readonly string Type;
 

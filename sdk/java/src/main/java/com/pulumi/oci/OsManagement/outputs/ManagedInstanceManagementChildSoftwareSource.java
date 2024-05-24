@@ -19,9 +19,6 @@ public final class ManagedInstanceManagementChildSoftwareSource {
     /**
      * @return software source name
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private @Nullable String name;
 
@@ -35,9 +32,6 @@ public final class ManagedInstanceManagementChildSoftwareSource {
     }
     /**
      * @return software source name
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> name() {

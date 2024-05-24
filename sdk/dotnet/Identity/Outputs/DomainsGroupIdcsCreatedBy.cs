@@ -14,12 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsGroupIdcsCreatedBy
     {
         /// <summary>
-        /// (Updatable) App Display Name
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The displayName of the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -29,25 +28,23 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// (Updatable) App URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -58,25 +55,21 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) The type of the entity that created this Group.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The type of resource, User or App, that created this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsDefaultValue: App
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// (Updatable) The ID of the App.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true

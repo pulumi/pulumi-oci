@@ -14,23 +14,23 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class NotebookSessionNotebookSessionConfigDetails
     {
         /// <summary>
-        /// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+        /// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
         /// </summary>
         public readonly int? BlockStorageSizeInGbs;
         /// <summary>
-        /// (Updatable) Details for the notebook session shape configuration.
+        /// Details for the notebook session shape configuration.
         /// </summary>
         public readonly Outputs.NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails? NotebookSessionShapeConfigDetails;
         /// <summary>
-        /// (Updatable) The OCID of a Data Science private endpoint.
+        /// The OCID of a Data Science private endpoint.
         /// </summary>
         public readonly string? PrivateEndpointId;
         /// <summary>
-        /// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+        /// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
         /// </summary>
         public readonly string Shape;
         /// <summary>
-        /// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+        /// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
         /// </summary>
         public readonly string? SubnetId;
 

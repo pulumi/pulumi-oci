@@ -13,12 +13,11 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) App Display Name
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Owner display name
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -30,11 +29,10 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) App URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The URI that corresponds to the owning Resource of this Group
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -47,15 +45,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the entity that created this Group.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Indicates the type of resource--for example, User or Group
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsDefaultValue: App
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsDefaultValue: User
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
@@ -65,17 +62,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The ID of the App.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) ID of the owner of this Group
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

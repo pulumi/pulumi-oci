@@ -65,6 +65,8 @@ public final class OpaInstanceAttachmentArgs extends com.pulumi.resources.Resour
 
     /**
      * The role of the target attachment.
+     * * `PARENT` - The target instance is the parent of this attachment.
+     * * `CHILD` - The target instance is the child of this attachment.
      * 
      */
     @Import(name="targetRole")
@@ -72,6 +74,8 @@ public final class OpaInstanceAttachmentArgs extends com.pulumi.resources.Resour
 
     /**
      * @return The role of the target attachment.
+     * * `PARENT` - The target instance is the parent of this attachment.
+     * * `CHILD` - The target instance is the child of this attachment.
      * 
      */
     public Optional<Output<String>> targetRole() {
@@ -188,6 +192,8 @@ public final class OpaInstanceAttachmentArgs extends com.pulumi.resources.Resour
 
         /**
          * @param targetRole The role of the target attachment.
+         * * `PARENT` - The target instance is the parent of this attachment.
+         * * `CHILD` - The target instance is the child of this attachment.
          * 
          * @return builder
          * 
@@ -199,6 +205,8 @@ public final class OpaInstanceAttachmentArgs extends com.pulumi.resources.Resour
 
         /**
          * @param targetRole The role of the target attachment.
+         * * `PARENT` - The target instance is the parent of this attachment.
+         * * `CHILD` - The target instance is the child of this attachment.
          * 
          * @return builder
          * 

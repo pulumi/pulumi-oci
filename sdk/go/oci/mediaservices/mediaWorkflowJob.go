@@ -73,7 +73,7 @@ import (
 type MediaWorkflowJob struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -104,7 +104,7 @@ type MediaWorkflowJob struct {
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayOutput `pulumi:"taskLifecycleStates"`
-	// When the lock was created.
+	// Creation time of the job. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
 	TimeEnded pulumi.StringOutput `pulumi:"timeEnded"`
@@ -155,7 +155,7 @@ func GetMediaWorkflowJob(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering MediaWorkflowJob resources.
 type mediaWorkflowJobState struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -186,7 +186,7 @@ type mediaWorkflowJobState struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// Status of each task.
 	TaskLifecycleStates []MediaWorkflowJobTaskLifecycleState `pulumi:"taskLifecycleStates"`
-	// When the lock was created.
+	// Creation time of the job. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// Time when the job finished. An RFC3339 formatted datetime string.
 	TimeEnded *string `pulumi:"timeEnded"`
@@ -202,7 +202,7 @@ type mediaWorkflowJobState struct {
 }
 
 type MediaWorkflowJobState struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -233,7 +233,7 @@ type MediaWorkflowJobState struct {
 	SystemTags pulumi.MapInput
 	// Status of each task.
 	TaskLifecycleStates MediaWorkflowJobTaskLifecycleStateArrayInput
-	// When the lock was created.
+	// Creation time of the job. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
 	// Time when the job finished. An RFC3339 formatted datetime string.
 	TimeEnded pulumi.StringPtrInput
@@ -253,7 +253,7 @@ func (MediaWorkflowJobState) ElementType() reflect.Type {
 }
 
 type mediaWorkflowJobArgs struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -281,7 +281,7 @@ type mediaWorkflowJobArgs struct {
 
 // The set of arguments for constructing a MediaWorkflowJob resource.
 type MediaWorkflowJobArgs struct {
-	// (Updatable) The compartment ID of the lock.
+	// (Updatable) ID of the compartment in which the job should be created.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -394,7 +394,7 @@ func (o MediaWorkflowJobOutput) ToMediaWorkflowJobOutputWithContext(ctx context.
 	return o
 }
 
-// (Updatable) The compartment ID of the lock.
+// (Updatable) ID of the compartment in which the job should be created.
 func (o MediaWorkflowJobOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -473,7 +473,7 @@ func (o MediaWorkflowJobOutput) TaskLifecycleStates() MediaWorkflowJobTaskLifecy
 	return o.ApplyT(func(v *MediaWorkflowJob) MediaWorkflowJobTaskLifecycleStateArrayOutput { return v.TaskLifecycleStates }).(MediaWorkflowJobTaskLifecycleStateArrayOutput)
 }
 
-// When the lock was created.
+// Creation time of the job. An RFC3339 formatted datetime string.
 func (o MediaWorkflowJobOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *MediaWorkflowJob) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

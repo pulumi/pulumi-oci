@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNetworkSource = new NetworkSource("testNetworkSource", NetworkSourceArgs.builder()        
+ *         var testNetworkSource = new NetworkSource("testNetworkSource", NetworkSourceArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(networkSourceDescription)
  *             .name(networkSourceName)

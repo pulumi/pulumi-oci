@@ -42,7 +42,7 @@ type SoftwareSource struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) User-friendly name.
+	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -142,7 +142,7 @@ type softwareSourceState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) User-friendly name.
+	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -207,7 +207,7 @@ type SoftwareSourceState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) User-friendly name.
+	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -268,7 +268,7 @@ type softwareSourceArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) User-friendly name.
+	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -300,7 +300,7 @@ type SoftwareSourceArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) User-specified description for the software source. Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// (Updatable) User-friendly name.
+	// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -451,7 +451,7 @@ func (o SoftwareSourceOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) User-friendly name.
+// (Updatable) User-friendly name for the software source. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 func (o SoftwareSourceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SoftwareSource) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

@@ -16,14 +16,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
     public static final WorkspaceApplicationTaskScheduleMetadataAggregatorArgs Empty = new WorkspaceApplicationTaskScheduleMetadataAggregatorArgs();
 
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -31,14 +31,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
     }
 
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier")
     private @Nullable Output<String> identifier;
 
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<Output<String>> identifier() {
@@ -46,14 +46,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
     }
 
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -76,14 +76,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
     }
 
     /**
-     * (Updatable) The type of the aggregator.
+     * The type of the aggregator.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) The type of the aggregator.
+     * @return The type of the aggregator.
      * 
      */
     public Optional<Output<String>> type() {
@@ -119,7 +119,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param description (Updatable) The description of the aggregator.
+         * @param description (Updatable) Detailed description for the object.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param description (Updatable) The description of the aggregator.
+         * @param description (Updatable) Detailed description for the object.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param identifier (Updatable) The identifier of the aggregator.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param identifier (Updatable) The identifier of the aggregator.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -161,7 +161,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -172,7 +172,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param type (Updatable) The type of the aggregator.
+         * @param type The type of the aggregator.
          * 
          * @return builder
          * 
@@ -214,7 +214,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataAggregatorArgs extend
         }
 
         /**
-         * @param type (Updatable) The type of the aggregator.
+         * @param type The type of the aggregator.
          * 
          * @return builder
          * 

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Waf.Outputs
     public sealed class AppFirewallPolicyRequestRateLimitingRule
     {
         /// <summary>
-        /// (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+        /// (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
         /// </summary>
         public readonly string ActionName;
         /// <summary>

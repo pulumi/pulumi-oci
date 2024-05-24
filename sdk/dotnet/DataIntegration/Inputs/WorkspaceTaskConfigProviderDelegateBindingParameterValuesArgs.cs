@@ -13,14 +13,11 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The root object value, used in custom parameters.
+        /// The root object value, used in custom parameters.
         /// </summary>
         [Input("rootObjectValue")]
         public Input<Inputs.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs>? RootObjectValue { get; set; }
 
-        /// <summary>
-        /// A simple value for the parameter.
-        /// </summary>
         [Input("simpleValue")]
         public Input<string>? SimpleValue { get; set; }
 

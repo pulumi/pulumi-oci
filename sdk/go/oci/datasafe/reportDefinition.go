@@ -116,7 +116,7 @@ type ReportDefinition struct {
 	Description pulumi.StringOutput `pulumi:"description"`
 	// (Updatable) Specifies the name of the report definition.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Specifies the order in which the summary must be displayed.
+	// Specifies the order in which the summary must be displayed.
 	DisplayOrder pulumi.IntOutput `pulumi:"displayOrder"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -136,10 +136,7 @@ type ReportDefinition struct {
 	ScheduledReportName pulumi.StringOutput `pulumi:"scheduledReportName"`
 	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit pulumi.IntOutput `pulumi:"scheduledReportRowLimit"`
-	// (Updatable) Additional scim filters used to get the specific summary.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Additional scim filters used to get the specific summary.
 	ScimFilter pulumi.StringOutput `pulumi:"scimFilter"`
 	// The current state of the report.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -224,7 +221,7 @@ type reportDefinitionState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Specifies the name of the report definition.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Specifies the order in which the summary must be displayed.
+	// Specifies the order in which the summary must be displayed.
 	DisplayOrder *int `pulumi:"displayOrder"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -244,10 +241,7 @@ type reportDefinitionState struct {
 	ScheduledReportName *string `pulumi:"scheduledReportName"`
 	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit *int `pulumi:"scheduledReportRowLimit"`
-	// (Updatable) Additional scim filters used to get the specific summary.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Additional scim filters used to get the specific summary.
 	ScimFilter *string `pulumi:"scimFilter"`
 	// The current state of the report.
 	State *string `pulumi:"state"`
@@ -282,7 +276,7 @@ type ReportDefinitionState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Specifies the name of the report definition.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Specifies the order in which the summary must be displayed.
+	// Specifies the order in which the summary must be displayed.
 	DisplayOrder pulumi.IntPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
@@ -302,10 +296,7 @@ type ReportDefinitionState struct {
 	ScheduledReportName pulumi.StringPtrInput
 	// Specifies the limit on the number of rows in the report.
 	ScheduledReportRowLimit pulumi.IntPtrInput
-	// (Updatable) Additional scim filters used to get the specific summary.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Additional scim filters used to get the specific summary.
 	ScimFilter pulumi.StringPtrInput
 	// The current state of the report.
 	State pulumi.StringPtrInput
@@ -507,7 +498,7 @@ func (o ReportDefinitionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Specifies the order in which the summary must be displayed.
+// Specifies the order in which the summary must be displayed.
 func (o ReportDefinitionOutput) DisplayOrder() pulumi.IntOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.IntOutput { return v.DisplayOrder }).(pulumi.IntOutput)
 }
@@ -557,10 +548,7 @@ func (o ReportDefinitionOutput) ScheduledReportRowLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.IntOutput { return v.ScheduledReportRowLimit }).(pulumi.IntOutput)
 }
 
-// (Updatable) Additional scim filters used to get the specific summary.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Additional scim filters used to get the specific summary.
 func (o ReportDefinitionOutput) ScimFilter() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.ScimFilter }).(pulumi.StringOutput)
 }

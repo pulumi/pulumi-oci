@@ -575,16 +575,18 @@ export class DomainsSetting extends pulumi.CustomResource {
      */
     public readonly issuer!: pulumi.Output<string>;
     /**
-     * (Updatable) Locale
+     * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      */
     public readonly locale!: pulumi.Output<string>;
     /**
@@ -1613,16 +1615,18 @@ export interface DomainsSettingState {
      */
     issuer?: pulumi.Input<string>;
     /**
-     * (Updatable) Locale
+     * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      */
     locale?: pulumi.Input<string>;
     /**
@@ -2321,16 +2325,18 @@ export interface DomainsSettingArgs {
      */
     issuer?: pulumi.Input<string>;
     /**
-     * (Updatable) Locale
+     * (Updatable) Default location for purposes of localizing items such as currency, date and time format, numerical representations, and so on.
      *
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+     * * caseExact: false
+     * * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(locale)"
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
+     * * uniqueness: none
      */
     locale?: pulumi.Input<string>;
     /**

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Autoscaling.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The type of action to take.
+        /// The type of resource.
         /// </summary>
         public readonly string Type;
 

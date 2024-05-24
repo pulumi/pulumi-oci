@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly ImmutableArray<string> FaultDomains;
         /// <summary>
-        /// (Updatable) The regional subnet where pods' VNIC will be placed.
+        /// (Updatable) The OCID of the subnet in which to place virtual nodes.
         /// </summary>
         public readonly string SubnetId;
 

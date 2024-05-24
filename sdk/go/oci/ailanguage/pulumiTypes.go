@@ -591,7 +591,7 @@ func (o ModelEvaluationResultMetricArrayOutput) Index(i pulumi.IntInput) ModelEv
 }
 
 type ModelModelDetails struct {
-	// classification Modes
+	// possible text classification modes
 	ClassificationMode *ModelModelDetailsClassificationMode `pulumi:"classificationMode"`
 	// supported language default value is en
 	LanguageCode *string `pulumi:"languageCode"`
@@ -613,7 +613,7 @@ type ModelModelDetailsInput interface {
 }
 
 type ModelModelDetailsArgs struct {
-	// classification Modes
+	// possible text classification modes
 	ClassificationMode ModelModelDetailsClassificationModePtrInput `pulumi:"classificationMode"`
 	// supported language default value is en
 	LanguageCode pulumi.StringPtrInput `pulumi:"languageCode"`
@@ -700,7 +700,7 @@ func (o ModelModelDetailsOutput) ToModelModelDetailsPtrOutputWithContext(ctx con
 	}).(ModelModelDetailsPtrOutput)
 }
 
-// classification Modes
+// possible text classification modes
 func (o ModelModelDetailsOutput) ClassificationMode() ModelModelDetailsClassificationModePtrOutput {
 	return o.ApplyT(func(v ModelModelDetails) *ModelModelDetailsClassificationMode { return v.ClassificationMode }).(ModelModelDetailsClassificationModePtrOutput)
 }
@@ -744,7 +744,7 @@ func (o ModelModelDetailsPtrOutput) Elem() ModelModelDetailsOutput {
 	}).(ModelModelDetailsOutput)
 }
 
-// classification Modes
+// possible text classification modes
 func (o ModelModelDetailsPtrOutput) ClassificationMode() ModelModelDetailsClassificationModePtrOutput {
 	return o.ApplyT(func(v *ModelModelDetails) *ModelModelDetailsClassificationMode {
 		if v == nil {
@@ -787,7 +787,7 @@ func (o ModelModelDetailsPtrOutput) Version() pulumi.StringPtrOutput {
 type ModelModelDetailsClassificationMode struct {
 	// classification Modes
 	ClassificationMode string `pulumi:"classificationMode"`
-	// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+	// Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
 	Version *string `pulumi:"version"`
 }
 
@@ -805,7 +805,7 @@ type ModelModelDetailsClassificationModeInput interface {
 type ModelModelDetailsClassificationModeArgs struct {
 	// classification Modes
 	ClassificationMode pulumi.StringInput `pulumi:"classificationMode"`
-	// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+	// Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
 	Version pulumi.StringPtrInput `pulumi:"version"`
 }
 
@@ -891,7 +891,7 @@ func (o ModelModelDetailsClassificationModeOutput) ClassificationMode() pulumi.S
 	return o.ApplyT(func(v ModelModelDetailsClassificationMode) string { return v.ClassificationMode }).(pulumi.StringOutput)
 }
 
-// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+// Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
 func (o ModelModelDetailsClassificationModeOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelModelDetailsClassificationMode) *string { return v.Version }).(pulumi.StringPtrOutput)
 }
@@ -930,7 +930,7 @@ func (o ModelModelDetailsClassificationModePtrOutput) ClassificationMode() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+// Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
 func (o ModelModelDetailsClassificationModePtrOutput) Version() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ModelModelDetailsClassificationMode) *string {
 		if v == nil {
@@ -1300,9 +1300,6 @@ type ModelTestStrategyTestingDatasetLocationDetails struct {
 	// Object storage namespace
 	Namespace string `pulumi:"namespace"`
 	// Array of files which need to be processed in the bucket
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectNames []string `pulumi:"objectNames"`
 }
 
@@ -1325,9 +1322,6 @@ type ModelTestStrategyTestingDatasetLocationDetailsArgs struct {
 	// Object storage namespace
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Array of files which need to be processed in the bucket
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectNames pulumi.StringArrayInput `pulumi:"objectNames"`
 }
 
@@ -1424,9 +1418,6 @@ func (o ModelTestStrategyTestingDatasetLocationDetailsOutput) Namespace() pulumi
 }
 
 // Array of files which need to be processed in the bucket
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestStrategyTestingDatasetLocationDetailsOutput) ObjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ModelTestStrategyTestingDatasetLocationDetails) []string { return v.ObjectNames }).(pulumi.StringArrayOutput)
 }
@@ -1486,9 +1477,6 @@ func (o ModelTestStrategyTestingDatasetLocationDetailsPtrOutput) Namespace() pul
 }
 
 // Array of files which need to be processed in the bucket
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestStrategyTestingDatasetLocationDetailsPtrOutput) ObjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ModelTestStrategyTestingDatasetLocationDetails) []string {
 		if v == nil {
@@ -1683,9 +1671,6 @@ type ModelTestStrategyValidationDatasetLocationDetails struct {
 	// Object storage namespace
 	Namespace string `pulumi:"namespace"`
 	// Array of files which need to be processed in the bucket
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectNames []string `pulumi:"objectNames"`
 }
 
@@ -1708,9 +1693,6 @@ type ModelTestStrategyValidationDatasetLocationDetailsArgs struct {
 	// Object storage namespace
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Array of files which need to be processed in the bucket
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ObjectNames pulumi.StringArrayInput `pulumi:"objectNames"`
 }
 
@@ -1807,9 +1789,6 @@ func (o ModelTestStrategyValidationDatasetLocationDetailsOutput) Namespace() pul
 }
 
 // Array of files which need to be processed in the bucket
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestStrategyValidationDatasetLocationDetailsOutput) ObjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ModelTestStrategyValidationDatasetLocationDetails) []string { return v.ObjectNames }).(pulumi.StringArrayOutput)
 }
@@ -1869,9 +1848,6 @@ func (o ModelTestStrategyValidationDatasetLocationDetailsPtrOutput) Namespace() 
 }
 
 // Array of files which need to be processed in the bucket
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o ModelTestStrategyValidationDatasetLocationDetailsPtrOutput) ObjectNames() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ModelTestStrategyValidationDatasetLocationDetails) []string {
 		if v == nil {

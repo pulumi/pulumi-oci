@@ -150,6 +150,9 @@ namespace Pulumi.Oci.Monitoring
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
+        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         [Output("messageFormat")]
         public Output<string> MessageFormat { get; private set; } = null!;
@@ -398,6 +401,9 @@ namespace Pulumi.Oci.Monitoring
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
+        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }
@@ -596,6 +602,9 @@ namespace Pulumi.Oci.Monitoring
 
         /// <summary>
         /// (Updatable) The format to use for alarm notifications. The formats are:
+        /// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        /// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+        /// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         /// </summary>
         [Input("messageFormat")]
         public Input<string>? MessageFormat { get; set; }

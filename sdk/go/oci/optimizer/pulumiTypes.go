@@ -14,7 +14,7 @@ import (
 var _ = internal.GetEnvOrDefault
 
 type ProfileLevelsConfiguration struct {
-	// (Updatable) The list of tags specified in the current profile override.
+	// (Updatable) The array of configuration levels.
 	Items []ProfileLevelsConfigurationItem `pulumi:"items"`
 }
 
@@ -30,7 +30,7 @@ type ProfileLevelsConfigurationInput interface {
 }
 
 type ProfileLevelsConfigurationArgs struct {
-	// (Updatable) The list of tags specified in the current profile override.
+	// (Updatable) The array of configuration levels.
 	Items ProfileLevelsConfigurationItemArrayInput `pulumi:"items"`
 }
 
@@ -111,7 +111,7 @@ func (o ProfileLevelsConfigurationOutput) ToProfileLevelsConfigurationPtrOutputW
 	}).(ProfileLevelsConfigurationPtrOutput)
 }
 
-// (Updatable) The list of tags specified in the current profile override.
+// (Updatable) The array of configuration levels.
 func (o ProfileLevelsConfigurationOutput) Items() ProfileLevelsConfigurationItemArrayOutput {
 	return o.ApplyT(func(v ProfileLevelsConfiguration) []ProfileLevelsConfigurationItem { return v.Items }).(ProfileLevelsConfigurationItemArrayOutput)
 }
@@ -140,7 +140,7 @@ func (o ProfileLevelsConfigurationPtrOutput) Elem() ProfileLevelsConfigurationOu
 	}).(ProfileLevelsConfigurationOutput)
 }
 
-// (Updatable) The list of tags specified in the current profile override.
+// (Updatable) The array of configuration levels.
 func (o ProfileLevelsConfigurationPtrOutput) Items() ProfileLevelsConfigurationItemArrayOutput {
 	return o.ApplyT(func(v *ProfileLevelsConfiguration) []ProfileLevelsConfigurationItem {
 		if v == nil {
@@ -257,7 +257,7 @@ func (o ProfileLevelsConfigurationItemArrayOutput) Index(i pulumi.IntInput) Prof
 }
 
 type ProfileTargetCompartments struct {
-	// (Updatable) The list of tags specified in the current profile override.
+	// (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
 	Items []string `pulumi:"items"`
 }
 
@@ -273,7 +273,7 @@ type ProfileTargetCompartmentsInput interface {
 }
 
 type ProfileTargetCompartmentsArgs struct {
-	// (Updatable) The list of tags specified in the current profile override.
+	// (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
 	Items pulumi.StringArrayInput `pulumi:"items"`
 }
 
@@ -354,7 +354,7 @@ func (o ProfileTargetCompartmentsOutput) ToProfileTargetCompartmentsPtrOutputWit
 	}).(ProfileTargetCompartmentsPtrOutput)
 }
 
-// (Updatable) The list of tags specified in the current profile override.
+// (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
 func (o ProfileTargetCompartmentsOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v ProfileTargetCompartments) []string { return v.Items }).(pulumi.StringArrayOutput)
 }
@@ -383,7 +383,7 @@ func (o ProfileTargetCompartmentsPtrOutput) Elem() ProfileTargetCompartmentsOutp
 	}).(ProfileTargetCompartmentsOutput)
 }
 
-// (Updatable) The list of tags specified in the current profile override.
+// (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
 func (o ProfileTargetCompartmentsPtrOutput) Items() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *ProfileTargetCompartments) []string {
 		if v == nil {

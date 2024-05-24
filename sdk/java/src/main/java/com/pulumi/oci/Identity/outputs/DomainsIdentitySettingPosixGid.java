@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsIdentitySettingPosixGid {
     /**
-     * @return (Updatable) The number at which the Posix Uid Manual assignment ends.
+     * @return (Updatable) The number at which the Posix Gid Manual assignment ends.
      * 
      * **Added In:** 17.4.6
      * 
@@ -28,7 +28,7 @@ public final class DomainsIdentitySettingPosixGid {
      */
     private @Nullable Integer manualAssignmentEndsAt;
     /**
-     * @return (Updatable) The number from which the Posix Uid Manual assignment starts.
+     * @return (Updatable) The number from which the Posix Gid Manual assignment starts.
      * 
      * **Added In:** 17.4.6
      * 
@@ -46,7 +46,7 @@ public final class DomainsIdentitySettingPosixGid {
 
     private DomainsIdentitySettingPosixGid() {}
     /**
-     * @return (Updatable) The number at which the Posix Uid Manual assignment ends.
+     * @return (Updatable) The number at which the Posix Gid Manual assignment ends.
      * 
      * **Added In:** 17.4.6
      * 
@@ -64,7 +64,7 @@ public final class DomainsIdentitySettingPosixGid {
         return Optional.ofNullable(this.manualAssignmentEndsAt);
     }
     /**
-     * @return (Updatable) The number from which the Posix Uid Manual assignment starts.
+     * @return (Updatable) The number from which the Posix Gid Manual assignment starts.
      * 
      * **Added In:** 17.4.6
      * 

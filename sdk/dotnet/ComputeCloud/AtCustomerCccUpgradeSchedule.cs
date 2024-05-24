@@ -76,7 +76,7 @@ namespace Pulumi.Oci.ComputeCloud
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        /// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -204,7 +204,7 @@ namespace Pulumi.Oci.ComputeCloud
         }
 
         /// <summary>
-        /// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        /// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.ComputeCloud
         }
 
         /// <summary>
-        /// (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+        /// (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

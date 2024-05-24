@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDedicatedVantagePoint = new DedicatedVantagePoint("testDedicatedVantagePoint", DedicatedVantagePointArgs.builder()        
+ *         var testDedicatedVantagePoint = new DedicatedVantagePoint("testDedicatedVantagePoint", DedicatedVantagePointArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .displayName(dedicatedVantagePointDisplayName)
  *             .dvpStackDetails(DedicatedVantagePointDvpStackDetailsArgs.builder()

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NamespaceIngestTimeRuleAction {
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     private String compartmentId;
@@ -29,10 +29,7 @@ public final class NamespaceIngestTimeRuleAction {
      */
     private String metricName;
     /**
-     * @return The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     private String namespace;
@@ -49,7 +46,7 @@ public final class NamespaceIngestTimeRuleAction {
 
     private NamespaceIngestTimeRuleAction() {}
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     public String compartmentId() {
@@ -70,10 +67,7 @@ public final class NamespaceIngestTimeRuleAction {
         return this.metricName;
     }
     /**
-     * @return The Logging Analytics namespace used for the request.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     public String namespace() {

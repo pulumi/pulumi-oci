@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList {
     /**
-     * @return (Updatable) A new key
+     * @return (Updatable) The field name to which the regular expression is applied
      * 
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) The Grok pattern.
+     * @return (Updatable) The regular expression
      * 
      */
     private @Nullable String pattern;
 
     private UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowList() {}
     /**
-     * @return (Updatable) A new key
+     * @return (Updatable) The field name to which the regular expression is applied
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) The Grok pattern.
+     * @return (Updatable) The regular expression
      * 
      */
     public Optional<String> pattern() {

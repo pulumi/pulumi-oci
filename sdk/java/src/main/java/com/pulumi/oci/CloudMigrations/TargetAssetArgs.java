@@ -95,14 +95,14 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Output<String> type() {
@@ -260,7 +260,7 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 
@@ -271,7 +271,7 @@ public final class TargetAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param type (Updatable) The type of action to run when the instance is interrupted for eviction.
+         * @param type (Updatable) The type of target asset.
          * 
          * @return builder
          * 

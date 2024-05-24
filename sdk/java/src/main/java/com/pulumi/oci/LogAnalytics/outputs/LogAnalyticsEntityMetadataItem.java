@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LogAnalyticsEntityMetadataItem {
     /**
-     * @return (Updatable) Log analytics entity name.
+     * @return (Updatable) The metadata name.
      * 
      */
     private @Nullable String name;
@@ -29,7 +29,7 @@ public final class LogAnalyticsEntityMetadataItem {
 
     private LogAnalyticsEntityMetadataItem() {}
     /**
-     * @return (Updatable) Log analytics entity name.
+     * @return (Updatable) The metadata name.
      * 
      */
     public Optional<String> name() {

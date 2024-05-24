@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Sch.Inputs
     public sealed class ConnectorSourceCursorArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type discriminator.
         /// </summary>
         [Input("kind")]
         public Input<string>? Kind { get; set; }

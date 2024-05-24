@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInstancePool = new InstancePool("testInstancePool", InstancePoolArgs.builder()        
+ *         var testInstancePool = new InstancePool("testInstancePool", InstancePoolArgs.builder()
  *             .compartmentId(compartmentId)
  *             .instanceConfigurationId(testInstanceConfiguration.id())
  *             .placementConfigurations(InstancePoolPlacementConfigurationArgs.builder()
@@ -153,14 +153,14 @@ public class InstancePool extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {

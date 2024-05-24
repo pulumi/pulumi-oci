@@ -73,7 +73,7 @@ export class NetworkAddressList extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) A private IP address or CIDR IP address range.
+     * (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
      */
     public readonly addresses!: pulumi.Output<string[] | undefined>;
     /**
@@ -177,7 +177,7 @@ export class NetworkAddressList extends pulumi.CustomResource {
  */
 export interface NetworkAddressListState {
     /**
-     * (Updatable) A private IP address or CIDR IP address range.
+     * (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
      */
     addresses?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -231,7 +231,7 @@ export interface NetworkAddressListState {
  */
 export interface NetworkAddressListArgs {
     /**
-     * (Updatable) A private IP address or CIDR IP address range.
+     * (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
      */
     addresses?: pulumi.Input<pulumi.Input<string>[]>;
     /**

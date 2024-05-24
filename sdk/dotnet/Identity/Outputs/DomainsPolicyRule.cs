@@ -57,13 +57,13 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly int Sequence;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Rule identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string

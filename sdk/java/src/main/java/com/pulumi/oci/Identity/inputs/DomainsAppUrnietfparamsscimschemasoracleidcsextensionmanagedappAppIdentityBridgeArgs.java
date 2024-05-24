@@ -16,17 +16,16 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     public static final DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs Empty = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppIdentityBridgeArgs();
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * (Updatable) Name of the IdentityBridge associated with the App.
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 19.1.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -36,17 +35,16 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Name of the IdentityBridge associated with the App.
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 19.1.4
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -57,7 +55,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) The URI of the IdentityBridge associated with the App.
+     * 
+     * **Added In:** 19.1.4
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -73,7 +73,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the IdentityBridge associated with the App.
+     * 
+     * **Added In:** 19.1.4
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -90,38 +92,38 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) The Id of the IdentityBridge associated with the App.
+     * 
+     * **Added In:** 19.1.4
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The Id of the IdentityBridge associated with the App.
+     * 
+     * **Added In:** 19.1.4
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
-     * * returned: default
+     * * required: false
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -155,17 +157,16 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Name of the IdentityBridge associated with the App.
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 19.1.4
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -179,17 +180,16 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Name of the IdentityBridge associated with the App.
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 19.1.4
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
+         * * mutability: readOnly
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
@@ -202,7 +202,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the IdentityBridge associated with the App.
+         * 
+         * **Added In:** 19.1.4
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -222,7 +224,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the IdentityBridge associated with the App.
+         * 
+         * **Added In:** 19.1.4
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -241,19 +245,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The Id of the IdentityBridge associated with the App.
+         * 
+         * **Added In:** 19.1.4
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
-         * * returned: default
+         * * required: false
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -264,19 +268,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The Id of the IdentityBridge associated with the App.
+         * 
+         * **Added In:** 19.1.4
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
-         * * returned: default
+         * * required: false
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

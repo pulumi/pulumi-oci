@@ -28,7 +28,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable Boolean adminRole;
     /**
-     * @return (Updatable) The ID of the App in this Grant.
+     * @return (Updatable) The ID of the App that defines this AppRole.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -57,12 +57,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String appName;
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) The display name of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -85,9 +85,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String legacyGroupName;
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -101,33 +99,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) The kind of membership this User has in the AppRole. A value of &#39;direct&#39; indicates that the User is a member of the AppRole.  A value of  &#39;indirect&#39; indicates that the User is a member of a Group that is a member of the AppRole.  A value of &#39;implicit&#39; indicates that the AppRole is public.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The Id of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -150,7 +147,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.adminRole);
     }
     /**
-     * @return (Updatable) The ID of the App in this Grant.
+     * @return (Updatable) The ID of the App that defines this AppRole.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -183,12 +180,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.appName);
     }
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) The display name of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -215,9 +212,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.legacyGroupName);
     }
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -233,14 +228,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) The kind of membership this User has in the AppRole. A value of &#39;direct&#39; indicates that the User is a member of the AppRole.  A value of  &#39;indirect&#39; indicates that the User is a member of a Group that is a member of the AppRole.  A value of &#39;implicit&#39; indicates that the AppRole is public.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -249,19 +245,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The Id of the AppRole assigned to the User.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

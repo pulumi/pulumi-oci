@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class PipelineConfigurationDetails
     {
         /// <summary>
-        /// (Updatable) The command line arguments to set for step.
+        /// (Updatable) The command line arguments to set for steps in the pipeline.
         /// </summary>
         public readonly string? CommandLineArguments;
         /// <summary>
-        /// (Updatable) Environment variables to set for step.
+        /// (Updatable) Environment variables to set for steps in the pipeline.
         /// </summary>
         public readonly ImmutableDictionary<string, object>? EnvironmentVariables;
         /// <summary>
-        /// (Updatable) A time bound for the execution of the step.
+        /// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
         /// </summary>
         public readonly string? MaximumRuntimeInMinutes;
         /// <summary>

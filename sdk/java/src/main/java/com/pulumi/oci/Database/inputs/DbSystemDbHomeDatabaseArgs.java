@@ -108,14 +108,14 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Import(name="databaseSoftwareImageId")
     private @Nullable Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Optional<Output<String>> databaseSoftwareImageId() {
@@ -224,14 +224,14 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
      * 
      */
     public Optional<Output<String>> id() {
@@ -575,7 +575,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 
@@ -586,7 +586,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to restore a database.
+         * @param databaseSoftwareImageId The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * 
          * @return builder
          * 
@@ -735,7 +735,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
          * 
          * @return builder
          * 
@@ -746,7 +746,7 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB system.
          * 
          * @return builder
          * 

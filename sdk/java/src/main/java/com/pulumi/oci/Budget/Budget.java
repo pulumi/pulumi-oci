@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBudget = new Budget("testBudget", BudgetArgs.builder()        
+ *         var testBudget = new Budget("testBudget", BudgetArgs.builder()
  *             .amount(budgetAmount)
  *             .compartmentId(tenancyOcid)
  *             .resetPeriod(budgetResetPeriod)

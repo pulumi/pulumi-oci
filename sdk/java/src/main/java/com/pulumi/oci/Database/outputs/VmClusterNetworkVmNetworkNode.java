@@ -13,74 +13,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class VmClusterNetworkVmNetworkNode {
     /**
-     * @return (Updatable) The Db server associated with the node.
+     * @return The Db server associated with the node.
      * 
      */
     private @Nullable String dbServerId;
     /**
-     * @return (Updatable) The node host name.
+     * @return The node host name.
      * 
      */
     private String hostname;
     /**
-     * @return (Updatable) The node IP address.
+     * @return The node IP address.
      * 
      */
     private String ip;
     /**
-     * @return (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     private @Nullable String state;
     /**
-     * @return (Updatable) The node virtual IP (VIP) address.
+     * @return The node virtual IP (VIP) address.
      * 
      */
     private @Nullable String vip;
     /**
-     * @return (Updatable) The node virtual IP (VIP) host name.
+     * @return The node virtual IP (VIP) host name.
      * 
      */
     private @Nullable String vipHostname;
 
     private VmClusterNetworkVmNetworkNode() {}
     /**
-     * @return (Updatable) The Db server associated with the node.
+     * @return The Db server associated with the node.
      * 
      */
     public Optional<String> dbServerId() {
         return Optional.ofNullable(this.dbServerId);
     }
     /**
-     * @return (Updatable) The node host name.
+     * @return The node host name.
      * 
      */
     public String hostname() {
         return this.hostname;
     }
     /**
-     * @return (Updatable) The node IP address.
+     * @return The node IP address.
      * 
      */
     public String ip() {
         return this.ip;
     }
     /**
-     * @return (Updatable) The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
+     * @return The current state of the VM cluster network nodes. CREATING - The resource is being created REQUIRES_VALIDATION - The resource is created and may not be usable until it is validated. VALIDATING - The resource is being validated and not available to use. VALIDATED - The resource is validated and is available for consumption by VM cluster. VALIDATION_FAILED - The resource validation has failed and might require user input to be corrected. UPDATING - The resource is being updated and not available to use. ALLOCATED - The resource is currently being used by VM cluster. TERMINATING - The resource is being deleted and not available to use. TERMINATED - The resource is deleted and unavailable. FAILED - The resource is in a failed state due to validation or other errors.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return (Updatable) The node virtual IP (VIP) address.
+     * @return The node virtual IP (VIP) address.
      * 
      */
     public Optional<String> vip() {
         return Optional.ofNullable(this.vip);
     }
     /**
-     * @return (Updatable) The node virtual IP (VIP) host name.
+     * @return The node virtual IP (VIP) host name.
      * 
      */
     public Optional<String> vipHostname() {

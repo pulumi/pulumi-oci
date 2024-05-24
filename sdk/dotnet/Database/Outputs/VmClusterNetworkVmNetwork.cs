@@ -14,31 +14,27 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class VmClusterNetworkVmNetwork
     {
         /// <summary>
-        /// (Updatable) The network domain name.
+        /// The network domain name.
         /// </summary>
         public readonly string? DomainName;
         /// <summary>
-        /// (Updatable) The network gateway.
+        /// The network gateway.
         /// </summary>
         public readonly string? Gateway;
         /// <summary>
-        /// (Updatable) The network netmask.
+        /// The network netmask.
         /// </summary>
         public readonly string? Netmask;
         /// <summary>
-        /// (Updatable) The network type.
+        /// The network type.
         /// </summary>
         public readonly string NetworkType;
         /// <summary>
-        /// (Updatable) The list of node details.
+        /// The list of node details.
         /// </summary>
         public readonly ImmutableArray<Outputs.VmClusterNetworkVmNetworkNode> Nodes;
         /// <summary>
-        /// (Updatable) The network VLAN ID.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The network VLAN ID.
         /// </summary>
         public readonly string? VlanId;
 

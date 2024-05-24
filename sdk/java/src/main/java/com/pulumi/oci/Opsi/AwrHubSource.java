@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAwrHubSource = new AwrHubSource("testAwrHubSource", AwrHubSourceArgs.builder()        
+ *         var testAwrHubSource = new AwrHubSource("testAwrHubSource", AwrHubSourceArgs.builder()
  *             .awrHubId(testAwrHub.id())
  *             .compartmentId(compartmentId)
  *             .name(awrHubSourceName)

@@ -85,6 +85,8 @@ type GetPublicIpsArgs struct {
 	// A filter to return only resources that belong to the given public IP pool.
 	PublicIpPoolId *string `pulumi:"publicIpPoolId"`
 	// Whether the public IP is regional or specific to a particular availability domain.
+	// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+	// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 	Scope string `pulumi:"scope"`
 }
 
@@ -98,12 +100,16 @@ type GetPublicIpsResult struct {
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Defines when the public IP is deleted and released back to Oracle's public IP pool.
+	// * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral public IP must always be assigned to an entity. If the assigned entity is a private IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned entity is a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), the ephemeral public IP is automatically deleted when the NAT gateway is terminated.
+	// * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP whenever you like. It does not need to be assigned to a private IP at all times.
 	Lifetime *string `pulumi:"lifetime"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
 	PublicIpPoolId *string `pulumi:"publicIpPoolId"`
 	// The list of public_ips.
 	PublicIps []GetPublicIpsPublicIp `pulumi:"publicIps"`
 	// Whether the public IP is regional or specific to a particular availability domain.
+	// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
+	// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 	Scope string `pulumi:"scope"`
 }
 
@@ -132,6 +138,8 @@ type GetPublicIpsOutputArgs struct {
 	// A filter to return only resources that belong to the given public IP pool.
 	PublicIpPoolId pulumi.StringPtrInput `pulumi:"publicIpPoolId"`
 	// Whether the public IP is regional or specific to a particular availability domain.
+	// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+	// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 	Scope pulumi.StringInput `pulumi:"scope"`
 }
 
@@ -174,6 +182,8 @@ func (o GetPublicIpsResultOutput) Id() pulumi.StringOutput {
 }
 
 // Defines when the public IP is deleted and released back to Oracle's public IP pool.
+// * `EPHEMERAL`: The lifetime is tied to the lifetime of its assigned entity. An ephemeral public IP must always be assigned to an entity. If the assigned entity is a private IP, the ephemeral public IP is automatically deleted when the private IP is deleted, when the VNIC is terminated, or when the instance is terminated. If the assigned entity is a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/), the ephemeral public IP is automatically deleted when the NAT gateway is terminated.
+// * `RESERVED`: You control the public IP's lifetime. You can delete a reserved public IP whenever you like. It does not need to be assigned to a private IP at all times.
 func (o GetPublicIpsResultOutput) Lifetime() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetPublicIpsResult) *string { return v.Lifetime }).(pulumi.StringPtrOutput)
 }
@@ -189,6 +199,8 @@ func (o GetPublicIpsResultOutput) PublicIps() GetPublicIpsPublicIpArrayOutput {
 }
 
 // Whether the public IP is regional or specific to a particular availability domain.
+// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs and ephemeral public IPs assigned to a regional entity have `scope` = `REGION`.
+// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 func (o GetPublicIpsResultOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicIpsResult) string { return v.Scope }).(pulumi.StringOutput)
 }

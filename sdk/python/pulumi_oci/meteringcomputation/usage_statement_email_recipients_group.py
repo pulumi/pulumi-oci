@@ -98,7 +98,7 @@ class _UsageStatementEmailRecipientsGroupState:
         Input properties used for looking up and filtering UsageStatementEmailRecipientsGroup resources.
         :param pulumi.Input[str] compartment_id: (Updatable) The customer tenancy.
         :param pulumi.Input[Sequence[pulumi.Input['UsageStatementEmailRecipientsGroupRecipientsListArgs']]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
-        :param pulumi.Input[str] state: (Updatable) The email recipient lifecycle state.
+        :param pulumi.Input[str] state: The email recipient group lifecycle state.
         :param pulumi.Input[str] subscription_id: The UsageStatement Subscription unique OCID.
                
                
@@ -153,7 +153,7 @@ class _UsageStatementEmailRecipientsGroupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The email recipient lifecycle state.
+        The email recipient group lifecycle state.
         """
         return pulumi.get(self, "state")
 
@@ -327,7 +327,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The customer tenancy.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UsageStatementEmailRecipientsGroupRecipientsListArgs']]]] recipients_lists: (Updatable) The list of recipient will receive the usage statement email.
-        :param pulumi.Input[str] state: (Updatable) The email recipient lifecycle state.
+        :param pulumi.Input[str] state: The email recipient group lifecycle state.
         :param pulumi.Input[str] subscription_id: The UsageStatement Subscription unique OCID.
                
                
@@ -370,7 +370,7 @@ class UsageStatementEmailRecipientsGroup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The email recipient lifecycle state.
+        The email recipient group lifecycle state.
         """
         return pulumi.get(self, "state")
 

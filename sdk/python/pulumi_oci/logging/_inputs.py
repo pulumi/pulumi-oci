@@ -206,7 +206,7 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
         """
         :param pulumi.Input[str] configuration_type: (Updatable) Type of Unified Agent service configuration.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs']]] application_configurations: (Updatable) Unified Agent monitoring application configuration details.
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs'] destination: (Updatable) Unified monitoring agent operational metrics destination object.
+        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs'] destination: (Updatable) Logging destination object.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceArgs']]] sources: (Updatable) Logging source object.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterArgs']]] unified_agent_configuration_filters: (Updatable) Logging filter object.
         """
@@ -248,7 +248,7 @@ class UnifiedAgentConfigurationServiceConfigurationArgs:
     @pulumi.getter
     def destination(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationArgs']]:
         """
-        (Updatable) Unified monitoring agent operational metrics destination object.
+        (Updatable) Logging destination object.
         """
         return pulumi.get(self, "destination")
 
@@ -290,11 +290,11 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
                  sources: Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]] = None,
                  unified_agent_configuration_filter: Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']] = None):
         """
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs'] destination: (Updatable) Unified monitoring agent operational metrics destination object.
-        :param pulumi.Input[str] source_type: (Updatable) Unified schema logging source type.
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs'] source: (Updatable) Unified monitoring agent operational metrics source object.
-        :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]] sources: (Updatable) Logging source object.
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs'] unified_agent_configuration_filter: (Updatable) Logging filter object.
+        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs'] destination: (Updatable) Kubernetes destination object.
+        :param pulumi.Input[str] source_type: (Updatable) Type of source of metrics
+        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs'] source: (Updatable) Kubernetes source object.
+        :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]] sources: (Updatable) Tail log source objects.
+        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs'] unified_agent_configuration_filter: (Updatable) Kubernetes filter object
         """
         pulumi.set(__self__, "destination", destination)
         pulumi.set(__self__, "source_type", source_type)
@@ -309,7 +309,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
     @pulumi.getter
     def destination(self) -> pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestinationArgs']:
         """
-        (Updatable) Unified monitoring agent operational metrics destination object.
+        (Updatable) Kubernetes destination object.
         """
         return pulumi.get(self, "destination")
 
@@ -321,7 +321,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
     @pulumi.getter(name="sourceType")
     def source_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Unified schema logging source type.
+        (Updatable) Type of source of metrics
         """
         return pulumi.get(self, "source_type")
 
@@ -333,7 +333,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
     @pulumi.getter
     def source(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]:
         """
-        (Updatable) Unified monitoring agent operational metrics source object.
+        (Updatable) Kubernetes source object.
         """
         return pulumi.get(self, "source")
 
@@ -345,7 +345,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
     @pulumi.getter
     def sources(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceArgs']]]]:
         """
-        (Updatable) Logging source object.
+        (Updatable) Tail log source objects.
         """
         return pulumi.get(self, "sources")
 
@@ -357,7 +357,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationArgs:
     @pulumi.getter(name="unifiedAgentConfigurationFilter")
     def unified_agent_configuration_filter(self) -> Optional[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilterArgs']]:
         """
-        (Updatable) Logging filter object.
+        (Updatable) Kubernetes filter object
         """
         return pulumi.get(self, "unified_agent_configuration_filter")
 
@@ -415,7 +415,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
                  source_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptionsArgs'] advanced_options: (Updatable) Advanced options for logging configuration
-        :param pulumi.Input[str] name: (Updatable) The name key to tag this Grok pattern.
+        :param pulumi.Input[str] name: (Updatable) Unique name for the source.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserArgs'] parser: (Updatable) Source parser object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] paths: (Updatable) Absolute paths for log source files. Wildcards can be used.
         :param pulumi.Input[str] source_type: (Updatable) Unified schema logging source type.
@@ -447,7 +447,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name key to tag this Grok pattern.
+        (Updatable) Unique name for the source.
         """
         return pulumi.get(self, "name")
 
@@ -552,7 +552,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
         :param pulumi.Input[str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[str] delimiter: (Updatable) CSV delimiter.
         :param pulumi.Input[str] expression: (Updatable) Regex pattern.
-        :param pulumi.Input[str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param pulumi.Input[str] field_time_key: (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         :param pulumi.Input[str] format_firstline: (Updatable) First line pattern format.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] formats: (Updatable) Mutiline pattern format.
         :param pulumi.Input[str] grok_failure_key: (Updatable) Grok failure key.
@@ -686,7 +686,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     @pulumi.getter(name="fieldTimeKey")
     def field_time_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
@@ -1023,8 +1023,8 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
                  time_format: Optional[pulumi.Input[str]] = None,
                  time_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        :param pulumi.Input[bool] is_keep_time_key: (Updatable) If true, keep the time field in the record.
+        :param pulumi.Input[str] field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param pulumi.Input[bool] is_keep_time_key: If true, keep the time field in the record.
         :param pulumi.Input[bool] parse_nested: (Updatable) If true, a separator parameter can be further defined.
         :param pulumi.Input[str] separator: (Updatable) Keys of adjacent levels are joined by the separator.
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
@@ -1047,7 +1047,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     @pulumi.getter(name="fieldTimeKey")
     def field_time_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
@@ -1059,7 +1059,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourc
     @pulumi.getter(name="isKeepTimeKey")
     def is_keep_time_key(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If true, keep the time field in the record.
+        If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
@@ -1266,10 +1266,10 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
                  filter_type: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] allow_lists: (Updatable) A list of filtering rules to include logs
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] deny_lists: (Updatable) A list of filtering rules to reject logs
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] allow_lists: (Updatable) List of metrics regex to be allowed.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] deny_lists: (Updatable) List of metrics regex to be denied.
         :param pulumi.Input[str] filter_type: (Updatable) Unified schema logging filter type.
-        :param pulumi.Input[str] name: (Updatable) The name key to tag this Grok pattern.
+        :param pulumi.Input[str] name: (Updatable) Unique name for the filter.
         """
         if allow_lists is not None:
             pulumi.set(__self__, "allow_lists", allow_lists)
@@ -1284,7 +1284,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
     @pulumi.getter(name="allowLists")
     def allow_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of filtering rules to include logs
+        (Updatable) List of metrics regex to be allowed.
         """
         return pulumi.get(self, "allow_lists")
 
@@ -1296,7 +1296,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
     @pulumi.getter(name="denyLists")
     def deny_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A list of filtering rules to reject logs
+        (Updatable) List of metrics regex to be denied.
         """
         return pulumi.get(self, "deny_lists")
 
@@ -1320,7 +1320,7 @@ class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifi
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name key to tag this Grok pattern.
+        (Updatable) Unique name for the filter.
         """
         return pulumi.get(self, "name")
 
@@ -1433,7 +1433,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
                  type: pulumi.Input[str],
                  metrics: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
-        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs'] record_input: (Updatable) record section of openmetrics parser.
+        :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs'] record_input: (Updatable) Record section of OperationalMetricsSource object.
         :param pulumi.Input[str] type: (Updatable) Type of the unified monitoring agent operational metrics source object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] metrics: (Updatable) List of unified monitoring agent operational metrics.
         """
@@ -1446,7 +1446,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @pulumi.getter(name="recordInput")
     def record_input(self) -> pulumi.Input['UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetricsConfigurationSourceRecordInputArgs']:
         """
-        (Updatable) record section of openmetrics parser.
+        (Updatable) Record section of OperationalMetricsSource object.
         """
         return pulumi.get(self, "record_input")
 
@@ -1485,8 +1485,8 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
                  namespace: pulumi.Input[str],
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] namespace: (Updatable) Namespace to emit metrics.
-        :param pulumi.Input[str] resource_group: (Updatable) Resource group to emit metrics.
+        :param pulumi.Input[str] namespace: (Updatable) Namespace to emit the operational metrics.
+        :param pulumi.Input[str] resource_group: (Updatable) Resource group to emit the operational metrics.
         """
         pulumi.set(__self__, "namespace", namespace)
         if resource_group is not None:
@@ -1496,7 +1496,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        (Updatable) Namespace to emit metrics.
+        (Updatable) Namespace to emit the operational metrics.
         """
         return pulumi.get(self, "namespace")
 
@@ -1508,7 +1508,7 @@ class UnifiedAgentConfigurationServiceConfigurationDestinationOperationalMetrics
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Resource group to emit metrics.
+        (Updatable) Resource group to emit the operational metrics.
         """
         return pulumi.get(self, "resource_group")
 
@@ -1532,7 +1532,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceAdvancedOptionsArgs'] advanced_options: (Updatable) Advanced options for logging configuration
         :param pulumi.Input[Sequence[pulumi.Input[str]]] channels: (Updatable) Windows event log channels.
         :param pulumi.Input[str] custom_plugin: (Updatable) User customized source plugin.
-        :param pulumi.Input[str] name: (Updatable) The name key to tag this Grok pattern.
+        :param pulumi.Input[str] name: (Updatable) Unique name for the source.
         :param pulumi.Input['UnifiedAgentConfigurationServiceConfigurationSourceParserArgs'] parser: (Updatable) Source parser object.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] paths: (Updatable) Absolute paths for log source files. Wildcards can be used.
         """
@@ -1602,7 +1602,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name key to tag this Grok pattern.
+        (Updatable) Unique name for the source.
         """
         return pulumi.get(self, "name")
 
@@ -1695,7 +1695,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
         :param pulumi.Input[str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[str] delimiter: (Updatable) CSV delimiter.
         :param pulumi.Input[str] expression: (Updatable) Regex pattern.
-        :param pulumi.Input[str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param pulumi.Input[str] field_time_key: (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         :param pulumi.Input[str] format_firstline: (Updatable) First line pattern format.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] formats: (Updatable) Mutiline pattern format.
         :param pulumi.Input[str] grok_failure_key: (Updatable) Grok failure key.
@@ -1829,7 +1829,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserArgs:
     @pulumi.getter(name="fieldTimeKey")
     def field_time_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
@@ -2166,8 +2166,8 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
                  time_format: Optional[pulumi.Input[str]] = None,
                  time_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        :param pulumi.Input[bool] is_keep_time_key: (Updatable) If true, keep the time field in the record.
+        :param pulumi.Input[str] field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param pulumi.Input[bool] is_keep_time_key: If true, keep the time field in the record.
         :param pulumi.Input[bool] parse_nested: (Updatable) If true, a separator parameter can be further defined.
         :param pulumi.Input[str] separator: (Updatable) Keys of adjacent levels are joined by the separator.
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
@@ -2190,7 +2190,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
     @pulumi.getter(name="fieldTimeKey")
     def field_time_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
@@ -2202,7 +2202,7 @@ class UnifiedAgentConfigurationServiceConfigurationSourceParserNestedParserArgs:
     @pulumi.getter(name="isKeepTimeKey")
     def is_keep_time_key(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If true, keep the time field in the record.
+        If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 
@@ -2429,7 +2429,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  reserve_time: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] filter_type: (Updatable) Unified schema logging filter type.
-        :param pulumi.Input[str] name: (Updatable) The name key to tag this Grok pattern.
+        :param pulumi.Input[str] name: (Updatable) Unique name for the filter.
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterAllowListArgs']]] allow_lists: (Updatable) A list of filtering rules to include logs
         :param pulumi.Input[str] custom_filter_type: (Updatable) Type of the custom filter
         :param pulumi.Input[Sequence[pulumi.Input['UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterCustomSectionArgs']]] custom_sections: (Updatable) List of custom sections in custom filter
@@ -2517,7 +2517,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        (Updatable) The name key to tag this Grok pattern.
+        (Updatable) Unique name for the filter.
         """
         return pulumi.get(self, "name")
 
@@ -2788,8 +2788,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  key: Optional[pulumi.Input[str]] = None,
                  pattern: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) A new key
-        :param pulumi.Input[str] pattern: (Updatable) The Grok pattern.
+        :param pulumi.Input[str] key: (Updatable) The field name to which the regular expression is applied
+        :param pulumi.Input[str] pattern: (Updatable) The regular expression
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2800,7 +2800,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A new key
+        (Updatable) The field name to which the regular expression is applied
         """
         return pulumi.get(self, "key")
 
@@ -2812,7 +2812,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def pattern(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The Grok pattern.
+        (Updatable) The regular expression
         """
         return pulumi.get(self, "pattern")
 
@@ -2827,8 +2827,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  name: Optional[pulumi.Input[str]] = None,
                  params: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) The name key to tag this Grok pattern.
-        :param pulumi.Input[Mapping[str, Any]] params: (Updatable) Parameters of the custom filter
+        :param pulumi.Input[str] name: (Updatable) The name of the custom section
+        :param pulumi.Input[Mapping[str, Any]] params: (Updatable) Parameters in the custom section
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -2839,7 +2839,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name key to tag this Grok pattern.
+        (Updatable) The name of the custom section
         """
         return pulumi.get(self, "name")
 
@@ -2851,7 +2851,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def params(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Parameters of the custom filter
+        (Updatable) Parameters in the custom section
         """
         return pulumi.get(self, "params")
 
@@ -2866,8 +2866,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  key: Optional[pulumi.Input[str]] = None,
                  pattern: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] key: (Updatable) A new key
-        :param pulumi.Input[str] pattern: (Updatable) The Grok pattern.
+        :param pulumi.Input[str] key: (Updatable) The field name to which the regular expression is applied
+        :param pulumi.Input[str] pattern: (Updatable) The regular expression
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -2878,7 +2878,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A new key
+        (Updatable) The field name to which the regular expression is applied
         """
         return pulumi.get(self, "key")
 
@@ -2890,7 +2890,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter
     def pattern(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The Grok pattern.
+        (Updatable) The regular expression
         """
         return pulumi.get(self, "pattern")
 
@@ -2936,7 +2936,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
         :param pulumi.Input[str] parser_type: (Updatable) Type of fluent parser.
         :param pulumi.Input[str] delimiter: (Updatable) CSV delimiter.
         :param pulumi.Input[str] expression: (Updatable) Regex pattern.
-        :param pulumi.Input[str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param pulumi.Input[str] field_time_key: (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         :param pulumi.Input[str] format_firstline: (Updatable) First line pattern format.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] formats: (Updatable) Mutiline pattern format.
         :param pulumi.Input[str] grok_failure_key: (Updatable) Grok failure key.
@@ -3070,7 +3070,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter(name="fieldTimeKey")
     def field_time_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
@@ -3407,8 +3407,8 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
                  time_format: Optional[pulumi.Input[str]] = None,
                  time_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] field_time_key: (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
-        :param pulumi.Input[bool] is_keep_time_key: (Updatable) If true, keep the time field in the record.
+        :param pulumi.Input[str] field_time_key: Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        :param pulumi.Input[bool] is_keep_time_key: If true, keep the time field in the record.
         :param pulumi.Input[bool] parse_nested: (Updatable) If true, a separator parameter can be further defined.
         :param pulumi.Input[str] separator: (Updatable) Keys of adjacent levels are joined by the separator.
         :param pulumi.Input[str] time_format: (Updatable) Process time value using the specified format.
@@ -3431,7 +3431,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter(name="fieldTimeKey")
     def field_time_key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         """
         return pulumi.get(self, "field_time_key")
 
@@ -3443,7 +3443,7 @@ class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilt
     @pulumi.getter(name="isKeepTimeKey")
     def is_keep_time_key(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If true, keep the time field in the record.
+        If true, keep the time field in the record.
         """
         return pulumi.get(self, "is_keep_time_key")
 

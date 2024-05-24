@@ -27,17 +27,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Locale;
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Login text
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
+        /// * idcsSanitize: true
         /// * type: string
-        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

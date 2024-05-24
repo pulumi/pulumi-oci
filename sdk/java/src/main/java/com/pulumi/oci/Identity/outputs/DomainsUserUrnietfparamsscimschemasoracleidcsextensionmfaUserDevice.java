@@ -29,12 +29,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String authenticationMethod;
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -59,15 +61,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String factorStatus;
     /**
-     * @return (Updatable) Authentication Factor Type
+     * @return (Updatable) The device authentication factor type.
      * 
-     * **Added In:** 20.1.3
+     * **Added In:** 18.4.2
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -92,9 +93,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String lastSyncTime;
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding Device resource which belongs to user.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -108,15 +109,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) A supplemental status indicating the reason why a user is disabled
+     * @return (Updatable) The device&#39;s status.
+     * 
+     * **Added In:** 18.4.2
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -139,19 +141,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
      */
     private @Nullable String thirdPartyVendorName;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s device identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -176,12 +178,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.authenticationMethod);
     }
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -210,15 +214,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.factorStatus);
     }
     /**
-     * @return (Updatable) Authentication Factor Type
+     * @return (Updatable) The device authentication factor type.
      * 
-     * **Added In:** 20.1.3
+     * **Added In:** 18.4.2
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -247,9 +250,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.lastSyncTime);
     }
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding Device resource which belongs to user.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -265,15 +268,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) A supplemental status indicating the reason why a user is disabled
+     * @return (Updatable) The device&#39;s status.
+     * 
+     * **Added In:** 18.4.2
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: request
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -300,19 +304,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionmfaUser
         return Optional.ofNullable(this.thirdPartyVendorName);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s device identifier.
+     * 
+     * **Added In:** 18.3.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

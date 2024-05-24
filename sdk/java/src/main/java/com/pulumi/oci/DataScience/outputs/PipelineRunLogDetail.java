@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineRunLogDetail {
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+     * @return The log group id for where log objects will be for pipeline runs.
      * 
      */
     private @Nullable String logGroupId;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+     * @return The log id of the log object the pipeline run logs will be shipped to.
      * 
      */
     private @Nullable String logId;
 
     private PipelineRunLogDetail() {}
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+     * @return The log group id for where log objects will be for pipeline runs.
      * 
      */
     public Optional<String> logGroupId() {
         return Optional.ofNullable(this.logGroupId);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+     * @return The log id of the log object the pipeline run logs will be shipped to.
      * 
      */
     public Optional<String> logId() {

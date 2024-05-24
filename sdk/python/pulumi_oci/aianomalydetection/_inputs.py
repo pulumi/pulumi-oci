@@ -54,9 +54,9 @@ class DataAssetDataSourceDetailsArgs:
         :param pulumi.Input[str] data_source_type: Data source type where actually data asset is being stored
         :param pulumi.Input[str] atp_password_secret_id: atp db password Secret Id
         :param pulumi.Input[str] atp_user_name: atp db user name
-        :param pulumi.Input[str] bucket: Bucket Name for influx connection
+        :param pulumi.Input[str] bucket: Object storage bucket name
         :param pulumi.Input[str] cwallet_file_secret_id: OCID of the secret containing the containers certificates of ATP wallet
-        :param pulumi.Input[str] database_name: DB Name for influx connection
+        :param pulumi.Input[str] database_name: atp database name
         :param pulumi.Input[str] ewallet_file_secret_id: OCID of the secret containing the PDB'S certificates of ATP wallet
         :param pulumi.Input[str] key_store_file_secret_id: OCID of the secret containing Keystore.jks file of the ATP wallet
         :param pulumi.Input[str] measurement_name: Measurement name for influx
@@ -152,7 +152,7 @@ class DataAssetDataSourceDetailsArgs:
     @pulumi.getter
     def bucket(self) -> Optional[pulumi.Input[str]]:
         """
-        Bucket Name for influx connection
+        Object storage bucket name
         """
         return pulumi.get(self, "bucket")
 
@@ -176,7 +176,7 @@ class DataAssetDataSourceDetailsArgs:
     @pulumi.getter(name="databaseName")
     def database_name(self) -> Optional[pulumi.Input[str]]:
         """
-        DB Name for influx connection
+        atp database name
         """
         return pulumi.get(self, "database_name")
 
@@ -596,7 +596,7 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
                  object: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] bucket: Object Storage bucket name.
-        :param pulumi.Input[str] namespace: Object Storage namespace.
+        :param pulumi.Input[str] namespace: Object Storage namespace name.
         :param pulumi.Input[str] object: Object Storage object name.
         """
         if bucket is not None:
@@ -622,7 +622,7 @@ class DetectAnomalyJobInputDetailsObjectLocationArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        Object Storage namespace.
+        Object Storage namespace name.
         """
         return pulumi.get(self, "namespace")
 
@@ -654,6 +654,7 @@ class DetectAnomalyJobOutputDetailsArgs:
         :param pulumi.Input[str] bucket: Object Storage bucket name.
         :param pulumi.Input[str] namespace: Object Storage namespace.
         :param pulumi.Input[str] output_type: The type of output location. Allowed values are:
+               * `OBJECT_STORAGE`: Object store output location.
         :param pulumi.Input[str] prefix: Object Storage folder name.
         """
         pulumi.set(__self__, "bucket", bucket)
@@ -691,6 +692,7 @@ class DetectAnomalyJobOutputDetailsArgs:
     def output_type(self) -> pulumi.Input[str]:
         """
         The type of output location. Allowed values are:
+        * `OBJECT_STORAGE`: Object store output location.
         """
         return pulumi.get(self, "output_type")
 
@@ -817,7 +819,7 @@ class ModelModelTrainingResultArgs:
         :param pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultRowReductionDetailArgs']]] row_reduction_details: Information regarding how/what row reduction methods will be applied. If this property is not present or is null, then it means row reduction is not applied.
         :param pulumi.Input[Sequence[pulumi.Input['ModelModelTrainingResultSignalDetailArgs']]] signal_details: The list of signal details.
         :param pulumi.Input[str] warning: A warning message to explain the reason when targetFap cannot be achieved for trained model
-        :param pulumi.Input[int] window_size: This value would determine the window size of the training algorithm.
+        :param pulumi.Input[int] window_size: Window size defined during training or deduced by the algorithm.
         """
         if fap is not None:
             pulumi.set(__self__, "fap", fap)
@@ -943,7 +945,7 @@ class ModelModelTrainingResultArgs:
     @pulumi.getter(name="windowSize")
     def window_size(self) -> Optional[pulumi.Input[int]]:
         """
-        This value would determine the window size of the training algorithm.
+        Window size defined during training or deduced by the algorithm.
         """
         return pulumi.get(self, "window_size")
 

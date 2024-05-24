@@ -12,6 +12,9 @@ namespace Pulumi.Oci.AiDocument.Inputs
 
     public sealed class ModelComponentModelArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of active custom Key Value model that need to be composed.
+        /// </summary>
         [Input("modelId")]
         public Input<string>? ModelId { get; set; }
 

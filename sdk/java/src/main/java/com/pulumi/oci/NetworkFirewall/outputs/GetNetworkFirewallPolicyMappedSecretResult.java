@@ -30,6 +30,8 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
     private String source;
     /**
      * @return Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
     private String type;
@@ -74,6 +76,8 @@ public final class GetNetworkFirewallPolicyMappedSecretResult {
     }
     /**
      * @return Type of the secrets mapped based on the policy.
+     * * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+     * * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
      * 
      */
     public String type() {

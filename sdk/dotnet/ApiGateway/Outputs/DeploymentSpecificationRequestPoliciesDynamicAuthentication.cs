@@ -18,7 +18,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServer> AuthenticationServers;
         /// <summary>
-        /// (Updatable) Information around selector used for branching among routes/ authentication servers while dynamic routing/ authentication.
+        /// (Updatable) The type of selector to use when dynamically routing and dynamically authenticating requests.
         /// </summary>
         public readonly Outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationSelectionSource SelectionSource;
 

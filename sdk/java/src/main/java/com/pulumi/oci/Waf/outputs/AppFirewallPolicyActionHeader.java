@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AppFirewallPolicyActionHeader {
     /**
-     * @return (Updatable) Rule name. Must be unique within the module.
+     * @return (Updatable) The name of the header field.
      * 
      */
     private @Nullable String name;
@@ -24,7 +24,7 @@ public final class AppFirewallPolicyActionHeader {
 
     private AppFirewallPolicyActionHeader() {}
     /**
-     * @return (Updatable) Rule name. Must be unique within the module.
+     * @return (Updatable) The name of the header field.
      * 
      */
     public Optional<String> name() {

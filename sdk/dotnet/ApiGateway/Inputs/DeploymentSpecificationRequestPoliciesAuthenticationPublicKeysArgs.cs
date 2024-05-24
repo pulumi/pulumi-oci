@@ -31,17 +31,13 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+        /// (Updatable) The duration for which the JWKS should be cached before it is fetched again.
         /// </summary>
         [Input("maxCacheDurationInHours")]
         public Input<int>? MaxCacheDurationInHours { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the public key set.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

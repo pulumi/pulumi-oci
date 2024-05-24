@@ -15,14 +15,14 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetri
     public static final ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs Empty = new ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs();
 
     /**
-     * (Updatable) The type descriminator.
+     * (Updatable) The type discriminator.
      * 
      */
     @Import(name="kind", required=true)
     private Output<String> kind;
 
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     public Output<String> kind() {
@@ -54,7 +54,7 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetri
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type discriminator.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetri
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type discriminator.
          * 
          * @return builder
          * 

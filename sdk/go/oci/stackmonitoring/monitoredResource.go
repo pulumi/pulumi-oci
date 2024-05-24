@@ -162,7 +162,7 @@ type MonitoredResource struct {
 	License pulumi.StringOutput `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrOutput `pulumi:"managementAgentId"`
-	// (Updatable) Property Name.
+	// Monitored Resource Name.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayOutput `pulumi:"properties"`
@@ -253,7 +253,7 @@ type monitoredResourceState struct {
 	License *string `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
-	// (Updatable) Property Name.
+	// Monitored Resource Name.
 	Name *string `pulumi:"name"`
 	// (Updatable) List of monitored resource properties.
 	Properties []MonitoredResourceProperty `pulumi:"properties"`
@@ -309,7 +309,7 @@ type MonitoredResourceState struct {
 	License pulumi.StringPtrInput
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
-	// (Updatable) Property Name.
+	// Monitored Resource Name.
 	Name pulumi.StringPtrInput
 	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayInput
@@ -369,7 +369,7 @@ type monitoredResourceArgs struct {
 	License *string `pulumi:"license"`
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId *string `pulumi:"managementAgentId"`
-	// (Updatable) Property Name.
+	// Monitored Resource Name.
 	Name *string `pulumi:"name"`
 	// (Updatable) List of monitored resource properties.
 	Properties []MonitoredResourceProperty `pulumi:"properties"`
@@ -412,7 +412,7 @@ type MonitoredResourceArgs struct {
 	License pulumi.StringPtrInput
 	// Management Agent Identifier [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	ManagementAgentId pulumi.StringPtrInput
-	// (Updatable) Property Name.
+	// Monitored Resource Name.
 	Name pulumi.StringPtrInput
 	// (Updatable) List of monitored resource properties.
 	Properties MonitoredResourcePropertyArrayInput
@@ -586,7 +586,7 @@ func (o MonitoredResourceOutput) ManagementAgentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringPtrOutput { return v.ManagementAgentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Property Name.
+// Monitored Resource Name.
 func (o MonitoredResourceOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *MonitoredResource) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

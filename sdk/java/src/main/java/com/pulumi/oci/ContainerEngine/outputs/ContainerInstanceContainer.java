@@ -36,7 +36,7 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return The list of strings that will be simplified to a single command for checking the status of the container.
+     * @return An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
      * 
      */
     private @Nullable List<String> commands;
@@ -57,7 +57,7 @@ public final class ContainerInstanceContainer {
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     private @Nullable String displayName;
@@ -170,7 +170,7 @@ public final class ContainerInstanceContainer {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return The list of strings that will be simplified to a single command for checking the status of the container.
+     * @return An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
      * 
      */
     public List<String> commands() {
@@ -201,7 +201,7 @@ public final class ContainerInstanceContainer {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     public Optional<String> displayName() {

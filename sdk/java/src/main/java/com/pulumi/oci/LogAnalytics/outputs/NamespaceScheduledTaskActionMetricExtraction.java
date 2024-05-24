@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NamespaceScheduledTaskActionMetricExtraction {
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     private @Nullable String compartmentId;
@@ -22,7 +22,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
      */
     private @Nullable String metricName;
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     private @Nullable String namespace;
@@ -34,7 +34,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
 
     private NamespaceScheduledTaskActionMetricExtraction() {}
     /**
-     * @return (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * @return (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
      * 
      */
     public Optional<String> compartmentId() {
@@ -48,7 +48,7 @@ public final class NamespaceScheduledTaskActionMetricExtraction {
         return Optional.ofNullable(this.metricName);
     }
     /**
-     * @return The Logging Analytics namespace used for the request.
+     * @return The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
      * 
      */
     public Optional<String> namespace() {

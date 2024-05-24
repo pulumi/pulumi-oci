@@ -47,10 +47,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? GrantMechanism;
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) Grant URI
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * idcsAddedSinceVersion: 3
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -61,18 +61,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag value
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) Grant identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * required: true
-        /// * idcsReturnEmptyWhenNull: true
-        /// * mutability: readWrite
+        /// * caseExact: true
+        /// * idcsAddedSinceVersion: 3
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
         /// * returned: default
         /// * type: string
-        /// * idcsSearchable: true
         /// * uniqueness: none
         /// </summary>
         public readonly string? Value;

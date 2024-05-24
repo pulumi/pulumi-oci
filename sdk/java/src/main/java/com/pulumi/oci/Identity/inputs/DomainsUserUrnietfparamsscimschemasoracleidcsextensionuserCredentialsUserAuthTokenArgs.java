@@ -16,9 +16,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCredentialsUserAuthTokenArgs();
 
     /**
-     * (Updatable) The OCID of the user&#39;s support account.
+     * (Updatable) The user&#39;s Auth token OCID.
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -35,9 +35,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
+     * @return (Updatable) The user&#39;s Auth token OCID.
      * 
-     * **Added In:** 2103141444
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -55,9 +55,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) The URI of the corresponding AuthToken resource to which the user belongs.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -73,9 +73,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding AuthToken resource to which the user belongs.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -92,38 +92,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The user&#39;s Auth token identifier.
+     * 
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The user&#39;s Auth token identifier.
+     * 
+     * **Added In:** 2012271618
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
+     * * mutability: readOnly
+     * * required: false
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -157,9 +157,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
+         * @param ocid (Updatable) The user&#39;s Auth token OCID.
          * 
-         * **Added In:** 2103141444
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -180,9 +180,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
+         * @param ocid (Updatable) The user&#39;s Auth token OCID.
          * 
-         * **Added In:** 2103141444
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -202,9 +202,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding AuthToken resource to which the user belongs.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -224,9 +224,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding AuthToken resource to which the user belongs.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -245,19 +245,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The user&#39;s Auth token identifier.
+         * 
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
-         * * type: binary
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -268,19 +268,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserCre
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The user&#39;s Auth token identifier.
+         * 
+         * **Added In:** 2012271618
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
-         * * type: binary
+         * * mutability: readOnly
+         * * required: false
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

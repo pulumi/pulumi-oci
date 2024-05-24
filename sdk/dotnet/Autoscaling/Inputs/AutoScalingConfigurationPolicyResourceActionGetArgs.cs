@@ -12,9 +12,6 @@ namespace Pulumi.Oci.Autoscaling.Inputs
 
     public sealed class AutoScalingConfigurationPolicyResourceActionGetArgs : global::Pulumi.ResourceArgs
     {
-        /// <summary>
-        /// The action to take when autoscaling is triggered.
-        /// </summary>
         [Input("action", required: true)]
         public Input<string> Action { get; set; } = null!;
 

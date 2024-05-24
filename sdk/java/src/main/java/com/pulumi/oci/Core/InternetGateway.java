@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testInternetGateway = new InternetGateway("testInternetGateway", InternetGatewayArgs.builder()        
+ *         var testInternetGateway = new InternetGateway("testInternetGateway", InternetGatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
  *             .enabled(internetGatewayEnabled)

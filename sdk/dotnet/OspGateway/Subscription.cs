@@ -26,19 +26,19 @@ namespace Pulumi.Oci.OspGateway
     public partial class Subscription : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Account type.
+        /// Account type.
         /// </summary>
         [Output("accountType")]
         public Output<string> AccountType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Bill to customer Account id.
+        /// Bill to customer Account id.
         /// </summary>
         [Output("billToCustAccountId")]
         public Output<string> BillToCustAccountId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Address details model.
+        /// Address details model.
         /// </summary>
         [Output("billingAddresses")]
         public Output<ImmutableArray<Outputs.SubscriptionBillingAddress>> BillingAddresses { get; private set; } = null!;
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.OspGateway
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Currency code
+        /// Currency code
         /// </summary>
         [Output("currencyCode")]
         public Output<string> CurrencyCode { get; private set; } = null!;
@@ -62,25 +62,25 @@ namespace Pulumi.Oci.OspGateway
         public Output<string> Email { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) GSI Subscription external code.
+        /// GSI Subscription external code.
         /// </summary>
         [Output("gsiOrgCode")]
         public Output<string> GsiOrgCode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Payment intension.
+        /// Payment intension.
         /// </summary>
         [Output("isIntentToPay")]
         public Output<bool> IsIntentToPay { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Language short code (en, de, hu, etc)
+        /// Language short code (en, de, hu, etc)
         /// </summary>
         [Output("languageCode")]
         public Output<string> LanguageCode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) GSI organization external identifier.
+        /// GSI organization external identifier.
         /// </summary>
         [Output("organizationId")]
         public Output<string> OrganizationId { get; private set; } = null!;
@@ -92,31 +92,31 @@ namespace Pulumi.Oci.OspGateway
         public Output<string> OspHomeRegion { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Payment gateway details.
+        /// Payment gateway details.
         /// </summary>
         [Output("paymentGateways")]
         public Output<ImmutableArray<Outputs.SubscriptionPaymentGateway>> PaymentGateways { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Payment option list of a subscription.
+        /// Payment option list of a subscription.
         /// </summary>
         [Output("paymentOptions")]
         public Output<ImmutableArray<Outputs.SubscriptionPaymentOption>> PaymentOptions { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Subscription plan type.
+        /// Subscription plan type.
         /// </summary>
         [Output("planType")]
         public Output<string> PlanType { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Ship to customer account role.
+        /// Ship to customer account role.
         /// </summary>
         [Output("shipToCustAcctRoleId")]
         public Output<string> ShipToCustAcctRoleId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Ship to customer account site address id.
+        /// Ship to customer account site address id.
         /// </summary>
         [Output("shipToCustAcctSiteId")]
         public Output<string> ShipToCustAcctSiteId { get; private set; } = null!;
@@ -138,43 +138,43 @@ namespace Pulumi.Oci.OspGateway
         public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Subscription plan number.
+        /// Subscription plan number.
         /// </summary>
         [Output("subscriptionPlanNumber")]
         public Output<string> SubscriptionPlanNumber { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Tax details.
+        /// Tax details.
         /// </summary>
         [Output("taxInfos")]
         public Output<ImmutableArray<Outputs.SubscriptionTaxInfo>> TaxInfos { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        /// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         /// </summary>
         [Output("timePersonalToCorporateConv")]
         public Output<string> TimePersonalToCorporateConv { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+        /// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         /// </summary>
         [Output("timePlanUpgrade")]
         public Output<string> TimePlanUpgrade { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Start date of the subscription.
+        /// Start date of the subscription.
         /// </summary>
         [Output("timeStart")]
         public Output<string> TimeStart { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Status of the upgrade.
+        /// Status of the upgrade.
         /// </summary>
         [Output("upgradeState")]
         public Output<string> UpgradeState { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+        /// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         /// </summary>
         [Output("upgradeStateDetails")]
         public Output<string> UpgradeStateDetails { get; private set; } = null!;
@@ -268,13 +268,13 @@ namespace Pulumi.Oci.OspGateway
     public sealed class SubscriptionState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Account type.
+        /// Account type.
         /// </summary>
         [Input("accountType")]
         public Input<string>? AccountType { get; set; }
 
         /// <summary>
-        /// (Updatable) Bill to customer Account id.
+        /// Bill to customer Account id.
         /// </summary>
         [Input("billToCustAccountId")]
         public Input<string>? BillToCustAccountId { get; set; }
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.OspGateway
         private InputList<Inputs.SubscriptionBillingAddressGetArgs>? _billingAddresses;
 
         /// <summary>
-        /// (Updatable) Address details model.
+        /// Address details model.
         /// </summary>
         public InputList<Inputs.SubscriptionBillingAddressGetArgs> BillingAddresses
         {
@@ -298,7 +298,7 @@ namespace Pulumi.Oci.OspGateway
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Currency code
+        /// Currency code
         /// </summary>
         [Input("currencyCode")]
         public Input<string>? CurrencyCode { get; set; }
@@ -310,25 +310,25 @@ namespace Pulumi.Oci.OspGateway
         public Input<string>? Email { get; set; }
 
         /// <summary>
-        /// (Updatable) GSI Subscription external code.
+        /// GSI Subscription external code.
         /// </summary>
         [Input("gsiOrgCode")]
         public Input<string>? GsiOrgCode { get; set; }
 
         /// <summary>
-        /// (Updatable) Payment intension.
+        /// Payment intension.
         /// </summary>
         [Input("isIntentToPay")]
         public Input<bool>? IsIntentToPay { get; set; }
 
         /// <summary>
-        /// (Updatable) Language short code (en, de, hu, etc)
+        /// Language short code (en, de, hu, etc)
         /// </summary>
         [Input("languageCode")]
         public Input<string>? LanguageCode { get; set; }
 
         /// <summary>
-        /// (Updatable) GSI organization external identifier.
+        /// GSI organization external identifier.
         /// </summary>
         [Input("organizationId")]
         public Input<string>? OrganizationId { get; set; }
@@ -343,7 +343,7 @@ namespace Pulumi.Oci.OspGateway
         private InputList<Inputs.SubscriptionPaymentGatewayGetArgs>? _paymentGateways;
 
         /// <summary>
-        /// (Updatable) Payment gateway details.
+        /// Payment gateway details.
         /// </summary>
         public InputList<Inputs.SubscriptionPaymentGatewayGetArgs> PaymentGateways
         {
@@ -355,7 +355,7 @@ namespace Pulumi.Oci.OspGateway
         private InputList<Inputs.SubscriptionPaymentOptionGetArgs>? _paymentOptions;
 
         /// <summary>
-        /// (Updatable) Payment option list of a subscription.
+        /// Payment option list of a subscription.
         /// </summary>
         public InputList<Inputs.SubscriptionPaymentOptionGetArgs> PaymentOptions
         {
@@ -364,19 +364,19 @@ namespace Pulumi.Oci.OspGateway
         }
 
         /// <summary>
-        /// (Updatable) Subscription plan type.
+        /// Subscription plan type.
         /// </summary>
         [Input("planType")]
         public Input<string>? PlanType { get; set; }
 
         /// <summary>
-        /// (Updatable) Ship to customer account role.
+        /// Ship to customer account role.
         /// </summary>
         [Input("shipToCustAcctRoleId")]
         public Input<string>? ShipToCustAcctRoleId { get; set; }
 
         /// <summary>
-        /// (Updatable) Ship to customer account site address id.
+        /// Ship to customer account site address id.
         /// </summary>
         [Input("shipToCustAcctSiteId")]
         public Input<string>? ShipToCustAcctSiteId { get; set; }
@@ -398,7 +398,7 @@ namespace Pulumi.Oci.OspGateway
         public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
-        /// (Updatable) Subscription plan number.
+        /// Subscription plan number.
         /// </summary>
         [Input("subscriptionPlanNumber")]
         public Input<string>? SubscriptionPlanNumber { get; set; }
@@ -407,7 +407,7 @@ namespace Pulumi.Oci.OspGateway
         private InputList<Inputs.SubscriptionTaxInfoGetArgs>? _taxInfos;
 
         /// <summary>
-        /// (Updatable) Tax details.
+        /// Tax details.
         /// </summary>
         public InputList<Inputs.SubscriptionTaxInfoGetArgs> TaxInfos
         {
@@ -416,31 +416,31 @@ namespace Pulumi.Oci.OspGateway
         }
 
         /// <summary>
-        /// (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+        /// Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
         /// </summary>
         [Input("timePersonalToCorporateConv")]
         public Input<string>? TimePersonalToCorporateConv { get; set; }
 
         /// <summary>
-        /// (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+        /// Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
         /// </summary>
         [Input("timePlanUpgrade")]
         public Input<string>? TimePlanUpgrade { get; set; }
 
         /// <summary>
-        /// (Updatable) Start date of the subscription.
+        /// Start date of the subscription.
         /// </summary>
         [Input("timeStart")]
         public Input<string>? TimeStart { get; set; }
 
         /// <summary>
-        /// (Updatable) Status of the upgrade.
+        /// Status of the upgrade.
         /// </summary>
         [Input("upgradeState")]
         public Input<string>? UpgradeState { get; set; }
 
         /// <summary>
-        /// (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+        /// This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
         /// </summary>
         [Input("upgradeStateDetails")]
         public Input<string>? UpgradeStateDetails { get; set; }

@@ -33,14 +33,14 @@ public final class PolicyWafConfigAddressRateLimitingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+     * (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
     @Import(name="blockResponseCode")
     private @Nullable Output<Integer> blockResponseCode;
 
     /**
-     * @return (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+     * @return (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
      * 
      */
     public Optional<Output<Integer>> blockResponseCode() {
@@ -48,14 +48,14 @@ public final class PolicyWafConfigAddressRateLimitingArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -126,7 +126,7 @@ public final class PolicyWafConfigAddressRateLimitingArgs extends com.pulumi.res
         }
 
         /**
-         * @param blockResponseCode (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+         * @param blockResponseCode (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
          * 
          * @return builder
          * 
@@ -137,7 +137,7 @@ public final class PolicyWafConfigAddressRateLimitingArgs extends com.pulumi.res
         }
 
         /**
-         * @param blockResponseCode (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+         * @param blockResponseCode (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
          * 
          * @return builder
          * 
@@ -147,7 +147,7 @@ public final class PolicyWafConfigAddressRateLimitingArgs extends com.pulumi.res
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class PolicyWafConfigAddressRateLimitingArgs extends com.pulumi.res
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
          * 
          * @return builder
          * 

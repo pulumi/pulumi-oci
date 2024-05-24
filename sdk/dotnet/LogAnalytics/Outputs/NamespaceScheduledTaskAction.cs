@@ -38,11 +38,11 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
         /// </summary>
         public readonly string? QueryString;
         /// <summary>
-        /// The ManagementSavedSearch id [OCID] to be accelerated.
+        /// The ManagementSavedSearch id [OCID] utilized in the action.
         /// </summary>
         public readonly string? SavedSearchId;
         /// <summary>
-        /// (Updatable) Schedule type discriminator.
+        /// Action type discriminator.
         /// </summary>
         public readonly string Type;
 

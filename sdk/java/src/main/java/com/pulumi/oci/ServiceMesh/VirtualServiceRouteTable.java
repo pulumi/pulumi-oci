@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualServiceRouteTable = new VirtualServiceRouteTable("testVirtualServiceRouteTable", VirtualServiceRouteTableArgs.builder()        
+ *         var testVirtualServiceRouteTable = new VirtualServiceRouteTable("testVirtualServiceRouteTable", VirtualServiceRouteTableArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(virtualServiceRouteTableName)
  *             .routeRules(VirtualServiceRouteTableRouteRuleArgs.builder()

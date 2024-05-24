@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<string>? _items;
 
         /// <summary>
-        /// (Updatable) List of parameters defined to set helm value.
+        /// (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
         /// </summary>
         public InputList<string> Items
         {

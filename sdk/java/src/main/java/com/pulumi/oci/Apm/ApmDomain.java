@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApmDomain = new ApmDomain("testApmDomain", ApmDomainArgs.builder()        
+ *         var testApmDomain = new ApmDomain("testApmDomain", ApmDomainArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(apmDomainDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

@@ -203,7 +203,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// Unique name that can be edited. The name should not contain any confidential information.
+        /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -397,7 +397,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// Unique name that can be edited. The name should not contain any confidential information.
+        /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -553,7 +553,7 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
-        /// Unique name that can be edited. The name should not contain any confidential information.
+        /// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

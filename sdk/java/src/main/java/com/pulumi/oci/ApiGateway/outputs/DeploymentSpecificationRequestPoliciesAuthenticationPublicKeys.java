@@ -27,15 +27,12 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
      */
     private @Nullable List<DeploymentSpecificationRequestPoliciesAuthenticationPublicKeysKey> keys;
     /**
-     * @return (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+     * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
      * 
      */
     private @Nullable Integer maxCacheDurationInHours;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the public key set.
      * 
      */
     private String type;
@@ -61,17 +58,14 @@ public final class DeploymentSpecificationRequestPoliciesAuthenticationPublicKey
         return this.keys == null ? List.of() : this.keys;
     }
     /**
-     * @return (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+     * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
      * 
      */
     public Optional<Integer> maxCacheDurationInHours() {
         return Optional.ofNullable(this.maxCacheDurationInHours);
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the public key set.
      * 
      */
     public String type() {

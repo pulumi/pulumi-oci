@@ -14,15 +14,15 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeployStageProductionLoadBalancerConfig
     {
         /// <summary>
-        /// (Updatable) Listen port for the backend server.
+        /// Listen port for the backend server.
         /// </summary>
         public readonly int? BackendPort;
         /// <summary>
-        /// (Updatable) Name of the load balancer listener.
+        /// Name of the load balancer listener.
         /// </summary>
         public readonly string? ListenerName;
         /// <summary>
-        /// (Updatable) The OCID of the load balancer.
+        /// The OCID of the load balancer.
         /// </summary>
         public readonly string? LoadBalancerId;
         /// <summary>

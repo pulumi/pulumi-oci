@@ -51,14 +51,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+     * (Updatable) The duration for which the JWKS should be cached before it is fetched again.
      * 
      */
     @Import(name="maxCacheDurationInHours")
     private @Nullable Output<Integer> maxCacheDurationInHours;
 
     /**
-     * @return (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+     * @return (Updatable) The duration for which the JWKS should be cached before it is fetched again.
      * 
      */
     public Optional<Output<Integer>> maxCacheDurationInHours() {
@@ -66,20 +66,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the public key set.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the public key set.
      * 
      */
     public Output<String> type() {
@@ -182,7 +176,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param maxCacheDurationInHours (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+         * @param maxCacheDurationInHours (Updatable) The duration for which the JWKS should be cached before it is fetched again.
          * 
          * @return builder
          * 
@@ -193,7 +187,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param maxCacheDurationInHours (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+         * @param maxCacheDurationInHours (Updatable) The duration for which the JWKS should be cached before it is fetched again.
          * 
          * @return builder
          * 
@@ -203,10 +197,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the public key set.
          * 
          * @return builder
          * 
@@ -217,10 +208,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the public key set.
          * 
          * @return builder
          * 

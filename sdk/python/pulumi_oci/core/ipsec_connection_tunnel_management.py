@@ -278,8 +278,8 @@ class _IpsecConnectionTunnelManagementState:
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         :param pulumi.Input[str] cpe_ip: The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] dpd_mode: This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
-        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        :param pulumi.Input[str] dpd_mode: Dead peer detection (DPD) mode set on the Oracle side of the connection.
+        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds.
         :param pulumi.Input['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs'] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
@@ -426,7 +426,7 @@ class _IpsecConnectionTunnelManagementState:
     @pulumi.getter(name="dpdMode")
     def dpd_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        Dead peer detection (DPD) mode set on the Oracle side of the connection.
         """
         return pulumi.get(self, "dpd_mode")
 
@@ -438,7 +438,7 @@ class _IpsecConnectionTunnelManagementState:
     @pulumi.getter(name="dpdTimeoutInSec")
     def dpd_timeout_in_sec(self) -> Optional[pulumi.Input[int]]:
         """
-        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        DPD timeout in seconds.
         """
         return pulumi.get(self, "dpd_timeout_in_sec")
 
@@ -884,8 +884,8 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
         :param pulumi.Input[str] cpe_ip: The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
         :param pulumi.Input[str] display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
-        :param pulumi.Input[str] dpd_mode: This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
-        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        :param pulumi.Input[str] dpd_mode: Dead peer detection (DPD) mode set on the Oracle side of the connection.
+        :param pulumi.Input[int] dpd_timeout_in_sec: DPD timeout in seconds.
         :param pulumi.Input[pulumi.InputType['IpsecConnectionTunnelManagementEncryptionDomainConfigArgs']] encryption_domain_config: Configuration information used by the encryption domain policy. Required if the tunnel uses POLICY routing.
         :param pulumi.Input[str] ike_version: Internet Key Exchange protocol version.
         :param pulumi.Input[str] ipsec_id: The OCID of the IPSec connection.
@@ -990,7 +990,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     @pulumi.getter(name="dpdMode")
     def dpd_mode(self) -> pulumi.Output[str]:
         """
-        This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+        Dead peer detection (DPD) mode set on the Oracle side of the connection.
         """
         return pulumi.get(self, "dpd_mode")
 
@@ -998,7 +998,7 @@ class IpsecConnectionTunnelManagement(pulumi.CustomResource):
     @pulumi.getter(name="dpdTimeoutInSec")
     def dpd_timeout_in_sec(self) -> pulumi.Output[int]:
         """
-        DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+        DPD timeout in seconds.
         """
         return pulumi.get(self, "dpd_timeout_in_sec")
 

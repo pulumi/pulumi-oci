@@ -16,7 +16,7 @@ public final class AssetSourceReplicationCredentials {
      */
     private String secretId;
     /**
-     * @return (Updatable) Asset source type.
+     * @return (Updatable) Authentication type
      * 
      */
     private String type;
@@ -30,7 +30,7 @@ public final class AssetSourceReplicationCredentials {
         return this.secretId;
     }
     /**
-     * @return (Updatable) Asset source type.
+     * @return (Updatable) Authentication type
      * 
      */
     public String type() {

@@ -227,7 +227,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Output<string?> ManagementAgentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Property Name.
+        /// Monitored Resource Name.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -451,7 +451,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Property Name.
+        /// Monitored Resource Name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -601,7 +601,7 @@ namespace Pulumi.Oci.StackMonitoring
         public Input<string>? ManagementAgentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Property Name.
+        /// Monitored Resource Name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

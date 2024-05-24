@@ -28,69 +28,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.CapacityManagement.OccCapacityRequest;
- * import com.pulumi.oci.CapacityManagement.OccCapacityRequestArgs;
- * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestDetailArgs;
- * import com.pulumi.oci.CapacityManagement.inputs.OccCapacityRequestPatchOperationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testOccCapacityRequest = new OccCapacityRequest("testOccCapacityRequest", OccCapacityRequestArgs.builder()        
- *             .availabilityDomain(occCapacityRequestAvailabilityDomain)
- *             .compartmentId(compartmentId)
- *             .dateExpectedCapacityHandover(occCapacityRequestDateExpectedCapacityHandover)
- *             .details(OccCapacityRequestDetailArgs.builder()
- *                 .demandQuantity(occCapacityRequestDetailsDemandQuantity)
- *                 .resourceName(testResource.name())
- *                 .resourceType(occCapacityRequestDetailsResourceType)
- *                 .workloadType(occCapacityRequestDetailsWorkloadType)
- *                 .actualHandoverQuantity(occCapacityRequestDetailsActualHandoverQuantity)
- *                 .dateActualHandover(occCapacityRequestDetailsDateActualHandover)
- *                 .dateExpectedHandover(occCapacityRequestDetailsDateExpectedHandover)
- *                 .expectedHandoverQuantity(occCapacityRequestDetailsExpectedHandoverQuantity)
- *                 .build())
- *             .displayName(occCapacityRequestDisplayName)
- *             .namespace(occCapacityRequestNamespace)
- *             .occAvailabilityCatalogId(testOccAvailabilityCatalog.id())
- *             .occCapacityRequestId(occCapacityRequestOccCapacityRequestId)
- *             .region(occCapacityRequestRegion)
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .description(occCapacityRequestDescription)
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .lifecycleDetails(occCapacityRequestLifecycleDetails)
- *             .patchOperations(OccCapacityRequestPatchOperationArgs.builder()
- *                 .operation(occCapacityRequestPatchOperationsOperation)
- *                 .selection(occCapacityRequestPatchOperationsSelection)
- *                 .from(occCapacityRequestPatchOperationsFrom)
- *                 .position(occCapacityRequestPatchOperationsPosition)
- *                 .selectedItem(occCapacityRequestPatchOperationsSelectedItem)
- *                 .value(occCapacityRequestPatchOperationsValue)
- *                 .values(occCapacityRequestPatchOperationsValues)
- *                 .build())
- *             .requestState(occCapacityRequestRequestState)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

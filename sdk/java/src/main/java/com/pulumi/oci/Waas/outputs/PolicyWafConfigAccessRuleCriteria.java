@@ -49,7 +49,7 @@ public final class PolicyWafConfigAccessRuleCriteria {
      */
     private @Nullable Boolean isCaseSensitive;
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) The criteria value.
      * 
      */
     private String value;
@@ -95,7 +95,7 @@ public final class PolicyWafConfigAccessRuleCriteria {
         return Optional.ofNullable(this.isCaseSensitive);
     }
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) The criteria value.
      * 
      */
     public String value() {

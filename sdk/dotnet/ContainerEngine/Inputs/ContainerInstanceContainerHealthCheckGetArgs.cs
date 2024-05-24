@@ -67,13 +67,13 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         public Input<int>? IntervalInSeconds { get; set; }
 
         /// <summary>
-        /// The name of the volume. This must be unique within a single container instance.
+        /// Health check name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+        /// Container health check HTTP path.
         /// </summary>
         [Input("path")]
         public Input<string>? Path { get; set; }

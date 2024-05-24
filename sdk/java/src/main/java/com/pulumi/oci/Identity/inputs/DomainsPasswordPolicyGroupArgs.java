@@ -17,10 +17,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     public static final DomainsPasswordPolicyGroupArgs Empty = new DomainsPasswordPolicyGroupArgs();
 
     /**
-     * (Updatable) The displayName of the User or App who modified this Resource
+     * (Updatable) Group Display Name
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -34,10 +35,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) Group Display Name
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -52,10 +54,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -69,10 +72,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -87,15 +91,17 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The identifier of the group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -104,15 +110,17 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The identifier of the group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -148,10 +156,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Group Display Name
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -169,10 +178,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) Group Display Name
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -189,10 +199,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -210,10 +221,11 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -230,15 +242,17 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The identifier of the group.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -251,15 +265,17 @@ public final class DomainsPasswordPolicyGroupArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The identifier of the group.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

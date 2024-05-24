@@ -108,7 +108,7 @@ export class Volume extends pulumi.CustomResource {
      */
     public readonly autotunePolicies!: pulumi.Output<outputs.Core.VolumeAutotunePolicy[]>;
     /**
-     * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
@@ -278,7 +278,7 @@ export interface VolumeState {
      */
     autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.VolumeAutotunePolicy>[]>;
     /**
-     * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
@@ -372,7 +372,7 @@ export interface VolumeArgs {
      */
     autotunePolicies?: pulumi.Input<pulumi.Input<inputs.Core.VolumeAutotunePolicy>[]>;
     /**
-     * (Updatable) The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      */
     availabilityDomain: pulumi.Input<string>;
     /**

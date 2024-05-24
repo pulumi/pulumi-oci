@@ -367,6 +367,14 @@ class EventDataContentArgs:
         :param pulumi.Input[str] exploit_object_store_location: The location of the exploit detection log within object storage.
         :param pulumi.Input[int] size: Size of the event content.
         :param pulumi.Input[str] type: Event type:
+               * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+               * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+               * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+               * `SOFTWARE_UPDATE` - Software updates - Packages
+               * `KSPLICE_UPDATE` - Ksplice updates
+               * `SOFTWARE_SOURCE` - Software source
+               * `AGENT` - Agent
+               * `MANAGEMENT_STATION` - Management Station
         """
         if content_availability is not None:
             pulumi.set(__self__, "content_availability", content_availability)
@@ -451,6 +459,14 @@ class EventDataContentArgs:
     def type(self) -> Optional[pulumi.Input[str]]:
         """
         Event type:
+        * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+        * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+        * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+        * `SOFTWARE_UPDATE` - Software updates - Packages
+        * `KSPLICE_UPDATE` - Ksplice updates
+        * `SOFTWARE_SOURCE` - Software source
+        * `AGENT` - Agent
+        * `MANAGEMENT_STATION` - Management Station
         """
         return pulumi.get(self, "type")
 
@@ -584,7 +600,7 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -596,7 +612,7 @@ class LifecycleEnvironmentManagedInstanceIdArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -908,7 +924,7 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         """
         if display_name is not None:
@@ -920,7 +936,7 @@ class LifecycleEnvironmentStageManagedInstanceIdArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -951,7 +967,7 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
                  software_source_type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] description: (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         :param pulumi.Input[str] id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
         :param pulumi.Input[bool] is_mandatory_for_autonomous_linux: Indicates whether this is a required software source for Autonomous Linux instances. If true, the user can't unselect it.
         :param pulumi.Input[str] software_source_type: Type of the software source.
@@ -983,7 +999,7 @@ class LifecycleEnvironmentStageSoftwareSourceIdArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+        (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
         """
         return pulumi.get(self, "display_name")
 
@@ -2374,7 +2390,7 @@ class ManagementStationMirrorArgs:
                  sslcert: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] directory: (Updatable) Path to the data volume on the management station where software source mirrors are stored.
-        :param pulumi.Input[str] port: (Updatable) Listening port used for the proxy.
+        :param pulumi.Input[str] port: (Updatable) Default mirror listening port for http.
         :param pulumi.Input[str] sslport: (Updatable) Default mirror listening port for https.
         :param pulumi.Input[str] sslcert: (Updatable) Path to the SSL cerfificate.
         """
@@ -2400,7 +2416,7 @@ class ManagementStationMirrorArgs:
     @pulumi.getter
     def port(self) -> pulumi.Input[str]:
         """
-        (Updatable) Listening port used for the proxy.
+        (Updatable) Default mirror listening port for http.
         """
         return pulumi.get(self, "port")
 

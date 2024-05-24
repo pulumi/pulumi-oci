@@ -32,14 +32,14 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Listening port used for the proxy.
+     * (Updatable) Default mirror listening port for http.
      * 
      */
     @Import(name="port", required=true)
     private Output<String> port;
 
     /**
-     * @return (Updatable) Listening port used for the proxy.
+     * @return (Updatable) Default mirror listening port for http.
      * 
      */
     public Output<String> port() {
@@ -125,7 +125,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port (Updatable) Listening port used for the proxy.
+         * @param port (Updatable) Default mirror listening port for http.
          * 
          * @return builder
          * 
@@ -136,7 +136,7 @@ public final class ManagementStationMirrorArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param port (Updatable) Listening port used for the proxy.
+         * @param port (Updatable) Default mirror listening port for http.
          * 
          * @return builder
          * 

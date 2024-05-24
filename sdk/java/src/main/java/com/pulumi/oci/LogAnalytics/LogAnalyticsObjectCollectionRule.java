@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsObjectCollectionRule = new LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", LogAnalyticsObjectCollectionRuleArgs.builder()        
+ *         var testLogAnalyticsObjectCollectionRule = new LogAnalyticsObjectCollectionRule("testLogAnalyticsObjectCollectionRule", LogAnalyticsObjectCollectionRuleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .logGroupId(testLogGroup.id())
  *             .logSourceName(logAnalyticsObjectCollectionRuleLogSourceName)

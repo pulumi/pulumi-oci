@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
     public sealed class TargetAssetTestSpecPreemptibleInstanceConfig
     {
         /// <summary>
-        /// (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+        /// The action to run when the preemptible instance is interrupted for eviction.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetTestSpecPreemptibleInstanceConfigPreemptionAction> PreemptionActions;
 

@@ -46,9 +46,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable Integer priority;
     /**
-     * @return (Updatable) App URI
+     * @return (Updatable) PasswordPolicy URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -62,9 +62,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The ID of the App.
+     * @return (Updatable) The ID of the PasswordPolicy.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -72,7 +72,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -117,9 +117,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return (Updatable) App URI
+     * @return (Updatable) PasswordPolicy URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -135,9 +135,9 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The ID of the App.
+     * @return (Updatable) The ID of the PasswordPolicy.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -145,7 +145,7 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
      * * multiValued: false
      * * mutability: readOnly
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

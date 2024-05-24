@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeEffectiveDetectorRuleDetail {
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     private @Nullable String condition;
     /**
-     * @return (Updatable) Configuration details
+     * @return Configuration details
      * 
      */
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
@@ -30,31 +30,31 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
      */
     private @Nullable Boolean isConfigurationAllowed;
     /**
-     * @return (Updatable) Enables the control
+     * @return Enables the control
      * 
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return (Updatable) user defined labels for a detector rule
+     * @return user defined labels for a detector rule
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return (Updatable) The Risk Level
+     * @return The Risk Level
      * 
      */
     private @Nullable String riskLevel;
 
     private DetectorRecipeEffectiveDetectorRuleDetail() {}
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return (Updatable) Configuration details
+     * @return Configuration details
      * 
      */
     public List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations() {
@@ -68,21 +68,21 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
-     * @return (Updatable) Enables the control
+     * @return Enables the control
      * 
      */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return (Updatable) user defined labels for a detector rule
+     * @return user defined labels for a detector rule
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return (Updatable) The Risk Level
+     * @return The Risk Level
      * 
      */
     public Optional<String> riskLevel() {

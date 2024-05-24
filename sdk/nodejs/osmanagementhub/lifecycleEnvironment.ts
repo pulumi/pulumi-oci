@@ -97,7 +97,7 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
      */
     public readonly archType!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -109,7 +109,7 @@ export class LifecycleEnvironment extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -235,7 +235,7 @@ export interface LifecycleEnvironmentState {
      */
     archType?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -247,7 +247,7 @@ export interface LifecycleEnvironmentState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -305,7 +305,7 @@ export interface LifecycleEnvironmentArgs {
      */
     archType: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle stage.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the lifecycle environment.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -317,7 +317,7 @@ export interface LifecycleEnvironmentArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      */
     displayName: pulumi.Input<string>;
     /**

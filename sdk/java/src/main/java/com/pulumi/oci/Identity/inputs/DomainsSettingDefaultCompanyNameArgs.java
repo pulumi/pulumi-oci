@@ -17,11 +17,13 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
     /**
      * (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -33,11 +35,13 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
     /**
      * @return (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -48,34 +52,32 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) Custom claim value
+     * (Updatable) Company name
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Company name
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -110,11 +112,13 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
         /**
          * @param locale (Updatable) Locale
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
-         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
          * * idcsCanonicalValueSourceResourceType: AllowedValue
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -130,11 +134,13 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
         /**
          * @param locale (Updatable) Locale
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
-         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+         * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
          * * idcsCanonicalValueSourceResourceType: AllowedValue
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -147,17 +153,16 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value (Updatable) Custom claim value
+         * @param value (Updatable) Company name
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -168,17 +173,16 @@ public final class DomainsSettingDefaultCompanyNameArgs extends com.pulumi.resou
         }
 
         /**
-         * @param value (Updatable) Custom claim value
+         * @param value (Updatable) Company name
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 

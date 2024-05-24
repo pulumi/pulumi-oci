@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDataSafeConfiguration = new DataSafeConfiguration("testDataSafeConfiguration", DataSafeConfigurationArgs.builder()        
+ *         var testDataSafeConfiguration = new DataSafeConfiguration("testDataSafeConfiguration", DataSafeConfigurationArgs.builder()
  *             .isEnabled(dataSafeConfigurationIsEnabled)
  *             .compartmentId(compartmentId)
  *             .build());

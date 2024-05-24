@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMaintenanceRun = new MaintenanceRun("testMaintenanceRun", MaintenanceRunArgs.builder()        
+ *         var testMaintenanceRun = new MaintenanceRun("testMaintenanceRun", MaintenanceRunArgs.builder()
  *             .patchType(maintenanceRunPatchType)
  *             .targetResourceId(testResource.id())
  *             .timeScheduled(maintenanceRunTimeScheduled)

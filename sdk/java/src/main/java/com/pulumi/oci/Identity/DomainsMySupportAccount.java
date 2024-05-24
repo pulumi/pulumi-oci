@@ -29,52 +29,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsMySupportAccount;
- * import com.pulumi.oci.Identity.DomainsMySupportAccountArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMySupportAccountTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsMySupportAccountUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testMySupportAccount = new DomainsMySupportAccount("testMySupportAccount", DomainsMySupportAccountArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:supportAccount")
- *             .token(mySupportAccountToken)
- *             .authorization(mySupportAccountAuthorization)
- *             .id(mySupportAccountId)
- *             .ocid(mySupportAccountOcid)
- *             .resourceTypeSchemaVersion(mySupportAccountResourceTypeSchemaVersion)
- *             .tags(DomainsMySupportAccountTagArgs.builder()
- *                 .key(mySupportAccountTagsKey)
- *                 .value(mySupportAccountTagsValue)
- *                 .build())
- *             .user(DomainsMySupportAccountUserArgs.builder()
- *                 .ocid(mySupportAccountUserOcid)
- *                 .value(mySupportAccountUserValue)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -417,7 +371,7 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
         return this.mySupportAccountProvider;
     }
     /**
-     * User&#39;s ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -425,16 +379,16 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
-     * @return User&#39;s ocid
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -442,9 +396,9 @@ public class DomainsMySupportAccount extends com.pulumi.resources.CustomResource
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Output<String> ocid() {

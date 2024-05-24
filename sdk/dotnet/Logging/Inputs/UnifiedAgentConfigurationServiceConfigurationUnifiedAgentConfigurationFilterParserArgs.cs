@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? Expression { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        /// (Updatable) Specifies the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
         [Input("fieldTimeKey")]
         public Input<string>? FieldTimeKey { get; set; }

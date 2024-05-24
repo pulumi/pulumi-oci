@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationTaskScheduleScheduleRef {
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     private @Nullable String description;
@@ -27,7 +27,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRef {
      */
     private @Nullable WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails frequencyDetails;
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     private @Nullable String identifier;
@@ -37,7 +37,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRef {
      */
     private @Nullable Boolean isDaylightAdjustmentEnabled;
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -84,7 +84,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRef {
 
     private WorkspaceApplicationTaskScheduleScheduleRef() {}
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Optional<String> description() {
@@ -98,7 +98,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRef {
         return Optional.ofNullable(this.frequencyDetails);
     }
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<String> identifier() {
@@ -112,7 +112,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRef {
         return Optional.ofNullable(this.isDaylightAdjustmentEnabled);
     }
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {

@@ -63,14 +63,18 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<String> description() {

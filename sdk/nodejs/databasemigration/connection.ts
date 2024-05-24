@@ -111,7 +111,7 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly certificateTdn!: pulumi.Output<string>;
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -287,7 +287,7 @@ export interface ConnectionState {
      */
     certificateTdn?: pulumi.Input<string>;
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -385,7 +385,7 @@ export interface ConnectionArgs {
      */
     certificateTdn?: pulumi.Input<string>;
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) OCID of the compartment
      */
     compartmentId: pulumi.Input<string>;
     /**

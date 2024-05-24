@@ -79,7 +79,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class MediaWorkflow : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -124,7 +124,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableArray<string>> MediaWorkflowConfigurationIds { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+        /// (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
         /// </summary>
         [Output("parameters")]
         public Output<string> Parameters { get; private set; } = null!;
@@ -148,7 +148,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableArray<Outputs.MediaWorkflowTask>> Tasks { get; private set; } = null!;
 
         /// <summary>
-        /// When the lock was created.
+        /// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -160,11 +160,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<string> TimeUpdated { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The version of the MediaWorkflowTaskDeclaration.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The version of the MediaWorkflow.
         /// </summary>
         [Output("version")]
         public Output<string> Version { get; private set; } = null!;
@@ -216,7 +212,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class MediaWorkflowArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -279,7 +275,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+        /// (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
         /// </summary>
         [Input("parameters")]
         public Input<string>? Parameters { get; set; }
@@ -305,7 +301,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class MediaWorkflowState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) Compartment Identifier.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -374,7 +370,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+        /// (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
         /// </summary>
         [Input("parameters")]
         public Input<string>? Parameters { get; set; }
@@ -410,7 +406,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// When the lock was created.
+        /// The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
@@ -422,11 +418,7 @@ namespace Pulumi.Oci.MediaServices
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// (Updatable) The version of the MediaWorkflowTaskDeclaration.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The version of the MediaWorkflow.
         /// </summary>
         [Input("version")]
         public Input<string>? Version { get; set; }

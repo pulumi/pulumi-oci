@@ -17,14 +17,14 @@ public final class DeploymentDeployArtifactOverrideArgumentsArgs extends com.pul
     public static final DeploymentDeployArtifactOverrideArgumentsArgs Empty = new DeploymentDeployArtifactOverrideArgumentsArgs();
 
     /**
-     * List of arguments provided at the time of deployment.
+     * List of artifact override arguments at the time of deployment.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<DeploymentDeployArtifactOverrideArgumentsItemArgs>> items;
 
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return List of artifact override arguments at the time of deployment.
      * 
      */
     public Optional<Output<List<DeploymentDeployArtifactOverrideArgumentsItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsArgs extends com.pul
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items List of artifact override arguments at the time of deployment.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsArgs extends com.pul
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items List of artifact override arguments at the time of deployment.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeploymentDeployArtifactOverrideArgumentsArgs extends com.pul
         }
 
         /**
-         * @param items List of arguments provided at the time of deployment.
+         * @param items List of artifact override arguments at the time of deployment.
          * 
          * @return builder
          * 

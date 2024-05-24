@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ExadataInsightMemberVmClusterDetail {
     /**
-     * @return (Updatable) Compartment Identifier of database
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     private @Nullable String compartmentId;
@@ -41,7 +41,7 @@ public final class ExadataInsightMemberVmClusterDetail {
 
     private ExadataInsightMemberVmClusterDetail() {}
     /**
-     * @return (Updatable) Compartment Identifier of database
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
     public Optional<String> compartmentId() {

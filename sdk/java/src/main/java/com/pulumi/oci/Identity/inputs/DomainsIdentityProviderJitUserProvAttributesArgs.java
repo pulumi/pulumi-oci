@@ -17,32 +17,34 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
     public static final DomainsIdentityProviderJitUserProvAttributesArgs Empty = new DomainsIdentityProviderJitUserProvAttributesArgs();
 
     /**
-     * (Updatable) Group URI
+     * (Updatable) Mapped Attribute URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * idcsSearchable: false
+     * * mutability: immutable
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     @Import(name="ref")
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) Group URI
+     * @return (Updatable) Mapped Attribute URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * idcsSearchable: false
+     * * mutability: immutable
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ref() {
@@ -50,13 +52,14 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -67,13 +70,14 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -110,16 +114,17 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
         }
 
         /**
-         * @param ref (Updatable) Group URI
+         * @param ref (Updatable) Mapped Attribute URI
          * 
-         * **Added In:** 2205120021
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * idcsSearchable: false
+         * * mutability: immutable
+         * * required: false
          * * returned: default
          * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -130,16 +135,17 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
         }
 
         /**
-         * @param ref (Updatable) Group URI
+         * @param ref (Updatable) Mapped Attribute URI
          * 
-         * **Added In:** 2205120021
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * idcsSearchable: false
+         * * mutability: immutable
+         * * required: false
          * * returned: default
          * * type: reference
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -149,13 +155,14 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Mapped Attribute identifier
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -170,13 +177,14 @@ public final class DomainsIdentityProviderJitUserProvAttributesArgs extends com.
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) Mapped Attribute identifier
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
-         * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

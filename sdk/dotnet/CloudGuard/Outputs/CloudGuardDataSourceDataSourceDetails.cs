@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly int? AdditionalEntitiesCount;
         /// <summary>
-        /// Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
         /// </summary>
         public readonly string DataSourceFeedProvider;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Query;
         /// <summary>
-        /// (Updatable) Time when the query can start, if not specified it can start immediately.
+        /// (Updatable) Continuous query start policy object
         /// </summary>
         public readonly Outputs.CloudGuardDataSourceDataSourceDetailsQueryStartTime? QueryStartTime;
         /// <summary>

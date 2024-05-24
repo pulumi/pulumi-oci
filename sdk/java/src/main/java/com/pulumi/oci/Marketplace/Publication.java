@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPublication = new Publication("testPublication", PublicationArgs.builder()        
+ *         var testPublication = new Publication("testPublication", PublicationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .isAgreementAcknowledged(publicationIsAgreementAcknowledged)
  *             .listingType(publicationListingType)
@@ -199,14 +199,14 @@ public class Publication extends com.pulumi.resources.CustomResource {
         return this.longDescription;
     }
     /**
-     * (Updatable) The name of the contact.
+     * (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) The name of the contact.
+     * @return (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     public Output<String> name() {
@@ -227,14 +227,14 @@ public class Publication extends com.pulumi.resources.CustomResource {
         return this.packageDetails;
     }
     /**
-     * The package&#39;s type.
+     * The listing&#39;s package type.
      * 
      */
     @Export(name="packageType", refs={String.class}, tree="[0]")
     private Output<String> packageType;
 
     /**
-     * @return The package&#39;s type.
+     * @return The listing&#39;s package type.
      * 
      */
     public Output<String> packageType() {

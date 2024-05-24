@@ -17,7 +17,7 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
     public static final DomainsAppSamlServiceProviderArgs Empty = new DomainsAppSamlServiceProviderArgs();
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) The URI of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +33,7 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,38 +50,34 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) The id of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The id of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -114,7 +110,7 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the App that acts as a Service Provider.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -134,7 +130,7 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) The URI of the App that acts as a Service Provider.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -153,19 +149,17 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The id of the App that acts as a Service Provider.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -176,19 +170,17 @@ public final class DomainsAppSamlServiceProviderArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The id of the App that acts as a Service Provider.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

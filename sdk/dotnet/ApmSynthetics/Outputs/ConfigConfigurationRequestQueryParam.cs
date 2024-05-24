@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
     public sealed class ConfigConfigurationRequestQueryParam
     {
         /// <summary>
-        /// (Updatable) Name of the parameter.
+        /// (Updatable) Name of request query parameter.
         /// </summary>
         public readonly string? ParamName;
         /// <summary>
-        /// (Updatable) Value of the parameter.
+        /// (Updatable) Value of request query parameter.
         /// </summary>
         public readonly string? ParamValue;
 

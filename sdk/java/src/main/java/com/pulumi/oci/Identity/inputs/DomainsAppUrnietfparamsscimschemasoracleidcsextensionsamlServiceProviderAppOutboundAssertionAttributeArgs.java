@@ -54,11 +54,12 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) Mapped Attribute URI
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
@@ -70,11 +71,12 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Mapped Attribute URI
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
@@ -87,38 +89,36 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -195,11 +195,12 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) Mapped Attribute URI
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
-         * * multiValued: false
          * * mutability: readOnly
          * * required: false
          * * returned: default
@@ -215,11 +216,12 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) Mapped Attribute URI
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
-         * * multiValued: false
          * * mutability: readOnly
          * * required: false
          * * returned: default
@@ -234,19 +236,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Mapped Attribute identifier
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -257,19 +258,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Mapped Attribute identifier
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

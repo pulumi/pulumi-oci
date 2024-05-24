@@ -759,6 +759,7 @@ func (o ResolverEndpointTypeArrayOutput) Index(i pulumi.IntInput) ResolverEndpoi
 
 type ResolverRule struct {
 	// (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action string `pulumi:"action"`
 	// (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
 	ClientAddressConditions []string `pulumi:"clientAddressConditions"`
@@ -783,6 +784,7 @@ type ResolverRuleInput interface {
 
 type ResolverRuleArgs struct {
 	// (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
 	ClientAddressConditions pulumi.StringArrayInput `pulumi:"clientAddressConditions"`
@@ -846,6 +848,7 @@ func (o ResolverRuleOutput) ToResolverRuleOutputWithContext(ctx context.Context)
 }
 
 // (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 func (o ResolverRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v ResolverRule) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -901,7 +904,7 @@ type RrsetItem struct {
 	RecordHash *string `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
 	RrsetVersion *string `pulumi:"rrsetVersion"`
-	// The type of the target RRSet within the target zone.
+	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	Rtype string `pulumi:"rtype"`
 	// (Updatable) The Time To Live for the record, in seconds.
 	Ttl int `pulumi:"ttl"`
@@ -929,7 +932,7 @@ type RrsetItemArgs struct {
 	RecordHash pulumi.StringPtrInput `pulumi:"recordHash"`
 	// The latest version of the record's zone in which its RRSet differs from the preceding version.
 	RrsetVersion pulumi.StringPtrInput `pulumi:"rrsetVersion"`
-	// The type of the target RRSet within the target zone.
+	// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 	Rtype pulumi.StringInput `pulumi:"rtype"`
 	// (Updatable) The Time To Live for the record, in seconds.
 	Ttl pulumi.IntInput `pulumi:"ttl"`
@@ -1011,7 +1014,7 @@ func (o RrsetItemOutput) RrsetVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RrsetItem) *string { return v.RrsetVersion }).(pulumi.StringPtrOutput)
 }
 
-// The type of the target RRSet within the target zone.
+// The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
 func (o RrsetItemOutput) Rtype() pulumi.StringOutput {
 	return o.ApplyT(func(v RrsetItem) string { return v.Rtype }).(pulumi.StringOutput)
 }
@@ -1184,6 +1187,11 @@ type SteeringPolicyRule struct {
 	// A user-defined description of the rule's purpose or behavior.
 	Description *string `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
+	// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+	// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+	// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+	// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+	// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -1208,6 +1216,11 @@ type SteeringPolicyRuleArgs struct {
 	// A user-defined description of the rule's purpose or behavior.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
+	// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+	// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+	// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+	// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+	// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -1283,6 +1296,11 @@ func (o SteeringPolicyRuleOutput) Description() pulumi.StringPtrOutput {
 }
 
 // The type of a rule determines its sorting/filtering behavior.
+// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 func (o SteeringPolicyRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v SteeringPolicyRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
@@ -1657,7 +1675,7 @@ type ZoneExternalDownstream struct {
 	Address string `pulumi:"address"`
 	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
 	Port *int `pulumi:"port"`
-	// (Updatable) The OCID of the TSIG key.
+	// (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
 	TsigKeyId *string `pulumi:"tsigKeyId"`
 }
 
@@ -1677,7 +1695,7 @@ type ZoneExternalDownstreamArgs struct {
 	Address pulumi.StringInput `pulumi:"address"`
 	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
 	Port pulumi.IntPtrInput `pulumi:"port"`
-	// (Updatable) The OCID of the TSIG key.
+	// (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
 	TsigKeyId pulumi.StringPtrInput `pulumi:"tsigKeyId"`
 }
 
@@ -1742,7 +1760,7 @@ func (o ZoneExternalDownstreamOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ZoneExternalDownstream) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The OCID of the TSIG key.
+// (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
 func (o ZoneExternalDownstreamOutput) TsigKeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZoneExternalDownstream) *string { return v.TsigKeyId }).(pulumi.StringPtrOutput)
 }
@@ -1980,13 +1998,13 @@ func (o ZoneNameserverArrayOutput) Index(i pulumi.IntInput) ZoneNameserverOutput
 }
 
 type ZoneZoneTransferServer struct {
-	// (Updatable) The server's IP address (IPv4 or IPv6).
+	// The server's IP address (IPv4 or IPv6).
 	Address *string `pulumi:"address"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
 	IsTransferDestination *bool `pulumi:"isTransferDestination"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer source.
 	IsTransferSource *bool `pulumi:"isTransferSource"`
-	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+	// The server's port.
 	Port *int `pulumi:"port"`
 }
 
@@ -2002,13 +2020,13 @@ type ZoneZoneTransferServerInput interface {
 }
 
 type ZoneZoneTransferServerArgs struct {
-	// (Updatable) The server's IP address (IPv4 or IPv6).
+	// The server's IP address (IPv4 or IPv6).
 	Address pulumi.StringPtrInput `pulumi:"address"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer destination.
 	IsTransferDestination pulumi.BoolPtrInput `pulumi:"isTransferDestination"`
 	// A Boolean flag indicating whether or not the server is a zone data transfer source.
 	IsTransferSource pulumi.BoolPtrInput `pulumi:"isTransferSource"`
-	// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+	// The server's port.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 }
 
@@ -2063,7 +2081,7 @@ func (o ZoneZoneTransferServerOutput) ToZoneZoneTransferServerOutputWithContext(
 	return o
 }
 
-// (Updatable) The server's IP address (IPv4 or IPv6).
+// The server's IP address (IPv4 or IPv6).
 func (o ZoneZoneTransferServerOutput) Address() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ZoneZoneTransferServer) *string { return v.Address }).(pulumi.StringPtrOutput)
 }
@@ -2078,7 +2096,7 @@ func (o ZoneZoneTransferServerOutput) IsTransferSource() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ZoneZoneTransferServer) *bool { return v.IsTransferSource }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+// The server's port.
 func (o ZoneZoneTransferServerOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ZoneZoneTransferServer) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -3023,6 +3041,7 @@ func (o GetResolverEndpointsResolverEndpointArrayOutput) Index(i pulumi.IntInput
 
 type GetResolverRule struct {
 	// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action string `pulumi:"action"`
 	// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
 	ClientAddressConditions []string `pulumi:"clientAddressConditions"`
@@ -3047,6 +3066,7 @@ type GetResolverRuleInput interface {
 
 type GetResolverRuleArgs struct {
 	// The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+	// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 	Action pulumi.StringInput `pulumi:"action"`
 	// A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
 	ClientAddressConditions pulumi.StringArrayInput `pulumi:"clientAddressConditions"`
@@ -3110,6 +3130,7 @@ func (o GetResolverRuleOutput) ToGetResolverRuleOutputWithContext(ctx context.Co
 }
 
 // The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+// * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
 func (o GetResolverRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v GetResolverRule) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -4853,6 +4874,11 @@ type GetSteeringPoliciesSteeringPolicyRule struct {
 	// A user-defined description of the rule's purpose or behavior.
 	Description string `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
+	// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+	// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+	// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+	// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+	// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -4877,6 +4903,11 @@ type GetSteeringPoliciesSteeringPolicyRuleArgs struct {
 	// A user-defined description of the rule's purpose or behavior.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
+	// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+	// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+	// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+	// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+	// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -4956,6 +4987,11 @@ func (o GetSteeringPoliciesSteeringPolicyRuleOutput) Description() pulumi.String
 }
 
 // The type of a rule determines its sorting/filtering behavior.
+// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 func (o GetSteeringPoliciesSteeringPolicyRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSteeringPoliciesSteeringPolicyRule) string { return v.RuleType }).(pulumi.StringOutput)
 }
@@ -5754,6 +5790,11 @@ type GetSteeringPolicyRule struct {
 	// A user-defined description of the rule's purpose or behavior.
 	Description string `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
+	// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+	// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+	// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+	// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+	// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 	RuleType string `pulumi:"ruleType"`
 }
 
@@ -5778,6 +5819,11 @@ type GetSteeringPolicyRuleArgs struct {
 	// A user-defined description of the rule's purpose or behavior.
 	Description pulumi.StringInput `pulumi:"description"`
 	// The type of a rule determines its sorting/filtering behavior.
+	// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+	// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+	// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+	// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+	// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 	RuleType pulumi.StringInput `pulumi:"ruleType"`
 }
 
@@ -5853,6 +5899,11 @@ func (o GetSteeringPolicyRuleOutput) Description() pulumi.StringOutput {
 }
 
 // The type of a rule determines its sorting/filtering behavior.
+// * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+// * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+// * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+// * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+// * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
 func (o GetSteeringPolicyRuleOutput) RuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSteeringPolicyRule) string { return v.RuleType }).(pulumi.StringOutput)
 }

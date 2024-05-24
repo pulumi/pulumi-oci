@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
     public sealed class TargetAssetRecommendedSpecInstanceOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+        /// Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
         /// </summary>
         [Input("areLegacyImdsEndpointsDisabled")]
         public Input<bool>? AreLegacyImdsEndpointsDisabled { get; set; }

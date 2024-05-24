@@ -14,16 +14,14 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppCloudControlProperty
     {
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+        /// (Updatable) The name of the property.
         /// 
-        /// **Deprecated Since: 18.2.2**
+        /// **Added In:** 18.4.2
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
         /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

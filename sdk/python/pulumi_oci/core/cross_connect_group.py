@@ -139,11 +139,7 @@ class _CrossConnectGroupState:
         :param pulumi.Input['CrossConnectGroupMacsecPropertiesArgs'] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
-        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] state: The cross-connect group's current state.
         :param pulumi.Input[str] time_created: The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         if compartment_id is not None:
@@ -267,11 +263,7 @@ class _CrossConnectGroupState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Indicates whether or not MACsec is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The cross-connect group's current state.
         """
         return pulumi.get(self, "state")
 
@@ -504,11 +496,7 @@ class CrossConnectGroup(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['CrossConnectGroupMacsecPropertiesArgs']] macsec_properties: (Updatable) Properties used to configure MACsec (if capable).
         :param pulumi.Input[str] oci_logical_device_name: The FastConnect device that terminates the logical connection. This device might be different than the device that terminates the physical connection.
         :param pulumi.Input[str] oci_physical_device_name: The FastConnect device that terminates the physical connection.
-        :param pulumi.Input[str] state: (Updatable) Indicates whether or not MACsec is enabled.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] state: The cross-connect group's current state.
         :param pulumi.Input[str] time_created: The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -595,11 +583,7 @@ class CrossConnectGroup(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) Indicates whether or not MACsec is enabled.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The cross-connect group's current state.
         """
         return pulumi.get(self, "state")
 

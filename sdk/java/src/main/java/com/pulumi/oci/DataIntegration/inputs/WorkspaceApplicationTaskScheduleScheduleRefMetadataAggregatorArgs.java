@@ -61,14 +61,14 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator
     }
 
     /**
-     * (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * (Updatable) The name of the aggregator.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+     * @return (Updatable) The name of the aggregator.
      * 
      */
     public Optional<Output<String>> name() {
@@ -182,7 +182,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) The name of the aggregator.
          * 
          * @return builder
          * 
@@ -193,7 +193,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefMetadataAggregator
         }
 
         /**
-         * @param name (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
+         * @param name (Updatable) The name of the aggregator.
          * 
          * @return builder
          * 

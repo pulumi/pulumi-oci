@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList {
     /**
-     * @return (Updatable) The value for the count statistic object.
+     * @return The value for the count statistic object.
      * 
      */
     private @Nullable String objectCount;
     /**
-     * @return (Updatable) The type of object for the count statistic object.
+     * @return The type of object for the count statistic object.
      * 
      */
     private @Nullable String objectType;
 
     private WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList() {}
     /**
-     * @return (Updatable) The value for the count statistic object.
+     * @return The value for the count statistic object.
      * 
      */
     public Optional<String> objectCount() {
         return Optional.ofNullable(this.objectCount);
     }
     /**
-     * @return (Updatable) The type of object for the count statistic object.
+     * @return The type of object for the count statistic object.
      * 
      */
     public Optional<String> objectType() {

@@ -24,68 +24,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Opsi.DatabaseInsight;
- * import com.pulumi.oci.Opsi.DatabaseInsightArgs;
- * import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionDetailsArgs;
- * import com.pulumi.oci.Opsi.inputs.DatabaseInsightCredentialDetailsArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testDatabaseInsight = new DatabaseInsight("testDatabaseInsight", DatabaseInsightArgs.builder()        
- *             .compartmentId(compartmentId)
- *             .entitySource(databaseInsightEntitySource)
- *             .connectionDetails(DatabaseInsightConnectionDetailsArgs.builder()
- *                 .hosts(DatabaseInsightConnectionDetailsHostArgs.builder()
- *                     .hostIp(databaseInsightConnectionDetailsHostsHostIp)
- *                     .port(databaseInsightConnectionDetailsHostsPort)
- *                     .build())
- *                 .protocol(databaseInsightConnectionDetailsProtocol)
- *                 .serviceName(testService.name())
- *                 .build())
- *             .credentialDetails(DatabaseInsightCredentialDetailsArgs.builder()
- *                 .credentialType(databaseInsightCredentialDetailsCredentialType)
- *                 .credentialSourceName(databaseInsightCredentialDetailsCredentialSourceName)
- *                 .passwordSecretId(testSecret.id())
- *                 .role(databaseInsightCredentialDetailsRole)
- *                 .userName(testUser.name())
- *                 .walletSecretId(testSecret.id())
- *                 .build())
- *             .databaseId(testDatabase.id())
- *             .databaseResourceType(databaseInsightDatabaseResourceType)
- *             .dbmPrivateEndpointId(testPrivateEndpoint.id())
- *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
- *             .deploymentType(databaseInsightDeploymentType)
- *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
- *             .enterpriseManagerEntityIdentifier(databaseInsightEnterpriseManagerEntityIdentifier)
- *             .enterpriseManagerIdentifier(databaseInsightEnterpriseManagerIdentifier)
- *             .exadataInsightId(testExadataInsight.id())
- *             .freeformTags(Map.of("bar-key", "value"))
- *             .opsiPrivateEndpointId(testPrivateEndpoint.id())
- *             .serviceName(testService.name())
- *             .systemTags(databaseInsightSystemTags)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import

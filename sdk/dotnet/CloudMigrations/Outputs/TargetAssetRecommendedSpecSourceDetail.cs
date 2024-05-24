@@ -14,33 +14,27 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
     public sealed class TargetAssetRecommendedSpecSourceDetail
     {
         /// <summary>
-        /// (Updatable) The OCID of the boot volume used to boot the instance.
+        /// The OCID of the boot volume used to boot the instance.
         /// </summary>
         public readonly string? BootVolumeId;
         /// <summary>
-        /// (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+        /// The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
         /// </summary>
         public readonly string? BootVolumeSizeInGbs;
         /// <summary>
-        /// (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-        /// 
-        /// Allowed values:
+        /// The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service's elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
         /// </summary>
         public readonly string? BootVolumeVpusPerGb;
         /// <summary>
-        /// (Updatable) The OCID of the image used to boot the instance.
+        /// The OCID of the image used to boot the instance.
         /// </summary>
         public readonly string? ImageId;
         /// <summary>
-        /// (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+        /// The OCID of the key management key to assign as the master encryption key for the boot volume.
         /// </summary>
         public readonly string? KmsKeyId;
         /// <summary>
-        /// (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
         /// </summary>
         public readonly string? SourceType;
 

@@ -12,14 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters {
     /**
-     * @return (Updatable) The list of headers.
+     * @return (Updatable) The list of query parameters.
      * 
      */
     private List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items;
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParameters() {}
     /**
-     * @return (Updatable) The list of headers.
+     * @return (Updatable) The list of query parameters.
      * 
      */
     public List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem> items() {

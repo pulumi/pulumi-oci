@@ -15,32 +15,16 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
 
     public static final InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs Empty = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs();
 
-    /**
-     * Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-     * 
-     */
     @Import(name="ipv6address")
     private @Nullable Output<String> ipv6address;
 
-    /**
-     * @return Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-     * 
-     */
     public Optional<Output<String>> ipv6address() {
         return Optional.ofNullable(this.ipv6address);
     }
 
-    /**
-     * Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-     * 
-     */
     @Import(name="ipv6subnetCidr")
     private @Nullable Output<String> ipv6subnetCidr;
 
-    /**
-     * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-     * 
-     */
     public Optional<Output<String>> ipv6subnetCidr() {
         return Optional.ofNullable(this.ipv6subnetCidr);
     }
@@ -70,44 +54,20 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreate
             $ = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetailArgs(Objects.requireNonNull(defaults));
         }
 
-        /**
-         * @param ipv6address Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-         * 
-         * @return builder
-         * 
-         */
         public Builder ipv6address(@Nullable Output<String> ipv6address) {
             $.ipv6address = ipv6address;
             return this;
         }
 
-        /**
-         * @param ipv6address Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-         * 
-         * @return builder
-         * 
-         */
         public Builder ipv6address(String ipv6address) {
             return ipv6address(Output.of(ipv6address));
         }
 
-        /**
-         * @param ipv6subnetCidr Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ipv6subnetCidr(@Nullable Output<String> ipv6subnetCidr) {
             $.ipv6subnetCidr = ipv6subnetCidr;
             return this;
         }
 
-        /**
-         * @param ipv6subnetCidr Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-         * 
-         * @return builder
-         * 
-         */
         public Builder ipv6subnetCidr(String ipv6subnetCidr) {
             return ipv6subnetCidr(Output.of(ipv6subnetCidr));
         }

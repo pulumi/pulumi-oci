@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTable = new Table("testTable", TableArgs.builder()        
+ *         var testTable = new Table("testTable", TableArgs.builder()
  *             .compartmentId(compartmentId)
  *             .ddlStatement(tableDdlStatement)
  *             .name(tableName)

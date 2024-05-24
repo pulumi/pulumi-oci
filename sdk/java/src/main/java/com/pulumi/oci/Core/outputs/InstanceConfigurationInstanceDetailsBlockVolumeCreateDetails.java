@@ -24,7 +24,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable List<InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsAutotunePolicy> autotunePolicies;
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private @Nullable String availabilityDomain;
@@ -44,7 +44,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
      */
     private @Nullable String clusterPlacementGroupId;
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return The OCID of the compartment that contains the volume.
      * 
      */
     private @Nullable String compartmentId;
@@ -96,7 +96,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return this.autotunePolicies == null ? List.of() : this.autotunePolicies;
     }
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<String> availabilityDomain() {
@@ -124,7 +124,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetails 
         return Optional.ofNullable(this.clusterPlacementGroupId);
     }
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return The OCID of the compartment that contains the volume.
      * 
      */
     public Optional<String> compartmentId() {

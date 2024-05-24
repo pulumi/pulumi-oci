@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAlarm = new Alarm("testAlarm", AlarmArgs.builder()        
+ *         var testAlarm = new Alarm("testAlarm", AlarmArgs.builder()
  *             .compartmentId(compartmentId)
  *             .destinations(testNotificationTopic.id())
  *             .displayName(alarmDisplayName)
@@ -233,6 +233,9 @@ public class Alarm extends com.pulumi.resources.CustomResource {
     }
     /**
      * (Updatable) The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      * 
      */
     @Export(name="messageFormat", refs={String.class}, tree="[0]")
@@ -240,6 +243,9 @@ public class Alarm extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) The format to use for alarm notifications. The formats are:
+     * * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+     * * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+     * * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
      * 
      */
     public Output<String> messageFormat() {

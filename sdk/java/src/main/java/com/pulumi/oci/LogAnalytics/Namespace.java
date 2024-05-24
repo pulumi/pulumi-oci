@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNamespace = new Namespace("testNamespace", NamespaceArgs.builder()        
+ *         var testNamespace = new Namespace("testNamespace", NamespaceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .isOnboarded(isOnboarded)
  *             .namespace(namespaceNamespace)

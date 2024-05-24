@@ -41,14 +41,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
      * 
      */
     @Import(name="cacheKeys")
     private @Nullable Output<List<String>> cacheKeys;
 
     /**
-     * @return (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+     * @return A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
      * 
      */
     public Optional<Output<List<String>>> cacheKeys() {
@@ -116,14 +116,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable)
+     * (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
     @Import(name="parameters")
     private @Nullable Output<Map<String,Object>> parameters;
 
     /**
-     * @return (Updatable)
+     * @return (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
      * 
      */
     public Optional<Output<Map<String,Object>>> parameters() {
@@ -191,20 +191,14 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Type of the authentication policy to use.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Type of the authentication policy to use.
      * 
      */
     public Output<String> type() {
@@ -326,7 +320,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param cacheKeys (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+         * @param cacheKeys A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
          * 
          * @return builder
          * 
@@ -337,7 +331,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param cacheKeys (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+         * @param cacheKeys A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
          * 
          * @return builder
          * 
@@ -347,7 +341,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param cacheKeys (Updatable) A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
+         * @param cacheKeys A list of keys from &#34;parameters&#34; attribute value whose values will be added to the cache key.
          * 
          * @return builder
          * 
@@ -451,7 +445,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param parameters (Updatable)
+         * @param parameters (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
          * 
          * @return builder
          * 
@@ -462,7 +456,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param parameters (Updatable)
+         * @param parameters (Updatable) A map where key is a user defined string and value is a context expressions whose values will be sent to the custom auth function. Values should contain an expression. Example: `{&#34;foo&#34;: &#34;request.header[abc]&#34;}`
          * 
          * @return builder
          * 
@@ -556,10 +550,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the authentication policy to use.
          * 
          * @return builder
          * 
@@ -570,10 +561,7 @@ public final class DeploymentSpecificationRequestPoliciesDynamicAuthenticationAu
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Type of the authentication policy to use.
          * 
          * @return builder
          * 

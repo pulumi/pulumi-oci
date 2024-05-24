@@ -47,7 +47,7 @@ namespace Pulumi.Oci.Waas.Outputs
         /// </summary>
         public readonly bool? IsCaseSensitive;
         /// <summary>
-        /// (Updatable) The value of the header.
+        /// (Updatable) The criteria value.
         /// </summary>
         public readonly string Value;
 

@@ -235,14 +235,14 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Property Name.
+     * Monitored Resource Name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Property Name.
+     * @return Monitored Resource Name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -768,7 +768,7 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name Monitored Resource Name.
          * 
          * @return builder
          * 
@@ -779,7 +779,7 @@ public final class MonitoredResourceState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name Monitored Resource Name.
          * 
          * @return builder
          * 

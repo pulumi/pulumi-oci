@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesLength
     {
         /// <summary>
-        /// (Updatable) An integer value of the parameter.
+        /// An integer value of the parameter.
         /// </summary>
         public readonly int? IntValue;
 

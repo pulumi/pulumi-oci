@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<int>? CoresCount { get; set; }
 
         /// <summary>
-        /// (Updatable) The tag description.
+        /// (Updatable) GPU device description.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -31,13 +31,13 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<string>? Manufacturer { get; set; }
 
         /// <summary>
-        /// (Updatable) Memory size in MBs.
+        /// (Updatable) GPU memory size in MBs.
         /// </summary>
         [Input("memoryInMbs")]
         public Input<string>? MemoryInMbs { get; set; }
 
         /// <summary>
-        /// (Updatable) The tag name.
+        /// (Updatable) GPU device name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// The OCID of the volume group replica.
+        /// The volume group replica's Oracle ID (OCID).
         /// </summary>
         [Input("volumeGroupReplicaId")]
         public Input<string>? VolumeGroupReplicaId { get; set; }

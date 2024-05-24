@@ -25,7 +25,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<string>? CertificateAuthorityId { get; set; }
 
         /// <summary>
-        /// (Updatable) Type of the Response Cache.
+        /// (Updatable) Type of the CA bundle
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

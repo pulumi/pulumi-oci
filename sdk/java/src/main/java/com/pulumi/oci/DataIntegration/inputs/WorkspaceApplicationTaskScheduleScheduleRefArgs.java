@@ -21,14 +21,14 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
     public static final WorkspaceApplicationTaskScheduleScheduleRefArgs Empty = new WorkspaceApplicationTaskScheduleScheduleRefArgs();
 
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -51,14 +51,14 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
     }
 
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier")
     private @Nullable Output<String> identifier;
 
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<Output<String>> identifier() {
@@ -81,14 +81,14 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
     }
 
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -252,7 +252,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
         }
 
         /**
-         * @param description (Updatable) The description of the aggregator.
+         * @param description (Updatable) Detailed description for the object.
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
         }
 
         /**
-         * @param description (Updatable) The description of the aggregator.
+         * @param description (Updatable) Detailed description for the object.
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
         }
 
         /**
-         * @param identifier (Updatable) The identifier of the aggregator.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
         }
 
         /**
-         * @param identifier (Updatable) The identifier of the aggregator.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefArgs extends com.p
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 

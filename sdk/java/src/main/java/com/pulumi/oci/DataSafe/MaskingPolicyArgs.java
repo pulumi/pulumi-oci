@@ -38,14 +38,14 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The source of masking columns.
+     * (Updatable) Details to associate a column source with a masking policy.
      * 
      */
     @Import(name="columnSources", required=true)
     private Output<List<MaskingPolicyColumnSourceArgs>> columnSources;
 
     /**
-     * @return (Updatable) The source of masking columns.
+     * @return (Updatable) Details to associate a column source with a masking policy.
      * 
      */
     public Output<List<MaskingPolicyColumnSourceArgs>> columnSources() {
@@ -313,7 +313,7 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param columnSources (Updatable) The source of masking columns.
+         * @param columnSources (Updatable) Details to associate a column source with a masking policy.
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param columnSources (Updatable) The source of masking columns.
+         * @param columnSources (Updatable) Details to associate a column source with a masking policy.
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class MaskingPolicyArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param columnSources (Updatable) The source of masking columns.
+         * @param columnSources (Updatable) Details to associate a column source with a masking policy.
          * 
          * @return builder
          * 

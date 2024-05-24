@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly int? MaxIdleTimeInMinutes;
         /// <summary>
-        /// (Updatable) Name of the day of the week.
+        /// (Updatable) Name of database tool.
         /// </summary>
         public readonly string Name;
 

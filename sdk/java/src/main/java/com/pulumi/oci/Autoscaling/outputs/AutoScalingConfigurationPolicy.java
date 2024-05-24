@@ -23,6 +23,10 @@ public final class AutoScalingConfigurationPolicy {
      * 
      */
     private @Nullable AutoScalingConfigurationPolicyCapacity capacity;
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     private @Nullable String displayName;
     /**
      * @return An execution schedule for an autoscaling policy.
@@ -30,7 +34,7 @@ public final class AutoScalingConfigurationPolicy {
      */
     private @Nullable AutoScalingConfigurationPolicyExecutionSchedule executionSchedule;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     * @return ID of the condition that is assigned after creation.
      * 
      */
     private @Nullable String id;
@@ -64,6 +68,10 @@ public final class AutoScalingConfigurationPolicy {
     public Optional<AutoScalingConfigurationPolicyCapacity> capacity() {
         return Optional.ofNullable(this.capacity);
     }
+    /**
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * 
+     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -75,7 +83,7 @@ public final class AutoScalingConfigurationPolicy {
         return Optional.ofNullable(this.executionSchedule);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+     * @return ID of the condition that is assigned after creation.
      * 
      */
     public Optional<String> id() {

@@ -16,14 +16,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     public static final SubscriptionPaymentOptionArgs Empty = new SubscriptionPaymentOptionArgs();
 
     /**
-     * (Updatable) Credit card type.
+     * Credit card type.
      * 
      */
     @Import(name="creditCardType")
     private @Nullable Output<String> creditCardType;
 
     /**
-     * @return (Updatable) Credit card type.
+     * @return Credit card type.
      * 
      */
     public Optional<Output<String>> creditCardType() {
@@ -31,14 +31,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The email address of the paypal user.
+     * The email address of the paypal user.
      * 
      */
     @Import(name="emailAddress")
     private @Nullable Output<String> emailAddress;
 
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return The email address of the paypal user.
      * 
      */
     public Optional<Output<String>> emailAddress() {
@@ -46,14 +46,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Agreement id for the paypal account.
+     * Agreement id for the paypal account.
      * 
      */
     @Import(name="extBillingAgreementId")
     private @Nullable Output<String> extBillingAgreementId;
 
     /**
-     * @return (Updatable) Agreement id for the paypal account.
+     * @return Agreement id for the paypal account.
      * 
      */
     public Optional<Output<String>> extBillingAgreementId() {
@@ -61,14 +61,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) First name of the paypal user.
+     * First name of the paypal user.
      * 
      */
     @Import(name="firstName")
     private @Nullable Output<String> firstName;
 
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return First name of the paypal user.
      * 
      */
     public Optional<Output<String>> firstName() {
@@ -76,14 +76,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Last four digits of the card.
+     * Last four digits of the card.
      * 
      */
     @Import(name="lastDigits")
     private @Nullable Output<String> lastDigits;
 
     /**
-     * @return (Updatable) Last four digits of the card.
+     * @return Last four digits of the card.
      * 
      */
     public Optional<Output<String>> lastDigits() {
@@ -91,14 +91,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Last name of the paypal user.
+     * Last name of the paypal user.
      * 
      */
     @Import(name="lastName")
     private @Nullable Output<String> lastName;
 
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return Last name of the paypal user.
      * 
      */
     public Optional<Output<String>> lastName() {
@@ -106,14 +106,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Name on the credit card.
+     * Name on the credit card.
      * 
      */
     @Import(name="nameOnCard")
     private @Nullable Output<String> nameOnCard;
 
     /**
-     * @return (Updatable) Name on the credit card.
+     * @return Name on the credit card.
      * 
      */
     public Optional<Output<String>> nameOnCard() {
@@ -121,14 +121,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Payment method
+     * Payment method
      * 
      */
     @Import(name="paymentMethod")
     private @Nullable Output<String> paymentMethod;
 
     /**
-     * @return (Updatable) Payment method
+     * @return Payment method
      * 
      */
     public Optional<Output<String>> paymentMethod() {
@@ -136,14 +136,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Expired date of the credit card.
+     * Expired date of the credit card.
      * 
      */
     @Import(name="timeExpiration")
     private @Nullable Output<String> timeExpiration;
 
     /**
-     * @return (Updatable) Expired date of the credit card.
+     * @return Expired date of the credit card.
      * 
      */
     public Optional<Output<String>> timeExpiration() {
@@ -151,14 +151,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Wallet instrument internal id.
+     * Wallet instrument internal id.
      * 
      */
     @Import(name="walletInstrumentId")
     private @Nullable Output<String> walletInstrumentId;
 
     /**
-     * @return (Updatable) Wallet instrument internal id.
+     * @return Wallet instrument internal id.
      * 
      */
     public Optional<Output<String>> walletInstrumentId() {
@@ -166,14 +166,14 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Wallet transaction id.
+     * Wallet transaction id.
      * 
      */
     @Import(name="walletTransactionId")
     private @Nullable Output<String> walletTransactionId;
 
     /**
-     * @return (Updatable) Wallet transaction id.
+     * @return Wallet transaction id.
      * 
      */
     public Optional<Output<String>> walletTransactionId() {
@@ -215,7 +215,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param creditCardType (Updatable) Credit card type.
+         * @param creditCardType Credit card type.
          * 
          * @return builder
          * 
@@ -226,7 +226,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param creditCardType (Updatable) Credit card type.
+         * @param creditCardType Credit card type.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param emailAddress (Updatable) The email address of the paypal user.
+         * @param emailAddress The email address of the paypal user.
          * 
          * @return builder
          * 
@@ -247,7 +247,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param emailAddress (Updatable) The email address of the paypal user.
+         * @param emailAddress The email address of the paypal user.
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param extBillingAgreementId (Updatable) Agreement id for the paypal account.
+         * @param extBillingAgreementId Agreement id for the paypal account.
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param extBillingAgreementId (Updatable) Agreement id for the paypal account.
+         * @param extBillingAgreementId Agreement id for the paypal account.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param firstName (Updatable) First name of the paypal user.
+         * @param firstName First name of the paypal user.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param firstName (Updatable) First name of the paypal user.
+         * @param firstName First name of the paypal user.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastDigits (Updatable) Last four digits of the card.
+         * @param lastDigits Last four digits of the card.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastDigits (Updatable) Last four digits of the card.
+         * @param lastDigits Last four digits of the card.
          * 
          * @return builder
          * 
@@ -320,7 +320,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastName (Updatable) Last name of the paypal user.
+         * @param lastName Last name of the paypal user.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastName (Updatable) Last name of the paypal user.
+         * @param lastName Last name of the paypal user.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nameOnCard (Updatable) Name on the credit card.
+         * @param nameOnCard Name on the credit card.
          * 
          * @return builder
          * 
@@ -352,7 +352,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param nameOnCard (Updatable) Name on the credit card.
+         * @param nameOnCard Name on the credit card.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param paymentMethod (Updatable) Payment method
+         * @param paymentMethod Payment method
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param paymentMethod (Updatable) Payment method
+         * @param paymentMethod Payment method
          * 
          * @return builder
          * 
@@ -383,7 +383,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeExpiration (Updatable) Expired date of the credit card.
+         * @param timeExpiration Expired date of the credit card.
          * 
          * @return builder
          * 
@@ -394,7 +394,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param timeExpiration (Updatable) Expired date of the credit card.
+         * @param timeExpiration Expired date of the credit card.
          * 
          * @return builder
          * 
@@ -404,7 +404,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param walletInstrumentId (Updatable) Wallet instrument internal id.
+         * @param walletInstrumentId Wallet instrument internal id.
          * 
          * @return builder
          * 
@@ -415,7 +415,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param walletInstrumentId (Updatable) Wallet instrument internal id.
+         * @param walletInstrumentId Wallet instrument internal id.
          * 
          * @return builder
          * 
@@ -425,7 +425,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param walletTransactionId (Updatable) Wallet transaction id.
+         * @param walletTransactionId Wallet transaction id.
          * 
          * @return builder
          * 
@@ -436,7 +436,7 @@ public final class SubscriptionPaymentOptionArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param walletTransactionId (Updatable) Wallet transaction id.
+         * @param walletTransactionId Wallet transaction id.
          * 
          * @return builder
          * 

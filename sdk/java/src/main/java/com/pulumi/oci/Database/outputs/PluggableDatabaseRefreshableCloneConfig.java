@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PluggableDatabaseRefreshableCloneConfig {
     /**
-     * @return Indicates whether Pluggable Database is a refreshable clone.
+     * @return Indicates whether the Pluggable Database is a refreshable clone.
      * 
      */
     private @Nullable Boolean isRefreshableClone;
 
     private PluggableDatabaseRefreshableCloneConfig() {}
     /**
-     * @return Indicates whether Pluggable Database is a refreshable clone.
+     * @return Indicates whether the Pluggable Database is a refreshable clone.
      * 
      */
     public Optional<Boolean> isRefreshableClone() {

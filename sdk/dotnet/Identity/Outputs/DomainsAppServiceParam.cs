@@ -14,14 +14,10 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppServiceParam
     {
         /// <summary>
-        /// (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-        /// 
-        /// **Deprecated Since: 18.2.2**
+        /// (Updatable) The name of the attribute.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
         /// * idcsSearchable: false
-        /// * idcsValuePersistedInOtherAttribute: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
@@ -31,20 +27,16 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) The value of the attribute.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: true
+        /// * mutability: readWrite
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? Value;
 

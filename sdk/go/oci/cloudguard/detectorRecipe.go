@@ -30,7 +30,9 @@ type DetectorRecipe struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
 	// detector for the rule
 	Detector pulumi.StringOutput `pulumi:"detector"`
@@ -105,7 +107,9 @@ type detectorRecipeState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
@@ -145,7 +149,9 @@ type DetectorRecipeState struct {
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// detector for the rule
 	Detector pulumi.StringPtrInput
@@ -189,7 +195,9 @@ type detectorRecipeArgs struct {
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
@@ -216,7 +224,9 @@ type DetectorRecipeArgs struct {
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
 	// detector for the rule
 	Detector pulumi.StringPtrInput
@@ -334,7 +344,9 @@ func (o DetectorRecipeOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Description for DetectorRecipeDetectorRule.
+// (Updatable) Detector recipe description.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }

@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", AutonomousContainerDatabaseDataguardAssociationArgs.builder()        
+ *         var testAutonomousContainerDatabaseDataguardAssociation = new AutonomousContainerDatabaseDataguardAssociation("testAutonomousContainerDatabaseDataguardAssociation", AutonomousContainerDatabaseDataguardAssociationArgs.builder()
  *             .autonomousContainerDatabaseId(testAutonomousContainerDatabase.id())
  *             .peerAutonomousContainerDatabaseDisplayName(autonomousContainerDatabaseDataguardAssociationPeerAutonomousContainerDatabaseDisplayName)
  *             .protectionMode(autonomousContainerDatabaseDataguardAssociationProtectionMode)

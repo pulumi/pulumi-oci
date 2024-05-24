@@ -110,7 +110,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class Target : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -264,7 +264,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class TargetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -362,7 +362,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class TargetState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// Compartment Identifier where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

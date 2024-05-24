@@ -36,14 +36,14 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     @Import(name="actionExpirationInSeconds")
     private @Nullable Output<Integer> actionExpirationInSeconds;
 
     /**
-     * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * @return (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     public Optional<Output<Integer>> actionExpirationInSeconds() {
@@ -111,14 +111,14 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -225,7 +225,7 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
         }
 
         /**
-         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
          * 
          * @return builder
          * 
@@ -236,7 +236,7 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
         }
 
         /**
-         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
          * 
          * @return builder
          * 
@@ -330,7 +330,7 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
          * 
          * @return builder
          * 
@@ -341,7 +341,7 @@ public final class PolicyWafConfigHumanInteractionChallengeArgs extends com.pulu
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
          * 
          * @return builder
          * 

@@ -13,11 +13,11 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsApprovalWorkflowStepApproverGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// (Updatable) The display of the approver.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -29,26 +29,25 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// The unique Oracle Cloud Infrastructure identifier of the approver.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: true
+        /// * caseExact: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) Approver URI
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -61,7 +60,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// Type of ApprovalWorkflowStep
+        /// The type of the approver.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -70,21 +69,17 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: string
+        /// * type: reference
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// Value of the tag.
+        /// The unique identifier of the approver.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

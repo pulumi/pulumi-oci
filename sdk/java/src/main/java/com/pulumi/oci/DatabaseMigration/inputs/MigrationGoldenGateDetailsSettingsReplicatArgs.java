@@ -62,14 +62,14 @@ public final class MigrationGoldenGateDetailsSettingsReplicatArgs extends com.pu
     }
 
     /**
-     * (Updatable) Extract performance.
+     * Extract performance.
      * 
      */
     @Import(name="performanceProfile")
     private @Nullable Output<String> performanceProfile;
 
     /**
-     * @return (Updatable) Extract performance.
+     * @return Extract performance.
      * 
      */
     public Optional<Output<String>> performanceProfile() {
@@ -167,7 +167,7 @@ public final class MigrationGoldenGateDetailsSettingsReplicatArgs extends com.pu
         }
 
         /**
-         * @param performanceProfile (Updatable) Extract performance.
+         * @param performanceProfile Extract performance.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class MigrationGoldenGateDetailsSettingsReplicatArgs extends com.pu
         }
 
         /**
-         * @param performanceProfile (Updatable) Extract performance.
+         * @param performanceProfile Extract performance.
          * 
          * @return builder
          * 

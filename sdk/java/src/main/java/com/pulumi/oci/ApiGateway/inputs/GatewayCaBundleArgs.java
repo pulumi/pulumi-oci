@@ -47,14 +47,14 @@ public final class GatewayCaBundleArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Type of the Response Cache.
+     * (Updatable) Type of the CA bundle
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache.
+     * @return (Updatable) Type of the CA bundle
      * 
      */
     public Output<String> type() {
@@ -130,7 +130,7 @@ public final class GatewayCaBundleArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache.
+         * @param type (Updatable) Type of the CA bundle
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class GatewayCaBundleArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache.
+         * @param type (Updatable) Type of the CA bundle
          * 
          * @return builder
          * 

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEkmsPrivateEndpoint = new EkmsPrivateEndpoint("testEkmsPrivateEndpoint", EkmsPrivateEndpointArgs.builder()        
+ *         var testEkmsPrivateEndpoint = new EkmsPrivateEndpoint("testEkmsPrivateEndpoint", EkmsPrivateEndpointArgs.builder()
  *             .caBundle(ekmsPrivateEndpointCaBundle)
  *             .compartmentId(compartmentId)
  *             .displayName(ekmsPrivateEndpointDisplayName)

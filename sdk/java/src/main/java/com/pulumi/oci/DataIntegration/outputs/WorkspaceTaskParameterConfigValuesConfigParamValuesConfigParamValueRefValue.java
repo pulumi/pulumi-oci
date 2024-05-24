@@ -13,17 +13,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue {
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     private @Nullable String modelType;
     /**
-     * @return (Updatable) The model version of an object.
+     * @return (Updatable) The object&#39;s model version.
      * 
      */
     private @Nullable String modelVersion;
@@ -40,21 +40,21 @@ public final class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigPara
 
     private WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValue() {}
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Optional<String> modelType() {
         return Optional.ofNullable(this.modelType);
     }
     /**
-     * @return (Updatable) The model version of an object.
+     * @return (Updatable) The object&#39;s model version.
      * 
      */
     public Optional<String> modelVersion() {

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Waf.Outputs
     public sealed class AppFirewallPolicyActionHeader
     {
         /// <summary>
-        /// (Updatable) Rule name. Must be unique within the module.
+        /// (Updatable) The name of the header field.
         /// </summary>
         public readonly string? Name;
         /// <summary>

@@ -39,7 +39,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExportSet = new ExportSet("testExportSet", ExportSetArgs.builder()        
+ *         var testExportSet = new ExportSet("testExportSet", ExportSetArgs.builder()
  *             .mountTargetId(testMountTarget.id())
  *             .displayName(exportSetName)
  *             .maxFsStatBytes(23843202333)

@@ -18,7 +18,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     public static final DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs Empty = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs();
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) Object class display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -34,7 +34,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Object class display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -84,7 +84,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) Object class URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -100,7 +100,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Object class URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -191,38 +191,34 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Object class template identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Object class template identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -259,7 +255,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) Object class display name
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -279,7 +275,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) Object class display name
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -337,7 +333,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) Object class URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -357,7 +353,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) Object class URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -462,19 +458,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Object class template identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -485,19 +479,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Object class template identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

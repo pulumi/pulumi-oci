@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs>? _details;
 
         /// <summary>
-        /// (Updatable) Details of ResponderRule.
+        /// Details of ResponderRule.
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs> Details
         {
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Detector { get; set; }
 
         /// <summary>
-        /// (Updatable) Identifier for DetectorRule.
+        /// The unique identifier of the detector rule.
         /// </summary>
         [Input("detectorRuleId")]
         public Input<string>? DetectorRuleId { get; set; }

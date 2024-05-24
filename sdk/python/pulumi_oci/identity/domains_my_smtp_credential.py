@@ -62,7 +62,7 @@ class DomainsMySmtpCredentialArgs:
                * returned: default
                * type: dateTime
                * uniqueness: none
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -70,9 +70,9 @@ class DomainsMySmtpCredentialArgs:
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[str] status: User credential status
                
@@ -222,7 +222,7 @@ class DomainsMySmtpCredentialArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -230,9 +230,9 @@ class DomainsMySmtpCredentialArgs:
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -452,7 +452,7 @@ class _DomainsMySmtpCredentialState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -460,9 +460,9 @@ class _DomainsMySmtpCredentialState:
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -817,7 +817,7 @@ class _DomainsMySmtpCredentialState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        User's ocid
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -825,9 +825,9 @@ class _DomainsMySmtpCredentialState:
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1037,7 +1037,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * type: dateTime
                * uniqueness: none
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1045,9 +1045,9 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1316,7 +1316,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: User's ocid
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1324,9 +1324,9 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1618,7 +1618,7 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        User's ocid
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1626,9 +1626,9 @@ class DomainsMySmtpCredential(pulumi.CustomResource):
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 

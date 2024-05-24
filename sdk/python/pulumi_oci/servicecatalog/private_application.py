@@ -179,7 +179,7 @@ class _PrivateApplicationState:
         :param pulumi.Input[Sequence[pulumi.Input['PrivateApplicationLogoArgs']]] logos: The model for uploaded binary data, like logos and images.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
         :param pulumi.Input['PrivateApplicationPackageDetailsArgs'] package_details: A base object for creating a private application package.
-        :param pulumi.Input[str] package_type: The package's type.
+        :param pulumi.Input[str] package_type: Type of packages within this private application.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
                
                
@@ -316,7 +316,7 @@ class _PrivateApplicationState:
     @pulumi.getter(name="packageType")
     def package_type(self) -> Optional[pulumi.Input[str]]:
         """
-        The package's type.
+        Type of packages within this private application.
         """
         return pulumi.get(self, "package_type")
 
@@ -579,7 +579,7 @@ class PrivateApplication(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PrivateApplicationLogoArgs']]]] logos: The model for uploaded binary data, like logos and images.
         :param pulumi.Input[str] long_description: (Updatable) A long description of the private application.
         :param pulumi.Input[pulumi.InputType['PrivateApplicationPackageDetailsArgs']] package_details: A base object for creating a private application package.
-        :param pulumi.Input[str] package_type: The package's type.
+        :param pulumi.Input[str] package_type: Type of packages within this private application.
         :param pulumi.Input[str] short_description: (Updatable) A short description of the private application.
                
                
@@ -676,7 +676,7 @@ class PrivateApplication(pulumi.CustomResource):
     @pulumi.getter(name="packageType")
     def package_type(self) -> pulumi.Output[str]:
         """
-        The package's type.
+        Type of packages within this private application.
         """
         return pulumi.get(self, "package_type")
 

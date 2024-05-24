@@ -13,7 +13,7 @@ namespace Pulumi.Oci.AiLanguage.Inputs
     public sealed class ModelModelDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// classification Modes
+        /// possible text classification modes
         /// </summary>
         [Input("classificationMode")]
         public Input<Inputs.ModelModelDetailsClassificationModeGetArgs>? ClassificationMode { get; set; }

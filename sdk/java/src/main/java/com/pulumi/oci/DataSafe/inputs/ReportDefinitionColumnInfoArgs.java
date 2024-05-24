@@ -34,14 +34,14 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Specifies the name of the report definition.
+     * (Updatable) Name of the column displayed on UI.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Specifies the name of the report definition.
+     * @return (Updatable) Name of the column displayed on UI.
      * 
      */
     public Output<String> displayName() {
@@ -49,14 +49,14 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Specifies the order in which the summary must be displayed.
+     * (Updatable) Specifies the display order of the column.
      * 
      */
     @Import(name="displayOrder", required=true)
     private Output<Integer> displayOrder;
 
     /**
-     * @return (Updatable) Specifies the order in which the summary must be displayed.
+     * @return (Updatable) Specifies the display order of the column.
      * 
      */
     public Output<Integer> displayOrder() {
@@ -64,14 +64,14 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Name of the column that must be sorted.
+     * (Updatable) Specifies the corresponding field name in the data source.
      * 
      */
     @Import(name="fieldName", required=true)
     private Output<String> fieldName;
 
     /**
-     * @return (Updatable) Name of the column that must be sorted.
+     * @return (Updatable) Specifies the corresponding field name in the data source.
      * 
      */
     public Output<String> fieldName() {
@@ -79,14 +79,14 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * (Updatable) Indicates if the column is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     @Import(name="isHidden", required=true)
     private Output<Boolean> isHidden;
 
     /**
-     * @return (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+     * @return (Updatable) Indicates if the column is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
      * 
      */
     public Output<Boolean> isHidden() {
@@ -143,7 +143,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName (Updatable) Specifies the name of the report definition.
+         * @param displayName (Updatable) Name of the column displayed on UI.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName (Updatable) Specifies the name of the report definition.
+         * @param displayName (Updatable) Name of the column displayed on UI.
          * 
          * @return builder
          * 
@@ -164,7 +164,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayOrder (Updatable) Specifies the order in which the summary must be displayed.
+         * @param displayOrder (Updatable) Specifies the display order of the column.
          * 
          * @return builder
          * 
@@ -175,7 +175,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayOrder (Updatable) Specifies the order in which the summary must be displayed.
+         * @param displayOrder (Updatable) Specifies the display order of the column.
          * 
          * @return builder
          * 
@@ -185,7 +185,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param fieldName (Updatable) Name of the column that must be sorted.
+         * @param fieldName (Updatable) Specifies the corresponding field name in the data source.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param fieldName (Updatable) Name of the column that must be sorted.
+         * @param fieldName (Updatable) Specifies the corresponding field name in the data source.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param isHidden (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * @param isHidden (Updatable) Indicates if the column is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class ReportDefinitionColumnInfoArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param isHidden (Updatable) Indicates if the summary is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
+         * @param isHidden (Updatable) Indicates if the column is hidden. Values can either be &#39;true&#39; or &#39;false&#39;.
          * 
          * @return builder
          * 

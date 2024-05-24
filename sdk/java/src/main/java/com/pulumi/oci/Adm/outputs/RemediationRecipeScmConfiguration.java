@@ -39,12 +39,12 @@ public final class RemediationRecipeScmConfiguration {
      */
     private @Nullable String ociCodeRepositoryId;
     /**
-     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
      * 
      */
     private @Nullable String patSecretId;
     /**
-     * @return (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
      * 
      */
     private @Nullable String repositoryUrl;
@@ -54,7 +54,7 @@ public final class RemediationRecipeScmConfiguration {
      */
     private String scmType;
     /**
-     * @return (Updatable) The username that will be used to authenticate with Jenkins.
+     * @return (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
      * 
      */
     private @Nullable String username;
@@ -96,14 +96,14 @@ public final class RemediationRecipeScmConfiguration {
         return Optional.ofNullable(this.ociCodeRepositoryId);
     }
     /**
-     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+     * @return (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
      * 
      */
     public Optional<String> patSecretId() {
         return Optional.ofNullable(this.patSecretId);
     }
     /**
-     * @return (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+     * @return (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
      * 
      */
     public Optional<String> repositoryUrl() {
@@ -117,7 +117,7 @@ public final class RemediationRecipeScmConfiguration {
         return this.scmType;
     }
     /**
-     * @return (Updatable) The username that will be used to authenticate with Jenkins.
+     * @return (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
      * 
      */
     public Optional<String> username() {

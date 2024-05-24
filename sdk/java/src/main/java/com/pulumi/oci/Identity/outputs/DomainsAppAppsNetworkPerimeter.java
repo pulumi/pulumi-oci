@@ -13,9 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppAppsNetworkPerimeter {
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the Network Perimeter.
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -27,28 +30,31 @@ public final class DomainsAppAppsNetworkPerimeter {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) List of identifier of Network Perimeters for App
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppAppsNetworkPerimeter() {}
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the Network Perimeter.
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -62,19 +68,19 @@ public final class DomainsAppAppsNetworkPerimeter {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) List of identifier of Network Perimeters for App
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

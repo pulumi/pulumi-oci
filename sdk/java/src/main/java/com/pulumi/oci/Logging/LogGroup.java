@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogGroup = new LogGroup("testLogGroup", LogGroupArgs.builder()        
+ *         var testLogGroup = new LogGroup("testLogGroup", LogGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(logGroupDisplayName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

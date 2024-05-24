@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDeploymentBackup = new DeploymentBackup("testDeploymentBackup", DeploymentBackupArgs.builder()        
+ *         var testDeploymentBackup = new DeploymentBackup("testDeploymentBackup", DeploymentBackupArgs.builder()
  *             .bucket(deploymentBackupBucket)
  *             .compartmentId(compartmentId)
  *             .deploymentId(testDeployment.id())

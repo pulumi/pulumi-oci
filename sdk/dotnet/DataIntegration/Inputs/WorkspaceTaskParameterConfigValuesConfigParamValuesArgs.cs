@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<Inputs.WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueArgs>? ConfigParamValue { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

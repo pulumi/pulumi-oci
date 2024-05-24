@@ -29,12 +29,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? AuthenticationMethod;
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        /// 
+        /// **Added In:** 18.3.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -57,15 +59,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? FactorStatus;
         /// <summary>
-        /// (Updatable) Authentication Factor Type
+        /// (Updatable) The device authentication factor type.
         /// 
-        /// **Added In:** 20.1.3
+        /// **Added In:** 18.4.2
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -88,9 +89,9 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? LastSyncTime;
         /// <summary>
-        /// (Updatable) User Token URI
+        /// (Updatable) The URI of the corresponding Device resource which belongs to user.
         /// 
-        /// **Added In:** 18.4.2
+        /// **Added In:** 18.3.6
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -103,15 +104,16 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) A supplemental status indicating the reason why a user is disabled
+        /// (Updatable) The device's status.
+        /// 
+        /// **Added In:** 18.4.2
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: request
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -132,20 +134,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? ThirdPartyVendorName;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The user's device identifier.
+        /// 
+        /// **Added In:** 18.3.6
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

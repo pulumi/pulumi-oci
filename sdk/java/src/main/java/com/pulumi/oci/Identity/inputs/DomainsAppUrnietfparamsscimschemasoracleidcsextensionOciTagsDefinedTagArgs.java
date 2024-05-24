@@ -89,38 +89,38 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsD
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
+     * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
+     * * mutability: readWrite
      * * returned: default
      * * type: string
+     * * idcsSearchable: true
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Oracle Cloud Infrastructure Tag value
+     * 
+     * **Added In:** 2011192329
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
+     * * caseExact: false
      * * required: true
+     * * idcsReturnEmptyWhenNull: true
+     * * mutability: readWrite
      * * returned: default
      * * type: string
+     * * idcsSearchable: true
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -240,19 +240,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsD
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
+         * 
+         * **Added In:** 2011192329
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
+         * * caseExact: false
          * * required: true
+         * * idcsReturnEmptyWhenNull: true
+         * * mutability: readWrite
          * * returned: default
          * * type: string
+         * * idcsSearchable: true
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -263,19 +263,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionOciTagsD
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Oracle Cloud Infrastructure Tag value
+         * 
+         * **Added In:** 2011192329
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readOnly
+         * * caseExact: false
          * * required: true
+         * * idcsReturnEmptyWhenNull: true
+         * * mutability: readWrite
          * * returned: default
          * * type: string
+         * * idcsSearchable: true
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

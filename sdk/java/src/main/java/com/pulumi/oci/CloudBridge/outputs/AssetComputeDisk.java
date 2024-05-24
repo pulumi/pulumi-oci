@@ -23,7 +23,7 @@ public final class AssetComputeDisk {
      */
     private @Nullable String location;
     /**
-     * @return (Updatable) The tag name.
+     * @return (Updatable) Disk name.
      * 
      */
     private @Nullable String name;
@@ -64,7 +64,7 @@ public final class AssetComputeDisk {
         return Optional.ofNullable(this.location);
     }
     /**
-     * @return (Updatable) The tag name.
+     * @return (Updatable) Disk name.
      * 
      */
     public Optional<String> name() {

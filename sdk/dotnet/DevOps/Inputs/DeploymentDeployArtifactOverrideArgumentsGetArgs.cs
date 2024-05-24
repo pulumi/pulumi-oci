@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.DeploymentDeployArtifactOverrideArgumentsItemGetArgs>? _items;
 
         /// <summary>
-        /// List of arguments provided at the time of deployment.
+        /// List of artifact override arguments at the time of deployment.
         /// </summary>
         public InputList<Inputs.DeploymentDeployArtifactOverrideArgumentsItemGetArgs> Items
         {

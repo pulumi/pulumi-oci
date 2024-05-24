@@ -42,11 +42,11 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly int? IntervalInSeconds;
         /// <summary>
-        /// The name of the volume. This must be unique within a single container instance.
+        /// Health check name.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Optional) Relative path for this file inside the volume mount directory. By default, the file is presented at the root of the volume mount path.
+        /// Container health check HTTP path.
         /// </summary>
         public readonly string? Path;
         /// <summary>

@@ -67,7 +67,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", IpsecConnectionTunnelManagementArgs.builder()        
+ *         var testIpSecConnectionTunnel = new IpsecConnectionTunnelManagement("testIpSecConnectionTunnel", IpsecConnectionTunnelManagementArgs.builder()
  *             .ipsecId(testIpsec.id())
  *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
  *             .routing(ipSecConnectionTunnelManagementRouting)
@@ -175,28 +175,28 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
         return Codegen.optional(this.dpdConfigs);
     }
     /**
-     * This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * Dead peer detection (DPD) mode set on the Oracle side of the connection.
      * 
      */
     @Export(name="dpdMode", refs={String.class}, tree="[0]")
     private Output<String> dpdMode;
 
     /**
-     * @return This option defines whether DPD can be initiated from the Oracle side of the connection. `INITIATE_AND_RESPOND` or `RESPOND_ONLY`
+     * @return Dead peer detection (DPD) mode set on the Oracle side of the connection.
      * 
      */
     public Output<String> dpdMode() {
         return this.dpdMode;
     }
     /**
-     * DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * DPD timeout in seconds.
      * 
      */
     @Export(name="dpdTimeoutInSec", refs={Integer.class}, tree="[0]")
     private Output<Integer> dpdTimeoutInSec;
 
     /**
-     * @return DPD timeout in seconds. This sets the longest interval between CPE device health messages before the IPSec connection indicates it has lost contact with the CPE. The default is 20 seconds.
+     * @return DPD timeout in seconds.
      * 
      */
     public Output<Integer> dpdTimeoutInSec() {

@@ -48,14 +48,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
     }
 
     /**
-     * Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
     @Import(name="isPvEncryptionInTransitEnabled")
     private @Nullable Output<Boolean> isPvEncryptionInTransitEnabled;
 
     /**
-     * @return Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
      * 
      */
     public Optional<Output<Boolean>> isPvEncryptionInTransitEnabled() {
@@ -93,14 +93,14 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
     }
 
     /**
-     * The type of action to run when the instance is interrupted for eviction.
+     * The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return The type of action to run when the instance is interrupted for eviction.
+     * @return The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
      * 
      */
     public Output<String> type() {
@@ -195,7 +195,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
         }
 
         /**
-         * @param isPvEncryptionInTransitEnabled Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [InstanceConfigurationLaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/InstanceConfigurationLaunchInstanceDetails).
+         * @param isPvEncryptionInTransitEnabled Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. The default value is false.
          * 
          * @return builder
          * 
@@ -258,7 +258,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
          * 
          * @return builder
          * 
@@ -269,7 +269,7 @@ public final class InstanceConfigurationInstanceDetailsBlockVolumeAttachDetailsA
         }
 
         /**
-         * @param type The type of action to run when the instance is interrupted for eviction.
+         * @param type The type of volume. The only supported values are &#34;iscsi&#34; and &#34;paravirtualized&#34;.
          * 
          * @return builder
          * 

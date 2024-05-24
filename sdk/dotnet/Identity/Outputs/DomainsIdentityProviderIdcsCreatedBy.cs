@@ -14,11 +14,10 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsIdentityProviderIdcsCreatedBy
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The displayName of the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -29,56 +28,54 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// (Updatable) Group URI
-        /// 
-        /// **Added In:** 2205120021
-        /// 
-        /// **SCIM++ Properties:**
-        /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: true
-        /// * returned: default
-        /// * type: reference
-        /// </summary>
-        public readonly string? Ref;
-        /// <summary>
-        /// (Updatable) Identity Provider Type
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readOnly
         /// * required: false
-        /// * returned: always
+        /// * returned: default
+        /// * type: reference
+        /// * uniqueness: none
+        /// </summary>
+        public readonly string? Ref;
+        /// <summary>
+        /// (Updatable) The type of resource, User or App, that created this Resource
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: false
+        /// * multiValued: false
+        /// * mutability: readOnly
+        /// * required: false
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

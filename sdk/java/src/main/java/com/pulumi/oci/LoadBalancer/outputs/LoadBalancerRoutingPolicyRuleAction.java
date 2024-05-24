@@ -16,10 +16,7 @@ public final class LoadBalancerRoutingPolicyRuleAction {
      */
     private String backendSetName;
     /**
-     * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name can be one of these values: `FORWARD_TO_BACKENDSET`
      * 
      */
     private String name;
@@ -33,10 +30,7 @@ public final class LoadBalancerRoutingPolicyRuleAction {
         return this.backendSetName;
     }
     /**
-     * @return (Updatable) A unique name for the routing policy rule. Avoid entering confidential information.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name can be one of these values: `FORWARD_TO_BACKENDSET`
      * 
      */
     public String name() {

@@ -21,7 +21,7 @@ public final class DeploymentSpecification {
      */
     private @Nullable DeploymentSpecificationLoggingPolicies loggingPolicies;
     /**
-     * @return (Updatable) Behavior applied to any requests received by the API on this route.
+     * @return (Updatable) Global behavior applied to all requests received by the API.
      * 
      */
     private @Nullable DeploymentSpecificationRequestPolicies requestPolicies;
@@ -40,7 +40,7 @@ public final class DeploymentSpecification {
         return Optional.ofNullable(this.loggingPolicies);
     }
     /**
-     * @return (Updatable) Behavior applied to any requests received by the API on this route.
+     * @return (Updatable) Global behavior applied to all requests received by the API.
      * 
      */
     public Optional<DeploymentSpecificationRequestPolicies> requestPolicies() {

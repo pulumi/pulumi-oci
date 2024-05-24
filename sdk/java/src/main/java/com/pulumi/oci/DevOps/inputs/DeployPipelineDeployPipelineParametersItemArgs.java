@@ -32,14 +32,14 @@ public final class DeployPipelineDeployPipelineParametersItemArgs extends com.pu
     }
 
     /**
-     * (Updatable) Optional description about the deployment pipeline.
+     * (Updatable) Description of the parameter.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Optional description about the deployment pipeline.
+     * @return (Updatable) Description of the parameter.
      * 
      */
     public Optional<Output<String>> description() {
@@ -109,7 +109,7 @@ public final class DeployPipelineDeployPipelineParametersItemArgs extends com.pu
         }
 
         /**
-         * @param description (Updatable) Optional description about the deployment pipeline.
+         * @param description (Updatable) Description of the parameter.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DeployPipelineDeployPipelineParametersItemArgs extends com.pu
         }
 
         /**
-         * @param description (Updatable) Optional description about the deployment pipeline.
+         * @param description (Updatable) Description of the parameter.
          * 
          * @return builder
          * 

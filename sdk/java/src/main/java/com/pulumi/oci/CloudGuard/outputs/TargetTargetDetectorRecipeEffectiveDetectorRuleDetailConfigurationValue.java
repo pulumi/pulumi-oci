@@ -22,7 +22,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
      */
     private @Nullable String managedListType;
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     private @Nullable String value;
@@ -43,7 +43,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         return Optional.ofNullable(this.managedListType);
     }
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<String> value() {

@@ -43,7 +43,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         }
 
         /// <summary>
-        /// The total amount of memory available to the node, in gigabytes
+        /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<int>? MemoryInGbs { get; set; }

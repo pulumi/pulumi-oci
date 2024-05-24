@@ -49,9 +49,7 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
     }
 
     /**
-     * (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI of the SCIM resource representing the User&#39;s manager.  RECOMMENDED.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -67,9 +65,7 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the SCIM resource representing the User&#39;s manager.  RECOMMENDED.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -86,38 +82,34 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The id of the SCIM resource representing  the User&#39;s  manager.  RECOMMENDED.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsCsvAttributeName: Manager Name
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The id of the SCIM resource representing  the User&#39;s  manager.  RECOMMENDED.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsCsvAttributeName: Manager Name
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -190,9 +182,7 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the SCIM resource representing the User&#39;s manager.  RECOMMENDED.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -212,9 +202,7 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the SCIM resource representing the User&#39;s manager.  RECOMMENDED.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -233,19 +221,17 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The id of the SCIM resource representing  the User&#39;s  manager.  RECOMMENDED.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsCsvAttributeName: Manager Name
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -256,19 +242,17 @@ public final class DomainsUserUrnietfparamsscimschemasextensionenterprise20userM
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The id of the SCIM resource representing  the User&#39;s  manager.  RECOMMENDED.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * idcsCsvAttributeName: Manager Name
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: true
+         * * required: false
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

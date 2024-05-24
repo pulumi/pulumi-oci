@@ -48,34 +48,30 @@ public final class DomainsSettingLoginTextArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Login text
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
+     * * idcsSanitize: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Login text
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
+     * * idcsSanitize: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> value() {
@@ -147,17 +143,15 @@ public final class DomainsSettingLoginTextArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) Custom claim value
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Login text
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
+         * * idcsSanitize: true
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -168,17 +162,15 @@ public final class DomainsSettingLoginTextArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) Custom claim value
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Login text
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
+         * * idcsSanitize: true
          * * type: string
-         * * uniqueness: none
          * 
          * @return builder
          * 

@@ -51,14 +51,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * (Updatable) The batch rollover size in kilobytes.
      * 
      */
     @Import(name="batchSizeInKbs")
     private @Nullable Output<Integer> batchSizeInKbs;
 
     /**
-     * @return (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+     * @return (Updatable) The batch rollover size in kilobytes.
      * 
      */
     public Optional<Output<Integer>> batchSizeInKbs() {
@@ -81,14 +81,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * (Updatable) The batch rollover time in seconds.
      * 
      */
     @Import(name="batchTimeInSec")
     private @Nullable Output<Integer> batchTimeInSec;
 
     /**
-     * @return (Updatable) Time limit (seconds) for batch sent to invoke the function.
+     * @return (Updatable) The batch rollover time in seconds.
      * 
      */
     public Optional<Output<Integer>> batchTimeInSec() {
@@ -156,14 +156,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      * 
      */
     @Import(name="functionId")
     private @Nullable Output<String> functionId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
      * 
      */
     public Optional<Output<String>> functionId() {
@@ -171,14 +171,14 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The type descriminator.
+     * (Updatable) The type discriminator.
      * 
      */
     @Import(name="kind", required=true)
     private Output<String> kind;
 
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     public Output<String> kind() {
@@ -390,7 +390,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchSizeInKbs (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+         * @param batchSizeInKbs (Updatable) The batch rollover size in kilobytes.
          * 
          * @return builder
          * 
@@ -401,7 +401,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchSizeInKbs (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+         * @param batchSizeInKbs (Updatable) The batch rollover size in kilobytes.
          * 
          * @return builder
          * 
@@ -432,7 +432,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchTimeInSec (Updatable) Time limit (seconds) for batch sent to invoke the function.
+         * @param batchTimeInSec (Updatable) The batch rollover time in seconds.
          * 
          * @return builder
          * 
@@ -443,7 +443,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param batchTimeInSec (Updatable) Time limit (seconds) for batch sent to invoke the function.
+         * @param batchTimeInSec (Updatable) The batch rollover time in seconds.
          * 
          * @return builder
          * 
@@ -547,7 +547,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
          * 
          * @return builder
          * 
@@ -558,7 +558,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+         * @param functionId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
          * 
          * @return builder
          * 
@@ -568,7 +568,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type discriminator.
          * 
          * @return builder
          * 
@@ -579,7 +579,7 @@ public final class ConnectorTargetArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param kind (Updatable) The type descriminator.
+         * @param kind (Updatable) The type discriminator.
          * 
          * @return builder
          * 

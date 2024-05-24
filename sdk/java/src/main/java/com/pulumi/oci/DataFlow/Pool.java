@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPool = new Pool("testPool", PoolArgs.builder()        
+ *         var testPool = new Pool("testPool", PoolArgs.builder()
  *             .compartmentId(compartmentId)
  *             .configurations(PoolConfigurationArgs.builder()
  *                 .max(poolConfigurationsMax)

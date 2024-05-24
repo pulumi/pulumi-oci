@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuthenticationPolicy = new AuthenticationPolicy("testAuthenticationPolicy", AuthenticationPolicyArgs.builder()        
+ *         var testAuthenticationPolicy = new AuthenticationPolicy("testAuthenticationPolicy", AuthenticationPolicyArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .networkPolicy(AuthenticationPolicyNetworkPolicyArgs.builder()
  *                 .networkSourceIds(authenticationPolicyNetworkPolicyNetworkSourceIds)

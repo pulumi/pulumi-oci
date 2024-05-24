@@ -31,7 +31,7 @@ public final class AutonomousDatabaseDbToolsDetail {
      */
     private @Nullable Integer maxIdleTimeInMinutes;
     /**
-     * @return (Updatable) Name of the day of the week.
+     * @return (Updatable) Name of database tool.
      * 
      */
     private String name;
@@ -59,7 +59,7 @@ public final class AutonomousDatabaseDbToolsDetail {
         return Optional.ofNullable(this.maxIdleTimeInMinutes);
     }
     /**
-     * @return (Updatable) Name of the day of the week.
+     * @return (Updatable) Name of database tool.
      * 
      */
     public String name() {

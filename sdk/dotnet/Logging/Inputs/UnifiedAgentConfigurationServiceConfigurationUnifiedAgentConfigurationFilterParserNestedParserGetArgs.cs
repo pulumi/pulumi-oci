@@ -13,13 +13,13 @@ namespace Pulumi.Oci.Logging.Inputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParserGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        /// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
         [Input("fieldTimeKey")]
         public Input<string>? FieldTimeKey { get; set; }
 
         /// <summary>
-        /// (Updatable) If true, keep the time field in the record.
+        /// If true, keep the time field in the record.
         /// </summary>
         [Input("isKeepTimeKey")]
         public Input<bool>? IsKeepTimeKey { get; set; }

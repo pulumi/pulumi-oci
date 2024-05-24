@@ -51,14 +51,18 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Description for DetectorRecipeDetectorRule.
+     * (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -228,7 +232,9 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -239,7 +245,9 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param description (Updatable) Description for DetectorRecipeDetectorRule.
+         * @param description (Updatable) Detector recipe description.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 

@@ -126,7 +126,7 @@ export class Pipeline extends pulumi.CustomResource {
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     public readonly deleteRelatedPipelineRuns!: pulumi.Output<boolean | undefined>;
     /**
-     * (Updatable) A short description of the step.
+     * (Updatable) A short description of the pipeline.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -263,7 +263,7 @@ export interface PipelineState {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     deleteRelatedPipelineRuns?: pulumi.Input<boolean>;
     /**
-     * (Updatable) A short description of the step.
+     * (Updatable) A short description of the pipeline.
      */
     description?: pulumi.Input<string>;
     /**
@@ -331,7 +331,7 @@ export interface PipelineArgs {
     definedTags?: pulumi.Input<{[key: string]: any}>;
     deleteRelatedPipelineRuns?: pulumi.Input<boolean>;
     /**
-     * (Updatable) A short description of the step.
+     * (Updatable) A short description of the pipeline.
      */
     description?: pulumi.Input<string>;
     /**

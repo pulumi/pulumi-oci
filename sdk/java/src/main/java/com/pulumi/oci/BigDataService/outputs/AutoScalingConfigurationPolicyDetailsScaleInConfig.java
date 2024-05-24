@@ -23,7 +23,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
      */
     private @Nullable Integer minNodeCount;
     /**
-     * @return (Updatable) This value is the number of nodes to add during a scale-out event.
+     * @return (Updatable) This value is the number of nodes to remove during a scale-in event.
      * 
      */
     private @Nullable Integer stepSize;
@@ -44,7 +44,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleInConfig {
         return Optional.ofNullable(this.minNodeCount);
     }
     /**
-     * @return (Updatable) This value is the number of nodes to add during a scale-out event.
+     * @return (Updatable) This value is the number of nodes to remove during a scale-in event.
      * 
      */
     public Optional<Integer> stepSize() {

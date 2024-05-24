@@ -47,14 +47,14 @@ public final class ConnectionConnectDescriptorArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Name of the host the SSH key is valid for.
+     * (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
      * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
-     * @return (Updatable) Name of the host the SSH key is valid for.
+     * @return (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
      * 
      */
     public Optional<Output<String>> host() {
@@ -146,7 +146,7 @@ public final class ConnectionConnectDescriptorArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param host (Updatable) Name of the host the SSH key is valid for.
+         * @param host (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class ConnectionConnectDescriptorArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param host (Updatable) Name of the host the SSH key is valid for.
+         * @param host (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
          * 
          * @return builder
          * 

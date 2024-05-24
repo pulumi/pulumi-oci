@@ -43,7 +43,7 @@ class WorkspaceTaskArgs:
         """
         The set of arguments for constructing a WorkspaceTask resource.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
         :param pulumi.Input['WorkspaceTaskRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
         :param pulumi.Input[str] workspace_id: The workspace ID.
                
@@ -53,20 +53,20 @@ class WorkspaceTaskArgs:
         :param pulumi.Input[str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
         :param pulumi.Input['WorkspaceTaskAuthConfigArgs'] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
         :param pulumi.Input['WorkspaceTaskCancelRestCallConfigArgs'] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
-        :param pulumi.Input['WorkspaceTaskConfigProviderDelegateArgs'] config_provider_delegate: (Updatable) The information about the configuration provider.
+        :param pulumi.Input['WorkspaceTaskConfigProviderDelegateArgs'] config_provider_delegate: (Updatable) The type to create a config provider.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigArgs'] execute_rest_call_config: (Updatable) The REST API configuration for execution.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskInputPortArgs']]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input['WorkspaceTaskOpConfigValuesArgs'] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] operation: (Updatable) Describes the shape of the execution result
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskOutputPortArgs']]] output_ports: (Updatable) An array of output ports.
         :param pulumi.Input[int] parallel_load_limit: (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskParameterArgs']]] parameters: (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskParameterArgs']]] parameters: (Updatable) An array of parameters.
         :param pulumi.Input['WorkspaceTaskParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
         :param pulumi.Input['WorkspaceTaskPollRestCallConfigArgs'] poll_rest_call_config: (Updatable) The REST API configuration for polling.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskTypedExpressionArgs']]] typed_expressions: (Updatable) List of typed expressions.
@@ -132,7 +132,7 @@ class WorkspaceTaskArgs:
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -208,7 +208,7 @@ class WorkspaceTaskArgs:
     @pulumi.getter(name="configProviderDelegate")
     def config_provider_delegate(self) -> Optional[pulumi.Input['WorkspaceTaskConfigProviderDelegateArgs']]:
         """
-        (Updatable) The information about the configuration provider.
+        (Updatable) The type to create a config provider.
         """
         return pulumi.get(self, "config_provider_delegate")
 
@@ -268,7 +268,7 @@ class WorkspaceTaskArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -280,7 +280,7 @@ class WorkspaceTaskArgs:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -364,7 +364,7 @@ class WorkspaceTaskArgs:
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskParameterArgs']]]]:
         """
-        (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        (Updatable) An array of parameters.
         """
         return pulumi.get(self, "parameters")
 
@@ -444,25 +444,25 @@ class _WorkspaceTaskState:
         :param pulumi.Input[str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
         :param pulumi.Input['WorkspaceTaskAuthConfigArgs'] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
         :param pulumi.Input['WorkspaceTaskCancelRestCallConfigArgs'] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
-        :param pulumi.Input['WorkspaceTaskConfigProviderDelegateArgs'] config_provider_delegate: (Updatable) The information about the configuration provider.
+        :param pulumi.Input['WorkspaceTaskConfigProviderDelegateArgs'] config_provider_delegate: (Updatable) The type to create a config provider.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input['WorkspaceTaskExecuteRestCallConfigArgs'] execute_rest_call_config: (Updatable) The REST API configuration for execution.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskInputPortArgs']]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataArgs']]] metadatas: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param pulumi.Input[int] object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         :param pulumi.Input['WorkspaceTaskOpConfigValuesArgs'] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] operation: (Updatable) Describes the shape of the execution result
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskOutputPortArgs']]] output_ports: (Updatable) An array of output ports.
         :param pulumi.Input[int] parallel_load_limit: (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
-        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskParameterArgs']]] parameters: (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        :param pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskParameterArgs']]] parameters: (Updatable) An array of parameters.
         :param pulumi.Input['WorkspaceTaskParentRefArgs'] parent_ref: (Updatable) A reference to the object's parent.
         :param pulumi.Input['WorkspaceTaskPollRestCallConfigArgs'] poll_rest_call_config: (Updatable) The REST API configuration for polling.
         :param pulumi.Input['WorkspaceTaskRegistryMetadataArgs'] registry_metadata: (Updatable) Information about the object and its parent.
@@ -568,7 +568,7 @@ class _WorkspaceTaskState:
     @pulumi.getter(name="configProviderDelegate")
     def config_provider_delegate(self) -> Optional[pulumi.Input['WorkspaceTaskConfigProviderDelegateArgs']]:
         """
-        (Updatable) The information about the configuration provider.
+        (Updatable) The type to create a config provider.
         """
         return pulumi.get(self, "config_provider_delegate")
 
@@ -640,7 +640,7 @@ class _WorkspaceTaskState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -652,7 +652,7 @@ class _WorkspaceTaskState:
     @pulumi.getter(name="keyMap")
     def key_map(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
@@ -664,7 +664,7 @@ class _WorkspaceTaskState:
     @pulumi.getter
     def metadatas(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskMetadataArgs']]]]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -676,7 +676,7 @@ class _WorkspaceTaskState:
     @pulumi.getter(name="modelType")
     def model_type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -688,7 +688,7 @@ class _WorkspaceTaskState:
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -724,7 +724,7 @@ class _WorkspaceTaskState:
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         """
         return pulumi.get(self, "object_version")
 
@@ -784,7 +784,7 @@ class _WorkspaceTaskState:
     @pulumi.getter
     def parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['WorkspaceTaskParameterArgs']]]]:
         """
-        (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        (Updatable) An array of parameters.
         """
         return pulumi.get(self, "parameters")
 
@@ -905,22 +905,22 @@ class WorkspaceTask(pulumi.CustomResource):
         :param pulumi.Input[str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskAuthConfigArgs']] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskCancelRestCallConfigArgs']] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
-        :param pulumi.Input[pulumi.InputType['WorkspaceTaskConfigProviderDelegateArgs']] config_provider_delegate: (Updatable) The information about the configuration provider.
+        :param pulumi.Input[pulumi.InputType['WorkspaceTaskConfigProviderDelegateArgs']] config_provider_delegate: (Updatable) The type to create a config provider.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskExecuteRestCallConfigArgs']] execute_rest_call_config: (Updatable) The REST API configuration for execution.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskInputPortArgs']]]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskOpConfigValuesArgs']] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] operation: (Updatable) Describes the shape of the execution result
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskOutputPortArgs']]]] output_ports: (Updatable) An array of output ports.
         :param pulumi.Input[int] parallel_load_limit: (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskParameterArgs']]]] parameters: (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskParameterArgs']]]] parameters: (Updatable) An array of parameters.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskParentRefArgs']] parent_ref: (Updatable) A reference to the object's parent.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskPollRestCallConfigArgs']] poll_rest_call_config: (Updatable) The REST API configuration for polling.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
@@ -1080,25 +1080,25 @@ class WorkspaceTask(pulumi.CustomResource):
         :param pulumi.Input[str] api_call_mode: (Updatable) The REST invocation pattern to use. ASYNC_OCI_WORKREQUEST is being deprecated as well as cancelEndpoint/MethodType.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskAuthConfigArgs']] auth_config: (Updatable) Authentication configuration for Generic REST invocation.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskCancelRestCallConfigArgs']] cancel_rest_call_config: (Updatable) The REST API configuration for cancelling the task.
-        :param pulumi.Input[pulumi.InputType['WorkspaceTaskConfigProviderDelegateArgs']] config_provider_delegate: (Updatable) The information about the configuration provider.
+        :param pulumi.Input[pulumi.InputType['WorkspaceTaskConfigProviderDelegateArgs']] config_provider_delegate: (Updatable) The type to create a config provider.
         :param pulumi.Input[str] description: (Updatable) Detailed description for the object.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskExecuteRestCallConfigArgs']] execute_rest_call_config: (Updatable) The REST API configuration for execution.
         :param pulumi.Input[str] identifier: (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskInputPortArgs']]]] input_ports: (Updatable) An array of input ports.
         :param pulumi.Input[bool] is_single_load: (Updatable) Defines whether Data Loader task is used for single load or multiple
-        :param pulumi.Input[str] key: (Updatable) The key of the object.
-        :param pulumi.Input[Mapping[str, Any]] key_map: (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskMetadataArgs']]]] metadatas: (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
-        :param pulumi.Input[str] model_type: (Updatable) The type of the types object.
-        :param pulumi.Input[str] model_version: (Updatable) The model version of an object.
+        :param pulumi.Input[str] key: (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
+        :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
+        :param pulumi.Input[str] model_type: (Updatable) The type of the task.
+        :param pulumi.Input[str] model_version: (Updatable) The object's model version.
         :param pulumi.Input[str] name: (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[int] object_status: (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
-        :param pulumi.Input[int] object_version: (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        :param pulumi.Input[int] object_version: This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskOpConfigValuesArgs']] op_config_values: (Updatable) Configuration values can be string, objects, or parameters.
         :param pulumi.Input[str] operation: (Updatable) Describes the shape of the execution result
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskOutputPortArgs']]]] output_ports: (Updatable) An array of output ports.
         :param pulumi.Input[int] parallel_load_limit: (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskParameterArgs']]]] parameters: (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceTaskParameterArgs']]]] parameters: (Updatable) An array of parameters.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskParentRefArgs']] parent_ref: (Updatable) A reference to the object's parent.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskPollRestCallConfigArgs']] poll_rest_call_config: (Updatable) The REST API configuration for polling.
         :param pulumi.Input[pulumi.InputType['WorkspaceTaskRegistryMetadataArgs']] registry_metadata: (Updatable) Information about the object and its parent.
@@ -1170,7 +1170,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter(name="configProviderDelegate")
     def config_provider_delegate(self) -> pulumi.Output['outputs.WorkspaceTaskConfigProviderDelegate']:
         """
-        (Updatable) The information about the configuration provider.
+        (Updatable) The type to create a config provider.
         """
         return pulumi.get(self, "config_provider_delegate")
 
@@ -1218,7 +1218,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        (Updatable) The key of the object.
+        (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         """
         return pulumi.get(self, "key")
 
@@ -1226,7 +1226,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter(name="keyMap")
     def key_map(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+        A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         """
         return pulumi.get(self, "key_map")
 
@@ -1234,7 +1234,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter
     def metadatas(self) -> pulumi.Output[Sequence['outputs.WorkspaceTaskMetadata']]:
         """
-        (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+        A summary type containing information about the object including its key, name and when/who created/updated it.
         """
         return pulumi.get(self, "metadatas")
 
@@ -1242,7 +1242,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter(name="modelType")
     def model_type(self) -> pulumi.Output[str]:
         """
-        (Updatable) The type of the types object.
+        (Updatable) The type of the task.
         """
         return pulumi.get(self, "model_type")
 
@@ -1250,7 +1250,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter(name="modelVersion")
     def model_version(self) -> pulumi.Output[str]:
         """
-        (Updatable) The model version of an object.
+        (Updatable) The object's model version.
         """
         return pulumi.get(self, "model_version")
 
@@ -1274,7 +1274,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter(name="objectVersion")
     def object_version(self) -> pulumi.Output[int]:
         """
-        (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+        This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
         """
         return pulumi.get(self, "object_version")
 
@@ -1314,7 +1314,7 @@ class WorkspaceTask(pulumi.CustomResource):
     @pulumi.getter
     def parameters(self) -> pulumi.Output[Sequence['outputs.WorkspaceTaskParameter']]:
         """
-        (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+        (Updatable) An array of parameters.
         """
         return pulumi.get(self, "parameters")
 

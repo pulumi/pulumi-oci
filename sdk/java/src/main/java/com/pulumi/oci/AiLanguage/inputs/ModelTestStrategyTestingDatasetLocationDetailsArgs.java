@@ -63,18 +63,12 @@ public final class ModelTestStrategyTestingDatasetLocationDetailsArgs extends co
     /**
      * Array of files which need to be processed in the bucket
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="objectNames", required=true)
     private Output<List<String>> objectNames;
 
     /**
      * @return Array of files which need to be processed in the bucket
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> objectNames() {
@@ -174,9 +168,6 @@ public final class ModelTestStrategyTestingDatasetLocationDetailsArgs extends co
         /**
          * @param objectNames Array of files which need to be processed in the bucket
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -188,9 +179,6 @@ public final class ModelTestStrategyTestingDatasetLocationDetailsArgs extends co
         /**
          * @param objectNames Array of files which need to be processed in the bucket
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -200,9 +188,6 @@ public final class ModelTestStrategyTestingDatasetLocationDetailsArgs extends co
 
         /**
          * @param objectNames Array of files which need to be processed in the bucket
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

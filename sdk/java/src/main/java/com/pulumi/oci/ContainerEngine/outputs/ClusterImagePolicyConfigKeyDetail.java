@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ClusterImagePolicyConfigKeyDetail {
     /**
-     * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+     * @return (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
      * 
      */
     private @Nullable String kmsKeyId;
 
     private ClusterImagePolicyConfigKeyDetail() {}
     /**
-     * @return The OCID of the KMS key to be used as the master encryption key for Kubernetes secret encryption. When used, `kubernetesVersion` must be at least `v1.13.0`.
+     * @return (Updatable) The OCIDs of the KMS key that will be used to verify whether the images are signed by an approved source.
      * 
      */
     public Optional<String> kmsKeyId() {

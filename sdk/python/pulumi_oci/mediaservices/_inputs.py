@@ -45,11 +45,7 @@ class MediaAssetLockArgs:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
-        :param pulumi.Input[str] type: (Updatable) The type of the media asset.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: Type of the lock.
         :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[str] time_created: When the lock was created.
@@ -79,11 +75,7 @@ class MediaAssetLockArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of the media asset.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -135,11 +127,7 @@ class MediaAssetMediaAssetTagArgs:
                  type: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] value: (Updatable) Tag of the MediaAsset.
-        :param pulumi.Input[str] type: (Updatable) The type of the media asset.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: (Updatable) Type of the tag.
         """
         pulumi.set(__self__, "value", value)
         if type is not None:
@@ -161,11 +149,7 @@ class MediaAssetMediaAssetTagArgs:
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The type of the media asset.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) Type of the tag.
         """
         return pulumi.get(self, "type")
 
@@ -518,7 +502,7 @@ class MediaWorkflowLockArgs:
                  time_created: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment ID of the lock.
-        :param pulumi.Input[str] type: (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        :param pulumi.Input[str] type: Type of the lock.
         :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
         :param pulumi.Input[str] related_resource_id: The ID of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
         :param pulumi.Input[str] time_created: When the lock was created.
@@ -548,7 +532,7 @@ class MediaWorkflowLockArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+        Type of the lock.
         """
         return pulumi.get(self, "type")
 
@@ -732,11 +716,7 @@ class StreamCdnConfigConfigArgs:
                  origin_auth_sign_encryption: Optional[pulumi.Input[str]] = None,
                  origin_auth_sign_type: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: Type of the lock.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] type: (Updatable) The name of the CDN configuration type.
         :param pulumi.Input[str] edge_hostname: (Updatable) The hostname of the CDN edge server to use when building CDN URLs.
         :param pulumi.Input[str] edge_path_prefix: (Updatable) The path to prepend when building CDN URLs.
         :param pulumi.Input[str] edge_token_key: (Updatable) The encryption key to use for edge token authentication.
@@ -777,11 +757,7 @@ class StreamCdnConfigConfigArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        Type of the lock.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The name of the CDN configuration type.
         """
         return pulumi.get(self, "type")
 

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ServiceMesh.Outputs
     public sealed class IngressGatewayMtls
     {
         /// <summary>
-        /// (Updatable) The OCID of the leaf certificate resource.
+        /// The OCID of the certificate resource that will be used for mTLS authentication with other virtual services in the mesh.
         /// </summary>
         public readonly string? CertificateId;
         /// <summary>

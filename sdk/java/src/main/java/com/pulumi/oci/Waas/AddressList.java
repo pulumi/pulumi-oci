@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAddressList = new AddressList("testAddressList", AddressListArgs.builder()        
+ *         var testAddressList = new AddressList("testAddressList", AddressListArgs.builder()
  *             .addresses(addressListAddresses)
  *             .compartmentId(compartmentId)
  *             .displayName(addressListDisplayName)

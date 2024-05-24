@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly int? MinApplyParallelism;
         /// <summary>
-        /// (Updatable) Extract performance.
+        /// Extract performance.
         /// </summary>
         public readonly string? PerformanceProfile;
 

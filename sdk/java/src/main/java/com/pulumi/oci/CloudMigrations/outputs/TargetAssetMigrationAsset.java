@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetMigrationAsset {
     /**
-     * @return (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     private @Nullable String compartmentId;
@@ -35,7 +35,7 @@ public final class TargetAssetMigrationAsset {
      */
     private @Nullable List<String> dependsOns;
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -115,21 +115,21 @@ public final class TargetAssetMigrationAsset {
      */
     private @Nullable String timeUpdated;
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     private @Nullable String type;
 
     private TargetAssetMigrationAsset() {}
     /**
-     * @return (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     public Optional<String> compartmentId() {
@@ -150,7 +150,7 @@ public final class TargetAssetMigrationAsset {
         return this.dependsOns == null ? List.of() : this.dependsOns;
     }
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
@@ -262,7 +262,7 @@ public final class TargetAssetMigrationAsset {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Optional<String> type() {

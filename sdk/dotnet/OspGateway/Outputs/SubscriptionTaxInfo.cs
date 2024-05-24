@@ -18,23 +18,23 @@ namespace Pulumi.Oci.OspGateway.Outputs
         /// </summary>
         public readonly string? Giro;
         /// <summary>
-        /// (Updatable) Tax exemption reason code.
+        /// Tax exemption reason code.
         /// </summary>
         public readonly string? NoTaxReasonCode;
         /// <summary>
-        /// (Updatable) Tax exemption reason description.
+        /// Tax exemption reason description.
         /// </summary>
         public readonly string? NoTaxReasonCodeDetails;
         /// <summary>
-        /// (Updatable) Brazilian companies' CNPJ number.
+        /// Brazilian companies' CNPJ number.
         /// </summary>
         public readonly string? TaxCnpj;
         /// <summary>
-        /// (Updatable) Tay payer identifier.
+        /// Tay payer identifier.
         /// </summary>
         public readonly string? TaxPayerId;
         /// <summary>
-        /// (Updatable) Tax registration number.
+        /// Tax registration number.
         /// </summary>
         public readonly string? TaxRegNumber;
 

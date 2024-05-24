@@ -119,7 +119,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly clusterConfiguration!: pulumi.Output<outputs.Core.ClusterNetworkClusterConfiguration>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -127,7 +127,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -135,7 +135,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      */
     public /*out*/ readonly hpcIslandId!: pulumi.Output<string>;
     /**
@@ -145,7 +145,7 @@ export class ClusterNetwork extends pulumi.CustomResource {
      */
     public readonly instancePools!: pulumi.Output<outputs.Core.ClusterNetworkInstancePool[]>;
     /**
-     * The list of network block OCIDs.
+     * The list of network block OCIDs of the HPC island.
      */
     public /*out*/ readonly networkBlockIds!: pulumi.Output<string[]>;
     /**
@@ -230,7 +230,7 @@ export interface ClusterNetworkState {
      */
     clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -238,7 +238,7 @@ export interface ClusterNetworkState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -246,7 +246,7 @@ export interface ClusterNetworkState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the HPC island used by the cluster network.
      */
     hpcIslandId?: pulumi.Input<string>;
     /**
@@ -256,7 +256,7 @@ export interface ClusterNetworkState {
      */
     instancePools?: pulumi.Input<pulumi.Input<inputs.Core.ClusterNetworkInstancePool>[]>;
     /**
-     * The list of network block OCIDs.
+     * The list of network block OCIDs of the HPC island.
      */
     networkBlockIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -288,7 +288,7 @@ export interface ClusterNetworkArgs {
      */
     clusterConfiguration?: pulumi.Input<inputs.Core.ClusterNetworkClusterConfiguration>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance pool.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the cluster network.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -296,7 +296,7 @@ export interface ClusterNetworkArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The display name of the VNIC. This is also used to match against the instance configuration defined secondary VNIC.
+     * (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      */
     displayName?: pulumi.Input<string>;
     /**

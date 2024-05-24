@@ -73,7 +73,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the Configuration to be used by the read replica.
+        /// The OCID of the Configuration to be used by the read replica.
         /// </summary>
         [Output("configurationId")]
         public Output<string> ConfigurationId { get; private set; } = null!;
@@ -133,7 +133,7 @@ namespace Pulumi.Oci.Mysql
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The MySQL version to be used by the read replica.
+        /// The MySQL version to be used by the read replica.
         /// </summary>
         [Output("mysqlVersion")]
         public Output<string> MysqlVersion { get; private set; } = null!;
@@ -163,11 +163,7 @@ namespace Pulumi.Oci.Mysql
         public Output<ImmutableArray<Outputs.ReplicaSecureConnection>> SecureConnections { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         [Output("shapeName")]
         public Output<string> ShapeName { get; private set; } = null!;
@@ -311,7 +307,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the Configuration to be used by the read replica.
+        /// The OCID of the Configuration to be used by the read replica.
         /// </summary>
         [Input("configurationId")]
         public Input<string>? ConfigurationId { get; set; }
@@ -383,7 +379,7 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The MySQL version to be used by the read replica.
+        /// The MySQL version to be used by the read replica.
         /// </summary>
         [Input("mysqlVersion")]
         public Input<string>? MysqlVersion { get; set; }
@@ -419,11 +415,7 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
-        /// (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         /// </summary>
         [Input("shapeName")]
         public Input<string>? ShapeName { get; set; }

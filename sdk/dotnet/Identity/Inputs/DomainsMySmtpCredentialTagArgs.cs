@@ -29,15 +29,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Key { get; set; } = null!;
 
         /// <summary>
-        /// User's id
+        /// Value of the tag.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>

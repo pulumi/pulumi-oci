@@ -13,9 +13,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent {
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -29,28 +29,16 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable)
      * 
      */
     private String value;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsent() {}
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -66,19 +54,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable)
      * 
      */
     public String value() {

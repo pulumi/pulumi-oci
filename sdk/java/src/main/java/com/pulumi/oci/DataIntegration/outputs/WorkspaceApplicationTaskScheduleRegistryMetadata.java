@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationTaskScheduleRegistryMetadata {
     /**
-     * @return (Updatable) The owning object key for this object.
+     * @return (Updatable) The owning object&#39;s key for this object.
      * 
      */
     private @Nullable String aggregatorKey;
@@ -25,24 +25,24 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadata {
      */
     private @Nullable Boolean isFavorite;
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) The identifying key for the object.
      * 
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return (Updatable) The registry version of the object.
+     * @return (Updatable) The registry version.
      * 
      */
     private @Nullable Integer registryVersion;
 
     private WorkspaceApplicationTaskScheduleRegistryMetadata() {}
     /**
-     * @return (Updatable) The owning object key for this object.
+     * @return (Updatable) The owning object&#39;s key for this object.
      * 
      */
     public Optional<String> aggregatorKey() {
@@ -56,21 +56,21 @@ public final class WorkspaceApplicationTaskScheduleRegistryMetadata {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) The identifying key for the object.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return (Updatable) The registry version of the object.
+     * @return (Updatable) The registry version.
      * 
      */
     public Optional<Integer> registryVersion() {

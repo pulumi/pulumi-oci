@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHttpProbe = new HttpProbe("testHttpProbe", HttpProbeArgs.builder()        
+ *         var testHttpProbe = new HttpProbe("testHttpProbe", HttpProbeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .protocol(httpProbeProtocol)
  *             .targets(httpProbeTargets)

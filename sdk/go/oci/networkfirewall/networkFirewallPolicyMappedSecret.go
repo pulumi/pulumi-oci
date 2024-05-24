@@ -66,6 +66,8 @@ type NetworkFirewallPolicyMappedSecret struct {
 	// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
 	Source pulumi.StringOutput `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringOutput `pulumi:"type"`
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringOutput `pulumi:"vaultSecretId"`
@@ -130,6 +132,8 @@ type networkFirewallPolicyMappedSecretState struct {
 	// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
 	Source *string `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type *string `pulumi:"type"`
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId *string `pulumi:"vaultSecretId"`
@@ -150,6 +154,8 @@ type NetworkFirewallPolicyMappedSecretState struct {
 	// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
 	Source pulumi.StringPtrInput
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringPtrInput
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringPtrInput
@@ -172,6 +178,8 @@ type networkFirewallPolicyMappedSecretArgs struct {
 	// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
 	Source string `pulumi:"source"`
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type string `pulumi:"type"`
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId string `pulumi:"vaultSecretId"`
@@ -191,6 +199,8 @@ type NetworkFirewallPolicyMappedSecretArgs struct {
 	// Source of the secrets, where the secrets are stored. The only accepted value is `OCI_VAULT`
 	Source pulumi.StringInput
 	// Type of the secrets mapped based on the policy.
+	// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+	// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 	Type pulumi.StringInput
 	// (Updatable) OCID for the Vault Secret to be used.
 	VaultSecretId pulumi.StringInput
@@ -309,6 +319,8 @@ func (o NetworkFirewallPolicyMappedSecretOutput) Source() pulumi.StringOutput {
 }
 
 // Type of the secrets mapped based on the policy.
+// * `SSL_INBOUND_INSPECTION`: For Inbound inspection of SSL traffic.
+// * `SSL_FORWARD_PROXY`: For forward proxy certificates for SSL inspection.
 func (o NetworkFirewallPolicyMappedSecretOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v *NetworkFirewallPolicyMappedSecret) pulumi.StringOutput { return v.Type }).(pulumi.StringOutput)
 }

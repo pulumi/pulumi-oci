@@ -41,7 +41,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails {
      */
     private @Nullable Integer interval;
     /**
-     * @return (Updatable) The type of the object.
+     * @return (Updatable) The type of the model
      * 
      */
     private String modelType;
@@ -93,7 +93,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails {
         return Optional.ofNullable(this.interval);
     }
     /**
-     * @return (Updatable) The type of the object.
+     * @return (Updatable) The type of the model
      * 
      */
     public String modelType() {

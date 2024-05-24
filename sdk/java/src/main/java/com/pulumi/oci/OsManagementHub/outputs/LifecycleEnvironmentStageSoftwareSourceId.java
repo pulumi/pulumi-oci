@@ -18,7 +18,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceId {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -47,7 +47,7 @@ public final class LifecycleEnvironmentStageSoftwareSourceId {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

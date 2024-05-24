@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourceType = new MonitoredResourceType("testMonitoredResourceType", MonitoredResourceTypeArgs.builder()        
+ *         var testMonitoredResourceType = new MonitoredResourceType("testMonitoredResourceType", MonitoredResourceTypeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(monitoredResourceTypeName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

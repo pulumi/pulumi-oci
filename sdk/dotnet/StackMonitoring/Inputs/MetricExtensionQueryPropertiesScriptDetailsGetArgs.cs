@@ -13,7 +13,7 @@ namespace Pulumi.Oci.StackMonitoring.Inputs
     public sealed class MetricExtensionQueryPropertiesScriptDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Sql statement or script file content as base64 encoded string
+        /// (Updatable) Content of the script file as base64 encoded string
         /// </summary>
         [Input("content", required: true)]
         public Input<string> Content { get; set; } = null!;

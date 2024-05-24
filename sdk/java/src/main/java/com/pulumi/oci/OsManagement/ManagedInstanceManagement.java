@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceManagement = new ManagedInstanceManagement("testManagedInstanceManagement", ManagedInstanceManagementArgs.builder()        
+ *         var testManagedInstanceManagement = new ManagedInstanceManagement("testManagedInstanceManagement", ManagedInstanceManagementArgs.builder()
  *             .managedInstanceId(testManagedInstance.id())
  *             .parentSoftwareSource(ManagedInstanceManagementParentSoftwareSourceArgs.builder()
  *                 .id(testParentSoftwareSource.id())

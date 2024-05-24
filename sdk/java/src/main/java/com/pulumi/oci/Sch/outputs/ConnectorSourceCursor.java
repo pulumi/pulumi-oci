@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ConnectorSourceCursor {
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     private @Nullable String kind;
 
     private ConnectorSourceCursor() {}
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     public Optional<String> kind() {

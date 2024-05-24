@@ -106,7 +106,7 @@ export class PrivateApplication extends pulumi.CustomResource {
      */
     public readonly packageDetails!: pulumi.Output<outputs.ServiceCatalog.PrivateApplicationPackageDetails>;
     /**
-     * The package's type.
+     * Type of packages within this private application.
      */
     public /*out*/ readonly packageType!: pulumi.Output<string>;
     /**
@@ -226,7 +226,7 @@ export interface PrivateApplicationState {
      */
     packageDetails?: pulumi.Input<inputs.ServiceCatalog.PrivateApplicationPackageDetails>;
     /**
-     * The package's type.
+     * Type of packages within this private application.
      */
     packageType?: pulumi.Input<string>;
     /**

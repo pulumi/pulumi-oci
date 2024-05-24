@@ -98,14 +98,14 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * The web application domain that the WAAS policy protects.
      * 
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
-     * @return (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+     * @return The web application domain that the WAAS policy protects.
      * 
      */
     public Optional<Output<String>> domain() {
@@ -369,7 +369,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+         * @param domain The web application domain that the WAAS policy protects.
          * 
          * @return builder
          * 
@@ -380,7 +380,7 @@ public final class PolicyState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param domain (Updatable) The domain for which the cookie is set, defaults to WAAS policy domain.
+         * @param domain The web application domain that the WAAS policy protects.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
      * 
      */
     private @Nullable String compartmentId;
@@ -23,7 +23,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     private @Nullable String kmsKeyId;
@@ -47,7 +47,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
 
     private InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails() {}
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The OCID of the compartment that contains the volume. If not provided,  it will be inherited from the instance.
      * 
      */
     public Optional<String> compartmentId() {
@@ -61,7 +61,7 @@ public final class InstanceLaunchVolumeAttachmentLaunchCreateVolumeDetails {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the Vault service key to assign as the master encryption key for the volume.
      * 
      */
     public Optional<String> kmsKeyId() {

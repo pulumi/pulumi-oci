@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalnoncontainerdatabasesStackMonitoring = new ExternalNonContainerDatabasesStackMonitoring("testExternalnoncontainerdatabasesStackMonitoring", ExternalNonContainerDatabasesStackMonitoringArgs.builder()        
+ *         var testExternalnoncontainerdatabasesStackMonitoring = new ExternalNonContainerDatabasesStackMonitoring("testExternalnoncontainerdatabasesStackMonitoring", ExternalNonContainerDatabasesStackMonitoringArgs.builder()
  *             .externalDatabaseConnectorId(testExternalDatabaseConnector.id())
  *             .externalNonContainerDatabaseId(testExternalNonContainerDatabase.id())
  *             .enableStackMonitoring(true)

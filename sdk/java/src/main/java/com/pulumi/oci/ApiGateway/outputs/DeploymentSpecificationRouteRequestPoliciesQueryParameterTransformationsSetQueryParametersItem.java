@@ -14,12 +14,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem {
     /**
-     * @return (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+     * @return (Updatable) If a query parameter with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
      * 
      */
     private @Nullable String ifExists;
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The case-sensitive name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     private String name;
@@ -31,14 +31,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItem() {}
     /**
-     * @return (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+     * @return (Updatable) If a query parameter with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
      * 
      */
     public Optional<String> ifExists() {
         return Optional.ofNullable(this.ifExists);
     }
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The case-sensitive name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     public String name() {

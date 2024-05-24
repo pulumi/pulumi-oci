@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Sch.Outputs
     public sealed class ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics
     {
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type discriminator.
         /// </summary>
         public readonly string Kind;
 

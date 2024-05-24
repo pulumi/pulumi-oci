@@ -218,10 +218,6 @@ class ManagedInstanceManagementChildSoftwareSource(dict):
         """
         :param str id: software source identifier
         :param str name: software source name
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -241,10 +237,6 @@ class ManagedInstanceManagementChildSoftwareSource(dict):
     def name(self) -> Optional[str]:
         """
         software source name
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "name")
 
@@ -273,7 +265,7 @@ class ManagedInstanceManagementManagedInstanceGroup(dict):
                  id: Optional[str] = None):
         """
         :param str display_name: User friendly name
-        :param str id: software source identifier
+        :param str id: unique identifier that is immutable on creation
         """
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
@@ -292,7 +284,7 @@ class ManagedInstanceManagementManagedInstanceGroup(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        software source identifier
+        unique identifier that is immutable on creation
         """
         return pulumi.get(self, "id")
 

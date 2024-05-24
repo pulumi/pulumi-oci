@@ -15,14 +15,14 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
     public static final BucketRetentionRuleDurationArgs Empty = new BucketRetentionRuleDurationArgs();
 
     /**
-     * The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
+     * (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
     @Import(name="timeAmount", required=true)
     private Output<String> timeAmount;
 
     /**
-     * @return The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
+     * @return (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
      * 
      */
     public Output<String> timeAmount() {
@@ -30,14 +30,14 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
     }
 
     /**
-     * The unit that should be used to interpret timeAmount.
+     * (Updatable) The unit that should be used to interpret timeAmount.
      * 
      */
     @Import(name="timeUnit", required=true)
     private Output<String> timeUnit;
 
     /**
-     * @return The unit that should be used to interpret timeAmount.
+     * @return (Updatable) The unit that should be used to interpret timeAmount.
      * 
      */
     public Output<String> timeUnit() {
@@ -70,7 +70,7 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeAmount The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
+         * @param timeAmount (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeAmount The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
+         * @param timeAmount (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object&#39;s Last-Modified timestamp.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeUnit The unit that should be used to interpret timeAmount.
+         * @param timeUnit (Updatable) The unit that should be used to interpret timeAmount.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class BucketRetentionRuleDurationArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeUnit The unit that should be used to interpret timeAmount.
+         * @param timeUnit (Updatable) The unit that should be used to interpret timeAmount.
          * 
          * @return builder
          * 

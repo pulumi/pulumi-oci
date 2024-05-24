@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testObjectLifecyclePolicy = new ObjectLifecyclePolicy("testObjectLifecyclePolicy", ObjectLifecyclePolicyArgs.builder()        
+ *         var testObjectLifecyclePolicy = new ObjectLifecyclePolicy("testObjectLifecyclePolicy", ObjectLifecyclePolicyArgs.builder()
  *             .bucket(objectLifecyclePolicyBucket)
  *             .namespace(objectLifecyclePolicyNamespace)
  *             .rules(ObjectLifecyclePolicyRuleArgs.builder()

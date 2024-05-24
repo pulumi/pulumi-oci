@@ -20,7 +20,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
      */
     private @Nullable UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceAdvancedOptions advancedOptions;
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the source.
      * 
      */
     private @Nullable String name;
@@ -49,7 +49,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
         return Optional.ofNullable(this.advancedOptions);
     }
     /**
-     * @return (Updatable) The name key to tag this Grok pattern.
+     * @return (Updatable) Unique name for the source.
      * 
      */
     public Optional<String> name() {

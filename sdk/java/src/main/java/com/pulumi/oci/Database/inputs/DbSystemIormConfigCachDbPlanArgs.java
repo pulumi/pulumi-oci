@@ -17,14 +17,14 @@ public final class DbSystemIormConfigCachDbPlanArgs extends com.pulumi.resources
     public static final DbSystemIormConfigCachDbPlanArgs Empty = new DbSystemIormConfigCachDbPlanArgs();
 
     /**
-     * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
     @Import(name="dbName")
     private @Nullable Output<String> dbName;
 
     /**
-     * @return The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+     * @return The database name. For the default `DbPlan`, the `dbName` is `default`.
      * 
      */
     public Optional<Output<String>> dbName() {
@@ -88,7 +88,7 @@ public final class DbSystemIormConfigCachDbPlanArgs extends com.pulumi.resources
         }
 
         /**
-         * @param dbName The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * @param dbName The database name. For the default `DbPlan`, the `dbName` is `default`.
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DbSystemIormConfigCachDbPlanArgs extends com.pulumi.resources
         }
 
         /**
-         * @param dbName The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+         * @param dbName The database name. For the default `DbPlan`, the `dbName` is `default`.
          * 
          * @return builder
          * 

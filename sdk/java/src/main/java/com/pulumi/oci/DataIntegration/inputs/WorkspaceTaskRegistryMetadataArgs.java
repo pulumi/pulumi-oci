@@ -50,14 +50,14 @@ public final class WorkspaceTaskRegistryMetadataArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) The identifying key for the object.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) The identifying key for the object.
      * 
      */
     public Optional<Output<String>> key() {
@@ -165,7 +165,7 @@ public final class WorkspaceTaskRegistryMetadataArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) The identifying key for the object.
          * 
          * @return builder
          * 
@@ -176,7 +176,7 @@ public final class WorkspaceTaskRegistryMetadataArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key (Updatable) The key of the object.
+         * @param key (Updatable) The identifying key for the object.
          * 
          * @return builder
          * 

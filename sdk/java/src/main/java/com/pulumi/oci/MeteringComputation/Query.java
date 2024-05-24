@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testQuery = new Query("testQuery", QueryArgs.builder()        
+ *         var testQuery = new Query("testQuery", QueryArgs.builder()
  *             .compartmentId(compartmentId)
  *             .queryDefinition(QueryQueryDefinitionArgs.builder()
  *                 .costAnalysisUi(QueryQueryDefinitionCostAnalysisUiArgs.builder()

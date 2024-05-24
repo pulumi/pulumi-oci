@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResourceTask = new MonitoredResourceTask("testMonitoredResourceTask", MonitoredResourceTaskArgs.builder()        
+ *         var testMonitoredResourceTask = new MonitoredResourceTask("testMonitoredResourceTask", MonitoredResourceTaskArgs.builder()
  *             .compartmentId(compartmentId)
  *             .taskDetails(MonitoredResourceTaskTaskDetailsArgs.builder()
  *                 .namespace(monitoredResourceTaskTaskDetailsNamespace)

@@ -17,14 +17,14 @@ public final class DeployStageGreenBackendIpsArgs extends com.pulumi.resources.R
     public static final DeployStageGreenBackendIpsArgs Empty = new DeployStageGreenBackendIpsArgs();
 
     /**
-     * (Updatable) List of parameters defined to set helm value.
+     * (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<String>> items;
 
     /**
-     * @return (Updatable) List of parameters defined to set helm value.
+     * @return (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
      * 
      */
     public Optional<Output<List<String>>> items() {
@@ -56,7 +56,7 @@ public final class DeployStageGreenBackendIpsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param items (Updatable) List of parameters defined to set helm value.
+         * @param items (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class DeployStageGreenBackendIpsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param items (Updatable) List of parameters defined to set helm value.
+         * @param items (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class DeployStageGreenBackendIpsArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param items (Updatable) List of parameters defined to set helm value.
+         * @param items (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
          * 
          * @return builder
          * 

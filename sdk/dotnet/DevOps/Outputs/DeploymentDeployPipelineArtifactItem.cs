@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeploymentDeployPipelineArtifactItem
     {
         /// <summary>
-        /// The OCID of the artifact to which this parameter applies.
+        /// The OCID of an artifact
         /// </summary>
         public readonly string? DeployArtifactId;
         /// <summary>

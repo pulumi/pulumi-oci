@@ -37,42 +37,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:OspGateway/subscription:Subscription")
 public class Subscription extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Account type.
+     * Account type.
      * 
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
-     * @return (Updatable) Account type.
+     * @return Account type.
      * 
      */
     public Output<String> accountType() {
         return this.accountType;
     }
     /**
-     * (Updatable) Bill to customer Account id.
+     * Bill to customer Account id.
      * 
      */
     @Export(name="billToCustAccountId", refs={String.class}, tree="[0]")
     private Output<String> billToCustAccountId;
 
     /**
-     * @return (Updatable) Bill to customer Account id.
+     * @return Bill to customer Account id.
      * 
      */
     public Output<String> billToCustAccountId() {
         return this.billToCustAccountId;
     }
     /**
-     * (Updatable) Address details model.
+     * Address details model.
      * 
      */
     @Export(name="billingAddresses", refs={List.class,SubscriptionBillingAddress.class}, tree="[0,1]")
     private Output<List<SubscriptionBillingAddress>> billingAddresses;
 
     /**
-     * @return (Updatable) Address details model.
+     * @return Address details model.
      * 
      */
     public Output<List<SubscriptionBillingAddress>> billingAddresses() {
@@ -93,14 +93,14 @@ public class Subscription extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Currency code
+     * Currency code
      * 
      */
     @Export(name="currencyCode", refs={String.class}, tree="[0]")
     private Output<String> currencyCode;
 
     /**
-     * @return (Updatable) Currency code
+     * @return Currency code
      * 
      */
     public Output<String> currencyCode() {
@@ -121,56 +121,56 @@ public class Subscription extends com.pulumi.resources.CustomResource {
         return this.email;
     }
     /**
-     * (Updatable) GSI Subscription external code.
+     * GSI Subscription external code.
      * 
      */
     @Export(name="gsiOrgCode", refs={String.class}, tree="[0]")
     private Output<String> gsiOrgCode;
 
     /**
-     * @return (Updatable) GSI Subscription external code.
+     * @return GSI Subscription external code.
      * 
      */
     public Output<String> gsiOrgCode() {
         return this.gsiOrgCode;
     }
     /**
-     * (Updatable) Payment intension.
+     * Payment intension.
      * 
      */
     @Export(name="isIntentToPay", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isIntentToPay;
 
     /**
-     * @return (Updatable) Payment intension.
+     * @return Payment intension.
      * 
      */
     public Output<Boolean> isIntentToPay() {
         return this.isIntentToPay;
     }
     /**
-     * (Updatable) Language short code (en, de, hu, etc)
+     * Language short code (en, de, hu, etc)
      * 
      */
     @Export(name="languageCode", refs={String.class}, tree="[0]")
     private Output<String> languageCode;
 
     /**
-     * @return (Updatable) Language short code (en, de, hu, etc)
+     * @return Language short code (en, de, hu, etc)
      * 
      */
     public Output<String> languageCode() {
         return this.languageCode;
     }
     /**
-     * (Updatable) GSI organization external identifier.
+     * GSI organization external identifier.
      * 
      */
     @Export(name="organizationId", refs={String.class}, tree="[0]")
     private Output<String> organizationId;
 
     /**
-     * @return (Updatable) GSI organization external identifier.
+     * @return GSI organization external identifier.
      * 
      */
     public Output<String> organizationId() {
@@ -191,70 +191,70 @@ public class Subscription extends com.pulumi.resources.CustomResource {
         return this.ospHomeRegion;
     }
     /**
-     * (Updatable) Payment gateway details.
+     * Payment gateway details.
      * 
      */
     @Export(name="paymentGateways", refs={List.class,SubscriptionPaymentGateway.class}, tree="[0,1]")
     private Output<List<SubscriptionPaymentGateway>> paymentGateways;
 
     /**
-     * @return (Updatable) Payment gateway details.
+     * @return Payment gateway details.
      * 
      */
     public Output<List<SubscriptionPaymentGateway>> paymentGateways() {
         return this.paymentGateways;
     }
     /**
-     * (Updatable) Payment option list of a subscription.
+     * Payment option list of a subscription.
      * 
      */
     @Export(name="paymentOptions", refs={List.class,SubscriptionPaymentOption.class}, tree="[0,1]")
     private Output<List<SubscriptionPaymentOption>> paymentOptions;
 
     /**
-     * @return (Updatable) Payment option list of a subscription.
+     * @return Payment option list of a subscription.
      * 
      */
     public Output<List<SubscriptionPaymentOption>> paymentOptions() {
         return this.paymentOptions;
     }
     /**
-     * (Updatable) Subscription plan type.
+     * Subscription plan type.
      * 
      */
     @Export(name="planType", refs={String.class}, tree="[0]")
     private Output<String> planType;
 
     /**
-     * @return (Updatable) Subscription plan type.
+     * @return Subscription plan type.
      * 
      */
     public Output<String> planType() {
         return this.planType;
     }
     /**
-     * (Updatable) Ship to customer account role.
+     * Ship to customer account role.
      * 
      */
     @Export(name="shipToCustAcctRoleId", refs={String.class}, tree="[0]")
     private Output<String> shipToCustAcctRoleId;
 
     /**
-     * @return (Updatable) Ship to customer account role.
+     * @return Ship to customer account role.
      * 
      */
     public Output<String> shipToCustAcctRoleId() {
         return this.shipToCustAcctRoleId;
     }
     /**
-     * (Updatable) Ship to customer account site address id.
+     * Ship to customer account site address id.
      * 
      */
     @Export(name="shipToCustAcctSiteId", refs={String.class}, tree="[0]")
     private Output<String> shipToCustAcctSiteId;
 
     /**
-     * @return (Updatable) Ship to customer account site address id.
+     * @return Ship to customer account site address id.
      * 
      */
     public Output<String> shipToCustAcctSiteId() {
@@ -295,98 +295,98 @@ public class Subscription extends com.pulumi.resources.CustomResource {
         return this.subscriptionId;
     }
     /**
-     * (Updatable) Subscription plan number.
+     * Subscription plan number.
      * 
      */
     @Export(name="subscriptionPlanNumber", refs={String.class}, tree="[0]")
     private Output<String> subscriptionPlanNumber;
 
     /**
-     * @return (Updatable) Subscription plan number.
+     * @return Subscription plan number.
      * 
      */
     public Output<String> subscriptionPlanNumber() {
         return this.subscriptionPlanNumber;
     }
     /**
-     * (Updatable) Tax details.
+     * Tax details.
      * 
      */
     @Export(name="taxInfos", refs={List.class,SubscriptionTaxInfo.class}, tree="[0,1]")
     private Output<List<SubscriptionTaxInfo>> taxInfos;
 
     /**
-     * @return (Updatable) Tax details.
+     * @return Tax details.
      * 
      */
     public Output<List<SubscriptionTaxInfo>> taxInfos() {
         return this.taxInfos;
     }
     /**
-     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
     @Export(name="timePersonalToCorporateConv", refs={String.class}, tree="[0]")
     private Output<String> timePersonalToCorporateConv;
 
     /**
-     * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
     public Output<String> timePersonalToCorporateConv() {
         return this.timePersonalToCorporateConv;
     }
     /**
-     * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
     @Export(name="timePlanUpgrade", refs={String.class}, tree="[0]")
     private Output<String> timePlanUpgrade;
 
     /**
-     * @return (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
     public Output<String> timePlanUpgrade() {
         return this.timePlanUpgrade;
     }
     /**
-     * (Updatable) Start date of the subscription.
+     * Start date of the subscription.
      * 
      */
     @Export(name="timeStart", refs={String.class}, tree="[0]")
     private Output<String> timeStart;
 
     /**
-     * @return (Updatable) Start date of the subscription.
+     * @return Start date of the subscription.
      * 
      */
     public Output<String> timeStart() {
         return this.timeStart;
     }
     /**
-     * (Updatable) Status of the upgrade.
+     * Status of the upgrade.
      * 
      */
     @Export(name="upgradeState", refs={String.class}, tree="[0]")
     private Output<String> upgradeState;
 
     /**
-     * @return (Updatable) Status of the upgrade.
+     * @return Status of the upgrade.
      * 
      */
     public Output<String> upgradeState() {
         return this.upgradeState;
     }
     /**
-     * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
     @Export(name="upgradeStateDetails", refs={String.class}, tree="[0]")
     private Output<String> upgradeStateDetails;
 
     /**
-     * @return (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
     public Output<String> upgradeStateDetails() {

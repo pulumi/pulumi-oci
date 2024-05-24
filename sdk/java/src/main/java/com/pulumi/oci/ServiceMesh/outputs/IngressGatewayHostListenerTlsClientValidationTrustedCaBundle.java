@@ -18,7 +18,7 @@ public final class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle 
      */
     private @Nullable String caBundleId;
     /**
-     * @return (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+     * @return (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
      * 
      */
     private @Nullable String secretName;
@@ -37,7 +37,7 @@ public final class IngressGatewayHostListenerTlsClientValidationTrustedCaBundle 
         return Optional.ofNullable(this.caBundleId);
     }
     /**
-     * @return (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+     * @return (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
      * 
      */
     public Optional<String> secretName() {

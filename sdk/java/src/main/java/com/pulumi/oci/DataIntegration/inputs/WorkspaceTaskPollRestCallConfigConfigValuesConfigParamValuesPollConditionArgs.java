@@ -17,14 +17,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
     public static final WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgs Empty = new WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionArgs();
 
     /**
-     * (Updatable) Reference to the parameter by its key.
+     * Reference to the parameter by its key.
      * 
      */
     @Import(name="parameterValue")
     private @Nullable Output<String> parameterValue;
 
     /**
-     * @return (Updatable) Reference to the parameter by its key.
+     * @return Reference to the parameter by its key.
      * 
      */
     public Optional<Output<String>> parameterValue() {
@@ -32,14 +32,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
     }
 
     /**
-     * (Updatable) The root object reference value.
+     * The root object reference value.
      * 
      */
     @Import(name="refValue")
     private @Nullable Output<WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs> refValue;
 
     /**
-     * @return (Updatable) The root object reference value.
+     * @return The root object reference value.
      * 
      */
     public Optional<Output<WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollConditionRefValueArgs>> refValue() {
@@ -72,7 +72,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
         }
 
         /**
-         * @param parameterValue (Updatable) Reference to the parameter by its key.
+         * @param parameterValue Reference to the parameter by its key.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
         }
 
         /**
-         * @param parameterValue (Updatable) Reference to the parameter by its key.
+         * @param parameterValue Reference to the parameter by its key.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
         }
 
         /**
-         * @param refValue (Updatable) The root object reference value.
+         * @param refValue The root object reference value.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
         }
 
         /**
-         * @param refValue (Updatable) The root object reference value.
+         * @param refValue The root object reference value.
          * 
          * @return builder
          * 

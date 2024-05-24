@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudGate = new DomainsCloudGate("testCloudGate", DomainsCloudGateArgs.builder()        
+ *         var testCloudGate = new DomainsCloudGate("testCloudGate", DomainsCloudGateArgs.builder()
  *             .displayName(cloudGateDisplayName)
  *             .idcsEndpoint(testDomain.url())
  *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:CloudGate")
@@ -279,38 +279,38 @@ public class DomainsCloudGate extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) Display name of upstream server
+     * (Updatable) Display name/Host identifier for this Cloud Gate
      * 
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of upstream server
+     * @return (Updatable) Display name/Host identifier for this Cloud Gate
      * 
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     public Output<String> displayName() {

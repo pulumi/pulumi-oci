@@ -116,7 +116,7 @@ class PublicationIcon(dict):
         :param str content_url: The content URL of the upload data.
         :param str file_extension: The file extension of the upload data.
         :param str mime_type: The MIME type of the upload data.
-        :param str name: (Updatable) The name of the contact.
+        :param str name: (Updatable) The name of the publication, which is also used in the listing.
         """
         if content_url is not None:
             pulumi.set(__self__, "content_url", content_url)
@@ -155,7 +155,7 @@ class PublicationIcon(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
@@ -300,7 +300,7 @@ class PublicationPackageDetailsOperatingSystem(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
         """
-        :param str name: (Updatable) The name of the contact.
+        :param str name: The name of the operating system.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -309,7 +309,7 @@ class PublicationPackageDetailsOperatingSystem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) The name of the contact.
+        The name of the operating system.
         """
         return pulumi.get(self, "name")
 
@@ -382,7 +382,7 @@ class PublicationSupportedOperatingSystem(dict):
     def __init__(__self__, *,
                  name: Optional[str] = None):
         """
-        :param str name: (Updatable) The name of the contact.
+        :param str name: (Updatable) The name of the publication, which is also used in the listing.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -391,7 +391,7 @@ class PublicationSupportedOperatingSystem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 

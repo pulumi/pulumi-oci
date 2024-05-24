@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DatabaseTools.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The DatabaseToolsConnection type.
+        /// Type of the lock.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

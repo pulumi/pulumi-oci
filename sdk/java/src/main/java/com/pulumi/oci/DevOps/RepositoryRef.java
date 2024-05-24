@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRepositoryRef = new RepositoryRef("testRepositoryRef", RepositoryRefArgs.builder()        
+ *         var testRepositoryRef = new RepositoryRef("testRepositoryRef", RepositoryRefArgs.builder()
  *             .refName(repositoryRefRefName)
  *             .refType(repositoryRefRefType)
  *             .repositoryId(testRepository.id())

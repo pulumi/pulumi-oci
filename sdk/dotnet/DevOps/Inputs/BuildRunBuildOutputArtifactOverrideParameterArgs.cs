@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.BuildRunBuildOutputArtifactOverrideParameterItemArgs>? _items;
 
         /// <summary>
-        /// List of arguments provided at the time of running the build.
+        /// List of exported variables.
         /// </summary>
         public InputList<Inputs.BuildRunBuildOutputArtifactOverrideParameterItemArgs> Items
         {

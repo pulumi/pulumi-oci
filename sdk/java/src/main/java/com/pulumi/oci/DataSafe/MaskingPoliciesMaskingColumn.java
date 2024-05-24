@@ -66,7 +66,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", MaskingPoliciesMaskingColumnArgs.builder()        
+ *         var testMaskingPoliciesMaskingColumn = new MaskingPoliciesMaskingColumn("testMaskingPoliciesMaskingColumn", MaskingPoliciesMaskingColumnArgs.builder()
  *             .columnName(maskingPoliciesMaskingColumnColumnName)
  *             .maskingPolicyId(testMaskingPolicy.id())
  *             .object(maskingPoliciesMaskingColumnObject)
@@ -139,14 +139,14 @@ public class MaskingPoliciesMaskingColumn extends com.pulumi.resources.CustomRes
         return this.childColumns;
     }
     /**
-     * (Updatable) The name of the substitution column.
+     * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      * 
      */
     @Export(name="columnName", refs={String.class}, tree="[0]")
     private Output<String> columnName;
 
     /**
-     * @return (Updatable) The name of the substitution column.
+     * @return The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      * 
      */
     public Output<String> columnName() {

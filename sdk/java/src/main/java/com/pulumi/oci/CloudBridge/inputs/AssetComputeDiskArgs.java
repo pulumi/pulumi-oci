@@ -47,14 +47,14 @@ public final class AssetComputeDiskArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) The tag name.
+     * (Updatable) Disk name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The tag name.
+     * @return (Updatable) Disk name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -194,7 +194,7 @@ public final class AssetComputeDiskArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name (Updatable) The tag name.
+         * @param name (Updatable) Disk name.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class AssetComputeDiskArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param name (Updatable) The tag name.
+         * @param name (Updatable) Disk name.
          * 
          * @return builder
          * 

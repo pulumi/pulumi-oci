@@ -13,9 +13,6 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     [OutputType]
     public sealed class ManagementAgentDataSourceListMetricDimension
     {
-        /// <summary>
-        /// Name of the property
-        /// </summary>
         public readonly string? Name;
         public readonly string? Value;
 

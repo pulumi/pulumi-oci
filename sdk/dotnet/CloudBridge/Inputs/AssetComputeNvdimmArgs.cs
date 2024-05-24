@@ -25,7 +25,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<string>? Label { get; set; }
 
         /// <summary>
-        /// (Updatable) The unit number of the SCSI controller.
+        /// (Updatable) The unit number of NVDIMM.
         /// </summary>
         [Input("unitNumber")]
         public Input<int>? UnitNumber { get; set; }

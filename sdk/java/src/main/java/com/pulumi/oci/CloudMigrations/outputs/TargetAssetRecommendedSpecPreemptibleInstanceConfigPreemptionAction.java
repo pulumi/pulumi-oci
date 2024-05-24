@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction {
     /**
-     * @return (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+     * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
      * 
      */
     private @Nullable Boolean preserveBootVolume;
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     private @Nullable String type;
 
     private TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction() {}
     /**
-     * @return (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+     * @return Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
      * 
      */
     public Optional<Boolean> preserveBootVolume() {
         return Optional.ofNullable(this.preserveBootVolume);
     }
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Optional<String> type() {

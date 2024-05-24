@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatasetDatasetFormatDetails {
     /**
-     * @return It defines the format type of text files.
+     * @return The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
      * 
      */
     private String formatType;
@@ -26,7 +26,7 @@ public final class DatasetDatasetFormatDetails {
 
     private DatasetDatasetFormatDetails() {}
     /**
-     * @return It defines the format type of text files.
+     * @return The format type. DOCUMENT format is for record contents that are PDFs or TIFFs. IMAGE format is for record contents that are JPEGs or PNGs. TEXT format is for record contents that are TXT files.
      * 
      */
     public String formatType() {

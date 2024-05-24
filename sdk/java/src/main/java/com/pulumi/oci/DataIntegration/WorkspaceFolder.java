@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceFolder = new WorkspaceFolder("testWorkspaceFolder", WorkspaceFolderArgs.builder()        
+ *         var testWorkspaceFolder = new WorkspaceFolder("testWorkspaceFolder", WorkspaceFolderArgs.builder()
  *             .identifier(workspaceFolderIdentifier)
  *             .name(workspaceFolderName)
  *             .registryMetadata(WorkspaceFolderRegistryMetadataArgs.builder()
@@ -136,14 +136,14 @@ public class WorkspaceFolder extends com.pulumi.resources.CustomResource {
         return this.identifier;
     }
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Currently not used on folder creation. Reserved for future.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Currently not used on folder creation. Reserved for future.
      * 
      */
     public Output<String> key() {

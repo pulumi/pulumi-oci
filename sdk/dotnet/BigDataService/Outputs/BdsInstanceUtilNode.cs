@@ -18,7 +18,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? BlockVolumeSizeInGbs;
         /// <summary>
-        /// The amount of worker nodes should be created
+        /// The amount of utility nodes should be created.
         /// </summary>
         public readonly int NumberOfNodes;
         /// <summary>

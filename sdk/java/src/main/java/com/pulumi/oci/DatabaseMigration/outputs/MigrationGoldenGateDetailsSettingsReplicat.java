@@ -28,7 +28,7 @@ public final class MigrationGoldenGateDetailsSettingsReplicat {
      */
     private @Nullable Integer minApplyParallelism;
     /**
-     * @return (Updatable) Extract performance.
+     * @return Extract performance.
      * 
      */
     private @Nullable String performanceProfile;
@@ -56,7 +56,7 @@ public final class MigrationGoldenGateDetailsSettingsReplicat {
         return Optional.ofNullable(this.minApplyParallelism);
     }
     /**
-     * @return (Updatable) Extract performance.
+     * @return Extract performance.
      * 
      */
     public Optional<String> performanceProfile() {

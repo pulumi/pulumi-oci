@@ -99,7 +99,7 @@ export class WorkspaceApplicationPatch extends pulumi.CustomResource {
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
-     * The identifying key for the object.
+     * The object's key.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -270,7 +270,7 @@ export interface WorkspaceApplicationPatchState {
      */
     identifier?: pulumi.Input<string>;
     /**
-     * The identifying key for the object.
+     * The object's key.
      */
     key?: pulumi.Input<string>;
     /**
@@ -356,7 +356,7 @@ export interface WorkspaceApplicationPatchArgs {
      */
     identifier?: pulumi.Input<string>;
     /**
-     * The identifying key for the object.
+     * The object's key.
      */
     key?: pulumi.Input<string>;
     /**

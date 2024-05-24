@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSecurityRecipe = new SecurityRecipe("testSecurityRecipe", SecurityRecipeArgs.builder()        
+ *         var testSecurityRecipe = new SecurityRecipe("testSecurityRecipe", SecurityRecipeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(securityRecipeDisplayName)
  *             .securityPolicies(securityRecipeSecurityPolicies)

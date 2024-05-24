@@ -26,7 +26,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string Format;
         /// <summary>
-        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
+        /// (Updatable) The content of the PEM-encoded public key.
         /// </summary>
         public readonly string? Key;
         /// <summary>

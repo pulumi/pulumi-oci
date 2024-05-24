@@ -70,7 +70,7 @@ export class DatabaseUpgrade extends pulumi.CustomResource {
      */
     public readonly databaseId!: pulumi.Output<string>;
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     public /*out*/ readonly databaseSoftwareImageId!: pulumi.Output<string>;
     /**
@@ -294,7 +294,7 @@ export interface DatabaseUpgradeState {
      */
     databaseId?: pulumi.Input<string>;
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      */
     databaseSoftwareImageId?: pulumi.Input<string>;
     /**

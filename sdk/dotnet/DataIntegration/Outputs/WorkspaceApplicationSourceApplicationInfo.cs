@@ -30,11 +30,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly string? LastPatchKey;
         /// <summary>
-        /// The workspace ID.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
         /// </summary>
         public readonly string? WorkspaceId;
 

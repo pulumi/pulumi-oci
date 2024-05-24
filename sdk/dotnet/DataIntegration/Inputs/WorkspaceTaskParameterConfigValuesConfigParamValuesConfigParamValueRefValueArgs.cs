@@ -13,19 +13,19 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskParameterConfigValuesConfigParamValuesConfigParamValueRefValueArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The type of the task.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }
 
         /// <summary>
-        /// (Updatable) The model version of an object.
+        /// (Updatable) The object's model version.
         /// </summary>
         [Input("modelVersion")]
         public Input<string>? ModelVersion { get; set; }

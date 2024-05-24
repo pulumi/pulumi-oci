@@ -31,14 +31,14 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Property Name.
+     * (Updatable) The name of the alias, within the context of the source.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the alias, within the context of the source.
      * 
      */
     public Output<String> name() {
@@ -46,14 +46,14 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
      * 
      */
     @Import(name="source", required=true)
     private Output<String> source;
 
     /**
-     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public Output<String> source() {
@@ -108,7 +108,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the alias, within the context of the source.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param name (Updatable) Property Name.
+         * @param name (Updatable) The name of the alias, within the context of the source.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class MonitoredResourceAliasesArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param source (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+         * @param source (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
          * 
          * @return builder
          * 

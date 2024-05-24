@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationScheduleMetadata {
     /**
-     * @return (Updatable) The owning object&#39;s key for this object.
+     * @return The owning object key for this object.
      * 
      */
     private @Nullable String aggregatorKey;
@@ -54,17 +54,17 @@ public final class WorkspaceApplicationScheduleMetadata {
      */
     private @Nullable Map<String,Object> infoFields;
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return Specifies whether this object is a favorite or not.
      * 
      */
     private @Nullable Boolean isFavorite;
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return (Updatable) The registry version.
+     * @return The registry version of the object.
      * 
      */
     private @Nullable Integer registryVersion;
@@ -91,7 +91,7 @@ public final class WorkspaceApplicationScheduleMetadata {
 
     private WorkspaceApplicationScheduleMetadata() {}
     /**
-     * @return (Updatable) The owning object&#39;s key for this object.
+     * @return The owning object key for this object.
      * 
      */
     public Optional<String> aggregatorKey() {
@@ -140,21 +140,21 @@ public final class WorkspaceApplicationScheduleMetadata {
         return this.infoFields == null ? Map.of() : this.infoFields;
     }
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return Specifies whether this object is a favorite or not.
      * 
      */
     public Optional<Boolean> isFavorite() {
         return Optional.ofNullable(this.isFavorite);
     }
     /**
-     * @return (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return (Updatable) The registry version.
+     * @return The registry version of the object.
      * 
      */
     public Optional<Integer> registryVersion() {

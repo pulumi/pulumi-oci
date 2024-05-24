@@ -19,25 +19,25 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? DataType { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies the name of the report definition.
+        /// (Updatable) Name of the column displayed on UI.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specifies the order in which the summary must be displayed.
+        /// (Updatable) Specifies the display order of the column.
         /// </summary>
         [Input("displayOrder", required: true)]
         public Input<int> DisplayOrder { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the column that must be sorted.
+        /// (Updatable) Specifies the corresponding field name in the data source.
         /// </summary>
         [Input("fieldName", required: true)]
         public Input<string> FieldName { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+        /// (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
         /// </summary>
         [Input("isHidden", required: true)]
         public Input<bool> IsHidden { get; set; } = null!;

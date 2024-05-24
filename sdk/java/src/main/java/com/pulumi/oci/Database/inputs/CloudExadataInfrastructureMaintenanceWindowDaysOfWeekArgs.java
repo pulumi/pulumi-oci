@@ -15,14 +15,14 @@ public final class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs ext
     public static final CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs Empty = new CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs();
 
     /**
-     * (Updatable) Name of the month of the year.
+     * (Updatable) Name of the day of the week.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) Name of the day of the week.
      * 
      */
     public Output<String> name() {
@@ -54,7 +54,7 @@ public final class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs ext
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name (Updatable) Name of the day of the week.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class CloudExadataInfrastructureMaintenanceWindowDaysOfWeekArgs ext
         }
 
         /**
-         * @param name (Updatable) Name of the month of the year.
+         * @param name (Updatable) Name of the day of the week.
          * 
          * @return builder
          * 

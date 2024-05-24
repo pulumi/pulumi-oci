@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ContainerEngine.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The regional subnet where pods' VNIC will be placed.
+        /// (Updatable) The OCID of the subnet in which to place virtual nodes.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;

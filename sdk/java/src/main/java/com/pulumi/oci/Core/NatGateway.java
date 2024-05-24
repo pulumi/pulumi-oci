@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNatGateway = new NatGateway("testNatGateway", NatGatewayArgs.builder()        
+ *         var testNatGateway = new NatGateway("testNatGateway", NatGatewayArgs.builder()
  *             .compartmentId(compartmentId)
  *             .vcnId(testVcn.id())
  *             .blockTraffic(natGatewayBlockTraffic)

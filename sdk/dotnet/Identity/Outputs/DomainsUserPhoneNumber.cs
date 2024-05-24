@@ -14,12 +14,13 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserPhoneNumber
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) A human-readable name, primarily used for display purposes. READ ONLY
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -27,10 +28,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        /// (Updatable) A Boolean value that indicates the 'primary' or preferred attribute value for this attribute--for example, the preferred phone number or primary phone number. The primary attribute value 'true' MUST appear no more than once.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: false
@@ -40,33 +42,31 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? Primary;
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) A label that indicates the attribute's function- for example, 'work', 'home', or 'mobile'
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) User's phone number
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
         /// <summary>

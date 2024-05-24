@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmClusterRemoveVirtualMachine = new VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine", VmClusterRemoveVirtualMachineArgs.builder()        
+ *         var testVmClusterRemoveVirtualMachine = new VmClusterRemoveVirtualMachine("testVmClusterRemoveVirtualMachine", VmClusterRemoveVirtualMachineArgs.builder()
  *             .dbServers(VmClusterRemoveVirtualMachineDbServerArgs.builder()
  *                 .dbServerId(testDbServer.id())
  *                 .build())

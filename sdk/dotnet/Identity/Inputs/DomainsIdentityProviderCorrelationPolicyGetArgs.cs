@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsIdentityProviderCorrelationPolicyGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+        /// (Updatable) Policy display name
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -30,32 +30,34 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) Group URI
+        /// (Updatable) Policy URI
         /// 
-        /// **Added In:** 2205120021
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: reference
+        /// * uniqueness: none
         /// </summary>
         [Input("ref")]
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Identity Provider Type
+        /// (Updatable) A label that indicates the type that this references.
         /// 
         /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsDefaultValue: Policy
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * required: true
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -63,10 +65,12 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Policy identifier
+        /// 
+        /// **Added In:** 20.1.3
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

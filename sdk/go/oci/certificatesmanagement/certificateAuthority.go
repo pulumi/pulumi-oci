@@ -34,7 +34,7 @@ type CertificateAuthority struct {
 	CertificateRevocationListDetails CertificateAuthorityCertificateRevocationListDetailsPtrOutput `pulumi:"certificateRevocationListDetails"`
 	// (Updatable) The compartment in which you want to create the CA.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) The origin of the CA.
+	// The origin of the CA.
 	ConfigType pulumi.StringOutput `pulumi:"configType"`
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions CertificateAuthorityCurrentVersionArrayOutput `pulumi:"currentVersions"`
@@ -44,7 +44,7 @@ type CertificateAuthority struct {
 	Description pulumi.StringPtrOutput `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The OCID of the private CA.
+	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId pulumi.StringOutput `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId pulumi.StringOutput `pulumi:"kmsKeyId"`
@@ -114,7 +114,7 @@ type certificateAuthorityState struct {
 	CertificateRevocationListDetails *CertificateAuthorityCertificateRevocationListDetails `pulumi:"certificateRevocationListDetails"`
 	// (Updatable) The compartment in which you want to create the CA.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The origin of the CA.
+	// The origin of the CA.
 	ConfigType *string `pulumi:"configType"`
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions []CertificateAuthorityCurrentVersion `pulumi:"currentVersions"`
@@ -124,7 +124,7 @@ type certificateAuthorityState struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The OCID of the private CA.
+	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId *string `pulumi:"issuerCertificateAuthorityId"`
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
@@ -156,7 +156,7 @@ type CertificateAuthorityState struct {
 	CertificateRevocationListDetails CertificateAuthorityCertificateRevocationListDetailsPtrInput
 	// (Updatable) The compartment in which you want to create the CA.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) The origin of the CA.
+	// The origin of the CA.
 	ConfigType pulumi.StringPtrInput
 	// The metadata details of the certificate authority (CA) version. This summary object does not contain the CA contents.
 	CurrentVersions CertificateAuthorityCurrentVersionArrayInput
@@ -166,7 +166,7 @@ type CertificateAuthorityState struct {
 	Description pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// The OCID of the private CA.
+	// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 	IssuerCertificateAuthorityId pulumi.StringPtrInput
 	// The OCID of the Oracle Cloud Infrastructure Vault key used to encrypt the CA.
 	KmsKeyId pulumi.StringPtrInput
@@ -355,7 +355,7 @@ func (o CertificateAuthorityOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) The origin of the CA.
+// The origin of the CA.
 func (o CertificateAuthorityOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringOutput { return v.ConfigType }).(pulumi.StringOutput)
 }
@@ -380,7 +380,7 @@ func (o CertificateAuthorityOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The OCID of the private CA.
+// The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
 func (o CertificateAuthorityOutput) IssuerCertificateAuthorityId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CertificateAuthority) pulumi.StringOutput { return v.IssuerCertificateAuthorityId }).(pulumi.StringOutput)
 }

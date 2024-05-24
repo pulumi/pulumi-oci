@@ -64,7 +64,7 @@ export class CertificateAuthority extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) The origin of the CA.
+     * The origin of the CA.
      */
     public /*out*/ readonly configType!: pulumi.Output<string>;
     /**
@@ -84,7 +84,7 @@ export class CertificateAuthority extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The OCID of the private CA.
+     * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      */
     public /*out*/ readonly issuerCertificateAuthorityId!: pulumi.Output<string>;
     /**
@@ -211,7 +211,7 @@ export interface CertificateAuthorityState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) The origin of the CA.
+     * The origin of the CA.
      */
     configType?: pulumi.Input<string>;
     /**
@@ -231,7 +231,7 @@ export interface CertificateAuthorityState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The OCID of the private CA.
+     * The OCID of the parent CA that issued this CA. If this is the root CA, then this value is null.
      */
     issuerCertificateAuthorityId?: pulumi.Input<string>;
     /**

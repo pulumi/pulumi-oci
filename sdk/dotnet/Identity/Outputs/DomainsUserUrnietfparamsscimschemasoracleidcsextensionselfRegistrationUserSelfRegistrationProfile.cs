@@ -14,22 +14,20 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsUserUrnietfparamsscimschemasoracleidcsextensionselfRegistrationUserSelfRegistrationProfile
     {
         /// <summary>
-        /// (Updatable) A human readable name, primarily used for display purposes.
+        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// (Updatable) User Token URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) URI of the profile.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -42,20 +40,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) Self Registration Profile Id
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
-        /// * returned: default
-        /// * type: binary
+        /// * returned: always
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

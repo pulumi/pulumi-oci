@@ -11,29 +11,13 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail {
-    /**
-     * @return Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-     * 
-     */
     private @Nullable String ipv6address;
-    /**
-     * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-     * 
-     */
     private @Nullable String ipv6subnetCidr;
 
     private InstanceConfigurationInstanceDetailsSecondaryVnicCreateVnicDetailsIpv6addressIpv6subnetCidrPairDetail() {}
-    /**
-     * @return Optional. An available IPv6 address of your subnet from a valid IPv6 prefix on the subnet (otherwise the IP address is automatically assigned).
-     * 
-     */
     public Optional<String> ipv6address() {
         return Optional.ofNullable(this.ipv6address);
     }
-    /**
-     * @return Optional. Used to disambiguate which subnet prefix should be used to create an IPv6 allocation.
-     * 
-     */
     public Optional<String> ipv6subnetCidr() {
         return Optional.ofNullable(this.ipv6subnetCidr);
     }

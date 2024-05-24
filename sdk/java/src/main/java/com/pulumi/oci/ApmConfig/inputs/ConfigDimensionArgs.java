@@ -16,14 +16,14 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
     public static final ConfigDimensionArgs Empty = new ConfigDimensionArgs();
 
     /**
-     * (Updatable) The name of the metric. This must be a known metric name.
+     * (Updatable) The name of the dimension.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name of the metric. This must be a known metric name.
+     * @return (Updatable) The name of the dimension.
      * 
      */
     public Optional<Output<String>> name() {
@@ -31,14 +31,14 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) This must not be set.
+     * (Updatable) The source to populate the dimension. This must not be specified.
      * 
      */
     @Import(name="valueSource")
     private @Nullable Output<String> valueSource;
 
     /**
-     * @return (Updatable) This must not be set.
+     * @return (Updatable) The source to populate the dimension. This must not be specified.
      * 
      */
     public Optional<Output<String>> valueSource() {
@@ -71,7 +71,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name (Updatable) The name of the metric. This must be a known metric name.
+         * @param name (Updatable) The name of the dimension.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param name (Updatable) The name of the metric. This must be a known metric name.
+         * @param name (Updatable) The name of the dimension.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param valueSource (Updatable) This must not be set.
+         * @param valueSource (Updatable) The source to populate the dimension. This must not be specified.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class ConfigDimensionArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param valueSource (Updatable) This must not be set.
+         * @param valueSource (Updatable) The source to populate the dimension. This must not be specified.
          * 
          * @return builder
          * 

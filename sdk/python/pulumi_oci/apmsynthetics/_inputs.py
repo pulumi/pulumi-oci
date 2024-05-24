@@ -471,8 +471,8 @@ class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
                  content: Optional[pulumi.Input[str]] = None,
                  file_name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] content: (Updatable) Content of the private key file.
-        :param pulumi.Input[str] file_name: (Updatable) Name of the private key file.
+        :param pulumi.Input[str] content: (Updatable) Content of the client certificate file.
+        :param pulumi.Input[str] file_name: (Updatable) Name of the certificate file. The name should not contain any confidential information.
         """
         if content is not None:
             pulumi.set(__self__, "content", content)
@@ -483,7 +483,7 @@ class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
     @pulumi.getter
     def content(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Content of the private key file.
+        (Updatable) Content of the client certificate file.
         """
         return pulumi.get(self, "content")
 
@@ -495,7 +495,7 @@ class ConfigConfigurationClientCertificateDetailsClientCertificateArgs:
     @pulumi.getter(name="fileName")
     def file_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the private key file.
+        (Updatable) Name of the certificate file. The name should not contain any confidential information.
         """
         return pulumi.get(self, "file_name")
 
@@ -888,8 +888,8 @@ class ConfigConfigurationRequestQueryParamArgs:
                  param_name: Optional[pulumi.Input[str]] = None,
                  param_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] param_name: (Updatable) Name of the parameter.
-        :param pulumi.Input[str] param_value: (Updatable) Value of the parameter.
+        :param pulumi.Input[str] param_name: (Updatable) Name of request query parameter.
+        :param pulumi.Input[str] param_value: (Updatable) Value of request query parameter.
         """
         if param_name is not None:
             pulumi.set(__self__, "param_name", param_name)
@@ -900,7 +900,7 @@ class ConfigConfigurationRequestQueryParamArgs:
     @pulumi.getter(name="paramName")
     def param_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the parameter.
+        (Updatable) Name of request query parameter.
         """
         return pulumi.get(self, "param_name")
 
@@ -912,7 +912,7 @@ class ConfigConfigurationRequestQueryParamArgs:
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value of the parameter.
+        (Updatable) Value of request query parameter.
         """
         return pulumi.get(self, "param_value")
 
@@ -1074,8 +1074,8 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
                  param_name: Optional[pulumi.Input[str]] = None,
                  param_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] param_name: (Updatable) Name of the parameter.
-        :param pulumi.Input[str] param_value: (Updatable) Value of the parameter.
+        :param pulumi.Input[str] param_name: Name of the parameter.
+        :param pulumi.Input[str] param_value: Value of the parameter.
         """
         if param_name is not None:
             pulumi.set(__self__, "param_name", param_name)
@@ -1086,7 +1086,7 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
     @pulumi.getter(name="paramName")
     def param_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the parameter.
+        Name of the parameter.
         """
         return pulumi.get(self, "param_name")
 
@@ -1098,7 +1098,7 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value of the parameter.
+        Value of the parameter.
         """
         return pulumi.get(self, "param_value")
 
@@ -1794,13 +1794,9 @@ class ScriptParameterScriptParameterArgs:
                  param_name: Optional[pulumi.Input[str]] = None,
                  param_value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[bool] is_secret: (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
-        :param pulumi.Input[str] param_name: (Updatable) Name of the parameter.
-        :param pulumi.Input[str] param_value: (Updatable) Value of the parameter.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] is_secret: If the parameter value is secret and should be kept confidential, then set isSecret to true.
+        :param pulumi.Input[str] param_name: Name of the parameter.
+        :param pulumi.Input[str] param_value: Value of the parameter.
         """
         if is_secret is not None:
             pulumi.set(__self__, "is_secret", is_secret)
@@ -1813,7 +1809,7 @@ class ScriptParameterScriptParameterArgs:
     @pulumi.getter(name="isSecret")
     def is_secret(self) -> Optional[pulumi.Input[bool]]:
         """
-        (Updatable) If the parameter value is secret and should be kept confidential, then set isSecret to true.
+        If the parameter value is secret and should be kept confidential, then set isSecret to true.
         """
         return pulumi.get(self, "is_secret")
 
@@ -1825,7 +1821,7 @@ class ScriptParameterScriptParameterArgs:
     @pulumi.getter(name="paramName")
     def param_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the parameter.
+        Name of the parameter.
         """
         return pulumi.get(self, "param_name")
 
@@ -1837,11 +1833,7 @@ class ScriptParameterScriptParameterArgs:
     @pulumi.getter(name="paramValue")
     def param_value(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value of the parameter.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Value of the parameter.
         """
         return pulumi.get(self, "param_value")
 

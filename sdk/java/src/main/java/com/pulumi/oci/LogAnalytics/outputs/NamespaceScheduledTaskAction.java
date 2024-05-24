@@ -45,12 +45,12 @@ public final class NamespaceScheduledTaskAction {
      */
     private @Nullable String queryString;
     /**
-     * @return The ManagementSavedSearch id [OCID] to be accelerated.
+     * @return The ManagementSavedSearch id [OCID] utilized in the action.
      * 
      */
     private @Nullable String savedSearchId;
     /**
-     * @return (Updatable) Schedule type discriminator.
+     * @return Action type discriminator.
      * 
      */
     private String type;
@@ -99,14 +99,14 @@ public final class NamespaceScheduledTaskAction {
         return Optional.ofNullable(this.queryString);
     }
     /**
-     * @return The ManagementSavedSearch id [OCID] to be accelerated.
+     * @return The ManagementSavedSearch id [OCID] utilized in the action.
      * 
      */
     public Optional<String> savedSearchId() {
         return Optional.ofNullable(this.savedSearchId);
     }
     /**
-     * @return (Updatable) Schedule type discriminator.
+     * @return Action type discriminator.
      * 
      */
     public String type() {

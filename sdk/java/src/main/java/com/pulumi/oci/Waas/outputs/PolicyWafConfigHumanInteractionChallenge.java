@@ -22,7 +22,7 @@ public final class PolicyWafConfigHumanInteractionChallenge {
      */
     private @Nullable String action;
     /**
-     * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * @return (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     private @Nullable Integer actionExpirationInSeconds;
@@ -47,7 +47,7 @@ public final class PolicyWafConfigHumanInteractionChallenge {
      */
     private @Nullable Integer interactionThreshold;
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
      * 
      */
     private Boolean isEnabled;
@@ -76,7 +76,7 @@ public final class PolicyWafConfigHumanInteractionChallenge {
         return Optional.ofNullable(this.action);
     }
     /**
-     * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * @return (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     public Optional<Integer> actionExpirationInSeconds() {
@@ -111,7 +111,7 @@ public final class PolicyWafConfigHumanInteractionChallenge {
         return Optional.ofNullable(this.interactionThreshold);
     }
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
      * 
      */
     public Boolean isEnabled() {

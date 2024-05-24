@@ -31,22 +31,26 @@ public final class DomainsIdentityProviderJitUserProvAssignedGroup {
     /**
      * @return (Updatable) Group URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Group identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -80,24 +84,28 @@ public final class DomainsIdentityProviderJitUserProvAssignedGroup {
     /**
      * @return (Updatable) Group URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Group identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite

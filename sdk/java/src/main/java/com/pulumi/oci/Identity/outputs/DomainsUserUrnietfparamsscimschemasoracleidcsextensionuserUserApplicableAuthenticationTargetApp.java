@@ -14,12 +14,15 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp {
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) App Display Name
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -28,9 +31,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) App URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -61,13 +64,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private @Nullable Integer targetRequestTimeout;
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label that indicates whether this is an App or IdentitySource.
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
+     * * mutability: readOnly
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -75,31 +80,32 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
      */
     private String type;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) App identifier
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
 
     private DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUserApplicableAuthenticationTargetApp() {}
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) App Display Name
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -110,9 +116,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) App URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -147,13 +153,15 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return Optional.ofNullable(this.targetRequestTimeout);
     }
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) A label that indicates whether this is an App or IdentitySource.
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: false
+     * * mutability: readOnly
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -163,19 +171,17 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionuserUse
         return this.type;
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) App identifier
+     * 
+     * **Added In:** 18.1.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

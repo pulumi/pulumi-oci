@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class PipelineRunLogDetail
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        /// The log group id for where log objects will be for pipeline runs.
         /// </summary>
         public readonly string? LogGroupId;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        /// The log id of the log object the pipeline run logs will be shipped to.
         /// </summary>
         public readonly string? LogId;
 

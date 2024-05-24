@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNodePool = new NodePool("testNodePool", NodePoolArgs.builder()        
+ *         var testNodePool = new NodePool("testNodePool", NodePoolArgs.builder()
  *             .clusterId(testCluster.id())
  *             .compartmentId(compartmentId)
  *             .name(nodePoolName)

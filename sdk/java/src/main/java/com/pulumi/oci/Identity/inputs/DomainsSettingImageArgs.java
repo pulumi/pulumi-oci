@@ -75,34 +75,28 @@ public final class DomainsSettingImageArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Image URI
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
+     * * type: reference
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Image URI
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
+     * * type: reference
      * 
      */
     public Output<String> value() {
@@ -206,17 +200,14 @@ public final class DomainsSettingImageArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value (Updatable) Custom claim value
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Image URI
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: string
-         * * uniqueness: none
+         * * type: reference
          * 
          * @return builder
          * 
@@ -227,17 +218,14 @@ public final class DomainsSettingImageArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param value (Updatable) Custom claim value
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) Image URI
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: string
-         * * uniqueness: none
+         * * type: reference
          * 
          * @return builder
          * 

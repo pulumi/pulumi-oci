@@ -16,14 +16,14 @@ public final class KeyExternalKeyReferenceDetailArgs extends com.pulumi.resource
     public static final KeyExternalKeyReferenceDetailArgs Empty = new KeyExternalKeyReferenceDetailArgs();
 
     /**
-     * ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+     * ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
     @Import(name="externalKeyId")
     private @Nullable Output<String> externalKeyId;
 
     /**
-     * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+     * @return ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
      * 
      */
     public Optional<Output<String>> externalKeyId() {
@@ -71,7 +71,7 @@ public final class KeyExternalKeyReferenceDetailArgs extends com.pulumi.resource
         }
 
         /**
-         * @param externalKeyId ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+         * @param externalKeyId ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class KeyExternalKeyReferenceDetailArgs extends com.pulumi.resource
         }
 
         /**
-         * @param externalKeyId ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+         * @param externalKeyId ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
          * 
          * @return builder
          * 

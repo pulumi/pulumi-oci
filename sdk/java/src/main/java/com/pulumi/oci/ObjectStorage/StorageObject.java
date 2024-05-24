@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testObject = new StorageObject("testObject", StorageObjectArgs.builder()        
+ *         var testObject = new StorageObject("testObject", StorageObjectArgs.builder()
  *             .bucket(objectBucket)
  *             .content(objectContent)
  *             .namespace(objectNamespace)

@@ -958,7 +958,7 @@ type MetricExtensionMetricList struct {
 	IsHidden *bool `pulumi:"isHidden"`
 	// (Updatable) Metric category
 	MetricCategory *string `pulumi:"metricCategory"`
-	// (Updatable) Name of the script file
+	// (Updatable) Name of the metric.
 	Name string `pulumi:"name"`
 	// (Updatable) Unit of metric value
 	Unit *string `pulumi:"unit"`
@@ -988,7 +988,7 @@ type MetricExtensionMetricListArgs struct {
 	IsHidden pulumi.BoolPtrInput `pulumi:"isHidden"`
 	// (Updatable) Metric category
 	MetricCategory pulumi.StringPtrInput `pulumi:"metricCategory"`
-	// (Updatable) Name of the script file
+	// (Updatable) Name of the metric.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) Unit of metric value
 	Unit pulumi.StringPtrInput `pulumi:"unit"`
@@ -1075,7 +1075,7 @@ func (o MetricExtensionMetricListOutput) MetricCategory() pulumi.StringPtrOutput
 	return o.ApplyT(func(v MetricExtensionMetricList) *string { return v.MetricCategory }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the script file
+// (Updatable) Name of the metric.
 func (o MetricExtensionMetricListOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricExtensionMetricList) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1777,7 +1777,7 @@ func (o MetricExtensionQueryPropertiesOutParamDetailsPtrOutput) OutParamType() p
 }
 
 type MetricExtensionQueryPropertiesScriptDetails struct {
-	// (Updatable) Sql statement or script file content as base64 encoded string
+	// (Updatable) Content of the script file as base64 encoded string
 	Content string `pulumi:"content"`
 	// (Updatable) Name of the script file
 	Name string `pulumi:"name"`
@@ -1795,7 +1795,7 @@ type MetricExtensionQueryPropertiesScriptDetailsInput interface {
 }
 
 type MetricExtensionQueryPropertiesScriptDetailsArgs struct {
-	// (Updatable) Sql statement or script file content as base64 encoded string
+	// (Updatable) Content of the script file as base64 encoded string
 	Content pulumi.StringInput `pulumi:"content"`
 	// (Updatable) Name of the script file
 	Name pulumi.StringInput `pulumi:"name"`
@@ -1878,7 +1878,7 @@ func (o MetricExtensionQueryPropertiesScriptDetailsOutput) ToMetricExtensionQuer
 	}).(MetricExtensionQueryPropertiesScriptDetailsPtrOutput)
 }
 
-// (Updatable) Sql statement or script file content as base64 encoded string
+// (Updatable) Content of the script file as base64 encoded string
 func (o MetricExtensionQueryPropertiesScriptDetailsOutput) Content() pulumi.StringOutput {
 	return o.ApplyT(func(v MetricExtensionQueryPropertiesScriptDetails) string { return v.Content }).(pulumi.StringOutput)
 }
@@ -1912,7 +1912,7 @@ func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Elem() MetricExten
 	}).(MetricExtensionQueryPropertiesScriptDetailsOutput)
 }
 
-// (Updatable) Sql statement or script file content as base64 encoded string
+// (Updatable) Content of the script file as base64 encoded string
 func (o MetricExtensionQueryPropertiesScriptDetailsPtrOutput) Content() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MetricExtensionQueryPropertiesScriptDetails) *string {
 		if v == nil {
@@ -2091,9 +2091,9 @@ func (o MetricExtensionQueryPropertiesSqlDetailsPtrOutput) ScriptFileName() pulu
 type MonitoredResourceAdditionalAlias struct {
 	// (Updatable) Monitored Resource Alias Reference Source Credential.
 	Credential MonitoredResourceAdditionalAliasCredential `pulumi:"credential"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the alias, within the context of the source.
 	Name string `pulumi:"name"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -2111,9 +2111,9 @@ type MonitoredResourceAdditionalAliasInput interface {
 type MonitoredResourceAdditionalAliasArgs struct {
 	// (Updatable) Monitored Resource Alias Reference Source Credential.
 	Credential MonitoredResourceAdditionalAliasCredentialInput `pulumi:"credential"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the alias, within the context of the source.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -2175,12 +2175,12 @@ func (o MonitoredResourceAdditionalAliasOutput) Credential() MonitoredResourceAd
 	}).(MonitoredResourceAdditionalAliasCredentialOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the alias, within the context of the source.
 func (o MonitoredResourceAdditionalAliasOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalAlias) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAdditionalAliasOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalAlias) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -2206,11 +2206,11 @@ func (o MonitoredResourceAdditionalAliasArrayOutput) Index(i pulumi.IntInput) Mo
 }
 
 type MonitoredResourceAdditionalAliasCredential struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 	Name string `pulumi:"name"`
 	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service string `pulumi:"service"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -2226,11 +2226,11 @@ type MonitoredResourceAdditionalAliasCredentialInput interface {
 }
 
 type MonitoredResourceAdditionalAliasCredentialArgs struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service pulumi.StringInput `pulumi:"service"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -2260,7 +2260,7 @@ func (o MonitoredResourceAdditionalAliasCredentialOutput) ToMonitoredResourceAdd
 	return o
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 func (o MonitoredResourceAdditionalAliasCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalAliasCredential) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2270,7 +2270,7 @@ func (o MonitoredResourceAdditionalAliasCredentialOutput) Service() pulumi.Strin
 	return o.ApplyT(func(v MonitoredResourceAdditionalAliasCredential) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAdditionalAliasCredentialOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalAliasCredential) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -2285,16 +2285,13 @@ type MonitoredResourceAdditionalCredential struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId *string `pulumi:"keyId"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential, within the context of the source.
 	Name *string `pulumi:"name"`
-	// (Updatable) List of monitored resource properties.
+	// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 	Properties []MonitoredResourceAdditionalCredentialProperty `pulumi:"properties"`
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source *string `pulumi:"source"`
-	// Monitored Resource Type.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 	Type *string `pulumi:"type"`
 }
 
@@ -2319,16 +2316,13 @@ type MonitoredResourceAdditionalCredentialArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential, within the context of the source.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) List of monitored resource properties.
+	// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 	Properties MonitoredResourceAdditionalCredentialPropertyArrayInput `pulumi:"properties"`
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringPtrInput `pulumi:"source"`
-	// Monitored Resource Type.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -2401,12 +2395,12 @@ func (o MonitoredResourceAdditionalCredentialOutput) KeyId() pulumi.StringPtrOut
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the credential, within the context of the source.
 func (o MonitoredResourceAdditionalCredentialOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) List of monitored resource properties.
+// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 func (o MonitoredResourceAdditionalCredentialOutput) Properties() MonitoredResourceAdditionalCredentialPropertyArrayOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) []MonitoredResourceAdditionalCredentialProperty {
 		return v.Properties
@@ -2418,10 +2412,7 @@ func (o MonitoredResourceAdditionalCredentialOutput) Source() pulumi.StringPtrOu
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 func (o MonitoredResourceAdditionalCredentialOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredential) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -2447,9 +2438,9 @@ func (o MonitoredResourceAdditionalCredentialArrayOutput) Index(i pulumi.IntInpu
 }
 
 type MonitoredResourceAdditionalCredentialProperty struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 	Name *string `pulumi:"name"`
-	// (Updatable) Property Value.
+	// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 	Value *string `pulumi:"value"`
 }
 
@@ -2465,9 +2456,9 @@ type MonitoredResourceAdditionalCredentialPropertyInput interface {
 }
 
 type MonitoredResourceAdditionalCredentialPropertyArgs struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) Property Value.
+	// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2522,12 +2513,12 @@ func (o MonitoredResourceAdditionalCredentialPropertyOutput) ToMonitoredResource
 	return o
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 func (o MonitoredResourceAdditionalCredentialPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredentialProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Property Value.
+// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 func (o MonitoredResourceAdditionalCredentialPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceAdditionalCredentialProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2555,9 +2546,9 @@ func (o MonitoredResourceAdditionalCredentialPropertyArrayOutput) Index(i pulumi
 type MonitoredResourceAliases struct {
 	// (Updatable) Monitored Resource Alias Reference Source Credential.
 	Credential MonitoredResourceAliasesCredential `pulumi:"credential"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the alias, within the context of the source.
 	Name string `pulumi:"name"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -2575,9 +2566,9 @@ type MonitoredResourceAliasesInput interface {
 type MonitoredResourceAliasesArgs struct {
 	// (Updatable) Monitored Resource Alias Reference Source Credential.
 	Credential MonitoredResourceAliasesCredentialInput `pulumi:"credential"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the alias, within the context of the source.
 	Name pulumi.StringInput `pulumi:"name"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -2663,12 +2654,12 @@ func (o MonitoredResourceAliasesOutput) Credential() MonitoredResourceAliasesCre
 	return o.ApplyT(func(v MonitoredResourceAliases) MonitoredResourceAliasesCredential { return v.Credential }).(MonitoredResourceAliasesCredentialOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the alias, within the context of the source.
 func (o MonitoredResourceAliasesOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliases) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliases) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -2707,7 +2698,7 @@ func (o MonitoredResourceAliasesPtrOutput) Credential() MonitoredResourceAliases
 	}).(MonitoredResourceAliasesCredentialPtrOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the alias, within the context of the source.
 func (o MonitoredResourceAliasesPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliases) *string {
 		if v == nil {
@@ -2717,7 +2708,7 @@ func (o MonitoredResourceAliasesPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesPtrOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliases) *string {
 		if v == nil {
@@ -2728,11 +2719,11 @@ func (o MonitoredResourceAliasesPtrOutput) Source() pulumi.StringPtrOutput {
 }
 
 type MonitoredResourceAliasesCredential struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 	Name string `pulumi:"name"`
 	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service string `pulumi:"service"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 	Source string `pulumi:"source"`
 }
 
@@ -2748,11 +2739,11 @@ type MonitoredResourceAliasesCredentialInput interface {
 }
 
 type MonitoredResourceAliasesCredentialArgs struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
 	Service pulumi.StringInput `pulumi:"service"`
-	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+	// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringInput `pulumi:"source"`
 }
 
@@ -2833,7 +2824,7 @@ func (o MonitoredResourceAliasesCredentialOutput) ToMonitoredResourceAliasesCred
 	}).(MonitoredResourceAliasesCredentialPtrOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 func (o MonitoredResourceAliasesCredentialOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliasesCredential) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2843,7 +2834,7 @@ func (o MonitoredResourceAliasesCredentialOutput) Service() pulumi.StringOutput 
 	return o.ApplyT(func(v MonitoredResourceAliasesCredential) string { return v.Service }).(pulumi.StringOutput)
 }
 
-// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesCredentialOutput) Source() pulumi.StringOutput {
 	return o.ApplyT(func(v MonitoredResourceAliasesCredential) string { return v.Source }).(pulumi.StringOutput)
 }
@@ -2872,7 +2863,7 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) Elem() MonitoredResourceAli
 	}).(MonitoredResourceAliasesCredentialOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
 func (o MonitoredResourceAliasesCredentialPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliasesCredential) *string {
 		if v == nil {
@@ -2892,7 +2883,7 @@ func (o MonitoredResourceAliasesCredentialPtrOutput) Service() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+// (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
 func (o MonitoredResourceAliasesCredentialPtrOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceAliasesCredential) *string {
 		if v == nil {
@@ -2912,16 +2903,13 @@ type MonitoredResourceCredentials struct {
 	Description *string `pulumi:"description"`
 	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId *string `pulumi:"keyId"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential, within the context of the source.
 	Name *string `pulumi:"name"`
-	// (Updatable) List of monitored resource properties.
+	// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 	Properties []MonitoredResourceCredentialsProperty `pulumi:"properties"`
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source *string `pulumi:"source"`
-	// Monitored Resource Type.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 	Type *string `pulumi:"type"`
 }
 
@@ -2946,16 +2934,13 @@ type MonitoredResourceCredentialsArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
 	KeyId pulumi.StringPtrInput `pulumi:"keyId"`
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential, within the context of the source.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) List of monitored resource properties.
+	// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 	Properties MonitoredResourceCredentialsPropertyArrayInput `pulumi:"properties"`
 	// (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
 	Source pulumi.StringPtrInput `pulumi:"source"`
-	// Monitored Resource Type.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -3054,12 +3039,12 @@ func (o MonitoredResourceCredentialsOutput) KeyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.KeyId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the credential, within the context of the source.
 func (o MonitoredResourceCredentialsOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) List of monitored resource properties.
+// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 func (o MonitoredResourceCredentialsOutput) Properties() MonitoredResourceCredentialsPropertyArrayOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) []MonitoredResourceCredentialsProperty { return v.Properties }).(MonitoredResourceCredentialsPropertyArrayOutput)
 }
@@ -3069,10 +3054,7 @@ func (o MonitoredResourceCredentialsOutput) Source() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Source }).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 func (o MonitoredResourceCredentialsOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentials) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -3134,7 +3116,7 @@ func (o MonitoredResourceCredentialsPtrOutput) KeyId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the credential, within the context of the source.
 func (o MonitoredResourceCredentialsPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -3144,7 +3126,7 @@ func (o MonitoredResourceCredentialsPtrOutput) Name() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) List of monitored resource properties.
+// (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
 func (o MonitoredResourceCredentialsPtrOutput) Properties() MonitoredResourceCredentialsPropertyArrayOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) []MonitoredResourceCredentialsProperty {
 		if v == nil {
@@ -3164,10 +3146,7 @@ func (o MonitoredResourceCredentialsPtrOutput) Source() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Monitored Resource Type.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
 func (o MonitoredResourceCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *MonitoredResourceCredentials) *string {
 		if v == nil {
@@ -3178,9 +3157,9 @@ func (o MonitoredResourceCredentialsPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type MonitoredResourceCredentialsProperty struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 	Name *string `pulumi:"name"`
-	// (Updatable) Property Value.
+	// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 	Value *string `pulumi:"value"`
 }
 
@@ -3196,9 +3175,9 @@ type MonitoredResourceCredentialsPropertyInput interface {
 }
 
 type MonitoredResourceCredentialsPropertyArgs struct {
-	// (Updatable) Property Name.
+	// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) Property Value.
+	// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3253,12 +3232,12 @@ func (o MonitoredResourceCredentialsPropertyOutput) ToMonitoredResourceCredentia
 	return o
 }
 
-// (Updatable) Property Name.
+// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
 func (o MonitoredResourceCredentialsPropertyOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentialsProperty) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Property Value.
+// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
 func (o MonitoredResourceCredentialsPropertyOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MonitoredResourceCredentialsProperty) *string { return v.Value }).(pulumi.StringPtrOutput)
 }

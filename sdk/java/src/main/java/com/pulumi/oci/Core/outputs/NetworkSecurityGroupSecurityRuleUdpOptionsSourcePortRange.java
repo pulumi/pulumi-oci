@@ -18,9 +18,6 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange {
     /**
      * @return The minimum port number, which must not be greater than the maximum port number.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     private Integer min;
 
@@ -34,9 +31,6 @@ public final class NetworkSecurityGroupSecurityRuleUdpOptionsSourcePortRange {
     }
     /**
      * @return The minimum port number, which must not be greater than the maximum port number.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Integer min() {

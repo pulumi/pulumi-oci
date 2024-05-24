@@ -18,11 +18,11 @@ namespace Pulumi.Oci.Psql.Outputs
         /// </summary>
         public readonly string? AvailabilityDomain;
         /// <summary>
-        /// A user-provided description of the database instance node.
+        /// (Updatable) A user-provided description of a database system.
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Display name of the database instance node. Avoid entering confidential information.
+        /// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>

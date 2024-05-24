@@ -39,313 +39,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.DataIntegration.WorkspaceTask;
- * import com.pulumi.oci.DataIntegration.WorkspaceTaskArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskRegistryMetadataArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskAuthConfigArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskAuthConfigParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskCancelRestCallConfigArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskCancelRestCallConfigConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskConfigProviderDelegateArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskInputPortArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskInputPortConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskInputPortConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskInputPortParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOpConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOpConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOpConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOutputPortArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOutputPortConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOutputPortConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskOutputPortParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskParameterArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskParameterConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskParameterConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskParameterConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskParameterParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskPollRestCallConfigArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskPollRestCallConfigConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionConfigValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionConfigValuesParentRefArgs;
- * import com.pulumi.oci.DataIntegration.inputs.WorkspaceTaskTypedExpressionParentRefArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testWorkspaceTask = new WorkspaceTask("testWorkspaceTask", WorkspaceTaskArgs.builder()        
- *             .identifier(workspaceTaskIdentifier)
- *             .modelType(workspaceTaskModelType)
- *             .name(workspaceTaskName)
- *             .registryMetadata(WorkspaceTaskRegistryMetadataArgs.builder()
- *                 .aggregatorKey(workspaceTaskRegistryMetadataAggregatorKey)
- *                 .isFavorite(workspaceTaskRegistryMetadataIsFavorite)
- *                 .key(workspaceTaskRegistryMetadataKey)
- *                 .labels(workspaceTaskRegistryMetadataLabels)
- *                 .registryVersion(workspaceTaskRegistryMetadataRegistryVersion)
- *                 .build())
- *             .workspaceId(testWorkspace.id())
- *             .apiCallMode(workspaceTaskApiCallMode)
- *             .authConfig(WorkspaceTaskAuthConfigArgs.builder()
- *                 .key(workspaceTaskAuthConfigKey)
- *                 .modelType(workspaceTaskAuthConfigModelType)
- *                 .modelVersion(workspaceTaskAuthConfigModelVersion)
- *                 .parentRef(WorkspaceTaskAuthConfigParentRefArgs.builder()
- *                     .parent(workspaceTaskAuthConfigParentRefParent)
- *                     .rootDocId(testRootDoc.id())
- *                     .build())
- *                 .resourcePrincipalSource(workspaceTaskAuthConfigResourcePrincipalSource)
- *                 .build())
- *             .authDetails(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .cancelEndpoint(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .cancelMethodType(workspaceTaskCancelMethodType)
- *             .cancelRestCallConfig(WorkspaceTaskCancelRestCallConfigArgs.builder()
- *                 .configValues(WorkspaceTaskCancelRestCallConfigConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskCancelRestCallConfigConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskCancelRestCallConfigConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .methodType(workspaceTaskCancelRestCallConfigMethodType)
- *                 .requestHeaders(workspaceTaskCancelRestCallConfigRequestHeaders)
- *                 .build())
- *             .conditionalCompositeFieldMap(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .configProviderDelegate(WorkspaceTaskConfigProviderDelegateArgs.builder()
- *                 .bindings(WorkspaceTaskConfigProviderDelegateBindingArgs.builder()
- *                     .rootObjectValue(workspaceTaskConfigProviderDelegateBindingsRootObjectValue)
- *                     .simpleValue(workspaceTaskConfigProviderDelegateBindingsSimpleValue)
- *                     .build())
- *                 .build())
- *             .dataFlow(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .dataflowApplication(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .description(workspaceTaskDescription)
- *             .endpoint(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .executeRestCallConfig(WorkspaceTaskExecuteRestCallConfigArgs.builder()
- *                 .configValues(WorkspaceTaskExecuteRestCallConfigConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskExecuteRestCallConfigConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskExecuteRestCallConfigConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskExecuteRestCallConfigConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .methodType(workspaceTaskExecuteRestCallConfigMethodType)
- *                 .requestHeaders(workspaceTaskExecuteRestCallConfigRequestHeaders)
- *                 .build())
- *             .headers(workspaceTaskHeaders)
- *             .inputPorts(WorkspaceTaskInputPortArgs.builder()
- *                 .modelType(workspaceTaskInputPortsModelType)
- *                 .configValues(WorkspaceTaskInputPortConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskInputPortConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskInputPortsConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskInputPortsConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskInputPortsConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskInputPortsConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskInputPortsConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskInputPortsConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskInputPortConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskInputPortsConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .description(workspaceTaskInputPortsDescription)
- *                 .fields(workspaceTaskInputPortsFields)
- *                 .key(workspaceTaskInputPortsKey)
- *                 .modelVersion(workspaceTaskInputPortsModelVersion)
- *                 .name(workspaceTaskInputPortsName)
- *                 .objectStatus(workspaceTaskInputPortsObjectStatus)
- *                 .parentRef(WorkspaceTaskInputPortParentRefArgs.builder()
- *                     .parent(workspaceTaskInputPortsParentRefParent)
- *                     .rootDocId(testRootDoc.id())
- *                     .build())
- *                 .portType(workspaceTaskInputPortsPortType)
- *                 .build())
- *             .isSingleLoad(workspaceTaskIsSingleLoad)
- *             .jsonData(workspaceTaskJsonData)
- *             .key(workspaceTaskKey)
- *             .methodType(workspaceTaskMethodType)
- *             .modelVersion(workspaceTaskModelVersion)
- *             .objectStatus(workspaceTaskObjectStatus)
- *             .opConfigValues(WorkspaceTaskOpConfigValuesArgs.builder()
- *                 .configParamValues(WorkspaceTaskOpConfigValuesConfigParamValuesArgs.builder()
- *                     .intValue(workspaceTaskOpConfigValuesConfigParamValuesIntValue)
- *                     .objectValue(workspaceTaskOpConfigValuesConfigParamValuesObjectValue)
- *                     .parameterValue(workspaceTaskOpConfigValuesConfigParamValuesParameterValue)
- *                     .refValue(workspaceTaskOpConfigValuesConfigParamValuesRefValue)
- *                     .rootObjectValue(workspaceTaskOpConfigValuesConfigParamValuesRootObjectValue)
- *                     .stringValue(workspaceTaskOpConfigValuesConfigParamValuesStringValue)
- *                     .build())
- *                 .parentRef(WorkspaceTaskOpConfigValuesParentRefArgs.builder()
- *                     .parent(workspaceTaskOpConfigValuesParentRefParent)
- *                     .rootDocId(testRootDoc.id())
- *                     .build())
- *                 .build())
- *             .operation(workspaceTaskOperation)
- *             .outputPorts(WorkspaceTaskOutputPortArgs.builder()
- *                 .modelType(workspaceTaskOutputPortsModelType)
- *                 .configValues(WorkspaceTaskOutputPortConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskOutputPortConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskOutputPortsConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskOutputPortsConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskOutputPortsConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskOutputPortsConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskOutputPortsConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskOutputPortsConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskOutputPortConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskOutputPortsConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .description(workspaceTaskOutputPortsDescription)
- *                 .fields(workspaceTaskOutputPortsFields)
- *                 .key(workspaceTaskOutputPortsKey)
- *                 .modelVersion(workspaceTaskOutputPortsModelVersion)
- *                 .name(workspaceTaskOutputPortsName)
- *                 .objectStatus(workspaceTaskOutputPortsObjectStatus)
- *                 .parentRef(WorkspaceTaskOutputPortParentRefArgs.builder()
- *                     .parent(workspaceTaskOutputPortsParentRefParent)
- *                     .rootDocId(testRootDoc.id())
- *                     .build())
- *                 .portType(workspaceTaskOutputPortsPortType)
- *                 .build())
- *             .parallelLoadLimit(workspaceTaskParallelLoadLimit)
- *             .parameters(WorkspaceTaskParameterArgs.builder()
- *                 .modelType(workspaceTaskParametersModelType)
- *                 .configValues(WorkspaceTaskParameterConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskParameterConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskParametersConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskParametersConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskParametersConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskParametersConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskParametersConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskParametersConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskParameterConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskParametersConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .defaultValue(workspaceTaskParametersDefaultValue)
- *                 .description(workspaceTaskParametersDescription)
- *                 .isInput(workspaceTaskParametersIsInput)
- *                 .isOutput(workspaceTaskParametersIsOutput)
- *                 .key(workspaceTaskParametersKey)
- *                 .modelVersion(workspaceTaskParametersModelVersion)
- *                 .name(workspaceTaskParametersName)
- *                 .objectStatus(workspaceTaskParametersObjectStatus)
- *                 .outputAggregationType(workspaceTaskParametersOutputAggregationType)
- *                 .parentRef(WorkspaceTaskParameterParentRefArgs.builder()
- *                     .parent(workspaceTaskParametersParentRefParent)
- *                     .rootDocId(testRootDoc.id())
- *                     .build())
- *                 .rootObjectDefaultValue(workspaceTaskParametersRootObjectDefaultValue)
- *                 .type(workspaceTaskParametersType)
- *                 .typeName(workspaceTaskParametersTypeName)
- *                 .usedFor(workspaceTaskParametersUsedFor)
- *                 .build())
- *             .parentRef(WorkspaceTaskParentRefArgs.builder()
- *                 .parent(workspaceTaskParentRefParent)
- *                 .rootDocId(testRootDoc.id())
- *                 .build())
- *             .pipeline(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .pollRestCallConfig(WorkspaceTaskPollRestCallConfigArgs.builder()
- *                 .configValues(WorkspaceTaskPollRestCallConfigConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskPollRestCallConfigConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskPollRestCallConfigConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskPollRestCallConfigConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .methodType(workspaceTaskPollRestCallConfigMethodType)
- *                 .requestHeaders(workspaceTaskPollRestCallConfigRequestHeaders)
- *                 .build())
- *             .script(%!v(PANIC=Format method: runtime error: invalid memory address or nil pointer dereference))
- *             .sqlScriptType(workspaceTaskSqlScriptType)
- *             .typedExpressions(WorkspaceTaskTypedExpressionArgs.builder()
- *                 .configValues(WorkspaceTaskTypedExpressionConfigValuesArgs.builder()
- *                     .configParamValues(WorkspaceTaskTypedExpressionConfigValuesConfigParamValuesArgs.builder()
- *                         .intValue(workspaceTaskTypedExpressionsConfigValuesConfigParamValuesIntValue)
- *                         .objectValue(workspaceTaskTypedExpressionsConfigValuesConfigParamValuesObjectValue)
- *                         .parameterValue(workspaceTaskTypedExpressionsConfigValuesConfigParamValuesParameterValue)
- *                         .refValue(workspaceTaskTypedExpressionsConfigValuesConfigParamValuesRefValue)
- *                         .rootObjectValue(workspaceTaskTypedExpressionsConfigValuesConfigParamValuesRootObjectValue)
- *                         .stringValue(workspaceTaskTypedExpressionsConfigValuesConfigParamValuesStringValue)
- *                         .build())
- *                     .parentRef(WorkspaceTaskTypedExpressionConfigValuesParentRefArgs.builder()
- *                         .parent(workspaceTaskTypedExpressionsConfigValuesParentRefParent)
- *                         .rootDocId(testRootDoc.id())
- *                         .build())
- *                     .build())
- *                 .description(workspaceTaskTypedExpressionsDescription)
- *                 .expression(workspaceTaskTypedExpressionsExpression)
- *                 .key(workspaceTaskTypedExpressionsKey)
- *                 .modelType(workspaceTaskTypedExpressionsModelType)
- *                 .modelVersion(workspaceTaskTypedExpressionsModelVersion)
- *                 .name(workspaceTaskTypedExpressionsName)
- *                 .objectStatus(workspaceTaskTypedExpressionsObjectStatus)
- *                 .parentRef(WorkspaceTaskTypedExpressionParentRefArgs.builder()
- *                     .parent(workspaceTaskTypedExpressionsParentRefParent)
- *                     .rootDocId(testRootDoc.id())
- *                     .build())
- *                 .type(workspaceTaskTypedExpressionsType)
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -402,14 +95,14 @@ public class WorkspaceTask extends com.pulumi.resources.CustomResource {
         return this.cancelRestCallConfig;
     }
     /**
-     * (Updatable) The information about the configuration provider.
+     * (Updatable) The type to create a config provider.
      * 
      */
     @Export(name="configProviderDelegate", refs={WorkspaceTaskConfigProviderDelegate.class}, tree="[0]")
     private Output<WorkspaceTaskConfigProviderDelegate> configProviderDelegate;
 
     /**
-     * @return (Updatable) The information about the configuration provider.
+     * @return (Updatable) The type to create a config provider.
      * 
      */
     public Output<WorkspaceTaskConfigProviderDelegate> configProviderDelegate() {
@@ -486,70 +179,70 @@ public class WorkspaceTask extends com.pulumi.resources.CustomResource {
         return this.isSingleLoad;
     }
     /**
-     * (Updatable) The key of the object.
+     * (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Output<String> key() {
         return this.key;
     }
     /**
-     * (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     @Export(name="keyMap", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> keyMap;
 
     /**
-     * @return (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+     * @return A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
      * 
      */
     public Output<Map<String,Object>> keyMap() {
         return this.keyMap;
     }
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Export(name="metadatas", refs={List.class,WorkspaceTaskMetadata.class}, tree="[0,1]")
     private Output<List<WorkspaceTaskMetadata>> metadatas;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     public Output<List<WorkspaceTaskMetadata>> metadatas() {
         return this.metadatas;
     }
     /**
-     * (Updatable) The type of the types object.
+     * (Updatable) The type of the task.
      * 
      */
     @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the types object.
+     * @return (Updatable) The type of the task.
      * 
      */
     public Output<String> modelType() {
         return this.modelType;
     }
     /**
-     * (Updatable) The model version of an object.
+     * (Updatable) The object&#39;s model version.
      * 
      */
     @Export(name="modelVersion", refs={String.class}, tree="[0]")
     private Output<String> modelVersion;
 
     /**
-     * @return (Updatable) The model version of an object.
+     * @return (Updatable) The object&#39;s model version.
      * 
      */
     public Output<String> modelVersion() {
@@ -584,14 +277,14 @@ public class WorkspaceTask extends com.pulumi.resources.CustomResource {
         return this.objectStatus;
     }
     /**
-     * (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      * 
      */
     @Export(name="objectVersion", refs={Integer.class}, tree="[0]")
     private Output<Integer> objectVersion;
 
     /**
-     * @return (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+     * @return This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
      * 
      */
     public Output<Integer> objectVersion() {
@@ -654,14 +347,14 @@ public class WorkspaceTask extends com.pulumi.resources.CustomResource {
         return this.parallelLoadLimit;
     }
     /**
-     * (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * (Updatable) An array of parameters.
      * 
      */
     @Export(name="parameters", refs={List.class,WorkspaceTaskParameter.class}, tree="[0,1]")
     private Output<List<WorkspaceTaskParameter>> parameters;
 
     /**
-     * @return (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+     * @return (Updatable) An array of parameters.
      * 
      */
     public Output<List<WorkspaceTaskParameter>> parameters() {

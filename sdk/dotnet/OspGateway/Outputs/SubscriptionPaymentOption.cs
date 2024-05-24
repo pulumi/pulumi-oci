@@ -14,47 +14,47 @@ namespace Pulumi.Oci.OspGateway.Outputs
     public sealed class SubscriptionPaymentOption
     {
         /// <summary>
-        /// (Updatable) Credit card type.
+        /// Credit card type.
         /// </summary>
         public readonly string? CreditCardType;
         /// <summary>
-        /// (Updatable) The email address of the paypal user.
+        /// The email address of the paypal user.
         /// </summary>
         public readonly string? EmailAddress;
         /// <summary>
-        /// (Updatable) Agreement id for the paypal account.
+        /// Agreement id for the paypal account.
         /// </summary>
         public readonly string? ExtBillingAgreementId;
         /// <summary>
-        /// (Updatable) First name of the paypal user.
+        /// First name of the paypal user.
         /// </summary>
         public readonly string? FirstName;
         /// <summary>
-        /// (Updatable) Last four digits of the card.
+        /// Last four digits of the card.
         /// </summary>
         public readonly string? LastDigits;
         /// <summary>
-        /// (Updatable) Last name of the paypal user.
+        /// Last name of the paypal user.
         /// </summary>
         public readonly string? LastName;
         /// <summary>
-        /// (Updatable) Name on the credit card.
+        /// Name on the credit card.
         /// </summary>
         public readonly string? NameOnCard;
         /// <summary>
-        /// (Updatable) Payment method
+        /// Payment method
         /// </summary>
         public readonly string? PaymentMethod;
         /// <summary>
-        /// (Updatable) Expired date of the credit card.
+        /// Expired date of the credit card.
         /// </summary>
         public readonly string? TimeExpiration;
         /// <summary>
-        /// (Updatable) Wallet instrument internal id.
+        /// Wallet instrument internal id.
         /// </summary>
         public readonly string? WalletInstrumentId;
         /// <summary>
-        /// (Updatable) Wallet transaction id.
+        /// Wallet transaction id.
         /// </summary>
         public readonly string? WalletTransactionId;
 

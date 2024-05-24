@@ -2186,9 +2186,9 @@ func (o JobRunJobStorageMountConfigurationDetailsListArrayOutput) Index(i pulumi
 }
 
 type JobRunLogDetail struct {
-	// The log group id for where log objects are for job runs.
+	// The log group id for where log objects will be for job runs.
 	LogGroupId *string `pulumi:"logGroupId"`
-	// The log id the job run will push logs too.
+	// The log id of the log object the job run logs will be shipped to.
 	LogId *string `pulumi:"logId"`
 }
 
@@ -2204,9 +2204,9 @@ type JobRunLogDetailInput interface {
 }
 
 type JobRunLogDetailArgs struct {
-	// The log group id for where log objects are for job runs.
+	// The log group id for where log objects will be for job runs.
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
-	// The log id the job run will push logs too.
+	// The log id of the log object the job run logs will be shipped to.
 	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
@@ -2261,12 +2261,12 @@ func (o JobRunLogDetailOutput) ToJobRunLogDetailOutputWithContext(ctx context.Co
 	return o
 }
 
-// The log group id for where log objects are for job runs.
+// The log group id for where log objects will be for job runs.
 func (o JobRunLogDetailOutput) LogGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobRunLogDetail) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
-// The log id the job run will push logs too.
+// The log id of the log object the job run logs will be shipped to.
 func (o JobRunLogDetailOutput) LogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v JobRunLogDetail) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
@@ -2294,7 +2294,7 @@ func (o JobRunLogDetailArrayOutput) Index(i pulumi.IntInput) JobRunLogDetailOutp
 type ModelCustomMetadataList struct {
 	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
 	Category *string `pulumi:"category"`
-	// (Updatable) A short description of the model.
+	// (Updatable) Description of model metadata
 	Description *string `pulumi:"description"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
@@ -2324,7 +2324,7 @@ type ModelCustomMetadataListInput interface {
 type ModelCustomMetadataListArgs struct {
 	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
 	Category pulumi.StringPtrInput `pulumi:"category"`
-	// (Updatable) A short description of the model.
+	// (Updatable) Description of model metadata
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
@@ -2396,7 +2396,7 @@ func (o ModelCustomMetadataListOutput) Category() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A short description of the model.
+// (Updatable) Description of model metadata
 func (o ModelCustomMetadataListOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelCustomMetadataList) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -2442,7 +2442,7 @@ func (o ModelCustomMetadataListArrayOutput) Index(i pulumi.IntInput) ModelCustom
 type ModelDefinedMetadataList struct {
 	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
 	Category *string `pulumi:"category"`
-	// (Updatable) A short description of the model.
+	// (Updatable) Description of model metadata
 	Description *string `pulumi:"description"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
@@ -2472,7 +2472,7 @@ type ModelDefinedMetadataListInput interface {
 type ModelDefinedMetadataListArgs struct {
 	// (Updatable) Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
 	Category pulumi.StringPtrInput `pulumi:"category"`
-	// (Updatable) A short description of the model.
+	// (Updatable) Description of model metadata
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Key of the model Metadata. The key can either be user defined or Oracle Cloud Infrastructure defined. List of Oracle Cloud Infrastructure defined keys:
 	// * useCaseType
@@ -2544,7 +2544,7 @@ func (o ModelDefinedMetadataListOutput) Category() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Category }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A short description of the model.
+// (Updatable) Description of model metadata
 func (o ModelDefinedMetadataListOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ModelDefinedMetadataList) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -4475,6 +4475,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	// (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
 	//
 	// The following values are supported:
+	// * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+	// * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
 	MetricExpressionRuleType string `pulumi:"metricExpressionRuleType"`
 	// (Updatable) Metric type
 	MetricType *string `pulumi:"metricType"`
@@ -4499,6 +4501,8 @@ type ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetails
 	// (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
 	//
 	// The following values are supported:
+	// * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+	// * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
 	MetricExpressionRuleType pulumi.StringInput `pulumi:"metricExpressionRuleType"`
 	// (Updatable) Metric type
 	MetricType pulumi.StringPtrInput `pulumi:"metricType"`
@@ -4562,6 +4566,8 @@ func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDeta
 // (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
 //
 // The following values are supported:
+// * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+// * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
 func (o ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRuleOutput) MetricExpressionRuleType() pulumi.StringOutput {
 	return o.ApplyT(func(v ModelDeploymentModelDeploymentConfigurationDetailsModelConfigurationDetailsScalingPolicyAutoScalingPolicyRule) string {
 		return v.MetricExpressionRuleType
@@ -4972,15 +4978,15 @@ func (o ModelDeploymentModelDeploymentSystemDataArrayOutput) Index(i pulumi.IntI
 }
 
 type NotebookSessionNotebookSessionConfigDetails struct {
-	// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs *int `pulumi:"blockStorageSizeInGbs"`
-	// (Updatable) Details for the notebook session shape configuration.
+	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails `pulumi:"notebookSessionShapeConfigDetails"`
-	// (Updatable) The OCID of a Data Science private endpoint.
+	// The OCID of a Data Science private endpoint.
 	PrivateEndpointId *string `pulumi:"privateEndpointId"`
-	// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape string `pulumi:"shape"`
-	// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
 	SubnetId *string `pulumi:"subnetId"`
 }
 
@@ -4996,15 +5002,15 @@ type NotebookSessionNotebookSessionConfigDetailsInput interface {
 }
 
 type NotebookSessionNotebookSessionConfigDetailsArgs struct {
-	// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+	// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 	BlockStorageSizeInGbs pulumi.IntPtrInput `pulumi:"blockStorageSizeInGbs"`
-	// (Updatable) Details for the notebook session shape configuration.
+	// Details for the notebook session shape configuration.
 	NotebookSessionShapeConfigDetails NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrInput `pulumi:"notebookSessionShapeConfigDetails"`
-	// (Updatable) The OCID of a Data Science private endpoint.
+	// The OCID of a Data Science private endpoint.
 	PrivateEndpointId pulumi.StringPtrInput `pulumi:"privateEndpointId"`
-	// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+	// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 	Shape pulumi.StringInput `pulumi:"shape"`
-	// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+	// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
 	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
@@ -5085,29 +5091,29 @@ func (o NotebookSessionNotebookSessionConfigDetailsOutput) ToNotebookSessionNote
 	}).(NotebookSessionNotebookSessionConfigDetailsPtrOutput)
 }
 
-// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) BlockStorageSizeInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *int { return v.BlockStorageSizeInGbs }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Details for the notebook session shape configuration.
+// Details for the notebook session shape configuration.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) NotebookSessionShapeConfigDetails() NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails {
 		return v.NotebookSessionShapeConfigDetails
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) The OCID of a Data Science private endpoint.
+// The OCID of a Data Science private endpoint.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) PrivateEndpointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *string { return v.PrivateEndpointId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) string { return v.Shape }).(pulumi.StringOutput)
 }
 
-// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
 func (o NotebookSessionNotebookSessionConfigDetailsOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetails) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
@@ -5136,7 +5142,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) Elem() NotebookSes
 	}).(NotebookSessionNotebookSessionConfigDetailsOutput)
 }
 
-// (Updatable) A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
+// A notebook session instance is provided with a block storage volume. This specifies the size of the volume in GBs.
 func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) BlockStorageSizeInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *int {
 		if v == nil {
@@ -5146,7 +5152,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) BlockStorageSizeIn
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Details for the notebook session shape configuration.
+// Details for the notebook session shape configuration.
 func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) NotebookSessionShapeConfigDetails() NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails {
 		if v == nil {
@@ -5156,7 +5162,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) NotebookSessionSha
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) The OCID of a Data Science private endpoint.
+// The OCID of a Data Science private endpoint.
 func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) PrivateEndpointId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *string {
 		if v == nil {
@@ -5166,7 +5172,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) PrivateEndpointId(
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
+// The shape used to launch the notebook session compute instance.  The list of available shapes in a given compartment can be retrieved using the `ListNotebookSessionShapes` endpoint.
 func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) Shape() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *string {
 		if v == nil {
@@ -5176,7 +5182,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) Shape() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
+// A notebook session instance is provided with a VNIC for network access.  This specifies the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet to create a VNIC in.  The subnet should be in a VCN with a NAT gateway for egress to the internet.
 func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetails) *string {
 		if v == nil {
@@ -5187,9 +5193,9 @@ func (o NotebookSessionNotebookSessionConfigDetailsPtrOutput) SubnetId() pulumi.
 }
 
 type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails struct {
-	// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// (Updatable) The total number of OCPUs available to the notebook session instance.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -5205,9 +5211,9 @@ type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetail
 }
 
 type NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsArgs struct {
-	// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+	// The total amount of memory available to the notebook session instance, in gigabytes.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// (Updatable) The total number of OCPUs available to the notebook session instance.
+	// The total number of OCPUs available to the notebook session instance.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -5288,14 +5294,14 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput)
 }
 
-// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+// The total amount of memory available to the notebook session instance, in gigabytes.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) The total number of OCPUs available to the notebook session instance.
+// The total number of OCPUs available to the notebook session instance.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		return v.Ocpus
@@ -5326,7 +5332,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 	}).(NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsOutput)
 }
 
-// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+// The total amount of memory available to the notebook session instance, in gigabytes.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		if v == nil {
@@ -5336,7 +5342,7 @@ func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDet
 	}).(pulumi.Float64PtrOutput)
 }
 
-// (Updatable) The total number of OCPUs available to the notebook session instance.
+// The total number of OCPUs available to the notebook session instance.
 func (o NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails) *float64 {
 		if v == nil {
@@ -6288,11 +6294,11 @@ func (o NotebookSessionNotebookSessionStorageMountConfigurationDetailsListArrayO
 }
 
 type PipelineConfigurationDetails struct {
-	// (Updatable) The command line arguments to set for step.
+	// (Updatable) The command line arguments to set for steps in the pipeline.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
-	// (Updatable) Environment variables to set for step.
+	// (Updatable) Environment variables to set for steps in the pipeline.
 	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
-	// (Updatable) A time bound for the execution of the step.
+	// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 	// (Updatable) The type of pipeline.
 	Type string `pulumi:"type"`
@@ -6310,11 +6316,11 @@ type PipelineConfigurationDetailsInput interface {
 }
 
 type PipelineConfigurationDetailsArgs struct {
-	// (Updatable) The command line arguments to set for step.
+	// (Updatable) The command line arguments to set for steps in the pipeline.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
-	// (Updatable) Environment variables to set for step.
+	// (Updatable) Environment variables to set for steps in the pipeline.
 	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
-	// (Updatable) A time bound for the execution of the step.
+	// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 	// (Updatable) The type of pipeline.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -6397,17 +6403,17 @@ func (o PipelineConfigurationDetailsOutput) ToPipelineConfigurationDetailsPtrOut
 	}).(PipelineConfigurationDetailsPtrOutput)
 }
 
-// (Updatable) The command line arguments to set for step.
+// (Updatable) The command line arguments to set for steps in the pipeline.
 func (o PipelineConfigurationDetailsOutput) CommandLineArguments() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineConfigurationDetails) *string { return v.CommandLineArguments }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Environment variables to set for step.
+// (Updatable) Environment variables to set for steps in the pipeline.
 func (o PipelineConfigurationDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
 	return o.ApplyT(func(v PipelineConfigurationDetails) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
 }
 
-// (Updatable) A time bound for the execution of the step.
+// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 func (o PipelineConfigurationDetailsOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineConfigurationDetails) *string { return v.MaximumRuntimeInMinutes }).(pulumi.StringPtrOutput)
 }
@@ -6441,7 +6447,7 @@ func (o PipelineConfigurationDetailsPtrOutput) Elem() PipelineConfigurationDetai
 	}).(PipelineConfigurationDetailsOutput)
 }
 
-// (Updatable) The command line arguments to set for step.
+// (Updatable) The command line arguments to set for steps in the pipeline.
 func (o PipelineConfigurationDetailsPtrOutput) CommandLineArguments() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineConfigurationDetails) *string {
 		if v == nil {
@@ -6451,7 +6457,7 @@ func (o PipelineConfigurationDetailsPtrOutput) CommandLineArguments() pulumi.Str
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Environment variables to set for step.
+// (Updatable) Environment variables to set for steps in the pipeline.
 func (o PipelineConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
 	return o.ApplyT(func(v *PipelineConfigurationDetails) map[string]interface{} {
 		if v == nil {
@@ -6461,7 +6467,7 @@ func (o PipelineConfigurationDetailsPtrOutput) EnvironmentVariables() pulumi.Map
 	}).(pulumi.MapOutput)
 }
 
-// (Updatable) A time bound for the execution of the step.
+// (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 func (o PipelineConfigurationDetailsPtrOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineConfigurationDetails) *string {
 		if v == nil {
@@ -7133,11 +7139,11 @@ func (o PipelineRunConfigurationDetailArrayOutput) Index(i pulumi.IntInput) Pipe
 }
 
 type PipelineRunConfigurationOverrideDetails struct {
-	// The command line arguments to set for step.
+	// The command line arguments to set for steps in the pipeline.
 	CommandLineArguments *string `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
+	// Environment variables to set for steps in the pipeline.
 	EnvironmentVariables map[string]interface{} `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
+	// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes *string `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
 	Type string `pulumi:"type"`
@@ -7155,11 +7161,11 @@ type PipelineRunConfigurationOverrideDetailsInput interface {
 }
 
 type PipelineRunConfigurationOverrideDetailsArgs struct {
-	// The command line arguments to set for step.
+	// The command line arguments to set for steps in the pipeline.
 	CommandLineArguments pulumi.StringPtrInput `pulumi:"commandLineArguments"`
-	// Environment variables to set for step.
+	// Environment variables to set for steps in the pipeline.
 	EnvironmentVariables pulumi.MapInput `pulumi:"environmentVariables"`
-	// A time bound for the execution of the step.
+	// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 	MaximumRuntimeInMinutes pulumi.StringPtrInput `pulumi:"maximumRuntimeInMinutes"`
 	// The type of pipeline.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -7242,17 +7248,17 @@ func (o PipelineRunConfigurationOverrideDetailsOutput) ToPipelineRunConfiguratio
 	}).(PipelineRunConfigurationOverrideDetailsPtrOutput)
 }
 
-// The command line arguments to set for step.
+// The command line arguments to set for steps in the pipeline.
 func (o PipelineRunConfigurationOverrideDetailsOutput) CommandLineArguments() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineRunConfigurationOverrideDetails) *string { return v.CommandLineArguments }).(pulumi.StringPtrOutput)
 }
 
-// Environment variables to set for step.
+// Environment variables to set for steps in the pipeline.
 func (o PipelineRunConfigurationOverrideDetailsOutput) EnvironmentVariables() pulumi.MapOutput {
 	return o.ApplyT(func(v PipelineRunConfigurationOverrideDetails) map[string]interface{} { return v.EnvironmentVariables }).(pulumi.MapOutput)
 }
 
-// A time bound for the execution of the step.
+// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 func (o PipelineRunConfigurationOverrideDetailsOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineRunConfigurationOverrideDetails) *string { return v.MaximumRuntimeInMinutes }).(pulumi.StringPtrOutput)
 }
@@ -7286,7 +7292,7 @@ func (o PipelineRunConfigurationOverrideDetailsPtrOutput) Elem() PipelineRunConf
 	}).(PipelineRunConfigurationOverrideDetailsOutput)
 }
 
-// The command line arguments to set for step.
+// The command line arguments to set for steps in the pipeline.
 func (o PipelineRunConfigurationOverrideDetailsPtrOutput) CommandLineArguments() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineRunConfigurationOverrideDetails) *string {
 		if v == nil {
@@ -7296,7 +7302,7 @@ func (o PipelineRunConfigurationOverrideDetailsPtrOutput) CommandLineArguments()
 	}).(pulumi.StringPtrOutput)
 }
 
-// Environment variables to set for step.
+// Environment variables to set for steps in the pipeline.
 func (o PipelineRunConfigurationOverrideDetailsPtrOutput) EnvironmentVariables() pulumi.MapOutput {
 	return o.ApplyT(func(v *PipelineRunConfigurationOverrideDetails) map[string]interface{} {
 		if v == nil {
@@ -7306,7 +7312,7 @@ func (o PipelineRunConfigurationOverrideDetailsPtrOutput) EnvironmentVariables()
 	}).(pulumi.MapOutput)
 }
 
-// A time bound for the execution of the step.
+// A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
 func (o PipelineRunConfigurationOverrideDetailsPtrOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineRunConfigurationOverrideDetails) *string {
 		if v == nil {
@@ -7521,9 +7527,9 @@ func (o PipelineRunLogConfigurationOverrideDetailsPtrOutput) LogId() pulumi.Stri
 }
 
 type PipelineRunLogDetail struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	// The log group id for where log objects will be for pipeline runs.
 	LogGroupId *string `pulumi:"logGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	// The log id of the log object the pipeline run logs will be shipped to.
 	LogId *string `pulumi:"logId"`
 }
 
@@ -7539,9 +7545,9 @@ type PipelineRunLogDetailInput interface {
 }
 
 type PipelineRunLogDetailArgs struct {
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	// The log group id for where log objects will be for pipeline runs.
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	// The log id of the log object the pipeline run logs will be shipped to.
 	LogId pulumi.StringPtrInput `pulumi:"logId"`
 }
 
@@ -7596,12 +7602,12 @@ func (o PipelineRunLogDetailOutput) ToPipelineRunLogDetailOutputWithContext(ctx 
 	return o
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+// The log group id for where log objects will be for pipeline runs.
 func (o PipelineRunLogDetailOutput) LogGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineRunLogDetail) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+// The log id of the log object the pipeline run logs will be shipped to.
 func (o PipelineRunLogDetailOutput) LogId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineRunLogDetail) *string { return v.LogId }).(pulumi.StringPtrOutput)
 }
@@ -7965,7 +7971,7 @@ type PipelineStepArtifact struct {
 	ArtifactContentMd5         *string `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       *string `pulumi:"artifactLastModified"`
 	PipelineStepArtifact       string  `pulumi:"pipelineStepArtifact"`
-	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName string `pulumi:"stepName"`
 }
 
@@ -7986,7 +7992,7 @@ type PipelineStepArtifactArgs struct {
 	ArtifactContentMd5         pulumi.StringPtrInput `pulumi:"artifactContentMd5"`
 	ArtifactLastModified       pulumi.StringPtrInput `pulumi:"artifactLastModified"`
 	PipelineStepArtifact       pulumi.StringInput    `pulumi:"pipelineStepArtifact"`
-	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
 
@@ -8087,7 +8093,7 @@ func (o PipelineStepArtifactOutput) PipelineStepArtifact() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepArtifact) string { return v.PipelineStepArtifact }).(pulumi.StringOutput)
 }
 
-// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 func (o PipelineStepArtifactOutput) StepName() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepArtifact) string { return v.StepName }).(pulumi.StringOutput)
 }
@@ -8161,7 +8167,7 @@ func (o PipelineStepArtifactPtrOutput) PipelineStepArtifact() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 func (o PipelineStepArtifactPtrOutput) StepName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineStepArtifact) *string {
 		if v == nil {

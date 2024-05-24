@@ -30,59 +30,6 @@ import javax.annotation.Nullable;
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.Identity.DomainsApiKey;
- * import com.pulumi.oci.Identity.DomainsApiKeyArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApiKeyTagArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs;
- * import com.pulumi.oci.Identity.inputs.DomainsApiKeyUserArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testApiKey = new DomainsApiKey("testApiKey", DomainsApiKeyArgs.builder()        
- *             .idcsEndpoint(testDomain.url())
- *             .key(apiKeyKey)
- *             .schemas("urn:ietf:params:scim:schemas:oracle:idcs:apikey")
- *             .attributeSets()
- *             .attributes("")
- *             .authorization(apiKeyAuthorization)
- *             .description(apiKeyDescription)
- *             .id(apiKeyId)
- *             .ocid(apiKeyOcid)
- *             .resourceTypeSchemaVersion(apiKeyResourceTypeSchemaVersion)
- *             .tags(DomainsApiKeyTagArgs.builder()
- *                 .key(apiKeyTagsKey)
- *                 .value(apiKeyTagsValue)
- *                 .build())
- *             .urnietfparamsscimschemasoracleidcsextensionselfChangeUser(DomainsApiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserArgs.builder()
- *                 .allowSelfChange(apiKeyUrnietfparamsscimschemasoracleidcsextensionselfChangeUserAllowSelfChange)
- *                 .build())
- *             .user(DomainsApiKeyUserArgs.builder()
- *                 .ocid(testUser.ocid())
- *                 .value(testUser.id())
- *                 .build())
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -447,34 +394,34 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
         return this.idcsPreventedOperations;
     }
     /**
-     * Key or name of the tag.
+     * Key
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return Key or name of the tag.
+     * @return Key
+     * 
+     * **Added In:** 2010242156
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
-     * * multiValued: false
-     * * mutability: readWrite
+     * * caseExact: true
+     * * idcsPii: true
+     * * type: string
+     * * mutability: immutable
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      * 
      */
     public Output<String> key() {
@@ -515,7 +462,7 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * The user&#39;s OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -523,16 +470,16 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     @Export(name="ocid", refs={String.class}, tree="[0]")
     private Output<String> ocid;
 
     /**
-     * @return The user&#39;s OCID.
+     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -540,9 +487,9 @@ public class DomainsApiKey extends com.pulumi.resources.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      * 
      */
     public Output<String> ocid() {

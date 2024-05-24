@@ -17,7 +17,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     public static final DomainsAppBasedOnTemplateArgs Empty = new DomainsAppBasedOnTemplateArgs();
 
     /**
-     * (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -34,7 +34,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> lastModified;
 
     /**
-     * @return (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * @return (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -52,7 +52,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) URI of the application template.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -68,7 +68,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the application template.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -85,38 +85,34 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * Identifier of the application template.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return Identifier of the application template.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -124,9 +120,9 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) Unique well-known identifier used to reference connector bundle.
+     * (Updatable) Unique Well-known identifier used to reference app template.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -143,9 +139,9 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> wellKnownId;
 
     /**
-     * @return (Updatable) Unique well-known identifier used to reference connector bundle.
+     * @return (Updatable) Unique Well-known identifier used to reference app template.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -190,7 +186,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastModified (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         * @param lastModified (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -211,7 +207,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param lastModified (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+         * @param lastModified (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -231,7 +227,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the application template.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -251,7 +247,7 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the application template.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -270,19 +266,17 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value Identifier of the application template.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -293,19 +287,17 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value Identifier of the application template.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -315,9 +307,9 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param wellKnownId (Updatable) Unique well-known identifier used to reference connector bundle.
+         * @param wellKnownId (Updatable) Unique Well-known identifier used to reference app template.
          * 
-         * **Added In:** 19.1.4
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -338,9 +330,9 @@ public final class DomainsAppBasedOnTemplateArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param wellKnownId (Updatable) Unique well-known identifier used to reference connector bundle.
+         * @param wellKnownId (Updatable) Unique Well-known identifier used to reference app template.
          * 
-         * **Added In:** 19.1.4
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

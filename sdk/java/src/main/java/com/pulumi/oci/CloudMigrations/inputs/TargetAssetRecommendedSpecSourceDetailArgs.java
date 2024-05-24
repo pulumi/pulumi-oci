@@ -16,14 +16,14 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
     public static final TargetAssetRecommendedSpecSourceDetailArgs Empty = new TargetAssetRecommendedSpecSourceDetailArgs();
 
     /**
-     * (Updatable) The OCID of the boot volume used to boot the instance.
+     * The OCID of the boot volume used to boot the instance.
      * 
      */
     @Import(name="bootVolumeId")
     private @Nullable Output<String> bootVolumeId;
 
     /**
-     * @return (Updatable) The OCID of the boot volume used to boot the instance.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     public Optional<Output<String>> bootVolumeId() {
@@ -31,14 +31,14 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+     * The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
      * 
      */
     @Import(name="bootVolumeSizeInGbs")
     private @Nullable Output<String> bootVolumeSizeInGbs;
 
     /**
-     * @return (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+     * @return The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
      * 
      */
     public Optional<Output<String>> bootVolumeSizeInGbs() {
@@ -46,18 +46,14 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-     * 
-     * Allowed values:
+     * The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
     @Import(name="bootVolumeVpusPerGb")
     private @Nullable Output<String> bootVolumeVpusPerGb;
 
     /**
-     * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-     * 
-     * Allowed values:
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
     public Optional<Output<String>> bootVolumeVpusPerGb() {
@@ -65,14 +61,14 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The OCID of the image used to boot the instance.
+     * The OCID of the image used to boot the instance.
      * 
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
-     * @return (Updatable) The OCID of the image used to boot the instance.
+     * @return The OCID of the image used to boot the instance.
      * 
      */
     public Optional<Output<String>> imageId() {
@@ -80,14 +76,14 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+     * The OCID of the key management key to assign as the master encryption key for the boot volume.
      * 
      */
     @Import(name="kmsKeyId")
     private @Nullable Output<String> kmsKeyId;
 
     /**
-     * @return (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the key management key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<Output<String>> kmsKeyId() {
@@ -95,20 +91,14 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     @Import(name="sourceType")
     private @Nullable Output<String> sourceType;
 
     /**
-     * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     public Optional<Output<String>> sourceType() {
@@ -145,7 +135,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param bootVolumeId (Updatable) The OCID of the boot volume used to boot the instance.
+         * @param bootVolumeId The OCID of the boot volume used to boot the instance.
          * 
          * @return builder
          * 
@@ -156,7 +146,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param bootVolumeId (Updatable) The OCID of the boot volume used to boot the instance.
+         * @param bootVolumeId The OCID of the boot volume used to boot the instance.
          * 
          * @return builder
          * 
@@ -166,7 +156,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param bootVolumeSizeInGbs (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+         * @param bootVolumeSizeInGbs The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
          * 
          * @return builder
          * 
@@ -177,7 +167,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param bootVolumeSizeInGbs (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+         * @param bootVolumeSizeInGbs The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
          * 
          * @return builder
          * 
@@ -187,9 +177,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param bootVolumeVpusPerGb (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-         * 
-         * Allowed values:
+         * @param bootVolumeVpusPerGb The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          * 
          * @return builder
          * 
@@ -200,9 +188,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param bootVolumeVpusPerGb (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-         * 
-         * Allowed values:
+         * @param bootVolumeVpusPerGb The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
          * 
          * @return builder
          * 
@@ -212,7 +198,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param imageId (Updatable) The OCID of the image used to boot the instance.
+         * @param imageId The OCID of the image used to boot the instance.
          * 
          * @return builder
          * 
@@ -223,7 +209,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param imageId (Updatable) The OCID of the image used to boot the instance.
+         * @param imageId The OCID of the image used to boot the instance.
          * 
          * @return builder
          * 
@@ -233,7 +219,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the key management key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -244,7 +230,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param kmsKeyId (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+         * @param kmsKeyId The OCID of the key management key to assign as the master encryption key for the boot volume.
          * 
          * @return builder
          * 
@@ -254,10 +240,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param sourceType (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param sourceType The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          * 
          * @return builder
          * 
@@ -268,10 +251,7 @@ public final class TargetAssetRecommendedSpecSourceDetailArgs extends com.pulumi
         }
 
         /**
-         * @param sourceType (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param sourceType The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
          * 
          * @return builder
          * 

@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDynamicGroup = new DynamicGroup("testDynamicGroup", DynamicGroupArgs.builder()        
+ *         var testDynamicGroup = new DynamicGroup("testDynamicGroup", DynamicGroupArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(dynamicGroupDescription)
  *             .matchingRule(dynamicGroupMatchingRule)

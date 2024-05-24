@@ -13,13 +13,15 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsRuleConditionGroup {
     /**
-     * @return (Updatable) Attribute name of an individual value to be returned.
+     * @return (Updatable) Condition or ConditionGroup name
+     * 
+     * **Added In:** 17.4.2
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -27,7 +29,7 @@ public final class DomainsRuleConditionGroup {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) PolicyType URI
+     * @return (Updatable) ConditionGroup URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -41,14 +43,14 @@ public final class DomainsRuleConditionGroup {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The type of resource, User or App, that modified this Resource
+     * @return (Updatable) A label that indicates whether this is Condition or ConditionGroup.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * idcsDefaultValue: Condition
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: readWrite
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -56,14 +58,14 @@ public final class DomainsRuleConditionGroup {
      */
     private String type;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Condition or ConditionGroup identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -73,13 +75,15 @@ public final class DomainsRuleConditionGroup {
 
     private DomainsRuleConditionGroup() {}
     /**
-     * @return (Updatable) Attribute name of an individual value to be returned.
+     * @return (Updatable) Condition or ConditionGroup name
+     * 
+     * **Added In:** 17.4.2
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -89,7 +93,7 @@ public final class DomainsRuleConditionGroup {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) PolicyType URI
+     * @return (Updatable) ConditionGroup URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -105,14 +109,14 @@ public final class DomainsRuleConditionGroup {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The type of resource, User or App, that modified this Resource
+     * @return (Updatable) A label that indicates whether this is Condition or ConditionGroup.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * idcsDefaultValue: Condition
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
+     * * mutability: readWrite
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -122,14 +126,14 @@ public final class DomainsRuleConditionGroup {
         return this.type;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Condition or ConditionGroup identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none

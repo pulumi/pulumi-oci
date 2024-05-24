@@ -16,7 +16,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _allowLists;
 
         /// <summary>
-        /// (Updatable) A list of filtering rules to include logs
+        /// (Updatable) List of metrics regex to be allowed.
         /// </summary>
         public InputList<string> AllowLists
         {
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Logging.Inputs
         private InputList<string>? _denyLists;
 
         /// <summary>
-        /// (Updatable) A list of filtering rules to reject logs
+        /// (Updatable) List of metrics regex to be denied.
         /// </summary>
         public InputList<string> DenyLists
         {
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Logging.Inputs
         public Input<string>? FilterType { get; set; }
 
         /// <summary>
-        /// (Updatable) The name key to tag this Grok pattern.
+        /// (Updatable) Unique name for the filter.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

@@ -16,12 +16,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
     /**
-     * @return (Updatable) Condition group corresponding to each compartment
+     * @return Condition group corresponding to each compartment
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups;
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
@@ -48,14 +48,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
 
     private TargetTargetDetectorRecipeEffectiveDetectorRuleDetail() {}
     /**
-     * @return (Updatable) Condition group corresponding to each compartment
+     * @return Condition group corresponding to each compartment
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup> conditionGroups() {
         return this.conditionGroups == null ? List.of() : this.conditionGroups;
     }
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations() {

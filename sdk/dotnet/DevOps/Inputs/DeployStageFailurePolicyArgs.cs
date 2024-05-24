@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<int>? FailurePercentage { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of policy used for rolling out a deployment stage.
+        /// (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
         /// </summary>
         [Input("policyType", required: true)]
         public Input<string> PolicyType { get; set; } = null!;

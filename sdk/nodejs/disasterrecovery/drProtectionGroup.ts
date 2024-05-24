@@ -197,7 +197,7 @@ export class DrProtectionGroup extends pulumi.CustomResource {
      */
     public /*out*/ readonly peerRegion!: pulumi.Output<string>;
     /**
-     * The role of the DR protection group.  Example: `STANDBY`
+     * The role of the DR protection group.
      */
     public /*out*/ readonly role!: pulumi.Output<string>;
     /**
@@ -338,7 +338,7 @@ export interface DrProtectionGroupState {
      */
     peerRegion?: pulumi.Input<string>;
     /**
-     * The role of the DR protection group.  Example: `STANDBY`
+     * The role of the DR protection group.
      */
     role?: pulumi.Input<string>;
     /**

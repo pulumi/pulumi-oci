@@ -22,7 +22,7 @@ public final class WorkspaceApplicationScheduleMetadataAggregator {
      */
     private @Nullable String identifier;
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -53,7 +53,7 @@ public final class WorkspaceApplicationScheduleMetadataAggregator {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {

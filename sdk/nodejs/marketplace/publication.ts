@@ -116,7 +116,7 @@ export class Publication extends pulumi.CustomResource {
      */
     public readonly longDescription!: pulumi.Output<string>;
     /**
-     * (Updatable) The name of the contact.
+     * (Updatable) The name of the publication, which is also used in the listing.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -124,7 +124,7 @@ export class Publication extends pulumi.CustomResource {
      */
     public readonly packageDetails!: pulumi.Output<outputs.Marketplace.PublicationPackageDetails>;
     /**
-     * The package's type.
+     * The listing's package type.
      */
     public /*out*/ readonly packageType!: pulumi.Output<string>;
     /**
@@ -256,7 +256,7 @@ export interface PublicationState {
      */
     longDescription?: pulumi.Input<string>;
     /**
-     * (Updatable) The name of the contact.
+     * (Updatable) The name of the publication, which is also used in the listing.
      */
     name?: pulumi.Input<string>;
     /**
@@ -264,7 +264,7 @@ export interface PublicationState {
      */
     packageDetails?: pulumi.Input<inputs.Marketplace.PublicationPackageDetails>;
     /**
-     * The package's type.
+     * The listing's package type.
      */
     packageType?: pulumi.Input<string>;
     /**
@@ -322,7 +322,7 @@ export interface PublicationArgs {
      */
     longDescription?: pulumi.Input<string>;
     /**
-     * (Updatable) The name of the contact.
+     * (Updatable) The name of the publication, which is also used in the listing.
      */
     name?: pulumi.Input<string>;
     /**

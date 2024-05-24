@@ -14,15 +14,23 @@ namespace Pulumi.Oci.Mysql.Outputs
     public sealed class MysqlDbSystemBackupPolicy
     {
         /// <summary>
-        /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
+        /// (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces.
+        /// 
+        /// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+        /// 
+        /// Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? DefinedTags;
         /// <summary>
-        /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Simple key-value pair applied without any predefined name, type or scope. Exists for cross-compatibility only.
+        /// 
+        /// Tags defined here will be copied verbatim as tags on the Backup resource created by this BackupPolicy.
+        /// 
+        /// Example: `{"bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object>? FreeformTags;
         /// <summary>
-        /// (Updatable) Specifies if PITR is enabled or disabled.
+        /// (Updatable) Specifies if automatic backups are enabled.
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>
@@ -34,15 +42,11 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int? RetentionInDays;
         /// <summary>
-        /// (Updatable) The start of the 2 hour maintenance window.
+        /// (Updatable) The start of a 30-minute window of time in which daily, automated backups occur.
         /// 
-        /// This string is of the format: "{day-of-week} {time-of-day}".
+        /// This should be in the format of the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
         /// 
-        /// "{day-of-week}" is a case-insensitive string like "mon", "tue", &amp;c.
-        /// 
-        /// "{time-of-day}" is the "Time" portion of an RFC3339-formatted timestamp. Any second or sub-second time data will be truncated to zero.
-        /// 
-        /// If you set the read replica maintenance window to "" or if not specified, the read replica is set same as the DB system maintenance window.
+        /// At some point in the window, the system may incur a brief service disruption as the backup is performed.
         /// </summary>
         public readonly string? WindowStartTime;
 

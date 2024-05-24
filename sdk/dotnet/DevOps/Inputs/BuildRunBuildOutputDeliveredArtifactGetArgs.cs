@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.BuildRunBuildOutputDeliveredArtifactItemGetArgs>? _items;
 
         /// <summary>
-        /// List of arguments provided at the time of running the build.
+        /// List of exported variables.
         /// </summary>
         public InputList<Inputs.BuildRunBuildOutputDeliveredArtifactItemGetArgs> Items
         {

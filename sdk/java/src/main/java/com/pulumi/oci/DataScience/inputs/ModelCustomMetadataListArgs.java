@@ -31,14 +31,14 @@ public final class ModelCustomMetadataListArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) A short description of the model.
+     * (Updatable) Description of model metadata
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A short description of the model.
+     * @return (Updatable) Description of model metadata
      * 
      */
     public Optional<Output<String>> description() {
@@ -140,7 +140,7 @@ public final class ModelCustomMetadataListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description (Updatable) A short description of the model.
+         * @param description (Updatable) Description of model metadata
          * 
          * @return builder
          * 
@@ -151,7 +151,7 @@ public final class ModelCustomMetadataListArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param description (Updatable) A short description of the model.
+         * @param description (Updatable) Description of model metadata
          * 
          * @return builder
          * 

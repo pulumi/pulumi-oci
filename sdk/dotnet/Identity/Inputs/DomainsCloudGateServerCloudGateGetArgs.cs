@@ -13,10 +13,10 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsCloudGateServerCloudGateGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) The URI of the owning Cloud Gate for this server block.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -29,10 +29,10 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The id of the owning Cloud Gate.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

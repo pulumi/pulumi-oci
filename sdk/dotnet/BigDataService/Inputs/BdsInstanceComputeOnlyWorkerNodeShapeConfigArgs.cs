@@ -13,7 +13,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
     public sealed class BdsInstanceComputeOnlyWorkerNodeShapeConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The total amount of memory available to the node, in gigabytes
+        /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
         [Input("memoryInGbs")]
         public Input<int>? MemoryInGbs { get; set; }

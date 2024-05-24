@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Country;
         /// <summary>
-        /// (Updatable) Full name
+        /// (Updatable) The full mailing address, formatted for display or use with a mailing label. This attribute MAY contain newlines.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -75,7 +75,8 @@ namespace Pulumi.Oci.Identity.Outputs
         /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: false
@@ -113,13 +114,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? StreetAddress;
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) A label indicating the attribute's function; e.g., 'work' or 'home'.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none

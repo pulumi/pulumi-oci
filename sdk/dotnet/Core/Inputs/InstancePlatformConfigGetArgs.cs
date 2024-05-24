@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Core.Inputs
         public Input<int>? PercentageOfCoresEnabled { get; set; }
 
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type of platform being configured.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

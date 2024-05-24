@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMediaWorkflowJob = new MediaWorkflowJob("testMediaWorkflowJob", MediaWorkflowJobArgs.builder()        
+ *         var testMediaWorkflowJob = new MediaWorkflowJob("testMediaWorkflowJob", MediaWorkflowJobArgs.builder()
  *             .compartmentId(compartmentId)
  *             .workflowIdentifierType(mediaWorkflowJobWorkflowIdentifierType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
@@ -88,14 +88,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:MediaServices/mediaWorkflowJob:MediaWorkflowJob")
 public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) ID of the compartment in which the job should be created.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) ID of the compartment in which the job should be created.
      * 
      */
     public Output<String> compartmentId() {
@@ -304,14 +304,14 @@ public class MediaWorkflowJob extends com.pulumi.resources.CustomResource {
         return this.taskLifecycleStates;
     }
     /**
-     * When the lock was created.
+     * Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

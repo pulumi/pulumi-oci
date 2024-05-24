@@ -179,7 +179,7 @@ export class DomainsMySupportAccount extends pulumi.CustomResource {
      */
     public /*out*/ readonly mySupportAccountProvider!: pulumi.Output<string>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -187,9 +187,9 @@ export class DomainsMySupportAccount extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -491,7 +491,7 @@ export interface DomainsMySupportAccountState {
      */
     mySupportAccountProvider?: pulumi.Input<string>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -499,9 +499,9 @@ export interface DomainsMySupportAccountState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -613,7 +613,7 @@ export interface DomainsMySupportAccountArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * User's ocid
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -621,9 +621,9 @@ export interface DomainsMySupportAccountArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

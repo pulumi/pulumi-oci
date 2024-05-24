@@ -61,7 +61,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplicationTaskSchedule = new WorkspaceApplicationTaskSchedule("testWorkspaceApplicationTaskSchedule", WorkspaceApplicationTaskScheduleArgs.builder()        
+ *         var testWorkspaceApplicationTaskSchedule = new WorkspaceApplicationTaskSchedule("testWorkspaceApplicationTaskSchedule", WorkspaceApplicationTaskScheduleArgs.builder()
  *             .applicationKey(workspaceApplicationTaskScheduleApplicationKey)
  *             .identifier(workspaceApplicationTaskScheduleIdentifier)
  *             .name(workspaceApplicationTaskScheduleName)
@@ -213,14 +213,14 @@ public class WorkspaceApplicationTaskSchedule extends com.pulumi.resources.Custo
         return this.configProviderDelegate;
     }
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Output<String> description() {
@@ -269,14 +269,14 @@ public class WorkspaceApplicationTaskSchedule extends com.pulumi.resources.Custo
         return this.expectedDurationUnit;
     }
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     @Export(name="identifier", refs={String.class}, tree="[0]")
     private Output<String> identifier;
 
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Output<String> identifier() {
@@ -325,14 +325,14 @@ public class WorkspaceApplicationTaskSchedule extends com.pulumi.resources.Custo
         return this.isEnabled;
     }
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     public Output<String> key() {
@@ -353,28 +353,28 @@ public class WorkspaceApplicationTaskSchedule extends com.pulumi.resources.Custo
         return this.lastRunDetails;
     }
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Export(name="metadatas", refs={List.class,WorkspaceApplicationTaskScheduleMetadata.class}, tree="[0,1]")
     private Output<List<WorkspaceApplicationTaskScheduleMetadata>> metadatas;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     public Output<List<WorkspaceApplicationTaskScheduleMetadata>> metadatas() {
         return this.metadatas;
     }
     /**
-     * (Updatable) The type of the object.
+     * The type of the object.
      * 
      */
     @Export(name="modelType", refs={String.class}, tree="[0]")
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the object.
+     * @return The type of the object.
      * 
      */
     public Output<String> modelType() {

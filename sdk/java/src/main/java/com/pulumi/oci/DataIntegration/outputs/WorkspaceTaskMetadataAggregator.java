@@ -22,7 +22,7 @@ public final class WorkspaceTaskMetadataAggregator {
      */
     private @Nullable String identifier;
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -32,7 +32,7 @@ public final class WorkspaceTaskMetadataAggregator {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) The object type.
+     * @return The object type.
      * 
      */
     private @Nullable String type;
@@ -53,7 +53,7 @@ public final class WorkspaceTaskMetadataAggregator {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {
@@ -67,7 +67,7 @@ public final class WorkspaceTaskMetadataAggregator {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) The object type.
+     * @return The object type.
      * 
      */
     public Optional<String> type() {

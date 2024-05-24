@@ -61,17 +61,9 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
         return Optional.ofNullable(this.metricDimensions);
     }
 
-    /**
-     * Name of the property
-     * 
-     */
     @Import(name="name")
     private @Nullable Output<String> name;
 
-    /**
-     * @return Name of the property
-     * 
-     */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
@@ -90,62 +82,30 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
         return Optional.ofNullable(this.proxyUrl);
     }
 
-    /**
-     * Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
-     * 
-     */
     @Import(name="readDataLimit")
     private @Nullable Output<Integer> readDataLimit;
 
-    /**
-     * @return Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
-     * 
-     */
     public Optional<Output<Integer>> readDataLimit() {
         return Optional.ofNullable(this.readDataLimit);
     }
 
-    /**
-     * Number in milliseconds. The timeout for reading the response from the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     @Import(name="readTimeout")
     private @Nullable Output<Integer> readTimeout;
 
-    /**
-     * @return Number in milliseconds. The timeout for reading the response from the Prometheus Exporter&#39;s endpoint.
-     * 
-     */
     public Optional<Output<Integer>> readTimeout() {
         return Optional.ofNullable(this.readTimeout);
     }
 
-    /**
-     * Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-     * 
-     */
     @Import(name="resourceGroup")
     private @Nullable Output<String> resourceGroup;
 
-    /**
-     * @return Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-     * 
-     */
     public Optional<Output<String>> resourceGroup() {
         return Optional.ofNullable(this.resourceGroup);
     }
 
-    /**
-     * Number in minutes. The scraping occurs at the specified interval.
-     * 
-     */
     @Import(name="scheduleMins")
     private @Nullable Output<Integer> scheduleMins;
 
-    /**
-     * @return Number in minutes. The scraping occurs at the specified interval.
-     * 
-     */
     public Optional<Output<Integer>> scheduleMins() {
         return Optional.ofNullable(this.scheduleMins);
     }
@@ -195,32 +155,16 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
         return Optional.ofNullable(this.timeUpdated);
     }
 
-    /**
-     * The type of the DataSource.
-     * 
-     */
     @Import(name="type")
     private @Nullable Output<String> type;
 
-    /**
-     * @return The type of the DataSource.
-     * 
-     */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
     }
 
-    /**
-     * The url through which the Prometheus Exporter publishes its metrics. (http only)
-     * 
-     */
     @Import(name="url")
     private @Nullable Output<String> url;
 
-    /**
-     * @return The url through which the Prometheus Exporter publishes its metrics. (http only)
-     * 
-     */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
     }
@@ -324,23 +268,11 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
             return metricDimensions(List.of(metricDimensions));
         }
 
-        /**
-         * @param name Name of the property
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
             return this;
         }
 
-        /**
-         * @param name Name of the property
-         * 
-         * @return builder
-         * 
-         */
         public Builder name(String name) {
             return name(Output.of(name));
         }
@@ -363,86 +295,38 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
             return proxyUrl(Output.of(proxyUrl));
         }
 
-        /**
-         * @param readDataLimit Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
-         * 
-         * @return builder
-         * 
-         */
         public Builder readDataLimit(@Nullable Output<Integer> readDataLimit) {
             $.readDataLimit = readDataLimit;
             return this;
         }
 
-        /**
-         * @param readDataLimit Number in kilobytes. The limit on the data being sent, not to exceed the agent&#39;s fixed limit of 400 (KB).
-         * 
-         * @return builder
-         * 
-         */
         public Builder readDataLimit(Integer readDataLimit) {
             return readDataLimit(Output.of(readDataLimit));
         }
 
-        /**
-         * @param readTimeout Number in milliseconds. The timeout for reading the response from the Prometheus Exporter&#39;s endpoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder readTimeout(@Nullable Output<Integer> readTimeout) {
             $.readTimeout = readTimeout;
             return this;
         }
 
-        /**
-         * @param readTimeout Number in milliseconds. The timeout for reading the response from the Prometheus Exporter&#39;s endpoint.
-         * 
-         * @return builder
-         * 
-         */
         public Builder readTimeout(Integer readTimeout) {
             return readTimeout(Output.of(readTimeout));
         }
 
-        /**
-         * @param resourceGroup Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder resourceGroup(@Nullable Output<String> resourceGroup) {
             $.resourceGroup = resourceGroup;
             return this;
         }
 
-        /**
-         * @param resourceGroup Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-         * 
-         * @return builder
-         * 
-         */
         public Builder resourceGroup(String resourceGroup) {
             return resourceGroup(Output.of(resourceGroup));
         }
 
-        /**
-         * @param scheduleMins Number in minutes. The scraping occurs at the specified interval.
-         * 
-         * @return builder
-         * 
-         */
         public Builder scheduleMins(@Nullable Output<Integer> scheduleMins) {
             $.scheduleMins = scheduleMins;
             return this;
         }
 
-        /**
-         * @param scheduleMins Number in minutes. The scraping occurs at the specified interval.
-         * 
-         * @return builder
-         * 
-         */
         public Builder scheduleMins(Integer scheduleMins) {
             return scheduleMins(Output.of(scheduleMins));
         }
@@ -510,44 +394,20 @@ public final class ManagementAgentDataSourceListArgs extends com.pulumi.resource
             return timeUpdated(Output.of(timeUpdated));
         }
 
-        /**
-         * @param type The type of the DataSource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
             return this;
         }
 
-        /**
-         * @param type The type of the DataSource.
-         * 
-         * @return builder
-         * 
-         */
         public Builder type(String type) {
             return type(Output.of(type));
         }
 
-        /**
-         * @param url The url through which the Prometheus Exporter publishes its metrics. (http only)
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
             return this;
         }
 
-        /**
-         * @param url The url through which the Prometheus Exporter publishes its metrics. (http only)
-         * 
-         * @return builder
-         * 
-         */
         public Builder url(String url) {
             return url(Output.of(url));
         }

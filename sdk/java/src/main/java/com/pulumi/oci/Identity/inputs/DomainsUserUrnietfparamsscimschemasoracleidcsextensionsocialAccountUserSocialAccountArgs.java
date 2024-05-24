@@ -17,12 +17,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialAccountUserSocialAccountArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -33,12 +33,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -50,9 +50,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     }
 
     /**
-     * (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI of the corresponding SocialAccount resource linked with the user
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -68,9 +66,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the corresponding SocialAccount resource linked with the user
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -87,38 +83,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable)
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable)
      * 
      */
     public Output<String> value() {
@@ -152,12 +124,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -172,12 +144,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -191,9 +163,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the corresponding SocialAccount resource linked with the user
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -213,9 +183,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the corresponding SocialAccount resource linked with the user
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -234,19 +202,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
-         * 
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
-         * * type: binary
-         * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param value (Updatable)
          * 
          * @return builder
          * 
@@ -257,19 +213,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionsocialA
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
-         * 
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
-         * * type: binary
-         * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param value (Updatable)
          * 
          * @return builder
          * 

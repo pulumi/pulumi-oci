@@ -151,7 +151,7 @@ func (o LogAnalyticsEntityMetadataPtrOutput) Items() LogAnalyticsEntityMetadataI
 }
 
 type LogAnalyticsEntityMetadataItem struct {
-	// (Updatable) Log analytics entity name.
+	// (Updatable) The metadata name.
 	Name *string `pulumi:"name"`
 	// (Updatable) The metadata type.
 	Type *string `pulumi:"type"`
@@ -171,7 +171,7 @@ type LogAnalyticsEntityMetadataItemInput interface {
 }
 
 type LogAnalyticsEntityMetadataItemArgs struct {
-	// (Updatable) Log analytics entity name.
+	// (Updatable) The metadata name.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 	// (Updatable) The metadata type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -230,7 +230,7 @@ func (o LogAnalyticsEntityMetadataItemOutput) ToLogAnalyticsEntityMetadataItemOu
 	return o
 }
 
-// (Updatable) Log analytics entity name.
+// (Updatable) The metadata name.
 func (o LogAnalyticsEntityMetadataItemOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LogAnalyticsEntityMetadataItem) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -653,16 +653,13 @@ func (o LogAnalyticsPreferencesManagementItemArrayOutput) Index(i pulumi.IntInpu
 }
 
 type NamespaceIngestTimeRuleAction struct {
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions []string `pulumi:"dimensions"`
 	// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName string `pulumi:"metricName"`
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace string `pulumi:"namespace"`
 	// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	ResourceGroup *string `pulumi:"resourceGroup"`
@@ -682,16 +679,13 @@ type NamespaceIngestTimeRuleActionInput interface {
 }
 
 type NamespaceIngestTimeRuleActionArgs struct {
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
 	Dimensions pulumi.StringArrayInput `pulumi:"dimensions"`
 	// (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName pulumi.StringInput `pulumi:"metricName"`
-	// The Logging Analytics namespace used for the request.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
@@ -750,7 +744,7 @@ func (o NamespaceIngestTimeRuleActionOutput) ToNamespaceIngestTimeRuleActionOutp
 	return o
 }
 
-// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 func (o NamespaceIngestTimeRuleActionOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -765,10 +759,7 @@ func (o NamespaceIngestTimeRuleActionOutput) MetricName() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.MetricName }).(pulumi.StringOutput)
 }
 
-// The Logging Analytics namespace used for the request.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 func (o NamespaceIngestTimeRuleActionOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceIngestTimeRuleAction) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -1146,9 +1137,9 @@ type NamespaceScheduledTaskAction struct {
 	PurgeDuration *string `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString *string `pulumi:"queryString"`
-	// The ManagementSavedSearch id [OCID] to be accelerated.
+	// The ManagementSavedSearch id [OCID] utilized in the action.
 	SavedSearchId *string `pulumi:"savedSearchId"`
-	// (Updatable) Schedule type discriminator.
+	// Action type discriminator.
 	Type string `pulumi:"type"`
 }
 
@@ -1176,9 +1167,9 @@ type NamespaceScheduledTaskActionArgs struct {
 	PurgeDuration pulumi.StringPtrInput `pulumi:"purgeDuration"`
 	// Purge query string.
 	QueryString pulumi.StringPtrInput `pulumi:"queryString"`
-	// The ManagementSavedSearch id [OCID] to be accelerated.
+	// The ManagementSavedSearch id [OCID] utilized in the action.
 	SavedSearchId pulumi.StringPtrInput `pulumi:"savedSearchId"`
-	// (Updatable) Schedule type discriminator.
+	// Action type discriminator.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1291,12 +1282,12 @@ func (o NamespaceScheduledTaskActionOutput) QueryString() pulumi.StringPtrOutput
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.QueryString }).(pulumi.StringPtrOutput)
 }
 
-// The ManagementSavedSearch id [OCID] to be accelerated.
+// The ManagementSavedSearch id [OCID] utilized in the action.
 func (o NamespaceScheduledTaskActionOutput) SavedSearchId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) *string { return v.SavedSearchId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Schedule type discriminator.
+// Action type discriminator.
 func (o NamespaceScheduledTaskActionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskAction) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -1385,7 +1376,7 @@ func (o NamespaceScheduledTaskActionPtrOutput) QueryString() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The ManagementSavedSearch id [OCID] to be accelerated.
+// The ManagementSavedSearch id [OCID] utilized in the action.
 func (o NamespaceScheduledTaskActionPtrOutput) SavedSearchId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *string {
 		if v == nil {
@@ -1395,7 +1386,7 @@ func (o NamespaceScheduledTaskActionPtrOutput) SavedSearchId() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Schedule type discriminator.
+// Action type discriminator.
 func (o NamespaceScheduledTaskActionPtrOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskAction) *string {
 		if v == nil {
@@ -1406,11 +1397,11 @@ func (o NamespaceScheduledTaskActionPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type NamespaceScheduledTaskActionMetricExtraction struct {
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName *string `pulumi:"metricName"`
-	// The Logging Analytics namespace used for the request.
+	// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace *string `pulumi:"namespace"`
 	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	ResourceGroup *string `pulumi:"resourceGroup"`
@@ -1428,11 +1419,11 @@ type NamespaceScheduledTaskActionMetricExtractionInput interface {
 }
 
 type NamespaceScheduledTaskActionMetricExtractionArgs struct {
-	// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
-	// The Logging Analytics namespace used for the request.
+	// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
 	// The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
 	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
@@ -1515,7 +1506,7 @@ func (o NamespaceScheduledTaskActionMetricExtractionOutput) ToNamespaceScheduled
 	}).(NamespaceScheduledTaskActionMetricExtractionPtrOutput)
 }
 
-// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 func (o NamespaceScheduledTaskActionMetricExtractionOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -1525,7 +1516,7 @@ func (o NamespaceScheduledTaskActionMetricExtractionOutput) MetricName() pulumi.
 	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.MetricName }).(pulumi.StringPtrOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 func (o NamespaceScheduledTaskActionMetricExtractionOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskActionMetricExtraction) *string { return v.Namespace }).(pulumi.StringPtrOutput)
 }
@@ -1559,7 +1550,7 @@ func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Elem() NamespaceS
 	}).(NamespaceScheduledTaskActionMetricExtractionOutput)
 }
 
-// (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+// (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
 		if v == nil {
@@ -1579,7 +1570,7 @@ func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) MetricName() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The Logging Analytics namespace used for the request.
+// The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
 func (o NamespaceScheduledTaskActionMetricExtractionPtrOutput) Namespace() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NamespaceScheduledTaskActionMetricExtraction) *string {
 		if v == nil {
@@ -1733,17 +1724,17 @@ func (o NamespaceScheduledTaskSchedulesPtrOutput) Schedules() NamespaceScheduled
 }
 
 type NamespaceScheduledTaskSchedulesSchedule struct {
-	// (Updatable) Value in cron format.
+	// Value in cron format.
 	Expression *string `pulumi:"expression"`
-	// (Updatable) Schedule misfire retry policy.
+	// Schedule misfire retry policy.
 	MisfirePolicy *string `pulumi:"misfirePolicy"`
-	// (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval *string `pulumi:"recurringInterval"`
-	// (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount *int `pulumi:"repeatCount"`
-	// (Updatable) Time zone, by default UTC.
+	// Time zone, by default UTC.
 	TimeZone *string `pulumi:"timeZone"`
-	// (Updatable) Schedule type discriminator.
+	// Schedule type discriminator.
 	Type string `pulumi:"type"`
 }
 
@@ -1759,17 +1750,17 @@ type NamespaceScheduledTaskSchedulesScheduleInput interface {
 }
 
 type NamespaceScheduledTaskSchedulesScheduleArgs struct {
-	// (Updatable) Value in cron format.
+	// Value in cron format.
 	Expression pulumi.StringPtrInput `pulumi:"expression"`
-	// (Updatable) Schedule misfire retry policy.
+	// Schedule misfire retry policy.
 	MisfirePolicy pulumi.StringPtrInput `pulumi:"misfirePolicy"`
-	// (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+	// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 	RecurringInterval pulumi.StringPtrInput `pulumi:"recurringInterval"`
-	// (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+	// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 	RepeatCount pulumi.IntPtrInput `pulumi:"repeatCount"`
-	// (Updatable) Time zone, by default UTC.
+	// Time zone, by default UTC.
 	TimeZone pulumi.StringPtrInput `pulumi:"timeZone"`
-	// (Updatable) Schedule type discriminator.
+	// Schedule type discriminator.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -1824,32 +1815,32 @@ func (o NamespaceScheduledTaskSchedulesScheduleOutput) ToNamespaceScheduledTaskS
 	return o
 }
 
-// (Updatable) Value in cron format.
+// Value in cron format.
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) Expression() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *string { return v.Expression }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Schedule misfire retry policy.
+// Schedule misfire retry policy.
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) MisfirePolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *string { return v.MisfirePolicy }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) RecurringInterval() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *string { return v.RecurringInterval }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) RepeatCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *int { return v.RepeatCount }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Time zone, by default UTC.
+// Time zone, by default UTC.
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) TimeZone() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) *string { return v.TimeZone }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Schedule type discriminator.
+// Schedule type discriminator.
 func (o NamespaceScheduledTaskSchedulesScheduleOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v NamespaceScheduledTaskSchedulesSchedule) string { return v.Type }).(pulumi.StringOutput)
 }

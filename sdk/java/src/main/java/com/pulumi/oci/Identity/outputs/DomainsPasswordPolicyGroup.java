@@ -13,10 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsPasswordPolicyGroup {
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) Group Display Name
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -28,10 +29,11 @@ public final class DomainsPasswordPolicyGroup {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -43,15 +45,17 @@ public final class DomainsPasswordPolicyGroup {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The identifier of the group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -60,10 +64,11 @@ public final class DomainsPasswordPolicyGroup {
 
     private DomainsPasswordPolicyGroup() {}
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) Group Display Name
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -77,10 +82,11 @@ public final class DomainsPasswordPolicyGroup {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the corresponding Group resource to which the password policy belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -94,15 +100,17 @@ public final class DomainsPasswordPolicyGroup {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The identifier of the group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

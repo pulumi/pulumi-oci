@@ -11,31 +11,28 @@ import java.util.Objects;
 @CustomType
 public final class DomainsGroupTag {
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag key
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
     private String key;
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -46,17 +43,16 @@ public final class DomainsGroupTag {
 
     private DomainsGroupTag() {}
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag key
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -64,15 +60,13 @@ public final class DomainsGroupTag {
         return this.key;
     }
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string

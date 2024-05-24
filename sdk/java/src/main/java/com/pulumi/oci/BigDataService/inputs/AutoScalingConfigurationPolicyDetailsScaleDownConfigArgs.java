@@ -17,14 +17,14 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs exte
     public static final AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs Empty = new AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs();
 
     /**
-     * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+     * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
      * 
      */
     @Import(name="memoryStepSize")
     private @Nullable Output<Integer> memoryStepSize;
 
     /**
-     * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+     * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
      * 
      */
     public Optional<Output<Integer>> memoryStepSize() {
@@ -77,14 +77,14 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs exte
     }
 
     /**
-     * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+     * (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
      * 
      */
     @Import(name="ocpuStepSize")
     private @Nullable Output<Integer> ocpuStepSize;
 
     /**
-     * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+     * @return (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
      * 
      */
     public Optional<Output<Integer>> ocpuStepSize() {
@@ -120,7 +120,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs exte
         }
 
         /**
-         * @param memoryStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         * @param memoryStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs exte
         }
 
         /**
-         * @param memoryStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         * @param memoryStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs exte
         }
 
         /**
-         * @param ocpuStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         * @param ocpuStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AutoScalingConfigurationPolicyDetailsScaleDownConfigArgs exte
         }
 
         /**
-         * @param ocpuStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+         * @param ocpuStepSize (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
          * 
          * @return builder
          * 

@@ -28,7 +28,7 @@ public final class DatabaseToolsConnectionLock {
      */
     private @Nullable String timeCreated;
     /**
-     * @return (Updatable) The DatabaseToolsConnection type.
+     * @return Type of the lock.
      * 
      */
     private String type;
@@ -56,7 +56,7 @@ public final class DatabaseToolsConnectionLock {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return (Updatable) The DatabaseToolsConnection type.
+     * @return Type of the lock.
      * 
      */
     public String type() {

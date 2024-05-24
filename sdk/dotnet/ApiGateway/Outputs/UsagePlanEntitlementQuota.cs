@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly string ResetPolicy;
         /// <summary>
-        /// (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+        /// (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
         /// </summary>
         public readonly string Unit;
         /// <summary>

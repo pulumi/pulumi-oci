@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Sch.Inputs
     public sealed class ConnectorTargetDimensionDimensionValueArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type of dimension value: static or evaluated.
         /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;

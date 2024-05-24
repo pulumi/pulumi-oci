@@ -35,7 +35,7 @@ public final class TargetDatabasePeerTargetDatabaseDetail {
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) The details required to establish a TLS enabled connection.
+     * @return The details required to establish a TLS enabled connection.
      * 
      */
     private @Nullable TargetDatabasePeerTargetDatabaseDetailTlsConfig tlsConfig;
@@ -70,7 +70,7 @@ public final class TargetDatabasePeerTargetDatabaseDetail {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) The details required to establish a TLS enabled connection.
+     * @return The details required to establish a TLS enabled connection.
      * 
      */
     public Optional<TargetDatabasePeerTargetDatabaseDetailTlsConfig> tlsConfig() {

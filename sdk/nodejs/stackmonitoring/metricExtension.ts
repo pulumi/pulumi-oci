@@ -103,7 +103,7 @@ export class MetricExtension extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Type of possible collection methods.
+     * Type of possible collection methods.
      */
     public /*out*/ readonly collectionMethod!: pulumi.Output<string>;
     /**
@@ -123,7 +123,7 @@ export class MetricExtension extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) Display name of the metric.
+     * (Updatable) Metric Extension display name.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -143,7 +143,7 @@ export class MetricExtension extends pulumi.CustomResource {
      */
     public readonly metricLists!: pulumi.Output<outputs.StackMonitoring.MetricExtensionMetricList[]>;
     /**
-     * (Updatable) Name of the script file
+     * Metric Extension Resource name.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -271,7 +271,7 @@ export class MetricExtension extends pulumi.CustomResource {
  */
 export interface MetricExtensionState {
     /**
-     * (Updatable) Type of possible collection methods.
+     * Type of possible collection methods.
      */
     collectionMethod?: pulumi.Input<string>;
     /**
@@ -291,7 +291,7 @@ export interface MetricExtensionState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Display name of the metric.
+     * (Updatable) Metric Extension display name.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -311,7 +311,7 @@ export interface MetricExtensionState {
      */
     metricLists?: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionMetricList>[]>;
     /**
-     * (Updatable) Name of the script file
+     * Metric Extension Resource name.
      */
     name?: pulumi.Input<string>;
     /**
@@ -373,7 +373,7 @@ export interface MetricExtensionArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) Display name of the metric.
+     * (Updatable) Metric Extension display name.
      */
     displayName: pulumi.Input<string>;
     /**
@@ -381,7 +381,7 @@ export interface MetricExtensionArgs {
      */
     metricLists: pulumi.Input<pulumi.Input<inputs.StackMonitoring.MetricExtensionMetricList>[]>;
     /**
-     * (Updatable) Name of the script file
+     * Metric Extension Resource name.
      */
     name?: pulumi.Input<string>;
     /**

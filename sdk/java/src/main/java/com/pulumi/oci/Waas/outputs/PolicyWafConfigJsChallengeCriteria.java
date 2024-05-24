@@ -49,7 +49,7 @@ public final class PolicyWafConfigJsChallengeCriteria {
      */
     private @Nullable Boolean isCaseSensitive;
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) The criteria value.
      * 
      */
     private String value;
@@ -95,7 +95,7 @@ public final class PolicyWafConfigJsChallengeCriteria {
         return Optional.ofNullable(this.isCaseSensitive);
     }
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) The criteria value.
      * 
      */
     public String value() {

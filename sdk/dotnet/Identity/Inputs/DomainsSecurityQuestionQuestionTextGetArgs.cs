@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Locale { get; set; } = null!;
 
         /// <summary>
-        /// Value of the tag.
+        /// The question text
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

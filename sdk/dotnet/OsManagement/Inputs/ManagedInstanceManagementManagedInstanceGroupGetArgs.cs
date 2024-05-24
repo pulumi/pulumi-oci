@@ -19,7 +19,7 @@ namespace Pulumi.Oci.OsManagement.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// software source identifier
+        /// unique identifier that is immutable on creation
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

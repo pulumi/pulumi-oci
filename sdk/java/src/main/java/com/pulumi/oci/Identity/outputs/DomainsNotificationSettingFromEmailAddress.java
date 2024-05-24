@@ -57,17 +57,14 @@ public final class DomainsNotificationSettingFromEmailAddress {
      */
     private @Nullable String validationStatus;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Value of the From email address
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     private String value;
@@ -124,17 +121,14 @@ public final class DomainsNotificationSettingFromEmailAddress {
         return Optional.ofNullable(this.validationStatus);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Value of the From email address
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     public String value() {

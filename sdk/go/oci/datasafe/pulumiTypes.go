@@ -2118,7 +2118,7 @@ func (o LibraryMasingFormatFormatEntryArrayOutput) Index(i pulumi.IntInput) Libr
 type MaskingPoliciesMaskingColumnMaskingFormat struct {
 	// (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
 	Condition *string `pulumi:"condition"`
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the masking format.
 	Description *string `pulumi:"description"`
 	// (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
 	FormatEntries []MaskingPoliciesMaskingColumnMaskingFormatFormatEntry `pulumi:"formatEntries"`
@@ -2138,7 +2138,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatInput interface {
 type MaskingPoliciesMaskingColumnMaskingFormatArgs struct {
 	// (Updatable) A condition that must be true for applying the masking format. It can be any valid  SQL construct that can be used in a SQL predicate. It enables you to do  <a href="https://docs.oracle.com/en/cloud/paas/data-safe/udscs/conditional-masking.html">conditional masking</a>  so that you can mask the column data values differently using different masking  formats and the associated conditions.
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// (Updatable) The description of the format entry.
+	// (Updatable) The description of the masking format.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) An array of format entries. The combined output of all the format entries is  used for masking the column data values.
 	FormatEntries MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArrayInput `pulumi:"formatEntries"`
@@ -2200,7 +2200,7 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatOutput) Condition() pulumi.Stri
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormat) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description of the format entry.
+// (Updatable) The description of the masking format.
 func (o MaskingPoliciesMaskingColumnMaskingFormatOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormat) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -2267,7 +2267,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntry struct {
 	RegularExpression *string `pulumi:"regularExpression"`
 	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
 	ReplaceWith *string `pulumi:"replaceWith"`
-	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName *string `pulumi:"schemaName"`
 	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
 	SqlExpression *string `pulumi:"sqlExpression"`
@@ -2333,7 +2333,7 @@ type MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs struct {
 	RegularExpression pulumi.StringPtrInput `pulumi:"regularExpression"`
 	// (Updatable) The value that should be used to replace the data matching the regular  expression. It can be a fixed string, fixed number, null value, or  SQL expression.
 	ReplaceWith pulumi.StringPtrInput `pulumi:"replaceWith"`
-	// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+	// (Updatable) The name of the schema that contains the substitution column.
 	SchemaName pulumi.StringPtrInput `pulumi:"schemaName"`
 	// (Updatable) The SQL expression to be used to generate the masked values. It can  consist of one or more values, operators, and SQL functions that  evaluate to a value. It can also contain substitution columns from  the same table. Specify the substitution columns within percent (%)  symbols.
 	SqlExpression pulumi.StringPtrInput `pulumi:"sqlExpression"`
@@ -2483,7 +2483,7 @@ func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) ReplaceWith(
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.ReplaceWith }).(pulumi.StringPtrOutput)
 }
 
-// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+// (Updatable) The name of the schema that contains the substitution column.
 func (o MaskingPoliciesMaskingColumnMaskingFormatFormatEntryOutput) SchemaName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v MaskingPoliciesMaskingColumnMaskingFormatFormatEntry) *string { return v.SchemaName }).(pulumi.StringPtrOutput)
 }
@@ -2666,11 +2666,11 @@ func (o MaskingPolicyColumnSourceArrayOutput) Index(i pulumi.IntInput) MaskingPo
 type ReportDefinitionColumnFilter struct {
 	// (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
 	Expressions []string `pulumi:"expressions"`
-	// (Updatable) Name of the column that must be sorted.
+	// (Updatable) Name of the column on which the filter must be applied.
 	FieldName string `pulumi:"fieldName"`
 	// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled bool `pulumi:"isEnabled"`
-	// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+	// (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
 	IsHidden bool `pulumi:"isHidden"`
 	// (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
 	Operator string `pulumi:"operator"`
@@ -2690,11 +2690,11 @@ type ReportDefinitionColumnFilterInput interface {
 type ReportDefinitionColumnFilterArgs struct {
 	// (Updatable) An array of expressions based on the operator type. A filter may have one or more expressions.
 	Expressions pulumi.StringArrayInput `pulumi:"expressions"`
-	// (Updatable) Name of the column that must be sorted.
+	// (Updatable) Name of the column on which the filter must be applied.
 	FieldName pulumi.StringInput `pulumi:"fieldName"`
 	// (Updatable) Indicates whether the filter is enabled. Values can either be 'true' or 'false'.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
-	// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+	// (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
 	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
 	// (Updatable) Specifies the type of operator that must be applied for example in, eq etc.
 	Operator pulumi.StringInput `pulumi:"operator"`
@@ -2756,7 +2756,7 @@ func (o ReportDefinitionColumnFilterOutput) Expressions() pulumi.StringArrayOutp
 	return o.ApplyT(func(v ReportDefinitionColumnFilter) []string { return v.Expressions }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Name of the column that must be sorted.
+// (Updatable) Name of the column on which the filter must be applied.
 func (o ReportDefinitionColumnFilterOutput) FieldName() pulumi.StringOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnFilter) string { return v.FieldName }).(pulumi.StringOutput)
 }
@@ -2766,7 +2766,7 @@ func (o ReportDefinitionColumnFilterOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnFilter) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
 
-// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+// (Updatable) Indicates whether the filter is hidden. Values can either be 'true' or 'false'.
 func (o ReportDefinitionColumnFilterOutput) IsHidden() pulumi.BoolOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnFilter) bool { return v.IsHidden }).(pulumi.BoolOutput)
 }
@@ -2799,13 +2799,13 @@ func (o ReportDefinitionColumnFilterArrayOutput) Index(i pulumi.IntInput) Report
 type ReportDefinitionColumnInfo struct {
 	// (Updatable) Specifies the data type of the column.
 	DataType *string `pulumi:"dataType"`
-	// (Updatable) Specifies the name of the report definition.
+	// (Updatable) Name of the column displayed on UI.
 	DisplayName string `pulumi:"displayName"`
-	// (Updatable) Specifies the order in which the summary must be displayed.
+	// (Updatable) Specifies the display order of the column.
 	DisplayOrder int `pulumi:"displayOrder"`
-	// (Updatable) Name of the column that must be sorted.
+	// (Updatable) Specifies the corresponding field name in the data source.
 	FieldName string `pulumi:"fieldName"`
-	// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+	// (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
 	IsHidden bool `pulumi:"isHidden"`
 }
 
@@ -2823,13 +2823,13 @@ type ReportDefinitionColumnInfoInput interface {
 type ReportDefinitionColumnInfoArgs struct {
 	// (Updatable) Specifies the data type of the column.
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
-	// (Updatable) Specifies the name of the report definition.
+	// (Updatable) Name of the column displayed on UI.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
-	// (Updatable) Specifies the order in which the summary must be displayed.
+	// (Updatable) Specifies the display order of the column.
 	DisplayOrder pulumi.IntInput `pulumi:"displayOrder"`
-	// (Updatable) Name of the column that must be sorted.
+	// (Updatable) Specifies the corresponding field name in the data source.
 	FieldName pulumi.StringInput `pulumi:"fieldName"`
-	// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+	// (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
 	IsHidden pulumi.BoolInput `pulumi:"isHidden"`
 }
 
@@ -2889,22 +2889,22 @@ func (o ReportDefinitionColumnInfoOutput) DataType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnInfo) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Specifies the name of the report definition.
+// (Updatable) Name of the column displayed on UI.
 func (o ReportDefinitionColumnInfoOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnInfo) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Specifies the order in which the summary must be displayed.
+// (Updatable) Specifies the display order of the column.
 func (o ReportDefinitionColumnInfoOutput) DisplayOrder() pulumi.IntOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnInfo) int { return v.DisplayOrder }).(pulumi.IntOutput)
 }
 
-// (Updatable) Name of the column that must be sorted.
+// (Updatable) Specifies the corresponding field name in the data source.
 func (o ReportDefinitionColumnInfoOutput) FieldName() pulumi.StringOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnInfo) string { return v.FieldName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates if the summary is hidden. Values can either be 'true' or 'false'.
+// (Updatable) Indicates if the column is hidden. Values can either be 'true' or 'false'.
 func (o ReportDefinitionColumnInfoOutput) IsHidden() pulumi.BoolOutput {
 	return o.ApplyT(func(v ReportDefinitionColumnInfo) bool { return v.IsHidden }).(pulumi.BoolOutput)
 }
@@ -4815,23 +4815,23 @@ func (o TargetDatabaseCredentialsPtrOutput) UserName() pulumi.StringPtrOutput {
 }
 
 type TargetDatabaseDatabaseDetails struct {
-	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
-	// The database type.
+	// (Updatable) The database type.
 	DatabaseType string `pulumi:"databaseType"`
-	// The OCID of the cloud database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId *string `pulumi:"dbSystemId"`
-	// The infrastructure type the database is running on.
+	// (Updatable) The infrastructure type the database is running on.
 	InfrastructureType string `pulumi:"infrastructureType"`
-	// The OCID of the compute instance on which the database is running.
+	// (Updatable) The OCID of the compute instance on which the database is running.
 	InstanceId *string `pulumi:"instanceId"`
-	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 	IpAddresses []string `pulumi:"ipAddresses"`
-	// The port number of the database listener.
+	// (Updatable) The port number of the database listener.
 	ListenerPort *int `pulumi:"listenerPort"`
-	// The service name of the database registered as target database.
+	// (Updatable) The service name of the database registered as target database.
 	ServiceName *string `pulumi:"serviceName"`
-	// The OCID of the VM cluster in which the database is running.
+	// (Updatable) The OCID of the VM cluster in which the database is running.
 	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
@@ -4847,23 +4847,23 @@ type TargetDatabaseDatabaseDetailsInput interface {
 }
 
 type TargetDatabaseDatabaseDetailsArgs struct {
-	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
-	// The database type.
+	// (Updatable) The database type.
 	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
-	// The OCID of the cloud database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
-	// The infrastructure type the database is running on.
+	// (Updatable) The infrastructure type the database is running on.
 	InfrastructureType pulumi.StringInput `pulumi:"infrastructureType"`
-	// The OCID of the compute instance on which the database is running.
+	// (Updatable) The OCID of the compute instance on which the database is running.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
-	// The port number of the database listener.
+	// (Updatable) The port number of the database listener.
 	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
-	// The service name of the database registered as target database.
+	// (Updatable) The service name of the database registered as target database.
 	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
-	// The OCID of the VM cluster in which the database is running.
+	// (Updatable) The OCID of the VM cluster in which the database is running.
 	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
 }
 
@@ -4944,47 +4944,47 @@ func (o TargetDatabaseDatabaseDetailsOutput) ToTargetDatabaseDatabaseDetailsPtrO
 	}).(TargetDatabaseDatabaseDetailsPtrOutput)
 }
 
-// The OCID of the Autonomous Database registered as a target database in Data Safe.
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
 }
 
-// The database type.
+// (Updatable) The database type.
 func (o TargetDatabaseDatabaseDetailsOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
 
-// The OCID of the cloud database registered as a target database in Data Safe.
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
-// The infrastructure type the database is running on.
+// (Updatable) The infrastructure type the database is running on.
 func (o TargetDatabaseDatabaseDetailsOutput) InfrastructureType() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) string { return v.InfrastructureType }).(pulumi.StringOutput)
 }
 
-// The OCID of the compute instance on which the database is running.
+// (Updatable) The OCID of the compute instance on which the database is running.
 func (o TargetDatabaseDatabaseDetailsOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 func (o TargetDatabaseDatabaseDetailsOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// The port number of the database listener.
+// (Updatable) The port number of the database listener.
 func (o TargetDatabaseDatabaseDetailsOutput) ListenerPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
 }
 
-// The service name of the database registered as target database.
+// (Updatable) The service name of the database registered as target database.
 func (o TargetDatabaseDatabaseDetailsOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the VM cluster in which the database is running.
+// (Updatable) The OCID of the VM cluster in which the database is running.
 func (o TargetDatabaseDatabaseDetailsOutput) VmClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabaseDatabaseDetails) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
@@ -5013,7 +5013,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) Elem() TargetDatabaseDatabaseDet
 	}).(TargetDatabaseDatabaseDetailsOutput)
 }
 
-// The OCID of the Autonomous Database registered as a target database in Data Safe.
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5023,7 +5023,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) AutonomousDatabaseId() pulumi.St
 	}).(pulumi.StringPtrOutput)
 }
 
-// The database type.
+// (Updatable) The database type.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) DatabaseType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5033,7 +5033,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) DatabaseType() pulumi.StringPtrO
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the cloud database registered as a target database in Data Safe.
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5043,7 +5043,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) DbSystemId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The infrastructure type the database is running on.
+// (Updatable) The infrastructure type the database is running on.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) InfrastructureType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5053,7 +5053,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) InfrastructureType() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the compute instance on which the database is running.
+// (Updatable) The OCID of the compute instance on which the database is running.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5063,7 +5063,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) InstanceId() pulumi.StringPtrOut
 	}).(pulumi.StringPtrOutput)
 }
 
-// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) []string {
 		if v == nil {
@@ -5073,7 +5073,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) IpAddresses() pulumi.StringArray
 	}).(pulumi.StringArrayOutput)
 }
 
-// The port number of the database listener.
+// (Updatable) The port number of the database listener.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) ListenerPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *int {
 		if v == nil {
@@ -5083,7 +5083,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) ListenerPort() pulumi.IntPtrOutp
 	}).(pulumi.IntPtrOutput)
 }
 
-// The service name of the database registered as target database.
+// (Updatable) The service name of the database registered as target database.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5093,7 +5093,7 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) ServiceName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the VM cluster in which the database is running.
+// (Updatable) The OCID of the VM cluster in which the database is running.
 func (o TargetDatabaseDatabaseDetailsPtrOutput) VmClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabaseDatabaseDetails) *string {
 		if v == nil {
@@ -5104,15 +5104,15 @@ func (o TargetDatabaseDatabaseDetailsPtrOutput) VmClusterId() pulumi.StringPtrOu
 }
 
 type TargetDatabasePeerTargetDatabaseType struct {
-	// Details of the database for the registration in Data Safe.
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails []TargetDatabasePeerTargetDatabaseDatabaseDetail `pulumi:"databaseDetails"`
 	// Unique name of the database associated to the peer target database.
 	DatabaseUniqueName *string `pulumi:"databaseUniqueName"`
-	// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
 	DataguardAssociationId *string `pulumi:"dataguardAssociationId"`
-	// The description of the peer target database in Data Safe.
+	// (Updatable) The description of the target database in Data Safe.
 	Description *string `pulumi:"description"`
-	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// The secondary key assigned for the peer target database in Data Safe.
 	Key *int `pulumi:"key"`
@@ -5140,15 +5140,15 @@ type TargetDatabasePeerTargetDatabaseTypeInput interface {
 }
 
 type TargetDatabasePeerTargetDatabaseTypeArgs struct {
-	// Details of the database for the registration in Data Safe.
+	// (Updatable) Details of the database for the registration in Data Safe.
 	DatabaseDetails TargetDatabasePeerTargetDatabaseDatabaseDetailArrayInput `pulumi:"databaseDetails"`
 	// Unique name of the database associated to the peer target database.
 	DatabaseUniqueName pulumi.StringPtrInput `pulumi:"databaseUniqueName"`
-	// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+	// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
 	DataguardAssociationId pulumi.StringPtrInput `pulumi:"dataguardAssociationId"`
-	// The description of the peer target database in Data Safe.
+	// (Updatable) The description of the target database in Data Safe.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+	// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The secondary key assigned for the peer target database in Data Safe.
 	Key pulumi.IntPtrInput `pulumi:"key"`
@@ -5215,7 +5215,7 @@ func (o TargetDatabasePeerTargetDatabaseTypeOutput) ToTargetDatabasePeerTargetDa
 	return o
 }
 
-// Details of the database for the registration in Data Safe.
+// (Updatable) Details of the database for the registration in Data Safe.
 func (o TargetDatabasePeerTargetDatabaseTypeOutput) DatabaseDetails() TargetDatabasePeerTargetDatabaseDatabaseDetailArrayOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) []TargetDatabasePeerTargetDatabaseDatabaseDetail {
 		return v.DatabaseDetails
@@ -5227,17 +5227,17 @@ func (o TargetDatabasePeerTargetDatabaseTypeOutput) DatabaseUniqueName() pulumi.
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.DatabaseUniqueName }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+// The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
 func (o TargetDatabasePeerTargetDatabaseTypeOutput) DataguardAssociationId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.DataguardAssociationId }).(pulumi.StringPtrOutput)
 }
 
-// The description of the peer target database in Data Safe.
+// (Updatable) The description of the target database in Data Safe.
 func (o TargetDatabasePeerTargetDatabaseTypeOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
 func (o TargetDatabasePeerTargetDatabaseTypeOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseType) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -5295,23 +5295,23 @@ func (o TargetDatabasePeerTargetDatabaseTypeArrayOutput) Index(i pulumi.IntInput
 }
 
 type TargetDatabasePeerTargetDatabaseDatabaseDetail struct {
-	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId *string `pulumi:"autonomousDatabaseId"`
-	// The database type.
+	// (Updatable) The database type.
 	DatabaseType *string `pulumi:"databaseType"`
-	// The OCID of the cloud database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId *string `pulumi:"dbSystemId"`
-	// The infrastructure type the database is running on.
+	// (Updatable) The infrastructure type the database is running on.
 	InfrastructureType *string `pulumi:"infrastructureType"`
-	// The OCID of the compute instance on which the database is running.
+	// (Updatable) The OCID of the compute instance on which the database is running.
 	InstanceId *string `pulumi:"instanceId"`
-	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 	IpAddresses []string `pulumi:"ipAddresses"`
-	// The port number of the database listener.
+	// (Updatable) The port number of the database listener.
 	ListenerPort *int `pulumi:"listenerPort"`
-	// The service name of the database registered as target database.
+	// (Updatable) The service name of the database registered as target database.
 	ServiceName *string `pulumi:"serviceName"`
-	// The OCID of the VM cluster in which the database is running.
+	// (Updatable) The OCID of the VM cluster in which the database is running.
 	VmClusterId *string `pulumi:"vmClusterId"`
 }
 
@@ -5327,23 +5327,23 @@ type TargetDatabasePeerTargetDatabaseDatabaseDetailInput interface {
 }
 
 type TargetDatabasePeerTargetDatabaseDatabaseDetailArgs struct {
-	// The OCID of the Autonomous Database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 	AutonomousDatabaseId pulumi.StringPtrInput `pulumi:"autonomousDatabaseId"`
-	// The database type.
+	// (Updatable) The database type.
 	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
-	// The OCID of the cloud database registered as a target database in Data Safe.
+	// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 	DbSystemId pulumi.StringPtrInput `pulumi:"dbSystemId"`
-	// The infrastructure type the database is running on.
+	// (Updatable) The infrastructure type the database is running on.
 	InfrastructureType pulumi.StringPtrInput `pulumi:"infrastructureType"`
-	// The OCID of the compute instance on which the database is running.
+	// (Updatable) The OCID of the compute instance on which the database is running.
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
-	// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+	// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 	IpAddresses pulumi.StringArrayInput `pulumi:"ipAddresses"`
-	// The port number of the database listener.
+	// (Updatable) The port number of the database listener.
 	ListenerPort pulumi.IntPtrInput `pulumi:"listenerPort"`
-	// The service name of the database registered as target database.
+	// (Updatable) The service name of the database registered as target database.
 	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
-	// The OCID of the VM cluster in which the database is running.
+	// (Updatable) The OCID of the VM cluster in which the database is running.
 	VmClusterId pulumi.StringPtrInput `pulumi:"vmClusterId"`
 }
 
@@ -5398,47 +5398,47 @@ func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ToTargetDatabasePe
 	return o
 }
 
-// The OCID of the Autonomous Database registered as a target database in Data Safe.
+// (Updatable) The OCID of the Autonomous Database registered as a target database in Data Safe.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) AutonomousDatabaseId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.AutonomousDatabaseId }).(pulumi.StringPtrOutput)
 }
 
-// The database type.
+// (Updatable) The database type.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DatabaseType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the cloud database registered as a target database in Data Safe.
+// (Updatable) The OCID of the cloud database registered as a target database in Data Safe.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) DbSystemId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.DbSystemId }).(pulumi.StringPtrOutput)
 }
 
-// The infrastructure type the database is running on.
+// (Updatable) The infrastructure type the database is running on.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InfrastructureType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.InfrastructureType }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the compute instance on which the database is running.
+// (Updatable) The OCID of the compute instance on which the database is running.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) InstanceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.InstanceId }).(pulumi.StringPtrOutput)
 }
 
-// The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
+// (Updatable) The list of database host IP Addresses. Fully qualified domain names can be used if connectionType is 'ONPREM_CONNECTOR'.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) IpAddresses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) []string { return v.IpAddresses }).(pulumi.StringArrayOutput)
 }
 
-// The port number of the database listener.
+// (Updatable) The port number of the database listener.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ListenerPort() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *int { return v.ListenerPort }).(pulumi.IntPtrOutput)
 }
 
-// The service name of the database registered as target database.
+// (Updatable) The service name of the database registered as target database.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) ServiceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
 }
 
-// The OCID of the VM cluster in which the database is running.
+// (Updatable) The OCID of the VM cluster in which the database is running.
 func (o TargetDatabasePeerTargetDatabaseDatabaseDetailOutput) VmClusterId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDatabaseDetail) *string { return v.VmClusterId }).(pulumi.StringPtrOutput)
 }
@@ -5761,7 +5761,7 @@ type TargetDatabasePeerTargetDatabaseDetail struct {
 	Description *string `pulumi:"description"`
 	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) The details required to establish a TLS enabled connection.
+	// The details required to establish a TLS enabled connection.
 	TlsConfig *TargetDatabasePeerTargetDatabaseDetailTlsConfig `pulumi:"tlsConfig"`
 }
 
@@ -5785,7 +5785,7 @@ type TargetDatabasePeerTargetDatabaseDetailArgs struct {
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// (Updatable) The details required to establish a TLS enabled connection.
+	// The details required to establish a TLS enabled connection.
 	TlsConfig TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrInput `pulumi:"tlsConfig"`
 }
 
@@ -5862,7 +5862,7 @@ func (o TargetDatabasePeerTargetDatabaseDetailOutput) DisplayName() pulumi.Strin
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The details required to establish a TLS enabled connection.
+// The details required to establish a TLS enabled connection.
 func (o TargetDatabasePeerTargetDatabaseDetailOutput) TlsConfig() TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetail) *TargetDatabasePeerTargetDatabaseDetailTlsConfig {
 		return v.TlsConfig
@@ -6014,18 +6014,15 @@ func (o TargetDatabasePeerTargetDatabaseDetailDatabaseDetailsOutput) VmClusterId
 }
 
 type TargetDatabasePeerTargetDatabaseDetailTlsConfig struct {
-	// (Updatable) The format of the certificate store.
+	// The format of the certificate store.
 	CertificateStoreType *string `pulumi:"certificateStoreType"`
-	// (Updatable) Base64 encoded string of key store file content.
+	// Base64 encoded string of key store file content.
 	KeyStoreContent *string `pulumi:"keyStoreContent"`
-	// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+	// Status to represent whether the database connection is TLS enabled or not.
 	Status string `pulumi:"status"`
-	// (Updatable) The password to read the trust store and key store files, if they are password protected.
+	// The password to read the trust store and key store files, if they are password protected.
 	StorePassword *string `pulumi:"storePassword"`
-	// (Updatable) Base64 encoded string of trust store file content.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Base64 encoded string of trust store file content.
 	TrustStoreContent *string `pulumi:"trustStoreContent"`
 }
 
@@ -6041,18 +6038,15 @@ type TargetDatabasePeerTargetDatabaseDetailTlsConfigInput interface {
 }
 
 type TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs struct {
-	// (Updatable) The format of the certificate store.
+	// The format of the certificate store.
 	CertificateStoreType pulumi.StringPtrInput `pulumi:"certificateStoreType"`
-	// (Updatable) Base64 encoded string of key store file content.
+	// Base64 encoded string of key store file content.
 	KeyStoreContent pulumi.StringPtrInput `pulumi:"keyStoreContent"`
-	// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+	// Status to represent whether the database connection is TLS enabled or not.
 	Status pulumi.StringInput `pulumi:"status"`
-	// (Updatable) The password to read the trust store and key store files, if they are password protected.
+	// The password to read the trust store and key store files, if they are password protected.
 	StorePassword pulumi.StringPtrInput `pulumi:"storePassword"`
-	// (Updatable) Base64 encoded string of trust store file content.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Base64 encoded string of trust store file content.
 	TrustStoreContent pulumi.StringPtrInput `pulumi:"trustStoreContent"`
 }
 
@@ -6133,30 +6127,27 @@ func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) ToTargetDatabaseP
 	}).(TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput)
 }
 
-// (Updatable) The format of the certificate store.
+// The format of the certificate store.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) CertificateStoreType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.CertificateStoreType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Base64 encoded string of key store file content.
+// Base64 encoded string of key store file content.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) KeyStoreContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.KeyStoreContent }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+// Status to represent whether the database connection is TLS enabled or not.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// (Updatable) The password to read the trust store and key store files, if they are password protected.
+// The password to read the trust store and key store files, if they are password protected.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) StorePassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.StorePassword }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Base64 encoded string of trust store file content.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Base64 encoded string of trust store file content.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput) TrustStoreContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string { return v.TrustStoreContent }).(pulumi.StringPtrOutput)
 }
@@ -6185,7 +6176,7 @@ func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) Elem() TargetD
 	}).(TargetDatabasePeerTargetDatabaseDetailTlsConfigOutput)
 }
 
-// (Updatable) The format of the certificate store.
+// The format of the certificate store.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) CertificateStoreType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
 		if v == nil {
@@ -6195,7 +6186,7 @@ func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) CertificateSto
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Base64 encoded string of key store file content.
+// Base64 encoded string of key store file content.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) KeyStoreContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
 		if v == nil {
@@ -6205,7 +6196,7 @@ func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) KeyStoreConten
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Status to represent whether the database connection is TLS enabled or not.
+// Status to represent whether the database connection is TLS enabled or not.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) Status() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
 		if v == nil {
@@ -6215,7 +6206,7 @@ func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) Status() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The password to read the trust store and key store files, if they are password protected.
+// The password to read the trust store and key store files, if they are password protected.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) StorePassword() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
 		if v == nil {
@@ -6225,10 +6216,7 @@ func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) StorePassword(
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Base64 encoded string of trust store file content.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Base64 encoded string of trust store file content.
 func (o TargetDatabasePeerTargetDatabaseDetailTlsConfigPtrOutput) TrustStoreContent() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *TargetDatabasePeerTargetDatabaseDetailTlsConfig) *string {
 		if v == nil {

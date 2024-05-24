@@ -16,14 +16,14 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
     public static final WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgs Empty = new WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollIntervalArgs();
 
     /**
-     * (Updatable) An object value of the parameter.
+     * An object value of the parameter.
      * 
      */
     @Import(name="objectValue")
     private @Nullable Output<Double> objectValue;
 
     /**
-     * @return (Updatable) An object value of the parameter.
+     * @return An object value of the parameter.
      * 
      */
     public Optional<Output<Double>> objectValue() {
@@ -55,7 +55,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
         }
 
         /**
-         * @param objectValue (Updatable) An object value of the parameter.
+         * @param objectValue An object value of the parameter.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesP
         }
 
         /**
-         * @param objectValue (Updatable) An object value of the parameter.
+         * @param objectValue An object value of the parameter.
          * 
          * @return builder
          * 

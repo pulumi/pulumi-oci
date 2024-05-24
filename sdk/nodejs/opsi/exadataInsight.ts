@@ -105,11 +105,11 @@ export class ExadataInsight extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier of database
+     * (Updatable) Compartment Identifier of Exadata insight
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -137,7 +137,7 @@ export class ExadataInsight extends pulumi.CustomResource {
      */
     public readonly enterpriseManagerIdentifier!: pulumi.Output<string>;
     /**
-     * Source of the database entity.
+     * (Updatable) Source of the Exadata system.
      */
     public readonly entitySource!: pulumi.Output<string>;
     /**
@@ -160,7 +160,7 @@ export class ExadataInsight extends pulumi.CustomResource {
      */
     public /*out*/ readonly exadataType!: pulumi.Output<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
@@ -284,11 +284,11 @@ export class ExadataInsight extends pulumi.CustomResource {
  */
 export interface ExadataInsightState {
     /**
-     * (Updatable) Compartment Identifier of database
+     * (Updatable) Compartment Identifier of Exadata insight
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -316,7 +316,7 @@ export interface ExadataInsightState {
      */
     enterpriseManagerIdentifier?: pulumi.Input<string>;
     /**
-     * Source of the database entity.
+     * (Updatable) Source of the Exadata system.
      */
     entitySource?: pulumi.Input<string>;
     /**
@@ -339,7 +339,7 @@ export interface ExadataInsightState {
      */
     exadataType?: pulumi.Input<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -385,11 +385,11 @@ export interface ExadataInsightState {
  */
 export interface ExadataInsightArgs {
     /**
-     * (Updatable) Compartment Identifier of database
+     * (Updatable) Compartment Identifier of Exadata insight
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -405,12 +405,12 @@ export interface ExadataInsightArgs {
      */
     enterpriseManagerIdentifier?: pulumi.Input<string>;
     /**
-     * Source of the database entity.
+     * (Updatable) Source of the Exadata system.
      */
     entitySource: pulumi.Input<string>;
     exadataInfraId?: pulumi.Input<string>;
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**

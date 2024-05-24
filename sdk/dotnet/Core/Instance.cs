@@ -107,7 +107,7 @@ namespace Pulumi.Oci.Core
         public Output<string?> ClusterPlacementGroupId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -137,7 +137,7 @@ namespace Pulumi.Oci.Core
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -212,13 +212,17 @@ namespace Pulumi.Oci.Core
         public Output<bool> IsCrossNumaNode { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         /// </summary>
         [Output("isPvEncryptionInTransitEnabled")]
         public Output<bool> IsPvEncryptionInTransitEnabled { get; private set; } = null!;
 
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        /// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        /// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// </summary>
         [Output("launchMode")]
         public Output<string> LaunchMode { get; private set; } = null!;
@@ -298,7 +302,7 @@ namespace Pulumi.Oci.Core
         public Output<Outputs.InstancePreemptibleInstanceConfig> PreemptibleInstanceConfig { get; private set; } = null!;
 
         /// <summary>
-        /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        /// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         /// </summary>
         [Output("preserveBootVolume")]
         public Output<bool?> PreserveBootVolume { get; private set; } = null!;
@@ -307,11 +311,7 @@ namespace Pulumi.Oci.Core
         public Output<bool?> PreserveDataVolumesCreatedAtLaunch { get; private set; } = null!;
 
         /// <summary>
-        /// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-        /// 
-        /// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        /// 
-        /// Example: `10.0.3.3`
+        /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         /// </summary>
         [Output("privateIp")]
         public Output<string> PrivateIp { get; private set; } = null!;
@@ -468,7 +468,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -504,7 +504,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -584,7 +584,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? IpxeScript { get; set; }
 
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
@@ -676,7 +676,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.InstancePreemptibleInstanceConfigArgs>? PreemptibleInstanceConfig { get; set; }
 
         /// <summary>
-        /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        /// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         /// </summary>
         [Input("preserveBootVolume")]
         public Input<bool>? PreserveBootVolume { get; set; }
@@ -774,7 +774,7 @@ namespace Pulumi.Oci.Core
         public Input<string>? ClusterPlacementGroupId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment containing images to search
+        /// (Updatable) The OCID of the compartment.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -810,7 +810,7 @@ namespace Pulumi.Oci.Core
         }
 
         /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -896,13 +896,17 @@ namespace Pulumi.Oci.Core
         public Input<bool>? IsCrossNumaNode { get; set; }
 
         /// <summary>
-        /// (Updatable) Use this for update operation only. This field is  Deprecated during create. For create use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/datatypes/LaunchInstanceDetails).
+        /// Whether to enable in-transit encryption for the data volume's paravirtualized attachment. The default value is false. Use this field only during create. To update use `is_pv_encryption_in_transit_enabled` under `launch_options` instead.
         /// </summary>
         [Input("isPvEncryptionInTransitEnabled")]
         public Input<bool>? IsPvEncryptionInTransitEnabled { get; set; }
 
         /// <summary>
         /// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+        /// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+        /// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+        /// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+        /// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
         /// </summary>
         [Input("launchMode")]
         public Input<string>? LaunchMode { get; set; }
@@ -994,7 +998,7 @@ namespace Pulumi.Oci.Core
         public Input<Inputs.InstancePreemptibleInstanceConfigGetArgs>? PreemptibleInstanceConfig { get; set; }
 
         /// <summary>
-        /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
+        /// (Optional) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. Defaults to false if not specified.
         /// </summary>
         [Input("preserveBootVolume")]
         public Input<bool>? PreserveBootVolume { get; set; }
@@ -1003,11 +1007,7 @@ namespace Pulumi.Oci.Core
         public Input<bool>? PreserveDataVolumesCreatedAtLaunch { get; set; }
 
         /// <summary>
-        /// A private IP address of your choice to assign to the VNIC. Must be an available IP address within the subnet's CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from the subnet. This is the VNIC's *primary* private IP address. The value appears in the `[Vnic](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vnic/)` object and also the `[PrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/)` object returned by `[ListPrivateIps](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/ListPrivateIps)` and `[GetPrivateIp](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/PrivateIp/GetPrivateIp)`.
-        /// 
-        /// If you specify a `vlanId`, the `privateIp` cannot be specified. See [Vlan](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Vlan).
-        /// 
-        /// Example: `10.0.3.3`
+        /// The private IP address of instance VNIC. To set the private IP address, use the `private_ip` argument in create_vnic_details.
         /// </summary>
         [Input("privateIp")]
         public Input<string>? PrivateIp { get; set; }

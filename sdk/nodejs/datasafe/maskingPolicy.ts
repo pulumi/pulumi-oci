@@ -99,7 +99,7 @@ export class MaskingPolicy extends pulumi.CustomResource {
      */
     public readonly addMaskingColumnsFromSdmTrigger!: pulumi.Output<number | undefined>;
     /**
-     * (Updatable) The source of masking columns.
+     * (Updatable) Details to associate a column source with a masking policy.
      */
     public readonly columnSources!: pulumi.Output<outputs.DataSafe.MaskingPolicyColumnSource[]>;
     /**
@@ -243,7 +243,7 @@ export interface MaskingPolicyState {
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
     /**
-     * (Updatable) The source of masking columns.
+     * (Updatable) Details to associate a column source with a masking policy.
      */
     columnSources?: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPolicyColumnSource>[]>;
     /**
@@ -325,7 +325,7 @@ export interface MaskingPolicyArgs {
      */
     addMaskingColumnsFromSdmTrigger?: pulumi.Input<number>;
     /**
-     * (Updatable) The source of masking columns.
+     * (Updatable) Details to associate a column source with a masking policy.
      */
     columnSources: pulumi.Input<pulumi.Input<inputs.DataSafe.MaskingPolicyColumnSource>[]>;
     /**

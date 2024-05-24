@@ -50,40 +50,34 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
     }
 
     /**
-     * The user&#39;s identifier.
+     * Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: true
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return The user&#39;s identifier.
+     * @return Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: true
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -157,20 +151,17 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
         }
 
         /**
-         * @param value The user&#39;s identifier.
+         * @param value Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: true
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -181,20 +172,17 @@ public final class DomainsMyUserDbCredentialTagArgs extends com.pulumi.resources
         }
 
         /**
-         * @param value The user&#39;s identifier.
+         * @param value Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: true
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

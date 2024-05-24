@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRecoveryServiceSubnet = new RecoveryServiceSubnet("testRecoveryServiceSubnet", RecoveryServiceSubnetArgs.builder()        
+ *         var testRecoveryServiceSubnet = new RecoveryServiceSubnet("testRecoveryServiceSubnet", RecoveryServiceSubnetArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(recoveryServiceSubnetDisplayName)
  *             .vcnId(testVcn.id())

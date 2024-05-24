@@ -32,14 +32,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * Configuration variable name.
+     * The configuration variable name.
      * 
      */
     @Import(name="configKey")
     private @Nullable Output<String> configKey;
 
     /**
-     * @return Configuration variable name.
+     * @return The configuration variable name.
      * 
      */
     public Optional<Output<String>> configKey() {
@@ -122,14 +122,14 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
     }
 
     /**
-     * User-selected variable value.
+     * User-selected configuration variable value.
      * 
      */
     @Import(name="overridenConfigValue")
     private @Nullable Output<String> overridenConfigValue;
 
     /**
-     * @return User-selected variable value.
+     * @return User-selected configuration variable value.
      * 
      */
     public Optional<Output<String>> overridenConfigValue() {
@@ -189,7 +189,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param configKey Configuration variable name.
+         * @param configKey The configuration variable name.
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param configKey Configuration variable name.
+         * @param configKey The configuration variable name.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param overridenConfigValue User-selected variable value.
+         * @param overridenConfigValue User-selected configuration variable value.
          * 
          * @return builder
          * 
@@ -326,7 +326,7 @@ public final class ConfigurationConfigurationDetailItemArgs extends com.pulumi.r
         }
 
         /**
-         * @param overridenConfigValue User-selected variable value.
+         * @param overridenConfigValue User-selected configuration variable value.
          * 
          * @return builder
          * 

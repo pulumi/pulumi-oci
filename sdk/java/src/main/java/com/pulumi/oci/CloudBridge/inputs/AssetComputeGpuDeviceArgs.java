@@ -32,14 +32,14 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) The tag description.
+     * (Updatable) GPU device description.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The tag description.
+     * @return (Updatable) GPU device description.
      * 
      */
     public Optional<Output<String>> description() {
@@ -62,14 +62,14 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Memory size in MBs.
+     * (Updatable) GPU memory size in MBs.
      * 
      */
     @Import(name="memoryInMbs")
     private @Nullable Output<String> memoryInMbs;
 
     /**
-     * @return (Updatable) Memory size in MBs.
+     * @return (Updatable) GPU memory size in MBs.
      * 
      */
     public Optional<Output<String>> memoryInMbs() {
@@ -77,14 +77,14 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) The tag name.
+     * (Updatable) GPU device name.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The tag name.
+     * @return (Updatable) GPU device name.
      * 
      */
     public Optional<Output<String>> name() {
@@ -141,7 +141,7 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param description (Updatable) The tag description.
+         * @param description (Updatable) GPU device description.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param description (Updatable) The tag description.
+         * @param description (Updatable) GPU device description.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param memoryInMbs (Updatable) Memory size in MBs.
+         * @param memoryInMbs (Updatable) GPU memory size in MBs.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param memoryInMbs (Updatable) Memory size in MBs.
+         * @param memoryInMbs (Updatable) GPU memory size in MBs.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name (Updatable) The tag name.
+         * @param name (Updatable) GPU device name.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AssetComputeGpuDeviceArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name (Updatable) The tag name.
+         * @param name (Updatable) GPU device name.
          * 
          * @return builder
          * 

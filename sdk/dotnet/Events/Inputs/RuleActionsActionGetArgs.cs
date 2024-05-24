@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Events.Inputs
         public Input<string> ActionType { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        /// (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -40,11 +40,7 @@ namespace Pulumi.Oci.Events.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Whether or not this action is currently enabled.  Example: `true`
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;

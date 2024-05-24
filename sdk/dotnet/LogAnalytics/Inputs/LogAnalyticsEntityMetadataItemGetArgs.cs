@@ -13,7 +13,7 @@ namespace Pulumi.Oci.LogAnalytics.Inputs
     public sealed class LogAnalyticsEntityMetadataItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Log analytics entity name.
+        /// (Updatable) The metadata name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

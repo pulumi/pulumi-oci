@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Roles;
         /// <summary>
-        /// (Updatable) The database user name.
+        /// (Updatable) The user name.
         /// </summary>
         public readonly string? UserName;
         /// <summary>

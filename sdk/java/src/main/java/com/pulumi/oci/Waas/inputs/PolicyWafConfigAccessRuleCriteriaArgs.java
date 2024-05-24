@@ -98,14 +98,14 @@ public final class PolicyWafConfigAccessRuleCriteriaArgs extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The value of the header.
+     * (Updatable) The criteria value.
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) The criteria value.
      * 
      */
     public Output<String> value() {
@@ -231,7 +231,7 @@ public final class PolicyWafConfigAccessRuleCriteriaArgs extends com.pulumi.reso
         }
 
         /**
-         * @param value (Updatable) The value of the header.
+         * @param value (Updatable) The criteria value.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class PolicyWafConfigAccessRuleCriteriaArgs extends com.pulumi.reso
         }
 
         /**
-         * @param value (Updatable) The value of the header.
+         * @param value (Updatable) The criteria value.
          * 
          * @return builder
          * 

@@ -126,7 +126,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

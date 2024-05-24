@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testStreamPool = new StreamPool("testStreamPool", StreamPoolArgs.builder()        
+ *         var testStreamPool = new StreamPool("testStreamPool", StreamPoolArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(streamPoolName)
  *             .customEncryptionKey(StreamPoolCustomEncryptionKeyArgs.builder()

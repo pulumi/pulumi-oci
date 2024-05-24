@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement("testDrgRouteDistributionStatement", DrgRouteDistributionStatementArgs.builder()        
+ *         var testDrgRouteDistributionStatement = new DrgRouteDistributionStatement("testDrgRouteDistributionStatement", DrgRouteDistributionStatementArgs.builder()
  *             .drgRouteDistributionId(testDrgRouteDistribution.id())
  *             .action(drgRouteDistributionStatementStatementsAction)
  *             .matchCriteria(DrgRouteDistributionStatementMatchCriteriaArgs.builder()

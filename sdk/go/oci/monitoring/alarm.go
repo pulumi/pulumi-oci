@@ -120,6 +120,9 @@ type Alarm struct {
 	// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
 	IsNotificationsPerMetricDimensionEnabled pulumi.BoolOutput `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// (Updatable) The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat pulumi.StringOutput `pulumi:"messageFormat"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId pulumi.StringOutput `pulumi:"metricCompartmentId"`
@@ -260,6 +263,9 @@ type alarmState struct {
 	// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
 	IsNotificationsPerMetricDimensionEnabled *bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// (Updatable) The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat *string `pulumi:"messageFormat"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId *string `pulumi:"metricCompartmentId"`
@@ -347,6 +353,9 @@ type AlarmState struct {
 	// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
 	IsNotificationsPerMetricDimensionEnabled pulumi.BoolPtrInput
 	// (Updatable) The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId pulumi.StringPtrInput
@@ -438,6 +447,9 @@ type alarmArgs struct {
 	// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
 	IsNotificationsPerMetricDimensionEnabled *bool `pulumi:"isNotificationsPerMetricDimensionEnabled"`
 	// (Updatable) The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat *string `pulumi:"messageFormat"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId string `pulumi:"metricCompartmentId"`
@@ -520,6 +532,9 @@ type AlarmArgs struct {
 	// (Updatable) When set to `true`, splits alarm notifications per metric stream. When set to `false`, groups alarm notifications across metric streams. Example: `true`
 	IsNotificationsPerMetricDimensionEnabled pulumi.BoolPtrInput
 	// (Updatable) The format to use for alarm notifications. The formats are:
+	// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+	// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+	// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 	MessageFormat pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
 	MetricCompartmentId pulumi.StringInput
@@ -711,6 +726,9 @@ func (o AlarmOutput) IsNotificationsPerMetricDimensionEnabled() pulumi.BoolOutpu
 }
 
 // (Updatable) The format to use for alarm notifications. The formats are:
+// * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+// * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+// * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
 func (o AlarmOutput) MessageFormat() pulumi.StringOutput {
 	return o.ApplyT(func(v *Alarm) pulumi.StringOutput { return v.MessageFormat }).(pulumi.StringOutput)
 }

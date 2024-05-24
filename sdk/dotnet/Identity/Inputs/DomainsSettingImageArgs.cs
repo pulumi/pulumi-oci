@@ -39,17 +39,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Image URI
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
-        /// * type: string
-        /// * uniqueness: none
+        /// * type: reference
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

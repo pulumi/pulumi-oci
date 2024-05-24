@@ -14,12 +14,13 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppScope {
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) OAuth scope description
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -28,7 +29,9 @@ public final class DomainsAppScope {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) OAuth scope display name
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -89,31 +92,30 @@ public final class DomainsAppScope {
      */
     private @Nullable Boolean requiresConsent;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) OAuth scope.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppScope() {}
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) OAuth scope description
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
@@ -124,7 +126,9 @@ public final class DomainsAppScope {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \&#34;displayName\&#34; attribute in \&#34;ConfigurationProperty\&#34; in ICF.
+     * @return (Updatable) OAuth scope display name
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -193,19 +197,17 @@ public final class DomainsAppScope {
         return Optional.ofNullable(this.requiresConsent);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) OAuth scope.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

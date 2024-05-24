@@ -22,7 +22,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// </summary>
         public readonly string? AtpUserName;
         /// <summary>
-        /// Bucket Name for influx connection
+        /// Object storage bucket name
         /// </summary>
         public readonly string? Bucket;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Outputs
         /// </summary>
         public readonly string DataSourceType;
         /// <summary>
-        /// DB Name for influx connection
+        /// atp database name
         /// </summary>
         public readonly string? DatabaseName;
         /// <summary>

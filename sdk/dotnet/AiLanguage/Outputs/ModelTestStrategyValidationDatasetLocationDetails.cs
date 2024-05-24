@@ -27,10 +27,6 @@ namespace Pulumi.Oci.AiLanguage.Outputs
         public readonly string Namespace;
         /// <summary>
         /// Array of files which need to be processed in the bucket
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly ImmutableArray<string> ObjectNames;
 

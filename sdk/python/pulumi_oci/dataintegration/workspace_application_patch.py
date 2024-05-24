@@ -38,7 +38,7 @@ class WorkspaceApplicationPatchArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] description: Detailed description for the object.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[str] model_version: The object's model version.
         :param pulumi.Input[str] name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_keys: The array of object keys to publish into application.
@@ -133,7 +133,7 @@ class WorkspaceApplicationPatchArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        The object's key.
         """
         return pulumi.get(self, "key")
 
@@ -235,7 +235,7 @@ class _WorkspaceApplicationPatchState:
         :param pulumi.Input[str] description: Detailed description for the object.
         :param pulumi.Input[Mapping[str, Any]] error_messages: The errors encountered while applying the patch, if any.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input['WorkspaceApplicationPatchMetadataArgs']]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The object type.
@@ -377,7 +377,7 @@ class _WorkspaceApplicationPatchState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        The identifying key for the object.
+        The object's key.
         """
         return pulumi.get(self, "key")
 
@@ -631,7 +631,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         :param pulumi.Input[str] application_key: The application key.
         :param pulumi.Input[str] description: Detailed description for the object.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[str] model_version: The object's model version.
         :param pulumi.Input[str] name: Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_keys: The array of object keys to publish into application.
@@ -797,7 +797,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
         :param pulumi.Input[str] description: Detailed description for the object.
         :param pulumi.Input[Mapping[str, Any]] error_messages: The errors encountered while applying the patch, if any.
         :param pulumi.Input[str] identifier: Value can only contain upper case letters, underscore and numbers. It should begin with upper case letter or underscore. The value can be modified.
-        :param pulumi.Input[str] key: The identifying key for the object.
+        :param pulumi.Input[str] key: The object's key.
         :param pulumi.Input[Mapping[str, Any]] key_map: A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['WorkspaceApplicationPatchMetadataArgs']]]] metadatas: A summary type containing information about the object including its key, name and when/who created/updated it.
         :param pulumi.Input[str] model_type: The object type.
@@ -898,7 +898,7 @@ class WorkspaceApplicationPatch(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        The identifying key for the object.
+        The object's key.
         """
         return pulumi.get(self, "key")
 

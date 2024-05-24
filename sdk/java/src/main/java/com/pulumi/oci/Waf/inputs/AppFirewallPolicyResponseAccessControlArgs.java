@@ -17,14 +17,14 @@ public final class AppFirewallPolicyResponseAccessControlArgs extends com.pulumi
     public static final AppFirewallPolicyResponseAccessControlArgs Empty = new AppFirewallPolicyResponseAccessControlArgs();
 
     /**
-     * (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<List<AppFirewallPolicyResponseAccessControlRuleArgs>> rules;
 
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
      * 
      */
     public Optional<Output<List<AppFirewallPolicyResponseAccessControlRuleArgs>>> rules() {
@@ -56,7 +56,7 @@ public final class AppFirewallPolicyResponseAccessControlArgs extends com.pulumi
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class AppFirewallPolicyResponseAccessControlArgs extends com.pulumi
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class AppFirewallPolicyResponseAccessControlArgs extends com.pulumi
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of AccessControlRules. Rules are executed in order of appearance in this array.
          * 
          * @return builder
          * 

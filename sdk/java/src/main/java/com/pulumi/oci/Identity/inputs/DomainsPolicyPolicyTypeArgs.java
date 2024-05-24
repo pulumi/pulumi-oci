@@ -17,7 +17,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
     public static final DomainsPolicyPolicyTypeArgs Empty = new DomainsPolicyPolicyTypeArgs();
 
     /**
-     * (Updatable) Rule URI
+     * (Updatable) PolicyType URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +33,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) Rule URI
+     * @return (Updatable) PolicyType URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,13 +50,13 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) PolicyType identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -67,13 +67,13 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) PolicyType identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -110,7 +110,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ref (Updatable) Rule URI
+         * @param ref (Updatable) PolicyType URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -130,7 +130,7 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param ref (Updatable) Rule URI
+         * @param ref (Updatable) PolicyType URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -149,13 +149,13 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) PolicyType identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
@@ -170,13 +170,13 @@ public final class DomainsPolicyPolicyTypeArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) PolicyType identifier
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string

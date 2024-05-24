@@ -46,14 +46,14 @@ public final class VirtualNodePoolPlacementConfigurationArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+     * (Updatable) The OCID of the subnet in which to place virtual nodes.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+     * @return (Updatable) The OCID of the subnet in which to place virtual nodes.
      * 
      */
     public Output<String> subnetId() {
@@ -139,7 +139,7 @@ public final class VirtualNodePoolPlacementConfigurationArgs extends com.pulumi.
         }
 
         /**
-         * @param subnetId (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+         * @param subnetId (Updatable) The OCID of the subnet in which to place virtual nodes.
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class VirtualNodePoolPlacementConfigurationArgs extends com.pulumi.
         }
 
         /**
-         * @param subnetId (Updatable) The regional subnet where pods&#39; VNIC will be placed.
+         * @param subnetId (Updatable) The OCID of the subnet in which to place virtual nodes.
          * 
          * @return builder
          * 

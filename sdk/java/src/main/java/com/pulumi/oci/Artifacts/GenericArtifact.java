@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testGenericArtifact = new GenericArtifact("testGenericArtifact", GenericArtifactArgs.builder()        
+ *         var testGenericArtifact = new GenericArtifact("testGenericArtifact", GenericArtifactArgs.builder()
  *             .artifactId(testArtifact.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .freeformTags(Map.of("Department", "Finance"))

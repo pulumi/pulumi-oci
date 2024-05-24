@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeBackupPolicy = new VolumeBackupPolicy("testVolumeBackupPolicy", VolumeBackupPolicyArgs.builder()        
+ *         var testVolumeBackupPolicy = new VolumeBackupPolicy("testVolumeBackupPolicy", VolumeBackupPolicyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .destinationRegion(volumeBackupPolicyDestinationRegion)

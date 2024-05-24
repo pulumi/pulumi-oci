@@ -17,18 +17,17 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
     public static final DomainsAppTermsOfUseArgs Empty = new DomainsAppTermsOfUseArgs();
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * (Updatable) Terms Of Use name
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -37,18 +36,17 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) Terms Of Use name
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
+     * * mutability: readOnly
+     * * required: false
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -58,7 +56,9 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) URI of the TermsOfUse.
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -74,7 +74,9 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the TermsOfUse.
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -91,38 +93,38 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Identifier of the TermsOfUse
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the TermsOfUse
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -156,18 +158,17 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Terms Of Use name
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -180,18 +181,17 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+         * @param name (Updatable) Terms Of Use name
          * 
-         * **Deprecated Since: 18.2.2**
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
-         * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
+         * * mutability: readOnly
+         * * required: false
+         * * returned: request
          * * type: string
          * * uniqueness: none
          * 
@@ -203,7 +203,9 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the TermsOfUse.
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -223,7 +225,9 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the TermsOfUse.
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -242,19 +246,19 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Identifier of the TermsOfUse
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -265,19 +269,19 @@ public final class DomainsAppTermsOfUseArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Identifier of the TermsOfUse
+         * 
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

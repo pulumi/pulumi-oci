@@ -52,34 +52,32 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -87,9 +85,10 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Rule URI
+     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -103,9 +102,10 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) Rule URI
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -155,13 +155,13 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
     }
 
     /**
-     * (Updatable) Value of the tag.
+     * (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -172,13 +172,13 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
     private Output<String> value;
 
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -259,17 +259,16 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -280,17 +279,16 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ocid (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -300,9 +298,10 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ref (Updatable) Rule URI
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -320,9 +319,10 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
         }
 
         /**
-         * @param ref (Updatable) Rule URI
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -380,13 +380,13 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -401,13 +401,13 @@ public final class DomainsPolicyIdcsLastModifiedByArgs extends com.pulumi.resour
         }
 
         /**
-         * @param value (Updatable) Value of the tag.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

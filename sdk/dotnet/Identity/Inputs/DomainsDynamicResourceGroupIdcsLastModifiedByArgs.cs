@@ -29,17 +29,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
@@ -77,18 +76,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag value
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readOnly
         /// * required: true
-        /// * idcsReturnEmptyWhenNull: true
-        /// * mutability: readWrite
         /// * returned: default
         /// * type: string
-        /// * idcsSearchable: true
         /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]

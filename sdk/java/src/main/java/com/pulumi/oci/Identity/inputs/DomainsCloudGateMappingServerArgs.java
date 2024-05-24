@@ -17,9 +17,7 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
     public static final DomainsCloudGateMappingServerArgs Empty = new DomainsCloudGateMappingServerArgs();
 
     /**
-     * (Updatable) The URI to the upstream block entry
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) The URI to the server block entry
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -36,9 +34,7 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI to the upstream block entry
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI to the server block entry
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -56,44 +52,34 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) The id of the server block entry.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The id of the upstream block entry.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the server block entry.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -126,9 +112,7 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ref (Updatable) The URI to the upstream block entry
-         * 
-         * **Added In:** 20.1.3
+         * @param ref (Updatable) The URI to the server block entry
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -149,9 +133,7 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
         }
 
         /**
-         * @param ref (Updatable) The URI to the upstream block entry
-         * 
-         * **Added In:** 20.1.3
+         * @param ref (Updatable) The URI to the server block entry
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -171,22 +153,17 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value (Updatable) The id of the upstream block entry.
-         * 
-         * **Added In:** 20.1.3
+         * @param value (Updatable) The id of the server block entry.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -197,22 +174,17 @@ public final class DomainsCloudGateMappingServerArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value (Updatable) The id of the upstream block entry.
-         * 
-         * **Added In:** 20.1.3
+         * @param value (Updatable) The id of the server block entry.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
-         * * required: false
+         * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

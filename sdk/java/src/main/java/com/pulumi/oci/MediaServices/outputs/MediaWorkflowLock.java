@@ -33,7 +33,7 @@ public final class MediaWorkflowLock {
      */
     private @Nullable String timeCreated;
     /**
-     * @return (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+     * @return Type of the lock.
      * 
      */
     private String type;
@@ -68,7 +68,7 @@ public final class MediaWorkflowLock {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+     * @return Type of the lock.
      * 
      */
     public String type() {

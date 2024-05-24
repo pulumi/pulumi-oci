@@ -64,7 +64,7 @@ namespace Pulumi.Oci.Waf
     public partial class NetworkAddressList : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) A private IP address or CIDR IP address range.
+        /// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         /// </summary>
         [Output("addresses")]
         public Output<ImmutableArray<string>> Addresses { get; private set; } = null!;
@@ -185,7 +185,7 @@ namespace Pulumi.Oci.Waf
         private InputList<string>? _addresses;
 
         /// <summary>
-        /// (Updatable) A private IP address or CIDR IP address range.
+        /// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         /// </summary>
         public InputList<string> Addresses
         {
@@ -271,7 +271,7 @@ namespace Pulumi.Oci.Waf
         private InputList<string>? _addresses;
 
         /// <summary>
-        /// (Updatable) A private IP address or CIDR IP address range.
+        /// (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         /// </summary>
         public InputList<string> Addresses
         {

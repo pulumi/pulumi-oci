@@ -17,14 +17,14 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
     public static final PolicyWafConfigAccessRuleResponseHeaderManipulationArgs Empty = new PolicyWafConfigAccessRuleResponseHeaderManipulationArgs();
 
     /**
-     * (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     public Output<String> action() {
@@ -47,14 +47,14 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
     }
 
     /**
-     * (Updatable) The value of the header.
+     * (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
      * 
      */
     public Optional<Output<String>> value() {
@@ -88,7 +88,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param value (Updatable) The value of the header.
+         * @param value (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulationArgs exten
         }
 
         /**
-         * @param value (Updatable) The value of the header.
+         * @param value (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
          * 
          * @return builder
          * 

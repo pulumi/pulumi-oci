@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class ClusterPlacementGroupCapabilitiesItem {
     /**
-     * @return The friendly name of the cluster placement group.
+     * @return The type of resource.
      * 
      */
     private String name;
@@ -23,7 +23,7 @@ public final class ClusterPlacementGroupCapabilitiesItem {
 
     private ClusterPlacementGroupCapabilitiesItem() {}
     /**
-     * @return The friendly name of the cluster placement group.
+     * @return The type of resource.
      * 
      */
     public String name() {

@@ -20,14 +20,14 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
     public static final PolicyWafConfigDeviceFingerprintChallengeArgs Empty = new PolicyWafConfigDeviceFingerprintChallengeArgs();
 
     /**
-     * (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
     @Import(name="action")
     private @Nullable Output<String> action;
 
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
      * 
      */
     public Optional<Output<String>> action() {
@@ -35,14 +35,14 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
     }
 
     /**
-     * (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     @Import(name="actionExpirationInSeconds")
     private @Nullable Output<Integer> actionExpirationInSeconds;
 
     /**
-     * @return (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+     * @return (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
      * 
      */
     public Optional<Output<Integer>> actionExpirationInSeconds() {
@@ -65,14 +65,14 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
     }
 
     /**
-     * (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+     * (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
      * 
      */
     @Import(name="failureThreshold")
     private @Nullable Output<Integer> failureThreshold;
 
     /**
-     * @return (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+     * @return (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
      * 
      */
     public Optional<Output<Integer>> failureThreshold() {
@@ -80,14 +80,14 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
     }
 
     /**
-     * (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+     * (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
      * 
      */
     @Import(name="failureThresholdExpirationInSeconds")
     private @Nullable Output<Integer> failureThresholdExpirationInSeconds;
 
     /**
-     * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+     * @return (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
      * 
      */
     public Optional<Output<Integer>> failureThresholdExpirationInSeconds() {
@@ -95,14 +95,14 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
     }
 
     /**
-     * (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -171,7 +171,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
          * 
          * @return builder
          * 
@@ -182,7 +182,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
          * 
          * @return builder
          * 
@@ -192,7 +192,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
          * 
          * @return builder
          * 
@@ -203,7 +203,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+         * @param actionExpirationInSeconds (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param failureThreshold (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+         * @param failureThreshold (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
          * 
          * @return builder
          * 
@@ -245,7 +245,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param failureThreshold (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+         * @param failureThreshold (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param failureThresholdExpirationInSeconds (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+         * @param failureThresholdExpirationInSeconds (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
          * 
          * @return builder
          * 
@@ -266,7 +266,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param failureThresholdExpirationInSeconds (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+         * @param failureThresholdExpirationInSeconds (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class PolicyWafConfigDeviceFingerprintChallengeArgs extends com.pul
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
          * 
          * @return builder
          * 

@@ -901,10 +901,7 @@ func (o PolicyOriginArrayOutput) Index(i pulumi.IntInput) PolicyOriginOutput {
 }
 
 type PolicyOriginCustomHeader struct {
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the header.
 	Name string `pulumi:"name"`
 	// (Updatable) The value of the header.
 	Value string `pulumi:"value"`
@@ -922,10 +919,7 @@ type PolicyOriginCustomHeaderInput interface {
 }
 
 type PolicyOriginCustomHeaderArgs struct {
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the header.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The value of the header.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -982,10 +976,7 @@ func (o PolicyOriginCustomHeaderOutput) ToPolicyOriginCustomHeaderOutputWithCont
 	return o
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the header.
 func (o PolicyOriginCustomHeaderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyOriginCustomHeader) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -1116,7 +1107,7 @@ func (o PolicyOriginGroupArrayOutput) Index(i pulumi.IntInput) PolicyOriginGroup
 }
 
 type PolicyOriginGroupOriginGroup struct {
-	// (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
 	Origin string `pulumi:"origin"`
 	Weight *int   `pulumi:"weight"`
 }
@@ -1133,7 +1124,7 @@ type PolicyOriginGroupOriginGroupInput interface {
 }
 
 type PolicyOriginGroupOriginGroupArgs struct {
-	// (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+	// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
 	Origin pulumi.StringInput `pulumi:"origin"`
 	Weight pulumi.IntPtrInput `pulumi:"weight"`
 }
@@ -1189,7 +1180,7 @@ func (o PolicyOriginGroupOriginGroupOutput) ToPolicyOriginGroupOriginGroupOutput
 	return o
 }
 
-// (Updatable) The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but is not required upon updating the configuration.
+// The key in the map of origins referencing the origin used for the Web Application Firewall. The origin must already be included in `Origins`. Required when creating the `WafConfig` resource, but not on update.
 func (o PolicyOriginGroupOriginGroupOutput) Origin() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyOriginGroupOriginGroup) string { return v.Origin }).(pulumi.StringOutput)
 }
@@ -1691,14 +1682,11 @@ type PolicyPolicyConfigHealthChecks struct {
 	HealthyThreshold *int `pulumi:"healthyThreshold"`
 	// (Updatable) Time between health checks of an individual origin server, in seconds.
 	IntervalInSeconds *int `pulumi:"intervalInSeconds"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the health checks.
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// (Updatable) Enables or disables additional check for predefined text in addition to response code.
 	IsResponseTextCheckEnabled *bool `pulumi:"isResponseTextCheckEnabled"`
-	// (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+	// (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
 	Method *string `pulumi:"method"`
 	// (Updatable) Path to visit on your origins when performing the health check.
 	Path *string `pulumi:"path"`
@@ -1736,14 +1724,11 @@ type PolicyPolicyConfigHealthChecksArgs struct {
 	HealthyThreshold pulumi.IntPtrInput `pulumi:"healthyThreshold"`
 	// (Updatable) Time between health checks of an individual origin server, in seconds.
 	IntervalInSeconds pulumi.IntPtrInput `pulumi:"intervalInSeconds"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the health checks.
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// (Updatable) Enables or disables additional check for predefined text in addition to response code.
 	IsResponseTextCheckEnabled pulumi.BoolPtrInput `pulumi:"isResponseTextCheckEnabled"`
-	// (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-	// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+	// (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
 	Method pulumi.StringPtrInput `pulumi:"method"`
 	// (Updatable) Path to visit on your origins when performing the health check.
 	Path pulumi.StringPtrInput `pulumi:"path"`
@@ -1861,7 +1846,7 @@ func (o PolicyPolicyConfigHealthChecksOutput) IntervalInSeconds() pulumi.IntPtrO
 	return o.ApplyT(func(v PolicyPolicyConfigHealthChecks) *int { return v.IntervalInSeconds }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the health checks.
 func (o PolicyPolicyConfigHealthChecksOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyConfigHealthChecks) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -1871,10 +1856,7 @@ func (o PolicyPolicyConfigHealthChecksOutput) IsResponseTextCheckEnabled() pulum
 	return o.ApplyT(func(v PolicyPolicyConfigHealthChecks) *bool { return v.IsResponseTextCheckEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+// (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
 func (o PolicyPolicyConfigHealthChecksOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyConfigHealthChecks) *string { return v.Method }).(pulumi.StringPtrOutput)
 }
@@ -1974,7 +1956,7 @@ func (o PolicyPolicyConfigHealthChecksPtrOutput) IntervalInSeconds() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the health checks.
 func (o PolicyPolicyConfigHealthChecksPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PolicyPolicyConfigHealthChecks) *bool {
 		if v == nil {
@@ -1994,10 +1976,7 @@ func (o PolicyPolicyConfigHealthChecksPtrOutput) IsResponseTextCheckEnabled() pu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-// * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+// (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
 func (o PolicyPolicyConfigHealthChecksPtrOutput) Method() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyPolicyConfigHealthChecks) *string {
 		if v == nil {
@@ -2047,10 +2026,7 @@ type PolicyPolicyConfigLoadBalancingMethod struct {
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
 	Method string `pulumi:"method"`
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
 	Name *string `pulumi:"name"`
 }
 
@@ -2075,10 +2051,7 @@ type PolicyPolicyConfigLoadBalancingMethodArgs struct {
 	// * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
 	// * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client's next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
 	Method pulumi.StringInput `pulumi:"method"`
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
 	Name pulumi.StringPtrInput `pulumi:"name"`
 }
 
@@ -2177,10 +2150,7 @@ func (o PolicyPolicyConfigLoadBalancingMethodOutput) Method() pulumi.StringOutpu
 	return o.ApplyT(func(v PolicyPolicyConfigLoadBalancingMethod) string { return v.Method }).(pulumi.StringOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
 func (o PolicyPolicyConfigLoadBalancingMethodOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyPolicyConfigLoadBalancingMethod) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -2242,10 +2212,7 @@ func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) Method() pulumi.StringPt
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the cookie used to track the persistence. Can contain any US-ASCII character except separator or control character.
 func (o PolicyPolicyConfigLoadBalancingMethodPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyPolicyConfigLoadBalancingMethod) *string {
 		if v == nil {
@@ -2604,17 +2571,25 @@ func (o PolicyWafConfigPtrOutput) Whitelists() PolicyWafConfigWhitelistArrayOutp
 }
 
 type PolicyWafConfigAccessRule struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+	// * **ALLOW:** Takes no action, just logs the request.
+	// * **DETECT:** Takes no action, but creates an alert for the request.
+	// * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+	// * **BYPASS:** Bypasses some or all challenges.
+	// * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+	// * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+	//
+	// Regardless of action, no further rules are processed once a rule is matched.
 	Action string `pulumi:"action"`
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
 	BlockAction *string `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
 	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
 	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
 	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
 	// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
@@ -2622,20 +2597,17 @@ type PolicyWafConfigAccessRule struct {
 	// * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
 	// * **CAPTCHA:** Bypasses CAPTCHA Challenge.
 	BypassChallenges []string `pulumi:"bypassChallenges"`
-	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaFooter *string `pulumi:"captchaFooter"`
-	// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+	// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaHeader *string `pulumi:"captchaHeader"`
-	// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+	// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaSubmitLabel *string `pulumi:"captchaSubmitLabel"`
-	// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+	// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaTitle *string `pulumi:"captchaTitle"`
-	// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+	// (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
 	Criterias []PolicyWafConfigAccessRuleCriteria `pulumi:"criterias"`
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The unique name of the access rule.
 	Name string `pulumi:"name"`
 	// (Updatable) The response status code to return when `action` is set to `REDIRECT`.
 	// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
@@ -2659,17 +2631,25 @@ type PolicyWafConfigAccessRuleInput interface {
 }
 
 type PolicyWafConfigAccessRuleArgs struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+	// * **ALLOW:** Takes no action, just logs the request.
+	// * **DETECT:** Takes no action, but creates an alert for the request.
+	// * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+	// * **BYPASS:** Bypasses some or all challenges.
+	// * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+	// * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+	//
+	// Regardless of action, no further rules are processed once a rule is matched.
 	Action pulumi.StringInput `pulumi:"action"`
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
 	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
 	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
 	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
 	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// (Updatable) The list of challenges to bypass when `action` is set to `BYPASS`. If unspecified or empty, all challenges are bypassed.
 	// * **JS_CHALLENGE:** Bypasses JavaScript Challenge.
@@ -2677,20 +2657,17 @@ type PolicyWafConfigAccessRuleArgs struct {
 	// * **HUMAN_INTERACTION_CHALLENGE:** Bypasses Human Interaction Challenge.
 	// * **CAPTCHA:** Bypasses CAPTCHA Challenge.
 	BypassChallenges pulumi.StringArrayInput `pulumi:"bypassChallenges"`
-	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
-	// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+	// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaHeader pulumi.StringPtrInput `pulumi:"captchaHeader"`
-	// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+	// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaSubmitLabel pulumi.StringPtrInput `pulumi:"captchaSubmitLabel"`
-	// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+	// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 	CaptchaTitle pulumi.StringPtrInput `pulumi:"captchaTitle"`
-	// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+	// (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
 	Criterias PolicyWafConfigAccessRuleCriteriaArrayInput `pulumi:"criterias"`
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The unique name of the access rule.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The response status code to return when `action` is set to `REDIRECT`.
 	// * **MOVED_PERMANENTLY:** Used for designating the permanent movement of a page (numerical code - 301).
@@ -2753,32 +2730,40 @@ func (o PolicyWafConfigAccessRuleOutput) ToPolicyWafConfigAccessRuleOutputWithCo
 	return o
 }
 
-// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+// (Updatable) The action to take when the access criteria are met for a rule. If unspecified, defaults to `ALLOW`.
+// * **ALLOW:** Takes no action, just logs the request.
+// * **DETECT:** Takes no action, but creates an alert for the request.
+// * **BLOCK:** Blocks the request by returning specified response code or showing error page.
+// * **BYPASS:** Bypasses some or all challenges.
+// * **REDIRECT:** Redirects the request to the specified URL. These fields are required when `REDIRECT` is selected: `redirectUrl`, `redirectResponseCode`.
+// * **SHOW_CAPTCHA:** Show a CAPTCHA Challenge page instead of the requested page.
+//
+// Regardless of action, no further rules are processed once a rule is matched.
 func (o PolicyWafConfigAccessRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) string { return v.Action }).(pulumi.StringOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests if `action` is set to `BLOCK` and the access criteria are met. If unspecified, defaults to `SET_RESPONSE_CODE`.
 func (o PolicyWafConfigAccessRuleOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access rules'.
 func (o PolicyWafConfigAccessRuleOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access blocked by website owner. Please contact support.'
 func (o PolicyWafConfigAccessRuleOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.BlockErrorPageDescription }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the access criteria are met. If unspecified, defaults to 'Access to the website is blocked.'
 func (o PolicyWafConfigAccessRuleOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the access criteria are met. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigAccessRuleOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
@@ -2792,35 +2777,32 @@ func (o PolicyWafConfigAccessRuleOutput) BypassChallenges() pulumi.StringArrayOu
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) []string { return v.BypassChallenges }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
+// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 func (o PolicyWafConfigAccessRuleOutput) CaptchaFooter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.CaptchaFooter }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `We have detected an increased number of attempts to access this webapp. To help us keep this webapp secure, please let us know that you are not a robot by entering the text from captcha below.`
+// (Updatable) The text to show in the header when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 func (o PolicyWafConfigAccessRuleOutput) CaptchaHeader() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.CaptchaHeader }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Yes, I am human`.
+// (Updatable) The text to show on the label of the CAPTCHA challenge submit button when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 func (o PolicyWafConfigAccessRuleOutput) CaptchaSubmitLabel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.CaptchaSubmitLabel }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, defaults to `Are you human?`
+// (Updatable) The title used when showing a CAPTCHA challenge when `action` is set to `SHOW_CAPTCHA` and the request is challenged.
 func (o PolicyWafConfigAccessRuleOutput) CaptchaTitle() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) *string { return v.CaptchaTitle }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+// (Updatable) The list of access rule criteria. The rule would be applied only for the requests that matched all the listed conditions.
 func (o PolicyWafConfigAccessRuleOutput) Criterias() PolicyWafConfigAccessRuleCriteriaArrayOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) []PolicyWafConfigAccessRuleCriteria { return v.Criterias }).(PolicyWafConfigAccessRuleCriteriaArrayOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The unique name of the access rule.
 func (o PolicyWafConfigAccessRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRule) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -2894,7 +2876,7 @@ type PolicyWafConfigAccessRuleCriteria struct {
 	Condition string `pulumi:"condition"`
 	// (Updatable) When enabled, the condition will be matched with case-sensitive rules.
 	IsCaseSensitive *bool `pulumi:"isCaseSensitive"`
-	// (Updatable) The value of the header.
+	// (Updatable) The criteria value.
 	Value string `pulumi:"value"`
 }
 
@@ -2939,7 +2921,7 @@ type PolicyWafConfigAccessRuleCriteriaArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// (Updatable) When enabled, the condition will be matched with case-sensitive rules.
 	IsCaseSensitive pulumi.BoolPtrInput `pulumi:"isCaseSensitive"`
-	// (Updatable) The value of the header.
+	// (Updatable) The criteria value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3029,7 +3011,7 @@ func (o PolicyWafConfigAccessRuleCriteriaOutput) IsCaseSensitive() pulumi.BoolPt
 	return o.ApplyT(func(v PolicyWafConfigAccessRuleCriteria) *bool { return v.IsCaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The value of the header.
+// (Updatable) The criteria value.
 func (o PolicyWafConfigAccessRuleCriteriaOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRuleCriteria) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3055,11 +3037,11 @@ func (o PolicyWafConfigAccessRuleCriteriaArrayOutput) Index(i pulumi.IntInput) P
 }
 
 type PolicyWafConfigAccessRuleResponseHeaderManipulation struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action string `pulumi:"action"`
 	// (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header string `pulumi:"header"`
-	// (Updatable) The value of the header.
+	// (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
 	Value *string `pulumi:"value"`
 }
 
@@ -3075,11 +3057,11 @@ type PolicyWafConfigAccessRuleResponseHeaderManipulationInput interface {
 }
 
 type PolicyWafConfigAccessRuleResponseHeaderManipulationArgs struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) A header field name that conforms to RFC 7230.  Example: `exampleHeaderName`
 	Header pulumi.StringInput `pulumi:"header"`
-	// (Updatable) The value of the header.
+	// (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -3134,7 +3116,7 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) ToPolicyWafCo
 	return o
 }
 
-// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+// (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -3144,7 +3126,7 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Header() pulu
 	return o.ApplyT(func(v PolicyWafConfigAccessRuleResponseHeaderManipulation) string { return v.Header }).(pulumi.StringOutput)
 }
 
-// (Updatable) The value of the header.
+// (Updatable) A header field value that conforms to RFC 7230.  Example: `exampleValue`
 func (o PolicyWafConfigAccessRuleResponseHeaderManipulationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAccessRuleResponseHeaderManipulation) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -3172,9 +3154,9 @@ func (o PolicyWafConfigAccessRuleResponseHeaderManipulationArrayOutput) Index(i 
 type PolicyWafConfigAddressRateLimiting struct {
 	// (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
 	AllowedRatePerAddress *int `pulumi:"allowedRatePerAddress"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode *int `pulumi:"blockResponseCode"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
 	MaxDelayedCountPerAddress *int `pulumi:"maxDelayedCountPerAddress"`
@@ -3194,9 +3176,9 @@ type PolicyWafConfigAddressRateLimitingInput interface {
 type PolicyWafConfigAddressRateLimitingArgs struct {
 	// (Updatable) The number of allowed requests per second from one IP address. If unspecified, defaults to `1`.
 	AllowedRatePerAddress pulumi.IntPtrInput `pulumi:"allowedRatePerAddress"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// (Updatable) The maximum number of requests allowed to be queued before subsequent requests are dropped. If unspecified, defaults to `10`.
 	MaxDelayedCountPerAddress pulumi.IntPtrInput `pulumi:"maxDelayedCountPerAddress"`
@@ -3284,12 +3266,12 @@ func (o PolicyWafConfigAddressRateLimitingOutput) AllowedRatePerAddress() pulumi
 	return o.ApplyT(func(v PolicyWafConfigAddressRateLimiting) *int { return v.AllowedRatePerAddress }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigAddressRateLimitingOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigAddressRateLimiting) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
 func (o PolicyWafConfigAddressRateLimitingOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v PolicyWafConfigAddressRateLimiting) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -3333,7 +3315,7 @@ func (o PolicyWafConfigAddressRateLimitingPtrOutput) AllowedRatePerAddress() pul
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code returned when a request is blocked. If unspecified, defaults to `503`. The list of available response codes: `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigAddressRateLimitingPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigAddressRateLimiting) *int {
 		if v == nil {
@@ -3343,7 +3325,7 @@ func (o PolicyWafConfigAddressRateLimitingPtrOutput) BlockResponseCode() pulumi.
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the address rate limiting Web Application Firewall feature.
 func (o PolicyWafConfigAddressRateLimitingPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigAddressRateLimiting) *bool {
 		if v == nil {
@@ -3364,22 +3346,21 @@ func (o PolicyWafConfigAddressRateLimitingPtrOutput) MaxDelayedCountPerAddress()
 }
 
 type PolicyWafConfigCachingRule struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take when the criteria of a caching rule are met.
+	// * **CACHE:** Caches requested content when the criteria of the rule are met.
+	// * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
 	Action string `pulumi:"action"`
 	// (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
 	CachingDuration *string `pulumi:"cachingDuration"`
 	// (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
 	ClientCachingDuration *string `pulumi:"clientCachingDuration"`
-	// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+	// (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
 	Criterias []PolicyWafConfigCachingRuleCriteria `pulumi:"criterias"`
 	// (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
 	IsClientCachingEnabled *bool `pulumi:"isClientCachingEnabled"`
 	// (Updatable) The unique key for the caching rule.
 	Key *string `pulumi:"key"`
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the caching rule.
 	Name string `pulumi:"name"`
 }
 
@@ -3395,22 +3376,21 @@ type PolicyWafConfigCachingRuleInput interface {
 }
 
 type PolicyWafConfigCachingRuleArgs struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take when the criteria of a caching rule are met.
+	// * **CACHE:** Caches requested content when the criteria of the rule are met.
+	// * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
 	Action pulumi.StringInput `pulumi:"action"`
 	// (Updatable) The duration to cache content for the caching rule, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
 	CachingDuration pulumi.StringPtrInput `pulumi:"cachingDuration"`
 	// (Updatable) The duration to cache content in the user's browser, specified in ISO 8601 extended format. Supported units: seconds, minutes, hours, days, weeks, months. The maximum value that can be set for any unit is `99`. Mixing of multiple units is not supported. Only applies when the `action` is set to `CACHE`. Example: `PT1H`
 	ClientCachingDuration pulumi.StringPtrInput `pulumi:"clientCachingDuration"`
-	// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+	// (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
 	Criterias PolicyWafConfigCachingRuleCriteriaArrayInput `pulumi:"criterias"`
 	// (Updatable) Enables or disables client caching. Browsers use the `Cache-Control` header value for caching content locally in the browser. This setting overrides the addition of a `Cache-Control` header in responses.
 	IsClientCachingEnabled pulumi.BoolPtrInput `pulumi:"isClientCachingEnabled"`
 	// (Updatable) The unique key for the caching rule.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the caching rule.
 	Name pulumi.StringInput `pulumi:"name"`
 }
 
@@ -3465,7 +3445,9 @@ func (o PolicyWafConfigCachingRuleOutput) ToPolicyWafConfigCachingRuleOutputWith
 	return o
 }
 
-// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+// (Updatable) The action to take when the criteria of a caching rule are met.
+// * **CACHE:** Caches requested content when the criteria of the rule are met.
+// * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
 func (o PolicyWafConfigCachingRuleOutput) Action() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigCachingRule) string { return v.Action }).(pulumi.StringOutput)
 }
@@ -3480,7 +3462,7 @@ func (o PolicyWafConfigCachingRuleOutput) ClientCachingDuration() pulumi.StringP
 	return o.ApplyT(func(v PolicyWafConfigCachingRule) *string { return v.ClientCachingDuration }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+// (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
 func (o PolicyWafConfigCachingRuleOutput) Criterias() PolicyWafConfigCachingRuleCriteriaArrayOutput {
 	return o.ApplyT(func(v PolicyWafConfigCachingRule) []PolicyWafConfigCachingRuleCriteria { return v.Criterias }).(PolicyWafConfigCachingRuleCriteriaArrayOutput)
 }
@@ -3495,10 +3477,7 @@ func (o PolicyWafConfigCachingRuleOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigCachingRule) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the caching rule.
 func (o PolicyWafConfigCachingRuleOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigCachingRule) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -3524,34 +3503,15 @@ func (o PolicyWafConfigCachingRuleArrayOutput) Index(i pulumi.IntInput) PolicyWa
 }
 
 type PolicyWafConfigCachingRuleCriteria struct {
-	// (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-	// * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-	// * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-	// * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
+	// (Updatable) The condition of the caching rule criteria.
+	// * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
+	// * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
 	// * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
 	// * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-	// * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-	// * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-	// * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-	// * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-	// * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-	// * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \n *Example:* "1.1.1.1\n1.1.1.2\n1.2.2.1/30"
-	// * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \n *Example:* "1.1.1.1\n1.1.1.2\n1.2.2.1/30"
-	// * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 	//
-	// *Example:* "GET\nPOST"
-	// * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	//
-	// *Example:* "GET\nPOST"
-	// * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
-	// * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
-	// * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-	// * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+	// URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
 	Condition string `pulumi:"condition"`
-	// (Updatable) The value of the header.
+	// (Updatable) The value of the caching rule criteria.
 	Value string `pulumi:"value"`
 }
 
@@ -3567,34 +3527,15 @@ type PolicyWafConfigCachingRuleCriteriaInput interface {
 }
 
 type PolicyWafConfigCachingRuleCriteriaArgs struct {
-	// (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-	// * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-	// * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-	// * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
+	// (Updatable) The condition of the caching rule criteria.
+	// * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
+	// * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
 	// * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
 	// * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-	// * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-	// * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-	// * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-	// * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-	// * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-	// * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \n *Example:* "1.1.1.1\n1.1.1.2\n1.2.2.1/30"
-	// * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \n *Example:* "1.1.1.1\n1.1.1.2\n1.2.2.1/30"
-	// * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-	// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-	// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-	// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 	//
-	// *Example:* "GET\nPOST"
-	// * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-	//
-	// *Example:* "GET\nPOST"
-	// * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
-	// * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
-	// * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-	// * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+	// URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
 	Condition pulumi.StringInput `pulumi:"condition"`
-	// (Updatable) The value of the header.
+	// (Updatable) The value of the caching rule criteria.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -3649,37 +3590,18 @@ func (o PolicyWafConfigCachingRuleCriteriaOutput) ToPolicyWafConfigCachingRuleCr
 	return o
 }
 
-// (Updatable) The criteria the access rule and JavaScript Challenge uses to determine if action should be taken on a request.
-// * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field. URL must start with a `/`.
-// * **URL_IS_NOT:** Matches if the concatenation of request URL path and query is not identical to the contents of the `value` field. URL must start with a `/`.
-// * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field. URL must start with a `/`.
+// (Updatable) The condition of the caching rule criteria.
+// * **URL_IS:** Matches if the concatenation of request URL path and query is identical to the contents of the `value` field.
+// * **URL_STARTS_WITH:** Matches if the concatenation of request URL path and query starts with the contents of the `value` field.
 // * **URL_PART_ENDS_WITH:** Matches if the concatenation of request URL path and query ends with the contents of the `value` field.
 // * **URL_PART_CONTAINS:** Matches if the concatenation of request URL path and query contains the contents of the `value` field.
-// * **URL_REGEX:** Matches if the concatenation of request URL path and query is described by the regular expression in the value field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-// * **URL_DOES_NOT_MATCH_REGEX:** Matches if the concatenation of request URL path and query is not described by the regular expression in the `value` field. The value must be a valid regular expression recognized by the PCRE library in Nginx (https://www.pcre.org).
-// * **URL_DOES_NOT_START_WITH:** Matches if the concatenation of request URL path and query does not start with the contents of the `value` field.
-// * **URL_PART_DOES_NOT_CONTAIN:** Matches if the concatenation of request URL path and query does not contain the contents of the `value` field.
-// * **URL_PART_DOES_NOT_END_WITH:** Matches if the concatenation of request URL path and query does not end with the contents of the `value` field.
-// * **IP_IS:** Matches if the request originates from one of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \n *Example:* "1.1.1.1\n1.1.1.2\n1.2.2.1/30"
-// * **IP_IS_NOT:** Matches if the request does not originate from any of the IP addresses contained in the defined address list. The `value` in this case is string with one or multiple IPs or CIDR notations separated by new line symbol \n *Example:* "1.1.1.1\n1.1.1.2\n1.2.2.1/30"
-// * **IP_IN_LIST:** Matches if the request originates from one of the IP addresses contained in the referenced address list. The `value` in this case is OCID of the address list.
-// * **IP_NOT_IN_LIST:** Matches if the request does not originate from any IP address contained in the referenced address list. The `value` field in this case is OCID of the address list.
-// * **HTTP_HEADER_CONTAINS:** The HTTP_HEADER_CONTAINS criteria is defined using a compound value separated by a colon: a header field name and a header field value. `host:test.example.com` is an example of a criteria value where `host` is the header field name and `test.example.com` is the header field value. A request matches when the header field name is a case insensitive match and the header field value is a case insensitive, substring match. *Example:* With a criteria value of `host:test.example.com`, where `host` is the name of the field and `test.example.com` is the value of the host field, a request with the header values, `Host: www.test.example.com` will match, where as a request with header values of `host: www.example.com` or `host: test.sub.example.com` will not match.
-// * **HTTP_METHOD_IS:** Matches if the request method is identical to one of the values listed in field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
 //
-// *Example:* "GET\nPOST"
-// * **HTTP_METHOD_IS_NOT:** Matches if the request is not identical to any of the contents of the `value` field. The `value` in this case is string with one or multiple HTTP methods separated by new line symbol \n The list of available methods: `GET`, `HEAD`, `POST`, `PUT`, `DELETE`, `CONNECT`, `OPTIONS`, `TRACE`, `PATCH`
-//
-// *Example:* "GET\nPOST"
-// * **COUNTRY_IS:** Matches if the request originates from one of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
-// * **COUNTRY_IS_NOT:** Matches if the request does not originate from any of countries in the `value` field. The `value` in this case is string with one or multiple countries separated by new line symbol \n Country codes are in ISO 3166-1 alpha-2 format. For a list of codes, see [ISO's website](https://www.iso.org/obp/ui/#search/code/). *Example:* "AL\nDZ\nAM"
-// * **USER_AGENT_IS:** Matches if the requesting user agent is identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
-// * **USER_AGENT_IS_NOT:** Matches if the requesting user agent is not identical to the contents of the `value` field. *Example:* `Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:35.0) Gecko/20100101 Firefox/35.0`
+// URLs must start with a `/`. URLs can't contain restricted double slashes `//`. URLs can't contain the restricted `'` `&` `?` symbols. Resources to cache can only be specified by a URL, any query parameters are ignored.
 func (o PolicyWafConfigCachingRuleCriteriaOutput) Condition() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigCachingRuleCriteria) string { return v.Condition }).(pulumi.StringOutput)
 }
 
-// (Updatable) The value of the header.
+// (Updatable) The value of the caching rule criteria.
 func (o PolicyWafConfigCachingRuleCriteriaOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigCachingRuleCriteria) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -3856,9 +3778,9 @@ func (o PolicyWafConfigCaptchaArrayOutput) Index(i pulumi.IntInput) PolicyWafCon
 }
 
 type PolicyWafConfigCustomProtectionRule struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 	Action *string `pulumi:"action"`
-	// (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions []PolicyWafConfigCustomProtectionRuleExclusion `pulumi:"exclusions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id *string `pulumi:"id"`
@@ -3876,9 +3798,9 @@ type PolicyWafConfigCustomProtectionRuleInput interface {
 }
 
 type PolicyWafConfigCustomProtectionRuleArgs struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 	Action pulumi.StringPtrInput `pulumi:"action"`
-	// (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+	// (Updatable)
 	Exclusions PolicyWafConfigCustomProtectionRuleExclusionArrayInput `pulumi:"exclusions"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the custom protection rule.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -3935,12 +3857,12 @@ func (o PolicyWafConfigCustomProtectionRuleOutput) ToPolicyWafConfigCustomProtec
 	return o
 }
 
-// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+// (Updatable) The action to take when the custom protection rule is triggered. `DETECT` - Logs the request when the criteria of the custom protection rule are met. `BLOCK` - Blocks the request when the criteria of the custom protection rule are met.
 func (o PolicyWafConfigCustomProtectionRuleOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigCustomProtectionRule) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+// (Updatable)
 func (o PolicyWafConfigCustomProtectionRuleOutput) Exclusions() PolicyWafConfigCustomProtectionRuleExclusionArrayOutput {
 	return o.ApplyT(func(v PolicyWafConfigCustomProtectionRule) []PolicyWafConfigCustomProtectionRuleExclusion {
 		return v.Exclusions
@@ -4079,17 +4001,17 @@ func (o PolicyWafConfigCustomProtectionRuleExclusionArrayOutput) Index(i pulumi.
 }
 
 type PolicyWafConfigDeviceFingerprintChallenge struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action *string `pulumi:"action"`
-	// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+	// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// (Updatable) The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings `pulumi:"challengeSettings"`
-	// (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+	// (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
 	FailureThreshold *int `pulumi:"failureThreshold"`
-	// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+	// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
 	FailureThresholdExpirationInSeconds *int `pulumi:"failureThresholdExpirationInSeconds"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
 	MaxAddressCount *int `pulumi:"maxAddressCount"`
@@ -4109,17 +4031,17 @@ type PolicyWafConfigDeviceFingerprintChallengeInput interface {
 }
 
 type PolicyWafConfigDeviceFingerprintChallengeArgs struct {
-	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+	// (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action pulumi.StringPtrInput `pulumi:"action"`
-	// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+	// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// (Updatable) The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrInput `pulumi:"challengeSettings"`
-	// (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+	// (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
 	FailureThreshold pulumi.IntPtrInput `pulumi:"failureThreshold"`
-	// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+	// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
 	FailureThresholdExpirationInSeconds pulumi.IntPtrInput `pulumi:"failureThresholdExpirationInSeconds"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// (Updatable) The maximum number of IP addresses permitted with the same device fingerprint. If unspecified, defaults to `20`.
 	MaxAddressCount pulumi.IntPtrInput `pulumi:"maxAddressCount"`
@@ -4204,12 +4126,12 @@ func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ToPolicyWafConfigDevice
 	}).(PolicyWafConfigDeviceFingerprintChallengePtrOutput)
 }
 
-// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+// (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
 func (o PolicyWafConfigDeviceFingerprintChallengeOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallenge) *int { return v.ActionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
@@ -4221,17 +4143,17 @@ func (o PolicyWafConfigDeviceFingerprintChallengeOutput) ChallengeSettings() Pol
 	}).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
-// (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+// (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
 func (o PolicyWafConfigDeviceFingerprintChallengeOutput) FailureThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallenge) *int { return v.FailureThreshold }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
 func (o PolicyWafConfigDeviceFingerprintChallengeOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallenge) *int { return v.FailureThresholdExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
 func (o PolicyWafConfigDeviceFingerprintChallengeOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallenge) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -4270,7 +4192,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) Elem() PolicyWafConf
 	}).(PolicyWafConfigDeviceFingerprintChallengeOutput)
 }
 
-// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+// (Updatable) The action to take on requests from detected bots. If unspecified, defaults to `DETECT`.
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) Action() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallenge) *string {
 		if v == nil {
@@ -4280,7 +4202,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) Action() pulumi.Stri
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallenge) *int {
 		if v == nil {
@@ -4300,7 +4222,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) ChallengeSettings() 
 	}).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
-// (Updatable) The number of failed requests before taking action. If unspecified, defaults to `10`.
+// (Updatable) The number of failed requests allowed before taking action. If unspecified, defaults to `10`.
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) FailureThreshold() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallenge) *int {
 		if v == nil {
@@ -4310,7 +4232,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) FailureThreshold() p
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to  `60`.
+// (Updatable) The number of seconds before the failure threshold resets. If unspecified, defaults to `60`.
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) FailureThresholdExpirationInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallenge) *int {
 		if v == nil {
@@ -4320,7 +4242,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) FailureThresholdExpi
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the device fingerprint challenge Web Application Firewall feature.
 func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallenge) *bool {
 		if v == nil {
@@ -4351,15 +4273,15 @@ func (o PolicyWafConfigDeviceFingerprintChallengePtrOutput) MaxAddressCountExpir
 }
 
 type PolicyWafConfigDeviceFingerprintChallengeChallengeSettings struct {
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 	BlockAction *string `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
 	CaptchaFooter *string `pulumi:"captchaFooter"`
@@ -4383,15 +4305,15 @@ type PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsInput interface {
 }
 
 type PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsArgs struct {
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
 	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
@@ -4480,33 +4402,33 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) ToPoli
 	}).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.BlockErrorPageCode
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.BlockErrorPageDescription
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		return v.BlockErrorPageMessage
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
@@ -4557,7 +4479,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Ele
 	}).(PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		if v == nil {
@@ -4567,7 +4489,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Blo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		if v == nil {
@@ -4577,7 +4499,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Blo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		if v == nil {
@@ -4587,7 +4509,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Blo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *string {
 		if v == nil {
@@ -4597,7 +4519,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Blo
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigDeviceFingerprintChallengeChallengeSettings) *int {
 		if v == nil {
@@ -4650,7 +4572,7 @@ func (o PolicyWafConfigDeviceFingerprintChallengeChallengeSettingsPtrOutput) Cap
 type PolicyWafConfigHumanInteractionChallenge struct {
 	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action *string `pulumi:"action"`
-	// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+	// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 	ActionExpirationInSeconds *int `pulumi:"actionExpirationInSeconds"`
 	// (Updatable) The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings *PolicyWafConfigHumanInteractionChallengeChallengeSettings `pulumi:"challengeSettings"`
@@ -4660,7 +4582,7 @@ type PolicyWafConfigHumanInteractionChallenge struct {
 	FailureThresholdExpirationInSeconds *int `pulumi:"failureThresholdExpirationInSeconds"`
 	// (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
 	InteractionThreshold *int `pulumi:"interactionThreshold"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
 	IsEnabled bool `pulumi:"isEnabled"`
 	// (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
 	IsNatEnabled *bool `pulumi:"isNatEnabled"`
@@ -4684,7 +4606,7 @@ type PolicyWafConfigHumanInteractionChallengeInput interface {
 type PolicyWafConfigHumanInteractionChallengeArgs struct {
 	// (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
 	Action pulumi.StringPtrInput `pulumi:"action"`
-	// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+	// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 	ActionExpirationInSeconds pulumi.IntPtrInput `pulumi:"actionExpirationInSeconds"`
 	// (Updatable) The challenge settings if `action` is set to `BLOCK`.
 	ChallengeSettings PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrInput `pulumi:"challengeSettings"`
@@ -4694,7 +4616,7 @@ type PolicyWafConfigHumanInteractionChallengeArgs struct {
 	FailureThresholdExpirationInSeconds pulumi.IntPtrInput `pulumi:"failureThresholdExpirationInSeconds"`
 	// (Updatable) The number of interactions required to pass the challenge. If unspecified, defaults to `3`.
 	InteractionThreshold pulumi.IntPtrInput `pulumi:"interactionThreshold"`
-	// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+	// (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
 	IsEnabled pulumi.BoolInput `pulumi:"isEnabled"`
 	// (Updatable) When enabled, the user is identified not only by the IP address but also by an unique additional hash, which prevents blocking visitors with shared IP addresses.
 	IsNatEnabled pulumi.BoolPtrInput `pulumi:"isNatEnabled"`
@@ -4786,7 +4708,7 @@ func (o PolicyWafConfigHumanInteractionChallengeOutput) Action() pulumi.StringPt
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallenge) *string { return v.Action }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 func (o PolicyWafConfigHumanInteractionChallengeOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallenge) *int { return v.ActionExpirationInSeconds }).(pulumi.IntPtrOutput)
 }
@@ -4813,7 +4735,7 @@ func (o PolicyWafConfigHumanInteractionChallengeOutput) InteractionThreshold() p
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallenge) *int { return v.InteractionThreshold }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
 func (o PolicyWafConfigHumanInteractionChallengeOutput) IsEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallenge) bool { return v.IsEnabled }).(pulumi.BoolOutput)
 }
@@ -4869,7 +4791,7 @@ func (o PolicyWafConfigHumanInteractionChallengePtrOutput) Action() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The number of seconds between challenges from the same IP address. If unspecified, defaults to `60`.
+// (Updatable) The number of seconds between challenges for the same IP address. If unspecified, defaults to `60`.
 func (o PolicyWafConfigHumanInteractionChallengePtrOutput) ActionExpirationInSeconds() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallenge) *int {
 		if v == nil {
@@ -4919,7 +4841,7 @@ func (o PolicyWafConfigHumanInteractionChallengePtrOutput) InteractionThreshold(
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+// (Updatable) Enables or disables the human interaction challenge Web Application Firewall feature.
 func (o PolicyWafConfigHumanInteractionChallengePtrOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallenge) *bool {
 		if v == nil {
@@ -4960,15 +4882,15 @@ func (o PolicyWafConfigHumanInteractionChallengePtrOutput) SetHttpHeader() Polic
 }
 
 type PolicyWafConfigHumanInteractionChallengeChallengeSettings struct {
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 	BlockAction *string `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
 	CaptchaFooter *string `pulumi:"captchaFooter"`
@@ -4992,15 +4914,15 @@ type PolicyWafConfigHumanInteractionChallengeChallengeSettingsInput interface {
 }
 
 type PolicyWafConfigHumanInteractionChallengeChallengeSettingsArgs struct {
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
 	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
@@ -5089,31 +5011,31 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) ToPolic
 	}).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.BlockErrorPageDescription
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		return v.BlockErrorPageMessage
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallengeChallengeSettings) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
@@ -5162,7 +5084,7 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Elem
 	}).(PolicyWafConfigHumanInteractionChallengeChallengeSettingsOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5172,7 +5094,7 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Bloc
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5182,7 +5104,7 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Bloc
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5192,7 +5114,7 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Bloc
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5202,7 +5124,7 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Bloc
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallengeChallengeSettings) *int {
 		if v == nil {
@@ -5253,10 +5175,7 @@ func (o PolicyWafConfigHumanInteractionChallengeChallengeSettingsPtrOutput) Capt
 }
 
 type PolicyWafConfigHumanInteractionChallengeSetHttpHeader struct {
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the header.
 	Name string `pulumi:"name"`
 	// (Updatable) The value of the header.
 	Value string `pulumi:"value"`
@@ -5274,10 +5193,7 @@ type PolicyWafConfigHumanInteractionChallengeSetHttpHeaderInput interface {
 }
 
 type PolicyWafConfigHumanInteractionChallengeSetHttpHeaderArgs struct {
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the header.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The value of the header.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -5360,10 +5276,7 @@ func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) ToPolicyWaf
 	}).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the header.
 func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigHumanInteractionChallengeSetHttpHeader) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -5397,10 +5310,7 @@ func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Elem() P
 	}).(PolicyWafConfigHumanInteractionChallengeSetHttpHeaderOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the header.
 func (o PolicyWafConfigHumanInteractionChallengeSetHttpHeaderPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigHumanInteractionChallengeSetHttpHeader) *string {
 		if v == nil {
@@ -5712,15 +5622,15 @@ func (o PolicyWafConfigJsChallengePtrOutput) SetHttpHeader() PolicyWafConfigJsCh
 }
 
 type PolicyWafConfigJsChallengeChallengeSettings struct {
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 	BlockAction *string `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 	BlockErrorPageCode *string `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 	BlockErrorPageDescription *string `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 	BlockErrorPageMessage *string `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode *int `pulumi:"blockResponseCode"`
 	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
 	CaptchaFooter *string `pulumi:"captchaFooter"`
@@ -5744,15 +5654,15 @@ type PolicyWafConfigJsChallengeChallengeSettingsInput interface {
 }
 
 type PolicyWafConfigJsChallengeChallengeSettingsArgs struct {
-	// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+	// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 	BlockAction pulumi.StringPtrInput `pulumi:"blockAction"`
-	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+	// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 	BlockErrorPageCode pulumi.StringPtrInput `pulumi:"blockErrorPageCode"`
-	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+	// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 	BlockErrorPageDescription pulumi.StringPtrInput `pulumi:"blockErrorPageDescription"`
-	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+	// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 	BlockErrorPageMessage pulumi.StringPtrInput `pulumi:"blockErrorPageMessage"`
-	// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+	// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 	BlockResponseCode pulumi.IntPtrInput `pulumi:"blockResponseCode"`
 	// (Updatable) The text to show in the footer when showing a CAPTCHA challenge when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_CAPTCHA`, and the request is blocked. If unspecified, default to `Enter the letters and numbers as they are shown in image above`.
 	CaptchaFooter pulumi.StringPtrInput `pulumi:"captchaFooter"`
@@ -5841,27 +5751,27 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) ToPolicyWafConfigJsCh
 	}).(PolicyWafConfigJsChallengeChallengeSettingsPtrOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockAction }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockErrorPageCode }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockErrorPageDescription }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeChallengeSettings) *string { return v.BlockErrorPageMessage }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeChallengeSettings) *int { return v.BlockResponseCode }).(pulumi.IntPtrOutput)
 }
@@ -5910,7 +5820,7 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) Elem() PolicyWafCo
 	}).(PolicyWafConfigJsChallengeChallengeSettingsOutput)
 }
 
-// (Updatable) If `action` is set to `BLOCK`, this specifies how the traffic is blocked when detected as malicious by a protection rule. If unspecified, defaults to `SET_RESPONSE_CODE`.
+// (Updatable) The method used to block requests that fail the challenge, if `action` is set to `BLOCK`. If unspecified, defaults to `SHOW_ERROR_PAGE`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockAction() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigJsChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5920,7 +5830,7 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockAction() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`.
+// (Updatable) The error code to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE` and the request is blocked. If unspecified, defaults to `403`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigJsChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5930,7 +5840,7 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageCode
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
+// (Updatable) The description text to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access blocked by website owner. Please contact support.`
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageDescription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigJsChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5940,7 +5850,7 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageDesc
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to 'Access to the website is blocked.'
+// (Updatable) The message to show on the error page when `action` is set to `BLOCK`, `blockAction` is set to `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `Access to the website is blocked`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageMessage() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigJsChallengeChallengeSettings) *string {
 		if v == nil {
@@ -5950,7 +5860,7 @@ func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockErrorPageMess
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The response code returned when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE`, and the traffic is detected as malicious by a protection rule. If unspecified, defaults to `403`. The list of available response codes: `400`, `401`, `403`, `405`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `500`, `501`, `502`, `503`, `504`, `507`.
+// (Updatable) The response status code to return when `action` is set to `BLOCK`, `blockAction` is set to `SET_RESPONSE_CODE` or `SHOW_ERROR_PAGE`, and the request is blocked. If unspecified, defaults to `403`. The list of available response codes: `200`, `201`, `202`, `204`, `206`, `300`, `301`, `302`, `303`, `304`, `307`, `400`, `401`, `403`, `404`, `405`, `408`, `409`, `411`, `412`, `413`, `414`, `415`, `416`, `422`, `444`, `494`, `495`, `496`, `497`, `499`, `500`, `501`, `502`, `503`, `504`, `507`.
 func (o PolicyWafConfigJsChallengeChallengeSettingsPtrOutput) BlockResponseCode() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigJsChallengeChallengeSettings) *int {
 		if v == nil {
@@ -6030,7 +5940,7 @@ type PolicyWafConfigJsChallengeCriteria struct {
 	Condition string `pulumi:"condition"`
 	// (Updatable) When enabled, the condition will be matched with case-sensitive rules.
 	IsCaseSensitive *bool `pulumi:"isCaseSensitive"`
-	// (Updatable) The value of the header.
+	// (Updatable) The criteria value.
 	Value string `pulumi:"value"`
 }
 
@@ -6075,7 +5985,7 @@ type PolicyWafConfigJsChallengeCriteriaArgs struct {
 	Condition pulumi.StringInput `pulumi:"condition"`
 	// (Updatable) When enabled, the condition will be matched with case-sensitive rules.
 	IsCaseSensitive pulumi.BoolPtrInput `pulumi:"isCaseSensitive"`
-	// (Updatable) The value of the header.
+	// (Updatable) The criteria value.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -6165,7 +6075,7 @@ func (o PolicyWafConfigJsChallengeCriteriaOutput) IsCaseSensitive() pulumi.BoolP
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeCriteria) *bool { return v.IsCaseSensitive }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The value of the header.
+// (Updatable) The criteria value.
 func (o PolicyWafConfigJsChallengeCriteriaOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeCriteria) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -6191,10 +6101,7 @@ func (o PolicyWafConfigJsChallengeCriteriaArrayOutput) Index(i pulumi.IntInput) 
 }
 
 type PolicyWafConfigJsChallengeSetHttpHeader struct {
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the header.
 	Name string `pulumi:"name"`
 	// (Updatable) The value of the header.
 	Value string `pulumi:"value"`
@@ -6212,10 +6119,7 @@ type PolicyWafConfigJsChallengeSetHttpHeaderInput interface {
 }
 
 type PolicyWafConfigJsChallengeSetHttpHeaderArgs struct {
-	// (Updatable) The unique name of the whitelist.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The name of the header.
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) The value of the header.
 	Value pulumi.StringInput `pulumi:"value"`
@@ -6298,10 +6202,7 @@ func (o PolicyWafConfigJsChallengeSetHttpHeaderOutput) ToPolicyWafConfigJsChalle
 	}).(PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the header.
 func (o PolicyWafConfigJsChallengeSetHttpHeaderOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v PolicyWafConfigJsChallengeSetHttpHeader) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -6335,10 +6236,7 @@ func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Elem() PolicyWafConfig
 	}).(PolicyWafConfigJsChallengeSetHttpHeaderOutput)
 }
 
-// (Updatable) The unique name of the whitelist.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The name of the header.
 func (o PolicyWafConfigJsChallengeSetHttpHeaderPtrOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PolicyWafConfigJsChallengeSetHttpHeader) *string {
 		if v == nil {

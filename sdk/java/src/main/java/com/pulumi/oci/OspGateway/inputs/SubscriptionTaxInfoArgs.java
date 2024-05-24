@@ -31,14 +31,14 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Tax exemption reason code.
+     * Tax exemption reason code.
      * 
      */
     @Import(name="noTaxReasonCode")
     private @Nullable Output<String> noTaxReasonCode;
 
     /**
-     * @return (Updatable) Tax exemption reason code.
+     * @return Tax exemption reason code.
      * 
      */
     public Optional<Output<String>> noTaxReasonCode() {
@@ -46,14 +46,14 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Tax exemption reason description.
+     * Tax exemption reason description.
      * 
      */
     @Import(name="noTaxReasonCodeDetails")
     private @Nullable Output<String> noTaxReasonCodeDetails;
 
     /**
-     * @return (Updatable) Tax exemption reason description.
+     * @return Tax exemption reason description.
      * 
      */
     public Optional<Output<String>> noTaxReasonCodeDetails() {
@@ -61,14 +61,14 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Brazilian companies&#39; CNPJ number.
+     * Brazilian companies&#39; CNPJ number.
      * 
      */
     @Import(name="taxCnpj")
     private @Nullable Output<String> taxCnpj;
 
     /**
-     * @return (Updatable) Brazilian companies&#39; CNPJ number.
+     * @return Brazilian companies&#39; CNPJ number.
      * 
      */
     public Optional<Output<String>> taxCnpj() {
@@ -76,14 +76,14 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Tay payer identifier.
+     * Tay payer identifier.
      * 
      */
     @Import(name="taxPayerId")
     private @Nullable Output<String> taxPayerId;
 
     /**
-     * @return (Updatable) Tay payer identifier.
+     * @return Tay payer identifier.
      * 
      */
     public Optional<Output<String>> taxPayerId() {
@@ -91,14 +91,14 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Tax registration number.
+     * Tax registration number.
      * 
      */
     @Import(name="taxRegNumber")
     private @Nullable Output<String> taxRegNumber;
 
     /**
-     * @return (Updatable) Tax registration number.
+     * @return Tax registration number.
      * 
      */
     public Optional<Output<String>> taxRegNumber() {
@@ -156,7 +156,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param noTaxReasonCode (Updatable) Tax exemption reason code.
+         * @param noTaxReasonCode Tax exemption reason code.
          * 
          * @return builder
          * 
@@ -167,7 +167,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param noTaxReasonCode (Updatable) Tax exemption reason code.
+         * @param noTaxReasonCode Tax exemption reason code.
          * 
          * @return builder
          * 
@@ -177,7 +177,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param noTaxReasonCodeDetails (Updatable) Tax exemption reason description.
+         * @param noTaxReasonCodeDetails Tax exemption reason description.
          * 
          * @return builder
          * 
@@ -188,7 +188,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param noTaxReasonCodeDetails (Updatable) Tax exemption reason description.
+         * @param noTaxReasonCodeDetails Tax exemption reason description.
          * 
          * @return builder
          * 
@@ -198,7 +198,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param taxCnpj (Updatable) Brazilian companies&#39; CNPJ number.
+         * @param taxCnpj Brazilian companies&#39; CNPJ number.
          * 
          * @return builder
          * 
@@ -209,7 +209,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param taxCnpj (Updatable) Brazilian companies&#39; CNPJ number.
+         * @param taxCnpj Brazilian companies&#39; CNPJ number.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param taxPayerId (Updatable) Tay payer identifier.
+         * @param taxPayerId Tay payer identifier.
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param taxPayerId (Updatable) Tay payer identifier.
+         * @param taxPayerId Tay payer identifier.
          * 
          * @return builder
          * 
@@ -240,7 +240,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param taxRegNumber (Updatable) Tax registration number.
+         * @param taxRegNumber Tax registration number.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class SubscriptionTaxInfoArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param taxRegNumber (Updatable) Tax registration number.
+         * @param taxRegNumber Tax registration number.
          * 
          * @return builder
          * 

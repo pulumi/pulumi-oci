@@ -111,7 +111,7 @@ export class IngressGatewayRouteTable extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) Name of the ingress gateway host that this route should apply to.
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -224,7 +224,7 @@ export interface IngressGatewayRouteTableState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) Name of the ingress gateway host that this route should apply to.
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
     name?: pulumi.Input<string>;
     /**
@@ -278,7 +278,7 @@ export interface IngressGatewayRouteTableArgs {
      */
     ingressGatewayId: pulumi.Input<string>;
     /**
-     * (Updatable) Name of the ingress gateway host that this route should apply to.
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      */
     name?: pulumi.Input<string>;
     /**

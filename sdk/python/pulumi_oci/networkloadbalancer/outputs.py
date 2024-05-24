@@ -88,16 +88,12 @@ class BackendSetBackend(dict):
                  target_id: Optional[str] = None,
                  weight: Optional[int] = None):
         """
-        :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        :param int port: (Updatable) The communication port for the backend server.  Example: `8080`
         :param str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
-               
-               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-               
-               Example: `example_backend_set`
+        :param str name: (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
@@ -121,7 +117,7 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        (Updatable) The communication port for the backend server.  Example: `8080`
         """
         return pulumi.get(self, "port")
 
@@ -161,11 +157,7 @@ class BackendSetBackend(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-
-        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_backend_set`
+        (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         """
         return pulumi.get(self, "name")
 
@@ -473,7 +465,7 @@ class NetworkLoadBalancerIpAddress(dict):
                  is_public: Optional[bool] = None,
                  reserved_ips: Optional[Sequence['outputs.NetworkLoadBalancerIpAddressReservedIp']] = None):
         """
-        :param str ip_address: The IP address of the backend server. Example: `10.0.0.3`
+        :param str ip_address: An IP address.  Example: `192.168.0.3`
         :param str ip_version: IP version associated with the listener.
         :param bool is_public: Whether the IP address is public or private.
         :param Sequence['NetworkLoadBalancerIpAddressReservedIpArgs'] reserved_ips: An object representing a reserved IP address to be attached or that is already attached to a network load balancer.
@@ -491,7 +483,7 @@ class NetworkLoadBalancerIpAddress(dict):
     @pulumi.getter(name="ipAddress")
     def ip_address(self) -> Optional[str]:
         """
-        The IP address of the backend server. Example: `10.0.0.3`
+        An IP address.  Example: `192.168.0.3`
         """
         return pulumi.get(self, "ip_address")
 
@@ -611,16 +603,12 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
                  target_id: Optional[str] = None,
                  weight: Optional[int] = None):
         """
-        :param int port: (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        :param int port: (Updatable) The communication port for the backend server.  Example: `8080`
         :param str ip_address: (Updatable) The IP address of the backend server.  Example: `10.0.0.3`
         :param bool is_backup: (Updatable) Whether the network load balancer should treat this server as a backup unit. If `true`, then the network load balancer forwards no ingress traffic to this backend server unless all other backend servers not marked as "isBackup" fail the health check policy.  Example: `false`
         :param bool is_drain: (Updatable) Whether the network load balancer should drain this server. Servers marked "isDrain" receive no incoming traffic.  Example: `false`
         :param bool is_offline: (Updatable) Whether the network load balancer should treat this server as offline. Offline servers receive no incoming traffic.  Example: `false`
-        :param str name: A user-friendly name for the backend set that must be unique and cannot be changed.
-               
-               Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-               
-               Example: `example_backend_set`
+        :param str name: (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         :param str target_id: (Updatable) The IP OCID/Instance OCID associated with the backend server. Example: `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>`
         :param int weight: (Updatable) The network load balancing policy weight assigned to the server. Backend servers with a higher weight receive a larger proportion of incoming traffic. For example, a server weighted '3' receives three times the number of new connections as a server weighted '1'. For more information about load balancing policies, see [How Network Load Balancing Policies Work](https://docs.cloud.oracle.com/iaas/Content/Balance/Reference/lbpolicies.htm).  Example: `3`
         """
@@ -644,7 +632,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     @pulumi.getter
     def port(self) -> int:
         """
-        (Updatable) The backend server port against which to run the health check. If the port is not specified, then the network load balancer uses the port information from the `Backend` object. The port must be specified if the backend port is 0.  Example: `8080`
+        (Updatable) The communication port for the backend server.  Example: `8080`
         """
         return pulumi.get(self, "port")
 
@@ -684,11 +672,7 @@ class NetworkLoadBalancersBackendSetsUnifiedBackend(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        A user-friendly name for the backend set that must be unique and cannot be changed.
-
-        Valid backend set names include only alphanumeric characters, dashes, and underscores. Backend set names cannot contain spaces. Avoid entering confidential information.
-
-        Example: `example_backend_set`
+        (Updatable) A read-only field showing the IP address/OCID and port that uniquely identify this backend server in the backend set.  Example: `10.0.0.3:8080`, or `ocid1.privateip..oc1.<var>&lt;unique_ID&gt;</var>:443` or `10.0.0.3:0`
         """
         return pulumi.get(self, "name")
 

@@ -2009,6 +2009,10 @@ type GetInstancesInstance struct {
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode string `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions           []GetInstancesInstanceLaunchOption           `pulumi:"launchOptions"`
@@ -2105,6 +2109,10 @@ type GetInstancesInstanceArgs struct {
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+	// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+	// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+	// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 	LaunchMode pulumi.StringInput `pulumi:"launchMode"`
 	// Options for tuning the compatibility and performance of VM shapes. The values that you specify override any default values.
 	LaunchOptions           GetInstancesInstanceLaunchOptionArrayInput           `pulumi:"launchOptions"`
@@ -2312,6 +2320,10 @@ func (o GetInstancesInstanceOutput) IsPvEncryptionInTransitEnabled() pulumi.Bool
 }
 
 // Specifies the configuration mode for launching virtual machine (VM) instances. The configuration modes are:
+// * `NATIVE` - VM instances launch with iSCSI boot and VFIO devices. The default value for platform images.
+// * `EMULATED` - VM instances launch with emulated devices, such as the E1000 network driver and emulated SCSI disk controller.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
+// * `CUSTOM` - VM instances launch with custom configuration settings specified in the `LaunchOptions` parameter.
 func (o GetInstancesInstanceOutput) LaunchMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstance) string { return v.LaunchMode }).(pulumi.StringOutput)
 }
@@ -2665,6 +2677,8 @@ type GetInstancesInstanceAvailabilityConfig struct {
 	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
 	IsLiveMigrationPreferred bool `pulumi:"isLiveMigrationPreferred"`
 	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
 	RecoveryAction string `pulumi:"recoveryAction"`
 }
 
@@ -2683,6 +2697,8 @@ type GetInstancesInstanceAvailabilityConfigArgs struct {
 	// Whether to live migrate supported VM instances to a healthy physical VM host without disrupting running instances during infrastructure maintenance events. If null, Oracle chooses the best option for migrating the VM during infrastructure maintenance events.
 	IsLiveMigrationPreferred pulumi.BoolInput `pulumi:"isLiveMigrationPreferred"`
 	// The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+	// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+	// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
 	RecoveryAction pulumi.StringInput `pulumi:"recoveryAction"`
 }
 
@@ -2743,6 +2759,8 @@ func (o GetInstancesInstanceAvailabilityConfigOutput) IsLiveMigrationPreferred()
 }
 
 // The lifecycle state for an instance when it is recovered after infrastructure maintenance.
+// * `RESTORE_INSTANCE` - The instance is restored to the lifecycle state it was in before the maintenance event. If the instance was running, it is automatically rebooted. This is the default action when a value is not set.
+// * `STOP_INSTANCE` - The instance is recovered in the stopped state.
 func (o GetInstancesInstanceAvailabilityConfigOutput) RecoveryAction() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceAvailabilityConfig) string { return v.RecoveryAction }).(pulumi.StringOutput)
 }
@@ -3147,16 +3165,31 @@ func (o GetInstancesInstanceInstanceOptionArrayOutput) Index(i pulumi.IntInput) 
 
 type GetInstancesInstanceLaunchOption struct {
 	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
 	BootVolumeType string `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
 	Firmware string `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled bool `pulumi:"isConsistentVolumeNamingEnabled"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled bool `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
 	NetworkType string `pulumi:"networkType"`
 	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
 	RemoteDataVolumeType string `pulumi:"remoteDataVolumeType"`
 }
 
@@ -3173,16 +3206,31 @@ type GetInstancesInstanceLaunchOptionInput interface {
 
 type GetInstancesInstanceLaunchOptionArgs struct {
 	// Emulation type for the boot volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
 	BootVolumeType pulumi.StringInput `pulumi:"bootVolumeType"`
 	// Firmware used to boot VM. Select the option that matches your operating system.
+	// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+	// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
 	Firmware pulumi.StringInput `pulumi:"firmware"`
 	// Whether to enable consistent volume naming feature. Defaults to false.
 	IsConsistentVolumeNamingEnabled pulumi.BoolInput `pulumi:"isConsistentVolumeNamingEnabled"`
 	// Deprecated. Instead use `isPvEncryptionInTransitEnabled` in [LaunchInstanceDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/datatypes/LaunchInstanceDetails).
 	IsPvEncryptionInTransitEnabled pulumi.BoolInput `pulumi:"isPvEncryptionInTransitEnabled"`
 	// Emulation type for the physical network interface card (NIC).
+	// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+	// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+	// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
 	NetworkType pulumi.StringInput `pulumi:"networkType"`
 	// Emulation type for volume.
+	// * `ISCSI` - ISCSI attached block storage device.
+	// * `SCSI` - Emulated SCSI disk.
+	// * `IDE` - Emulated IDE disk.
+	// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+	// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
 	RemoteDataVolumeType pulumi.StringInput `pulumi:"remoteDataVolumeType"`
 }
 
@@ -3238,11 +3286,18 @@ func (o GetInstancesInstanceLaunchOptionOutput) ToGetInstancesInstanceLaunchOpti
 }
 
 // Emulation type for the boot volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
 func (o GetInstancesInstanceLaunchOptionOutput) BootVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.BootVolumeType }).(pulumi.StringOutput)
 }
 
 // Firmware used to boot VM. Select the option that matches your operating system.
+// * `BIOS` - Boot VM using BIOS style firmware. This is compatible with both 32 bit and 64 bit operating systems that boot using MBR style bootloaders.
+// * `UEFI_64` - Boot VM using UEFI style firmware compatible with 64 bit operating systems. This is the default for platform images.
 func (o GetInstancesInstanceLaunchOptionOutput) Firmware() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.Firmware }).(pulumi.StringOutput)
 }
@@ -3258,11 +3313,19 @@ func (o GetInstancesInstanceLaunchOptionOutput) IsPvEncryptionInTransitEnabled()
 }
 
 // Emulation type for the physical network interface card (NIC).
+// * `E1000` - Emulated Gigabit ethernet controller. Compatible with Linux e1000 network driver.
+// * `VFIO` - Direct attached Virtual Function network controller. This is the networking type when you launch an instance using hardware-assisted (SR-IOV) networking.
+// * `PARAVIRTUALIZED` - VM instances launch with paravirtualized devices using VirtIO drivers.
 func (o GetInstancesInstanceLaunchOptionOutput) NetworkType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.NetworkType }).(pulumi.StringOutput)
 }
 
 // Emulation type for volume.
+// * `ISCSI` - ISCSI attached block storage device.
+// * `SCSI` - Emulated SCSI disk.
+// * `IDE` - Emulated IDE disk.
+// * `VFIO` - Direct attached Virtual Function storage. This is the default option for local data volumes on platform images.
+// * `PARAVIRTUALIZED` - Paravirtualized disk. This is the default for boot volumes and remote block storage volumes on platform images.
 func (o GetInstancesInstanceLaunchOptionOutput) RemoteDataVolumeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancesInstanceLaunchOption) string { return v.RemoteDataVolumeType }).(pulumi.StringOutput)
 }
@@ -10069,6 +10132,9 @@ type GetNetworkSecurityGroupSecurityRulesSecurityRule struct {
 	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
 	Source string `pulumi:"source"`
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType string `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless bool `pulumi:"stateless"`
@@ -10113,6 +10179,9 @@ type GetNetworkSecurityGroupSecurityRulesSecurityRuleArgs struct {
 	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
 	Source pulumi.StringInput `pulumi:"source"`
 	// Type of source for the rule. Required if `direction` = `INGRESS`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+	// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless pulumi.BoolInput `pulumi:"stateless"`
@@ -10225,6 +10294,9 @@ func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) Source() pulumi.
 }
 
 // Type of source for the rule. Required if `direction` = `INGRESS`.
+// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
+// * `NETWORK_SECURITY_GROUP`: If the rule's `source` is the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a [NetworkSecurityGroup](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NetworkSecurityGroup/).
 func (o GetNetworkSecurityGroupSecurityRulesSecurityRuleOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNetworkSecurityGroupSecurityRulesSecurityRule) string { return v.SourceType }).(pulumi.StringOutput)
 }
@@ -12526,6 +12598,8 @@ type GetPublicIpsPublicIp struct {
 	// A filter to return only resources that belong to the given public IP pool.
 	PublicIpPoolId string `pulumi:"publicIpPoolId"`
 	// Whether the public IP is regional or specific to a particular availability domain.
+	// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+	// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 	Scope string `pulumi:"scope"`
 	// The public IP's current state.
 	State string `pulumi:"state"`
@@ -12570,6 +12644,8 @@ type GetPublicIpsPublicIpArgs struct {
 	// A filter to return only resources that belong to the given public IP pool.
 	PublicIpPoolId pulumi.StringInput `pulumi:"publicIpPoolId"`
 	// Whether the public IP is regional or specific to a particular availability domain.
+	// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+	// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 	Scope pulumi.StringInput `pulumi:"scope"`
 	// The public IP's current state.
 	State pulumi.StringInput `pulumi:"state"`
@@ -12689,6 +12765,8 @@ func (o GetPublicIpsPublicIpOutput) PublicIpPoolId() pulumi.StringOutput {
 }
 
 // Whether the public IP is regional or specific to a particular availability domain.
+// * `REGION`: The public IP exists within a region and is assigned to a regional entity (such as a [NatGateway](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/NatGateway/)), or can be assigned to a private IP in any availability domain in the region. Reserved public IPs have `scope` = `REGION`, as do ephemeral public IPs assigned to a regional entity.
+// * `AVAILABILITY_DOMAIN`: The public IP exists within the availability domain of the entity it's assigned to, which is specified by the `availabilityDomain` property of the public IP object. Ephemeral public IPs that are assigned to private IPs have `scope` = `AVAILABILITY_DOMAIN`.
 func (o GetPublicIpsPublicIpOutput) Scope() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPublicIpsPublicIp) string { return v.Scope }).(pulumi.StringOutput)
 }
@@ -13323,6 +13401,8 @@ type GetRouteTablesRouteTableRouteRule struct {
 	// Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
 	Destination string `pulumi:"destination"`
 	// Type of destination for the rule. Required if you provide a `destination`.
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
 	DestinationType string `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
 	NetworkEntityId string `pulumi:"networkEntityId"`
@@ -13351,6 +13431,8 @@ type GetRouteTablesRouteTableRouteRuleArgs struct {
 	// Conceptually, this is the range of IP addresses used for matching when routing traffic. Required if you provide a `destinationType`.
 	Destination pulumi.StringInput `pulumi:"destination"`
 	// Type of destination for the rule. Required if you provide a `destination`.
+	// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
 	DestinationType pulumi.StringInput `pulumi:"destinationType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the route rule's target. For information about the type of targets you can specify, see [Route Tables](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm).
 	NetworkEntityId pulumi.StringInput `pulumi:"networkEntityId"`
@@ -13427,6 +13509,8 @@ func (o GetRouteTablesRouteTableRouteRuleOutput) Destination() pulumi.StringOutp
 }
 
 // Type of destination for the rule. Required if you provide a `destination`.
+// * `CIDR_BLOCK`: If the rule's `destination` is an IP address range in CIDR notation.
+// * `SERVICE_CIDR_BLOCK`: If the rule's `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
 func (o GetRouteTablesRouteTableRouteRuleOutput) DestinationType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRouteTablesRouteTableRouteRule) string { return v.DestinationType }).(pulumi.StringOutput)
 }
@@ -14485,6 +14569,8 @@ type GetSecurityListsSecurityListIngressSecurityRule struct {
 	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
 	Source string `pulumi:"source"`
 	// Type of source for the rule. The default is `CIDR_BLOCK`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
 	SourceType string `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless bool `pulumi:"stateless"`
@@ -14519,6 +14605,8 @@ type GetSecurityListsSecurityListIngressSecurityRuleArgs struct {
 	// Conceptually, this is the range of IP addresses that a packet coming into the instance can come from.
 	Source pulumi.StringInput `pulumi:"source"`
 	// Type of source for the rule. The default is `CIDR_BLOCK`.
+	// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+	// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
 	SourceType pulumi.StringInput `pulumi:"sourceType"`
 	// A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
 	Stateless pulumi.BoolInput `pulumi:"stateless"`
@@ -14606,6 +14694,8 @@ func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) Source() pulumi.S
 }
 
 // Type of source for the rule. The default is `CIDR_BLOCK`.
+// * `CIDR_BLOCK`: If the rule's `source` is an IP address range in CIDR notation.
+// * `SERVICE_CIDR_BLOCK`: If the rule's `source` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic coming from a particular `Service` through a service gateway).
 func (o GetSecurityListsSecurityListIngressSecurityRuleOutput) SourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetSecurityListsSecurityListIngressSecurityRule) string { return v.SourceType }).(pulumi.StringOutput)
 }

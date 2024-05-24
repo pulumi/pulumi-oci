@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceApplicationTaskScheduleMetadataCountStatistic {
     /**
-     * @return (Updatable) The array of statistics.
+     * @return The array of statistics.
      * 
      */
     private @Nullable List<WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList> objectTypeCountLists;
 
     private WorkspaceApplicationTaskScheduleMetadataCountStatistic() {}
     /**
-     * @return (Updatable) The array of statistics.
+     * @return The array of statistics.
      * 
      */
     public List<WorkspaceApplicationTaskScheduleMetadataCountStatisticObjectTypeCountList> objectTypeCountLists() {

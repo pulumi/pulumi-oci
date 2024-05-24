@@ -110,7 +110,7 @@ export class WorkspaceApplicationSchedule extends pulumi.CustomResource {
      */
     public readonly isDaylightAdjustmentEnabled!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -118,7 +118,7 @@ export class WorkspaceApplicationSchedule extends pulumi.CustomResource {
      */
     public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationScheduleMetadata[]>;
     /**
-     * (Updatable) The type of the model
+     * The type of the object.
      */
     public /*out*/ readonly modelType!: pulumi.Output<string>;
     /**
@@ -245,7 +245,7 @@ export interface WorkspaceApplicationScheduleState {
      */
     isDaylightAdjustmentEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**
@@ -253,7 +253,7 @@ export interface WorkspaceApplicationScheduleState {
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationScheduleMetadata>[]>;
     /**
-     * (Updatable) The type of the model
+     * The type of the object.
      */
     modelType?: pulumi.Input<string>;
     /**
@@ -319,7 +319,7 @@ export interface WorkspaceApplicationScheduleArgs {
      */
     isDaylightAdjustmentEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**

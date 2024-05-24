@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<string>? DatabaseServiceName { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the host the SSH key is valid for.
+        /// (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
         /// </summary>
         [Input("host")]
         public Input<string>? Host { get; set; }

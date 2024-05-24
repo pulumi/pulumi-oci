@@ -119,7 +119,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? ReplaceWith { get; set; }
 
         /// <summary>
-        /// The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+        /// (Updatable) The name of the schema that contains the substitution column.
         /// </summary>
         [Input("schemaName")]
         public Input<string>? SchemaName { get; set; }

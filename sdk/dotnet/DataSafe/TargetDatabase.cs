@@ -138,7 +138,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<Outputs.TargetDatabaseCredentials> Credentials { get; private set; } = null!;
 
         /// <summary>
-        /// Details of the database for the registration in Data Safe.
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         [Output("databaseDetails")]
         public Output<Outputs.TargetDatabaseDatabaseDetails> DatabaseDetails { get; private set; } = null!;
@@ -150,13 +150,13 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// The description of the peer target database in Data Safe.
+        /// (Updatable) The description of the target database in Data Safe.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -280,7 +280,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<Inputs.TargetDatabaseCredentialsArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// Details of the database for the registration in Data Safe.
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         [Input("databaseDetails", required: true)]
         public Input<Inputs.TargetDatabaseDatabaseDetailsArgs> DatabaseDetails { get; set; } = null!;
@@ -298,13 +298,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The description of the peer target database in Data Safe.
+        /// (Updatable) The description of the target database in Data Safe.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -378,7 +378,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<Inputs.TargetDatabaseCredentialsGetArgs>? Credentials { get; set; }
 
         /// <summary>
-        /// Details of the database for the registration in Data Safe.
+        /// (Updatable) Details of the database for the registration in Data Safe.
         /// </summary>
         [Input("databaseDetails")]
         public Input<Inputs.TargetDatabaseDatabaseDetailsGetArgs>? DatabaseDetails { get; set; }
@@ -396,13 +396,13 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// The description of the peer target database in Data Safe.
+        /// (Updatable) The description of the target database in Data Safe.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+        /// (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

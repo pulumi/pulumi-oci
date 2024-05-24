@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database.Outputs
     public sealed class AutonomousExadataInfrastructureMaintenanceWindowMonth
     {
         /// <summary>
-        /// (Updatable) Name of the month of the year.
+        /// Name of the month of the year.
         /// </summary>
         public readonly string? Name;
 

@@ -60,17 +60,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? ValidationStatus { get; set; }
 
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Value of the From email address
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

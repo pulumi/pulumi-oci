@@ -34,7 +34,7 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// (Updatable) Specifies if PITR is enabled or disabled.
+        /// Whether the Channel has been enabled by the user.
         /// </summary>
         public readonly bool? IsEnabled;
         /// <summary>

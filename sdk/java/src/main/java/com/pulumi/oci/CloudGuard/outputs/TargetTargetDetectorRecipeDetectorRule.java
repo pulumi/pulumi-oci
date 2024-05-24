@@ -28,7 +28,7 @@ public final class TargetTargetDetectorRecipeDetectorRule {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return (Updatable) Overriden settings of a Detector Rule applied on target
      * 
      */
     private TargetTargetDetectorRecipeDetectorRuleDetails details;
@@ -113,7 +113,7 @@ public final class TargetTargetDetectorRecipeDetectorRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return (Updatable) Overriden settings of a Detector Rule applied on target
      * 
      */
     public TargetTargetDetectorRecipeDetectorRuleDetails details() {

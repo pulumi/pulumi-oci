@@ -52,14 +52,14 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+     * The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
     @Import(name="stepName", required=true)
     private Output<String> stepName;
 
     /**
-     * @return (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+     * @return The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
      * 
      */
     public Output<String> stepName() {
@@ -141,7 +141,7 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param stepName (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+         * @param stepName The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class PipelineStepArtifactArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param stepName (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
+         * @param stepName The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
          * 
          * @return builder
          * 

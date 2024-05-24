@@ -19,8 +19,7 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
         /// </summary>
         [Input("value")]
         public Input<int>? Value { get; set; }

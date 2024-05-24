@@ -38,7 +38,9 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// (Updatable) Detector recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("description")]
         public Output<string> Description { get; private set; } = null!;
@@ -188,7 +190,9 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// (Updatable) Detector recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -270,7 +274,9 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// (Updatable) Detector recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

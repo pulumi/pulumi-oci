@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceApplicationMetadataArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The owning object's key for this object.
+        /// The owning object key for this object.
         /// </summary>
         [Input("aggregatorKey")]
         public Input<string>? AggregatorKey { get; set; }
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
+        /// Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
         /// </summary>
         public InputList<string> Labels
         {
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         }
 
         /// <summary>
-        /// The registry version.
+        /// The registry version of the object.
         /// </summary>
         [Input("registryVersion")]
         public Input<int>? RegistryVersion { get; set; }

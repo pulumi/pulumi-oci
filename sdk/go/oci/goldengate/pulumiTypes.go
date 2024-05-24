@@ -120,8 +120,7 @@ func (o ConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) Conne
 }
 
 type ConnectionBootstrapServer struct {
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
-	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
+	// (Updatable) The name or address of a host.
 	Host *string `pulumi:"host"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port *int `pulumi:"port"`
@@ -142,8 +141,7 @@ type ConnectionBootstrapServerInput interface {
 }
 
 type ConnectionBootstrapServerArgs struct {
-	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
-	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
+	// (Updatable) The name or address of a host.
 	Host pulumi.StringPtrInput `pulumi:"host"`
 	// (Updatable) The port of an endpoint usually specified for a connection.
 	Port pulumi.IntPtrInput `pulumi:"port"`
@@ -203,8 +201,7 @@ func (o ConnectionBootstrapServerOutput) ToConnectionBootstrapServerOutputWithCo
 	return o
 }
 
-// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
-// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
+// (Updatable) The name or address of a host.
 func (o ConnectionBootstrapServerOutput) Host() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectionBootstrapServer) *string { return v.Host }).(pulumi.StringPtrOutput)
 }

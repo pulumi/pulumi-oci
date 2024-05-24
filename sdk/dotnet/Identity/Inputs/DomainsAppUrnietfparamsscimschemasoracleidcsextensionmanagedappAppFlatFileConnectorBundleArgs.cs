@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppFlatFileConnectorBundleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Display-name of the AppRole.
+        /// (Updatable) ConnectorBundle display name
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) ConnectorBundle URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -43,20 +43,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) ConnectorBundle identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

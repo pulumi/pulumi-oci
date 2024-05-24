@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly string? Identifier;
         /// <summary>
-        /// The identifying key for the object.
+        /// (Updatable) Currently not used on application creation. Reserved for future.
         /// </summary>
         public readonly string? Key;
         /// <summary>

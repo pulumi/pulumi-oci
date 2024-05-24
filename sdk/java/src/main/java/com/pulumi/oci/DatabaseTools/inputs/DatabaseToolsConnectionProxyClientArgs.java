@@ -49,14 +49,14 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
     }
 
     /**
-     * (Updatable) The database user name.
+     * (Updatable) The user name.
      * 
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
-     * @return (Updatable) The database user name.
+     * @return (Updatable) The user name.
      * 
      */
     public Optional<Output<String>> userName() {
@@ -158,7 +158,7 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
         }
 
         /**
-         * @param userName (Updatable) The database user name.
+         * @param userName (Updatable) The user name.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class DatabaseToolsConnectionProxyClientArgs extends com.pulumi.res
         }
 
         /**
-         * @param userName (Updatable) The database user name.
+         * @param userName (Updatable) The user name.
          * 
          * @return builder
          * 

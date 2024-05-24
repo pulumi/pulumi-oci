@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable("testIngressGatewayRouteTable", IngressGatewayRouteTableArgs.builder()        
+ *         var testIngressGatewayRouteTable = new IngressGatewayRouteTable("testIngressGatewayRouteTable", IngressGatewayRouteTableArgs.builder()
  *             .compartmentId(compartmentId)
  *             .ingressGatewayId(testIngressGateway.id())
  *             .name(ingressGatewayRouteTableName)
@@ -180,14 +180,14 @@ public class IngressGatewayRouteTable extends com.pulumi.resources.CustomResourc
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) Name of the ingress gateway host that this route should apply to.
+     * A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the ingress gateway host that this route should apply to.
+     * @return A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
      * 
      */
     public Output<String> name() {

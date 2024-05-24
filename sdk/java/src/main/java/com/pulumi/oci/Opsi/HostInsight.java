@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testHostInsight = new HostInsight("testHostInsight", HostInsightArgs.builder()        
+ *         var testHostInsight = new HostInsight("testHostInsight", HostInsightArgs.builder()
  *             .compartmentId(compartmentId)
  *             .entitySource(hostInsightEntitySource)
  *             .computeId(testCompute.id())

@@ -68,7 +68,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOutboundConnector = new OutboundConnector("testOutboundConnector", OutboundConnectorArgs.builder()        
+ *         var testOutboundConnector = new OutboundConnector("testOutboundConnector", OutboundConnectorArgs.builder()
  *             .availabilityDomain(outboundConnectorAvailabilityDomain)
  *             .bindDistinguishedName(outboundConnectorBindDistinguishedName)
  *             .compartmentId(compartmentId)

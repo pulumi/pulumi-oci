@@ -99,10 +99,7 @@ type CrossConnectGroup struct {
 	OciLogicalDeviceName pulumi.StringOutput `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
 	OciPhysicalDeviceName pulumi.StringOutput `pulumi:"ociPhysicalDeviceName"`
-	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The cross-connect group's current state.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -157,10 +154,7 @@ type crossConnectGroupState struct {
 	OciLogicalDeviceName *string `pulumi:"ociLogicalDeviceName"`
 	// The FastConnect device that terminates the physical connection.
 	OciPhysicalDeviceName *string `pulumi:"ociPhysicalDeviceName"`
-	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The cross-connect group's current state.
 	State *string `pulumi:"state"`
 	// The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -183,10 +177,7 @@ type CrossConnectGroupState struct {
 	OciLogicalDeviceName pulumi.StringPtrInput
 	// The FastConnect device that terminates the physical connection.
 	OciPhysicalDeviceName pulumi.StringPtrInput
-	// (Updatable) Indicates whether or not MACsec is enabled.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// The cross-connect group's current state.
 	State pulumi.StringPtrInput
 	// The date and time the cross-connect group was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).  Example: `2016-08-25T21:10:29.600Z`
 	TimeCreated pulumi.StringPtrInput
@@ -354,10 +345,7 @@ func (o CrossConnectGroupOutput) OciPhysicalDeviceName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnectGroup) pulumi.StringOutput { return v.OciPhysicalDeviceName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Indicates whether or not MACsec is enabled.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// The cross-connect group's current state.
 func (o CrossConnectGroupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CrossConnectGroup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

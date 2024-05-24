@@ -1107,7 +1107,7 @@ class _DeployStageState:
         :param pulumi.Input['DeployStageBlueGreenStrategyArgs'] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input['DeployStageCanaryStrategyArgs'] canary_strategy: Specifies the required canary release strategy for OKE deployment.
         :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment where the ContainerInstance will be created.
         :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
@@ -1389,7 +1389,7 @@ class _DeployStageState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -2577,7 +2577,7 @@ class DeployStage(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['DeployStageBlueGreenStrategyArgs']] blue_green_strategy: Specifies the required blue green release strategy for OKE deployment.
         :param pulumi.Input[pulumi.InputType['DeployStageCanaryStrategyArgs']] canary_strategy: Specifies the required canary release strategy for OKE deployment.
         :param pulumi.Input[str] command_spec_deploy_artifact_id: (Updatable) The OCID of the artifact that contains the command specification.
-        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        :param pulumi.Input[str] compartment_id: The OCID of the compartment where the ContainerInstance will be created.
         :param pulumi.Input[str] compute_instance_group_blue_green_deployment_deploy_stage_id: The OCID of the upstream compute instance group blue-green deployment stage in this pipeline.
         :param pulumi.Input[str] compute_instance_group_canary_deploy_stage_id: A compute instance group canary stage OCID for load balancer.
         :param pulumi.Input[str] compute_instance_group_canary_traffic_shift_deploy_stage_id: (Updatable) A compute instance group canary traffic shift stage OCID for load balancer.
@@ -2770,7 +2770,7 @@ class DeployStage(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        The OCID of the compartment where the ContainerInstance will be created.
         """
         return pulumi.get(self, "compartment_id")
 

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string DefaultValue;
         /// <summary>
-        /// (Updatable) Optional description about the build pipeline.
+        /// (Updatable) Description of the parameter.
         /// </summary>
         public readonly string? Description;
         /// <summary>

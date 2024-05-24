@@ -22,8 +22,8 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
-        /// * returned: always
+        /// * required: false
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>

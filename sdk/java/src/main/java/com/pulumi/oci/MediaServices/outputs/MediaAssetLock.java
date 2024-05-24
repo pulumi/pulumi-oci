@@ -33,10 +33,7 @@ public final class MediaAssetLock {
      */
     private @Nullable String timeCreated;
     /**
-     * @return (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Type of the lock.
      * 
      */
     private String type;
@@ -71,10 +68,7 @@ public final class MediaAssetLock {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Type of the lock.
      * 
      */
     public String type() {

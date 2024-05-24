@@ -28,7 +28,7 @@ class TargetArgs:
                  target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None):
         """
         The set of arguments for constructing a Target resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
+        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
         :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
                
                Avoid entering confidential information.
@@ -66,7 +66,7 @@ class TargetArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) compartment associated with condition
+        Compartment Identifier where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -211,7 +211,7 @@ class _TargetState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Target resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
+        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
@@ -274,7 +274,7 @@ class _TargetState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) compartment associated with condition
+        Compartment Identifier where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -560,7 +560,7 @@ class Target(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
+        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
@@ -737,7 +737,7 @@ class Target(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) compartment associated with condition
+        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
@@ -788,7 +788,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) compartment associated with condition
+        Compartment Identifier where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 

@@ -49,7 +49,7 @@ class AutoScalingConfigurationAutoScalingResources(dict):
                  type: str):
         """
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
-        :param str type: The type of action to take.
+        :param str type: The type of resource.
         """
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "type", type)
@@ -66,7 +66,7 @@ class AutoScalingConfigurationAutoScalingResources(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to take.
+        The type of resource.
         """
         return pulumi.get(self, "type")
 
@@ -113,8 +113,9 @@ class AutoScalingConfigurationPolicy(dict):
         """
         :param str policy_type: The type of autoscaling policy.
         :param 'AutoScalingConfigurationPolicyCapacityArgs' capacity: The capacity requirements of the autoscaling policy.
+        :param str display_name: A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param 'AutoScalingConfigurationPolicyExecutionScheduleArgs' execution_schedule: An execution schedule for an autoscaling policy.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        :param str id: ID of the condition that is assigned after creation.
         :param bool is_enabled: Whether the autoscaling policy is enabled.
         :param 'AutoScalingConfigurationPolicyResourceActionArgs' resource_action: An action that can be executed against a resource.
         :param str time_created: The date and time the autoscaling configuration was created, in the format defined by RFC3339.  Example: `2016-08-25T21:10:29.600Z`
@@ -156,6 +157,9 @@ class AutoScalingConfigurationPolicy(dict):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
+        """
+        A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -170,7 +174,7 @@ class AutoScalingConfigurationPolicy(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        ID of the condition that is assigned after creation.
         """
         return pulumi.get(self, "id")
 
@@ -276,7 +280,7 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
                
                Example: `0 15 10 ? * *`
         :param str timezone: The time zone for the execution schedule.
-        :param str type: The type of action to take.
+        :param str type: The type of execution schedule.
         """
         pulumi.set(__self__, "expression", expression)
         pulumi.set(__self__, "timezone", timezone)
@@ -310,7 +314,7 @@ class AutoScalingConfigurationPolicyExecutionSchedule(dict):
     @pulumi.getter
     def type(self) -> str:
         """
-        The type of action to take.
+        The type of execution schedule.
         """
         return pulumi.get(self, "type")
 
@@ -338,7 +342,6 @@ class AutoScalingConfigurationPolicyResourceAction(dict):
                  action: str,
                  action_type: str):
         """
-        :param str action: The action to take when autoscaling is triggered.
         :param str action_type: The type of resource action.
         """
         pulumi.set(__self__, "action", action)
@@ -347,9 +350,6 @@ class AutoScalingConfigurationPolicyResourceAction(dict):
     @property
     @pulumi.getter
     def action(self) -> str:
-        """
-        The action to take when autoscaling is triggered.
-        """
         return pulumi.get(self, "action")
 
     @property
@@ -387,7 +387,7 @@ class AutoScalingConfigurationPolicyRule(dict):
                  metric: Optional['outputs.AutoScalingConfigurationPolicyRuleMetric'] = None):
         """
         :param 'AutoScalingConfigurationPolicyRuleActionArgs' action: The action to take when autoscaling is triggered.
-        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        :param str id: ID of the condition that is assigned after creation.
         :param 'AutoScalingConfigurationPolicyRuleMetricArgs' metric: Metric and threshold details for triggering an autoscaling action.
         """
         pulumi.set(__self__, "display_name", display_name)
@@ -415,7 +415,7 @@ class AutoScalingConfigurationPolicyRule(dict):
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        ID of the condition that is assigned after creation.
         """
         return pulumi.get(self, "id")
 
@@ -435,8 +435,7 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
                  value: Optional[int] = None):
         """
         :param str type: The type of action to take.
-        :param int value: ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param int value: To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -455,8 +454,7 @@ class AutoScalingConfigurationPolicyRuleAction(dict):
     @pulumi.getter
     def value(self) -> Optional[int]:
         """
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        To scale out (increase the number of instances), provide a positive value. To scale in (decrease the number of instances), provide a negative value.
         """
         return pulumi.get(self, "value")
 

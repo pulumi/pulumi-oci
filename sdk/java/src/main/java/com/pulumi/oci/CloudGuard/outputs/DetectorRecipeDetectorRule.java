@@ -22,12 +22,14 @@ public final class DetectorRecipeDetectorRule {
      */
     private @Nullable List<DetectorRecipeDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return The id of the attached DataSource.
      * 
      */
     private @Nullable String dataSourceId;
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     private @Nullable String description;
@@ -54,7 +56,7 @@ public final class DetectorRecipeDetectorRule {
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return Data Source entities mapping for a Detector Rule
      * 
      */
     private @Nullable List<DetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
@@ -69,7 +71,7 @@ public final class DetectorRecipeDetectorRule {
      */
     private @Nullable List<String> managedListTypes;
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
     private @Nullable String recommendation;
@@ -108,14 +110,16 @@ public final class DetectorRecipeDetectorRule {
         return this.candidateResponderRules == null ? List.of() : this.candidateResponderRules;
     }
     /**
-     * @return (Updatable) The id of the attached DataSource.
+     * @return The id of the attached DataSource.
      * 
      */
     public Optional<String> dataSourceId() {
         return Optional.ofNullable(this.dataSourceId);
     }
     /**
-     * @return (Updatable) Description for DetectorRecipeDetectorRule.
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<String> description() {
@@ -152,7 +156,7 @@ public final class DetectorRecipeDetectorRule {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) Data Source entities mapping for a Detector Rule
+     * @return Data Source entities mapping for a Detector Rule
      * 
      */
     public List<DetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -173,7 +177,7 @@ public final class DetectorRecipeDetectorRule {
         return this.managedListTypes == null ? List.of() : this.managedListTypes;
     }
     /**
-     * @return (Updatable) Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule
      * 
      */
     public Optional<String> recommendation() {

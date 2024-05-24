@@ -42,7 +42,6 @@ class DbHomeArgs:
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -163,9 +162,6 @@ class DbHomeArgs:
     @property
     @pulumi.getter(name="enableDatabaseDelete")
     def enable_database_delete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-        """
         return pulumi.get(self, "enable_database_delete")
 
     @enable_database_delete.setter
@@ -298,7 +294,6 @@ class _DbHomeState:
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -459,9 +454,6 @@ class _DbHomeState:
     @property
     @pulumi.getter(name="enableDatabaseDelete")
     def enable_database_delete(self) -> Optional[pulumi.Input[bool]]:
-        """
-        Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-        """
         return pulumi.get(self, "enable_database_delete")
 
     @enable_database_delete.setter
@@ -660,7 +652,6 @@ class DbHome(pulumi.CustomResource):
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -809,7 +800,6 @@ class DbHome(pulumi.CustomResource):
                This cannot be updated in parallel with any of the following: licenseModel, dbEdition, cpuCoreCount, computeCount, computeModel, adminPassword, whitelistedIps, isMTLSConnectionRequired, openMode, permissionLevel, dbWorkload, privateEndpointLabel, nsgIds, isRefreshable, dbName, scheduledOperations, dbToolsDetails, isLocalDataGuardEnabled, or isFreeTier.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] display_name: The user-provided name of the Database Home.
-        :param pulumi.Input[bool] enable_database_delete: Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_desupported_version: If true, the customer acknowledges that the specified Oracle Database software is an older release that is not currently supported by OCI.
         :param pulumi.Input[bool] is_unified_auditing_enabled: Indicates whether unified autiding is enabled or not. Set to True to enable unified auditing on respective DBHome.
@@ -923,9 +913,6 @@ class DbHome(pulumi.CustomResource):
     @property
     @pulumi.getter(name="enableDatabaseDelete")
     def enable_database_delete(self) -> pulumi.Output[Optional[bool]]:
-        """
-        Defaults to false. If omitted or set to false the provider will not delete databases removed from the Db Home configuration.
-        """
         return pulumi.get(self, "enable_database_delete")
 
     @property

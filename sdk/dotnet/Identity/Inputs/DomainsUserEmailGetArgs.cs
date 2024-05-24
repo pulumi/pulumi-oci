@@ -30,10 +30,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? PendingVerificationData { get; set; }
 
         /// <summary>
-        /// (Updatable) A Boolean value indicating the 'primary' or preferred attribute value for this attribute. The primary attribute value 'true' MUST appear no more than once.
+        /// (Updatable) A Boolean value that indicates whether the email address is the primary email address. The primary attribute value 'true' MUST appear no more than once.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: false
@@ -63,13 +64,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? Secondary { get; set; }
 
         /// <summary>
-        /// (Updatable) A label indicating the attribute's function.
+        /// (Updatable) Type of email address
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -78,32 +80,29 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
-        /// 
-        /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
-        /// * multiValued: false
-        /// * mutability: readWrite
-        /// * required: true
-        /// * returned: default
-        /// * type: binary
-        /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-        /// </summary>
-        [Input("value", required: true)]
-        public Input<string> Value { get; set; } = null!;
-
-        /// <summary>
-        /// (Updatable) A Boolean value that indicates if the phone number is verified.
+        /// (Updatable) Email address
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
+        /// * uniqueness: none
+        /// </summary>
+        [Input("value", required: true)]
+        public Input<string> Value { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) A Boolean value that indicates whether or not the e-mail address is verified
+        /// 
+        /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: boolean

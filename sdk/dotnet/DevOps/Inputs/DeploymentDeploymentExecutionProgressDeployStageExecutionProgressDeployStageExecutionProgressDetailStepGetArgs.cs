@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DevOps.Inputs
     public sealed class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailStepGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Name of the parameter (case-sensitive).
+        /// Name of the step.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

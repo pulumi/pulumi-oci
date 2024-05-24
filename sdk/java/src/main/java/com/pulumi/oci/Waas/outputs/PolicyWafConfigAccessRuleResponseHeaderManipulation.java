@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     private String action;
@@ -23,14 +23,14 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
      */
     private String header;
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
      * 
      */
     private @Nullable String value;
 
     private PolicyWafConfigAccessRuleResponseHeaderManipulation() {}
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action can be one of these values: `ADD_HTTP_RESPONSE_HEADER`, `EXTEND_HTTP_RESPONSE_HEADER`, `REMOVE_HTTP_RESPONSE_HEADER`
      * 
      */
     public String action() {
@@ -44,7 +44,7 @@ public final class PolicyWafConfigAccessRuleResponseHeaderManipulation {
         return this.header;
     }
     /**
-     * @return (Updatable) The value of the header.
+     * @return (Updatable) A header field value that conforms to RFC 7230.  Example: `example_value`
      * 
      */
     public Optional<String> value() {

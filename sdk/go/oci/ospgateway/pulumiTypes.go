@@ -345,57 +345,57 @@ func (o AddressActionVerificationAddressArrayOutput) Index(i pulumi.IntInput) Ad
 }
 
 type SubscriptionBillingAddress struct {
-	// (Updatable) Address identifier.
+	// Address identifier.
 	AddressKey *string `pulumi:"addressKey"`
-	// (Updatable) Name of the city.
+	// Name of the city.
 	City *string `pulumi:"city"`
-	// (Updatable) Name of the customer company.
+	// Name of the customer company.
 	CompanyName *string `pulumi:"companyName"`
-	// (Updatable) Contributor class of the customer company.
+	// Contributor class of the customer company.
 	ContributorClass *string `pulumi:"contributorClass"`
-	// (Updatable) Country of the address.
+	// Country of the address.
 	Country *string `pulumi:"country"`
-	// (Updatable) County of the address.
+	// County of the address.
 	County *string `pulumi:"county"`
-	// (Updatable) Department name of the customer company.
+	// Department name of the customer company.
 	DepartmentName *string `pulumi:"departmentName"`
-	// (Updatable) The email address of the paypal user.
+	// The email address of the paypal user.
 	EmailAddress *string `pulumi:"emailAddress"`
-	// (Updatable) First name of the paypal user.
+	// First name of the paypal user.
 	FirstName *string `pulumi:"firstName"`
-	// (Updatable) Internal number of the customer company.
+	// Internal number of the customer company.
 	InternalNumber *string `pulumi:"internalNumber"`
-	// (Updatable) Job title of the contact person.
+	// Job title of the contact person.
 	JobTitle *string `pulumi:"jobTitle"`
-	// (Updatable) Last name of the paypal user.
+	// Last name of the paypal user.
 	LastName *string `pulumi:"lastName"`
-	// (Updatable) Address line 1.
+	// Address line 1.
 	Line1 *string `pulumi:"line1"`
-	// (Updatable) Address line 2.
+	// Address line 2.
 	Line2 *string `pulumi:"line2"`
-	// (Updatable) Address line 3.
+	// Address line 3.
 	Line3 *string `pulumi:"line3"`
-	// (Updatable) Address line 4.
+	// Address line 4.
 	Line4 *string `pulumi:"line4"`
-	// (Updatable) Middle name of the contact person.
+	// Middle name of the contact person.
 	MiddleName *string `pulumi:"middleName"`
-	// (Updatable) Municipal Inscription.
+	// Municipal Inscription.
 	MunicipalInscription *string `pulumi:"municipalInscription"`
-	// (Updatable) Phone country code of the contact person.
+	// Phone country code of the contact person.
 	PhoneCountryCode *string `pulumi:"phoneCountryCode"`
-	// (Updatable) Phone number of the contact person.
+	// Phone number of the contact person.
 	PhoneNumber *string `pulumi:"phoneNumber"`
-	// (Updatable) Post code of the address.
+	// Post code of the address.
 	PostalCode *string `pulumi:"postalCode"`
-	// (Updatable) Province of the address.
+	// Province of the address.
 	Province *string `pulumi:"province"`
-	// (Updatable) State of the address.
+	// State of the address.
 	State *string `pulumi:"state"`
-	// (Updatable) State Inscription.
+	// State Inscription.
 	StateInscription *string `pulumi:"stateInscription"`
-	// (Updatable) Street name of the address.
+	// Street name of the address.
 	StreetName *string `pulumi:"streetName"`
-	// (Updatable) Street number of the address.
+	// Street number of the address.
 	StreetNumber *string `pulumi:"streetNumber"`
 }
 
@@ -411,57 +411,57 @@ type SubscriptionBillingAddressInput interface {
 }
 
 type SubscriptionBillingAddressArgs struct {
-	// (Updatable) Address identifier.
+	// Address identifier.
 	AddressKey pulumi.StringPtrInput `pulumi:"addressKey"`
-	// (Updatable) Name of the city.
+	// Name of the city.
 	City pulumi.StringPtrInput `pulumi:"city"`
-	// (Updatable) Name of the customer company.
+	// Name of the customer company.
 	CompanyName pulumi.StringPtrInput `pulumi:"companyName"`
-	// (Updatable) Contributor class of the customer company.
+	// Contributor class of the customer company.
 	ContributorClass pulumi.StringPtrInput `pulumi:"contributorClass"`
-	// (Updatable) Country of the address.
+	// Country of the address.
 	Country pulumi.StringPtrInput `pulumi:"country"`
-	// (Updatable) County of the address.
+	// County of the address.
 	County pulumi.StringPtrInput `pulumi:"county"`
-	// (Updatable) Department name of the customer company.
+	// Department name of the customer company.
 	DepartmentName pulumi.StringPtrInput `pulumi:"departmentName"`
-	// (Updatable) The email address of the paypal user.
+	// The email address of the paypal user.
 	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
-	// (Updatable) First name of the paypal user.
+	// First name of the paypal user.
 	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
-	// (Updatable) Internal number of the customer company.
+	// Internal number of the customer company.
 	InternalNumber pulumi.StringPtrInput `pulumi:"internalNumber"`
-	// (Updatable) Job title of the contact person.
+	// Job title of the contact person.
 	JobTitle pulumi.StringPtrInput `pulumi:"jobTitle"`
-	// (Updatable) Last name of the paypal user.
+	// Last name of the paypal user.
 	LastName pulumi.StringPtrInput `pulumi:"lastName"`
-	// (Updatable) Address line 1.
+	// Address line 1.
 	Line1 pulumi.StringPtrInput `pulumi:"line1"`
-	// (Updatable) Address line 2.
+	// Address line 2.
 	Line2 pulumi.StringPtrInput `pulumi:"line2"`
-	// (Updatable) Address line 3.
+	// Address line 3.
 	Line3 pulumi.StringPtrInput `pulumi:"line3"`
-	// (Updatable) Address line 4.
+	// Address line 4.
 	Line4 pulumi.StringPtrInput `pulumi:"line4"`
-	// (Updatable) Middle name of the contact person.
+	// Middle name of the contact person.
 	MiddleName pulumi.StringPtrInput `pulumi:"middleName"`
-	// (Updatable) Municipal Inscription.
+	// Municipal Inscription.
 	MunicipalInscription pulumi.StringPtrInput `pulumi:"municipalInscription"`
-	// (Updatable) Phone country code of the contact person.
+	// Phone country code of the contact person.
 	PhoneCountryCode pulumi.StringPtrInput `pulumi:"phoneCountryCode"`
-	// (Updatable) Phone number of the contact person.
+	// Phone number of the contact person.
 	PhoneNumber pulumi.StringPtrInput `pulumi:"phoneNumber"`
-	// (Updatable) Post code of the address.
+	// Post code of the address.
 	PostalCode pulumi.StringPtrInput `pulumi:"postalCode"`
-	// (Updatable) Province of the address.
+	// Province of the address.
 	Province pulumi.StringPtrInput `pulumi:"province"`
-	// (Updatable) State of the address.
+	// State of the address.
 	State pulumi.StringPtrInput `pulumi:"state"`
-	// (Updatable) State Inscription.
+	// State Inscription.
 	StateInscription pulumi.StringPtrInput `pulumi:"stateInscription"`
-	// (Updatable) Street name of the address.
+	// Street name of the address.
 	StreetName pulumi.StringPtrInput `pulumi:"streetName"`
-	// (Updatable) Street number of the address.
+	// Street number of the address.
 	StreetNumber pulumi.StringPtrInput `pulumi:"streetNumber"`
 }
 
@@ -516,132 +516,132 @@ func (o SubscriptionBillingAddressOutput) ToSubscriptionBillingAddressOutputWith
 	return o
 }
 
-// (Updatable) Address identifier.
+// Address identifier.
 func (o SubscriptionBillingAddressOutput) AddressKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.AddressKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the city.
+// Name of the city.
 func (o SubscriptionBillingAddressOutput) City() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.City }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name of the customer company.
+// Name of the customer company.
 func (o SubscriptionBillingAddressOutput) CompanyName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.CompanyName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Contributor class of the customer company.
+// Contributor class of the customer company.
 func (o SubscriptionBillingAddressOutput) ContributorClass() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.ContributorClass }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Country of the address.
+// Country of the address.
 func (o SubscriptionBillingAddressOutput) Country() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.Country }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) County of the address.
+// County of the address.
 func (o SubscriptionBillingAddressOutput) County() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.County }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Department name of the customer company.
+// Department name of the customer company.
 func (o SubscriptionBillingAddressOutput) DepartmentName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The email address of the paypal user.
+// The email address of the paypal user.
 func (o SubscriptionBillingAddressOutput) EmailAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) First name of the paypal user.
+// First name of the paypal user.
 func (o SubscriptionBillingAddressOutput) FirstName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Internal number of the customer company.
+// Internal number of the customer company.
 func (o SubscriptionBillingAddressOutput) InternalNumber() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.InternalNumber }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Job title of the contact person.
+// Job title of the contact person.
 func (o SubscriptionBillingAddressOutput) JobTitle() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Last name of the paypal user.
+// Last name of the paypal user.
 func (o SubscriptionBillingAddressOutput) LastName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Address line 1.
+// Address line 1.
 func (o SubscriptionBillingAddressOutput) Line1() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.Line1 }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Address line 2.
+// Address line 2.
 func (o SubscriptionBillingAddressOutput) Line2() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.Line2 }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Address line 3.
+// Address line 3.
 func (o SubscriptionBillingAddressOutput) Line3() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.Line3 }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Address line 4.
+// Address line 4.
 func (o SubscriptionBillingAddressOutput) Line4() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.Line4 }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Middle name of the contact person.
+// Middle name of the contact person.
 func (o SubscriptionBillingAddressOutput) MiddleName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.MiddleName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Municipal Inscription.
+// Municipal Inscription.
 func (o SubscriptionBillingAddressOutput) MunicipalInscription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.MunicipalInscription }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Phone country code of the contact person.
+// Phone country code of the contact person.
 func (o SubscriptionBillingAddressOutput) PhoneCountryCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.PhoneCountryCode }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Phone number of the contact person.
+// Phone number of the contact person.
 func (o SubscriptionBillingAddressOutput) PhoneNumber() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.PhoneNumber }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Post code of the address.
+// Post code of the address.
 func (o SubscriptionBillingAddressOutput) PostalCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.PostalCode }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Province of the address.
+// Province of the address.
 func (o SubscriptionBillingAddressOutput) Province() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.Province }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) State of the address.
+// State of the address.
 func (o SubscriptionBillingAddressOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.State }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) State Inscription.
+// State Inscription.
 func (o SubscriptionBillingAddressOutput) StateInscription() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.StateInscription }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Street name of the address.
+// Street name of the address.
 func (o SubscriptionBillingAddressOutput) StreetName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.StreetName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Street number of the address.
+// Street number of the address.
 func (o SubscriptionBillingAddressOutput) StreetNumber() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionBillingAddress) *string { return v.StreetNumber }).(pulumi.StringPtrOutput)
 }
@@ -667,7 +667,7 @@ func (o SubscriptionBillingAddressArrayOutput) Index(i pulumi.IntInput) Subscrip
 }
 
 type SubscriptionPaymentGateway struct {
-	// (Updatable) Merchant details.
+	// Merchant details.
 	MerchantDefinedDatas []SubscriptionPaymentGatewayMerchantDefinedData `pulumi:"merchantDefinedDatas"`
 }
 
@@ -683,7 +683,7 @@ type SubscriptionPaymentGatewayInput interface {
 }
 
 type SubscriptionPaymentGatewayArgs struct {
-	// (Updatable) Merchant details.
+	// Merchant details.
 	MerchantDefinedDatas SubscriptionPaymentGatewayMerchantDefinedDataArrayInput `pulumi:"merchantDefinedDatas"`
 }
 
@@ -738,7 +738,7 @@ func (o SubscriptionPaymentGatewayOutput) ToSubscriptionPaymentGatewayOutputWith
 	return o
 }
 
-// (Updatable) Merchant details.
+// Merchant details.
 func (o SubscriptionPaymentGatewayOutput) MerchantDefinedDatas() SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput {
 	return o.ApplyT(func(v SubscriptionPaymentGateway) []SubscriptionPaymentGatewayMerchantDefinedData {
 		return v.MerchantDefinedDatas
@@ -766,9 +766,9 @@ func (o SubscriptionPaymentGatewayArrayOutput) Index(i pulumi.IntInput) Subscrip
 }
 
 type SubscriptionPaymentGatewayMerchantDefinedData struct {
-	// (Updatable) Cloud account name.
+	// Cloud account name.
 	CloudAccountName *string `pulumi:"cloudAccountName"`
-	// (Updatable) Promotion type code.
+	// Promotion type code.
 	PromoType *string `pulumi:"promoType"`
 }
 
@@ -784,9 +784,9 @@ type SubscriptionPaymentGatewayMerchantDefinedDataInput interface {
 }
 
 type SubscriptionPaymentGatewayMerchantDefinedDataArgs struct {
-	// (Updatable) Cloud account name.
+	// Cloud account name.
 	CloudAccountName pulumi.StringPtrInput `pulumi:"cloudAccountName"`
-	// (Updatable) Promotion type code.
+	// Promotion type code.
 	PromoType pulumi.StringPtrInput `pulumi:"promoType"`
 }
 
@@ -841,12 +841,12 @@ func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) ToSubscriptionPayme
 	return o
 }
 
-// (Updatable) Cloud account name.
+// Cloud account name.
 func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) CloudAccountName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentGatewayMerchantDefinedData) *string { return v.CloudAccountName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Promotion type code.
+// Promotion type code.
 func (o SubscriptionPaymentGatewayMerchantDefinedDataOutput) PromoType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentGatewayMerchantDefinedData) *string { return v.PromoType }).(pulumi.StringPtrOutput)
 }
@@ -872,27 +872,27 @@ func (o SubscriptionPaymentGatewayMerchantDefinedDataArrayOutput) Index(i pulumi
 }
 
 type SubscriptionPaymentOption struct {
-	// (Updatable) Credit card type.
+	// Credit card type.
 	CreditCardType *string `pulumi:"creditCardType"`
-	// (Updatable) The email address of the paypal user.
+	// The email address of the paypal user.
 	EmailAddress *string `pulumi:"emailAddress"`
-	// (Updatable) Agreement id for the paypal account.
+	// Agreement id for the paypal account.
 	ExtBillingAgreementId *string `pulumi:"extBillingAgreementId"`
-	// (Updatable) First name of the paypal user.
+	// First name of the paypal user.
 	FirstName *string `pulumi:"firstName"`
-	// (Updatable) Last four digits of the card.
+	// Last four digits of the card.
 	LastDigits *string `pulumi:"lastDigits"`
-	// (Updatable) Last name of the paypal user.
+	// Last name of the paypal user.
 	LastName *string `pulumi:"lastName"`
-	// (Updatable) Name on the credit card.
+	// Name on the credit card.
 	NameOnCard *string `pulumi:"nameOnCard"`
-	// (Updatable) Payment method
+	// Payment method
 	PaymentMethod *string `pulumi:"paymentMethod"`
-	// (Updatable) Expired date of the credit card.
+	// Expired date of the credit card.
 	TimeExpiration *string `pulumi:"timeExpiration"`
-	// (Updatable) Wallet instrument internal id.
+	// Wallet instrument internal id.
 	WalletInstrumentId *string `pulumi:"walletInstrumentId"`
-	// (Updatable) Wallet transaction id.
+	// Wallet transaction id.
 	WalletTransactionId *string `pulumi:"walletTransactionId"`
 }
 
@@ -908,27 +908,27 @@ type SubscriptionPaymentOptionInput interface {
 }
 
 type SubscriptionPaymentOptionArgs struct {
-	// (Updatable) Credit card type.
+	// Credit card type.
 	CreditCardType pulumi.StringPtrInput `pulumi:"creditCardType"`
-	// (Updatable) The email address of the paypal user.
+	// The email address of the paypal user.
 	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
-	// (Updatable) Agreement id for the paypal account.
+	// Agreement id for the paypal account.
 	ExtBillingAgreementId pulumi.StringPtrInput `pulumi:"extBillingAgreementId"`
-	// (Updatable) First name of the paypal user.
+	// First name of the paypal user.
 	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
-	// (Updatable) Last four digits of the card.
+	// Last four digits of the card.
 	LastDigits pulumi.StringPtrInput `pulumi:"lastDigits"`
-	// (Updatable) Last name of the paypal user.
+	// Last name of the paypal user.
 	LastName pulumi.StringPtrInput `pulumi:"lastName"`
-	// (Updatable) Name on the credit card.
+	// Name on the credit card.
 	NameOnCard pulumi.StringPtrInput `pulumi:"nameOnCard"`
-	// (Updatable) Payment method
+	// Payment method
 	PaymentMethod pulumi.StringPtrInput `pulumi:"paymentMethod"`
-	// (Updatable) Expired date of the credit card.
+	// Expired date of the credit card.
 	TimeExpiration pulumi.StringPtrInput `pulumi:"timeExpiration"`
-	// (Updatable) Wallet instrument internal id.
+	// Wallet instrument internal id.
 	WalletInstrumentId pulumi.StringPtrInput `pulumi:"walletInstrumentId"`
-	// (Updatable) Wallet transaction id.
+	// Wallet transaction id.
 	WalletTransactionId pulumi.StringPtrInput `pulumi:"walletTransactionId"`
 }
 
@@ -983,57 +983,57 @@ func (o SubscriptionPaymentOptionOutput) ToSubscriptionPaymentOptionOutputWithCo
 	return o
 }
 
-// (Updatable) Credit card type.
+// Credit card type.
 func (o SubscriptionPaymentOptionOutput) CreditCardType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.CreditCardType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The email address of the paypal user.
+// The email address of the paypal user.
 func (o SubscriptionPaymentOptionOutput) EmailAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Agreement id for the paypal account.
+// Agreement id for the paypal account.
 func (o SubscriptionPaymentOptionOutput) ExtBillingAgreementId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.ExtBillingAgreementId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) First name of the paypal user.
+// First name of the paypal user.
 func (o SubscriptionPaymentOptionOutput) FirstName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Last four digits of the card.
+// Last four digits of the card.
 func (o SubscriptionPaymentOptionOutput) LastDigits() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.LastDigits }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Last name of the paypal user.
+// Last name of the paypal user.
 func (o SubscriptionPaymentOptionOutput) LastName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Name on the credit card.
+// Name on the credit card.
 func (o SubscriptionPaymentOptionOutput) NameOnCard() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.NameOnCard }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Payment method
+// Payment method
 func (o SubscriptionPaymentOptionOutput) PaymentMethod() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.PaymentMethod }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Expired date of the credit card.
+// Expired date of the credit card.
 func (o SubscriptionPaymentOptionOutput) TimeExpiration() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.TimeExpiration }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Wallet instrument internal id.
+// Wallet instrument internal id.
 func (o SubscriptionPaymentOptionOutput) WalletInstrumentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.WalletInstrumentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Wallet transaction id.
+// Wallet transaction id.
 func (o SubscriptionPaymentOptionOutput) WalletTransactionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionPaymentOption) *string { return v.WalletTransactionId }).(pulumi.StringPtrOutput)
 }
@@ -1590,15 +1590,15 @@ type SubscriptionSubscriptionBillingAddress struct {
 	County *string `pulumi:"county"`
 	// (Updatable) Department name of the customer company.
 	DepartmentName *string `pulumi:"departmentName"`
-	// (Updatable) The email address of the paypal user.
+	// (Updatable) Contact person email address.
 	EmailAddress *string `pulumi:"emailAddress"`
-	// (Updatable) First name of the paypal user.
+	// (Updatable) First name of the contact person.
 	FirstName *string `pulumi:"firstName"`
 	// (Updatable) Internal number of the customer company.
 	InternalNumber *string `pulumi:"internalNumber"`
 	// (Updatable) Job title of the contact person.
 	JobTitle *string `pulumi:"jobTitle"`
-	// (Updatable) Last name of the paypal user.
+	// (Updatable) Last name of the contact person.
 	LastName *string `pulumi:"lastName"`
 	// (Updatable) Address line 1.
 	Line1 *string `pulumi:"line1"`
@@ -1656,15 +1656,15 @@ type SubscriptionSubscriptionBillingAddressArgs struct {
 	County pulumi.StringPtrInput `pulumi:"county"`
 	// (Updatable) Department name of the customer company.
 	DepartmentName pulumi.StringPtrInput `pulumi:"departmentName"`
-	// (Updatable) The email address of the paypal user.
+	// (Updatable) Contact person email address.
 	EmailAddress pulumi.StringPtrInput `pulumi:"emailAddress"`
-	// (Updatable) First name of the paypal user.
+	// (Updatable) First name of the contact person.
 	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
 	// (Updatable) Internal number of the customer company.
 	InternalNumber pulumi.StringPtrInput `pulumi:"internalNumber"`
 	// (Updatable) Job title of the contact person.
 	JobTitle pulumi.StringPtrInput `pulumi:"jobTitle"`
-	// (Updatable) Last name of the paypal user.
+	// (Updatable) Last name of the contact person.
 	LastName pulumi.StringPtrInput `pulumi:"lastName"`
 	// (Updatable) Address line 1.
 	Line1 pulumi.StringPtrInput `pulumi:"line1"`
@@ -1782,12 +1782,12 @@ func (o SubscriptionSubscriptionBillingAddressOutput) DepartmentName() pulumi.St
 	return o.ApplyT(func(v SubscriptionSubscriptionBillingAddress) *string { return v.DepartmentName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The email address of the paypal user.
+// (Updatable) Contact person email address.
 func (o SubscriptionSubscriptionBillingAddressOutput) EmailAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionBillingAddress) *string { return v.EmailAddress }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) First name of the paypal user.
+// (Updatable) First name of the contact person.
 func (o SubscriptionSubscriptionBillingAddressOutput) FirstName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionBillingAddress) *string { return v.FirstName }).(pulumi.StringPtrOutput)
 }
@@ -1802,7 +1802,7 @@ func (o SubscriptionSubscriptionBillingAddressOutput) JobTitle() pulumi.StringPt
 	return o.ApplyT(func(v SubscriptionSubscriptionBillingAddress) *string { return v.JobTitle }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Last name of the paypal user.
+// (Updatable) Last name of the contact person.
 func (o SubscriptionSubscriptionBillingAddressOutput) LastName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionSubscriptionBillingAddress) *string { return v.LastName }).(pulumi.StringPtrOutput)
 }
@@ -2595,15 +2595,15 @@ func (o SubscriptionSubscriptionTaxInfoPtrOutput) TaxRegNumber() pulumi.StringPt
 type SubscriptionTaxInfo struct {
 	// Companies' GIRO code
 	Giro *string `pulumi:"giro"`
-	// (Updatable) Tax exemption reason code.
+	// Tax exemption reason code.
 	NoTaxReasonCode *string `pulumi:"noTaxReasonCode"`
-	// (Updatable) Tax exemption reason description.
+	// Tax exemption reason description.
 	NoTaxReasonCodeDetails *string `pulumi:"noTaxReasonCodeDetails"`
-	// (Updatable) Brazilian companies' CNPJ number.
+	// Brazilian companies' CNPJ number.
 	TaxCnpj *string `pulumi:"taxCnpj"`
-	// (Updatable) Tay payer identifier.
+	// Tay payer identifier.
 	TaxPayerId *string `pulumi:"taxPayerId"`
-	// (Updatable) Tax registration number.
+	// Tax registration number.
 	TaxRegNumber *string `pulumi:"taxRegNumber"`
 }
 
@@ -2621,15 +2621,15 @@ type SubscriptionTaxInfoInput interface {
 type SubscriptionTaxInfoArgs struct {
 	// Companies' GIRO code
 	Giro pulumi.StringPtrInput `pulumi:"giro"`
-	// (Updatable) Tax exemption reason code.
+	// Tax exemption reason code.
 	NoTaxReasonCode pulumi.StringPtrInput `pulumi:"noTaxReasonCode"`
-	// (Updatable) Tax exemption reason description.
+	// Tax exemption reason description.
 	NoTaxReasonCodeDetails pulumi.StringPtrInput `pulumi:"noTaxReasonCodeDetails"`
-	// (Updatable) Brazilian companies' CNPJ number.
+	// Brazilian companies' CNPJ number.
 	TaxCnpj pulumi.StringPtrInput `pulumi:"taxCnpj"`
-	// (Updatable) Tay payer identifier.
+	// Tay payer identifier.
 	TaxPayerId pulumi.StringPtrInput `pulumi:"taxPayerId"`
-	// (Updatable) Tax registration number.
+	// Tax registration number.
 	TaxRegNumber pulumi.StringPtrInput `pulumi:"taxRegNumber"`
 }
 
@@ -2689,27 +2689,27 @@ func (o SubscriptionTaxInfoOutput) Giro() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.Giro }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Tax exemption reason code.
+// Tax exemption reason code.
 func (o SubscriptionTaxInfoOutput) NoTaxReasonCode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.NoTaxReasonCode }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Tax exemption reason description.
+// Tax exemption reason description.
 func (o SubscriptionTaxInfoOutput) NoTaxReasonCodeDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.NoTaxReasonCodeDetails }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Brazilian companies' CNPJ number.
+// Brazilian companies' CNPJ number.
 func (o SubscriptionTaxInfoOutput) TaxCnpj() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.TaxCnpj }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Tay payer identifier.
+// Tay payer identifier.
 func (o SubscriptionTaxInfoOutput) TaxPayerId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.TaxPayerId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Tax registration number.
+// Tax registration number.
 func (o SubscriptionTaxInfoOutput) TaxRegNumber() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v SubscriptionTaxInfo) *string { return v.TaxRegNumber }).(pulumi.StringPtrOutput)
 }

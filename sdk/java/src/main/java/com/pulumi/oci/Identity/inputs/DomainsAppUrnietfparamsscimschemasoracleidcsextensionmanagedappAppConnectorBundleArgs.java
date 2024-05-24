@@ -17,7 +17,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     public static final DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs Empty = new DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppConnectorBundleArgs();
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) ConnectorBundle display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +33,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) ConnectorBundle display name
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,7 +50,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) ConnectorBundle URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -66,7 +66,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) ConnectorBundle URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -83,13 +83,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+     * (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
      * 
-     * **Added In:** 18.1.6
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
+     * * idcsDefaultValue: ConnectorBundle
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -103,13 +103,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private Output<String> type;
 
     /**
-     * @return (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+     * @return (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
      * 
-     * **Added In:** 18.1.6
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsDefaultValue: AccountObjectClass
+     * * idcsDefaultValue: ConnectorBundle
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: immutable
@@ -124,38 +124,34 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) ConnectorBundle identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ConnectorBundle identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -163,9 +159,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     }
 
     /**
-     * (Updatable) Unique well-known identifier used to reference connector bundle.
+     * (Updatable) Unique Well-known identifier used to reference connector bundle.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -182,9 +178,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
     private @Nullable Output<String> wellKnownId;
 
     /**
-     * @return (Updatable) Unique well-known identifier used to reference connector bundle.
+     * @return (Updatable) Unique Well-known identifier used to reference connector bundle.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -230,7 +226,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) ConnectorBundle display name
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -250,7 +246,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) ConnectorBundle display name
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -269,7 +265,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) ConnectorBundle URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -289,7 +285,7 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) ConnectorBundle URI
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -308,13 +304,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param type (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+         * @param type (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
          * 
-         * **Added In:** 18.1.6
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsDefaultValue: AccountObjectClass
+         * * idcsDefaultValue: ConnectorBundle
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: immutable
@@ -332,13 +328,13 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param type (Updatable) Object Class type. Allowed values are AccountObjectClass, ManagedObjectClass.
+         * @param type (Updatable) Connector Bundle type. Allowed values are ConnectorBundle, LocalConnectorBundle.
          * 
-         * **Added In:** 18.1.6
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsDefaultValue: AccountObjectClass
+         * * idcsDefaultValue: ConnectorBundle
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: immutable
@@ -355,19 +351,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) ConnectorBundle identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -378,19 +372,17 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) ConnectorBundle identifier
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: immutable
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -400,9 +392,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param wellKnownId (Updatable) Unique well-known identifier used to reference connector bundle.
+         * @param wellKnownId (Updatable) Unique Well-known identifier used to reference connector bundle.
          * 
-         * **Added In:** 19.1.4
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -423,9 +415,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanageda
         }
 
         /**
-         * @param wellKnownId (Updatable) Unique well-known identifier used to reference connector bundle.
+         * @param wellKnownId (Updatable) Unique Well-known identifier used to reference connector bundle.
          * 
-         * **Added In:** 19.1.4
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * caseExact: false

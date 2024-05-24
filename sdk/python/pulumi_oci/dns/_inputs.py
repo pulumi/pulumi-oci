@@ -473,6 +473,7 @@ class ResolverRuleArgs:
                  qname_cover_conditions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] action: (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+               * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] destination_addresses: (Updatable) IP addresses to which queries should be forwarded. Currently limited to a single address.
         :param pulumi.Input[str] source_endpoint_name: (Updatable) Name of an endpoint, that is a sub-resource of the resolver, to use as the forwarding interface. The endpoint must have isForwarding set to true.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] client_address_conditions: (Updatable) A list of CIDR blocks. The query must come from a client within one of the blocks in order for the rule action to apply.
@@ -491,6 +492,7 @@ class ResolverRuleArgs:
     def action(self) -> pulumi.Input[str]:
         """
         (Updatable) The action determines the behavior of the rule. If a query matches a supplied condition, the action will apply. If there are no conditions on the rule, all queries are subject to the specified action.
+        * `FORWARD` - Matching requests will be forwarded from the source interface to the destination address.
         """
         return pulumi.get(self, "action")
 
@@ -560,7 +562,7 @@ class RrsetItemArgs:
         """
         :param pulumi.Input[str] domain: The fully qualified domain name where the record can be located.
         :param pulumi.Input[str] rdata: (Updatable) The record's data, as whitespace-delimited tokens in type-specific presentation format. All RDATA is normalized and the returned presentation of your RDATA may differ from its initial input. For more information about RDATA, see [Supported DNS Resource Record Types](https://docs.cloud.oracle.com/iaas/Content/DNS/Reference/supporteddnsresource.htm)
-        :param pulumi.Input[str] rtype: The type of the target RRSet within the target zone.
+        :param pulumi.Input[str] rtype: The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         :param pulumi.Input[int] ttl: (Updatable) The Time To Live for the record, in seconds.
         :param pulumi.Input[bool] is_protected: A Boolean flag indicating whether or not parts of the record are unable to be explicitly managed.
         :param pulumi.Input[str] record_hash: A unique identifier for the record within its zone.
@@ -605,7 +607,7 @@ class RrsetItemArgs:
     @pulumi.getter
     def rtype(self) -> pulumi.Input[str]:
         """
-        The type of the target RRSet within the target zone.
+        The canonical name for the record's type, such as A or CNAME. For more information, see [Resource Record (RR) TYPEs](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4).
         """
         return pulumi.get(self, "rtype")
 
@@ -756,6 +758,11 @@ class SteeringPolicyRuleArgs:
                  description: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] rule_type: The type of a rule determines its sorting/filtering behavior.
+               * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+               * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+               * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+               * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+               * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
         :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleCaseArgs']]] cases: An array of `caseConditions`. A rule may optionally include a sequence of cases defining alternate configurations for how it should behave during processing for any given DNS query. When a rule has no sequence of `cases`, it is always evaluated with the same configuration during processing. When a rule has an empty sequence of `cases`, it is always ignored during processing. When a rule has a non-empty sequence of `cases`, its behavior during processing is configured by the first matching `case` in the sequence. When a rule has no matching cases the rule is ignored. A rule case with no `caseCondition` always matches. A rule case with a `caseCondition` matches only when that expression evaluates to true for the given query.
         :param pulumi.Input[Sequence[pulumi.Input['SteeringPolicyRuleDefaultAnswerDataArgs']]] default_answer_datas: Defines a default set of answer conditions and values that are applied to an answer when `cases` is not defined for the rule, or a matching case does not have any matching `answerCondition`s in its `answerData`. `defaultAnswerData` is not applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed.
         :param pulumi.Input[int] default_count: Defines a default count if `cases` is not defined for the rule or a matching case does not define `count`. `defaultCount` is **not** applied if `cases` is defined and there are no matching cases. In this scenario, the next rule will be processed. If no rules remain to be processed, the answer will be chosen from the remaining list of answers.
@@ -776,6 +783,11 @@ class SteeringPolicyRuleArgs:
     def rule_type(self) -> pulumi.Input[str]:
         """
         The type of a rule determines its sorting/filtering behavior.
+        * `FILTER` - Filters the list of answers based on their defined boolean data. Answers remain only if their `shouldKeep` value is `true`.
+        * `HEALTH` - Removes answers from the list if their `rdata` matches a target in the health check monitor referenced by the steering policy and the target is reported down.
+        * `WEIGHTED` - Uses a number between 0 and 255 to determine how often an answer will be served in relation to other answers. Anwers with a higher weight will be served more frequently.
+        * `PRIORITY` - Uses a defined rank value of answers to determine which answer to serve, moving those with the lowest values to the beginning of the list without changing the relative order of those with the same value. Answers can be given a value between `0` and `255`.
+        * `LIMIT` - Filters answers that are too far down the list. Parameter `defaultCount` specifies how many answers to keep. **Example:** If `defaultCount` has a value of `2` and there are five answers left, when the `LIMIT` rule is processed, only the first two answers will remain in the list.
         """
         return pulumi.get(self, "rule_type")
 
@@ -1006,7 +1018,7 @@ class ZoneExternalDownstreamArgs:
         """
         :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
         :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
-        :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key.
+        :param pulumi.Input[str] tsig_key_id: (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
         """
         pulumi.set(__self__, "address", address)
         if port is not None:
@@ -1042,7 +1054,7 @@ class ZoneExternalDownstreamArgs:
     @pulumi.getter(name="tsigKeyId")
     def tsig_key_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the TSIG key.
+        (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
         """
         return pulumi.get(self, "tsig_key_id")
 
@@ -1136,10 +1148,10 @@ class ZoneZoneTransferServerArgs:
                  is_transfer_source: Optional[pulumi.Input[bool]] = None,
                  port: Optional[pulumi.Input[int]] = None):
         """
-        :param pulumi.Input[str] address: (Updatable) The server's IP address (IPv4 or IPv6).
+        :param pulumi.Input[str] address: The server's IP address (IPv4 or IPv6).
         :param pulumi.Input[bool] is_transfer_destination: A Boolean flag indicating whether or not the server is a zone data transfer destination.
         :param pulumi.Input[bool] is_transfer_source: A Boolean flag indicating whether or not the server is a zone data transfer source.
-        :param pulumi.Input[int] port: (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        :param pulumi.Input[int] port: The server's port.
         """
         if address is not None:
             pulumi.set(__self__, "address", address)
@@ -1154,7 +1166,7 @@ class ZoneZoneTransferServerArgs:
     @pulumi.getter
     def address(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The server's IP address (IPv4 or IPv6).
+        The server's IP address (IPv4 or IPv6).
         """
         return pulumi.get(self, "address")
 
@@ -1190,7 +1202,7 @@ class ZoneZoneTransferServerArgs:
     @pulumi.getter
     def port(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        The server's port.
         """
         return pulumi.get(self, "port")
 

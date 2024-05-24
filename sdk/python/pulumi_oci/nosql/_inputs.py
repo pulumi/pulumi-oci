@@ -84,13 +84,9 @@ class TableReplicaArgs:
                  state: Optional[pulumi.Input[str]] = None,
                  table_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] capacity_mode: (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        :param pulumi.Input[str] capacity_mode: The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail.
-        :param pulumi.Input[int] max_write_units: (Updatable) Maximum sustained write throughput limit for the table.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[int] max_write_units: Maximum sustained write throughput limit for the table.
         :param pulumi.Input[str] region: A customer-facing region identifier
         :param pulumi.Input[str] state: The state of a table.
         :param pulumi.Input[str] table_id: The OCID of the replica table
@@ -112,7 +108,7 @@ class TableReplicaArgs:
     @pulumi.getter(name="capacityMode")
     def capacity_mode(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+        The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
         """
         return pulumi.get(self, "capacity_mode")
 
@@ -136,11 +132,7 @@ class TableReplicaArgs:
     @pulumi.getter(name="maxWriteUnits")
     def max_write_units(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Maximum sustained write throughput limit for the table.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        Maximum sustained write throughput limit for the table.
         """
         return pulumi.get(self, "max_write_units")
 

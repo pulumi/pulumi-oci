@@ -128,7 +128,7 @@ export class StreamPackagingConfig extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * When the lock was created.
+     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -251,7 +251,7 @@ export interface StreamPackagingConfigState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * When the lock was created.
+     * The time when the Packaging Configuration was created. An RFC3339 formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**

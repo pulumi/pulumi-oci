@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ServiceMesh.Inputs
         public Input<string>? CaBundleId { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the secret. For Kubernetes this is the name of the Kubernetes secret of type tls. For other platforms the secrets must be mounted at: /etc/oci/secrets/${secretName}/tls.{key,crt}
+        /// (Updatable) Name of the secret. For Kubernetes this will be the name of an opaque Kubernetes secret with key ca.crt. For other platforms the secret must be mounted at: /etc/oci/secrets/${secretName}/ca.crt
         /// </summary>
         [Input("secretName")]
         public Input<string>? SecretName { get; set; }

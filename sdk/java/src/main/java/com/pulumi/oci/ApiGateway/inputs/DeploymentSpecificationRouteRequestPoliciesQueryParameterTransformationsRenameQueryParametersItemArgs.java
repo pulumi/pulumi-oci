@@ -15,14 +15,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     public static final DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs Empty = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemArgs();
 
     /**
-     * (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+     * (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     @Import(name="from", required=true)
     private Output<String> from;
 
     /**
-     * @return (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     public Output<String> from() {
@@ -30,14 +30,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     }
 
     /**
-     * (Updatable) The new name of the header.  This name must be unique across transformation policies.
+     * (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     @Import(name="to", required=true)
     private Output<String> to;
 
     /**
-     * @return (Updatable) The new name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
      * 
      */
     public Output<String> to() {
@@ -70,7 +70,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param from (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param from (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param from (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param from (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
          * 
          * @return builder
          * 
@@ -91,7 +91,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param to (Updatable) The new name of the header.  This name must be unique across transformation policies.
+         * @param to (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
          * 
          * @return builder
          * 
@@ -102,7 +102,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param to (Updatable) The new name of the header.  This name must be unique across transformation policies.
+         * @param to (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
          * 
          * @return builder
          * 

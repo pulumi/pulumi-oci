@@ -144,7 +144,7 @@ type DomainsMySmtpCredential struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMySmtpCredentialMetaArrayOutput `pulumi:"metas"`
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -152,9 +152,9 @@ type DomainsMySmtpCredential struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
@@ -388,7 +388,7 @@ type domainsMySmtpCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsMySmtpCredentialMeta `pulumi:"metas"`
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -396,9 +396,9 @@ type domainsMySmtpCredentialState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -597,7 +597,7 @@ type DomainsMySmtpCredentialState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsMySmtpCredentialMetaArrayInput
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -605,9 +605,9 @@ type DomainsMySmtpCredentialState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -719,7 +719,7 @@ type domainsMySmtpCredentialArgs struct {
 	ExpiresOn *string `pulumi:"expiresOn"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -727,9 +727,9 @@ type domainsMySmtpCredentialArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -814,7 +814,7 @@ type DomainsMySmtpCredentialArgs struct {
 	ExpiresOn pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// User's ocid
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -822,9 +822,9 @@ type DomainsMySmtpCredentialArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -1125,7 +1125,7 @@ func (o DomainsMySmtpCredentialOutput) Metas() DomainsMySmtpCredentialMetaArrayO
 	return o.ApplyT(func(v *DomainsMySmtpCredential) DomainsMySmtpCredentialMetaArrayOutput { return v.Metas }).(DomainsMySmtpCredentialMetaArrayOutput)
 }
 
-// User's ocid
+// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1133,9 +1133,9 @@ func (o DomainsMySmtpCredentialOutput) Metas() DomainsMySmtpCredentialMetaArrayO
 // * multiValued: false
 // * mutability: immutable
 // * required: false
-// * returned: always
+// * returned: default
 // * type: string
-// * uniqueness: none
+// * uniqueness: global
 func (o DomainsMySmtpCredentialOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsMySmtpCredential) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }

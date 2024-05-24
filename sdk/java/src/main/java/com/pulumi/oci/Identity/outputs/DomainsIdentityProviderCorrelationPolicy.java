@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsIdentityProviderCorrelationPolicy {
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * @return (Updatable) Policy display name
      * 
      * **Added In:** 20.1.3
      * 
@@ -29,41 +29,45 @@ public final class DomainsIdentityProviderCorrelationPolicy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Group URI
-     * 
-     * **Added In:** 2205120021
-     * 
-     * **SCIM++ Properties:**
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
-     * * returned: default
-     * * type: reference
-     * 
-     */
-    private @Nullable String ref;
-    /**
-     * @return (Updatable) Identity Provider Type
+     * @return (Updatable) Policy URI
      * 
      * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsSearchable: false
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
+     * * returned: default
+     * * type: reference
+     * * uniqueness: none
+     * 
+     */
+    private @Nullable String ref;
+    /**
+     * @return (Updatable) A label that indicates the type that this references.
+     * 
+     * **Added In:** 20.1.3
+     * 
+     * **SCIM++ Properties:**
+     * * idcsDefaultValue: Policy
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
     private String type;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Policy identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -77,7 +81,7 @@ public final class DomainsIdentityProviderCorrelationPolicy {
 
     private DomainsIdentityProviderCorrelationPolicy() {}
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * @return (Updatable) Policy display name
      * 
      * **Added In:** 20.1.3
      * 
@@ -95,33 +99,35 @@ public final class DomainsIdentityProviderCorrelationPolicy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Group URI
+     * @return (Updatable) Policy URI
      * 
-     * **Added In:** 2205120021
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: reference
+     * * uniqueness: none
      * 
      */
     public Optional<String> ref() {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Identity Provider Type
+     * @return (Updatable) A label that indicates the type that this references.
      * 
      * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: true
+     * * idcsDefaultValue: Policy
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -130,10 +136,12 @@ public final class DomainsIdentityProviderCorrelationPolicy {
         return this.type;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Policy identifier
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite

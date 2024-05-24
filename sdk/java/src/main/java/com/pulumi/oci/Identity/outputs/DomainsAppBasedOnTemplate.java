@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppBasedOnTemplate {
     /**
-     * @return (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * @return (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -28,7 +28,7 @@ public final class DomainsAppBasedOnTemplate {
      */
     private @Nullable String lastModified;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the application template.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -42,26 +42,24 @@ public final class DomainsAppBasedOnTemplate {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return Identifier of the application template.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
     /**
-     * @return (Updatable) Unique well-known identifier used to reference connector bundle.
+     * @return (Updatable) Unique Well-known identifier used to reference app template.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -78,7 +76,7 @@ public final class DomainsAppBasedOnTemplate {
 
     private DomainsAppBasedOnTemplate() {}
     /**
-     * @return (Updatable) The most recent DateTime that the details of this Resource were updated at the Service Provider. If this Resource has never been modified since its initial creation, the value MUST be the same as the value of created. The attribute MUST be a DateTime.
+     * @return (Updatable) The most recent DateTime that the appTemplate on which the application based upon is updated. The attribute MUST be a DateTime.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -95,7 +93,7 @@ public final class DomainsAppBasedOnTemplate {
         return Optional.ofNullable(this.lastModified);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the application template.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -111,28 +109,26 @@ public final class DomainsAppBasedOnTemplate {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return Identifier of the application template.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {
         return this.value;
     }
     /**
-     * @return (Updatable) Unique well-known identifier used to reference connector bundle.
+     * @return (Updatable) Unique Well-known identifier used to reference app template.
      * 
-     * **Added In:** 19.1.4
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * caseExact: false

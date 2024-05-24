@@ -271,6 +271,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     }
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     @Export(name="cloneType", refs={String.class}, tree="[0]")
@@ -278,6 +280,8 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
 
     /**
      * @return The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     public Output<String> cloneType() {
@@ -298,14 +302,14 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Compute used by database tools.
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      * 
      */
     @Export(name="computeCount", refs={Double.class}, tree="[0]")
     private Output<Double> computeCount;
 
     /**
-     * @return (Updatable) Compute used by database tools.
+     * @return (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      * 
      */
     public Output<Double> computeCount() {

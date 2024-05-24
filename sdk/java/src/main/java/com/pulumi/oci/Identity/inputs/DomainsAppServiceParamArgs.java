@@ -17,14 +17,10 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
     public static final DomainsAppServiceParamArgs Empty = new DomainsAppServiceParamArgs();
 
     /**
-     * (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * (Updatable) The name of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -37,14 +33,10 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
     private Output<String> name;
 
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-     * 
-     * **Deprecated Since: 18.2.2**
+     * @return (Updatable) The name of the attribute.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
@@ -58,38 +50,32 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) The value of the attribute.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The value of the attribute.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: true
+     * * mutability: readWrite
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -122,14 +108,10 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name (Updatable) The name of the attribute.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -146,14 +128,10 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param name (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
-         * 
-         * **Deprecated Since: 18.2.2**
+         * @param name (Updatable) The name of the attribute.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
          * * idcsSearchable: false
-         * * idcsValuePersistedInOtherAttribute: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
@@ -169,19 +147,16 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The value of the attribute.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -192,19 +167,16 @@ public final class DomainsAppServiceParamArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) The value of the attribute.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: true
+         * * mutability: readWrite
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

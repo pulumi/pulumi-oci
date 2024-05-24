@@ -13,11 +13,11 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsMySupportAccountIdcsLastModifiedByArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) User display name
+        /// The displayName of the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * caseExact: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -29,15 +29,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// User's ocid
+        /// The OCID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -45,7 +44,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI that corresponds to the user linked to this Support Account
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -77,15 +76,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// User's id
+        /// The ID of the SCIM resource that represents the User or App who modified this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>

@@ -28,9 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) User Token URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The URI of the SCIM resource representing the User's manager.  RECOMMENDED.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -45,20 +43,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of a X509 certificate.
+        /// (Updatable) The id of the SCIM resource representing  the User's  manager.  RECOMMENDED.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsCsvAttributeName: Manager Name
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: true
+        /// * required: false
         /// * returned: default
-        /// * type: binary
+        /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

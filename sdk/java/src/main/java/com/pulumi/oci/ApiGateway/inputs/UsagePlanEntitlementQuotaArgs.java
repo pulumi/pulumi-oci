@@ -46,14 +46,14 @@ public final class UsagePlanEntitlementQuotaArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+     * (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
      * 
      */
     @Import(name="unit", required=true)
     private Output<String> unit;
 
     /**
-     * @return (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+     * @return (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
      * 
      */
     public Output<String> unit() {
@@ -145,7 +145,7 @@ public final class UsagePlanEntitlementQuotaArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param unit (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+         * @param unit (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
          * 
          * @return builder
          * 
@@ -156,7 +156,7 @@ public final class UsagePlanEntitlementQuotaArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param unit (Updatable) The unit of time over which rate limits are calculated. Example: `SECOND`
+         * @param unit (Updatable) The unit of time over which quotas are calculated. Example: `MINUTE` or `MONTH`
          * 
          * @return builder
          * 

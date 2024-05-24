@@ -17,14 +17,14 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     public static final AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs Empty = new AutonomousContainerDatabaseBackupConfigBackupDestinationDetailsArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
      * 
      */
     public Optional<Output<String>> id() {
@@ -32,14 +32,14 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     }
 
     /**
-     * Proxy URL to connect to object store.
+     * (Updatable) Proxy URL to connect to object store.
      * 
      */
     @Import(name="internetProxy")
     private @Nullable Output<String> internetProxy;
 
     /**
-     * @return Proxy URL to connect to object store.
+     * @return (Updatable) Proxy URL to connect to object store.
      * 
      */
     public Optional<Output<String>> internetProxy() {
@@ -47,14 +47,14 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     }
 
     /**
-     * Type of the database backup destination.
+     * (Updatable) Type of the database backup destination.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Type of the database backup destination.
+     * @return (Updatable) Type of the database backup destination.
      * 
      */
     public Output<String> type() {
@@ -62,14 +62,14 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
     @Import(name="vpcPassword")
     private @Nullable Output<String> vpcPassword;
 
     /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+     * @return (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
      * 
      */
     public Optional<Output<String>> vpcPassword() {
@@ -77,14 +77,14 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
     }
 
     /**
-     * For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
     @Import(name="vpcUser")
     private @Nullable Output<String> vpcUser;
 
     /**
-     * @return For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+     * @return (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
      * 
      */
     public Optional<Output<String>> vpcUser() {
@@ -120,7 +120,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param id The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+         * @param id (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param internetProxy Proxy URL to connect to object store.
+         * @param internetProxy (Updatable) Proxy URL to connect to object store.
          * 
          * @return builder
          * 
@@ -152,7 +152,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param internetProxy Proxy URL to connect to object store.
+         * @param internetProxy (Updatable) Proxy URL to connect to object store.
          * 
          * @return builder
          * 
@@ -162,7 +162,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param type Type of the database backup destination.
+         * @param type (Updatable) Type of the database backup destination.
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param type Type of the database backup destination.
+         * @param type (Updatable) Type of the database backup destination.
          * 
          * @return builder
          * 
@@ -183,7 +183,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param vpcPassword For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         * @param vpcPassword (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
          * 
          * @return builder
          * 
@@ -194,7 +194,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param vpcPassword For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
+         * @param vpcPassword (Updatable) For a RECOVERY_APPLIANCE backup destination, the password for the VPC user that is used to access the Recovery Appliance.
          * 
          * @return builder
          * 
@@ -204,7 +204,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param vpcUser For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         * @param vpcUser (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class AutonomousContainerDatabaseBackupConfigBackupDestinationDetai
         }
 
         /**
-         * @param vpcUser For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
+         * @param vpcUser (Updatable) For a RECOVERY_APPLIANCE backup destination, the Virtual Private Catalog (VPC) user that is used to access the Recovery Appliance.
          * 
          * @return builder
          * 

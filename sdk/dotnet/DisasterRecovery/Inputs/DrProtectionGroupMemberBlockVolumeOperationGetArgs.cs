@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DisasterRecovery.Inputs
         public Input<string>? BlockVolumeId { get; set; }
 
         /// <summary>
-        /// (Updatable) The details for creating a file system mount.
+        /// (Updatable) The details for creating a mount for a file system on a block volume.
         /// </summary>
         [Input("mountDetails")]
         public Input<Inputs.DrProtectionGroupMemberBlockVolumeOperationMountDetailsGetArgs>? MountDetails { get; set; }

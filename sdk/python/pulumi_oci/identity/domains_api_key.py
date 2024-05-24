@@ -31,17 +31,17 @@ class DomainsApiKeyArgs:
         """
         The set of arguments for constructing a DomainsApiKey resource.
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] key: Key
+               
+               **Added In:** 2010242156
                
                **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
+               * caseExact: true
+               * idcsPii: true
+               * type: string
+               * mutability: immutable
                * required: true
                * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
                **SCIM++ Properties:**
@@ -66,7 +66,7 @@ class DomainsApiKeyArgs:
                * mutability: readWrite
                * required: false
                * returned: default
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -74,9 +74,9 @@ class DomainsApiKeyArgs:
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input['DomainsApiKeyTagArgs']]] tags: A list of tags on this resource.
                
@@ -140,17 +140,17 @@ class DomainsApiKeyArgs:
     @pulumi.getter
     def key(self) -> pulumi.Input[str]:
         """
-        Key or name of the tag.
+        Key
+
+        **Added In:** 2010242156
 
         **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
+        * caseExact: true
+        * idcsPii: true
+        * type: string
+        * mutability: immutable
         * required: true
         * returned: default
-        * type: string
-        * uniqueness: none
         """
         return pulumi.get(self, "key")
 
@@ -241,7 +241,7 @@ class DomainsApiKeyArgs:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's OCID.
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -249,9 +249,9 @@ class DomainsApiKeyArgs:
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -452,17 +452,17 @@ class _DomainsApiKeyState:
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] key: Key
+               
+               **Added In:** 2010242156
                
                **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
+               * caseExact: true
+               * idcsPii: true
+               * type: string
+               * mutability: immutable
                * required: true
                * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input['DomainsApiKeyMetaArgs']]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
@@ -474,7 +474,7 @@ class _DomainsApiKeyState:
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -482,9 +482,9 @@ class _DomainsApiKeyState:
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -821,17 +821,17 @@ class _DomainsApiKeyState:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        Key or name of the tag.
+        Key
+
+        **Added In:** 2010242156
 
         **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
+        * caseExact: true
+        * idcsPii: true
+        * type: string
+        * mutability: immutable
         * required: true
         * returned: default
-        * type: string
-        * uniqueness: none
         """
         return pulumi.get(self, "key")
 
@@ -865,7 +865,7 @@ class _DomainsApiKeyState:
     @pulumi.getter
     def ocid(self) -> Optional[pulumi.Input[str]]:
         """
-        The user's OCID.
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -873,9 +873,9 @@ class _DomainsApiKeyState:
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 
@@ -1043,18 +1043,18 @@ class DomainsApiKey(pulumi.CustomResource):
                * required: false
                * returned: default
         :param pulumi.Input[str] idcs_endpoint: The basic endpoint for the identity domain
-        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] key: Key
+               
+               **Added In:** 2010242156
                
                **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
+               * caseExact: true
+               * idcsPii: true
+               * type: string
+               * mutability: immutable
                * required: true
                * returned: default
-               * type: string
-               * uniqueness: none
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1062,9 +1062,9 @@ class DomainsApiKey(pulumi.CustomResource):
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1320,17 +1320,17 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: request
                * type: string
                * uniqueness: none
-        :param pulumi.Input[str] key: Key or name of the tag.
+        :param pulumi.Input[str] key: Key
+               
+               **Added In:** 2010242156
                
                **SCIM++ Properties:**
-               * caseExact: false
-               * idcsSearchable: true
-               * multiValued: false
-               * mutability: readWrite
+               * caseExact: true
+               * idcsPii: true
+               * type: string
+               * mutability: immutable
                * required: true
                * returned: default
-               * type: string
-               * uniqueness: none
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DomainsApiKeyMetaArgs']]]] metas: (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
                
                **SCIM++ Properties:**
@@ -1342,7 +1342,7 @@ class DomainsApiKey(pulumi.CustomResource):
                * returned: default
                * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
                * type: complex
-        :param pulumi.Input[str] ocid: The user's OCID.
+        :param pulumi.Input[str] ocid: Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
                
                **SCIM++ Properties:**
                * caseExact: true
@@ -1350,9 +1350,9 @@ class DomainsApiKey(pulumi.CustomResource):
                * multiValued: false
                * mutability: immutable
                * required: false
-               * returned: always
+               * returned: default
                * type: string
-               * uniqueness: none
+               * uniqueness: global
         :param pulumi.Input[str] resource_type_schema_version: An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas: REQUIRED. The schemas attribute is an array of Strings which allows introspection of the supported schema version for a SCIM representation as well any schema extensions supported by that representation. Each String value must be a unique URI. This specification defines URIs for User, Group, and a standard \\"enterprise\\" extension. All representations of SCIM schema MUST include a non-zero value array with value(s) of the URIs supported by that representation. Duplicate values MUST NOT be included. Value order is not specified and MUST not impact behavior.
                
@@ -1620,17 +1620,17 @@ class DomainsApiKey(pulumi.CustomResource):
     @pulumi.getter
     def key(self) -> pulumi.Output[str]:
         """
-        Key or name of the tag.
+        Key
+
+        **Added In:** 2010242156
 
         **SCIM++ Properties:**
-        * caseExact: false
-        * idcsSearchable: true
-        * multiValued: false
-        * mutability: readWrite
+        * caseExact: true
+        * idcsPii: true
+        * type: string
+        * mutability: immutable
         * required: true
         * returned: default
-        * type: string
-        * uniqueness: none
         """
         return pulumi.get(self, "key")
 
@@ -1656,7 +1656,7 @@ class DomainsApiKey(pulumi.CustomResource):
     @pulumi.getter
     def ocid(self) -> pulumi.Output[str]:
         """
-        The user's OCID.
+        Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 
         **SCIM++ Properties:**
         * caseExact: true
@@ -1664,9 +1664,9 @@ class DomainsApiKey(pulumi.CustomResource):
         * multiValued: false
         * mutability: immutable
         * required: false
-        * returned: always
+        * returned: default
         * type: string
-        * uniqueness: none
+        * uniqueness: global
         """
         return pulumi.get(self, "ocid")
 

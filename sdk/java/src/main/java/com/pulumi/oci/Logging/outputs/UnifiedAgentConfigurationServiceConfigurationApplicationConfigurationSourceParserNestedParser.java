@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser {
     /**
-     * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     private @Nullable String fieldTimeKey;
     /**
-     * @return (Updatable) If true, keep the time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     private @Nullable Boolean isKeepTimeKey;
@@ -45,14 +45,14 @@ public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfi
 
     private UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSourceParserNestedParser() {}
     /**
-     * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * @return Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     public Optional<String> fieldTimeKey() {
         return Optional.ofNullable(this.fieldTimeKey);
     }
     /**
-     * @return (Updatable) If true, keep the time field in the record.
+     * @return If true, keep the time field in the record.
      * 
      */
     public Optional<Boolean> isKeepTimeKey() {

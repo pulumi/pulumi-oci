@@ -95,7 +95,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
      */
     private @Nullable String replaceWith;
     /**
-     * @return The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+     * @return (Updatable) The name of the schema that contains the substitution column.
      * 
      */
     private @Nullable String schemaName;
@@ -251,7 +251,7 @@ public final class MaskingPoliciesMaskingColumnMaskingFormatFormatEntry {
         return Optional.ofNullable(this.replaceWith);
     }
     /**
-     * @return The name of the schema that contains the database column. This attribute cannot be updated for an existing masking column.
+     * @return (Updatable) The name of the schema that contains the substitution column.
      * 
      */
     public Optional<String> schemaName() {

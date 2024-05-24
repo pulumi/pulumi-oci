@@ -14,17 +14,17 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsApprovalWorkflowApprovalWorkflowStep {
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The unique Oracle Cloud Infrastructure identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
@@ -44,10 +44,9 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
      */
     private @Nullable Integer order;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) ApprovalWorkflowSteps URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -59,14 +58,14 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) The type of resource, User or App, that modified this Resource
+     * @return (Updatable) The type of the ApprovalWorkflowSteps.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -74,10 +73,10 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
      */
     private String type;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The unique identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -91,17 +90,17 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
 
     private DomainsApprovalWorkflowApprovalWorkflowStep() {}
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The unique Oracle Cloud Infrastructure identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
@@ -125,10 +124,9 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
         return Optional.ofNullable(this.order);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) ApprovalWorkflowSteps URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -142,14 +140,14 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The type of resource, User or App, that modified this Resource
+     * @return (Updatable) The type of the ApprovalWorkflowSteps.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -159,10 +157,10 @@ public final class DomainsApprovalWorkflowApprovalWorkflowStep {
         return this.type;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The unique identifier of the ApprovalWorkflowStep.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite

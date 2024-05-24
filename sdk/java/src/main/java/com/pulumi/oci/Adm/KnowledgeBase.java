@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testKnowledgeBase = new KnowledgeBase("testKnowledgeBase", KnowledgeBaseArgs.builder()        
+ *         var testKnowledgeBase = new KnowledgeBase("testKnowledgeBase", KnowledgeBaseArgs.builder()
  *             .compartmentId(compartmentId)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .displayName(knowledgeBaseDisplayName)

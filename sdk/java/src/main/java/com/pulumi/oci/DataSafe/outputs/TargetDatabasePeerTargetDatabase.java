@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetDatabasePeerTargetDatabase {
     /**
-     * @return Details of the database for the registration in Data Safe.
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     private @Nullable List<TargetDatabasePeerTargetDatabaseDatabaseDetail> databaseDetails;
@@ -26,17 +26,17 @@ public final class TargetDatabasePeerTargetDatabase {
      */
     private @Nullable String databaseUniqueName;
     /**
-     * @return The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+     * @return The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
      * 
      */
     private @Nullable String dataguardAssociationId;
     /**
-     * @return The description of the peer target database in Data Safe.
+     * @return (Updatable) The description of the target database in Data Safe.
      * 
      */
     private @Nullable String description;
     /**
-     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -73,7 +73,7 @@ public final class TargetDatabasePeerTargetDatabase {
 
     private TargetDatabasePeerTargetDatabase() {}
     /**
-     * @return Details of the database for the registration in Data Safe.
+     * @return (Updatable) Details of the database for the registration in Data Safe.
      * 
      */
     public List<TargetDatabasePeerTargetDatabaseDatabaseDetail> databaseDetails() {
@@ -87,21 +87,21 @@ public final class TargetDatabasePeerTargetDatabase {
         return Optional.ofNullable(this.databaseUniqueName);
     }
     /**
-     * @return The OCID of the Data Guard Association resource in which the database being registered is considered as peer database to the primary database.
+     * @return The OCID of the Data Guard Association resource in which the database associated to the peer target database is considered as peer database to the primary database.
      * 
      */
     public Optional<String> dataguardAssociationId() {
         return Optional.ofNullable(this.dataguardAssociationId);
     }
     /**
-     * @return The description of the peer target database in Data Safe.
+     * @return (Updatable) The description of the target database in Data Safe.
      * 
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * @return (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      * 
      */
     public Optional<String> displayName() {

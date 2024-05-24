@@ -12,84 +12,74 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetTestSpecSourceDetail {
     /**
-     * @return (Updatable) The OCID of the boot volume used to boot the instance.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     private @Nullable String bootVolumeId;
     /**
-     * @return (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+     * @return The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
      * 
      */
     private @Nullable String bootVolumeSizeInGbs;
     /**
-     * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-     * 
-     * Allowed values:
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
     private @Nullable String bootVolumeVpusPerGb;
     /**
-     * @return (Updatable) The OCID of the image used to boot the instance.
+     * @return The OCID of the image used to boot the instance.
      * 
      */
     private @Nullable String imageId;
     /**
-     * @return (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the key management key to assign as the master encryption key for the boot volume.
      * 
      */
     private @Nullable String kmsKeyId;
     /**
-     * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     private @Nullable String sourceType;
 
     private TargetAssetTestSpecSourceDetail() {}
     /**
-     * @return (Updatable) The OCID of the boot volume used to boot the instance.
+     * @return The OCID of the boot volume used to boot the instance.
      * 
      */
     public Optional<String> bootVolumeId() {
         return Optional.ofNullable(this.bootVolumeId);
     }
     /**
-     * @return (Updatable) The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
+     * @return The size of the boot volume in GBs. The minimum value is 50 GB and the maximum value is 32,768 GB (32 TB).
      * 
      */
     public Optional<String> bootVolumeSizeInGbs() {
         return Optional.ofNullable(this.bootVolumeSizeInGbs);
     }
     /**
-     * @return (Updatable) The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
-     * 
-     * Allowed values:
+     * @return The number of volume performance units (VPUs) that will be applied to this volume per GB that represents the Block Volume service&#39;s elastic performance options. See [Block Volume Performance Levels](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/blockvolumeperformance.htm#perf_levels) for more information.
      * 
      */
     public Optional<String> bootVolumeVpusPerGb() {
         return Optional.ofNullable(this.bootVolumeVpusPerGb);
     }
     /**
-     * @return (Updatable) The OCID of the image used to boot the instance.
+     * @return The OCID of the image used to boot the instance.
      * 
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
-     * @return (Updatable) The OCID of the key management key to assign as the master encryption key for the boot volume.
+     * @return The OCID of the key management key to assign as the master encryption key for the boot volume.
      * 
      */
     public Optional<String> kmsKeyId() {
         return Optional.ofNullable(this.kmsKeyId);
     }
     /**
-     * @return (Updatable) The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The source type for the instance. Use `image` when specifying the image OCID. Use `bootVolume` when specifying the boot volume OCID.
      * 
      */
     public Optional<String> sourceType() {

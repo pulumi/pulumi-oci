@@ -50,11 +50,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string? Query;
         /// <summary>
-        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
         /// </summary>
         public readonly string? RuleName;
         /// <summary>
-        /// (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        /// (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
         /// </summary>
         public readonly string? Severity;
 

@@ -133,12 +133,9 @@ func (o DatabaseToolsConnectionKeyStoreArrayOutput) Index(i pulumi.IntInput) Dat
 }
 
 type DatabaseToolsConnectionKeyStoreKeyStoreContent struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
 	SecretId *string `pulumi:"secretId"`
-	// (Updatable) The value type of the user password.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The value type of the key store content.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -154,12 +151,9 @@ type DatabaseToolsConnectionKeyStoreKeyStoreContentInput interface {
 }
 
 type DatabaseToolsConnectionKeyStoreKeyStoreContentArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
-	// (Updatable) The value type of the user password.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The value type of the key store content.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -240,15 +234,12 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ToDatabaseToolsCon
 	}).(DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionKeyStoreKeyStoreContent) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The value type of the user password.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The value type of the key store content.
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionKeyStoreKeyStoreContent) string { return v.ValueType }).(pulumi.StringOutput)
 }
@@ -277,7 +268,7 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) Elem() Database
 	}).(DatabaseToolsConnectionKeyStoreKeyStoreContentOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionKeyStoreKeyStoreContent) *string {
 		if v == nil {
@@ -287,10 +278,7 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) SecretId() pulu
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The value type of the user password.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The value type of the key store content.
 func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionKeyStoreKeyStoreContent) *string {
 		if v == nil {
@@ -301,12 +289,9 @@ func (o DatabaseToolsConnectionKeyStoreKeyStoreContentPtrOutput) ValueType() pul
 }
 
 type DatabaseToolsConnectionKeyStoreKeyStorePassword struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
 	SecretId *string `pulumi:"secretId"`
-	// (Updatable) The value type of the user password.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The value type of the key store password.
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -322,12 +307,9 @@ type DatabaseToolsConnectionKeyStoreKeyStorePasswordInput interface {
 }
 
 type DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
 	SecretId pulumi.StringPtrInput `pulumi:"secretId"`
-	// (Updatable) The value type of the user password.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// (Updatable) The value type of the key store password.
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -408,15 +390,12 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ToDatabaseToolsCo
 	}).(DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionKeyStoreKeyStorePassword) *string { return v.SecretId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The value type of the user password.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The value type of the key store password.
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionKeyStoreKeyStorePassword) string { return v.ValueType }).(pulumi.StringOutput)
 }
@@ -445,7 +424,7 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) Elem() Databas
 	}).(DatabaseToolsConnectionKeyStoreKeyStorePasswordOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) SecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionKeyStoreKeyStorePassword) *string {
 		if v == nil {
@@ -455,10 +434,7 @@ func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) SecretId() pul
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The value type of the user password.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// (Updatable) The value type of the key store password.
 func (o DatabaseToolsConnectionKeyStoreKeyStorePasswordPtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionKeyStoreKeyStorePassword) *string {
 		if v == nil {
@@ -475,7 +451,7 @@ type DatabaseToolsConnectionLock struct {
 	RelatedResourceId *string `pulumi:"relatedResourceId"`
 	// When the lock was created.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// (Updatable) The DatabaseToolsConnection type.
+	// Type of the lock.
 	Type string `pulumi:"type"`
 }
 
@@ -497,7 +473,7 @@ type DatabaseToolsConnectionLockArgs struct {
 	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
 	// When the lock was created.
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
-	// (Updatable) The DatabaseToolsConnection type.
+	// Type of the lock.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -567,7 +543,7 @@ func (o DatabaseToolsConnectionLockOutput) TimeCreated() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v DatabaseToolsConnectionLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The DatabaseToolsConnection type.
+// Type of the lock.
 func (o DatabaseToolsConnectionLockOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionLock) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -597,7 +573,7 @@ type DatabaseToolsConnectionProxyClient struct {
 	ProxyAuthenticationType string `pulumi:"proxyAuthenticationType"`
 	// (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
 	Roles []string `pulumi:"roles"`
-	// (Updatable) The database user name.
+	// (Updatable) The user name.
 	UserName *string `pulumi:"userName"`
 	// (Updatable) The user password.
 	UserPassword *DatabaseToolsConnectionProxyClientUserPassword `pulumi:"userPassword"`
@@ -619,7 +595,7 @@ type DatabaseToolsConnectionProxyClientArgs struct {
 	ProxyAuthenticationType pulumi.StringInput `pulumi:"proxyAuthenticationType"`
 	// (Updatable) A list of database roles for the client. These roles are enabled if the proxy is authorized to use the roles on behalf of the client.
 	Roles pulumi.StringArrayInput `pulumi:"roles"`
-	// (Updatable) The database user name.
+	// (Updatable) The user name.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
 	// (Updatable) The user password.
 	UserPassword DatabaseToolsConnectionProxyClientUserPasswordPtrInput `pulumi:"userPassword"`
@@ -712,7 +688,7 @@ func (o DatabaseToolsConnectionProxyClientOutput) Roles() pulumi.StringArrayOutp
 	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) []string { return v.Roles }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The database user name.
+// (Updatable) The user name.
 func (o DatabaseToolsConnectionProxyClientOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionProxyClient) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
@@ -768,7 +744,7 @@ func (o DatabaseToolsConnectionProxyClientPtrOutput) Roles() pulumi.StringArrayO
 	}).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The database user name.
+// (Updatable) The user name.
 func (o DatabaseToolsConnectionProxyClientPtrOutput) UserName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClient) *string {
 		if v == nil {
@@ -792,9 +768,6 @@ type DatabaseToolsConnectionProxyClientUserPassword struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId string `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType string `pulumi:"valueType"`
 }
 
@@ -813,9 +786,6 @@ type DatabaseToolsConnectionProxyClientUserPasswordArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
 	SecretId pulumi.StringInput `pulumi:"secretId"`
 	// (Updatable) The value type of the user password.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	ValueType pulumi.StringInput `pulumi:"valueType"`
 }
 
@@ -902,9 +872,6 @@ func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) SecretId() pulumi.
 }
 
 // (Updatable) The value type of the user password.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionProxyClientUserPasswordOutput) ValueType() pulumi.StringOutput {
 	return o.ApplyT(func(v DatabaseToolsConnectionProxyClientUserPassword) string { return v.ValueType }).(pulumi.StringOutput)
 }
@@ -944,9 +911,6 @@ func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) SecretId() pulu
 }
 
 // (Updatable) The value type of the user password.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DatabaseToolsConnectionProxyClientUserPasswordPtrOutput) ValueType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseToolsConnectionProxyClientUserPassword) *string {
 		if v == nil {

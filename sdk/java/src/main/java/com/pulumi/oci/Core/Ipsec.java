@@ -74,7 +74,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testIpSecConnection = new Ipsec("testIpSecConnection", IpsecArgs.builder()        
+ *         var testIpSecConnection = new Ipsec("testIpSecConnection", IpsecArgs.builder()
  *             .compartmentId(compartmentId)
  *             .cpeId(testCpe.id())
  *             .drgId(testDrg.id())

@@ -20,14 +20,14 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
     public static final NodePoolNodeArgs Empty = new NodePoolNodeArgs();
 
     /**
-     * (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+     * The name of the availability domain in which this node is placed.
      * 
      */
     @Import(name="availabilityDomain")
     private @Nullable Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+     * @return The name of the availability domain in which this node is placed.
      * 
      */
     public Optional<Output<String>> availabilityDomain() {
@@ -215,14 +215,14 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The OCID of the subnet in which to place nodes.
+     * The OCID of the subnet in which this node is placed.
      * 
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
-     * @return (Updatable) The OCID of the subnet in which to place nodes.
+     * @return The OCID of the subnet in which this node is placed.
      * 
      */
     public Optional<Output<String>> subnetId() {
@@ -267,7 +267,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The name of the availability domain in which this node is placed.
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param availabilityDomain (Updatable) The availability domain in which to place nodes. Example: `Uocm:PHX-AD-1`
+         * @param availabilityDomain The name of the availability domain in which this node is placed.
          * 
          * @return builder
          * 
@@ -550,7 +550,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId (Updatable) The OCID of the subnet in which to place nodes.
+         * @param subnetId The OCID of the subnet in which this node is placed.
          * 
          * @return builder
          * 
@@ -561,7 +561,7 @@ public final class NodePoolNodeArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId (Updatable) The OCID of the subnet in which to place nodes.
+         * @param subnetId The OCID of the subnet in which this node is placed.
          * 
          * @return builder
          * 

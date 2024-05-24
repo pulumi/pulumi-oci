@@ -19,7 +19,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// Object Storage namespace.
+        /// Object Storage namespace name.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

@@ -24,7 +24,7 @@ public final class DeployStageFailurePolicy {
      */
     private @Nullable Integer failurePercentage;
     /**
-     * @return (Updatable) The type of policy used for rolling out a deployment stage.
+     * @return (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
      * 
      */
     private String policyType;
@@ -45,7 +45,7 @@ public final class DeployStageFailurePolicy {
         return Optional.ofNullable(this.failurePercentage);
     }
     /**
-     * @return (Updatable) The type of policy used for rolling out a deployment stage.
+     * @return (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
      * 
      */
     public String policyType() {

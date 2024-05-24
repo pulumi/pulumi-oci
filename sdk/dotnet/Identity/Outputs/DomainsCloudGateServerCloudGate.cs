@@ -14,10 +14,10 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsCloudGateServerCloudGate
     {
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) The URI of the owning Cloud Gate for this server block.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -28,10 +28,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The id of the owning Cloud Gate.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

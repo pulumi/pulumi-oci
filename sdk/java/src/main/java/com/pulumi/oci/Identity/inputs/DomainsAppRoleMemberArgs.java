@@ -122,15 +122,16 @@ public final class DomainsAppRoleMemberArgs extends com.pulumi.resources.Resourc
     }
 
     /**
-     * Value of the tag.
+     * ID of the member of this AppRole
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -139,15 +140,16 @@ public final class DomainsAppRoleMemberArgs extends com.pulumi.resources.Resourc
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return ID of the member of this AppRole
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
+     * * idcsCsvAttributeName: Member
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -307,15 +309,16 @@ public final class DomainsAppRoleMemberArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value ID of the member of this AppRole
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: Member
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -328,15 +331,16 @@ public final class DomainsAppRoleMemberArgs extends com.pulumi.resources.Resourc
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value ID of the member of this AppRole
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
+         * * idcsCsvAttributeName: Member
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

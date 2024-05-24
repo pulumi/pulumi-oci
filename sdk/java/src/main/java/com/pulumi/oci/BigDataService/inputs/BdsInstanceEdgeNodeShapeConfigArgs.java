@@ -16,14 +16,14 @@ public final class BdsInstanceEdgeNodeShapeConfigArgs extends com.pulumi.resourc
     public static final BdsInstanceEdgeNodeShapeConfigArgs Empty = new BdsInstanceEdgeNodeShapeConfigArgs();
 
     /**
-     * The total amount of memory available to the node, in gigabytes
+     * The total amount of memory available to the node, in gigabytes.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Integer> memoryInGbs;
 
     /**
-     * @return The total amount of memory available to the node, in gigabytes
+     * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
     public Optional<Output<Integer>> memoryInGbs() {
@@ -87,7 +87,7 @@ public final class BdsInstanceEdgeNodeShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class BdsInstanceEdgeNodeShapeConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param memoryInGbs The total amount of memory available to the node, in gigabytes
+         * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
          * 

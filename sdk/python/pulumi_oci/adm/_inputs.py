@@ -173,9 +173,9 @@ class RemediationRecipeScmConfigurationArgs:
         :param pulumi.Input[str] build_file_location: (Updatable) The location of the build file relative to the root of the repository. Only Maven build files (POM) are currently supported. If this property is not specified, ADM will use the build file located at the root of the repository.
         :param pulumi.Input[str] external_scm_type: (Updatable) The type of External Source Code Management.
         :param pulumi.Input[str] oci_code_repository_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Oracle Cloud Infrastructure DevOps repository.
-        :param pulumi.Input[str] pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
-        :param pulumi.Input[str] repository_url: (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
-        :param pulumi.Input[str] username: (Updatable) The username that will be used to authenticate with Jenkins.
+        :param pulumi.Input[str] pat_secret_id: (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
+        :param pulumi.Input[str] repository_url: (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
+        :param pulumi.Input[str] username: (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
         """
         pulumi.set(__self__, "branch", branch)
         pulumi.set(__self__, "is_automerge_enabled", is_automerge_enabled)
@@ -269,7 +269,7 @@ class RemediationRecipeScmConfigurationArgs:
     @pulumi.getter(name="patSecretId")
     def pat_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The PAT provides the credentials to access the Jenkins Pipeline.
+        (Updatable) The Oracle Cloud Identifier ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)) of the Private Access Token (PAT) Secret. The secret provides the credentials necessary to authenticate against the SCM.
         """
         return pulumi.get(self, "pat_secret_id")
 
@@ -281,7 +281,7 @@ class RemediationRecipeScmConfigurationArgs:
     @pulumi.getter(name="repositoryUrl")
     def repository_url(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The location of the repository where the GitHub Actions is defined. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName]
+        (Updatable) The repository URL for the SCM. For Non-Enterprise GitHub the expected format is https://github.com/[owner]/[repoName] For Enterprise GitHub the expected format is http(s)://[hostname]/api/v3/repos/[owner]/[repoName] For GitLab the expected format is https://gitlab.com/[groupName]/[repoName]
         """
         return pulumi.get(self, "repository_url")
 
@@ -293,7 +293,7 @@ class RemediationRecipeScmConfigurationArgs:
     @pulumi.getter
     def username(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The username that will be used to authenticate with Jenkins.
+        (Updatable) The username for the SCM (to perform operations such as cloning or pushing via HTTP).
         """
         return pulumi.get(self, "username")
 

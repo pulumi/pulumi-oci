@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testNamedCredential = new NamedCredential("testNamedCredential", NamedCredentialArgs.builder()        
+ *         var testNamedCredential = new NamedCredential("testNamedCredential", NamedCredentialArgs.builder()
  *             .compartmentId(compartmentId)
  *             .content(NamedCredentialContentArgs.builder()
  *                 .credentialType(namedCredentialContentCredentialType)

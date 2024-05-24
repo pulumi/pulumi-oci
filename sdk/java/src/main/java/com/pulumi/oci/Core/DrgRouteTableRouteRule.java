@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRouteTableRouteRule = new DrgRouteTableRouteRule("testDrgRouteTableRouteRule", DrgRouteTableRouteRuleArgs.builder()        
+ *         var testDrgRouteTableRouteRule = new DrgRouteTableRouteRule("testDrgRouteTableRouteRule", DrgRouteTableRouteRuleArgs.builder()
  *             .drgRouteTableId(testDrgRouteTable.id())
  *             .destination(drgRouteTableRouteRuleRouteRulesDestination)
  *             .destinationType(drgRouteTableRouteRuleRouteRulesDestinationType)
@@ -106,6 +106,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
     }
     /**
      * Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
      * 
      */
     @Export(name="destinationType", refs={String.class}, tree="[0]")
@@ -113,6 +114,7 @@ public class DrgRouteTableRouteRule extends com.pulumi.resources.CustomResource 
 
     /**
      * @return Type of destination for the rule. Required if `direction` = `EGRESS`. Allowed values:
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
      * 
      */
     public Output<String> destinationType() {

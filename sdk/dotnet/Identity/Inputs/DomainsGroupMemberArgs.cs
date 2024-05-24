@@ -29,12 +29,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? DateAdded { get; set; }
 
         /// <summary>
-        /// (Updatable) App Display Name
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The member's display name.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -64,12 +63,11 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? MembershipOcid { get; set; }
 
         /// <summary>
-        /// (Updatable) PasswordPolicy Name
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The member's name.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -81,27 +79,28 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the member of this group.
+        /// 
+        /// **Added In:** 2012271618
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
-        /// * returned: default
+        /// * returned: always
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) App URI
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The URI that corresponds to the member Resource of this group.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -114,15 +113,14 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the entity that created this Group.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Indicates the type of resource, for example, User or Group.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsDefaultValue: App
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
+        /// * idcsDefaultValue: User
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
@@ -132,17 +130,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The ID of the App.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) The ID of the member of this Group
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

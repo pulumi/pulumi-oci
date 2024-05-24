@@ -25,17 +25,13 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<bool>? IsDefault { get; set; }
 
         /// <summary>
-        /// (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) Name assigned to the branch.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Information regarding type of the selection key.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;
@@ -44,7 +40,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+        /// (Updatable) Information regarding the set of values of selector for which this branch should be selected.
         /// </summary>
         public InputList<string> Values
         {

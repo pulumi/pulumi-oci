@@ -74,7 +74,7 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -115,7 +115,7 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * When the lock was created.
+     * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -182,7 +182,7 @@ export class MediaWorkflowConfiguration extends pulumi.CustomResource {
  */
 export interface MediaWorkflowConfigurationState {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -223,7 +223,7 @@ export interface MediaWorkflowConfigurationState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * When the lock was created.
+     * The time when the the MediaWorkflowConfiguration was created. An RFC3339 formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -237,7 +237,7 @@ export interface MediaWorkflowConfigurationState {
  */
 export interface MediaWorkflowConfigurationArgs {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     compartmentId: pulumi.Input<string>;
     /**

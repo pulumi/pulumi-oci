@@ -143,38 +143,38 @@ public final class DomainsCloudGateArgs extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * (Updatable) Display name of upstream server
+     * (Updatable) Display name/Host identifier for this Cloud Gate
      * 
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of upstream server
+     * @return (Updatable) Display name/Host identifier for this Cloud Gate
      * 
-     * **Added In:** 20.1.3
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: server
      * 
      */
     public Output<String> displayName() {
@@ -590,19 +590,19 @@ public final class DomainsCloudGateArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName (Updatable) Display name of upstream server
+         * @param displayName (Updatable) Display name/Host identifier for this Cloud Gate
          * 
-         * **Added In:** 20.1.3
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: server
          * 
          * @return builder
          * 
@@ -613,19 +613,19 @@ public final class DomainsCloudGateArgs extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param displayName (Updatable) Display name of upstream server
+         * @param displayName (Updatable) Display name/Host identifier for this Cloud Gate
          * 
-         * **Added In:** 20.1.3
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: default
+         * * mutability: readWrite
+         * * required: true
+         * * returned: always
          * * type: string
-         * * uniqueness: none
+         * * uniqueness: server
          * 
          * @return builder
          * 

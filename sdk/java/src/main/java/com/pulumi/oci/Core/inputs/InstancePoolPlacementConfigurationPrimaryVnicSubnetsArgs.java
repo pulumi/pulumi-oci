@@ -51,6 +51,8 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs exte
 
     /**
      * (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+     * ===
+     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     @Import(name="subnetId", required=true)
@@ -58,6 +60,8 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs exte
 
     /**
      * @return (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+     * ===
+     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     public Output<String> subnetId() {
@@ -144,6 +148,8 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs exte
 
         /**
          * @param subnetId (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         * ===
+         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          * 
          * @return builder
          * 
@@ -155,6 +161,8 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs exte
 
         /**
          * @param subnetId (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
+         * ===
+         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          * 
          * @return builder
          * 

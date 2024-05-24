@@ -25,7 +25,7 @@ namespace Pulumi.Oci.CloudBridge.Inputs
         public Input<string>? Location { get; set; }
 
         /// <summary>
-        /// (Updatable) The tag name.
+        /// (Updatable) Disk name.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

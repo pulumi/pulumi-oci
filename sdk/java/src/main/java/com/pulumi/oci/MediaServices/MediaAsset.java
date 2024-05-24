@@ -51,14 +51,14 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
         return this.bucket;
     }
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -169,14 +169,14 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
         return this.mediaWorkflowJobId;
     }
     /**
-     * (Updatable) JSON string containing the technial metadata for the media asset.
+     * (Updatable) List of Metadata.
      * 
      */
     @Export(name="metadatas", refs={List.class,MediaAssetMetadata.class}, tree="[0,1]")
     private Output<List<MediaAssetMetadata>> metadatas;
 
     /**
-     * @return (Updatable) JSON string containing the technial metadata for the media asset.
+     * @return (Updatable) List of Metadata.
      * 
      */
     public Output<List<MediaAssetMetadata>> metadatas() {
@@ -323,14 +323,14 @@ public class MediaAsset extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * When the lock was created.
+     * The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the MediaAsset was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

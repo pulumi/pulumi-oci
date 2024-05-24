@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsPolicyPolicyType {
     /**
-     * @return (Updatable) Rule URI
+     * @return (Updatable) PolicyType URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,13 +27,13 @@ public final class DomainsPolicyPolicyType {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) PolicyType identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -44,7 +44,7 @@ public final class DomainsPolicyPolicyType {
 
     private DomainsPolicyPolicyType() {}
     /**
-     * @return (Updatable) Rule URI
+     * @return (Updatable) PolicyType URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -60,13 +60,13 @@ public final class DomainsPolicyPolicyType {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) PolicyType identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

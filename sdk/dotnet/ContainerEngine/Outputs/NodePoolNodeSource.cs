@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
     public sealed class NodePoolNodeSource
     {
         /// <summary>
-        /// (Updatable) The OCID of the image used to boot the node.
+        /// The OCID of the image used to boot the node.
         /// </summary>
         public readonly string? ImageId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.ContainerEngine.Outputs
         /// </summary>
         public readonly string? SourceName;
         /// <summary>
-        /// (Updatable) The source type for the node. Use `IMAGE` when specifying an OCID of an image.
+        /// The source type for the node. Use `IMAGE` when specifying an OCID of an image.
         /// </summary>
         public readonly string? SourceType;
 

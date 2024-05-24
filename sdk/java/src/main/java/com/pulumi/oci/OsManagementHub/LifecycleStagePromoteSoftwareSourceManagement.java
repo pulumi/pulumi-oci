@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLifecycleStagePromoteSoftwareSourceManagement = new LifecycleStagePromoteSoftwareSourceManagement("testLifecycleStagePromoteSoftwareSourceManagement", LifecycleStagePromoteSoftwareSourceManagementArgs.builder()        
+ *         var testLifecycleStagePromoteSoftwareSourceManagement = new LifecycleStagePromoteSoftwareSourceManagement("testLifecycleStagePromoteSoftwareSourceManagement", LifecycleStagePromoteSoftwareSourceManagementArgs.builder()
  *             .lifecycleStageId(testLifecycleStage.id())
  *             .softwareSourceId(testSoftwareSource.id())
  *             .workRequestDetails(LifecycleStagePromoteSoftwareSourceManagementWorkRequestDetailsArgs.builder()

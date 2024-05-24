@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class MonitoredResourceAdditionalAliasCredential {
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
      * 
      */
     private String name;
@@ -21,14 +21,14 @@ public final class MonitoredResourceAdditionalAliasCredential {
      */
     private String service;
     /**
-     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     private String source;
 
     private MonitoredResourceAdditionalAliasCredential() {}
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
      * 
      */
     public String name() {
@@ -42,7 +42,7 @@ public final class MonitoredResourceAdditionalAliasCredential {
         return this.service;
     }
     /**
-     * @return (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+     * @return (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
      * 
      */
     public String source() {

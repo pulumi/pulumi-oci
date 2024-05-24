@@ -112,6 +112,10 @@ def get_autonomous_database_wallet(autonomous_database_id: Optional[str] = None,
     :param str generate_type: The type of wallet to generate.
            
            **Serverless instance usage:**
+           * `SINGLE` - used to generate a wallet for a single database
+           * `ALL` - used to generate wallet for all databases in the region
+           
+           **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
     :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
     """
     __args__ = dict()
@@ -149,6 +153,10 @@ def get_autonomous_database_wallet_output(autonomous_database_id: Optional[pulum
     :param str generate_type: The type of wallet to generate.
            
            **Serverless instance usage:**
+           * `SINGLE` - used to generate a wallet for a single database
+           * `ALL` - used to generate wallet for all databases in the region
+           
+           **Dedicated Exadata infrastructure usage:** Value must be `NULL` if attribute is used.
     :param str password: The password to encrypt the keys inside the wallet. The password must be at least 8 characters long and must include at least 1 letter and either 1 numeric character or 1 special character.
     """
     ...

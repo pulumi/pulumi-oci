@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRuleSet = new RuleSet("testRuleSet", RuleSetArgs.builder()        
+ *         var testRuleSet = new RuleSet("testRuleSet", RuleSetArgs.builder()
  *             .items(RuleSetItemArgs.builder()
  *                 .action(ruleSetItemsAction)
  *                 .allowedMethods(ruleSetItemsAllowedMethods)

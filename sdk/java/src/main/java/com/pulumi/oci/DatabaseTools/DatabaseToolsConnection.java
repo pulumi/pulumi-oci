@@ -248,14 +248,14 @@ public class DatabaseToolsConnection extends com.pulumi.resources.CustomResource
         return this.systemTags;
     }
     /**
-     * When the lock was created.
+     * The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time the Database Tools connection was created. An RFC3339 formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

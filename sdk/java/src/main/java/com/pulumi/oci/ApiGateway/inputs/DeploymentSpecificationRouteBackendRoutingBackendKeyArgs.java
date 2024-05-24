@@ -49,14 +49,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
     }
 
     /**
-     * (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * (Updatable) Name assigned to the branch.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+     * @return (Updatable) Name assigned to the branch.
      * 
      */
     public Output<String> name() {
@@ -64,20 +64,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Information regarding type of the selection key.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Information regarding type of the selection key.
      * 
      */
     public Output<String> type() {
@@ -85,14 +79,14 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
     }
 
     /**
-     * (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * (Updatable) Information regarding the set of values of selector for which this branch should be selected.
      * 
      */
     @Import(name="values")
     private @Nullable Output<List<String>> values;
 
     /**
-     * @return (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+     * @return (Updatable) Information regarding the set of values of selector for which this branch should be selected.
      * 
      */
     public Optional<Output<List<String>>> values() {
@@ -170,7 +164,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Name assigned to the branch.
          * 
          * @return builder
          * 
@@ -181,7 +175,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param name (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+         * @param name (Updatable) Name assigned to the branch.
          * 
          * @return builder
          * 
@@ -191,10 +185,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Information regarding type of the selection key.
          * 
          * @return builder
          * 
@@ -205,10 +196,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) Information regarding type of the selection key.
          * 
          * @return builder
          * 
@@ -218,7 +206,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) Information regarding the set of values of selector for which this branch should be selected.
          * 
          * @return builder
          * 
@@ -229,7 +217,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) Information regarding the set of values of selector for which this branch should be selected.
          * 
          * @return builder
          * 
@@ -239,7 +227,7 @@ public final class DeploymentSpecificationRouteBackendRoutingBackendKeyArgs exte
         }
 
         /**
-         * @param values (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+         * @param values (Updatable) Information regarding the set of values of selector for which this branch should be selected.
          * 
          * @return builder
          * 

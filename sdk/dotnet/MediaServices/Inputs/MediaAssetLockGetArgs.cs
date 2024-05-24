@@ -37,11 +37,7 @@ namespace Pulumi.Oci.MediaServices.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the media asset.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Type of the lock.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

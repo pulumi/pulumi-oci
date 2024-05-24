@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentDeployStageOverrideArguments {
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return List of stage override arguments at the time of deployment.
      * 
      */
     private @Nullable List<DeploymentDeployStageOverrideArgumentsItem> items;
 
     private DeploymentDeployStageOverrideArguments() {}
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return List of stage override arguments at the time of deployment.
      * 
      */
     public List<DeploymentDeployStageOverrideArgumentsItem> items() {

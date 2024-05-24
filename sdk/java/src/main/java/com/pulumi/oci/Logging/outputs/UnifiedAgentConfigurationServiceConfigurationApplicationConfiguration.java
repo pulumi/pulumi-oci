@@ -17,62 +17,62 @@ import javax.annotation.Nullable;
 @CustomType
 public final class UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration {
     /**
-     * @return (Updatable) Unified monitoring agent operational metrics destination object.
+     * @return (Updatable) Kubernetes destination object.
      * 
      */
     private UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination destination;
     /**
-     * @return (Updatable) Unified monitoring agent operational metrics source object.
+     * @return (Updatable) Kubernetes source object.
      * 
      */
     private @Nullable UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource source;
     /**
-     * @return (Updatable) Unified schema logging source type.
+     * @return (Updatable) Type of source of metrics
      * 
      */
     private String sourceType;
     /**
-     * @return (Updatable) Logging source object.
+     * @return (Updatable) Tail log source objects.
      * 
      */
     private @Nullable List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource> sources;
     /**
-     * @return (Updatable) Logging filter object.
+     * @return (Updatable) Kubernetes filter object
      * 
      */
     private @Nullable UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter unifiedAgentConfigurationFilter;
 
     private UnifiedAgentConfigurationServiceConfigurationApplicationConfiguration() {}
     /**
-     * @return (Updatable) Unified monitoring agent operational metrics destination object.
+     * @return (Updatable) Kubernetes destination object.
      * 
      */
     public UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationDestination destination() {
         return this.destination;
     }
     /**
-     * @return (Updatable) Unified monitoring agent operational metrics source object.
+     * @return (Updatable) Kubernetes source object.
      * 
      */
     public Optional<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource> source() {
         return Optional.ofNullable(this.source);
     }
     /**
-     * @return (Updatable) Unified schema logging source type.
+     * @return (Updatable) Type of source of metrics
      * 
      */
     public String sourceType() {
         return this.sourceType;
     }
     /**
-     * @return (Updatable) Logging source object.
+     * @return (Updatable) Tail log source objects.
      * 
      */
     public List<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationSource> sources() {
         return this.sources == null ? List.of() : this.sources;
     }
     /**
-     * @return (Updatable) Logging filter object.
+     * @return (Updatable) Kubernetes filter object
      * 
      */
     public Optional<UnifiedAgentConfigurationServiceConfigurationApplicationConfigurationUnifiedAgentConfigurationFilter> unifiedAgentConfigurationFilter() {

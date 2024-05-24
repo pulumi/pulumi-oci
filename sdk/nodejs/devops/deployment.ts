@@ -72,7 +72,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public readonly deployPipelineId!: pulumi.Output<string>;
     /**
-     * The OCID of the stage.
+     * Specifies the OCID of the stage to be redeployed.
      */
     public readonly deployStageId!: pulumi.Output<string>;
     /**
@@ -234,7 +234,7 @@ export interface DeploymentState {
      */
     deployPipelineId?: pulumi.Input<string>;
     /**
-     * The OCID of the stage.
+     * Specifies the OCID of the stage to be redeployed.
      */
     deployStageId?: pulumi.Input<string>;
     /**
@@ -316,7 +316,7 @@ export interface DeploymentArgs {
      */
     deployPipelineId: pulumi.Input<string>;
     /**
-     * The OCID of the stage.
+     * Specifies the OCID of the stage to be redeployed.
      */
     deployStageId?: pulumi.Input<string>;
     /**

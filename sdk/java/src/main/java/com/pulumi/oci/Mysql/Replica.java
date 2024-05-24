@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReplica = new Replica("testReplica", ReplicaArgs.builder()        
+ *         var testReplica = new Replica("testReplica", ReplicaArgs.builder()
  *             .dbSystemId(testMysqlDbSystem.id())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .description(replicaDescription)
@@ -111,14 +111,14 @@ public class Replica extends com.pulumi.resources.CustomResource {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The OCID of the Configuration to be used by the read replica.
+     * The OCID of the Configuration to be used by the read replica.
      * 
      */
     @Export(name="configurationId", refs={String.class}, tree="[0]")
     private Output<String> configurationId;
 
     /**
-     * @return (Updatable) The OCID of the Configuration to be used by the read replica.
+     * @return The OCID of the Configuration to be used by the read replica.
      * 
      */
     public Output<String> configurationId() {
@@ -251,14 +251,14 @@ public class Replica extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) The MySQL version to be used by the read replica.
+     * The MySQL version to be used by the read replica.
      * 
      */
     @Export(name="mysqlVersion", refs={String.class}, tree="[0]")
     private Output<String> mysqlVersion;
 
     /**
-     * @return (Updatable) The MySQL version to be used by the read replica.
+     * @return The MySQL version to be used by the read replica.
      * 
      */
     public Output<String> mysqlVersion() {
@@ -321,20 +321,14 @@ public class Replica extends com.pulumi.resources.CustomResource {
         return this.secureConnections;
     }
     /**
-     * (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
     @Export(name="shapeName", refs={String.class}, tree="[0]")
     private Output<String> shapeName;
 
     /**
-     * @return (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
      * 
      */
     public Output<String> shapeName() {

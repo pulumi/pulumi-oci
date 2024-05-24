@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeployStageDeployStagePredecessorCollection
     {
         /// <summary>
-        /// (Updatable) List of parameters defined to set helm value.
+        /// (Updatable) A list of stage predecessors for a stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeployStageDeployStagePredecessorCollectionItem> Items;
 

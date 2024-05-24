@@ -18,14 +18,14 @@ public final class ZoneZoneTransferServerArgs extends com.pulumi.resources.Resou
     public static final ZoneZoneTransferServerArgs Empty = new ZoneZoneTransferServerArgs();
 
     /**
-     * (Updatable) The server&#39;s IP address (IPv4 or IPv6).
+     * The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
     @Import(name="address")
     private @Nullable Output<String> address;
 
     /**
-     * @return (Updatable) The server&#39;s IP address (IPv4 or IPv6).
+     * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
     public Optional<Output<String>> address() {
@@ -63,14 +63,14 @@ public final class ZoneZoneTransferServerArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
+     * The server&#39;s port.
      * 
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
-     * @return (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
+     * @return The server&#39;s port.
      * 
      */
     public Optional<Output<Integer>> port() {
@@ -105,7 +105,7 @@ public final class ZoneZoneTransferServerArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param address (Updatable) The server&#39;s IP address (IPv4 or IPv6).
+         * @param address The server&#39;s IP address (IPv4 or IPv6).
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class ZoneZoneTransferServerArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param address (Updatable) The server&#39;s IP address (IPv4 or IPv6).
+         * @param address The server&#39;s IP address (IPv4 or IPv6).
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class ZoneZoneTransferServerArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param port (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
+         * @param port The server&#39;s port.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class ZoneZoneTransferServerArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param port (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
+         * @param port The server&#39;s port.
          * 
          * @return builder
          * 

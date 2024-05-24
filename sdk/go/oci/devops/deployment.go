@@ -38,7 +38,7 @@ type Deployment struct {
 	DeployPipelineEnvironments DeploymentDeployPipelineEnvironmentArrayOutput `pulumi:"deployPipelineEnvironments"`
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringOutput `pulumi:"deployPipelineId"`
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId pulumi.StringOutput `pulumi:"deployStageId"`
 	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
 	DeployStageOverrideArguments DeploymentDeployStageOverrideArgumentsOutput `pulumi:"deployStageOverrideArguments"`
@@ -122,7 +122,7 @@ type deploymentState struct {
 	DeployPipelineEnvironments []DeploymentDeployPipelineEnvironment `pulumi:"deployPipelineEnvironments"`
 	// The OCID of a pipeline.
 	DeployPipelineId *string `pulumi:"deployPipelineId"`
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
 	DeployStageOverrideArguments *DeploymentDeployStageOverrideArguments `pulumi:"deployStageOverrideArguments"`
@@ -171,7 +171,7 @@ type DeploymentState struct {
 	DeployPipelineEnvironments DeploymentDeployPipelineEnvironmentArrayInput
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringPtrInput
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId pulumi.StringPtrInput
 	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
 	DeployStageOverrideArguments DeploymentDeployStageOverrideArgumentsPtrInput
@@ -218,7 +218,7 @@ type deploymentArgs struct {
 	DeployArtifactOverrideArguments *DeploymentDeployArtifactOverrideArguments `pulumi:"deployArtifactOverrideArguments"`
 	// The OCID of a pipeline.
 	DeployPipelineId string `pulumi:"deployPipelineId"`
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId *string `pulumi:"deployStageId"`
 	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
 	DeployStageOverrideArguments *DeploymentDeployStageOverrideArguments `pulumi:"deployStageOverrideArguments"`
@@ -248,7 +248,7 @@ type DeploymentArgs struct {
 	DeployArtifactOverrideArguments DeploymentDeployArtifactOverrideArgumentsPtrInput
 	// The OCID of a pipeline.
 	DeployPipelineId pulumi.StringInput
-	// The OCID of the stage.
+	// Specifies the OCID of the stage to be redeployed.
 	DeployStageId pulumi.StringPtrInput
 	// Specifies the list of arguments to be overriden per Stage at the time of deployment.
 	DeployStageOverrideArguments DeploymentDeployStageOverrideArgumentsPtrInput
@@ -391,7 +391,7 @@ func (o DeploymentOutput) DeployPipelineId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeployPipelineId }).(pulumi.StringOutput)
 }
 
-// The OCID of the stage.
+// Specifies the OCID of the stage to be redeployed.
 func (o DeploymentOutput) DeployStageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Deployment) pulumi.StringOutput { return v.DeployStageId }).(pulumi.StringOutput)
 }

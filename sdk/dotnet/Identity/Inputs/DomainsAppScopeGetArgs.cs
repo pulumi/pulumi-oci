@@ -13,12 +13,13 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppScopeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The description of the AppRole.
+        /// (Updatable) OAuth scope description
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
@@ -28,7 +29,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Display name of the flatfile bundle configuration property. This attribute maps to \"displayName\" attribute in \"ConfigurationProperty\" in ICF.
+        /// (Updatable) OAuth scope display name
+        /// 
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -93,20 +96,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? RequiresConsent { get; set; }
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) OAuth scope.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

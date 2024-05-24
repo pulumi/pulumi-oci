@@ -14,30 +14,27 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsGroupTag
     {
         /// <summary>
-        /// (Updatable) Oracle Cloud Infrastructure Tag key
-        /// 
-        /// **Added In:** 2011192329
+        /// (Updatable) Key or name of the tag.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * type: string
-        /// * required: true
-        /// * mutability: readWrite
-        /// * returned: default
         /// * idcsSearchable: true
+        /// * multiValued: false
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: default
+        /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) The ID of the App.
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
+        /// * caseExact: false
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string

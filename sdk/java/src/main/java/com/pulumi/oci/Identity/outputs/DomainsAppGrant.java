@@ -60,7 +60,7 @@ public final class DomainsAppGrant {
      */
     private @Nullable String granteeType;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -74,19 +74,17 @@ public final class DomainsAppGrant {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String value;
@@ -147,7 +145,7 @@ public final class DomainsAppGrant {
         return Optional.ofNullable(this.granteeType);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Grant URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -163,19 +161,17 @@ public final class DomainsAppGrant {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Grant identifier
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> value() {

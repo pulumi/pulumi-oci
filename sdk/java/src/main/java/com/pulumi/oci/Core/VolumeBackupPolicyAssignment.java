@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeBackupPolicyAssignment = new VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", VolumeBackupPolicyAssignmentArgs.builder()        
+ *         var testVolumeBackupPolicyAssignment = new VolumeBackupPolicyAssignment("testVolumeBackupPolicyAssignment", VolumeBackupPolicyAssignmentArgs.builder()
  *             .assetId(testVolume.id())
  *             .policyId(testVolumeBackupPolicy.id())
  *             .build());

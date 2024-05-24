@@ -16,14 +16,14 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
     public static final DeployStageDeployStagePredecessorCollectionArgs Empty = new DeployStageDeployStagePredecessorCollectionArgs();
 
     /**
-     * (Updatable) List of parameters defined to set helm value.
+     * (Updatable) A list of stage predecessors for a stage.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<DeployStageDeployStagePredecessorCollectionItemArgs>> items;
 
     /**
-     * @return (Updatable) List of parameters defined to set helm value.
+     * @return (Updatable) A list of stage predecessors for a stage.
      * 
      */
     public Output<List<DeployStageDeployStagePredecessorCollectionItemArgs>> items() {
@@ -55,7 +55,7 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
         }
 
         /**
-         * @param items (Updatable) List of parameters defined to set helm value.
+         * @param items (Updatable) A list of stage predecessors for a stage.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
         }
 
         /**
-         * @param items (Updatable) List of parameters defined to set helm value.
+         * @param items (Updatable) A list of stage predecessors for a stage.
          * 
          * @return builder
          * 
@@ -76,7 +76,7 @@ public final class DeployStageDeployStagePredecessorCollectionArgs extends com.p
         }
 
         /**
-         * @param items (Updatable) List of parameters defined to set helm value.
+         * @param items (Updatable) A list of stage predecessors for a stage.
          * 
          * @return builder
          * 

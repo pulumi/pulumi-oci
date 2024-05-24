@@ -18,7 +18,7 @@ public final class ComputeCapacityTopologyCapacitySource {
      */
     private String capacityType;
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
      * 
      */
     private @Nullable String compartmentId;
@@ -32,7 +32,7 @@ public final class ComputeCapacityTopologyCapacitySource {
         return this.capacityType;
     }
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this compute capacity topology.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of this capacity source.
      * 
      */
     public Optional<String> compartmentId() {

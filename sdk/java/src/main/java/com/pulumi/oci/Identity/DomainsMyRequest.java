@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMyRequest = new DomainsMyRequest("testMyRequest", DomainsMyRequestArgs.builder()        
+ *         var testMyRequest = new DomainsMyRequest("testMyRequest", DomainsMyRequestArgs.builder()
  *             .approvalDetails()
  *             .idcsEndpoint(testDomain.url())
  *             .justification(myRequestJustification)

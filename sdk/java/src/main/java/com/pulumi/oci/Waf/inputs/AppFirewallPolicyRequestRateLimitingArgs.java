@@ -17,14 +17,14 @@ public final class AppFirewallPolicyRequestRateLimitingArgs extends com.pulumi.r
     public static final AppFirewallPolicyRequestRateLimitingArgs Empty = new AppFirewallPolicyRequestRateLimitingArgs();
 
     /**
-     * (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
      * 
      */
     @Import(name="rules")
     private @Nullable Output<List<AppFirewallPolicyRequestRateLimitingRuleArgs>> rules;
 
     /**
-     * @return (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+     * @return (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
      * 
      */
     public Optional<Output<List<AppFirewallPolicyRequestRateLimitingRuleArgs>>> rules() {
@@ -56,7 +56,7 @@ public final class AppFirewallPolicyRequestRateLimitingArgs extends com.pulumi.r
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class AppFirewallPolicyRequestRateLimitingArgs extends com.pulumi.r
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class AppFirewallPolicyRequestRateLimitingArgs extends com.pulumi.r
         }
 
         /**
-         * @param rules (Updatable) Ordered list of ProtectionRules. Rules are executed in order of appearance in this array. ProtectionRules in this array can only use protection capabilities of RESPONSE_PROTECTION_CAPABILITY type.
+         * @param rules (Updatable) Ordered list of RequestRateLimitingRules. Rules are executed in order of appearance in this array.
          * 
          * @return builder
          * 

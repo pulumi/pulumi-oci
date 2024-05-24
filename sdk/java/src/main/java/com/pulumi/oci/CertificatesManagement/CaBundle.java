@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCaBundle = new CaBundle("testCaBundle", CaBundleArgs.builder()        
+ *         var testCaBundle = new CaBundle("testCaBundle", CaBundleArgs.builder()
  *             .caBundlePem(caBundleCaBundlePem)
  *             .compartmentId(compartmentId)
  *             .name(caBundleName)

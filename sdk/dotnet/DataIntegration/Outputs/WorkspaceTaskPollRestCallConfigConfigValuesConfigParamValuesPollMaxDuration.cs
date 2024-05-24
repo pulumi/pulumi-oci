@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceTaskPollRestCallConfigConfigValuesConfigParamValuesPollMaxDuration
     {
         /// <summary>
-        /// (Updatable) An object value of the parameter.
+        /// An object value of the parameter.
         /// </summary>
         public readonly double? ObjectValue;
 

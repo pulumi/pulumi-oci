@@ -64,7 +64,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitor = new Config("testMonitor", ConfigArgs.builder()        
+ *         var testMonitor = new Config("testMonitor", ConfigArgs.builder()
  *             .apmDomainId(testApmDomain.id())
  *             .displayName(monitorDisplayName)
  *             .monitorType(monitorMonitorType)
@@ -246,14 +246,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * Unique name that can be edited. The name should not contain any confidential information.
+     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return Unique name that can be edited. The name should not contain any confidential information.
+     * @return (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     public Output<String> displayName() {

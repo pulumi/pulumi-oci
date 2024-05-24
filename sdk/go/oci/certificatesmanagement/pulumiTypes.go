@@ -1323,9 +1323,9 @@ type CertificateAuthorityCurrentVersion struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
-	// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []CertificateAuthorityCurrentVersionValidity `pulumi:"validities"`
-	// (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
 	VersionName *string `pulumi:"versionName"`
 	// The version number of the CA.
 	VersionNumber *string `pulumi:"versionNumber"`
@@ -1357,9 +1357,9 @@ type CertificateAuthorityCurrentVersionArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
-	// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities CertificateAuthorityCurrentVersionValidityArrayInput `pulumi:"validities"`
-	// (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+	// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
 	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the CA.
 	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
@@ -1453,14 +1453,14 @@ func (o CertificateAuthorityCurrentVersionOutput) TimeOfDeletion() pulumi.String
 	return o.ApplyT(func(v CertificateAuthorityCurrentVersion) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 func (o CertificateAuthorityCurrentVersionOutput) Validities() CertificateAuthorityCurrentVersionValidityArrayOutput {
 	return o.ApplyT(func(v CertificateAuthorityCurrentVersion) []CertificateAuthorityCurrentVersionValidity {
 		return v.Validities
 	}).(CertificateAuthorityCurrentVersionValidityArrayOutput)
 }
 
-// (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+// The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
 func (o CertificateAuthorityCurrentVersionOutput) VersionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateAuthorityCurrentVersion) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
@@ -1597,9 +1597,9 @@ func (o CertificateAuthorityCurrentVersionRevocationStatusArrayOutput) Index(i p
 }
 
 type CertificateAuthorityCurrentVersionValidity struct {
-	// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
-	// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
@@ -1615,9 +1615,9 @@ type CertificateAuthorityCurrentVersionValidityInput interface {
 }
 
 type CertificateAuthorityCurrentVersionValidityArgs struct {
-	// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
-	// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
@@ -1672,12 +1672,12 @@ func (o CertificateAuthorityCurrentVersionValidityOutput) ToCertificateAuthority
 	return o
 }
 
-// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o CertificateAuthorityCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateAuthorityCurrentVersionValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o CertificateAuthorityCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateAuthorityCurrentVersionValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }
@@ -3317,9 +3317,9 @@ type CertificateCurrentVersion struct {
 	TimeCreated *string `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion *string `pulumi:"timeOfDeletion"`
-	// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities []CertificateCurrentVersionValidity `pulumi:"validities"`
-	// (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
 	VersionName *string `pulumi:"versionName"`
 	// The version number of the certificate.
 	VersionNumber *string `pulumi:"versionNumber"`
@@ -3353,9 +3353,9 @@ type CertificateCurrentVersionArgs struct {
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfDeletion pulumi.StringPtrInput `pulumi:"timeOfDeletion"`
-	// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+	// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 	Validities CertificateCurrentVersionValidityArrayInput `pulumi:"validities"`
-	// (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+	// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
 	VersionName pulumi.StringPtrInput `pulumi:"versionName"`
 	// The version number of the certificate.
 	VersionNumber pulumi.StringPtrInput `pulumi:"versionNumber"`
@@ -3456,12 +3456,12 @@ func (o CertificateCurrentVersionOutput) TimeOfDeletion() pulumi.StringPtrOutput
 	return o.ApplyT(func(v CertificateCurrentVersion) *string { return v.TimeOfDeletion }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
 func (o CertificateCurrentVersionOutput) Validities() CertificateCurrentVersionValidityArrayOutput {
 	return o.ApplyT(func(v CertificateCurrentVersion) []CertificateCurrentVersionValidity { return v.Validities }).(CertificateCurrentVersionValidityArrayOutput)
 }
 
-// (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
 func (o CertificateCurrentVersionOutput) VersionName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateCurrentVersion) *string { return v.VersionName }).(pulumi.StringPtrOutput)
 }
@@ -3704,9 +3704,9 @@ func (o CertificateCurrentVersionSubjectAlternativeNameArrayOutput) Index(i pulu
 }
 
 type CertificateCurrentVersionValidity struct {
-	// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotAfter *string `pulumi:"timeOfValidityNotAfter"`
-	// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotBefore *string `pulumi:"timeOfValidityNotBefore"`
 }
 
@@ -3722,9 +3722,9 @@ type CertificateCurrentVersionValidityInput interface {
 }
 
 type CertificateCurrentVersionValidityArgs struct {
-	// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotAfter pulumi.StringPtrInput `pulumi:"timeOfValidityNotAfter"`
-	// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+	// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 	TimeOfValidityNotBefore pulumi.StringPtrInput `pulumi:"timeOfValidityNotBefore"`
 }
 
@@ -3779,12 +3779,12 @@ func (o CertificateCurrentVersionValidityOutput) ToCertificateCurrentVersionVali
 	return o
 }
 
-// (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+// The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o CertificateCurrentVersionValidityOutput) TimeOfValidityNotAfter() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateCurrentVersionValidity) *string { return v.TimeOfValidityNotAfter }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+// The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
 func (o CertificateCurrentVersionValidityOutput) TimeOfValidityNotBefore() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v CertificateCurrentVersionValidity) *string { return v.TimeOfValidityNotBefore }).(pulumi.StringPtrOutput)
 }

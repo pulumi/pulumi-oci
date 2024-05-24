@@ -409,7 +409,7 @@ class BuildPipelineBuildPipelineParametersItem(dict):
         """
         :param str default_value: (Updatable) Default value of the parameter.
         :param str name: (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
-        :param str description: (Updatable) Optional description about the build pipeline.
+        :param str description: (Updatable) Description of the parameter.
         """
         pulumi.set(__self__, "default_value", default_value)
         pulumi.set(__self__, "name", name)
@@ -436,7 +436,7 @@ class BuildPipelineBuildPipelineParametersItem(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) Optional description about the build pipeline.
+        (Updatable) Description of the parameter.
         """
         return pulumi.get(self, "description")
 
@@ -446,7 +446,7 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollection(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItem']):
         """
-        :param Sequence['BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs'] items: (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        :param Sequence['BuildPipelineStageBuildPipelineStagePredecessorCollectionItemArgs'] items: (Updatable) A list of build pipeline stage predecessors for a stage.
         """
         pulumi.set(__self__, "items", items)
 
@@ -454,7 +454,7 @@ class BuildPipelineStageBuildPipelineStagePredecessorCollection(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItem']:
         """
-        (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        (Updatable) A list of build pipeline stage predecessors for a stage.
         """
         return pulumi.get(self, "items")
 
@@ -543,7 +543,7 @@ class BuildPipelineStageBuildSourceCollection(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.BuildPipelineStageBuildSourceCollectionItem']] = None):
         """
-        :param Sequence['BuildPipelineStageBuildSourceCollectionItemArgs'] items: (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        :param Sequence['BuildPipelineStageBuildSourceCollectionItemArgs'] items: (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -552,7 +552,7 @@ class BuildPipelineStageBuildSourceCollection(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.BuildPipelineStageBuildSourceCollectionItem']]:
         """
-        (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        (Updatable) Collection of build sources. In case of UPDATE operation, replaces existing build sources list. Merging with existing build sources is not supported.
         """
         return pulumi.get(self, "items")
 
@@ -928,7 +928,7 @@ class BuildRunBuildOutputArtifactOverrideParameter(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.BuildRunBuildOutputArtifactOverrideParameterItem']] = None):
         """
-        :param Sequence['BuildRunBuildOutputArtifactOverrideParameterItemArgs'] items: List of arguments provided at the time of running the build.
+        :param Sequence['BuildRunBuildOutputArtifactOverrideParameterItemArgs'] items: List of exported variables.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -937,7 +937,7 @@ class BuildRunBuildOutputArtifactOverrideParameter(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.BuildRunBuildOutputArtifactOverrideParameterItem']]:
         """
-        List of arguments provided at the time of running the build.
+        List of exported variables.
         """
         return pulumi.get(self, "items")
 
@@ -967,7 +967,7 @@ class BuildRunBuildOutputArtifactOverrideParameterItem(dict):
                  value: Optional[str] = None):
         """
         :param str deploy_artifact_id: The OCID of the deployment artifact definition.
-        :param str name: Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        :param str name: Name of the step.
         :param str value: Value of the argument.
         """
         if deploy_artifact_id is not None:
@@ -989,7 +989,7 @@ class BuildRunBuildOutputArtifactOverrideParameterItem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        Name of the step.
         """
         return pulumi.get(self, "name")
 
@@ -1007,7 +1007,7 @@ class BuildRunBuildOutputDeliveredArtifact(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifactItem']] = None):
         """
-        :param Sequence['BuildRunBuildOutputDeliveredArtifactItemArgs'] items: List of arguments provided at the time of running the build.
+        :param Sequence['BuildRunBuildOutputDeliveredArtifactItemArgs'] items: List of exported variables.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -1016,7 +1016,7 @@ class BuildRunBuildOutputDeliveredArtifact(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.BuildRunBuildOutputDeliveredArtifactItem']]:
         """
-        List of arguments provided at the time of running the build.
+        List of exported variables.
         """
         return pulumi.get(self, "items")
 
@@ -1170,7 +1170,7 @@ class BuildRunBuildOutputExportedVariable(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.BuildRunBuildOutputExportedVariableItem']] = None):
         """
-        :param Sequence['BuildRunBuildOutputExportedVariableItemArgs'] items: List of arguments provided at the time of running the build.
+        :param Sequence['BuildRunBuildOutputExportedVariableItemArgs'] items: List of exported variables.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -1179,7 +1179,7 @@ class BuildRunBuildOutputExportedVariable(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.BuildRunBuildOutputExportedVariableItem']]:
         """
-        List of arguments provided at the time of running the build.
+        List of exported variables.
         """
         return pulumi.get(self, "items")
 
@@ -1190,7 +1190,7 @@ class BuildRunBuildOutputExportedVariableItem(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        :param str name: Name of the step.
         :param str value: Value of the argument.
         """
         if name is not None:
@@ -1202,7 +1202,7 @@ class BuildRunBuildOutputExportedVariableItem(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: 'Build_Pipeline_param' is not same as 'build_pipeline_Param'
+        Name of the step.
         """
         return pulumi.get(self, "name")
 
@@ -1220,7 +1220,7 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollection(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem']] = None):
         """
-        :param Sequence['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs'] items: List of arguments provided at the time of running the build.
+        :param Sequence['BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItemArgs'] items: List of exported variables.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -1229,7 +1229,7 @@ class BuildRunBuildOutputVulnerabilityAuditSummaryCollection(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.BuildRunBuildOutputVulnerabilityAuditSummaryCollectionItem']]:
         """
-        List of arguments provided at the time of running the build.
+        List of exported variables.
         """
         return pulumi.get(self, "items")
 
@@ -2393,7 +2393,7 @@ class DeployPipelineDeployPipelineArtifact(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItem']] = None):
         """
-        :param Sequence['DeployPipelineDeployPipelineArtifactItemArgs'] items: (Updatable) List of parameters defined for a deployment pipeline.
+        :param Sequence['DeployPipelineDeployPipelineArtifactItemArgs'] items: List of parameters defined for a deployment pipeline.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2402,7 +2402,7 @@ class DeployPipelineDeployPipelineArtifact(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItem']]:
         """
-        (Updatable) List of parameters defined for a deployment pipeline.
+        List of parameters defined for a deployment pipeline.
         """
         return pulumi.get(self, "items")
 
@@ -2476,7 +2476,7 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStage(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem']] = None):
         """
-        :param Sequence['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs'] items: (Updatable) List of parameters defined for a deployment pipeline.
+        :param Sequence['DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItemArgs'] items: List of parameters defined for a deployment pipeline.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2485,7 +2485,7 @@ class DeployPipelineDeployPipelineArtifactItemDeployPipelineStage(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeployPipelineDeployPipelineArtifactItemDeployPipelineStageItem']]:
         """
-        (Updatable) List of parameters defined for a deployment pipeline.
+        List of parameters defined for a deployment pipeline.
         """
         return pulumi.get(self, "items")
 
@@ -2545,7 +2545,7 @@ class DeployPipelineDeployPipelineEnvironment(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItem']] = None):
         """
-        :param Sequence['DeployPipelineDeployPipelineEnvironmentItemArgs'] items: (Updatable) List of parameters defined for a deployment pipeline.
+        :param Sequence['DeployPipelineDeployPipelineEnvironmentItemArgs'] items: List of parameters defined for a deployment pipeline.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2554,7 +2554,7 @@ class DeployPipelineDeployPipelineEnvironment(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItem']]:
         """
-        (Updatable) List of parameters defined for a deployment pipeline.
+        List of parameters defined for a deployment pipeline.
         """
         return pulumi.get(self, "items")
 
@@ -2628,7 +2628,7 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem']] = None):
         """
-        :param Sequence['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs'] items: (Updatable) List of parameters defined for a deployment pipeline.
+        :param Sequence['DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItemArgs'] items: List of parameters defined for a deployment pipeline.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2637,7 +2637,7 @@ class DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeployPipelineDeployPipelineEnvironmentItemDeployPipelineStageItem']]:
         """
-        (Updatable) List of parameters defined for a deployment pipeline.
+        List of parameters defined for a deployment pipeline.
         """
         return pulumi.get(self, "items")
 
@@ -2736,7 +2736,7 @@ class DeployPipelineDeployPipelineParametersItem(dict):
         """
         :param str name: (Updatable) Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$.
         :param str default_value: (Updatable) Default value of the parameter.
-        :param str description: (Updatable) Optional description about the deployment pipeline.
+        :param str description: (Updatable) Description of the parameter.
         """
         pulumi.set(__self__, "name", name)
         if default_value is not None:
@@ -2764,7 +2764,7 @@ class DeployPipelineDeployPipelineParametersItem(dict):
     @pulumi.getter
     def description(self) -> Optional[str]:
         """
-        (Updatable) Optional description about the deployment pipeline.
+        (Updatable) Description of the parameter.
         """
         return pulumi.get(self, "description")
 
@@ -2822,7 +2822,7 @@ class DeployStageBlueBackendIps(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence[str]] = None):
         """
-        :param Sequence[str] items: (Updatable) List of parameters defined to set helm value.
+        :param Sequence[str] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -2831,7 +2831,7 @@ class DeployStageBlueBackendIps(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) List of parameters defined to set helm value.
+        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
         """
         return pulumi.get(self, "items")
 
@@ -2870,7 +2870,7 @@ class DeployStageBlueGreenStrategy(dict):
         :param str ingress_name: Name of the Ingress resource.
         :param str namespace_a: First Namespace for deployment.
         :param str namespace_b: Second Namespace for deployment.
-        :param str strategy_type: Canary strategy type.
+        :param str strategy_type: Blue Green strategy type
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
         pulumi.set(__self__, "namespace_a", namespace_a)
@@ -2905,7 +2905,7 @@ class DeployStageBlueGreenStrategy(dict):
     @pulumi.getter(name="strategyType")
     def strategy_type(self) -> str:
         """
-        Canary strategy type.
+        Blue Green strategy type
         """
         return pulumi.get(self, "strategy_type")
 
@@ -2937,7 +2937,7 @@ class DeployStageCanaryStrategy(dict):
                  strategy_type: str):
         """
         :param str ingress_name: Name of the Ingress resource.
-        :param str namespace: (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+        :param str namespace: Canary namespace to be used for Kubernetes canary deployment.
         :param str strategy_type: Canary strategy type.
         """
         pulumi.set(__self__, "ingress_name", ingress_name)
@@ -2956,7 +2956,7 @@ class DeployStageCanaryStrategy(dict):
     @pulumi.getter
     def namespace(self) -> str:
         """
-        (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+        Canary namespace to be used for Kubernetes canary deployment.
         """
         return pulumi.get(self, "namespace")
 
@@ -3185,7 +3185,7 @@ class DeployStageDeployStagePredecessorCollection(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem']):
         """
-        :param Sequence['DeployStageDeployStagePredecessorCollectionItemArgs'] items: (Updatable) List of parameters defined to set helm value.
+        :param Sequence['DeployStageDeployStagePredecessorCollectionItemArgs'] items: (Updatable) A list of stage predecessors for a stage.
         """
         pulumi.set(__self__, "items", items)
 
@@ -3193,7 +3193,7 @@ class DeployStageDeployStagePredecessorCollection(dict):
     @pulumi.getter
     def items(self) -> Sequence['outputs.DeployStageDeployStagePredecessorCollectionItem']:
         """
-        (Updatable) List of parameters defined to set helm value.
+        (Updatable) A list of stage predecessors for a stage.
         """
         return pulumi.get(self, "items")
 
@@ -3244,7 +3244,7 @@ class DeployStageFailurePolicy(dict):
                  failure_count: Optional[int] = None,
                  failure_percentage: Optional[int] = None):
         """
-        :param str policy_type: (Updatable) The type of policy used for rolling out a deployment stage.
+        :param str policy_type: (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
         :param int failure_count: (Updatable) The threshold count of failed instances in the group, which when reached or exceeded sets the stage as FAILED.
         :param int failure_percentage: (Updatable) The failure percentage threshold, which when reached or exceeded sets the stage as FAILED. Percentage is computed as the ceiling value of the number of failed instances over the total count of the instances in the group.
         """
@@ -3258,7 +3258,7 @@ class DeployStageFailurePolicy(dict):
     @pulumi.getter(name="policyType")
     def policy_type(self) -> str:
         """
-        (Updatable) The type of policy used for rolling out a deployment stage.
+        (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
         """
         return pulumi.get(self, "policy_type")
 
@@ -3284,7 +3284,7 @@ class DeployStageGreenBackendIps(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence[str]] = None):
         """
-        :param Sequence[str] items: (Updatable) List of parameters defined to set helm value.
+        :param Sequence[str] items: (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -3293,7 +3293,7 @@ class DeployStageGreenBackendIps(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence[str]]:
         """
-        (Updatable) List of parameters defined to set helm value.
+        (Updatable) The IP address of the backend server. A server could be a compute instance or a load balancer.
         """
         return pulumi.get(self, "items")
 
@@ -3403,9 +3403,9 @@ class DeployStageProductionLoadBalancerConfig(dict):
                  load_balancer_id: Optional[str] = None,
                  state: Optional[str] = None):
         """
-        :param int backend_port: (Updatable) Listen port for the backend server.
-        :param str listener_name: (Updatable) Name of the load balancer listener.
-        :param str load_balancer_id: (Updatable) The OCID of the load balancer.
+        :param int backend_port: Listen port for the backend server.
+        :param str listener_name: Name of the load balancer listener.
+        :param str load_balancer_id: The OCID of the load balancer.
         :param str state: The current state of the deployment stage.
         """
         if backend_port is not None:
@@ -3421,7 +3421,7 @@ class DeployStageProductionLoadBalancerConfig(dict):
     @pulumi.getter(name="backendPort")
     def backend_port(self) -> Optional[int]:
         """
-        (Updatable) Listen port for the backend server.
+        Listen port for the backend server.
         """
         return pulumi.get(self, "backend_port")
 
@@ -3429,7 +3429,7 @@ class DeployStageProductionLoadBalancerConfig(dict):
     @pulumi.getter(name="listenerName")
     def listener_name(self) -> Optional[str]:
         """
-        (Updatable) Name of the load balancer listener.
+        Name of the load balancer listener.
         """
         return pulumi.get(self, "listener_name")
 
@@ -3437,7 +3437,7 @@ class DeployStageProductionLoadBalancerConfig(dict):
     @pulumi.getter(name="loadBalancerId")
     def load_balancer_id(self) -> Optional[str]:
         """
-        (Updatable) The OCID of the load balancer.
+        The OCID of the load balancer.
         """
         return pulumi.get(self, "load_balancer_id")
 
@@ -3472,7 +3472,7 @@ class DeployStageRollbackPolicy(dict):
     def __init__(__self__, *,
                  policy_type: Optional[str] = None):
         """
-        :param str policy_type: (Updatable) The type of policy used for rolling out a deployment stage.
+        :param str policy_type: (Updatable) Specifies type of the deployment stage rollback policy.
         """
         if policy_type is not None:
             pulumi.set(__self__, "policy_type", policy_type)
@@ -3481,7 +3481,7 @@ class DeployStageRollbackPolicy(dict):
     @pulumi.getter(name="policyType")
     def policy_type(self) -> Optional[str]:
         """
-        (Updatable) The type of policy used for rolling out a deployment stage.
+        (Updatable) Specifies type of the deployment stage rollback policy.
         """
         return pulumi.get(self, "policy_type")
 
@@ -3815,7 +3815,7 @@ class DeploymentDeployArtifactOverrideArguments(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeploymentDeployArtifactOverrideArgumentsItem']] = None):
         """
-        :param Sequence['DeploymentDeployArtifactOverrideArgumentsItemArgs'] items: List of arguments provided at the time of deployment.
+        :param Sequence['DeploymentDeployArtifactOverrideArgumentsItemArgs'] items: List of artifact override arguments at the time of deployment.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -3824,7 +3824,7 @@ class DeploymentDeployArtifactOverrideArguments(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeploymentDeployArtifactOverrideArgumentsItem']]:
         """
-        List of arguments provided at the time of deployment.
+        List of artifact override arguments at the time of deployment.
         """
         return pulumi.get(self, "items")
 
@@ -3855,8 +3855,7 @@ class DeploymentDeployArtifactOverrideArgumentsItem(dict):
         """
         :param str deploy_artifact_id: The OCID of the artifact to which this parameter applies.
         :param str name: Name of the parameter (case-sensitive).
-        :param str value: value of the argument.
-               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        :param str value: Value of the parameter.
         """
         if deploy_artifact_id is not None:
             pulumi.set(__self__, "deploy_artifact_id", deploy_artifact_id)
@@ -3885,8 +3884,7 @@ class DeploymentDeployArtifactOverrideArgumentsItem(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        value of the argument.
-        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        Value of the parameter.
         """
         return pulumi.get(self, "value")
 
@@ -3896,7 +3894,7 @@ class DeploymentDeployPipelineArtifact(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItem']] = None):
         """
-        :param Sequence['DeploymentDeployPipelineArtifactItemArgs'] items: List of arguments provided at the time of deployment.
+        :param Sequence['DeploymentDeployPipelineArtifactItemArgs'] items: A list of stage predecessors for a stage.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -3905,7 +3903,7 @@ class DeploymentDeployPipelineArtifact(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItem']]:
         """
-        List of arguments provided at the time of deployment.
+        A list of stage predecessors for a stage.
         """
         return pulumi.get(self, "items")
 
@@ -3938,7 +3936,7 @@ class DeploymentDeployPipelineArtifactItem(dict):
                  deploy_pipeline_stages: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStage']] = None,
                  display_name: Optional[str] = None):
         """
-        :param str deploy_artifact_id: The OCID of the artifact to which this parameter applies.
+        :param str deploy_artifact_id: The OCID of an artifact
         :param Sequence['DeploymentDeployPipelineArtifactItemDeployPipelineStageArgs'] deploy_pipeline_stages: List of stages.
         :param str display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
@@ -3953,7 +3951,7 @@ class DeploymentDeployPipelineArtifactItem(dict):
     @pulumi.getter(name="deployArtifactId")
     def deploy_artifact_id(self) -> Optional[str]:
         """
-        The OCID of the artifact to which this parameter applies.
+        The OCID of an artifact
         """
         return pulumi.get(self, "deploy_artifact_id")
 
@@ -3979,7 +3977,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStage(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStageItem']] = None):
         """
-        :param Sequence['DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs'] items: List of arguments provided at the time of deployment.
+        :param Sequence['DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs'] items: A list of stage predecessors for a stage.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -3988,7 +3986,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStage(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeploymentDeployPipelineArtifactItemDeployPipelineStageItem']]:
         """
-        List of arguments provided at the time of deployment.
+        A list of stage predecessors for a stage.
         """
         return pulumi.get(self, "items")
 
@@ -4018,7 +4016,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItem(dict):
                  deploy_stage_id: Optional[str] = None,
                  display_name: Optional[str] = None):
         """
-        :param str deploy_stage_id: The OCID of the stage.
+        :param str deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param str display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
         if deploy_stage_id is not None:
@@ -4030,7 +4028,7 @@ class DeploymentDeployPipelineArtifactItemDeployPipelineStageItem(dict):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[str]:
         """
-        The OCID of the stage.
+        Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -4048,7 +4046,7 @@ class DeploymentDeployPipelineEnvironment(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItem']] = None):
         """
-        :param Sequence['DeploymentDeployPipelineEnvironmentItemArgs'] items: List of arguments provided at the time of deployment.
+        :param Sequence['DeploymentDeployPipelineEnvironmentItemArgs'] items: A list of stage predecessors for a stage.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -4057,7 +4055,7 @@ class DeploymentDeployPipelineEnvironment(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItem']]:
         """
-        List of arguments provided at the time of deployment.
+        A list of stage predecessors for a stage.
         """
         return pulumi.get(self, "items")
 
@@ -4131,7 +4129,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem']] = None):
         """
-        :param Sequence['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs'] items: List of arguments provided at the time of deployment.
+        :param Sequence['DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItemArgs'] items: A list of stage predecessors for a stage.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -4140,7 +4138,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStage(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem']]:
         """
-        List of arguments provided at the time of deployment.
+        A list of stage predecessors for a stage.
         """
         return pulumi.get(self, "items")
 
@@ -4170,7 +4168,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
                  deploy_stage_id: Optional[str] = None,
                  display_name: Optional[str] = None):
         """
-        :param str deploy_stage_id: The OCID of the stage.
+        :param str deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param str display_name: (Updatable) Deployment display name. Avoid entering confidential information.
         """
         if deploy_stage_id is not None:
@@ -4182,7 +4180,7 @@ class DeploymentDeployPipelineEnvironmentItemDeployPipelineStageItem(dict):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[str]:
         """
-        The OCID of the stage.
+        Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -4200,7 +4198,7 @@ class DeploymentDeployStageOverrideArguments(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.DeploymentDeployStageOverrideArgumentsItem']] = None):
         """
-        :param Sequence['DeploymentDeployStageOverrideArgumentsItemArgs'] items: List of arguments provided at the time of deployment.
+        :param Sequence['DeploymentDeployStageOverrideArgumentsItemArgs'] items: List of stage override arguments at the time of deployment.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -4209,7 +4207,7 @@ class DeploymentDeployStageOverrideArguments(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.DeploymentDeployStageOverrideArgumentsItem']]:
         """
-        List of arguments provided at the time of deployment.
+        List of stage override arguments at the time of deployment.
         """
         return pulumi.get(self, "items")
 
@@ -4240,8 +4238,7 @@ class DeploymentDeployStageOverrideArgumentsItem(dict):
         """
         :param str deploy_stage_id: The OCID of the stage.
         :param str name: Name of the parameter (case-sensitive).
-        :param str value: value of the argument.
-               *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        :param str value: Value of the parameter.
         """
         if deploy_stage_id is not None:
             pulumi.set(__self__, "deploy_stage_id", deploy_stage_id)
@@ -4270,8 +4267,7 @@ class DeploymentDeployStageOverrideArgumentsItem(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        value of the argument.
-        *  To retrieve Helm Diff for Helm stages in the pipeline add deployment_arguments with name=PLAN_DRY_RUN and value=true
+        Value of the parameter.
         """
         return pulumi.get(self, "value")
 
@@ -4435,7 +4431,7 @@ class DeploymentDeploymentExecutionProgressDeployStageExecutionProgress(dict):
         """
         :param str deploy_stage_display_name: Stage display name. Avoid entering confidential information.
         :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetailArgs'] deploy_stage_execution_progress_details: Details about stage execution for all the target environments.
-        :param str deploy_stage_id: The OCID of the stage.
+        :param str deploy_stage_id: Specifies the OCID of the stage to be redeployed.
         :param Sequence['DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStagePredecessorArgs'] deploy_stage_predecessors: Collection containing the predecessors of a stage.
         :param str deploy_stage_type: Deployment stage type.
         :param str status: The current state of the stage.
@@ -4479,7 +4475,7 @@ class DeploymentDeploymentExecutionProgressDeployStageExecutionProgress(dict):
     @pulumi.getter(name="deployStageId")
     def deploy_stage_id(self) -> Optional[str]:
         """
-        The OCID of the stage.
+        Specifies the OCID of the stage to be redeployed.
         """
         return pulumi.get(self, "deploy_stage_id")
 
@@ -4627,7 +4623,7 @@ class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeploySta
                  time_finished: Optional[str] = None,
                  time_started: Optional[str] = None):
         """
-        :param str name: Name of the parameter (case-sensitive).
+        :param str name: Name of the step.
         :param str state: The current state of the deployment.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -4645,7 +4641,7 @@ class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeploySta
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Name of the parameter (case-sensitive).
+        Name of the step.
         """
         return pulumi.get(self, "name")
 
@@ -4701,7 +4697,7 @@ class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeploySta
                  time_finished: Optional[str] = None,
                  time_started: Optional[str] = None):
         """
-        :param str name: Name of the parameter (case-sensitive).
+        :param str name: Name of the step.
         :param str state: The current state of the deployment.
         :param str time_finished: Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         :param str time_started: Time the deployment is started. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -4719,7 +4715,7 @@ class DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeploySta
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        Name of the parameter (case-sensitive).
+        Name of the step.
         """
         return pulumi.get(self, "name")
 
@@ -5018,10 +5014,6 @@ class TriggerActionFilter(dict):
                  include: Optional['outputs.TriggerActionFilterInclude'] = None):
         """
         :param str trigger_source: (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param Sequence[str] events: (Updatable) The events, for example, PUSH, PULL_REQUEST_MERGE.
         :param 'TriggerActionFilterExcludeArgs' exclude: (Updatable) Attributes to filter GitLab self-hosted server events. File filter criteria - Changes only affecting excluded files will not invoke a build. if both include and exclude filter are used then exclusion filter will be applied on the result set of inclusion filter.
         :param 'TriggerActionFilterIncludeArgs' include: (Updatable) Attributes to filter GitLab self-hosted server events.
@@ -5039,10 +5031,6 @@ class TriggerActionFilter(dict):
     def trigger_source(self) -> str:
         """
         (Updatable) Source of the trigger. Allowed values are,  GITHUB, GITLAB, BITBUCKET_CLOUD, VBS and DEVOPS_CODE_REPOSITORY.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "trigger_source")
 

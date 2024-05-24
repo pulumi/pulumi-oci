@@ -19,9 +19,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
     /**
      * (Updatable) A human-readable name, primarily used for display purposes
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -33,9 +35,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
     /**
      * @return (Updatable) A human-readable name, primarily used for display purposes
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -48,9 +52,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
     /**
      * (Updatable) Indicates the image type
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -62,9 +68,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
     /**
      * @return (Updatable) Indicates the image type
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -75,34 +83,32 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) Custom claim value
+     * (Updatable) Image URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
+     * * type: reference
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Image URI
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
-     * * type: string
-     * * uniqueness: none
+     * * type: reference
      * 
      */
     public Output<String> value() {
@@ -138,9 +144,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
         /**
          * @param display (Updatable) A human-readable name, primarily used for display purposes
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -156,9 +164,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
         /**
          * @param display (Updatable) A human-readable name, primarily used for display purposes
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -173,9 +183,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
         /**
          * @param type (Updatable) Indicates the image type
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -191,9 +203,11 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
         /**
          * @param type (Updatable) Indicates the image type
          * 
+         * **Added In:** 18.2.2
+         * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -206,17 +220,16 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value (Updatable) Custom claim value
+         * @param value (Updatable) Image URI
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
-         * * type: string
-         * * uniqueness: none
+         * * type: reference
          * 
          * @return builder
          * 
@@ -227,17 +240,16 @@ public final class DomainsSettingDefaultImageArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param value (Updatable) Custom claim value
+         * @param value (Updatable) Image URI
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.2
          * 
          * **SCIM++ Properties:**
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
-         * * type: string
-         * * uniqueness: none
+         * * type: reference
          * 
          * @return builder
          * 

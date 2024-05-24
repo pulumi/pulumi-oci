@@ -13,11 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
     /**
-     * @return (Updatable) The user&#39;s display name.
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -28,22 +28,21 @@ public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
      */
     private @Nullable String display;
     /**
-     * @return The user&#39;s OCID.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential.
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -73,31 +72,28 @@ public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
      */
     private @Nullable String type;
     /**
-     * @return The user&#39;s ID.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsMyOauth2clientCredentialIdcsLastModifiedBy() {}
     /**
-     * @return (Updatable) The user&#39;s display name.
+     * @return The displayName of the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
-     * * idcsSearchable: true
+     * * caseExact: true
+     * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -110,15 +106,14 @@ public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return The user&#39;s OCID.
+     * @return The OCID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -127,7 +122,7 @@ public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) The URI that corresponds to the user linked to this credential.
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -161,20 +156,17 @@ public final class DomainsMyOauth2clientCredentialIdcsLastModifiedBy {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return The user&#39;s ID.
+     * @return The ID of the SCIM resource that represents the User or App who modified this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
-     * * returned: always
+     * * mutability: readOnly
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

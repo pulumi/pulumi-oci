@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCpe = new Cpe("testCpe", CpeArgs.builder()        
+ *         var testCpe = new Cpe("testCpe", CpeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .ipAddress(cpeIpAddress)
  *             .cpeDeviceShapeId(testCpeDeviceShapes.cpeDeviceShapes()[0].cpeDeviceShapeId())

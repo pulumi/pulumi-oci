@@ -48,7 +48,7 @@ public final class DomainsUserEntitlement {
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -56,19 +56,17 @@ public final class DomainsUserEntitlement {
      */
     private String type;
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The value of an entitlement.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -113,7 +111,7 @@ public final class DomainsUserEntitlement {
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readWrite
-     * * required: false
+     * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
@@ -123,19 +121,17 @@ public final class DomainsUserEntitlement {
         return this.type;
     }
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The value of an entitlement.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

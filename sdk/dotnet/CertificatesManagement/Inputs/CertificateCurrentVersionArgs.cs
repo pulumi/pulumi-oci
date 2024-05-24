@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         private InputList<Inputs.CertificateCurrentVersionValidityArgs>? _validities;
 
         /// <summary>
-        /// (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        /// An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         /// </summary>
         public InputList<Inputs.CertificateCurrentVersionValidityArgs> Validities
         {
@@ -91,7 +91,7 @@ namespace Pulumi.Oci.CertificatesManagement.Inputs
         }
 
         /// <summary>
-        /// (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+        /// The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         /// </summary>
         [Input("versionName")]
         public Input<string>? VersionName { get; set; }

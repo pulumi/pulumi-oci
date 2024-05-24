@@ -16,7 +16,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemGetArgs>? _items;
 
         /// <summary>
-        /// (Updatable) The list of headers.
+        /// (Updatable) The list of query parameters.
         /// </summary>
         public InputList<Inputs.DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItemGetArgs> Items
         {

@@ -101,14 +101,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Unique name that can be edited. The name should not contain any confidential information.
+     * (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return Unique name that can be edited. The name should not contain any confidential information.
+     * @return (Updatable) Unique name that can be edited. The name should not contain any confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -528,7 +528,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName (Updatable) Unique name that can be edited. The name should not contain any confidential information.
          * 
          * @return builder
          * 
@@ -539,7 +539,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName Unique name that can be edited. The name should not contain any confidential information.
+         * @param displayName (Updatable) Unique name that can be edited. The name should not contain any confidential information.
          * 
          * @return builder
          * 

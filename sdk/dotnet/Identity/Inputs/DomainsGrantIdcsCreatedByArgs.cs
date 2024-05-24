@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsGrantIdcsCreatedByArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// The displayName of the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -29,23 +29,22 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// The OCID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
+        /// * mutability: readOnly
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         [Input("ocid")]
         public Input<string>? Ocid { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -61,7 +60,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// The type of resource, User or App, that modified this Resource
+        /// The type of resource, User or App, that created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -77,13 +76,13 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Type { get; set; }
 
         /// <summary>
-        /// Value of the tag.
+        /// The ID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: readOnly
         /// * required: true
         /// * returned: default
         /// * type: string

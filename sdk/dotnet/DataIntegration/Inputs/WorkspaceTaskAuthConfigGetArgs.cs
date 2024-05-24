@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskAuthConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify this object.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the types object.
+        /// (Updatable) The specific authentication configuration to be used for Generic REST invocation.
         /// </summary>
         [Input("modelType")]
         public Input<string>? ModelType { get; set; }

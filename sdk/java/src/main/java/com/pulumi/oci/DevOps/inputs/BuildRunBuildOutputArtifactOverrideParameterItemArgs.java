@@ -31,14 +31,14 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItemArgs extends 
     }
 
     /**
-     * Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
+     * Name of the step.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
+     * @return Name of the step.
      * 
      */
     public Optional<Output<String>> name() {
@@ -108,7 +108,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItemArgs extends 
         }
 
         /**
-         * @param name Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
+         * @param name Name of the step.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class BuildRunBuildOutputArtifactOverrideParameterItemArgs extends 
         }
 
         /**
-         * @param name Name of the parameter (case-sensitive). Parameter name must be ^[a-zA-Z][a-zA-Z_0-9]*$. Example: &#39;Build_Pipeline_param&#39; is not same as &#39;build_pipeline_Param&#39;
+         * @param name Name of the step.
          * 
          * @return builder
          * 

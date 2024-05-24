@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// </summary>
         public readonly string? Category;
         /// <summary>
-        /// (Updatable) A short description of the model.
+        /// (Updatable) Description of model metadata
         /// </summary>
         public readonly string? Description;
         /// <summary>

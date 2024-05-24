@@ -18,18 +18,14 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
     public static final TargetAssetRecommendedSpecAgentConfigArgs Empty = new TargetAssetRecommendedSpecAgentConfigArgs();
 
     /**
-     * (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-     * 
-     * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
     @Import(name="areAllPluginsDisabled")
     private @Nullable Output<Boolean> areAllPluginsDisabled;
 
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-     * 
-     * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+     * @return Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
      * 
      */
     public Optional<Output<Boolean>> areAllPluginsDisabled() {
@@ -37,26 +33,14 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-     * 
-     * These are the management plugins: OS Management Service Agent and Compute instance run command.
-     * 
-     * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+     * Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
      * 
      */
     @Import(name="isManagementDisabled")
     private @Nullable Output<Boolean> isManagementDisabled;
 
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-     * 
-     * These are the management plugins: OS Management Service Agent and Compute instance run command.
-     * 
-     * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+     * @return Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
      * 
      */
     public Optional<Output<Boolean>> isManagementDisabled() {
@@ -64,26 +48,14 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-     * 
-     * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-     * 
-     * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+     * Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
      * 
      */
     @Import(name="isMonitoringDisabled")
     private @Nullable Output<Boolean> isMonitoringDisabled;
 
     /**
-     * @return (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-     * 
-     * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-     * 
-     * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-     * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-     * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+     * @return Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
      * 
      */
     public Optional<Output<Boolean>> isMonitoringDisabled() {
@@ -91,14 +63,14 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The configuration of plugins associated with this instance.
+     * The configuration of plugins associated with this instance.
      * 
      */
     @Import(name="pluginsConfigs")
     private @Nullable Output<List<TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs>> pluginsConfigs;
 
     /**
-     * @return (Updatable) The configuration of plugins associated with this instance.
+     * @return The configuration of plugins associated with this instance.
      * 
      */
     public Optional<Output<List<TargetAssetRecommendedSpecAgentConfigPluginsConfigArgs>>> pluginsConfigs() {
@@ -133,9 +105,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param areAllPluginsDisabled (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-         * 
-         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         * @param areAllPluginsDisabled Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
          * 
          * @return builder
          * 
@@ -146,9 +116,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param areAllPluginsDisabled (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-         * 
-         * To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+         * @param areAllPluginsDisabled Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
          * 
          * @return builder
          * 
@@ -158,13 +126,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param isManagementDisabled (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-         * 
-         * These are the management plugins: OS Management Service Agent and Compute instance run command.
-         * 
-         * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+         * @param isManagementDisabled Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
          * 
          * @return builder
          * 
@@ -175,13 +137,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param isManagementDisabled (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-         * 
-         * These are the management plugins: OS Management Service Agent and Compute instance run command.
-         * 
-         * The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+         * @param isManagementDisabled Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
          * 
          * @return builder
          * 
@@ -191,13 +147,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param isMonitoringDisabled (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-         * 
-         * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-         * 
-         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+         * @param isMonitoringDisabled Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
          * 
          * @return builder
          * 
@@ -208,13 +158,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param isMonitoringDisabled (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-         * 
-         * These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-         * 
-         * The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-         * * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-         * * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+         * @param isMonitoringDisabled Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
          * 
          * @return builder
          * 
@@ -224,7 +168,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param pluginsConfigs (Updatable) The configuration of plugins associated with this instance.
+         * @param pluginsConfigs The configuration of plugins associated with this instance.
          * 
          * @return builder
          * 
@@ -235,7 +179,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param pluginsConfigs (Updatable) The configuration of plugins associated with this instance.
+         * @param pluginsConfigs The configuration of plugins associated with this instance.
          * 
          * @return builder
          * 
@@ -245,7 +189,7 @@ public final class TargetAssetRecommendedSpecAgentConfigArgs extends com.pulumi.
         }
 
         /**
-         * @param pluginsConfigs (Updatable) The configuration of plugins associated with this instance.
+         * @param pluginsConfigs The configuration of plugins associated with this instance.
          * 
          * @return builder
          * 

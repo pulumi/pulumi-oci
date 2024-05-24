@@ -13,7 +13,9 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn {
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,7 +29,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the corresponding Group resource to which the user belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -41,26 +45,28 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The identifier of the User&#39;s group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAppAppGroupMembershipToReturn() {}
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -76,7 +82,9 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the corresponding Group resource to which the user belongs
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -92,19 +100,19 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionradiusAp
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The identifier of the User&#39;s group.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

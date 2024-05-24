@@ -70,14 +70,14 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the aggregator.
+     * @return (Updatable) Detailed description for the object.
      * 
      */
     public Optional<Output<String>> description() {
@@ -130,14 +130,14 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     @Import(name="identifier")
     private @Nullable Output<String> identifier;
 
     /**
-     * @return (Updatable) The identifier of the aggregator.
+     * @return (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      * 
      */
     public Optional<Output<String>> identifier() {
@@ -190,14 +190,14 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The key of the aggregator object.
+     * @return (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      * 
      */
     public Optional<Output<String>> key() {
@@ -220,14 +220,14 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     @Import(name="metadatas")
     private @Nullable Output<List<WorkspaceApplicationTaskScheduleMetadataArgs>> metadatas;
 
     /**
-     * @return (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * @return A summary type containing information about the object including its key, name and when/who created/updated it.
      * 
      */
     public Optional<Output<List<WorkspaceApplicationTaskScheduleMetadataArgs>>> metadatas() {
@@ -235,14 +235,14 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
     }
 
     /**
-     * (Updatable) The type of the object.
+     * The type of the object.
      * 
      */
     @Import(name="modelType")
     private @Nullable Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the object.
+     * @return The type of the object.
      * 
      */
     public Optional<Output<String>> modelType() {
@@ -573,7 +573,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) The description of the aggregator.
+         * @param description (Updatable) Detailed description for the object.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param description (Updatable) The description of the aggregator.
+         * @param description (Updatable) Detailed description for the object.
          * 
          * @return builder
          * 
@@ -657,7 +657,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param identifier (Updatable) The identifier of the aggregator.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -668,7 +668,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param identifier (Updatable) The identifier of the aggregator.
+         * @param identifier (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
          * 
          * @return builder
          * 
@@ -741,7 +741,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -752,7 +752,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param key (Updatable) The key of the aggregator object.
+         * @param key (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
          * 
          * @return builder
          * 
@@ -793,7 +793,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param metadatas (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadatas A summary type containing information about the object including its key, name and when/who created/updated it.
          * 
          * @return builder
          * 
@@ -804,7 +804,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param metadatas (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadatas A summary type containing information about the object including its key, name and when/who created/updated it.
          * 
          * @return builder
          * 
@@ -814,7 +814,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param metadatas (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+         * @param metadatas A summary type containing information about the object including its key, name and when/who created/updated it.
          * 
          * @return builder
          * 
@@ -824,7 +824,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param modelType (Updatable) The type of the object.
+         * @param modelType The type of the object.
          * 
          * @return builder
          * 
@@ -835,7 +835,7 @@ public final class WorkspaceApplicationTaskScheduleState extends com.pulumi.reso
         }
 
         /**
-         * @param modelType (Updatable) The type of the object.
+         * @param modelType The type of the object.
          * 
          * @return builder
          * 

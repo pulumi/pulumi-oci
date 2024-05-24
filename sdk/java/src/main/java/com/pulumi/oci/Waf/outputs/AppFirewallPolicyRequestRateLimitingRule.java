@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class AppFirewallPolicyRequestRateLimitingRule {
     /**
-     * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+     * @return (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
      * 
      */
     private String actionName;
@@ -48,7 +48,7 @@ public final class AppFirewallPolicyRequestRateLimitingRule {
 
     private AppFirewallPolicyRequestRateLimitingRule() {}
     /**
-     * @return (Updatable) Override action to take if capability was triggered, defined in Protection Rule for this capability. Only actions of type CHECK are allowed.
+     * @return (Updatable) References action by name from actions defined in WebAppFirewallPolicy.
      * 
      */
     public String actionName() {

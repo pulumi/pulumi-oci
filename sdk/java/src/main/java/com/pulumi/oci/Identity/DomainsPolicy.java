@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPolicy = new DomainsPolicy("testPolicy", DomainsPolicyArgs.builder()        
+ *         var testPolicy = new DomainsPolicy("testPolicy", DomainsPolicyArgs.builder()
  *             .idcsEndpoint(testDomain.url())
  *             .name(policyName)
  *             .policyType(DomainsPolicyPolicyTypeArgs.builder()
@@ -517,17 +517,15 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
         return this.metas;
     }
     /**
-     * (Updatable) Rule name
-     * 
-     * **Added In:** 17.4.2
+     * (Updatable) Policy name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -536,17 +534,15 @@ public class DomainsPolicy extends com.pulumi.resources.CustomResource {
     private Output<String> name;
 
     /**
-     * @return (Updatable) Rule name
-     * 
-     * **Added In:** 17.4.2
+     * @return (Updatable) Policy name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: request
+     * * mutability: readWrite
+     * * required: true
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

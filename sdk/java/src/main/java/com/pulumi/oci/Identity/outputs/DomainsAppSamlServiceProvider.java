@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppSamlServiceProvider {
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -27,26 +27,24 @@ public final class DomainsAppSamlServiceProvider {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The id of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppSamlServiceProvider() {}
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) The URI of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -62,19 +60,17 @@ public final class DomainsAppSamlServiceProvider {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) The id of the App that acts as a Service Provider.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

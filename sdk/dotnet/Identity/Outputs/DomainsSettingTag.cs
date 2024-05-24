@@ -28,11 +28,11 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Key;
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Value of the tag.
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true

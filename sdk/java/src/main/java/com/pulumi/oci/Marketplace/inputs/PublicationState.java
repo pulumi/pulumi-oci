@@ -129,14 +129,14 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The name of the contact.
+     * (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) The name of the contact.
+     * @return (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     public Optional<Output<String>> name() {
@@ -159,14 +159,14 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The package&#39;s type.
+     * The listing&#39;s package type.
      * 
      */
     @Import(name="packageType")
     private @Nullable Output<String> packageType;
 
     /**
-     * @return The package&#39;s type.
+     * @return The listing&#39;s package type.
      * 
      */
     public Optional<Output<String>> packageType() {
@@ -460,7 +460,7 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) The name of the contact.
+         * @param name (Updatable) The name of the publication, which is also used in the listing.
          * 
          * @return builder
          * 
@@ -471,7 +471,7 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name (Updatable) The name of the contact.
+         * @param name (Updatable) The name of the publication, which is also used in the listing.
          * 
          * @return builder
          * 
@@ -502,7 +502,7 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param packageType The package&#39;s type.
+         * @param packageType The listing&#39;s package type.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class PublicationState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param packageType The package&#39;s type.
+         * @param packageType The listing&#39;s package type.
          * 
          * @return builder
          * 

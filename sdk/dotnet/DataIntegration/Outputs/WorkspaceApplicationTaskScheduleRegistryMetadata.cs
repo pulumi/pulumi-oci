@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceApplicationTaskScheduleRegistryMetadata
     {
         /// <summary>
-        /// (Updatable) The owning object key for this object.
+        /// (Updatable) The owning object's key for this object.
         /// </summary>
         public readonly string? AggregatorKey;
         /// <summary>
@@ -22,15 +22,15 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly bool? IsFavorite;
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) The identifying key for the object.
         /// </summary>
         public readonly string? Key;
         /// <summary>
-        /// (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+        /// (Updatable) Labels are keywords or labels that you can add to data assets, dataflows etc. You can define your own labels and use them to categorize content.
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// (Updatable) The registry version of the object.
+        /// (Updatable) The registry version.
         /// </summary>
         public readonly int? RegistryVersion;
 

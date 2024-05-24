@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", DatabaseToolsPrivateEndpointArgs.builder()        
+ *         var testDatabaseToolsPrivateEndpoint = new DatabaseToolsPrivateEndpoint("testDatabaseToolsPrivateEndpoint", DatabaseToolsPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(databaseToolsPrivateEndpointDisplayName)
  *             .endpointServiceId(testService.id())
@@ -329,14 +329,14 @@ public class DatabaseToolsPrivateEndpoint extends com.pulumi.resources.CustomRes
         return this.systemTags;
     }
     /**
-     * When the lock was created.
+     * The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeCreated() {

@@ -16,6 +16,8 @@ namespace Pulumi.Oci.DataScience.Inputs
         /// (Updatable) The metric expression for creating the alarm used to trigger autoscaling actions on the model deployment.
         /// 
         /// The following values are supported:
+        /// * `PREDEFINED_EXPRESSION`: An expression built using CPU or Memory metrics emitted by the Model Deployment Monitoring.
+        /// * `CUSTOM_EXPRESSION`: A custom Monitoring Query Language (MQL) expression.
         /// </summary>
         [Input("metricExpressionRuleType", required: true)]
         public Input<string> MetricExpressionRuleType { get; set; } = null!;

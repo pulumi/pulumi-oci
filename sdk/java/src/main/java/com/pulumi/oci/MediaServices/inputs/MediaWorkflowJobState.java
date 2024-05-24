@@ -23,14 +23,14 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
     public static final MediaWorkflowJobState Empty = new MediaWorkflowJobState();
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) ID of the compartment in which the job should be created.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) ID of the compartment in which the job should be created.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -255,14 +255,14 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * When the lock was created.
+     * Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return Creation time of the job. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -380,7 +380,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) ID of the compartment in which the job should be created.
          * 
          * @return builder
          * 
@@ -391,7 +391,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) ID of the compartment in which the job should be created.
          * 
          * @return builder
          * 
@@ -744,7 +744,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated Creation time of the job. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class MediaWorkflowJobState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated Creation time of the job. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

@@ -14,27 +14,27 @@ namespace Pulumi.Oci.LogAnalytics.Outputs
     public sealed class NamespaceScheduledTaskSchedulesSchedule
     {
         /// <summary>
-        /// (Updatable) Value in cron format.
+        /// Value in cron format.
         /// </summary>
         public readonly string? Expression;
         /// <summary>
-        /// (Updatable) Schedule misfire retry policy.
+        /// Schedule misfire retry policy.
         /// </summary>
         public readonly string? MisfirePolicy;
         /// <summary>
-        /// (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        /// Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         /// </summary>
         public readonly string? RecurringInterval;
         /// <summary>
-        /// (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        /// Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         /// </summary>
         public readonly int? RepeatCount;
         /// <summary>
-        /// (Updatable) Time zone, by default UTC.
+        /// Time zone, by default UTC.
         /// </summary>
         public readonly string? TimeZone;
         /// <summary>
-        /// (Updatable) Schedule type discriminator.
+        /// Schedule type discriminator.
         /// </summary>
         public readonly string Type;
 

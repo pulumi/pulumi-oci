@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration
     {
         /// <summary>
-        /// (Updatable) Unique name of the configuration
+        /// Unique name of the configuration
         /// </summary>
         public readonly string? ConfigKey;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? DataType;
         /// <summary>
-        /// (Updatable) configuration name
+        /// configuration name
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) configuration value
+        /// configuration value
         /// </summary>
         public readonly string? Value;
         /// <summary>

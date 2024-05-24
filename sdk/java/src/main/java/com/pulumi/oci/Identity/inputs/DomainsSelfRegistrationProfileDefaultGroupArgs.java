@@ -17,10 +17,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
     public static final DomainsSelfRegistrationProfileDefaultGroupArgs Empty = new DomainsSelfRegistrationProfileDefaultGroupArgs();
 
     /**
-     * (Updatable) The displayName of the User or App who modified this Resource
+     * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -34,10 +33,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -52,10 +50,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) URI of the Default Group
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -69,10 +66,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the Default Group
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -87,7 +83,7 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
     }
 
     /**
-     * (Updatable) name of the attribute
+     * (Updatable) Identifier of the Default Group.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -98,16 +94,13 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Identifier of the Default Group.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -118,9 +111,6 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -154,10 +144,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -175,10 +164,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -195,10 +183,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) URI of the Default Group
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -216,10 +203,9 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) URI of the Default Group
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -236,7 +222,7 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) Identifier of the Default Group.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -247,9 +233,6 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -260,7 +243,7 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) Identifier of the Default Group.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -271,9 +254,6 @@ public final class DomainsSelfRegistrationProfileDefaultGroupArgs extends com.pu
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

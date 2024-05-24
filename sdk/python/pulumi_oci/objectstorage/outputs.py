@@ -164,8 +164,8 @@ class BucketRetentionRuleDuration(dict):
                  time_amount: str,
                  time_unit: str):
         """
-        :param str time_amount: The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
-        :param str time_unit: The unit that should be used to interpret timeAmount.
+        :param str time_amount: (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+        :param str time_unit: (Updatable) The unit that should be used to interpret timeAmount.
         """
         pulumi.set(__self__, "time_amount", time_amount)
         pulumi.set(__self__, "time_unit", time_unit)
@@ -174,7 +174,7 @@ class BucketRetentionRuleDuration(dict):
     @pulumi.getter(name="timeAmount")
     def time_amount(self) -> str:
         """
-        The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
+        (Updatable) The timeAmount is interpreted in units defined by the timeUnit parameter, and is calculated in relation to each object's Last-Modified timestamp.
         """
         return pulumi.get(self, "time_amount")
 
@@ -182,7 +182,7 @@ class BucketRetentionRuleDuration(dict):
     @pulumi.getter(name="timeUnit")
     def time_unit(self) -> str:
         """
-        The unit that should be used to interpret timeAmount.
+        (Updatable) The unit that should be used to interpret timeAmount.
         """
         return pulumi.get(self, "time_unit")
 

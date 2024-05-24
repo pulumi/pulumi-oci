@@ -13,28 +13,20 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskConfigProviderDelegateBindingParameterValues {
     /**
-     * @return (Updatable) The root object value, used in custom parameters.
+     * @return The root object value, used in custom parameters.
      * 
      */
     private @Nullable WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue rootObjectValue;
-    /**
-     * @return A simple value for the parameter.
-     * 
-     */
     private @Nullable String simpleValue;
 
     private WorkspaceTaskConfigProviderDelegateBindingParameterValues() {}
     /**
-     * @return (Updatable) The root object value, used in custom parameters.
+     * @return The root object value, used in custom parameters.
      * 
      */
     public Optional<WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue> rootObjectValue() {
         return Optional.ofNullable(this.rootObjectValue);
     }
-    /**
-     * @return A simple value for the parameter.
-     * 
-     */
     public Optional<String> simpleValue() {
         return Optional.ofNullable(this.simpleValue);
     }

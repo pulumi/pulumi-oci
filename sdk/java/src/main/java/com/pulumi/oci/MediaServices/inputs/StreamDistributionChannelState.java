@@ -21,14 +21,14 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
     public static final StreamDistributionChannelState Empty = new StreamDistributionChannelState();
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -148,14 +148,14 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
     }
 
     /**
-     * When the lock was created.
+     * The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return When the lock was created.
+     * @return The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -212,7 +212,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 
@@ -410,7 +410,7 @@ public final class StreamDistributionChannelState extends com.pulumi.resources.R
         }
 
         /**
-         * @param timeCreated When the lock was created.
+         * @param timeCreated The time when the Stream Distribution Channel was created. An RFC3339 formatted datetime string.
          * 
          * @return builder
          * 

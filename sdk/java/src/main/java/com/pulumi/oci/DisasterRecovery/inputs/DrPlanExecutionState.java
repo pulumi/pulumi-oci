@@ -203,14 +203,14 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The type of the plan execution.
+     * The type of the DR plan executed.
      * 
      */
     @Import(name="planExecutionType")
     private @Nullable Output<String> planExecutionType;
 
     /**
-     * @return The type of the plan execution.
+     * @return The type of the DR plan executed.
      * 
      */
     public Optional<Output<String>> planExecutionType() {
@@ -644,7 +644,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param planExecutionType The type of the plan execution.
+         * @param planExecutionType The type of the DR plan executed.
          * 
          * @return builder
          * 
@@ -655,7 +655,7 @@ public final class DrPlanExecutionState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param planExecutionType The type of the plan execution.
+         * @param planExecutionType The type of the DR plan executed.
          * 
          * @return builder
          * 

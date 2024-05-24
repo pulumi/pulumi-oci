@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
     public sealed class TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction
     {
         /// <summary>
-        /// (Updatable) Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
+        /// Whether to preserve the boot volume that was used to launch the preemptible instance when the instance is terminated. By default, it is false if not specified.
         /// </summary>
         public readonly bool? PreserveBootVolume;
         /// <summary>
-        /// (Updatable) The type of action to run when the instance is interrupted for eviction.
+        /// (Updatable) The type of target asset.
         /// </summary>
         public readonly string? Type;
 

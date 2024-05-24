@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DataScience.Outputs
     public sealed class NotebookSessionNotebookSessionConfigDetailsNotebookSessionShapeConfigDetails
     {
         /// <summary>
-        /// (Updatable) The total amount of memory available to the notebook session instance, in gigabytes.
+        /// The total amount of memory available to the notebook session instance, in gigabytes.
         /// </summary>
         public readonly double? MemoryInGbs;
         /// <summary>
-        /// (Updatable) The total number of OCPUs available to the notebook session instance.
+        /// The total number of OCPUs available to the notebook session instance.
         /// </summary>
         public readonly double? Ocpus;
 

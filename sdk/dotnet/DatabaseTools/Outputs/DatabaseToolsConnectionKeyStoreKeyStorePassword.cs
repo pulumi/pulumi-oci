@@ -14,15 +14,11 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
     public sealed class DatabaseToolsConnectionKeyStoreKeyStorePassword
     {
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
         /// </summary>
         public readonly string? SecretId;
         /// <summary>
-        /// (Updatable) The value type of the user password.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) The value type of the key store password.
         /// </summary>
         public readonly string ValueType;
 

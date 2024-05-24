@@ -129,14 +129,11 @@ func (o IndexKeyArrayOutput) Index(i pulumi.IntInput) IndexKeyOutput {
 }
 
 type TableReplicaType struct {
-	// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
 	CapacityMode *string `pulumi:"capacityMode"`
 	// A message describing the current state in more detail.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) Maximum sustained write throughput limit for the table.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Maximum sustained write throughput limit for the table.
 	MaxWriteUnits *int `pulumi:"maxWriteUnits"`
 	// A customer-facing region identifier
 	Region *string `pulumi:"region"`
@@ -158,14 +155,11 @@ type TableReplicaTypeInput interface {
 }
 
 type TableReplicaTypeArgs struct {
-	// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+	// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
 	CapacityMode pulumi.StringPtrInput `pulumi:"capacityMode"`
 	// A message describing the current state in more detail.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
-	// (Updatable) Maximum sustained write throughput limit for the table.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Maximum sustained write throughput limit for the table.
 	MaxWriteUnits pulumi.IntPtrInput `pulumi:"maxWriteUnits"`
 	// A customer-facing region identifier
 	Region pulumi.StringPtrInput `pulumi:"region"`
@@ -226,7 +220,7 @@ func (o TableReplicaTypeOutput) ToTableReplicaTypeOutputWithContext(ctx context.
 	return o
 }
 
-// (Updatable) The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
+// The capacity mode of the table.  If capacityMode = ON_DEMAND, maxReadUnits and maxWriteUnits are not used, and both will have the value of zero.
 func (o TableReplicaTypeOutput) CapacityMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TableReplicaType) *string { return v.CapacityMode }).(pulumi.StringPtrOutput)
 }
@@ -236,10 +230,7 @@ func (o TableReplicaTypeOutput) LifecycleDetails() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TableReplicaType) *string { return v.LifecycleDetails }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Maximum sustained write throughput limit for the table.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Maximum sustained write throughput limit for the table.
 func (o TableReplicaTypeOutput) MaxWriteUnits() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v TableReplicaType) *int { return v.MaxWriteUnits }).(pulumi.IntPtrOutput)
 }

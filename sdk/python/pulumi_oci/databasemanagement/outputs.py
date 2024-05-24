@@ -6717,8 +6717,8 @@ class ManagedDatabasesChangeDatabaseParameterCredentials(dict):
                  secret_id: Optional[str] = None,
                  user_name: Optional[str] = None):
         """
-        :param str password: The database user's password encoded using BASE64 scheme.
-        :param str role: The role of the database user.
+        :param str password: The password for the database user name.
+        :param str role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param str user_name: The database user name used to perform management activity.
         """
@@ -6735,7 +6735,7 @@ class ManagedDatabasesChangeDatabaseParameterCredentials(dict):
     @pulumi.getter
     def password(self) -> Optional[str]:
         """
-        The database user's password encoded using BASE64 scheme.
+        The password for the database user name.
         """
         return pulumi.get(self, "password")
 
@@ -6743,7 +6743,7 @@ class ManagedDatabasesChangeDatabaseParameterCredentials(dict):
     @pulumi.getter
     def role(self) -> Optional[str]:
         """
-        The role of the database user.
+        The role of the database user. Indicates whether the database user is a normal user or sysdba.
         """
         return pulumi.get(self, "role")
 
@@ -6948,8 +6948,8 @@ class ManagedDatabasesResetDatabaseParameterCredentials(dict):
                  secret_id: Optional[str] = None,
                  user_name: Optional[str] = None):
         """
-        :param str password: The database user's password encoded using BASE64 scheme.
-        :param str role: The role of the database user.
+        :param str password: The password for the database user name.
+        :param str role: The role of the database user. Indicates whether the database user is a normal user or sysdba.
         :param str secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
         :param str user_name: The database user name used to perform management activity.
         """
@@ -6966,7 +6966,7 @@ class ManagedDatabasesResetDatabaseParameterCredentials(dict):
     @pulumi.getter
     def password(self) -> Optional[str]:
         """
-        The database user's password encoded using BASE64 scheme.
+        The password for the database user name.
         """
         return pulumi.get(self, "password")
 
@@ -6974,7 +6974,7 @@ class ManagedDatabasesResetDatabaseParameterCredentials(dict):
     @pulumi.getter
     def role(self) -> Optional[str]:
         """
-        The role of the database user.
+        The role of the database user. Indicates whether the database user is a normal user or sysdba.
         """
         return pulumi.get(self, "role")
 

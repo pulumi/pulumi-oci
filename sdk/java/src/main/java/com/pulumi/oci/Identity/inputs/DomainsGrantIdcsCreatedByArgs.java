@@ -17,7 +17,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     public static final DomainsGrantIdcsCreatedByArgs Empty = new DomainsGrantIdcsCreatedByArgs();
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -34,7 +34,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -52,34 +52,32 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -87,7 +85,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -104,7 +102,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -122,7 +120,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * The type of resource, User or App, that modified this Resource
+     * The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -139,7 +137,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     private @Nullable Output<String> type;
 
     /**
-     * @return The type of resource, User or App, that modified this Resource
+     * @return The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -157,13 +155,13 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     }
 
     /**
-     * Value of the tag.
+     * The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -174,13 +172,13 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -220,7 +218,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -241,7 +239,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -261,17 +259,16 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -282,17 +279,16 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: immutable
-         * * required: false
+         * * mutability: readOnly
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -302,7 +298,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -323,7 +319,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -343,7 +339,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -364,7 +360,7 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param type The type of resource, User or App, that modified this Resource
+         * @param type The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -384,13 +380,13 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string
@@ -405,13 +401,13 @@ public final class DomainsGrantIdcsCreatedByArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
          * * type: string

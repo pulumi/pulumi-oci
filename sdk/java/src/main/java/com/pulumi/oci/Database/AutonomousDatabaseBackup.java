@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup("testAutonomousDatabaseBackup", AutonomousDatabaseBackupArgs.builder()        
+ *         var testAutonomousDatabaseBackup = new AutonomousDatabaseBackup("testAutonomousDatabaseBackup", AutonomousDatabaseBackupArgs.builder()
  *             .autonomousDatabaseId(testAutonomousDatabase.id())
  *             .displayName(autonomousDatabaseBackupDisplayName)
  *             .isLongTermBackup(autonomousDatabaseBackupIsLongTermBackup)

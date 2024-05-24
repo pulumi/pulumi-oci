@@ -231,7 +231,7 @@ class _DatabaseToolsPrivateEndpointState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
@@ -488,7 +488,7 @@ class _DatabaseToolsPrivateEndpointState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        When the lock was created.
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -762,7 +762,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: When the lock was created.
+        :param pulumi.Input[str] time_created: The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Database Tools private endpoint was updated. An RFC3339 formatted datetime string
         :param pulumi.Input[str] vcn_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN that the private endpoint belongs to.
         """
@@ -936,7 +936,7 @@ class DatabaseToolsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        When the lock was created.
+        The time the Database Tools private endpoint was created. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 

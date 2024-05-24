@@ -18,10 +18,7 @@ public final class DeploymentSpecificationRouteResponsePoliciesHeaderTransformat
      */
     private List<DeploymentSpecificationRouteResponsePoliciesHeaderTransformationsFilterHeadersItem> items;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
      * 
      */
     private String type;
@@ -35,10 +32,7 @@ public final class DeploymentSpecificationRouteResponsePoliciesHeaderTransformat
         return this.items;
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) BLOCK drops any headers that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the headers in the list and removes all others, so it acts as an inclusion list.
      * 
      */
     public String type() {

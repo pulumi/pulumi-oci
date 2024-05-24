@@ -28,7 +28,7 @@ class NetworkAddressListArgs:
         The set of arguments for constructing a NetworkAddressList resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[str] type: (Updatable) Type of NetworkAddressList.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -78,7 +78,7 @@ class NetworkAddressListArgs:
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A private IP address or CIDR IP address range.
+        (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         return pulumi.get(self, "addresses")
 
@@ -164,7 +164,7 @@ class _NetworkAddressListState:
                  vcn_addresses: Optional[pulumi.Input[Sequence[pulumi.Input['NetworkAddressListVcnAddressArgs']]]] = None):
         """
         Input properties used for looking up and filtering NetworkAddressList resources.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
@@ -206,7 +206,7 @@ class _NetworkAddressListState:
     @pulumi.getter
     def addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) A private IP address or CIDR IP address range.
+        (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         return pulumi.get(self, "addresses")
 
@@ -400,7 +400,7 @@ class NetworkAddressList(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
@@ -529,7 +529,7 @@ class NetworkAddressList(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A private IP address or CIDR IP address range.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] addresses: (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) NetworkAddressList display name, can be renamed.
@@ -564,7 +564,7 @@ class NetworkAddressList(pulumi.CustomResource):
     @pulumi.getter
     def addresses(self) -> pulumi.Output[Optional[Sequence[str]]]:
         """
-        (Updatable) A private IP address or CIDR IP address range.
+        (Updatable) A list of IP address prefixes in CIDR notation. To specify all addresses, use "0.0.0.0/0" for IPv4 and "::/0" for IPv6.
         """
         return pulumi.get(self, "addresses")
 

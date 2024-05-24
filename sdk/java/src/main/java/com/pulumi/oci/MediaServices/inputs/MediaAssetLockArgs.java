@@ -77,20 +77,14 @@ public final class MediaAssetLockArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * Type of the lock.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of the media asset.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Type of the lock.
      * 
      */
     public Output<String> type() {
@@ -210,10 +204,7 @@ public final class MediaAssetLockArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type (Updatable) The type of the media asset.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type Type of the lock.
          * 
          * @return builder
          * 
@@ -224,10 +215,7 @@ public final class MediaAssetLockArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param type (Updatable) The type of the media asset.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type Type of the lock.
          * 
          * @return builder
          * 

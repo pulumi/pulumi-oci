@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         final var config = ctx.config();
  *         final var disassociateTrigger = config.get("disassociateTrigger").orElse(0);
- *         var testDrProtectionGroup = new DrProtectionGroup("testDrProtectionGroup", DrProtectionGroupArgs.builder()        
+ *         var testDrProtectionGroup = new DrProtectionGroup("testDrProtectionGroup", DrProtectionGroupArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(drProtectionGroupDisplayName)
  *             .logLocation(DrProtectionGroupLogLocationArgs.builder()
@@ -331,14 +331,14 @@ public class DrProtectionGroup extends com.pulumi.resources.CustomResource {
         return this.peerRegion;
     }
     /**
-     * The role of the DR protection group.  Example: `STANDBY`
+     * The role of the DR protection group.
      * 
      */
     @Export(name="role", refs={String.class}, tree="[0]")
     private Output<String> role;
 
     /**
-     * @return The role of the DR protection group.  Example: `STANDBY`
+     * @return The role of the DR protection group.
      * 
      */
     public Output<String> role() {

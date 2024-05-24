@@ -17,27 +17,27 @@ public final class SubscriptionTaxInfo {
      */
     private @Nullable String giro;
     /**
-     * @return (Updatable) Tax exemption reason code.
+     * @return Tax exemption reason code.
      * 
      */
     private @Nullable String noTaxReasonCode;
     /**
-     * @return (Updatable) Tax exemption reason description.
+     * @return Tax exemption reason description.
      * 
      */
     private @Nullable String noTaxReasonCodeDetails;
     /**
-     * @return (Updatable) Brazilian companies&#39; CNPJ number.
+     * @return Brazilian companies&#39; CNPJ number.
      * 
      */
     private @Nullable String taxCnpj;
     /**
-     * @return (Updatable) Tay payer identifier.
+     * @return Tay payer identifier.
      * 
      */
     private @Nullable String taxPayerId;
     /**
-     * @return (Updatable) Tax registration number.
+     * @return Tax registration number.
      * 
      */
     private @Nullable String taxRegNumber;
@@ -51,35 +51,35 @@ public final class SubscriptionTaxInfo {
         return Optional.ofNullable(this.giro);
     }
     /**
-     * @return (Updatable) Tax exemption reason code.
+     * @return Tax exemption reason code.
      * 
      */
     public Optional<String> noTaxReasonCode() {
         return Optional.ofNullable(this.noTaxReasonCode);
     }
     /**
-     * @return (Updatable) Tax exemption reason description.
+     * @return Tax exemption reason description.
      * 
      */
     public Optional<String> noTaxReasonCodeDetails() {
         return Optional.ofNullable(this.noTaxReasonCodeDetails);
     }
     /**
-     * @return (Updatable) Brazilian companies&#39; CNPJ number.
+     * @return Brazilian companies&#39; CNPJ number.
      * 
      */
     public Optional<String> taxCnpj() {
         return Optional.ofNullable(this.taxCnpj);
     }
     /**
-     * @return (Updatable) Tay payer identifier.
+     * @return Tay payer identifier.
      * 
      */
     public Optional<String> taxPayerId() {
         return Optional.ofNullable(this.taxPayerId);
     }
     /**
-     * @return (Updatable) Tax registration number.
+     * @return Tax registration number.
      * 
      */
     public Optional<String> taxRegNumber() {

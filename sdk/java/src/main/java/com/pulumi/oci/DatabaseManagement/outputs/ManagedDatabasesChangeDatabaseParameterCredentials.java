@@ -12,12 +12,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ManagedDatabasesChangeDatabaseParameterCredentials {
     /**
-     * @return The database user&#39;s password encoded using BASE64 scheme.
+     * @return The password for the database user name.
      * 
      */
     private @Nullable String password;
     /**
-     * @return The role of the database user.
+     * @return The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * 
      */
     private @Nullable String role;
@@ -34,14 +34,14 @@ public final class ManagedDatabasesChangeDatabaseParameterCredentials {
 
     private ManagedDatabasesChangeDatabaseParameterCredentials() {}
     /**
-     * @return The database user&#39;s password encoded using BASE64 scheme.
+     * @return The password for the database user name.
      * 
      */
     public Optional<String> password() {
         return Optional.ofNullable(this.password);
     }
     /**
-     * @return The role of the database user.
+     * @return The role of the database user. Indicates whether the database user is a normal user or sysdba.
      * 
      */
     public Optional<String> role() {

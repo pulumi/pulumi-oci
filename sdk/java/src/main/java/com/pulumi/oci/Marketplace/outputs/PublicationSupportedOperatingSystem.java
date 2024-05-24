@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PublicationSupportedOperatingSystem {
     /**
-     * @return (Updatable) The name of the contact.
+     * @return (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     private @Nullable String name;
 
     private PublicationSupportedOperatingSystem() {}
     /**
-     * @return (Updatable) The name of the contact.
+     * @return (Updatable) The name of the publication, which is also used in the listing.
      * 
      */
     public Optional<String> name() {

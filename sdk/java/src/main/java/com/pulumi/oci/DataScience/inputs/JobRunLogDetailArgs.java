@@ -16,14 +16,14 @@ public final class JobRunLogDetailArgs extends com.pulumi.resources.ResourceArgs
     public static final JobRunLogDetailArgs Empty = new JobRunLogDetailArgs();
 
     /**
-     * The log group id for where log objects are for job runs.
+     * The log group id for where log objects will be for job runs.
      * 
      */
     @Import(name="logGroupId")
     private @Nullable Output<String> logGroupId;
 
     /**
-     * @return The log group id for where log objects are for job runs.
+     * @return The log group id for where log objects will be for job runs.
      * 
      */
     public Optional<Output<String>> logGroupId() {
@@ -31,14 +31,14 @@ public final class JobRunLogDetailArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The log id the job run will push logs too.
+     * The log id of the log object the job run logs will be shipped to.
      * 
      */
     @Import(name="logId")
     private @Nullable Output<String> logId;
 
     /**
-     * @return The log id the job run will push logs too.
+     * @return The log id of the log object the job run logs will be shipped to.
      * 
      */
     public Optional<Output<String>> logId() {
@@ -71,7 +71,7 @@ public final class JobRunLogDetailArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param logGroupId The log group id for where log objects are for job runs.
+         * @param logGroupId The log group id for where log objects will be for job runs.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class JobRunLogDetailArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param logGroupId The log group id for where log objects are for job runs.
+         * @param logGroupId The log group id for where log objects will be for job runs.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class JobRunLogDetailArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param logId The log id the job run will push logs too.
+         * @param logId The log id of the log object the job run logs will be shipped to.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class JobRunLogDetailArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param logId The log id the job run will push logs too.
+         * @param logId The log id of the log object the job run logs will be shipped to.
          * 
          * @return builder
          * 

@@ -91,8 +91,8 @@ class AlarmOverride(dict):
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
                -----
-        :param str rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
-        :param str severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        :param str rule_name: (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+        :param str severity: (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
         """
         if body is not None:
             pulumi.set(__self__, "body", body)
@@ -157,7 +157,7 @@ class AlarmOverride(dict):
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> Optional[str]:
         """
-        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
         """
         return pulumi.get(self, "rule_name")
 
@@ -165,7 +165,7 @@ class AlarmOverride(dict):
     @pulumi.getter
     def severity(self) -> Optional[str]:
         """
-        (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
         """
         return pulumi.get(self, "severity")
 
@@ -874,6 +874,9 @@ class GetAlarmsAlarmResult(dict):
         :param bool is_enabled: Whether the alarm is enabled.  Example: `true`
         :param bool is_notifications_per_metric_dimension_enabled: Whether the alarm sends a separate message for each metric stream. See [Creating an Alarm That Splits Messages by Metric Stream](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-split.htm). Example: `true`
         :param str message_format: The format to use for alarm notifications. The formats are:
+               * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+               * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+               * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         :param str metric_compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric being evaluated by the alarm.
         :param bool metric_compartment_id_in_subtree: When true, the alarm evaluates metrics from all compartments and subcompartments. The parameter can only be set to true when metricCompartmentId is the tenancy OCID (the tenancy is the root compartment). A true value requires the user to have tenancy-level permissions. If this requirement is not met, then the call is rejected. When false, the alarm evaluates metrics from only the compartment specified in metricCompartmentId. Default is false.  Example: `true`
         :param str namespace: The source service or application emitting the metric that is evaluated by the alarm.  Example: `oci_computeagent`
@@ -995,6 +998,9 @@ class GetAlarmsAlarmResult(dict):
     def message_format(self) -> str:
         """
         The format to use for alarm notifications. The formats are:
+        * `RAW` - Raw JSON blob. Default value. When the `destinations` attribute specifies `Streaming`, all alarm notifications use this format.
+        * `PRETTY_JSON`: JSON with new lines and indents. Available when the `destinations` attribute specifies `Notifications` only.
+        * `ONS_OPTIMIZED`: Simplified, user-friendly layout. Available when the `destinations` attribute specifies `Notifications` only. Applies to Email subscription types only.
         """
         return pulumi.get(self, "message_format")
 

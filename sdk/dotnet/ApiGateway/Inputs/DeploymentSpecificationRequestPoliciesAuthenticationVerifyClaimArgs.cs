@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<bool>? IsRequired { get; set; }
 
         /// <summary>
-        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
+        /// (Updatable) Name of the claim.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         private InputList<string>? _values;
 
         /// <summary>
-        /// (Updatable) A list of new values.  Each value can be a constant or may include one or more expressions enclosed within ${} delimiters.
+        /// (Updatable) The list of acceptable values for a given claim. If this value is "null" or empty and "isRequired" set to "true", then the presence of this claim in the JWT is validated.
         /// </summary>
         public InputList<string> Values
         {

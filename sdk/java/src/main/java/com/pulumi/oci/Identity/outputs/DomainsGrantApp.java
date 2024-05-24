@@ -13,25 +13,23 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsGrantApp {
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Application display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Application URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -43,13 +41,13 @@ public final class DomainsGrantApp {
      */
     private @Nullable String ref;
     /**
-     * @return Value of the tag.
+     * @return Application identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -60,15 +58,14 @@ public final class DomainsGrantApp {
 
     private DomainsGrantApp() {}
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) Application display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: request
      * * type: string
      * * uniqueness: none
      * 
@@ -77,10 +74,9 @@ public final class DomainsGrantApp {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Application URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -94,13 +90,13 @@ public final class DomainsGrantApp {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return Value of the tag.
+     * @return Application identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly string? Location;
         /// <summary>
-        /// (Updatable) The tag name.
+        /// (Updatable) Disk name.
         /// </summary>
         public readonly string? Name;
         /// <summary>

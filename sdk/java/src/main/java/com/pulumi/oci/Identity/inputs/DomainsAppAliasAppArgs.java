@@ -17,9 +17,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     public static final DomainsAppAliasAppArgs Empty = new DomainsAppAliasAppArgs();
 
     /**
-     * (Updatable) The description of the AppRole.
+     * (Updatable) Description of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -33,9 +34,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) Description of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -50,9 +52,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) Display-name of the AppRole.
+     * (Updatable) Display name of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -66,9 +69,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Display name of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -83,9 +87,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) URI of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -99,9 +104,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -116,38 +122,34 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) ID of the alias App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ID of the alias App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -182,9 +184,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param description (Updatable) The description of the AppRole.
+         * @param description (Updatable) Description of the alias App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -202,9 +205,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param description (Updatable) The description of the AppRole.
+         * @param description (Updatable) Description of the alias App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -221,9 +225,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) Display name of the alias App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -241,9 +246,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param display (Updatable) Display-name of the AppRole.
+         * @param display (Updatable) Display name of the alias App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -260,9 +266,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the alias App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -280,9 +287,10 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the alias App.
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -299,19 +307,17 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) ID of the alias App.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -322,19 +328,17 @@ public final class DomainsAppAliasAppArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) ID of the alias App.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

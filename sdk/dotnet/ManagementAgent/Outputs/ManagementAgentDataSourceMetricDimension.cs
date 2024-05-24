@@ -14,7 +14,7 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
     public sealed class ManagementAgentDataSourceMetricDimension
     {
         /// <summary>
-        /// Unique name of the DataSource.
+        /// (Updatable) Name of the metric dimension
         /// </summary>
         public readonly string Name;
         /// <summary>

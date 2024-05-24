@@ -106,6 +106,15 @@ namespace Pulumi.Oci.Ons
         /// The protocol used for the subscription.
         /// 
         /// Allowed values:
+        /// * `CUSTOM_HTTPS`
+        /// * `EMAIL`
+        /// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+        /// * `ORACLE_FUNCTIONS`
+        /// * `PAGERDUTY`
+        /// * `SLACK`
+        /// * `SMS`
+        /// 
+        /// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         /// </summary>
         [Output("protocol")]
         public Output<string> Protocol { get; private set; } = null!;
@@ -220,6 +229,15 @@ namespace Pulumi.Oci.Ons
         /// The protocol used for the subscription.
         /// 
         /// Allowed values:
+        /// * `CUSTOM_HTTPS`
+        /// * `EMAIL`
+        /// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+        /// * `ORACLE_FUNCTIONS`
+        /// * `PAGERDUTY`
+        /// * `SLACK`
+        /// * `SMS`
+        /// 
+        /// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         /// </summary>
         [Input("protocol", required: true)]
         public Input<string> Protocol { get; set; } = null!;
@@ -302,6 +320,15 @@ namespace Pulumi.Oci.Ons
         /// The protocol used for the subscription.
         /// 
         /// Allowed values:
+        /// * `CUSTOM_HTTPS`
+        /// * `EMAIL`
+        /// * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+        /// * `ORACLE_FUNCTIONS`
+        /// * `PAGERDUTY`
+        /// * `SLACK`
+        /// * `SMS`
+        /// 
+        /// For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }

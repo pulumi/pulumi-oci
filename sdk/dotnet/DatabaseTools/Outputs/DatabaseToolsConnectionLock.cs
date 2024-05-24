@@ -26,7 +26,7 @@ namespace Pulumi.Oci.DatabaseTools.Outputs
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// (Updatable) The DatabaseToolsConnection type.
+        /// Type of the lock.
         /// </summary>
         public readonly string Type;
 

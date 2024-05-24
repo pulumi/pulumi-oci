@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRedisCluster = new RedisCluster("testRedisCluster", RedisClusterArgs.builder()        
+ *         var testRedisCluster = new RedisCluster("testRedisCluster", RedisClusterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(redisClusterDisplayName)
  *             .nodeCount(redisClusterNodeCount)

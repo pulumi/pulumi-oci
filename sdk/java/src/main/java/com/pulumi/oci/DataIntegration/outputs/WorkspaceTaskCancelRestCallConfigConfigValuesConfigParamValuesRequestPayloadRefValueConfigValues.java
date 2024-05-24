@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues {
     /**
-     * @return (Updatable) The configuration parameter values.
+     * @return The configuration parameter values.
      * 
      */
     private @Nullable WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues configParamValues;
 
     private WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValues() {}
     /**
-     * @return (Updatable) The configuration parameter values.
+     * @return The configuration parameter values.
      * 
      */
     public Optional<WorkspaceTaskCancelRestCallConfigConfigValuesConfigParamValuesRequestPayloadRefValueConfigValuesConfigParamValues> configParamValues() {

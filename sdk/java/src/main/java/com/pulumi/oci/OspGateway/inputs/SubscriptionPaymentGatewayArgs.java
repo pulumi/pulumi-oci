@@ -17,14 +17,14 @@ public final class SubscriptionPaymentGatewayArgs extends com.pulumi.resources.R
     public static final SubscriptionPaymentGatewayArgs Empty = new SubscriptionPaymentGatewayArgs();
 
     /**
-     * (Updatable) Merchant details.
+     * Merchant details.
      * 
      */
     @Import(name="merchantDefinedDatas")
     private @Nullable Output<List<SubscriptionPaymentGatewayMerchantDefinedDataArgs>> merchantDefinedDatas;
 
     /**
-     * @return (Updatable) Merchant details.
+     * @return Merchant details.
      * 
      */
     public Optional<Output<List<SubscriptionPaymentGatewayMerchantDefinedDataArgs>>> merchantDefinedDatas() {
@@ -56,7 +56,7 @@ public final class SubscriptionPaymentGatewayArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param merchantDefinedDatas (Updatable) Merchant details.
+         * @param merchantDefinedDatas Merchant details.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class SubscriptionPaymentGatewayArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param merchantDefinedDatas (Updatable) Merchant details.
+         * @param merchantDefinedDatas Merchant details.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class SubscriptionPaymentGatewayArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param merchantDefinedDatas (Updatable) Merchant details.
+         * @param merchantDefinedDatas Merchant details.
          * 
          * @return builder
          * 

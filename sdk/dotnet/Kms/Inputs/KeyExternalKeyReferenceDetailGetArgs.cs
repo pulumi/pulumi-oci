@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Kms.Inputs
     public sealed class KeyExternalKeyReferenceDetailGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM
+        /// ExternalKeyId refers to the globally unique key Id associated with the key created in external vault in CTM.
         /// </summary>
         [Input("externalKeyId")]
         public Input<string>? ExternalKeyId { get; set; }

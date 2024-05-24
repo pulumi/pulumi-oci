@@ -18,14 +18,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs();
 
     /**
-     * (Updatable) Unique name of the configuration
+     * Unique name of the configuration
      * 
      */
     @Import(name="configKey")
     private @Nullable Output<String> configKey;
 
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return Unique name of the configuration
      * 
      */
     public Optional<Output<String>> configKey() {
@@ -48,14 +48,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     }
 
     /**
-     * (Updatable) configuration name
+     * configuration name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) configuration name
+     * @return configuration name
      * 
      */
     public Optional<Output<String>> name() {
@@ -63,14 +63,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     }
 
     /**
-     * (Updatable) configuration value
+     * configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -121,7 +121,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey Unique name of the configuration
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param configKey (Updatable) Unique name of the configuration
+         * @param configKey Unique name of the configuration
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name configuration name
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param name (Updatable) configuration name
+         * @param name configuration name
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 

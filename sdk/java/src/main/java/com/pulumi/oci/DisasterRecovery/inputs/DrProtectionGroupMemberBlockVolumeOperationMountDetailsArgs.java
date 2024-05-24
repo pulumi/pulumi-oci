@@ -16,14 +16,14 @@ public final class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs e
     public static final DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs Empty = new DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs();
 
     /**
-     * (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+     * (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
      * 
      */
     @Import(name="mountPoint")
     private @Nullable Output<String> mountPoint;
 
     /**
-     * @return (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+     * @return (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
      * 
      */
     public Optional<Output<String>> mountPoint() {
@@ -55,7 +55,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs e
         }
 
         /**
-         * @param mountPoint (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+         * @param mountPoint (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DrProtectionGroupMemberBlockVolumeOperationMountDetailsArgs e
         }
 
         /**
-         * @param mountPoint (Updatable) The physical mount point of the file system on a host.  Example: `/mnt/yourmountpoint`
+         * @param mountPoint (Updatable) The physical mount point used for mounting the file system on the block volume.  Example: `/mnt/yourmountpoint`
          * 
          * @return builder
          * 

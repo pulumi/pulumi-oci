@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string>? AllowedValues { get; set; }
 
         /// <summary>
-        /// Configuration variable name.
+        /// The configuration variable name.
         /// </summary>
         [Input("configKey")]
         public Input<string>? ConfigKey { get; set; }
@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<bool>? IsRestartRequired { get; set; }
 
         /// <summary>
-        /// User-selected variable value.
+        /// User-selected configuration variable value.
         /// </summary>
         [Input("overridenConfigValue")]
         public Input<string>? OverridenConfigValue { get; set; }

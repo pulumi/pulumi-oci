@@ -17,7 +17,9 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
     public static final DomainsAppAsOpcServiceArgs Empty = new DomainsAppAsOpcServiceArgs();
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) URI of the OPCService facet.
+     * 
+     * **Deprecated Since: 17.3.4**
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +35,9 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the OPCService facet.
+     * 
+     * **Deprecated Since: 17.3.4**
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,38 +54,38 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Identifier of the OPCService facet.
+     * 
+     * **Deprecated Since: 17.3.4**
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the OPCService facet.
+     * 
+     * **Deprecated Since: 17.3.4**
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -114,7 +118,9 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the OPCService facet.
+         * 
+         * **Deprecated Since: 17.3.4**
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -134,7 +140,9 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the OPCService facet.
+         * 
+         * **Deprecated Since: 17.3.4**
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -153,19 +161,19 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Identifier of the OPCService facet.
+         * 
+         * **Deprecated Since: 17.3.4**
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -176,19 +184,19 @@ public final class DomainsAppAsOpcServiceArgs extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Identifier of the OPCService facet.
+         * 
+         * **Deprecated Since: 17.3.4**
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

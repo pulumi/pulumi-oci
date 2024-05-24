@@ -43,7 +43,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testClusterStartCredentialRotationManagement = new ClusterStartCredentialRotationManagement("testClusterStartCredentialRotationManagement", ClusterStartCredentialRotationManagementArgs.builder()        
+ *         var testClusterStartCredentialRotationManagement = new ClusterStartCredentialRotationManagement("testClusterStartCredentialRotationManagement", ClusterStartCredentialRotationManagementArgs.builder()
  *             .autoCompletionDelayDuration(clusterStartCredentialRotationManagementAutoCompletionDelayDuration)
  *             .clusterId(testCluster.id())
  *             .build());

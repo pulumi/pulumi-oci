@@ -56,7 +56,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceGroupManageModuleStreamsManagement = new ManagedInstanceGroupManageModuleStreamsManagement("testManagedInstanceGroupManageModuleStreamsManagement", ManagedInstanceGroupManageModuleStreamsManagementArgs.builder()        
+ *         var testManagedInstanceGroupManageModuleStreamsManagement = new ManagedInstanceGroupManageModuleStreamsManagement("testManagedInstanceGroupManageModuleStreamsManagement", ManagedInstanceGroupManageModuleStreamsManagementArgs.builder()
  *             .managedInstanceGroupId(testManagedInstanceGroup.id())
  *             .disables(ManagedInstanceGroupManageModuleStreamsManagementDisableArgs.builder()
  *                 .moduleName(managedInstanceGroupManageModuleStreamsManagementDisableModuleName)

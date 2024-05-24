@@ -34,14 +34,14 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The amount of worker nodes should be created
+     * Number of nodes that forming the cluster
      * 
      */
     @Import(name="numberOfNodes", required=true)
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return The amount of worker nodes should be created
+     * @return Number of nodes that forming the cluster
      * 
      */
     public Output<Integer> numberOfNodes() {
@@ -63,17 +63,9 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         return this.shape;
     }
 
-    /**
-     * The shape configuration requested for the node.
-     * 
-     */
     @Import(name="shapeConfig")
     private @Nullable Output<BdsInstanceEdgeNodeShapeConfigArgs> shapeConfig;
 
-    /**
-     * @return The shape configuration requested for the node.
-     * 
-     */
     public Optional<Output<BdsInstanceEdgeNodeShapeConfigArgs>> shapeConfig() {
         return Optional.ofNullable(this.shapeConfig);
     }
@@ -143,7 +135,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param numberOfNodes The amount of worker nodes should be created
+         * @param numberOfNodes Number of nodes that forming the cluster
          * 
          * @return builder
          * 
@@ -154,7 +146,7 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param numberOfNodes The amount of worker nodes should be created
+         * @param numberOfNodes Number of nodes that forming the cluster
          * 
          * @return builder
          * 
@@ -184,23 +176,11 @@ public final class BdsInstanceEdgeNodeArgs extends com.pulumi.resources.Resource
             return shape(Output.of(shape));
         }
 
-        /**
-         * @param shapeConfig The shape configuration requested for the node.
-         * 
-         * @return builder
-         * 
-         */
         public Builder shapeConfig(@Nullable Output<BdsInstanceEdgeNodeShapeConfigArgs> shapeConfig) {
             $.shapeConfig = shapeConfig;
             return this;
         }
 
-        /**
-         * @param shapeConfig The shape configuration requested for the node.
-         * 
-         * @return builder
-         * 
-         */
         public Builder shapeConfig(BdsInstanceEdgeNodeShapeConfigArgs shapeConfig) {
             return shapeConfig(Output.of(shapeConfig));
         }

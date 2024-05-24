@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DatasetDatasetSourceDetails {
     /**
-     * @return Bucket name
+     * @return The object storage bucket that contains the dataset data source.
      * 
      */
     private String bucket;
     /**
-     * @return Bucket namespace name
+     * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
     private String namespace;
@@ -28,21 +28,21 @@ public final class DatasetDatasetSourceDetails {
      */
     private @Nullable String prefix;
     /**
-     * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+     * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
     private String sourceType;
 
     private DatasetDatasetSourceDetails() {}
     /**
-     * @return Bucket name
+     * @return The object storage bucket that contains the dataset data source.
      * 
      */
     public String bucket() {
         return this.bucket;
     }
     /**
-     * @return Bucket namespace name
+     * @return The namespace of the bucket that contains the dataset data source.
      * 
      */
     public String namespace() {
@@ -56,7 +56,7 @@ public final class DatasetDatasetSourceDetails {
         return Optional.ofNullable(this.prefix);
     }
     /**
-     * @return The type of data source. OBJECT_STORAGE - The source details for an object storage bucket.
+     * @return The source type. OBJECT_STORAGE allows the user to describe where in object storage the dataset is.
      * 
      */
     public String sourceType() {

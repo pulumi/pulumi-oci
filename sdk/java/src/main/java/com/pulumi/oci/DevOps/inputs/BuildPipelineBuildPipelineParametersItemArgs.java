@@ -32,14 +32,14 @@ public final class BuildPipelineBuildPipelineParametersItemArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Optional description about the build pipeline.
+     * (Updatable) Description of the parameter.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Optional description about the build pipeline.
+     * @return (Updatable) Description of the parameter.
      * 
      */
     public Optional<Output<String>> description() {
@@ -109,7 +109,7 @@ public final class BuildPipelineBuildPipelineParametersItemArgs extends com.pulu
         }
 
         /**
-         * @param description (Updatable) Optional description about the build pipeline.
+         * @param description (Updatable) Description of the parameter.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class BuildPipelineBuildPipelineParametersItemArgs extends com.pulu
         }
 
         /**
-         * @param description (Updatable) Optional description about the build pipeline.
+         * @param description (Updatable) Description of the parameter.
          * 
          * @return builder
          * 

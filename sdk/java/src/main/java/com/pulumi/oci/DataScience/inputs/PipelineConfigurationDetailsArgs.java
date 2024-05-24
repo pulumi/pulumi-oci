@@ -19,14 +19,14 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
     public static final PipelineConfigurationDetailsArgs Empty = new PipelineConfigurationDetailsArgs();
 
     /**
-     * (Updatable) The command line arguments to set for step.
+     * (Updatable) The command line arguments to set for steps in the pipeline.
      * 
      */
     @Import(name="commandLineArguments")
     private @Nullable Output<String> commandLineArguments;
 
     /**
-     * @return (Updatable) The command line arguments to set for step.
+     * @return (Updatable) The command line arguments to set for steps in the pipeline.
      * 
      */
     public Optional<Output<String>> commandLineArguments() {
@@ -34,14 +34,14 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Environment variables to set for step.
+     * (Updatable) Environment variables to set for steps in the pipeline.
      * 
      */
     @Import(name="environmentVariables")
     private @Nullable Output<Map<String,Object>> environmentVariables;
 
     /**
-     * @return (Updatable) Environment variables to set for step.
+     * @return (Updatable) Environment variables to set for steps in the pipeline.
      * 
      */
     public Optional<Output<Map<String,Object>>> environmentVariables() {
@@ -49,14 +49,14 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) A time bound for the execution of the step.
+     * (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * 
      */
     @Import(name="maximumRuntimeInMinutes")
     private @Nullable Output<String> maximumRuntimeInMinutes;
 
     /**
-     * @return (Updatable) A time bound for the execution of the step.
+     * @return (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
      * 
      */
     public Optional<Output<String>> maximumRuntimeInMinutes() {
@@ -106,7 +106,7 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param commandLineArguments (Updatable) The command line arguments to set for step.
+         * @param commandLineArguments (Updatable) The command line arguments to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -117,7 +117,7 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param commandLineArguments (Updatable) The command line arguments to set for step.
+         * @param commandLineArguments (Updatable) The command line arguments to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param environmentVariables (Updatable) Environment variables to set for step.
+         * @param environmentVariables (Updatable) Environment variables to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -138,7 +138,7 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param environmentVariables (Updatable) Environment variables to set for step.
+         * @param environmentVariables (Updatable) Environment variables to set for steps in the pipeline.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param maximumRuntimeInMinutes (Updatable) A time bound for the execution of the step.
+         * @param maximumRuntimeInMinutes (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class PipelineConfigurationDetailsArgs extends com.pulumi.resources
         }
 
         /**
-         * @param maximumRuntimeInMinutes (Updatable) A time bound for the execution of the step.
+         * @param maximumRuntimeInMinutes (Updatable) A time bound for the execution of the entire Pipeline. Timer starts when the Pipeline Run is in progress.
          * 
          * @return builder
          * 

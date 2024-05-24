@@ -55,13 +55,13 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public Input<string>? DepartmentName { get; set; }
 
         /// <summary>
-        /// (Updatable) The email address of the paypal user.
+        /// (Updatable) Contact person email address.
         /// </summary>
         [Input("emailAddress")]
         public Input<string>? EmailAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) First name of the paypal user.
+        /// (Updatable) First name of the contact person.
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
@@ -79,7 +79,7 @@ namespace Pulumi.Oci.OspGateway.Inputs
         public Input<string>? JobTitle { get; set; }
 
         /// <summary>
-        /// (Updatable) Last name of the paypal user.
+        /// (Updatable) Last name of the contact person.
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }

@@ -23,14 +23,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     public static final SubscriptionState Empty = new SubscriptionState();
 
     /**
-     * (Updatable) Account type.
+     * Account type.
      * 
      */
     @Import(name="accountType")
     private @Nullable Output<String> accountType;
 
     /**
-     * @return (Updatable) Account type.
+     * @return Account type.
      * 
      */
     public Optional<Output<String>> accountType() {
@@ -38,14 +38,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Bill to customer Account id.
+     * Bill to customer Account id.
      * 
      */
     @Import(name="billToCustAccountId")
     private @Nullable Output<String> billToCustAccountId;
 
     /**
-     * @return (Updatable) Bill to customer Account id.
+     * @return Bill to customer Account id.
      * 
      */
     public Optional<Output<String>> billToCustAccountId() {
@@ -53,14 +53,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Address details model.
+     * Address details model.
      * 
      */
     @Import(name="billingAddresses")
     private @Nullable Output<List<SubscriptionBillingAddressArgs>> billingAddresses;
 
     /**
-     * @return (Updatable) Address details model.
+     * @return Address details model.
      * 
      */
     public Optional<Output<List<SubscriptionBillingAddressArgs>>> billingAddresses() {
@@ -83,14 +83,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Currency code
+     * Currency code
      * 
      */
     @Import(name="currencyCode")
     private @Nullable Output<String> currencyCode;
 
     /**
-     * @return (Updatable) Currency code
+     * @return Currency code
      * 
      */
     public Optional<Output<String>> currencyCode() {
@@ -113,14 +113,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) GSI Subscription external code.
+     * GSI Subscription external code.
      * 
      */
     @Import(name="gsiOrgCode")
     private @Nullable Output<String> gsiOrgCode;
 
     /**
-     * @return (Updatable) GSI Subscription external code.
+     * @return GSI Subscription external code.
      * 
      */
     public Optional<Output<String>> gsiOrgCode() {
@@ -128,14 +128,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Payment intension.
+     * Payment intension.
      * 
      */
     @Import(name="isIntentToPay")
     private @Nullable Output<Boolean> isIntentToPay;
 
     /**
-     * @return (Updatable) Payment intension.
+     * @return Payment intension.
      * 
      */
     public Optional<Output<Boolean>> isIntentToPay() {
@@ -143,14 +143,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Language short code (en, de, hu, etc)
+     * Language short code (en, de, hu, etc)
      * 
      */
     @Import(name="languageCode")
     private @Nullable Output<String> languageCode;
 
     /**
-     * @return (Updatable) Language short code (en, de, hu, etc)
+     * @return Language short code (en, de, hu, etc)
      * 
      */
     public Optional<Output<String>> languageCode() {
@@ -158,14 +158,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) GSI organization external identifier.
+     * GSI organization external identifier.
      * 
      */
     @Import(name="organizationId")
     private @Nullable Output<String> organizationId;
 
     /**
-     * @return (Updatable) GSI organization external identifier.
+     * @return GSI organization external identifier.
      * 
      */
     public Optional<Output<String>> organizationId() {
@@ -188,14 +188,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Payment gateway details.
+     * Payment gateway details.
      * 
      */
     @Import(name="paymentGateways")
     private @Nullable Output<List<SubscriptionPaymentGatewayArgs>> paymentGateways;
 
     /**
-     * @return (Updatable) Payment gateway details.
+     * @return Payment gateway details.
      * 
      */
     public Optional<Output<List<SubscriptionPaymentGatewayArgs>>> paymentGateways() {
@@ -203,14 +203,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Payment option list of a subscription.
+     * Payment option list of a subscription.
      * 
      */
     @Import(name="paymentOptions")
     private @Nullable Output<List<SubscriptionPaymentOptionArgs>> paymentOptions;
 
     /**
-     * @return (Updatable) Payment option list of a subscription.
+     * @return Payment option list of a subscription.
      * 
      */
     public Optional<Output<List<SubscriptionPaymentOptionArgs>>> paymentOptions() {
@@ -218,14 +218,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Subscription plan type.
+     * Subscription plan type.
      * 
      */
     @Import(name="planType")
     private @Nullable Output<String> planType;
 
     /**
-     * @return (Updatable) Subscription plan type.
+     * @return Subscription plan type.
      * 
      */
     public Optional<Output<String>> planType() {
@@ -233,14 +233,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Ship to customer account role.
+     * Ship to customer account role.
      * 
      */
     @Import(name="shipToCustAcctRoleId")
     private @Nullable Output<String> shipToCustAcctRoleId;
 
     /**
-     * @return (Updatable) Ship to customer account role.
+     * @return Ship to customer account role.
      * 
      */
     public Optional<Output<String>> shipToCustAcctRoleId() {
@@ -248,14 +248,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Ship to customer account site address id.
+     * Ship to customer account site address id.
      * 
      */
     @Import(name="shipToCustAcctSiteId")
     private @Nullable Output<String> shipToCustAcctSiteId;
 
     /**
-     * @return (Updatable) Ship to customer account site address id.
+     * @return Ship to customer account site address id.
      * 
      */
     public Optional<Output<String>> shipToCustAcctSiteId() {
@@ -299,14 +299,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Subscription plan number.
+     * Subscription plan number.
      * 
      */
     @Import(name="subscriptionPlanNumber")
     private @Nullable Output<String> subscriptionPlanNumber;
 
     /**
-     * @return (Updatable) Subscription plan number.
+     * @return Subscription plan number.
      * 
      */
     public Optional<Output<String>> subscriptionPlanNumber() {
@@ -314,14 +314,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Tax details.
+     * Tax details.
      * 
      */
     @Import(name="taxInfos")
     private @Nullable Output<List<SubscriptionTaxInfoArgs>> taxInfos;
 
     /**
-     * @return (Updatable) Tax details.
+     * @return Tax details.
      * 
      */
     public Optional<Output<List<SubscriptionTaxInfoArgs>>> taxInfos() {
@@ -329,14 +329,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
     @Import(name="timePersonalToCorporateConv")
     private @Nullable Output<String> timePersonalToCorporateConv;
 
     /**
-     * @return (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * @return Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      * 
      */
     public Optional<Output<String>> timePersonalToCorporateConv() {
@@ -344,14 +344,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
     @Import(name="timePlanUpgrade")
     private @Nullable Output<String> timePlanUpgrade;
 
     /**
-     * @return (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * @return Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      * 
      */
     public Optional<Output<String>> timePlanUpgrade() {
@@ -359,14 +359,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Start date of the subscription.
+     * Start date of the subscription.
      * 
      */
     @Import(name="timeStart")
     private @Nullable Output<String> timeStart;
 
     /**
-     * @return (Updatable) Start date of the subscription.
+     * @return Start date of the subscription.
      * 
      */
     public Optional<Output<String>> timeStart() {
@@ -374,14 +374,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Status of the upgrade.
+     * Status of the upgrade.
      * 
      */
     @Import(name="upgradeState")
     private @Nullable Output<String> upgradeState;
 
     /**
-     * @return (Updatable) Status of the upgrade.
+     * @return Status of the upgrade.
      * 
      */
     public Optional<Output<String>> upgradeState() {
@@ -389,14 +389,14 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
     @Import(name="upgradeStateDetails")
     private @Nullable Output<String> upgradeStateDetails;
 
     /**
-     * @return (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * @return This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      * 
      */
     public Optional<Output<String>> upgradeStateDetails() {
@@ -452,7 +452,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountType (Updatable) Account type.
+         * @param accountType Account type.
          * 
          * @return builder
          * 
@@ -463,7 +463,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accountType (Updatable) Account type.
+         * @param accountType Account type.
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billToCustAccountId (Updatable) Bill to customer Account id.
+         * @param billToCustAccountId Bill to customer Account id.
          * 
          * @return builder
          * 
@@ -484,7 +484,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billToCustAccountId (Updatable) Bill to customer Account id.
+         * @param billToCustAccountId Bill to customer Account id.
          * 
          * @return builder
          * 
@@ -494,7 +494,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingAddresses (Updatable) Address details model.
+         * @param billingAddresses Address details model.
          * 
          * @return builder
          * 
@@ -505,7 +505,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingAddresses (Updatable) Address details model.
+         * @param billingAddresses Address details model.
          * 
          * @return builder
          * 
@@ -515,7 +515,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param billingAddresses (Updatable) Address details model.
+         * @param billingAddresses Address details model.
          * 
          * @return builder
          * 
@@ -546,7 +546,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currencyCode (Updatable) Currency code
+         * @param currencyCode Currency code
          * 
          * @return builder
          * 
@@ -557,7 +557,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param currencyCode (Updatable) Currency code
+         * @param currencyCode Currency code
          * 
          * @return builder
          * 
@@ -588,7 +588,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param gsiOrgCode (Updatable) GSI Subscription external code.
+         * @param gsiOrgCode GSI Subscription external code.
          * 
          * @return builder
          * 
@@ -599,7 +599,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param gsiOrgCode (Updatable) GSI Subscription external code.
+         * @param gsiOrgCode GSI Subscription external code.
          * 
          * @return builder
          * 
@@ -609,7 +609,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIntentToPay (Updatable) Payment intension.
+         * @param isIntentToPay Payment intension.
          * 
          * @return builder
          * 
@@ -620,7 +620,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param isIntentToPay (Updatable) Payment intension.
+         * @param isIntentToPay Payment intension.
          * 
          * @return builder
          * 
@@ -630,7 +630,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param languageCode (Updatable) Language short code (en, de, hu, etc)
+         * @param languageCode Language short code (en, de, hu, etc)
          * 
          * @return builder
          * 
@@ -641,7 +641,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param languageCode (Updatable) Language short code (en, de, hu, etc)
+         * @param languageCode Language short code (en, de, hu, etc)
          * 
          * @return builder
          * 
@@ -651,7 +651,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param organizationId (Updatable) GSI organization external identifier.
+         * @param organizationId GSI organization external identifier.
          * 
          * @return builder
          * 
@@ -662,7 +662,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param organizationId (Updatable) GSI organization external identifier.
+         * @param organizationId GSI organization external identifier.
          * 
          * @return builder
          * 
@@ -693,7 +693,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param paymentGateways (Updatable) Payment gateway details.
+         * @param paymentGateways Payment gateway details.
          * 
          * @return builder
          * 
@@ -704,7 +704,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param paymentGateways (Updatable) Payment gateway details.
+         * @param paymentGateways Payment gateway details.
          * 
          * @return builder
          * 
@@ -714,7 +714,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param paymentGateways (Updatable) Payment gateway details.
+         * @param paymentGateways Payment gateway details.
          * 
          * @return builder
          * 
@@ -724,7 +724,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param paymentOptions (Updatable) Payment option list of a subscription.
+         * @param paymentOptions Payment option list of a subscription.
          * 
          * @return builder
          * 
@@ -735,7 +735,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param paymentOptions (Updatable) Payment option list of a subscription.
+         * @param paymentOptions Payment option list of a subscription.
          * 
          * @return builder
          * 
@@ -745,7 +745,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param paymentOptions (Updatable) Payment option list of a subscription.
+         * @param paymentOptions Payment option list of a subscription.
          * 
          * @return builder
          * 
@@ -755,7 +755,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param planType (Updatable) Subscription plan type.
+         * @param planType Subscription plan type.
          * 
          * @return builder
          * 
@@ -766,7 +766,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param planType (Updatable) Subscription plan type.
+         * @param planType Subscription plan type.
          * 
          * @return builder
          * 
@@ -776,7 +776,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shipToCustAcctRoleId (Updatable) Ship to customer account role.
+         * @param shipToCustAcctRoleId Ship to customer account role.
          * 
          * @return builder
          * 
@@ -787,7 +787,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shipToCustAcctRoleId (Updatable) Ship to customer account role.
+         * @param shipToCustAcctRoleId Ship to customer account role.
          * 
          * @return builder
          * 
@@ -797,7 +797,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shipToCustAcctSiteId (Updatable) Ship to customer account site address id.
+         * @param shipToCustAcctSiteId Ship to customer account site address id.
          * 
          * @return builder
          * 
@@ -808,7 +808,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param shipToCustAcctSiteId (Updatable) Ship to customer account site address id.
+         * @param shipToCustAcctSiteId Ship to customer account site address id.
          * 
          * @return builder
          * 
@@ -866,7 +866,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subscriptionPlanNumber (Updatable) Subscription plan number.
+         * @param subscriptionPlanNumber Subscription plan number.
          * 
          * @return builder
          * 
@@ -877,7 +877,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subscriptionPlanNumber (Updatable) Subscription plan number.
+         * @param subscriptionPlanNumber Subscription plan number.
          * 
          * @return builder
          * 
@@ -887,7 +887,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param taxInfos (Updatable) Tax details.
+         * @param taxInfos Tax details.
          * 
          * @return builder
          * 
@@ -898,7 +898,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param taxInfos (Updatable) Tax details.
+         * @param taxInfos Tax details.
          * 
          * @return builder
          * 
@@ -908,7 +908,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param taxInfos (Updatable) Tax details.
+         * @param taxInfos Tax details.
          * 
          * @return builder
          * 
@@ -918,7 +918,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timePersonalToCorporateConv (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         * @param timePersonalToCorporateConv Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
          * 
          * @return builder
          * 
@@ -929,7 +929,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timePersonalToCorporateConv (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+         * @param timePersonalToCorporateConv Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
          * 
          * @return builder
          * 
@@ -939,7 +939,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timePlanUpgrade (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+         * @param timePlanUpgrade Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
          * 
          * @return builder
          * 
@@ -950,7 +950,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timePlanUpgrade (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+         * @param timePlanUpgrade Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
          * 
          * @return builder
          * 
@@ -960,7 +960,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeStart (Updatable) Start date of the subscription.
+         * @param timeStart Start date of the subscription.
          * 
          * @return builder
          * 
@@ -971,7 +971,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param timeStart (Updatable) Start date of the subscription.
+         * @param timeStart Start date of the subscription.
          * 
          * @return builder
          * 
@@ -981,7 +981,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeState (Updatable) Status of the upgrade.
+         * @param upgradeState Status of the upgrade.
          * 
          * @return builder
          * 
@@ -992,7 +992,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeState (Updatable) Status of the upgrade.
+         * @param upgradeState Status of the upgrade.
          * 
          * @return builder
          * 
@@ -1002,7 +1002,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeStateDetails (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+         * @param upgradeStateDetails This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
          * 
          * @return builder
          * 
@@ -1013,7 +1013,7 @@ public final class SubscriptionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param upgradeStateDetails (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+         * @param upgradeStateDetails This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
          * 
          * @return builder
          * 

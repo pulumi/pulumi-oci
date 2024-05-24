@@ -136,14 +136,14 @@ public class DeployStage extends com.pulumi.resources.CustomResource {
         return this.commandSpecDeployArtifactId;
     }
     /**
-     * (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+     * The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+     * @return The OCID of the compartment where the ContainerInstance will be created.
      * 
      */
     public Output<String> compartmentId() {

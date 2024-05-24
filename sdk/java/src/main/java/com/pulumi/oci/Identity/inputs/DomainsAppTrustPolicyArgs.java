@@ -17,7 +17,7 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
     public static final DomainsAppTrustPolicyArgs Empty = new DomainsAppTrustPolicyArgs();
 
     /**
-     * (Updatable) URI of the AppRole.
+     * (Updatable) URI of the policy.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -33,7 +33,7 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the policy.
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -50,38 +50,34 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Identifier of the Policy.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Identifier of the Policy.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -114,7 +110,7 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the policy.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -134,7 +130,7 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param ref (Updatable) URI of the AppRole.
+         * @param ref (Updatable) URI of the policy.
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -153,19 +149,17 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Identifier of the Policy.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -176,19 +170,17 @@ public final class DomainsAppTrustPolicyArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Identifier of the Policy.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

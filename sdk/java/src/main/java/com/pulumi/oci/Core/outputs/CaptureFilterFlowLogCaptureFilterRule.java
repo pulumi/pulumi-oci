@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CaptureFilterFlowLogCaptureFilterRule {
     /**
-     * @return (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+     * @return (Updatable) Traffic to this CIDR will be captured in the flow log.
      * 
      */
     private @Nullable String destinationCidr;
@@ -46,15 +46,12 @@ public final class CaptureFilterFlowLogCaptureFilterRule {
      */
     private @Nullable Integer priority;
     /**
-     * @return (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-     * * 1 = ICMP
-     * * 6 = TCP
-     * * 17 = UDP
+     * @return (Updatable) The transport protocol the filter uses.
      * 
      */
     private @Nullable String protocol;
     /**
-     * @return (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+     * @return (Updatable) Include or exclude a ruleAction object.
      * 
      */
     private @Nullable String ruleAction;
@@ -64,7 +61,7 @@ public final class CaptureFilterFlowLogCaptureFilterRule {
      */
     private @Nullable Integer samplingRate;
     /**
-     * @return (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+     * @return (Updatable) Traffic from this CIDR will be captured in the flow log.
      * 
      */
     private @Nullable String sourceCidr;
@@ -81,7 +78,7 @@ public final class CaptureFilterFlowLogCaptureFilterRule {
 
     private CaptureFilterFlowLogCaptureFilterRule() {}
     /**
-     * @return (Updatable) Traffic sent to this CIDR block through the VTAP source will be mirrored to the VTAP target.
+     * @return (Updatable) Traffic to this CIDR will be captured in the flow log.
      * 
      */
     public Optional<String> destinationCidr() {
@@ -120,17 +117,14 @@ public final class CaptureFilterFlowLogCaptureFilterRule {
         return Optional.ofNullable(this.priority);
     }
     /**
-     * @return (Updatable) The transport protocol used in the filter. If do not choose a protocol, all protocols will be used in the filter. Supported options are:
-     * * 1 = ICMP
-     * * 6 = TCP
-     * * 17 = UDP
+     * @return (Updatable) The transport protocol the filter uses.
      * 
      */
     public Optional<String> protocol() {
         return Optional.ofNullable(this.protocol);
     }
     /**
-     * @return (Updatable) Include or exclude packets meeting this definition from mirrored traffic.
+     * @return (Updatable) Include or exclude a ruleAction object.
      * 
      */
     public Optional<String> ruleAction() {
@@ -144,7 +138,7 @@ public final class CaptureFilterFlowLogCaptureFilterRule {
         return Optional.ofNullable(this.samplingRate);
     }
     /**
-     * @return (Updatable) Traffic from this CIDR block to the VTAP source will be mirrored to the VTAP target.
+     * @return (Updatable) Traffic from this CIDR will be captured in the flow log.
      * 
      */
     public Optional<String> sourceCidr() {

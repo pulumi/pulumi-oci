@@ -18,7 +18,7 @@ type ConnectorSource struct {
 	ConfigMap *string `pulumi:"configMap"`
 	// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursor *ConnectorSourceCursor `pulumi:"cursor"`
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind string `pulumi:"kind"`
 	// (Updatable) The logs for this Logging source.
 	LogSources []ConnectorSourceLogSource `pulumi:"logSources"`
@@ -46,7 +46,7 @@ type ConnectorSourceArgs struct {
 	ConfigMap pulumi.StringPtrInput `pulumi:"configMap"`
 	// (Updatable) The [read setting](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm), which determines where in the stream to start moving data. For configuration instructions, see [Creating a Connector with a Streaming Source](https://docs.cloud.oracle.com/iaas/Content/connector-hub/create-service-connector-streaming-source.htm).
 	Cursor ConnectorSourceCursorPtrInput `pulumi:"cursor"`
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The logs for this Logging source.
 	LogSources ConnectorSourceLogSourceArrayInput `pulumi:"logSources"`
@@ -145,7 +145,7 @@ func (o ConnectorSourceOutput) Cursor() ConnectorSourceCursorPtrOutput {
 	return o.ApplyT(func(v ConnectorSource) *ConnectorSourceCursor { return v.Cursor }).(ConnectorSourceCursorPtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourceOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorSource) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -214,7 +214,7 @@ func (o ConnectorSourcePtrOutput) Cursor() ConnectorSourceCursorPtrOutput {
 	}).(ConnectorSourceCursorPtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourcePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorSource) *string {
 		if v == nil {
@@ -265,7 +265,7 @@ func (o ConnectorSourcePtrOutput) StreamId() pulumi.StringPtrOutput {
 }
 
 type ConnectorSourceCursor struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind *string `pulumi:"kind"`
 }
 
@@ -281,7 +281,7 @@ type ConnectorSourceCursorInput interface {
 }
 
 type ConnectorSourceCursorArgs struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind pulumi.StringPtrInput `pulumi:"kind"`
 }
 
@@ -362,7 +362,7 @@ func (o ConnectorSourceCursorOutput) ToConnectorSourceCursorPtrOutputWithContext
 	}).(ConnectorSourceCursorPtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourceCursorOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceCursor) *string { return v.Kind }).(pulumi.StringPtrOutput)
 }
@@ -391,7 +391,7 @@ func (o ConnectorSourceCursorPtrOutput) Elem() ConnectorSourceCursorOutput {
 	}).(ConnectorSourceCursorOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourceCursorPtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorSourceCursor) *string {
 		if v == nil {
@@ -402,9 +402,9 @@ func (o ConnectorSourceCursorPtrOutput) Kind() pulumi.StringPtrOutput {
 }
 
 type ConnectorSourceLogSource struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
 	LogGroupId *string `pulumi:"logGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
 	LogId *string `pulumi:"logId"`
@@ -422,9 +422,9 @@ type ConnectorSourceLogSourceInput interface {
 }
 
 type ConnectorSourceLogSourceArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
 	LogId pulumi.StringPtrInput `pulumi:"logId"`
@@ -481,12 +481,12 @@ func (o ConnectorSourceLogSourceOutput) ToConnectorSourceLogSourceOutputWithCont
 	return o
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the log source.
 func (o ConnectorSourceLogSourceOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceLogSource) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group. Note: For the Notifications target, only _Audit is allowed. Example OCID for _Audit log group: ocid1.tenancy.oc1..exampleuniqueid/_Audit
 func (o ConnectorSourceLogSourceOutput) LogGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceLogSource) *string { return v.LogGroupId }).(pulumi.StringPtrOutput)
 }
@@ -517,7 +517,7 @@ func (o ConnectorSourceLogSourceArrayOutput) Index(i pulumi.IntInput) ConnectorS
 }
 
 type ConnectorSourceMonitoringSource struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment containing metric namespaces you want to use for the Monitoring source.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Discriminator for namespaces in the compartment-specific list.
 	NamespaceDetails *ConnectorSourceMonitoringSourceNamespaceDetails `pulumi:"namespaceDetails"`
@@ -535,7 +535,7 @@ type ConnectorSourceMonitoringSourceInput interface {
 }
 
 type ConnectorSourceMonitoringSourceArgs struct {
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment containing metric namespaces you want to use for the Monitoring source.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) Discriminator for namespaces in the compartment-specific list.
 	NamespaceDetails ConnectorSourceMonitoringSourceNamespaceDetailsPtrInput `pulumi:"namespaceDetails"`
@@ -592,7 +592,7 @@ func (o ConnectorSourceMonitoringSourceOutput) ToConnectorSourceMonitoringSource
 	return o
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the metric.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a compartment containing metric namespaces you want to use for the Monitoring source.
 func (o ConnectorSourceMonitoringSourceOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorSourceMonitoringSource) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -625,7 +625,7 @@ func (o ConnectorSourceMonitoringSourceArrayOutput) Index(i pulumi.IntInput) Con
 }
 
 type ConnectorSourceMonitoringSourceNamespaceDetails struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind string `pulumi:"kind"`
 	// (Updatable) The namespaces for the compartment-specific list.
 	Namespaces []ConnectorSourceMonitoringSourceNamespaceDetailsNamespace `pulumi:"namespaces"`
@@ -643,7 +643,7 @@ type ConnectorSourceMonitoringSourceNamespaceDetailsInput interface {
 }
 
 type ConnectorSourceMonitoringSourceNamespaceDetailsArgs struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The namespaces for the compartment-specific list.
 	Namespaces ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayInput `pulumi:"namespaces"`
@@ -726,7 +726,7 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) ToConnectorSource
 	}).(ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetails) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -762,7 +762,7 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Elem() Connect
 	}).(ConnectorSourceMonitoringSourceNamespaceDetailsOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorSourceMonitoringSourceNamespaceDetails) *string {
 		if v == nil {
@@ -785,7 +785,7 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsPtrOutput) Namespaces() C
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespace struct {
 	// (Updatable) The metrics to query for the specified metric namespace.
 	Metrics ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics `pulumi:"metrics"`
-	// (Updatable) The namespace.
+	// (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
 	Namespace string `pulumi:"namespace"`
 }
 
@@ -803,7 +803,7 @@ type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceInput interface {
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArgs struct {
 	// (Updatable) The metrics to query for the specified metric namespace.
 	Metrics ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput `pulumi:"metrics"`
-	// (Updatable) The namespace.
+	// (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 }
 
@@ -865,7 +865,7 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) Metrics(
 	}).(ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput)
 }
 
-// (Updatable) The namespace.
+// (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `ociComputeagent`
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceOutput) Namespace() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetailsNamespace) string { return v.Namespace }).(pulumi.StringOutput)
 }
@@ -891,7 +891,7 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceArrayOutput) Ind
 }
 
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind string `pulumi:"kind"`
 }
 
@@ -907,7 +907,7 @@ type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsInput interf
 }
 
 type ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsArgs struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 }
 
@@ -937,7 +937,7 @@ func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) T
 	return o
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetrics) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -947,11 +947,11 @@ type ConnectorTarget struct {
 	BatchRolloverSizeInMbs *int `pulumi:"batchRolloverSizeInMbs"`
 	// (Updatable) The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs *int `pulumi:"batchRolloverTimeInMs"`
-	// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+	// (Updatable) The batch rollover size in kilobytes.
 	BatchSizeInKbs *int `pulumi:"batchSizeInKbs"`
 	// (Updatable) The batch rollover size in number of messages.
 	BatchSizeInNum *int `pulumi:"batchSizeInNum"`
-	// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+	// (Updatable) The batch rollover time in seconds.
 	BatchTimeInSec *int `pulumi:"batchTimeInSec"`
 	// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket *string `pulumi:"bucket"`
@@ -961,9 +961,9 @@ type ConnectorTarget struct {
 	Dimensions []ConnectorTargetDimension `pulumi:"dimensions"`
 	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging *bool `pulumi:"enableFormattedMessaging"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 	FunctionId *string `pulumi:"functionId"`
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind string `pulumi:"kind"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId *string `pulumi:"logGroupId"`
@@ -999,11 +999,11 @@ type ConnectorTargetArgs struct {
 	BatchRolloverSizeInMbs pulumi.IntPtrInput `pulumi:"batchRolloverSizeInMbs"`
 	// (Updatable) The batch rollover time in milliseconds.
 	BatchRolloverTimeInMs pulumi.IntPtrInput `pulumi:"batchRolloverTimeInMs"`
-	// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+	// (Updatable) The batch rollover size in kilobytes.
 	BatchSizeInKbs pulumi.IntPtrInput `pulumi:"batchSizeInKbs"`
 	// (Updatable) The batch rollover size in number of messages.
 	BatchSizeInNum pulumi.IntPtrInput `pulumi:"batchSizeInNum"`
-	// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+	// (Updatable) The batch rollover time in seconds.
 	BatchTimeInSec pulumi.IntPtrInput `pulumi:"batchTimeInSec"`
 	// (Updatable) The name of the bucket. Valid characters are letters (upper or lower case), numbers, hyphens (-), underscores(_), and periods (.). Bucket names must be unique within an Object Storage namespace. Avoid entering confidential information. Example: my-new-bucket1
 	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
@@ -1013,9 +1013,9 @@ type ConnectorTargetArgs struct {
 	Dimensions ConnectorTargetDimensionArrayInput `pulumi:"dimensions"`
 	// (Updatable) Whether to apply a simplified, user-friendly format to the message. Applies only when friendly formatting is supported by the connector source and the subscription protocol.  Example: `true`
 	EnableFormattedMessaging pulumi.BoolPtrInput `pulumi:"enableFormattedMessaging"`
-	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 	FunctionId pulumi.StringPtrInput `pulumi:"functionId"`
-	// (Updatable) The type descriminator.
+	// (Updatable) The type discriminator.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Logging Analytics log group.
 	LogGroupId pulumi.StringPtrInput `pulumi:"logGroupId"`
@@ -1122,7 +1122,7 @@ func (o ConnectorTargetOutput) BatchRolloverTimeInMs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchRolloverTimeInMs }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+// (Updatable) The batch rollover size in kilobytes.
 func (o ConnectorTargetOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchSizeInKbs }).(pulumi.IntPtrOutput)
 }
@@ -1132,7 +1132,7 @@ func (o ConnectorTargetOutput) BatchSizeInNum() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchSizeInNum }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+// (Updatable) The batch rollover time in seconds.
 func (o ConnectorTargetOutput) BatchTimeInSec() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *int { return v.BatchTimeInSec }).(pulumi.IntPtrOutput)
 }
@@ -1157,12 +1157,12 @@ func (o ConnectorTargetOutput) EnableFormattedMessaging() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *bool { return v.EnableFormattedMessaging }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 func (o ConnectorTargetOutput) FunctionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConnectorTarget) *string { return v.FunctionId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorTargetOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorTarget) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -1251,7 +1251,7 @@ func (o ConnectorTargetPtrOutput) BatchRolloverTimeInMs() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Size limit (kilobytes) for batch sent to invoke the function.
+// (Updatable) The batch rollover size in kilobytes.
 func (o ConnectorTargetPtrOutput) BatchSizeInKbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *int {
 		if v == nil {
@@ -1271,7 +1271,7 @@ func (o ConnectorTargetPtrOutput) BatchSizeInNum() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) Time limit (seconds) for batch sent to invoke the function.
+// (Updatable) The batch rollover time in seconds.
 func (o ConnectorTargetPtrOutput) BatchTimeInSec() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *int {
 		if v == nil {
@@ -1321,7 +1321,7 @@ func (o ConnectorTargetPtrOutput) EnableFormattedMessaging() pulumi.BoolPtrOutpu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function to be used as a task.
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the function.
 func (o ConnectorTargetPtrOutput) FunctionId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *string {
 		if v == nil {
@@ -1331,7 +1331,7 @@ func (o ConnectorTargetPtrOutput) FunctionId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type discriminator.
 func (o ConnectorTargetPtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTarget) *string {
 		if v == nil {
@@ -1528,7 +1528,7 @@ func (o ConnectorTargetDimensionArrayOutput) Index(i pulumi.IntInput) ConnectorT
 }
 
 type ConnectorTargetDimensionDimensionValue struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type of dimension value: static or evaluated.
 	Kind string `pulumi:"kind"`
 	// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path *string `pulumi:"path"`
@@ -1548,7 +1548,7 @@ type ConnectorTargetDimensionDimensionValueInput interface {
 }
 
 type ConnectorTargetDimensionDimensionValueArgs struct {
-	// (Updatable) The type descriminator.
+	// (Updatable) The type of dimension value: static or evaluated.
 	Kind pulumi.StringInput `pulumi:"kind"`
 	// (Updatable) The location to use for deriving the dimension value (evaluated). The path must start with `logContent` in an acceptable notation style with supported [JMESPath selectors](https://jmespath.org/specification.html): expression with dot and index operator (`.` and `[]`). Example with dot notation: `logContent.data` Example with index notation: `logContent.data[0].content` For information on valid dimension keys and values, see [MetricDataDetails Reference](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/MetricDataDetails). The returned value depends on the results of evaluation. If the evaluated value is valid, then the evaluated value is returned without double quotes. (Any front or trailing double quotes are trimmed before returning the value. For example, the evaluated value `"compartmentId"` is returned as `compartmentId`.) If the evaluated value is invalid, then the returned value is `SCH_EVAL_INVALID_VALUE`. If the evaluated value is empty, then the returned value is `SCH_EVAL_VALUE_EMPTY`.
 	Path pulumi.StringPtrInput `pulumi:"path"`
@@ -1633,7 +1633,7 @@ func (o ConnectorTargetDimensionDimensionValueOutput) ToConnectorTargetDimension
 	}).(ConnectorTargetDimensionDimensionValuePtrOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type of dimension value: static or evaluated.
 func (o ConnectorTargetDimensionDimensionValueOutput) Kind() pulumi.StringOutput {
 	return o.ApplyT(func(v ConnectorTargetDimensionDimensionValue) string { return v.Kind }).(pulumi.StringOutput)
 }
@@ -1672,7 +1672,7 @@ func (o ConnectorTargetDimensionDimensionValuePtrOutput) Elem() ConnectorTargetD
 	}).(ConnectorTargetDimensionDimensionValueOutput)
 }
 
-// (Updatable) The type descriminator.
+// (Updatable) The type of dimension value: static or evaluated.
 func (o ConnectorTargetDimensionDimensionValuePtrOutput) Kind() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConnectorTargetDimensionDimensionValue) *string {
 		if v == nil {

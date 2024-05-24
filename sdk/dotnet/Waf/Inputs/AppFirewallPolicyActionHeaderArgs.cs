@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Waf.Inputs
     public sealed class AppFirewallPolicyActionHeaderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Rule name. Must be unique within the module.
+        /// (Updatable) The name of the header field.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DevOps.Outputs
     public sealed class DeploymentDeployPipelineEnvironment
     {
         /// <summary>
-        /// List of arguments provided at the time of deployment.
+        /// A list of stage predecessors for a stage.
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentDeployPipelineEnvironmentItem> Items;
 

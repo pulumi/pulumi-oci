@@ -38,7 +38,7 @@ class PublicationIconArgs:
         :param pulumi.Input[str] content_url: The content URL of the upload data.
         :param pulumi.Input[str] file_extension: The file extension of the upload data.
         :param pulumi.Input[str] mime_type: The MIME type of the upload data.
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
         """
         if content_url is not None:
             pulumi.set(__self__, "content_url", content_url)
@@ -89,7 +89,7 @@ class PublicationIconArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 
@@ -224,7 +224,7 @@ class PublicationPackageDetailsOperatingSystemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: The name of the operating system.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -233,7 +233,7 @@ class PublicationPackageDetailsOperatingSystemArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the contact.
+        The name of the operating system.
         """
         return pulumi.get(self, "name")
 
@@ -326,7 +326,7 @@ class PublicationSupportedOperatingSystemArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) The name of the contact.
+        :param pulumi.Input[str] name: (Updatable) The name of the publication, which is also used in the listing.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -335,7 +335,7 @@ class PublicationSupportedOperatingSystemArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The name of the contact.
+        (Updatable) The name of the publication, which is also used in the listing.
         """
         return pulumi.get(self, "name")
 

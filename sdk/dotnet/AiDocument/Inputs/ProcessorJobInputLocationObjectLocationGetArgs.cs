@@ -19,7 +19,7 @@ namespace Pulumi.Oci.AiDocument.Inputs
         public Input<string>? Bucket { get; set; }
 
         /// <summary>
-        /// The Object Storage namespace.
+        /// The Object Storage namespace name.
         /// </summary>
         [Input("namespace")]
         public Input<string>? Namespace { get; set; }

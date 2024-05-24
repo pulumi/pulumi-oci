@@ -17,14 +17,14 @@ public final class ConnectionPrivateEndpointArgs extends com.pulumi.resources.Re
     public static final ConnectionPrivateEndpointArgs Empty = new ConnectionPrivateEndpointArgs();
 
     /**
-     * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
      * 
      */
     public Output<String> compartmentId() {
@@ -104,7 +104,7 @@ public final class ConnectionPrivateEndpointArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
          * 
          * @return builder
          * 
@@ -115,7 +115,7 @@ public final class ConnectionPrivateEndpointArgs extends com.pulumi.resources.Re
         }
 
         /**
-         * @param compartmentId (Updatable) OCID of the compartment where the secret containing the credentials will be created.
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
          * 
          * @return builder
          * 

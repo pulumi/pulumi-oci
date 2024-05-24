@@ -15,17 +15,16 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
     public static final DomainsAppTagArgs Empty = new DomainsAppTagArgs();
 
     /**
-     * (Updatable) Oracle Cloud Infrastructure Tag key
-     * 
-     * **Added In:** 2011192329
+     * (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -33,17 +32,16 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> key;
 
     /**
-     * @return (Updatable) Oracle Cloud Infrastructure Tag key
-     * 
-     * **Added In:** 2011192329
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * type: string
-     * * required: true
-     * * mutability: readWrite
-     * * returned: default
      * * idcsSearchable: true
+     * * multiValued: false
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
+     * * type: string
      * * uniqueness: none
      * 
      */
@@ -52,38 +50,34 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) ID of the AppRole.
+     * (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -116,17 +110,16 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key (Updatable) Oracle Cloud Infrastructure Tag key
-         * 
-         * **Added In:** 2011192329
+         * @param key (Updatable) Key or name of the tag.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * type: string
-         * * required: true
-         * * mutability: readWrite
-         * * returned: default
          * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
          * * uniqueness: none
          * 
          * @return builder
@@ -138,17 +131,16 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param key (Updatable) Oracle Cloud Infrastructure Tag key
-         * 
-         * **Added In:** 2011192329
+         * @param key (Updatable) Key or name of the tag.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
-         * * type: string
-         * * required: true
-         * * mutability: readWrite
-         * * returned: default
          * * idcsSearchable: true
+         * * multiValued: false
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
+         * * type: string
          * * uniqueness: none
          * 
          * @return builder
@@ -159,19 +151,17 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -182,19 +172,17 @@ public final class DomainsAppTagArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param value (Updatable) ID of the AppRole.
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

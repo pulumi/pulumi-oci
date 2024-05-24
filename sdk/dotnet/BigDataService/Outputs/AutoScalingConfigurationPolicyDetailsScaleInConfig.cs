@@ -22,7 +22,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int? MinNodeCount;
         /// <summary>
-        /// (Updatable) This value is the number of nodes to add during a scale-out event.
+        /// (Updatable) This value is the number of nodes to remove during a scale-in event.
         /// </summary>
         public readonly int? StepSize;
 

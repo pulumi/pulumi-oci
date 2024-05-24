@@ -19,13 +19,13 @@ namespace Pulumi.Oci.Psql.Inputs
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
-        /// A user-provided description of the database instance node.
+        /// (Updatable) A user-provided description of a database system.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// Display name of the database instance node. Avoid entering confidential information.
+        /// (Updatable) A user-friendly display name for the database system. Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

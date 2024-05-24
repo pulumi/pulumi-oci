@@ -476,7 +476,7 @@ class _BdsInstanceState:
         :param pulumi.Input['BdsInstanceMasterNodeArgs'] master_node: The master node in the BDS instance
         :param pulumi.Input['BdsInstanceNetworkConfigArgs'] network_config: Additional configuration of the user's network.
         :param pulumi.Input[Sequence[pulumi.Input['BdsInstanceNodeArgs']]] nodes: The list of nodes in the Big Data Service cluster.
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
+        :param pulumi.Input[int] number_of_nodes: Number of nodes that forming the cluster
         :param pulumi.Input[int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -849,7 +849,7 @@ class _BdsInstanceState:
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> Optional[pulumi.Input[int]]:
         """
-        The amount of worker nodes should be created
+        Number of nodes that forming the cluster
         """
         return pulumi.get(self, "number_of_nodes")
 
@@ -1207,7 +1207,7 @@ class BdsInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['BdsInstanceMasterNodeArgs']] master_node: The master node in the BDS instance
         :param pulumi.Input[pulumi.InputType['BdsInstanceNetworkConfigArgs']] network_config: Additional configuration of the user's network.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['BdsInstanceNodeArgs']]]] nodes: The list of nodes in the Big Data Service cluster.
-        :param pulumi.Input[int] number_of_nodes: The amount of worker nodes should be created
+        :param pulumi.Input[int] number_of_nodes: Number of nodes that forming the cluster
         :param pulumi.Input[int] number_of_nodes_requiring_maintenance_reboot: Number of nodes that require a maintenance reboot
         :param pulumi.Input[str] os_patch_version: (Updatable) The version of the patch to be upated.
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -1452,7 +1452,7 @@ class BdsInstance(pulumi.CustomResource):
     @pulumi.getter(name="numberOfNodes")
     def number_of_nodes(self) -> pulumi.Output[int]:
         """
-        The amount of worker nodes should be created
+        Number of nodes that forming the cluster
         """
         return pulumi.get(self, "number_of_nodes")
 

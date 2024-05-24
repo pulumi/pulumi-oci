@@ -46,14 +46,14 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
     }
 
     /**
-     * (Updatable) configuration value
+     * configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -129,7 +129,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationVal
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value configuration value
          * 
          * @return builder
          * 

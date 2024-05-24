@@ -25,7 +25,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Determines if the parameter is required in the request.
+        /// (Updatable) Determines if the request body is required in the request.
         /// </summary>
         [Input("required")]
         public Input<bool>? Required { get; set; }

@@ -55,14 +55,14 @@ public final class UsageStatementEmailRecipientsGroupState extends com.pulumi.re
     }
 
     /**
-     * (Updatable) The email recipient lifecycle state.
+     * The email recipient group lifecycle state.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The email recipient lifecycle state.
+     * @return The email recipient group lifecycle state.
      * 
      */
     public Optional<Output<String>> state() {
@@ -180,7 +180,7 @@ public final class UsageStatementEmailRecipientsGroupState extends com.pulumi.re
         }
 
         /**
-         * @param state (Updatable) The email recipient lifecycle state.
+         * @param state The email recipient group lifecycle state.
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class UsageStatementEmailRecipientsGroupState extends com.pulumi.re
         }
 
         /**
-         * @param state (Updatable) The email recipient lifecycle state.
+         * @param state The email recipient group lifecycle state.
          * 
          * @return builder
          * 

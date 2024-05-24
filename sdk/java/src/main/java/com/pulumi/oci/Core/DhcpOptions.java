@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDhcpOptions = new DhcpOptions("testDhcpOptions", DhcpOptionsArgs.builder()        
+ *         var testDhcpOptions = new DhcpOptions("testDhcpOptions", DhcpOptionsArgs.builder()
  *             .compartmentId(compartmentId)
  *             .options(            
  *                 DhcpOptionsOptionArgs.builder()
@@ -110,7 +110,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDhcpOptions = new DhcpOptions("testDhcpOptions", DhcpOptionsArgs.builder()        
+ *         var testDhcpOptions = new DhcpOptions("testDhcpOptions", DhcpOptionsArgs.builder()
  *             .compartmentId(compartmentId)
  *             .options(            
  *                 DhcpOptionsOptionArgs.builder()

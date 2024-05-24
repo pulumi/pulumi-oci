@@ -30,7 +30,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string DomainName;
         /// <summary>
-        /// (Updatable) The DBCS schema-name granted to this Group for the DB instance that 'dbInstanceId' specifies.
+        /// (Updatable) The DBCS schema-name granted to this group in the DB domain that 'domainName' specifies.
         /// 
         /// **Added In:** 18.2.4
         /// 

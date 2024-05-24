@@ -32,7 +32,7 @@ class IngressGatewayRouteTableArgs:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
+        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -125,7 +125,7 @@ class IngressGatewayRouteTableArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the ingress gateway host that this route should apply to.
+        A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
         return pulumi.get(self, "name")
 
@@ -170,7 +170,7 @@ class _IngressGatewayRouteTableState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] ingress_gateway_id: The OCID of the service mesh in which this access policy is created.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
+        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         :param pulumi.Input[Sequence[pulumi.Input['IngressGatewayRouteTableRouteRuleArgs']]] route_rules: (Updatable) The route rules for the ingress gateway.
         :param pulumi.Input[str] state: The current state of the Resource.
@@ -281,7 +281,7 @@ class _IngressGatewayRouteTableState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Name of the ingress gateway host that this route should apply to.
+        A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
         return pulumi.get(self, "name")
 
@@ -434,7 +434,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) Description of the resource. It can be changed after creation. Avoid entering confidential information.  Example: `This is my new resource`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] ingress_gateway_id: The OCID of the service mesh in which this access policy is created.
-        :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
+        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the ingress gateway.
         """
@@ -582,7 +582,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] ingress_gateway_id: The OCID of the service mesh in which this access policy is created.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in a Failed state.
-        :param pulumi.Input[str] name: (Updatable) Name of the ingress gateway host that this route should apply to.
+        :param pulumi.Input[str] name: A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         :param pulumi.Input[int] priority: (Updatable) The priority of the route table. Lower value means higher priority. The routes are declared based on the priority.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IngressGatewayRouteTableRouteRuleArgs']]]] route_rules: (Updatable) The route rules for the ingress gateway.
         :param pulumi.Input[str] state: The current state of the Resource.
@@ -661,7 +661,7 @@ class IngressGatewayRouteTable(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Name of the ingress gateway host that this route should apply to.
+        A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         """
         return pulumi.get(self, "name")
 

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testOdaPrivateEndpoint = new OdaPrivateEndpoint("testOdaPrivateEndpoint", OdaPrivateEndpointArgs.builder()        
+ *         var testOdaPrivateEndpoint = new OdaPrivateEndpoint("testOdaPrivateEndpoint", OdaPrivateEndpointArgs.builder()
  *             .compartmentId(compartmentId)
  *             .subnetId(testSubnet.id())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

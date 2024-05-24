@@ -168,7 +168,7 @@ type Config struct {
 	Configuration ConfigConfigurationOutput `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// Unique name that can be edited. The name should not contain any confidential information.
+	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -264,7 +264,7 @@ type configState struct {
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Unique name that can be edited. The name should not contain any confidential information.
+	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -316,7 +316,7 @@ type ConfigState struct {
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// Unique name that can be edited. The name should not contain any confidential information.
+	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -372,7 +372,7 @@ type configArgs struct {
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// Unique name that can be edited. The name should not contain any confidential information.
+	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -419,7 +419,7 @@ type ConfigArgs struct {
 	Configuration ConfigConfigurationPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// Unique name that can be edited. The name should not contain any confidential information.
+	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -566,7 +566,7 @@ func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// Unique name that can be edited. The name should not contain any confidential information.
+// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 func (o ConfigOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }

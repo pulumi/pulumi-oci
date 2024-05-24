@@ -250,7 +250,7 @@ type DatabaseInsightConnectionDetails struct {
 	HostName *string `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts []DatabaseInsightConnectionDetailsHost `pulumi:"hosts"`
-	// Listener port number used for connection requests for rivate endpoint accessed db resource.
+	// Listener port number used for connection requests.
 	Port *int `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
 	Protocol *string `pulumi:"protocol"`
@@ -274,7 +274,7 @@ type DatabaseInsightConnectionDetailsArgs struct {
 	HostName pulumi.StringPtrInput `pulumi:"hostName"`
 	// List of hosts and port for private endpoint accessed database resource.
 	Hosts DatabaseInsightConnectionDetailsHostArrayInput `pulumi:"hosts"`
-	// Listener port number used for connection requests for rivate endpoint accessed db resource.
+	// Listener port number used for connection requests.
 	Port pulumi.IntPtrInput `pulumi:"port"`
 	// Protocol used for connection requests for private endpoint accssed database resource.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
@@ -369,7 +369,7 @@ func (o DatabaseInsightConnectionDetailsOutput) Hosts() DatabaseInsightConnectio
 	return o.ApplyT(func(v DatabaseInsightConnectionDetails) []DatabaseInsightConnectionDetailsHost { return v.Hosts }).(DatabaseInsightConnectionDetailsHostArrayOutput)
 }
 
-// Listener port number used for connection requests for rivate endpoint accessed db resource.
+// Listener port number used for connection requests.
 func (o DatabaseInsightConnectionDetailsOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v DatabaseInsightConnectionDetails) *int { return v.Port }).(pulumi.IntPtrOutput)
 }
@@ -428,7 +428,7 @@ func (o DatabaseInsightConnectionDetailsPtrOutput) Hosts() DatabaseInsightConnec
 	}).(DatabaseInsightConnectionDetailsHostArrayOutput)
 }
 
-// Listener port number used for connection requests for rivate endpoint accessed db resource.
+// Listener port number used for connection requests.
 func (o DatabaseInsightConnectionDetailsPtrOutput) Port() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *DatabaseInsightConnectionDetails) *int {
 		if v == nil {
@@ -797,7 +797,7 @@ func (o DatabaseInsightCredentialDetailsPtrOutput) WalletSecretId() pulumi.Strin
 }
 
 type ExadataInsightMemberVmClusterDetail struct {
-	// (Updatable) Compartment Identifier of database
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 	DbmPrivateEndpointId *string `pulumi:"dbmPrivateEndpointId"`
@@ -821,7 +821,7 @@ type ExadataInsightMemberVmClusterDetailInput interface {
 }
 
 type ExadataInsightMemberVmClusterDetailArgs struct {
-	// (Updatable) Compartment Identifier of database
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
 	DbmPrivateEndpointId pulumi.StringPtrInput `pulumi:"dbmPrivateEndpointId"`
@@ -884,7 +884,7 @@ func (o ExadataInsightMemberVmClusterDetailOutput) ToExadataInsightMemberVmClust
 	return o
 }
 
-// (Updatable) Compartment Identifier of database
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o ExadataInsightMemberVmClusterDetailOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetail) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -2077,7 +2077,7 @@ func (o OpsiConfigurationConfigItemArrayOutput) Index(i pulumi.IntInput) OpsiCon
 }
 
 type OpsiConfigurationConfigItemMetadata struct {
-	// (Updatable) Type of configuration item.
+	// Type of configuration item.
 	ConfigItemType *string `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
 	DataType *string `pulumi:"dataType"`
@@ -2103,7 +2103,7 @@ type OpsiConfigurationConfigItemMetadataInput interface {
 }
 
 type OpsiConfigurationConfigItemMetadataArgs struct {
-	// (Updatable) Type of configuration item.
+	// Type of configuration item.
 	ConfigItemType pulumi.StringPtrInput `pulumi:"configItemType"`
 	// Data type of configuration item. Examples: STRING, BOOLEAN, NUMBER
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
@@ -2168,7 +2168,7 @@ func (o OpsiConfigurationConfigItemMetadataOutput) ToOpsiConfigurationConfigItem
 	return o
 }
 
-// (Updatable) Type of configuration item.
+// Type of configuration item.
 func (o OpsiConfigurationConfigItemMetadataOutput) ConfigItemType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpsiConfigurationConfigItemMetadata) *string { return v.ConfigItemType }).(pulumi.StringPtrOutput)
 }

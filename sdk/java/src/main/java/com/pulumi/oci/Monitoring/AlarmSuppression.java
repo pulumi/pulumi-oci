@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAlarmSuppression = new AlarmSuppression("testAlarmSuppression", AlarmSuppressionArgs.builder()        
+ *         var testAlarmSuppression = new AlarmSuppression("testAlarmSuppression", AlarmSuppressionArgs.builder()
  *             .alarmSuppressionTarget(AlarmSuppressionAlarmSuppressionTargetArgs.builder()
  *                 .alarmId(testAlarm.id())
  *                 .targetType(alarmSuppressionAlarmSuppressionTargetTargetType)

@@ -18,14 +18,14 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
     public static final InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs Empty = new InstanceConfigurationInstanceDetailsOptionLaunchDetailsSourceDetailsInstanceSourceImageFilterDetailsArgs();
 
     /**
-     * (Updatable) The OCID of the compartment containing images to search
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment containing images to search
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -105,7 +105,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class InstanceConfigurationInstanceDetailsOptionLaunchDetailsSource
         }
 
         /**
-         * @param compartmentId (Updatable) The OCID of the compartment containing images to search
+         * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the instance configuration.
          * 
          * @return builder
          * 

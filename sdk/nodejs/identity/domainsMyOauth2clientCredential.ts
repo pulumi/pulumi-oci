@@ -208,21 +208,18 @@ export class DomainsMyOauth2clientCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly metas!: pulumi.Output<outputs.Identity.DomainsMyOauth2clientCredentialMeta[]>;
     /**
-     * (Updatable) The username.
+     * Name
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      */
     public readonly name!: pulumi.Output<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -230,9 +227,9 @@ export class DomainsMyOauth2clientCredential extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -564,21 +561,18 @@ export interface DomainsMyOauth2clientCredentialState {
      */
     metas?: pulumi.Input<pulumi.Input<inputs.Identity.DomainsMyOauth2clientCredentialMeta>[]>;
     /**
-     * (Updatable) The username.
+     * Name
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      */
     name?: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -586,9 +580,9 @@ export interface DomainsMyOauth2clientCredentialState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -740,21 +734,18 @@ export interface DomainsMyOauth2clientCredentialArgs {
      */
     isResetSecret?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The username.
+     * Name
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      */
     name?: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -762,9 +753,9 @@ export interface DomainsMyOauth2clientCredentialArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

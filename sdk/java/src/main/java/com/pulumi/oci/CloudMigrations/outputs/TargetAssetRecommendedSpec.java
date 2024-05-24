@@ -22,268 +22,212 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetRecommendedSpec {
     /**
-     * @return (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+     * @return Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecAgentConfig> agentConfigs;
     /**
-     * @return (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private @Nullable String availabilityDomain;
     /**
-     * @return (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * @return The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
     private @Nullable String capacityReservationId;
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     private @Nullable String compartmentId;
     /**
-     * @return (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * @return Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecCreateVnicDetail> createVnicDetails;
     /**
-     * @return (Updatable) The OCID of the dedicated VM host.
+     * @return The OCID of the dedicated VM host.
      * 
      */
     private @Nullable String dedicatedVmHostId;
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private @Nullable Map<String,Object> definedTags;
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-     * 
-     * If you do not specify the fault domain, the system selects one for you.
-     * 
-     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-     * 
-     * Example: `FAULT-DOMAIN-1`
+     * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
     private @Nullable String faultDomain;
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     private @Nullable Map<String,Object> freeformTags;
     /**
-     * @return (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+     * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
      */
     private @Nullable String hostnameLabel;
     /**
-     * @return (Updatable) Optional mutable instance options
+     * @return Optional mutable instance options
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecInstanceOption> instanceOptions;
     /**
-     * @return (Updatable) This is an advanced option.
-     * 
-     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-     * 
-     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-     * 
-     * By default, the iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     * 
-     * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-     * 
-     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     * 
-     * For more information about iPXE, see http://ipxe.org.
+     * @return This is an advanced option.
      * 
      */
     private @Nullable String ipxeScript;
     /**
-     * @return (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * 
      */
     private @Nullable Boolean isPvEncryptionInTransitEnabled;
     /**
-     * @return (Updatable) Configuration options for preemptible instances.
+     * @return Configuration options for preemptible instances.
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs;
     /**
-     * @return (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-     * 
-     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+     * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     private @Nullable String shape;
     /**
-     * @return (Updatable) The shape configuration requested for the instance.
-     * 
-     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * @return The shape configuration requested for the instance.
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecShapeConfig> shapeConfigs;
-    /**
-     * @return (Updatable)
-     * 
-     */
     private @Nullable List<TargetAssetRecommendedSpecSourceDetail> sourceDetails;
 
     private TargetAssetRecommendedSpec() {}
     /**
-     * @return (Updatable) Configuration options for the Oracle Cloud Agent software running on the instance.
+     * @return Configuration options for the Oracle Cloud Agent software running on the instance.
      * 
      */
     public List<TargetAssetRecommendedSpecAgentConfig> agentConfigs() {
         return this.agentConfigs == null ? List.of() : this.agentConfigs;
     }
     /**
-     * @return (Updatable) The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Optional<String> availabilityDomain() {
         return Optional.ofNullable(this.availabilityDomain);
     }
     /**
-     * @return (Updatable) The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
+     * @return The OCID of the compute capacity reservation under which this instance is launched. You can opt out of all default reservations by specifying an empty string as input for this field. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm#default).
      * 
      */
     public Optional<String> capacityReservationId() {
         return Optional.ofNullable(this.capacityReservationId);
     }
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     public Optional<String> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return (Updatable) Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * @return Contains properties for a VNIC. You use this object when creating the primary VNIC during instance launch or when creating a secondary VNIC. For more information about VNICs, see [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * 
      */
     public List<TargetAssetRecommendedSpecCreateVnicDetail> createVnicDetails() {
         return this.createVnicDetails == null ? List.of() : this.createVnicDetails;
     }
     /**
-     * @return (Updatable) The OCID of the dedicated VM host.
+     * @return The OCID of the dedicated VM host.
      * 
      */
     public Optional<String> dedicatedVmHostId() {
         return Optional.ofNullable(this.dedicatedVmHostId);
     }
     /**
-     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> definedTags() {
         return this.definedTags == null ? Map.of() : this.definedTags;
     }
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return (Updatable) A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
-     * 
-     * If you do not specify the fault domain, the system selects one for you.
-     * 
-     * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
-     * 
-     * Example: `FAULT-DOMAIN-1`
+     * @return A fault domain is a grouping of hardware and infrastructure within an availability domain. Each availability domain contains three fault domains. Fault domains lets you distribute your instances so that they are not on the same physical hardware within a single availability domain. A hardware failure or Compute hardware maintenance that affects one fault domain does not affect instances in other fault domains.
      * 
      */
     public Optional<String> faultDomain() {
         return Optional.ofNullable(this.faultDomain);
     }
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return Simple key-value pair that is applied without any predefined name, type or scope. It exists only for cross-compatibility. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Map<String,Object> freeformTags() {
         return this.freeformTags == null ? Map.of() : this.freeformTags;
     }
     /**
-     * @return (Updatable) Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
+     * @return Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
      * 
      */
     public Optional<String> hostnameLabel() {
         return Optional.ofNullable(this.hostnameLabel);
     }
     /**
-     * @return (Updatable) Optional mutable instance options
+     * @return Optional mutable instance options
      * 
      */
     public List<TargetAssetRecommendedSpecInstanceOption> instanceOptions() {
         return this.instanceOptions == null ? List.of() : this.instanceOptions;
     }
     /**
-     * @return (Updatable) This is an advanced option.
-     * 
-     * When a bare metal or virtual machine instance boots, the iPXE firmware that runs on the instance is configured to run an iPXE script to continue the boot process.
-     * 
-     * If you want more control over the boot process, you can provide your own custom iPXE script that will run when the instance boots. Be aware that the same iPXE script will run every time an instance boots, not only after the initial LaunchInstance call.
-     * 
-     * By default, the iPXE script connects to the instance&#39;s local boot volume over iSCSI and performs a network boot. If you use a custom iPXE script and want to network-boot from the instance&#39;s local boot volume over iSCSI in the same way as the default iPXE script, use the following iSCSI IP address: 169.254.0.2, and boot volume IQN: iqn.2015-02.oracle.boot.
-     * 
-     * If your instance boot volume type is paravirtualized, the boot volume is attached to the instance through virtio-scsi and no iPXE script is used. If your instance boot volume type is paravirtualized and you use custom iPXE to perform network-boot into your instance, the primary boot volume is attached as a data volume through the virtio-scsi drive.
-     * 
-     * For more information about the Bring Your Own Image feature of Oracle Cloud Infrastructure, see [Bring Your Own Image](https://docs.cloud.oracle.com/iaas/Content/Compute/References/bringyourownimage.htm).
-     * 
-     * For more information about iPXE, see http://ipxe.org.
+     * @return This is an advanced option.
      * 
      */
     public Optional<String> ipxeScript() {
         return Optional.ofNullable(this.ipxeScript);
     }
     /**
-     * @return (Updatable) Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
+     * @return Whether to enable in-transit encryption for the data volume&#39;s paravirtualized attachment. This field applies to both block volumes and boot volumes. By default, the value is false.
      * 
      */
     public Optional<Boolean> isPvEncryptionInTransitEnabled() {
         return Optional.ofNullable(this.isPvEncryptionInTransitEnabled);
     }
     /**
-     * @return (Updatable) Configuration options for preemptible instances.
+     * @return Configuration options for preemptible instances.
      * 
      */
     public List<TargetAssetRecommendedSpecPreemptibleInstanceConfig> preemptibleInstanceConfigs() {
         return this.preemptibleInstanceConfigs == null ? List.of() : this.preemptibleInstanceConfigs;
     }
     /**
-     * @return (Updatable) The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
-     * 
-     * You can enumerate all available shapes by calling [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Shape/ListShapes).
+     * @return The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
      * 
      */
     public Optional<String> shape() {
         return Optional.ofNullable(this.shape);
     }
     /**
-     * @return (Updatable) The shape configuration requested for the instance.
-     * 
-     * If the parameter is provided, the instance is created with the resources that you specify. If some properties are missing or the entire parameter is not provided, the instance is created with the default configuration values for the `shape` that you specify.
-     * 
-     * Each shape only supports certain configurable values. If the values that you provide are not valid for the specified `shape`, an error is returned.
+     * @return The shape configuration requested for the instance.
      * 
      */
     public List<TargetAssetRecommendedSpecShapeConfig> shapeConfigs() {
         return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
-    /**
-     * @return (Updatable)
-     * 
-     */
     public List<TargetAssetRecommendedSpecSourceDetail> sourceDetails() {
         return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }

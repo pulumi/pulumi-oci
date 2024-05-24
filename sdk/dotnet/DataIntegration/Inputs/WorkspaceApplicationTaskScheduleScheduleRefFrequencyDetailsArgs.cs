@@ -49,7 +49,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<int>? Interval { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of the object.
+        /// (Updatable) The type of the model
         /// </summary>
         [Input("modelType", required: true)]
         public Input<string> ModelType { get; set; } = null!;

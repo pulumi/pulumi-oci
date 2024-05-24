@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Waas.Inputs
         public Input<bool>? IsCaseSensitive { get; set; }
 
         /// <summary>
-        /// (Updatable) The value of the header.
+        /// (Updatable) The criteria value.
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

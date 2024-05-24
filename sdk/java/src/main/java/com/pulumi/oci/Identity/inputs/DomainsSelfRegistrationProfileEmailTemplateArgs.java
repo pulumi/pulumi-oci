@@ -17,10 +17,11 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
     public static final DomainsSelfRegistrationProfileEmailTemplateArgs Empty = new DomainsSelfRegistrationProfileEmailTemplateArgs();
 
     /**
-     * (Updatable) The displayName of the User or App who modified this Resource
+     * (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -34,10 +35,11 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+     * 
+     * **Added In:** 19.2.1
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -52,10 +54,9 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) URI of the Email Template
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -69,10 +70,9 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) URI of the Email Template
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -87,7 +87,7 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
     }
 
     /**
-     * (Updatable) name of the attribute
+     * (Updatable) Identifier of the Email Template.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -98,16 +98,13 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) name of the attribute
+     * @return (Updatable) Identifier of the Email Template.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -118,9 +115,6 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -154,10 +148,11 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -175,10 +170,11 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
         }
 
         /**
-         * @param display (Updatable) The displayName of the User or App who modified this Resource
+         * @param display (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
+         * 
+         * **Added In:** 19.2.1
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -195,10 +191,9 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) URI of the Email Template
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -216,10 +211,9 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) URI of the Email Template
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -236,7 +230,7 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) Identifier of the Email Template.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -247,9 +241,6 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -260,7 +251,7 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
         }
 
         /**
-         * @param value (Updatable) name of the attribute
+         * @param value (Updatable) Identifier of the Email Template.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -271,9 +262,6 @@ public final class DomainsSelfRegistrationProfileEmailTemplateArgs extends com.p
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -136,17 +136,17 @@ type DomainsApiKey struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayOutput `pulumi:"idcsPreventedOperations"`
-	// Key or name of the tag.
+	// Key
+	//
+	// **Added In:** 2010242156
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: false
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
+	// * caseExact: true
+	// * idcsPii: true
+	// * type: string
+	// * mutability: immutable
 	// * required: true
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Key pulumi.StringOutput `pulumi:"key"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
@@ -160,7 +160,7 @@ type DomainsApiKey struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsApiKeyMetaArrayOutput `pulumi:"metas"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -168,9 +168,9 @@ type DomainsApiKey struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringOutput `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrOutput `pulumi:"resourceTypeSchemaVersion"`
@@ -375,17 +375,17 @@ type domainsApiKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations []string `pulumi:"idcsPreventedOperations"`
-	// Key or name of the tag.
+	// Key
+	//
+	// **Added In:** 2010242156
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: false
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
+	// * caseExact: true
+	// * idcsPii: true
+	// * type: string
+	// * mutability: immutable
 	// * required: true
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Key *string `pulumi:"key"`
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
@@ -399,7 +399,7 @@ type domainsApiKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsApiKeyMeta `pulumi:"metas"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -407,9 +407,9 @@ type domainsApiKeyState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -576,17 +576,17 @@ type DomainsApiKeyState struct {
 	// * type: string
 	// * uniqueness: none
 	IdcsPreventedOperations pulumi.StringArrayInput
-	// Key or name of the tag.
+	// Key
+	//
+	// **Added In:** 2010242156
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: false
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
+	// * caseExact: true
+	// * idcsPii: true
+	// * type: string
+	// * mutability: immutable
 	// * required: true
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Key pulumi.StringPtrInput
 	// (Updatable) A complex attribute that contains resource metadata. All sub-attributes are OPTIONAL.
 	//
@@ -600,7 +600,7 @@ type DomainsApiKeyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsApiKeyMetaArrayInput
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -608,9 +608,9 @@ type DomainsApiKeyState struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -690,19 +690,19 @@ type domainsApiKeyArgs struct {
 	Description *string `pulumi:"description"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// Key or name of the tag.
+	// Key
+	//
+	// **Added In:** 2010242156
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: false
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
+	// * caseExact: true
+	// * idcsPii: true
+	// * type: string
+	// * mutability: immutable
 	// * required: true
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Key string `pulumi:"key"`
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -710,9 +710,9 @@ type domainsApiKeyArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid *string `pulumi:"ocid"`
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion *string `pulumi:"resourceTypeSchemaVersion"`
@@ -777,19 +777,19 @@ type DomainsApiKeyArgs struct {
 	Description pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// Key or name of the tag.
+	// Key
+	//
+	// **Added In:** 2010242156
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: false
-	// * idcsSearchable: true
-	// * multiValued: false
-	// * mutability: readWrite
+	// * caseExact: true
+	// * idcsPii: true
+	// * type: string
+	// * mutability: immutable
 	// * required: true
 	// * returned: default
-	// * type: string
-	// * uniqueness: none
 	Key pulumi.StringInput
-	// The user's OCID.
+	// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 	//
 	// **SCIM++ Properties:**
 	// * caseExact: true
@@ -797,9 +797,9 @@ type DomainsApiKeyArgs struct {
 	// * multiValued: false
 	// * mutability: immutable
 	// * required: false
-	// * returned: always
+	// * returned: default
 	// * type: string
-	// * uniqueness: none
+	// * uniqueness: global
 	Ocid pulumi.StringPtrInput
 	// An endpoint-specific schema version number to use in the Request. Allowed version values are Earliest Version or Latest Version as specified in each REST API endpoint description, or any sequential number inbetween. All schema attributes/body parameters are a part of version 1. After version 1, any attributes added or deprecated will be tagged with the version that they were added to or deprecated in. If no version is provided, the latest schema version is returned.
 	ResourceTypeSchemaVersion pulumi.StringPtrInput
@@ -1079,17 +1079,17 @@ func (o DomainsApiKeyOutput) IdcsPreventedOperations() pulumi.StringArrayOutput 
 	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringArrayOutput { return v.IdcsPreventedOperations }).(pulumi.StringArrayOutput)
 }
 
-// Key or name of the tag.
+// Key
+//
+// **Added In:** 2010242156
 //
 // **SCIM++ Properties:**
-// * caseExact: false
-// * idcsSearchable: true
-// * multiValued: false
-// * mutability: readWrite
+// * caseExact: true
+// * idcsPii: true
+// * type: string
+// * mutability: immutable
 // * required: true
 // * returned: default
-// * type: string
-// * uniqueness: none
 func (o DomainsApiKeyOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
@@ -1109,7 +1109,7 @@ func (o DomainsApiKeyOutput) Metas() DomainsApiKeyMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsApiKey) DomainsApiKeyMetaArrayOutput { return v.Metas }).(DomainsApiKeyMetaArrayOutput)
 }
 
-// The user's OCID.
+// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
 //
 // **SCIM++ Properties:**
 // * caseExact: true
@@ -1117,9 +1117,9 @@ func (o DomainsApiKeyOutput) Metas() DomainsApiKeyMetaArrayOutput {
 // * multiValued: false
 // * mutability: immutable
 // * required: false
-// * returned: always
+// * returned: default
 // * type: string
-// * uniqueness: none
+// * uniqueness: global
 func (o DomainsApiKeyOutput) Ocid() pulumi.StringOutput {
 	return o.ApplyT(func(v *DomainsApiKey) pulumi.StringOutput { return v.Ocid }).(pulumi.StringOutput)
 }

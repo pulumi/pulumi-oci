@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetTestSpecInstanceOption {
     /**
-     * @return (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+     * @return Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
      */
     private @Nullable Boolean areLegacyImdsEndpointsDisabled;
 
     private TargetAssetTestSpecInstanceOption() {}
     /**
-     * @return (Updatable) Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
+     * @return Whether to disable the legacy (/v1) instance metadata service endpoints. Customers who have migrated to /v2 should set this to true for added security. Default is false.
      * 
      */
     public Optional<Boolean> areLegacyImdsEndpointsDisabled() {

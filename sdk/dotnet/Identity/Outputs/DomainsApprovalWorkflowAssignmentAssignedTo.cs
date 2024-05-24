@@ -28,57 +28,57 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// The displayName of the User or App who modified this Resource
+        /// (Updatable) Display name of the resource for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: request
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// Ocid of the resource for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
-        /// * returned: default
+        /// * returned: always
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// The type of resource, User or App, that modified this Resource
+        /// Type of the resource (stripe and non-stripe) for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string Type;
         /// <summary>
-        /// Value of the tag.
+        /// Identifier of the resource for which Approval Workflow is assigned
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

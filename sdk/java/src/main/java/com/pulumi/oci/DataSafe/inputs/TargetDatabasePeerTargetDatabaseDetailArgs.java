@@ -79,14 +79,14 @@ public final class TargetDatabasePeerTargetDatabaseDetailArgs extends com.pulumi
     }
 
     /**
-     * (Updatable) The details required to establish a TLS enabled connection.
+     * The details required to establish a TLS enabled connection.
      * 
      */
     @Import(name="tlsConfig")
     private @Nullable Output<TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs> tlsConfig;
 
     /**
-     * @return (Updatable) The details required to establish a TLS enabled connection.
+     * @return The details required to establish a TLS enabled connection.
      * 
      */
     public Optional<Output<TargetDatabasePeerTargetDatabaseDetailTlsConfigArgs>> tlsConfig() {
@@ -206,7 +206,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailArgs extends com.pulumi
         }
 
         /**
-         * @param tlsConfig (Updatable) The details required to establish a TLS enabled connection.
+         * @param tlsConfig The details required to establish a TLS enabled connection.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class TargetDatabasePeerTargetDatabaseDetailArgs extends com.pulumi
         }
 
         /**
-         * @param tlsConfig (Updatable) The details required to establish a TLS enabled connection.
+         * @param tlsConfig The details required to establish a TLS enabled connection.
          * 
          * @return builder
          * 

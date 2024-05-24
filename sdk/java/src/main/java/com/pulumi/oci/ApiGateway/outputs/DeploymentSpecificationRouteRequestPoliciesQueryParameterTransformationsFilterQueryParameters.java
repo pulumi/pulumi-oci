@@ -13,32 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters {
     /**
-     * @return (Updatable) The list of headers.
+     * @return (Updatable) The list of query parameters.
      * 
      */
     private List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items;
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
      * 
      */
     private String type;
 
     private DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParameters() {}
     /**
-     * @return (Updatable) The list of headers.
+     * @return (Updatable) The list of query parameters.
      * 
      */
     public List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItem> items() {
         return this.items;
     }
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
      * 
      */
     public String type() {

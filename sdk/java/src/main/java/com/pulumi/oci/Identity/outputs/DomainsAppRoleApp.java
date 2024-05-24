@@ -13,14 +13,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppRoleApp {
     /**
-     * @return Member display name
+     * @return (Updatable) App display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -42,7 +42,7 @@ public final class DomainsAppRoleApp {
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) The URI corresponding to the member Resource of this Group
+     * @return (Updatable) App URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -70,15 +70,15 @@ public final class DomainsAppRoleApp {
      */
     private @Nullable String serviceInstanceIdentifier;
     /**
-     * @return Value of the tag.
+     * @return App identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -87,14 +87,14 @@ public final class DomainsAppRoleApp {
 
     private DomainsAppRoleApp() {}
     /**
-     * @return Member display name
+     * @return (Updatable) App display name
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -120,7 +120,7 @@ public final class DomainsAppRoleApp {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) The URI corresponding to the member Resource of this Group
+     * @return (Updatable) App URI
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -152,15 +152,15 @@ public final class DomainsAppRoleApp {
         return Optional.ofNullable(this.serviceInstanceIdentifier);
     }
     /**
-     * @return Value of the tag.
+     * @return App identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 

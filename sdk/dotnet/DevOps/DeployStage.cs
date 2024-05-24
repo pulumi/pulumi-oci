@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> CommandSpecDeployArtifactId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        /// The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -956,7 +956,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? CommandSpecDeployArtifactId { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the compartment where the ContainerInstance will be created.
+        /// The OCID of the compartment where the ContainerInstance will be created.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }

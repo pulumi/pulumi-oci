@@ -23,14 +23,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     public static final WorkspaceApplicationTaskScheduleMetadataArgs Empty = new WorkspaceApplicationTaskScheduleMetadataArgs();
 
     /**
-     * (Updatable) The owning object key for this object.
+     * The owning object key for this object.
      * 
      */
     @Import(name="aggregatorKey")
     private @Nullable Output<String> aggregatorKey;
 
     /**
-     * @return (Updatable) The owning object key for this object.
+     * @return The owning object key for this object.
      * 
      */
     public Optional<Output<String>> aggregatorKey() {
@@ -38,14 +38,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
      * 
      */
     @Import(name="aggregators")
     private @Nullable Output<List<WorkspaceApplicationTaskScheduleMetadataAggregatorArgs>> aggregators;
 
     /**
-     * @return (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+     * @return A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
      * 
      */
     public Optional<Output<List<WorkspaceApplicationTaskScheduleMetadataAggregatorArgs>>> aggregators() {
@@ -53,14 +53,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) A count statistics.
+     * A count statistics.
      * 
      */
     @Import(name="countStatistics")
     private @Nullable Output<List<WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs>> countStatistics;
 
     /**
-     * @return (Updatable) A count statistics.
+     * @return A count statistics.
      * 
      */
     public Optional<Output<List<WorkspaceApplicationTaskScheduleMetadataCountStatisticArgs>>> countStatistics() {
@@ -68,14 +68,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The user that created the object.
+     * The user that created the object.
      * 
      */
     @Import(name="createdBy")
     private @Nullable Output<String> createdBy;
 
     /**
-     * @return (Updatable) The user that created the object.
+     * @return The user that created the object.
      * 
      */
     public Optional<Output<String>> createdBy() {
@@ -83,14 +83,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The user that created the object.
+     * The user that created the object.
      * 
      */
     @Import(name="createdByName")
     private @Nullable Output<String> createdByName;
 
     /**
-     * @return (Updatable) The user that created the object.
+     * @return The user that created the object.
      * 
      */
     public Optional<Output<String>> createdByName() {
@@ -98,14 +98,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The full path to identify this object.
+     * The full path to identify this object.
      * 
      */
     @Import(name="identifierPath")
     private @Nullable Output<String> identifierPath;
 
     /**
-     * @return (Updatable) The full path to identify this object.
+     * @return The full path to identify this object.
      * 
      */
     public Optional<Output<String>> identifierPath() {
@@ -113,14 +113,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Information property fields.
+     * Information property fields.
      * 
      */
     @Import(name="infoFields")
     private @Nullable Output<Map<String,Object>> infoFields;
 
     /**
-     * @return (Updatable) Information property fields.
+     * @return Information property fields.
      * 
      */
     public Optional<Output<Map<String,Object>>> infoFields() {
@@ -128,14 +128,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Specifies whether this object is a favorite or not.
+     * Specifies whether this object is a favorite or not.
      * 
      */
     @Import(name="isFavorite")
     private @Nullable Output<Boolean> isFavorite;
 
     /**
-     * @return (Updatable) Specifies whether this object is a favorite or not.
+     * @return Specifies whether this object is a favorite or not.
      * 
      */
     public Optional<Output<Boolean>> isFavorite() {
@@ -143,14 +143,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+     * @return Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -158,14 +158,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The registry version of the object.
+     * The registry version of the object.
      * 
      */
     @Import(name="registryVersion")
     private @Nullable Output<Integer> registryVersion;
 
     /**
-     * @return (Updatable) The registry version of the object.
+     * @return The registry version of the object.
      * 
      */
     public Optional<Output<Integer>> registryVersion() {
@@ -173,14 +173,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The date and time that the object was created.
+     * The date and time that the object was created.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return (Updatable) The date and time that the object was created.
+     * @return The date and time that the object was created.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -188,14 +188,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The date and time that the object was updated.
+     * The date and time that the object was updated.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return (Updatable) The date and time that the object was updated.
+     * @return The date and time that the object was updated.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -203,14 +203,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The user that updated the object.
+     * The user that updated the object.
      * 
      */
     @Import(name="updatedBy")
     private @Nullable Output<String> updatedBy;
 
     /**
-     * @return (Updatable) The user that updated the object.
+     * @return The user that updated the object.
      * 
      */
     public Optional<Output<String>> updatedBy() {
@@ -218,14 +218,14 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The user that updated the object.
+     * The user that updated the object.
      * 
      */
     @Import(name="updatedByName")
     private @Nullable Output<String> updatedByName;
 
     /**
-     * @return (Updatable) The user that updated the object.
+     * @return The user that updated the object.
      * 
      */
     public Optional<Output<String>> updatedByName() {
@@ -270,7 +270,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param aggregatorKey (Updatable) The owning object key for this object.
+         * @param aggregatorKey The owning object key for this object.
          * 
          * @return builder
          * 
@@ -281,7 +281,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param aggregatorKey (Updatable) The owning object key for this object.
+         * @param aggregatorKey The owning object key for this object.
          * 
          * @return builder
          * 
@@ -291,7 +291,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param aggregators (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+         * @param aggregators A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
          * 
          * @return builder
          * 
@@ -302,7 +302,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param aggregators (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+         * @param aggregators A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
          * 
          * @return builder
          * 
@@ -312,7 +312,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param aggregators (Updatable) A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
+         * @param aggregators A summary type containing information about the object&#39;s aggregator including its type, key, name and description.
          * 
          * @return builder
          * 
@@ -322,7 +322,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param countStatistics (Updatable) A count statistics.
+         * @param countStatistics A count statistics.
          * 
          * @return builder
          * 
@@ -333,7 +333,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param countStatistics (Updatable) A count statistics.
+         * @param countStatistics A count statistics.
          * 
          * @return builder
          * 
@@ -343,7 +343,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param countStatistics (Updatable) A count statistics.
+         * @param countStatistics A count statistics.
          * 
          * @return builder
          * 
@@ -353,7 +353,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param createdBy (Updatable) The user that created the object.
+         * @param createdBy The user that created the object.
          * 
          * @return builder
          * 
@@ -364,7 +364,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param createdBy (Updatable) The user that created the object.
+         * @param createdBy The user that created the object.
          * 
          * @return builder
          * 
@@ -374,7 +374,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param createdByName (Updatable) The user that created the object.
+         * @param createdByName The user that created the object.
          * 
          * @return builder
          * 
@@ -385,7 +385,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param createdByName (Updatable) The user that created the object.
+         * @param createdByName The user that created the object.
          * 
          * @return builder
          * 
@@ -395,7 +395,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param identifierPath (Updatable) The full path to identify this object.
+         * @param identifierPath The full path to identify this object.
          * 
          * @return builder
          * 
@@ -406,7 +406,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param identifierPath (Updatable) The full path to identify this object.
+         * @param identifierPath The full path to identify this object.
          * 
          * @return builder
          * 
@@ -416,7 +416,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param infoFields (Updatable) Information property fields.
+         * @param infoFields Information property fields.
          * 
          * @return builder
          * 
@@ -427,7 +427,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param infoFields (Updatable) Information property fields.
+         * @param infoFields Information property fields.
          * 
          * @return builder
          * 
@@ -437,7 +437,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param isFavorite (Updatable) Specifies whether this object is a favorite or not.
+         * @param isFavorite Specifies whether this object is a favorite or not.
          * 
          * @return builder
          * 
@@ -448,7 +448,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param isFavorite (Updatable) Specifies whether this object is a favorite or not.
+         * @param isFavorite Specifies whether this object is a favorite or not.
          * 
          * @return builder
          * 
@@ -458,7 +458,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -469,7 +469,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -479,7 +479,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param labels (Updatable) Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
+         * @param labels Labels are keywords or tags that you can add to data assets, dataflows and so on. You can define your own labels and use them to categorize content.
          * 
          * @return builder
          * 
@@ -489,7 +489,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param registryVersion (Updatable) The registry version of the object.
+         * @param registryVersion The registry version of the object.
          * 
          * @return builder
          * 
@@ -500,7 +500,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param registryVersion (Updatable) The registry version of the object.
+         * @param registryVersion The registry version of the object.
          * 
          * @return builder
          * 
@@ -510,7 +510,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param timeCreated (Updatable) The date and time that the object was created.
+         * @param timeCreated The date and time that the object was created.
          * 
          * @return builder
          * 
@@ -521,7 +521,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param timeCreated (Updatable) The date and time that the object was created.
+         * @param timeCreated The date and time that the object was created.
          * 
          * @return builder
          * 
@@ -531,7 +531,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param timeUpdated (Updatable) The date and time that the object was updated.
+         * @param timeUpdated The date and time that the object was updated.
          * 
          * @return builder
          * 
@@ -542,7 +542,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param timeUpdated (Updatable) The date and time that the object was updated.
+         * @param timeUpdated The date and time that the object was updated.
          * 
          * @return builder
          * 
@@ -552,7 +552,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param updatedBy (Updatable) The user that updated the object.
+         * @param updatedBy The user that updated the object.
          * 
          * @return builder
          * 
@@ -563,7 +563,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param updatedBy (Updatable) The user that updated the object.
+         * @param updatedBy The user that updated the object.
          * 
          * @return builder
          * 
@@ -573,7 +573,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param updatedByName (Updatable) The user that updated the object.
+         * @param updatedByName The user that updated the object.
          * 
          * @return builder
          * 
@@ -584,7 +584,7 @@ public final class WorkspaceApplicationTaskScheduleMetadataArgs extends com.pulu
         }
 
         /**
-         * @param updatedByName (Updatable) The user that updated the object.
+         * @param updatedByName The user that updated the object.
          * 
          * @return builder
          * 

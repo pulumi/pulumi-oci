@@ -16,7 +16,7 @@ public final class AppFirewallPolicyActionBody {
      */
     private String text;
     /**
-     * @return (Updatable) Type of WebAppFirewallPolicyRule.
+     * @return (Updatable) Type of HttpResponseBody.
      * 
      */
     private String type;
@@ -30,7 +30,7 @@ public final class AppFirewallPolicyActionBody {
         return this.text;
     }
     /**
-     * @return (Updatable) Type of WebAppFirewallPolicyRule.
+     * @return (Updatable) Type of HttpResponseBody.
      * 
      */
     public String type() {

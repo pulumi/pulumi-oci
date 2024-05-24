@@ -14,9 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsCloudGateMappingCloudGate
     {
         /// <summary>
-        /// (Updatable) The URI to the upstream block entry
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The URI of the OAuth app for this Cloud Gate.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -30,23 +28,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) The id of the upstream block entry.
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The id of the owning Cloud Gate.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

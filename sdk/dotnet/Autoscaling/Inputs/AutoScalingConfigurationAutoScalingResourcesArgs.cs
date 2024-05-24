@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public Input<string> Id { get; set; } = null!;
 
         /// <summary>
-        /// The type of action to take.
+        /// The type of resource.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

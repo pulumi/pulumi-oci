@@ -500,7 +500,7 @@ class MetricExtensionMetricList(dict):
                  unit: Optional[str] = None):
         """
         :param str data_type: (Updatable) Data type of value of this metric
-        :param str name: (Updatable) Name of the script file
+        :param str name: (Updatable) Name of the metric.
         :param str compute_expression: (Updatable) Compute Expression to calculate the value of this metric
         :param str display_name: (Updatable) Display name of the metric.
         :param bool is_dimension: (Updatable) Current metric need to be included as dimension or not
@@ -535,7 +535,7 @@ class MetricExtensionMetricList(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Name of the script file
+        (Updatable) Name of the metric.
         """
         return pulumi.get(self, "name")
 
@@ -915,7 +915,7 @@ class MetricExtensionQueryPropertiesScriptDetails(dict):
                  content: str,
                  name: str):
         """
-        :param str content: (Updatable) Sql statement or script file content as base64 encoded string
+        :param str content: (Updatable) Content of the script file as base64 encoded string
         :param str name: (Updatable) Name of the script file
         """
         pulumi.set(__self__, "content", content)
@@ -925,7 +925,7 @@ class MetricExtensionQueryPropertiesScriptDetails(dict):
     @pulumi.getter
     def content(self) -> str:
         """
-        (Updatable) Sql statement or script file content as base64 encoded string
+        (Updatable) Content of the script file as base64 encoded string
         """
         return pulumi.get(self, "content")
 
@@ -993,8 +993,8 @@ class MonitoredResourceAdditionalAlias(dict):
                  source: str):
         """
         :param 'MonitoredResourceAdditionalAliasCredentialArgs' credential: (Updatable) Monitored Resource Alias Reference Source Credential.
-        :param str name: (Updatable) Property Name.
-        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str name: (Updatable) The name of the alias, within the context of the source.
+        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "credential", credential)
         pulumi.set(__self__, "name", name)
@@ -1012,7 +1012,7 @@ class MonitoredResourceAdditionalAlias(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the alias, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1020,7 +1020,7 @@ class MonitoredResourceAdditionalAlias(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1032,9 +1032,9 @@ class MonitoredResourceAdditionalAliasCredential(dict):
                  service: str,
                  source: str):
         """
-        :param str name: (Updatable) Property Name.
+        :param str name: (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
-        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
@@ -1044,7 +1044,7 @@ class MonitoredResourceAdditionalAliasCredential(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         """
         return pulumi.get(self, "name")
 
@@ -1060,7 +1060,7 @@ class MonitoredResourceAdditionalAliasCredential(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1101,14 +1101,10 @@ class MonitoredResourceAdditionalCredential(dict):
                * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         :param str description: (Updatable) The user-specified textual description of the credential.
         :param str key_id: (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
-        :param str name: (Updatable) Property Name.
-        :param Sequence['MonitoredResourceAdditionalCredentialPropertyArgs'] properties: (Updatable) List of monitored resource properties.
+        :param str name: (Updatable) The name of the credential, within the context of the source.
+        :param Sequence['MonitoredResourceAdditionalCredentialPropertyArgs'] properties: (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param str type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str type: (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -1156,7 +1152,7 @@ class MonitoredResourceAdditionalCredential(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1164,7 +1160,7 @@ class MonitoredResourceAdditionalCredential(dict):
     @pulumi.getter
     def properties(self) -> Optional[Sequence['outputs.MonitoredResourceAdditionalCredentialProperty']]:
         """
-        (Updatable) List of monitored resource properties.
+        (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         """
         return pulumi.get(self, "properties")
 
@@ -1180,11 +1176,7 @@ class MonitoredResourceAdditionalCredential(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         return pulumi.get(self, "type")
 
@@ -1195,8 +1187,8 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Property Name.
-        :param str value: (Updatable) Property Value.
+        :param str name: (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+        :param str value: (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1207,7 +1199,7 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
         """
         return pulumi.get(self, "name")
 
@@ -1215,7 +1207,7 @@ class MonitoredResourceAdditionalCredentialProperty(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) Property Value.
+        (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         return pulumi.get(self, "value")
 
@@ -1228,8 +1220,8 @@ class MonitoredResourceAliases(dict):
                  source: str):
         """
         :param 'MonitoredResourceAliasesCredentialArgs' credential: (Updatable) Monitored Resource Alias Reference Source Credential.
-        :param str name: (Updatable) Property Name.
-        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str name: (Updatable) The name of the alias, within the context of the source.
+        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "credential", credential)
         pulumi.set(__self__, "name", name)
@@ -1247,7 +1239,7 @@ class MonitoredResourceAliases(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the alias, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1255,7 +1247,7 @@ class MonitoredResourceAliases(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. Example: {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1267,9 +1259,9 @@ class MonitoredResourceAliasesCredential(dict):
                  service: str,
                  source: str):
         """
-        :param str name: (Updatable) Property Name.
+        :param str name: (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         :param str service: (Updatable) The name of the service owning the credential.  Example: stack-monitoring or dbmgmt
-        :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        :param str source: (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "service", service)
@@ -1279,7 +1271,7 @@ class MonitoredResourceAliasesCredential(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the pre-existing source credential which alias cred should point to. This should refer to the pre-existing source attribute which is bound to credential name.
         """
         return pulumi.get(self, "name")
 
@@ -1295,7 +1287,7 @@ class MonitoredResourceAliasesCredential(dict):
     @pulumi.getter
     def source(self) -> str:
         """
-        (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
+        (Updatable) The source type and source name combination,delimited with (.) separator. This refers to the pre-existing source which alias cred should point to. Ex. {source type}.{source name} and source type max char limit is 63.
         """
         return pulumi.get(self, "source")
 
@@ -1336,14 +1328,10 @@ class MonitoredResourceCredentials(dict):
                * ENCRYPTED - The credential properties will have credentials stored in vault in encrypted format using KMS client which uses master key for encryption. The same master key will be used to decrypt the credentials before passing on to the management agent.
         :param str description: (Updatable) The user-specified textual description of the credential.
         :param str key_id: (Updatable) The master key should be created in Oracle Cloud Infrastructure Vault owned by the client of this API.  The user should have permission to access the vault key.
-        :param str name: (Updatable) Property Name.
-        :param Sequence['MonitoredResourceCredentialsPropertyArgs'] properties: (Updatable) List of monitored resource properties.
+        :param str name: (Updatable) The name of the credential, within the context of the source.
+        :param Sequence['MonitoredResourceCredentialsPropertyArgs'] properties: (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         :param str source: (Updatable) The source type and source name combination, delimited with (.) separator. {source type}.{source name} and source type max char limit is 63.
-        :param str type: Monitored Resource Type. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param str type: (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         if credential_type is not None:
             pulumi.set(__self__, "credential_type", credential_type)
@@ -1391,7 +1379,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential, within the context of the source.
         """
         return pulumi.get(self, "name")
 
@@ -1399,7 +1387,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def properties(self) -> Optional[Sequence['outputs.MonitoredResourceCredentialsProperty']]:
         """
-        (Updatable) List of monitored resource properties.
+        (Updatable) The credential properties list. Credential property values will be either  in plain text format or encrypted for encrypted credentials.
         """
         return pulumi.get(self, "properties")
 
@@ -1415,11 +1403,7 @@ class MonitoredResourceCredentials(dict):
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
-        Monitored Resource Type. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The type of the credential ( ex. JMXCreds,DBCreds).
         """
         return pulumi.get(self, "type")
 
@@ -1430,8 +1414,8 @@ class MonitoredResourceCredentialsProperty(dict):
                  name: Optional[str] = None,
                  value: Optional[str] = None):
         """
-        :param str name: (Updatable) Property Name.
-        :param str value: (Updatable) Property Value.
+        :param str name: (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
+        :param str value: (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -1442,7 +1426,7 @@ class MonitoredResourceCredentialsProperty(dict):
     @pulumi.getter
     def name(self) -> Optional[str]:
         """
-        (Updatable) Property Name.
+        (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
         """
         return pulumi.get(self, "name")
 
@@ -1450,7 +1434,7 @@ class MonitoredResourceCredentialsProperty(dict):
     @pulumi.getter
     def value(self) -> Optional[str]:
         """
-        (Updatable) Property Value.
+        (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         """
         return pulumi.get(self, "value")
 

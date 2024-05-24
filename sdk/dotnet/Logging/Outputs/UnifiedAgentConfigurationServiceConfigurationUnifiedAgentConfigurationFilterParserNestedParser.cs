@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Logging.Outputs
     public sealed class UnifiedAgentConfigurationServiceConfigurationUnifiedAgentConfigurationFilterParserNestedParser
     {
         /// <summary>
-        /// (Updatable) Specify the time field for the event time. If the event doesn't have this field, the current time is used.
+        /// Specify the time field for the event time. If the event doesn't have this field, the current time is used.
         /// </summary>
         public readonly string? FieldTimeKey;
         /// <summary>
-        /// (Updatable) If true, keep the time field in the record.
+        /// If true, keep the time field in the record.
         /// </summary>
         public readonly bool? IsKeepTimeKey;
         /// <summary>

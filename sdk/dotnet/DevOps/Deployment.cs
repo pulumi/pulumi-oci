@@ -62,7 +62,7 @@ namespace Pulumi.Oci.DevOps
         public Output<string> DeployPipelineId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the stage.
+        /// Specifies the OCID of the stage to be redeployed.
         /// </summary>
         [Output("deployStageId")]
         public Output<string> DeployStageId { get; private set; } = null!;
@@ -226,7 +226,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string> DeployPipelineId { get; set; } = null!;
 
         /// <summary>
-        /// The OCID of the stage.
+        /// Specifies the OCID of the stage to be redeployed.
         /// </summary>
         [Input("deployStageId")]
         public Input<string>? DeployStageId { get; set; }
@@ -346,7 +346,7 @@ namespace Pulumi.Oci.DevOps
         public Input<string>? DeployPipelineId { get; set; }
 
         /// <summary>
-        /// The OCID of the stage.
+        /// Specifies the OCID of the stage to be redeployed.
         /// </summary>
         [Input("deployStageId")]
         public Input<string>? DeployStageId { get; set; }

@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testEmailDomain = new EmailDomain("testEmailDomain", EmailDomainArgs.builder()        
+ *         var testEmailDomain = new EmailDomain("testEmailDomain", EmailDomainArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(emailDomainName)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

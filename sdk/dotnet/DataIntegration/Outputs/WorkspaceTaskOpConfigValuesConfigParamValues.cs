@@ -15,7 +15,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     {
         public readonly Outputs.WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue? ConfigParamValue;
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         public readonly string? Key;
 

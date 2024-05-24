@@ -17,9 +17,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOfUseUserTermsOfUseConsentArgs();
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -35,9 +35,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -54,38 +54,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable)
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
-     * 
-     * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
-     * * mutability: readWrite
-     * * required: true
-     * * returned: default
-     * * type: binary
-     * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable)
      * 
      */
     public Output<String> value() {
@@ -118,9 +94,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -140,9 +116,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding TermsOfUseConsent resource linked with the user
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 18.2.6
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -161,19 +137,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
-         * 
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
-         * * type: binary
-         * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param value (Updatable)
          * 
          * @return builder
          * 
@@ -184,19 +148,7 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensiontermsOf
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
-         * 
-         * **SCIM++ Properties:**
-         * * idcsSearchable: false
-         * * multiValued: false
-         * * mutability: readWrite
-         * * required: true
-         * * returned: default
-         * * type: binary
-         * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param value (Updatable)
          * 
          * @return builder
          * 

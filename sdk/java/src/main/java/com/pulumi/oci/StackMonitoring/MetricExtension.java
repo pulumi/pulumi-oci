@@ -55,7 +55,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMetricExtension = new MetricExtension("testMetricExtension", MetricExtensionArgs.builder()        
+ *         var testMetricExtension = new MetricExtension("testMetricExtension", MetricExtensionArgs.builder()
  *             .collectionRecurrences(metricExtensionCollectionRecurrences)
  *             .compartmentId(compartmentId)
  *             .displayName(metricExtensionDisplayName)
@@ -121,14 +121,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:StackMonitoring/metricExtension:MetricExtension")
 public class MetricExtension extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Type of possible collection methods.
+     * Type of possible collection methods.
      * 
      */
     @Export(name="collectionMethod", refs={String.class}, tree="[0]")
     private Output<String> collectionMethod;
 
     /**
-     * @return (Updatable) Type of possible collection methods.
+     * @return Type of possible collection methods.
      * 
      */
     public Output<String> collectionMethod() {
@@ -191,14 +191,14 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) Display name of the metric.
+     * (Updatable) Metric Extension display name.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Display name of the metric.
+     * @return (Updatable) Metric Extension display name.
      * 
      */
     public Output<String> displayName() {
@@ -261,14 +261,14 @@ public class MetricExtension extends com.pulumi.resources.CustomResource {
         return this.metricLists;
     }
     /**
-     * (Updatable) Name of the script file
+     * Metric Extension Resource name.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) Name of the script file
+     * @return Metric Extension Resource name.
      * 
      */
     public Output<String> name() {

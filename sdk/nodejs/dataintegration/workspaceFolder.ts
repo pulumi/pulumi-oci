@@ -87,7 +87,7 @@ export class WorkspaceFolder extends pulumi.CustomResource {
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Currently not used on folder creation. Reserved for future.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -213,7 +213,7 @@ export interface WorkspaceFolderState {
      */
     identifier?: pulumi.Input<string>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Currently not used on folder creation. Reserved for future.
      */
     key?: pulumi.Input<string>;
     /**
@@ -280,7 +280,7 @@ export interface WorkspaceFolderArgs {
      */
     identifier: pulumi.Input<string>;
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Currently not used on folder creation. Reserved for future.
      */
     key?: pulumi.Input<string>;
     /**

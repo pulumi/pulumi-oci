@@ -64,14 +64,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * The list of strings that will be simplified to a single command for checking the status of the container.
+     * An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
      * 
      */
     @Import(name="commands")
     private @Nullable Output<List<String>> commands;
 
     /**
-     * @return The list of strings that will be simplified to a single command for checking the status of the container.
+     * @return An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
      * 
      */
     public Optional<Output<List<String>>> commands() {
@@ -131,14 +131,14 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
     }
 
     /**
-     * A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -519,7 +519,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
+         * @param commands An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
          * 
          * @return builder
          * 
@@ -530,7 +530,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
+         * @param commands An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
          * 
          * @return builder
          * 
@@ -540,7 +540,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param commands The list of strings that will be simplified to a single command for checking the status of the container.
+         * @param commands An optional command that overrides the ENTRYPOINT process. If you do not provide a value, the existing ENTRYPOINT process defined in the image is used.
          * 
          * @return builder
          * 
@@ -622,7 +622,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
          * 
          * @return builder
          * 
@@ -633,7 +633,7 @@ public final class ContainerInstanceContainerArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param displayName A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+         * @param displayName A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information. If you don&#39;t provide a name, a name is generated automatically.
          * 
          * @return builder
          * 

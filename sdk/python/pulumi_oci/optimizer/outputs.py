@@ -82,7 +82,7 @@ class ProfileLevelsConfiguration(dict):
     def __init__(__self__, *,
                  items: Optional[Sequence['outputs.ProfileLevelsConfigurationItem']] = None):
         """
-        :param Sequence['ProfileLevelsConfigurationItemArgs'] items: (Updatable) The list of tags specified in the current profile override.
+        :param Sequence['ProfileLevelsConfigurationItemArgs'] items: (Updatable) The array of configuration levels.
         """
         if items is not None:
             pulumi.set(__self__, "items", items)
@@ -91,7 +91,7 @@ class ProfileLevelsConfiguration(dict):
     @pulumi.getter
     def items(self) -> Optional[Sequence['outputs.ProfileLevelsConfigurationItem']]:
         """
-        (Updatable) The list of tags specified in the current profile override.
+        (Updatable) The array of configuration levels.
         """
         return pulumi.get(self, "items")
 
@@ -149,7 +149,7 @@ class ProfileTargetCompartments(dict):
     def __init__(__self__, *,
                  items: Sequence[str]):
         """
-        :param Sequence[str] items: (Updatable) The list of tags specified in the current profile override.
+        :param Sequence[str] items: (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
         """
         pulumi.set(__self__, "items", items)
 
@@ -157,7 +157,7 @@ class ProfileTargetCompartments(dict):
     @pulumi.getter
     def items(self) -> Sequence[str]:
         """
-        (Updatable) The list of tags specified in the current profile override.
+        (Updatable) The list of OCIDs attached to the compartments specified in the current profile override.
         """
         return pulumi.get(self, "items")
 

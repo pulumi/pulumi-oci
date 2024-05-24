@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testProtectionRule = new ProtectionRule("testProtectionRule", ProtectionRuleArgs.builder()        
+ *         var testProtectionRule = new ProtectionRule("testProtectionRule", ProtectionRuleArgs.builder()
  *             .waasPolicyId(testWaasPolicy.id())
  *             .key(key)
  *             .action("DETECT")
@@ -103,14 +103,14 @@ public class ProtectionRule extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+     * (Updatable)
      * 
      */
     @Export(name="exclusions", refs={List.class,ProtectionRuleExclusion.class}, tree="[0,1]")
     private Output<List<ProtectionRuleExclusion>> exclusions;
 
     /**
-     * @return An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+     * @return (Updatable)
      * 
      */
     public Output<List<ProtectionRuleExclusion>> exclusions() {

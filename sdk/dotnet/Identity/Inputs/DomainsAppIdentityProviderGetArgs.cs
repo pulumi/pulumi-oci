@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppIdentityProviderGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Display-name of the AppRole.
+        /// (Updatable) Display-name of the IdentityProvider.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -28,7 +28,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) URI of the IdentityProvider.
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -43,20 +43,16 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) ID of the IdentityProvider.
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

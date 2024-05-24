@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExadataInsight = new ExadataInsight("testExadataInsight", ExadataInsightArgs.builder()        
+ *         var testExadataInsight = new ExadataInsight("testExadataInsight", ExadataInsightArgs.builder()
  *             .compartmentId(compartmentId)
  *             .enterpriseManagerBridgeId(testEnterpriseManagerBridge.id())
  *             .enterpriseManagerEntityIdentifier(exadataInsightEnterpriseManagerEntityIdentifier)
@@ -113,28 +113,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Opsi/exadataInsight:ExadataInsight")
 public class ExadataInsight extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier of database
+     * (Updatable) Compartment Identifier of Exadata insight
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier of database
+     * @return (Updatable) Compartment Identifier of Exadata insight
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -225,14 +225,14 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
         return this.enterpriseManagerIdentifier;
     }
     /**
-     * Source of the database entity.
+     * (Updatable) Source of the Exadata system.
      * 
      */
     @Export(name="entitySource", refs={String.class}, tree="[0]")
     private Output<String> entitySource;
 
     /**
-     * @return Source of the database entity.
+     * @return (Updatable) Source of the Exadata system.
      * 
      */
     public Output<String> entitySource() {
@@ -313,14 +313,14 @@ public class ExadataInsight extends com.pulumi.resources.CustomResource {
         return this.exadataType;
     }
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
      * 
      */
     public Output<Map<String,Object>> freeformTags() {

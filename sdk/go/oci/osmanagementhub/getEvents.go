@@ -110,6 +110,14 @@ type GetEventsResult struct {
 	TimeCreatedGreaterThanOrEqualTo *string `pulumi:"timeCreatedGreaterThanOrEqualTo"`
 	TimeCreatedLessThan             *string `pulumi:"timeCreatedLessThan"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Types []string `pulumi:"types"`
 }
 
@@ -229,6 +237,14 @@ func (o GetEventsResultOutput) TimeCreatedLessThan() pulumi.StringPtrOutput {
 }
 
 // Event type:
+// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+// * `SOFTWARE_UPDATE` - Software updates - Packages
+// * `KSPLICE_UPDATE` - Ksplice updates
+// * `SOFTWARE_SOURCE` - Software source
+// * `AGENT` - Agent
+// * `MANAGEMENT_STATION` - Management Station
 func (o GetEventsResultOutput) Types() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetEventsResult) []string { return v.Types }).(pulumi.StringArrayOutput)
 }

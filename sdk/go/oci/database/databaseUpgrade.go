@@ -39,7 +39,7 @@ type DatabaseUpgrade struct {
 	ConnectionStrings DatabaseUpgradeConnectionStringArrayOutput `pulumi:"connectionStrings"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringOutput `pulumi:"databaseId"`
-	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringOutput `pulumi:"databaseSoftwareImageId"`
 	// Details for the database upgrade source.
 	DatabaseUpgradeSourceDetails DatabaseUpgradeDatabaseUpgradeSourceDetailsOutput `pulumi:"databaseUpgradeSourceDetails"`
@@ -141,7 +141,7 @@ type databaseUpgradeState struct {
 	ConnectionStrings []DatabaseUpgradeConnectionString `pulumi:"connectionStrings"`
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId *string `pulumi:"databaseId"`
-	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId *string `pulumi:"databaseSoftwareImageId"`
 	// Details for the database upgrade source.
 	DatabaseUpgradeSourceDetails *DatabaseUpgradeDatabaseUpgradeSourceDetails `pulumi:"databaseUpgradeSourceDetails"`
@@ -208,7 +208,7 @@ type DatabaseUpgradeState struct {
 	ConnectionStrings DatabaseUpgradeConnectionStringArrayInput
 	// The database [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	DatabaseId pulumi.StringPtrInput
-	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+	// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 	DatabaseSoftwareImageId pulumi.StringPtrInput
 	// Details for the database upgrade source.
 	DatabaseUpgradeSourceDetails DatabaseUpgradeDatabaseUpgradeSourceDetailsPtrInput
@@ -399,7 +399,7 @@ func (o DatabaseUpgradeOutput) DatabaseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DatabaseId }).(pulumi.StringOutput)
 }
 
-// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+// The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
 func (o DatabaseUpgradeOutput) DatabaseSoftwareImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseUpgrade) pulumi.StringOutput { return v.DatabaseSoftwareImageId }).(pulumi.StringOutput)
 }

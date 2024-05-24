@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         private InputList<Inputs.TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionGetArgs>? _preemptionActions;
 
         /// <summary>
-        /// (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+        /// The action to run when the preemptible instance is interrupted for eviction.
         /// </summary>
         public InputList<Inputs.TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionGetArgs> PreemptionActions
         {

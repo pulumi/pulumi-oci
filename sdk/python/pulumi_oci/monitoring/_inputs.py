@@ -56,8 +56,8 @@ class AlarmOverrideArgs:
                CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
                
                -----
-        :param pulumi.Input[str] rule_name: (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
-        :param pulumi.Input[str] severity: (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        :param pulumi.Input[str] rule_name: (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
+        :param pulumi.Input[str] severity: (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
         """
         if body is not None:
             pulumi.set(__self__, "body", body)
@@ -134,7 +134,7 @@ class AlarmOverrideArgs:
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        (Updatable) A user-friendly description for this alarm override. Must be unique across all `ruleName` values for the alarm.
         """
         return pulumi.get(self, "rule_name")
 
@@ -146,7 +146,7 @@ class AlarmOverrideArgs:
     @pulumi.getter
     def severity(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The perceived type of response required when the alarm is in the "FIRING" state.  Example: `CRITICAL`
+        (Updatable) The perceived severity of the alarm with regard to the affected system.  Example: `CRITICAL`
         """
         return pulumi.get(self, "severity")
 

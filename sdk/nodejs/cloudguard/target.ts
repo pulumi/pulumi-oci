@@ -97,7 +97,7 @@ export class Target extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -243,7 +243,7 @@ export class Target extends pulumi.CustomResource {
  */
 export interface TargetState {
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -323,7 +323,7 @@ export interface TargetState {
  */
 export interface TargetArgs {
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      */
     compartmentId: pulumi.Input<string>;
     /**

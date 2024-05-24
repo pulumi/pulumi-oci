@@ -25,13 +25,15 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The id of the attached DataSource.
+        /// The id of the attached DataSource.
         /// </summary>
         [Input("dataSourceId")]
         public Input<string>? DataSourceId { get; set; }
 
         /// <summary>
-        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// (Updatable) Detector recipe description.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -66,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.DetectorRecipeDetectorRuleEntitiesMappingGetArgs>? _entitiesMappings;
 
         /// <summary>
-        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// Data Source entities mapping for a Detector Rule
         /// </summary>
         public InputList<Inputs.DetectorRecipeDetectorRuleEntitiesMappingGetArgs> EntitiesMappings
         {
@@ -93,7 +95,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
+        /// Recommendation for DetectorRecipeDetectorRule
         /// </summary>
         [Input("recommendation")]
         public Input<string>? Recommendation { get; set; }

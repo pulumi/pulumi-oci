@@ -74,7 +74,7 @@ type BdsInstance struct {
 	NetworkConfig BdsInstanceNetworkConfigOutput `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayOutput `pulumi:"nodes"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes pulumi.IntOutput `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntOutput `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
@@ -206,7 +206,7 @@ type bdsInstanceState struct {
 	NetworkConfig *BdsInstanceNetworkConfig `pulumi:"networkConfig"`
 	// The list of nodes in the Big Data Service cluster.
 	Nodes []BdsInstanceNode `pulumi:"nodes"`
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes *int `pulumi:"numberOfNodes"`
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot *int `pulumi:"numberOfNodesRequiringMaintenanceReboot"`
@@ -272,7 +272,7 @@ type BdsInstanceState struct {
 	NetworkConfig BdsInstanceNetworkConfigPtrInput
 	// The list of nodes in the Big Data Service cluster.
 	Nodes BdsInstanceNodeArrayInput
-	// The amount of worker nodes should be created
+	// Number of nodes that forming the cluster
 	NumberOfNodes pulumi.IntPtrInput
 	// Number of nodes that require a maintenance reboot
 	NumberOfNodesRequiringMaintenanceReboot pulumi.IntPtrInput
@@ -608,7 +608,7 @@ func (o BdsInstanceOutput) Nodes() BdsInstanceNodeArrayOutput {
 	return o.ApplyT(func(v *BdsInstance) BdsInstanceNodeArrayOutput { return v.Nodes }).(BdsInstanceNodeArrayOutput)
 }
 
-// The amount of worker nodes should be created
+// Number of nodes that forming the cluster
 func (o BdsInstanceOutput) NumberOfNodes() pulumi.IntOutput {
 	return o.ApplyT(func(v *BdsInstance) pulumi.IntOutput { return v.NumberOfNodes }).(pulumi.IntOutput)
 }

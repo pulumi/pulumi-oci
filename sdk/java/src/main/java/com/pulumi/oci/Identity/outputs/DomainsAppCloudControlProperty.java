@@ -12,16 +12,14 @@ import java.util.Objects;
 @CustomType
 public final class DomainsAppCloudControlProperty {
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) The name of the property.
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.4.2
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -48,16 +46,14 @@ public final class DomainsAppCloudControlProperty {
 
     private DomainsAppCloudControlProperty() {}
     /**
-     * @return (Updatable) The attribute represents the name of the attribute that will be used in the Security Assertion Markup Language (SAML) assertion
+     * @return (Updatable) The name of the property.
      * 
-     * **Deprecated Since: 18.2.2**
+     * **Added In:** 18.4.2
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
-     * * idcsValuePersistedInOtherAttribute: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string

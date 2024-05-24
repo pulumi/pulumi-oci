@@ -466,7 +466,7 @@ class ModelModelDetailsArgs:
                  version: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] model_type: Model type
-        :param pulumi.Input['ModelModelDetailsClassificationModeArgs'] classification_mode: classification Modes
+        :param pulumi.Input['ModelModelDetailsClassificationModeArgs'] classification_mode: possible text classification modes
         :param pulumi.Input[str] language_code: supported language default value is en
         :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
         """
@@ -494,7 +494,7 @@ class ModelModelDetailsArgs:
     @pulumi.getter(name="classificationMode")
     def classification_mode(self) -> Optional[pulumi.Input['ModelModelDetailsClassificationModeArgs']]:
         """
-        classification Modes
+        possible text classification modes
         """
         return pulumi.get(self, "classification_mode")
 
@@ -534,7 +534,7 @@ class ModelModelDetailsClassificationModeArgs:
                  version: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] classification_mode: classification Modes
-        :param pulumi.Input[str] version: Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        :param pulumi.Input[str] version: Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
         """
         pulumi.set(__self__, "classification_mode", classification_mode)
         if version is not None:
@@ -556,7 +556,7 @@ class ModelModelDetailsClassificationModeArgs:
     @pulumi.getter
     def version(self) -> Optional[pulumi.Input[str]]:
         """
-        Optional pre trained model version. if nothing specified latest pre trained model will be used.  Supported versions can be found at /modelTypes/{modelType}
+        Optional if nothing specified latest base model will be used for training. Supported versions can be found at /modelTypes/{modelType}
         """
         return pulumi.get(self, "version")
 
@@ -684,10 +684,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
         :param pulumi.Input[str] location_type: Possible object storage location types
         :param pulumi.Input[str] namespace: Object storage namespace
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_names: Array of files which need to be processed in the bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
@@ -735,10 +731,6 @@ class ModelTestStrategyTestingDatasetLocationDetailsArgs:
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         Array of files which need to be processed in the bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object_names")
 
@@ -813,10 +805,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
         :param pulumi.Input[str] location_type: Possible object storage location types
         :param pulumi.Input[str] namespace: Object storage namespace
         :param pulumi.Input[Sequence[pulumi.Input[str]]] object_names: Array of files which need to be processed in the bucket
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "location_type", location_type)
@@ -864,10 +852,6 @@ class ModelTestStrategyValidationDatasetLocationDetailsArgs:
     def object_names(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
         Array of files which need to be processed in the bucket
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "object_names")
 

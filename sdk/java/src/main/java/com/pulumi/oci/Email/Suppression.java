@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSuppression = new Suppression("testSuppression", SuppressionArgs.builder()        
+ *         var testSuppression = new Suppression("testSuppression", SuppressionArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .emailAddress(suppressionEmailAddress)
  *             .build());

@@ -77,14 +77,14 @@ public final class MediaWorkflowLockArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+     * Type of the lock.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+     * @return Type of the lock.
      * 
      */
     public Output<String> type() {
@@ -204,7 +204,7 @@ public final class MediaWorkflowLockArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+         * @param type Type of the lock.
          * 
          * @return builder
          * 
@@ -215,7 +215,7 @@ public final class MediaWorkflowLockArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param type (Updatable) The type of process to run at this task. Refers to the name of a MediaWorkflowTaskDeclaration.
+         * @param type Type of the lock.
          * 
          * @return builder
          * 

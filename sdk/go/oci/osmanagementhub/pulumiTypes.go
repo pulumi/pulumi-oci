@@ -420,6 +420,14 @@ type EventDataContent struct {
 	// Size of the event content.
 	Size *int `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type *string `pulumi:"type"`
 }
 
@@ -451,6 +459,14 @@ type EventDataContentArgs struct {
 	// Size of the event content.
 	Size pulumi.IntPtrInput `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -536,6 +552,14 @@ func (o EventDataContentOutput) Size() pulumi.IntPtrOutput {
 }
 
 // Event type:
+// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+// * `SOFTWARE_UPDATE` - Software updates - Packages
+// * `KSPLICE_UPDATE` - Ksplice updates
+// * `SOFTWARE_SOURCE` - Software source
+// * `AGENT` - Agent
+// * `MANAGEMENT_STATION` - Management Station
 func (o EventDataContentOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v EventDataContent) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -712,7 +736,7 @@ func (o EventSystemDetailArrayOutput) Index(i pulumi.IntInput) EventSystemDetail
 }
 
 type LifecycleEnvironmentManagedInstanceId struct {
-	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -730,7 +754,7 @@ type LifecycleEnvironmentManagedInstanceIdInput interface {
 }
 
 type LifecycleEnvironmentManagedInstanceIdArgs struct {
-	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -787,7 +811,7 @@ func (o LifecycleEnvironmentManagedInstanceIdOutput) ToLifecycleEnvironmentManag
 	return o
 }
 
-// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 func (o LifecycleEnvironmentManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LifecycleEnvironmentManagedInstanceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1072,7 +1096,7 @@ func (o LifecycleEnvironmentStageArrayOutput) Index(i pulumi.IntInput) Lifecycle
 }
 
 type LifecycleEnvironmentStageManagedInstanceId struct {
-	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -1090,7 +1114,7 @@ type LifecycleEnvironmentStageManagedInstanceIdInput interface {
 }
 
 type LifecycleEnvironmentStageManagedInstanceIdArgs struct {
-	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -1147,7 +1171,7 @@ func (o LifecycleEnvironmentStageManagedInstanceIdOutput) ToLifecycleEnvironment
 	return o
 }
 
-// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 func (o LifecycleEnvironmentStageManagedInstanceIdOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LifecycleEnvironmentStageManagedInstanceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1180,7 +1204,7 @@ func (o LifecycleEnvironmentStageManagedInstanceIdArrayOutput) Index(i pulumi.In
 type LifecycleEnvironmentStageSoftwareSourceId struct {
 	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id *string `pulumi:"id"`
@@ -1204,7 +1228,7 @@ type LifecycleEnvironmentStageSoftwareSourceIdInput interface {
 type LifecycleEnvironmentStageSoftwareSourceIdArgs struct {
 	// (Updatable) User-specified information about the lifecycle environment. Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+	// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -1270,7 +1294,7 @@ func (o LifecycleEnvironmentStageSoftwareSourceIdOutput) Description() pulumi.St
 	return o.ApplyT(func(v LifecycleEnvironmentStageSoftwareSourceId) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+// (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
 func (o LifecycleEnvironmentStageSoftwareSourceIdOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v LifecycleEnvironmentStageSoftwareSourceId) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -5329,7 +5353,7 @@ func (o ManagementStationHealthArrayOutput) Index(i pulumi.IntInput) ManagementS
 type ManagementStationMirror struct {
 	// (Updatable) Path to the data volume on the management station where software source mirrors are stored.
 	Directory string `pulumi:"directory"`
-	// (Updatable) Listening port used for the proxy.
+	// (Updatable) Default mirror listening port for http.
 	Port string `pulumi:"port"`
 	// (Updatable) Path to the SSL cerfificate.
 	Sslcert *string `pulumi:"sslcert"`
@@ -5351,7 +5375,7 @@ type ManagementStationMirrorInput interface {
 type ManagementStationMirrorArgs struct {
 	// (Updatable) Path to the data volume on the management station where software source mirrors are stored.
 	Directory pulumi.StringInput `pulumi:"directory"`
-	// (Updatable) Listening port used for the proxy.
+	// (Updatable) Default mirror listening port for http.
 	Port pulumi.StringInput `pulumi:"port"`
 	// (Updatable) Path to the SSL cerfificate.
 	Sslcert pulumi.StringPtrInput `pulumi:"sslcert"`
@@ -5441,7 +5465,7 @@ func (o ManagementStationMirrorOutput) Directory() pulumi.StringOutput {
 	return o.ApplyT(func(v ManagementStationMirror) string { return v.Directory }).(pulumi.StringOutput)
 }
 
-// (Updatable) Listening port used for the proxy.
+// (Updatable) Default mirror listening port for http.
 func (o ManagementStationMirrorOutput) Port() pulumi.StringOutput {
 	return o.ApplyT(func(v ManagementStationMirror) string { return v.Port }).(pulumi.StringOutput)
 }
@@ -5490,7 +5514,7 @@ func (o ManagementStationMirrorPtrOutput) Directory() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Listening port used for the proxy.
+// (Updatable) Default mirror listening port for http.
 func (o ManagementStationMirrorPtrOutput) Port() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ManagementStationMirror) *string {
 		if v == nil {
@@ -9878,6 +9902,14 @@ type GetEventDataContent struct {
 	// Size of the event content.
 	Size int `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type string `pulumi:"type"`
 }
 
@@ -9909,6 +9941,14 @@ type GetEventDataContentArgs struct {
 	// Size of the event content.
 	Size pulumi.IntInput `pulumi:"size"`
 	// Event type:
+	// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+	// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+	// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+	// * `SOFTWARE_UPDATE` - Software updates - Packages
+	// * `KSPLICE_UPDATE` - Ksplice updates
+	// * `SOFTWARE_SOURCE` - Software source
+	// * `AGENT` - Agent
+	// * `MANAGEMENT_STATION` - Management Station
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -9994,6 +10034,14 @@ func (o GetEventDataContentOutput) Size() pulumi.IntOutput {
 }
 
 // Event type:
+// * `KERNEL_OOPS` - Used to identify a kernel panic condition event
+// * `KERNEL_CRASH` - Used to identify an internal fatal kernel error that cannot be safely recovered from
+// * `EXPLOIT_ATTEMPT` - Used to identify a known exploit detection as identified by Ksplice
+// * `SOFTWARE_UPDATE` - Software updates - Packages
+// * `KSPLICE_UPDATE` - Ksplice updates
+// * `SOFTWARE_SOURCE` - Software source
+// * `AGENT` - Agent
+// * `MANAGEMENT_STATION` - Management Station
 func (o GetEventDataContentOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetEventDataContent) string { return v.Type }).(pulumi.StringOutput)
 }

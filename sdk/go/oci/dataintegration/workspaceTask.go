@@ -32,7 +32,7 @@ type WorkspaceTask struct {
 	AuthConfig WorkspaceTaskAuthConfigOutput `pulumi:"authConfig"`
 	// (Updatable) The REST API configuration for cancelling the task.
 	CancelRestCallConfig WorkspaceTaskCancelRestCallConfigOutput `pulumi:"cancelRestCallConfig"`
-	// (Updatable) The information about the configuration provider.
+	// (Updatable) The type to create a config provider.
 	ConfigProviderDelegate WorkspaceTaskConfigProviderDelegateOutput `pulumi:"configProviderDelegate"`
 	// (Updatable) Detailed description for the object.
 	Description pulumi.StringOutput `pulumi:"description"`
@@ -44,21 +44,21 @@ type WorkspaceTask struct {
 	InputPorts WorkspaceTaskInputPortArrayOutput `pulumi:"inputPorts"`
 	// (Updatable) Defines whether Data Loader task is used for single load or multiple
 	IsSingleLoad pulumi.BoolOutput `pulumi:"isSingleLoad"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringOutput `pulumi:"key"`
-	// (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapOutput `pulumi:"keyMap"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceTaskMetadataArrayOutput `pulumi:"metadatas"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringOutput `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringOutput `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntOutput `pulumi:"objectStatus"`
-	// (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+	// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
 	ObjectVersion pulumi.IntOutput `pulumi:"objectVersion"`
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	OpConfigValues WorkspaceTaskOpConfigValuesOutput `pulumi:"opConfigValues"`
@@ -68,7 +68,7 @@ type WorkspaceTask struct {
 	OutputPorts WorkspaceTaskOutputPortArrayOutput `pulumi:"outputPorts"`
 	// (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
 	ParallelLoadLimit pulumi.IntOutput `pulumi:"parallelLoadLimit"`
-	// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+	// (Updatable) An array of parameters.
 	Parameters WorkspaceTaskParameterArrayOutput `pulumi:"parameters"`
 	// (Updatable) A reference to the object's parent.
 	ParentRef WorkspaceTaskParentRefOutput `pulumi:"parentRef"`
@@ -133,7 +133,7 @@ type workspaceTaskState struct {
 	AuthConfig *WorkspaceTaskAuthConfig `pulumi:"authConfig"`
 	// (Updatable) The REST API configuration for cancelling the task.
 	CancelRestCallConfig *WorkspaceTaskCancelRestCallConfig `pulumi:"cancelRestCallConfig"`
-	// (Updatable) The information about the configuration provider.
+	// (Updatable) The type to create a config provider.
 	ConfigProviderDelegate *WorkspaceTaskConfigProviderDelegate `pulumi:"configProviderDelegate"`
 	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
@@ -145,21 +145,21 @@ type workspaceTaskState struct {
 	InputPorts []WorkspaceTaskInputPort `pulumi:"inputPorts"`
 	// (Updatable) Defines whether Data Loader task is used for single load or multiple
 	IsSingleLoad *bool `pulumi:"isSingleLoad"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap map[string]interface{} `pulumi:"keyMap"`
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas []WorkspaceTaskMetadata `pulumi:"metadatas"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType *string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus *int `pulumi:"objectStatus"`
-	// (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+	// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
 	ObjectVersion *int `pulumi:"objectVersion"`
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	OpConfigValues *WorkspaceTaskOpConfigValues `pulumi:"opConfigValues"`
@@ -169,7 +169,7 @@ type workspaceTaskState struct {
 	OutputPorts []WorkspaceTaskOutputPort `pulumi:"outputPorts"`
 	// (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
 	ParallelLoadLimit *int `pulumi:"parallelLoadLimit"`
-	// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+	// (Updatable) An array of parameters.
 	Parameters []WorkspaceTaskParameter `pulumi:"parameters"`
 	// (Updatable) A reference to the object's parent.
 	ParentRef *WorkspaceTaskParentRef `pulumi:"parentRef"`
@@ -193,7 +193,7 @@ type WorkspaceTaskState struct {
 	AuthConfig WorkspaceTaskAuthConfigPtrInput
 	// (Updatable) The REST API configuration for cancelling the task.
 	CancelRestCallConfig WorkspaceTaskCancelRestCallConfigPtrInput
-	// (Updatable) The information about the configuration provider.
+	// (Updatable) The type to create a config provider.
 	ConfigProviderDelegate WorkspaceTaskConfigProviderDelegatePtrInput
 	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput
@@ -205,21 +205,21 @@ type WorkspaceTaskState struct {
 	InputPorts WorkspaceTaskInputPortArrayInput
 	// (Updatable) Defines whether Data Loader task is used for single load or multiple
 	IsSingleLoad pulumi.BoolPtrInput
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
-	// (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+	// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 	KeyMap pulumi.MapInput
-	// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+	// A summary type containing information about the object including its key, name and when/who created/updated it.
 	Metadatas WorkspaceTaskMetadataArrayInput
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringPtrInput
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
 	// (Updatable) The status of an object that can be set to value 1 for shallow references across objects, other values reserved.
 	ObjectStatus pulumi.IntPtrInput
-	// (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+	// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
 	ObjectVersion pulumi.IntPtrInput
 	// (Updatable) Configuration values can be string, objects, or parameters.
 	OpConfigValues WorkspaceTaskOpConfigValuesPtrInput
@@ -229,7 +229,7 @@ type WorkspaceTaskState struct {
 	OutputPorts WorkspaceTaskOutputPortArrayInput
 	// (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
 	ParallelLoadLimit pulumi.IntPtrInput
-	// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+	// (Updatable) An array of parameters.
 	Parameters WorkspaceTaskParameterArrayInput
 	// (Updatable) A reference to the object's parent.
 	ParentRef WorkspaceTaskParentRefPtrInput
@@ -257,7 +257,7 @@ type workspaceTaskArgs struct {
 	AuthConfig *WorkspaceTaskAuthConfig `pulumi:"authConfig"`
 	// (Updatable) The REST API configuration for cancelling the task.
 	CancelRestCallConfig *WorkspaceTaskCancelRestCallConfig `pulumi:"cancelRestCallConfig"`
-	// (Updatable) The information about the configuration provider.
+	// (Updatable) The type to create a config provider.
 	ConfigProviderDelegate *WorkspaceTaskConfigProviderDelegate `pulumi:"configProviderDelegate"`
 	// (Updatable) Detailed description for the object.
 	Description *string `pulumi:"description"`
@@ -269,11 +269,11 @@ type workspaceTaskArgs struct {
 	InputPorts []WorkspaceTaskInputPort `pulumi:"inputPorts"`
 	// (Updatable) Defines whether Data Loader task is used for single load or multiple
 	IsSingleLoad *bool `pulumi:"isSingleLoad"`
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key *string `pulumi:"key"`
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType string `pulumi:"modelType"`
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion *string `pulumi:"modelVersion"`
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name *string `pulumi:"name"`
@@ -287,7 +287,7 @@ type workspaceTaskArgs struct {
 	OutputPorts []WorkspaceTaskOutputPort `pulumi:"outputPorts"`
 	// (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
 	ParallelLoadLimit *int `pulumi:"parallelLoadLimit"`
-	// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+	// (Updatable) An array of parameters.
 	Parameters []WorkspaceTaskParameter `pulumi:"parameters"`
 	// (Updatable) A reference to the object's parent.
 	ParentRef *WorkspaceTaskParentRef `pulumi:"parentRef"`
@@ -312,7 +312,7 @@ type WorkspaceTaskArgs struct {
 	AuthConfig WorkspaceTaskAuthConfigPtrInput
 	// (Updatable) The REST API configuration for cancelling the task.
 	CancelRestCallConfig WorkspaceTaskCancelRestCallConfigPtrInput
-	// (Updatable) The information about the configuration provider.
+	// (Updatable) The type to create a config provider.
 	ConfigProviderDelegate WorkspaceTaskConfigProviderDelegatePtrInput
 	// (Updatable) Detailed description for the object.
 	Description pulumi.StringPtrInput
@@ -324,11 +324,11 @@ type WorkspaceTaskArgs struct {
 	InputPorts WorkspaceTaskInputPortArrayInput
 	// (Updatable) Defines whether Data Loader task is used for single load or multiple
 	IsSingleLoad pulumi.BoolPtrInput
-	// (Updatable) The key of the object.
+	// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 	Key pulumi.StringPtrInput
-	// (Updatable) The type of the types object.
+	// (Updatable) The type of the task.
 	ModelType pulumi.StringInput
-	// (Updatable) The model version of an object.
+	// (Updatable) The object's model version.
 	ModelVersion pulumi.StringPtrInput
 	// (Updatable) Free form text without any restriction on permitted characters. Name can have letters, numbers, and special characters. The value is editable and is restricted to 1000 characters.
 	Name pulumi.StringPtrInput
@@ -342,7 +342,7 @@ type WorkspaceTaskArgs struct {
 	OutputPorts WorkspaceTaskOutputPortArrayInput
 	// (Updatable) Defines the number of entities being loaded in parallel at a time for a Data Loader task
 	ParallelLoadLimit pulumi.IntPtrInput
-	// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+	// (Updatable) An array of parameters.
 	Parameters WorkspaceTaskParameterArrayInput
 	// (Updatable) A reference to the object's parent.
 	ParentRef WorkspaceTaskParentRefPtrInput
@@ -461,7 +461,7 @@ func (o WorkspaceTaskOutput) CancelRestCallConfig() WorkspaceTaskCancelRestCallC
 	return o.ApplyT(func(v *WorkspaceTask) WorkspaceTaskCancelRestCallConfigOutput { return v.CancelRestCallConfig }).(WorkspaceTaskCancelRestCallConfigOutput)
 }
 
-// (Updatable) The information about the configuration provider.
+// (Updatable) The type to create a config provider.
 func (o WorkspaceTaskOutput) ConfigProviderDelegate() WorkspaceTaskConfigProviderDelegateOutput {
 	return o.ApplyT(func(v *WorkspaceTask) WorkspaceTaskConfigProviderDelegateOutput { return v.ConfigProviderDelegate }).(WorkspaceTaskConfigProviderDelegateOutput)
 }
@@ -491,27 +491,27 @@ func (o WorkspaceTaskOutput) IsSingleLoad() pulumi.BoolOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.BoolOutput { return v.IsSingleLoad }).(pulumi.BoolOutput)
 }
 
-// (Updatable) The key of the object.
+// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
 func (o WorkspaceTaskOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.StringOutput { return v.Key }).(pulumi.StringOutput)
 }
 
-// (Updatable) A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
+// A key map. If provided, key is replaced with generated key. This structure provides mapping between user provided key and generated key.
 func (o WorkspaceTaskOutput) KeyMap() pulumi.MapOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.MapOutput { return v.KeyMap }).(pulumi.MapOutput)
 }
 
-// (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+// A summary type containing information about the object including its key, name and when/who created/updated it.
 func (o WorkspaceTaskOutput) Metadatas() WorkspaceTaskMetadataArrayOutput {
 	return o.ApplyT(func(v *WorkspaceTask) WorkspaceTaskMetadataArrayOutput { return v.Metadatas }).(WorkspaceTaskMetadataArrayOutput)
 }
 
-// (Updatable) The type of the types object.
+// (Updatable) The type of the task.
 func (o WorkspaceTaskOutput) ModelType() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.StringOutput { return v.ModelType }).(pulumi.StringOutput)
 }
 
-// (Updatable) The model version of an object.
+// (Updatable) The object's model version.
 func (o WorkspaceTaskOutput) ModelVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.StringOutput { return v.ModelVersion }).(pulumi.StringOutput)
 }
@@ -526,7 +526,7 @@ func (o WorkspaceTaskOutput) ObjectStatus() pulumi.IntOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.IntOutput { return v.ObjectStatus }).(pulumi.IntOutput)
 }
 
-// (Updatable) This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
+// This is used by the service for optimistic locking of the object, to prevent multiple users from simultaneously updating the object.
 func (o WorkspaceTaskOutput) ObjectVersion() pulumi.IntOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.IntOutput { return v.ObjectVersion }).(pulumi.IntOutput)
 }
@@ -551,7 +551,7 @@ func (o WorkspaceTaskOutput) ParallelLoadLimit() pulumi.IntOutput {
 	return o.ApplyT(func(v *WorkspaceTask) pulumi.IntOutput { return v.ParallelLoadLimit }).(pulumi.IntOutput)
 }
 
-// (Updatable) A list of parameters for the pipeline, this allows certain aspects of the pipeline to be configured when the pipeline is executed.
+// (Updatable) An array of parameters.
 func (o WorkspaceTaskOutput) Parameters() WorkspaceTaskParameterArrayOutput {
 	return o.ApplyT(func(v *WorkspaceTask) WorkspaceTaskParameterArrayOutput { return v.Parameters }).(WorkspaceTaskParameterArrayOutput)
 }

@@ -23,7 +23,7 @@ public final class WorkspaceApplicationDependentObjectMetadata {
      */
     private @Nullable String identifier;
     /**
-     * @return The identifying key for the object.
+     * @return (Updatable) Currently not used on application creation. Reserved for future.
      * 
      */
     private @Nullable String key;
@@ -64,7 +64,7 @@ public final class WorkspaceApplicationDependentObjectMetadata {
         return Optional.ofNullable(this.identifier);
     }
     /**
-     * @return The identifying key for the object.
+     * @return (Updatable) Currently not used on application creation. Reserved for future.
      * 
      */
     public Optional<String> key() {

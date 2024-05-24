@@ -50,12 +50,12 @@ public final class CertificateAuthorityCurrentVersion {
      */
     private @Nullable String timeOfDeletion;
     /**
-     * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+     * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
     private @Nullable List<CertificateAuthorityCurrentVersionValidity> validities;
     /**
-     * @return (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     * @return The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
     private @Nullable String versionName;
@@ -116,14 +116,14 @@ public final class CertificateAuthorityCurrentVersion {
         return Optional.ofNullable(this.timeOfDeletion);
     }
     /**
-     * @return (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+     * @return An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
      * 
      */
     public List<CertificateAuthorityCurrentVersionValidity> validities() {
         return this.validities == null ? List.of() : this.validities;
     }
     /**
-     * @return (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+     * @return The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
      * 
      */
     public Optional<String> versionName() {

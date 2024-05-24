@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentDeployPipelineArtifactItem {
     /**
-     * @return The OCID of the artifact to which this parameter applies.
+     * @return The OCID of an artifact
      * 
      */
     private @Nullable String deployArtifactId;
@@ -31,7 +31,7 @@ public final class DeploymentDeployPipelineArtifactItem {
 
     private DeploymentDeployPipelineArtifactItem() {}
     /**
-     * @return The OCID of the artifact to which this parameter applies.
+     * @return The OCID of an artifact
      * 
      */
     public Optional<String> deployArtifactId() {

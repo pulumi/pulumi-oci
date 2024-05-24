@@ -216,17 +216,15 @@ type DomainsPolicy struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsPolicyMetaArrayOutput `pulumi:"metas"`
-	// (Updatable) Rule name
-	//
-	// **Added In:** 17.4.2
+	// (Updatable) Policy name
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
+	// * caseExact: false
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: request
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -492,17 +490,15 @@ type domainsPolicyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsPolicyMeta `pulumi:"metas"`
-	// (Updatable) Rule name
-	//
-	// **Added In:** 17.4.2
+	// (Updatable) Policy name
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
+	// * caseExact: false
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: request
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
@@ -730,17 +726,15 @@ type DomainsPolicyState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsPolicyMetaArrayInput
-	// (Updatable) Rule name
-	//
-	// **Added In:** 17.4.2
+	// (Updatable) Policy name
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
+	// * caseExact: false
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: request
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
@@ -881,17 +875,15 @@ type domainsPolicyArgs struct {
 	ExternalId *string `pulumi:"externalId"`
 	// The basic endpoint for the identity domain
 	IdcsEndpoint string `pulumi:"idcsEndpoint"`
-	// (Updatable) Rule name
-	//
-	// **Added In:** 17.4.2
+	// (Updatable) Policy name
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
+	// * caseExact: false
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: request
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
@@ -1014,17 +1006,15 @@ type DomainsPolicyArgs struct {
 	ExternalId pulumi.StringPtrInput
 	// The basic endpoint for the identity domain
 	IdcsEndpoint pulumi.StringInput
-	// (Updatable) Rule name
-	//
-	// **Added In:** 17.4.2
+	// (Updatable) Policy name
 	//
 	// **SCIM++ Properties:**
-	// * caseExact: true
+	// * caseExact: false
 	// * idcsSearchable: true
 	// * multiValued: false
-	// * mutability: readOnly
-	// * required: false
-	// * returned: request
+	// * mutability: readWrite
+	// * required: true
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
@@ -1368,17 +1358,15 @@ func (o DomainsPolicyOutput) Metas() DomainsPolicyMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsPolicy) DomainsPolicyMetaArrayOutput { return v.Metas }).(DomainsPolicyMetaArrayOutput)
 }
 
-// (Updatable) Rule name
-//
-// **Added In:** 17.4.2
+// (Updatable) Policy name
 //
 // **SCIM++ Properties:**
-// * caseExact: true
+// * caseExact: false
 // * idcsSearchable: true
 // * multiValued: false
-// * mutability: readOnly
-// * required: false
-// * returned: request
+// * mutability: readWrite
+// * required: true
+// * returned: always
 // * type: string
 // * uniqueness: none
 func (o DomainsPolicyOutput) Name() pulumi.StringOutput {

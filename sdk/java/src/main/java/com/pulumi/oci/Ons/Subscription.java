@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSubscription = new Subscription("testSubscription", SubscriptionArgs.builder()        
+ *         var testSubscription = new Subscription("testSubscription", SubscriptionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .endpoint(subscriptionEndpoint)
  *             .protocol(subscriptionProtocol)
@@ -181,6 +181,15 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * The protocol used for the subscription.
      * 
      * Allowed values:
+     * * `CUSTOM_HTTPS`
+     * * `EMAIL`
+     * * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+     * * `ORACLE_FUNCTIONS`
+     * * `PAGERDUTY`
+     * * `SLACK`
+     * * `SMS`
+     * 
+     * For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      * 
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
@@ -190,6 +199,15 @@ public class Subscription extends com.pulumi.resources.CustomResource {
      * @return The protocol used for the subscription.
      * 
      * Allowed values:
+     * * `CUSTOM_HTTPS`
+     * * `EMAIL`
+     * * `HTTPS` (deprecated; for PagerDuty endpoints, use `PAGERDUTY`)
+     * * `ORACLE_FUNCTIONS`
+     * * `PAGERDUTY`
+     * * `SLACK`
+     * * `SMS`
+     * 
+     * For information about subscription protocols, see [To create a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#createSub).
      * 
      */
     public Output<String> protocol() {

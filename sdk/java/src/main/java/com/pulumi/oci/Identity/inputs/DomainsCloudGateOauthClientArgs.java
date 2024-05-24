@@ -55,9 +55,7 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) The URI of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -74,9 +72,7 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) URI of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The URI of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
      * * caseExact: false
@@ -94,44 +90,34 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) The id of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return (Updatable) ID of the upstream server
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) The id of the OAuth app for this CloudGate.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: true
+     * * required: false
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> value() {
@@ -210,9 +196,7 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param ref (Updatable) URI of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param ref (Updatable) The URI of the OAuth app for this CloudGate.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -233,9 +217,7 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param ref (Updatable) URI of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param ref (Updatable) The URI of the OAuth app for this CloudGate.
          * 
          * **SCIM++ Properties:**
          * * caseExact: false
@@ -255,22 +237,17 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param value (Updatable) ID of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param value (Updatable) The id of the OAuth app for this CloudGate.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -281,22 +258,17 @@ public final class DomainsCloudGateOauthClientArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param value (Updatable) ID of the upstream server
-         * 
-         * **Added In:** 20.1.3
+         * @param value (Updatable) The id of the OAuth app for this CloudGate.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: true
+         * * required: false
          * * returned: default
          * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

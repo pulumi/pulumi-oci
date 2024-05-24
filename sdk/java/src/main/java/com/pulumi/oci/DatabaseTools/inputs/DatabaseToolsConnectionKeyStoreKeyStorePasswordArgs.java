@@ -17,14 +17,14 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
     public static final DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs Empty = new DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
      * 
      */
     @Import(name="secretId")
     private @Nullable Output<String> secretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
      * 
      */
     public Optional<Output<String>> secretId() {
@@ -32,20 +32,14 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
     }
 
     /**
-     * (Updatable) The value type of the user password.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The value type of the key store password.
      * 
      */
     @Import(name="valueType", required=true)
     private Output<String> valueType;
 
     /**
-     * @return (Updatable) The value type of the user password.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The value type of the key store password.
      * 
      */
     public Output<String> valueType() {
@@ -78,7 +72,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
         }
 
         /**
-         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
          * 
          * @return builder
          * 
@@ -89,7 +83,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
         }
 
         /**
-         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store password.
          * 
          * @return builder
          * 
@@ -99,10 +93,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
         }
 
         /**
-         * @param valueType (Updatable) The value type of the user password.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param valueType (Updatable) The value type of the key store password.
          * 
          * @return builder
          * 
@@ -113,10 +104,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStorePasswordArgs extends c
         }
 
         /**
-         * @param valueType (Updatable) The value type of the user password.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param valueType (Updatable) The value type of the key store password.
          * 
          * @return builder
          * 

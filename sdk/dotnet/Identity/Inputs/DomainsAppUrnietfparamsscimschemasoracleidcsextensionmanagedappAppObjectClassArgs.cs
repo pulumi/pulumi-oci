@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsAppUrnietfparamsscimschemasoracleidcsextensionmanagedappAppObjectClassArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Display-name of the AppRole.
+        /// (Updatable) Object class display name
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<bool>? IsAccountObjectClass { get; set; }
 
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) Object class URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -92,20 +92,17 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Type { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) Object class template identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: immutable
         /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

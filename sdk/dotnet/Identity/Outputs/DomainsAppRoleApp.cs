@@ -14,14 +14,14 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppRoleApp
     {
         /// <summary>
-        /// Member display name
+        /// (Updatable) App display name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) The URI corresponding to the member Resource of this Group
+        /// (Updatable) App URI
         /// 
         /// **SCIM++ Properties:**
         /// * idcsSearchable: false
@@ -67,15 +67,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? ServiceInstanceIdentifier;
         /// <summary>
-        /// Value of the tag.
+        /// App identifier
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readWrite
+        /// * mutability: immutable
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

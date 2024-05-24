@@ -32,10 +32,7 @@ public final class WorkspaceApplicationSourceApplicationInfo {
      */
     private @Nullable String lastPatchKey;
     /**
-     * @return The workspace ID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      * 
      */
     private @Nullable String workspaceId;
@@ -70,10 +67,7 @@ public final class WorkspaceApplicationSourceApplicationInfo {
         return Optional.ofNullable(this.lastPatchKey);
     }
     /**
-     * @return The workspace ID.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return The OCID of the workspace containing the application. This allows cross workspace deployment to publish an application from a different workspace into the current workspace specified in this operation.
      * 
      */
     public Optional<String> workspaceId() {

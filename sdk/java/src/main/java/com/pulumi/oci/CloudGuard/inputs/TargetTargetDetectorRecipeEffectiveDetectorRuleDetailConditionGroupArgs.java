@@ -16,14 +16,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs();
 
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -31,14 +31,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
     }
 
     /**
-     * (Updatable) Base condition object
+     * Base condition object
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     public Optional<Output<String>> condition() {
@@ -71,7 +71,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition Base condition object
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditio
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition Base condition object
          * 
          * @return builder
          * 

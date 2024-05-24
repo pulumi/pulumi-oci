@@ -57,7 +57,9 @@ class OpaInstanceAttachment(dict):
                * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
+        :param str target_role: The role of the target attachment. 
+               * `PARENT` - The target instance is the parent of this attachment.
+               * `CHILD` - The target instance is the child of this attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
         if is_implicit is not None:
@@ -100,7 +102,9 @@ class OpaInstanceAttachment(dict):
     @pulumi.getter(name="targetRole")
     def target_role(self) -> Optional[str]:
         """
-        The role of the target attachment.
+        The role of the target attachment. 
+        * `PARENT` - The target instance is the parent of this attachment.
+        * `CHILD` - The target instance is the child of this attachment.
         """
         return pulumi.get(self, "target_role")
 
@@ -126,7 +130,9 @@ class GetOpaInstanceAttachmentResult(dict):
                * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
+        :param str target_role: The role of the target attachment. 
+               * `PARENT` - The target instance is the parent of this attachment.
+               * `CHILD` - The target instance is the child of this attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
         pulumi.set(__self__, "is_implicit", is_implicit)
@@ -164,7 +170,9 @@ class GetOpaInstanceAttachmentResult(dict):
     @pulumi.getter(name="targetRole")
     def target_role(self) -> str:
         """
-        The role of the target attachment.
+        The role of the target attachment. 
+        * `PARENT` - The target instance is the parent of this attachment.
+        * `CHILD` - The target instance is the child of this attachment.
         """
         return pulumi.get(self, "target_role")
 
@@ -463,7 +471,9 @@ class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
                * If role == `CHILD`, this instance was created from attached instance on behalf of a user
         :param str target_id: The OCID of the target instance (which could be any other Oracle Cloud Infrastructure PaaS/SaaS resource), to which this instance is attached.
         :param str target_instance_url: The dataplane instance URL of the attached instance
-        :param str target_role: The role of the target attachment.
+        :param str target_role: The role of the target attachment. 
+               * `PARENT` - The target instance is the parent of this attachment.
+               * `CHILD` - The target instance is the child of this attachment.
         :param str target_service_type: The type of the target instance, such as "FUSION".
         """
         pulumi.set(__self__, "is_implicit", is_implicit)
@@ -501,7 +511,9 @@ class GetOpaInstancesOpaInstanceCollectionItemAttachmentResult(dict):
     @pulumi.getter(name="targetRole")
     def target_role(self) -> str:
         """
-        The role of the target attachment.
+        The role of the target attachment. 
+        * `PARENT` - The target instance is the parent of this attachment.
+        * `CHILD` - The target instance is the child of this attachment.
         """
         return pulumi.get(self, "target_role")
 

@@ -17,14 +17,14 @@ public final class TargetAssetTestSpecPreemptibleInstanceConfigArgs extends com.
     public static final TargetAssetTestSpecPreemptibleInstanceConfigArgs Empty = new TargetAssetTestSpecPreemptibleInstanceConfigArgs();
 
     /**
-     * (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+     * The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
     @Import(name="preemptionActions")
     private @Nullable Output<List<TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs>> preemptionActions;
 
     /**
-     * @return (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+     * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
     public Optional<Output<List<TargetAssetTestSpecPreemptibleInstanceConfigPreemptionActionArgs>>> preemptionActions() {
@@ -56,7 +56,7 @@ public final class TargetAssetTestSpecPreemptibleInstanceConfigArgs extends com.
         }
 
         /**
-         * @param preemptionActions (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+         * @param preemptionActions The action to run when the preemptible instance is interrupted for eviction.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class TargetAssetTestSpecPreemptibleInstanceConfigArgs extends com.
         }
 
         /**
-         * @param preemptionActions (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+         * @param preemptionActions The action to run when the preemptible instance is interrupted for eviction.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class TargetAssetTestSpecPreemptibleInstanceConfigArgs extends com.
         }
 
         /**
-         * @param preemptionActions (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+         * @param preemptionActions The action to run when the preemptible instance is interrupted for eviction.
          * 
          * @return builder
          * 

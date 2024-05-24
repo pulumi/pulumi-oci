@@ -74,7 +74,7 @@ export class VolumeGroup extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume group.
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
@@ -210,7 +210,7 @@ export class VolumeGroup extends pulumi.CustomResource {
  */
 export interface VolumeGroupState {
     /**
-     * (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume group.
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
@@ -283,7 +283,7 @@ export interface VolumeGroupState {
  */
 export interface VolumeGroupArgs {
     /**
-     * (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume group.
      */
     availabilityDomain: pulumi.Input<string>;
     /**

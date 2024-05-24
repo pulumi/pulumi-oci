@@ -31,7 +31,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
      */
     private @Nullable String expression;
     /**
-     * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * @return (Updatable) Specifies the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     private @Nullable String fieldTimeKey;
@@ -193,7 +193,7 @@ public final class UnifiedAgentConfigurationServiceConfigurationSourceParser {
         return Optional.ofNullable(this.expression);
     }
     /**
-     * @return (Updatable) Specify the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
+     * @return (Updatable) Specifies the time field for the event time. If the event doesn&#39;t have this field, the current time is used.
      * 
      */
     public Optional<String> fieldTimeKey() {

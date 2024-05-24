@@ -16,14 +16,14 @@ public final class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs ex
     public static final DrProtectionGroupMemberFileSystemOperationMountDetailsArgs Empty = new DrProtectionGroupMemberFileSystemOperationMountDetailsArgs();
 
     /**
-     * (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+     * (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
     @Import(name="mountTargetId")
     private @Nullable Output<String> mountTargetId;
 
     /**
-     * @return (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+     * @return (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
      * 
      */
     public Optional<Output<String>> mountTargetId() {
@@ -55,7 +55,7 @@ public final class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs ex
         }
 
         /**
-         * @param mountTargetId (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+         * @param mountTargetId (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class DrProtectionGroupMemberFileSystemOperationMountDetailsArgs ex
         }
 
         /**
-         * @param mountTargetId (Updatable) The OCID of the mount target.  Example: `ocid1.mounttarget.oc1..uniqueID`
+         * @param mountTargetId (Updatable) The OCID of the mount target for this file system.  Example: `ocid1.mounttarget.oc1..uniqueID`
          * 
          * @return builder
          * 

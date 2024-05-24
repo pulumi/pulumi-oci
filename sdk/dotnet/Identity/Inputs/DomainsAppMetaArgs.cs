@@ -61,9 +61,10 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Location { get; set; }
 
         /// <summary>
-        /// (Updatable) Object class resource type
+        /// (Updatable) Name of the resource type of the resource--for example, Users or Groups
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: false
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly

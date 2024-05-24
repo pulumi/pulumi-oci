@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
     public sealed class WorkspaceApplicationTaskScheduleScheduleRef
     {
         /// <summary>
-        /// (Updatable) The description of the aggregator.
+        /// (Updatable) Detailed description for the object.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly Outputs.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetails? FrequencyDetails;
         /// <summary>
-        /// (Updatable) The identifier of the aggregator.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
         public readonly string? Identifier;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.DataIntegration.Outputs
         /// </summary>
         public readonly bool? IsDaylightAdjustmentEnabled;
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         /// </summary>
         public readonly string? Key;
         /// <summary>

@@ -40,7 +40,7 @@ namespace Pulumi.Oci.Waas
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        /// (Updatable)
         /// </summary>
         [Output("exclusions")]
         public Output<ImmutableArray<Outputs.ProtectionRuleExclusion>> Exclusions { get; private set; } = null!;
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.Waas
         private InputList<Inputs.ProtectionRuleExclusionArgs>? _exclusions;
 
         /// <summary>
-        /// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        /// (Updatable)
         /// </summary>
         public InputList<Inputs.ProtectionRuleExclusionArgs> Exclusions
         {
@@ -175,7 +175,7 @@ namespace Pulumi.Oci.Waas
         private InputList<Inputs.ProtectionRuleExclusionGetArgs>? _exclusions;
 
         /// <summary>
-        /// An array of The target property of a request that would allow it to bypass the protection rule. For example, when `target` is `REQUEST_COOKIE_NAMES`, the list may include names of cookies to exclude from the protection rule. When the target is `ARGS`, the list may include strings of URL query parameters and values from form-urlencoded XML, JSON, AMP, or POST payloads to exclude from the protection rule. `Exclusions` properties must not contain whitespace, comma or |. **Note:** If protection rules have been enabled that utilize the `maxArgumentCount` or `maxTotalNameLengthOfArguments` properties, and the `target` property has been set to `ARGS`, it is important that the `exclusions` properties be defined to honor those protection rule settings in a consistent manner.
+        /// (Updatable)
         /// </summary>
         public InputList<Inputs.ProtectionRuleExclusionGetArgs> Exclusions
         {

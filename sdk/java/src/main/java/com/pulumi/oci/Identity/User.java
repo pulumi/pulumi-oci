@@ -78,7 +78,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUser = new User("testUser", UserArgs.builder()        
+ *         var testUser = new User("testUser", UserArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .description(userDescription)
  *             .name(userName)

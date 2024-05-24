@@ -20,28 +20,21 @@ type ManagementAgentDataSourceList struct {
 	IsDaemonSet       *bool                                          `pulumi:"isDaemonSet"`
 	Key               *string                                        `pulumi:"key"`
 	MetricDimensions  []ManagementAgentDataSourceListMetricDimension `pulumi:"metricDimensions"`
-	// Name of the property
-	Name      *string `pulumi:"name"`
-	Namespace *string `pulumi:"namespace"`
-	ProxyUrl  *string `pulumi:"proxyUrl"`
-	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
-	ReadDataLimit *int `pulumi:"readDataLimit"`
-	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
-	ReadTimeout *int `pulumi:"readTimeout"`
-	// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-	ResourceGroup *string `pulumi:"resourceGroup"`
-	// Number in minutes. The scraping occurs at the specified interval.
-	ScheduleMins *int `pulumi:"scheduleMins"`
+	Name              *string                                        `pulumi:"name"`
+	Namespace         *string                                        `pulumi:"namespace"`
+	ProxyUrl          *string                                        `pulumi:"proxyUrl"`
+	ReadDataLimit     *int                                           `pulumi:"readDataLimit"`
+	ReadTimeout       *int                                           `pulumi:"readTimeout"`
+	ResourceGroup     *string                                        `pulumi:"resourceGroup"`
+	ScheduleMins      *int                                           `pulumi:"scheduleMins"`
 	// The current state of managementAgent
 	State *string `pulumi:"state"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
-	// The type of the DataSource.
-	Type *string `pulumi:"type"`
-	// The url through which the Prometheus Exporter publishes its metrics. (http only)
-	Url *string `pulumi:"url"`
+	Type        *string `pulumi:"type"`
+	Url         *string `pulumi:"url"`
 }
 
 // ManagementAgentDataSourceListInput is an input type that accepts ManagementAgentDataSourceListArgs and ManagementAgentDataSourceListOutput values.
@@ -62,28 +55,21 @@ type ManagementAgentDataSourceListArgs struct {
 	IsDaemonSet       pulumi.BoolPtrInput                                    `pulumi:"isDaemonSet"`
 	Key               pulumi.StringPtrInput                                  `pulumi:"key"`
 	MetricDimensions  ManagementAgentDataSourceListMetricDimensionArrayInput `pulumi:"metricDimensions"`
-	// Name of the property
-	Name      pulumi.StringPtrInput `pulumi:"name"`
-	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
-	ProxyUrl  pulumi.StringPtrInput `pulumi:"proxyUrl"`
-	// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
-	ReadDataLimit pulumi.IntPtrInput `pulumi:"readDataLimit"`
-	// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
-	ReadTimeout pulumi.IntPtrInput `pulumi:"readTimeout"`
-	// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-	ResourceGroup pulumi.StringPtrInput `pulumi:"resourceGroup"`
-	// Number in minutes. The scraping occurs at the specified interval.
-	ScheduleMins pulumi.IntPtrInput `pulumi:"scheduleMins"`
+	Name              pulumi.StringPtrInput                                  `pulumi:"name"`
+	Namespace         pulumi.StringPtrInput                                  `pulumi:"namespace"`
+	ProxyUrl          pulumi.StringPtrInput                                  `pulumi:"proxyUrl"`
+	ReadDataLimit     pulumi.IntPtrInput                                     `pulumi:"readDataLimit"`
+	ReadTimeout       pulumi.IntPtrInput                                     `pulumi:"readTimeout"`
+	ResourceGroup     pulumi.StringPtrInput                                  `pulumi:"resourceGroup"`
+	ScheduleMins      pulumi.IntPtrInput                                     `pulumi:"scheduleMins"`
 	// The current state of managementAgent
 	State pulumi.StringPtrInput `pulumi:"state"`
 	// The time the Management Agent was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
 	// The time the Management Agent was last updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput `pulumi:"timeUpdated"`
-	// The type of the DataSource.
-	Type pulumi.StringPtrInput `pulumi:"type"`
-	// The url through which the Prometheus Exporter publishes its metrics. (http only)
-	Url pulumi.StringPtrInput `pulumi:"url"`
+	Type        pulumi.StringPtrInput `pulumi:"type"`
+	Url         pulumi.StringPtrInput `pulumi:"url"`
 }
 
 func (ManagementAgentDataSourceListArgs) ElementType() reflect.Type {
@@ -163,7 +149,6 @@ func (o ManagementAgentDataSourceListOutput) MetricDimensions() ManagementAgentD
 	}).(ManagementAgentDataSourceListMetricDimensionArrayOutput)
 }
 
-// Name of the property
 func (o ManagementAgentDataSourceListOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -176,22 +161,18 @@ func (o ManagementAgentDataSourceListOutput) ProxyUrl() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.ProxyUrl }).(pulumi.StringPtrOutput)
 }
 
-// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
 func (o ManagementAgentDataSourceListOutput) ReadDataLimit() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ReadDataLimit }).(pulumi.IntPtrOutput)
 }
 
-// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
 func (o ManagementAgentDataSourceListOutput) ReadTimeout() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ReadTimeout }).(pulumi.IntPtrOutput)
 }
 
-// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
 func (o ManagementAgentDataSourceListOutput) ResourceGroup() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.ResourceGroup }).(pulumi.StringPtrOutput)
 }
 
-// Number in minutes. The scraping occurs at the specified interval.
 func (o ManagementAgentDataSourceListOutput) ScheduleMins() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *int { return v.ScheduleMins }).(pulumi.IntPtrOutput)
 }
@@ -211,12 +192,10 @@ func (o ManagementAgentDataSourceListOutput) TimeUpdated() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.TimeUpdated }).(pulumi.StringPtrOutput)
 }
 
-// The type of the DataSource.
 func (o ManagementAgentDataSourceListOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
 
-// The url through which the Prometheus Exporter publishes its metrics. (http only)
 func (o ManagementAgentDataSourceListOutput) Url() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceList) *string { return v.Url }).(pulumi.StringPtrOutput)
 }
@@ -242,7 +221,6 @@ func (o ManagementAgentDataSourceListArrayOutput) Index(i pulumi.IntInput) Manag
 }
 
 type ManagementAgentDataSourceListMetricDimension struct {
-	// Name of the property
 	Name  *string `pulumi:"name"`
 	Value *string `pulumi:"value"`
 }
@@ -259,7 +237,6 @@ type ManagementAgentDataSourceListMetricDimensionInput interface {
 }
 
 type ManagementAgentDataSourceListMetricDimensionArgs struct {
-	// Name of the property
 	Name  pulumi.StringPtrInput `pulumi:"name"`
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
@@ -315,7 +292,6 @@ func (o ManagementAgentDataSourceListMetricDimensionOutput) ToManagementAgentDat
 	return o
 }
 
-// Name of the property
 func (o ManagementAgentDataSourceListMetricDimensionOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceListMetricDimension) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
@@ -345,7 +321,7 @@ func (o ManagementAgentDataSourceListMetricDimensionArrayOutput) Index(i pulumi.
 }
 
 type ManagementAgentDataSourceMetricDimension struct {
-	// Unique name of the DataSource.
+	// (Updatable) Name of the metric dimension
 	Name string `pulumi:"name"`
 	// (Updatable) Value of the metric dimension
 	Value string `pulumi:"value"`
@@ -363,7 +339,7 @@ type ManagementAgentDataSourceMetricDimensionInput interface {
 }
 
 type ManagementAgentDataSourceMetricDimensionArgs struct {
-	// Unique name of the DataSource.
+	// (Updatable) Name of the metric dimension
 	Name pulumi.StringInput `pulumi:"name"`
 	// (Updatable) Value of the metric dimension
 	Value pulumi.StringInput `pulumi:"value"`
@@ -420,7 +396,7 @@ func (o ManagementAgentDataSourceMetricDimensionOutput) ToManagementAgentDataSou
 	return o
 }
 
-// Unique name of the DataSource.
+// (Updatable) Name of the metric dimension
 func (o ManagementAgentDataSourceMetricDimensionOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceMetricDimension) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -453,10 +429,8 @@ func (o ManagementAgentDataSourceMetricDimensionArrayOutput) Index(i pulumi.IntI
 type ManagementAgentDataSourceSummaryList struct {
 	IsDaemonSet *bool   `pulumi:"isDaemonSet"`
 	Key         *string `pulumi:"key"`
-	// Name of the property
-	Name *string `pulumi:"name"`
-	// The type of the DataSource.
-	Type *string `pulumi:"type"`
+	Name        *string `pulumi:"name"`
+	Type        *string `pulumi:"type"`
 }
 
 // ManagementAgentDataSourceSummaryListInput is an input type that accepts ManagementAgentDataSourceSummaryListArgs and ManagementAgentDataSourceSummaryListOutput values.
@@ -473,10 +447,8 @@ type ManagementAgentDataSourceSummaryListInput interface {
 type ManagementAgentDataSourceSummaryListArgs struct {
 	IsDaemonSet pulumi.BoolPtrInput   `pulumi:"isDaemonSet"`
 	Key         pulumi.StringPtrInput `pulumi:"key"`
-	// Name of the property
-	Name pulumi.StringPtrInput `pulumi:"name"`
-	// The type of the DataSource.
-	Type pulumi.StringPtrInput `pulumi:"type"`
+	Name        pulumi.StringPtrInput `pulumi:"name"`
+	Type        pulumi.StringPtrInput `pulumi:"type"`
 }
 
 func (ManagementAgentDataSourceSummaryListArgs) ElementType() reflect.Type {
@@ -538,12 +510,10 @@ func (o ManagementAgentDataSourceSummaryListOutput) Key() pulumi.StringPtrOutput
 	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Name of the property
 func (o ManagementAgentDataSourceSummaryListOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// The type of the DataSource.
 func (o ManagementAgentDataSourceSummaryListOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ManagementAgentDataSourceSummaryList) *string { return v.Type }).(pulumi.StringPtrOutput)
 }

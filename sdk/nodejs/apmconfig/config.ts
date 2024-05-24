@@ -109,7 +109,7 @@ export class Config extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the metric.
+     * (Updatable) An optional string that describes what the options are intended or used for.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -270,7 +270,7 @@ export interface ConfigState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the metric.
+     * (Updatable) An optional string that describes what the options are intended or used for.
      */
     description?: pulumi.Input<string>;
     /**
@@ -356,7 +356,7 @@ export interface ConfigArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the metric.
+     * (Updatable) An optional string that describes what the options are intended or used for.
      */
     description?: pulumi.Input<string>;
     /**

@@ -47,14 +47,14 @@ public final class WorkspaceApplicationDependentObjectMetadataArgs extends com.p
     }
 
     /**
-     * The identifying key for the object.
+     * (Updatable) Currently not used on application creation. Reserved for future.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return The identifying key for the object.
+     * @return (Updatable) Currently not used on application creation. Reserved for future.
      * 
      */
     public Optional<Output<String>> key() {
@@ -194,7 +194,7 @@ public final class WorkspaceApplicationDependentObjectMetadataArgs extends com.p
         }
 
         /**
-         * @param key The identifying key for the object.
+         * @param key (Updatable) Currently not used on application creation. Reserved for future.
          * 
          * @return builder
          * 
@@ -205,7 +205,7 @@ public final class WorkspaceApplicationDependentObjectMetadataArgs extends com.p
         }
 
         /**
-         * @param key The identifying key for the object.
+         * @param key (Updatable) Currently not used on application creation. Reserved for future.
          * 
          * @return builder
          * 

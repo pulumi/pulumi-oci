@@ -48,7 +48,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDedicatedAiCluster = new DedicatedAiCluster("testDedicatedAiCluster", DedicatedAiClusterArgs.builder()        
+ *         var testDedicatedAiCluster = new DedicatedAiCluster("testDedicatedAiCluster", DedicatedAiClusterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .type(dedicatedAiClusterType)
  *             .unitCount(dedicatedAiClusterUnitCount)

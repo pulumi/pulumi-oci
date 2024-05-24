@@ -330,14 +330,15 @@ namespace Pulumi.Oci.Identity
         public Output<ImmutableArray<Outputs.DomainsRuleMeta>> Metas { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Attribute name of an individual value to be returned.
+        /// (Updatable) Rule name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -636,14 +637,15 @@ namespace Pulumi.Oci.Identity
         public Input<bool>? Locked { get; set; }
 
         /// <summary>
-        /// (Updatable) Attribute name of an individual value to be returned.
+        /// (Updatable) Rule name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>
@@ -1049,14 +1051,15 @@ namespace Pulumi.Oci.Identity
         }
 
         /// <summary>
-        /// (Updatable) Attribute name of an individual value to be returned.
+        /// (Updatable) Rule name
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
         /// </summary>

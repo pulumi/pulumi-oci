@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testListingPackageAgreement = new ListingPackageAgreement("testListingPackageAgreement", ListingPackageAgreementArgs.builder()        
+ *         var testListingPackageAgreement = new ListingPackageAgreement("testListingPackageAgreement", ListingPackageAgreementArgs.builder()
  *             .agreementId(testAgreement.id())
  *             .listingId(testListing.id())
  *             .packageVersion(listingPackageAgreementPackageVersion)

@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.DeployStageDeployStagePredecessorCollectionItemArgs>? _items;
 
         /// <summary>
-        /// (Updatable) List of parameters defined to set helm value.
+        /// (Updatable) A list of stage predecessors for a stage.
         /// </summary>
         public InputList<Inputs.DeployStageDeployStagePredecessorCollectionItemArgs> Items
         {

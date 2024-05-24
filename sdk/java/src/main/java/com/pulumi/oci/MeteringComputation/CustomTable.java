@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCustomTable = new CustomTable("testCustomTable", CustomTableArgs.builder()        
+ *         var testCustomTable = new CustomTable("testCustomTable", CustomTableArgs.builder()
  *             .compartmentId(compartmentId)
  *             .savedCustomTable(CustomTableSavedCustomTableArgs.builder()
  *                 .displayName(customTableSavedCustomTableDisplayName)

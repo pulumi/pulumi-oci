@@ -27,7 +27,7 @@ public final class ConnectorSource {
      */
     private @Nullable ConnectorSourceCursor cursor;
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     private String kind;
@@ -68,7 +68,7 @@ public final class ConnectorSource {
         return Optional.ofNullable(this.cursor);
     }
     /**
-     * @return (Updatable) The type descriminator.
+     * @return (Updatable) The type discriminator.
      * 
      */
     public String kind() {

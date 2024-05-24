@@ -27,7 +27,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return Details of ResponderRule.
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
@@ -37,7 +37,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String detector;
     /**
-     * @return (Updatable) Identifier for DetectorRule.
+     * @return The unique identifier of the detector rule.
      * 
      */
     private @Nullable String detectorRuleId;
@@ -112,7 +112,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return Details of ResponderRule.
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details() {
@@ -126,7 +126,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.detector);
     }
     /**
-     * @return (Updatable) Identifier for DetectorRule.
+     * @return The unique identifier of the detector rule.
      * 
      */
     public Optional<String> detectorRuleId() {

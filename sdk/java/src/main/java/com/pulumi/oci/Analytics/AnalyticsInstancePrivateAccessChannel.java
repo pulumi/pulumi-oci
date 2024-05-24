@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAnalyticsInstancePrivateAccessChannel = new AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", AnalyticsInstancePrivateAccessChannelArgs.builder()        
+ *         var testAnalyticsInstancePrivateAccessChannel = new AnalyticsInstancePrivateAccessChannel("testAnalyticsInstancePrivateAccessChannel", AnalyticsInstancePrivateAccessChannelArgs.builder()
  *             .analyticsInstanceId(testAnalyticsInstance.id())
  *             .displayName(analyticsInstancePrivateAccessChannelDisplayName)
  *             .privateSourceDnsZones(AnalyticsInstancePrivateAccessChannelPrivateSourceDnsZoneArgs.builder()

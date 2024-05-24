@@ -14,11 +14,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsRenameQueryParametersItem
     {
         /// <summary>
-        /// (Updatable) The original case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) The original case-sensitive name of the query parameter.  This name must be unique across transformation policies.
         /// </summary>
         public readonly string From;
         /// <summary>
-        /// (Updatable) The new name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) The new name of the query parameter.  This name must be unique across transformation policies.
         /// </summary>
         public readonly string To;
 

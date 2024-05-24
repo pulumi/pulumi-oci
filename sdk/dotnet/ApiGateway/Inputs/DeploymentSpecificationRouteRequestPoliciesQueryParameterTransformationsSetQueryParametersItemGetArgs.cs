@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApiGateway.Inputs
     public sealed class DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsSetQueryParametersItemGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) If a header with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
+        /// (Updatable) If a query parameter with the same name already exists in the request, OVERWRITE will overwrite the value, APPEND will append to the existing value, or SKIP will keep the existing value.
         /// </summary>
         [Input("ifExists")]
         public Input<string>? IfExists { get; set; }
 
         /// <summary>
-        /// (Updatable) The case-insensitive name of the header.  This name must be unique across transformation policies.
+        /// (Updatable) The case-sensitive name of the query parameter.  This name must be unique across transformation policies.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

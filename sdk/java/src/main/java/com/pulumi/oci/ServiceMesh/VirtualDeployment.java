@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVirtualDeployment = new VirtualDeployment("testVirtualDeployment", VirtualDeploymentArgs.builder()        
+ *         var testVirtualDeployment = new VirtualDeployment("testVirtualDeployment", VirtualDeploymentArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(virtualDeploymentName)
  *             .virtualServiceId(testVirtualService.id())

@@ -13,33 +13,19 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
     public sealed class TargetAssetTestSpecAgentConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
-        /// 
-        /// To get a list of available plugins, use the [ListInstanceagentAvailablePlugins](https://docs.cloud.oracle.com/iaas/api/#/en/instanceagent/20180530/Plugin/ListInstanceagentAvailablePlugins) operation in the Oracle Cloud Agent API. For more information about the available plugins, see [Managing Plugins with Oracle Cloud Agent](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/manage-plugins.htm).
+        /// Whether Oracle Cloud Agent can run all the available plugins. This includes the management and monitoring plugins.
         /// </summary>
         [Input("areAllPluginsDisabled")]
         public Input<bool>? AreAllPluginsDisabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
-        /// 
-        /// These are the management plugins: OS Management Service Agent and Compute instance run command.
-        /// 
-        /// The management plugins are controlled by this parameter and the per-plugin configuration in the `pluginsConfig` object.
-        /// * If `isManagementDisabled` is true, all the management plugins are disabled, regardless of the per-plugin configuration.
-        /// * If `isManagementDisabled` is false, all the management plugins are enabled. You can optionally disable individual management plugins by providing a value in the `pluginsConfig` object.
+        /// Whether Oracle Cloud Agent can run all the available management plugins. By default, the value is false (management plugins are enabled).
         /// </summary>
         [Input("isManagementDisabled")]
         public Input<bool>? IsManagementDisabled { get; set; }
 
         /// <summary>
-        /// (Updatable) Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
-        /// 
-        /// These are the monitoring plugins: Compute instance monitoring and Custom logs monitoring.
-        /// 
-        /// The monitoring plugins are controlled by this parameter and by the per-plugin configuration in the `pluginsConfig` object.
-        /// * If `isMonitoringDisabled` is true, all the monitoring plugins are disabled, regardless of the per-plugin configuration.
-        /// * If `isMonitoringDisabled` is false, all the monitoring plugins are enabled. You can optionally disable individual monitoring plugins by providing a value in the `pluginsConfig` object.
+        /// Whether Oracle Cloud Agent can gather performance metrics and monitor the instance using the monitoring plugins. By default, the value is false (monitoring plugins are enabled).
         /// </summary>
         [Input("isMonitoringDisabled")]
         public Input<bool>? IsMonitoringDisabled { get; set; }
@@ -48,7 +34,7 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
         private InputList<Inputs.TargetAssetTestSpecAgentConfigPluginsConfigGetArgs>? _pluginsConfigs;
 
         /// <summary>
-        /// (Updatable) The configuration of plugins associated with this instance.
+        /// The configuration of plugins associated with this instance.
         /// </summary>
         public InputList<Inputs.TargetAssetTestSpecAgentConfigPluginsConfigGetArgs> PluginsConfigs
         {

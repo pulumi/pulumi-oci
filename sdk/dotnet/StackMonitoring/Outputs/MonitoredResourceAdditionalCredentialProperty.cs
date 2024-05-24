@@ -14,11 +14,11 @@ namespace Pulumi.Oci.StackMonitoring.Outputs
     public sealed class MonitoredResourceAdditionalCredentialProperty
     {
         /// <summary>
-        /// (Updatable) Property Name.
+        /// (Updatable) The name of the credential property, should confirm with names of properties of this credential's type.  Example: For JMXCreds type, credential property name for weblogic user is 'Username'.
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) Property Value.
+        /// (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for 'Username' property is 'weblogic'.
         /// </summary>
         public readonly string? Value;
 

@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseSoftwareImage = new DatabaseSoftwareImage("testDatabaseSoftwareImage", DatabaseSoftwareImageArgs.builder()        
+ *         var testDatabaseSoftwareImage = new DatabaseSoftwareImage("testDatabaseSoftwareImage", DatabaseSoftwareImageArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(databaseSoftwareImageDisplayName)
  *             .databaseSoftwareImageOneOffPatches(databaseSoftwareImageDatabaseSoftwareImageOneOffPatches)

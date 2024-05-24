@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class VmClusterNetworkDrScanArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The node host name.
+        /// (Updatable) The Disaster recovery SCAN hostname.
         /// </summary>
         [Input("hostname", required: true)]
         public Input<string> Hostname { get; set; } = null!;
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Database.Inputs
         private InputList<string>? _ips;
 
         /// <summary>
-        /// (Updatable) The list of SCAN IP addresses. Three addresses should be provided.
+        /// (Updatable) The list of Disaster recovery SCAN IP addresses. Three addresses should be provided.
         /// </summary>
         public InputList<string> Ips
         {
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database.Inputs
         }
 
         /// <summary>
-        /// (Updatable) The SCAN TCPIP port. Default is 1521.
+        /// (Updatable) The Disaster recovery SCAN TCPIP port. Default is 1521.
         /// </summary>
         [Input("scanListenerPortTcp", required: true)]
         public Input<int> ScanListenerPortTcp { get; set; } = null!;

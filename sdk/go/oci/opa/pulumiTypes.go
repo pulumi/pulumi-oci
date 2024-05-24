@@ -22,6 +22,8 @@ type OpaInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl *string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole *string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType *string `pulumi:"targetServiceType"`
@@ -47,6 +49,8 @@ type OpaInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringPtrInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringPtrInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringPtrInput `pulumi:"targetServiceType"`
@@ -120,6 +124,8 @@ func (o OpaInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringPtrOutput 
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o OpaInstanceAttachmentOutput) TargetRole() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v OpaInstanceAttachment) *string { return v.TargetRole }).(pulumi.StringPtrOutput)
 }
@@ -158,6 +164,8 @@ type GetOpaInstanceAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType string `pulumi:"targetServiceType"`
@@ -183,6 +191,8 @@ type GetOpaInstanceAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
@@ -256,6 +266,8 @@ func (o GetOpaInstanceAttachmentOutput) TargetInstanceUrl() pulumi.StringOutput 
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o GetOpaInstanceAttachmentOutput) TargetRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpaInstanceAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
 }
@@ -772,6 +784,8 @@ type GetOpaInstancesOpaInstanceCollectionItemAttachment struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl string `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole string `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType string `pulumi:"targetServiceType"`
@@ -797,6 +811,8 @@ type GetOpaInstancesOpaInstanceCollectionItemAttachmentArgs struct {
 	// The dataplane instance URL of the attached instance
 	TargetInstanceUrl pulumi.StringInput `pulumi:"targetInstanceUrl"`
 	// The role of the target attachment.
+	// * `PARENT` - The target instance is the parent of this attachment.
+	// * `CHILD` - The target instance is the child of this attachment.
 	TargetRole pulumi.StringInput `pulumi:"targetRole"`
 	// The type of the target instance, such as "FUSION".
 	TargetServiceType pulumi.StringInput `pulumi:"targetServiceType"`
@@ -870,6 +886,8 @@ func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetInstance
 }
 
 // The role of the target attachment.
+// * `PARENT` - The target instance is the parent of this attachment.
+// * `CHILD` - The target instance is the child of this attachment.
 func (o GetOpaInstancesOpaInstanceCollectionItemAttachmentOutput) TargetRole() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOpaInstancesOpaInstanceCollectionItemAttachment) string { return v.TargetRole }).(pulumi.StringOutput)
 }

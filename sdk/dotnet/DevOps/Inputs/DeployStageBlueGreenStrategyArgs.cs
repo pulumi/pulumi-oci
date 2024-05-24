@@ -31,7 +31,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         public Input<string> NamespaceB { get; set; } = null!;
 
         /// <summary>
-        /// Canary strategy type.
+        /// Blue Green strategy type
         /// </summary>
         [Input("strategyType", required: true)]
         public Input<string> StrategyType { get; set; } = null!;

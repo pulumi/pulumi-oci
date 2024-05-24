@@ -13,9 +13,10 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsAppAliasApp {
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) Description of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -27,9 +28,10 @@ public final class DomainsAppAliasApp {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Display name of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -41,9 +43,10 @@ public final class DomainsAppAliasApp {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -55,28 +58,27 @@ public final class DomainsAppAliasApp {
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ID of the alias App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
 
     private DomainsAppAliasApp() {}
     /**
-     * @return (Updatable) The description of the AppRole.
+     * @return (Updatable) Description of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -90,9 +92,10 @@ public final class DomainsAppAliasApp {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Display-name of the AppRole.
+     * @return (Updatable) Display name of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -106,9 +109,10 @@ public final class DomainsAppAliasApp {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) URI of the alias App.
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -122,19 +126,17 @@ public final class DomainsAppAliasApp {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) ID of the alias App.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

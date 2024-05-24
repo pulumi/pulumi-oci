@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPluggableDatabasePluggabledatabasemanagementsManagement = new PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement", PluggableDatabaseManagementsManagementArgs.builder()        
+ *         var testPluggableDatabasePluggabledatabasemanagementsManagement = new PluggableDatabaseManagementsManagement("testPluggableDatabasePluggabledatabasemanagementsManagement", PluggableDatabaseManagementsManagementArgs.builder()
  *             .pluggableDatabaseId(testPluggableDatabase.id())
  *             .enablePluggabledatabasemanagement(enablePluggabledatabasemanagement)
  *             .credentialDetails(PluggableDatabaseManagementsManagementCredentialDetailsArgs.builder()

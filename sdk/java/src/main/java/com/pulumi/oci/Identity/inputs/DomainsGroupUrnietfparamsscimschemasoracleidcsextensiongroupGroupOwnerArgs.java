@@ -17,12 +17,11 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     public static final DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs Empty = new DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupGroupOwnerArgs();
 
     /**
-     * (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Owner display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -35,12 +34,11 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) App Display Name
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Owner display name
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -54,11 +52,10 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI that corresponds to the owning Resource of this Group
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -72,11 +69,10 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) App URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI that corresponds to the owning Resource of this Group
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -91,15 +87,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) Indicates the type of resource--for example, User or Group
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -110,15 +105,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of the entity that created this Group.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Indicates the type of resource--for example, User or Group
      * 
      * **SCIM++ Properties:**
-     * * idcsDefaultValue: App
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsDefaultValue: User
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
      * * returned: default
      * * type: string
@@ -130,17 +124,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     }
 
     /**
-     * (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) ID of the owner of this Group
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -149,17 +141,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
     private Output<String> value;
 
     /**
-     * @return (Updatable) The ID of the App.
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) ID of the owner of this Group
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
+     * * mutability: readWrite
      * * required: true
-     * * returned: default
+     * * returned: always
      * * type: string
      * * uniqueness: none
      * 
@@ -196,12 +186,11 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param display (Updatable) App Display Name
-         * 
-         * **Added In:** 18.4.2
+         * @param display (Updatable) Owner display name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -218,12 +207,11 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param display (Updatable) App Display Name
-         * 
-         * **Added In:** 18.4.2
+         * @param display (Updatable) Owner display name
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -239,11 +227,10 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI that corresponds to the owning Resource of this Group
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -261,11 +248,10 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param ref (Updatable) App URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI that corresponds to the owning Resource of this Group
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -282,15 +268,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param type (Updatable) The type of the entity that created this Group.
-         * 
-         * **Added In:** 18.4.2
+         * @param type (Updatable) Indicates the type of resource--for example, User or Group
          * 
          * **SCIM++ Properties:**
-         * * idcsDefaultValue: App
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsDefaultValue: User
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
@@ -305,15 +290,14 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param type (Updatable) The type of the entity that created this Group.
-         * 
-         * **Added In:** 18.4.2
+         * @param type (Updatable) Indicates the type of resource--for example, User or Group
          * 
          * **SCIM++ Properties:**
-         * * idcsDefaultValue: App
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsDefaultValue: User
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
          * * returned: default
          * * type: string
@@ -327,17 +311,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) ID of the owner of this Group
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 
@@ -350,17 +332,15 @@ public final class DomainsGroupUrnietfparamsscimschemasoracleidcsextensiongroupG
         }
 
         /**
-         * @param value (Updatable) The ID of the App.
-         * 
-         * **Added In:** 18.4.2
+         * @param value (Updatable) ID of the owner of this Group
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
+         * * mutability: readWrite
          * * required: true
-         * * returned: default
+         * * returned: always
          * * type: string
          * * uniqueness: none
          * 

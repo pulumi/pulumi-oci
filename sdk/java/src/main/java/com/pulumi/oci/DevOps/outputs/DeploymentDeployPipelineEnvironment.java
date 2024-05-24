@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DeploymentDeployPipelineEnvironment {
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return A list of stage predecessors for a stage.
      * 
      */
     private @Nullable List<DeploymentDeployPipelineEnvironmentItem> items;
 
     private DeploymentDeployPipelineEnvironment() {}
     /**
-     * @return List of arguments provided at the time of deployment.
+     * @return A list of stage predecessors for a stage.
      * 
      */
     public List<DeploymentDeployPipelineEnvironmentItem> items() {

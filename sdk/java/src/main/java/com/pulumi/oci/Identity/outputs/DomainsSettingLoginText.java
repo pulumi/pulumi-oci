@@ -25,17 +25,15 @@ public final class DomainsSettingLoginText {
      */
     private String locale;
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Login text
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
+     * * idcsSanitize: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     private String value;
@@ -58,17 +56,15 @@ public final class DomainsSettingLoginText {
         return this.locale;
     }
     /**
-     * @return (Updatable) Custom claim value
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) Login text
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
+     * * idcsSanitize: true
      * * type: string
-     * * uniqueness: none
      * 
      */
     public String value() {

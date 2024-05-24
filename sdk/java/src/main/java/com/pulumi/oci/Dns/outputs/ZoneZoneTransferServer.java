@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class ZoneZoneTransferServer {
     /**
-     * @return (Updatable) The server&#39;s IP address (IPv4 or IPv6).
+     * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
     private @Nullable String address;
@@ -29,14 +29,14 @@ public final class ZoneZoneTransferServer {
      */
     private @Nullable Boolean isTransferSource;
     /**
-     * @return (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
+     * @return The server&#39;s port.
      * 
      */
     private @Nullable Integer port;
 
     private ZoneZoneTransferServer() {}
     /**
-     * @return (Updatable) The server&#39;s IP address (IPv4 or IPv6).
+     * @return The server&#39;s IP address (IPv4 or IPv6).
      * 
      */
     public Optional<String> address() {
@@ -57,7 +57,7 @@ public final class ZoneZoneTransferServer {
         return Optional.ofNullable(this.isTransferSource);
     }
     /**
-     * @return (Updatable) The server&#39;s port. Port value must be a value of 53, otherwise omit the port value.
+     * @return The server&#39;s port.
      * 
      */
     public Optional<Integer> port() {

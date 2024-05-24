@@ -15,14 +15,14 @@ public final class ManagementAgentDataSourceMetricDimensionArgs extends com.pulu
     public static final ManagementAgentDataSourceMetricDimensionArgs Empty = new ManagementAgentDataSourceMetricDimensionArgs();
 
     /**
-     * Unique name of the DataSource.
+     * (Updatable) Name of the metric dimension
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Unique name of the DataSource.
+     * @return (Updatable) Name of the metric dimension
      * 
      */
     public Output<String> name() {
@@ -70,7 +70,7 @@ public final class ManagementAgentDataSourceMetricDimensionArgs extends com.pulu
         }
 
         /**
-         * @param name Unique name of the DataSource.
+         * @param name (Updatable) Name of the metric dimension
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class ManagementAgentDataSourceMetricDimensionArgs extends com.pulu
         }
 
         /**
-         * @param name Unique name of the DataSource.
+         * @param name (Updatable) Name of the metric dimension
          * 
          * @return builder
          * 

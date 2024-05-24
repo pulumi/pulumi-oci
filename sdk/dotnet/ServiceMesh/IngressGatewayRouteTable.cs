@@ -119,7 +119,7 @@ namespace Pulumi.Oci.ServiceMesh
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the ingress gateway host that this route should apply to.
+        /// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -249,7 +249,7 @@ namespace Pulumi.Oci.ServiceMesh
         public Input<string> IngressGatewayId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Name of the ingress gateway host that this route should apply to.
+        /// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -329,7 +329,7 @@ namespace Pulumi.Oci.ServiceMesh
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the ingress gateway host that this route should apply to.
+        /// A user-friendly name. The name must be unique within the same ingress gateway and cannot be changed after creation. Avoid entering confidential information.  Example: `My unique resource name`
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

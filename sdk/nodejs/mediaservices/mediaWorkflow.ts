@@ -84,7 +84,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -113,7 +113,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
      */
     public readonly mediaWorkflowConfigurationIds!: pulumi.Output<string[]>;
     /**
-     * (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      */
     public readonly parameters!: pulumi.Output<string>;
     /**
@@ -129,7 +129,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
      */
     public readonly tasks!: pulumi.Output<outputs.MediaServices.MediaWorkflowTask[]>;
     /**
-     * When the lock was created.
+     * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -137,11 +137,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
-     * (Updatable) The version of the MediaWorkflowTaskDeclaration.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The version of the MediaWorkflow.
      */
     public /*out*/ readonly version!: pulumi.Output<string>;
 
@@ -207,7 +203,7 @@ export class MediaWorkflow extends pulumi.CustomResource {
  */
 export interface MediaWorkflowState {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -236,7 +232,7 @@ export interface MediaWorkflowState {
      */
     mediaWorkflowConfigurationIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      */
     parameters?: pulumi.Input<string>;
     /**
@@ -252,7 +248,7 @@ export interface MediaWorkflowState {
      */
     tasks?: pulumi.Input<pulumi.Input<inputs.MediaServices.MediaWorkflowTask>[]>;
     /**
-     * When the lock was created.
+     * The time when the MediaWorkflow was created. An RFC3339 formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -260,11 +256,7 @@ export interface MediaWorkflowState {
      */
     timeUpdated?: pulumi.Input<string>;
     /**
-     * (Updatable) The version of the MediaWorkflowTaskDeclaration.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The version of the MediaWorkflow.
      */
     version?: pulumi.Input<string>;
 }
@@ -274,7 +266,7 @@ export interface MediaWorkflowState {
  */
 export interface MediaWorkflowArgs {
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -299,7 +291,7 @@ export interface MediaWorkflowArgs {
      */
     mediaWorkflowConfigurationIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * (Updatable) Data specifiying how this task is to be run. The data is a JSON object that must conform to the JSON Schema specified by the parameters of the MediaWorkflowTaskDeclaration this task references. The parameters may contain values or references to other parameters.
+     * (Updatable) JSON object representing named parameters and their default values that can be referenced throughout this workflow. The values declared here can be overridden by the MediaWorkflowConfigurations or parameters supplied when creating MediaWorkflowJobs from this MediaWorkflow.
      */
     parameters?: pulumi.Input<string>;
     /**

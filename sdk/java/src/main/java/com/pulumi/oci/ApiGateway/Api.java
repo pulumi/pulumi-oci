@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApi = new Api("testApi", ApiArgs.builder()        
+ *         var testApi = new Api("testApi", ApiArgs.builder()
  *             .compartmentId(compartmentId)
  *             .content(apiContent)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

@@ -153,6 +153,8 @@ class GetVtapResult:
     def is_vtap_enabled(self) -> bool:
         """
         Used to start or stop a `Vtap` resource.
+        * `TRUE` directs the VTAP to start mirroring traffic.
+        * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         """
         return pulumi.get(self, "is_vtap_enabled")
 

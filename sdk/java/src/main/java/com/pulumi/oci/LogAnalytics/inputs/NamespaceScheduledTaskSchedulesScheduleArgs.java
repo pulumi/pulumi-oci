@@ -18,14 +18,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     public static final NamespaceScheduledTaskSchedulesScheduleArgs Empty = new NamespaceScheduledTaskSchedulesScheduleArgs();
 
     /**
-     * (Updatable) Value in cron format.
+     * Value in cron format.
      * 
      */
     @Import(name="expression")
     private @Nullable Output<String> expression;
 
     /**
-     * @return (Updatable) Value in cron format.
+     * @return Value in cron format.
      * 
      */
     public Optional<Output<String>> expression() {
@@ -33,14 +33,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Schedule misfire retry policy.
+     * Schedule misfire retry policy.
      * 
      */
     @Import(name="misfirePolicy")
     private @Nullable Output<String> misfirePolicy;
 
     /**
-     * @return (Updatable) Schedule misfire retry policy.
+     * @return Schedule misfire retry policy.
      * 
      */
     public Optional<Output<String>> misfirePolicy() {
@@ -48,14 +48,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     @Import(name="recurringInterval")
     private @Nullable Output<String> recurringInterval;
 
     /**
-     * @return (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+     * @return Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
      * 
      */
     public Optional<Output<String>> recurringInterval() {
@@ -63,14 +63,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+     * Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
      * 
      */
     @Import(name="repeatCount")
     private @Nullable Output<Integer> repeatCount;
 
     /**
-     * @return (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+     * @return Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
      * 
      */
     public Optional<Output<Integer>> repeatCount() {
@@ -78,14 +78,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Time zone, by default UTC.
+     * Time zone, by default UTC.
      * 
      */
     @Import(name="timeZone")
     private @Nullable Output<String> timeZone;
 
     /**
-     * @return (Updatable) Time zone, by default UTC.
+     * @return Time zone, by default UTC.
      * 
      */
     public Optional<Output<String>> timeZone() {
@@ -93,14 +93,14 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
     }
 
     /**
-     * (Updatable) Schedule type discriminator.
+     * Schedule type discriminator.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Schedule type discriminator.
+     * @return Schedule type discriminator.
      * 
      */
     public Output<String> type() {
@@ -137,7 +137,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param expression (Updatable) Value in cron format.
+         * @param expression Value in cron format.
          * 
          * @return builder
          * 
@@ -148,7 +148,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param expression (Updatable) Value in cron format.
+         * @param expression Value in cron format.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param misfirePolicy (Updatable) Schedule misfire retry policy.
+         * @param misfirePolicy Schedule misfire retry policy.
          * 
          * @return builder
          * 
@@ -169,7 +169,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param misfirePolicy (Updatable) Schedule misfire retry policy.
+         * @param misfirePolicy Schedule misfire retry policy.
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param recurringInterval (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         * @param recurringInterval Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
          * 
          * @return builder
          * 
@@ -190,7 +190,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param recurringInterval (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+         * @param recurringInterval Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param repeatCount (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+         * @param repeatCount Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param repeatCount (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+         * @param repeatCount Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
          * 
          * @return builder
          * 
@@ -221,7 +221,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param timeZone (Updatable) Time zone, by default UTC.
+         * @param timeZone Time zone, by default UTC.
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param timeZone (Updatable) Time zone, by default UTC.
+         * @param timeZone Time zone, by default UTC.
          * 
          * @return builder
          * 
@@ -242,7 +242,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param type (Updatable) Schedule type discriminator.
+         * @param type Schedule type discriminator.
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class NamespaceScheduledTaskSchedulesScheduleArgs extends com.pulum
         }
 
         /**
-         * @param type (Updatable) Schedule type discriminator.
+         * @param type Schedule type discriminator.
          * 
          * @return builder
          * 

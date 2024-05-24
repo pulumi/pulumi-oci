@@ -69,14 +69,14 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) A description of the metric.
+     * (Updatable) An optional string that describes what the options are intended or used for.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A description of the metric.
+     * @return (Updatable) An optional string that describes what the options are intended or used for.
      * 
      */
     public Optional<Output<String>> description() {
@@ -366,7 +366,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A description of the metric.
+         * @param description (Updatable) An optional string that describes what the options are intended or used for.
          * 
          * @return builder
          * 
@@ -377,7 +377,7 @@ public final class ConfigArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) A description of the metric.
+         * @param description (Updatable) An optional string that describes what the options are intended or used for.
          * 
          * @return builder
          * 

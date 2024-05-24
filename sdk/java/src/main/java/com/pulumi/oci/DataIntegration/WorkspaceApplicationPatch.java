@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceApplicationPatch = new WorkspaceApplicationPatch("testWorkspaceApplicationPatch", WorkspaceApplicationPatchArgs.builder()        
+ *         var testWorkspaceApplicationPatch = new WorkspaceApplicationPatch("testWorkspaceApplicationPatch", WorkspaceApplicationPatchArgs.builder()
  *             .applicationKey(workspaceApplicationPatchApplicationKey)
  *             .identifier(workspaceApplicationPatchIdentifier)
  *             .name(workspaceApplicationPatchName)
@@ -175,14 +175,14 @@ public class WorkspaceApplicationPatch extends com.pulumi.resources.CustomResour
         return this.identifier;
     }
     /**
-     * The identifying key for the object.
+     * The object&#39;s key.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return The identifying key for the object.
+     * @return The object&#39;s key.
      * 
      */
     public Output<String> key() {

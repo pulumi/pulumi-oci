@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class ExadataInsightMemberVmClusterDetail
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier of database
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>

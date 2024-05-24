@@ -159,7 +159,7 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
      */
     public readonly configProviderDelegate!: pulumi.Output<string>;
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -175,7 +175,7 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
      */
     public readonly expectedDurationUnit!: pulumi.Output<string>;
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
     public readonly identifier!: pulumi.Output<string>;
     /**
@@ -191,7 +191,7 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
      */
     public readonly isEnabled!: pulumi.Output<boolean>;
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      */
     public readonly key!: pulumi.Output<string>;
     /**
@@ -199,11 +199,11 @@ export class WorkspaceApplicationTaskSchedule extends pulumi.CustomResource {
      */
     public /*out*/ readonly lastRunDetails!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetail[]>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
     public /*out*/ readonly metadatas!: pulumi.Output<outputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadata[]>;
     /**
-     * (Updatable) The type of the object.
+     * The type of the object.
      */
     public /*out*/ readonly modelType!: pulumi.Output<string>;
     /**
@@ -369,7 +369,7 @@ export interface WorkspaceApplicationTaskScheduleState {
      */
     configProviderDelegate?: pulumi.Input<string>;
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      */
     description?: pulumi.Input<string>;
     /**
@@ -385,7 +385,7 @@ export interface WorkspaceApplicationTaskScheduleState {
      */
     expectedDurationUnit?: pulumi.Input<string>;
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
     identifier?: pulumi.Input<string>;
     /**
@@ -401,7 +401,7 @@ export interface WorkspaceApplicationTaskScheduleState {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**
@@ -409,11 +409,11 @@ export interface WorkspaceApplicationTaskScheduleState {
      */
     lastRunDetails?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleLastRunDetail>[]>;
     /**
-     * (Updatable) A summary type containing information about the object including its key, name and when/who created/updated it.
+     * A summary type containing information about the object including its key, name and when/who created/updated it.
      */
     metadatas?: pulumi.Input<pulumi.Input<inputs.DataIntegration.WorkspaceApplicationTaskScheduleMetadata>[]>;
     /**
-     * (Updatable) The type of the object.
+     * The type of the object.
      */
     modelType?: pulumi.Input<string>;
     /**
@@ -492,7 +492,7 @@ export interface WorkspaceApplicationTaskScheduleArgs {
      */
     configProviderDelegate?: pulumi.Input<string>;
     /**
-     * (Updatable) The description of the aggregator.
+     * (Updatable) Detailed description for the object.
      */
     description?: pulumi.Input<string>;
     /**
@@ -508,7 +508,7 @@ export interface WorkspaceApplicationTaskScheduleArgs {
      */
     expectedDurationUnit?: pulumi.Input<string>;
     /**
-     * (Updatable) The identifier of the aggregator.
+     * (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
      */
     identifier: pulumi.Input<string>;
     /**
@@ -524,7 +524,7 @@ export interface WorkspaceApplicationTaskScheduleArgs {
      */
     isEnabled?: pulumi.Input<boolean>;
     /**
-     * (Updatable) The key of the aggregator object.
+     * (Updatable) Generated key that can be used in API calls to identify taskSchedule. On scenarios where reference to the taskSchedule is needed, a value can be passed in create.
      */
     key?: pulumi.Input<string>;
     /**

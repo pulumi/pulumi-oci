@@ -58,7 +58,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDrgRpcAttachment = new DrgAttachmentManagement("testDrgRpcAttachment", DrgAttachmentManagementArgs.builder()        
+ *         var testDrgRpcAttachment = new DrgAttachmentManagement("testDrgRpcAttachment", DrgAttachmentManagementArgs.builder()
  *             .attachmentType("REMOTE_PEERING_CONNECTION")
  *             .compartmentId(compartmentOcid)
  *             .networkId(testRpc.id())

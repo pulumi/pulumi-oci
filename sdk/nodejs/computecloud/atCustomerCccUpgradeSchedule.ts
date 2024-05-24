@@ -81,7 +81,7 @@ export class AtCustomerCccUpgradeSchedule extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
      */
     public readonly description!: pulumi.Output<string>;
     /**
@@ -192,7 +192,7 @@ export interface AtCustomerCccUpgradeScheduleState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**
@@ -250,7 +250,7 @@ export interface AtCustomerCccUpgradeScheduleArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) A description of the Compute Cloud@Customer upgrade schedule time block.
+     * (Updatable) An optional description of the Compute Cloud@Customer upgrade schedule. Avoid entering confidential information.
      */
     description?: pulumi.Input<string>;
     /**

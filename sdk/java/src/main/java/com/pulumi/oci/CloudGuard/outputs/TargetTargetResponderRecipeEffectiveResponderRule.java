@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipeEffectiveResponderRule {
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -26,7 +26,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return Details of ResponderRule.
      * 
      */
     private @Nullable List<TargetTargetResponderRecipeEffectiveResponderRuleDetail> details;
@@ -48,10 +48,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
      */
     private @Nullable List<String> policies;
     /**
-     * @return (Updatable) Identifier for ResponderRule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Unique ResponderRule identifier.
      * 
      */
     private @Nullable String responderRuleId;
@@ -83,7 +80,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
 
     private TargetTargetResponderRecipeEffectiveResponderRule() {}
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
@@ -99,7 +96,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return Details of ResponderRule.
      * 
      */
     public List<TargetTargetResponderRecipeEffectiveResponderRuleDetail> details() {
@@ -129,10 +126,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRule {
         return this.policies == null ? List.of() : this.policies;
     }
     /**
-     * @return (Updatable) Identifier for ResponderRule.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return Unique ResponderRule identifier.
      * 
      */
     public Optional<String> responderRuleId() {

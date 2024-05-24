@@ -15,12 +15,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipeEffectiveResponderRuleDetail {
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     private @Nullable String condition;
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     private @Nullable List<TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations;
@@ -30,21 +30,21 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetail {
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return (Updatable) Execution Mode for ResponderRule
+     * @return Execution Mode for ResponderRule
      * 
      */
     private @Nullable String mode;
 
     private TargetTargetResponderRecipeEffectiveResponderRuleDetail() {}
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     public List<TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration> configurations() {
@@ -58,7 +58,7 @@ public final class TargetTargetResponderRecipeEffectiveResponderRuleDetail {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return (Updatable) Execution Mode for ResponderRule
+     * @return Execution Mode for ResponderRule
      * 
      */
     public Optional<String> mode() {

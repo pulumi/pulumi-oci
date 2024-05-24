@@ -108,14 +108,14 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * (Updatable) Enables or disables the health checks.
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+     * @return (Updatable) Enables or disables the health checks.
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -138,20 +138,14 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-     * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-     * * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-     * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+     * (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
      * 
      */
     @Import(name="method")
     private @Nullable Output<String> method;
 
     /**
-     * @return (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-     * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-     * * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-     * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+     * @return (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
      * 
      */
     public Optional<Output<String>> method() {
@@ -369,7 +363,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the health checks.
          * 
          * @return builder
          * 
@@ -380,7 +374,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param isEnabled (Updatable) Enables or disables the JavaScript challenge Web Application Firewall feature.
+         * @param isEnabled (Updatable) Enables or disables the health checks.
          * 
          * @return builder
          * 
@@ -411,10 +405,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param method (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-         * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-         * * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-         * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+         * @param method (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
          * 
          * @return builder
          * 
@@ -425,10 +416,7 @@ public final class PolicyPolicyConfigHealthChecksArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param method (Updatable) Load balancing methods are algorithms used to efficiently distribute traffic among origin servers.
-         * * **[IP_HASH](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/IPHashLoadBalancingMethod):** All the incoming requests from the same client IP address should go to the same content origination server. IP_HASH load balancing method uses origin weights when choosing which origin should the hash be assigned to initially.
-         * * **[ROUND_ROBIN](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/RoundRobinLoadBalancingMethod):** Forwards requests sequentially to the available origin servers. The first request - to the first origin server, the second request - to the next origin server, and so on. After it sends a request to the last origin server, it starts again with the first origin server. When using weights on origins, Weighted Round Robin assigns more requests to origins with a greater weight. Over a period of time, origins will receive a number of requests in proportion to their weight.
-         * * **[STICKY_COOKIE](https://www.terraform.io/iaas/api/#/en/waas/latest/datatypes/StickyCookieLoadBalancingMethod):** Adds a session cookie to the first response from the origin server and identifies the server that sent the response. The client&#39;s next request contains the cookie value, and nginx routes the request to the origin server that responded to the first request. STICKY_COOKIE load balancing method falls back to Round Robin for the first request.
+         * @param method (Updatable) An HTTP verb (i.e. HEAD, GET, or POST) to use when performing the health check.
          * 
          * @return builder
          * 

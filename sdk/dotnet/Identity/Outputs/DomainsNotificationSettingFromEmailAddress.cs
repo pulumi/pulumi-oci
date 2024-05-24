@@ -55,17 +55,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? ValidationStatus;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) Value of the From email address
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
         /// * type: string
-        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

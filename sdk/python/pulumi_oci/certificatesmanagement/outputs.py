@@ -728,8 +728,8 @@ class CertificateAuthorityCurrentVersion(dict):
         :param Sequence[str] stages: A list of rotation states for this CA version.
         :param str time_created: A property indicating when the CA was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_deletion: An optional property indicating when to delete the CA version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param Sequence['CertificateAuthorityCurrentVersionValidityArgs'] validities: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
-        :param str version_name: (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+        :param Sequence['CertificateAuthorityCurrentVersionValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        :param str version_name: The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         :param str version_number: The version number of the CA.
         """
         if certificate_authority_id is not None:
@@ -813,7 +813,7 @@ class CertificateAuthorityCurrentVersion(dict):
     @pulumi.getter
     def validities(self) -> Optional[Sequence['outputs.CertificateAuthorityCurrentVersionValidity']]:
         """
-        (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         """
         return pulumi.get(self, "validities")
 
@@ -821,7 +821,7 @@ class CertificateAuthorityCurrentVersion(dict):
     @pulumi.getter(name="versionName")
     def version_name(self) -> Optional[str]:
         """
-        (Updatable) The name of the CA version. When the value is not null, a name is unique across versions of a given CA.
+        The name of the CA version. When this value is not null, the name is unique across CA versions for a given CA.
         """
         return pulumi.get(self, "version_name")
 
@@ -909,8 +909,8 @@ class CertificateAuthorityCurrentVersionValidity(dict):
                  time_of_validity_not_after: Optional[str] = None,
                  time_of_validity_not_before: Optional[str] = None):
         """
-        :param str time_of_validity_not_after: (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str time_of_validity_not_before: (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         if time_of_validity_not_after is not None:
             pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
@@ -921,7 +921,7 @@ class CertificateAuthorityCurrentVersionValidity(dict):
     @pulumi.getter(name="timeOfValidityNotAfter")
     def time_of_validity_not_after(self) -> Optional[str]:
         """
-        (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_validity_not_after")
 
@@ -929,7 +929,7 @@ class CertificateAuthorityCurrentVersionValidity(dict):
     @pulumi.getter(name="timeOfValidityNotBefore")
     def time_of_validity_not_before(self) -> Optional[str]:
         """
-        (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_validity_not_before")
 
@@ -1891,8 +1891,8 @@ class CertificateCurrentVersion(dict):
         :param Sequence['CertificateCurrentVersionSubjectAlternativeNameArgs'] subject_alternative_names: A list of subject alternative names.
         :param str time_created: A property indicating when the certificate was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         :param str time_of_deletion: An optional property indicating when to delete the certificate version, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param Sequence['CertificateCurrentVersionValidityArgs'] validities: (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
-        :param str version_name: (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+        :param Sequence['CertificateCurrentVersionValidityArgs'] validities: An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        :param str version_name: The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         :param str version_number: The version number of the certificate.
         """
         if certificate_id is not None:
@@ -1986,7 +1986,7 @@ class CertificateCurrentVersion(dict):
     @pulumi.getter
     def validities(self) -> Optional[Sequence['outputs.CertificateCurrentVersionValidity']]:
         """
-        (Updatable) An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
+        An object that describes a period of time during which an entity is valid. If this is not provided when you create a certificate, the validity of the issuing CA is used.
         """
         return pulumi.get(self, "validities")
 
@@ -1994,7 +1994,7 @@ class CertificateCurrentVersion(dict):
     @pulumi.getter(name="versionName")
     def version_name(self) -> Optional[str]:
         """
-        (Updatable) A name for the certificate. When the value is not null, a name is unique across versions of a given certificate.
+        The name of the certificate version. When the value is not null, a name is unique across versions of a given certificate.
         """
         return pulumi.get(self, "version_name")
 
@@ -2113,8 +2113,8 @@ class CertificateCurrentVersionValidity(dict):
                  time_of_validity_not_after: Optional[str] = None,
                  time_of_validity_not_before: Optional[str] = None):
         """
-        :param str time_of_validity_not_after: (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
-        :param str time_of_validity_not_before: (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param str time_of_validity_not_after: The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        :param str time_of_validity_not_before: The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         if time_of_validity_not_after is not None:
             pulumi.set(__self__, "time_of_validity_not_after", time_of_validity_not_after)
@@ -2125,7 +2125,7 @@ class CertificateCurrentVersionValidity(dict):
     @pulumi.getter(name="timeOfValidityNotAfter")
     def time_of_validity_not_after(self) -> Optional[str]:
         """
-        (Updatable) The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        The date on which the certificate validity period ends, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_validity_not_after")
 
@@ -2133,7 +2133,7 @@ class CertificateCurrentVersionValidity(dict):
     @pulumi.getter(name="timeOfValidityNotBefore")
     def time_of_validity_not_before(self) -> Optional[str]:
         """
-        (Updatable) The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
+        The date on which the certificate validity period begins, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2019-04-03T21:10:29.600Z`
         """
         return pulumi.get(self, "time_of_validity_not_before")
 

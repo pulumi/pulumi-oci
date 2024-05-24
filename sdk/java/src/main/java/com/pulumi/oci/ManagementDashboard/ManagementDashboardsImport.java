@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagementDashboardsImport = new ManagementDashboardsImport("testManagementDashboardsImport", ManagementDashboardsImportArgs.builder()        
+ *         var testManagementDashboardsImport = new ManagementDashboardsImport("testManagementDashboardsImport", ManagementDashboardsImportArgs.builder()
  *             .importDetails(sampleImportDetails)
  *             .importDetailsFile(sampleImportDetailsFilePath)
  *             .build());

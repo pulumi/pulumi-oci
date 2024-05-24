@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Sch.Outputs
         /// </summary>
         public readonly Outputs.ConnectorSourceCursor? Cursor;
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type discriminator.
         /// </summary>
         public readonly string Kind;
         /// <summary>

@@ -125,15 +125,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     }
 
     /**
-     * (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
-     * 
-     * **Added In:** 20.1.3
+     * (Updatable) Indicates that the password has expired
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: request
      * * type: boolean
@@ -144,15 +141,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     private @Nullable Output<Boolean> expired;
 
     /**
-     * @return (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
-     * 
-     * **Added In:** 20.1.3
+     * @return (Updatable) Indicates that the password has expired
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: request
      * * type: boolean
@@ -460,15 +454,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param expired (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
-         * 
-         * **Added In:** 20.1.3
+         * @param expired (Updatable) Indicates that the password has expired
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: request
          * * type: boolean
@@ -483,15 +474,12 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param expired (Updatable) Indicates whether the user password is expired. If this value is false, password expiry is still evaluated during user login.
-         * 
-         * **Added In:** 20.1.3
+         * @param expired (Updatable) Indicates that the password has expired
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: request
          * * type: boolean

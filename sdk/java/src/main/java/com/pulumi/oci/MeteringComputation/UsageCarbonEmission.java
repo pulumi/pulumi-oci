@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testUsageCarbonEmission = new UsageCarbonEmission("testUsageCarbonEmission", UsageCarbonEmissionArgs.builder()        
+ *         var testUsageCarbonEmission = new UsageCarbonEmission("testUsageCarbonEmission", UsageCarbonEmissionArgs.builder()
  *             .tenantId(testTenant.id())
  *             .timeUsageEnded(usageCarbonEmissionTimeUsageEnded)
  *             .timeUsageStarted(usageCarbonEmissionTimeUsageStarted)

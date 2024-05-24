@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()        
+ *         var testConnection = new Connection("testConnection", ConnectionArgs.builder()
  *             .connectionType(connectionConnectionType)
  *             .projectId(testProject.id())
  *             .accessToken(connectionAccessToken)

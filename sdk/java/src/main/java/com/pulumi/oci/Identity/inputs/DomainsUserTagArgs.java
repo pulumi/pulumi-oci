@@ -15,17 +15,15 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
     public static final DomainsUserTagArgs Empty = new DomainsUserTagArgs();
 
     /**
-     * (Updatable) The user&#39;s API key value.
-     * 
-     * **Added In:** 2106240046
+     * (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -34,17 +32,15 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
     private Output<String> key;
 
     /**
-     * @return (Updatable) The user&#39;s API key value.
-     * 
-     * **Added In:** 2106240046
+     * @return (Updatable) Key or name of the tag.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readOnly
-     * * required: false
-     * * returned: always
+     * * mutability: readWrite
+     * * required: true
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -54,38 +50,34 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) Value of the tag.
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -118,17 +110,15 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) The user&#39;s API key value.
-         * 
-         * **Added In:** 2106240046
+         * @param key (Updatable) Key or name of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: always
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -141,17 +131,15 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param key (Updatable) The user&#39;s API key value.
-         * 
-         * **Added In:** 2106240046
+         * @param key (Updatable) Key or name of the tag.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readOnly
-         * * required: false
-         * * returned: always
+         * * mutability: readWrite
+         * * required: true
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -163,19 +151,17 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -186,19 +172,17 @@ public final class DomainsUserTagArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) Value of the tag.
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -49,7 +49,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testExternalExadataInfrastructureExadataManagement = new ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement", ExternalExadataInfrastructureExadataManagementArgs.builder()        
+ *         var testExternalExadataInfrastructureExadataManagement = new ExternalExadataInfrastructureExadataManagement("testExternalExadataInfrastructureExadataManagement", ExternalExadataInfrastructureExadataManagementArgs.builder()
  *             .externalExadataInfrastructureId(testExternalExadataInfrastructure.id())
  *             .enableExadata(enableExadata)
  *             .licenseModel(externalExadataInfrastructureExadataManagementLicenseModel)

@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<int>? MaxIdleTimeInMinutes { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the day of the week.
+        /// (Updatable) Name of database tool.
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

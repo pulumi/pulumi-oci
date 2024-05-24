@@ -43,6 +43,8 @@ class VtapArgs:
         :param pulumi.Input[str] encapsulation_protocol: (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_vtap_enabled: (Updatable) Used to start or stop a `Vtap` resource.
+               * `TRUE` directs the VTAP to start mirroring traffic.
+               * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         :param pulumi.Input[int] max_packet_size: (Updatable) The maximum size of the packets to be included in the filter.
         :param pulumi.Input[str] source_private_endpoint_ip: (Updatable) The IP Address of the source private endpoint.
         :param pulumi.Input[str] source_private_endpoint_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet that source private endpoint belongs to.
@@ -191,6 +193,8 @@ class VtapArgs:
     def is_vtap_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Used to start or stop a `Vtap` resource.
+        * `TRUE` directs the VTAP to start mirroring traffic.
+        * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         """
         return pulumi.get(self, "is_vtap_enabled")
 
@@ -344,6 +348,8 @@ class _VtapState:
         :param pulumi.Input[str] encapsulation_protocol: (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_vtap_enabled: (Updatable) Used to start or stop a `Vtap` resource.
+               * `TRUE` directs the VTAP to start mirroring traffic.
+               * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         :param pulumi.Input[str] lifecycle_state_details: The VTAP's current running state.
         :param pulumi.Input[int] max_packet_size: (Updatable) The maximum size of the packets to be included in the filter.
         :param pulumi.Input[str] source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
@@ -483,6 +489,8 @@ class _VtapState:
     def is_vtap_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) Used to start or stop a `Vtap` resource.
+        * `TRUE` directs the VTAP to start mirroring traffic.
+        * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         """
         return pulumi.get(self, "is_vtap_enabled")
 
@@ -748,6 +756,8 @@ class Vtap(pulumi.CustomResource):
         :param pulumi.Input[str] encapsulation_protocol: (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_vtap_enabled: (Updatable) Used to start or stop a `Vtap` resource.
+               * `TRUE` directs the VTAP to start mirroring traffic.
+               * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         :param pulumi.Input[int] max_packet_size: (Updatable) The maximum size of the packets to be included in the filter.
         :param pulumi.Input[str] source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
         :param pulumi.Input[str] source_private_endpoint_ip: (Updatable) The IP Address of the source private endpoint.
@@ -938,6 +948,8 @@ class Vtap(pulumi.CustomResource):
         :param pulumi.Input[str] encapsulation_protocol: (Updatable) Defines an encapsulation header type for the VTAP's mirrored traffic.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param pulumi.Input[bool] is_vtap_enabled: (Updatable) Used to start or stop a `Vtap` resource.
+               * `TRUE` directs the VTAP to start mirroring traffic.
+               * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         :param pulumi.Input[str] lifecycle_state_details: The VTAP's current running state.
         :param pulumi.Input[int] max_packet_size: (Updatable) The maximum size of the packets to be included in the filter.
         :param pulumi.Input[str] source_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the source point where packets are captured.
@@ -1037,6 +1049,8 @@ class Vtap(pulumi.CustomResource):
     def is_vtap_enabled(self) -> pulumi.Output[bool]:
         """
         (Updatable) Used to start or stop a `Vtap` resource.
+        * `TRUE` directs the VTAP to start mirroring traffic.
+        * `FALSE` (Default) directs the VTAP to stop mirroring traffic.
         """
         return pulumi.get(self, "is_vtap_enabled")
 

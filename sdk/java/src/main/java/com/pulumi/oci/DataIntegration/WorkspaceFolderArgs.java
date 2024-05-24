@@ -71,14 +71,14 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Currently not used on folder creation. Reserved for future.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Currently not used on folder creation. Reserved for future.
      * 
      */
     public Optional<Output<String>> key() {
@@ -272,7 +272,7 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Currently not used on folder creation. Reserved for future.
          * 
          * @return builder
          * 
@@ -283,7 +283,7 @@ public final class WorkspaceFolderArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param key (Updatable) The identifying key for the object.
+         * @param key (Updatable) Currently not used on folder creation. Reserved for future.
          * 
          * @return builder
          * 

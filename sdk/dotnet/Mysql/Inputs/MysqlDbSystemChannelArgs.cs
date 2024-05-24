@@ -55,7 +55,7 @@ namespace Pulumi.Oci.Mysql.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// (Updatable) Specifies if PITR is enabled or disabled.
+        /// Whether the Channel has been enabled by the user.
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }

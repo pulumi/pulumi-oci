@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Core.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// The type of action to run when the instance is interrupted for eviction.
+        /// The type can be one of these values: `volume`, `volumeBackup`
         /// </summary>
         public readonly string Type;
 

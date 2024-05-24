@@ -62,7 +62,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()        
+ *         var testDatabaseUpgrade = new DatabaseUpgrade("testDatabaseUpgrade", DatabaseUpgradeArgs.builder()
  *             .action(databaseUpgradeAction)
  *             .databaseId(testDatabase.id())
  *             .databaseUpgradeSourceDetails(DatabaseUpgradeDatabaseUpgradeSourceDetailsArgs.builder()
@@ -158,14 +158,14 @@ public class DatabaseUpgrade extends com.pulumi.resources.CustomResource {
         return this.databaseId;
     }
     /**
-     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     @Export(name="databaseSoftwareImageId", refs={String.class}, tree="[0]")
     private Output<String> databaseSoftwareImageId;
 
     /**
-     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the image to be used to upgrade a database.
+     * @return The database software image [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * 
      */
     public Output<String> databaseSoftwareImageId() {

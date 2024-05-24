@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testConfiguration = new Configuration("testConfiguration", ConfigurationArgs.builder()        
+ *         var testConfiguration = new Configuration("testConfiguration", ConfigurationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .dbConfigurationOverrides(ConfigurationDbConfigurationOverridesArgs.builder()
  *                 .items(ConfigurationDbConfigurationOverridesItemArgs.builder()

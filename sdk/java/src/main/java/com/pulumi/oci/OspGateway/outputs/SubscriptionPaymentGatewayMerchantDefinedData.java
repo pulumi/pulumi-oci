@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SubscriptionPaymentGatewayMerchantDefinedData {
     /**
-     * @return (Updatable) Cloud account name.
+     * @return Cloud account name.
      * 
      */
     private @Nullable String cloudAccountName;
     /**
-     * @return (Updatable) Promotion type code.
+     * @return Promotion type code.
      * 
      */
     private @Nullable String promoType;
 
     private SubscriptionPaymentGatewayMerchantDefinedData() {}
     /**
-     * @return (Updatable) Cloud account name.
+     * @return Cloud account name.
      * 
      */
     public Optional<String> cloudAccountName() {
         return Optional.ofNullable(this.cloudAccountName);
     }
     /**
-     * @return (Updatable) Promotion type code.
+     * @return Promotion type code.
      * 
      */
     public Optional<String> promoType() {

@@ -48,15 +48,15 @@ export class Subscription extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Account type.
+     * Account type.
      */
     public /*out*/ readonly accountType!: pulumi.Output<string>;
     /**
-     * (Updatable) Bill to customer Account id.
+     * Bill to customer Account id.
      */
     public /*out*/ readonly billToCustAccountId!: pulumi.Output<string>;
     /**
-     * (Updatable) Address details model.
+     * Address details model.
      */
     public /*out*/ readonly billingAddresses!: pulumi.Output<outputs.OspGateway.SubscriptionBillingAddress[]>;
     /**
@@ -64,7 +64,7 @@ export class Subscription extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) Currency code
+     * Currency code
      */
     public /*out*/ readonly currencyCode!: pulumi.Output<string>;
     /**
@@ -72,19 +72,19 @@ export class Subscription extends pulumi.CustomResource {
      */
     public readonly email!: pulumi.Output<string>;
     /**
-     * (Updatable) GSI Subscription external code.
+     * GSI Subscription external code.
      */
     public /*out*/ readonly gsiOrgCode!: pulumi.Output<string>;
     /**
-     * (Updatable) Payment intension.
+     * Payment intension.
      */
     public /*out*/ readonly isIntentToPay!: pulumi.Output<boolean>;
     /**
-     * (Updatable) Language short code (en, de, hu, etc)
+     * Language short code (en, de, hu, etc)
      */
     public /*out*/ readonly languageCode!: pulumi.Output<string>;
     /**
-     * (Updatable) GSI organization external identifier.
+     * GSI organization external identifier.
      */
     public /*out*/ readonly organizationId!: pulumi.Output<string>;
     /**
@@ -92,23 +92,23 @@ export class Subscription extends pulumi.CustomResource {
      */
     public readonly ospHomeRegion!: pulumi.Output<string>;
     /**
-     * (Updatable) Payment gateway details.
+     * Payment gateway details.
      */
     public /*out*/ readonly paymentGateways!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentGateway[]>;
     /**
-     * (Updatable) Payment option list of a subscription.
+     * Payment option list of a subscription.
      */
     public /*out*/ readonly paymentOptions!: pulumi.Output<outputs.OspGateway.SubscriptionPaymentOption[]>;
     /**
-     * (Updatable) Subscription plan type.
+     * Subscription plan type.
      */
     public /*out*/ readonly planType!: pulumi.Output<string>;
     /**
-     * (Updatable) Ship to customer account role.
+     * Ship to customer account role.
      */
     public /*out*/ readonly shipToCustAcctRoleId!: pulumi.Output<string>;
     /**
-     * (Updatable) Ship to customer account site address id.
+     * Ship to customer account site address id.
      */
     public /*out*/ readonly shipToCustAcctSiteId!: pulumi.Output<string>;
     /**
@@ -124,31 +124,31 @@ export class Subscription extends pulumi.CustomResource {
      */
     public readonly subscriptionId!: pulumi.Output<string>;
     /**
-     * (Updatable) Subscription plan number.
+     * Subscription plan number.
      */
     public /*out*/ readonly subscriptionPlanNumber!: pulumi.Output<string>;
     /**
-     * (Updatable) Tax details.
+     * Tax details.
      */
     public /*out*/ readonly taxInfos!: pulumi.Output<outputs.OspGateway.SubscriptionTaxInfo[]>;
     /**
-     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      */
     public /*out*/ readonly timePersonalToCorporateConv!: pulumi.Output<string>;
     /**
-     * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
     public /*out*/ readonly timePlanUpgrade!: pulumi.Output<string>;
     /**
-     * (Updatable) Start date of the subscription.
+     * Start date of the subscription.
      */
     public /*out*/ readonly timeStart!: pulumi.Output<string>;
     /**
-     * (Updatable) Status of the upgrade.
+     * Status of the upgrade.
      */
     public /*out*/ readonly upgradeState!: pulumi.Output<string>;
     /**
-     * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      */
     public /*out*/ readonly upgradeStateDetails!: pulumi.Output<string>;
 
@@ -243,15 +243,15 @@ export class Subscription extends pulumi.CustomResource {
  */
 export interface SubscriptionState {
     /**
-     * (Updatable) Account type.
+     * Account type.
      */
     accountType?: pulumi.Input<string>;
     /**
-     * (Updatable) Bill to customer Account id.
+     * Bill to customer Account id.
      */
     billToCustAccountId?: pulumi.Input<string>;
     /**
-     * (Updatable) Address details model.
+     * Address details model.
      */
     billingAddresses?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionBillingAddress>[]>;
     /**
@@ -259,7 +259,7 @@ export interface SubscriptionState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) Currency code
+     * Currency code
      */
     currencyCode?: pulumi.Input<string>;
     /**
@@ -267,19 +267,19 @@ export interface SubscriptionState {
      */
     email?: pulumi.Input<string>;
     /**
-     * (Updatable) GSI Subscription external code.
+     * GSI Subscription external code.
      */
     gsiOrgCode?: pulumi.Input<string>;
     /**
-     * (Updatable) Payment intension.
+     * Payment intension.
      */
     isIntentToPay?: pulumi.Input<boolean>;
     /**
-     * (Updatable) Language short code (en, de, hu, etc)
+     * Language short code (en, de, hu, etc)
      */
     languageCode?: pulumi.Input<string>;
     /**
-     * (Updatable) GSI organization external identifier.
+     * GSI organization external identifier.
      */
     organizationId?: pulumi.Input<string>;
     /**
@@ -287,23 +287,23 @@ export interface SubscriptionState {
      */
     ospHomeRegion?: pulumi.Input<string>;
     /**
-     * (Updatable) Payment gateway details.
+     * Payment gateway details.
      */
     paymentGateways?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionPaymentGateway>[]>;
     /**
-     * (Updatable) Payment option list of a subscription.
+     * Payment option list of a subscription.
      */
     paymentOptions?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionPaymentOption>[]>;
     /**
-     * (Updatable) Subscription plan type.
+     * Subscription plan type.
      */
     planType?: pulumi.Input<string>;
     /**
-     * (Updatable) Ship to customer account role.
+     * Ship to customer account role.
      */
     shipToCustAcctRoleId?: pulumi.Input<string>;
     /**
-     * (Updatable) Ship to customer account site address id.
+     * Ship to customer account site address id.
      */
     shipToCustAcctSiteId?: pulumi.Input<string>;
     /**
@@ -319,31 +319,31 @@ export interface SubscriptionState {
      */
     subscriptionId?: pulumi.Input<string>;
     /**
-     * (Updatable) Subscription plan number.
+     * Subscription plan number.
      */
     subscriptionPlanNumber?: pulumi.Input<string>;
     /**
-     * (Updatable) Tax details.
+     * Tax details.
      */
     taxInfos?: pulumi.Input<pulumi.Input<inputs.OspGateway.SubscriptionTaxInfo>[]>;
     /**
-     * (Updatable) Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
+     * Date of upgrade/conversion when account type changed from PERSONAL to CORPORATE
      */
     timePersonalToCorporateConv?: pulumi.Input<string>;
     /**
-     * (Updatable) Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
+     * Date of upgrade/conversion when planType changed from FREE_TIER to PAYG
      */
     timePlanUpgrade?: pulumi.Input<string>;
     /**
-     * (Updatable) Start date of the subscription.
+     * Start date of the subscription.
      */
     timeStart?: pulumi.Input<string>;
     /**
-     * (Updatable) Status of the upgrade.
+     * Status of the upgrade.
      */
     upgradeState?: pulumi.Input<string>;
     /**
-     * (Updatable) This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
+     * This field is used to describe the Upgrade State in case of error (E.g. Upgrade failure caused by interfacing Tax details- TaxError)
      */
     upgradeStateDetails?: pulumi.Input<string>;
 }

@@ -20,14 +20,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     public static final TargetTargetResponderRecipeArgs Empty = new TargetTargetResponderRecipeArgs();
 
     /**
-     * (Updatable) compartment associated with condition
+     * Compartment Identifier where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return Compartment Identifier where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -211,7 +211,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId (Updatable) compartment associated with condition
+         * @param compartmentId Compartment Identifier where the resource is created
          * 
          * @return builder
          * 

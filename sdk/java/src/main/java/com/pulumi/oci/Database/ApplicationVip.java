@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testApplicationVip = new ApplicationVip("testApplicationVip", ApplicationVipArgs.builder()        
+ *         var testApplicationVip = new ApplicationVip("testApplicationVip", ApplicationVipArgs.builder()
  *             .cloudVmClusterId(testCloudVmCluster.id())
  *             .hostnameLabel(applicationVipHostnameLabel)
  *             .subnetId(testSubnet.id())

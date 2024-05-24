@@ -38,7 +38,7 @@ class ConfigArgs:
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the metric.
+        :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
         :param pulumi.Input[str] filter_text: (Updatable) The string that defines the Span Filter expression.
@@ -133,7 +133,7 @@ class ConfigArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A description of the metric.
+        (Updatable) An optional string that describes what the options are intended or used for.
         """
         return pulumi.get(self, "description")
 
@@ -304,7 +304,7 @@ class _ConfigState:
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the metric.
+        :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigDimensionArgs']]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
@@ -417,7 +417,7 @@ class _ConfigState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A description of the metric.
+        (Updatable) An optional string that describes what the options are intended or used for.
         """
         return pulumi.get(self, "description")
 
@@ -702,7 +702,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] apm_domain_id: (Updatable) The APM Domain ID the request is intended for.
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the metric.
+        :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigDimensionArgs']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[str] filter_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a Span Filter. The filterId is mandatory for the creation of MetricGroups. A filterId is generated when a Span Filter is created.
@@ -888,7 +888,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] config_type: (Updatable) The type of configuration item.
         :param pulumi.Input[str] created_by: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a user.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: (Updatable) A description of the metric.
+        :param pulumi.Input[str] description: (Updatable) An optional string that describes what the options are intended or used for.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigDimensionArgs']]]] dimensions: (Updatable) A list of dimensions for the metric. This variable should not be used.
         :param pulumi.Input[str] display_name: (Updatable) The name by which a configuration entity is displayed to the end user.
         :param pulumi.Input[str] etag: For optimistic concurrency control. See `if-match`.
@@ -969,7 +969,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        (Updatable) A description of the metric.
+        (Updatable) An optional string that describes what the options are intended or used for.
         """
         return pulumi.get(self, "description")
 

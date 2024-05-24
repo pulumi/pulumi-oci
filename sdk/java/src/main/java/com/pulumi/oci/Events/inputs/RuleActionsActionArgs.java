@@ -39,14 +39,14 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * @return (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -84,20 +84,14 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Whether or not this rule is currently enabled.  Example: `true`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) Whether or not this action is currently enabled.  Example: `true`
      * 
      */
     @Import(name="isEnabled", required=true)
     private Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Whether or not this rule is currently enabled.  Example: `true`
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) Whether or not this action is currently enabled.  Example: `true`
      * 
      */
     public Output<Boolean> isEnabled() {
@@ -224,7 +218,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+         * @param description (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -235,7 +229,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param description (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+         * @param description (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -287,10 +281,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param isEnabled (Updatable) Whether or not this rule is currently enabled.  Example: `true`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param isEnabled (Updatable) Whether or not this action is currently enabled.  Example: `true`
          * 
          * @return builder
          * 
@@ -301,10 +292,7 @@ public final class RuleActionsActionArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param isEnabled (Updatable) Whether or not this rule is currently enabled.  Example: `true`
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param isEnabled (Updatable) Whether or not this action is currently enabled.  Example: `true`
          * 
          * @return builder
          * 

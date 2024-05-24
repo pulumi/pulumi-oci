@@ -52,7 +52,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVolumeBackup = new VolumeBackup("testVolumeBackup", VolumeBackupArgs.builder()        
+ *         var testVolumeBackup = new VolumeBackup("testVolumeBackup", VolumeBackupArgs.builder()
  *             .volumeId(testVolume.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(volumeBackupDisplayName)

@@ -34,14 +34,14 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
     }
 
     /**
-     * (Updatable) The name of the substitution column.
+     * The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      * 
      */
     @Import(name="columnName")
     private @Nullable Output<String> columnName;
 
     /**
-     * @return (Updatable) The name of the substitution column.
+     * @return The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
      * 
      */
     public Optional<Output<String>> columnName() {
@@ -335,7 +335,7 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
         }
 
         /**
-         * @param columnName (Updatable) The name of the substitution column.
+         * @param columnName The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
          * 
          * @return builder
          * 
@@ -346,7 +346,7 @@ public final class MaskingPoliciesMaskingColumnState extends com.pulumi.resource
         }
 
         /**
-         * @param columnName (Updatable) The name of the substitution column.
+         * @param columnName The name of the database column. This attribute cannot be updated for an existing  masking column. Note that the same name is used for the masking column. There  is no separate displayName attribute for the masking column.
          * 
          * @return builder
          * 

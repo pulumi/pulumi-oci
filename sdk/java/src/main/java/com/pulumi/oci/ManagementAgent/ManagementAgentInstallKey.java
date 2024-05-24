@@ -45,7 +45,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagementAgentInstallKey = new ManagementAgentInstallKey("testManagementAgentInstallKey", ManagementAgentInstallKeyArgs.builder()        
+ *         var testManagementAgentInstallKey = new ManagementAgentInstallKey("testManagementAgentInstallKey", ManagementAgentInstallKeyArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(managementAgentInstallKeyDisplayName)
  *             .allowedKeyInstallCount(managementAgentInstallKeyAllowedKeyInstallCount)

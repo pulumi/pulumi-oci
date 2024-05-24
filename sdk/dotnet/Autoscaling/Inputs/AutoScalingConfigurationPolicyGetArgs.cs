@@ -18,6 +18,9 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         [Input("capacity")]
         public Input<Inputs.AutoScalingConfigurationPolicyCapacityGetArgs>? Capacity { get; set; }
 
+        /// <summary>
+        /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
@@ -28,7 +31,7 @@ namespace Pulumi.Oci.Autoscaling.Inputs
         public Input<Inputs.AutoScalingConfigurationPolicyExecutionScheduleGetArgs>? ExecutionSchedule { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource that is managed by the autoscaling configuration.
+        /// ID of the condition that is assigned after creation.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

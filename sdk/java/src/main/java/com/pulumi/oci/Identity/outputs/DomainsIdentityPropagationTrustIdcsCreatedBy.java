@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsIdentityPropagationTrustIdcsCreatedBy {
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -28,47 +28,43 @@ public final class DomainsIdentityPropagationTrustIdcsCreatedBy {
      */
     private @Nullable String display;
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     private @Nullable String ref;
     /**
-     * @return (Updatable) The type of the inbound token from the Identity cloud provider.
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: false
-     * * required: true
-     * * mutability: readWrite
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
-     * * multiValued: false
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private @Nullable String type;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -79,7 +75,7 @@ public final class DomainsIdentityPropagationTrustIdcsCreatedBy {
 
     private DomainsIdentityPropagationTrustIdcsCreatedBy() {}
     /**
-     * @return (Updatable) The displayName of the User or App who modified this Resource
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -96,17 +92,16 @@ public final class DomainsIdentityPropagationTrustIdcsCreatedBy {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: immutable
-     * * required: false
+     * * mutability: readOnly
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
@@ -116,33 +111,30 @@ public final class DomainsIdentityPropagationTrustIdcsCreatedBy {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) The type of the inbound token from the Identity cloud provider.
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
+     * * caseExact: false
      * * idcsSearchable: false
-     * * required: true
-     * * mutability: readWrite
+     * * multiValued: false
+     * * mutability: readOnly
+     * * required: false
      * * returned: default
      * * type: string
-     * * multiValued: false
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string

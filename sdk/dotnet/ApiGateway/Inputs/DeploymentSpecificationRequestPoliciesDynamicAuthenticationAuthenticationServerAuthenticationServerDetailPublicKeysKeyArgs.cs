@@ -31,7 +31,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<string> Format { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Information around the values for selector of an authentication/ routing branch.
+        /// (Updatable) The content of the PEM-encoded public key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

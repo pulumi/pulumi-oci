@@ -23,7 +23,7 @@ public final class ConnectionConnectDescriptor {
      */
     private @Nullable String databaseServiceName;
     /**
-     * @return (Updatable) Name of the host the SSH key is valid for.
+     * @return (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
      * 
      */
     private @Nullable String host;
@@ -49,7 +49,7 @@ public final class ConnectionConnectDescriptor {
         return Optional.ofNullable(this.databaseServiceName);
     }
     /**
-     * @return (Updatable) Name of the host the SSH key is valid for.
+     * @return (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
      * 
      */
     public Optional<String> host() {

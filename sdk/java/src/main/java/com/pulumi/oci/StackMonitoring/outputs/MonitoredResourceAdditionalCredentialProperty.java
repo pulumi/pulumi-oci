@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class MonitoredResourceAdditionalCredentialProperty {
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the credential property, should confirm with names of properties of this credential&#39;s type.  Example: For JMXCreds type, credential property name for weblogic user is &#39;Username&#39;.
      * 
      */
     private @Nullable String name;
     /**
-     * @return (Updatable) Property Value.
+     * @return (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for &#39;Username&#39; property is &#39;weblogic&#39;.
      * 
      */
     private @Nullable String value;
 
     private MonitoredResourceAdditionalCredentialProperty() {}
     /**
-     * @return (Updatable) Property Name.
+     * @return (Updatable) The name of the credential property, should confirm with names of properties of this credential&#39;s type.  Example: For JMXCreds type, credential property name for weblogic user is &#39;Username&#39;.
      * 
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
     /**
-     * @return (Updatable) Property Value.
+     * @return (Updatable) The value of the credential property name. Example: For JMXCreds type, credential property value for &#39;Username&#39; property is &#39;weblogic&#39;.
      * 
      */
     public Optional<String> value() {

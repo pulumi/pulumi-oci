@@ -16,14 +16,14 @@ public final class AppFirewallPolicyActionHeaderArgs extends com.pulumi.resource
     public static final AppFirewallPolicyActionHeaderArgs Empty = new AppFirewallPolicyActionHeaderArgs();
 
     /**
-     * (Updatable) Rule name. Must be unique within the module.
+     * (Updatable) The name of the header field.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return (Updatable) Rule name. Must be unique within the module.
+     * @return (Updatable) The name of the header field.
      * 
      */
     public Optional<Output<String>> name() {
@@ -71,7 +71,7 @@ public final class AppFirewallPolicyActionHeaderArgs extends com.pulumi.resource
         }
 
         /**
-         * @param name (Updatable) Rule name. Must be unique within the module.
+         * @param name (Updatable) The name of the header field.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AppFirewallPolicyActionHeaderArgs extends com.pulumi.resource
         }
 
         /**
-         * @param name (Updatable) Rule name. Must be unique within the module.
+         * @param name (Updatable) The name of the header field.
          * 
          * @return builder
          * 

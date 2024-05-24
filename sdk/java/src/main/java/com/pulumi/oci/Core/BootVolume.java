@@ -57,7 +57,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testBootVolume = new BootVolume("testBootVolume", BootVolumeArgs.builder()        
+ *         var testBootVolume = new BootVolume("testBootVolume", BootVolumeArgs.builder()
  *             .compartmentId(compartmentId)
  *             .sourceDetails(BootVolumeSourceDetailsArgs.builder()
  *                 .id(bootVolumeSourceDetailsId)
@@ -130,14 +130,14 @@ public class BootVolume extends com.pulumi.resources.CustomResource {
         return this.autotunePolicies;
     }
     /**
-     * (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+     * The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     @Export(name="availabilityDomain", refs={String.class}, tree="[0]")
     private Output<String> availabilityDomain;
 
     /**
-     * @return (Updatable) The availability domain of the boot volume replica.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the volume. Omissible for cloning a volume. The new volume will be created in the availability domain of the source volume.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public Output<String> availabilityDomain() {

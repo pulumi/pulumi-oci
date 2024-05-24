@@ -223,14 +223,14 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
     }
 
     /**
-     * (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+     * (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
      * 
      * **Added In:** 17.4.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: boolean
@@ -241,14 +241,14 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
     private @Nullable Output<Boolean> syncFromTemplate;
 
     /**
-     * @return (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+     * @return (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
      * 
      * **Added In:** 17.4.2
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: true
+     * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: boolean
@@ -623,14 +623,14 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
         }
 
         /**
-         * @param syncFromTemplate (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+         * @param syncFromTemplate (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
          * 
          * **Added In:** 17.4.2
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: boolean
@@ -645,14 +645,14 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionformFill
         }
 
         /**
-         * @param syncFromTemplate (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate disabled inheritance for these Form-Fill-related attributes.
+         * @param syncFromTemplate (Updatable) If true, indicates that each of the Form-Fill-related attributes that can be inherited from the template actually will be inherited from the template. If false, indicates that the AppTemplate on which this App is based has disabled inheritance for these Form-Fill-related attributes.
          * 
          * **Added In:** 17.4.2
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: true
+         * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: boolean

@@ -19,7 +19,7 @@ namespace Pulumi.Oci.OsManagementHub.Inputs
         public Input<string> Directory { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Listening port used for the proxy.
+        /// (Updatable) Default mirror listening port for http.
         /// </summary>
         [Input("port", required: true)]
         public Input<string> Port { get; set; } = null!;

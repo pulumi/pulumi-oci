@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testLogAnalyticsPreferencesManagement = new LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", LogAnalyticsPreferencesManagementArgs.builder()        
+ *         var testLogAnalyticsPreferencesManagement = new LogAnalyticsPreferencesManagement("testLogAnalyticsPreferencesManagement", LogAnalyticsPreferencesManagementArgs.builder()
  *             .namespace(logAnalyticsPreferencesManagementNamespace)
  *             .items(LogAnalyticsPreferencesManagementItemArgs.builder()
  *                 .name(logAnalyticsPreferencesManagementItemsName)

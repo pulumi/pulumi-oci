@@ -177,15 +177,15 @@ type ContainerInstance struct {
 	ContainerRestartPolicy pulumi.StringOutput `pulumi:"containerRestartPolicy"`
 	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayOutput `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig ContainerInstanceDnsConfigOutput `pulumi:"dnsConfig"`
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringOutput `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringOutput `pulumi:"gracefulShutdownTimeoutInSeconds"`
@@ -276,15 +276,15 @@ type containerInstanceState struct {
 	ContainerRestartPolicy *string `pulumi:"containerRestartPolicy"`
 	// The containers to create on this container instance.
 	Containers []ContainerInstanceContainer `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName *string `pulumi:"displayName"`
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig *ContainerInstanceDnsConfig `pulumi:"dnsConfig"`
 	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
@@ -328,15 +328,15 @@ type ContainerInstanceState struct {
 	ContainerRestartPolicy pulumi.StringPtrInput
 	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringPtrInput
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig ContainerInstanceDnsConfigPtrInput
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
@@ -382,15 +382,15 @@ type containerInstanceArgs struct {
 	ContainerRestartPolicy *string `pulumi:"containerRestartPolicy"`
 	// The containers to create on this container instance.
 	Containers []ContainerInstanceContainer `pulumi:"containers"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName *string `pulumi:"displayName"`
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig *ContainerInstanceDnsConfig `pulumi:"dnsConfig"`
 	// The fault domain where the container instance runs.
 	FaultDomain *string `pulumi:"faultDomain"`
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds *string `pulumi:"gracefulShutdownTimeoutInSeconds"`
@@ -423,15 +423,15 @@ type ContainerInstanceArgs struct {
 	ContainerRestartPolicy pulumi.StringPtrInput
 	// The containers to create on this container instance.
 	Containers ContainerInstanceContainerArrayInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 	DefinedTags pulumi.MapInput
-	// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+	// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 	DisplayName pulumi.StringPtrInput
 	// Allow customers to define DNS settings for containers. If this is not provided, the containers use the default DNS settings of the subnet.
 	DnsConfig ContainerInstanceDnsConfigPtrInput
 	// The fault domain where the container instance runs.
 	FaultDomain pulumi.StringPtrInput
-	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// The amount of time that processes in a container have to gracefully end when the container must be stopped. For example, when you delete a container instance. After the timeout is reached, the processes are sent a signal to be deleted.
 	GracefulShutdownTimeoutInSeconds pulumi.StringPtrInput
@@ -566,12 +566,12 @@ func (o ContainerInstanceOutput) Containers() ContainerInstanceContainerArrayOut
 	return o.ApplyT(func(v *ContainerInstance) ContainerInstanceContainerArrayOutput { return v.Containers }).(ContainerInstanceContainerArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`.
 func (o ContainerInstanceOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// A user-friendly name for the VNIC. Does not have to be unique. Avoid entering confidential information.
+// (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information. If you don't provide a name, a name is generated automatically.
 func (o ContainerInstanceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -586,7 +586,7 @@ func (o ContainerInstanceOutput) FaultDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.StringOutput { return v.FaultDomain }).(pulumi.StringOutput)
 }
 
-// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 func (o ContainerInstanceOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *ContainerInstance) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

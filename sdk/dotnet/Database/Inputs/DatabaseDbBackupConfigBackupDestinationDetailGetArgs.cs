@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? DbrsPolicyId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup destination.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }

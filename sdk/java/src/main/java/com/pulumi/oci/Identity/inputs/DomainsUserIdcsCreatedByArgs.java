@@ -17,12 +17,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     public static final DomainsUserIdcsCreatedByArgs Empty = new DomainsUserIdcsCreatedByArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -33,12 +34,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) The displayName of the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -50,17 +52,14 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The OCID of the user&#39;s support account.
-     * 
-     * **Added In:** 2103141444
+     * (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -69,17 +68,14 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> ocid;
 
     /**
-     * @return (Updatable) The OCID of the user&#39;s support account.
-     * 
-     * **Added In:** 2103141444
+     * @return (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
-     * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
      * * uniqueness: none
      * 
@@ -89,11 +85,10 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -107,11 +102,10 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
-     * 
-     * **Added In:** 18.4.2
+     * @return (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -126,12 +120,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) A label indicating the attribute&#39;s function.
+     * (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -142,12 +137,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     private @Nullable Output<String> type;
 
     /**
-     * @return (Updatable) A label indicating the attribute&#39;s function.
+     * @return (Updatable) The type of resource, User or App, that created this Resource
      * 
      * **SCIM++ Properties:**
+     * * caseExact: false
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -159,38 +155,34 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
-     * * type: binary
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -226,12 +218,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -246,12 +239,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) The displayName of the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -265,17 +259,14 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
-         * 
-         * **Added In:** 2103141444
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -288,17 +279,14 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ocid (Updatable) The OCID of the user&#39;s support account.
-         * 
-         * **Added In:** 2103141444
+         * @param ocid (Updatable) The OCID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
-         * * required: false
-         * * returned: always
+         * * returned: default
          * * type: string
          * * uniqueness: none
          * 
@@ -310,11 +298,10 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -332,11 +319,10 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param ref (Updatable) User Token URI
-         * 
-         * **Added In:** 18.4.2
+         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -353,12 +339,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -373,12 +360,13 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param type (Updatable) A label indicating the attribute&#39;s function.
+         * @param type (Updatable) The type of resource, User or App, that created this Resource
          * 
          * **SCIM++ Properties:**
+         * * caseExact: false
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -392,19 +380,17 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -415,19 +401,17 @@ public final class DomainsUserIdcsCreatedByArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The ID of the SCIM resource that represents the User or App who created this Resource
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
          * * returned: default
-         * * type: binary
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

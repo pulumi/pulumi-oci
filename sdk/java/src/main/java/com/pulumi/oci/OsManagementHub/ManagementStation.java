@@ -54,7 +54,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagementStation = new ManagementStation("testManagementStation", ManagementStationArgs.builder()        
+ *         var testManagementStation = new ManagementStation("testManagementStation", ManagementStationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(managementStationDisplayName)
  *             .hostname(managementStationHostname)

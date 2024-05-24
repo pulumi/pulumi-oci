@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<Inputs.ConnectorSourceMonitoringSourceNamespaceDetailsNamespaceMetricsGetArgs> Metrics { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The namespace.
+        /// (Updatable) The source service or application to use when querying for metric data points. Must begin with `oci_`.  Example: `oci_computeagent`
         /// </summary>
         [Input("namespace", required: true)]
         public Input<string> Namespace { get; set; } = null!;

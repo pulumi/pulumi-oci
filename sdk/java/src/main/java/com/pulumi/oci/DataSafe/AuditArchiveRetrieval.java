@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAuditArchiveRetrieval = new AuditArchiveRetrieval("testAuditArchiveRetrieval", AuditArchiveRetrievalArgs.builder()        
+ *         var testAuditArchiveRetrieval = new AuditArchiveRetrieval("testAuditArchiveRetrieval", AuditArchiveRetrievalArgs.builder()
  *             .compartmentId(compartmentId)
  *             .endDate(auditArchiveRetrievalEndDate)
  *             .startDate(auditArchiveRetrievalStartDate)

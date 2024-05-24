@@ -73,7 +73,7 @@ import (
 type VolumeGroup struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume group.
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
 	//
@@ -151,7 +151,7 @@ func GetVolumeGroup(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering VolumeGroup resources.
 type volumeGroupState struct {
-	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume group.
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
 	//
@@ -191,7 +191,7 @@ type volumeGroupState struct {
 }
 
 type VolumeGroupState struct {
-	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume group.
 	AvailabilityDomain pulumi.StringPtrInput
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
 	//
@@ -235,7 +235,7 @@ func (VolumeGroupState) ElementType() reflect.Type {
 }
 
 type volumeGroupArgs struct {
-	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume group.
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
 	//
@@ -266,7 +266,7 @@ type volumeGroupArgs struct {
 
 // The set of arguments for constructing a VolumeGroup resource.
 type VolumeGroupArgs struct {
-	// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+	// The availability domain of the volume group.
 	AvailabilityDomain pulumi.StringInput
 	// If provided, specifies the ID of the volume backup policy to assign to the newly created volume group. If omitted, no policy will be assigned. This field is deprecated. Use the `Core.getVolumeBackupPolicyAssignments` instead to assign a backup policy to a volume group.
 	//
@@ -382,7 +382,7 @@ func (o VolumeGroupOutput) ToVolumeGroupOutputWithContext(ctx context.Context) V
 	return o
 }
 
-// (Updatable) The availability domain of the volume group replica.  Example: `Uocm:PHX-AD-1`
+// The availability domain of the volume group.
 func (o VolumeGroupOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *VolumeGroup) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }

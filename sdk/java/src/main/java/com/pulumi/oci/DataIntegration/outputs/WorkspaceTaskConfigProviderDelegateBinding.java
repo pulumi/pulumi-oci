@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class WorkspaceTaskConfigProviderDelegateBinding {
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -21,7 +21,7 @@ public final class WorkspaceTaskConfigProviderDelegateBinding {
 
     private WorkspaceTaskConfigProviderDelegateBinding() {}
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {

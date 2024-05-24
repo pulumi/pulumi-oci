@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas {
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
     private String availabilityDomain;
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
      * 
      */
     private @Nullable String displayName;
 
     private InstanceConfigurationInstanceDetailsBlockVolumeCreateDetailsBlockVolumeReplicas() {}
     /**
-     * @return The availability domain of the instance.  Example: `Uocm:PHX-AD-1`
+     * @return The availability domain of the block volume replica.  Example: `Uocm:PHX-AD-1`
      * 
      */
     public String availabilityDomain() {
         return this.availabilityDomain;
     }
     /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return The display name of the block volume replica. You may optionally specify a *display name* for the block volume replica, otherwise a default is provided.
      * 
      */
     public Optional<String> displayName() {

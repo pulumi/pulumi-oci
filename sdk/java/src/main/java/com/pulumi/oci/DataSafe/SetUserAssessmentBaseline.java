@@ -44,7 +44,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSetUserAssessmentBaseline = new SetUserAssessmentBaseline("testSetUserAssessmentBaseline", SetUserAssessmentBaselineArgs.builder()        
+ *         var testSetUserAssessmentBaseline = new SetUserAssessmentBaseline("testSetUserAssessmentBaseline", SetUserAssessmentBaselineArgs.builder()
  *             .userAssessmentId(testUserAssessment.id())
  *             .assessmentIds(setUserAssessmentBaselineAssessmentIds)
  *             .build());

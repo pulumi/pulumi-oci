@@ -20,11 +20,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// (Updatable) Possible type of entity
+        /// Possible type of entity
         /// </summary>
         public readonly string? EntityType;
         /// <summary>
-        /// (Updatable) The entity value mapped to a data source query
+        /// The entity value mapped to a data source query
         /// </summary>
         public readonly string? QueryField;
 

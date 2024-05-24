@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceTaskMetadataCountStatisticObjectTypeCountListGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The value for the count statistic object.
+        /// The value for the count statistic object.
         /// </summary>
         [Input("objectCount")]
         public Input<string>? ObjectCount { get; set; }
 
         /// <summary>
-        /// (Updatable) The type of object for the count statistic object.
+        /// The type of object for the count statistic object.
         /// </summary>
         [Input("objectType")]
         public Input<string>? ObjectType { get; set; }

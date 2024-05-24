@@ -60,13 +60,13 @@ public final class DomainsPolicyRule {
      */
     private Integer sequence;
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Rule identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string
@@ -129,13 +129,13 @@ public final class DomainsPolicyRule {
         return this.sequence;
     }
     /**
-     * @return (Updatable) Value of the tag.
+     * @return (Updatable) Rule identifier
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: immutable
      * * required: true
      * * returned: default
      * * type: string

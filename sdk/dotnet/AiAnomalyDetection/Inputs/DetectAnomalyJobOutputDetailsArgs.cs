@@ -26,6 +26,7 @@ namespace Pulumi.Oci.AiAnomalyDetection.Inputs
 
         /// <summary>
         /// The type of output location. Allowed values are:
+        /// * `OBJECT_STORAGE`: Object store output location.
         /// </summary>
         [Input("outputType", required: true)]
         public Input<string> OutputType { get; set; } = null!;

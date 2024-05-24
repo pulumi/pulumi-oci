@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetAssetRecommendedSpecPreemptibleInstanceConfig {
     /**
-     * @return (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+     * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions;
 
     private TargetAssetRecommendedSpecPreemptibleInstanceConfig() {}
     /**
-     * @return (Updatable) The action to run when the preemptible instance is interrupted for eviction.
+     * @return The action to run when the preemptible instance is interrupted for eviction.
      * 
      */
     public List<TargetAssetRecommendedSpecPreemptibleInstanceConfigPreemptionAction> preemptionActions() {

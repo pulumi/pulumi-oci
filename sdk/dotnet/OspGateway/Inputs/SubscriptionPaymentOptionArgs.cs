@@ -13,67 +13,67 @@ namespace Pulumi.Oci.OspGateway.Inputs
     public sealed class SubscriptionPaymentOptionArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Credit card type.
+        /// Credit card type.
         /// </summary>
         [Input("creditCardType")]
         public Input<string>? CreditCardType { get; set; }
 
         /// <summary>
-        /// (Updatable) The email address of the paypal user.
+        /// The email address of the paypal user.
         /// </summary>
         [Input("emailAddress")]
         public Input<string>? EmailAddress { get; set; }
 
         /// <summary>
-        /// (Updatable) Agreement id for the paypal account.
+        /// Agreement id for the paypal account.
         /// </summary>
         [Input("extBillingAgreementId")]
         public Input<string>? ExtBillingAgreementId { get; set; }
 
         /// <summary>
-        /// (Updatable) First name of the paypal user.
+        /// First name of the paypal user.
         /// </summary>
         [Input("firstName")]
         public Input<string>? FirstName { get; set; }
 
         /// <summary>
-        /// (Updatable) Last four digits of the card.
+        /// Last four digits of the card.
         /// </summary>
         [Input("lastDigits")]
         public Input<string>? LastDigits { get; set; }
 
         /// <summary>
-        /// (Updatable) Last name of the paypal user.
+        /// Last name of the paypal user.
         /// </summary>
         [Input("lastName")]
         public Input<string>? LastName { get; set; }
 
         /// <summary>
-        /// (Updatable) Name on the credit card.
+        /// Name on the credit card.
         /// </summary>
         [Input("nameOnCard")]
         public Input<string>? NameOnCard { get; set; }
 
         /// <summary>
-        /// (Updatable) Payment method
+        /// Payment method
         /// </summary>
         [Input("paymentMethod")]
         public Input<string>? PaymentMethod { get; set; }
 
         /// <summary>
-        /// (Updatable) Expired date of the credit card.
+        /// Expired date of the credit card.
         /// </summary>
         [Input("timeExpiration")]
         public Input<string>? TimeExpiration { get; set; }
 
         /// <summary>
-        /// (Updatable) Wallet instrument internal id.
+        /// Wallet instrument internal id.
         /// </summary>
         [Input("walletInstrumentId")]
         public Input<string>? WalletInstrumentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Wallet transaction id.
+        /// Wallet transaction id.
         /// </summary>
         [Input("walletTransactionId")]
         public Input<string>? WalletTransactionId { get; set; }

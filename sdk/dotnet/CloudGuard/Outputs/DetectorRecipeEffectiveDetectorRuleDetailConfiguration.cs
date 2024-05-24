@@ -14,23 +14,23 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeEffectiveDetectorRuleDetailConfiguration
     {
         /// <summary>
-        /// (Updatable) Unique name of the configuration
+        /// Unique name of the configuration
         /// </summary>
         public readonly string? ConfigKey;
         /// <summary>
-        /// (Updatable) configuration data type
+        /// configuration data type
         /// </summary>
         public readonly string? DataType;
         /// <summary>
-        /// (Updatable) configuration name
+        /// configuration name
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) configuration value
+        /// configuration value
         /// </summary>
         public readonly string? Value;
         /// <summary>
-        /// (Updatable) List of configuration values
+        /// List of configuration values
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue> Values;
 

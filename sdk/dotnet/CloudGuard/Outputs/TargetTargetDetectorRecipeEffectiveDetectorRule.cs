@@ -24,7 +24,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Details of ResponderRule.
+        /// Details of ResponderRule.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> Details;
         /// <summary>
@@ -32,7 +32,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Detector;
         /// <summary>
-        /// (Updatable) Identifier for DetectorRule.
+        /// The unique identifier of the detector rule.
         /// </summary>
         public readonly string? DetectorRuleId;
         /// <summary>

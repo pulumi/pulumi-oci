@@ -13,11 +13,11 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainsApprovalWorkflowStepApprover {
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) The display of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -28,25 +28,24 @@ public final class DomainsApprovalWorkflowStepApprover {
      */
     private @Nullable String display;
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The unique Oracle Cloud Infrastructure identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: true
+     * * caseExact: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     private @Nullable String ocid;
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Approver URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -58,7 +57,7 @@ public final class DomainsApprovalWorkflowStepApprover {
      */
     private @Nullable String ref;
     /**
-     * @return Type of ApprovalWorkflowStep
+     * @return The type of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -67,19 +66,16 @@ public final class DomainsApprovalWorkflowStepApprover {
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
+     * * type: reference
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String type;
     /**
-     * @return Value of the tag.
+     * @return The unique identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -93,11 +89,11 @@ public final class DomainsApprovalWorkflowStepApprover {
 
     private DomainsApprovalWorkflowStepApprover() {}
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) The display of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -110,27 +106,26 @@ public final class DomainsApprovalWorkflowStepApprover {
         return Optional.ofNullable(this.display);
     }
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The unique Oracle Cloud Infrastructure identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: true
+     * * caseExact: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<String> ocid() {
         return Optional.ofNullable(this.ocid);
     }
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Approver URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -144,7 +139,7 @@ public final class DomainsApprovalWorkflowStepApprover {
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return Type of ApprovalWorkflowStep
+     * @return The type of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -153,21 +148,18 @@ public final class DomainsApprovalWorkflowStepApprover {
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
+     * * type: reference
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String type() {
         return this.type;
     }
     /**
-     * @return Value of the tag.
+     * @return The unique identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite

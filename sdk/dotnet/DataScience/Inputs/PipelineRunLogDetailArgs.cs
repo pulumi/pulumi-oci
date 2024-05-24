@@ -13,13 +13,13 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class PipelineRunLogDetailArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        /// The log group id for where log objects will be for pipeline runs.
         /// </summary>
         [Input("logGroupId")]
         public Input<string>? LogGroupId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        /// The log id of the log object the pipeline run logs will be shipped to.
         /// </summary>
         [Input("logId")]
         public Input<string>? LogId { get; set; }

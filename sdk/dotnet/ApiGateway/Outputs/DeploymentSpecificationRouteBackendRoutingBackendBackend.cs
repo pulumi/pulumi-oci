@@ -14,48 +14,38 @@ namespace Pulumi.Oci.ApiGateway.Outputs
     public sealed class DeploymentSpecificationRouteBackendRoutingBackendBackend
     {
         /// <summary>
-        /// (Updatable) The body of the stock response from the mock backend.
+        /// The body of the stock response from the mock backend.
         /// </summary>
         public readonly string? Body;
         /// <summary>
-        /// (Updatable) Defines a timeout for establishing a connection with a proxied server.
+        /// Defines a timeout for establishing a connection with a proxied server.
         /// </summary>
         public readonly double? ConnectTimeoutInSeconds;
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Functions function resource.
         /// </summary>
         public readonly string? FunctionId;
-        /// <summary>
-        /// (Updatable)
-        /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRouteBackendRoutingBackendBackendHeader> Headers;
         /// <summary>
-        /// (Updatable) Defines whether or not to uphold SSL verification.
+        /// Defines whether or not to uphold SSL verification.
         /// </summary>
         public readonly bool? IsSslVerifyDisabled;
         /// <summary>
-        /// (Updatable) Defines a timeout for reading a response from the proxied server.
+        /// Defines a timeout for reading a response from the proxied server.
         /// </summary>
         public readonly double? ReadTimeoutInSeconds;
         /// <summary>
-        /// (Updatable) Defines a timeout for transmitting a request to the proxied server.
+        /// Defines a timeout for transmitting a request to the proxied server.
         /// </summary>
         public readonly double? SendTimeoutInSeconds;
         /// <summary>
-        /// (Updatable) The status code of the stock response from the mock backend.
+        /// The status code of the stock response from the mock backend.
         /// </summary>
         public readonly int? Status;
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Type of the Response Cache Store Policy.
         /// </summary>
         public readonly string Type;
-        /// <summary>
-        /// (Updatable)
-        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

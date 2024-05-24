@@ -14,7 +14,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
     public sealed class AutoScalingConfigurationPolicyDetailsScaleDownConfig
     {
         /// <summary>
-        /// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+        /// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the size of memory in GBs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
         /// </summary>
         public readonly int? MemoryStepSize;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly int? MinOcpusPerNode;
         /// <summary>
-        /// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to add to each node during a scale-up event. This value is not used for nodes with fixed compute shapes.
+        /// (Updatable) For nodes with [flexible compute shapes](https://docs.cloud.oracle.com/iaas/Content/bigdata/create-cluster.htm#cluster-plan-shape), this value is the number of OCPUs to remove from each node during a scale-down event. This value is not used for nodes with fixed compute shapes.
         /// </summary>
         public readonly int? OcpuStepSize;
 

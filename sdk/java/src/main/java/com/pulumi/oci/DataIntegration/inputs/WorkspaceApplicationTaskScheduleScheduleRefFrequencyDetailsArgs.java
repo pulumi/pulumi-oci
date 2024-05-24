@@ -95,14 +95,14 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsAr
     }
 
     /**
-     * (Updatable) The type of the object.
+     * (Updatable) The type of the model
      * 
      */
     @Import(name="modelType", required=true)
     private Output<String> modelType;
 
     /**
-     * @return (Updatable) The type of the object.
+     * @return (Updatable) The type of the model
      * 
      */
     public Output<String> modelType() {
@@ -286,7 +286,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsAr
         }
 
         /**
-         * @param modelType (Updatable) The type of the object.
+         * @param modelType (Updatable) The type of the model
          * 
          * @return builder
          * 
@@ -297,7 +297,7 @@ public final class WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsAr
         }
 
         /**
-         * @param modelType (Updatable) The type of the object.
+         * @param modelType (Updatable) The type of the model
          * 
          * @return builder
          * 

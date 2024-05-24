@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
     public sealed class WorkspaceApplicationTaskScheduleScheduleRefGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The description of the aggregator.
+        /// (Updatable) Detailed description for the object.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<Inputs.WorkspaceApplicationTaskScheduleScheduleRefFrequencyDetailsGetArgs>? FrequencyDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The identifier of the aggregator.
+        /// (Updatable) Value can only contain upper case letters, underscore, and numbers. It should begin with upper case letter or underscore. The value can be modified.
         /// </summary>
         [Input("identifier")]
         public Input<string>? Identifier { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<bool>? IsDaylightAdjustmentEnabled { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the aggregator object.
+        /// (Updatable) Generated key that can be used in API calls to identify schedule. On scenarios where reference to the schedule is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }

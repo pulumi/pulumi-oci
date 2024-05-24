@@ -17,11 +17,11 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     public static final DomainsApprovalWorkflowStepApproverArgs Empty = new DomainsApprovalWorkflowStepApproverArgs();
 
     /**
-     * The displayName of the User or App who modified this Resource
+     * (Updatable) The display of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -34,11 +34,11 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     private @Nullable Output<String> display;
 
     /**
-     * @return The displayName of the User or App who modified this Resource
+     * @return (Updatable) The display of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
-     * * idcsSearchable: false
+     * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readOnly
      * * required: false
@@ -52,34 +52,34 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     }
 
     /**
-     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * The unique Oracle Cloud Infrastructure identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: true
+     * * caseExact: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     @Import(name="ocid")
     private @Nullable Output<String> ocid;
 
     /**
-     * @return Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+     * @return The unique Oracle Cloud Infrastructure identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: true
+     * * caseExact: true
      * * multiValued: false
-     * * mutability: immutable
+     * * mutability: readWrite
      * * required: false
      * * returned: default
      * * type: string
-     * * uniqueness: global
+     * * uniqueness: none
      * 
      */
     public Optional<Output<String>> ocid() {
@@ -87,10 +87,9 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     }
 
     /**
-     * (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * (Updatable) Approver URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -104,10 +103,9 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+     * @return (Updatable) Approver URI
      * 
      * **SCIM++ Properties:**
-     * * caseExact: true
      * * idcsSearchable: false
      * * multiValued: false
      * * mutability: readOnly
@@ -122,7 +120,7 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     }
 
     /**
-     * Type of ApprovalWorkflowStep
+     * The type of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -131,18 +129,15 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
+     * * type: reference
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return Type of ApprovalWorkflowStep
+     * @return The type of the approver.
      * 
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -151,11 +146,8 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
      * * mutability: readWrite
      * * required: true
      * * returned: default
-     * * type: string
+     * * type: reference
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> type() {
@@ -163,10 +155,10 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     }
 
     /**
-     * Value of the tag.
+     * The unique identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -180,10 +172,10 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
     private Output<String> value;
 
     /**
-     * @return Value of the tag.
+     * @return The unique identifier of the approver.
      * 
      * **SCIM++ Properties:**
-     * * caseExact: false
+     * * caseExact: true
      * * idcsSearchable: true
      * * multiValued: false
      * * mutability: readWrite
@@ -226,11 +218,11 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) The display of the approver.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -247,11 +239,11 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param display The displayName of the User or App who modified this Resource
+         * @param display (Updatable) The display of the approver.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
-         * * idcsSearchable: false
+         * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readOnly
          * * required: false
@@ -267,17 +259,17 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The unique Oracle Cloud Infrastructure identifier of the approver.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: true
+         * * caseExact: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -288,17 +280,17 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param ocid Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+         * @param ocid The unique Oracle Cloud Infrastructure identifier of the approver.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: true
+         * * caseExact: true
          * * multiValued: false
-         * * mutability: immutable
+         * * mutability: readWrite
          * * required: false
          * * returned: default
          * * type: string
-         * * uniqueness: global
+         * * uniqueness: none
          * 
          * @return builder
          * 
@@ -308,10 +300,9 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Approver URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -329,10 +320,9 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param ref (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+         * @param ref (Updatable) Approver URI
          * 
          * **SCIM++ Properties:**
-         * * caseExact: true
          * * idcsSearchable: false
          * * multiValued: false
          * * mutability: readOnly
@@ -349,7 +339,7 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param type Type of ApprovalWorkflowStep
+         * @param type The type of the approver.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -358,11 +348,8 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: string
+         * * type: reference
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -373,7 +360,7 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param type Type of ApprovalWorkflowStep
+         * @param type The type of the approver.
          * 
          * **SCIM++ Properties:**
          * * caseExact: true
@@ -382,11 +369,8 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
          * * mutability: readWrite
          * * required: true
          * * returned: default
-         * * type: string
+         * * type: reference
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -396,10 +380,10 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The unique identifier of the approver.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite
@@ -417,10 +401,10 @@ public final class DomainsApprovalWorkflowStepApproverArgs extends com.pulumi.re
         }
 
         /**
-         * @param value Value of the tag.
+         * @param value The unique identifier of the approver.
          * 
          * **SCIM++ Properties:**
-         * * caseExact: false
+         * * caseExact: true
          * * idcsSearchable: true
          * * multiValued: false
          * * mutability: readWrite

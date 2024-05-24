@@ -20,14 +20,18 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
     public static final PolicyWafConfigCachingRuleArgs Empty = new PolicyWafConfigCachingRuleArgs();
 
     /**
-     * (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * (Updatable) The action to take when the criteria of a caching rule are met.
+     * * **CACHE:** Caches requested content when the criteria of the rule are met.
+     * * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      * 
      */
     @Import(name="action", required=true)
     private Output<String> action;
 
     /**
-     * @return (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+     * @return (Updatable) The action to take when the criteria of a caching rule are met.
+     * * **CACHE:** Caches requested content when the criteria of the rule are met.
+     * * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
      * 
      */
     public Output<String> action() {
@@ -65,14 +69,14 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     * (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
      * 
      */
     @Import(name="criterias", required=true)
     private Output<List<PolicyWafConfigCachingRuleCriteriaArgs>> criterias;
 
     /**
-     * @return (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+     * @return (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
      * 
      */
     public Output<List<PolicyWafConfigCachingRuleCriteriaArgs>> criterias() {
@@ -110,20 +114,14 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
     }
 
     /**
-     * (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The name of the caching rule.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return (Updatable) The unique name of the whitelist.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The name of the caching rule.
      * 
      */
     public Output<String> name() {
@@ -161,7 +159,9 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action to take when the criteria of a caching rule are met.
+         * * **CACHE:** Caches requested content when the criteria of the rule are met.
+         * * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
          * 
          * @return builder
          * 
@@ -172,7 +172,9 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param action (Updatable) The action to take against requests from detected bots. If unspecified, defaults to `DETECT`.
+         * @param action (Updatable) The action to take when the criteria of a caching rule are met.
+         * * **CACHE:** Caches requested content when the criteria of the rule are met.
+         * * **BYPASS_CACHE:** Allows requests to bypass the cache and be directed to the origin when the criteria of the rule is met.
          * 
          * @return builder
          * 
@@ -224,7 +226,7 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param criterias (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+         * @param criterias (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
          * 
          * @return builder
          * 
@@ -235,7 +237,7 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param criterias (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+         * @param criterias (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
          * 
          * @return builder
          * 
@@ -245,7 +247,7 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param criterias (Updatable) When defined, the JavaScript Challenge would be applied only for the requests that matched all the listed conditions.
+         * @param criterias (Updatable) The array of the rule criteria with condition and value. The caching rule would be applied for the requests that matched any of the listed conditions.
          * 
          * @return builder
          * 
@@ -297,10 +299,7 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The name of the caching rule.
          * 
          * @return builder
          * 
@@ -311,10 +310,7 @@ public final class PolicyWafConfigCachingRuleArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param name (Updatable) The unique name of the whitelist.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param name (Updatable) The name of the caching rule.
          * 
          * @return builder
          * 

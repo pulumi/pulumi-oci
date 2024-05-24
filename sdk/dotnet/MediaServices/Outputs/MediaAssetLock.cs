@@ -30,11 +30,7 @@ namespace Pulumi.Oci.MediaServices.Outputs
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// (Updatable) The type of the media asset.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// Type of the lock.
         /// </summary>
         public readonly string Type;
 

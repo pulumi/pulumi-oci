@@ -62,14 +62,14 @@ public final class DatabaseToolsConnectionLockArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) The DatabaseToolsConnection type.
+     * Type of the lock.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) The DatabaseToolsConnection type.
+     * @return Type of the lock.
      * 
      */
     public Output<String> type() {
@@ -167,7 +167,7 @@ public final class DatabaseToolsConnectionLockArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type (Updatable) The DatabaseToolsConnection type.
+         * @param type Type of the lock.
          * 
          * @return builder
          * 
@@ -178,7 +178,7 @@ public final class DatabaseToolsConnectionLockArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param type (Updatable) The DatabaseToolsConnection type.
+         * @param type Type of the lock.
          * 
          * @return builder
          * 

@@ -25,7 +25,7 @@ public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProg
      */
     private @Nullable List<DeploymentDeploymentExecutionProgressDeployStageExecutionProgressDeployStageExecutionProgressDetail> deployStageExecutionProgressDetails;
     /**
-     * @return The OCID of the stage.
+     * @return Specifies the OCID of the stage to be redeployed.
      * 
      */
     private @Nullable String deployStageId;
@@ -71,7 +71,7 @@ public final class DeploymentDeploymentExecutionProgressDeployStageExecutionProg
         return this.deployStageExecutionProgressDetails == null ? List.of() : this.deployStageExecutionProgressDetails;
     }
     /**
-     * @return The OCID of the stage.
+     * @return Specifies the OCID of the stage to be redeployed.
      * 
      */
     public Optional<String> deployStageId() {

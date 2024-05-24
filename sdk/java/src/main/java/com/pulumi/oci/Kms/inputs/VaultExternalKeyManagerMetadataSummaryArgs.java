@@ -18,14 +18,14 @@ public final class VaultExternalKeyManagerMetadataSummaryArgs extends com.pulumi
     public static final VaultExternalKeyManagerMetadataSummaryArgs Empty = new VaultExternalKeyManagerMetadataSummaryArgs();
 
     /**
-     * URI of the vault on external key manager.
+     * URL of the vault on external key manager.
      * 
      */
     @Import(name="externalVaultEndpointUrl")
     private @Nullable Output<String> externalVaultEndpointUrl;
 
     /**
-     * @return URI of the vault on external key manager.
+     * @return URL of the vault on external key manager.
      * 
      */
     public Optional<Output<String>> externalVaultEndpointUrl() {
@@ -48,14 +48,14 @@ public final class VaultExternalKeyManagerMetadataSummaryArgs extends com.pulumi
     }
 
     /**
-     * OCID of private endpoint created by customer.
+     * OCID of the private endpoint.
      * 
      */
     @Import(name="privateEndpointId")
     private @Nullable Output<String> privateEndpointId;
 
     /**
-     * @return OCID of private endpoint created by customer.
+     * @return OCID of the private endpoint.
      * 
      */
     public Optional<Output<String>> privateEndpointId() {
@@ -105,7 +105,7 @@ public final class VaultExternalKeyManagerMetadataSummaryArgs extends com.pulumi
         }
 
         /**
-         * @param externalVaultEndpointUrl URI of the vault on external key manager.
+         * @param externalVaultEndpointUrl URL of the vault on external key manager.
          * 
          * @return builder
          * 
@@ -116,7 +116,7 @@ public final class VaultExternalKeyManagerMetadataSummaryArgs extends com.pulumi
         }
 
         /**
-         * @param externalVaultEndpointUrl URI of the vault on external key manager.
+         * @param externalVaultEndpointUrl URL of the vault on external key manager.
          * 
          * @return builder
          * 
@@ -157,7 +157,7 @@ public final class VaultExternalKeyManagerMetadataSummaryArgs extends com.pulumi
         }
 
         /**
-         * @param privateEndpointId OCID of private endpoint created by customer.
+         * @param privateEndpointId OCID of the private endpoint.
          * 
          * @return builder
          * 
@@ -168,7 +168,7 @@ public final class VaultExternalKeyManagerMetadataSummaryArgs extends com.pulumi
         }
 
         /**
-         * @param privateEndpointId OCID of private endpoint created by customer.
+         * @param privateEndpointId OCID of the private endpoint.
          * 
          * @return builder
          * 

@@ -60,7 +60,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTargetAsset = new TargetAsset("testTargetAsset", TargetAssetArgs.builder()        
+ *         var testTargetAsset = new TargetAsset("testTargetAsset", TargetAssetArgs.builder()
  *             .isExcludedFromExecution(targetAssetIsExcludedFromExecution)
  *             .migrationPlanId(testMigrationPlan.id())
  *             .preferredShapeType(targetAssetPreferredShapeType)
@@ -159,14 +159,14 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
         return this.blockVolumesPerformance;
     }
     /**
-     * (Updatable) The OCID of the compartment.
+     * The OCID of the compartment.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The OCID of the compartment.
+     * @return The OCID of the compartment.
      * 
      */
     public Output<String> compartmentId() {
@@ -201,14 +201,14 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
         return this.createdResourceId;
     }
     /**
-     * (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
+     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable. Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -397,14 +397,14 @@ public class TargetAsset extends com.pulumi.resources.CustomResource {
         return this.timeUpdated;
     }
     /**
-     * (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * (Updatable) The type of target asset.
      * 
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
-     * @return (Updatable) The type of action to run when the instance is interrupted for eviction.
+     * @return (Updatable) The type of target asset.
      * 
      */
     public Output<String> type() {

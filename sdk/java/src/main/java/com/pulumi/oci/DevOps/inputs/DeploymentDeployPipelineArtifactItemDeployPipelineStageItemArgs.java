@@ -16,14 +16,14 @@ public final class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemAr
     public static final DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs Empty = new DeploymentDeployPipelineArtifactItemDeployPipelineStageItemArgs();
 
     /**
-     * The OCID of the stage.
+     * Specifies the OCID of the stage to be redeployed.
      * 
      */
     @Import(name="deployStageId")
     private @Nullable Output<String> deployStageId;
 
     /**
-     * @return The OCID of the stage.
+     * @return Specifies the OCID of the stage to be redeployed.
      * 
      */
     public Optional<Output<String>> deployStageId() {
@@ -71,7 +71,7 @@ public final class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemAr
         }
 
         /**
-         * @param deployStageId The OCID of the stage.
+         * @param deployStageId Specifies the OCID of the stage to be redeployed.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class DeploymentDeployPipelineArtifactItemDeployPipelineStageItemAr
         }
 
         /**
-         * @param deployStageId The OCID of the stage.
+         * @param deployStageId Specifies the OCID of the stage to be redeployed.
          * 
          * @return builder
          * 

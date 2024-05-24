@@ -19,7 +19,7 @@ namespace Pulumi.Oci.ApiGateway.Inputs
         public Input<Inputs.DeploymentSpecificationLoggingPoliciesGetArgs>? LoggingPolicies { get; set; }
 
         /// <summary>
-        /// (Updatable) Behavior applied to any requests received by the API on this route.
+        /// (Updatable) Global behavior applied to all requests received by the API.
         /// </summary>
         [Input("requestPolicies")]
         public Input<Inputs.DeploymentSpecificationRequestPoliciesGetArgs>? RequestPolicies { get; set; }

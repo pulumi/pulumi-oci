@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testAutonomousContainerDatabase = new AutonomousContainerDatabase("testAutonomousContainerDatabase", AutonomousContainerDatabaseArgs.builder()        
+ *         var testAutonomousContainerDatabase = new AutonomousContainerDatabase("testAutonomousContainerDatabase", AutonomousContainerDatabaseArgs.builder()
  *             .displayName(autonomousContainerDatabaseDisplayName)
  *             .patchModel(autonomousContainerDatabasePatchModel)
  *             .cloudAutonomousVmClusterId(testCloudAutonomousVmCluster.id())

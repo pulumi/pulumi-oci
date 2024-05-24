@@ -59,7 +59,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testPathAnalysi = new PathAnalysi("testPathAnalysi", PathAnalysiArgs.builder()        
+ *         var testPathAnalysi = new PathAnalysi("testPathAnalysi", PathAnalysiArgs.builder()
  *             .type(pathAnalysiType)
  *             .cacheControl(pathAnalysiCacheControl)
  *             .compartmentId(compartmentId)

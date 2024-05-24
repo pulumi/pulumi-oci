@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Sch.Inputs
         public Input<Inputs.ConnectorSourceCursorGetArgs>? Cursor { get; set; }
 
         /// <summary>
-        /// (Updatable) The type descriminator.
+        /// (Updatable) The type discriminator.
         /// </summary>
         [Input("kind", required: true)]
         public Input<string> Kind { get; set; } = null!;

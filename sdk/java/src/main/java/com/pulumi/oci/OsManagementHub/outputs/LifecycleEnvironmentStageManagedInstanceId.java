@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class LifecycleEnvironmentStageManagedInstanceId {
     /**
-     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
@@ -24,7 +24,7 @@ public final class LifecycleEnvironmentStageManagedInstanceId {
 
     private LifecycleEnvironmentStageManagedInstanceId() {}
     /**
-     * @return (Updatable) A user-friendly name for the lifecycle stage. Does not have to be unique and you can change the name later. Avoid entering confidential information.
+     * @return (Updatable) A user-friendly name for the lifecycle environment. Does not have to be unique and you can change the name later. Avoid entering confidential information.
      * 
      */
     public Optional<String> displayName() {

@@ -15,14 +15,14 @@ public final class ClusterPlacementGroupCapabilitiesItemArgs extends com.pulumi.
     public static final ClusterPlacementGroupCapabilitiesItemArgs Empty = new ClusterPlacementGroupCapabilitiesItemArgs();
 
     /**
-     * The friendly name of the cluster placement group.
+     * The type of resource.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return The friendly name of the cluster placement group.
+     * @return The type of resource.
      * 
      */
     public Output<String> name() {
@@ -70,7 +70,7 @@ public final class ClusterPlacementGroupCapabilitiesItemArgs extends com.pulumi.
         }
 
         /**
-         * @param name The friendly name of the cluster placement group.
+         * @param name The type of resource.
          * 
          * @return builder
          * 
@@ -81,7 +81,7 @@ public final class ClusterPlacementGroupCapabilitiesItemArgs extends com.pulumi.
         }
 
         /**
-         * @param name The friendly name of the cluster placement group.
+         * @param name The type of resource.
          * 
          * @return builder
          * 

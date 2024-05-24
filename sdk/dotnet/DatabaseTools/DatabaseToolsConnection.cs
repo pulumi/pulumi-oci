@@ -116,7 +116,7 @@ namespace Pulumi.Oci.DatabaseTools
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// When the lock was created.
+        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -458,7 +458,7 @@ namespace Pulumi.Oci.DatabaseTools
         }
 
         /// <summary>
-        /// When the lock was created.
+        /// The time the Database Tools connection was created. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

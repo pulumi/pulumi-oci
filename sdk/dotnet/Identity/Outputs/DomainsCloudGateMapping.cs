@@ -58,12 +58,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Name;
         /// <summary>
-        /// (Updatable) Any additional settings for this upstream server in nginx configuration form
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) More NGINX Settings. JSON encoded key value pairs similar to WTP encoding
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -102,12 +100,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? ProxyPass;
         /// <summary>
-        /// (Updatable) URI of the upstream server
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) URI of the App being mapped to
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -132,14 +128,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string ResourcePrefix;
         /// <summary>
-        /// (Updatable) Server Name for the Server Block
+        /// (Updatable) Server Instance for the Mapping. This is one of the server IDs(server blocks) from the associated Cloud Gate list
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
-        /// * idcsSearchable: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
@@ -162,23 +158,17 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? UpstreamServerGroupId;
         /// <summary>
-        /// (Updatable) ID of the upstream server
-        /// 
-        /// **Added In:** 20.1.3
+        /// (Updatable) The id of the App being mapped to
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: true
+        /// * required: false
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string? Value;
 

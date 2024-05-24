@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Inputs
         private InputList<Inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemGetArgs>? _items;
 
         /// <summary>
-        /// (Updatable) Collection of artifacts that were generated in the Build stage and need to be pushed to the artifactory stores. In case of UPDATE operation, replaces existing artifacts list. Merging with existing artifacts is not supported.
+        /// (Updatable) A list of build pipeline stage predecessors for a stage.
         /// </summary>
         public InputList<Inputs.BuildPipelineStageBuildPipelineStagePredecessorCollectionItemGetArgs> Items
         {

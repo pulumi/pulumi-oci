@@ -48,14 +48,14 @@ public final class DeployStageFailurePolicyArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The type of policy used for rolling out a deployment stage.
+     * (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
      * 
      */
     @Import(name="policyType", required=true)
     private Output<String> policyType;
 
     /**
-     * @return (Updatable) The type of policy used for rolling out a deployment stage.
+     * @return (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
      * 
      */
     public Output<String> policyType() {
@@ -131,7 +131,7 @@ public final class DeployStageFailurePolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param policyType (Updatable) The type of policy used for rolling out a deployment stage.
+         * @param policyType (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DeployStageFailurePolicyArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param policyType (Updatable) The type of policy used for rolling out a deployment stage.
+         * @param policyType (Updatable) Specifies if the failure instance size is given by absolute number or by percentage.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
     public sealed class MigrationDataTransferMediumDetailsDatabaseLinkDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Name of directory object in database
+        /// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

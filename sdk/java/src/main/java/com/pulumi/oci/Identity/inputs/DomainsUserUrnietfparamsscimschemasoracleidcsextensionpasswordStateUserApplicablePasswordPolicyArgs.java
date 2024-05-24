@@ -18,12 +18,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     public static final DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs Empty = new DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswordStateUserApplicablePasswordPolicyArgs();
 
     /**
-     * (Updatable) A human readable name, primarily used for display purposes.
+     * (Updatable) Password Policy Display Name
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -34,12 +36,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     private @Nullable Output<String> display;
 
     /**
-     * @return (Updatable) A human readable name, primarily used for display purposes.
+     * @return (Updatable) Password Policy Display Name
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: false
      * * returned: default
      * * type: string
@@ -88,9 +92,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     }
 
     /**
-     * (Updatable) User Token URI
+     * (Updatable) The URI of the corresponding PasswordPolicy resource.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -106,9 +110,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     private @Nullable Output<String> ref;
 
     /**
-     * @return (Updatable) User Token URI
+     * @return (Updatable) The URI of the corresponding PasswordPolicy resource.
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
@@ -125,38 +129,38 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
     }
 
     /**
-     * (Updatable) The value of a X509 certificate.
+     * (Updatable) The identifier of the password policy.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) The value of a X509 certificate.
+     * @return (Updatable) The identifier of the password policy.
+     * 
+     * **Added In:** 20.1.3
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
-     * * returned: default
-     * * type: binary
+     * * returned: always
+     * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> value() {
@@ -191,12 +195,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) Password Policy Display Name
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -211,12 +217,14 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param display (Updatable) A human readable name, primarily used for display purposes.
+         * @param display (Updatable) Password Policy Display Name
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: false
          * * returned: default
          * * type: string
@@ -273,9 +281,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding PasswordPolicy resource.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -295,9 +303,9 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param ref (Updatable) User Token URI
+         * @param ref (Updatable) The URI of the corresponding PasswordPolicy resource.
          * 
-         * **Added In:** 18.4.2
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
          * * idcsSearchable: false
@@ -316,19 +324,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The identifier of the password policy.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -339,19 +347,19 @@ public final class DomainsUserUrnietfparamsscimschemasoracleidcsextensionpasswor
         }
 
         /**
-         * @param value (Updatable) The value of a X509 certificate.
+         * @param value (Updatable) The identifier of the password policy.
+         * 
+         * **Added In:** 20.1.3
          * 
          * **SCIM++ Properties:**
-         * * idcsSearchable: false
+         * * caseExact: true
+         * * idcsSearchable: true
          * * multiValued: false
-         * * mutability: readWrite
+         * * mutability: readOnly
          * * required: true
-         * * returned: default
-         * * type: binary
+         * * returned: always
+         * * type: string
          * * uniqueness: none
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class ManagementAgentDataSourceMetricDimension {
     /**
-     * @return Unique name of the DataSource.
+     * @return (Updatable) Name of the metric dimension
      * 
      */
     private String name;
@@ -23,7 +23,7 @@ public final class ManagementAgentDataSourceMetricDimension {
 
     private ManagementAgentDataSourceMetricDimension() {}
     /**
-     * @return Unique name of the DataSource.
+     * @return (Updatable) Name of the metric dimension
      * 
      */
     public String name() {

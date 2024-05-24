@@ -123,6 +123,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// * `FULL` - This option creates a new database that includes all source database data.
+        /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
         [Output("cloneType")]
         public Output<string> CloneType { get; private set; } = null!;
@@ -134,7 +136,7 @@ namespace Pulumi.Oci.Database
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compute used by database tools.
+        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         /// </summary>
         [Output("computeCount")]
         public Output<double> ComputeCount { get; private set; } = null!;
@@ -1004,6 +1006,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// * `FULL` - This option creates a new database that includes all source database data.
+        /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
         [Input("cloneType")]
         public Input<string>? CloneType { get; set; }
@@ -1015,7 +1019,7 @@ namespace Pulumi.Oci.Database
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Compute used by database tools.
+        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         /// </summary>
         [Input("computeCount")]
         public Input<double>? ComputeCount { get; set; }
@@ -1654,6 +1658,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+        /// * `FULL` - This option creates a new database that includes all source database data.
+        /// * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
         /// </summary>
         [Input("cloneType")]
         public Input<string>? CloneType { get; set; }
@@ -1665,7 +1671,7 @@ namespace Pulumi.Oci.Database
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) Compute used by database tools.
+        /// (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
         /// </summary>
         [Input("computeCount")]
         public Input<double>? ComputeCount { get; set; }

@@ -209,14 +209,14 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * The role of the DR protection group.  Example: `STANDBY`
+     * The role of the DR protection group.
      * 
      */
     @Import(name="role")
     private @Nullable Output<String> role;
 
     /**
-     * @return The role of the DR protection group.  Example: `STANDBY`
+     * @return The role of the DR protection group.
      * 
      */
     public Optional<Output<String>> role() {
@@ -592,7 +592,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param role The role of the DR protection group.  Example: `STANDBY`
+         * @param role The role of the DR protection group.
          * 
          * @return builder
          * 
@@ -603,7 +603,7 @@ public final class DrProtectionGroupState extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param role The role of the DR protection group.  Example: `STANDBY`
+         * @param role The role of the DR protection group.
          * 
          * @return builder
          * 

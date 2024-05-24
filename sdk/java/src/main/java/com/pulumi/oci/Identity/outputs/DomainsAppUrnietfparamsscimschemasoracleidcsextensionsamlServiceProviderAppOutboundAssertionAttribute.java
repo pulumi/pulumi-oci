@@ -29,11 +29,12 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
      */
     private @Nullable String direction;
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Mapped Attribute URI
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
@@ -43,19 +44,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
      */
     private @Nullable String ref;
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     private String value;
@@ -80,11 +80,12 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         return Optional.ofNullable(this.direction);
     }
     /**
-     * @return (Updatable) URI of the AppRole.
+     * @return (Updatable) Mapped Attribute URI
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
      * * idcsSearchable: false
-     * * multiValued: false
      * * mutability: readOnly
      * * required: false
      * * returned: default
@@ -96,19 +97,18 @@ public final class DomainsAppUrnietfparamsscimschemasoracleidcsextensionsamlServ
         return Optional.ofNullable(this.ref);
     }
     /**
-     * @return (Updatable) ID of the AppRole.
+     * @return (Updatable) Mapped Attribute identifier
+     * 
+     * **Added In:** 18.2.6
      * 
      * **SCIM++ Properties:**
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * caseExact: true
+     * * idcsSearchable: true
      * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
      * * uniqueness: none
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public String value() {

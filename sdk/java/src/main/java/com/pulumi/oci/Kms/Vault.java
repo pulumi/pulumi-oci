@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVault = new Vault("testVault", VaultArgs.builder()        
+ *         var testVault = new Vault("testVault", VaultArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(vaultDisplayName)
  *             .vaultType(vaultVaultType)

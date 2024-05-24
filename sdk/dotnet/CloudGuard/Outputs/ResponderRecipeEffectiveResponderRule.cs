@@ -24,7 +24,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Details of UpdateResponderRuleDetails.
+        /// Details of ResponderRule.
         /// </summary>
         public readonly ImmutableArray<Outputs.ResponderRecipeEffectiveResponderRuleDetail> Details;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Policies;
         /// <summary>
-        /// (Updatable) ResponderRecipeRule Identifier
+        /// Identifier for ResponderRule.
         /// </summary>
         public readonly string? ResponderRuleId;
         /// <summary>

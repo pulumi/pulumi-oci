@@ -14,9 +14,12 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsAppAppsNetworkPerimeter
     {
         /// <summary>
-        /// (Updatable) URI of the AppRole.
+        /// (Updatable) URI of the Network Perimeter.
+        /// 
+        /// **Added In:** 2010242156
         /// 
         /// **SCIM++ Properties:**
+        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -27,20 +30,19 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// (Updatable) ID of the AppRole.
+        /// (Updatable) List of identifier of Network Perimeters for App
+        /// 
+        /// **Added In:** 2010242156
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsSearchable: false
+        /// * caseExact: true
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
+        /// * mutability: readWrite
         /// * required: true
-        /// * returned: default
+        /// * returned: always
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

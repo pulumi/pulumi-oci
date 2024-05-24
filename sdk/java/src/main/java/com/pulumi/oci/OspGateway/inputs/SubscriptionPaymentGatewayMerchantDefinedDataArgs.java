@@ -16,14 +16,14 @@ public final class SubscriptionPaymentGatewayMerchantDefinedDataArgs extends com
     public static final SubscriptionPaymentGatewayMerchantDefinedDataArgs Empty = new SubscriptionPaymentGatewayMerchantDefinedDataArgs();
 
     /**
-     * (Updatable) Cloud account name.
+     * Cloud account name.
      * 
      */
     @Import(name="cloudAccountName")
     private @Nullable Output<String> cloudAccountName;
 
     /**
-     * @return (Updatable) Cloud account name.
+     * @return Cloud account name.
      * 
      */
     public Optional<Output<String>> cloudAccountName() {
@@ -31,14 +31,14 @@ public final class SubscriptionPaymentGatewayMerchantDefinedDataArgs extends com
     }
 
     /**
-     * (Updatable) Promotion type code.
+     * Promotion type code.
      * 
      */
     @Import(name="promoType")
     private @Nullable Output<String> promoType;
 
     /**
-     * @return (Updatable) Promotion type code.
+     * @return Promotion type code.
      * 
      */
     public Optional<Output<String>> promoType() {
@@ -71,7 +71,7 @@ public final class SubscriptionPaymentGatewayMerchantDefinedDataArgs extends com
         }
 
         /**
-         * @param cloudAccountName (Updatable) Cloud account name.
+         * @param cloudAccountName Cloud account name.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class SubscriptionPaymentGatewayMerchantDefinedDataArgs extends com
         }
 
         /**
-         * @param cloudAccountName (Updatable) Cloud account name.
+         * @param cloudAccountName Cloud account name.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class SubscriptionPaymentGatewayMerchantDefinedDataArgs extends com
         }
 
         /**
-         * @param promoType (Updatable) Promotion type code.
+         * @param promoType Promotion type code.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class SubscriptionPaymentGatewayMerchantDefinedDataArgs extends com
         }
 
         /**
-         * @param promoType (Updatable) Promotion type code.
+         * @param promoType Promotion type code.
          * 
          * @return builder
          * 

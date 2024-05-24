@@ -19,14 +19,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     public static final DetectorRecipeEffectiveDetectorRuleDetailArgs Empty = new DetectorRecipeEffectiveDetectorRuleDetailArgs();
 
     /**
-     * (Updatable) Base condition object
+     * Base condition object
      * 
      */
     @Import(name="condition")
     private @Nullable Output<String> condition;
 
     /**
-     * @return (Updatable) Base condition object
+     * @return Base condition object
      * 
      */
     public Optional<Output<String>> condition() {
@@ -34,14 +34,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * (Updatable) Configuration details
+     * Configuration details
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Configuration details
+     * @return Configuration details
      * 
      */
     public Optional<Output<List<DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>>> configurations() {
@@ -64,14 +64,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * (Updatable) Enables the control
+     * Enables the control
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return (Updatable) Enables the control
+     * @return Enables the control
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -79,14 +79,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * (Updatable) user defined labels for a detector rule
+     * user defined labels for a detector rule
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return (Updatable) user defined labels for a detector rule
+     * @return user defined labels for a detector rule
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -94,14 +94,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
     }
 
     /**
-     * (Updatable) The Risk Level
+     * The Risk Level
      * 
      */
     @Import(name="riskLevel")
     private @Nullable Output<String> riskLevel;
 
     /**
-     * @return (Updatable) The Risk Level
+     * @return The Risk Level
      * 
      */
     public Optional<Output<String>> riskLevel() {
@@ -138,7 +138,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition Base condition object
          * 
          * @return builder
          * 
@@ -149,7 +149,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param condition (Updatable) Base condition object
+         * @param condition Base condition object
          * 
          * @return builder
          * 
@@ -159,7 +159,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param configurations (Updatable) Configuration details
+         * @param configurations Configuration details
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param configurations (Updatable) Configuration details
+         * @param configurations Configuration details
          * 
          * @return builder
          * 
@@ -180,7 +180,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param configurations (Updatable) Configuration details
+         * @param configurations Configuration details
          * 
          * @return builder
          * 
@@ -211,7 +211,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param isEnabled (Updatable) Enables the control
+         * @param isEnabled Enables the control
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param isEnabled (Updatable) Enables the control
+         * @param isEnabled Enables the control
          * 
          * @return builder
          * 
@@ -232,7 +232,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param labels (Updatable) user defined labels for a detector rule
+         * @param labels user defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param labels (Updatable) user defined labels for a detector rule
+         * @param labels user defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param labels (Updatable) user defined labels for a detector rule
+         * @param labels user defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -263,7 +263,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param riskLevel (Updatable) The Risk Level
+         * @param riskLevel The Risk Level
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailArgs extends com.pul
         }
 
         /**
-         * @param riskLevel (Updatable) The Risk Level
+         * @param riskLevel The Risk Level
          * 
          * @return builder
          * 

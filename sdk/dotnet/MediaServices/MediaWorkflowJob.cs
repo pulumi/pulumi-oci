@@ -69,7 +69,7 @@ namespace Pulumi.Oci.MediaServices
     public partial class MediaWorkflowJob : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) ID of the compartment in which the job should be created.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -162,7 +162,7 @@ namespace Pulumi.Oci.MediaServices
         public Output<ImmutableArray<Outputs.MediaWorkflowJobTaskLifecycleState>> TaskLifecycleStates { get; private set; } = null!;
 
         /// <summary>
-        /// When the lock was created.
+        /// Creation time of the job. An RFC3339 formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -242,7 +242,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class MediaWorkflowJobArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) ID of the compartment in which the job should be created.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -341,7 +341,7 @@ namespace Pulumi.Oci.MediaServices
     public sealed class MediaWorkflowJobState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment ID of the lock.
+        /// (Updatable) ID of the compartment in which the job should be created.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -476,7 +476,7 @@ namespace Pulumi.Oci.MediaServices
         }
 
         /// <summary>
-        /// When the lock was created.
+        /// Creation time of the job. An RFC3339 formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

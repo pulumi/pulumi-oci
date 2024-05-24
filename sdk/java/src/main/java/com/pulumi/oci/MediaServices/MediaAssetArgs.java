@@ -39,14 +39,14 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The compartment ID of the lock.
+     * (Updatable) Compartment Identifier.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment ID of the lock.
+     * @return (Updatable) Compartment Identifier.
      * 
      */
     public Output<String> compartmentId() {
@@ -166,14 +166,14 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) JSON string containing the technial metadata for the media asset.
+     * (Updatable) List of Metadata.
      * 
      */
     @Import(name="metadatas")
     private @Nullable Output<List<MediaAssetMetadataArgs>> metadatas;
 
     /**
-     * @return (Updatable) JSON string containing the technial metadata for the media asset.
+     * @return (Updatable) List of Metadata.
      * 
      */
     public Optional<Output<List<MediaAssetMetadataArgs>>> metadatas() {
@@ -386,7 +386,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment ID of the lock.
+         * @param compartmentId (Updatable) Compartment Identifier.
          * 
          * @return builder
          * 
@@ -583,7 +583,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metadatas (Updatable) JSON string containing the technial metadata for the media asset.
+         * @param metadatas (Updatable) List of Metadata.
          * 
          * @return builder
          * 
@@ -594,7 +594,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metadatas (Updatable) JSON string containing the technial metadata for the media asset.
+         * @param metadatas (Updatable) List of Metadata.
          * 
          * @return builder
          * 
@@ -604,7 +604,7 @@ public final class MediaAssetArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param metadatas (Updatable) JSON string containing the technial metadata for the media asset.
+         * @param metadatas (Updatable) List of Metadata.
          * 
          * @return builder
          * 

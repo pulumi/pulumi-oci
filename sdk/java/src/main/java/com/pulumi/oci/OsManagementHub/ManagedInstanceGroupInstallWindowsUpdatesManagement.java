@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testManagedInstanceGroupInstallWindowsUpdatesManagement = new ManagedInstanceGroupInstallWindowsUpdatesManagement("testManagedInstanceGroupInstallWindowsUpdatesManagement", ManagedInstanceGroupInstallWindowsUpdatesManagementArgs.builder()        
+ *         var testManagedInstanceGroupInstallWindowsUpdatesManagement = new ManagedInstanceGroupInstallWindowsUpdatesManagement("testManagedInstanceGroupInstallWindowsUpdatesManagement", ManagedInstanceGroupInstallWindowsUpdatesManagementArgs.builder()
  *             .managedInstanceGroupId(testManagedInstanceGroup.id())
  *             .windowsUpdateTypes(managedInstanceGroupInstallWindowsUpdatesManagementWindowsUpdateTypes)
  *             .workRequestDetails(ManagedInstanceGroupInstallWindowsUpdatesManagementWorkRequestDetailsArgs.builder()

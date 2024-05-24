@@ -17,14 +17,14 @@ public final class DatasetInitialImportDatasetConfigurationImportFormatArgs exte
     public static final DatasetInitialImportDatasetConfigurationImportFormatArgs Empty = new DatasetInitialImportDatasetConfigurationImportFormatArgs();
 
     /**
-     * An unique name for a label within its dataset.
+     * Name of import format
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return An unique name for a label within its dataset.
+     * @return Name of import format
      * 
      */
     public Output<String> name() {
@@ -72,7 +72,7 @@ public final class DatasetInitialImportDatasetConfigurationImportFormatArgs exte
         }
 
         /**
-         * @param name An unique name for a label within its dataset.
+         * @param name Name of import format
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class DatasetInitialImportDatasetConfigurationImportFormatArgs exte
         }
 
         /**
-         * @param name An unique name for a label within its dataset.
+         * @param name Name of import format
          * 
          * @return builder
          * 

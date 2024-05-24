@@ -50,7 +50,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSchedule = new Schedule("testSchedule", ScheduleArgs.builder()        
+ *         var testSchedule = new Schedule("testSchedule", ScheduleArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(scheduleName)
  *             .resultLocation(ScheduleResultLocationArgs.builder()

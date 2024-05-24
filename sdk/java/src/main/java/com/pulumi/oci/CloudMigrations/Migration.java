@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMigration = new Migration("testMigration", MigrationArgs.builder()        
+ *         var testMigration = new Migration("testMigration", MigrationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .displayName(migrationDisplayName)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))

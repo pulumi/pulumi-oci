@@ -16,7 +16,7 @@ var _ = internal.GetEnvOrDefault
 type CloudGuardDataSourceDataSourceDetails struct {
 	// (Updatable) The additional entities count used for data source query.
 	AdditionalEntitiesCount *int `pulumi:"additionalEntitiesCount"`
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
 	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Interval in minutes that query is run periodically.
 	IntervalInMinutes *int `pulumi:"intervalInMinutes"`
@@ -28,7 +28,7 @@ type CloudGuardDataSourceDataSourceDetails struct {
 	Operator *string `pulumi:"operator"`
 	// (Updatable) The continuous query expression that is run periodically.
 	Query *string `pulumi:"query"`
-	// (Updatable) Time when the query can start, if not specified it can start immediately.
+	// (Updatable) Continuous query start policy object
 	QueryStartTime *CloudGuardDataSourceDataSourceDetailsQueryStartTime `pulumi:"queryStartTime"`
 	// (Updatable) Logging Query regions
 	Regions []string `pulumi:"regions"`
@@ -50,7 +50,7 @@ type CloudGuardDataSourceDataSourceDetailsInput interface {
 type CloudGuardDataSourceDataSourceDetailsArgs struct {
 	// (Updatable) The additional entities count used for data source query.
 	AdditionalEntitiesCount pulumi.IntPtrInput `pulumi:"additionalEntitiesCount"`
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
 	DataSourceFeedProvider pulumi.StringInput `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Interval in minutes that query is run periodically.
 	IntervalInMinutes pulumi.IntPtrInput `pulumi:"intervalInMinutes"`
@@ -62,7 +62,7 @@ type CloudGuardDataSourceDataSourceDetailsArgs struct {
 	Operator pulumi.StringPtrInput `pulumi:"operator"`
 	// (Updatable) The continuous query expression that is run periodically.
 	Query pulumi.StringPtrInput `pulumi:"query"`
-	// (Updatable) Time when the query can start, if not specified it can start immediately.
+	// (Updatable) Continuous query start policy object
 	QueryStartTime CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrInput `pulumi:"queryStartTime"`
 	// (Updatable) Logging Query regions
 	Regions pulumi.StringArrayInput `pulumi:"regions"`
@@ -152,7 +152,7 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) AdditionalEntitiesCount() p
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *int { return v.AdditionalEntitiesCount }).(pulumi.IntPtrOutput)
 }
 
-// Possible type of dataSourceFeed Provider(LoggingQuery)
+// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
 func (o CloudGuardDataSourceDataSourceDetailsOutput) DataSourceFeedProvider() pulumi.StringOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) string { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
 }
@@ -184,7 +184,7 @@ func (o CloudGuardDataSourceDataSourceDetailsOutput) Query() pulumi.StringPtrOut
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *string { return v.Query }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Time when the query can start, if not specified it can start immediately.
+// (Updatable) Continuous query start policy object
 func (o CloudGuardDataSourceDataSourceDetailsOutput) QueryStartTime() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
 	return o.ApplyT(func(v CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
 		return v.QueryStartTime
@@ -235,7 +235,7 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) AdditionalEntitiesCount(
 	}).(pulumi.IntPtrOutput)
 }
 
-// Possible type of dataSourceFeed Provider(LoggingQuery)
+// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) DataSourceFeedProvider() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *string {
 		if v == nil {
@@ -295,7 +295,7 @@ func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) Query() pulumi.StringPtr
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Time when the query can start, if not specified it can start immediately.
+// (Updatable) Continuous query start policy object
 func (o CloudGuardDataSourceDataSourceDetailsPtrOutput) QueryStartTime() CloudGuardDataSourceDataSourceDetailsQueryStartTimePtrOutput {
 	return o.ApplyT(func(v *CloudGuardDataSourceDataSourceDetails) *CloudGuardDataSourceDataSourceDetailsQueryStartTime {
 		if v == nil {
@@ -1029,9 +1029,11 @@ func (o DataMaskRuleTargetSelectedPtrOutput) Values() pulumi.StringArrayOutput {
 type DetectorRecipeDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []DetectorRecipeDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// (Updatable) The id of the attached DataSource.
+	// The id of the attached DataSource.
 	DataSourceId *string `pulumi:"dataSourceId"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeDetectorRuleDetails `pulumi:"details"`
@@ -1043,13 +1045,13 @@ type DetectorRecipeDetectorRule struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Data Source entities mapping for a Detector Rule
+	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings []DetectorRecipeDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes []string `pulumi:"managedListTypes"`
-	// (Updatable) Recommendation for DetectorRecipeDetectorRule
+	// Recommendation for DetectorRecipeDetectorRule
 	Recommendation *string `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType *string `pulumi:"resourceType"`
@@ -1077,9 +1079,11 @@ type DetectorRecipeDetectorRuleInput interface {
 type DetectorRecipeDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules DetectorRecipeDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// (Updatable) The id of the attached DataSource.
+	// The id of the attached DataSource.
 	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
 	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
 	Details DetectorRecipeDetectorRuleDetailsInput `pulumi:"details"`
@@ -1091,13 +1095,13 @@ type DetectorRecipeDetectorRuleArgs struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// (Updatable) Data Source entities mapping for a Detector Rule
+	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings DetectorRecipeDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes pulumi.StringArrayInput `pulumi:"managedListTypes"`
-	// (Updatable) Recommendation for DetectorRecipeDetectorRule
+	// Recommendation for DetectorRecipeDetectorRule
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
@@ -1169,12 +1173,14 @@ func (o DetectorRecipeDetectorRuleOutput) CandidateResponderRules() DetectorReci
 	}).(DetectorRecipeDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// (Updatable) The id of the attached DataSource.
+// The id of the attached DataSource.
 func (o DetectorRecipeDetectorRuleOutput) DataSourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Description for DetectorRecipeDetectorRule.
+// (Updatable) Detector recipe description.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
@@ -1201,7 +1207,7 @@ func (o DetectorRecipeDetectorRuleOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Data Source entities mapping for a Detector Rule
+// Data Source entities mapping for a Detector Rule
 func (o DetectorRecipeDetectorRuleOutput) EntitiesMappings() DetectorRecipeDetectorRuleEntitiesMappingArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) []DetectorRecipeDetectorRuleEntitiesMapping {
 		return v.EntitiesMappings
@@ -1218,7 +1224,7 @@ func (o DetectorRecipeDetectorRuleOutput) ManagedListTypes() pulumi.StringArrayO
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) []string { return v.ManagedListTypes }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Recommendation for DetectorRecipeDetectorRule
+// Recommendation for DetectorRecipeDetectorRule
 func (o DetectorRecipeDetectorRuleOutput) Recommendation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRule) *string { return v.Recommendation }).(pulumi.StringPtrOutput)
 }
@@ -1777,9 +1783,7 @@ func (o DetectorRecipeDetectorRuleDetailsConfigurationValueArrayOutput) Index(i 
 }
 
 type DetectorRecipeDetectorRuleDetailsEntitiesMapping struct {
-	// (Updatable) Detector recipe display name.
-	//
-	// Avoid entering confidential information.
+	// (Updatable) The display name of entity
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType *string `pulumi:"entityType"`
@@ -1799,9 +1803,7 @@ type DetectorRecipeDetectorRuleDetailsEntitiesMappingInput interface {
 }
 
 type DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs struct {
-	// (Updatable) Detector recipe display name.
-	//
-	// Avoid entering confidential information.
+	// (Updatable) The display name of entity
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// (Updatable) Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
@@ -1860,9 +1862,7 @@ func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) ToDetectorRecipe
 	return o
 }
 
-// (Updatable) Detector recipe display name.
-//
-// Avoid entering confidential information.
+// (Updatable) The display name of entity
 func (o DetectorRecipeDetectorRuleDetailsEntitiesMappingOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleDetailsEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -1902,9 +1902,9 @@ type DetectorRecipeDetectorRuleEntitiesMapping struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Possible type of entity
+	// Possible type of entity
 	EntityType *string `pulumi:"entityType"`
-	// (Updatable) The entity value mapped to a data source query
+	// The entity value mapped to a data source query
 	QueryField *string `pulumi:"queryField"`
 }
 
@@ -1924,9 +1924,9 @@ type DetectorRecipeDetectorRuleEntitiesMappingArgs struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// (Updatable) Possible type of entity
+	// Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
-	// (Updatable) The entity value mapped to a data source query
+	// The entity value mapped to a data source query
 	QueryField pulumi.StringPtrInput `pulumi:"queryField"`
 }
 
@@ -1988,12 +1988,12 @@ func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) DisplayName() pulumi.St
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Possible type of entity
+// Possible type of entity
 func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The entity value mapped to a data source query
+// The entity value mapped to a data source query
 func (o DetectorRecipeDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeDetectorRuleEntitiesMapping) *string { return v.QueryField }).(pulumi.StringPtrOutput)
 }
@@ -2021,27 +2021,29 @@ func (o DetectorRecipeDetectorRuleEntitiesMappingArrayOutput) Index(i pulumi.Int
 type DetectorRecipeEffectiveDetectorRule struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules []DetectorRecipeEffectiveDetectorRuleCandidateResponderRule `pulumi:"candidateResponderRules"`
-	// (Updatable) The id of the attached DataSource.
+	// The id of the attached DataSource.
 	DataSourceId *string `pulumi:"dataSourceId"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+	// Details of a Detector Rule
 	Details []DetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
-	// (Updatable) DetectorRecipeRule Identifier
+	// The unique identifier of the detector rule.
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Data Source entities mapping for a Detector Rule
+	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings []DetectorRecipeEffectiveDetectorRuleEntitiesMapping `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes []string `pulumi:"managedListTypes"`
-	// (Updatable) Recommendation for DetectorRecipeDetectorRule
+	// Recommendation for DetectorRecipeDetectorRule
 	Recommendation *string `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType *string `pulumi:"resourceType"`
@@ -2069,27 +2071,29 @@ type DetectorRecipeEffectiveDetectorRuleInput interface {
 type DetectorRecipeEffectiveDetectorRuleArgs struct {
 	// List of CandidateResponderRule related to this rule
 	CandidateResponderRules DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayInput `pulumi:"candidateResponderRules"`
-	// (Updatable) The id of the attached DataSource.
+	// The id of the attached DataSource.
 	DataSourceId pulumi.StringPtrInput `pulumi:"dataSourceId"`
-	// (Updatable) Description for DetectorRecipeDetectorRule.
+	// (Updatable) Detector recipe description.
+	//
+	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+	// Details of a Detector Rule
 	Details DetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
-	// (Updatable) DetectorRecipeRule Identifier
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
 	// (Updatable) Detector recipe display name.
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// (Updatable) Data Source entities mapping for a Detector Rule
+	// Data Source entities mapping for a Detector Rule
 	EntitiesMappings DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayInput `pulumi:"entitiesMappings"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of cloudguard managed list types related to this rule
 	ManagedListTypes pulumi.StringArrayInput `pulumi:"managedListTypes"`
-	// (Updatable) Recommendation for DetectorRecipeDetectorRule
+	// Recommendation for DetectorRecipeDetectorRule
 	Recommendation pulumi.StringPtrInput `pulumi:"recommendation"`
 	// resource type of the configuration to which the rule is applied
 	ResourceType pulumi.StringPtrInput `pulumi:"resourceType"`
@@ -2161,17 +2165,19 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) CandidateResponderRules() Det
 	}).(DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput)
 }
 
-// (Updatable) The id of the attached DataSource.
+// The id of the attached DataSource.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) DataSourceId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DataSourceId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Description for DetectorRecipeDetectorRule.
+// (Updatable) Detector recipe description.
+//
+// Avoid entering confidential information.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) Description() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+// Details of a Detector Rule
 func (o DetectorRecipeEffectiveDetectorRuleOutput) Details() DetectorRecipeEffectiveDetectorRuleDetailArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) []DetectorRecipeEffectiveDetectorRuleDetail {
 		return v.Details
@@ -2183,7 +2189,7 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) Detector() pulumi.StringPtrOu
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.Detector }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) DetectorRecipeRule Identifier
+// The unique identifier of the detector rule.
 func (o DetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DetectorRuleId }).(pulumi.StringPtrOutput)
 }
@@ -2195,7 +2201,7 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) DisplayName() pulumi.StringPt
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Data Source entities mapping for a Detector Rule
+// Data Source entities mapping for a Detector Rule
 func (o DetectorRecipeEffectiveDetectorRuleOutput) EntitiesMappings() DetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) []DetectorRecipeEffectiveDetectorRuleEntitiesMapping {
 		return v.EntitiesMappings
@@ -2212,7 +2218,7 @@ func (o DetectorRecipeEffectiveDetectorRuleOutput) ManagedListTypes() pulumi.Str
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) []string { return v.ManagedListTypes }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Recommendation for DetectorRecipeDetectorRule
+// Recommendation for DetectorRecipeDetectorRule
 func (o DetectorRecipeEffectiveDetectorRuleOutput) Recommendation() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRule) *string { return v.Recommendation }).(pulumi.StringPtrOutput)
 }
@@ -2384,17 +2390,17 @@ func (o DetectorRecipeEffectiveDetectorRuleCandidateResponderRuleArrayOutput) In
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetail struct {
-	// (Updatable) Base condition object
+	// Base condition object
 	Condition *string `pulumi:"condition"`
-	// (Updatable) Configuration details
+	// Configuration details
 	Configurations []DetectorRecipeEffectiveDetectorRuleDetailConfiguration `pulumi:"configurations"`
 	// configuration allowed or not
 	IsConfigurationAllowed *bool `pulumi:"isConfigurationAllowed"`
-	// (Updatable) Enables the control
+	// Enables the control
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// (Updatable) user defined labels for a detector rule
+	// user defined labels for a detector rule
 	Labels []string `pulumi:"labels"`
-	// (Updatable) The Risk Level
+	// The Risk Level
 	RiskLevel *string `pulumi:"riskLevel"`
 }
 
@@ -2410,17 +2416,17 @@ type DetectorRecipeEffectiveDetectorRuleDetailInput interface {
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailArgs struct {
-	// (Updatable) Base condition object
+	// Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// (Updatable) Configuration details
+	// Configuration details
 	Configurations DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
 	// configuration allowed or not
 	IsConfigurationAllowed pulumi.BoolPtrInput `pulumi:"isConfigurationAllowed"`
-	// (Updatable) Enables the control
+	// Enables the control
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
-	// (Updatable) user defined labels for a detector rule
+	// user defined labels for a detector rule
 	Labels pulumi.StringArrayInput `pulumi:"labels"`
-	// (Updatable) The Risk Level
+	// The Risk Level
 	RiskLevel pulumi.StringPtrInput `pulumi:"riskLevel"`
 }
 
@@ -2475,12 +2481,12 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) ToDetectorRecipeEffecti
 	return o
 }
 
-// (Updatable) Base condition object
+// Base condition object
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Configuration details
+// Configuration details
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) Configurations() DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) []DetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return v.Configurations
@@ -2492,17 +2498,17 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) IsConfigurationAllowed(
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) *bool { return v.IsConfigurationAllowed }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Enables the control
+// Enables the control
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) user defined labels for a detector rule
+// user defined labels for a detector rule
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) Labels() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) []string { return v.Labels }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) The Risk Level
+// The Risk Level
 func (o DetectorRecipeEffectiveDetectorRuleDetailOutput) RiskLevel() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetail) *string { return v.RiskLevel }).(pulumi.StringPtrOutput)
 }
@@ -2528,15 +2534,15 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(i pulumi.Int
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey *string `pulumi:"configKey"`
-	// (Updatable) configuration data type
+	// configuration data type
 	DataType *string `pulumi:"dataType"`
-	// (Updatable) configuration name
+	// configuration name
 	Name *string `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
-	// (Updatable) List of configuration values
+	// List of configuration values
 	Values []DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue `pulumi:"values"`
 }
 
@@ -2552,15 +2558,15 @@ type DetectorRecipeEffectiveDetectorRuleDetailConfigurationInput interface {
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
-	// (Updatable) configuration data type
+	// configuration data type
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
-	// (Updatable) configuration name
+	// configuration name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
-	// (Updatable) List of configuration values
+	// List of configuration values
 	Values DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
 }
 
@@ -2615,27 +2621,27 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ToDetector
 	return o
 }
 
-// (Updatable) Unique name of the configuration
+// Unique name of the configuration
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration data type
+// configuration data type
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) DataType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration name
+// configuration name
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) List of configuration values
+// List of configuration values
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Values() DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfiguration) []DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue {
 		return v.Values
@@ -2663,11 +2669,11 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput) Index
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue struct {
-	// (Updatable) configuration list item type, either CUSTOM or MANAGED
+	// configuration list item type, either CUSTOM or MANAGED
 	ListType *string `pulumi:"listType"`
-	// (Updatable) type of the managed list
+	// type of the managed list
 	ManagedListType *string `pulumi:"managedListType"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
 }
 
@@ -2683,11 +2689,11 @@ type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueInput interface 
 }
 
 type DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs struct {
-	// (Updatable) configuration list item type, either CUSTOM or MANAGED
+	// configuration list item type, either CUSTOM or MANAGED
 	ListType pulumi.StringPtrInput `pulumi:"listType"`
-	// (Updatable) type of the managed list
+	// type of the managed list
 	ManagedListType pulumi.StringPtrInput `pulumi:"managedListType"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -2742,17 +2748,17 @@ func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ToDet
 	return o
 }
 
-// (Updatable) configuration list item type, either CUSTOM or MANAGED
+// configuration list item type, either CUSTOM or MANAGED
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ListType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) *string { return v.ListType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) type of the managed list
+// type of the managed list
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) ManagedListType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) *string { return v.ManagedListType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o DetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -2782,9 +2788,9 @@ type DetectorRecipeEffectiveDetectorRuleEntitiesMapping struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Possible type of entity
+	// Possible type of entity
 	EntityType *string `pulumi:"entityType"`
-	// (Updatable) The entity value mapped to a data source query
+	// The entity value mapped to a data source query
 	QueryField *string `pulumi:"queryField"`
 }
 
@@ -2804,9 +2810,9 @@ type DetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
-	// (Updatable) Possible type of entity
+	// Possible type of entity
 	EntityType pulumi.StringPtrInput `pulumi:"entityType"`
-	// (Updatable) The entity value mapped to a data source query
+	// The entity value mapped to a data source query
 	QueryField pulumi.StringPtrInput `pulumi:"queryField"`
 }
 
@@ -2868,12 +2874,12 @@ func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) DisplayName() 
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Possible type of entity
+// Possible type of entity
 func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) EntityType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.EntityType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The entity value mapped to a data source query
+// The entity value mapped to a data source query
 func (o DetectorRecipeEffectiveDetectorRuleEntitiesMappingOutput) QueryField() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DetectorRecipeEffectiveDetectorRuleEntitiesMapping) *string { return v.QueryField }).(pulumi.StringPtrOutput)
 }
@@ -2905,7 +2911,7 @@ type ResponderRecipeEffectiveResponderRule struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Details of UpdateResponderRuleDetails.
+	// Details of ResponderRule.
 	Details []ResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
 	// (Updatable) Responder recipe display name.
 	//
@@ -2915,7 +2921,7 @@ type ResponderRecipeEffectiveResponderRule struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
-	// (Updatable) ResponderRecipeRule Identifier
+	// Identifier for ResponderRule.
 	ResponderRuleId *string `pulumi:"responderRuleId"`
 	// The current state of the Example.
 	State *string `pulumi:"state"`
@@ -2947,7 +2953,7 @@ type ResponderRecipeEffectiveResponderRuleArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Details of UpdateResponderRuleDetails.
+	// Details of ResponderRule.
 	Details ResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
 	// (Updatable) Responder recipe display name.
 	//
@@ -2957,7 +2963,7 @@ type ResponderRecipeEffectiveResponderRuleArgs struct {
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
-	// (Updatable) ResponderRecipeRule Identifier
+	// Identifier for ResponderRule.
 	ResponderRuleId pulumi.StringPtrInput `pulumi:"responderRuleId"`
 	// The current state of the Example.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -3034,7 +3040,7 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) Description() pulumi.String
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Details of UpdateResponderRuleDetails.
+// Details of ResponderRule.
 func (o ResponderRecipeEffectiveResponderRuleOutput) Details() ResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) []ResponderRecipeEffectiveResponderRuleDetail {
 		return v.Details
@@ -3058,7 +3064,7 @@ func (o ResponderRecipeEffectiveResponderRuleOutput) Policies() pulumi.StringArr
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) []string { return v.Policies }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) ResponderRecipeRule Identifier
+// Identifier for ResponderRule.
 func (o ResponderRecipeEffectiveResponderRuleOutput) ResponderRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRule) *string { return v.ResponderRuleId }).(pulumi.StringPtrOutput)
 }
@@ -3113,7 +3119,7 @@ type ResponderRecipeEffectiveResponderRuleDetail struct {
 	Condition *string `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations []ResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
-	// (Updatable) Identifies state for ResponderRule
+	// Identifies state for ResponderRule
 	IsEnabled *bool `pulumi:"isEnabled"`
 	// Execution Mode for ResponderRule
 	Mode *string `pulumi:"mode"`
@@ -3135,7 +3141,7 @@ type ResponderRecipeEffectiveResponderRuleDetailArgs struct {
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 	// ResponderRule configurations
 	Configurations ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
-	// (Updatable) Identifies state for ResponderRule
+	// Identifies state for ResponderRule
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
 	// Execution Mode for ResponderRule
 	Mode pulumi.StringPtrInput `pulumi:"mode"`
@@ -3204,7 +3210,7 @@ func (o ResponderRecipeEffectiveResponderRuleDetailOutput) Configurations() Resp
 	}).(ResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput)
 }
 
-// (Updatable) Identifies state for ResponderRule
+// Identifies state for ResponderRule
 func (o ResponderRecipeEffectiveResponderRuleDetailOutput) IsEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v ResponderRecipeEffectiveResponderRuleDetail) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -3880,7 +3886,7 @@ func (o TargetTargetDetailArrayOutput) Index(i pulumi.IntInput) TargetTargetDeta
 }
 
 type TargetTargetDetailTargetSecurityZoneRecipe struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -3926,7 +3932,7 @@ type TargetTargetDetailTargetSecurityZoneRecipeInput interface {
 }
 
 type TargetTargetDetailTargetSecurityZoneRecipeArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -4011,7 +4017,7 @@ func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) ToTargetTargetDetailTa
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetTargetDetailTargetSecurityZoneRecipeOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetailTargetSecurityZoneRecipe) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -4103,7 +4109,7 @@ func (o TargetTargetDetailTargetSecurityZoneRecipeArrayOutput) Index(i pulumi.In
 }
 
 type TargetTargetDetectorRecipe struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
 	//
@@ -4145,7 +4151,7 @@ type TargetTargetDetectorRecipeInput interface {
 }
 
 type TargetTargetDetectorRecipeArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
 	//
@@ -4226,7 +4232,7 @@ func (o TargetTargetDetectorRecipeOutput) ToTargetTargetDetectorRecipeOutputWith
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetTargetDetectorRecipeOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipe) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -4319,7 +4325,7 @@ type TargetTargetDetectorRecipeDetectorRule struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Details of ResponderRule.
+	// (Updatable) Overriden settings of a Detector Rule applied on target
 	Details TargetTargetDetectorRecipeDetectorRuleDetails `pulumi:"details"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
@@ -4367,7 +4373,7 @@ type TargetTargetDetectorRecipeDetectorRuleArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Details of ResponderRule.
+	// (Updatable) Overriden settings of a Detector Rule applied on target
 	Details TargetTargetDetectorRecipeDetectorRuleDetailsInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
@@ -4460,7 +4466,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleOutput) Description() pulumi.Strin
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Details of ResponderRule.
+// (Updatable) Overriden settings of a Detector Rule applied on target
 func (o TargetTargetDetectorRecipeDetectorRuleOutput) Details() TargetTargetDetectorRecipeDetectorRuleDetailsOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRule) TargetTargetDetectorRecipeDetectorRuleDetails {
 		return v.Details
@@ -4554,7 +4560,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleArrayOutput) Index(i pulumi.IntInp
 type TargetTargetDetectorRecipeDetectorRuleDetails struct {
 	// (Updatable) Condition group corresponding to each compartment
 	ConditionGroups []TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup `pulumi:"conditionGroups"`
-	// (Updatable) Configurations associated with the ResponderRule
+	// ResponderRule configurations
 	Configurations []TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration `pulumi:"configurations"`
 	// configuration allowed or not
 	IsConfigurationAllowed *bool `pulumi:"isConfigurationAllowed"`
@@ -4580,7 +4586,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsInput interface {
 type TargetTargetDetectorRecipeDetectorRuleDetailsArgs struct {
 	// (Updatable) Condition group corresponding to each compartment
 	ConditionGroups TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayInput `pulumi:"conditionGroups"`
-	// (Updatable) Configurations associated with the ResponderRule
+	// ResponderRule configurations
 	Configurations TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayInput `pulumi:"configurations"`
 	// configuration allowed or not
 	IsConfigurationAllowed pulumi.BoolPtrInput `pulumi:"isConfigurationAllowed"`
@@ -4625,7 +4631,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsOutput) ConditionGroups() T
 	}).(TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput)
 }
 
-// (Updatable) Configurations associated with the ResponderRule
+// ResponderRule configurations
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsOutput) Configurations() TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArrayOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetails) []TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration {
 		return v.Configurations
@@ -4759,13 +4765,13 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupArrayOutput) 
 }
 
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey *string `pulumi:"configKey"`
 	// configuration data type
 	DataType *string `pulumi:"dataType"`
-	// (Updatable) configuration name
+	// configuration name
 	Name *string `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
 	// List of configuration values
 	Values []TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue `pulumi:"values"`
@@ -4783,13 +4789,13 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationInput interface {
 }
 
 type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationArgs struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
 	// configuration data type
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
-	// (Updatable) configuration name
+	// configuration name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 	// List of configuration values
 	Values TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArrayInput `pulumi:"values"`
@@ -4846,7 +4852,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ToTarg
 	return o
 }
 
-// (Updatable) Unique name of the configuration
+// Unique name of the configuration
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
 }
@@ -4856,12 +4862,12 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) DataTy
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration name
+// configuration name
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -4898,7 +4904,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue struct {
 	ListType *string `pulumi:"listType"`
 	// type of the managed list
 	ManagedListType *string `pulumi:"managedListType"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
 }
 
@@ -4918,7 +4924,7 @@ type TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueArgs struct 
 	ListType pulumi.StringPtrInput `pulumi:"listType"`
 	// type of the managed list
 	ManagedListType pulumi.StringPtrInput `pulumi:"managedListType"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -4985,7 +4991,7 @@ func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput) M
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValueOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -5138,11 +5144,11 @@ type TargetTargetDetectorRecipeEffectiveDetectorRule struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Details of ResponderRule.
+	// Details of ResponderRule.
 	Details []TargetTargetDetectorRecipeEffectiveDetectorRuleDetail `pulumi:"details"`
 	// detector for the rule
 	Detector *string `pulumi:"detector"`
-	// (Updatable) Identifier for DetectorRule.
+	// The unique identifier of the detector rule.
 	DetectorRuleId *string `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
 	//
@@ -5186,11 +5192,11 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Details of ResponderRule.
+	// Details of ResponderRule.
 	Details TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayInput `pulumi:"details"`
 	// detector for the rule
 	Detector pulumi.StringPtrInput `pulumi:"detector"`
-	// (Updatable) Identifier for DetectorRule.
+	// The unique identifier of the detector rule.
 	DetectorRuleId pulumi.StringPtrInput `pulumi:"detectorRuleId"`
 	// (Updatable) DetectorTemplate identifier.
 	//
@@ -5279,7 +5285,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Description() pul
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Details of ResponderRule.
+// Details of ResponderRule.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Details() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) []TargetTargetDetectorRecipeEffectiveDetectorRuleDetail {
 		return v.Details
@@ -5291,7 +5297,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) Detector() pulumi
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.Detector }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Identifier for DetectorRule.
+// The unique identifier of the detector rule.
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleOutput) DetectorRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRule) *string { return v.DetectorRuleId }).(pulumi.StringPtrOutput)
 }
@@ -5371,9 +5377,9 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleArrayOutput) Index(i pulu
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetail struct {
-	// (Updatable) Condition group corresponding to each compartment
+	// Condition group corresponding to each compartment
 	ConditionGroups []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup `pulumi:"conditionGroups"`
-	// (Updatable) Configurations associated with the ResponderRule
+	// ResponderRule configurations
 	Configurations []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration `pulumi:"configurations"`
 	// configuration allowed or not
 	IsConfigurationAllowed *bool `pulumi:"isConfigurationAllowed"`
@@ -5397,9 +5403,9 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailInput interface {
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs struct {
-	// (Updatable) Condition group corresponding to each compartment
+	// Condition group corresponding to each compartment
 	ConditionGroups TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayInput `pulumi:"conditionGroups"`
-	// (Updatable) Configurations associated with the ResponderRule
+	// ResponderRule configurations
 	Configurations TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayInput `pulumi:"configurations"`
 	// configuration allowed or not
 	IsConfigurationAllowed pulumi.BoolPtrInput `pulumi:"isConfigurationAllowed"`
@@ -5462,14 +5468,14 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ToTargetTar
 	return o
 }
 
-// (Updatable) Condition group corresponding to each compartment
+// Condition group corresponding to each compartment
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) ConditionGroups() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetail) []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup {
 		return v.ConditionGroups
 	}).(TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArrayOutput)
 }
 
-// (Updatable) Configurations associated with the ResponderRule
+// ResponderRule configurations
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailOutput) Configurations() TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArrayOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetail) []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration {
 		return v.Configurations
@@ -5517,9 +5523,9 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArrayOutput) Index(
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) Base condition object
+	// Base condition object
 	Condition *string `pulumi:"condition"`
 }
 
@@ -5535,9 +5541,9 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupInput in
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
-	// (Updatable) Base condition object
+	// Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
 }
 
@@ -5592,14 +5598,14 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutpu
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup) *string {
 		return v.CompartmentId
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Base condition object
+// Base condition object
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup) *string {
 		return v.Condition
@@ -5627,13 +5633,13 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArray
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey *string `pulumi:"configKey"`
 	// configuration data type
 	DataType *string `pulumi:"dataType"`
-	// (Updatable) configuration name
+	// configuration name
 	Name *string `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
 	// List of configuration values
 	Values []TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue `pulumi:"values"`
@@ -5651,13 +5657,13 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationInput int
 }
 
 type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
 	// configuration data type
 	DataType pulumi.StringPtrInput `pulumi:"dataType"`
-	// (Updatable) configuration name
+	// configuration name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 	// List of configuration values
 	Values TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArrayInput `pulumi:"values"`
@@ -5714,7 +5720,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput
 	return o
 }
 
-// (Updatable) Unique name of the configuration
+// Unique name of the configuration
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.ConfigKey }).(pulumi.StringPtrOutput)
 }
@@ -5724,12 +5730,12 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.DataType }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration name
+// configuration name
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -5766,7 +5772,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue str
 	ListType *string `pulumi:"listType"`
 	// type of the managed list
 	ManagedListType *string `pulumi:"managedListType"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
 }
 
@@ -5786,7 +5792,7 @@ type TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs
 	ListType pulumi.StringPtrInput `pulumi:"listType"`
 	// type of the managed list
 	ManagedListType pulumi.StringPtrInput `pulumi:"managedListType"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -5855,7 +5861,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueO
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValue) *string {
 		return v.Value
@@ -6004,7 +6010,7 @@ func (o TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArrayOutpu
 }
 
 type TargetTargetResponderRecipe struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
 	//
@@ -6042,7 +6048,7 @@ type TargetTargetResponderRecipeInput interface {
 }
 
 type TargetTargetResponderRecipeArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
 	//
@@ -6119,7 +6125,7 @@ func (o TargetTargetResponderRecipeOutput) ToTargetTargetResponderRecipeOutputWi
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetTargetResponderRecipeOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipe) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -6198,13 +6204,13 @@ func (o TargetTargetResponderRecipeArrayOutput) Index(i pulumi.IntInput) TargetT
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRule struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// (Updatable) Details of ResponderRule.
+	// Details of ResponderRule.
 	Details []TargetTargetResponderRecipeEffectiveResponderRuleDetail `pulumi:"details"`
 	// (Updatable) DetectorTemplate identifier.
 	//
@@ -6214,10 +6220,7 @@ type TargetTargetResponderRecipeEffectiveResponderRule struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies []string `pulumi:"policies"`
-	// (Updatable) Identifier for ResponderRule.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Unique ResponderRule identifier.
 	ResponderRuleId *string `pulumi:"responderRuleId"`
 	// (Updatable) The current state of the DetectorRule.
 	State *string `pulumi:"state"`
@@ -6243,13 +6246,13 @@ type TargetTargetResponderRecipeEffectiveResponderRuleInput interface {
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput `pulumi:"description"`
-	// (Updatable) Details of ResponderRule.
+	// Details of ResponderRule.
 	Details TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayInput `pulumi:"details"`
 	// (Updatable) DetectorTemplate identifier.
 	//
@@ -6259,10 +6262,7 @@ type TargetTargetResponderRecipeEffectiveResponderRuleArgs struct {
 	LifecycleDetails pulumi.StringPtrInput `pulumi:"lifecycleDetails"`
 	// List of Policy
 	Policies pulumi.StringArrayInput `pulumi:"policies"`
-	// (Updatable) Identifier for ResponderRule.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	// Unique ResponderRule identifier.
 	ResponderRuleId pulumi.StringPtrInput `pulumi:"responderRuleId"`
 	// (Updatable) The current state of the DetectorRule.
 	State pulumi.StringPtrInput `pulumi:"state"`
@@ -6327,7 +6327,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) ToTargetTargetR
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
@@ -6339,7 +6339,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Description() p
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.Description }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Details of ResponderRule.
+// Details of ResponderRule.
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Details() TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) []TargetTargetResponderRecipeEffectiveResponderRuleDetail {
 		return v.Details
@@ -6363,10 +6363,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) Policies() pulu
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) []string { return v.Policies }).(pulumi.StringArrayOutput)
 }
 
-// (Updatable) Identifier for ResponderRule.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+// Unique ResponderRule identifier.
 func (o TargetTargetResponderRecipeEffectiveResponderRuleOutput) ResponderRuleId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRule) *string { return v.ResponderRuleId }).(pulumi.StringPtrOutput)
 }
@@ -6417,13 +6414,13 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleArrayOutput) Index(i pu
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleDetail struct {
-	// (Updatable) Base condition object
+	// Base condition object
 	Condition *string `pulumi:"condition"`
-	// (Updatable) Configurations associated with the ResponderRule
+	// ResponderRule configurations
 	Configurations []TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration `pulumi:"configurations"`
 	// Identifies state for ResponderRule
 	IsEnabled *bool `pulumi:"isEnabled"`
-	// (Updatable) Execution Mode for ResponderRule
+	// Execution Mode for ResponderRule
 	Mode *string `pulumi:"mode"`
 }
 
@@ -6439,13 +6436,13 @@ type TargetTargetResponderRecipeEffectiveResponderRuleDetailInput interface {
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs struct {
-	// (Updatable) Base condition object
+	// Base condition object
 	Condition pulumi.StringPtrInput `pulumi:"condition"`
-	// (Updatable) Configurations associated with the ResponderRule
+	// ResponderRule configurations
 	Configurations TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayInput `pulumi:"configurations"`
 	// Identifies state for ResponderRule
 	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
-	// (Updatable) Execution Mode for ResponderRule
+	// Execution Mode for ResponderRule
 	Mode pulumi.StringPtrInput `pulumi:"mode"`
 }
 
@@ -6500,12 +6497,12 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) ToTargetT
 	return o
 }
 
-// (Updatable) Base condition object
+// Base condition object
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) Condition() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetail) *string { return v.Condition }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Configurations associated with the ResponderRule
+// ResponderRule configurations
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) Configurations() TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArrayOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetail) []TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration {
 		return v.Configurations
@@ -6517,7 +6514,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) IsEnabled
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetail) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// (Updatable) Execution Mode for ResponderRule
+// Execution Mode for ResponderRule
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailOutput) Mode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetail) *string { return v.Mode }).(pulumi.StringPtrOutput)
 }
@@ -6543,11 +6540,11 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailArrayOutput) Inde
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey *string `pulumi:"configKey"`
-	// (Updatable) configuration name
+	// configuration name
 	Name *string `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value *string `pulumi:"value"`
 }
 
@@ -6563,11 +6560,11 @@ type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationInput i
 }
 
 type TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArgs struct {
-	// (Updatable) Unique name of the configuration
+	// Unique name of the configuration
 	ConfigKey pulumi.StringPtrInput `pulumi:"configKey"`
-	// (Updatable) configuration name
+	// configuration name
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// (Updatable) configuration value
+	// configuration value
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -6622,19 +6619,19 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutp
 	return o
 }
 
-// (Updatable) Unique name of the configuration
+// Unique name of the configuration
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) ConfigKey() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration) *string {
 		return v.ConfigKey
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration name
+// configuration name
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) configuration value
+// configuration value
 func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeEffectiveResponderRuleDetailConfiguration) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -6660,7 +6657,7 @@ func (o TargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationArra
 }
 
 type TargetTargetResponderRecipeResponderRule struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The target description.
 	//
@@ -6705,7 +6702,7 @@ type TargetTargetResponderRecipeResponderRuleInput interface {
 }
 
 type TargetTargetResponderRecipeResponderRuleArgs struct {
-	// (Updatable) compartment associated with condition
+	// Compartment Identifier where the resource is created
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The target description.
 	//
@@ -6789,7 +6786,7 @@ func (o TargetTargetResponderRecipeResponderRuleOutput) ToTargetTargetResponderR
 	return o
 }
 
-// (Updatable) compartment associated with condition
+// Compartment Identifier where the resource is created
 func (o TargetTargetResponderRecipeResponderRuleOutput) CompartmentId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v TargetTargetResponderRecipeResponderRule) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }

@@ -13,11 +13,13 @@ public final class DomainsSettingDefaultCompanyName {
     /**
      * @return (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -25,17 +27,16 @@ public final class DomainsSettingDefaultCompanyName {
      */
     private String locale;
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Company name
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     private String value;
@@ -44,11 +45,13 @@ public final class DomainsSettingDefaultCompanyName {
     /**
      * @return (Updatable) Locale
      * 
+     * **Added In:** 18.2.2
+     * 
      * **SCIM++ Properties:**
-     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(loginTexts.locale)&#34;
+     * * idcsCanonicalValueSourceFilter: attrName eq &#34;locales&#34; and attrValues.value eq &#34;$(companyNames.locale)&#34;
      * * idcsCanonicalValueSourceResourceType: AllowedValue
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
@@ -58,17 +61,16 @@ public final class DomainsSettingDefaultCompanyName {
         return this.locale;
     }
     /**
-     * @return (Updatable) Custom claim value
+     * @return (Updatable) Company name
      * 
-     * **Added In:** 18.4.2
+     * **Added In:** 18.2.2
      * 
      * **SCIM++ Properties:**
      * * multiValued: false
-     * * mutability: readWrite
+     * * mutability: readOnly
      * * required: true
      * * returned: default
      * * type: string
-     * * uniqueness: none
      * 
      */
     public String value() {

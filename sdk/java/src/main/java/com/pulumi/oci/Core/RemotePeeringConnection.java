@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testRemotePeeringConnection = new RemotePeeringConnection("testRemotePeeringConnection", RemotePeeringConnectionArgs.builder()        
+ *         var testRemotePeeringConnection = new RemotePeeringConnection("testRemotePeeringConnection", RemotePeeringConnectionArgs.builder()
  *             .compartmentId(compartmentId)
  *             .drgId(testDrg.id())
  *             .definedTags(Map.of("Operations.CostCenter", "42"))

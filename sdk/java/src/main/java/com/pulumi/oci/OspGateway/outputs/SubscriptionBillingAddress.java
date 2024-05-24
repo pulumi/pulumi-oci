@@ -12,314 +12,314 @@ import javax.annotation.Nullable;
 @CustomType
 public final class SubscriptionBillingAddress {
     /**
-     * @return (Updatable) Address identifier.
+     * @return Address identifier.
      * 
      */
     private @Nullable String addressKey;
     /**
-     * @return (Updatable) Name of the city.
+     * @return Name of the city.
      * 
      */
     private @Nullable String city;
     /**
-     * @return (Updatable) Name of the customer company.
+     * @return Name of the customer company.
      * 
      */
     private @Nullable String companyName;
     /**
-     * @return (Updatable) Contributor class of the customer company.
+     * @return Contributor class of the customer company.
      * 
      */
     private @Nullable String contributorClass;
     /**
-     * @return (Updatable) Country of the address.
+     * @return Country of the address.
      * 
      */
     private @Nullable String country;
     /**
-     * @return (Updatable) County of the address.
+     * @return County of the address.
      * 
      */
     private @Nullable String county;
     /**
-     * @return (Updatable) Department name of the customer company.
+     * @return Department name of the customer company.
      * 
      */
     private @Nullable String departmentName;
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return The email address of the paypal user.
      * 
      */
     private @Nullable String emailAddress;
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return First name of the paypal user.
      * 
      */
     private @Nullable String firstName;
     /**
-     * @return (Updatable) Internal number of the customer company.
+     * @return Internal number of the customer company.
      * 
      */
     private @Nullable String internalNumber;
     /**
-     * @return (Updatable) Job title of the contact person.
+     * @return Job title of the contact person.
      * 
      */
     private @Nullable String jobTitle;
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return Last name of the paypal user.
      * 
      */
     private @Nullable String lastName;
     /**
-     * @return (Updatable) Address line 1.
+     * @return Address line 1.
      * 
      */
     private @Nullable String line1;
     /**
-     * @return (Updatable) Address line 2.
+     * @return Address line 2.
      * 
      */
     private @Nullable String line2;
     /**
-     * @return (Updatable) Address line 3.
+     * @return Address line 3.
      * 
      */
     private @Nullable String line3;
     /**
-     * @return (Updatable) Address line 4.
+     * @return Address line 4.
      * 
      */
     private @Nullable String line4;
     /**
-     * @return (Updatable) Middle name of the contact person.
+     * @return Middle name of the contact person.
      * 
      */
     private @Nullable String middleName;
     /**
-     * @return (Updatable) Municipal Inscription.
+     * @return Municipal Inscription.
      * 
      */
     private @Nullable String municipalInscription;
     /**
-     * @return (Updatable) Phone country code of the contact person.
+     * @return Phone country code of the contact person.
      * 
      */
     private @Nullable String phoneCountryCode;
     /**
-     * @return (Updatable) Phone number of the contact person.
+     * @return Phone number of the contact person.
      * 
      */
     private @Nullable String phoneNumber;
     /**
-     * @return (Updatable) Post code of the address.
+     * @return Post code of the address.
      * 
      */
     private @Nullable String postalCode;
     /**
-     * @return (Updatable) Province of the address.
+     * @return Province of the address.
      * 
      */
     private @Nullable String province;
     /**
-     * @return (Updatable) State of the address.
+     * @return State of the address.
      * 
      */
     private @Nullable String state;
     /**
-     * @return (Updatable) State Inscription.
+     * @return State Inscription.
      * 
      */
     private @Nullable String stateInscription;
     /**
-     * @return (Updatable) Street name of the address.
+     * @return Street name of the address.
      * 
      */
     private @Nullable String streetName;
     /**
-     * @return (Updatable) Street number of the address.
+     * @return Street number of the address.
      * 
      */
     private @Nullable String streetNumber;
 
     private SubscriptionBillingAddress() {}
     /**
-     * @return (Updatable) Address identifier.
+     * @return Address identifier.
      * 
      */
     public Optional<String> addressKey() {
         return Optional.ofNullable(this.addressKey);
     }
     /**
-     * @return (Updatable) Name of the city.
+     * @return Name of the city.
      * 
      */
     public Optional<String> city() {
         return Optional.ofNullable(this.city);
     }
     /**
-     * @return (Updatable) Name of the customer company.
+     * @return Name of the customer company.
      * 
      */
     public Optional<String> companyName() {
         return Optional.ofNullable(this.companyName);
     }
     /**
-     * @return (Updatable) Contributor class of the customer company.
+     * @return Contributor class of the customer company.
      * 
      */
     public Optional<String> contributorClass() {
         return Optional.ofNullable(this.contributorClass);
     }
     /**
-     * @return (Updatable) Country of the address.
+     * @return Country of the address.
      * 
      */
     public Optional<String> country() {
         return Optional.ofNullable(this.country);
     }
     /**
-     * @return (Updatable) County of the address.
+     * @return County of the address.
      * 
      */
     public Optional<String> county() {
         return Optional.ofNullable(this.county);
     }
     /**
-     * @return (Updatable) Department name of the customer company.
+     * @return Department name of the customer company.
      * 
      */
     public Optional<String> departmentName() {
         return Optional.ofNullable(this.departmentName);
     }
     /**
-     * @return (Updatable) The email address of the paypal user.
+     * @return The email address of the paypal user.
      * 
      */
     public Optional<String> emailAddress() {
         return Optional.ofNullable(this.emailAddress);
     }
     /**
-     * @return (Updatable) First name of the paypal user.
+     * @return First name of the paypal user.
      * 
      */
     public Optional<String> firstName() {
         return Optional.ofNullable(this.firstName);
     }
     /**
-     * @return (Updatable) Internal number of the customer company.
+     * @return Internal number of the customer company.
      * 
      */
     public Optional<String> internalNumber() {
         return Optional.ofNullable(this.internalNumber);
     }
     /**
-     * @return (Updatable) Job title of the contact person.
+     * @return Job title of the contact person.
      * 
      */
     public Optional<String> jobTitle() {
         return Optional.ofNullable(this.jobTitle);
     }
     /**
-     * @return (Updatable) Last name of the paypal user.
+     * @return Last name of the paypal user.
      * 
      */
     public Optional<String> lastName() {
         return Optional.ofNullable(this.lastName);
     }
     /**
-     * @return (Updatable) Address line 1.
+     * @return Address line 1.
      * 
      */
     public Optional<String> line1() {
         return Optional.ofNullable(this.line1);
     }
     /**
-     * @return (Updatable) Address line 2.
+     * @return Address line 2.
      * 
      */
     public Optional<String> line2() {
         return Optional.ofNullable(this.line2);
     }
     /**
-     * @return (Updatable) Address line 3.
+     * @return Address line 3.
      * 
      */
     public Optional<String> line3() {
         return Optional.ofNullable(this.line3);
     }
     /**
-     * @return (Updatable) Address line 4.
+     * @return Address line 4.
      * 
      */
     public Optional<String> line4() {
         return Optional.ofNullable(this.line4);
     }
     /**
-     * @return (Updatable) Middle name of the contact person.
+     * @return Middle name of the contact person.
      * 
      */
     public Optional<String> middleName() {
         return Optional.ofNullable(this.middleName);
     }
     /**
-     * @return (Updatable) Municipal Inscription.
+     * @return Municipal Inscription.
      * 
      */
     public Optional<String> municipalInscription() {
         return Optional.ofNullable(this.municipalInscription);
     }
     /**
-     * @return (Updatable) Phone country code of the contact person.
+     * @return Phone country code of the contact person.
      * 
      */
     public Optional<String> phoneCountryCode() {
         return Optional.ofNullable(this.phoneCountryCode);
     }
     /**
-     * @return (Updatable) Phone number of the contact person.
+     * @return Phone number of the contact person.
      * 
      */
     public Optional<String> phoneNumber() {
         return Optional.ofNullable(this.phoneNumber);
     }
     /**
-     * @return (Updatable) Post code of the address.
+     * @return Post code of the address.
      * 
      */
     public Optional<String> postalCode() {
         return Optional.ofNullable(this.postalCode);
     }
     /**
-     * @return (Updatable) Province of the address.
+     * @return Province of the address.
      * 
      */
     public Optional<String> province() {
         return Optional.ofNullable(this.province);
     }
     /**
-     * @return (Updatable) State of the address.
+     * @return State of the address.
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return (Updatable) State Inscription.
+     * @return State Inscription.
      * 
      */
     public Optional<String> stateInscription() {
         return Optional.ofNullable(this.stateInscription);
     }
     /**
-     * @return (Updatable) Street name of the address.
+     * @return Street name of the address.
      * 
      */
     public Optional<String> streetName() {
         return Optional.ofNullable(this.streetName);
     }
     /**
-     * @return (Updatable) Street number of the address.
+     * @return Street number of the address.
      * 
      */
     public Optional<String> streetNumber() {

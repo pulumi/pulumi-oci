@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Dns.Outputs
         /// </summary>
         public readonly int? Port;
         /// <summary>
-        /// (Updatable) The OCID of the TSIG key.
+        /// (Updatable) The OCID of the TSIG key. A TSIG key is used to secure DNS messages (in this case, zone transfers) between two systems that both have the (shared) secret.
         /// </summary>
         public readonly string? TsigKeyId;
 

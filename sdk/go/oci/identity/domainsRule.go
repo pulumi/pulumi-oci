@@ -258,14 +258,15 @@ type DomainsRule struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsRuleMetaArrayOutput `pulumi:"metas"`
-	// (Updatable) Attribute name of an individual value to be returned.
+	// (Updatable) Rule name
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: true
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: true
-	// * returned: default
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringOutput `pulumi:"name"`
@@ -573,14 +574,15 @@ type domainsRuleState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas []DomainsRuleMeta `pulumi:"metas"`
-	// (Updatable) Attribute name of an individual value to be returned.
+	// (Updatable) Rule name
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: true
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: true
-	// * returned: default
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
@@ -844,14 +846,15 @@ type DomainsRuleState struct {
 	// * idcsCsvAttributeNameMappings: [[columnHeaderName:Created Date, mapsTo:meta.created]]
 	// * type: complex
 	Metas DomainsRuleMetaArrayInput
-	// (Updatable) Attribute name of an individual value to be returned.
+	// (Updatable) Rule name
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: true
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: true
-	// * returned: default
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
@@ -1028,14 +1031,15 @@ type domainsRuleArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	Locked *bool `pulumi:"locked"`
-	// (Updatable) Attribute name of an individual value to be returned.
+	// (Updatable) Rule name
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: true
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: true
-	// * returned: default
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name *string `pulumi:"name"`
@@ -1194,14 +1198,15 @@ type DomainsRuleArgs struct {
 	// * type: boolean
 	// * uniqueness: none
 	Locked pulumi.BoolPtrInput
-	// (Updatable) Attribute name of an individual value to be returned.
+	// (Updatable) Rule name
 	//
 	// **SCIM++ Properties:**
-	// * idcsSearchable: false
+	// * caseExact: true
+	// * idcsSearchable: true
 	// * multiValued: false
 	// * mutability: readWrite
 	// * required: true
-	// * returned: default
+	// * returned: always
 	// * type: string
 	// * uniqueness: none
 	Name pulumi.StringPtrInput
@@ -1590,14 +1595,15 @@ func (o DomainsRuleOutput) Metas() DomainsRuleMetaArrayOutput {
 	return o.ApplyT(func(v *DomainsRule) DomainsRuleMetaArrayOutput { return v.Metas }).(DomainsRuleMetaArrayOutput)
 }
 
-// (Updatable) Attribute name of an individual value to be returned.
+// (Updatable) Rule name
 //
 // **SCIM++ Properties:**
-// * idcsSearchable: false
+// * caseExact: true
+// * idcsSearchable: true
 // * multiValued: false
 // * mutability: readWrite
 // * required: true
-// * returned: default
+// * returned: always
 // * type: string
 // * uniqueness: none
 func (o DomainsRuleOutput) Name() pulumi.StringOutput {

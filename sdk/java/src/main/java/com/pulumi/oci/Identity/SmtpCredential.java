@@ -46,7 +46,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testSmtpCredential = new SmtpCredential("testSmtpCredential", SmtpCredentialArgs.builder()        
+ *         var testSmtpCredential = new SmtpCredential("testSmtpCredential", SmtpCredentialArgs.builder()
  *             .description(smtpCredentialDescription)
  *             .userId(testUser.id())
  *             .build());

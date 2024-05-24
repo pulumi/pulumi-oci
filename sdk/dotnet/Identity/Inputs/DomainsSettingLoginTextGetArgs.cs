@@ -28,17 +28,15 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string> Locale { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Login text
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
         /// * mutability: readWrite
         /// * required: true
         /// * returned: default
+        /// * idcsSanitize: true
         /// * type: string
-        /// * uniqueness: none
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

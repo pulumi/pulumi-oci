@@ -20,14 +20,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs();
 
     /**
-     * (Updatable) Condition group corresponding to each compartment
+     * Condition group corresponding to each compartment
      * 
      */
     @Import(name="conditionGroups")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs>> conditionGroups;
 
     /**
-     * @return (Updatable) Condition group corresponding to each compartment
+     * @return Condition group corresponding to each compartment
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroupArgs>>> conditionGroups() {
@@ -35,14 +35,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     }
 
     /**
-     * (Updatable) Configurations associated with the ResponderRule
+     * ResponderRule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>> configurations;
 
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>>> configurations() {
@@ -139,7 +139,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param conditionGroups (Updatable) Condition group corresponding to each compartment
+         * @param conditionGroups Condition group corresponding to each compartment
          * 
          * @return builder
          * 
@@ -150,7 +150,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param conditionGroups (Updatable) Condition group corresponding to each compartment
+         * @param conditionGroups Condition group corresponding to each compartment
          * 
          * @return builder
          * 
@@ -160,7 +160,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param conditionGroups (Updatable) Condition group corresponding to each compartment
+         * @param conditionGroups Condition group corresponding to each compartment
          * 
          * @return builder
          * 
@@ -170,7 +170,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param configurations (Updatable) Configurations associated with the ResponderRule
+         * @param configurations ResponderRule configurations
          * 
          * @return builder
          * 

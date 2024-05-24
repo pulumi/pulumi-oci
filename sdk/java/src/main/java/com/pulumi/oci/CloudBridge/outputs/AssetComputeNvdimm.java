@@ -23,7 +23,7 @@ public final class AssetComputeNvdimm {
      */
     private @Nullable String label;
     /**
-     * @return (Updatable) The unit number of the SCSI controller.
+     * @return (Updatable) The unit number of NVDIMM.
      * 
      */
     private @Nullable Integer unitNumber;
@@ -44,7 +44,7 @@ public final class AssetComputeNvdimm {
         return Optional.ofNullable(this.label);
     }
     /**
-     * @return (Updatable) The unit number of the SCSI controller.
+     * @return (Updatable) The unit number of NVDIMM.
      * 
      */
     public Optional<Integer> unitNumber() {

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// </summary>
         public readonly string IngressName;
         /// <summary>
-        /// (Updatable) Default namespace to be used for Kubernetes deployment when not specified in the manifest.
+        /// Canary namespace to be used for Kubernetes canary deployment.
         /// </summary>
         public readonly string Namespace;
         /// <summary>

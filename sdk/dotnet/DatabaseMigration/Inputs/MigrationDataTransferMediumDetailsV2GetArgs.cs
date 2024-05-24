@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<string>? AccessKeyId { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of directory object in database
+        /// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.DatabaseMigration.Inputs
         public Input<string>? SecretAccessKey { get; set; }
 
         /// <summary>
-        /// (Updatable) Migration type.
+        /// (Updatable) Type of the data transfer medium to use for the datapump
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

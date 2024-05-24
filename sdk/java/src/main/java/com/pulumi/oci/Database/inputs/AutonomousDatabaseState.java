@@ -269,6 +269,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
     /**
      * The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     @Import(name="cloneType")
@@ -276,6 +278,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
     /**
      * @return The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+     * * `FULL` - This option creates a new database that includes all source database data.
+     * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
      * 
      */
     public Optional<Output<String>> cloneType() {
@@ -298,14 +302,14 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
-     * (Updatable) Compute used by database tools.
+     * (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      * 
      */
     @Import(name="computeCount")
     private @Nullable Output<Double> computeCount;
 
     /**
-     * @return (Updatable) Compute used by database tools.
+     * @return (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
      * 
      */
     public Optional<Output<Double>> computeCount() {
@@ -2638,6 +2642,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
         /**
          * @param cloneType The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+         * * `FULL` - This option creates a new database that includes all source database data.
+         * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
          * 
          * @return builder
          * 
@@ -2649,6 +2655,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
 
         /**
          * @param cloneType The Autonomous Database clone type. This parameter is not used to create a refreshable clone type, and for refreshable clones one must use the (source=CLONE_TO_REFRESHABLE) parameter.
+         * * `FULL` - This option creates a new database that includes all source database data.
+         * * `METADATA` - This option creates a new database that includes the source database schema and select metadata, but not the source database data.
          * 
          * @return builder
          * 
@@ -2679,7 +2687,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeCount (Updatable) Compute used by database tools.
+         * @param computeCount (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
          * 
          * @return builder
          * 
@@ -2690,7 +2698,7 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param computeCount (Updatable) Compute used by database tools.
+         * @param computeCount (Updatable) The compute amount available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database Serverless instance, the &#39;ECPU&#39; compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the `computeModel` parameter. When using `cpuCoreCount` parameter, it is an error to specify computeCount to a non-null value. Providing `computeModel` and `computeCount` is the preferred method for both OCPU and ECPU.
          * 
          * @return builder
          * 

@@ -14,7 +14,7 @@ import javax.annotation.Nullable;
 public final class WorkspaceTaskOpConfigValuesConfigParamValues {
     private @Nullable WorkspaceTaskOpConfigValuesConfigParamValuesConfigParamValue configParamValue;
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     private @Nullable String key;
@@ -24,7 +24,7 @@ public final class WorkspaceTaskOpConfigValuesConfigParamValues {
         return Optional.ofNullable(this.configParamValue);
     }
     /**
-     * @return (Updatable) The key of the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
      * 
      */
     public Optional<String> key() {

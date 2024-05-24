@@ -46,16 +46,9 @@ class ManagementAgentDataSourceListArgs:
                  type: Optional[pulumi.Input[str]] = None,
                  url: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: Name of the property
-        :param pulumi.Input[int] read_data_limit: Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
-        :param pulumi.Input[int] read_timeout: Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
-        :param pulumi.Input[str] resource_group: Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-        :param pulumi.Input[int] schedule_mins: Number in minutes. The scraping occurs at the specified interval.
         :param pulumi.Input[str] state: The current state of managementAgent
         :param pulumi.Input[str] time_created: The time the Management Agent was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the Management Agent was last updated. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] type: The type of the DataSource.
-        :param pulumi.Input[str] url: The url through which the Prometheus Exporter publishes its metrics. (http only)
         """
         if allow_metrics is not None:
             pulumi.set(__self__, "allow_metrics", allow_metrics)
@@ -151,9 +144,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the property
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -181,9 +171,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="readDataLimit")
     def read_data_limit(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
-        """
         return pulumi.get(self, "read_data_limit")
 
     @read_data_limit.setter
@@ -193,9 +180,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="readTimeout")
     def read_timeout(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
-        """
         return pulumi.get(self, "read_timeout")
 
     @read_timeout.setter
@@ -205,9 +189,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> Optional[pulumi.Input[str]]:
-        """
-        Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
-        """
         return pulumi.get(self, "resource_group")
 
     @resource_group.setter
@@ -217,9 +198,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter(name="scheduleMins")
     def schedule_mins(self) -> Optional[pulumi.Input[int]]:
-        """
-        Number in minutes. The scraping occurs at the specified interval.
-        """
         return pulumi.get(self, "schedule_mins")
 
     @schedule_mins.setter
@@ -265,9 +243,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the DataSource.
-        """
         return pulumi.get(self, "type")
 
     @type.setter
@@ -277,9 +252,6 @@ class ManagementAgentDataSourceListArgs:
     @property
     @pulumi.getter
     def url(self) -> Optional[pulumi.Input[str]]:
-        """
-        The url through which the Prometheus Exporter publishes its metrics. (http only)
-        """
         return pulumi.get(self, "url")
 
     @url.setter
@@ -292,9 +264,6 @@ class ManagementAgentDataSourceListMetricDimensionArgs:
     def __init__(__self__, *,
                  name: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the property
-        """
         if name is not None:
             pulumi.set(__self__, "name", name)
         if value is not None:
@@ -303,9 +272,6 @@ class ManagementAgentDataSourceListMetricDimensionArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the property
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -328,7 +294,7 @@ class ManagementAgentDataSourceMetricDimensionArgs:
                  name: pulumi.Input[str],
                  value: pulumi.Input[str]):
         """
-        :param pulumi.Input[str] name: Unique name of the DataSource.
+        :param pulumi.Input[str] name: (Updatable) Name of the metric dimension
         :param pulumi.Input[str] value: (Updatable) Value of the metric dimension
         """
         pulumi.set(__self__, "name", name)
@@ -338,7 +304,7 @@ class ManagementAgentDataSourceMetricDimensionArgs:
     @pulumi.getter
     def name(self) -> pulumi.Input[str]:
         """
-        Unique name of the DataSource.
+        (Updatable) Name of the metric dimension
         """
         return pulumi.get(self, "name")
 
@@ -366,10 +332,6 @@ class ManagementAgentDataSourceSummaryListArgs:
                  key: Optional[pulumi.Input[str]] = None,
                  name: Optional[pulumi.Input[str]] = None,
                  type: Optional[pulumi.Input[str]] = None):
-        """
-        :param pulumi.Input[str] name: Name of the property
-        :param pulumi.Input[str] type: The type of the DataSource.
-        """
         if is_daemon_set is not None:
             pulumi.set(__self__, "is_daemon_set", is_daemon_set)
         if key is not None:
@@ -400,9 +362,6 @@ class ManagementAgentDataSourceSummaryListArgs:
     @property
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
-        """
-        Name of the property
-        """
         return pulumi.get(self, "name")
 
     @name.setter
@@ -412,9 +371,6 @@ class ManagementAgentDataSourceSummaryListArgs:
     @property
     @pulumi.getter
     def type(self) -> Optional[pulumi.Input[str]]:
-        """
-        The type of the DataSource.
-        """
         return pulumi.get(self, "type")
 
     @type.setter

@@ -14,11 +14,11 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsSmtpCredentialIdcsCreatedBy
     {
         /// <summary>
-        /// (Updatable) User display name
+        /// The displayName of the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
-        /// * idcsSearchable: true
+        /// * caseExact: true
+        /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
         /// * required: false
@@ -28,21 +28,20 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Display;
         /// <summary>
-        /// User's ocid
+        /// The OCID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         /// <summary>
-        /// (Updatable) The URI that corresponds to the user linked to this credential
+        /// (Updatable) The URI of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -56,7 +55,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Ref;
         /// <summary>
-        /// The type of resource, User or App, that modified this Resource
+        /// The type of resource, User or App, that created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
@@ -70,15 +69,15 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? Type;
         /// <summary>
-        /// User's id
+        /// The ID of the SCIM resource that represents the User or App who created this Resource
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
-        /// * required: false
-        /// * returned: always
+        /// * mutability: readOnly
+        /// * required: true
+        /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>

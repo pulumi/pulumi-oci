@@ -64,7 +64,7 @@ class LogAnalyticsEntityMetadataItemArgs:
                  type: Optional[pulumi.Input[str]] = None,
                  value: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] name: (Updatable) Log analytics entity name.
+        :param pulumi.Input[str] name: (Updatable) The metadata name.
         :param pulumi.Input[str] type: (Updatable) The metadata type.
         :param pulumi.Input[str] value: (Updatable) The metadata value.
         """
@@ -79,7 +79,7 @@ class LogAnalyticsEntityMetadataItemArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Log analytics entity name.
+        (Updatable) The metadata name.
         """
         return pulumi.get(self, "name")
 
@@ -365,13 +365,9 @@ class NamespaceIngestTimeRuleActionArgs:
                  dimensions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         :param pulumi.Input[str] metric_name: (Updatable) The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] namespace: (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param pulumi.Input[str] type: (Updatable) Discriminator.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] dimensions: (Updatable) Additional dimensions to publish for the extracted metric. A valid list contains the source field names whose values are to be published as dimensions. The source name itself is specified using a special macro SOURCE_NAME
         :param pulumi.Input[str] resource_group: (Updatable) The resourceGroup of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
@@ -389,7 +385,7 @@ class NamespaceIngestTimeRuleActionArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -413,11 +409,7 @@ class NamespaceIngestTimeRuleActionArgs:
     @pulumi.getter
     def namespace(self) -> pulumi.Input[str]:
         """
-        The Logging Analytics namespace used for the request. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        (Updatable) The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         """
         return pulumi.get(self, "namespace")
 
@@ -609,14 +601,14 @@ class NamespaceScheduledTaskActionArgs:
                  query_string: Optional[pulumi.Input[str]] = None,
                  saved_search_id: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) Schedule type discriminator.
+        :param pulumi.Input[str] type: Action type discriminator.
         :param pulumi.Input[bool] compartment_id_in_subtree: if true, purge child compartments data
         :param pulumi.Input[str] data_type: the type of the log data to be purged
         :param pulumi.Input['NamespaceScheduledTaskActionMetricExtractionArgs'] metric_extraction: Specify metric extraction for SAVED_SEARCH scheduled task execution to post to Oracle Cloud Infrastructure Monitoring.
         :param pulumi.Input[str] purge_compartment_id: the compartment OCID under which the data will be purged
         :param pulumi.Input[str] purge_duration: The duration of data to be retained, which is used to calculate the timeDataEnded when the task fires. The value should be negative. Purge duration in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. -P365D (not -P1Y) or -P14D (not -P2W).
         :param pulumi.Input[str] query_string: Purge query string.
-        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] to be accelerated.
+        :param pulumi.Input[str] saved_search_id: The ManagementSavedSearch id [OCID] utilized in the action.
         """
         pulumi.set(__self__, "type", type)
         if compartment_id_in_subtree is not None:
@@ -638,7 +630,7 @@ class NamespaceScheduledTaskActionArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Schedule type discriminator.
+        Action type discriminator.
         """
         return pulumi.get(self, "type")
 
@@ -722,7 +714,7 @@ class NamespaceScheduledTaskActionArgs:
     @pulumi.getter(name="savedSearchId")
     def saved_search_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The ManagementSavedSearch id [OCID] to be accelerated.
+        The ManagementSavedSearch id [OCID] utilized in the action.
         """
         return pulumi.get(self, "saved_search_id")
 
@@ -739,9 +731,9 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
                  namespace: Optional[pulumi.Input[str]] = None,
                  resource_group: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param pulumi.Input[str] compartment_id: (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         :param pulumi.Input[str] metric_name: The metric name of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
-        :param pulumi.Input[str] namespace: The Logging Analytics namespace used for the request.
+        :param pulumi.Input[str] namespace: The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         :param pulumi.Input[str] resource_group: The resource group of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
         """
         if compartment_id is not None:
@@ -757,7 +749,7 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier [OCID] (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        (Updatable) The compartment OCID (https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the extracted metric.
         """
         return pulumi.get(self, "compartment_id")
 
@@ -781,7 +773,7 @@ class NamespaceScheduledTaskActionMetricExtractionArgs:
     @pulumi.getter
     def namespace(self) -> Optional[pulumi.Input[str]]:
         """
-        The Logging Analytics namespace used for the request.
+        The namespace of the extracted metric. A valid value starts with an alphabetical character and includes only alphanumeric characters and underscores (_).
         """
         return pulumi.get(self, "namespace")
 
@@ -828,12 +820,12 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
                  repeat_count: Optional[pulumi.Input[int]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] type: (Updatable) Schedule type discriminator.
-        :param pulumi.Input[str] expression: (Updatable) Value in cron format.
-        :param pulumi.Input[str] misfire_policy: (Updatable) Schedule misfire retry policy.
-        :param pulumi.Input[str] recurring_interval: (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
-        :param pulumi.Input[int] repeat_count: (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
-        :param pulumi.Input[str] time_zone: (Updatable) Time zone, by default UTC.
+        :param pulumi.Input[str] type: Schedule type discriminator.
+        :param pulumi.Input[str] expression: Value in cron format.
+        :param pulumi.Input[str] misfire_policy: Schedule misfire retry policy.
+        :param pulumi.Input[str] recurring_interval: Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        :param pulumi.Input[int] repeat_count: Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        :param pulumi.Input[str] time_zone: Time zone, by default UTC.
         """
         pulumi.set(__self__, "type", type)
         if expression is not None:
@@ -851,7 +843,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter
     def type(self) -> pulumi.Input[str]:
         """
-        (Updatable) Schedule type discriminator.
+        Schedule type discriminator.
         """
         return pulumi.get(self, "type")
 
@@ -863,7 +855,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter
     def expression(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Value in cron format.
+        Value in cron format.
         """
         return pulumi.get(self, "expression")
 
@@ -875,7 +867,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter(name="misfirePolicy")
     def misfire_policy(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Schedule misfire retry policy.
+        Schedule misfire retry policy.
         """
         return pulumi.get(self, "misfire_policy")
 
@@ -887,7 +879,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter(name="recurringInterval")
     def recurring_interval(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
+        Recurring interval in ISO 8601 extended format as described in https://en.wikipedia.org/wiki/ISO_8601#Durations. The largest supported unit is D, e.g. P14D (not P2W). The value must be at least 5 minutes (PT5M) and at most 3 weeks (P21D or PT30240M).
         """
         return pulumi.get(self, "recurring_interval")
 
@@ -899,7 +891,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter(name="repeatCount")
     def repeat_count(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
+        Number of times (0-based) to execute until auto-stop. Default value -1 will execute indefinitely. Value 0 will execute once.
         """
         return pulumi.get(self, "repeat_count")
 
@@ -911,7 +903,7 @@ class NamespaceScheduledTaskSchedulesScheduleArgs:
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Time zone, by default UTC.
+        Time zone, by default UTC.
         """
         return pulumi.get(self, "time_zone")
 

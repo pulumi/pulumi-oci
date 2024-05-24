@@ -35,8 +35,9 @@ class AutoScalingConfigurationArgs:
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
         """
         pulumi.set(__self__, "auto_scaling_resources", auto_scaling_resources)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -119,6 +120,9 @@ class AutoScalingConfigurationArgs:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -141,7 +145,7 @@ class AutoScalingConfigurationArgs:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the autoscaling policy is enabled.
+        (Updatable) Whether the autoscaling configuration is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -174,8 +178,9 @@ class _AutoScalingConfigurationState:
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
         :param pulumi.Input[int] max_resource_count: The maximum number of resources to scale out to.
         :param pulumi.Input[int] min_resource_count: The minimum number of resources to scale in to.
         :param pulumi.Input[Sequence[pulumi.Input['AutoScalingConfigurationPolicyArgs']]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -259,6 +264,9 @@ class _AutoScalingConfigurationState:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
         return pulumi.get(self, "display_name")
 
     @display_name.setter
@@ -281,7 +289,7 @@ class _AutoScalingConfigurationState:
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
         """
-        Whether the autoscaling policy is enabled.
+        (Updatable) Whether the autoscaling configuration is enabled.
         """
         return pulumi.get(self, "is_enabled")
 
@@ -431,8 +439,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
         """
         ...
@@ -595,8 +604,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
                
                For schedule-based autoscaling policies, this value is not used.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
+        :param pulumi.Input[str] display_name: (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[bool] is_enabled: Whether the autoscaling policy is enabled.
+        :param pulumi.Input[bool] is_enabled: (Updatable) Whether the autoscaling configuration is enabled.
         :param pulumi.Input[int] max_resource_count: The maximum number of resources to scale out to.
         :param pulumi.Input[int] min_resource_count: The minimum number of resources to scale in to.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutoScalingConfigurationPolicyArgs']]]] policies: Autoscaling policy definitions for the autoscaling configuration. An autoscaling policy defines the criteria that trigger autoscaling actions and the actions to take.
@@ -658,6 +668,9 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
+        """
+        (Updatable) A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
+        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -672,7 +685,7 @@ class AutoScalingConfiguration(pulumi.CustomResource):
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> pulumi.Output[bool]:
         """
-        Whether the autoscaling policy is enabled.
+        (Updatable) Whether the autoscaling configuration is enabled.
         """
         return pulumi.get(self, "is_enabled")
 

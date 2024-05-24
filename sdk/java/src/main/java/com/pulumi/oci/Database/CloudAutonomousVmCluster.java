@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testCloudAutonomousVmCluster = new CloudAutonomousVmCluster("testCloudAutonomousVmCluster", CloudAutonomousVmClusterArgs.builder()        
+ *         var testCloudAutonomousVmCluster = new CloudAutonomousVmCluster("testCloudAutonomousVmCluster", CloudAutonomousVmClusterArgs.builder()
  *             .cloudExadataInfrastructureId(testCloudExadataInfrastructure.id())
  *             .compartmentId(compartmentId)
  *             .displayName(cloudAutonomousVmClusterDisplayName)

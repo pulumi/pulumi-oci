@@ -20,14 +20,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
     public static final RuleState Empty = new RuleState();
 
     /**
-     * (Updatable) A list of one or more ActionDetails objects.
+     * (Updatable) A list of ActionDetails objects to create for a rule.
      * 
      */
     @Import(name="actions")
     private @Nullable Output<RuleActionsArgs> actions;
 
     /**
-     * @return (Updatable) A list of one or more ActionDetails objects.
+     * @return (Updatable) A list of ActionDetails objects to create for a rule.
      * 
      */
     public Optional<Output<RuleActionsArgs>> actions() {
@@ -249,7 +249,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actions (Updatable) A list of one or more ActionDetails objects.
+         * @param actions (Updatable) A list of ActionDetails objects to create for a rule.
          * 
          * @return builder
          * 
@@ -260,7 +260,7 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param actions (Updatable) A list of one or more ActionDetails objects.
+         * @param actions (Updatable) A list of ActionDetails objects to create for a rule.
          * 
          * @return builder
          * 

@@ -16,14 +16,14 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCol
     public static final AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs Empty = new AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCollaborativeWeightArgs();
 
     /**
-     * (Updatable) Unique key of referenced protection capability.
+     * (Updatable) Unique key of collaborative capability for which weight will be overridden.
      * 
      */
     @Import(name="key", required=true)
     private Output<String> key;
 
     /**
-     * @return (Updatable) Unique key of referenced protection capability.
+     * @return (Updatable) Unique key of collaborative capability for which weight will be overridden.
      * 
      */
     public Output<String> key() {
@@ -71,7 +71,7 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCol
         }
 
         /**
-         * @param key (Updatable) Unique key of referenced protection capability.
+         * @param key (Updatable) Unique key of collaborative capability for which weight will be overridden.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class AppFirewallPolicyRequestProtectionRuleProtectionCapabilityCol
         }
 
         /**
-         * @param key (Updatable) Unique key of referenced protection capability.
+         * @param key (Updatable) Unique key of collaborative capability for which weight will be overridden.
          * 
          * @return builder
          * 

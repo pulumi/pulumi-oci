@@ -34,14 +34,14 @@ public final class BdsInstanceUtilNodeArgs extends com.pulumi.resources.Resource
     }
 
     /**
-     * The amount of worker nodes should be created
+     * The amount of utility nodes should be created.
      * 
      */
     @Import(name="numberOfNodes", required=true)
     private Output<Integer> numberOfNodes;
 
     /**
-     * @return The amount of worker nodes should be created
+     * @return The amount of utility nodes should be created.
      * 
      */
     public Output<Integer> numberOfNodes() {
@@ -143,7 +143,7 @@ public final class BdsInstanceUtilNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param numberOfNodes The amount of worker nodes should be created
+         * @param numberOfNodes The amount of utility nodes should be created.
          * 
          * @return builder
          * 
@@ -154,7 +154,7 @@ public final class BdsInstanceUtilNodeArgs extends com.pulumi.resources.Resource
         }
 
         /**
-         * @param numberOfNodes The amount of worker nodes should be created
+         * @param numberOfNodes The amount of utility nodes should be created.
          * 
          * @return builder
          * 

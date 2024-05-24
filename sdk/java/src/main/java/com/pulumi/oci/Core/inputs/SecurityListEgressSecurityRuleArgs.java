@@ -62,6 +62,8 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
      * (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
      * 
      * Allowed values:
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
     @Import(name="destinationType")
@@ -71,6 +73,8 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
      * @return (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
      * 
      * Allowed values:
+     * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+     * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
      * 
      */
     public Optional<Output<String>> destinationType() {
@@ -116,14 +120,14 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
     }
 
     /**
-     * (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+     * (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
     @Import(name="stateless")
     private @Nullable Output<Boolean> stateless;
 
     /**
-     * @return (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+     * @return (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
      * 
      */
     public Optional<Output<Boolean>> stateless() {
@@ -245,6 +249,8 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
          * @param destinationType (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
          * 
          * Allowed values:
+         * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
          * 
          * @return builder
          * 
@@ -258,6 +264,8 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
          * @param destinationType (Updatable) Type of destination for the rule. The default is `CIDR_BLOCK`.
          * 
          * Allowed values:
+         * * `CIDR_BLOCK`: If the rule&#39;s `destination` is an IP address range in CIDR notation.
+         * * `SERVICE_CIDR_BLOCK`: If the rule&#39;s `destination` is the `cidrBlock` value for a [Service](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/Service/) (the rule is for traffic destined for a particular `Service` through a service gateway).
          * 
          * @return builder
          * 
@@ -317,7 +325,7 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param stateless (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+         * @param stateless (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
          * 
          * @return builder
          * 
@@ -328,7 +336,7 @@ public final class SecurityListEgressSecurityRuleArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param stateless (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if ingress traffic allows TCP destination port 80, there should be an egress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
+         * @param stateless (Updatable) A stateless rule allows traffic in one direction. Remember to add a corresponding stateless rule in the other direction if you need to support bidirectional traffic. For example, if egress traffic allows TCP destination port 80, there should be an ingress rule to allow TCP source port 80. Defaults to false, which means the rule is stateful and a corresponding rule is not necessary for bidirectional traffic.
          * 
          * @return builder
          * 

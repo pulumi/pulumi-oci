@@ -13,10 +13,9 @@ namespace Pulumi.Oci.Identity.Inputs
     public sealed class DomainsSelfRegistrationProfileDefaultGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The displayName of the User or App who modified this Resource
+        /// (Updatable) A human readable name, primarily used for display purposes. READ-ONLY.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -29,10 +28,9 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Display { get; set; }
 
         /// <summary>
-        /// (Updatable) The URI of the SCIM resource that represents the User or App who modified this Resource
+        /// (Updatable) URI of the Default Group
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: true
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
@@ -45,7 +43,7 @@ namespace Pulumi.Oci.Identity.Inputs
         public Input<string>? Ref { get; set; }
 
         /// <summary>
-        /// (Updatable) name of the attribute
+        /// (Updatable) Identifier of the Default Group.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
@@ -56,10 +54,6 @@ namespace Pulumi.Oci.Identity.Inputs
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("value", required: true)]
         public Input<string> Value { get; set; } = null!;

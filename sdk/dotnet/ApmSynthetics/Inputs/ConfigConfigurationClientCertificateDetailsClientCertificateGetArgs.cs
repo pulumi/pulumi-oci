@@ -13,13 +13,13 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
     public sealed class ConfigConfigurationClientCertificateDetailsClientCertificateGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Content of the private key file.
+        /// (Updatable) Content of the client certificate file.
         /// </summary>
         [Input("content")]
         public Input<string>? Content { get; set; }
 
         /// <summary>
-        /// (Updatable) Name of the private key file.
+        /// (Updatable) Name of the certificate file. The name should not contain any confidential information.
         /// </summary>
         [Input("fileName")]
         public Input<string>? FileName { get; set; }

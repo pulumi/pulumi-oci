@@ -63,7 +63,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testMonitoredResource = new MonitoredResource("testMonitoredResource", MonitoredResourceArgs.builder()        
+ *         var testMonitoredResource = new MonitoredResource("testMonitoredResource", MonitoredResourceArgs.builder()
  *             .compartmentId(compartmentId)
  *             .name(monitoredResourceName)
  *             .type(monitoredResourceType)
@@ -347,14 +347,14 @@ public class MonitoredResource extends com.pulumi.resources.CustomResource {
         return Codegen.optional(this.managementAgentId);
     }
     /**
-     * (Updatable) Property Name.
+     * Monitored Resource Name.
      * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
-     * @return (Updatable) Property Name.
+     * @return Monitored Resource Name.
      * 
      */
     public Output<String> name() {

@@ -160,7 +160,7 @@ class _ReplicaState:
         Input properties used for looking up and filtering Replica resources.
         :param pulumi.Input[str] availability_domain: The name of the Availability Domain the read replica is located in.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the read replica.
-        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
+        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used by the read replica.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the read replica is associated with.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) User provided description of the read replica.
@@ -170,16 +170,12 @@ class _ReplicaState:
         :param pulumi.Input[str] ip_address: The IP address the read replica is configured to listen on.
         :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param pulumi.Input[str] lifecycle_details: A message describing the state of the read replica.
-        :param pulumi.Input[str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
+        :param pulumi.Input[str] mysql_version: The MySQL version to be used by the read replica.
         :param pulumi.Input[int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input['ReplicaReplicaOverridesArgs'] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         :param pulumi.Input[Sequence[pulumi.Input['ReplicaSecureConnectionArgs']]] secure_connections: Secure connection configuration details.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] state: The state of the read replica.
         :param pulumi.Input[str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -255,7 +251,7 @@ class _ReplicaState:
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the Configuration to be used by the read replica.
+        The OCID of the Configuration to be used by the read replica.
         """
         return pulumi.get(self, "configuration_id")
 
@@ -375,7 +371,7 @@ class _ReplicaState:
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The MySQL version to be used by the read replica.
+        The MySQL version to be used by the read replica.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -435,11 +431,7 @@ class _ReplicaState:
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
 
@@ -681,7 +673,7 @@ class Replica(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] availability_domain: The name of the Availability Domain the read replica is located in.
         :param pulumi.Input[str] compartment_id: The OCID of the compartment that contains the read replica.
-        :param pulumi.Input[str] configuration_id: (Updatable) The OCID of the Configuration to be used by the read replica.
+        :param pulumi.Input[str] configuration_id: The OCID of the Configuration to be used by the read replica.
         :param pulumi.Input[str] db_system_id: The OCID of the DB System the read replica is associated with.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) User provided description of the read replica.
@@ -691,16 +683,12 @@ class Replica(pulumi.CustomResource):
         :param pulumi.Input[str] ip_address: The IP address the read replica is configured to listen on.
         :param pulumi.Input[bool] is_delete_protected: (Updatable) Specifies whether the read replica can be deleted. Set to true to prevent deletion, false (default) to allow. Note that if a read replica is delete protected it also prevents the entire DB System from being deleted. If the DB System is delete protected, read replicas can still be deleted individually if they are not delete  protected themselves.
         :param pulumi.Input[str] lifecycle_details: A message describing the state of the read replica.
-        :param pulumi.Input[str] mysql_version: (Updatable) The MySQL version to be used by the read replica.
+        :param pulumi.Input[str] mysql_version: The MySQL version to be used by the read replica.
         :param pulumi.Input[int] port: The port the read replica is configured to listen on.
         :param pulumi.Input[int] port_x: The TCP network port on which X Plugin listens for connections. This is the X Plugin equivalent of port.
         :param pulumi.Input[pulumi.InputType['ReplicaReplicaOverridesArgs']] replica_overrides: (Updatable) By default a read replica inherits the MySQL version, shape, and configuration of the source DB system.  If you want to override any of these, provide values in the properties, mysqlVersion, shapeName,  and configurationId. If you set a property value to "", then the value is inherited from its  source DB system.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ReplicaSecureConnectionArgs']]]] secure_connections: Secure connection configuration details.
-        :param pulumi.Input[str] shape_name: (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] shape_name: The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         :param pulumi.Input[str] state: The state of the read replica.
         :param pulumi.Input[str] time_created: The date and time the read replica was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param pulumi.Input[str] time_updated: The time the read replica was last updated, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
@@ -752,7 +740,7 @@ class Replica(pulumi.CustomResource):
     @pulumi.getter(name="configurationId")
     def configuration_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the Configuration to be used by the read replica.
+        The OCID of the Configuration to be used by the read replica.
         """
         return pulumi.get(self, "configuration_id")
 
@@ -832,7 +820,7 @@ class Replica(pulumi.CustomResource):
     @pulumi.getter(name="mysqlVersion")
     def mysql_version(self) -> pulumi.Output[str]:
         """
-        (Updatable) The MySQL version to be used by the read replica.
+        The MySQL version to be used by the read replica.
         """
         return pulumi.get(self, "mysql_version")
 
@@ -872,11 +860,7 @@ class Replica(pulumi.CustomResource):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The shape to be used by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The shape currently in use by the read replica. The shape determines the resources allocated:  CPU cores and memory for VM shapes, CPU cores, memory and storage for non-VM (bare metal) shapes.  To get a list of shapes, use the [ListShapes](https://docs.cloud.oracle.com/iaas/api/#/en/mysql/20190415/ShapeSummary/ListShapes) operation.
         """
         return pulumi.get(self, "shape_name")
 

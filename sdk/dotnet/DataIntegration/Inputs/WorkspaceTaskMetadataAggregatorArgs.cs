@@ -25,7 +25,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? Identifier { get; set; }
 
         /// <summary>
-        /// (Updatable) The key of the object.
+        /// (Updatable) Generated key that can be used in API calls to identify task. On scenarios where reference to the task is needed, a value can be passed in create.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
@@ -37,7 +37,7 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// (Updatable) The object type.
+        /// The object type.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Database.Inputs
     public sealed class DbSystemMaintenanceWindowDetailsDaysOfWeekGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Name of the month of the year.
+        /// (Updatable) Name of the day of the week.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

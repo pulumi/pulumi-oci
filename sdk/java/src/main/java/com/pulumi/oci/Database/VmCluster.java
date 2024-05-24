@@ -53,7 +53,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testVmCluster = new VmCluster("testVmCluster", VmClusterArgs.builder()        
+ *         var testVmCluster = new VmCluster("testVmCluster", VmClusterArgs.builder()
  *             .compartmentId(compartmentId)
  *             .cpuCoreCount(vmClusterCpuCoreCount)
  *             .displayName(vmClusterDisplayName)

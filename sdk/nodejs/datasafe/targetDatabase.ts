@@ -133,7 +133,7 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     public readonly credentials!: pulumi.Output<outputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * Details of the database for the registration in Data Safe.
+     * (Updatable) Details of the database for the registration in Data Safe.
      */
     public readonly databaseDetails!: pulumi.Output<outputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -141,11 +141,11 @@ export class TargetDatabase extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The description of the peer target database in Data Safe.
+     * (Updatable) The description of the target database in Data Safe.
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -267,7 +267,7 @@ export interface TargetDatabaseState {
      */
     credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * Details of the database for the registration in Data Safe.
+     * (Updatable) Details of the database for the registration in Data Safe.
      */
     databaseDetails?: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -275,11 +275,11 @@ export interface TargetDatabaseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The description of the peer target database in Data Safe.
+     * (Updatable) The description of the target database in Data Safe.
      */
     description?: pulumi.Input<string>;
     /**
-     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -337,7 +337,7 @@ export interface TargetDatabaseArgs {
      */
     credentials?: pulumi.Input<inputs.DataSafe.TargetDatabaseCredentials>;
     /**
-     * Details of the database for the registration in Data Safe.
+     * (Updatable) Details of the database for the registration in Data Safe.
      */
     databaseDetails: pulumi.Input<inputs.DataSafe.TargetDatabaseDatabaseDetails>;
     /**
@@ -345,11 +345,11 @@ export interface TargetDatabaseArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The description of the peer target database in Data Safe.
+     * (Updatable) The description of the target database in Data Safe.
      */
     description?: pulumi.Input<string>;
     /**
-     * The display name of the peer target database in Data Safe. The name is modifiable and does not need to be unique.
+     * (Updatable) The display name of the target database in Data Safe. The name is modifiable and does not need to be unique.
      */
     displayName?: pulumi.Input<string>;
     /**

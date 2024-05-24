@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly int? ConnectedNetworks;
         /// <summary>
-        /// (Updatable) Number of GPU cores.
+        /// (Updatable) Number of CPUs.
         /// </summary>
         public readonly int? CoresCount;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.CloudBridge.Outputs
         /// </summary>
         public readonly string? CpuModel;
         /// <summary>
-        /// (Updatable) The tag description.
+        /// (Updatable) Information about the asset.
         /// </summary>
         public readonly string? Description;
         /// <summary>

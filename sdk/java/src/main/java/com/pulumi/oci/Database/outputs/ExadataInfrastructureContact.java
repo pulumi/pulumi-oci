@@ -29,7 +29,7 @@ public final class ExadataInfrastructureContact {
      */
     private Boolean isPrimary;
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) The name of the Exadata Infrastructure contact.
      * 
      */
     private String name;
@@ -62,7 +62,7 @@ public final class ExadataInfrastructureContact {
         return this.isPrimary;
     }
     /**
-     * @return (Updatable) Name of the month of the year.
+     * @return (Updatable) The name of the Exadata Infrastructure contact.
      * 
      */
     public String name() {

@@ -21,7 +21,7 @@ namespace Pulumi.Oci.Events.Outputs
         /// </summary>
         public readonly string ActionType;
         /// <summary>
-        /// (Updatable) A string that describes the details of the rule. It does not have to be unique, and you can change it. Avoid entering confidential information.
+        /// (Updatable) A string that describes the details of the action. It does not have to be unique, and you can change it. Avoid entering confidential information.
         /// </summary>
         public readonly string? Description;
         /// <summary>
@@ -33,11 +33,7 @@ namespace Pulumi.Oci.Events.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// (Updatable) Whether or not this rule is currently enabled.  Example: `true` 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Whether or not this action is currently enabled.  Example: `true`
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>

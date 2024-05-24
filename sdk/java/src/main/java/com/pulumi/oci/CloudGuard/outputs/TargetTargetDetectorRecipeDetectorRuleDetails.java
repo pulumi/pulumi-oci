@@ -21,7 +21,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
      */
     private @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup> conditionGroups;
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations;
@@ -55,7 +55,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleDetails {
         return this.conditionGroups == null ? List.of() : this.conditionGroups;
     }
     /**
-     * @return (Updatable) Configurations associated with the ResponderRule
+     * @return ResponderRule configurations
      * 
      */
     public List<TargetTargetDetectorRecipeDetectorRuleDetailsConfiguration> configurations() {

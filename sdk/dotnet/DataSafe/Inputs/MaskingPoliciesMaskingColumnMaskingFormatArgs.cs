@@ -19,7 +19,7 @@ namespace Pulumi.Oci.DataSafe.Inputs
         public Input<string>? Condition { get; set; }
 
         /// <summary>
-        /// (Updatable) The description of the format entry.
+        /// (Updatable) The description of the masking format.
         /// </summary>
         [Input("description")]
         public Input<string>? Description { get; set; }

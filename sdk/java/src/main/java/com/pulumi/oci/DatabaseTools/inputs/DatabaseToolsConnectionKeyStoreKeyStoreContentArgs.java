@@ -17,14 +17,14 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
     public static final DatabaseToolsConnectionKeyStoreKeyStoreContentArgs Empty = new DatabaseToolsConnectionKeyStoreKeyStoreContentArgs();
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
      * 
      */
     @Import(name="secretId")
     private @Nullable Output<String> secretId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
      * 
      */
     public Optional<Output<String>> secretId() {
@@ -32,20 +32,14 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
     }
 
     /**
-     * (Updatable) The value type of the user password.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) The value type of the key store content.
      * 
      */
     @Import(name="valueType", required=true)
     private Output<String> valueType;
 
     /**
-     * @return (Updatable) The value type of the user password.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) The value type of the key store content.
      * 
      */
     public Output<String> valueType() {
@@ -78,7 +72,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
         }
 
         /**
-         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
          * 
          * @return builder
          * 
@@ -89,7 +83,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
         }
 
         /**
-         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the user password.
+         * @param secretId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the secret containing the key store.
          * 
          * @return builder
          * 
@@ -99,10 +93,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
         }
 
         /**
-         * @param valueType (Updatable) The value type of the user password.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param valueType (Updatable) The value type of the key store content.
          * 
          * @return builder
          * 
@@ -113,10 +104,7 @@ public final class DatabaseToolsConnectionKeyStoreKeyStoreContentArgs extends co
         }
 
         /**
-         * @param valueType (Updatable) The value type of the user password.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param valueType (Updatable) The value type of the key store content.
          * 
          * @return builder
          * 

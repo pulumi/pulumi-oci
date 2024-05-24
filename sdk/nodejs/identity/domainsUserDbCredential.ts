@@ -248,21 +248,20 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      */
     public /*out*/ readonly mixedSalt!: pulumi.Output<string>;
     /**
-     * (Updatable) The username.
+     * (Updatable) Name
+     *
+     * **Added In:** 2109090424
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * type: string
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      */
     public /*out*/ readonly name!: pulumi.Output<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -270,9 +269,9 @@ export class DomainsUserDbCredential extends pulumi.CustomResource {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     public readonly ocid!: pulumi.Output<string>;
     /**
@@ -662,21 +661,20 @@ export interface DomainsUserDbCredentialState {
      */
     mixedSalt?: pulumi.Input<string>;
     /**
-     * (Updatable) The username.
+     * (Updatable) Name
+     *
+     * **Added In:** 2109090424
      *
      * **SCIM++ Properties:**
      * * caseExact: false
-     * * idcsSearchable: false
-     * * multiValued: false
+     * * type: string
      * * mutability: readOnly
      * * required: false
      * * returned: default
-     * * type: string
-     * * uniqueness: none
      */
     name?: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -684,9 +682,9 @@ export interface DomainsUserDbCredentialState {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**
@@ -842,7 +840,7 @@ export interface DomainsUserDbCredentialArgs {
      */
     idcsEndpoint: pulumi.Input<string>;
     /**
-     * The user's OCID.
+     * Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
      *
      * **SCIM++ Properties:**
      * * caseExact: true
@@ -850,9 +848,9 @@ export interface DomainsUserDbCredentialArgs {
      * * multiValued: false
      * * mutability: immutable
      * * required: false
-     * * returned: always
+     * * returned: default
      * * type: string
-     * * uniqueness: none
+     * * uniqueness: global
      */
     ocid?: pulumi.Input<string>;
     /**

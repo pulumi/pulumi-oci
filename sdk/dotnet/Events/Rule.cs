@@ -71,7 +71,7 @@ namespace Pulumi.Oci.Events
     public partial class Rule : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) A list of one or more ActionDetails objects.
+        /// (Updatable) A list of ActionDetails objects to create for a rule.
         /// </summary>
         [Output("actions")]
         public Output<Outputs.RuleActions> Actions { get; private set; } = null!;
@@ -199,7 +199,7 @@ namespace Pulumi.Oci.Events
     public sealed class RuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A list of one or more ActionDetails objects.
+        /// (Updatable) A list of ActionDetails objects to create for a rule.
         /// </summary>
         [Input("actions", required: true)]
         public Input<Inputs.RuleActionsArgs> Actions { get; set; } = null!;
@@ -283,7 +283,7 @@ namespace Pulumi.Oci.Events
     public sealed class RuleState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) A list of one or more ActionDetails objects.
+        /// (Updatable) A list of ActionDetails objects to create for a rule.
         /// </summary>
         [Input("actions")]
         public Input<Inputs.RuleActionsGetArgs>? Actions { get; set; }

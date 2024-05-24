@@ -19,7 +19,7 @@ namespace Pulumi.Oci.Waf.Inputs
         public Input<string> Text { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Type of WebAppFirewallPolicyRule.
+        /// (Updatable) Type of HttpResponseBody.
         /// </summary>
         [Input("type", required: true)]
         public Input<string> Type { get; set; } = null!;

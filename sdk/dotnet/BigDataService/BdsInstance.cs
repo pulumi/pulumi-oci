@@ -170,7 +170,7 @@ namespace Pulumi.Oci.BigDataService
         public Output<ImmutableArray<Outputs.BdsInstanceNode>> Nodes { get; private set; } = null!;
 
         /// <summary>
-        /// The amount of worker nodes should be created
+        /// Number of nodes that forming the cluster
         /// </summary>
         [Output("numberOfNodes")]
         public Output<int> NumberOfNodes { get; private set; } = null!;
@@ -632,7 +632,7 @@ namespace Pulumi.Oci.BigDataService
         }
 
         /// <summary>
-        /// The amount of worker nodes should be created
+        /// Number of nodes that forming the cluster
         /// </summary>
         [Input("numberOfNodes")]
         public Input<int>? NumberOfNodes { get; set; }

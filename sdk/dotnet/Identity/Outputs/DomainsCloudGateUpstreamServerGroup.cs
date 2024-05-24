@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsCloudGateUpstreamServerGroup
     {
         /// <summary>
-        /// (Updatable) Display name of upstream server
+        /// (Updatable) Display name of upstream
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -23,14 +23,14 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * idcsSearchable: false
         /// * multiValued: false
         /// * mutability: readOnly
-        /// * required: false
+        /// * required: true
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// (Updatable) Any additional settings for this upstream server in nginx configuration form
+        /// (Updatable) Any additional settings in nginx configuration form
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string? NginxSettings;
         /// <summary>
-        /// (Updatable) URI of the upstream server
+        /// (Updatable) URI of the upstream server groups
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly bool? Ssl;
         /// <summary>
-        /// (Updatable) ID of the upstream server
+        /// (Updatable) Name for the Upstream Block
         /// 
         /// **Added In:** 20.1.3
         /// 
@@ -91,10 +91,6 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * returned: default
         /// * type: string
         /// * uniqueness: none
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         public readonly string Value;
 

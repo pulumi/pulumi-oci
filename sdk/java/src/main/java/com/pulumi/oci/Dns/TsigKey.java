@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testTsigKey = new TsigKey("testTsigKey", TsigKeyArgs.builder()        
+ *         var testTsigKey = new TsigKey("testTsigKey", TsigKeyArgs.builder()
  *             .algorithm(tsigKeyAlgorithm)
  *             .compartmentId(compartmentId)
  *             .name(tsigKeyName)

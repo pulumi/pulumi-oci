@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testReplication = new Replication("testReplication", ReplicationArgs.builder()        
+ *         var testReplication = new Replication("testReplication", ReplicationArgs.builder()
  *             .compartmentId(compartmentId)
  *             .sourceId(testSource.id())
  *             .targetId(testTarget.id())

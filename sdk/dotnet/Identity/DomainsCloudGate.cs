@@ -155,19 +155,19 @@ namespace Pulumi.Oci.Identity
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Display name of upstream server
+        /// (Updatable) Display name/Host identifier for this Cloud Gate
         /// 
-        /// **Added In:** 20.1.3
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: server
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -586,19 +586,19 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Display name of upstream server
+        /// (Updatable) Display name/Host identifier for this Cloud Gate
         /// 
-        /// **Added In:** 20.1.3
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: server
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -810,19 +810,19 @@ namespace Pulumi.Oci.Identity
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Display name of upstream server
+        /// (Updatable) Display name/Host identifier for this Cloud Gate
         /// 
-        /// **Added In:** 20.1.3
+        /// **Added In:** 19.2.1
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: false
-        /// * idcsSearchable: false
+        /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: readOnly
-        /// * required: false
-        /// * returned: default
+        /// * mutability: readWrite
+        /// * required: true
+        /// * returned: always
         /// * type: string
-        /// * uniqueness: none
+        /// * uniqueness: server
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }

@@ -47,7 +47,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseRegistration = new DatabaseRegistration("testDatabaseRegistration", DatabaseRegistrationArgs.builder()        
+ *         var testDatabaseRegistration = new DatabaseRegistration("testDatabaseRegistration", DatabaseRegistrationArgs.builder()
  *             .aliasName(databaseRegistrationAliasName)
  *             .compartmentId(compartmentId)
  *             .displayName(databaseRegistrationDisplayName)

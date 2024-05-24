@@ -17,14 +17,14 @@ public final class ProfileLevelsConfigurationArgs extends com.pulumi.resources.R
     public static final ProfileLevelsConfigurationArgs Empty = new ProfileLevelsConfigurationArgs();
 
     /**
-     * (Updatable) The list of tags specified in the current profile override.
+     * (Updatable) The array of configuration levels.
      * 
      */
     @Import(name="items")
     private @Nullable Output<List<ProfileLevelsConfigurationItemArgs>> items;
 
     /**
-     * @return (Updatable) The list of tags specified in the current profile override.
+     * @return (Updatable) The array of configuration levels.
      * 
      */
     public Optional<Output<List<ProfileLevelsConfigurationItemArgs>>> items() {
@@ -56,7 +56,7 @@ public final class ProfileLevelsConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param items (Updatable) The list of tags specified in the current profile override.
+         * @param items (Updatable) The array of configuration levels.
          * 
          * @return builder
          * 
@@ -67,7 +67,7 @@ public final class ProfileLevelsConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param items (Updatable) The list of tags specified in the current profile override.
+         * @param items (Updatable) The array of configuration levels.
          * 
          * @return builder
          * 
@@ -77,7 +77,7 @@ public final class ProfileLevelsConfigurationArgs extends com.pulumi.resources.R
         }
 
         /**
-         * @param items (Updatable) The list of tags specified in the current profile override.
+         * @param items (Updatable) The array of configuration levels.
          * 
          * @return builder
          * 

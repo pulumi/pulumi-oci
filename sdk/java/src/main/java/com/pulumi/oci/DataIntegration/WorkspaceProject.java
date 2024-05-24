@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testWorkspaceProject = new WorkspaceProject("testWorkspaceProject", WorkspaceProjectArgs.builder()        
+ *         var testWorkspaceProject = new WorkspaceProject("testWorkspaceProject", WorkspaceProjectArgs.builder()
  *             .identifier(workspaceProjectIdentifier)
  *             .name(workspaceProjectName)
  *             .workspaceId(testWorkspace.id())
@@ -114,14 +114,14 @@ public class WorkspaceProject extends com.pulumi.resources.CustomResource {
         return this.identifier;
     }
     /**
-     * (Updatable) The identifying key for the object.
+     * (Updatable) Generated key that can be used in API calls to identify project.
      * 
      */
     @Export(name="key", refs={String.class}, tree="[0]")
     private Output<String> key;
 
     /**
-     * @return (Updatable) The identifying key for the object.
+     * @return (Updatable) Generated key that can be used in API calls to identify project.
      * 
      */
     public Output<String> key() {

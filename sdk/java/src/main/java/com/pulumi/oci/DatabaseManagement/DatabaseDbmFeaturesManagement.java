@@ -51,7 +51,7 @@ import javax.annotation.Nullable;
  *     }
  * 
  *     public static void stack(Context ctx) {
- *         var testDatabaseDbmFeaturesManagement = new DatabaseDbmFeaturesManagement("testDatabaseDbmFeaturesManagement", DatabaseDbmFeaturesManagementArgs.builder()        
+ *         var testDatabaseDbmFeaturesManagement = new DatabaseDbmFeaturesManagement("testDatabaseDbmFeaturesManagement", DatabaseDbmFeaturesManagementArgs.builder()
  *             .databaseId(testDatabase.id())
  *             .enableDatabaseDbmFeature(enableDatabaseDbmFeature)
  *             .featureDetails(DatabaseDbmFeaturesManagementFeatureDetailsArgs.builder()

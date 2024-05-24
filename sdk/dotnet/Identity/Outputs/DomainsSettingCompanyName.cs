@@ -17,7 +17,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// (Updatable) Locale
         /// 
         /// **SCIM++ Properties:**
-        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(loginTexts.locale)"
+        /// * idcsCanonicalValueSourceFilter: attrName eq "locales" and attrValues.value eq "$(companyNames.locale)"
         /// * idcsCanonicalValueSourceResourceType: AllowedValue
         /// * multiValued: false
         /// * mutability: readWrite
@@ -27,9 +27,7 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Locale;
         /// <summary>
-        /// (Updatable) Custom claim value
-        /// 
-        /// **Added In:** 18.4.2
+        /// (Updatable) Company name
         /// 
         /// **SCIM++ Properties:**
         /// * multiValued: false
@@ -37,7 +35,6 @@ namespace Pulumi.Oci.Identity.Outputs
         /// * required: true
         /// * returned: default
         /// * type: string
-        /// * uniqueness: none
         /// </summary>
         public readonly string Value;
 

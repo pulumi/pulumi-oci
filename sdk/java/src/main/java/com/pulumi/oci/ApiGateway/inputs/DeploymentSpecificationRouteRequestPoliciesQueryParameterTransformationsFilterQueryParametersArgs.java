@@ -17,14 +17,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     public static final DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs Empty = new DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersArgs();
 
     /**
-     * (Updatable) The list of headers.
+     * (Updatable) The list of query parameters.
      * 
      */
     @Import(name="items", required=true)
     private Output<List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs>> items;
 
     /**
-     * @return (Updatable) The list of headers.
+     * @return (Updatable) The list of query parameters.
      * 
      */
     public Output<List<DeploymentSpecificationRouteRequestPoliciesQueryParameterTransformationsFilterQueryParametersItemArgs>> items() {
@@ -32,20 +32,14 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
     }
 
     /**
-     * (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
      * 
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
-     * @return (Updatable) Type of the Response Cache Store Policy.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * @return (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
      * 
      */
     public Output<String> type() {
@@ -78,7 +72,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param items (Updatable) The list of headers.
+         * @param items (Updatable) The list of query parameters.
          * 
          * @return builder
          * 
@@ -89,7 +83,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param items (Updatable) The list of headers.
+         * @param items (Updatable) The list of query parameters.
          * 
          * @return builder
          * 
@@ -99,7 +93,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param items (Updatable) The list of headers.
+         * @param items (Updatable) The list of query parameters.
          * 
          * @return builder
          * 
@@ -109,10 +103,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
          * 
          * @return builder
          * 
@@ -123,10 +114,7 @@ public final class DeploymentSpecificationRouteRequestPoliciesQueryParameterTran
         }
 
         /**
-         * @param type (Updatable) Type of the Response Cache Store Policy.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @param type (Updatable) BLOCK drops any query parameters that are in the list of items, so it acts as an exclusion list.  ALLOW permits only the parameters in the list and removes all others, so it acts as an inclusion list.
          * 
          * @return builder
          * 

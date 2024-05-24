@@ -15,14 +15,14 @@ public final class ApplicationImagePolicyConfigKeyDetailArgs extends com.pulumi.
     public static final ApplicationImagePolicyConfigKeyDetailArgs Empty = new ApplicationImagePolicyConfigKeyDetailArgs();
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
      * 
      */
     @Import(name="kmsKeyId", required=true)
     private Output<String> kmsKeyId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
      * 
      */
     public Output<String> kmsKeyId() {
@@ -54,7 +54,7 @@ public final class ApplicationImagePolicyConfigKeyDetailArgs extends com.pulumi.
         }
 
         /**
-         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+         * @param kmsKeyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class ApplicationImagePolicyConfigKeyDetailArgs extends com.pulumi.
         }
 
         /**
-         * @param kmsKeyId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
+         * @param kmsKeyId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)s of the KMS key that will be used to verify the image signature.
          * 
          * @return builder
          * 

@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Dns.Inputs
     public sealed class ZoneZoneTransferServerArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The server's IP address (IPv4 or IPv6).
+        /// The server's IP address (IPv4 or IPv6).
         /// </summary>
         [Input("address")]
         public Input<string>? Address { get; set; }
@@ -31,7 +31,7 @@ namespace Pulumi.Oci.Dns.Inputs
         public Input<bool>? IsTransferSource { get; set; }
 
         /// <summary>
-        /// (Updatable) The server's port. Port value must be a value of 53, otherwise omit the port value.
+        /// The server's port.
         /// </summary>
         [Input("port")]
         public Input<int>? Port { get; set; }

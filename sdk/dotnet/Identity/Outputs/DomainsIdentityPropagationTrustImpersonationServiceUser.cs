@@ -14,17 +14,17 @@ namespace Pulumi.Oci.Identity.Outputs
     public sealed class DomainsIdentityPropagationTrustImpersonationServiceUser
     {
         /// <summary>
-        /// (Updatable) Unique Oracle Cloud Infrastructure identifier for the SCIM Resource.
+        /// (Updatable) The OCID of the Service User.
         /// 
         /// **SCIM++ Properties:**
         /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
-        /// * mutability: immutable
+        /// * mutability: readWrite
         /// * required: false
         /// * returned: default
         /// * type: string
-        /// * uniqueness: global
+        /// * uniqueness: none
         /// </summary>
         public readonly string? Ocid;
         public readonly string? Ref;
@@ -42,10 +42,10 @@ namespace Pulumi.Oci.Identity.Outputs
         /// </summary>
         public readonly string Rule;
         /// <summary>
-        /// (Updatable) Value of the tag.
+        /// (Updatable) The ID of the Service User.
         /// 
         /// **SCIM++ Properties:**
-        /// * caseExact: false
+        /// * caseExact: true
         /// * idcsSearchable: true
         /// * multiValued: false
         /// * mutability: readWrite

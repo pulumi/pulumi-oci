@@ -22,15 +22,11 @@ namespace Pulumi.Oci.ApiGateway.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.DeploymentSpecificationRequestPoliciesDynamicAuthenticationAuthenticationServerAuthenticationServerDetailPublicKeysKey> Keys;
         /// <summary>
-        /// (Updatable) The duration for which the introspect URL response should be cached before it is fetched again.
+        /// (Updatable) The duration for which the JWKS should be cached before it is fetched again.
         /// </summary>
         public readonly int? MaxCacheDurationInHours;
         /// <summary>
-        /// (Updatable) Type of the Response Cache Store Policy.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// (Updatable) Type of the public key set.
         /// </summary>
         public readonly string Type;
         /// <summary>

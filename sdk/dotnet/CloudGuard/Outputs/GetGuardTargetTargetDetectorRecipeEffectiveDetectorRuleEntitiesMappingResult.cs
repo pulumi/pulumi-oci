@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingResult
     {
         /// <summary>
-        /// ResponderRule display name.
+        /// Responder rule display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Possible type of entity
+        /// Type of entity
         /// </summary>
         public readonly string EntityType;
         /// <summary>

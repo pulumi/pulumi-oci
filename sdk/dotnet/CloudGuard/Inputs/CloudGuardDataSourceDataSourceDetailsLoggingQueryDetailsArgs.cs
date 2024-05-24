@@ -19,7 +19,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<int>? KeyEntitiesCount { get; set; }
 
         /// <summary>
-        /// (Updatable) Logging query type for data source (Sighting/Insight)
+        /// (Updatable) Logging query type for data source
         /// </summary>
         [Input("loggingQueryType", required: true)]
         public Input<string> LoggingQueryType { get; set; } = null!;

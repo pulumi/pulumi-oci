@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+        /// Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
         /// 
         /// 
         /// ## Example Usage
@@ -48,7 +48,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Data Mask Rules in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all DataMaskRule objects in the specified compartmentId (OCID) and its subcompartments.
+        /// Returns a list of all DataMaskRule resources in the specified compartmentId (OCID) and its subcompartments.
         /// 
         /// 
         /// ## Example Usage
@@ -90,13 +90,13 @@ namespace Pulumi.Oci.CloudGuard
         public string? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The status of the dataMaskRule.
+        /// The status of the data mask rule
         /// </summary>
         [Input("dataMaskRuleStatus")]
         public string? DataMaskRuleStatus { get; set; }
@@ -116,19 +116,19 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// OCID of iamGroup
+        /// OCID of the IAM group
         /// </summary>
         [Input("iamGroupId")]
         public string? IamGroupId { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
 
         /// <summary>
-        /// OCID of target
+        /// OCID of the target
         /// </summary>
         [Input("targetId")]
         public string? TargetId { get; set; }
@@ -154,13 +154,13 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// The status of the dataMaskRule.
+        /// The status of the data mask rule
         /// </summary>
         [Input("dataMaskRuleStatus")]
         public Input<string>? DataMaskRuleStatus { get; set; }
@@ -180,19 +180,19 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// OCID of iamGroup
+        /// OCID of the IAM group
         /// </summary>
         [Input("iamGroupId")]
         public Input<string>? IamGroupId { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// OCID of target
+        /// OCID of the target
         /// </summary>
         [Input("targetId")]
         public Input<string>? TargetId { get; set; }
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.CloudGuard
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// Compartment Identifier where the resource is created.
+        /// Compartment OCID where the resource is created
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -223,16 +223,16 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataMaskRulesDataMaskRuleCollectionResult> DataMaskRuleCollections;
         /// <summary>
-        /// The status of the dataMaskRule.
+        /// The current status of the data mask rule
         /// </summary>
         public readonly string? DataMaskRuleStatus;
         /// <summary>
-        /// Data Mask Rule Identifier, can be renamed.
+        /// Data mask rule display name
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDataMaskRulesFilterResult> Filters;
         /// <summary>
-        /// IAM Group id associated with the data mask rule
+        /// IAM Group ID associated with the data mask rule
         /// </summary>
         public readonly string? IamGroupId;
         /// <summary>
@@ -240,7 +240,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The current state of the DataMaskRule.
+        /// The current lifecycle state of the data mask rule
         /// </summary>
         public readonly string? State;
         public readonly string? TargetId;

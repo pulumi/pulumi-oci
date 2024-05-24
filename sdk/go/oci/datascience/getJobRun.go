@@ -87,7 +87,8 @@ type LookupJobRunResult struct {
 	// Details of the state of the job run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
-	LogDetails []GetJobRunLogDetail `pulumi:"logDetails"`
+	LogDetails      []GetJobRunLogDetail `pulumi:"logDetails"`
+	OpcParentRptUrl string               `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	ProjectId string `pulumi:"projectId"`
 	// The state of the job run.
@@ -224,6 +225,10 @@ func (o LookupJobRunResultOutput) LifecycleDetails() pulumi.StringOutput {
 // Customer logging details for job run.
 func (o LookupJobRunResultOutput) LogDetails() GetJobRunLogDetailArrayOutput {
 	return o.ApplyT(func(v LookupJobRunResult) []GetJobRunLogDetail { return v.LogDetails }).(GetJobRunLogDetailArrayOutput)
+}
+
+func (o LookupJobRunResultOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupJobRunResult) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.

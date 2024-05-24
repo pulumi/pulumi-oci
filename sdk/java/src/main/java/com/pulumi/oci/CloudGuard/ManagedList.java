@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a new ManagedList object.
+ * Creates a new ManagedList resource.
  * 
  * ## Import
  * 
@@ -34,14 +34,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/managedList:ManagedList")
 public class ManagedList extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -62,7 +62,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * (Updatable) Managed list description.
+     * (Updatable) Managed list description
      * 
      * Avoid entering confidential information.
      * 
@@ -71,7 +71,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
     private Output<String> description;
 
     /**
-     * @return (Updatable) Managed list description.
+     * @return (Updatable) Managed list description
      * 
      * Avoid entering confidential information.
      * 
@@ -98,14 +98,14 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      * 
      */
     @Export(name="feedProvider", refs={String.class}, tree="[0]")
     private Output<String> feedProvider;
 
     /**
-     * @return provider of the feed
+     * @return Provider of the managed list feed
      * 
      */
     public Output<String> feedProvider() {
@@ -130,63 +130,63 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * If this list is editable or not
+     * Is this list editable?
      * 
      */
     @Export(name="isEditable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEditable;
 
     /**
-     * @return If this list is editable or not
+     * @return Is this list editable?
      * 
      */
     public Output<Boolean> isEditable() {
         return this.isEditable;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     public Output<String> lifecyleDetails() {
         return this.lifecyleDetails;
     }
     /**
-     * (Updatable) List of ManagedListItem
+     * (Updatable) List of items in the managed list
      * 
      */
     @Export(name="listItems", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> listItems;
 
     /**
-     * @return (Updatable) List of ManagedListItem
+     * @return (Updatable) List of items in the managed list
      * 
      */
     public Output<List<String>> listItems() {
         return this.listItems;
     }
     /**
-     * type of the list
+     * Type of information stored in the list
      * 
      */
     @Export(name="listType", refs={String.class}, tree="[0]")
     private Output<String> listType;
 
     /**
-     * @return type of the list
+     * @return Type of information stored in the list
      * 
      */
     public Output<String> listType() {
         return this.listType;
     }
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -196,7 +196,7 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
     private Output<String> sourceManagedListId;
 
     /**
-     * @return OCID of the Source ManagedList
+     * @return OCID of the source managed list
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -206,14 +206,14 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.sourceManagedListId;
     }
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Output<String> state() {
@@ -248,14 +248,14 @@ public class ManagedList extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the managed list was updated. Format defined by RFC3339.
+     * @return The date and time the managed list was last updated. Format defined by RFC3339.
      * 
      */
     public Output<String> timeUpdated() {

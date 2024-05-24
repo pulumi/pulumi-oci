@@ -112,6 +112,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
+//				OpcParentRptUrl: pulumi.Any(modelDeploymentOpcParentRptUrl),
 //			})
 //			if err != nil {
 //				return err
@@ -154,6 +155,8 @@ type ModelDeployment struct {
 	ModelDeploymentSystemDatas ModelDeploymentModelDeploymentSystemDataArrayOutput `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl pulumi.StringOutput `pulumi:"modelDeploymentUrl"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrOutput `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
@@ -226,6 +229,8 @@ type modelDeploymentState struct {
 	ModelDeploymentSystemDatas []ModelDeploymentModelDeploymentSystemData `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl *string `pulumi:"modelDeploymentUrl"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId *string `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
@@ -260,6 +265,8 @@ type ModelDeploymentState struct {
 	ModelDeploymentSystemDatas ModelDeploymentModelDeploymentSystemDataArrayInput
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl pulumi.StringPtrInput
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringPtrInput
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
@@ -290,6 +297,8 @@ type modelDeploymentArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The model deployment configuration details.
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetails `pulumi:"modelDeploymentConfigurationDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId string `pulumi:"projectId"`
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
@@ -315,6 +324,8 @@ type ModelDeploymentArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) The model deployment configuration details.
 	ModelDeploymentConfigurationDetails ModelDeploymentModelDeploymentConfigurationDetailsInput
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
 	ProjectId pulumi.StringInput
 	// (Updatable) The target state for the Model Deployment. Could be set to `ACTIVE` or `INACTIVE`.
@@ -468,6 +479,11 @@ func (o ModelDeploymentOutput) ModelDeploymentSystemDatas() ModelDeploymentModel
 // The URL to interact with the model deployment.
 func (o ModelDeploymentOutput) ModelDeploymentUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *ModelDeployment) pulumi.StringOutput { return v.ModelDeploymentUrl }).(pulumi.StringOutput)
+}
+
+// URL to fetch the Resource Principal Token from the parent resource.
+func (o ModelDeploymentOutput) OpcParentRptUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ModelDeployment) pulumi.StringPtrOutput { return v.OpcParentRptUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.

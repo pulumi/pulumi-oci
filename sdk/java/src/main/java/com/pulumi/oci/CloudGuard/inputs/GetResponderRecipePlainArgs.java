@@ -14,14 +14,14 @@ public final class GetResponderRecipePlainArgs extends com.pulumi.resources.Invo
     public static final GetResponderRecipePlainArgs Empty = new GetResponderRecipePlainArgs();
 
     /**
-     * OCID of ResponderRecipe
+     * OCID of the responder recipe.
      * 
      */
     @Import(name="responderRecipeId", required=true)
     private String responderRecipeId;
 
     /**
-     * @return OCID of ResponderRecipe
+     * @return OCID of the responder recipe.
      * 
      */
     public String responderRecipeId() {
@@ -53,7 +53,7 @@ public final class GetResponderRecipePlainArgs extends com.pulumi.resources.Invo
         }
 
         /**
-         * @param responderRecipeId OCID of ResponderRecipe
+         * @param responderRecipeId OCID of the responder recipe.
          * 
          * @return builder
          * 

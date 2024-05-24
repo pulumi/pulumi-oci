@@ -95,6 +95,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     opcParentRptUrl: modelDeploymentOpcParentRptUrl,
  * });
  * ```
  *
@@ -179,6 +180,10 @@ export class ModelDeployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly modelDeploymentUrl!: pulumi.Output<string>;
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    public readonly opcParentRptUrl!: pulumi.Output<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */
     public readonly projectId!: pulumi.Output<string>;
@@ -219,6 +224,7 @@ export class ModelDeployment extends pulumi.CustomResource {
             resourceInputs["modelDeploymentConfigurationDetails"] = state ? state.modelDeploymentConfigurationDetails : undefined;
             resourceInputs["modelDeploymentSystemDatas"] = state ? state.modelDeploymentSystemDatas : undefined;
             resourceInputs["modelDeploymentUrl"] = state ? state.modelDeploymentUrl : undefined;
+            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -240,6 +246,7 @@ export class ModelDeployment extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["modelDeploymentConfigurationDetails"] = args ? args.modelDeploymentConfigurationDetails : undefined;
+            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
@@ -302,6 +309,10 @@ export interface ModelDeploymentState {
      */
     modelDeploymentUrl?: pulumi.Input<string>;
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */
     projectId?: pulumi.Input<string>;
@@ -351,6 +362,10 @@ export interface ModelDeploymentArgs {
      * (Updatable) The model deployment configuration details.
      */
     modelDeploymentConfigurationDetails: pulumi.Input<inputs.DataScience.ModelDeploymentModelDeploymentConfigurationDetails>;
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
      */

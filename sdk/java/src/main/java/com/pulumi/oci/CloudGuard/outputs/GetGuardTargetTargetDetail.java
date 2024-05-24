@@ -13,50 +13,50 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetTargetDetail {
     /**
-     * @return The name of the security zone to associate this compartment with.
+     * @return The name of the security zone to associate with this compartment.
      * 
      */
     private String securityZoneDisplayName;
     /**
-     * @return The OCID of the security zone to associate this compartment with.
+     * @return The OCID of the security zone to associate with this compartment
      * 
      */
     private String securityZoneId;
     /**
-     * @return possible type of targets
+     * @return Type of target
      * 
      */
     private String targetResourceType;
     /**
-     * @return The list of security zone recipes to associate this compartment with.
+     * @return The list of security zone recipes to associate with this compartment
      * 
      */
     private List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
 
     private GetGuardTargetTargetDetail() {}
     /**
-     * @return The name of the security zone to associate this compartment with.
+     * @return The name of the security zone to associate with this compartment.
      * 
      */
     public String securityZoneDisplayName() {
         return this.securityZoneDisplayName;
     }
     /**
-     * @return The OCID of the security zone to associate this compartment with.
+     * @return The OCID of the security zone to associate with this compartment
      * 
      */
     public String securityZoneId() {
         return this.securityZoneId;
     }
     /**
-     * @return possible type of targets
+     * @return Type of target
      * 
      */
     public String targetResourceType() {
         return this.targetResourceType;
     }
     /**
-     * @return The list of security zone recipes to associate this compartment with.
+     * @return The list of security zone recipes to associate with this compartment
      * 
      */
     public List<GetGuardTargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes() {

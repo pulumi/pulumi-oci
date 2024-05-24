@@ -46,6 +46,14 @@ import (
 //							EnvironmentVariables:    pulumi.Any(pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables),
 //							MaximumRuntimeInMinutes: pulumi.Any(pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes),
 //						},
+//						StepContainerConfigurationDetails: &datascience.PipelineStepDetailStepContainerConfigurationDetailsArgs{
+//							ContainerType:    pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsContainerType),
+//							Image:            pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsImage),
+//							Cmds:             pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsCmd),
+//							Entrypoints:      pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint),
+//							ImageDigest:      pulumi.Any(pipelineStepDetailsStepContainerConfigurationDetailsImageDigest),
+//							ImageSignatureId: pulumi.Any(testImageSignature.Id),
+//						},
 //						StepInfrastructureConfigurationDetails: &datascience.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{
 //							BlockStorageSizeInGbs: pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs),
 //							ShapeConfigDetails: &datascience.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{
@@ -53,6 +61,7 @@ import (
 //								Ocpus:       pulumi.Any(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
 //							},
 //							ShapeName: pulumi.Any(testShape.Name),
+//							SubnetId:  pulumi.Any(testSubnet.Id),
 //						},
 //					},
 //				},
@@ -77,6 +86,7 @@ import (
 //						MemoryInGbs: pulumi.Any(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs),
 //						Ocpus:       pulumi.Any(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus),
 //					},
+//					SubnetId: pulumi.Any(testSubnet.Id),
 //				},
 //				LogConfigurationDetails: &datascience.PipelineLogConfigurationDetailsArgs{
 //					EnableAutoLogCreation: pulumi.Any(pipelineLogConfigurationDetailsEnableAutoLogCreation),
@@ -119,7 +129,7 @@ type Pipeline struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The infrastructure configuration details of a pipeline or a step.
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsOutput `pulumi:"infrastructureConfigurationDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -194,7 +204,7 @@ type pipelineState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The infrastructure configuration details of a pipeline or a step.
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails *PipelineInfrastructureConfigurationDetails `pulumi:"infrastructureConfigurationDetails"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -231,7 +241,7 @@ type PipelineState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The infrastructure configuration details of a pipeline or a step.
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -270,7 +280,7 @@ type pipelineArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The infrastructure configuration details of a pipeline or a step.
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails *PipelineInfrastructureConfigurationDetails `pulumi:"infrastructureConfigurationDetails"`
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails *PipelineLogConfigurationDetails `pulumi:"logConfigurationDetails"`
@@ -296,7 +306,7 @@ type PipelineArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// The infrastructure configuration details of a pipeline or a step.
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	InfrastructureConfigurationDetails PipelineInfrastructureConfigurationDetailsPtrInput
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails PipelineLogConfigurationDetailsPtrInput
@@ -433,7 +443,7 @@ func (o PipelineOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The infrastructure configuration details of a pipeline or a step.
+// (Updatable) The infrastructure configuration details of a pipeline or a step.
 func (o PipelineOutput) InfrastructureConfigurationDetails() PipelineInfrastructureConfigurationDetailsOutput {
 	return o.ApplyT(func(v *Pipeline) PipelineInfrastructureConfigurationDetailsOutput {
 		return v.InfrastructureConfigurationDetails

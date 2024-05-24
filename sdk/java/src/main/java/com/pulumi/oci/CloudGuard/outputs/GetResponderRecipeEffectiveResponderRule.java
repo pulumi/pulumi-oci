@@ -13,22 +13,22 @@ import java.util.Objects;
 @CustomType
 public final class GetResponderRecipeEffectiveResponderRule {
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     private List<GetResponderRecipeEffectiveResponderRuleDetail> details;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private String displayName;
@@ -38,22 +38,22 @@ public final class GetResponderRecipeEffectiveResponderRule {
      */
     private String lifecycleDetails;
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     private List<String> policies;
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique identifier for the responder rule
      * 
      */
     private String responderRuleId;
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     private String state;
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     private List<String> supportedModes;
@@ -63,40 +63,40 @@ public final class GetResponderRecipeEffectiveResponderRule {
      */
     private String timeCreated;
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     private String type;
 
     private GetResponderRecipeEffectiveResponderRule() {}
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public List<GetResponderRecipeEffectiveResponderRuleDetail> details() {
         return this.details;
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public String displayName() {
@@ -110,28 +110,28 @@ public final class GetResponderRecipeEffectiveResponderRule {
         return this.lifecycleDetails;
     }
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public List<String> policies() {
         return this.policies;
     }
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique identifier for the responder rule
      * 
      */
     public String responderRuleId() {
         return this.responderRuleId;
     }
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public List<String> supportedModes() {
@@ -145,14 +145,14 @@ public final class GetResponderRecipeEffectiveResponderRule {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public String type() {

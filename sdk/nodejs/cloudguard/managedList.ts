@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Managed List resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a new ManagedList object.
+ * Creates a new ManagedList resource.
  *
  * ## Import
  *
@@ -46,7 +46,7 @@ export class ManagedList extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -54,7 +54,7 @@ export class ManagedList extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) Managed list description.
+     * (Updatable) Managed list description
      *
      * Avoid entering confidential information.
      */
@@ -66,7 +66,7 @@ export class ManagedList extends pulumi.CustomResource {
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      */
     public /*out*/ readonly feedProvider!: pulumi.Output<string>;
     /**
@@ -76,23 +76,23 @@ export class ManagedList extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * If this list is editable or not
+     * Is this list editable?
      */
     public /*out*/ readonly isEditable!: pulumi.Output<boolean>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
     public /*out*/ readonly lifecyleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) List of ManagedListItem
+     * (Updatable) List of items in the managed list
      */
     public readonly listItems!: pulumi.Output<string[]>;
     /**
-     * type of the list
+     * Type of information stored in the list
      */
     public readonly listType!: pulumi.Output<string>;
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      *
      *
      * ** IMPORTANT **
@@ -100,7 +100,7 @@ export class ManagedList extends pulumi.CustomResource {
      */
     public readonly sourceManagedListId!: pulumi.Output<string>;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -112,7 +112,7 @@ export class ManagedList extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -178,7 +178,7 @@ export class ManagedList extends pulumi.CustomResource {
  */
 export interface ManagedListState {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -186,7 +186,7 @@ export interface ManagedListState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Managed list description.
+     * (Updatable) Managed list description
      *
      * Avoid entering confidential information.
      */
@@ -198,7 +198,7 @@ export interface ManagedListState {
      */
     displayName?: pulumi.Input<string>;
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      */
     feedProvider?: pulumi.Input<string>;
     /**
@@ -208,23 +208,23 @@ export interface ManagedListState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * If this list is editable or not
+     * Is this list editable?
      */
     isEditable?: pulumi.Input<boolean>;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
     lifecyleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) List of ManagedListItem
+     * (Updatable) List of items in the managed list
      */
     listItems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * type of the list
+     * Type of information stored in the list
      */
     listType?: pulumi.Input<string>;
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      *
      *
      * ** IMPORTANT **
@@ -232,7 +232,7 @@ export interface ManagedListState {
      */
     sourceManagedListId?: pulumi.Input<string>;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     state?: pulumi.Input<string>;
     /**
@@ -244,7 +244,7 @@ export interface ManagedListState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -254,7 +254,7 @@ export interface ManagedListState {
  */
 export interface ManagedListArgs {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -262,7 +262,7 @@ export interface ManagedListArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) Managed list description.
+     * (Updatable) Managed list description
      *
      * Avoid entering confidential information.
      */
@@ -280,15 +280,15 @@ export interface ManagedListArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) List of ManagedListItem
+     * (Updatable) List of items in the managed list
      */
     listItems?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * type of the list
+     * Type of information stored in the list
      */
     listType?: pulumi.Input<string>;
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      *
      *
      * ** IMPORTANT **

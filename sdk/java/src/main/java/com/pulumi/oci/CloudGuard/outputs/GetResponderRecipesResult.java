@@ -18,13 +18,13 @@ import javax.annotation.Nullable;
 public final class GetResponderRecipesResult {
     private @Nullable String accessLevel;
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
     private @Nullable Boolean compartmentIdInSubtree;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private @Nullable String displayName;
@@ -41,7 +41,7 @@ public final class GetResponderRecipesResult {
      */
     private List<GetResponderRecipesResponderRecipeCollection> responderRecipeCollections;
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     private @Nullable String state;
@@ -51,7 +51,7 @@ public final class GetResponderRecipesResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
@@ -61,7 +61,7 @@ public final class GetResponderRecipesResult {
         return Optional.ofNullable(this.compartmentIdInSubtree);
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public Optional<String> displayName() {
@@ -88,7 +88,7 @@ public final class GetResponderRecipesResult {
         return this.responderRecipeCollections;
     }
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public Optional<String> state() {

@@ -22,7 +22,7 @@ class GetModelDeploymentResult:
     """
     A collection of values returned by getModelDeployment.
     """
-    def __init__(__self__, category_log_details=None, compartment_id=None, created_by=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, model_deployment_configuration_details=None, model_deployment_id=None, model_deployment_system_datas=None, model_deployment_url=None, project_id=None, state=None, time_created=None):
+    def __init__(__self__, category_log_details=None, compartment_id=None, created_by=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, model_deployment_configuration_details=None, model_deployment_id=None, model_deployment_system_datas=None, model_deployment_url=None, opc_parent_rpt_url=None, project_id=None, state=None, time_created=None):
         if category_log_details and not isinstance(category_log_details, list):
             raise TypeError("Expected argument 'category_log_details' to be a list")
         pulumi.set(__self__, "category_log_details", category_log_details)
@@ -62,6 +62,9 @@ class GetModelDeploymentResult:
         if model_deployment_url and not isinstance(model_deployment_url, str):
             raise TypeError("Expected argument 'model_deployment_url' to be a str")
         pulumi.set(__self__, "model_deployment_url", model_deployment_url)
+        if opc_parent_rpt_url and not isinstance(opc_parent_rpt_url, str):
+            raise TypeError("Expected argument 'opc_parent_rpt_url' to be a str")
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
@@ -174,6 +177,11 @@ class GetModelDeploymentResult:
         return pulumi.get(self, "model_deployment_url")
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
@@ -217,6 +225,7 @@ class AwaitableGetModelDeploymentResult(GetModelDeploymentResult):
             model_deployment_id=self.model_deployment_id,
             model_deployment_system_datas=self.model_deployment_system_datas,
             model_deployment_url=self.model_deployment_url,
+            opc_parent_rpt_url=self.opc_parent_rpt_url,
             project_id=self.project_id,
             state=self.state,
             time_created=self.time_created)
@@ -260,6 +269,7 @@ def get_model_deployment(model_deployment_id: Optional[str] = None,
         model_deployment_id=pulumi.get(__ret__, 'model_deployment_id'),
         model_deployment_system_datas=pulumi.get(__ret__, 'model_deployment_system_datas'),
         model_deployment_url=pulumi.get(__ret__, 'model_deployment_url'),
+        opc_parent_rpt_url=pulumi.get(__ret__, 'opc_parent_rpt_url'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'))

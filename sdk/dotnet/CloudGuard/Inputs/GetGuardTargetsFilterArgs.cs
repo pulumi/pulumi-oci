@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class GetGuardTargetsFilterInputArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// configuration name
+        /// Configuration name
         /// </summary>
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;

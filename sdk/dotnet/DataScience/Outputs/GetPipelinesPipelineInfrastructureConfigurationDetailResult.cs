@@ -25,6 +25,10 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// The shape used to launch the instance for all step runs in the pipeline.
         /// </summary>
         public readonly string ShapeName;
+        /// <summary>
+        /// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        /// </summary>
+        public readonly string SubnetId;
 
         [OutputConstructor]
         private GetPipelinesPipelineInfrastructureConfigurationDetailResult(
@@ -32,11 +36,14 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult> shapeConfigDetails,
 
-            string shapeName)
+            string shapeName,
+
+            string subnetId)
         {
             BlockStorageSizeInGbs = blockStorageSizeInGbs;
             ShapeConfigDetails = shapeConfigDetails;
             ShapeName = shapeName;
+            SubnetId = subnetId;
         }
     }
 }

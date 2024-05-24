@@ -7,8 +7,11 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
+import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resources.ResourceArgs {
@@ -31,6 +34,21 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
     }
 
     /**
+     * Container Details for a step in pipeline.
+     * 
+     */
+    @Import(name="stepContainerConfigurationDetails")
+    private @Nullable Output<PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs> stepContainerConfigurationDetails;
+
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    public Optional<Output<PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs>> stepContainerConfigurationDetails() {
+        return Optional.ofNullable(this.stepContainerConfigurationDetails);
+    }
+
+    /**
      * The name of the step.
      * 
      */
@@ -49,6 +67,7 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
 
     private PipelineRunStepOverrideDetailArgs(PipelineRunStepOverrideDetailArgs $) {
         this.stepConfigurationDetails = $.stepConfigurationDetails;
+        this.stepContainerConfigurationDetails = $.stepContainerConfigurationDetails;
         this.stepName = $.stepName;
     }
 
@@ -89,6 +108,27 @@ public final class PipelineRunStepOverrideDetailArgs extends com.pulumi.resource
          */
         public Builder stepConfigurationDetails(PipelineRunStepOverrideDetailStepConfigurationDetailsArgs stepConfigurationDetails) {
             return stepConfigurationDetails(Output.of(stepConfigurationDetails));
+        }
+
+        /**
+         * @param stepContainerConfigurationDetails Container Details for a step in pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepContainerConfigurationDetails(@Nullable Output<PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs> stepContainerConfigurationDetails) {
+            $.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            return this;
+        }
+
+        /**
+         * @param stepContainerConfigurationDetails Container Details for a step in pipeline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder stepContainerConfigurationDetails(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs stepContainerConfigurationDetails) {
+            return stepContainerConfigurationDetails(Output.of(stepContainerConfigurationDetails));
         }
 
         /**

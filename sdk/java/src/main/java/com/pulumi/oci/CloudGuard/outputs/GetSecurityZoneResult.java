@@ -29,7 +29,7 @@ public final class GetSecurityZoneResult {
      */
     private String description;
     /**
-     * @return The security zone&#39;s name
+     * @return The security zone&#39;s display name
      * 
      */
     private String displayName;
@@ -39,7 +39,7 @@ public final class GetSecurityZoneResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     private String id;
@@ -55,7 +55,7 @@ public final class GetSecurityZoneResult {
     private String lifecycleDetails;
     private String securityZoneId;
     /**
-     * @return The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * @return The OCID of the recipe (`SecurityRecipe` resource) for the security zone
      * 
      */
     private String securityZoneRecipeId;
@@ -65,7 +65,7 @@ public final class GetSecurityZoneResult {
      */
     private String securityZoneTargetId;
     /**
-     * @return The current state of the security zone
+     * @return The current lifecycle state of the security zone
      * 
      */
     private String state;
@@ -103,7 +103,7 @@ public final class GetSecurityZoneResult {
         return this.description;
     }
     /**
-     * @return The security zone&#39;s name
+     * @return The security zone&#39;s display name
      * 
      */
     public String displayName() {
@@ -117,7 +117,7 @@ public final class GetSecurityZoneResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     public String id() {
@@ -141,7 +141,7 @@ public final class GetSecurityZoneResult {
         return this.securityZoneId;
     }
     /**
-     * @return The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * @return The OCID of the recipe (`SecurityRecipe` resource) for the security zone
      * 
      */
     public String securityZoneRecipeId() {
@@ -155,7 +155,7 @@ public final class GetSecurityZoneResult {
         return this.securityZoneTargetId;
     }
     /**
-     * @return The current state of the security zone
+     * @return The current lifecycle state of the security zone
      * 
      */
     public String state() {

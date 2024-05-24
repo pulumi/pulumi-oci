@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+// Returns a security zone (SecurityZone resource) identified by securityZoneId.
 //
 // ## Example Usage
 //
@@ -52,7 +52,7 @@ func LookupSecurityZone(ctx *pulumi.Context, args *LookupSecurityZoneArgs, opts 
 
 // A collection of arguments for invoking getSecurityZone.
 type LookupSecurityZoneArgs struct {
-	// The unique identifier of the security zone (`SecurityZone`)
+	// The unique identifier of the security zone (`SecurityZone` resource).
 	SecurityZoneId string `pulumi:"securityZoneId"`
 }
 
@@ -64,22 +64,22 @@ type LookupSecurityZoneResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The security zone's description
 	Description string `pulumi:"description"`
-	// The security zone's name
+	// The security zone's display name
 	DisplayName string `pulumi:"displayName"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique identifier that is immutable on creation
+	// Unique identifier that can’t be changed after creation
 	Id string `pulumi:"id"`
 	// List of inherited compartments
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	SecurityZoneId   string `pulumi:"securityZoneId"`
-	// The OCID of the recipe (`SecurityRecipe`) for the security zone
+	// The OCID of the recipe (`SecurityRecipe` resource) for the security zone
 	SecurityZoneRecipeId string `pulumi:"securityZoneRecipeId"`
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId string `pulumi:"securityZoneTargetId"`
-	// The current state of the security zone
+	// The current lifecycle state of the security zone
 	State string `pulumi:"state"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -102,7 +102,7 @@ func LookupSecurityZoneOutput(ctx *pulumi.Context, args LookupSecurityZoneOutput
 
 // A collection of arguments for invoking getSecurityZone.
 type LookupSecurityZoneOutputArgs struct {
-	// The unique identifier of the security zone (`SecurityZone`)
+	// The unique identifier of the security zone (`SecurityZone` resource).
 	SecurityZoneId pulumi.StringInput `pulumi:"securityZoneId"`
 }
 
@@ -140,7 +140,7 @@ func (o LookupSecurityZoneResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// The security zone's name
+// The security zone's display name
 func (o LookupSecurityZoneResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -150,7 +150,7 @@ func (o LookupSecurityZoneResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Unique identifier that is immutable on creation
+// Unique identifier that can’t be changed after creation
 func (o LookupSecurityZoneResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.Id }).(pulumi.StringOutput)
 }
@@ -169,7 +169,7 @@ func (o LookupSecurityZoneResultOutput) SecurityZoneId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.SecurityZoneId }).(pulumi.StringOutput)
 }
 
-// The OCID of the recipe (`SecurityRecipe`) for the security zone
+// The OCID of the recipe (`SecurityRecipe` resource) for the security zone
 func (o LookupSecurityZoneResultOutput) SecurityZoneRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.SecurityZoneRecipeId }).(pulumi.StringOutput)
 }
@@ -179,7 +179,7 @@ func (o LookupSecurityZoneResultOutput) SecurityZoneTargetId() pulumi.StringOutp
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.SecurityZoneTargetId }).(pulumi.StringOutput)
 }
 
-// The current state of the security zone
+// The current lifecycle state of the security zone
 func (o LookupSecurityZoneResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupSecurityZoneResult) string { return v.State }).(pulumi.StringOutput)
 }

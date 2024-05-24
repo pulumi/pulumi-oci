@@ -53,7 +53,7 @@ namespace Pulumi.Oci.Queue.Outputs
         /// The endpoint to use to consume or publish messages in the queue.
         /// </summary>
         public readonly string MessagesEndpoint;
-        public readonly bool PurgeQueue;
+        public readonly int PurgeTrigger;
         public readonly string PurgeType;
         /// <summary>
         /// The retention period of the messages in the queue, in seconds.
@@ -106,7 +106,7 @@ namespace Pulumi.Oci.Queue.Outputs
 
             string messagesEndpoint,
 
-            bool purgeQueue,
+            int purgeTrigger,
 
             string purgeType,
 
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.Queue.Outputs
             Id = id;
             LifecycleDetails = lifecycleDetails;
             MessagesEndpoint = messagesEndpoint;
-            PurgeQueue = purgeQueue;
+            PurgeTrigger = purgeTrigger;
             PurgeType = purgeType;
             RetentionInSeconds = retentionInSeconds;
             State = state;

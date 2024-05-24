@@ -12,7 +12,8 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+    /// Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+    /// through a CreateSecurityZoneDetails resource.
     /// 
     /// ## Example Usage
     /// 
@@ -73,7 +74,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The security zone's name
+        /// (Updatable) The security zone's display name
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -99,7 +100,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        /// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
         /// 
         /// 
         /// ** IMPORTANT **
@@ -115,7 +116,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> SecurityZoneTargetId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the security zone
+        /// The current lifecycle state of the security zone
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -203,7 +204,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The security zone's name
+        /// (Updatable) The security zone's display name
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -223,7 +224,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        /// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
         /// 
         /// 
         /// ** IMPORTANT **
@@ -265,7 +266,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The security zone's name
+        /// (Updatable) The security zone's display name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -303,7 +304,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        /// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
         /// 
         /// 
         /// ** IMPORTANT **
@@ -319,7 +320,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? SecurityZoneTargetId { get; set; }
 
         /// <summary>
-        /// The current state of the security zone
+        /// The current lifecycle state of the security zone
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

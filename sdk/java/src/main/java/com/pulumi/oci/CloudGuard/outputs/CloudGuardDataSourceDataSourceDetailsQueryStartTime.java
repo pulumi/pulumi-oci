@@ -13,26 +13,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CloudGuardDataSourceDataSourceDetailsQueryStartTime {
     /**
-     * @return (Updatable) Time when the query can start, if not specified it can start immediately.
+     * @return (Updatable) Time when the query can start. If not specified it can start immediately
      * 
      */
     private @Nullable String queryStartTime;
     /**
-     * @return (Updatable) policy used for deciding the query start time
+     * @return (Updatable) Start policy delay timing
      * 
      */
     private String startPolicyType;
 
     private CloudGuardDataSourceDataSourceDetailsQueryStartTime() {}
     /**
-     * @return (Updatable) Time when the query can start, if not specified it can start immediately.
+     * @return (Updatable) Time when the query can start. If not specified it can start immediately
      * 
      */
     public Optional<String> queryStartTime() {
         return Optional.ofNullable(this.queryStartTime);
     }
     /**
-     * @return (Updatable) policy used for deciding the query start time
+     * @return (Updatable) Start policy delay timing
      * 
      */
     public String startPolicyType() {

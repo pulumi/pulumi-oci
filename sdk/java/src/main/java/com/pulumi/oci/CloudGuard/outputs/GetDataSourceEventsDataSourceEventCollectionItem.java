@@ -18,22 +18,22 @@ public final class GetDataSourceEventsDataSourceEventCollectionItem {
      */
     private String comments;
     /**
-     * @return DataSource OCID
+     * @return Data source OCID.
      * 
      */
     private String dataSourceId;
     /**
-     * @return Data source event date time
+     * @return Data source event date and time
      * 
      */
     private String eventDate;
     /**
-     * @return Event info of a data source.
+     * @return This resource can have multiple subtypes, depending on the dataSourceFeedProvider value. For example, if dataSourceFeedProvider is LOGGINGQUERY, this resource will be of type LoggingEventInfo.
      * 
      */
     private List<GetDataSourceEventsDataSourceEventCollectionItemEventInfo> eventInfos;
     /**
-     * @return A filter to return only resource their region matches the given region.
+     * @return A filter to return only resource where their region matches the given region.
      * 
      */
     private String region;
@@ -43,7 +43,7 @@ public final class GetDataSourceEventsDataSourceEventCollectionItem {
      */
     private String status;
     /**
-     * @return Data source event created time
+     * @return Data source event creation date and time
      * 
      */
     private String timeCreated;
@@ -57,28 +57,28 @@ public final class GetDataSourceEventsDataSourceEventCollectionItem {
         return this.comments;
     }
     /**
-     * @return DataSource OCID
+     * @return Data source OCID.
      * 
      */
     public String dataSourceId() {
         return this.dataSourceId;
     }
     /**
-     * @return Data source event date time
+     * @return Data source event date and time
      * 
      */
     public String eventDate() {
         return this.eventDate;
     }
     /**
-     * @return Event info of a data source.
+     * @return This resource can have multiple subtypes, depending on the dataSourceFeedProvider value. For example, if dataSourceFeedProvider is LOGGINGQUERY, this resource will be of type LoggingEventInfo.
      * 
      */
     public List<GetDataSourceEventsDataSourceEventCollectionItemEventInfo> eventInfos() {
         return this.eventInfos;
     }
     /**
-     * @return A filter to return only resource their region matches the given region.
+     * @return A filter to return only resource where their region matches the given region.
      * 
      */
     public String region() {
@@ -92,7 +92,7 @@ public final class GetDataSourceEventsDataSourceEventCollectionItem {
         return this.status;
     }
     /**
-     * @return Data source event created time
+     * @return Data source event creation date and time
      * 
      */
     public String timeCreated() {

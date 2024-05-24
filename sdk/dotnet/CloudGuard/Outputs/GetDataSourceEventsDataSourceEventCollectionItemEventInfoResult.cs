@@ -14,12 +14,24 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult
     {
         /// <summary>
-        /// Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// Possible type of dataSourceFeed Provider (LoggingQuery)
         /// </summary>
         public readonly string DataSourceFeedProvider;
+        /// <summary>
+        /// Log result details of DataSource for a Problem
+        /// </summary>
         public readonly string LogResult;
+        /// <summary>
+        /// Observed value of DataSource for a Problem
+        /// </summary>
         public readonly string ObservedValue;
+        /// <summary>
+        /// Operator details of DataSource for a Problem
+        /// </summary>
         public readonly string Operator;
+        /// <summary>
+        /// Triggered value of DataSource for a Problem
+        /// </summary>
         public readonly string TriggerValue;
 
         [OutputConstructor]

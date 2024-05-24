@@ -16,7 +16,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEnt
      */
     private String displayName;
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     private String entityType;
@@ -35,7 +35,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEnt
         return this.displayName;
     }
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public String entityType() {

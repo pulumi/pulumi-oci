@@ -14,7 +14,9 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        /// Returns the configuration details for a Cloud Guard tenancy,
+        /// identified by root compartment OCID.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +42,9 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+        /// Returns the configuration details for a Cloud Guard tenancy,
+        /// identified by root compartment OCID.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +72,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetCloudGuardConfigurationArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -82,7 +86,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetCloudGuardConfigurationInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -100,15 +104,15 @@ namespace Pulumi.Oci.CloudGuard
         public readonly string CompartmentId;
         public readonly string Id;
         /// <summary>
-        /// The reporting region value
+        /// The reporting region
         /// </summary>
         public readonly string ReportingRegion;
         /// <summary>
-        /// Identifies if Oracle managed resources were created by customers
+        /// Were Oracle-managed resources created by customer?
         /// </summary>
         public readonly bool SelfManageResources;
         /// <summary>
-        /// Status of Cloud Guard Tenant
+        /// Status of the Cloud Guard tenant
         /// </summary>
         public readonly string Status;
 

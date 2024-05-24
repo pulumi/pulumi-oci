@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourceDataSourceDetectorMappingInfoResult
     {
         /// <summary>
-        /// Id of the attached detectorRecipeId to the Data Source.
+        /// ID of the detector recipe attached to the data source
         /// </summary>
         public readonly string DetectorRecipeId;
         /// <summary>
-        /// Id of the attached detectorRuleId to the Data Source.
+        /// ID of the detector rule attached to the data source
         /// </summary>
         public readonly string DetectorRuleId;
 

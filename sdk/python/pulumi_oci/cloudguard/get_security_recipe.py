@@ -66,7 +66,7 @@ class GetSecurityRecipeResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The id of the compartment that contains the recipe
+        The OCID of the compartment that contains the recipe
         """
         return pulumi.get(self, "compartment_id")
 
@@ -90,7 +90,7 @@ class GetSecurityRecipeResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The recipe's name
+        The recipe's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -106,7 +106,7 @@ class GetSecurityRecipeResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can’t be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -130,7 +130,7 @@ class GetSecurityRecipeResult:
     @pulumi.getter(name="securityPolicies")
     def security_policies(self) -> Sequence[str]:
         """
-        The list of `SecurityPolicy` ids that are included in the recipe
+        The list of security policy IDs that are included in the recipe
         """
         return pulumi.get(self, "security_policies")
 
@@ -143,7 +143,7 @@ class GetSecurityRecipeResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the recipe
+        The current lifecycle state of the recipe
         """
         return pulumi.get(self, "state")
 
@@ -190,7 +190,7 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
     """
     This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+    Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
 
     ## Example Usage
 
@@ -202,7 +202,7 @@ def get_security_recipe(security_recipe_id: Optional[str] = None,
     ```
 
 
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
+    :param str security_recipe_id: The unique identifier of the security zone recipe. (`SecurityRecipe`)
     """
     __args__ = dict()
     __args__['securityRecipeId'] = security_recipe_id
@@ -231,7 +231,7 @@ def get_security_recipe_output(security_recipe_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a security zone recipe by identifier. A security zone recipe is a collection of security zone policies.
+    Returns a security zone recipe (SecurityRecipe resource) identified by securityRecipeId.
 
     ## Example Usage
 
@@ -243,6 +243,6 @@ def get_security_recipe_output(security_recipe_id: Optional[pulumi.Input[str]] =
     ```
 
 
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
+    :param str security_recipe_id: The unique identifier of the security zone recipe. (`SecurityRecipe`)
     """
     ...

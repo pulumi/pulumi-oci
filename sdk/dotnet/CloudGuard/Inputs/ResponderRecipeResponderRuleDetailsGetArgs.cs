@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class ResponderRecipeResponderRuleDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Base condition object
+        /// The base condition resource.
         /// </summary>
         [Input("condition")]
         public Input<string>? Condition { get; set; }
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.ResponderRecipeResponderRuleDetailsConfigurationGetArgs>? _configurations;
 
         /// <summary>
-        /// ResponderRule configurations
+        /// List of responder rule configurations
         /// </summary>
         public InputList<Inputs.ResponderRecipeResponderRuleDetailsConfigurationGetArgs> Configurations
         {
@@ -31,13 +31,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) Identifies state for ResponderRule
+        /// (Updatable) Enablement state for the responder rule
         /// </summary>
         [Input("isEnabled", required: true)]
         public Input<bool> IsEnabled { get; set; } = null!;
 
         /// <summary>
-        /// Execution Mode for ResponderRule
+        /// Execution mode for the responder rule
         /// </summary>
         [Input("mode")]
         public Input<string>? Mode { get; set; }

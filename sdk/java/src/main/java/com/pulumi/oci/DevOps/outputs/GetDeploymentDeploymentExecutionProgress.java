@@ -5,9 +5,9 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.DevOps.outputs.GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress;
+import java.lang.Object;
 import java.lang.String;
-import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -16,7 +16,7 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private List<GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses;
+    private Map<String,Object> deployStageExecutionProgress;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -33,8 +33,8 @@ public final class GetDeploymentDeploymentExecutionProgress {
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public List<GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses() {
-        return this.deployStageExecutionProgresses;
+    public Map<String,Object> deployStageExecutionProgress() {
+        return this.deployStageExecutionProgress;
     }
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -60,27 +60,24 @@ public final class GetDeploymentDeploymentExecutionProgress {
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses;
+        private Map<String,Object> deployStageExecutionProgress;
         private String timeFinished;
         private String timeStarted;
         public Builder() {}
         public Builder(GetDeploymentDeploymentExecutionProgress defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.deployStageExecutionProgresses = defaults.deployStageExecutionProgresses;
+    	      this.deployStageExecutionProgress = defaults.deployStageExecutionProgress;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
         }
 
         @CustomType.Setter
-        public Builder deployStageExecutionProgresses(List<GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses) {
-            if (deployStageExecutionProgresses == null) {
-              throw new MissingRequiredPropertyException("GetDeploymentDeploymentExecutionProgress", "deployStageExecutionProgresses");
+        public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
+            if (deployStageExecutionProgress == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentDeploymentExecutionProgress", "deployStageExecutionProgress");
             }
-            this.deployStageExecutionProgresses = deployStageExecutionProgresses;
+            this.deployStageExecutionProgress = deployStageExecutionProgress;
             return this;
-        }
-        public Builder deployStageExecutionProgresses(GetDeploymentDeploymentExecutionProgressDeployStageExecutionProgress... deployStageExecutionProgresses) {
-            return deployStageExecutionProgresses(List.of(deployStageExecutionProgresses));
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
@@ -100,7 +97,7 @@ public final class GetDeploymentDeploymentExecutionProgress {
         }
         public GetDeploymentDeploymentExecutionProgress build() {
             final var _resultValue = new GetDeploymentDeploymentExecutionProgress();
-            _resultValue.deployStageExecutionProgresses = deployStageExecutionProgresses;
+            _resultValue.deployStageExecutionProgress = deployStageExecutionProgress;
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeStarted = timeStarted;
             return _resultValue;

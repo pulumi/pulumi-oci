@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.outputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails;
 import com.pulumi.oci.CloudGuard.outputs.CloudGuardDataSourceDataSourceDetailsQueryStartTime;
+import com.pulumi.oci.CloudGuard.outputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -17,32 +18,42 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CloudGuardDataSourceDataSourceDetails {
     /**
-     * @return (Updatable) The additional entities count used for data source query.
+     * @return (Updatable) The additional entities count used for data source query
      * 
      */
     private @Nullable Integer additionalEntitiesCount;
     /**
-     * @return (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return (Updatable) Type of data source feed provider (LoggingQuery)
      * 
      */
     private String dataSourceFeedProvider;
+    /**
+     * @return (Updatable) Description text for the query
+     * 
+     */
+    private @Nullable String description;
     /**
      * @return (Updatable) Interval in minutes that query is run periodically.
      * 
      */
     private @Nullable Integer intervalInMinutes;
     /**
-     * @return (Updatable) Additional details specific to the data source type (Sighting/Insight).
+     * @return (Updatable) Interval in minutes which query is run periodically.
+     * 
+     */
+    private @Nullable Integer intervalInSeconds;
+    /**
+     * @return (Updatable) Details for a logging query for a data source.
      * 
      */
     private @Nullable CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails loggingQueryDetails;
     /**
-     * @return (Updatable) Logging query type for data source (Sighting/Insight)
+     * @return (Updatable) Type of logging query for data source (Sighting/Insight)
      * 
      */
     private @Nullable String loggingQueryType;
     /**
-     * @return (Updatable) Operator used in Data Soruce
+     * @return (Updatable) Operator used in data source
      * 
      */
     private @Nullable String operator;
@@ -52,35 +63,47 @@ public final class CloudGuardDataSourceDataSourceDetails {
      */
     private @Nullable String query;
     /**
-     * @return (Updatable) Continuous query start policy object
+     * @return (Updatable) Start policy for continuous query
      * 
      */
     private @Nullable CloudGuardDataSourceDataSourceDetailsQueryStartTime queryStartTime;
     /**
-     * @return (Updatable) Logging Query regions
+     * @return (Updatable) List of logging query regions
      * 
      */
     private @Nullable List<String> regions;
     /**
-     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+     * @return (Updatable) Target information in which scheduled query will be run
+     * 
+     */
+    private @Nullable List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail> scheduledQueryScopeDetails;
+    /**
+     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     private @Nullable Integer threshold;
 
     private CloudGuardDataSourceDataSourceDetails() {}
     /**
-     * @return (Updatable) The additional entities count used for data source query.
+     * @return (Updatable) The additional entities count used for data source query
      * 
      */
     public Optional<Integer> additionalEntitiesCount() {
         return Optional.ofNullable(this.additionalEntitiesCount);
     }
     /**
-     * @return (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return (Updatable) Type of data source feed provider (LoggingQuery)
      * 
      */
     public String dataSourceFeedProvider() {
         return this.dataSourceFeedProvider;
+    }
+    /**
+     * @return (Updatable) Description text for the query
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
     }
     /**
      * @return (Updatable) Interval in minutes that query is run periodically.
@@ -90,21 +113,28 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.intervalInMinutes);
     }
     /**
-     * @return (Updatable) Additional details specific to the data source type (Sighting/Insight).
+     * @return (Updatable) Interval in minutes which query is run periodically.
+     * 
+     */
+    public Optional<Integer> intervalInSeconds() {
+        return Optional.ofNullable(this.intervalInSeconds);
+    }
+    /**
+     * @return (Updatable) Details for a logging query for a data source.
      * 
      */
     public Optional<CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails> loggingQueryDetails() {
         return Optional.ofNullable(this.loggingQueryDetails);
     }
     /**
-     * @return (Updatable) Logging query type for data source (Sighting/Insight)
+     * @return (Updatable) Type of logging query for data source (Sighting/Insight)
      * 
      */
     public Optional<String> loggingQueryType() {
         return Optional.ofNullable(this.loggingQueryType);
     }
     /**
-     * @return (Updatable) Operator used in Data Soruce
+     * @return (Updatable) Operator used in data source
      * 
      */
     public Optional<String> operator() {
@@ -118,21 +148,28 @@ public final class CloudGuardDataSourceDataSourceDetails {
         return Optional.ofNullable(this.query);
     }
     /**
-     * @return (Updatable) Continuous query start policy object
+     * @return (Updatable) Start policy for continuous query
      * 
      */
     public Optional<CloudGuardDataSourceDataSourceDetailsQueryStartTime> queryStartTime() {
         return Optional.ofNullable(this.queryStartTime);
     }
     /**
-     * @return (Updatable) Logging Query regions
+     * @return (Updatable) List of logging query regions
      * 
      */
     public List<String> regions() {
         return this.regions == null ? List.of() : this.regions;
     }
     /**
-     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+     * @return (Updatable) Target information in which scheduled query will be run
+     * 
+     */
+    public List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail> scheduledQueryScopeDetails() {
+        return this.scheduledQueryScopeDetails == null ? List.of() : this.scheduledQueryScopeDetails;
+    }
+    /**
+     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     public Optional<Integer> threshold() {
@@ -150,26 +187,32 @@ public final class CloudGuardDataSourceDataSourceDetails {
     public static final class Builder {
         private @Nullable Integer additionalEntitiesCount;
         private String dataSourceFeedProvider;
+        private @Nullable String description;
         private @Nullable Integer intervalInMinutes;
+        private @Nullable Integer intervalInSeconds;
         private @Nullable CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails loggingQueryDetails;
         private @Nullable String loggingQueryType;
         private @Nullable String operator;
         private @Nullable String query;
         private @Nullable CloudGuardDataSourceDataSourceDetailsQueryStartTime queryStartTime;
         private @Nullable List<String> regions;
+        private @Nullable List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail> scheduledQueryScopeDetails;
         private @Nullable Integer threshold;
         public Builder() {}
         public Builder(CloudGuardDataSourceDataSourceDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.additionalEntitiesCount = defaults.additionalEntitiesCount;
     	      this.dataSourceFeedProvider = defaults.dataSourceFeedProvider;
+    	      this.description = defaults.description;
     	      this.intervalInMinutes = defaults.intervalInMinutes;
+    	      this.intervalInSeconds = defaults.intervalInSeconds;
     	      this.loggingQueryDetails = defaults.loggingQueryDetails;
     	      this.loggingQueryType = defaults.loggingQueryType;
     	      this.operator = defaults.operator;
     	      this.query = defaults.query;
     	      this.queryStartTime = defaults.queryStartTime;
     	      this.regions = defaults.regions;
+    	      this.scheduledQueryScopeDetails = defaults.scheduledQueryScopeDetails;
     	      this.threshold = defaults.threshold;
         }
 
@@ -188,9 +231,21 @@ public final class CloudGuardDataSourceDataSourceDetails {
             return this;
         }
         @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
+            return this;
+        }
+        @CustomType.Setter
         public Builder intervalInMinutes(@Nullable Integer intervalInMinutes) {
 
             this.intervalInMinutes = intervalInMinutes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder intervalInSeconds(@Nullable Integer intervalInSeconds) {
+
+            this.intervalInSeconds = intervalInSeconds;
             return this;
         }
         @CustomType.Setter
@@ -233,6 +288,15 @@ public final class CloudGuardDataSourceDataSourceDetails {
             return regions(List.of(regions));
         }
         @CustomType.Setter
+        public Builder scheduledQueryScopeDetails(@Nullable List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail> scheduledQueryScopeDetails) {
+
+            this.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
+            return this;
+        }
+        public Builder scheduledQueryScopeDetails(CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetail... scheduledQueryScopeDetails) {
+            return scheduledQueryScopeDetails(List.of(scheduledQueryScopeDetails));
+        }
+        @CustomType.Setter
         public Builder threshold(@Nullable Integer threshold) {
 
             this.threshold = threshold;
@@ -242,13 +306,16 @@ public final class CloudGuardDataSourceDataSourceDetails {
             final var _resultValue = new CloudGuardDataSourceDataSourceDetails();
             _resultValue.additionalEntitiesCount = additionalEntitiesCount;
             _resultValue.dataSourceFeedProvider = dataSourceFeedProvider;
+            _resultValue.description = description;
             _resultValue.intervalInMinutes = intervalInMinutes;
+            _resultValue.intervalInSeconds = intervalInSeconds;
             _resultValue.loggingQueryDetails = loggingQueryDetails;
             _resultValue.loggingQueryType = loggingQueryType;
             _resultValue.operator = operator;
             _resultValue.query = query;
             _resultValue.queryStartTime = queryStartTime;
             _resultValue.regions = regions;
+            _resultValue.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
             _resultValue.threshold = threshold;
             return _resultValue;
         }

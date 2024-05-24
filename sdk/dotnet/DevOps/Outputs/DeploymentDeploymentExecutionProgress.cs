@@ -16,7 +16,7 @@ namespace Pulumi.Oci.DevOps.Outputs
         /// <summary>
         /// Map of stage OCIDs to deploy stage execution progress model.
         /// </summary>
-        public readonly ImmutableArray<Outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress> DeployStageExecutionProgresses;
+        public readonly ImmutableDictionary<string, object>? DeployStageExecutionProgress;
         /// <summary>
         /// Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
         /// </summary>
@@ -28,13 +28,13 @@ namespace Pulumi.Oci.DevOps.Outputs
 
         [OutputConstructor]
         private DeploymentDeploymentExecutionProgress(
-            ImmutableArray<Outputs.DeploymentDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses,
+            ImmutableDictionary<string, object>? deployStageExecutionProgress,
 
             string? timeFinished,
 
             string? timeStarted)
         {
-            DeployStageExecutionProgresses = deployStageExecutionProgresses;
+            DeployStageExecutionProgress = deployStageExecutionProgress;
             TimeFinished = timeFinished;
             TimeStarted = timeStarted;
         }

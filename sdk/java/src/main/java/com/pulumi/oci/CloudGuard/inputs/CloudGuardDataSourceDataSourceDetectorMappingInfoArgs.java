@@ -16,14 +16,14 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs extends
     public static final CloudGuardDataSourceDataSourceDetectorMappingInfoArgs Empty = new CloudGuardDataSourceDataSourceDetectorMappingInfoArgs();
 
     /**
-     * Id of the attached detectorRecipeId to the Data Source.
+     * ID of the detector recipe attached to the data source
      * 
      */
     @Import(name="detectorRecipeId")
     private @Nullable Output<String> detectorRecipeId;
 
     /**
-     * @return Id of the attached detectorRecipeId to the Data Source.
+     * @return ID of the detector recipe attached to the data source
      * 
      */
     public Optional<Output<String>> detectorRecipeId() {
@@ -31,14 +31,14 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs extends
     }
 
     /**
-     * Id of the attached detectorRuleId to the Data Source.
+     * ID of the detector rule attached to the data source
      * 
      */
     @Import(name="detectorRuleId")
     private @Nullable Output<String> detectorRuleId;
 
     /**
-     * @return Id of the attached detectorRuleId to the Data Source.
+     * @return ID of the detector rule attached to the data source
      * 
      */
     public Optional<Output<String>> detectorRuleId() {
@@ -71,7 +71,7 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs extends
         }
 
         /**
-         * @param detectorRecipeId Id of the attached detectorRecipeId to the Data Source.
+         * @param detectorRecipeId ID of the detector recipe attached to the data source
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs extends
         }
 
         /**
-         * @param detectorRecipeId Id of the attached detectorRecipeId to the Data Source.
+         * @param detectorRecipeId ID of the detector recipe attached to the data source
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs extends
         }
 
         /**
-         * @param detectorRuleId Id of the attached detectorRuleId to the Data Source.
+         * @param detectorRuleId ID of the detector rule attached to the data source
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class CloudGuardDataSourceDataSourceDetectorMappingInfoArgs extends
         }
 
         /**
-         * @param detectorRuleId Id of the attached detectorRuleId to the Data Source.
+         * @param detectorRuleId ID of the detector rule attached to the data source
          * 
          * @return builder
          * 

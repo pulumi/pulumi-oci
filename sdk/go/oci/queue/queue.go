@@ -36,6 +36,8 @@ import (
 //				ChannelConsumptionLimit:      pulumi.Any(queueChannelConsumptionLimit),
 //				CustomEncryptionKeyId:        pulumi.Any(testKey.Id),
 //				DeadLetterQueueDeliveryCount: pulumi.Any(queueDeadLetterQueueDeliveryCount),
+//				PurgeTrigger:                 pulumi.Any(purgeTrigger),
+//				PurgeType:                    pulumi.Any(purgeType),
 //				DefinedTags: pulumi.Map{
 //					"foo-namespace.bar-key": pulumi.Any("value"),
 //				},
@@ -82,9 +84,14 @@ type Queue struct {
 	// Any additional details about the current state of the queue.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
-	MessagesEndpoint pulumi.StringOutput    `pulumi:"messagesEndpoint"`
-	PurgeQueue       pulumi.BoolPtrOutput   `pulumi:"purgeQueue"`
-	PurgeType        pulumi.StringPtrOutput `pulumi:"purgeType"`
+	MessagesEndpoint pulumi.StringOutput `pulumi:"messagesEndpoint"`
+	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+	PurgeTrigger pulumi.IntPtrOutput `pulumi:"purgeTrigger"`
+	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PurgeType pulumi.StringPtrOutput `pulumi:"purgeType"`
 	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntOutput `pulumi:"retentionInSeconds"`
 	// The current state of the queue.
@@ -155,8 +162,13 @@ type queueState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint *string `pulumi:"messagesEndpoint"`
-	PurgeQueue       *bool   `pulumi:"purgeQueue"`
-	PurgeType        *string `pulumi:"purgeType"`
+	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+	PurgeTrigger *int `pulumi:"purgeTrigger"`
+	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PurgeType *string `pulumi:"purgeType"`
 	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
 	// The current state of the queue.
@@ -192,8 +204,13 @@ type QueueState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint pulumi.StringPtrInput
-	PurgeQueue       pulumi.BoolPtrInput
-	PurgeType        pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+	PurgeTrigger pulumi.IntPtrInput
+	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PurgeType pulumi.StringPtrInput
 	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntPtrInput
 	// The current state of the queue.
@@ -229,8 +246,13 @@ type queueArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	PurgeQueue   *bool                  `pulumi:"purgeQueue"`
-	PurgeType    *string                `pulumi:"purgeType"`
+	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+	PurgeTrigger *int `pulumi:"purgeTrigger"`
+	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PurgeType *string `pulumi:"purgeType"`
 	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds *int `pulumi:"retentionInSeconds"`
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
@@ -255,8 +277,13 @@ type QueueArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	PurgeQueue   pulumi.BoolPtrInput
-	PurgeType    pulumi.StringPtrInput
+	// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+	PurgeTrigger pulumi.IntPtrInput
+	// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	PurgeType pulumi.StringPtrInput
 	// The retention period of messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntPtrInput
 	// (Updatable) The default polling timeout of the messages in the queue, in seconds.
@@ -397,10 +424,15 @@ func (o QueueOutput) MessagesEndpoint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringOutput { return v.MessagesEndpoint }).(pulumi.StringOutput)
 }
 
-func (o QueueOutput) PurgeQueue() pulumi.BoolPtrOutput {
-	return o.ApplyT(func(v *Queue) pulumi.BoolPtrOutput { return v.PurgeQueue }).(pulumi.BoolPtrOutput)
+// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+func (o QueueOutput) PurgeTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *Queue) pulumi.IntPtrOutput { return v.PurgeTrigger }).(pulumi.IntPtrOutput)
 }
 
+// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o QueueOutput) PurgeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *Queue) pulumi.StringPtrOutput { return v.PurgeType }).(pulumi.StringPtrOutput)
 }

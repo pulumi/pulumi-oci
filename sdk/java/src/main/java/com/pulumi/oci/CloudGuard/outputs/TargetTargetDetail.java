@@ -14,50 +14,50 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetail {
     /**
-     * @return The name of the security zone to associate this compartment with.
+     * @return The name of the security zone to associate with this compartment.
      * 
      */
     private @Nullable String securityZoneDisplayName;
     /**
-     * @return The OCID of the security zone to associate this compartment with.
+     * @return The OCID of the security zone to associate with this compartment
      * 
      */
     private @Nullable String securityZoneId;
     /**
-     * @return possible type of targets(COMPARTMENT/FACLOUD)
+     * @return Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     private @Nullable String targetResourceType;
     /**
-     * @return The list of security zone recipes to associate this compartment with.
+     * @return The list of security zone recipes to associate with this compartment
      * 
      */
     private @Nullable List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes;
 
     private TargetTargetDetail() {}
     /**
-     * @return The name of the security zone to associate this compartment with.
+     * @return The name of the security zone to associate with this compartment.
      * 
      */
     public Optional<String> securityZoneDisplayName() {
         return Optional.ofNullable(this.securityZoneDisplayName);
     }
     /**
-     * @return The OCID of the security zone to associate this compartment with.
+     * @return The OCID of the security zone to associate with this compartment
      * 
      */
     public Optional<String> securityZoneId() {
         return Optional.ofNullable(this.securityZoneId);
     }
     /**
-     * @return possible type of targets(COMPARTMENT/FACLOUD)
+     * @return Type of resource that target support (COMPARTMENT/FACLOUD)
      * 
      */
     public Optional<String> targetResourceType() {
         return Optional.ofNullable(this.targetResourceType);
     }
     /**
-     * @return The list of security zone recipes to associate this compartment with.
+     * @return The list of security zone recipes to associate with this compartment
      * 
      */
     public List<TargetTargetDetailTargetSecurityZoneRecipe> targetSecurityZoneRecipes() {

@@ -31,6 +31,8 @@ namespace Pulumi.Oci.Queue
     ///         ChannelConsumptionLimit = queueChannelConsumptionLimit,
     ///         CustomEncryptionKeyId = testKey.Id,
     ///         DeadLetterQueueDeliveryCount = queueDeadLetterQueueDeliveryCount,
+    ///         PurgeTrigger = purgeTrigger,
+    ///         PurgeType = purgeType,
     ///         DefinedTags = 
     ///         {
     ///             { "foo-namespace.bar-key", "value" },
@@ -112,9 +114,18 @@ namespace Pulumi.Oci.Queue
         [Output("messagesEndpoint")]
         public Output<string> MessagesEndpoint { get; private set; } = null!;
 
-        [Output("purgeQueue")]
-        public Output<bool?> PurgeQueue { get; private set; } = null!;
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        /// </summary>
+        [Output("purgeTrigger")]
+        public Output<int?> PurgeTrigger { get; private set; } = null!;
 
+        /// <summary>
+        /// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Output("purgeType")]
         public Output<string?> PurgeType { get; private set; } = null!;
 
@@ -260,9 +271,18 @@ namespace Pulumi.Oci.Queue
             set => _freeformTags = value;
         }
 
-        [Input("purgeQueue")]
-        public Input<bool>? PurgeQueue { get; set; }
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        /// </summary>
+        [Input("purgeTrigger")]
+        public Input<int>? PurgeTrigger { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("purgeType")]
         public Input<string>? PurgeType { get; set; }
 
@@ -358,9 +378,18 @@ namespace Pulumi.Oci.Queue
         [Input("messagesEndpoint")]
         public Input<string>? MessagesEndpoint { get; set; }
 
-        [Input("purgeQueue")]
-        public Input<bool>? PurgeQueue { get; set; }
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+        /// </summary>
+        [Input("purgeTrigger")]
+        public Input<int>? PurgeTrigger { get; set; }
 
+        /// <summary>
+        /// (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
         [Input("purgeType")]
         public Input<string>? PurgeType { get; set; }
 

@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a Target identified by targetId
+ * Returns a target (Target resource) identified by targetId.
  *
  * ## Example Usage
  *
@@ -35,7 +35,7 @@ export function getGuardTarget(args: GetGuardTargetArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetGuardTargetArgs {
     /**
-     * OCID of target
+     * OCID of the target
      */
     targetId: string;
 }
@@ -45,7 +45,7 @@ export interface GetGuardTargetArgs {
  */
 export interface GetGuardTargetResult {
     /**
-     * Compartment Identifier
+     * Compartment OCID
      */
     readonly compartmentId: string;
     /**
@@ -53,11 +53,11 @@ export interface GetGuardTargetResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * ResponderRule description.
+     * Responder rule description
      */
     readonly description: string;
     /**
-     * ResponderRule display name.
+     * Responder rule display name
      */
     readonly displayName: string;
     /**
@@ -65,7 +65,7 @@ export interface GetGuardTargetResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier of TargetResponderRecipe that can't be changed after creation.
+     * Unique identifier of target responder recipe that can't be changed after creation
      */
     readonly id: string;
     /**
@@ -73,7 +73,7 @@ export interface GetGuardTargetResult {
      */
     readonly inheritedByCompartments: string[];
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
     readonly lifecyleDetails: string;
     /**
@@ -81,7 +81,7 @@ export interface GetGuardTargetResult {
      */
     readonly recipeCount: number;
     /**
-     * The current state of the ResponderRule.
+     * The current lifecycle state of the responder rule
      */
     readonly state: string;
     /**
@@ -93,7 +93,7 @@ export interface GetGuardTargetResult {
      */
     readonly targetDetails: outputs.CloudGuard.GetGuardTargetTargetDetail[];
     /**
-     * List of detector recipes associated with target
+     * List of detector recipes attached to target
      */
     readonly targetDetectorRecipes: outputs.CloudGuard.GetGuardTargetTargetDetectorRecipe[];
     readonly targetId: string;
@@ -102,11 +102,11 @@ export interface GetGuardTargetResult {
      */
     readonly targetResourceId: string;
     /**
-     * possible type of targets
+     * Type of target
      */
     readonly targetResourceType: string;
     /**
-     * List of responder recipes associated with target
+     * List of responder recipes attached to target
      */
     readonly targetResponderRecipes: outputs.CloudGuard.GetGuardTargetTargetResponderRecipe[];
     /**
@@ -114,14 +114,14 @@ export interface GetGuardTargetResult {
      */
     readonly timeCreated: string;
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      */
     readonly timeUpdated: string;
 }
 /**
  * This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a Target identified by targetId
+ * Returns a target (Target resource) identified by targetId.
  *
  * ## Example Usage
  *
@@ -143,7 +143,7 @@ export function getGuardTargetOutput(args: GetGuardTargetOutputArgs, opts?: pulu
  */
 export interface GetGuardTargetOutputArgs {
     /**
-     * OCID of target
+     * OCID of the target
      */
     targetId: pulumi.Input<string>;
 }

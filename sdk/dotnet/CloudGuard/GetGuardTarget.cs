@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a Target identified by targetId
+        /// Returns a target (Target resource) identified by targetId.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a Target identified by targetId
+        /// Returns a target (Target resource) identified by targetId.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetGuardTargetArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of target
+        /// OCID of the target
         /// </summary>
         [Input("targetId", required: true)]
         public string TargetId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetGuardTargetInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of target
+        /// OCID of the target
         /// </summary>
         [Input("targetId", required: true)]
         public Input<string> TargetId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetGuardTargetResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// Compartment OCID
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -106,11 +106,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// ResponderRule display name.
+        /// Responder rule display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -126,7 +126,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<string> InheritedByCompartments;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         public readonly string LifecyleDetails;
         /// <summary>
@@ -134,7 +134,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly int RecipeCount;
         /// <summary>
-        /// The current state of the ResponderRule.
+        /// The current lifecycle state of the responder rule
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -146,7 +146,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetailResult> TargetDetails;
         /// <summary>
-        /// List of detector recipes associated with target
+        /// List of detector recipes attached to target
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetTargetDetectorRecipeResult> TargetDetectorRecipes;
         public readonly string TargetId;
@@ -155,11 +155,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string TargetResourceId;
         /// <summary>
-        /// possible type of targets
+        /// Type of target
         /// </summary>
         public readonly string TargetResourceType;
         /// <summary>
-        /// List of responder recipes associated with target
+        /// List of responder recipes attached to target
         /// </summary>
         public readonly ImmutableArray<Outputs.GetGuardTargetTargetResponderRecipeResult> TargetResponderRecipes;
         /// <summary>
@@ -167,7 +167,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

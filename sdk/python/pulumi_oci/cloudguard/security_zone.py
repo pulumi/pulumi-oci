@@ -23,8 +23,8 @@ class SecurityZoneArgs:
         """
         The set of arguments for constructing a SecurityZone resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment for the security zone
-        :param pulumi.Input[str] display_name: (Updatable) The security zone's name
-        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        :param pulumi.Input[str] display_name: (Updatable) The security zone's display name
+        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
                
                ** IMPORTANT **
@@ -61,7 +61,7 @@ class SecurityZoneArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) The security zone's name
+        (Updatable) The security zone's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -73,7 +73,7 @@ class SecurityZoneArgs:
     @pulumi.getter(name="securityZoneRecipeId")
     def security_zone_recipe_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
 
         ** IMPORTANT **
@@ -144,19 +144,19 @@ class _SecurityZoneState:
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment for the security zone
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The security zone's description
-        :param pulumi.Input[str] display_name: (Updatable) The security zone's name
+        :param pulumi.Input[str] display_name: (Updatable) The security zone's display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
-        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_zone_target_id: The OCID of the target associated with the security zone
-        :param pulumi.Input[str] state: The current state of the security zone
+        :param pulumi.Input[str] state: The current lifecycle state of the security zone
         :param pulumi.Input[str] time_created: The time the security zone was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the security zone was last updated. An RFC3339 formatted datetime string.
         """
@@ -225,7 +225,7 @@ class _SecurityZoneState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The security zone's name
+        (Updatable) The security zone's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -275,7 +275,7 @@ class _SecurityZoneState:
     @pulumi.getter(name="securityZoneRecipeId")
     def security_zone_recipe_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
 
         ** IMPORTANT **
@@ -303,7 +303,7 @@ class _SecurityZoneState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the security zone
+        The current lifecycle state of the security zone
         """
         return pulumi.get(self, "state")
 
@@ -351,7 +351,8 @@ class SecurityZone(pulumi.CustomResource):
         """
         This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+        Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+        through a CreateSecurityZoneDetails resource.
 
         ## Example Usage
 
@@ -385,11 +386,11 @@ class SecurityZone(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment for the security zone
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The security zone's description
-        :param pulumi.Input[str] display_name: (Updatable) The security zone's name
+        :param pulumi.Input[str] display_name: (Updatable) The security zone's display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
                
                ** IMPORTANT **
@@ -404,7 +405,8 @@ class SecurityZone(pulumi.CustomResource):
         """
         This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+        Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+        through a CreateSecurityZoneDetails resource.
 
         ## Example Usage
 
@@ -513,19 +515,19 @@ class SecurityZone(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment for the security zone
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: (Updatable) The security zone's description
-        :param pulumi.Input[str] display_name: (Updatable) The security zone's name
+        :param pulumi.Input[str] display_name: (Updatable) The security zone's display name
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
-        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        :param pulumi.Input[str] security_zone_recipe_id: (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] security_zone_target_id: The OCID of the target associated with the security zone
-        :param pulumi.Input[str] state: The current state of the security zone
+        :param pulumi.Input[str] state: The current lifecycle state of the security zone
         :param pulumi.Input[str] time_created: The time the security zone was created. An RFC3339 formatted datetime string.
         :param pulumi.Input[str] time_updated: The time the security zone was last updated. An RFC3339 formatted datetime string.
         """
@@ -575,7 +577,7 @@ class SecurityZone(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) The security zone's name
+        (Updatable) The security zone's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -609,7 +611,7 @@ class SecurityZone(pulumi.CustomResource):
     @pulumi.getter(name="securityZoneRecipeId")
     def security_zone_recipe_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+        (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 
 
         ** IMPORTANT **
@@ -629,7 +631,7 @@ class SecurityZone(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the security zone
+        The current lifecycle state of the security zone
         """
         return pulumi.get(self, "state")
 

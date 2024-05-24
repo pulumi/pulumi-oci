@@ -15,6 +15,7 @@ namespace Pulumi.Oci.CloudGuard
         /// This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
         /// Returns a list of entities for a CloudGuard Problem
+        /// Returns a list of entities for a problem.
         /// 
         /// 
         /// ## Example Usage
@@ -42,6 +43,7 @@ namespace Pulumi.Oci.CloudGuard
         /// This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
         /// Returns a list of entities for a CloudGuard Problem
+        /// Returns a list of entities for a problem.
         /// 
         /// 
         /// ## Example Usage
@@ -78,7 +80,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// OCId of the problem.
+        /// OCID of the problem.
         /// </summary>
         [Input("problemId", required: true)]
         public string ProblemId { get; set; } = null!;
@@ -100,7 +102,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// OCId of the problem.
+        /// OCID of the problem.
         /// </summary>
         [Input("problemId", required: true)]
         public Input<string> ProblemId { get; set; } = null!;
@@ -125,7 +127,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetProblemEntitiesProblemEntityCollectionResult> ProblemEntityCollections;
         /// <summary>
-        /// Attached problem id
+        /// Attached problem ID
         /// </summary>
         public readonly string ProblemId;
 

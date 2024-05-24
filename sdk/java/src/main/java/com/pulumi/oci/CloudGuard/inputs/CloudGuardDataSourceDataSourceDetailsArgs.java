@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs;
 import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs;
+import com.pulumi.oci.CloudGuard.inputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -21,14 +22,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     public static final CloudGuardDataSourceDataSourceDetailsArgs Empty = new CloudGuardDataSourceDataSourceDetailsArgs();
 
     /**
-     * (Updatable) The additional entities count used for data source query.
+     * (Updatable) The additional entities count used for data source query
      * 
      */
     @Import(name="additionalEntitiesCount")
     private @Nullable Output<Integer> additionalEntitiesCount;
 
     /**
-     * @return (Updatable) The additional entities count used for data source query.
+     * @return (Updatable) The additional entities count used for data source query
      * 
      */
     public Optional<Output<Integer>> additionalEntitiesCount() {
@@ -36,18 +37,33 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+     * (Updatable) Type of data source feed provider (LoggingQuery)
      * 
      */
     @Import(name="dataSourceFeedProvider", required=true)
     private Output<String> dataSourceFeedProvider;
 
     /**
-     * @return (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return (Updatable) Type of data source feed provider (LoggingQuery)
      * 
      */
     public Output<String> dataSourceFeedProvider() {
         return this.dataSourceFeedProvider;
+    }
+
+    /**
+     * (Updatable) Description text for the query
+     * 
+     */
+    @Import(name="description")
+    private @Nullable Output<String> description;
+
+    /**
+     * @return (Updatable) Description text for the query
+     * 
+     */
+    public Optional<Output<String>> description() {
+        return Optional.ofNullable(this.description);
     }
 
     /**
@@ -66,14 +82,29 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Additional details specific to the data source type (Sighting/Insight).
+     * (Updatable) Interval in minutes which query is run periodically.
+     * 
+     */
+    @Import(name="intervalInSeconds")
+    private @Nullable Output<Integer> intervalInSeconds;
+
+    /**
+     * @return (Updatable) Interval in minutes which query is run periodically.
+     * 
+     */
+    public Optional<Output<Integer>> intervalInSeconds() {
+        return Optional.ofNullable(this.intervalInSeconds);
+    }
+
+    /**
+     * (Updatable) Details for a logging query for a data source.
      * 
      */
     @Import(name="loggingQueryDetails")
     private @Nullable Output<CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs> loggingQueryDetails;
 
     /**
-     * @return (Updatable) Additional details specific to the data source type (Sighting/Insight).
+     * @return (Updatable) Details for a logging query for a data source.
      * 
      */
     public Optional<Output<CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs>> loggingQueryDetails() {
@@ -81,14 +112,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Logging query type for data source (Sighting/Insight)
+     * (Updatable) Type of logging query for data source (Sighting/Insight)
      * 
      */
     @Import(name="loggingQueryType")
     private @Nullable Output<String> loggingQueryType;
 
     /**
-     * @return (Updatable) Logging query type for data source (Sighting/Insight)
+     * @return (Updatable) Type of logging query for data source (Sighting/Insight)
      * 
      */
     public Optional<Output<String>> loggingQueryType() {
@@ -96,14 +127,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Operator used in Data Soruce
+     * (Updatable) Operator used in data source
      * 
      */
     @Import(name="operator")
     private @Nullable Output<String> operator;
 
     /**
-     * @return (Updatable) Operator used in Data Soruce
+     * @return (Updatable) Operator used in data source
      * 
      */
     public Optional<Output<String>> operator() {
@@ -126,14 +157,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Continuous query start policy object
+     * (Updatable) Start policy for continuous query
      * 
      */
     @Import(name="queryStartTime")
     private @Nullable Output<CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs> queryStartTime;
 
     /**
-     * @return (Updatable) Continuous query start policy object
+     * @return (Updatable) Start policy for continuous query
      * 
      */
     public Optional<Output<CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs>> queryStartTime() {
@@ -141,14 +172,14 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) Logging Query regions
+     * (Updatable) List of logging query regions
      * 
      */
     @Import(name="regions")
     private @Nullable Output<List<String>> regions;
 
     /**
-     * @return (Updatable) Logging Query regions
+     * @return (Updatable) List of logging query regions
      * 
      */
     public Optional<Output<List<String>>> regions() {
@@ -156,14 +187,29 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     }
 
     /**
-     * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+     * (Updatable) Target information in which scheduled query will be run
+     * 
+     */
+    @Import(name="scheduledQueryScopeDetails")
+    private @Nullable Output<List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs>> scheduledQueryScopeDetails;
+
+    /**
+     * @return (Updatable) Target information in which scheduled query will be run
+     * 
+     */
+    public Optional<Output<List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs>>> scheduledQueryScopeDetails() {
+        return Optional.ofNullable(this.scheduledQueryScopeDetails);
+    }
+
+    /**
+     * (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     @Import(name="threshold")
     private @Nullable Output<Integer> threshold;
 
     /**
-     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+     * @return (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
      * 
      */
     public Optional<Output<Integer>> threshold() {
@@ -175,13 +221,16 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
     private CloudGuardDataSourceDataSourceDetailsArgs(CloudGuardDataSourceDataSourceDetailsArgs $) {
         this.additionalEntitiesCount = $.additionalEntitiesCount;
         this.dataSourceFeedProvider = $.dataSourceFeedProvider;
+        this.description = $.description;
         this.intervalInMinutes = $.intervalInMinutes;
+        this.intervalInSeconds = $.intervalInSeconds;
         this.loggingQueryDetails = $.loggingQueryDetails;
         this.loggingQueryType = $.loggingQueryType;
         this.operator = $.operator;
         this.query = $.query;
         this.queryStartTime = $.queryStartTime;
         this.regions = $.regions;
+        this.scheduledQueryScopeDetails = $.scheduledQueryScopeDetails;
         this.threshold = $.threshold;
     }
 
@@ -204,7 +253,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param additionalEntitiesCount (Updatable) The additional entities count used for data source query.
+         * @param additionalEntitiesCount (Updatable) The additional entities count used for data source query
          * 
          * @return builder
          * 
@@ -215,7 +264,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param additionalEntitiesCount (Updatable) The additional entities count used for data source query.
+         * @param additionalEntitiesCount (Updatable) The additional entities count used for data source query
          * 
          * @return builder
          * 
@@ -225,7 +274,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param dataSourceFeedProvider (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider (Updatable) Type of data source feed provider (LoggingQuery)
          * 
          * @return builder
          * 
@@ -236,13 +285,34 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param dataSourceFeedProvider (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider (Updatable) Type of data source feed provider (LoggingQuery)
          * 
          * @return builder
          * 
          */
         public Builder dataSourceFeedProvider(String dataSourceFeedProvider) {
             return dataSourceFeedProvider(Output.of(dataSourceFeedProvider));
+        }
+
+        /**
+         * @param description (Updatable) Description text for the query
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(@Nullable Output<String> description) {
+            $.description = description;
+            return this;
+        }
+
+        /**
+         * @param description (Updatable) Description text for the query
+         * 
+         * @return builder
+         * 
+         */
+        public Builder description(String description) {
+            return description(Output.of(description));
         }
 
         /**
@@ -267,7 +337,28 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param loggingQueryDetails (Updatable) Additional details specific to the data source type (Sighting/Insight).
+         * @param intervalInSeconds (Updatable) Interval in minutes which query is run periodically.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder intervalInSeconds(@Nullable Output<Integer> intervalInSeconds) {
+            $.intervalInSeconds = intervalInSeconds;
+            return this;
+        }
+
+        /**
+         * @param intervalInSeconds (Updatable) Interval in minutes which query is run periodically.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder intervalInSeconds(Integer intervalInSeconds) {
+            return intervalInSeconds(Output.of(intervalInSeconds));
+        }
+
+        /**
+         * @param loggingQueryDetails (Updatable) Details for a logging query for a data source.
          * 
          * @return builder
          * 
@@ -278,7 +369,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param loggingQueryDetails (Updatable) Additional details specific to the data source type (Sighting/Insight).
+         * @param loggingQueryDetails (Updatable) Details for a logging query for a data source.
          * 
          * @return builder
          * 
@@ -288,7 +379,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param loggingQueryType (Updatable) Logging query type for data source (Sighting/Insight)
+         * @param loggingQueryType (Updatable) Type of logging query for data source (Sighting/Insight)
          * 
          * @return builder
          * 
@@ -299,7 +390,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param loggingQueryType (Updatable) Logging query type for data source (Sighting/Insight)
+         * @param loggingQueryType (Updatable) Type of logging query for data source (Sighting/Insight)
          * 
          * @return builder
          * 
@@ -309,7 +400,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param operator (Updatable) Operator used in Data Soruce
+         * @param operator (Updatable) Operator used in data source
          * 
          * @return builder
          * 
@@ -320,7 +411,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param operator (Updatable) Operator used in Data Soruce
+         * @param operator (Updatable) Operator used in data source
          * 
          * @return builder
          * 
@@ -351,7 +442,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param queryStartTime (Updatable) Continuous query start policy object
+         * @param queryStartTime (Updatable) Start policy for continuous query
          * 
          * @return builder
          * 
@@ -362,7 +453,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param queryStartTime (Updatable) Continuous query start policy object
+         * @param queryStartTime (Updatable) Start policy for continuous query
          * 
          * @return builder
          * 
@@ -372,7 +463,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param regions (Updatable) Logging Query regions
+         * @param regions (Updatable) List of logging query regions
          * 
          * @return builder
          * 
@@ -383,7 +474,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param regions (Updatable) Logging Query regions
+         * @param regions (Updatable) List of logging query regions
          * 
          * @return builder
          * 
@@ -393,7 +484,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param regions (Updatable) Logging Query regions
+         * @param regions (Updatable) List of logging query regions
          * 
          * @return builder
          * 
@@ -403,7 +494,38 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param threshold (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         * @param scheduledQueryScopeDetails (Updatable) Target information in which scheduled query will be run
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledQueryScopeDetails(@Nullable Output<List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs>> scheduledQueryScopeDetails) {
+            $.scheduledQueryScopeDetails = scheduledQueryScopeDetails;
+            return this;
+        }
+
+        /**
+         * @param scheduledQueryScopeDetails (Updatable) Target information in which scheduled query will be run
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledQueryScopeDetails(List<CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs> scheduledQueryScopeDetails) {
+            return scheduledQueryScopeDetails(Output.of(scheduledQueryScopeDetails));
+        }
+
+        /**
+         * @param scheduledQueryScopeDetails (Updatable) Target information in which scheduled query will be run
+         * 
+         * @return builder
+         * 
+         */
+        public Builder scheduledQueryScopeDetails(CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs... scheduledQueryScopeDetails) {
+            return scheduledQueryScopeDetails(List.of(scheduledQueryScopeDetails));
+        }
+
+        /**
+         * @param threshold (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
          * 
          * @return builder
          * 
@@ -414,7 +536,7 @@ public final class CloudGuardDataSourceDataSourceDetailsArgs extends com.pulumi.
         }
 
         /**
-         * @param threshold (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+         * @param threshold (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
          * 
          * @return builder
          * 

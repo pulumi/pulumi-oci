@@ -76,7 +76,7 @@ class GetResponderRecipeResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -92,7 +92,7 @@ class GetResponderRecipeResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        ResponderRule description.
+        Responder rule description
         """
         return pulumi.get(self, "description")
 
@@ -100,7 +100,7 @@ class GetResponderRecipeResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ResponderRule display name.
+        Responder rule display name
         """
         return pulumi.get(self, "display_name")
 
@@ -108,7 +108,7 @@ class GetResponderRecipeResult:
     @pulumi.getter(name="effectiveResponderRules")
     def effective_responder_rules(self) -> Sequence['outputs.GetResponderRecipeEffectiveResponderRuleResult']:
         """
-        List of responder rules associated with the recipe
+        List of currently enabled responder rules for the responder type, for recipe after applying defaults
         """
         return pulumi.get(self, "effective_responder_rules")
 
@@ -124,7 +124,7 @@ class GetResponderRecipeResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Identifier for ResponderRecipe.
+        Unique identifier for the responder recip
         """
         return pulumi.get(self, "id")
 
@@ -140,7 +140,7 @@ class GetResponderRecipeResult:
     @pulumi.getter
     def owner(self) -> str:
         """
-        Owner of ResponderRecipe
+        Owner of responder recipe
         """
         return pulumi.get(self, "owner")
 
@@ -161,7 +161,7 @@ class GetResponderRecipeResult:
     @pulumi.getter(name="sourceResponderRecipeId")
     def source_responder_recipe_id(self) -> str:
         """
-        The id of the source responder recipe.
+        The unique identifier of the source responder recipe
         """
         return pulumi.get(self, "source_responder_recipe_id")
 
@@ -169,7 +169,7 @@ class GetResponderRecipeResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the Example.
+        The current lifecycle state of the example
         """
         return pulumi.get(self, "state")
 
@@ -193,7 +193,7 @@ class GetResponderRecipeResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the responder recipe was updated. Format defined by RFC3339.
+        The date and time the responder recipe was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -227,7 +227,7 @@ def get_responder_recipe(responder_recipe_id: Optional[str] = None,
     """
     This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Get a ResponderRecipe by identifier
+    Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
 
     ## Example Usage
 
@@ -239,7 +239,7 @@ def get_responder_recipe(responder_recipe_id: Optional[str] = None,
     ```
 
 
-    :param str responder_recipe_id: OCID of ResponderRecipe
+    :param str responder_recipe_id: OCID of the responder recipe.
     """
     __args__ = dict()
     __args__['responderRecipeId'] = responder_recipe_id
@@ -271,7 +271,7 @@ def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]]
     """
     This data source provides details about a specific Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Get a ResponderRecipe by identifier
+    Returns a responder recipe (ResponderRecipe resource) identified by responderRecipeId.
 
     ## Example Usage
 
@@ -283,6 +283,6 @@ def get_responder_recipe_output(responder_recipe_id: Optional[pulumi.Input[str]]
     ```
 
 
-    :param str responder_recipe_id: OCID of ResponderRecipe
+    :param str responder_recipe_id: OCID of the responder recipe.
     """
     ...

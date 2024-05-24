@@ -14,7 +14,9 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of events from CloudGuard DataSource
+        /// Returns a list of data source events
+        /// (DataSourceEventCollection  resource) from the data source
+        /// (DataSource resource) identified by dataSourceId.
         /// 
         /// 
         /// ## Example Usage
@@ -42,7 +44,9 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Data Source Events in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of events from CloudGuard DataSource
+        /// Returns a list of data source events
+        /// (DataSourceEventCollection  resource) from the data source
+        /// (DataSource resource) identified by dataSourceId.
         /// 
         /// 
         /// ## Example Usage
@@ -72,7 +76,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataSourceEventsArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// DataSource OCID
+        /// Data source OCID.
         /// </summary>
         [Input("dataSourceId", required: true)]
         public string DataSourceId { get; set; } = null!;
@@ -86,7 +90,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// A filter to return only resource their region matches the given region.
+        /// A filter to return only resource where their region matches the given region.
         /// </summary>
         [Input("region")]
         public string? Region { get; set; }
@@ -100,7 +104,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataSourceEventsInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// DataSource OCID
+        /// Data source OCID.
         /// </summary>
         [Input("dataSourceId", required: true)]
         public Input<string> DataSourceId { get; set; } = null!;
@@ -114,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// A filter to return only resource their region matches the given region.
+        /// A filter to return only resource where their region matches the given region.
         /// </summary>
         [Input("region")]
         public Input<string>? Region { get; set; }
@@ -134,7 +138,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourceEventsDataSourceEventCollectionResult> DataSourceEventCollections;
         /// <summary>
-        /// Attached data Source
+        /// Unique identifier of data source.
         /// </summary>
         public readonly string DataSourceId;
         public readonly ImmutableArray<Outputs.GetDataSourceEventsFilterResult> Filters;

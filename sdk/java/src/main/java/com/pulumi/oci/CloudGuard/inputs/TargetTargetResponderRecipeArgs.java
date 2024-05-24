@@ -20,14 +20,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     public static final TargetTargetResponderRecipeArgs Empty = new TargetTargetResponderRecipeArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -54,7 +54,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -63,7 +63,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -73,14 +73,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * List of responder rules associated with the recipe after applying all defaults
+     * List of currently enabled responder rules for the responder type for recipe after applying defaults
      * 
      */
     @Import(name="effectiveResponderRules")
     private @Nullable Output<List<TargetTargetResponderRecipeEffectiveResponderRuleArgs>> effectiveResponderRules;
 
     /**
-     * @return List of responder rules associated with the recipe after applying all defaults
+     * @return List of currently enabled responder rules for the responder type for recipe after applying defaults
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeEffectiveResponderRuleArgs>>> effectiveResponderRules() {
@@ -88,14 +88,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public Optional<Output<String>> id() {
@@ -103,14 +103,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * Owner of ResponderRecipe
+     * Owner of target responder recipe
      * 
      */
     @Import(name="owner")
     private @Nullable Output<String> owner;
 
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public Optional<Output<String>> owner() {
@@ -118,14 +118,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * Identifier for ResponderRecipe.
+     * Unique identifier for responder recipe
      * 
      */
     @Import(name="responderRecipeId", required=true)
     private Output<String> responderRecipeId;
 
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for responder recipe
      * 
      */
     public Output<String> responderRecipeId() {
@@ -133,14 +133,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) Override responder rules associated with reponder recipe in a target.
+     * (Updatable) List of overrides to be applied to responder rules associated with the target
      * 
      */
     @Import(name="responderRules")
     private @Nullable Output<List<TargetTargetResponderRecipeResponderRuleArgs>> responderRules;
 
     /**
-     * @return (Updatable) Override responder rules associated with reponder recipe in a target.
+     * @return (Updatable) List of overrides to be applied to responder rules associated with the target
      * 
      */
     public Optional<Output<List<TargetTargetResponderRecipeResponderRuleArgs>>> responderRules() {
@@ -163,14 +163,14 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -211,7 +211,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -270,7 +270,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -282,7 +282,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param effectiveResponderRules List of responder rules associated with the recipe after applying all defaults
+         * @param effectiveResponderRules List of currently enabled responder rules for the responder type for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -293,7 +293,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param effectiveResponderRules List of responder rules associated with the recipe after applying all defaults
+         * @param effectiveResponderRules List of currently enabled responder rules for the responder type for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -303,7 +303,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param effectiveResponderRules List of responder rules associated with the recipe after applying all defaults
+         * @param effectiveResponderRules List of currently enabled responder rules for the responder type for recipe after applying defaults
          * 
          * @return builder
          * 
@@ -313,7 +313,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+         * @param id Unique identifier of target responder recipe that can&#39;t be changed after creation
          * 
          * @return builder
          * 
@@ -324,7 +324,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param id Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+         * @param id Unique identifier of target responder recipe that can&#39;t be changed after creation
          * 
          * @return builder
          * 
@@ -334,7 +334,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of target responder recipe
          * 
          * @return builder
          * 
@@ -345,7 +345,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param owner Owner of ResponderRecipe
+         * @param owner Owner of target responder recipe
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param responderRecipeId Identifier for ResponderRecipe.
+         * @param responderRecipeId Unique identifier for responder recipe
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param responderRecipeId Identifier for ResponderRecipe.
+         * @param responderRecipeId Unique identifier for responder recipe
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param responderRules (Updatable) Override responder rules associated with reponder recipe in a target.
+         * @param responderRules (Updatable) List of overrides to be applied to responder rules associated with the target
          * 
          * @return builder
          * 
@@ -387,7 +387,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param responderRules (Updatable) Override responder rules associated with reponder recipe in a target.
+         * @param responderRules (Updatable) List of overrides to be applied to responder rules associated with the target
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param responderRules (Updatable) Override responder rules associated with reponder recipe in a target.
+         * @param responderRules (Updatable) List of overrides to be applied to responder rules associated with the target
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class TargetTargetResponderRecipeArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

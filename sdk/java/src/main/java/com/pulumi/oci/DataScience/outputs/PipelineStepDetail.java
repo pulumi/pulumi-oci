@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepConfigurationDetails;
+import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepContainerConfigurationDetails;
 import com.pulumi.oci.DataScience.outputs.PipelineStepDetailStepInfrastructureConfigurationDetails;
 import java.lang.Boolean;
 import java.lang.String;
@@ -42,7 +43,12 @@ public final class PipelineStepDetail {
      */
     private @Nullable PipelineStepDetailStepConfigurationDetails stepConfigurationDetails;
     /**
-     * @return The infrastructure configuration details of a pipeline or a step.
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    private @Nullable PipelineStepDetailStepContainerConfigurationDetails stepContainerConfigurationDetails;
+    /**
+     * @return (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     private @Nullable PipelineStepDetailStepInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails;
@@ -97,7 +103,14 @@ public final class PipelineStepDetail {
         return Optional.ofNullable(this.stepConfigurationDetails);
     }
     /**
-     * @return The infrastructure configuration details of a pipeline or a step.
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    public Optional<PipelineStepDetailStepContainerConfigurationDetails> stepContainerConfigurationDetails() {
+        return Optional.ofNullable(this.stepContainerConfigurationDetails);
+    }
+    /**
+     * @return (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     public Optional<PipelineStepDetailStepInfrastructureConfigurationDetails> stepInfrastructureConfigurationDetails() {
@@ -135,6 +148,7 @@ public final class PipelineStepDetail {
         private @Nullable Boolean isArtifactUploaded;
         private @Nullable String jobId;
         private @Nullable PipelineStepDetailStepConfigurationDetails stepConfigurationDetails;
+        private @Nullable PipelineStepDetailStepContainerConfigurationDetails stepContainerConfigurationDetails;
         private @Nullable PipelineStepDetailStepInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails;
         private String stepName;
         private String stepType;
@@ -146,6 +160,7 @@ public final class PipelineStepDetail {
     	      this.isArtifactUploaded = defaults.isArtifactUploaded;
     	      this.jobId = defaults.jobId;
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
+    	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
     	      this.stepInfrastructureConfigurationDetails = defaults.stepInfrastructureConfigurationDetails;
     	      this.stepName = defaults.stepName;
     	      this.stepType = defaults.stepType;
@@ -185,6 +200,12 @@ public final class PipelineStepDetail {
             return this;
         }
         @CustomType.Setter
+        public Builder stepContainerConfigurationDetails(@Nullable PipelineStepDetailStepContainerConfigurationDetails stepContainerConfigurationDetails) {
+
+            this.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stepInfrastructureConfigurationDetails(@Nullable PipelineStepDetailStepInfrastructureConfigurationDetails stepInfrastructureConfigurationDetails) {
 
             this.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
@@ -213,6 +234,7 @@ public final class PipelineStepDetail {
             _resultValue.isArtifactUploaded = isArtifactUploaded;
             _resultValue.jobId = jobId;
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
             _resultValue.stepInfrastructureConfigurationDetails = stepInfrastructureConfigurationDetails;
             _resultValue.stepName = stepName;
             _resultValue.stepType = stepType;

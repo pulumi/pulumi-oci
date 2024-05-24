@@ -12,14 +12,14 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     private @Nullable String entityType;
@@ -31,7 +31,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
 
     private TargetTargetDetectorRecipeDetectorRuleEntitiesMapping() {}
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -40,7 +40,7 @@ public final class TargetTargetDetectorRecipeDetectorRuleEntitiesMapping {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public Optional<String> entityType() {

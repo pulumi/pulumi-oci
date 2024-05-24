@@ -26,14 +26,14 @@ public final class GetProblemEntitiesArgs extends com.pulumi.resources.InvokeArg
     }
 
     /**
-     * OCId of the problem.
+     * OCID of the problem.
      * 
      */
     @Import(name="problemId", required=true)
     private Output<String> problemId;
 
     /**
-     * @return OCId of the problem.
+     * @return OCID of the problem.
      * 
      */
     public Output<String> problemId() {
@@ -79,7 +79,7 @@ public final class GetProblemEntitiesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param problemId OCId of the problem.
+         * @param problemId OCID of the problem.
          * 
          * @return builder
          * 
@@ -90,7 +90,7 @@ public final class GetProblemEntitiesArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param problemId OCId of the problem.
+         * @param problemId OCID of the problem.
          * 
          * @return builder
          * 

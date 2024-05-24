@@ -52,7 +52,7 @@ class GetCloudGuardConfigurationResult:
     @pulumi.getter(name="reportingRegion")
     def reporting_region(self) -> str:
         """
-        The reporting region value
+        The reporting region
         """
         return pulumi.get(self, "reporting_region")
 
@@ -60,7 +60,7 @@ class GetCloudGuardConfigurationResult:
     @pulumi.getter(name="selfManageResources")
     def self_manage_resources(self) -> bool:
         """
-        Identifies if Oracle managed resources were created by customers
+        Were Oracle-managed resources created by customer?
         """
         return pulumi.get(self, "self_manage_resources")
 
@@ -68,7 +68,7 @@ class GetCloudGuardConfigurationResult:
     @pulumi.getter
     def status(self) -> str:
         """
-        Status of Cloud Guard Tenant
+        Status of the Cloud Guard tenant
         """
         return pulumi.get(self, "status")
 
@@ -91,7 +91,8 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
     """
     This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+    Returns the configuration details for a Cloud Guard tenancy,
+    identified by root compartment OCID.
 
     ## Example Usage
 
@@ -103,7 +104,7 @@ def get_cloud_guard_configuration(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -124,7 +125,8 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[s
     """
     This data source provides details about a specific Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns the configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+    Returns the configuration details for a Cloud Guard tenancy,
+    identified by root compartment OCID.
 
     ## Example Usage
 
@@ -136,6 +138,6 @@ def get_cloud_guard_configuration_output(compartment_id: Optional[pulumi.Input[s
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     """
     ...

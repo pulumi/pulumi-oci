@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.DetectorRecipeDetectorRuleCandidateResponderRuleGetArgs>? _candidateResponderRules;
 
         /// <summary>
-        /// List of CandidateResponderRule related to this rule
+        /// List of responder rules that can be used to remediate this detector rule
         /// </summary>
         public InputList<Inputs.DetectorRecipeDetectorRuleCandidateResponderRuleGetArgs> CandidateResponderRules
         {
@@ -25,7 +25,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// The id of the attached DataSource.
+        /// The ID of the attached data source
         /// </summary>
         [Input("dataSourceId")]
         public Input<string>? DataSourceId { get; set; }
@@ -39,19 +39,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) Details of a Detector Rule to be overriden in Detector Recipe
+        /// (Updatable) Parameters to be updated for a detector rule within a detector recipe.
         /// </summary>
         [Input("details", required: true)]
         public Input<Inputs.DetectorRecipeDetectorRuleDetailsGetArgs> Details { get; set; } = null!;
 
         /// <summary>
-        /// detector for the rule
+        /// Detector for the rule
         /// </summary>
         [Input("detector")]
         public Input<string>? Detector { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorRecipeRule Identifier
+        /// (Updatable) Detector recipe rule ID
         /// </summary>
         [Input("detectorRuleId", required: true)]
         public Input<string> DetectorRuleId { get; set; } = null!;
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.DetectorRecipeDetectorRuleEntitiesMappingGetArgs>? _entitiesMappings;
 
         /// <summary>
-        /// Data Source entities mapping for a Detector Rule
+        /// Data source entities mapping for the detector rule
         /// </summary>
         public InputList<Inputs.DetectorRecipeDetectorRuleEntitiesMappingGetArgs> EntitiesMappings
         {
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _managedListTypes;
 
         /// <summary>
-        /// List of cloudguard managed list types related to this rule
+        /// List of managed list types related to this rule
         /// </summary>
         public InputList<string> ManagedListTypes
         {
@@ -95,37 +95,37 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Recommendation for DetectorRecipeDetectorRule
+        /// Recommendation for DetectorRecipeDetectorRule resource
         /// </summary>
         [Input("recommendation")]
         public Input<string>? Recommendation { get; set; }
 
         /// <summary>
-        /// resource type of the configuration to which the rule is applied
+        /// Resource type of the configuration to which the rule is applied
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
 
         /// <summary>
-        /// service type of the configuration to which the rule is applied
+        /// Service type of the configuration to which the rule is applied
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// The date and time the detector recipe was created. Format defined by RFC3339.
+        /// The date and time the detector recipe was created Format defined by RFC3339.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the detector recipe was updated. Format defined by RFC3339.
+        /// The date and time the detector recipe was last updated Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

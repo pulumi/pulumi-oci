@@ -62,6 +62,7 @@ namespace Pulumi.Oci.DataScience
     ///             LogGroupId = testLogGroup.Id,
     ///             LogId = testLog.Id,
     ///         },
+    ///         OpcParentRptUrl = jobRunOpcParentRptUrl,
     ///     });
     /// 
     /// });
@@ -161,6 +162,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("logDetails")]
         public Output<ImmutableArray<Outputs.JobRunLogDetail>> LogDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Output("opcParentRptUrl")]
+        public Output<string?> OpcParentRptUrl { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -309,6 +316,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.JobRunJobLogConfigurationOverrideDetailsArgs>? JobLogConfigurationOverrideDetails { get; set; }
 
         /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
         /// 
         /// 
@@ -439,6 +452,12 @@ namespace Pulumi.Oci.DataScience
             get => _logDetails ?? (_logDetails = new InputList<Inputs.JobRunLogDetailGetArgs>());
             set => _logDetails = value;
         }
+
+        /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.

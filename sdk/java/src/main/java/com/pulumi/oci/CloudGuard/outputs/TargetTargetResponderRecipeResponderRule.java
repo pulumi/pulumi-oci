@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipeResponderRule {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -27,12 +27,12 @@ public final class TargetTargetResponderRecipeResponderRule {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
      * 
      */
     private TargetTargetResponderRecipeResponderRuleDetails details;
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -44,12 +44,12 @@ public final class TargetTargetResponderRecipeResponderRule {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     private @Nullable List<String> policies;
     /**
-     * @return (Updatable) Identifier for ResponderRule.
+     * @return (Updatable) Unique identifier for target detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -57,12 +57,12 @@ public final class TargetTargetResponderRecipeResponderRule {
      */
     private String responderRuleId;
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     private @Nullable String state;
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     private @Nullable List<String> supportedModes;
@@ -72,19 +72,19 @@ public final class TargetTargetResponderRecipeResponderRule {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     private @Nullable String type;
 
     private TargetTargetResponderRecipeResponderRule() {}
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
@@ -100,14 +100,14 @@ public final class TargetTargetResponderRecipeResponderRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
      * 
      */
     public TargetTargetResponderRecipeResponderRuleDetails details() {
         return this.details;
     }
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -123,14 +123,14 @@ public final class TargetTargetResponderRecipeResponderRule {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public List<String> policies() {
         return this.policies == null ? List.of() : this.policies;
     }
     /**
-     * @return (Updatable) Identifier for ResponderRule.
+     * @return (Updatable) Unique identifier for target detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -140,14 +140,14 @@ public final class TargetTargetResponderRecipeResponderRule {
         return this.responderRuleId;
     }
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public List<String> supportedModes() {
@@ -161,14 +161,14 @@ public final class TargetTargetResponderRecipeResponderRule {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {
         return Optional.ofNullable(this.timeUpdated);
     }
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public Optional<String> type() {

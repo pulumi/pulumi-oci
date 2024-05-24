@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetResponderRecipe
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -24,29 +24,29 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// List of responder rules associated with the recipe after applying all defaults
+        /// List of currently enabled responder rules for the responder type for recipe after applying defaults
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetResponderRecipeEffectiveResponderRule> EffectiveResponderRules;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         public readonly string? Id;
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         public readonly string? Owner;
         /// <summary>
-        /// Identifier for ResponderRecipe.
+        /// Unique identifier for responder recipe
         /// </summary>
         public readonly string ResponderRecipeId;
         /// <summary>
-        /// (Updatable) Override responder rules associated with reponder recipe in a target.
+        /// (Updatable) List of overrides to be applied to responder rules associated with the target
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetTargetResponderRecipeResponderRule> ResponderRules;
         /// <summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string? TimeUpdated;
 

@@ -85,7 +85,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -101,7 +101,7 @@ class GetGuardTargetResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        ResponderRule description.
+        Responder rule description
         """
         return pulumi.get(self, "description")
 
@@ -109,7 +109,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ResponderRule display name.
+        Responder rule display name
         """
         return pulumi.get(self, "display_name")
 
@@ -125,7 +125,7 @@ class GetGuardTargetResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        Unique identifier of target responder recipe that can't be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -141,7 +141,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -157,7 +157,7 @@ class GetGuardTargetResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule
         """
         return pulumi.get(self, "state")
 
@@ -181,7 +181,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="targetDetectorRecipes")
     def target_detector_recipes(self) -> Sequence['outputs.GetGuardTargetTargetDetectorRecipeResult']:
         """
-        List of detector recipes associated with target
+        List of detector recipes attached to target
         """
         return pulumi.get(self, "target_detector_recipes")
 
@@ -202,7 +202,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> str:
         """
-        possible type of targets
+        Type of target
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -210,7 +210,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="targetResponderRecipes")
     def target_responder_recipes(self) -> Sequence['outputs.GetGuardTargetTargetResponderRecipeResult']:
         """
-        List of responder recipes associated with target
+        List of responder recipes attached to target
         """
         return pulumi.get(self, "target_responder_recipes")
 
@@ -226,7 +226,7 @@ class GetGuardTargetResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -263,7 +263,7 @@ def get_guard_target(target_id: Optional[str] = None,
     """
     This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a Target identified by targetId
+    Returns a target (Target resource) identified by targetId.
 
     ## Example Usage
 
@@ -275,7 +275,7 @@ def get_guard_target(target_id: Optional[str] = None,
     ```
 
 
-    :param str target_id: OCID of target
+    :param str target_id: OCID of the target
     """
     __args__ = dict()
     __args__['targetId'] = target_id
@@ -310,7 +310,7 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
     """
     This data source provides details about a specific Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a Target identified by targetId
+    Returns a target (Target resource) identified by targetId.
 
     ## Example Usage
 
@@ -322,6 +322,6 @@ def get_guard_target_output(target_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str target_id: OCID of target
+    :param str target_id: OCID of the target
     """
     ...

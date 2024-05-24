@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a new DetectorRecipe object.
+ * Creates a new DetectorRecipe resource.
  *
  * ## Import
  *
@@ -48,7 +48,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
     }
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
@@ -62,11 +62,15 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * detector for the rule
+     * Detector for the rule
      */
     public readonly detector!: pulumi.Output<string>;
     /**
-     * (Updatable) Detector Rules to override from source detector recipe
+     * Recipe type ( STANDARD, ENTERPRISE )
+     */
+    public /*out*/ readonly detectorRecipeType!: pulumi.Output<string>;
+    /**
+     * (Updatable) Detector rules to override from source detector recipe
      */
     public readonly detectorRules!: pulumi.Output<outputs.CloudGuard.DetectorRecipeDetectorRule[]>;
     /**
@@ -90,7 +94,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public /*out*/ readonly owner!: pulumi.Output<string>;
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      *
      *
      * ** IMPORTANT **
@@ -98,7 +102,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public readonly sourceDetectorRecipeId!: pulumi.Output<string>;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -106,15 +110,15 @@ export class DetectorRecipe extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      */
     public /*out*/ readonly targetIds!: pulumi.Output<string[]>;
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
 
@@ -135,6 +139,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["detector"] = state ? state.detector : undefined;
+            resourceInputs["detectorRecipeType"] = state ? state.detectorRecipeType : undefined;
             resourceInputs["detectorRules"] = state ? state.detectorRules : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["effectiveDetectorRules"] = state ? state.effectiveDetectorRules : undefined;
@@ -162,6 +167,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["sourceDetectorRecipeId"] = args ? args.sourceDetectorRecipeId : undefined;
+            resourceInputs["detectorRecipeType"] = undefined /*out*/;
             resourceInputs["effectiveDetectorRules"] = undefined /*out*/;
             resourceInputs["owner"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -180,7 +186,7 @@ export class DetectorRecipe extends pulumi.CustomResource {
  */
 export interface DetectorRecipeState {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     compartmentId?: pulumi.Input<string>;
     /**
@@ -194,11 +200,15 @@ export interface DetectorRecipeState {
      */
     description?: pulumi.Input<string>;
     /**
-     * detector for the rule
+     * Detector for the rule
      */
     detector?: pulumi.Input<string>;
     /**
-     * (Updatable) Detector Rules to override from source detector recipe
+     * Recipe type ( STANDARD, ENTERPRISE )
+     */
+    detectorRecipeType?: pulumi.Input<string>;
+    /**
+     * (Updatable) Detector rules to override from source detector recipe
      */
     detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
     /**
@@ -222,7 +232,7 @@ export interface DetectorRecipeState {
      */
     owner?: pulumi.Input<string>;
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      *
      *
      * ** IMPORTANT **
@@ -230,7 +240,7 @@ export interface DetectorRecipeState {
      */
     sourceDetectorRecipeId?: pulumi.Input<string>;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     state?: pulumi.Input<string>;
     /**
@@ -238,15 +248,15 @@ export interface DetectorRecipeState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      */
     targetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      */
     timeUpdated?: pulumi.Input<string>;
 }
@@ -256,7 +266,7 @@ export interface DetectorRecipeState {
  */
 export interface DetectorRecipeArgs {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -270,11 +280,11 @@ export interface DetectorRecipeArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * detector for the rule
+     * Detector for the rule
      */
     detector?: pulumi.Input<string>;
     /**
-     * (Updatable) Detector Rules to override from source detector recipe
+     * (Updatable) Detector rules to override from source detector recipe
      */
     detectorRules?: pulumi.Input<pulumi.Input<inputs.CloudGuard.DetectorRecipeDetectorRule>[]>;
     /**
@@ -290,7 +300,7 @@ export interface DetectorRecipeArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      *
      *
      * ** IMPORTANT **

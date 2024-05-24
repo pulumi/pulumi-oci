@@ -14,43 +14,43 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeDetectorRuleDetails
     {
         /// <summary>
-        /// (Updatable) Base condition object
+        /// (Updatable) The base condition resource.
         /// </summary>
         public readonly string? Condition;
         /// <summary>
-        /// (Updatable) Configuration details
+        /// (Updatable) List of detector rule configurations
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsConfiguration> Configurations;
         /// <summary>
-        /// (Updatable) The id of the attached DataSource.
+        /// (Updatable) The unique identifier of the attached data source
         /// </summary>
         public readonly string? DataSourceId;
         /// <summary>
-        /// (Updatable) Description for DetectorRecipeDetectorRule.
+        /// (Updatable) Description for the detector rule
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Data Source entities mapping for a Detector Rule
+        /// (Updatable) Data source entities mapping for a detector rule
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeDetectorRuleDetailsEntitiesMapping> EntitiesMappings;
         /// <summary>
-        /// configuration allowed or not
+        /// Can the rule be configured?
         /// </summary>
         public readonly bool? IsConfigurationAllowed;
         /// <summary>
-        /// (Updatable) Enables the control
+        /// (Updatable) Enablement status of the detector rule
         /// </summary>
         public readonly bool IsEnabled;
         /// <summary>
-        /// (Updatable) user defined labels for a detector rule
+        /// (Updatable) User-defined labels for a detector rule
         /// </summary>
         public readonly ImmutableArray<string> Labels;
         /// <summary>
-        /// (Updatable) Recommendation for DetectorRecipeDetectorRule
+        /// (Updatable) Recommendation for the detector rule
         /// </summary>
         public readonly string? Recommendation;
         /// <summary>
-        /// (Updatable) The Risk Level
+        /// (Updatable) The risk level of the detector rule
         /// </summary>
         public readonly string RiskLevel;
 

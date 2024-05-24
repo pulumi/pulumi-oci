@@ -121,6 +121,21 @@ public final class PipelineRunArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    @Import(name="opcParentRptUrl")
+    private @Nullable Output<String> opcParentRptUrl;
+
+    /**
+     * @return URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    public Optional<Output<String>> opcParentRptUrl() {
+        return Optional.ofNullable(this.opcParentRptUrl);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
@@ -196,6 +211,7 @@ public final class PipelineRunArgs extends com.pulumi.resources.ResourceArgs {
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.logConfigurationOverrideDetails = $.logConfigurationOverrideDetails;
+        this.opcParentRptUrl = $.opcParentRptUrl;
         this.pipelineId = $.pipelineId;
         this.projectId = $.projectId;
         this.stepOverrideDetails = $.stepOverrideDetails;
@@ -353,6 +369,27 @@ public final class PipelineRunArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder logConfigurationOverrideDetails(PipelineRunLogConfigurationOverrideDetailsArgs logConfigurationOverrideDetails) {
             return logConfigurationOverrideDetails(Output.of(logConfigurationOverrideDetails));
+        }
+
+        /**
+         * @param opcParentRptUrl URL to fetch the Resource Principal Token from the parent resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(@Nullable Output<String> opcParentRptUrl) {
+            $.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
+         * @param opcParentRptUrl URL to fetch the Resource Principal Token from the parent resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            return opcParentRptUrl(Output.of(opcParentRptUrl));
         }
 
         /**

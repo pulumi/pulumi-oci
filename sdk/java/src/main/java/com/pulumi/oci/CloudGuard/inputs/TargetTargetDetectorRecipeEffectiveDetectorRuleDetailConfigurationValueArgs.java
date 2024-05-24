@@ -16,14 +16,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueArgs();
 
     /**
-     * configuration list item type, either CUSTOM or MANAGED
+     * Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     @Import(name="listType")
     private @Nullable Output<String> listType;
 
     /**
-     * @return configuration list item type, either CUSTOM or MANAGED
+     * @return Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     public Optional<Output<String>> listType() {
@@ -31,14 +31,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     }
 
     /**
-     * type of the managed list
+     * Type of content in the managed list
      * 
      */
     @Import(name="managedListType")
     private @Nullable Output<String> managedListType;
 
     /**
-     * @return type of the managed list
+     * @return Type of content in the managed list
      * 
      */
     public Optional<Output<String>> managedListType() {
@@ -46,14 +46,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
     }
 
     /**
-     * configuration value
+     * Configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param listType configuration list item type, either CUSTOM or MANAGED
+         * @param listType Configuration list item type (CUSTOM or MANAGED)
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param listType configuration list item type, either CUSTOM or MANAGED
+         * @param listType Configuration list item type (CUSTOM or MANAGED)
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param managedListType type of the managed list
+         * @param managedListType Type of content in the managed list
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param managedListType type of the managed list
+         * @param managedListType Type of content in the managed list
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param value configuration value
+         * @param value Configuration value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigur
         }
 
         /**
-         * @param value configuration value
+         * @param value Configuration value
          * 
          * @return builder
          * 

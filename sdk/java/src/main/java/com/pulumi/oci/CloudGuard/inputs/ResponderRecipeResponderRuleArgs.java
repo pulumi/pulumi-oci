@@ -19,14 +19,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     public static final ResponderRecipeResponderRuleArgs Empty = new ResponderRecipeResponderRuleArgs();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -53,14 +53,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) Details of UpdateResponderRuleDetails.
+     * (Updatable) Parameters to be updated for a responder rule within a responder recipe.
      * 
      */
     @Import(name="details", required=true)
     private Output<ResponderRecipeResponderRuleDetailsArgs> details;
 
     /**
-     * @return (Updatable) Details of UpdateResponderRuleDetails.
+     * @return (Updatable) Parameters to be updated for a responder rule within a responder recipe.
      * 
      */
     public Output<ResponderRecipeResponderRuleDetailsArgs> details() {
@@ -102,14 +102,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * List of Policy
+     * List of policies
      * 
      */
     @Import(name="policies")
     private @Nullable Output<List<String>> policies;
 
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public Optional<Output<List<String>>> policies() {
@@ -117,14 +117,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) ResponderRecipeRule Identifier
+     * (Updatable) Unique identifier for the responder rule
      * 
      */
     @Import(name="responderRuleId", required=true)
     private Output<String> responderRuleId;
 
     /**
-     * @return (Updatable) ResponderRecipeRule Identifier
+     * @return (Updatable) Unique identifier for the responder rule
      * 
      */
     public Output<String> responderRuleId() {
@@ -132,14 +132,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public Optional<Output<String>> state() {
@@ -147,14 +147,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * Supported Execution Modes
+     * Supported execution modes for the responder rule
      * 
      */
     @Import(name="supportedModes")
     private @Nullable Output<List<String>> supportedModes;
 
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public Optional<Output<List<String>>> supportedModes() {
@@ -177,14 +177,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -192,14 +192,14 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
     }
 
     /**
-     * Type of Responder
+     * Type of responder
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public Optional<Output<String>> type() {
@@ -242,7 +242,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -253,7 +253,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -288,7 +288,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param details (Updatable) Details of UpdateResponderRuleDetails.
+         * @param details (Updatable) Parameters to be updated for a responder rule within a responder recipe.
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param details (Updatable) Details of UpdateResponderRuleDetails.
+         * @param details (Updatable) Parameters to be updated for a responder rule within a responder recipe.
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -366,7 +366,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -376,7 +376,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -386,7 +386,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param responderRuleId (Updatable) ResponderRecipeRule Identifier
+         * @param responderRuleId (Updatable) Unique identifier for the responder rule
          * 
          * @return builder
          * 
@@ -397,7 +397,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param responderRuleId (Updatable) ResponderRecipeRule Identifier
+         * @param responderRuleId (Updatable) Unique identifier for the responder rule
          * 
          * @return builder
          * 
@@ -407,7 +407,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param state The current state of the Example.
+         * @param state The current lifecycle state of the example
          * 
          * @return builder
          * 
@@ -418,7 +418,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param state The current state of the Example.
+         * @param state The current lifecycle state of the example
          * 
          * @return builder
          * 
@@ -428,7 +428,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -439,7 +439,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -449,7 +449,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -480,7 +480,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param timeUpdated The date and time the responder recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the responder recipe was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -491,7 +491,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param timeUpdated The date and time the responder recipe was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the responder recipe was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -501,7 +501,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type Type of Responder
+         * @param type Type of responder
          * 
          * @return builder
          * 
@@ -512,7 +512,7 @@ public final class ResponderRecipeResponderRuleArgs extends com.pulumi.resources
         }
 
         /**
-         * @param type Type of Responder
+         * @param type Type of responder
          * 
          * @return builder
          * 

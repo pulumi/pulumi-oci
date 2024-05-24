@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue {
     /**
-     * @return configuration list item type, either CUSTOM or MANAGED
+     * @return Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     private String listType;
     /**
-     * @return type of the managed list
+     * @return Type of content in the managed list
      * 
      */
     private String managedListType;
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     private String value;
 
     private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetailConfigurationValue() {}
     /**
-     * @return configuration list item type, either CUSTOM or MANAGED
+     * @return Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     public String listType() {
         return this.listType;
     }
     /**
-     * @return type of the managed list
+     * @return Type of content in the managed list
      * 
      */
     public String managedListType() {
         return this.managedListType;
     }
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public String value() {

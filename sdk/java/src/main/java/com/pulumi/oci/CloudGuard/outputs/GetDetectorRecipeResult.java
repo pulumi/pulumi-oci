@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeResult {
     /**
-     * @return compartmentId of detector recipe
+     * @return Compartment OCID of detector recipe
      * 
      */
     private String compartmentId;
@@ -26,23 +26,28 @@ public final class GetDetectorRecipeResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     private String description;
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     private String detector;
     private String detectorRecipeId;
+    /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    private String detectorRecipeType;
     /**
      * @return List of detector rules for the detector type for recipe - user input
      * 
      */
     private List<GetDetectorRecipeDetectorRule> detectorRules;
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     private String displayName;
@@ -57,7 +62,7 @@ public final class GetDetectorRecipeResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     private String id;
@@ -67,12 +72,12 @@ public final class GetDetectorRecipeResult {
      */
     private String owner;
     /**
-     * @return Recipe Ocid of the Source Recipe to be cloned
+     * @return Recipe OCID of the source recipe to be cloned
      * 
      */
     private String sourceDetectorRecipeId;
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     private String state;
@@ -82,24 +87,24 @@ public final class GetDetectorRecipeResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The recipe attached to targets
+     * @return List of target IDs to which the recipe is attached
      * 
      */
     private List<String> targetIds;
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetDetectorRecipeResult() {}
     /**
-     * @return compartmentId of detector recipe
+     * @return Compartment OCID of detector recipe
      * 
      */
     public String compartmentId() {
@@ -113,14 +118,14 @@ public final class GetDetectorRecipeResult {
         return this.definedTags;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     public String detector() {
@@ -130,6 +135,13 @@ public final class GetDetectorRecipeResult {
         return this.detectorRecipeId;
     }
     /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public String detectorRecipeType() {
+        return this.detectorRecipeType;
+    }
+    /**
      * @return List of detector rules for the detector type for recipe - user input
      * 
      */
@@ -137,7 +149,7 @@ public final class GetDetectorRecipeResult {
         return this.detectorRules;
     }
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     public String displayName() {
@@ -158,7 +170,7 @@ public final class GetDetectorRecipeResult {
         return this.freeformTags;
     }
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     public String id() {
@@ -172,14 +184,14 @@ public final class GetDetectorRecipeResult {
         return this.owner;
     }
     /**
-     * @return Recipe Ocid of the Source Recipe to be cloned
+     * @return Recipe OCID of the source recipe to be cloned
      * 
      */
     public String sourceDetectorRecipeId() {
         return this.sourceDetectorRecipeId;
     }
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public String state() {
@@ -193,21 +205,21 @@ public final class GetDetectorRecipeResult {
         return this.systemTags;
     }
     /**
-     * @return The recipe attached to targets
+     * @return List of target IDs to which the recipe is attached
      * 
      */
     public List<String> targetIds() {
         return this.targetIds;
     }
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {
@@ -228,6 +240,7 @@ public final class GetDetectorRecipeResult {
         private String description;
         private String detector;
         private String detectorRecipeId;
+        private String detectorRecipeType;
         private List<GetDetectorRecipeDetectorRule> detectorRules;
         private String displayName;
         private List<GetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
@@ -248,6 +261,7 @@ public final class GetDetectorRecipeResult {
     	      this.description = defaults.description;
     	      this.detector = defaults.detector;
     	      this.detectorRecipeId = defaults.detectorRecipeId;
+    	      this.detectorRecipeType = defaults.detectorRecipeType;
     	      this.detectorRules = defaults.detectorRules;
     	      this.displayName = defaults.displayName;
     	      this.effectiveDetectorRules = defaults.effectiveDetectorRules;
@@ -300,6 +314,14 @@ public final class GetDetectorRecipeResult {
               throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "detectorRecipeId");
             }
             this.detectorRecipeId = detectorRecipeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder detectorRecipeType(String detectorRecipeType) {
+            if (detectorRecipeType == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipeResult", "detectorRecipeType");
+            }
+            this.detectorRecipeType = detectorRecipeType;
             return this;
         }
         @CustomType.Setter
@@ -414,6 +436,7 @@ public final class GetDetectorRecipeResult {
             _resultValue.description = description;
             _resultValue.detector = detector;
             _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRecipeType = detectorRecipeType;
             _resultValue.detectorRules = detectorRules;
             _resultValue.displayName = displayName;
             _resultValue.effectiveDetectorRules = effectiveDetectorRules;

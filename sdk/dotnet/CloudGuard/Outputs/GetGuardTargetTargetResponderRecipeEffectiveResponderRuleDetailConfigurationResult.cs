@@ -14,15 +14,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetTargetResponderRecipeEffectiveResponderRuleDetailConfigurationResult
     {
         /// <summary>
-        /// Unique name of the configuration
+        /// Unique identifier of the configuration
         /// </summary>
         public readonly string ConfigKey;
         /// <summary>
-        /// configuration name
+        /// Configuration name
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// configuration value
+        /// Configuration value
         /// </summary>
         public readonly string Value;
 

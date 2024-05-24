@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a DataMaskRule object, identified by DataMaskRuleId.
+        /// Returns a DataMaskRule resource, identified by dataMaskRuleId.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a DataMaskRule object, identified by DataMaskRuleId.
+        /// Returns a DataMaskRule resource, identified by dataMaskRuleId.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataMaskRuleArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of dataMaskRule
+        /// OCID of the data mask rule
         /// </summary>
         [Input("dataMaskRuleId", required: true)]
         public string DataMaskRuleId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataMaskRuleInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// OCID of dataMaskRule
+        /// OCID of the data mask rule
         /// </summary>
         [Input("dataMaskRuleId", required: true)]
         public Input<string> DataMaskRuleId { get; set; } = null!;
@@ -98,16 +98,16 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataMaskRuleResult
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created.
+        /// Compartment OCID where the resource is created
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Data Mask Categories
+        /// List of data mask rule categories
         /// </summary>
         public readonly ImmutableArray<string> DataMaskCategories;
         public readonly string DataMaskRuleId;
         /// <summary>
-        /// The status of the dataMaskRule.
+        /// The current status of the data mask rule
         /// </summary>
         public readonly string DataMaskRuleStatus;
         /// <summary>
@@ -115,11 +115,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The data mask rule description.
+        /// The data mask rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// Data Mask Rule Identifier, can be renamed.
+        /// Data mask rule display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -127,19 +127,19 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// IAM Group id associated with the data mask rule
+        /// IAM Group ID associated with the data mask rule
         /// </summary>
         public readonly string IamGroupId;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Additional details on the substate of the lifecycle state [DEPRECATE]
         /// </summary>
         public readonly string LifecyleDetails;
         /// <summary>
-        /// The current state of the DataMaskRule.
+        /// The current lifecycle state of the data mask rule
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -147,7 +147,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        /// Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataMaskRuleTargetSelectedResult> TargetSelecteds;
         /// <summary>

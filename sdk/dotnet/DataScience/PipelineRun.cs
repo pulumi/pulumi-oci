@@ -51,6 +51,7 @@ namespace Pulumi.Oci.DataScience
     ///             LogGroupId = testLogGroup.Id,
     ///             LogId = testLog.Id,
     ///         },
+    ///         OpcParentRptUrl = pipelineRunOpcParentRptUrl,
     ///         ProjectId = testProject.Id,
     ///         StepOverrideDetails = new[]
     ///         {
@@ -63,6 +64,15 @@ namespace Pulumi.Oci.DataScience
     ///                     MaximumRuntimeInMinutes = pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
     ///                 },
     ///                 StepName = pipelineRunStepOverrideDetailsStepName,
+    ///                 StepContainerConfigurationDetails = new Oci.DataScience.Inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs
+    ///                 {
+    ///                     ContainerType = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType,
+    ///                     Image = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage,
+    ///                     Cmds = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd,
+    ///                     Entrypoints = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint,
+    ///                     ImageDigest = pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
+    ///                     ImageSignatureId = testImageSignature.Id,
+    ///                 },
     ///             },
     ///         },
     ///         SystemTags = pipelineRunSystemTags,
@@ -144,6 +154,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("logDetails")]
         public Output<ImmutableArray<Outputs.PipelineRunLogDetail>> LogDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Output("opcParentRptUrl")]
+        public Output<string?> OpcParentRptUrl { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
@@ -307,6 +323,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.PipelineRunLogConfigurationOverrideDetailsArgs>? LogConfigurationOverrideDetails { get; set; }
 
         /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         /// </summary>
         [Input("pipelineId", required: true)]
@@ -440,6 +462,12 @@ namespace Pulumi.Oci.DataScience
             get => _logDetails ?? (_logDetails = new InputList<Inputs.PipelineRunLogDetailGetArgs>());
             set => _logDetails = value;
         }
+
+        /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.

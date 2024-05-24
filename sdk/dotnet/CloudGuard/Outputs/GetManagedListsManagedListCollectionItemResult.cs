@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetManagedListsManagedListCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ManagedList description.
+        /// Managed list description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// provider of the feed
+        /// Provider of the managed list feed
         /// </summary>
         public readonly string FeedProvider;
         /// <summary>
@@ -38,31 +38,31 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// If this list is editable or not
+        /// Is this list editable?
         /// </summary>
         public readonly bool IsEditable;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         /// </summary>
         public readonly string LifecyleDetails;
         /// <summary>
-        /// List of ManagedListItem
+        /// List of items in the managed list
         /// </summary>
         public readonly ImmutableArray<string> ListItems;
         /// <summary>
-        /// The type of the ManagedList.
+        /// The type of managed list.
         /// </summary>
         public readonly string ListType;
         /// <summary>
-        /// OCID of the Source ManagedList
+        /// OCID of the source managed list
         /// </summary>
         public readonly string SourceManagedListId;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the managed list was updated. Format defined by RFC3339.
+        /// The date and time the managed list was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

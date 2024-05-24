@@ -64,6 +64,9 @@ export interface GetPipelineRunResult {
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
+    /**
+     * If set to true will delete related job runs.
+     */
     readonly deleteRelatedJobRuns: boolean;
     /**
      * A user-friendly display name for the resource.
@@ -89,6 +92,7 @@ export interface GetPipelineRunResult {
      * Customer logging details for pipeline run.
      */
     readonly logDetails: outputs.DataScience.GetPipelineRunLogDetail[];
+    readonly opcParentRptUrl: string;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */

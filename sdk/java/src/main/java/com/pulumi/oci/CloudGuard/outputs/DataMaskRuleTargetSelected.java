@@ -13,12 +13,12 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DataMaskRuleTargetSelected {
     /**
-     * @return (Updatable) Target selection.
+     * @return (Updatable) Kind of target selection to be used
      * 
      */
     private String kind;
     /**
-     * @return (Updatable) Types of Targets
+     * @return (Updatable) Types of targets
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -28,14 +28,14 @@ public final class DataMaskRuleTargetSelected {
 
     private DataMaskRuleTargetSelected() {}
     /**
-     * @return (Updatable) Target selection.
+     * @return (Updatable) Kind of target selection to be used
      * 
      */
     public String kind() {
         return this.kind;
     }
     /**
-     * @return (Updatable) Types of Targets
+     * @return (Updatable) Types of targets
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

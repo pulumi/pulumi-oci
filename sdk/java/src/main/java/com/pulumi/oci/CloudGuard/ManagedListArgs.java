@@ -20,14 +20,14 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     public static final ManagedListArgs Empty = new ManagedListArgs();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -50,7 +50,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Managed list description.
+     * (Updatable) Managed list description
      * 
      * Avoid entering confidential information.
      * 
@@ -59,7 +59,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> description;
 
     /**
-     * @return (Updatable) Managed list description.
+     * @return (Updatable) Managed list description
      * 
      * Avoid entering confidential information.
      * 
@@ -107,14 +107,14 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) List of ManagedListItem
+     * (Updatable) List of items in the managed list
      * 
      */
     @Import(name="listItems")
     private @Nullable Output<List<String>> listItems;
 
     /**
-     * @return (Updatable) List of ManagedListItem
+     * @return (Updatable) List of items in the managed list
      * 
      */
     public Optional<Output<List<String>>> listItems() {
@@ -122,14 +122,14 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * type of the list
+     * Type of information stored in the list
      * 
      */
     @Import(name="listType")
     private @Nullable Output<String> listType;
 
     /**
-     * @return type of the list
+     * @return Type of information stored in the list
      * 
      */
     public Optional<Output<String>> listType() {
@@ -137,7 +137,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -147,7 +147,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<String> sourceManagedListId;
 
     /**
-     * @return OCID of the Source ManagedList
+     * @return OCID of the source managed list
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -189,7 +189,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -200,7 +200,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -231,7 +231,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Managed list description.
+         * @param description (Updatable) Managed list description
          * 
          * Avoid entering confidential information.
          * 
@@ -244,7 +244,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description (Updatable) Managed list description.
+         * @param description (Updatable) Managed list description
          * 
          * Avoid entering confidential information.
          * 
@@ -306,7 +306,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listItems (Updatable) List of ManagedListItem
+         * @param listItems (Updatable) List of items in the managed list
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listItems (Updatable) List of ManagedListItem
+         * @param listItems (Updatable) List of items in the managed list
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listItems (Updatable) List of ManagedListItem
+         * @param listItems (Updatable) List of items in the managed list
          * 
          * @return builder
          * 
@@ -337,7 +337,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listType type of the list
+         * @param listType Type of information stored in the list
          * 
          * @return builder
          * 
@@ -348,7 +348,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param listType type of the list
+         * @param listType Type of information stored in the list
          * 
          * @return builder
          * 
@@ -358,7 +358,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceManagedListId OCID of the Source ManagedList
+         * @param sourceManagedListId OCID of the source managed list
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -372,7 +372,7 @@ public final class ManagedListArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param sourceManagedListId OCID of the Source ManagedList
+         * @param sourceManagedListId OCID of the source managed list
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

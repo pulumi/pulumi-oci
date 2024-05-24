@@ -20,14 +20,14 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
     public static final GetSecurityZonesArgs Empty = new GetSecurityZonesArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
@@ -57,14 +57,14 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The unique identifier of the security zone (`SecurityZone`)
+     * The unique identifier of the security zone (`SecurityZone` resource).
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return The unique identifier of the security zone (`SecurityZone`)
+     * @return The unique identifier of the security zone (`SecurityZone` resource).
      * 
      */
     public Optional<Output<String>> id() {
@@ -72,14 +72,14 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * security zones in the subtree
+     * Is security zones in the subtree?
      * 
      */
     @Import(name="isRequiredSecurityZonesInSubtree")
     private @Nullable Output<Boolean> isRequiredSecurityZonesInSubtree;
 
     /**
-     * @return security zones in the subtree
+     * @return Is security zones in the subtree?
      * 
      */
     public Optional<Output<Boolean>> isRequiredSecurityZonesInSubtree() {
@@ -87,14 +87,14 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
      * 
      */
     @Import(name="securityRecipeId")
     private @Nullable Output<String> securityRecipeId;
 
     /**
-     * @return The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * @return The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
      * 
      */
     public Optional<Output<String>> securityRecipeId() {
@@ -102,14 +102,14 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<Output<String>> state() {
@@ -147,7 +147,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -158,7 +158,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -202,7 +202,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param id The unique identifier of the security zone (`SecurityZone`)
+         * @param id The unique identifier of the security zone (`SecurityZone` resource).
          * 
          * @return builder
          * 
@@ -213,7 +213,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param id The unique identifier of the security zone (`SecurityZone`)
+         * @param id The unique identifier of the security zone (`SecurityZone` resource).
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param isRequiredSecurityZonesInSubtree security zones in the subtree
+         * @param isRequiredSecurityZonesInSubtree Is security zones in the subtree?
          * 
          * @return builder
          * 
@@ -234,7 +234,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param isRequiredSecurityZonesInSubtree security zones in the subtree
+         * @param isRequiredSecurityZonesInSubtree Is security zones in the subtree?
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param securityRecipeId The unique identifier of the security zone recipe (`SecurityRecipe`)
+         * @param securityRecipeId The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
          * 
          * @return builder
          * 
@@ -255,7 +255,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param securityRecipeId The unique identifier of the security zone recipe (`SecurityRecipe`)
+         * @param securityRecipeId The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
          * 
          * @return builder
          * 
@@ -265,7 +265,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 
@@ -276,7 +276,7 @@ public final class GetSecurityZonesArgs extends com.pulumi.resources.InvokeArgs 
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 

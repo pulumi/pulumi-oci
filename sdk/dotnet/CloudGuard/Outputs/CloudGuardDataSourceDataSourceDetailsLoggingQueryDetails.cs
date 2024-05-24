@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly int? KeyEntitiesCount;
         /// <summary>
-        /// (Updatable) Logging query type for data source (Sighting/Insight)
+        /// (Updatable) Logging query type for data source
         /// </summary>
         public readonly string LoggingQueryType;
 

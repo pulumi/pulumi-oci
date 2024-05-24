@@ -19,14 +19,14 @@ public final class GetGuardTargetsFilterArgs extends com.pulumi.resources.Resour
     public static final GetGuardTargetsFilterArgs Empty = new GetGuardTargetsFilterArgs();
 
     /**
-     * configuration name
+     * Configuration name
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public Output<String> name() {
@@ -82,7 +82,7 @@ public final class GetGuardTargetsFilterArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class GetGuardTargetsFilterArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 

@@ -18,14 +18,14 @@ public final class GetResponderRecipesFilter extends com.pulumi.resources.Invoke
     public static final GetResponderRecipesFilter Empty = new GetResponderRecipesFilter();
 
     /**
-     * configuration name
+     * Configuration name
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetResponderRecipesFilter extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 

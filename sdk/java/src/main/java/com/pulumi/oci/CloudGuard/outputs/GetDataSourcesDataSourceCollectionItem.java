@@ -17,7 +17,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -32,7 +32,7 @@ public final class GetDataSourcesDataSourceCollectionItem {
      */
     private List<GetDataSourcesDataSourceCollectionItemDataSourceDetectorMappingInfo> dataSourceDetectorMappingInfos;
     /**
-     * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+     * @return A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      * 
      */
     private String dataSourceFeedProvider;
@@ -52,7 +52,7 @@ public final class GetDataSourcesDataSourceCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Ocid for Data source
+     * @return OCID for the data source
      * 
      */
     private String id;
@@ -62,12 +62,12 @@ public final class GetDataSourcesDataSourceCollectionItem {
      */
     private List<GetDataSourcesDataSourceCollectionItemRegionStatusDetail> regionStatusDetails;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
     /**
-     * @return Status of data Source
+     * @return Enablement status of the data source
      * 
      */
     private String status;
@@ -82,14 +82,14 @@ public final class GetDataSourcesDataSourceCollectionItem {
      */
     private String timeCreated;
     /**
-     * @return The date and time the Data source was updated. Format defined by RFC3339.
+     * @return The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetDataSourcesDataSourceCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -110,7 +110,7 @@ public final class GetDataSourcesDataSourceCollectionItem {
         return this.dataSourceDetectorMappingInfos;
     }
     /**
-     * @return A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+     * @return A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
      * 
      */
     public String dataSourceFeedProvider() {
@@ -138,7 +138,7 @@ public final class GetDataSourcesDataSourceCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Ocid for Data source
+     * @return OCID for the data source
      * 
      */
     public String id() {
@@ -152,14 +152,14 @@ public final class GetDataSourcesDataSourceCollectionItem {
         return this.regionStatusDetails;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Status of data Source
+     * @return Enablement status of the data source
      * 
      */
     public String status() {
@@ -180,7 +180,7 @@ public final class GetDataSourcesDataSourceCollectionItem {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the Data source was updated. Format defined by RFC3339.
+     * @return The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

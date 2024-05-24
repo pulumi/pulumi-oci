@@ -33,7 +33,7 @@ export function getManagedList(args: GetManagedListArgs, opts?: pulumi.InvokeOpt
  */
 export interface GetManagedListArgs {
     /**
-     * The cloudguard list OCID to be passed in the request.
+     * The managed list OCID to be passed in the request.
      */
     managedListId: string;
 }
@@ -43,7 +43,7 @@ export interface GetManagedListArgs {
  */
 export interface GetManagedListResult {
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      */
     readonly compartmentId: string;
     /**
@@ -51,15 +51,15 @@ export interface GetManagedListResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * ManagedList description.
+     * Managed list description
      */
     readonly description: string;
     /**
-     * ManagedList display name.
+     * Managed list display name
      */
     readonly displayName: string;
     /**
-     * provider of the feed
+     * Provider of the managed list feed
      */
     readonly feedProvider: string;
     /**
@@ -67,32 +67,32 @@ export interface GetManagedListResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can't be changed after creation
      */
     readonly id: string;
     /**
-     * If this list is editable or not
+     * Is this list editable?
      */
     readonly isEditable: boolean;
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      */
     readonly lifecyleDetails: string;
     /**
-     * List of ManagedListItem
+     * List of items in the managed list
      */
     readonly listItems: string[];
     /**
-     * type of the list
+     * Type of information contained in the managed list
      */
     readonly listType: string;
     readonly managedListId: string;
     /**
-     * OCID of the Source ManagedList
+     * OCID of the source managed list
      */
     readonly sourceManagedListId: string;
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      */
     readonly state: string;
     /**
@@ -104,7 +104,7 @@ export interface GetManagedListResult {
      */
     readonly timeCreated: string;
     /**
-     * The date and time the managed list was updated. Format defined by RFC3339.
+     * The date and time the managed list was last updated. Format defined by RFC3339.
      */
     readonly timeUpdated: string;
 }
@@ -133,7 +133,7 @@ export function getManagedListOutput(args: GetManagedListOutputArgs, opts?: pulu
  */
 export interface GetManagedListOutputArgs {
     /**
-     * The cloudguard list OCID to be passed in the request.
+     * The managed list OCID to be passed in the request.
      */
     managedListId: pulumi.Input<string>;
 }

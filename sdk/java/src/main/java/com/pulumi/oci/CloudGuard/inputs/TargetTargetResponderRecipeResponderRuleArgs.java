@@ -19,14 +19,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     public static final TargetTargetResponderRecipeResponderRuleArgs Empty = new TargetTargetResponderRecipeResponderRuleArgs();
 
     /**
-     * Compartment Identifier where the resource is created
+     * Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -53,14 +53,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Details of ResponderRule.
+     * (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
      * 
      */
     @Import(name="details", required=true)
     private Output<TargetTargetResponderRecipeResponderRuleDetailsArgs> details;
 
     /**
-     * @return (Updatable) Details of ResponderRule.
+     * @return (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
      * 
      */
     public Output<TargetTargetResponderRecipeResponderRuleDetailsArgs> details() {
@@ -68,7 +68,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -77,7 +77,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -102,14 +102,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * List of Policy
+     * List of policies
      * 
      */
     @Import(name="policies")
     private @Nullable Output<List<String>> policies;
 
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public Optional<Output<List<String>>> policies() {
@@ -117,7 +117,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * (Updatable) Identifier for ResponderRule.
+     * (Updatable) Unique identifier for target detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -127,7 +127,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     private Output<String> responderRuleId;
 
     /**
-     * @return (Updatable) Identifier for ResponderRule.
+     * @return (Updatable) Unique identifier for target detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -138,14 +138,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -153,14 +153,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * Supported Execution Modes
+     * Supported execution modes for the responder rule
      * 
      */
     @Import(name="supportedModes")
     private @Nullable Output<List<String>> supportedModes;
 
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public Optional<Output<List<String>>> supportedModes() {
@@ -183,14 +183,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -198,14 +198,14 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
     }
 
     /**
-     * Type of Responder
+     * Type of responder
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public Optional<Output<String>> type() {
@@ -248,7 +248,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param compartmentId Compartment Identifier where the resource is created
+         * @param compartmentId Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -294,7 +294,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
          * 
          * @return builder
          * 
@@ -305,7 +305,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param details (Updatable) Details of ResponderRule.
+         * @param details (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
          * 
          * @return builder
          * 
@@ -315,7 +315,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -328,7 +328,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -361,7 +361,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -372,7 +372,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -382,7 +382,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param policies List of Policy
+         * @param policies List of policies
          * 
          * @return builder
          * 
@@ -392,7 +392,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param responderRuleId (Updatable) Identifier for ResponderRule.
+         * @param responderRuleId (Updatable) Unique identifier for target detector recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -406,7 +406,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param responderRuleId (Updatable) Identifier for ResponderRule.
+         * @param responderRuleId (Updatable) Unique identifier for target detector recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -419,7 +419,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -461,7 +461,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param supportedModes Supported Execution Modes
+         * @param supportedModes Supported execution modes for the responder rule
          * 
          * @return builder
          * 
@@ -492,7 +492,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -503,7 +503,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -513,7 +513,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param type Type of Responder
+         * @param type Type of responder
          * 
          * @return builder
          * 
@@ -524,7 +524,7 @@ public final class TargetTargetResponderRecipeResponderRuleArgs extends com.pulu
         }
 
         /**
-         * @param type Type of Responder
+         * @param type Type of responder
          * 
          * @return builder
          * 

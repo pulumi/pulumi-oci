@@ -12,38 +12,38 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeDetectorRuleCandidateResponderRule {
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     private String displayName;
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     private String id;
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     private Boolean isPreferred;
 
     private GetDetectorRecipeDetectorRuleCandidateResponderRule() {}
     /**
-     * @return The display name of entity
+     * @return Display name of the entity
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Preferred state
+     * @return Is this the preferred state?
      * 
      */
     public Boolean isPreferred() {

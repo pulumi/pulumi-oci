@@ -19,14 +19,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     public static final TargetTargetDetectorRecipeEffectiveDetectorRuleArgs Empty = new TargetTargetDetectorRecipeEffectiveDetectorRuleArgs();
 
     /**
-     * The id of the attached DataSource.
+     * The ID of the attached data source
      * 
      */
     @Import(name="dataSourceId")
     private @Nullable Output<String> dataSourceId;
 
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public Optional<Output<String>> dataSourceId() {
@@ -53,14 +53,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * Details of ResponderRule.
+     * Detailed information for a responder rule
      * 
      */
     @Import(name="details")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs>> details;
 
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs>>> details() {
@@ -68,14 +68,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * detector for the rule
+     * Detector type for the rule
      * 
      */
     @Import(name="detector")
     private @Nullable Output<String> detector;
 
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     public Optional<Output<String>> detector() {
@@ -83,14 +83,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * The unique identifier of the detector rule.
+     * The unique identifier of the detector rule
      * 
      */
     @Import(name="detectorRuleId")
     private @Nullable Output<String> detectorRuleId;
 
     /**
-     * @return The unique identifier of the detector rule.
+     * @return The unique identifier of the detector rule
      * 
      */
     public Optional<Output<String>> detectorRuleId() {
@@ -98,7 +98,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * (Updatable) DetectorTemplate identifier.
+     * (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -107,7 +107,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -117,14 +117,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * Data Source entities mapping for a Detector Rule
+     * Data source entities mapping for a detector rule
      * 
      */
     @Import(name="entitiesMappings")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>> entitiesMappings;
 
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for a detector rule
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingArgs>>> entitiesMappings() {
@@ -147,14 +147,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * List of cloudguard managed list types related to this rule
+     * List of managed list types related to this rule
      * 
      */
     @Import(name="managedListTypes")
     private @Nullable Output<List<String>> managedListTypes;
 
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public Optional<Output<List<String>>> managedListTypes() {
@@ -162,14 +162,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * Recommendation for TargetDetectorRecipeDetectorRule
+     * Recommendation for TargetDetectorRecipeDetectorRule resource
      * 
      */
     @Import(name="recommendation")
     private @Nullable Output<String> recommendation;
 
     /**
-     * @return Recommendation for TargetDetectorRecipeDetectorRule
+     * @return Recommendation for TargetDetectorRecipeDetectorRule resource
      * 
      */
     public Optional<Output<String>> recommendation() {
@@ -177,14 +177,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * resource type of the configuration to which the rule is applied
+     * The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
      * 
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
      * 
      */
     public Optional<Output<String>> resourceType() {
@@ -192,14 +192,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * service type of the configuration to which the rule is applied
+     * Service type of the configuration to which the rule is applied
      * 
      */
     @Import(name="serviceType")
     private @Nullable Output<String> serviceType;
 
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public Optional<Output<String>> serviceType() {
@@ -207,14 +207,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * (Updatable) The current state of the DetectorRule.
+     * (Updatable) The enablement state of the detector rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -237,14 +237,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
     }
 
     /**
-     * The date and time the target was updated. Format defined by RFC3339.
+     * The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -290,7 +290,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param dataSourceId The id of the attached DataSource.
+         * @param dataSourceId The ID of the attached data source
          * 
          * @return builder
          * 
@@ -301,7 +301,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param dataSourceId The id of the attached DataSource.
+         * @param dataSourceId The ID of the attached data source
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param details Details of ResponderRule.
+         * @param details Detailed information for a responder rule
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param details Details of ResponderRule.
+         * @param details Detailed information for a responder rule
          * 
          * @return builder
          * 
@@ -357,7 +357,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param details Details of ResponderRule.
+         * @param details Detailed information for a responder rule
          * 
          * @return builder
          * 
@@ -367,7 +367,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector type for the rule
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector type for the rule
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param detectorRuleId The unique identifier of the detector rule.
+         * @param detectorRuleId The unique identifier of the detector rule
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param detectorRuleId The unique identifier of the detector rule.
+         * @param detectorRuleId The unique identifier of the detector rule
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -422,7 +422,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param displayName (Updatable) DetectorTemplate identifier.
+         * @param displayName (Updatable) Display name for the target.
          * 
          * Avoid entering confidential information.
          * 
@@ -434,7 +434,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data source entities mapping for a detector rule
          * 
          * @return builder
          * 
@@ -445,7 +445,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data source entities mapping for a detector rule
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param entitiesMappings Data Source entities mapping for a Detector Rule
+         * @param entitiesMappings Data source entities mapping for a detector rule
          * 
          * @return builder
          * 
@@ -486,7 +486,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param managedListTypes List of cloudguard managed list types related to this rule
+         * @param managedListTypes List of managed list types related to this rule
          * 
          * @return builder
          * 
@@ -497,7 +497,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param managedListTypes List of cloudguard managed list types related to this rule
+         * @param managedListTypes List of managed list types related to this rule
          * 
          * @return builder
          * 
@@ -507,7 +507,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param managedListTypes List of cloudguard managed list types related to this rule
+         * @param managedListTypes List of managed list types related to this rule
          * 
          * @return builder
          * 
@@ -517,7 +517,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param recommendation Recommendation for TargetDetectorRecipeDetectorRule
+         * @param recommendation Recommendation for TargetDetectorRecipeDetectorRule resource
          * 
          * @return builder
          * 
@@ -528,7 +528,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param recommendation Recommendation for TargetDetectorRecipeDetectorRule
+         * @param recommendation Recommendation for TargetDetectorRecipeDetectorRule resource
          * 
          * @return builder
          * 
@@ -538,7 +538,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param resourceType resource type of the configuration to which the rule is applied
+         * @param resourceType The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
          * 
          * @return builder
          * 
@@ -549,7 +549,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param resourceType resource type of the configuration to which the rule is applied
+         * @param resourceType The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
          * 
          * @return builder
          * 
@@ -559,7 +559,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param serviceType service type of the configuration to which the rule is applied
+         * @param serviceType Service type of the configuration to which the rule is applied
          * 
          * @return builder
          * 
@@ -570,7 +570,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param serviceType service type of the configuration to which the rule is applied
+         * @param serviceType Service type of the configuration to which the rule is applied
          * 
          * @return builder
          * 
@@ -580,7 +580,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -591,7 +591,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param state (Updatable) The current state of the DetectorRule.
+         * @param state (Updatable) The enablement state of the detector rule
          * 
          * @return builder
          * 
@@ -622,7 +622,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -633,7 +633,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleArgs extends c
         }
 
         /**
-         * @param timeUpdated The date and time the target was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the target was last updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

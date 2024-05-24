@@ -19,7 +19,8 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+ * Creates a security zone recipe (SecurityRecipe resource), using parameters
+ * passed in a CreateSecurityRecipeDetails resource.
  * 
  * ## Example Usage
  * 
@@ -73,14 +74,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/securityRecipe:SecurityRecipe")
 public class SecurityRecipe extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The compartment in which to create the recipe
+     * (Updatable) The OCID of the compartment in which to create the recipe
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment in which to create the recipe
+     * @return (Updatable) The OCID of the compartment in which to create the recipe
      * 
      */
     public Output<String> compartmentId() {
@@ -115,14 +116,18 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) The recipe&#39;s name
+     * (Updatable) The recipe&#39;s display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The recipe&#39;s name
+     * @return (Updatable) The recipe&#39;s display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -175,7 +180,7 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
         return this.owner;
     }
     /**
-     * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * (Updatable) The list of security policy IDs to include in the recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +190,7 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
     private Output<List<String>> securityPolicies;
 
     /**
-     * @return (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * @return (Updatable) The list of security policy IDs to include in the recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -195,14 +200,14 @@ public class SecurityRecipe extends com.pulumi.resources.CustomResource {
         return this.securityPolicies;
     }
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the recipe
+     * @return The current lifecycle state of the recipe
      * 
      */
     public Output<String> state() {

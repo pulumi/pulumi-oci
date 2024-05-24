@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineInfrastructureConfigurationDetailsShapeConfigDetails {
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
      */
     private @Nullable Double memoryInGbs;
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
      * 
      */
     private @Nullable Double ocpus;
 
     private PipelineInfrastructureConfigurationDetailsShapeConfigDetails() {}
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
      */
     public Optional<Double> memoryInGbs() {
         return Optional.ofNullable(this.memoryInGbs);
     }
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
      * 
      */
     public Optional<Double> ocpus() {

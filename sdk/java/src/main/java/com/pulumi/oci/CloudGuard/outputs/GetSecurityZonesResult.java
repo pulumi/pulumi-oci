@@ -22,13 +22,13 @@ public final class GetSecurityZonesResult {
      */
     private String compartmentId;
     /**
-     * @return The security zone&#39;s name
+     * @return The security zone&#39;s display name
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetSecurityZonesFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     private @Nullable String id;
@@ -40,7 +40,7 @@ public final class GetSecurityZonesResult {
      */
     private List<GetSecurityZonesSecurityZoneCollection> securityZoneCollections;
     /**
-     * @return The current state of the security zone
+     * @return The current lifecycle state of the security zone
      * 
      */
     private @Nullable String state;
@@ -54,7 +54,7 @@ public final class GetSecurityZonesResult {
         return this.compartmentId;
     }
     /**
-     * @return The security zone&#39;s name
+     * @return The security zone&#39;s display name
      * 
      */
     public Optional<String> displayName() {
@@ -64,7 +64,7 @@ public final class GetSecurityZonesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     public Optional<String> id() {
@@ -84,7 +84,7 @@ public final class GetSecurityZonesResult {
         return this.securityZoneCollections;
     }
     /**
-     * @return The current state of the security zone
+     * @return The current lifecycle state of the security zone
      * 
      */
     public Optional<String> state() {

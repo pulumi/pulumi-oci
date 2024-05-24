@@ -38,7 +38,7 @@ class PipelineArgs:
         :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -172,7 +172,7 @@ class PipelineArgs:
     @pulumi.getter(name="infrastructureConfigurationDetails")
     def infrastructure_configuration_details(self) -> Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']]:
         """
-        The infrastructure configuration details of a pipeline or a step.
+        (Updatable) The infrastructure configuration details of a pipeline or a step.
         """
         return pulumi.get(self, "infrastructure_configuration_details")
 
@@ -232,7 +232,7 @@ class _PipelineState:
         :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs'] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input['PipelineLogConfigurationDetailsArgs'] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -376,7 +376,7 @@ class _PipelineState:
     @pulumi.getter(name="infrastructureConfigurationDetails")
     def infrastructure_configuration_details(self) -> Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']]:
         """
-        The infrastructure configuration details of a pipeline or a step.
+        (Updatable) The infrastructure configuration details of a pipeline or a step.
         """
         return pulumi.get(self, "infrastructure_configuration_details")
 
@@ -534,6 +534,14 @@ class Pipeline(pulumi.CustomResource):
                     environment_variables=pipeline_step_details_step_configuration_details_environment_variables,
                     maximum_runtime_in_minutes=pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
                 ),
+                step_container_configuration_details=oci.data_science.PipelineStepDetailStepContainerConfigurationDetailsArgs(
+                    container_type=pipeline_step_details_step_container_configuration_details_container_type,
+                    image=pipeline_step_details_step_container_configuration_details_image,
+                    cmds=pipeline_step_details_step_container_configuration_details_cmd,
+                    entrypoints=pipeline_step_details_step_container_configuration_details_entrypoint,
+                    image_digest=pipeline_step_details_step_container_configuration_details_image_digest,
+                    image_signature_id=test_image_signature["id"],
+                ),
                 step_infrastructure_configuration_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(
                     block_storage_size_in_gbs=pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
                     shape_config_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
@@ -541,6 +549,7 @@ class Pipeline(pulumi.CustomResource):
                         ocpus=pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
                     ),
                     shape_name=test_shape["name"],
+                    subnet_id=test_subnet["id"],
                 ),
             )],
             configuration_details=oci.data_science.PipelineConfigurationDetailsArgs(
@@ -564,6 +573,7 @@ class Pipeline(pulumi.CustomResource):
                     memory_in_gbs=pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
                     ocpus=pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
                 ),
+                subnet_id=test_subnet["id"],
             ),
             log_configuration_details=oci.data_science.PipelineLogConfigurationDetailsArgs(
                 enable_auto_log_creation=pipeline_log_configuration_details_enable_auto_log_creation,
@@ -589,7 +599,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]] step_details: (Updatable) Array of step details for each step.
@@ -626,6 +636,14 @@ class Pipeline(pulumi.CustomResource):
                     environment_variables=pipeline_step_details_step_configuration_details_environment_variables,
                     maximum_runtime_in_minutes=pipeline_step_details_step_configuration_details_maximum_runtime_in_minutes,
                 ),
+                step_container_configuration_details=oci.data_science.PipelineStepDetailStepContainerConfigurationDetailsArgs(
+                    container_type=pipeline_step_details_step_container_configuration_details_container_type,
+                    image=pipeline_step_details_step_container_configuration_details_image,
+                    cmds=pipeline_step_details_step_container_configuration_details_cmd,
+                    entrypoints=pipeline_step_details_step_container_configuration_details_entrypoint,
+                    image_digest=pipeline_step_details_step_container_configuration_details_image_digest,
+                    image_signature_id=test_image_signature["id"],
+                ),
                 step_infrastructure_configuration_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs(
                     block_storage_size_in_gbs=pipeline_step_details_step_infrastructure_configuration_details_block_storage_size_in_gbs,
                     shape_config_details=oci.data_science.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs(
@@ -633,6 +651,7 @@ class Pipeline(pulumi.CustomResource):
                         ocpus=pipeline_step_details_step_infrastructure_configuration_details_shape_config_details_ocpus,
                     ),
                     shape_name=test_shape["name"],
+                    subnet_id=test_subnet["id"],
                 ),
             )],
             configuration_details=oci.data_science.PipelineConfigurationDetailsArgs(
@@ -656,6 +675,7 @@ class Pipeline(pulumi.CustomResource):
                     memory_in_gbs=pipeline_infrastructure_configuration_details_shape_config_details_memory_in_gbs,
                     ocpus=pipeline_infrastructure_configuration_details_shape_config_details_ocpus,
                 ),
+                subnet_id=test_subnet["id"],
             ),
             log_configuration_details=oci.data_science.PipelineLogConfigurationDetailsArgs(
                 enable_auto_log_creation=pipeline_log_configuration_details_enable_auto_log_creation,
@@ -775,7 +795,7 @@ class Pipeline(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) A short description of the pipeline.
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
-        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']] infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in 'Failed' state.
         :param pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']] log_configuration_details: (Updatable) The pipeline log configuration details.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
@@ -874,7 +894,7 @@ class Pipeline(pulumi.CustomResource):
     @pulumi.getter(name="infrastructureConfigurationDetails")
     def infrastructure_configuration_details(self) -> pulumi.Output['outputs.PipelineInfrastructureConfigurationDetails']:
         """
-        The infrastructure configuration details of a pipeline or a step.
+        (Updatable) The infrastructure configuration details of a pipeline or a step.
         """
         return pulumi.get(self, "infrastructure_configuration_details")
 

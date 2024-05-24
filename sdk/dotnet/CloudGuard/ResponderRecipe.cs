@@ -12,7 +12,8 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Create a ResponderRecipe.
+    /// Creates a responder recipe (ResponderRecipe resource), from values passed in a
+    /// CreateResponderRecipeDetails resource.
     /// 
     /// ## Import
     /// 
@@ -26,7 +27,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class ResponderRecipe : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -54,7 +55,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// List of responder rules associated with the recipe
+        /// List of currently enabled responder rules for the responder type, for recipe after applying defaults
         /// </summary>
         [Output("effectiveResponderRules")]
         public Output<ImmutableArray<Outputs.ResponderRecipeEffectiveResponderRule>> EffectiveResponderRules { get; private set; } = null!;
@@ -74,19 +75,19 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of responder recipe
         /// </summary>
         [Output("owner")]
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Responder Rules to override from source responder recipe
+        /// (Updatable) List of responder rules to override from source responder recipe
         /// </summary>
         [Output("responderRules")]
         public Output<ImmutableArray<Outputs.ResponderRecipeResponderRule>> ResponderRules { get; private set; } = null!;
 
         /// <summary>
-        /// The id of the source responder recipe.
+        /// The unique identifier of the source responder recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -96,7 +97,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> SourceResponderRecipeId { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the Example.
+        /// The current lifecycle state of the example
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -114,7 +115,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the responder recipe was updated. Format defined by RFC3339.
+        /// The date and time the responder recipe was last updated. Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -166,7 +167,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class ResponderRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -217,7 +218,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.ResponderRecipeResponderRuleArgs>? _responderRules;
 
         /// <summary>
-        /// (Updatable) Responder Rules to override from source responder recipe
+        /// (Updatable) List of responder rules to override from source responder recipe
         /// </summary>
         public InputList<Inputs.ResponderRecipeResponderRuleArgs> ResponderRules
         {
@@ -226,7 +227,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The id of the source responder recipe.
+        /// The unique identifier of the source responder recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -244,7 +245,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class ResponderRecipeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) Compartment Identifier
+        /// (Updatable) Compartment OCID
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -281,7 +282,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.ResponderRecipeEffectiveResponderRuleGetArgs>? _effectiveResponderRules;
 
         /// <summary>
-        /// List of responder rules associated with the recipe
+        /// List of currently enabled responder rules for the responder type, for recipe after applying defaults
         /// </summary>
         public InputList<Inputs.ResponderRecipeEffectiveResponderRuleGetArgs> EffectiveResponderRules
         {
@@ -310,7 +311,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of responder recipe
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
@@ -319,7 +320,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<Inputs.ResponderRecipeResponderRuleGetArgs>? _responderRules;
 
         /// <summary>
-        /// (Updatable) Responder Rules to override from source responder recipe
+        /// (Updatable) List of responder rules to override from source responder recipe
         /// </summary>
         public InputList<Inputs.ResponderRecipeResponderRuleGetArgs> ResponderRules
         {
@@ -328,7 +329,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The id of the source responder recipe.
+        /// The unique identifier of the source responder recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -338,7 +339,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? SourceResponderRecipeId { get; set; }
 
         /// <summary>
-        /// The current state of the Example.
+        /// The current lifecycle state of the example
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -362,7 +363,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the responder recipe was updated. Format defined by RFC3339.
+        /// The date and time the responder recipe was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

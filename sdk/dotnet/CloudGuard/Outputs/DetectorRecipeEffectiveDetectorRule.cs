@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DetectorRecipeEffectiveDetectorRule
     {
         /// <summary>
-        /// List of CandidateResponderRule related to this rule
+        /// List of responder rules that can be used to remediate this detector rule
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleCandidateResponderRule> CandidateResponderRules;
         /// <summary>
-        /// The id of the attached DataSource.
+        /// The ID of the attached data source
         /// </summary>
         public readonly string? DataSourceId;
         /// <summary>
@@ -28,11 +28,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// Details of a Detector Rule
+        /// Detailed information for a detector.
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleDetail> Details;
         /// <summary>
-        /// detector for the rule
+        /// Detector for the rule
         /// </summary>
         public readonly string? Detector;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? DisplayName;
         /// <summary>
-        /// Data Source entities mapping for a Detector Rule
+        /// Data source entities mapping for the detector rule
         /// </summary>
         public readonly ImmutableArray<Outputs.DetectorRecipeEffectiveDetectorRuleEntitiesMapping> EntitiesMappings;
         /// <summary>
@@ -54,31 +54,31 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? LifecycleDetails;
         /// <summary>
-        /// List of cloudguard managed list types related to this rule
+        /// List of managed list types related to this rule
         /// </summary>
         public readonly ImmutableArray<string> ManagedListTypes;
         /// <summary>
-        /// Recommendation for DetectorRecipeDetectorRule
+        /// Recommendation for DetectorRecipeDetectorRule resource
         /// </summary>
         public readonly string? Recommendation;
         /// <summary>
-        /// resource type of the configuration to which the rule is applied
+        /// Resource type of the configuration to which the rule is applied
         /// </summary>
         public readonly string? ResourceType;
         /// <summary>
-        /// service type of the configuration to which the rule is applied
+        /// Service type of the configuration to which the rule is applied
         /// </summary>
         public readonly string? ServiceType;
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// The date and time the detector recipe was created. Format defined by RFC3339.
+        /// The date and time the detector recipe was created Format defined by RFC3339.
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// The date and time the detector recipe was updated. Format defined by RFC3339.
+        /// The date and time the detector recipe was last updated Format defined by RFC3339.
         /// </summary>
         public readonly string? TimeUpdated;
 

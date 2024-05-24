@@ -25,6 +25,7 @@ class PipelineRunArgs:
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
@@ -37,6 +38,7 @@ class PipelineRunArgs:
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
         :param pulumi.Input[Mapping[str, Any]] system_tags: Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}` 
                
@@ -59,6 +61,8 @@ class PipelineRunArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if log_configuration_override_details is not None:
             pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if step_override_details is not None:
             pulumi.set(__self__, "step_override_details", step_override_details)
         if system_tags is not None:
@@ -170,6 +174,18 @@ class PipelineRunArgs:
         pulumi.set(self, "log_configuration_override_details", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter(name="stepOverrideDetails")
     def step_override_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunStepOverrideDetailArgs']]]]:
         """
@@ -212,6 +228,7 @@ class _PipelineRunState:
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  log_configuration_override_details: Optional[pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs']] = None,
                  log_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  pipeline_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -234,6 +251,7 @@ class _PipelineRunState:
         :param pulumi.Input[str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input['PipelineRunLogConfigurationOverrideDetailsArgs'] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[Sequence[pulumi.Input['PipelineRunLogDetailArgs']]] log_details: Customer logging details for pipeline run.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[str] state: The state of the step run.
@@ -271,6 +289,8 @@ class _PipelineRunState:
             pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
         if log_details is not None:
             pulumi.set(__self__, "log_details", log_details)
+        if opc_parent_rpt_url is not None:
+            pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if pipeline_id is not None:
             pulumi.set(__self__, "pipeline_id", pipeline_id)
         if project_id is not None:
@@ -422,6 +442,18 @@ class _PipelineRunState:
         pulumi.set(self, "log_details", value)
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @opc_parent_rpt_url.setter
+    def opc_parent_rpt_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "opc_parent_rpt_url", value)
+
+    @property
     @pulumi.getter(name="pipelineId")
     def pipeline_id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -558,6 +590,7 @@ class PipelineRun(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['PipelineRunLogConfigurationOverrideDetailsArgs']]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  pipeline_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineRunStepOverrideDetailArgs']]]]] = None,
@@ -596,6 +629,7 @@ class PipelineRun(pulumi.CustomResource):
                 log_group_id=test_log_group["id"],
                 log_id=test_log["id"],
             ),
+            opc_parent_rpt_url=pipeline_run_opc_parent_rpt_url,
             project_id=test_project["id"],
             step_override_details=[oci.data_science.PipelineRunStepOverrideDetailArgs(
                 step_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs(
@@ -604,6 +638,14 @@ class PipelineRun(pulumi.CustomResource):
                     maximum_runtime_in_minutes=pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
                 ),
                 step_name=pipeline_run_step_override_details_step_name,
+                step_container_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs(
+                    container_type=pipeline_run_step_override_details_step_container_configuration_details_container_type,
+                    image=pipeline_run_step_override_details_step_container_configuration_details_image,
+                    cmds=pipeline_run_step_override_details_step_container_configuration_details_cmd,
+                    entrypoints=pipeline_run_step_override_details_step_container_configuration_details_entrypoint,
+                    image_digest=pipeline_run_step_override_details_step_container_configuration_details_image_digest,
+                    image_signature_id=test_image_signature["id"],
+                ),
             )],
             system_tags=pipeline_run_system_tags)
         ```
@@ -624,6 +666,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[str] display_name: (Updatable) A user-friendly display name for the resource.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Department": "Finance"}`
         :param pulumi.Input[pulumi.InputType['PipelineRunLogConfigurationOverrideDetailsArgs']] log_configuration_override_details: The pipeline log configuration details.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineRunStepOverrideDetailArgs']]]] step_override_details: Array of step override details. Only Step Configuration is allowed to be overridden.
@@ -672,6 +715,7 @@ class PipelineRun(pulumi.CustomResource):
                 log_group_id=test_log_group["id"],
                 log_id=test_log["id"],
             ),
+            opc_parent_rpt_url=pipeline_run_opc_parent_rpt_url,
             project_id=test_project["id"],
             step_override_details=[oci.data_science.PipelineRunStepOverrideDetailArgs(
                 step_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs(
@@ -680,6 +724,14 @@ class PipelineRun(pulumi.CustomResource):
                     maximum_runtime_in_minutes=pipeline_run_step_override_details_step_configuration_details_maximum_runtime_in_minutes,
                 ),
                 step_name=pipeline_run_step_override_details_step_name,
+                step_container_configuration_details=oci.data_science.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs(
+                    container_type=pipeline_run_step_override_details_step_container_configuration_details_container_type,
+                    image=pipeline_run_step_override_details_step_container_configuration_details_image,
+                    cmds=pipeline_run_step_override_details_step_container_configuration_details_cmd,
+                    entrypoints=pipeline_run_step_override_details_step_container_configuration_details_entrypoint,
+                    image_digest=pipeline_run_step_override_details_step_container_configuration_details_image_digest,
+                    image_signature_id=test_image_signature["id"],
+                ),
             )],
             system_tags=pipeline_run_system_tags)
         ```
@@ -714,6 +766,7 @@ class PipelineRun(pulumi.CustomResource):
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['PipelineRunLogConfigurationOverrideDetailsArgs']]] = None,
+                 opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
                  pipeline_id: Optional[pulumi.Input[str]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  step_override_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineRunStepOverrideDetailArgs']]]]] = None,
@@ -736,6 +789,7 @@ class PipelineRun(pulumi.CustomResource):
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["log_configuration_override_details"] = log_configuration_override_details
+            __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
             if pipeline_id is None and not opts.urn:
                 raise TypeError("Missing required property 'pipeline_id'")
             __props__.__dict__["pipeline_id"] = pipeline_id
@@ -775,6 +829,7 @@ class PipelineRun(pulumi.CustomResource):
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             log_configuration_override_details: Optional[pulumi.Input[pulumi.InputType['PipelineRunLogConfigurationOverrideDetailsArgs']]] = None,
             log_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineRunLogDetailArgs']]]]] = None,
+            opc_parent_rpt_url: Optional[pulumi.Input[str]] = None,
             pipeline_id: Optional[pulumi.Input[str]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
@@ -802,6 +857,7 @@ class PipelineRun(pulumi.CustomResource):
         :param pulumi.Input[str] lifecycle_details: Details of the state of the step run.
         :param pulumi.Input[pulumi.InputType['PipelineRunLogConfigurationOverrideDetailsArgs']] log_configuration_override_details: The pipeline log configuration details.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineRunLogDetailArgs']]]] log_details: Customer logging details for pipeline run.
+        :param pulumi.Input[str] opc_parent_rpt_url: URL to fetch the Resource Principal Token from the parent resource.
         :param pulumi.Input[str] pipeline_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         :param pulumi.Input[str] project_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
         :param pulumi.Input[str] state: The state of the step run.
@@ -832,6 +888,7 @@ class PipelineRun(pulumi.CustomResource):
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["log_configuration_override_details"] = log_configuration_override_details
         __props__.__dict__["log_details"] = log_details
+        __props__.__dict__["opc_parent_rpt_url"] = opc_parent_rpt_url
         __props__.__dict__["pipeline_id"] = pipeline_id
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
@@ -928,6 +985,14 @@ class PipelineRun(pulumi.CustomResource):
         Customer logging details for pipeline run.
         """
         return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> pulumi.Output[Optional[str]]:
+        """
+        URL to fetch the Resource Principal Token from the parent resource.
+        """
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="pipelineId")

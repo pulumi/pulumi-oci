@@ -124,6 +124,7 @@ namespace Pulumi.Oci.DataScience
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         OpcParentRptUrl = modelDeploymentOpcParentRptUrl,
     ///     });
     /// 
     /// });
@@ -205,6 +206,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Output("modelDeploymentUrl")]
         public Output<string> ModelDeploymentUrl { get; private set; } = null!;
+
+        /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Output("opcParentRptUrl")]
+        public Output<string?> OpcParentRptUrl { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
@@ -329,6 +336,12 @@ namespace Pulumi.Oci.DataScience
         public Input<Inputs.ModelDeploymentModelDeploymentConfigurationDetailsArgs> ModelDeploymentConfigurationDetails { get; set; } = null!;
 
         /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
+
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.
         /// </summary>
         [Input("projectId", required: true)]
@@ -435,6 +448,12 @@ namespace Pulumi.Oci.DataScience
         /// </summary>
         [Input("modelDeploymentUrl")]
         public Input<string>? ModelDeploymentUrl { get; set; }
+
+        /// <summary>
+        /// URL to fetch the Resource Principal Token from the parent resource.
+        /// </summary>
+        [Input("opcParentRptUrl")]
+        public Input<string>? OpcParentRptUrl { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.

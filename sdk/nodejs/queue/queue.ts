@@ -21,6 +21,8 @@ import * as utilities from "../utilities";
  *     channelConsumptionLimit: queueChannelConsumptionLimit,
  *     customEncryptionKeyId: testKey.id,
  *     deadLetterQueueDeliveryCount: queueDeadLetterQueueDeliveryCount,
+ *     purgeTrigger: purgeTrigger,
+ *     purgeType: purgeType,
  *     definedTags: {
  *         "foo-namespace.bar-key": "value",
  *     },
@@ -105,7 +107,16 @@ export class Queue extends pulumi.CustomResource {
      * The endpoint to use to consume or publish messages in the queue.
      */
     public /*out*/ readonly messagesEndpoint!: pulumi.Output<string>;
-    public readonly purgeQueue!: pulumi.Output<boolean | undefined>;
+    /**
+     * (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     */
+    public readonly purgeTrigger!: pulumi.Output<number | undefined>;
+    /**
+     * (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     public readonly purgeType!: pulumi.Output<string | undefined>;
     /**
      * The retention period of messages in the queue, in seconds.
@@ -158,7 +169,7 @@ export class Queue extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["messagesEndpoint"] = state ? state.messagesEndpoint : undefined;
-            resourceInputs["purgeQueue"] = state ? state.purgeQueue : undefined;
+            resourceInputs["purgeTrigger"] = state ? state.purgeTrigger : undefined;
             resourceInputs["purgeType"] = state ? state.purgeType : undefined;
             resourceInputs["retentionInSeconds"] = state ? state.retentionInSeconds : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -182,7 +193,7 @@ export class Queue extends pulumi.CustomResource {
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
-            resourceInputs["purgeQueue"] = args ? args.purgeQueue : undefined;
+            resourceInputs["purgeTrigger"] = args ? args.purgeTrigger : undefined;
             resourceInputs["purgeType"] = args ? args.purgeType : undefined;
             resourceInputs["retentionInSeconds"] = args ? args.retentionInSeconds : undefined;
             resourceInputs["timeoutInSeconds"] = args ? args.timeoutInSeconds : undefined;
@@ -239,7 +250,16 @@ export interface QueueState {
      * The endpoint to use to consume or publish messages in the queue.
      */
     messagesEndpoint?: pulumi.Input<string>;
-    purgeQueue?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     */
+    purgeTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     purgeType?: pulumi.Input<string>;
     /**
      * The retention period of messages in the queue, in seconds.
@@ -303,7 +323,16 @@ export interface QueueArgs {
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
-    purgeQueue?: pulumi.Input<boolean>;
+    /**
+     * (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     */
+    purgeTrigger?: pulumi.Input<number>;
+    /**
+     * (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
     purgeType?: pulumi.Input<string>;
     /**
      * The retention period of messages in the queue, in seconds.

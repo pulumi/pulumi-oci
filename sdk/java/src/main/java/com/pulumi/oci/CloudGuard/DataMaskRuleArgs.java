@@ -21,14 +21,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final DataMaskRuleArgs Empty = new DataMaskRuleArgs();
 
     /**
-     * (Updatable) Compartment Identifier where the resource is created
+     * (Updatable) Compartment OCID where the resource is created
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier where the resource is created
+     * @return (Updatable) Compartment OCID where the resource is created
      * 
      */
     public Output<String> compartmentId() {
@@ -36,14 +36,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Data Mask Categories
+     * (Updatable) Data mask rule categories
      * 
      */
     @Import(name="dataMaskCategories", required=true)
     private Output<List<String>> dataMaskCategories;
 
     /**
-     * @return (Updatable) Data Mask Categories
+     * @return (Updatable) Data mask rule categories
      * 
      */
     public Output<List<String>> dataMaskCategories() {
@@ -51,14 +51,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The status of the dataMaskRule.
+     * (Updatable) The current status of the data mask rule
      * 
      */
     @Import(name="dataMaskRuleStatus")
     private @Nullable Output<String> dataMaskRuleStatus;
 
     /**
-     * @return (Updatable) The status of the dataMaskRule.
+     * @return (Updatable) The current status of the data mask rule
      * 
      */
     public Optional<Output<String>> dataMaskRuleStatus() {
@@ -81,14 +81,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The data mask rule description. Avoid entering confidential information.
+     * The data mask rule description Avoid entering confidential information.
      * 
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The data mask rule description. Avoid entering confidential information.
+     * @return The data mask rule description Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> description() {
@@ -96,7 +96,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Data mask rule name.
+     * (Updatable) Data mask rule display name
      * 
      * Avoid entering confidential information.
      * 
@@ -105,7 +105,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data mask rule name.
+     * @return (Updatable) Data mask rule display name
      * 
      * Avoid entering confidential information.
      * 
@@ -134,14 +134,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) IAM Group id associated with the data mask rule
+     * (Updatable) IAM group ID associated with the data mask rule
      * 
      */
     @Import(name="iamGroupId", required=true)
     private Output<String> iamGroupId;
 
     /**
-     * @return (Updatable) IAM Group id associated with the data mask rule
+     * @return (Updatable) IAM group ID associated with the data mask rule
      * 
      */
     public Output<String> iamGroupId() {
@@ -149,14 +149,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the DataMaskRule.
+     * @return The current lifecycle state of the data mask rule
      * 
      */
     public Optional<Output<String>> state() {
@@ -164,14 +164,14 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      * 
      */
     @Import(name="targetSelected", required=true)
     private Output<DataMaskRuleTargetSelectedArgs> targetSelected;
 
     /**
-     * @return (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * @return (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      * 
      */
     public Output<DataMaskRuleTargetSelectedArgs> targetSelected() {
@@ -212,7 +212,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier where the resource is created
+         * @param compartmentId (Updatable) Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -223,7 +223,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier where the resource is created
+         * @param compartmentId (Updatable) Compartment OCID where the resource is created
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataMaskCategories (Updatable) Data Mask Categories
+         * @param dataMaskCategories (Updatable) Data mask rule categories
          * 
          * @return builder
          * 
@@ -244,7 +244,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataMaskCategories (Updatable) Data Mask Categories
+         * @param dataMaskCategories (Updatable) Data mask rule categories
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataMaskCategories (Updatable) Data Mask Categories
+         * @param dataMaskCategories (Updatable) Data mask rule categories
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataMaskRuleStatus (Updatable) The status of the dataMaskRule.
+         * @param dataMaskRuleStatus (Updatable) The current status of the data mask rule
          * 
          * @return builder
          * 
@@ -275,7 +275,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dataMaskRuleStatus (Updatable) The status of the dataMaskRule.
+         * @param dataMaskRuleStatus (Updatable) The current status of the data mask rule
          * 
          * @return builder
          * 
@@ -306,7 +306,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The data mask rule description. Avoid entering confidential information.
+         * @param description The data mask rule description Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -317,7 +317,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The data mask rule description. Avoid entering confidential information.
+         * @param description The data mask rule description Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -327,7 +327,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data mask rule name.
+         * @param displayName (Updatable) Data mask rule display name
          * 
          * Avoid entering confidential information.
          * 
@@ -340,7 +340,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param displayName (Updatable) Data mask rule name.
+         * @param displayName (Updatable) Data mask rule display name
          * 
          * Avoid entering confidential information.
          * 
@@ -377,7 +377,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamGroupId (Updatable) IAM Group id associated with the data mask rule
+         * @param iamGroupId (Updatable) IAM group ID associated with the data mask rule
          * 
          * @return builder
          * 
@@ -388,7 +388,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param iamGroupId (Updatable) IAM Group id associated with the data mask rule
+         * @param iamGroupId (Updatable) IAM group ID associated with the data mask rule
          * 
          * @return builder
          * 
@@ -398,7 +398,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the DataMaskRule.
+         * @param state The current lifecycle state of the data mask rule
          * 
          * @return builder
          * 
@@ -409,7 +409,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param state The current state of the DataMaskRule.
+         * @param state The current lifecycle state of the data mask rule
          * 
          * @return builder
          * 
@@ -419,7 +419,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetSelected (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+         * @param targetSelected (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
          * 
          * @return builder
          * 
@@ -430,7 +430,7 @@ public final class DataMaskRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param targetSelected (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+         * @param targetSelected (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
          * 
          * @return builder
          * 

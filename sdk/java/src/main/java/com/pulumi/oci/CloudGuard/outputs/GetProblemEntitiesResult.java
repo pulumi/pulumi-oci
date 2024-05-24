@@ -26,7 +26,7 @@ public final class GetProblemEntitiesResult {
      */
     private List<GetProblemEntitiesProblemEntityCollection> problemEntityCollections;
     /**
-     * @return Attached problem id
+     * @return Attached problem ID
      * 
      */
     private String problemId;
@@ -50,7 +50,7 @@ public final class GetProblemEntitiesResult {
         return this.problemEntityCollections;
     }
     /**
-     * @return Attached problem id
+     * @return Attached problem ID
      * 
      */
     public String problemId() {

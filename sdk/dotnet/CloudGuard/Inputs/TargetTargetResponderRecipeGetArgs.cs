@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetResponderRecipeGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -27,7 +27,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetResponderRecipeEffectiveResponderRuleGetArgs>? _effectiveResponderRules;
 
         /// <summary>
-        /// List of responder rules associated with the recipe after applying all defaults
+        /// List of currently enabled responder rules for the responder type for recipe after applying defaults
         /// </summary>
         public InputList<Inputs.TargetTargetResponderRecipeEffectiveResponderRuleGetArgs> EffectiveResponderRules
         {
@@ -47,19 +47,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         [Input("owner")]
         public Input<string>? Owner { get; set; }
 
         /// <summary>
-        /// Identifier for ResponderRecipe.
+        /// Unique identifier for responder recipe
         /// </summary>
         [Input("responderRecipeId", required: true)]
         public Input<string> ResponderRecipeId { get; set; } = null!;
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetResponderRecipeResponderRuleGetArgs>? _responderRules;
 
         /// <summary>
-        /// (Updatable) Override responder rules associated with reponder recipe in a target.
+        /// (Updatable) List of overrides to be applied to responder rules associated with the target
         /// </summary>
         public InputList<Inputs.TargetTargetResponderRecipeResponderRuleGetArgs> ResponderRules
         {
@@ -83,7 +83,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

@@ -6,6 +6,7 @@ package com.pulumi.oci.DataScience.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail;
+import com.pulumi.oci.DataScience.outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -17,6 +18,11 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
      * 
      */
     private List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    private List<GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
     /**
      * @return The name of the step.
      * 
@@ -30,6 +36,13 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
      */
     public List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails() {
         return this.stepConfigurationDetails;
+    }
+    /**
+     * @return Container Details for a step in pipeline.
+     * 
+     */
+    public List<GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails() {
+        return this.stepContainerConfigurationDetails;
     }
     /**
      * @return The name of the step.
@@ -49,11 +62,13 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
     @CustomType.Builder
     public static final class Builder {
         private List<GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail> stepConfigurationDetails;
+        private List<GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails;
         private String stepName;
         public Builder() {}
         public Builder(GetPipelineRunsPipelineRunStepOverrideDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.stepConfigurationDetails = defaults.stepConfigurationDetails;
+    	      this.stepContainerConfigurationDetails = defaults.stepContainerConfigurationDetails;
     	      this.stepName = defaults.stepName;
         }
 
@@ -69,6 +84,17 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
             return stepConfigurationDetails(List.of(stepConfigurationDetails));
         }
         @CustomType.Setter
+        public Builder stepContainerConfigurationDetails(List<GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail> stepContainerConfigurationDetails) {
+            if (stepContainerConfigurationDetails == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepContainerConfigurationDetails");
+            }
+            this.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
+            return this;
+        }
+        public Builder stepContainerConfigurationDetails(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail... stepContainerConfigurationDetails) {
+            return stepContainerConfigurationDetails(List.of(stepContainerConfigurationDetails));
+        }
+        @CustomType.Setter
         public Builder stepName(String stepName) {
             if (stepName == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRunStepOverrideDetail", "stepName");
@@ -79,6 +105,7 @@ public final class GetPipelineRunsPipelineRunStepOverrideDetail {
         public GetPipelineRunsPipelineRunStepOverrideDetail build() {
             final var _resultValue = new GetPipelineRunsPipelineRunStepOverrideDetail();
             _resultValue.stepConfigurationDetails = stepConfigurationDetails;
+            _resultValue.stepContainerConfigurationDetails = stepContainerConfigurationDetails;
             _resultValue.stepName = stepName;
             return _resultValue;
         }

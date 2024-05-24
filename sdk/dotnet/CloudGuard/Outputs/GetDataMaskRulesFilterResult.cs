@@ -16,7 +16,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         public readonly string Name;
         public readonly bool? Regex;
         /// <summary>
-        /// Types of Targets
+        /// Types of targets
         /// </summary>
         public readonly ImmutableArray<string> Values;
 

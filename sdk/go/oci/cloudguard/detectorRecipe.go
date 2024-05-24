@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a new DetectorRecipe object.
+// Creates a new DetectorRecipe resource.
 //
 // ## Import
 //
@@ -26,7 +26,7 @@ import (
 type DetectorRecipe struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -34,9 +34,11 @@ type DetectorRecipe struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringOutput `pulumi:"description"`
-	// detector for the rule
+	// Detector for the rule
 	Detector pulumi.StringOutput `pulumi:"detector"`
-	// (Updatable) Detector Rules to override from source detector recipe
+	// Recipe type ( STANDARD, ENTERPRISE )
+	DetectorRecipeType pulumi.StringOutput `pulumi:"detectorRecipeType"`
+	// (Updatable) Detector rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayOutput `pulumi:"detectorRules"`
 	// (Updatable) Detector recipe display name.
 	//
@@ -50,20 +52,20 @@ type DetectorRecipe struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Owner of detector recipe
 	Owner pulumi.StringOutput `pulumi:"owner"`
-	// The id of the source detector recipe.
+	// The ID of the source detector recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId pulumi.StringOutput `pulumi:"sourceDetectorRecipeId"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The recipe attached to targets
+	// List of target IDs to which the recipe is attached
 	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
-	// The date and time the detector recipe was created. Format defined by RFC3339.
+	// The date and time the detector recipe was created Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the detector recipe was updated. Format defined by RFC3339.
+	// The date and time the detector recipe was last updated Format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -103,7 +105,7 @@ func GetDetectorRecipe(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering DetectorRecipe resources.
 type detectorRecipeState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -111,9 +113,11 @@ type detectorRecipeState struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// detector for the rule
+	// Detector for the rule
 	Detector *string `pulumi:"detector"`
-	// (Updatable) Detector Rules to override from source detector recipe
+	// Recipe type ( STANDARD, ENTERPRISE )
+	DetectorRecipeType *string `pulumi:"detectorRecipeType"`
+	// (Updatable) Detector rules to override from source detector recipe
 	DetectorRules []DetectorRecipeDetectorRule `pulumi:"detectorRules"`
 	// (Updatable) Detector recipe display name.
 	//
@@ -127,25 +131,25 @@ type detectorRecipeState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Owner of detector recipe
 	Owner *string `pulumi:"owner"`
-	// The id of the source detector recipe.
+	// The ID of the source detector recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId *string `pulumi:"sourceDetectorRecipeId"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The recipe attached to targets
+	// List of target IDs to which the recipe is attached
 	TargetIds []string `pulumi:"targetIds"`
-	// The date and time the detector recipe was created. Format defined by RFC3339.
+	// The date and time the detector recipe was created Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the detector recipe was updated. Format defined by RFC3339.
+	// The date and time the detector recipe was last updated Format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type DetectorRecipeState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -153,9 +157,11 @@ type DetectorRecipeState struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// detector for the rule
+	// Detector for the rule
 	Detector pulumi.StringPtrInput
-	// (Updatable) Detector Rules to override from source detector recipe
+	// Recipe type ( STANDARD, ENTERPRISE )
+	DetectorRecipeType pulumi.StringPtrInput
+	// (Updatable) Detector rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayInput
 	// (Updatable) Detector recipe display name.
 	//
@@ -169,20 +175,20 @@ type DetectorRecipeState struct {
 	FreeformTags pulumi.MapInput
 	// Owner of detector recipe
 	Owner pulumi.StringPtrInput
-	// The id of the source detector recipe.
+	// The ID of the source detector recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceDetectorRecipeId pulumi.StringPtrInput
-	// The current state of the resource.
+	// The current lifecycle state of the resource
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The recipe attached to targets
+	// List of target IDs to which the recipe is attached
 	TargetIds pulumi.StringArrayInput
-	// The date and time the detector recipe was created. Format defined by RFC3339.
+	// The date and time the detector recipe was created Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the detector recipe was updated. Format defined by RFC3339.
+	// The date and time the detector recipe was last updated Format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -191,7 +197,7 @@ func (DetectorRecipeState) ElementType() reflect.Type {
 }
 
 type detectorRecipeArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -199,9 +205,9 @@ type detectorRecipeArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description *string `pulumi:"description"`
-	// detector for the rule
+	// Detector for the rule
 	Detector *string `pulumi:"detector"`
-	// (Updatable) Detector Rules to override from source detector recipe
+	// (Updatable) Detector rules to override from source detector recipe
 	DetectorRules []DetectorRecipeDetectorRule `pulumi:"detectorRules"`
 	// (Updatable) Detector recipe display name.
 	//
@@ -211,7 +217,7 @@ type detectorRecipeArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The id of the source detector recipe.
+	// The ID of the source detector recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -220,7 +226,7 @@ type detectorRecipeArgs struct {
 
 // The set of arguments for constructing a DetectorRecipe resource.
 type DetectorRecipeArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -228,9 +234,9 @@ type DetectorRecipeArgs struct {
 	//
 	// Avoid entering confidential information.
 	Description pulumi.StringPtrInput
-	// detector for the rule
+	// Detector for the rule
 	Detector pulumi.StringPtrInput
-	// (Updatable) Detector Rules to override from source detector recipe
+	// (Updatable) Detector rules to override from source detector recipe
 	DetectorRules DetectorRecipeDetectorRuleArrayInput
 	// (Updatable) Detector recipe display name.
 	//
@@ -240,7 +246,7 @@ type DetectorRecipeArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// The id of the source detector recipe.
+	// The ID of the source detector recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -334,7 +340,7 @@ func (o DetectorRecipeOutput) ToDetectorRecipeOutputWithContext(ctx context.Cont
 	return o
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) Compartment OCID
 func (o DetectorRecipeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -351,12 +357,17 @@ func (o DetectorRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// detector for the rule
+// Detector for the rule
 func (o DetectorRecipeOutput) Detector() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.Detector }).(pulumi.StringOutput)
 }
 
-// (Updatable) Detector Rules to override from source detector recipe
+// Recipe type ( STANDARD, ENTERPRISE )
+func (o DetectorRecipeOutput) DetectorRecipeType() pulumi.StringOutput {
+	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.DetectorRecipeType }).(pulumi.StringOutput)
+}
+
+// (Updatable) Detector rules to override from source detector recipe
 func (o DetectorRecipeOutput) DetectorRules() DetectorRecipeDetectorRuleArrayOutput {
 	return o.ApplyT(func(v *DetectorRecipe) DetectorRecipeDetectorRuleArrayOutput { return v.DetectorRules }).(DetectorRecipeDetectorRuleArrayOutput)
 }
@@ -387,7 +398,7 @@ func (o DetectorRecipeOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
-// The id of the source detector recipe.
+// The ID of the source detector recipe
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -395,7 +406,7 @@ func (o DetectorRecipeOutput) SourceDetectorRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.SourceDetectorRecipeId }).(pulumi.StringOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource
 func (o DetectorRecipeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -405,17 +416,17 @@ func (o DetectorRecipeOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The recipe attached to targets
+// List of target IDs to which the recipe is attached
 func (o DetectorRecipeOutput) TargetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringArrayOutput { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
-// The date and time the detector recipe was created. Format defined by RFC3339.
+// The date and time the detector recipe was created Format defined by RFC3339.
 func (o DetectorRecipeOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the detector recipe was updated. Format defined by RFC3339.
+// The date and time the detector recipe was last updated Format defined by RFC3339.
 func (o DetectorRecipeOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DetectorRecipe) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

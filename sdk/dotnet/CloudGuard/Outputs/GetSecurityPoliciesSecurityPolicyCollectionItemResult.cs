@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetSecurityPoliciesSecurityPolicyCollectionItemResult
     {
         /// <summary>
-        /// The category of security policy
+        /// The category of the security policy
         /// </summary>
         public readonly string Category;
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string FriendlyName;
         /// <summary>
-        /// The unique identifier of the security zone policy (`SecurityPolicy`)
+        /// The unique identifier of the security zone policy. (`SecurityPolicy`)
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -58,7 +58,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableArray<string> Services;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>

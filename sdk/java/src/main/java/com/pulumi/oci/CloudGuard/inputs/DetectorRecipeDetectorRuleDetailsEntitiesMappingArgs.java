@@ -17,14 +17,14 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
     public static final DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs Empty = new DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs();
 
     /**
-     * (Updatable) The display name of entity
+     * (Updatable) Display name of the entity
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The display name of entity
+     * @return (Updatable) Display name of the entity
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -32,14 +32,14 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
     }
 
     /**
-     * (Updatable) Possible type of entity
+     * (Updatable) Type of entity
      * 
      */
     @Import(name="entityType")
     private @Nullable Output<String> entityType;
 
     /**
-     * @return (Updatable) Possible type of entity
+     * @return (Updatable) Type of entity
      * 
      */
     public Optional<Output<String>> entityType() {
@@ -88,7 +88,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
         }
 
         /**
-         * @param displayName (Updatable) The display name of entity
+         * @param displayName (Updatable) Display name of the entity
          * 
          * @return builder
          * 
@@ -99,7 +99,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
         }
 
         /**
-         * @param displayName (Updatable) The display name of entity
+         * @param displayName (Updatable) Display name of the entity
          * 
          * @return builder
          * 
@@ -109,7 +109,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
         }
 
         /**
-         * @param entityType (Updatable) Possible type of entity
+         * @param entityType (Updatable) Type of entity
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs extends 
         }
 
         /**
-         * @param entityType (Updatable) Possible type of entity
+         * @param entityType (Updatable) Type of entity
          * 
          * @return builder
          * 

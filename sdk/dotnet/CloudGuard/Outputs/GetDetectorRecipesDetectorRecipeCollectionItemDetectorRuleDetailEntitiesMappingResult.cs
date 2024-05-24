@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
-        /// Possible type of entity
+        /// Type of entity
         /// </summary>
         public readonly string EntityType;
         /// <summary>

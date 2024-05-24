@@ -18,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetResult {
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
@@ -28,12 +28,12 @@ public final class GetGuardTargetResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private String displayName;
@@ -43,7 +43,7 @@ public final class GetGuardTargetResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private String id;
@@ -53,7 +53,7 @@ public final class GetGuardTargetResult {
      */
     private List<String> inheritedByCompartments;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     private String lifecyleDetails;
@@ -63,7 +63,7 @@ public final class GetGuardTargetResult {
      */
     private Integer recipeCount;
     /**
-     * @return The current state of the ResponderRule.
+     * @return The current lifecycle state of the responder rule
      * 
      */
     private String state;
@@ -78,7 +78,7 @@ public final class GetGuardTargetResult {
      */
     private List<GetGuardTargetTargetDetail> targetDetails;
     /**
-     * @return List of detector recipes associated with target
+     * @return List of detector recipes attached to target
      * 
      */
     private List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes;
@@ -89,12 +89,12 @@ public final class GetGuardTargetResult {
      */
     private String targetResourceId;
     /**
-     * @return possible type of targets
+     * @return Type of target
      * 
      */
     private String targetResourceType;
     /**
-     * @return List of responder recipes associated with target
+     * @return List of responder recipes attached to target
      * 
      */
     private List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes;
@@ -104,14 +104,14 @@ public final class GetGuardTargetResult {
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetResult() {}
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
@@ -125,14 +125,14 @@ public final class GetGuardTargetResult {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public String displayName() {
@@ -146,7 +146,7 @@ public final class GetGuardTargetResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public String id() {
@@ -160,7 +160,7 @@ public final class GetGuardTargetResult {
         return this.inheritedByCompartments;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     public String lifecyleDetails() {
@@ -174,7 +174,7 @@ public final class GetGuardTargetResult {
         return this.recipeCount;
     }
     /**
-     * @return The current state of the ResponderRule.
+     * @return The current lifecycle state of the responder rule
      * 
      */
     public String state() {
@@ -195,7 +195,7 @@ public final class GetGuardTargetResult {
         return this.targetDetails;
     }
     /**
-     * @return List of detector recipes associated with target
+     * @return List of detector recipes attached to target
      * 
      */
     public List<GetGuardTargetTargetDetectorRecipe> targetDetectorRecipes() {
@@ -212,14 +212,14 @@ public final class GetGuardTargetResult {
         return this.targetResourceId;
     }
     /**
-     * @return possible type of targets
+     * @return Type of target
      * 
      */
     public String targetResourceType() {
         return this.targetResourceType;
     }
     /**
-     * @return List of responder recipes associated with target
+     * @return List of responder recipes attached to target
      * 
      */
     public List<GetGuardTargetTargetResponderRecipe> targetResponderRecipes() {
@@ -233,7 +233,7 @@ public final class GetGuardTargetResult {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

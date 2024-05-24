@@ -13,17 +13,17 @@ import java.util.Objects;
 @CustomType
 public final class GetResponderRecipesResponderRecipeCollectionItemResponderRule {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     private List<GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail> details;
@@ -38,22 +38,22 @@ public final class GetResponderRecipesResponderRecipeCollectionItemResponderRule
      */
     private String lifecycleDetails;
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     private List<String> policies;
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique identifier for the responder rule
      * 
      */
     private String responderRuleId;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     private List<String> supportedModes;
@@ -63,33 +63,33 @@ public final class GetResponderRecipesResponderRecipeCollectionItemResponderRule
      */
     private String timeCreated;
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     private String type;
 
     private GetResponderRecipesResponderRecipeCollectionItemResponderRule() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public List<GetResponderRecipesResponderRecipeCollectionItemResponderRuleDetail> details() {
@@ -110,28 +110,28 @@ public final class GetResponderRecipesResponderRecipeCollectionItemResponderRule
         return this.lifecycleDetails;
     }
     /**
-     * @return List of Policy
+     * @return List of policies
      * 
      */
     public List<String> policies() {
         return this.policies;
     }
     /**
-     * @return Identifier for ResponderRule.
+     * @return Unique identifier for the responder rule
      * 
      */
     public String responderRuleId() {
         return this.responderRuleId;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return Supported Execution Modes
+     * @return Supported execution modes for the responder rule
      * 
      */
     public List<String> supportedModes() {
@@ -145,14 +145,14 @@ public final class GetResponderRecipesResponderRecipeCollectionItemResponderRule
         return this.timeCreated;
     }
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {
         return this.timeUpdated;
     }
     /**
-     * @return Type of Responder
+     * @return Type of responder
      * 
      */
     public String type() {

@@ -76,6 +76,7 @@ public final class GetModelDeploymentsModelDeployment {
      * 
      */
     private String modelDeploymentUrl;
+    private String opcParentRptUrl;
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
@@ -177,6 +178,9 @@ public final class GetModelDeploymentsModelDeployment {
     public String modelDeploymentUrl() {
         return this.modelDeploymentUrl;
     }
+    public String opcParentRptUrl() {
+        return this.opcParentRptUrl;
+    }
     /**
      * @return &lt;b&gt;Filter&lt;/b&gt; results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
      * 
@@ -220,6 +224,7 @@ public final class GetModelDeploymentsModelDeployment {
         private List<GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetail> modelDeploymentConfigurationDetails;
         private List<GetModelDeploymentsModelDeploymentModelDeploymentSystemData> modelDeploymentSystemDatas;
         private String modelDeploymentUrl;
+        private String opcParentRptUrl;
         private String projectId;
         private String state;
         private String timeCreated;
@@ -238,6 +243,7 @@ public final class GetModelDeploymentsModelDeployment {
     	      this.modelDeploymentConfigurationDetails = defaults.modelDeploymentConfigurationDetails;
     	      this.modelDeploymentSystemDatas = defaults.modelDeploymentSystemDatas;
     	      this.modelDeploymentUrl = defaults.modelDeploymentUrl;
+    	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
@@ -349,6 +355,14 @@ public final class GetModelDeploymentsModelDeployment {
             return this;
         }
         @CustomType.Setter
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            if (opcParentRptUrl == null) {
+              throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeployment", "opcParentRptUrl");
+            }
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetModelDeploymentsModelDeployment", "projectId");
@@ -386,6 +400,7 @@ public final class GetModelDeploymentsModelDeployment {
             _resultValue.modelDeploymentConfigurationDetails = modelDeploymentConfigurationDetails;
             _resultValue.modelDeploymentSystemDatas = modelDeploymentSystemDatas;
             _resultValue.modelDeploymentUrl = modelDeploymentUrl;
+            _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;

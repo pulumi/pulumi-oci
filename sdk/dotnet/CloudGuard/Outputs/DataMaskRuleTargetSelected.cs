@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class DataMaskRuleTargetSelected
     {
         /// <summary>
-        /// (Updatable) Target selection.
+        /// (Updatable) Kind of target selection to be used
         /// </summary>
         public readonly string Kind;
         /// <summary>
-        /// (Updatable) Types of Targets
+        /// (Updatable) Types of targets
         /// 
         /// 
         /// ** IMPORTANT **

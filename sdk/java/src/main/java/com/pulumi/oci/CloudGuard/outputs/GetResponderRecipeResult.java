@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetResponderRecipeResult {
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
@@ -26,17 +26,17 @@ public final class GetResponderRecipeResult {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private String displayName;
     /**
-     * @return List of responder rules associated with the recipe
+     * @return List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     private List<GetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
@@ -46,7 +46,7 @@ public final class GetResponderRecipeResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for the responder recip
      * 
      */
     private String id;
@@ -56,7 +56,7 @@ public final class GetResponderRecipeResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of responder recipe
      * 
      */
     private String owner;
@@ -67,12 +67,12 @@ public final class GetResponderRecipeResult {
      */
     private List<GetResponderRecipeResponderRule> responderRules;
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      */
     private String sourceResponderRecipeId;
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     private String state;
@@ -87,14 +87,14 @@ public final class GetResponderRecipeResult {
      */
     private String timeCreated;
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetResponderRecipeResult() {}
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
@@ -108,21 +108,21 @@ public final class GetResponderRecipeResult {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return List of responder rules associated with the recipe
+     * @return List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     public List<GetResponderRecipeEffectiveResponderRule> effectiveResponderRules() {
@@ -136,7 +136,7 @@ public final class GetResponderRecipeResult {
         return this.freeformTags;
     }
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for the responder recip
      * 
      */
     public String id() {
@@ -150,7 +150,7 @@ public final class GetResponderRecipeResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of responder recipe
      * 
      */
     public String owner() {
@@ -167,14 +167,14 @@ public final class GetResponderRecipeResult {
         return this.responderRules;
     }
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      */
     public String sourceResponderRecipeId() {
         return this.sourceResponderRecipeId;
     }
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public String state() {
@@ -195,7 +195,7 @@ public final class GetResponderRecipeResult {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

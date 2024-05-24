@@ -15,122 +15,122 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipeDetectorRuleDetail {
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     private String condition;
     /**
-     * @return Configuration details
+     * @return List of detector rule configurations
      * 
      */
     private List<GetDetectorRecipeDetectorRuleDetailConfiguration> configurations;
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     private String dataSourceId;
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     private String description;
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     private List<GetDetectorRecipeDetectorRuleDetailEntitiesMapping> entitiesMappings;
     /**
-     * @return configuration allowed or not
+     * @return Can the rule be configured?
      * 
      */
     private Boolean isConfigurationAllowed;
     /**
-     * @return Enables the control
+     * @return Enablement status for the rule
      * 
      */
     private Boolean isEnabled;
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     private List<String> labels;
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     private String recommendation;
     /**
-     * @return The Risk Level
+     * @return The risk level for the rule
      * 
      */
     private String riskLevel;
 
     private GetDetectorRecipeDetectorRuleDetail() {}
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public String condition() {
         return this.condition;
     }
     /**
-     * @return Configuration details
+     * @return List of detector rule configurations
      * 
      */
     public List<GetDetectorRecipeDetectorRuleDetailConfiguration> configurations() {
         return this.configurations;
     }
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public String dataSourceId() {
         return this.dataSourceId;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     public List<GetDetectorRecipeDetectorRuleDetailEntitiesMapping> entitiesMappings() {
         return this.entitiesMappings;
     }
     /**
-     * @return configuration allowed or not
+     * @return Can the rule be configured?
      * 
      */
     public Boolean isConfigurationAllowed() {
         return this.isConfigurationAllowed;
     }
     /**
-     * @return Enables the control
+     * @return Enablement status for the rule
      * 
      */
     public Boolean isEnabled() {
         return this.isEnabled;
     }
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     public List<String> labels() {
         return this.labels;
     }
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     public String recommendation() {
         return this.recommendation;
     }
     /**
-     * @return The Risk Level
+     * @return The risk level for the rule
      * 
      */
     public String riskLevel() {

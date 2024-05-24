@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     private @Nullable String dataSourceId;
@@ -27,29 +27,29 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String description;
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details;
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     private @Nullable String detector;
     /**
-     * @return The unique identifier of the detector rule.
+     * @return The unique identifier of the detector rule
      * 
      */
     private @Nullable String detectorRuleId;
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for a detector rule
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings;
@@ -59,27 +59,27 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String lifecycleDetails;
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     private @Nullable List<String> managedListTypes;
     /**
-     * @return Recommendation for TargetDetectorRecipeDetectorRule
+     * @return Recommendation for TargetDetectorRecipeDetectorRule resource
      * 
      */
     private @Nullable String recommendation;
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
      * 
      */
     private @Nullable String resourceType;
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     private @Nullable String serviceType;
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     private @Nullable String state;
@@ -89,14 +89,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
 
     private TargetTargetDetectorRecipeEffectiveDetectorRule() {}
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public Optional<String> dataSourceId() {
@@ -112,28 +112,28 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetail> details() {
         return this.details == null ? List.of() : this.details;
     }
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     public Optional<String> detector() {
         return Optional.ofNullable(this.detector);
     }
     /**
-     * @return The unique identifier of the detector rule.
+     * @return The unique identifier of the detector rule
      * 
      */
     public Optional<String> detectorRuleId() {
         return Optional.ofNullable(this.detectorRuleId);
     }
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -142,7 +142,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for a detector rule
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -156,35 +156,35 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.lifecycleDetails);
     }
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public List<String> managedListTypes() {
         return this.managedListTypes == null ? List.of() : this.managedListTypes;
     }
     /**
-     * @return Recommendation for TargetDetectorRecipeDetectorRule
+     * @return Recommendation for TargetDetectorRecipeDetectorRule resource
      * 
      */
     public Optional<String> recommendation() {
         return Optional.ofNullable(this.recommendation);
     }
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
      * 
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);
     }
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public Optional<String> serviceType() {
         return Optional.ofNullable(this.serviceType);
     }
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<String> state() {
@@ -198,7 +198,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRule {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {

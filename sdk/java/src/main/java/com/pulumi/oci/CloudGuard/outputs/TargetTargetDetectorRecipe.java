@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipe {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -28,44 +28,49 @@ public final class TargetTargetDetectorRecipe {
      */
     private @Nullable String description;
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     private @Nullable String detector;
     /**
-     * @return Identifier for DetectorRecipe.
+     * @return Unique identifier for the target detector recipe
      * 
      */
     private String detectorRecipeId;
     /**
-     * @return (Updatable) Overrides to be applied to Detector Rule associated with the target
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    private @Nullable String detectorRecipeType;
+    /**
+     * @return (Updatable) List of overrides to be applied to detector rules associated with the target
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules;
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return List of effective detector rules for the detector type for recipe after applying defaults
+     * @return List of currently enabled detector rules for the detector type for recipe after applying defaults
      * 
      */
     private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private @Nullable String id;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private @Nullable String owner;
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     private @Nullable String state;
@@ -75,14 +80,14 @@ public final class TargetTargetDetectorRecipe {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
 
     private TargetTargetDetectorRecipe() {}
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
@@ -98,28 +103,35 @@ public final class TargetTargetDetectorRecipe {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     public Optional<String> detector() {
         return Optional.ofNullable(this.detector);
     }
     /**
-     * @return Identifier for DetectorRecipe.
+     * @return Unique identifier for the target detector recipe
      * 
      */
     public String detectorRecipeId() {
         return this.detectorRecipeId;
     }
     /**
-     * @return (Updatable) Overrides to be applied to Detector Rule associated with the target
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public Optional<String> detectorRecipeType() {
+        return Optional.ofNullable(this.detectorRecipeType);
+    }
+    /**
+     * @return (Updatable) List of overrides to be applied to detector rules associated with the target
      * 
      */
     public List<TargetTargetDetectorRecipeDetectorRule> detectorRules() {
         return this.detectorRules == null ? List.of() : this.detectorRules;
     }
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -128,28 +140,28 @@ public final class TargetTargetDetectorRecipe {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return List of effective detector rules for the detector type for recipe after applying defaults
+     * @return List of currently enabled detector rules for the detector type for recipe after applying defaults
      * 
      */
     public List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules() {
         return this.effectiveDetectorRules == null ? List.of() : this.effectiveDetectorRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
     }
     /**
-     * @return (Updatable) The current state of the DetectorRule.
+     * @return (Updatable) The enablement state of the detector rule
      * 
      */
     public Optional<String> state() {
@@ -163,7 +175,7 @@ public final class TargetTargetDetectorRecipe {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {
@@ -183,6 +195,7 @@ public final class TargetTargetDetectorRecipe {
         private @Nullable String description;
         private @Nullable String detector;
         private String detectorRecipeId;
+        private @Nullable String detectorRecipeType;
         private @Nullable List<TargetTargetDetectorRecipeDetectorRule> detectorRules;
         private @Nullable String displayName;
         private @Nullable List<TargetTargetDetectorRecipeEffectiveDetectorRule> effectiveDetectorRules;
@@ -198,6 +211,7 @@ public final class TargetTargetDetectorRecipe {
     	      this.description = defaults.description;
     	      this.detector = defaults.detector;
     	      this.detectorRecipeId = defaults.detectorRecipeId;
+    	      this.detectorRecipeType = defaults.detectorRecipeType;
     	      this.detectorRules = defaults.detectorRules;
     	      this.displayName = defaults.displayName;
     	      this.effectiveDetectorRules = defaults.effectiveDetectorRules;
@@ -232,6 +246,12 @@ public final class TargetTargetDetectorRecipe {
               throw new MissingRequiredPropertyException("TargetTargetDetectorRecipe", "detectorRecipeId");
             }
             this.detectorRecipeId = detectorRecipeId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder detectorRecipeType(@Nullable String detectorRecipeType) {
+
+            this.detectorRecipeType = detectorRecipeType;
             return this;
         }
         @CustomType.Setter
@@ -294,6 +314,7 @@ public final class TargetTargetDetectorRecipe {
             _resultValue.description = description;
             _resultValue.detector = detector;
             _resultValue.detectorRecipeId = detectorRecipeId;
+            _resultValue.detectorRecipeType = detectorRecipeType;
             _resultValue.detectorRules = detectorRules;
             _resultValue.displayName = displayName;
             _resultValue.effectiveDetectorRules = effectiveDetectorRules;

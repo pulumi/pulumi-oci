@@ -14,37 +14,37 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetTargetResponderRecipe {
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private String displayName;
     /**
-     * @return List of responder rules associated with the recipe after applying all defaults
+     * @return List of currently enabled responder rules for the responder type for recipe after applying defaults
      * 
      */
     private List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private String id;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private String owner;
     /**
-     * @return Unique identifier for Responder Recipe of which this is an extension.
+     * @return Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
      * 
      */
     private String responderRecipeId;
@@ -59,56 +59,56 @@ public final class GetGuardTargetTargetResponderRecipe {
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetTargetResponderRecipe() {}
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public String displayName() {
         return this.displayName;
     }
     /**
-     * @return List of responder rules associated with the recipe after applying all defaults
+     * @return List of currently enabled responder rules for the responder type for recipe after applying defaults
      * 
      */
     public List<GetGuardTargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules() {
         return this.effectiveResponderRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return Unique identifier for Responder Recipe of which this is an extension.
+     * @return Unique identifier for the Oracle-managed responder recipe from which this recipe was cloned
      * 
      */
     public String responderRecipeId() {
@@ -129,7 +129,7 @@ public final class GetGuardTargetTargetResponderRecipe {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

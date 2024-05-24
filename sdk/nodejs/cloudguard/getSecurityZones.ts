@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a list of all security zones in a compartment.
+ * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+ * compartmentId. List is contained in a page of SecurityZoneSummary resources.
  *
  * ## Example Usage
  *
@@ -46,7 +47,7 @@ export function getSecurityZones(args: GetSecurityZonesArgs, opts?: pulumi.Invok
  */
 export interface GetSecurityZonesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -55,19 +56,19 @@ export interface GetSecurityZonesArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetSecurityZonesFilter[];
     /**
-     * The unique identifier of the security zone (`SecurityZone`)
+     * The unique identifier of the security zone (`SecurityZone` resource).
      */
     id?: string;
     /**
-     * security zones in the subtree
+     * Is security zones in the subtree?
      */
     isRequiredSecurityZonesInSubtree?: boolean;
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
      */
     securityRecipeId?: string;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
 }
@@ -81,12 +82,12 @@ export interface GetSecurityZonesResult {
      */
     readonly compartmentId: string;
     /**
-     * The security zone's name
+     * The security zone's display name
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetSecurityZonesFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can’t be changed after creation
      */
     readonly id?: string;
     readonly isRequiredSecurityZonesInSubtree?: boolean;
@@ -96,14 +97,15 @@ export interface GetSecurityZonesResult {
      */
     readonly securityZoneCollections: outputs.CloudGuard.GetSecurityZonesSecurityZoneCollection[];
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a list of all security zones in a compartment.
+ * Returns a list of security zones (SecurityZone resources) in a compartment identified by
+ * compartmentId. List is contained in a page of SecurityZoneSummary resources.
  *
  * ## Example Usage
  *
@@ -130,7 +132,7 @@ export function getSecurityZonesOutput(args: GetSecurityZonesOutputArgs, opts?: 
  */
 export interface GetSecurityZonesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -139,19 +141,19 @@ export interface GetSecurityZonesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSecurityZonesFilterArgs>[]>;
     /**
-     * The unique identifier of the security zone (`SecurityZone`)
+     * The unique identifier of the security zone (`SecurityZone` resource).
      */
     id?: pulumi.Input<string>;
     /**
-     * security zones in the subtree
+     * Is security zones in the subtree?
      */
     isRequiredSecurityZonesInSubtree?: pulumi.Input<boolean>;
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
      */
     securityRecipeId?: pulumi.Input<string>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
 }

@@ -32,6 +32,14 @@ import * as utilities from "../utilities";
  *             environmentVariables: pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables,
  *             maximumRuntimeInMinutes: pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
  *         },
+ *         stepContainerConfigurationDetails: {
+ *             containerType: pipelineStepDetailsStepContainerConfigurationDetailsContainerType,
+ *             image: pipelineStepDetailsStepContainerConfigurationDetailsImage,
+ *             cmds: pipelineStepDetailsStepContainerConfigurationDetailsCmd,
+ *             entrypoints: pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint,
+ *             imageDigest: pipelineStepDetailsStepContainerConfigurationDetailsImageDigest,
+ *             imageSignatureId: testImageSignature.id,
+ *         },
  *         stepInfrastructureConfigurationDetails: {
  *             blockStorageSizeInGbs: pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs,
  *             shapeConfigDetails: {
@@ -39,6 +47,7 @@ import * as utilities from "../utilities";
  *                 ocpus: pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
  *             },
  *             shapeName: testShape.name,
+ *             subnetId: testSubnet.id,
  *         },
  *     }],
  *     configurationDetails: {
@@ -62,6 +71,7 @@ import * as utilities from "../utilities";
  *             memoryInGbs: pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs,
  *             ocpus: pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus,
  *         },
+ *         subnetId: testSubnet.id,
  *     },
  *     logConfigurationDetails: {
  *         enableAutoLogCreation: pipelineLogConfigurationDetailsEnableAutoLogCreation,
@@ -138,7 +148,7 @@ export class Pipeline extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The infrastructure configuration details of a pipeline or a step.
+     * (Updatable) The infrastructure configuration details of a pipeline or a step.
      */
     public readonly infrastructureConfigurationDetails!: pulumi.Output<outputs.DataScience.PipelineInfrastructureConfigurationDetails>;
     /**
@@ -275,7 +285,7 @@ export interface PipelineState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The infrastructure configuration details of a pipeline or a step.
+     * (Updatable) The infrastructure configuration details of a pipeline or a step.
      */
     infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetails>;
     /**
@@ -343,7 +353,7 @@ export interface PipelineArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The infrastructure configuration details of a pipeline or a step.
+     * (Updatable) The infrastructure configuration details of a pipeline or a step.
      */
     infrastructureConfigurationDetails?: pulumi.Input<inputs.DataScience.PipelineInfrastructureConfigurationDetails>;
     /**

@@ -21,7 +21,7 @@ class GetQueueResult:
     """
     A collection of values returned by getQueue.
     """
-    def __init__(__self__, channel_consumption_limit=None, compartment_id=None, custom_encryption_key_id=None, dead_letter_queue_delivery_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, messages_endpoint=None, purge_queue=None, purge_type=None, queue_id=None, retention_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, timeout_in_seconds=None, visibility_in_seconds=None):
+    def __init__(__self__, channel_consumption_limit=None, compartment_id=None, custom_encryption_key_id=None, dead_letter_queue_delivery_count=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, messages_endpoint=None, purge_trigger=None, purge_type=None, queue_id=None, retention_in_seconds=None, state=None, system_tags=None, time_created=None, time_updated=None, timeout_in_seconds=None, visibility_in_seconds=None):
         if channel_consumption_limit and not isinstance(channel_consumption_limit, int):
             raise TypeError("Expected argument 'channel_consumption_limit' to be a int")
         pulumi.set(__self__, "channel_consumption_limit", channel_consumption_limit)
@@ -52,9 +52,9 @@ class GetQueueResult:
         if messages_endpoint and not isinstance(messages_endpoint, str):
             raise TypeError("Expected argument 'messages_endpoint' to be a str")
         pulumi.set(__self__, "messages_endpoint", messages_endpoint)
-        if purge_queue and not isinstance(purge_queue, bool):
-            raise TypeError("Expected argument 'purge_queue' to be a bool")
-        pulumi.set(__self__, "purge_queue", purge_queue)
+        if purge_trigger and not isinstance(purge_trigger, int):
+            raise TypeError("Expected argument 'purge_trigger' to be a int")
+        pulumi.set(__self__, "purge_trigger", purge_trigger)
         if purge_type and not isinstance(purge_type, str):
             raise TypeError("Expected argument 'purge_type' to be a str")
         pulumi.set(__self__, "purge_type", purge_type)
@@ -164,9 +164,9 @@ class GetQueueResult:
         return pulumi.get(self, "messages_endpoint")
 
     @property
-    @pulumi.getter(name="purgeQueue")
-    def purge_queue(self) -> bool:
-        return pulumi.get(self, "purge_queue")
+    @pulumi.getter(name="purgeTrigger")
+    def purge_trigger(self) -> int:
+        return pulumi.get(self, "purge_trigger")
 
     @property
     @pulumi.getter(name="purgeType")
@@ -251,7 +251,7 @@ class AwaitableGetQueueResult(GetQueueResult):
             id=self.id,
             lifecycle_details=self.lifecycle_details,
             messages_endpoint=self.messages_endpoint,
-            purge_queue=self.purge_queue,
+            purge_trigger=self.purge_trigger,
             purge_type=self.purge_type,
             queue_id=self.queue_id,
             retention_in_seconds=self.retention_in_seconds,
@@ -298,7 +298,7 @@ def get_queue(queue_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         messages_endpoint=pulumi.get(__ret__, 'messages_endpoint'),
-        purge_queue=pulumi.get(__ret__, 'purge_queue'),
+        purge_trigger=pulumi.get(__ret__, 'purge_trigger'),
         purge_type=pulumi.get(__ret__, 'purge_type'),
         queue_id=pulumi.get(__ret__, 'queue_id'),
         retention_in_seconds=pulumi.get(__ret__, 'retention_in_seconds'),

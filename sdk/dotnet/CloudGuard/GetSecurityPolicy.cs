@@ -14,7 +14,10 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+        /// Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+        /// (securityPolicyId). When a policy is enabled in a security zone, then any action in
+        /// the zone that attempts to violate that policy is blocked.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +43,10 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+        /// Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+        /// (securityPolicyId). When a policy is enabled in a security zone, then any action in
+        /// the zone that attempts to violate that policy is blocked.
+        /// 
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +74,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityPolicyArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique identifier of the security zone policy (`SecurityPolicy`)
+        /// The unique identifier of the security zone policy. (`SecurityPolicy`)
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public string SecurityPolicyId { get; set; } = null!;
@@ -82,7 +88,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityPolicyInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique identifier of the security zone policy (`SecurityPolicy`)
+        /// The unique identifier of the security zone policy. (`SecurityPolicy`)
         /// </summary>
         [Input("securityPolicyId", required: true)]
         public Input<string> SecurityPolicyId { get; set; } = null!;
@@ -98,11 +104,11 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityPolicyResult
     {
         /// <summary>
-        /// The category of security policy
+        /// The category of the security policy
         /// </summary>
         public readonly string Category;
         /// <summary>
-        /// The id of the security policy's compartment
+        /// The OCID of the security policy's compartment
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -114,7 +120,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The security policy's full name
+        /// The security policy's display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -143,7 +149,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<string> Services;
         /// <summary>
-        /// The current state of the security policy
+        /// The current lifecycle state of the security policy
         /// </summary>
         public readonly string State;
         /// <summary>

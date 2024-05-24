@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetResponderRecipeEffectiveResponderRuleArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs>? _details;
 
         /// <summary>
-        /// Details of ResponderRule.
+        /// Detailed information for a responder rule
         /// </summary>
         public InputList<Inputs.TargetTargetResponderRecipeEffectiveResponderRuleDetailArgs> Details
         {
@@ -39,7 +39,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -56,7 +56,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _policies;
 
         /// <summary>
-        /// List of Policy
+        /// List of policies
         /// </summary>
         public InputList<string> Policies
         {
@@ -65,13 +65,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Unique ResponderRule identifier.
+        /// Unique identifier for the responder rule
         /// </summary>
         [Input("responderRuleId")]
         public Input<string>? ResponderRuleId { get; set; }
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _supportedModes;
 
         /// <summary>
-        /// Supported Execution Modes
+        /// Supported execution modes for the responder rule
         /// </summary>
         public InputList<string> SupportedModes
         {
@@ -95,13 +95,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }
 
         /// <summary>
-        /// Type of Responder
+        /// Type of responder
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

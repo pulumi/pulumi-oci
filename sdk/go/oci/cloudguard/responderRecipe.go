@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Create a ResponderRecipe.
+// Creates a responder recipe (ResponderRecipe resource), from values passed in a
+// CreateResponderRecipeDetails resource.
 //
 // ## Import
 //
@@ -26,7 +27,7 @@ import (
 type ResponderRecipe struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -38,7 +39,7 @@ type ResponderRecipe struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// List of responder rules associated with the recipe
+	// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 	EffectiveResponderRules ResponderRecipeEffectiveResponderRuleArrayOutput `pulumi:"effectiveResponderRules"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -46,22 +47,22 @@ type ResponderRecipe struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// Owner of ResponderRecipe
+	// Owner of responder recipe
 	Owner pulumi.StringOutput `pulumi:"owner"`
-	// (Updatable) Responder Rules to override from source responder recipe
+	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayOutput `pulumi:"responderRules"`
-	// The id of the source responder recipe.
+	// The unique identifier of the source responder recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId pulumi.StringOutput `pulumi:"sourceResponderRecipeId"`
-	// The current state of the Example.
+	// The current lifecycle state of the example
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the responder recipe was updated. Format defined by RFC3339.
+	// The date and time the responder recipe was last updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -104,7 +105,7 @@ func GetResponderRecipe(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering ResponderRecipe resources.
 type responderRecipeState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -116,7 +117,7 @@ type responderRecipeState struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
-	// List of responder rules associated with the recipe
+	// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 	EffectiveResponderRules []ResponderRecipeEffectiveResponderRule `pulumi:"effectiveResponderRules"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -124,27 +125,27 @@ type responderRecipeState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// Owner of ResponderRecipe
+	// Owner of responder recipe
 	Owner *string `pulumi:"owner"`
-	// (Updatable) Responder Rules to override from source responder recipe
+	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules []ResponderRecipeResponderRule `pulumi:"responderRules"`
-	// The id of the source responder recipe.
+	// The unique identifier of the source responder recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId *string `pulumi:"sourceResponderRecipeId"`
-	// The current state of the Example.
+	// The current lifecycle state of the example
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the responder recipe was updated. Format defined by RFC3339.
+	// The date and time the responder recipe was last updated. Format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type ResponderRecipeState struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -156,7 +157,7 @@ type ResponderRecipeState struct {
 	//
 	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
-	// List of responder rules associated with the recipe
+	// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 	EffectiveResponderRules ResponderRecipeEffectiveResponderRuleArrayInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -164,22 +165,22 @@ type ResponderRecipeState struct {
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// Owner of ResponderRecipe
+	// Owner of responder recipe
 	Owner pulumi.StringPtrInput
-	// (Updatable) Responder Rules to override from source responder recipe
+	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayInput
-	// The id of the source responder recipe.
+	// The unique identifier of the source responder recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceResponderRecipeId pulumi.StringPtrInput
-	// The current state of the Example.
+	// The current lifecycle state of the example
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
 	// The date and time the responder recipe was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the responder recipe was updated. Format defined by RFC3339.
+	// The date and time the responder recipe was last updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -188,7 +189,7 @@ func (ResponderRecipeState) ElementType() reflect.Type {
 }
 
 type responderRecipeArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -204,9 +205,9 @@ type responderRecipeArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Responder Rules to override from source responder recipe
+	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules []ResponderRecipeResponderRule `pulumi:"responderRules"`
-	// The id of the source responder recipe.
+	// The unique identifier of the source responder recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -215,7 +216,7 @@ type responderRecipeArgs struct {
 
 // The set of arguments for constructing a ResponderRecipe resource.
 type ResponderRecipeArgs struct {
-	// (Updatable) Compartment Identifier
+	// (Updatable) Compartment OCID
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -231,9 +232,9 @@ type ResponderRecipeArgs struct {
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) Responder Rules to override from source responder recipe
+	// (Updatable) List of responder rules to override from source responder recipe
 	ResponderRules ResponderRecipeResponderRuleArrayInput
-	// The id of the source responder recipe.
+	// The unique identifier of the source responder recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -327,7 +328,7 @@ func (o ResponderRecipeOutput) ToResponderRecipeOutputWithContext(ctx context.Co
 	return o
 }
 
-// (Updatable) Compartment Identifier
+// (Updatable) Compartment OCID
 func (o ResponderRecipeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -351,7 +352,7 @@ func (o ResponderRecipeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// List of responder rules associated with the recipe
+// List of currently enabled responder rules for the responder type, for recipe after applying defaults
 func (o ResponderRecipeOutput) EffectiveResponderRules() ResponderRecipeEffectiveResponderRuleArrayOutput {
 	return o.ApplyT(func(v *ResponderRecipe) ResponderRecipeEffectiveResponderRuleArrayOutput {
 		return v.EffectiveResponderRules
@@ -370,17 +371,17 @@ func (o ResponderRecipeOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Owner of ResponderRecipe
+// Owner of responder recipe
 func (o ResponderRecipeOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
-// (Updatable) Responder Rules to override from source responder recipe
+// (Updatable) List of responder rules to override from source responder recipe
 func (o ResponderRecipeOutput) ResponderRules() ResponderRecipeResponderRuleArrayOutput {
 	return o.ApplyT(func(v *ResponderRecipe) ResponderRecipeResponderRuleArrayOutput { return v.ResponderRules }).(ResponderRecipeResponderRuleArrayOutput)
 }
 
-// The id of the source responder recipe.
+// The unique identifier of the source responder recipe
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -388,7 +389,7 @@ func (o ResponderRecipeOutput) SourceResponderRecipeId() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.SourceResponderRecipeId }).(pulumi.StringOutput)
 }
 
-// The current state of the Example.
+// The current lifecycle state of the example
 func (o ResponderRecipeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
@@ -403,7 +404,7 @@ func (o ResponderRecipeOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the responder recipe was updated. Format defined by RFC3339.
+// The date and time the responder recipe was last updated. Format defined by RFC3339.
 func (o ResponderRecipeOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *ResponderRecipe) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

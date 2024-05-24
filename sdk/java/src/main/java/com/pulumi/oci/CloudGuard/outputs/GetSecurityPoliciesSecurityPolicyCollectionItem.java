@@ -14,12 +14,12 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
     /**
-     * @return The category of security policy
+     * @return The category of the security policy
      * 
      */
     private String category;
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -49,7 +49,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
      */
     private String friendlyName;
     /**
-     * @return The unique identifier of the security zone policy (`SecurityPolicy`)
+     * @return The unique identifier of the security zone policy. (`SecurityPolicy`)
      * 
      */
     private String id;
@@ -69,7 +69,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
      */
     private List<String> services;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -86,14 +86,14 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
 
     private GetSecurityPoliciesSecurityPolicyCollectionItem() {}
     /**
-     * @return The category of security policy
+     * @return The category of the security policy
      * 
      */
     public String category() {
         return this.category;
     }
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -135,7 +135,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
         return this.friendlyName;
     }
     /**
-     * @return The unique identifier of the security zone policy (`SecurityPolicy`)
+     * @return The unique identifier of the security zone policy. (`SecurityPolicy`)
      * 
      */
     public String id() {
@@ -163,7 +163,7 @@ public final class GetSecurityPoliciesSecurityPolicyCollectionItem {
         return this.services;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {

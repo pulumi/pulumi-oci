@@ -76,6 +76,7 @@ public final class GetPipelineRunsPipelineRun {
      * 
      */
     private List<GetPipelineRunsPipelineRunLogDetail> logDetails;
+    private String opcParentRptUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      * 
@@ -208,6 +209,9 @@ public final class GetPipelineRunsPipelineRun {
     public List<GetPipelineRunsPipelineRunLogDetail> logDetails() {
         return this.logDetails;
     }
+    public String opcParentRptUrl() {
+        return this.opcParentRptUrl;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
      * 
@@ -300,6 +304,7 @@ public final class GetPipelineRunsPipelineRun {
         private String lifecycleDetails;
         private List<GetPipelineRunsPipelineRunLogConfigurationOverrideDetail> logConfigurationOverrideDetails;
         private List<GetPipelineRunsPipelineRunLogDetail> logDetails;
+        private String opcParentRptUrl;
         private String pipelineId;
         private String projectId;
         private String state;
@@ -325,6 +330,7 @@ public final class GetPipelineRunsPipelineRun {
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logConfigurationOverrideDetails = defaults.logConfigurationOverrideDetails;
     	      this.logDetails = defaults.logDetails;
+    	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.pipelineId = defaults.pipelineId;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
@@ -446,6 +452,14 @@ public final class GetPipelineRunsPipelineRun {
             return logDetails(List.of(logDetails));
         }
         @CustomType.Setter
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            if (opcParentRptUrl == null) {
+              throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "opcParentRptUrl");
+            }
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder pipelineId(String pipelineId) {
             if (pipelineId == null) {
               throw new MissingRequiredPropertyException("GetPipelineRunsPipelineRun", "pipelineId");
@@ -545,6 +559,7 @@ public final class GetPipelineRunsPipelineRun {
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logConfigurationOverrideDetails = logConfigurationOverrideDetails;
             _resultValue.logDetails = logDetails;
+            _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.pipelineId = pipelineId;
             _resultValue.projectId = projectId;
             _resultValue.state = state;

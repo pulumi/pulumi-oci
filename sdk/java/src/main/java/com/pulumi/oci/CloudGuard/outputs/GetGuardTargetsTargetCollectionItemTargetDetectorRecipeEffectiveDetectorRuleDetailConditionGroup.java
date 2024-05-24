@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     private String condition;
 
     private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeEffectiveDetectorRuleDetailConditionGroup() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public String condition() {

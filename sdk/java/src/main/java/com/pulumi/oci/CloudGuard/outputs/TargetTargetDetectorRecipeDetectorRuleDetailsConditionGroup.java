@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup {
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return (Updatable) Compartment OCID associated with condition
      * 
      */
     private String compartmentId;
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     private String condition;
 
     private TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroup() {}
     /**
-     * @return (Updatable) compartment associated with condition
+     * @return (Updatable) Compartment OCID associated with condition
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return (Updatable) Base condition object
+     * @return (Updatable) The base condition resource.
      * 
      */
     public String condition() {

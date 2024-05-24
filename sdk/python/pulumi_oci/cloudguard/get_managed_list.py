@@ -78,7 +78,7 @@ class GetManagedListResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -94,7 +94,7 @@ class GetManagedListResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        ManagedList description.
+        Managed list description
         """
         return pulumi.get(self, "description")
 
@@ -102,7 +102,7 @@ class GetManagedListResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        ManagedList display name.
+        Managed list display name
         """
         return pulumi.get(self, "display_name")
 
@@ -110,7 +110,7 @@ class GetManagedListResult:
     @pulumi.getter(name="feedProvider")
     def feed_provider(self) -> str:
         """
-        provider of the feed
+        Provider of the managed list feed
         """
         return pulumi.get(self, "feed_provider")
 
@@ -126,7 +126,7 @@ class GetManagedListResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -134,7 +134,7 @@ class GetManagedListResult:
     @pulumi.getter(name="isEditable")
     def is_editable(self) -> bool:
         """
-        If this list is editable or not
+        Is this list editable?
         """
         return pulumi.get(self, "is_editable")
 
@@ -142,7 +142,7 @@ class GetManagedListResult:
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -150,7 +150,7 @@ class GetManagedListResult:
     @pulumi.getter(name="listItems")
     def list_items(self) -> Sequence[str]:
         """
-        List of ManagedListItem
+        List of items in the managed list
         """
         return pulumi.get(self, "list_items")
 
@@ -158,7 +158,7 @@ class GetManagedListResult:
     @pulumi.getter(name="listType")
     def list_type(self) -> str:
         """
-        type of the list
+        Type of information contained in the managed list
         """
         return pulumi.get(self, "list_type")
 
@@ -171,7 +171,7 @@ class GetManagedListResult:
     @pulumi.getter(name="sourceManagedListId")
     def source_managed_list_id(self) -> str:
         """
-        OCID of the Source ManagedList
+        OCID of the source managed list
         """
         return pulumi.get(self, "source_managed_list_id")
 
@@ -179,7 +179,7 @@ class GetManagedListResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the resource.
+        The current lifecycle state of the resource
         """
         return pulumi.get(self, "state")
 
@@ -203,7 +203,7 @@ class GetManagedListResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The date and time the managed list was updated. Format defined by RFC3339.
+        The date and time the managed list was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -250,7 +250,7 @@ def get_managed_list(managed_list_id: Optional[str] = None,
     ```
 
 
-    :param str managed_list_id: The cloudguard list OCID to be passed in the request.
+    :param str managed_list_id: The managed list OCID to be passed in the request.
     """
     __args__ = dict()
     __args__['managedListId'] = managed_list_id
@@ -295,6 +295,6 @@ def get_managed_list_output(managed_list_id: Optional[pulumi.Input[str]] = None,
     ```
 
 
-    :param str managed_list_id: The cloudguard list OCID to be passed in the request.
+    :param str managed_list_id: The managed list OCID to be passed in the request.
     """
     ...

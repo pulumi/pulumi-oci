@@ -17,44 +17,12 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
+ * Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+ * The reporting region cannot be updated once created.
  * 
  * ## Example Usage
  * 
  * &lt;!--Start PulumiCodeChooser --&gt;
- * <pre>
- * {@code
- * package generated_program;
- * 
- * import com.pulumi.Context;
- * import com.pulumi.Pulumi;
- * import com.pulumi.core.Output;
- * import com.pulumi.oci.CloudGuard.CloudGuardConfiguration;
- * import com.pulumi.oci.CloudGuard.CloudGuardConfigurationArgs;
- * import java.util.List;
- * import java.util.ArrayList;
- * import java.util.Map;
- * import java.io.File;
- * import java.nio.file.Files;
- * import java.nio.file.Paths;
- * 
- * public class App {
- *     public static void main(String[] args) {
- *         Pulumi.run(App::stack);
- *     }
- * 
- *     public static void stack(Context ctx) {
- *         var testCloudGuardConfiguration = new CloudGuardConfiguration("testCloudGuardConfiguration", CloudGuardConfigurationArgs.builder()
- *             .compartmentId(compartmentId)
- *             .reportingRegion(cloudGuardConfigurationReportingRegion)
- *             .status(cloudGuardConfigurationStatus)
- *             .selfManageResources(cloudGuardConfigurationSelfManageResources)
- *             .build());
- * 
- *     }
- * }
- * }
- * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
  * 
  * ## Import
@@ -65,28 +33,28 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration")
 public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) The ID of the compartment in which to list resources.
+     * (Updatable) The OCID of the compartment in which to list resources.
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The ID of the compartment in which to list resources.
+     * @return (Updatable) The OCID of the compartment in which to list resources.
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) The reporting region value
+     * (Updatable) The reporting region
      * 
      */
     @Export(name="reportingRegion", refs={String.class}, tree="[0]")
     private Output<String> reportingRegion;
 
     /**
-     * @return (Updatable) The reporting region value
+     * @return (Updatable) The reporting region
      * 
      */
     public Output<String> reportingRegion() {
@@ -107,7 +75,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
         return this.selfManageResources;
     }
     /**
-     * (Updatable) Status of Cloud Guard Tenant
+     * (Updatable) Status of Cloud Guard tenant
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -117,7 +85,7 @@ public class CloudGuardConfiguration extends com.pulumi.resources.CustomResource
     private Output<String> status;
 
     /**
-     * @return (Updatable) Status of Cloud Guard Tenant
+     * @return (Updatable) Status of Cloud Guard tenant
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

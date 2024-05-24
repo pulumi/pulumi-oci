@@ -85,6 +85,7 @@ import javax.annotation.Nullable;
  *                 .logGroupId(testLogGroup.id())
  *                 .logId(testLog.id())
  *                 .build())
+ *             .opcParentRptUrl(jobRunOpcParentRptUrl)
  *             .build());
  * 
  *     }
@@ -299,6 +300,20 @@ public class JobRun extends com.pulumi.resources.CustomResource {
      */
     public Output<List<JobRunLogDetail>> logDetails() {
         return this.logDetails;
+    }
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    @Export(name="opcParentRptUrl", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> opcParentRptUrl;
+
+    /**
+     * @return URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    public Output<Optional<String>> opcParentRptUrl() {
+        return Codegen.optional(this.opcParentRptUrl);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.

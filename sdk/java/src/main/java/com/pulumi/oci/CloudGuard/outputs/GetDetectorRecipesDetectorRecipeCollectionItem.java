@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -26,15 +26,20 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     private String description;
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     private String detector;
+    /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    private String detectorRecipeType;
     /**
      * @return List of detector rules for the detector type for recipe - user input
      * 
@@ -56,7 +61,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     private String id;
@@ -66,12 +71,12 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
      */
     private String owner;
     /**
-     * @return Recipe Ocid of the Source Recipe to be cloned
+     * @return Recipe OCID of the source recipe to be cloned
      * 
      */
     private String sourceDetectorRecipeId;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -81,24 +86,24 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The recipe attached to targets
+     * @return List of target IDs to which the recipe is attached
      * 
      */
     private List<String> targetIds;
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetDetectorRecipesDetectorRecipeCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -112,18 +117,25 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     public String detector() {
         return this.detector;
+    }
+    /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public String detectorRecipeType() {
+        return this.detectorRecipeType;
     }
     /**
      * @return List of detector rules for the detector type for recipe - user input
@@ -154,7 +166,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Ocid for detector recipe
+     * @return OCID for detector recipe
      * 
      */
     public String id() {
@@ -168,14 +180,14 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
         return this.owner;
     }
     /**
-     * @return Recipe Ocid of the Source Recipe to be cloned
+     * @return Recipe OCID of the source recipe to be cloned
      * 
      */
     public String sourceDetectorRecipeId() {
         return this.sourceDetectorRecipeId;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
@@ -189,21 +201,21 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
         return this.systemTags;
     }
     /**
-     * @return The recipe attached to targets
+     * @return List of target IDs to which the recipe is attached
      * 
      */
     public List<String> targetIds() {
         return this.targetIds;
     }
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {
@@ -223,6 +235,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
         private Map<String,Object> definedTags;
         private String description;
         private String detector;
+        private String detectorRecipeType;
         private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule> detectorRules;
         private String displayName;
         private List<GetDetectorRecipesDetectorRecipeCollectionItemEffectiveDetectorRule> effectiveDetectorRules;
@@ -242,6 +255,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.detector = defaults.detector;
+    	      this.detectorRecipeType = defaults.detectorRecipeType;
     	      this.detectorRules = defaults.detectorRules;
     	      this.displayName = defaults.displayName;
     	      this.effectiveDetectorRules = defaults.effectiveDetectorRules;
@@ -286,6 +300,14 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
               throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItem", "detector");
             }
             this.detector = detector;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder detectorRecipeType(String detectorRecipeType) {
+            if (detectorRecipeType == null) {
+              throw new MissingRequiredPropertyException("GetDetectorRecipesDetectorRecipeCollectionItem", "detectorRecipeType");
+            }
+            this.detectorRecipeType = detectorRecipeType;
             return this;
         }
         @CustomType.Setter
@@ -399,6 +421,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItem {
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.detector = detector;
+            _resultValue.detectorRecipeType = detectorRecipeType;
             _resultValue.detectorRules = detectorRules;
             _resultValue.displayName = displayName;
             _resultValue.effectiveDetectorRules = effectiveDetectorRules;

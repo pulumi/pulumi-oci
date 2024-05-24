@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:CloudGuard/adhocQuery:AdhocQuery":
+		r = &AdhocQuery{}
 	case "oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration":
 		r = &CloudGuardConfiguration{}
 	case "oci:CloudGuard/cloudGuardDataSource:CloudGuardDataSource":
@@ -33,12 +35,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ManagedList{}
 	case "oci:CloudGuard/responderRecipe:ResponderRecipe":
 		r = &ResponderRecipe{}
+	case "oci:CloudGuard/savedQuery:SavedQuery":
+		r = &SavedQuery{}
 	case "oci:CloudGuard/securityRecipe:SecurityRecipe":
 		r = &SecurityRecipe{}
 	case "oci:CloudGuard/securityZone:SecurityZone":
 		r = &SecurityZone{}
 	case "oci:CloudGuard/target:Target":
 		r = &Target{}
+	case "oci:CloudGuard/wlpAgent:WlpAgent":
+		r = &WlpAgent{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -52,6 +58,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CloudGuard/adhocQuery",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CloudGuard/cloudGuardConfiguration",
@@ -84,6 +95,11 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"oci",
+		"CloudGuard/savedQuery",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"CloudGuard/securityRecipe",
 		&module{version},
 	)
@@ -95,6 +111,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"CloudGuard/target",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"CloudGuard/wlpAgent",
 		&module{version},
 	)
 }

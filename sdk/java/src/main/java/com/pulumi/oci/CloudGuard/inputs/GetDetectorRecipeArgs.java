@@ -15,14 +15,14 @@ public final class GetDetectorRecipeArgs extends com.pulumi.resources.InvokeArgs
     public static final GetDetectorRecipeArgs Empty = new GetDetectorRecipeArgs();
 
     /**
-     * DetectorRecipe OCID
+     * Detector recipe OCID
      * 
      */
     @Import(name="detectorRecipeId", required=true)
     private Output<String> detectorRecipeId;
 
     /**
-     * @return DetectorRecipe OCID
+     * @return Detector recipe OCID
      * 
      */
     public Output<String> detectorRecipeId() {
@@ -54,7 +54,7 @@ public final class GetDetectorRecipeArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param detectorRecipeId DetectorRecipe OCID
+         * @param detectorRecipeId Detector recipe OCID
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetDetectorRecipeArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param detectorRecipeId DetectorRecipe OCID
+         * @param detectorRecipeId Detector recipe OCID
          * 
          * @return builder
          * 

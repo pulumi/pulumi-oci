@@ -19,14 +19,14 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
     public static final SecurityRecipeState Empty = new SecurityRecipeState();
 
     /**
-     * (Updatable) The compartment in which to create the recipe
+     * (Updatable) The OCID of the compartment in which to create the recipe
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment in which to create the recipe
+     * @return (Updatable) The OCID of the compartment in which to create the recipe
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -64,14 +64,18 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The recipe&#39;s name
+     * (Updatable) The recipe&#39;s display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) The recipe&#39;s name
+     * @return (Updatable) The recipe&#39;s display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -128,7 +132,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * (Updatable) The list of security policy IDs to include in the recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -138,7 +142,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
     private @Nullable Output<List<String>> securityPolicies;
 
     /**
-     * @return (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * @return (Updatable) The list of security policy IDs to include in the recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,14 +153,14 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the recipe
+     * @return The current lifecycle state of the recipe
      * 
      */
     public Optional<Output<String>> state() {
@@ -228,7 +232,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment in which to create the recipe
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the recipe
          * 
          * @return builder
          * 
@@ -239,7 +243,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment in which to create the recipe
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the recipe
          * 
          * @return builder
          * 
@@ -291,7 +295,9 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The recipe&#39;s name
+         * @param displayName (Updatable) The recipe&#39;s display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -302,7 +308,9 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param displayName (Updatable) The recipe&#39;s name
+         * @param displayName (Updatable) The recipe&#39;s display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -379,7 +387,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * @param securityPolicies (Updatable) The list of security policy IDs to include in the recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -393,7 +401,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * @param securityPolicies (Updatable) The list of security policy IDs to include in the recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -406,7 +414,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * @param securityPolicies (Updatable) The list of security policy IDs to include in the recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -419,7 +427,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The current state of the recipe
+         * @param state The current lifecycle state of the recipe
          * 
          * @return builder
          * 
@@ -430,7 +438,7 @@ public final class SecurityRecipeState extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param state The current state of the recipe
+         * @param state The current lifecycle state of the recipe
          * 
          * @return builder
          * 

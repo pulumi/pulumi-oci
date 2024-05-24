@@ -5,9 +5,9 @@ package com.pulumi.oci.DevOps.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
-import com.pulumi.oci.DevOps.outputs.GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress;
+import java.lang.Object;
 import java.lang.String;
-import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 
 @CustomType
@@ -16,7 +16,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProg
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    private List<GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses;
+    private Map<String,Object> deployStageExecutionProgress;
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
      * 
@@ -33,8 +33,8 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProg
      * @return Map of stage OCIDs to deploy stage execution progress model.
      * 
      */
-    public List<GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses() {
-        return this.deployStageExecutionProgresses;
+    public Map<String,Object> deployStageExecutionProgress() {
+        return this.deployStageExecutionProgress;
     }
     /**
      * @return Time the deployment is finished. Format defined by [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339).
@@ -60,27 +60,24 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProg
     }
     @CustomType.Builder
     public static final class Builder {
-        private List<GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses;
+        private Map<String,Object> deployStageExecutionProgress;
         private String timeFinished;
         private String timeStarted;
         public Builder() {}
         public Builder(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress defaults) {
     	      Objects.requireNonNull(defaults);
-    	      this.deployStageExecutionProgresses = defaults.deployStageExecutionProgresses;
+    	      this.deployStageExecutionProgress = defaults.deployStageExecutionProgress;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
         }
 
         @CustomType.Setter
-        public Builder deployStageExecutionProgresses(List<GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress> deployStageExecutionProgresses) {
-            if (deployStageExecutionProgresses == null) {
-              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress", "deployStageExecutionProgresses");
+        public Builder deployStageExecutionProgress(Map<String,Object> deployStageExecutionProgress) {
+            if (deployStageExecutionProgress == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress", "deployStageExecutionProgress");
             }
-            this.deployStageExecutionProgresses = deployStageExecutionProgresses;
+            this.deployStageExecutionProgress = deployStageExecutionProgress;
             return this;
-        }
-        public Builder deployStageExecutionProgresses(GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgressDeployStageExecutionProgress... deployStageExecutionProgresses) {
-            return deployStageExecutionProgresses(List.of(deployStageExecutionProgresses));
         }
         @CustomType.Setter
         public Builder timeFinished(String timeFinished) {
@@ -100,7 +97,7 @@ public final class GetDeploymentsDeploymentCollectionItemDeploymentExecutionProg
         }
         public GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress build() {
             final var _resultValue = new GetDeploymentsDeploymentCollectionItemDeploymentExecutionProgress();
-            _resultValue.deployStageExecutionProgresses = deployStageExecutionProgresses;
+            _resultValue.deployStageExecutionProgress = deployStageExecutionProgress;
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeStarted = timeStarted;
             return _resultValue;

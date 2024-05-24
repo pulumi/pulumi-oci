@@ -39,6 +39,7 @@ import * as utilities from "../utilities";
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
+ *     opcParentRptUrl: pipelineRunOpcParentRptUrl,
  *     projectId: testProject.id,
  *     stepOverrideDetails: [{
  *         stepConfigurationDetails: {
@@ -47,6 +48,14 @@ import * as utilities from "../utilities";
  *             maximumRuntimeInMinutes: pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes,
  *         },
  *         stepName: pipelineRunStepOverrideDetailsStepName,
+ *         stepContainerConfigurationDetails: {
+ *             containerType: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType,
+ *             image: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage,
+ *             cmds: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd,
+ *             entrypoints: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint,
+ *             imageDigest: pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest,
+ *             imageSignatureId: testImageSignature.id,
+ *         },
  *     }],
  *     systemTags: pipelineRunSystemTags,
  * });
@@ -130,6 +139,10 @@ export class PipelineRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.PipelineRunLogDetail[]>;
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    public readonly opcParentRptUrl!: pulumi.Output<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
     public readonly pipelineId!: pulumi.Output<string>;
@@ -198,6 +211,7 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logConfigurationOverrideDetails"] = state ? state.logConfigurationOverrideDetails : undefined;
             resourceInputs["logDetails"] = state ? state.logDetails : undefined;
+            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
             resourceInputs["pipelineId"] = state ? state.pipelineId : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
@@ -226,6 +240,7 @@ export class PipelineRun extends pulumi.CustomResource {
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["logConfigurationOverrideDetails"] = args ? args.logConfigurationOverrideDetails : undefined;
+            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
             resourceInputs["pipelineId"] = args ? args.pipelineId : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["stepOverrideDetails"] = args ? args.stepOverrideDetails : undefined;
@@ -291,6 +306,10 @@ export interface PipelineRunState {
      * Customer logging details for pipeline run.
      */
     logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineRunLogDetail>[]>;
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */
@@ -366,6 +385,10 @@ export interface PipelineRunArgs {
      * The pipeline log configuration details.
      */
     logConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.PipelineRunLogConfigurationOverrideDetails>;
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      */

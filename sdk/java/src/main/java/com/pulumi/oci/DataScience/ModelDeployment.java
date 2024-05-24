@@ -17,6 +17,7 @@ import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -132,6 +133,7 @@ import javax.annotation.Nullable;
  *             .description(modelDeploymentDescription)
  *             .displayName(modelDeploymentDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .opcParentRptUrl(modelDeploymentOpcParentRptUrl)
  *             .build());
  * 
  *     }
@@ -304,6 +306,20 @@ public class ModelDeployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> modelDeploymentUrl() {
         return this.modelDeploymentUrl;
+    }
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    @Export(name="opcParentRptUrl", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> opcParentRptUrl;
+
+    /**
+     * @return URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    public Output<Optional<String>> opcParentRptUrl() {
+        return Codegen.optional(this.opcParentRptUrl);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate with the model deployment.

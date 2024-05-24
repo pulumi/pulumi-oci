@@ -61,7 +61,7 @@ class GetSecurityZonesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The security zone's name
+        The security zone's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -74,7 +74,7 @@ class GetSecurityZonesResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can’t be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -100,7 +100,7 @@ class GetSecurityZonesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the security zone
+        The current lifecycle state of the security zone
         """
         return pulumi.get(self, "state")
 
@@ -132,7 +132,8 @@ def get_security_zones(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a list of all security zones in a compartment.
+    Returns a list of security zones (SecurityZone resources) in a compartment identified by
+    compartmentId. List is contained in a page of SecurityZoneSummary resources.
 
     ## Example Usage
 
@@ -149,12 +150,12 @@ def get_security_zones(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone (`SecurityZone`)
-    :param bool is_required_security_zones_in_subtree: security zones in the subtree
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str id: The unique identifier of the security zone (`SecurityZone` resource).
+    :param bool is_required_security_zones_in_subtree: Is security zones in the subtree?
+    :param str security_recipe_id: The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -190,7 +191,8 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
     """
     This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a list of all security zones in a compartment.
+    Returns a list of security zones (SecurityZone resources) in a compartment identified by
+    compartmentId. List is contained in a page of SecurityZoneSummary resources.
 
     ## Example Usage
 
@@ -207,11 +209,11 @@ def get_security_zones_output(compartment_id: Optional[pulumi.Input[str]] = None
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone (`SecurityZone`)
-    :param bool is_required_security_zones_in_subtree: security zones in the subtree
-    :param str security_recipe_id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str id: The unique identifier of the security zone (`SecurityZone` resource).
+    :param bool is_required_security_zones_in_subtree: Is security zones in the subtree?
+    :param str security_recipe_id: The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

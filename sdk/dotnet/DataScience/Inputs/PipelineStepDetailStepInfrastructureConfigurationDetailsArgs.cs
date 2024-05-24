@@ -13,22 +13,28 @@ namespace Pulumi.Oci.DataScience.Inputs
     public sealed class PipelineStepDetailStepInfrastructureConfigurationDetailsArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The size of the block storage volume to attach to the instance.
+        /// (Updatable) The size of the block storage volume to attach to the instance.
         /// </summary>
         [Input("blockStorageSizeInGbs", required: true)]
         public Input<int> BlockStorageSizeInGbs { get; set; } = null!;
 
         /// <summary>
-        /// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        /// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         /// </summary>
         [Input("shapeConfigDetails")]
         public Input<Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs>? ShapeConfigDetails { get; set; }
 
         /// <summary>
-        /// The shape used to launch the instance for all step runs in the pipeline.
+        /// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
         /// </summary>
         [Input("shapeName", required: true)]
         public Input<string> ShapeName { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        /// </summary>
+        [Input("subnetId")]
+        public Input<string>? SubnetId { get; set; }
 
         public PipelineStepDetailStepInfrastructureConfigurationDetailsArgs()
         {

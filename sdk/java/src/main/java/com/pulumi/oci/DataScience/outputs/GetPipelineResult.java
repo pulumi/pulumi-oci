@@ -39,6 +39,10 @@ public final class GetPipelineResult {
      * 
      */
     private Map<String,Object> definedTags;
+    /**
+     * @return If set to true will delete pipeline runs which are in a terminal state.
+     * 
+     */
     private Boolean deleteRelatedPipelineRuns;
     /**
      * @return A short description of the step.
@@ -137,6 +141,10 @@ public final class GetPipelineResult {
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
+    /**
+     * @return If set to true will delete pipeline runs which are in a terminal state.
+     * 
+     */
     public Boolean deleteRelatedPipelineRuns() {
         return this.deleteRelatedPipelineRuns;
     }

@@ -33,14 +33,14 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -48,14 +48,14 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The status of the dataMaskRule.
+     * The status of the data mask rule
      * 
      */
     @Import(name="dataMaskRuleStatus")
     private @Nullable String dataMaskRuleStatus;
 
     /**
-     * @return The status of the dataMaskRule.
+     * @return The status of the data mask rule
      * 
      */
     public Optional<String> dataMaskRuleStatus() {
@@ -85,14 +85,14 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * OCID of iamGroup
+     * OCID of the IAM group
      * 
      */
     @Import(name="iamGroupId")
     private @Nullable String iamGroupId;
 
     /**
-     * @return OCID of iamGroup
+     * @return OCID of the IAM group
      * 
      */
     public Optional<String> iamGroupId() {
@@ -100,14 +100,14 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<String> state() {
@@ -115,14 +115,14 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
     }
 
     /**
-     * OCID of target
+     * OCID of the target
      * 
      */
     @Import(name="targetId")
     private @Nullable String targetId;
 
     /**
-     * @return OCID of target
+     * @return OCID of the target
      * 
      */
     public Optional<String> targetId() {
@@ -188,7 +188,7 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -199,7 +199,7 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param dataMaskRuleStatus The status of the dataMaskRule.
+         * @param dataMaskRuleStatus The status of the data mask rule
          * 
          * @return builder
          * 
@@ -230,7 +230,7 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param iamGroupId OCID of iamGroup
+         * @param iamGroupId OCID of the IAM group
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 
@@ -252,7 +252,7 @@ public final class GetDataMaskRulesPlainArgs extends com.pulumi.resources.Invoke
         }
 
         /**
-         * @param targetId OCID of target
+         * @param targetId OCID of the target
          * 
          * @return builder
          * 

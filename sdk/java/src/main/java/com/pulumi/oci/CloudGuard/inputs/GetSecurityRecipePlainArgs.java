@@ -14,14 +14,14 @@ public final class GetSecurityRecipePlainArgs extends com.pulumi.resources.Invok
     public static final GetSecurityRecipePlainArgs Empty = new GetSecurityRecipePlainArgs();
 
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      * 
      */
     @Import(name="securityRecipeId", required=true)
     private String securityRecipeId;
 
     /**
-     * @return The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * @return The unique identifier of the security zone recipe. (`SecurityRecipe`)
      * 
      */
     public String securityRecipeId() {
@@ -53,7 +53,7 @@ public final class GetSecurityRecipePlainArgs extends com.pulumi.resources.Invok
         }
 
         /**
-         * @param securityRecipeId The unique identifier of the security zone recipe (`SecurityRecipe`)
+         * @param securityRecipeId The unique identifier of the security zone recipe. (`SecurityRecipe`)
          * 
          * @return builder
          * 

@@ -14,27 +14,27 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule {
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     private String dataSourceId;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail> details;
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     private String detector;
     /**
-     * @return The unique identifier of the detector rule.
+     * @return The unique identifier of the detector rule
      * 
      */
     private String detectorRuleId;
@@ -44,7 +44,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      */
     private String displayName;
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for a detector rule
      * 
      */
     private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings;
@@ -54,27 +54,27 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      */
     private String lifecycleDetails;
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     private List<String> managedListTypes;
     /**
-     * @return Recommendation for TargetDetectorRecipeDetectorRule
+     * @return Recommendation for TargetDetectorRecipeDetectorRule resource
      * 
      */
     private String recommendation;
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
      * 
      */
     private String resourceType;
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     private String serviceType;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -84,42 +84,42 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRule() {}
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public String dataSourceId() {
         return this.dataSourceId;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Details of ResponderRule.
+     * @return Detailed information for a responder rule
      * 
      */
     public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleDetail> details() {
         return this.details;
     }
     /**
-     * @return detector for the rule
+     * @return Detector type for the rule
      * 
      */
     public String detector() {
         return this.detector;
     }
     /**
-     * @return The unique identifier of the detector rule.
+     * @return The unique identifier of the detector rule
      * 
      */
     public String detectorRuleId() {
@@ -133,7 +133,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         return this.displayName;
     }
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for a detector rule
      * 
      */
     public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -147,35 +147,35 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         return this.lifecycleDetails;
     }
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public List<String> managedListTypes() {
         return this.managedListTypes;
     }
     /**
-     * @return Recommendation for TargetDetectorRecipeDetectorRule
+     * @return Recommendation for TargetDetectorRecipeDetectorRule resource
      * 
      */
     public String recommendation() {
         return this.recommendation;
     }
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
      * 
      */
     public String resourceType() {
         return this.resourceType;
     }
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
@@ -189,7 +189,7 @@ public final class GetGuardTargetsTargetCollectionItemTargetDetectorRecipeDetect
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

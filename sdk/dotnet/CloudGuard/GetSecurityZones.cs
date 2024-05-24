@@ -14,7 +14,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a list of all security zones in a compartment.
+        /// Returns a list of security zones (SecurityZone resources) in a compartment identified by
+        /// compartmentId. List is contained in a page of SecurityZoneSummary resources.
         /// 
         /// 
         /// ## Example Usage
@@ -46,7 +47,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Security Zones in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a list of all security zones in a compartment.
+        /// Returns a list of security zones (SecurityZone resources) in a compartment identified by
+        /// compartmentId. List is contained in a page of SecurityZoneSummary resources.
         /// 
         /// 
         /// ## Example Usage
@@ -80,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityZonesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -100,25 +102,25 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The unique identifier of the security zone (`SecurityZone`)
+        /// The unique identifier of the security zone (`SecurityZone` resource).
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// security zones in the subtree
+        /// Is security zones in the subtree?
         /// </summary>
         [Input("isRequiredSecurityZonesInSubtree")]
         public bool? IsRequiredSecurityZonesInSubtree { get; set; }
 
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
         /// </summary>
         [Input("securityRecipeId")]
         public string? SecurityRecipeId { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -132,7 +134,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityZonesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -152,25 +154,25 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The unique identifier of the security zone (`SecurityZone`)
+        /// The unique identifier of the security zone (`SecurityZone` resource).
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// security zones in the subtree
+        /// Is security zones in the subtree?
         /// </summary>
         [Input("isRequiredSecurityZonesInSubtree")]
         public Input<bool>? IsRequiredSecurityZonesInSubtree { get; set; }
 
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe` resource).
         /// </summary>
         [Input("securityRecipeId")]
         public Input<string>? SecurityRecipeId { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -190,12 +192,12 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The security zone's name
+        /// The security zone's display name
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetSecurityZonesFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can’t be changed after creation
         /// </summary>
         public readonly string? Id;
         public readonly bool? IsRequiredSecurityZonesInSubtree;
@@ -205,7 +207,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityZonesSecurityZoneCollectionResult> SecurityZoneCollections;
         /// <summary>
-        /// The current state of the security zone
+        /// The current lifecycle state of the security zone
         /// </summary>
         public readonly string? State;
 

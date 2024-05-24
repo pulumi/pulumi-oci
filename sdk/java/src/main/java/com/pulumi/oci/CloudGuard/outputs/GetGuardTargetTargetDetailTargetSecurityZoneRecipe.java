@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     private String compartmentId;
@@ -24,12 +24,12 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     private String displayName;
@@ -39,7 +39,7 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private String id;
@@ -49,17 +49,17 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
      */
     private String lifecycleDetails;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private String owner;
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     private List<String> securityPolicies;
     /**
-     * @return The current state of the ResponderRule.
+     * @return The current lifecycle state of the responder rule
      * 
      */
     private String state;
@@ -74,14 +74,14 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetTargetDetailTargetSecurityZoneRecipe() {}
     /**
-     * @return Compartment Identifier
+     * @return Compartment OCID
      * 
      */
     public String compartmentId() {
@@ -95,14 +95,14 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return ResponderRule display name.
+     * @return Responder rule display name
      * 
      */
     public String displayName() {
@@ -116,7 +116,7 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public String id() {
@@ -130,21 +130,21 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
         return this.lifecycleDetails;
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public String owner() {
         return this.owner;
     }
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     public List<String> securityPolicies() {
         return this.securityPolicies;
     }
     /**
-     * @return The current state of the ResponderRule.
+     * @return The current lifecycle state of the responder rule
      * 
      */
     public String state() {
@@ -165,7 +165,7 @@ public final class GetGuardTargetTargetDetailTargetSecurityZoneRecipe {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

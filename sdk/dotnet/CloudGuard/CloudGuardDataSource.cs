@@ -12,7 +12,8 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a DataSource
+    /// Creates a data source (DataSource resource), using parameters passed
+    /// through a CreateDataSourceDetails resource.
     /// 
     /// ## Example Usage
     /// 
@@ -33,7 +34,9 @@ namespace Pulumi.Oci.CloudGuard
     ///         {
     ///             DataSourceFeedProvider = dataSourceDataSourceDetailsDataSourceFeedProvider,
     ///             AdditionalEntitiesCount = dataSourceDataSourceDetailsAdditionalEntitiesCount,
+    ///             Description = dataSourceDataSourceDetailsDescription,
     ///             IntervalInMinutes = dataSourceDataSourceDetailsIntervalInMinutes,
+    ///             IntervalInSeconds = dataSourceDataSourceDetailsIntervalInSeconds,
     ///             LoggingQueryDetails = new Oci.CloudGuard.Inputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs
     ///             {
     ///                 LoggingQueryType = dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType,
@@ -48,6 +51,15 @@ namespace Pulumi.Oci.CloudGuard
     ///                 QueryStartTime = dataSourceDataSourceDetailsQueryStartTimeQueryStartTime,
     ///             },
     ///             Regions = dataSourceDataSourceDetailsRegions,
+    ///             ScheduledQueryScopeDetails = new[]
+    ///             {
+    ///                 new Oci.CloudGuard.Inputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs
+    ///                 {
+    ///                     Region = dataSourceDataSourceDetailsScheduledQueryScopeDetailsRegion,
+    ///                     ResourceIds = dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceIds,
+    ///                     ResourceType = dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceType,
+    ///                 },
+    ///             },
     ///             Threshold = dataSourceDataSourceDetailsThreshold,
     ///         },
     ///         DefinedTags = 
@@ -76,7 +88,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class CloudGuardDataSource : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) CompartmentId of Data Source.
+        /// (Updatable) Compartment OCID of the data source
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -94,7 +106,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableArray<Outputs.CloudGuardDataSourceDataSourceDetectorMappingInfo>> DataSourceDetectorMappingInfos { get; private set; } = null!;
 
         /// <summary>
-        /// Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// Type of data source feed provider (LoggingQuery)
         /// </summary>
         [Output("dataSourceFeedProvider")]
         public Output<string> DataSourceFeedProvider { get; private set; } = null!;
@@ -106,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Data Source display name.
+        /// (Updatable) Data source display name
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -126,13 +138,13 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableArray<Outputs.CloudGuardDataSourceRegionStatusDetail>> RegionStatusDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// (Updatable) Enablement status of data source.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -154,7 +166,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time the Data source was updated. Format defined by RFC3339.
+        /// The date and time the data source was updated. Format defined by RFC3339.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -206,7 +218,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class CloudGuardDataSourceArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) CompartmentId of Data Source.
+        /// (Updatable) Compartment OCID of the data source
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -218,7 +230,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<Inputs.CloudGuardDataSourceDataSourceDetailsArgs>? DataSourceDetails { get; set; }
 
         /// <summary>
-        /// Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// Type of data source feed provider (LoggingQuery)
         /// </summary>
         [Input("dataSourceFeedProvider", required: true)]
         public Input<string> DataSourceFeedProvider { get; set; } = null!;
@@ -236,7 +248,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Data Source display name.
+        /// (Updatable) Data source display name
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -256,7 +268,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// (Updatable) Enablement status of data source.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -274,7 +286,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class CloudGuardDataSourceState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) CompartmentId of Data Source.
+        /// (Updatable) Compartment OCID of the data source
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -298,7 +310,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// Type of data source feed provider (LoggingQuery)
         /// </summary>
         [Input("dataSourceFeedProvider")]
         public Input<string>? DataSourceFeedProvider { get; set; }
@@ -316,7 +328,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// (Updatable) Data Source display name.
+        /// (Updatable) Data source display name
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -348,13 +360,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) Status of DataSource. Default value is DISABLED.
+        /// (Updatable) Enablement status of data source.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -382,7 +394,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the Data source was updated. Format defined by RFC3339.
+        /// The date and time the data source was updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

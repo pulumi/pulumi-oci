@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+ * Returns a security zone (SecurityZone resource) identified by securityZoneId.
  *
  * ## Example Usage
  *
@@ -33,7 +33,7 @@ export function getSecurityZone(args: GetSecurityZoneArgs, opts?: pulumi.InvokeO
  */
 export interface GetSecurityZoneArgs {
     /**
-     * The unique identifier of the security zone (`SecurityZone`)
+     * The unique identifier of the security zone (`SecurityZone` resource).
      */
     securityZoneId: string;
 }
@@ -55,7 +55,7 @@ export interface GetSecurityZoneResult {
      */
     readonly description: string;
     /**
-     * The security zone's name
+     * The security zone's display name
      */
     readonly displayName: string;
     /**
@@ -63,7 +63,7 @@ export interface GetSecurityZoneResult {
      */
     readonly freeformTags: {[key: string]: any};
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can’t be changed after creation
      */
     readonly id: string;
     /**
@@ -76,7 +76,7 @@ export interface GetSecurityZoneResult {
     readonly lifecycleDetails: string;
     readonly securityZoneId: string;
     /**
-     * The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * The OCID of the recipe (`SecurityRecipe` resource) for the security zone
      */
     readonly securityZoneRecipeId: string;
     /**
@@ -84,7 +84,7 @@ export interface GetSecurityZoneResult {
      */
     readonly securityZoneTargetId: string;
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      */
     readonly state: string;
     /**
@@ -99,7 +99,7 @@ export interface GetSecurityZoneResult {
 /**
  * This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+ * Returns a security zone (SecurityZone resource) identified by securityZoneId.
  *
  * ## Example Usage
  *
@@ -121,7 +121,7 @@ export function getSecurityZoneOutput(args: GetSecurityZoneOutputArgs, opts?: pu
  */
 export interface GetSecurityZoneOutputArgs {
     /**
-     * The unique identifier of the security zone (`SecurityZone`)
+     * The unique identifier of the security zone (`SecurityZone` resource).
      */
     securityZoneId: pulumi.Input<string>;
 }

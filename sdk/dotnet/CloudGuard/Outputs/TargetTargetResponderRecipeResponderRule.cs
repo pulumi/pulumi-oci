@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class TargetTargetResponderRecipeResponderRule
     {
         /// <summary>
-        /// Compartment Identifier where the resource is created
+        /// Compartment OCID where the resource is created
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
@@ -24,11 +24,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? Description;
         /// <summary>
-        /// (Updatable) Details of ResponderRule.
+        /// (Updatable) Parameters to update details for a responder rule for a target responder recipe. TargetResponderRuleDetails contains all configurations associated with the ResponderRule, whereas UpdateTargetResponderRecipeResponderRuleDetails refers to the details that are to be updated for ResponderRule.
         /// </summary>
         public readonly Outputs.TargetTargetResponderRecipeResponderRuleDetails Details;
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -38,11 +38,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? LifecycleDetails;
         /// <summary>
-        /// List of Policy
+        /// List of policies
         /// </summary>
         public readonly ImmutableArray<string> Policies;
         /// <summary>
-        /// (Updatable) Identifier for ResponderRule.
+        /// (Updatable) Unique identifier for target detector recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -50,11 +50,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string ResponderRuleId;
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         public readonly string? State;
         /// <summary>
-        /// Supported Execution Modes
+        /// Supported execution modes for the responder rule
         /// </summary>
         public readonly ImmutableArray<string> SupportedModes;
         /// <summary>
@@ -62,11 +62,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string? TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string? TimeUpdated;
         /// <summary>
-        /// Type of Responder
+        /// Type of responder
         /// </summary>
         public readonly string? Type;
 

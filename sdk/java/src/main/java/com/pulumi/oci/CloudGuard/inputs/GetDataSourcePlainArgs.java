@@ -14,14 +14,14 @@ public final class GetDataSourcePlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetDataSourcePlainArgs Empty = new GetDataSourcePlainArgs();
 
     /**
-     * DataSource OCID
+     * Data source OCID.
      * 
      */
     @Import(name="dataSourceId", required=true)
     private String dataSourceId;
 
     /**
-     * @return DataSource OCID
+     * @return Data source OCID.
      * 
      */
     public String dataSourceId() {
@@ -53,7 +53,7 @@ public final class GetDataSourcePlainArgs extends com.pulumi.resources.InvokeArg
         }
 
         /**
-         * @param dataSourceId DataSource OCID
+         * @param dataSourceId Data source OCID.
          * 
          * @return builder
          * 

@@ -11,32 +11,64 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourceEventsDataSourceEventCollectionItemEventInfo {
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return Possible type of dataSourceFeed Provider (LoggingQuery)
      * 
      */
     private String dataSourceFeedProvider;
+    /**
+     * @return Log result details of DataSource for a Problem
+     * 
+     */
     private String logResult;
+    /**
+     * @return Observed value of DataSource for a Problem
+     * 
+     */
     private String observedValue;
+    /**
+     * @return Operator details of DataSource for a Problem
+     * 
+     */
     private String operator;
+    /**
+     * @return Triggered value of DataSource for a Problem
+     * 
+     */
     private String triggerValue;
 
     private GetDataSourceEventsDataSourceEventCollectionItemEventInfo() {}
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return Possible type of dataSourceFeed Provider (LoggingQuery)
      * 
      */
     public String dataSourceFeedProvider() {
         return this.dataSourceFeedProvider;
     }
+    /**
+     * @return Log result details of DataSource for a Problem
+     * 
+     */
     public String logResult() {
         return this.logResult;
     }
+    /**
+     * @return Observed value of DataSource for a Problem
+     * 
+     */
     public String observedValue() {
         return this.observedValue;
     }
+    /**
+     * @return Operator details of DataSource for a Problem
+     * 
+     */
     public String operator() {
         return this.operator;
     }
+    /**
+     * @return Triggered value of DataSource for a Problem
+     * 
+     */
     public String triggerValue() {
         return this.triggerValue;
     }

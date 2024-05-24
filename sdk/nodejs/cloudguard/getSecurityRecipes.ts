@@ -9,7 +9,8 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a list of all security zone recipes in a compartment.
+ * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+ * compartment, identified by compartmentId.
  *
  * ## Example Usage
  *
@@ -42,7 +43,7 @@ export function getSecurityRecipes(args: GetSecurityRecipesArgs, opts?: pulumi.I
  */
 export interface GetSecurityRecipesArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
@@ -51,11 +52,11 @@ export interface GetSecurityRecipesArgs {
     displayName?: string;
     filters?: inputs.CloudGuard.GetSecurityRecipesFilter[];
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      */
     id?: string;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
 }
@@ -65,16 +66,16 @@ export interface GetSecurityRecipesArgs {
  */
 export interface GetSecurityRecipesResult {
     /**
-     * The id of the compartment that contains the recipe
+     * The OCID of the compartment that contains the recipe
      */
     readonly compartmentId: string;
     /**
-     * The recipe's name
+     * The recipe's display name
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetSecurityRecipesFilter[];
     /**
-     * Unique identifier that is immutable on creation
+     * Unique identifier that can’t be changed after creation
      */
     readonly id?: string;
     /**
@@ -82,14 +83,15 @@ export interface GetSecurityRecipesResult {
      */
     readonly securityRecipeCollections: outputs.CloudGuard.GetSecurityRecipesSecurityRecipeCollection[];
     /**
-     * The current state of the recipe
+     * The current lifecycle state of the recipe
      */
     readonly state?: string;
 }
 /**
  * This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Gets a list of all security zone recipes in a compartment.
+ * Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+ * compartment, identified by compartmentId.
  *
  * ## Example Usage
  *
@@ -114,7 +116,7 @@ export function getSecurityRecipesOutput(args: GetSecurityRecipesOutputArgs, opt
  */
 export interface GetSecurityRecipesOutputArgs {
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
@@ -123,11 +125,11 @@ export interface GetSecurityRecipesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.CloudGuard.GetSecurityRecipesFilterArgs>[]>;
     /**
-     * The unique identifier of the security zone recipe (`SecurityRecipe`)
+     * The unique identifier of the security zone recipe. (`SecurityRecipe`)
      */
     id?: pulumi.Input<string>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
 }

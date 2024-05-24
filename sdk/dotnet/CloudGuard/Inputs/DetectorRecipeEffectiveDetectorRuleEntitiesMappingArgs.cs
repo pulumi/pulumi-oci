@@ -21,7 +21,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Possible type of entity
+        /// Type of entity
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }

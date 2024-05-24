@@ -21,7 +21,8 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Responder Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Create a ResponderRecipe.
+ * Creates a responder recipe (ResponderRecipe resource), from values passed in a
+ * CreateResponderRecipeDetails resource.
  * 
  * ## Import
  * 
@@ -35,14 +36,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/responderRecipe:ResponderRecipe")
 public class ResponderRecipe extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -99,14 +100,14 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * List of responder rules associated with the recipe
+     * List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     @Export(name="effectiveResponderRules", refs={List.class,ResponderRecipeEffectiveResponderRule.class}, tree="[0,1]")
     private Output<List<ResponderRecipeEffectiveResponderRule>> effectiveResponderRules;
 
     /**
-     * @return List of responder rules associated with the recipe
+     * @return List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     public Output<List<ResponderRecipeEffectiveResponderRule>> effectiveResponderRules() {
@@ -145,35 +146,35 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * Owner of ResponderRecipe
+     * Owner of responder recipe
      * 
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of responder recipe
      * 
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
-     * (Updatable) Responder Rules to override from source responder recipe
+     * (Updatable) List of responder rules to override from source responder recipe
      * 
      */
     @Export(name="responderRules", refs={List.class,ResponderRecipeResponderRule.class}, tree="[0,1]")
     private Output<List<ResponderRecipeResponderRule>> responderRules;
 
     /**
-     * @return (Updatable) Responder Rules to override from source responder recipe
+     * @return (Updatable) List of responder rules to override from source responder recipe
      * 
      */
     public Output<List<ResponderRecipeResponderRule>> responderRules() {
         return this.responderRules;
     }
     /**
-     * The id of the source responder recipe.
+     * The unique identifier of the source responder recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,7 +184,7 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
     private Output<String> sourceResponderRecipeId;
 
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,14 +194,14 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
         return this.sourceResponderRecipeId;
     }
     /**
-     * The current state of the Example.
+     * The current lifecycle state of the example
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the Example.
+     * @return The current lifecycle state of the example
      * 
      */
     public Output<String> state() {
@@ -235,14 +236,14 @@ public class ResponderRecipe extends com.pulumi.resources.CustomResource {
         return this.timeCreated;
     }
     /**
-     * The date and time the responder recipe was updated. Format defined by RFC3339.
+     * The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public Output<String> timeUpdated() {

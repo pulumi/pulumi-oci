@@ -15,27 +15,27 @@ import java.util.Objects;
 @CustomType
 public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule {
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule> candidateResponderRules;
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     private String dataSourceId;
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     private String description;
     /**
-     * @return Details of a Detector Rule
+     * @return Detailed information for a detector.
      * 
      */
     private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail> details;
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     private String detector;
@@ -50,7 +50,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule {
      */
     private String displayName;
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     private List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping> entitiesMappings;
@@ -60,72 +60,72 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule {
      */
     private String lifecycleDetails;
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     private List<String> managedListTypes;
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     private String recommendation;
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     private String resourceType;
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     private String serviceType;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     private String timeCreated;
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule() {}
     /**
-     * @return List of CandidateResponderRule related to this rule
+     * @return List of responder rules that can be used to remediate this detector rule
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleCandidateResponderRule> candidateResponderRules() {
         return this.candidateResponderRules;
     }
     /**
-     * @return The id of the attached DataSource.
+     * @return The ID of the attached data source
      * 
      */
     public String dataSourceId() {
         return this.dataSourceId;
     }
     /**
-     * @return Description for DetectorRecipeDetectorRule.
+     * @return Description for detector recipe detector rule
      * 
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Details of a Detector Rule
+     * @return Detailed information for a detector.
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleDetail> details() {
         return this.details;
     }
     /**
-     * @return detector for the rule
+     * @return Detector recipe for the rule
      * 
      */
     public String detector() {
@@ -146,7 +146,7 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule {
         return this.displayName;
     }
     /**
-     * @return Data Source entities mapping for a Detector Rule
+     * @return Data source entities mapping for the detector rule
      * 
      */
     public List<GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleEntitiesMapping> entitiesMappings() {
@@ -160,49 +160,49 @@ public final class GetDetectorRecipesDetectorRecipeCollectionItemDetectorRule {
         return this.lifecycleDetails;
     }
     /**
-     * @return List of cloudguard managed list types related to this rule
+     * @return List of managed list types related to this rule
      * 
      */
     public List<String> managedListTypes() {
         return this.managedListTypes;
     }
     /**
-     * @return Recommendation for DetectorRecipeDetectorRule
+     * @return Recommendation for DetectorRecipeDetectorRule resource
      * 
      */
     public String recommendation() {
         return this.recommendation;
     }
     /**
-     * @return resource type of the configuration to which the rule is applied
+     * @return Resource type of the configuration to which the rule is applied
      * 
      */
     public String resourceType() {
         return this.resourceType;
     }
     /**
-     * @return service type of the configuration to which the rule is applied
+     * @return Service type of the configuration to which the rule is applied
      * 
      */
     public String serviceType() {
         return this.serviceType;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
         return this.state;
     }
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

@@ -49,7 +49,13 @@ namespace Pulumi.Oci.DataScience.Inputs
         public Input<Inputs.PipelineStepDetailStepConfigurationDetailsArgs>? StepConfigurationDetails { get; set; }
 
         /// <summary>
-        /// The infrastructure configuration details of a pipeline or a step.
+        /// Container Details for a step in pipeline.
+        /// </summary>
+        [Input("stepContainerConfigurationDetails")]
+        public Input<Inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs>? StepContainerConfigurationDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) The infrastructure configuration details of a pipeline or a step.
         /// </summary>
         [Input("stepInfrastructureConfigurationDetails")]
         public Input<Inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs>? StepInfrastructureConfigurationDetails { get; set; }

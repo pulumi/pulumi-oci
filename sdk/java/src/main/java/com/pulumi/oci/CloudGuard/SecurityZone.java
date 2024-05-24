@@ -19,7 +19,8 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+ * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+ * through a CreateSecurityZoneDetails resource.
  * 
  * ## Example Usage
  * 
@@ -115,14 +116,14 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * (Updatable) The security zone&#39;s name
+     * (Updatable) The security zone&#39;s display name
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The security zone&#39;s name
+     * @return (Updatable) The security zone&#39;s display name
      * 
      */
     public Output<String> displayName() {
@@ -175,7 +176,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
-     * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -185,7 +186,7 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
     private Output<String> securityZoneRecipeId;
 
     /**
-     * @return (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * @return (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -209,14 +210,14 @@ public class SecurityZone extends com.pulumi.resources.CustomResource {
         return this.securityZoneTargetId;
     }
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the security zone
+     * @return The current lifecycle state of the security zone
      * 
      */
     public Output<String> state() {

@@ -14,12 +14,12 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityPolicyResult {
     /**
-     * @return The category of security policy
+     * @return The category of the security policy
      * 
      */
     private String category;
     /**
-     * @return The id of the security policy&#39;s compartment
+     * @return The OCID of the security policy&#39;s compartment
      * 
      */
     private String compartmentId;
@@ -34,7 +34,7 @@ public final class GetSecurityPolicyResult {
      */
     private String description;
     /**
-     * @return The security policy&#39;s full name
+     * @return The security policy&#39;s display name
      * 
      */
     private String displayName;
@@ -70,7 +70,7 @@ public final class GetSecurityPolicyResult {
      */
     private List<String> services;
     /**
-     * @return The current state of the security policy
+     * @return The current lifecycle state of the security policy
      * 
      */
     private String state;
@@ -87,14 +87,14 @@ public final class GetSecurityPolicyResult {
 
     private GetSecurityPolicyResult() {}
     /**
-     * @return The category of security policy
+     * @return The category of the security policy
      * 
      */
     public String category() {
         return this.category;
     }
     /**
-     * @return The id of the security policy&#39;s compartment
+     * @return The OCID of the security policy&#39;s compartment
      * 
      */
     public String compartmentId() {
@@ -115,7 +115,7 @@ public final class GetSecurityPolicyResult {
         return this.description;
     }
     /**
-     * @return The security policy&#39;s full name
+     * @return The security policy&#39;s display name
      * 
      */
     public String displayName() {
@@ -167,7 +167,7 @@ public final class GetSecurityPolicyResult {
         return this.services;
     }
     /**
-     * @return The current state of the security policy
+     * @return The current lifecycle state of the security policy
      * 
      */
     public String state() {

@@ -17,14 +17,14 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
     public static final CloudGuardConfigurationState Empty = new CloudGuardConfigurationState();
 
     /**
-     * (Updatable) The ID of the compartment in which to list resources.
+     * (Updatable) The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The ID of the compartment in which to list resources.
+     * @return (Updatable) The OCID of the compartment in which to list resources.
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -32,14 +32,14 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) The reporting region value
+     * (Updatable) The reporting region
      * 
      */
     @Import(name="reportingRegion")
     private @Nullable Output<String> reportingRegion;
 
     /**
-     * @return (Updatable) The reporting region value
+     * @return (Updatable) The reporting region
      * 
      */
     public Optional<Output<String>> reportingRegion() {
@@ -62,7 +62,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
     }
 
     /**
-     * (Updatable) Status of Cloud Guard Tenant
+     * (Updatable) Status of Cloud Guard tenant
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -72,7 +72,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) Status of Cloud Guard Tenant
+     * @return (Updatable) Status of Cloud Guard tenant
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -110,7 +110,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param compartmentId (Updatable) The ID of the compartment in which to list resources.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -121,7 +121,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param compartmentId (Updatable) The ID of the compartment in which to list resources.
+         * @param compartmentId (Updatable) The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -131,7 +131,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param reportingRegion (Updatable) The reporting region value
+         * @param reportingRegion (Updatable) The reporting region
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param reportingRegion (Updatable) The reporting region value
+         * @param reportingRegion (Updatable) The reporting region
          * 
          * @return builder
          * 
@@ -173,7 +173,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status (Updatable) Status of Cloud Guard Tenant
+         * @param status (Updatable) Status of Cloud Guard tenant
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -187,7 +187,7 @@ public final class CloudGuardConfigurationState extends com.pulumi.resources.Res
         }
 
         /**
-         * @param status (Updatable) Status of Cloud Guard Tenant
+         * @param status (Updatable) Status of Cloud Guard tenant
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

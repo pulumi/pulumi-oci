@@ -45,6 +45,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunLogConfigurationOverrideDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -76,6 +77,7 @@ import javax.annotation.Nullable;
  *                 .logGroupId(testLogGroup.id())
  *                 .logId(testLog.id())
  *                 .build())
+ *             .opcParentRptUrl(pipelineRunOpcParentRptUrl)
  *             .projectId(testProject.id())
  *             .stepOverrideDetails(PipelineRunStepOverrideDetailArgs.builder()
  *                 .stepConfigurationDetails(PipelineRunStepOverrideDetailStepConfigurationDetailsArgs.builder()
@@ -84,6 +86,14 @@ import javax.annotation.Nullable;
  *                     .maximumRuntimeInMinutes(pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes)
  *                     .build())
  *                 .stepName(pipelineRunStepOverrideDetailsStepName)
+ *                 .stepContainerConfigurationDetails(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs.builder()
+ *                     .containerType(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType)
+ *                     .image(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage)
+ *                     .cmds(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd)
+ *                     .entrypoints(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint)
+ *                     .imageDigest(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest)
+ *                     .imageSignatureId(testImageSignature.id())
+ *                     .build())
  *                 .build())
  *             .systemTags(pipelineRunSystemTags)
  *             .build());
@@ -250,6 +260,20 @@ public class PipelineRun extends com.pulumi.resources.CustomResource {
      */
     public Output<List<PipelineRunLogDetail>> logDetails() {
         return this.logDetails;
+    }
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    @Export(name="opcParentRptUrl", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> opcParentRptUrl;
+
+    /**
+     * @return URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    public Output<Optional<String>> opcParentRptUrl() {
+        return Codegen.optional(this.opcParentRptUrl);
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.

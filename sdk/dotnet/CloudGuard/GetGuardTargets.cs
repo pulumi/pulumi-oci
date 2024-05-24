@@ -14,9 +14,10 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all Targets in a compartment
-        /// The ListTargets operation returns only the targets in `compartmentId` passed.
-        /// The list does not include any subcompartments of the compartmentId passed.
+        /// Returns a list of targets (TargetCollection resource with page of TargetSummary
+        /// resources) for the target identified by compartmentId. By default, only the target
+        /// associated with the compartment is returned. Setting compartmentIdInSubtree to true
+        /// returns the entire hierarchy of targets in subcompartments.
         /// 
         /// The parameter `accessLevel` specifies whether to return only those compartments for which the
         /// requestor has INSPECT permissions on at least one resource directly
@@ -26,7 +27,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
@@ -59,9 +60,10 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of all Targets in a compartment
-        /// The ListTargets operation returns only the targets in `compartmentId` passed.
-        /// The list does not include any subcompartments of the compartmentId passed.
+        /// Returns a list of targets (TargetCollection resource with page of TargetSummary
+        /// resources) for the target identified by compartmentId. By default, only the target
+        /// associated with the compartment is returned. Setting compartmentIdInSubtree to true
+        /// returns the entire hierarchy of targets in subcompartments.
         /// 
         /// The parameter `accessLevel` specifies whether to return only those compartments for which the
         /// requestor has INSPECT permissions on at least one resource directly
@@ -71,7 +73,7 @@ namespace Pulumi.Oci.CloudGuard
         /// 
         /// The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
         /// `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-        /// To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+        /// To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
         /// set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
         /// 
         /// 
@@ -112,13 +114,13 @@ namespace Pulumi.Oci.CloudGuard
         public string? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public bool? CompartmentIdInSubtree { get; set; }
@@ -144,7 +146,7 @@ namespace Pulumi.Oci.CloudGuard
         public bool? IsNonSecurityZoneTargetsOnlyQuery { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -164,13 +166,13 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? AccessLevel { get; set; }
 
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+        /// Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
         /// </summary>
         [Input("compartmentIdInSubtree")]
         public Input<bool>? CompartmentIdInSubtree { get; set; }
@@ -196,7 +198,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<bool>? IsNonSecurityZoneTargetsOnlyQuery { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -213,12 +215,12 @@ namespace Pulumi.Oci.CloudGuard
     {
         public readonly string? AccessLevel;
         /// <summary>
-        /// Compartment Identifier
+        /// Compartment OCID
         /// </summary>
         public readonly string CompartmentId;
         public readonly bool? CompartmentIdInSubtree;
         /// <summary>
-        /// ResponderRule display name.
+        /// Responder rule display name
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetGuardTargetsFilterResult> Filters;
@@ -228,7 +230,7 @@ namespace Pulumi.Oci.CloudGuard
         public readonly string Id;
         public readonly bool? IsNonSecurityZoneTargetsOnlyQuery;
         /// <summary>
-        /// The current state of the ResponderRule.
+        /// The current lifecycle state of the responder rule
         /// </summary>
         public readonly string? State;
         /// <summary>

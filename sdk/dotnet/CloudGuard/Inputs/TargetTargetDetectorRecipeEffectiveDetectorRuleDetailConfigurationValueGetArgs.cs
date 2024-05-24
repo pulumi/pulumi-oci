@@ -13,19 +13,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationValueGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// configuration list item type, either CUSTOM or MANAGED
+        /// Configuration list item type (CUSTOM or MANAGED)
         /// </summary>
         [Input("listType")]
         public Input<string>? ListType { get; set; }
 
         /// <summary>
-        /// type of the managed list
+        /// Type of content in the managed list
         /// </summary>
         [Input("managedListType")]
         public Input<string>? ManagedListType { get; set; }
 
         /// <summary>
-        /// configuration value
+        /// Configuration value
         /// </summary>
         [Input("value")]
         public Input<string>? Value { get; set; }

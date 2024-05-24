@@ -13,16 +13,22 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class CloudGuardDataSourceDataSourceDetailsGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The additional entities count used for data source query.
+        /// (Updatable) The additional entities count used for data source query
         /// </summary>
         [Input("additionalEntitiesCount")]
         public Input<int>? AdditionalEntitiesCount { get; set; }
 
         /// <summary>
-        /// (Updatable) Possible type of dataSourceFeed Provider(LoggingQuery)
+        /// (Updatable) Type of data source feed provider (LoggingQuery)
         /// </summary>
         [Input("dataSourceFeedProvider", required: true)]
         public Input<string> DataSourceFeedProvider { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Description text for the query
+        /// </summary>
+        [Input("description")]
+        public Input<string>? Description { get; set; }
 
         /// <summary>
         /// (Updatable) Interval in minutes that query is run periodically.
@@ -31,19 +37,25 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<int>? IntervalInMinutes { get; set; }
 
         /// <summary>
-        /// (Updatable) Additional details specific to the data source type (Sighting/Insight).
+        /// (Updatable) Interval in minutes which query is run periodically.
+        /// </summary>
+        [Input("intervalInSeconds")]
+        public Input<int>? IntervalInSeconds { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details for a logging query for a data source.
         /// </summary>
         [Input("loggingQueryDetails")]
         public Input<Inputs.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsGetArgs>? LoggingQueryDetails { get; set; }
 
         /// <summary>
-        /// (Updatable) Logging query type for data source (Sighting/Insight)
+        /// (Updatable) Type of logging query for data source (Sighting/Insight)
         /// </summary>
         [Input("loggingQueryType")]
         public Input<string>? LoggingQueryType { get; set; }
 
         /// <summary>
-        /// (Updatable) Operator used in Data Soruce
+        /// (Updatable) Operator used in data source
         /// </summary>
         [Input("operator")]
         public Input<string>? Operator { get; set; }
@@ -55,7 +67,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? Query { get; set; }
 
         /// <summary>
-        /// (Updatable) Continuous query start policy object
+        /// (Updatable) Start policy for continuous query
         /// </summary>
         [Input("queryStartTime")]
         public Input<Inputs.CloudGuardDataSourceDataSourceDetailsQueryStartTimeGetArgs>? QueryStartTime { get; set; }
@@ -64,7 +76,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _regions;
 
         /// <summary>
-        /// (Updatable) Logging Query regions
+        /// (Updatable) List of logging query regions
         /// </summary>
         public InputList<string> Regions
         {
@@ -72,8 +84,20 @@ namespace Pulumi.Oci.CloudGuard.Inputs
             set => _regions = value;
         }
 
+        [Input("scheduledQueryScopeDetails")]
+        private InputList<Inputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailGetArgs>? _scheduledQueryScopeDetails;
+
         /// <summary>
-        /// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), the query result to trigger an event.
+        /// (Updatable) Target information in which scheduled query will be run
+        /// </summary>
+        public InputList<Inputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailGetArgs> ScheduledQueryScopeDetails
+        {
+            get => _scheduledQueryScopeDetails ?? (_scheduledQueryScopeDetails = new InputList<Inputs.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailGetArgs>());
+            set => _scheduledQueryScopeDetails = value;
+        }
+
+        /// <summary>
+        /// (Updatable) The integer value that must be exceeded, fall below or equal to (depending on the operator), for the query result to trigger an event
         /// </summary>
         [Input("threshold")]
         public Input<int>? Threshold { get; set; }

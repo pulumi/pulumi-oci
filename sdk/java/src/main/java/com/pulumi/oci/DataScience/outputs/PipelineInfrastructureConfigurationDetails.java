@@ -15,42 +15,54 @@ import javax.annotation.Nullable;
 @CustomType
 public final class PipelineInfrastructureConfigurationDetails {
     /**
-     * @return The size of the block storage volume to attach to the instance.
+     * @return (Updatable) The size of the block storage volume to attach to the instance.
      * 
      */
     private Integer blockStorageSizeInGbs;
     /**
-     * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+     * @return (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
     private @Nullable PipelineInfrastructureConfigurationDetailsShapeConfigDetails shapeConfigDetails;
     /**
-     * @return The shape used to launch the instance for all step runs in the pipeline.
+     * @return (Updatable) The shape used to launch the instance for all step runs in the pipeline.
      * 
      */
     private String shapeName;
+    /**
+     * @return (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    private @Nullable String subnetId;
 
     private PipelineInfrastructureConfigurationDetails() {}
     /**
-     * @return The size of the block storage volume to attach to the instance.
+     * @return (Updatable) The size of the block storage volume to attach to the instance.
      * 
      */
     public Integer blockStorageSizeInGbs() {
         return this.blockStorageSizeInGbs;
     }
     /**
-     * @return Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+     * @return (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
      * 
      */
     public Optional<PipelineInfrastructureConfigurationDetailsShapeConfigDetails> shapeConfigDetails() {
         return Optional.ofNullable(this.shapeConfigDetails);
     }
     /**
-     * @return The shape used to launch the instance for all step runs in the pipeline.
+     * @return (Updatable) The shape used to launch the instance for all step runs in the pipeline.
      * 
      */
     public String shapeName() {
         return this.shapeName;
+    }
+    /**
+     * @return (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+     * 
+     */
+    public Optional<String> subnetId() {
+        return Optional.ofNullable(this.subnetId);
     }
 
     public static Builder builder() {
@@ -65,12 +77,14 @@ public final class PipelineInfrastructureConfigurationDetails {
         private Integer blockStorageSizeInGbs;
         private @Nullable PipelineInfrastructureConfigurationDetailsShapeConfigDetails shapeConfigDetails;
         private String shapeName;
+        private @Nullable String subnetId;
         public Builder() {}
         public Builder(PipelineInfrastructureConfigurationDetails defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.blockStorageSizeInGbs = defaults.blockStorageSizeInGbs;
     	      this.shapeConfigDetails = defaults.shapeConfigDetails;
     	      this.shapeName = defaults.shapeName;
+    	      this.subnetId = defaults.subnetId;
         }
 
         @CustomType.Setter
@@ -95,11 +109,18 @@ public final class PipelineInfrastructureConfigurationDetails {
             this.shapeName = shapeName;
             return this;
         }
+        @CustomType.Setter
+        public Builder subnetId(@Nullable String subnetId) {
+
+            this.subnetId = subnetId;
+            return this;
+        }
         public PipelineInfrastructureConfigurationDetails build() {
             final var _resultValue = new PipelineInfrastructureConfigurationDetails();
             _resultValue.blockStorageSizeInGbs = blockStorageSizeInGbs;
             _resultValue.shapeConfigDetails = shapeConfigDetails;
             _resultValue.shapeName = shapeName;
+            _resultValue.subnetId = subnetId;
             return _resultValue;
         }
     }

@@ -13,7 +13,8 @@ import (
 
 // This data source provides the list of Problem Entities in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Returns a list of entities for a CloudGuard Problem
+// Returns a list of entities for a CloudGuard Problem
+// Returns a list of entities for a problem.
 //
 // ## Example Usage
 //
@@ -53,7 +54,7 @@ func GetProblemEntities(ctx *pulumi.Context, args *GetProblemEntitiesArgs, opts 
 // A collection of arguments for invoking getProblemEntities.
 type GetProblemEntitiesArgs struct {
 	Filters []GetProblemEntitiesFilter `pulumi:"filters"`
-	// OCId of the problem.
+	// OCID of the problem.
 	ProblemId string `pulumi:"problemId"`
 }
 
@@ -64,7 +65,7 @@ type GetProblemEntitiesResult struct {
 	Id string `pulumi:"id"`
 	// The list of problem_entity_collection.
 	ProblemEntityCollections []GetProblemEntitiesProblemEntityCollection `pulumi:"problemEntityCollections"`
-	// Attached problem id
+	// Attached problem ID
 	ProblemId string `pulumi:"problemId"`
 }
 
@@ -84,7 +85,7 @@ func GetProblemEntitiesOutput(ctx *pulumi.Context, args GetProblemEntitiesOutput
 // A collection of arguments for invoking getProblemEntities.
 type GetProblemEntitiesOutputArgs struct {
 	Filters GetProblemEntitiesFilterArrayInput `pulumi:"filters"`
-	// OCId of the problem.
+	// OCID of the problem.
 	ProblemId pulumi.StringInput `pulumi:"problemId"`
 }
 
@@ -123,7 +124,7 @@ func (o GetProblemEntitiesResultOutput) ProblemEntityCollections() GetProblemEnt
 	}).(GetProblemEntitiesProblemEntityCollectionArrayOutput)
 }
 
-// Attached problem id
+// Attached problem ID
 func (o GetProblemEntitiesResultOutput) ProblemId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetProblemEntitiesResult) string { return v.ProblemId }).(pulumi.StringOutput)
 }

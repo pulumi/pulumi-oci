@@ -16,7 +16,7 @@ import java.util.Objects;
 @CustomType
 public final class GetResponderRecipesResponderRecipeCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -26,7 +26,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
@@ -36,7 +36,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private String displayName;
     /**
-     * @return List of responder rules associated with the recipe
+     * @return List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     private List<GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule> effectiveResponderRules;
@@ -46,7 +46,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for the responder recip
      * 
      */
     private String id;
@@ -56,7 +56,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private String lifecycleDetails;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of responder recipe
      * 
      */
     private String owner;
@@ -66,12 +66,12 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private List<GetResponderRecipesResponderRecipeCollectionItemResponderRule> responderRules;
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      */
     private String sourceResponderRecipeId;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -86,14 +86,14 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
      */
     private String timeCreated;
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetResponderRecipesResponderRecipeCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -107,7 +107,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
@@ -121,7 +121,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.displayName;
     }
     /**
-     * @return List of responder rules associated with the recipe
+     * @return List of currently enabled responder rules for the responder type, for recipe after applying defaults
      * 
      */
     public List<GetResponderRecipesResponderRecipeCollectionItemEffectiveResponderRule> effectiveResponderRules() {
@@ -135,7 +135,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for the responder recip
      * 
      */
     public String id() {
@@ -149,7 +149,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.lifecycleDetails;
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of responder recipe
      * 
      */
     public String owner() {
@@ -163,14 +163,14 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.responderRules;
     }
     /**
-     * @return The id of the source responder recipe.
+     * @return The unique identifier of the source responder recipe
      * 
      */
     public String sourceResponderRecipeId() {
         return this.sourceResponderRecipeId;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
@@ -191,7 +191,7 @@ public final class GetResponderRecipesResponderRecipeCollectionItem {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the responder recipe was updated. Format defined by RFC3339.
+     * @return The date and time the responder recipe was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

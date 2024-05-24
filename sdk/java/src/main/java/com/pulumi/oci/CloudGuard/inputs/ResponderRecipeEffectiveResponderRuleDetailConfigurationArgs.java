@@ -16,14 +16,14 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
     public static final ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs Empty = new ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs();
 
     /**
-     * Unique name of the configuration
+     * Unique identifier of the configuration
      * 
      */
     @Import(name="configKey")
     private @Nullable Output<String> configKey;
 
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     public Optional<Output<String>> configKey() {
@@ -31,14 +31,14 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
     }
 
     /**
-     * configuration name
+     * Configuration name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public Optional<Output<String>> name() {
@@ -46,14 +46,14 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
     }
 
     /**
-     * configuration value
+     * Configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -87,7 +87,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
         }
 
         /**
-         * @param configKey Unique name of the configuration
+         * @param configKey Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -98,7 +98,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
         }
 
         /**
-         * @param configKey Unique name of the configuration
+         * @param configKey Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -108,7 +108,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
         }
 
         /**
-         * @param value configuration value
+         * @param value Configuration value
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class ResponderRecipeEffectiveResponderRuleDetailConfigurationArgs 
         }
 
         /**
-         * @param value configuration value
+         * @param value Configuration value
          * 
          * @return builder
          * 

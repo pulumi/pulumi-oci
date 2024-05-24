@@ -16,18 +16,18 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetSecurityRecipesResult {
     /**
-     * @return The id of the compartment that contains the recipe
+     * @return The OCID of the compartment that contains the recipe
      * 
      */
     private String compartmentId;
     /**
-     * @return The recipe&#39;s name
+     * @return The recipe&#39;s display name
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetSecurityRecipesFilter> filters;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     private @Nullable String id;
@@ -37,21 +37,21 @@ public final class GetSecurityRecipesResult {
      */
     private List<GetSecurityRecipesSecurityRecipeCollection> securityRecipeCollections;
     /**
-     * @return The current state of the recipe
+     * @return The current lifecycle state of the recipe
      * 
      */
     private @Nullable String state;
 
     private GetSecurityRecipesResult() {}
     /**
-     * @return The id of the compartment that contains the recipe
+     * @return The OCID of the compartment that contains the recipe
      * 
      */
     public String compartmentId() {
         return this.compartmentId;
     }
     /**
-     * @return The recipe&#39;s name
+     * @return The recipe&#39;s display name
      * 
      */
     public Optional<String> displayName() {
@@ -61,7 +61,7 @@ public final class GetSecurityRecipesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     public Optional<String> id() {
@@ -75,7 +75,7 @@ public final class GetSecurityRecipesResult {
         return this.securityRecipeCollections;
     }
     /**
-     * @return The current state of the recipe
+     * @return The current lifecycle state of the recipe
      * 
      */
     public Optional<String> state() {

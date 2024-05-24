@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected {
     /**
-     * @return Target selection.
+     * @return Kind of target selection to be used
      * 
      */
     private String kind;
     /**
-     * @return Types of Targets
+     * @return Types of targets
      * 
      */
     private List<String> values;
 
     private GetDataMaskRulesDataMaskRuleCollectionItemTargetSelected() {}
     /**
-     * @return Target selection.
+     * @return Kind of target selection to be used
      * 
      */
     public String kind() {
         return this.kind;
     }
     /**
-     * @return Types of Targets
+     * @return Types of targets
      * 
      */
     public List<String> values() {

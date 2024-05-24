@@ -21,13 +21,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// Ocid for detector recipe
+        /// OCID for detector recipe
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// Preferred state
+        /// Is this the preferred state?
         /// </summary>
         [Input("isPreferred")]
         public Input<bool>? IsPreferred { get; set; }

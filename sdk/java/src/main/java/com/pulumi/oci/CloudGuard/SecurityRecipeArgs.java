@@ -20,14 +20,14 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
     public static final SecurityRecipeArgs Empty = new SecurityRecipeArgs();
 
     /**
-     * (Updatable) The compartment in which to create the recipe
+     * (Updatable) The OCID of the compartment in which to create the recipe
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) The compartment in which to create the recipe
+     * @return (Updatable) The OCID of the compartment in which to create the recipe
      * 
      */
     public Output<String> compartmentId() {
@@ -65,14 +65,18 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The recipe&#39;s name
+     * (Updatable) The recipe&#39;s display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) The recipe&#39;s name
+     * @return (Updatable) The recipe&#39;s display name.
+     * 
+     * Avoid entering confidential information.
      * 
      */
     public Output<String> displayName() {
@@ -99,7 +103,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * (Updatable) The list of security policy IDs to include in the recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -109,7 +113,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
     private Output<List<String>> securityPolicies;
 
     /**
-     * @return (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+     * @return (Updatable) The list of security policy IDs to include in the recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -149,7 +153,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment in which to create the recipe
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the recipe
          * 
          * @return builder
          * 
@@ -160,7 +164,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) The compartment in which to create the recipe
+         * @param compartmentId (Updatable) The OCID of the compartment in which to create the recipe
          * 
          * @return builder
          * 
@@ -212,7 +216,9 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) The recipe&#39;s name
+         * @param displayName (Updatable) The recipe&#39;s display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -223,7 +229,9 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param displayName (Updatable) The recipe&#39;s name
+         * @param displayName (Updatable) The recipe&#39;s display name.
+         * 
+         * Avoid entering confidential information.
          * 
          * @return builder
          * 
@@ -258,7 +266,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * @param securityPolicies (Updatable) The list of security policy IDs to include in the recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -272,7 +280,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * @param securityPolicies (Updatable) The list of security policy IDs to include in the recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -285,7 +293,7 @@ public final class SecurityRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param securityPolicies (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+         * @param securityPolicies (Updatable) The list of security policy IDs to include in the recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

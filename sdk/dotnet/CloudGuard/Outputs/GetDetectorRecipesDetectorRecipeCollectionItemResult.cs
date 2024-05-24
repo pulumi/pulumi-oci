@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDetectorRecipesDetectorRecipeCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,13 +22,17 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// Description for DetectorRecipeDetectorRule.
+        /// Description for detector recipe detector rule
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// detector for the rule
+        /// Detector recipe for the rule
         /// </summary>
         public readonly string Detector;
+        /// <summary>
+        /// Recipe type ( STANDARD, ENTERPRISE )
+        /// </summary>
+        public readonly string DetectorRecipeType;
         /// <summary>
         /// List of detector rules for the detector type for recipe - user input
         /// </summary>
@@ -46,7 +50,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Ocid for detector recipe
+        /// OCID for detector recipe
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -54,11 +58,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// Recipe Ocid of the Source Recipe to be cloned
+        /// Recipe OCID of the source recipe to be cloned
         /// </summary>
         public readonly string SourceDetectorRecipeId;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -66,15 +70,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The recipe attached to targets
+        /// List of target IDs to which the recipe is attached
         /// </summary>
         public readonly ImmutableArray<string> TargetIds;
         /// <summary>
-        /// The date and time the detector recipe was created. Format defined by RFC3339.
+        /// The date and time the detector recipe was created Format defined by RFC3339.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the detector recipe was updated. Format defined by RFC3339.
+        /// The date and time the detector recipe was last updated Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 
@@ -87,6 +91,8 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             string description,
 
             string detector,
+
+            string detectorRecipeType,
 
             ImmutableArray<Outputs.GetDetectorRecipesDetectorRecipeCollectionItemDetectorRuleResult> detectorRules,
 
@@ -116,6 +122,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
             DefinedTags = definedTags;
             Description = description;
             Detector = detector;
+            DetectorRecipeType = detectorRecipeType;
             DetectorRules = detectorRules;
             DisplayName = displayName;
             EffectiveDetectorRules = effectiveDetectorRules;

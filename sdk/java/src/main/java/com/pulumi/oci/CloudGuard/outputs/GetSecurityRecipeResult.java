@@ -14,7 +14,7 @@ import java.util.Objects;
 @CustomType
 public final class GetSecurityRecipeResult {
     /**
-     * @return The id of the compartment that contains the recipe
+     * @return The OCID of the compartment that contains the recipe
      * 
      */
     private String compartmentId;
@@ -29,7 +29,7 @@ public final class GetSecurityRecipeResult {
      */
     private String description;
     /**
-     * @return The recipe&#39;s name
+     * @return The recipe&#39;s display name
      * 
      */
     private String displayName;
@@ -39,7 +39,7 @@ public final class GetSecurityRecipeResult {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     private String id;
@@ -54,13 +54,13 @@ public final class GetSecurityRecipeResult {
      */
     private String owner;
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     private List<String> securityPolicies;
     private String securityRecipeId;
     /**
-     * @return The current state of the recipe
+     * @return The current lifecycle state of the recipe
      * 
      */
     private String state;
@@ -77,7 +77,7 @@ public final class GetSecurityRecipeResult {
 
     private GetSecurityRecipeResult() {}
     /**
-     * @return The id of the compartment that contains the recipe
+     * @return The OCID of the compartment that contains the recipe
      * 
      */
     public String compartmentId() {
@@ -98,7 +98,7 @@ public final class GetSecurityRecipeResult {
         return this.description;
     }
     /**
-     * @return The recipe&#39;s name
+     * @return The recipe&#39;s display name
      * 
      */
     public String displayName() {
@@ -112,7 +112,7 @@ public final class GetSecurityRecipeResult {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier that is immutable on creation
+     * @return Unique identifier that can’t be changed after creation
      * 
      */
     public String id() {
@@ -133,7 +133,7 @@ public final class GetSecurityRecipeResult {
         return this.owner;
     }
     /**
-     * @return The list of `SecurityPolicy` ids that are included in the recipe
+     * @return The list of security policy IDs that are included in the recipe
      * 
      */
     public List<String> securityPolicies() {
@@ -143,7 +143,7 @@ public final class GetSecurityRecipeResult {
         return this.securityRecipeId;
     }
     /**
-     * @return The current state of the recipe
+     * @return The current lifecycle state of the recipe
      * 
      */
     public String state() {

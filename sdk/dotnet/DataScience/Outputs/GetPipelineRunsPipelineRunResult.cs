@@ -58,6 +58,7 @@ namespace Pulumi.Oci.DataScience.Outputs
         /// Customer logging details for pipeline run.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineRunsPipelineRunLogDetailResult> LogDetails;
+        public readonly string OpcParentRptUrl;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
         /// </summary>
@@ -125,6 +126,8 @@ namespace Pulumi.Oci.DataScience.Outputs
 
             ImmutableArray<Outputs.GetPipelineRunsPipelineRunLogDetailResult> logDetails,
 
+            string opcParentRptUrl,
+
             string pipelineId,
 
             string projectId,
@@ -157,6 +160,7 @@ namespace Pulumi.Oci.DataScience.Outputs
             LifecycleDetails = lifecycleDetails;
             LogConfigurationOverrideDetails = logConfigurationOverrideDetails;
             LogDetails = logDetails;
+            OpcParentRptUrl = opcParentRptUrl;
             PipelineId = pipelineId;
             ProjectId = projectId;
             State = state;

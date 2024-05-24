@@ -17,14 +17,14 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
     public static final CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs Empty = new CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs();
 
     /**
-     * (Updatable) Time when the query can start, if not specified it can start immediately.
+     * (Updatable) Time when the query can start. If not specified it can start immediately
      * 
      */
     @Import(name="queryStartTime")
     private @Nullable Output<String> queryStartTime;
 
     /**
-     * @return (Updatable) Time when the query can start, if not specified it can start immediately.
+     * @return (Updatable) Time when the query can start. If not specified it can start immediately
      * 
      */
     public Optional<Output<String>> queryStartTime() {
@@ -32,14 +32,14 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
     }
 
     /**
-     * (Updatable) policy used for deciding the query start time
+     * (Updatable) Start policy delay timing
      * 
      */
     @Import(name="startPolicyType", required=true)
     private Output<String> startPolicyType;
 
     /**
-     * @return (Updatable) policy used for deciding the query start time
+     * @return (Updatable) Start policy delay timing
      * 
      */
     public Output<String> startPolicyType() {
@@ -72,7 +72,7 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
         }
 
         /**
-         * @param queryStartTime (Updatable) Time when the query can start, if not specified it can start immediately.
+         * @param queryStartTime (Updatable) Time when the query can start. If not specified it can start immediately
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
         }
 
         /**
-         * @param queryStartTime (Updatable) Time when the query can start, if not specified it can start immediately.
+         * @param queryStartTime (Updatable) Time when the query can start. If not specified it can start immediately
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
         }
 
         /**
-         * @param startPolicyType (Updatable) policy used for deciding the query start time
+         * @param startPolicyType (Updatable) Start policy delay timing
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class CloudGuardDataSourceDataSourceDetailsQueryStartTimeArgs exten
         }
 
         /**
-         * @param startPolicyType (Updatable) policy used for deciding the query start time
+         * @param startPolicyType (Updatable) Start policy delay timing
          * 
          * @return builder
          * 

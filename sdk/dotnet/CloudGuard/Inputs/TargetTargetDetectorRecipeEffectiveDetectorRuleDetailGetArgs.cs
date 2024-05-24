@@ -28,7 +28,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationGetArgs>? _configurations;
 
         /// <summary>
-        /// ResponderRule configurations
+        /// List of responder rule configurations
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationGetArgs> Configurations
         {
@@ -37,13 +37,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// configuration allowed or not
+        /// Configuration allowed or not
         /// </summary>
         [Input("isConfigurationAllowed")]
         public Input<bool>? IsConfigurationAllowed { get; set; }
 
         /// <summary>
-        /// Identifies state for ResponderRule
+        /// Enabled state for the responder rule
         /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
@@ -52,7 +52,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _labels;
 
         /// <summary>
-        /// user defined labels for a detector rule
+        /// User-defined labels for a detector rule
         /// </summary>
         public InputList<string> Labels
         {
@@ -61,7 +61,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// The Risk Level
+        /// The risk level of the detector rule
         /// </summary>
         [Input("riskLevel")]
         public Input<string>? RiskLevel { get; set; }

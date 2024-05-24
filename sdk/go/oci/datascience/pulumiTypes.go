@@ -6488,12 +6488,14 @@ func (o PipelineConfigurationDetailsPtrOutput) Type() pulumi.StringPtrOutput {
 }
 
 type PipelineInfrastructureConfigurationDetails struct {
-	// The size of the block storage volume to attach to the instance.
+	// (Updatable) The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 	ShapeConfigDetails *PipelineInfrastructureConfigurationDetailsShapeConfigDetails `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
+	// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName string `pulumi:"shapeName"`
+	// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // PipelineInfrastructureConfigurationDetailsInput is an input type that accepts PipelineInfrastructureConfigurationDetailsArgs and PipelineInfrastructureConfigurationDetailsOutput values.
@@ -6508,12 +6510,14 @@ type PipelineInfrastructureConfigurationDetailsInput interface {
 }
 
 type PipelineInfrastructureConfigurationDetailsArgs struct {
-	// The size of the block storage volume to attach to the instance.
+	// (Updatable) The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 	ShapeConfigDetails PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrInput `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
+	// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (PipelineInfrastructureConfigurationDetailsArgs) ElementType() reflect.Type {
@@ -6593,21 +6597,26 @@ func (o PipelineInfrastructureConfigurationDetailsOutput) ToPipelineInfrastructu
 	}).(PipelineInfrastructureConfigurationDetailsPtrOutput)
 }
 
-// The size of the block storage volume to attach to the instance.
+// (Updatable) The size of the block storage volume to attach to the instance.
 func (o PipelineInfrastructureConfigurationDetailsOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v PipelineInfrastructureConfigurationDetails) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 func (o PipelineInfrastructureConfigurationDetailsOutput) ShapeConfigDetails() PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v PipelineInfrastructureConfigurationDetails) *PipelineInfrastructureConfigurationDetailsShapeConfigDetails {
 		return v.ShapeConfigDetails
 	}).(PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput)
 }
 
-// The shape used to launch the instance for all step runs in the pipeline.
+// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 func (o PipelineInfrastructureConfigurationDetailsOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineInfrastructureConfigurationDetails) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o PipelineInfrastructureConfigurationDetailsOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineInfrastructureConfigurationDetails) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type PipelineInfrastructureConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -6634,7 +6643,7 @@ func (o PipelineInfrastructureConfigurationDetailsPtrOutput) Elem() PipelineInfr
 	}).(PipelineInfrastructureConfigurationDetailsOutput)
 }
 
-// The size of the block storage volume to attach to the instance.
+// (Updatable) The size of the block storage volume to attach to the instance.
 func (o PipelineInfrastructureConfigurationDetailsPtrOutput) BlockStorageSizeInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PipelineInfrastructureConfigurationDetails) *int {
 		if v == nil {
@@ -6644,7 +6653,7 @@ func (o PipelineInfrastructureConfigurationDetailsPtrOutput) BlockStorageSizeInG
 	}).(pulumi.IntPtrOutput)
 }
 
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 func (o PipelineInfrastructureConfigurationDetailsPtrOutput) ShapeConfigDetails() PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v *PipelineInfrastructureConfigurationDetails) *PipelineInfrastructureConfigurationDetailsShapeConfigDetails {
 		if v == nil {
@@ -6654,7 +6663,7 @@ func (o PipelineInfrastructureConfigurationDetailsPtrOutput) ShapeConfigDetails(
 	}).(PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput)
 }
 
-// The shape used to launch the instance for all step runs in the pipeline.
+// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 func (o PipelineInfrastructureConfigurationDetailsPtrOutput) ShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineInfrastructureConfigurationDetails) *string {
 		if v == nil {
@@ -6664,10 +6673,20 @@ func (o PipelineInfrastructureConfigurationDetailsPtrOutput) ShapeName() pulumi.
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o PipelineInfrastructureConfigurationDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineInfrastructureConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
 type PipelineInfrastructureConfigurationDetailsShapeConfigDetails struct {
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -6683,9 +6702,9 @@ type PipelineInfrastructureConfigurationDetailsShapeConfigDetailsInput interface
 }
 
 type PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs struct {
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -6766,12 +6785,12 @@ func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutput) ToPi
 	}).(PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v PipelineInfrastructureConfigurationDetailsShapeConfigDetails) *float64 { return v.MemoryInGbs }).(pulumi.Float64PtrOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v PipelineInfrastructureConfigurationDetailsShapeConfigDetails) *float64 { return v.Ocpus }).(pulumi.Float64PtrOutput)
 }
@@ -6800,7 +6819,7 @@ func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput) E
 	}).(PipelineInfrastructureConfigurationDetailsShapeConfigDetailsOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *PipelineInfrastructureConfigurationDetailsShapeConfigDetails) *float64 {
 		if v == nil {
@@ -6810,7 +6829,7 @@ func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput) M
 	}).(pulumi.Float64PtrOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 func (o PipelineInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *PipelineInfrastructureConfigurationDetailsShapeConfigDetails) *float64 {
 		if v == nil {
@@ -7635,6 +7654,8 @@ func (o PipelineRunLogDetailArrayOutput) Index(i pulumi.IntInput) PipelineRunLog
 type PipelineRunStepOverrideDetail struct {
 	// The configuration details of a step.
 	StepConfigurationDetails PipelineRunStepOverrideDetailStepConfigurationDetails `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails *PipelineRunStepOverrideDetailStepContainerConfigurationDetails `pulumi:"stepContainerConfigurationDetails"`
 	// The name of the step.
 	StepName string `pulumi:"stepName"`
 }
@@ -7653,6 +7674,8 @@ type PipelineRunStepOverrideDetailInput interface {
 type PipelineRunStepOverrideDetailArgs struct {
 	// The configuration details of a step.
 	StepConfigurationDetails PipelineRunStepOverrideDetailStepConfigurationDetailsInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput `pulumi:"stepContainerConfigurationDetails"`
 	// The name of the step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
@@ -7713,6 +7736,13 @@ func (o PipelineRunStepOverrideDetailOutput) StepConfigurationDetails() Pipeline
 	return o.ApplyT(func(v PipelineRunStepOverrideDetail) PipelineRunStepOverrideDetailStepConfigurationDetails {
 		return v.StepConfigurationDetails
 	}).(PipelineRunStepOverrideDetailStepConfigurationDetailsOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o PipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetails() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetail) *PipelineRunStepOverrideDetailStepContainerConfigurationDetails {
+		return v.StepContainerConfigurationDetails
+	}).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
 }
 
 // The name of the step.
@@ -7811,6 +7841,240 @@ func (o PipelineRunStepOverrideDetailStepConfigurationDetailsOutput) Environment
 func (o PipelineRunStepOverrideDetailStepConfigurationDetailsOutput) MaximumRuntimeInMinutes() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepConfigurationDetails) *string {
 		return v.MaximumRuntimeInMinutes
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepContainerConfigurationDetails struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId *string `pulumi:"imageSignatureId"`
+}
+
+// PipelineRunStepOverrideDetailStepContainerConfigurationDetailsInput is an input type that accepts PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs and PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepContainerConfigurationDetailsInput` via:
+//
+//	PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{...}
+type PipelineRunStepOverrideDetailStepContainerConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput
+	ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput
+}
+
+type PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringPtrInput `pulumi:"imageSignatureId"`
+}
+
+func (PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (i PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return i.ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput)
+}
+
+func (i PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput).ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput is an input type that accepts PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs, PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtr and PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput` via:
+//
+//	        PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput
+	ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput
+}
+
+type pipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrType PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs
+
+func PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtr(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput {
+	return (*pipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrType)(v)
+}
+
+func (*pipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (i *pipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrType) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return i.ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrType) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineRunStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *PipelineRunStepOverrideDetailStepContainerConfigurationDetails {
+		return &v
+	}).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) string { return v.ContainerType }).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *string {
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
+type PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineRunStepOverrideDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ToPipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Elem() PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) PipelineRunStepOverrideDetailStepContainerConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineRunStepOverrideDetailStepContainerConfigurationDetails
+		return ret
+	}).(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ContainerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContainerType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRunStepOverrideDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageSignatureId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -8188,7 +8452,9 @@ type PipelineStepDetail struct {
 	JobId *string `pulumi:"jobId"`
 	// (Updatable) The configuration details of a step.
 	StepConfigurationDetails *PipelineStepDetailStepConfigurationDetails `pulumi:"stepConfigurationDetails"`
-	// The infrastructure configuration details of a pipeline or a step.
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails *PipelineStepDetailStepContainerConfigurationDetails `pulumi:"stepContainerConfigurationDetails"`
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails *PipelineStepDetailStepInfrastructureConfigurationDetails `pulumi:"stepInfrastructureConfigurationDetails"`
 	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName string `pulumi:"stepName"`
@@ -8221,7 +8487,9 @@ type PipelineStepDetailArgs struct {
 	JobId pulumi.StringPtrInput `pulumi:"jobId"`
 	// (Updatable) The configuration details of a step.
 	StepConfigurationDetails PipelineStepDetailStepConfigurationDetailsPtrInput `pulumi:"stepConfigurationDetails"`
-	// The infrastructure configuration details of a pipeline or a step.
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails PipelineStepDetailStepContainerConfigurationDetailsPtrInput `pulumi:"stepContainerConfigurationDetails"`
+	// (Updatable) The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails PipelineStepDetailStepInfrastructureConfigurationDetailsPtrInput `pulumi:"stepInfrastructureConfigurationDetails"`
 	// (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
 	StepName pulumi.StringInput `pulumi:"stepName"`
@@ -8310,7 +8578,14 @@ func (o PipelineStepDetailOutput) StepConfigurationDetails() PipelineStepDetailS
 	}).(PipelineStepDetailStepConfigurationDetailsPtrOutput)
 }
 
-// The infrastructure configuration details of a pipeline or a step.
+// Container Details for a step in pipeline.
+func (o PipelineStepDetailOutput) StepContainerConfigurationDetails() PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetail) *PipelineStepDetailStepContainerConfigurationDetails {
+		return v.StepContainerConfigurationDetails
+	}).(PipelineStepDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+// (Updatable) The infrastructure configuration details of a pipeline or a step.
 func (o PipelineStepDetailOutput) StepInfrastructureConfigurationDetails() PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput {
 	return o.ApplyT(func(v PipelineStepDetail) *PipelineStepDetailStepInfrastructureConfigurationDetails {
 		return v.StepInfrastructureConfigurationDetails
@@ -8527,13 +8802,247 @@ func (o PipelineStepDetailStepConfigurationDetailsPtrOutput) MaximumRuntimeInMin
 	}).(pulumi.StringPtrOutput)
 }
 
+type PipelineStepDetailStepContainerConfigurationDetails struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest *string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId *string `pulumi:"imageSignatureId"`
+}
+
+// PipelineStepDetailStepContainerConfigurationDetailsInput is an input type that accepts PipelineStepDetailStepContainerConfigurationDetailsArgs and PipelineStepDetailStepContainerConfigurationDetailsOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepContainerConfigurationDetailsInput` via:
+//
+//	PipelineStepDetailStepContainerConfigurationDetailsArgs{...}
+type PipelineStepDetailStepContainerConfigurationDetailsInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepContainerConfigurationDetailsOutput() PipelineStepDetailStepContainerConfigurationDetailsOutput
+	ToPipelineStepDetailStepContainerConfigurationDetailsOutputWithContext(context.Context) PipelineStepDetailStepContainerConfigurationDetailsOutput
+}
+
+type PipelineStepDetailStepContainerConfigurationDetailsArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringPtrInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringPtrInput `pulumi:"imageSignatureId"`
+}
+
+func (PipelineStepDetailStepContainerConfigurationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (i PipelineStepDetailStepContainerConfigurationDetailsArgs) ToPipelineStepDetailStepContainerConfigurationDetailsOutput() PipelineStepDetailStepContainerConfigurationDetailsOutput {
+	return i.ToPipelineStepDetailStepContainerConfigurationDetailsOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepContainerConfigurationDetailsArgs) ToPipelineStepDetailStepContainerConfigurationDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepContainerConfigurationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepContainerConfigurationDetailsOutput)
+}
+
+func (i PipelineStepDetailStepContainerConfigurationDetailsArgs) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutput() PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i PipelineStepDetailStepContainerConfigurationDetailsArgs) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepContainerConfigurationDetailsOutput).ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx)
+}
+
+// PipelineStepDetailStepContainerConfigurationDetailsPtrInput is an input type that accepts PipelineStepDetailStepContainerConfigurationDetailsArgs, PipelineStepDetailStepContainerConfigurationDetailsPtr and PipelineStepDetailStepContainerConfigurationDetailsPtrOutput values.
+// You can construct a concrete instance of `PipelineStepDetailStepContainerConfigurationDetailsPtrInput` via:
+//
+//	        PipelineStepDetailStepContainerConfigurationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type PipelineStepDetailStepContainerConfigurationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutput() PipelineStepDetailStepContainerConfigurationDetailsPtrOutput
+	ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Context) PipelineStepDetailStepContainerConfigurationDetailsPtrOutput
+}
+
+type pipelineStepDetailStepContainerConfigurationDetailsPtrType PipelineStepDetailStepContainerConfigurationDetailsArgs
+
+func PipelineStepDetailStepContainerConfigurationDetailsPtr(v *PipelineStepDetailStepContainerConfigurationDetailsArgs) PipelineStepDetailStepContainerConfigurationDetailsPtrInput {
+	return (*pipelineStepDetailStepContainerConfigurationDetailsPtrType)(v)
+}
+
+func (*pipelineStepDetailStepContainerConfigurationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (i *pipelineStepDetailStepContainerConfigurationDetailsPtrType) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutput() PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return i.ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *pipelineStepDetailStepContainerConfigurationDetailsPtrType) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+type PipelineStepDetailStepContainerConfigurationDetailsOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepContainerConfigurationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*PipelineStepDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ToPipelineStepDetailStepContainerConfigurationDetailsOutput() PipelineStepDetailStepContainerConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ToPipelineStepDetailStepContainerConfigurationDetailsOutputWithContext(ctx context.Context) PipelineStepDetailStepContainerConfigurationDetailsOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutput() PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineStepDetailStepContainerConfigurationDetails) *PipelineStepDetailStepContainerConfigurationDetails {
+		return &v
+	}).(PipelineStepDetailStepContainerConfigurationDetailsPtrOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepContainerConfigurationDetails) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepContainerConfigurationDetails) string { return v.ContainerType }).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepContainerConfigurationDetails) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepContainerConfigurationDetails) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepContainerConfigurationDetails) *string { return v.ImageDigest }).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o PipelineStepDetailStepContainerConfigurationDetailsOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepContainerConfigurationDetails) *string { return v.ImageSignatureId }).(pulumi.StringPtrOutput)
+}
+
+type PipelineStepDetailStepContainerConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**PipelineStepDetailStepContainerConfigurationDetails)(nil)).Elem()
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutput() PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ToPipelineStepDetailStepContainerConfigurationDetailsPtrOutputWithContext(ctx context.Context) PipelineStepDetailStepContainerConfigurationDetailsPtrOutput {
+	return o
+}
+
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) Elem() PipelineStepDetailStepContainerConfigurationDetailsOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) PipelineStepDetailStepContainerConfigurationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret PipelineStepDetailStepContainerConfigurationDetails
+		return ret
+	}).(PipelineStepDetailStepContainerConfigurationDetailsOutput)
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ContainerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.ContainerType
+	}).(pulumi.StringPtrOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) Image() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Image
+	}).(pulumi.StringPtrOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ImageDigest() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageDigest
+	}).(pulumi.StringPtrOutput)
+}
+
+// OCID of the container image signature
+func (o PipelineStepDetailStepContainerConfigurationDetailsPtrOutput) ImageSignatureId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepContainerConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageSignatureId
+	}).(pulumi.StringPtrOutput)
+}
+
 type PipelineStepDetailStepInfrastructureConfigurationDetails struct {
-	// The size of the block storage volume to attach to the instance.
+	// (Updatable) The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 	ShapeConfigDetails *PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
+	// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName string `pulumi:"shapeName"`
+	// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId *string `pulumi:"subnetId"`
 }
 
 // PipelineStepDetailStepInfrastructureConfigurationDetailsInput is an input type that accepts PipelineStepDetailStepInfrastructureConfigurationDetailsArgs and PipelineStepDetailStepInfrastructureConfigurationDetailsOutput values.
@@ -8548,12 +9057,14 @@ type PipelineStepDetailStepInfrastructureConfigurationDetailsInput interface {
 }
 
 type PipelineStepDetailStepInfrastructureConfigurationDetailsArgs struct {
-	// The size of the block storage volume to attach to the instance.
+	// (Updatable) The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs pulumi.IntInput `pulumi:"blockStorageSizeInGbs"`
-	// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+	// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 	ShapeConfigDetails PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrInput `pulumi:"shapeConfigDetails"`
-	// The shape used to launch the instance for all step runs in the pipeline.
+	// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
 }
 
 func (PipelineStepDetailStepInfrastructureConfigurationDetailsArgs) ElementType() reflect.Type {
@@ -8633,21 +9144,26 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsOutput) ToPipeli
 	}).(PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput)
 }
 
-// The size of the block storage volume to attach to the instance.
+// (Updatable) The size of the block storage volume to attach to the instance.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsOutput) BlockStorageSizeInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v PipelineStepDetailStepInfrastructureConfigurationDetails) int { return v.BlockStorageSizeInGbs }).(pulumi.IntOutput)
 }
 
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsOutput) ShapeConfigDetails() PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v PipelineStepDetailStepInfrastructureConfigurationDetails) *PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails {
 		return v.ShapeConfigDetails
 	}).(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput)
 }
 
-// The shape used to launch the instance for all step runs in the pipeline.
+// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepDetailStepInfrastructureConfigurationDetails) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o PipelineStepDetailStepInfrastructureConfigurationDetailsOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v PipelineStepDetailStepInfrastructureConfigurationDetails) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
 }
 
 type PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput struct{ *pulumi.OutputState }
@@ -8674,7 +9190,7 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) Elem(
 	}).(PipelineStepDetailStepInfrastructureConfigurationDetailsOutput)
 }
 
-// The size of the block storage volume to attach to the instance.
+// (Updatable) The size of the block storage volume to attach to the instance.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) BlockStorageSizeInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *PipelineStepDetailStepInfrastructureConfigurationDetails) *int {
 		if v == nil {
@@ -8684,7 +9200,7 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) Block
 	}).(pulumi.IntPtrOutput)
 }
 
-// Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+// (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) ShapeConfigDetails() PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput {
 	return o.ApplyT(func(v *PipelineStepDetailStepInfrastructureConfigurationDetails) *PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails {
 		if v == nil {
@@ -8694,7 +9210,7 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) Shape
 	}).(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput)
 }
 
-// The shape used to launch the instance for all step runs in the pipeline.
+// (Updatable) The shape used to launch the instance for all step runs in the pipeline.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) ShapeName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *PipelineStepDetailStepInfrastructureConfigurationDetails) *string {
 		if v == nil {
@@ -8704,10 +9220,20 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) Shape
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineStepDetailStepInfrastructureConfigurationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SubnetId
+	}).(pulumi.StringPtrOutput)
+}
+
 type PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails struct {
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 	MemoryInGbs *float64 `pulumi:"memoryInGbs"`
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 	Ocpus *float64 `pulumi:"ocpus"`
 }
 
@@ -8723,9 +9249,9 @@ type PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsI
 }
 
 type PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs struct {
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 	MemoryInGbs pulumi.Float64PtrInput `pulumi:"memoryInGbs"`
-	// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+	// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 	Ocpus pulumi.Float64PtrInput `pulumi:"ocpus"`
 }
 
@@ -8806,14 +9332,14 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetai
 	}).(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails) *float64 {
 		return v.MemoryInGbs
 	}).(pulumi.Float64PtrOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails) *float64 {
 		return v.Ocpus
@@ -8844,7 +9370,7 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetai
 	}).(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput) MemoryInGbs() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails) *float64 {
 		if v == nil {
@@ -8854,7 +9380,7 @@ func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetai
 	}).(pulumi.Float64PtrOutput)
 }
 
-// A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+// (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
 func (o PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsPtrOutput) Ocpus() pulumi.Float64PtrOutput {
 	return o.ApplyT(func(v *PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails) *float64 {
 		if v == nil {
@@ -10940,7 +11466,8 @@ type GetJobRunsJobRun struct {
 	// Details of the state of the job run.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
-	LogDetails []GetJobRunsJobRunLogDetail `pulumi:"logDetails"`
+	LogDetails      []GetJobRunsJobRunLogDetail `pulumi:"logDetails"`
+	OpcParentRptUrl string                      `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	ProjectId string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -10993,7 +11520,8 @@ type GetJobRunsJobRunArgs struct {
 	// Details of the state of the job run.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
-	LogDetails GetJobRunsJobRunLogDetailArrayInput `pulumi:"logDetails"`
+	LogDetails      GetJobRunsJobRunLogDetailArrayInput `pulumi:"logDetails"`
+	OpcParentRptUrl pulumi.StringInput                  `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -11139,6 +11667,10 @@ func (o GetJobRunsJobRunOutput) LifecycleDetails() pulumi.StringOutput {
 // Customer logging details for job run.
 func (o GetJobRunsJobRunOutput) LogDetails() GetJobRunsJobRunLogDetailArrayOutput {
 	return o.ApplyT(func(v GetJobRunsJobRun) []GetJobRunsJobRunLogDetail { return v.LogDetails }).(GetJobRunsJobRunLogDetailArrayOutput)
+}
+
+func (o GetJobRunsJobRunOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetJobRunsJobRun) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
@@ -15963,6 +16495,7 @@ type GetModelDeploymentsModelDeployment struct {
 	ModelDeploymentSystemDatas []GetModelDeploymentsModelDeploymentModelDeploymentSystemData `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl string `pulumi:"modelDeploymentUrl"`
+	OpcParentRptUrl    string `pulumi:"opcParentRptUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId string `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -16007,6 +16540,7 @@ type GetModelDeploymentsModelDeploymentArgs struct {
 	ModelDeploymentSystemDatas GetModelDeploymentsModelDeploymentModelDeploymentSystemDataArrayInput `pulumi:"modelDeploymentSystemDatas"`
 	// The URL to interact with the model deployment.
 	ModelDeploymentUrl pulumi.StringInput `pulumi:"modelDeploymentUrl"`
+	OpcParentRptUrl    pulumi.StringInput `pulumi:"opcParentRptUrl"`
 	// <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
 	ProjectId pulumi.StringInput `pulumi:"projectId"`
 	// <b>Filter</b> results by the specified lifecycle state. Must be a valid state for the resource type.
@@ -16130,6 +16664,10 @@ func (o GetModelDeploymentsModelDeploymentOutput) ModelDeploymentSystemDatas() G
 // The URL to interact with the model deployment.
 func (o GetModelDeploymentsModelDeploymentOutput) ModelDeploymentUrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) string { return v.ModelDeploymentUrl }).(pulumi.StringOutput)
+}
+
+func (o GetModelDeploymentsModelDeploymentOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetModelDeploymentsModelDeployment) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // <b>Filter</b> results by the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project.
@@ -21579,6 +22117,8 @@ type GetPipelineInfrastructureConfigurationDetail struct {
 	ShapeConfigDetails []GetPipelineInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
 }
 
 // GetPipelineInfrastructureConfigurationDetailInput is an input type that accepts GetPipelineInfrastructureConfigurationDetailArgs and GetPipelineInfrastructureConfigurationDetailOutput values.
@@ -21599,6 +22139,8 @@ type GetPipelineInfrastructureConfigurationDetailArgs struct {
 	ShapeConfigDetails GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
 func (GetPipelineInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
@@ -21667,6 +22209,11 @@ func (o GetPipelineInfrastructureConfigurationDetailOutput) ShapeConfigDetails()
 // The shape used to launch the instance for all step runs in the pipeline.
 func (o GetPipelineInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelineInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineInfrastructureConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 type GetPipelineInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -22402,6 +22949,8 @@ func (o GetPipelineRunLogDetailArrayOutput) Index(i pulumi.IntInput) GetPipeline
 type GetPipelineRunStepOverrideDetail struct {
 	// The configuration details of a step.
 	StepConfigurationDetails []GetPipelineRunStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
 	// The name of the step.
 	StepName string `pulumi:"stepName"`
 }
@@ -22420,6 +22969,8 @@ type GetPipelineRunStepOverrideDetailInput interface {
 type GetPipelineRunStepOverrideDetailArgs struct {
 	// The configuration details of a step.
 	StepConfigurationDetails GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
 	// The name of the step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
@@ -22480,6 +23031,13 @@ func (o GetPipelineRunStepOverrideDetailOutput) StepConfigurationDetails() GetPi
 	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepConfigurationDetail {
 		return v.StepConfigurationDetails
 	}).(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetPipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetails() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetail) []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
 }
 
 // The name of the step.
@@ -22624,6 +23182,154 @@ func (o GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput) Inde
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepConfigurationDetail {
 		return vs[0].([]GetPipelineRunStepOverrideDetailStepConfigurationDetail)[vs[1].(int)]
 	}).(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput is an input type that accepts GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs and GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...}
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray and GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{ GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...} }
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+	ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray []GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ContainerType
+	}).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetPipelineRunStepOverrideDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
 }
 
 type GetPipelineRunStepRun struct {
@@ -22906,7 +23612,8 @@ type GetPipelineRunsPipelineRun struct {
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails []GetPipelineRunsPipelineRunLogConfigurationOverrideDetail `pulumi:"logConfigurationOverrideDetails"`
 	// Customer logging details for pipeline run.
-	LogDetails []GetPipelineRunsPipelineRunLogDetail `pulumi:"logDetails"`
+	LogDetails      []GetPipelineRunsPipelineRunLogDetail `pulumi:"logDetails"`
+	OpcParentRptUrl string                                `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
 	PipelineId string `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -22963,7 +23670,8 @@ type GetPipelineRunsPipelineRunArgs struct {
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails GetPipelineRunsPipelineRunLogConfigurationOverrideDetailArrayInput `pulumi:"logConfigurationOverrideDetails"`
 	// Customer logging details for pipeline run.
-	LogDetails GetPipelineRunsPipelineRunLogDetailArrayInput `pulumi:"logDetails"`
+	LogDetails      GetPipelineRunsPipelineRunLogDetailArrayInput `pulumi:"logDetails"`
+	OpcParentRptUrl pulumi.StringInput                            `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
 	PipelineId pulumi.StringInput `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -23100,6 +23808,10 @@ func (o GetPipelineRunsPipelineRunOutput) LogConfigurationOverrideDetails() GetP
 // Customer logging details for pipeline run.
 func (o GetPipelineRunsPipelineRunOutput) LogDetails() GetPipelineRunsPipelineRunLogDetailArrayOutput {
 	return o.ApplyT(func(v GetPipelineRunsPipelineRun) []GetPipelineRunsPipelineRunLogDetail { return v.LogDetails }).(GetPipelineRunsPipelineRunLogDetailArrayOutput)
+}
+
+func (o GetPipelineRunsPipelineRunOutput) OpcParentRptUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRun) string { return v.OpcParentRptUrl }).(pulumi.StringOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline.
@@ -23659,6 +24371,8 @@ func (o GetPipelineRunsPipelineRunLogDetailArrayOutput) Index(i pulumi.IntInput)
 type GetPipelineRunsPipelineRunStepOverrideDetail struct {
 	// The configuration details of a step.
 	StepConfigurationDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
 	// The name of the step.
 	StepName string `pulumi:"stepName"`
 }
@@ -23677,6 +24391,8 @@ type GetPipelineRunsPipelineRunStepOverrideDetailInput interface {
 type GetPipelineRunsPipelineRunStepOverrideDetailArgs struct {
 	// The configuration details of a step.
 	StepConfigurationDetails GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
 	// The name of the step.
 	StepName pulumi.StringInput `pulumi:"stepName"`
 }
@@ -23737,6 +24453,13 @@ func (o GetPipelineRunsPipelineRunStepOverrideDetailOutput) StepConfigurationDet
 	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetail) []GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail {
 		return v.StepConfigurationDetails
 	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailOutput) StepContainerConfigurationDetails() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetail) []GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
 }
 
 // The name of the step.
@@ -23883,6 +24606,160 @@ func (o GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArray
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail {
 		return vs[0].([]GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetail)[vs[1].(int)]
 	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs and GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...}
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray and GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{ GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{...} }
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+	ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray []GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Cmds
+	}).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ContainerType
+	}).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail) []string {
+		return v.Entrypoints
+	}).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.Image
+	}).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageDigest
+	}).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput() GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput)
 }
 
 type GetPipelineRunsPipelineRunStepRun struct {
@@ -24174,6 +25051,8 @@ type GetPipelineStepDetail struct {
 	JobId string `pulumi:"jobId"`
 	// The configuration details of a step.
 	StepConfigurationDetails []GetPipelineStepDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetPipelineStepDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails []GetPipelineStepDetailStepInfrastructureConfigurationDetail `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
@@ -24204,6 +25083,8 @@ type GetPipelineStepDetailArgs struct {
 	JobId pulumi.StringInput `pulumi:"jobId"`
 	// The configuration details of a step.
 	StepConfigurationDetails GetPipelineStepDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetPipelineStepDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
@@ -24288,6 +25169,13 @@ func (o GetPipelineStepDetailOutput) StepConfigurationDetails() GetPipelineStepD
 	return o.ApplyT(func(v GetPipelineStepDetail) []GetPipelineStepDetailStepConfigurationDetail {
 		return v.StepConfigurationDetails
 	}).(GetPipelineStepDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetPipelineStepDetailOutput) StepContainerConfigurationDetails() GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetail) []GetPipelineStepDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput)
 }
 
 // The infrastructure configuration details of a pipeline or a step.
@@ -24444,6 +25332,148 @@ func (o GetPipelineStepDetailStepConfigurationDetailArrayOutput) Index(i pulumi.
 	}).(GetPipelineStepDetailStepConfigurationDetailOutput)
 }
 
+type GetPipelineStepDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetPipelineStepDetailStepContainerConfigurationDetailInput is an input type that accepts GetPipelineStepDetailStepContainerConfigurationDetailArgs and GetPipelineStepDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetPipelineStepDetailStepContainerConfigurationDetailArgs{...}
+type GetPipelineStepDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepContainerConfigurationDetailOutput() GetPipelineStepDetailStepContainerConfigurationDetailOutput
+	ToGetPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetPipelineStepDetailStepContainerConfigurationDetailOutput
+}
+
+type GetPipelineStepDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetPipelineStepDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepContainerConfigurationDetailArgs) ToGetPipelineStepDetailStepContainerConfigurationDetailOutput() GetPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepContainerConfigurationDetailArgs) ToGetPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetPipelineStepDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetPipelineStepDetailStepContainerConfigurationDetailArray and GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelineStepDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetPipelineStepDetailStepContainerConfigurationDetailArray{ GetPipelineStepDetailStepContainerConfigurationDetailArgs{...} }
+type GetPipelineStepDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutput() GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput
+	ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetPipelineStepDetailStepContainerConfigurationDetailArray []GetPipelineStepDetailStepContainerConfigurationDetailInput
+
+func (GetPipelineStepDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelineStepDetailStepContainerConfigurationDetailArray) ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutput() GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelineStepDetailStepContainerConfigurationDetailArray) ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetPipelineStepDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) ToGetPipelineStepDetailStepContainerConfigurationDetailOutput() GetPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) ToGetPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepContainerConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepContainerConfigurationDetail) string { return v.ContainerType }).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepContainerConfigurationDetail) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepContainerConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepContainerConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetPipelineStepDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepContainerConfigurationDetail) string { return v.ImageSignatureId }).(pulumi.StringOutput)
+}
+
+type GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutput() GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelineStepDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetPipelineStepDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelineStepDetailStepContainerConfigurationDetailOutput)
+}
+
 type GetPipelineStepDetailStepInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -24451,6 +25481,8 @@ type GetPipelineStepDetailStepInfrastructureConfigurationDetail struct {
 	ShapeConfigDetails []GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
 }
 
 // GetPipelineStepDetailStepInfrastructureConfigurationDetailInput is an input type that accepts GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs and GetPipelineStepDetailStepInfrastructureConfigurationDetailOutput values.
@@ -24471,6 +25503,8 @@ type GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs struct {
 	ShapeConfigDetails GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
 func (GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
@@ -24539,6 +25573,11 @@ func (o GetPipelineStepDetailStepInfrastructureConfigurationDetailOutput) ShapeC
 // The shape used to launch the instance for all step runs in the pipeline.
 func (o GetPipelineStepDetailStepInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelineStepDetailStepInfrastructureConfigurationDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelineStepDetailStepInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelineStepDetailStepInfrastructureConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 type GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -25165,6 +26204,8 @@ type GetPipelinesPipelineInfrastructureConfigurationDetail struct {
 	ShapeConfigDetails []GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
 }
 
 // GetPipelinesPipelineInfrastructureConfigurationDetailInput is an input type that accepts GetPipelinesPipelineInfrastructureConfigurationDetailArgs and GetPipelinesPipelineInfrastructureConfigurationDetailOutput values.
@@ -25185,6 +26226,8 @@ type GetPipelinesPipelineInfrastructureConfigurationDetailArgs struct {
 	ShapeConfigDetails GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
 func (GetPipelinesPipelineInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
@@ -25253,6 +26296,11 @@ func (o GetPipelinesPipelineInfrastructureConfigurationDetailOutput) ShapeConfig
 // The shape used to launch the instance for all step runs in the pipeline.
 func (o GetPipelinesPipelineInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineInfrastructureConfigurationDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelinesPipelineInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineInfrastructureConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 type GetPipelinesPipelineInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -25645,6 +26693,8 @@ type GetPipelinesPipelineStepDetail struct {
 	JobId string `pulumi:"jobId"`
 	// The configuration details of a step.
 	StepConfigurationDetails []GetPipelinesPipelineStepDetailStepConfigurationDetail `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails []GetPipelinesPipelineStepDetailStepContainerConfigurationDetail `pulumi:"stepContainerConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails []GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
@@ -25675,6 +26725,8 @@ type GetPipelinesPipelineStepDetailArgs struct {
 	JobId pulumi.StringInput `pulumi:"jobId"`
 	// The configuration details of a step.
 	StepConfigurationDetails GetPipelinesPipelineStepDetailStepConfigurationDetailArrayInput `pulumi:"stepConfigurationDetails"`
+	// Container Details for a step in pipeline.
+	StepContainerConfigurationDetails GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput `pulumi:"stepContainerConfigurationDetails"`
 	// The infrastructure configuration details of a pipeline or a step.
 	StepInfrastructureConfigurationDetails GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput `pulumi:"stepInfrastructureConfigurationDetails"`
 	// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
@@ -25759,6 +26811,13 @@ func (o GetPipelinesPipelineStepDetailOutput) StepConfigurationDetails() GetPipe
 	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) []GetPipelinesPipelineStepDetailStepConfigurationDetail {
 		return v.StepConfigurationDetails
 	}).(GetPipelinesPipelineStepDetailStepConfigurationDetailArrayOutput)
+}
+
+// Container Details for a step in pipeline.
+func (o GetPipelinesPipelineStepDetailOutput) StepContainerConfigurationDetails() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetail) []GetPipelinesPipelineStepDetailStepContainerConfigurationDetail {
+		return v.StepContainerConfigurationDetails
+	}).(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput)
 }
 
 // The infrastructure configuration details of a pipeline or a step.
@@ -25915,6 +26974,150 @@ func (o GetPipelinesPipelineStepDetailStepConfigurationDetailArrayOutput) Index(
 	}).(GetPipelinesPipelineStepDetailStepConfigurationDetailOutput)
 }
 
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetail struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds []string `pulumi:"cmds"`
+	// The type of container.
+	ContainerType string `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints []string `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image string `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest string `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId string `pulumi:"imageSignatureId"`
+}
+
+// GetPipelinesPipelineStepDetailStepContainerConfigurationDetailInput is an input type that accepts GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs and GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepContainerConfigurationDetailInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs{...}
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetailInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput
+	ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput
+}
+
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs struct {
+	// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+	Cmds pulumi.StringArrayInput `pulumi:"cmds"`
+	// The type of container.
+	ContainerType pulumi.StringInput `pulumi:"containerType"`
+	// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+	Entrypoints pulumi.StringArrayInput `pulumi:"entrypoints"`
+	// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+	Image pulumi.StringInput `pulumi:"image"`
+	// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+	ImageDigest pulumi.StringInput `pulumi:"imageDigest"`
+	// OCID of the container image signature
+	ImageSignatureId pulumi.StringInput `pulumi:"imageSignatureId"`
+}
+
+func (GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput)
+}
+
+// GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput is an input type that accepts GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray and GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput values.
+// You can construct a concrete instance of `GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput` via:
+//
+//	GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray{ GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs{...} }
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput
+	ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Context) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput
+}
+
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray []GetPipelinesPipelineStepDetailStepContainerConfigurationDetailInput
+
+func (GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (i GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return i.ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetPipelinesPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return o
+}
+
+// The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) Cmds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepContainerConfigurationDetail) []string { return v.Cmds }).(pulumi.StringArrayOutput)
+}
+
+// The type of container.
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) ContainerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepContainerConfigurationDetail) string { return v.ContainerType }).(pulumi.StringOutput)
+}
+
+// The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) Entrypoints() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepContainerConfigurationDetail) []string { return v.Entrypoints }).(pulumi.StringArrayOutput)
+}
+
+// The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) Image() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepContainerConfigurationDetail) string { return v.Image }).(pulumi.StringOutput)
+}
+
+// The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) ImageDigest() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepContainerConfigurationDetail) string { return v.ImageDigest }).(pulumi.StringOutput)
+}
+
+// OCID of the container image signature
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput) ImageSignatureId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepContainerConfigurationDetail) string {
+		return v.ImageSignatureId
+	}).(pulumi.StringOutput)
+}
+
+type GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetPipelinesPipelineStepDetailStepContainerConfigurationDetail)(nil)).Elem()
+}
+
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput() GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput) ToGetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutputWithContext(ctx context.Context) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput {
+	return o
+}
+
+func (o GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput) Index(i pulumi.IntInput) GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetPipelinesPipelineStepDetailStepContainerConfigurationDetail {
+		return vs[0].([]GetPipelinesPipelineStepDetailStepContainerConfigurationDetail)[vs[1].(int)]
+	}).(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput)
+}
+
 type GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail struct {
 	// The size of the block storage volume to attach to the instance.
 	BlockStorageSizeInGbs int `pulumi:"blockStorageSizeInGbs"`
@@ -25922,6 +27125,8 @@ type GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail struct 
 	ShapeConfigDetails []GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetail `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName string `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId string `pulumi:"subnetId"`
 }
 
 // GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailInput is an input type that accepts GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs and GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailOutput values.
@@ -25942,6 +27147,8 @@ type GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs str
 	ShapeConfigDetails GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArrayInput `pulumi:"shapeConfigDetails"`
 	// The shape used to launch the instance for all step runs in the pipeline.
 	ShapeName pulumi.StringInput `pulumi:"shapeName"`
+	// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 }
 
 func (GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs) ElementType() reflect.Type {
@@ -26012,6 +27219,11 @@ func (o GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailOutpu
 // The shape used to launch the instance for all step runs in the pipeline.
 func (o GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail) string { return v.ShapeName }).(pulumi.StringOutput)
+}
+
+// The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+func (o GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetail) string { return v.SubnetId }).(pulumi.StringOutput)
 }
 
 type GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput struct{ *pulumi.OutputState }
@@ -26864,6 +28076,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailInput)(nil)).Elem(), PipelineRunStepOverrideDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailArrayInput)(nil)).Elem(), PipelineRunStepOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepConfigurationDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepContainerConfigurationDetailsInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrInput)(nil)).Elem(), PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepRunInput)(nil)).Elem(), PipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepRunArrayInput)(nil)).Elem(), PipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepArtifactInput)(nil)).Elem(), PipelineStepArtifactArgs{})
@@ -26872,6 +28086,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailArrayInput)(nil)).Elem(), PipelineStepDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepContainerConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepContainerConfigurationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepContainerConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepContainerConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsPtrInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsInput)(nil)).Elem(), PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs{})
@@ -27084,6 +28300,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepRunInput)(nil)).Elem(), GetPipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunStepRunArrayInput)(nil)).Elem(), GetPipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsFilterInput)(nil)).Elem(), GetPipelineRunsFilterArgs{})
@@ -27102,6 +28320,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepRunInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineRunsPipelineRunStepRunArrayInput)(nil)).Elem(), GetPipelineRunsPipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepArtifactInput)(nil)).Elem(), GetPipelineStepArtifactArgs{})
@@ -27110,6 +28330,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepConfigurationDetailInput)(nil)).Elem(), GetPipelineStepDetailStepConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelineStepDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepContainerConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
@@ -27132,6 +28354,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepConfigurationDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepConfigurationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepContainerConfigurationDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailInput)(nil)).Elem(), GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs{})
@@ -27235,6 +28459,8 @@ func init() {
 	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineRunStepOverrideDetailStepContainerConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(PipelineStepArtifactOutput{})
@@ -27243,6 +28469,8 @@ func init() {
 	pulumi.RegisterOutputType(PipelineStepDetailArrayOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepConfigurationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepContainerConfigurationDetailsOutput{})
+	pulumi.RegisterOutputType(PipelineStepDetailStepContainerConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsPtrOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsOutput{})
@@ -27455,6 +28683,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsFilterOutput{})
@@ -27473,6 +28703,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(GetPipelineRunsPipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepArtifactOutput{})
@@ -27481,6 +28713,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelineStepDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelineStepDetailStepContainerConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})
@@ -27503,6 +28737,8 @@ func init() {
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepConfigurationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailOutput{})
+	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailOutput{})

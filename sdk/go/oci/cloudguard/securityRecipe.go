@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+// Creates a security zone recipe (SecurityRecipe resource), using parameters
+// passed in a CreateSecurityRecipeDetails resource.
 //
 // ## Example Usage
 //
@@ -61,13 +62,15 @@ import (
 type SecurityRecipe struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) The compartment in which to create the recipe
+	// (Updatable) The OCID of the compartment in which to create the recipe
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The recipe's description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The recipe's name
+	// (Updatable) The recipe's display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -77,12 +80,12 @@ type SecurityRecipe struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
 	Owner pulumi.StringOutput `pulumi:"owner"`
-	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	// (Updatable) The list of security policy IDs to include in the recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies pulumi.StringArrayOutput `pulumi:"securityPolicies"`
-	// The current state of the recipe
+	// The current lifecycle state of the recipe
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -129,13 +132,15 @@ func GetSecurityRecipe(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering SecurityRecipe resources.
 type securityRecipeState struct {
-	// (Updatable) The compartment in which to create the recipe
+	// (Updatable) The OCID of the compartment in which to create the recipe
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The recipe's description
 	Description *string `pulumi:"description"`
-	// (Updatable) The recipe's name
+	// (Updatable) The recipe's display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -145,12 +150,12 @@ type securityRecipeState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The owner of the recipe
 	Owner *string `pulumi:"owner"`
-	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	// (Updatable) The list of security policy IDs to include in the recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies []string `pulumi:"securityPolicies"`
-	// The current state of the recipe
+	// The current lifecycle state of the recipe
 	State *string `pulumi:"state"`
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -159,13 +164,15 @@ type securityRecipeState struct {
 }
 
 type SecurityRecipeState struct {
-	// (Updatable) The compartment in which to create the recipe
+	// (Updatable) The OCID of the compartment in which to create the recipe
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The recipe's description
 	Description pulumi.StringPtrInput
-	// (Updatable) The recipe's name
+	// (Updatable) The recipe's display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -175,12 +182,12 @@ type SecurityRecipeState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// The owner of the recipe
 	Owner pulumi.StringPtrInput
-	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	// (Updatable) The list of security policy IDs to include in the recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityPolicies pulumi.StringArrayInput
-	// The current state of the recipe
+	// The current lifecycle state of the recipe
 	State pulumi.StringPtrInput
 	// The time the recipe was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -193,19 +200,21 @@ func (SecurityRecipeState) ElementType() reflect.Type {
 }
 
 type securityRecipeArgs struct {
-	// (Updatable) The compartment in which to create the recipe
+	// (Updatable) The OCID of the compartment in which to create the recipe
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The recipe's description
 	Description *string `pulumi:"description"`
-	// (Updatable) The recipe's name
+	// (Updatable) The recipe's display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	// (Updatable) The list of security policy IDs to include in the recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -214,19 +223,21 @@ type securityRecipeArgs struct {
 
 // The set of arguments for constructing a SecurityRecipe resource.
 type SecurityRecipeArgs struct {
-	// (Updatable) The compartment in which to create the recipe
+	// (Updatable) The OCID of the compartment in which to create the recipe
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) The recipe's description
 	Description pulumi.StringPtrInput
-	// (Updatable) The recipe's name
+	// (Updatable) The recipe's display name.
+	//
+	// Avoid entering confidential information.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+	// (Updatable) The list of security policy IDs to include in the recipe
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -320,7 +331,7 @@ func (o SecurityRecipeOutput) ToSecurityRecipeOutputWithContext(ctx context.Cont
 	return o
 }
 
-// (Updatable) The compartment in which to create the recipe
+// (Updatable) The OCID of the compartment in which to create the recipe
 func (o SecurityRecipeOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -335,7 +346,9 @@ func (o SecurityRecipeOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) The recipe's name
+// (Updatable) The recipe's display name.
+//
+// Avoid entering confidential information.
 func (o SecurityRecipeOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -357,7 +370,7 @@ func (o SecurityRecipeOutput) Owner() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.Owner }).(pulumi.StringOutput)
 }
 
-// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+// (Updatable) The list of security policy IDs to include in the recipe
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -365,7 +378,7 @@ func (o SecurityRecipeOutput) SecurityPolicies() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringArrayOutput { return v.SecurityPolicies }).(pulumi.StringArrayOutput)
 }
 
-// The current state of the recipe
+// The current lifecycle state of the recipe
 func (o SecurityRecipeOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityRecipe) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

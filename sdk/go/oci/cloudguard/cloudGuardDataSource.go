@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// # Creates a DataSource
+// Creates a data source (DataSource resource), using parameters passed
+// through a CreateDataSourceDetails resource.
 //
 // ## Example Usage
 //
@@ -37,7 +38,9 @@ import (
 //				DataSourceDetails: &cloudguard.CloudGuardDataSourceDataSourceDetailsArgs{
 //					DataSourceFeedProvider:  pulumi.Any(dataSourceDataSourceDetailsDataSourceFeedProvider),
 //					AdditionalEntitiesCount: pulumi.Any(dataSourceDataSourceDetailsAdditionalEntitiesCount),
+//					Description:             pulumi.Any(dataSourceDataSourceDetailsDescription),
 //					IntervalInMinutes:       pulumi.Any(dataSourceDataSourceDetailsIntervalInMinutes),
+//					IntervalInSeconds:       pulumi.Any(dataSourceDataSourceDetailsIntervalInSeconds),
 //					LoggingQueryDetails: &cloudguard.CloudGuardDataSourceDataSourceDetailsLoggingQueryDetailsArgs{
 //						LoggingQueryType: pulumi.Any(dataSourceDataSourceDetailsLoggingQueryDetailsLoggingQueryType),
 //						KeyEntitiesCount: pulumi.Any(dataSourceDataSourceDetailsLoggingQueryDetailsKeyEntitiesCount),
@@ -49,7 +52,14 @@ import (
 //						StartPolicyType: pulumi.Any(dataSourceDataSourceDetailsQueryStartTimeStartPolicyType),
 //						QueryStartTime:  pulumi.Any(dataSourceDataSourceDetailsQueryStartTimeQueryStartTime),
 //					},
-//					Regions:   pulumi.Any(dataSourceDataSourceDetailsRegions),
+//					Regions: pulumi.Any(dataSourceDataSourceDetailsRegions),
+//					ScheduledQueryScopeDetails: cloudguard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArray{
+//						&cloudguard.CloudGuardDataSourceDataSourceDetailsScheduledQueryScopeDetailArgs{
+//							Region:       pulumi.Any(dataSourceDataSourceDetailsScheduledQueryScopeDetailsRegion),
+//							ResourceIds:  pulumi.Any(dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceIds),
+//							ResourceType: pulumi.Any(dataSourceDataSourceDetailsScheduledQueryScopeDetailsResourceType),
+//						},
+//					},
 //					Threshold: pulumi.Any(dataSourceDataSourceDetailsThreshold),
 //				},
 //				DefinedTags: pulumi.Map{
@@ -79,17 +89,17 @@ import (
 type CloudGuardDataSource struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) CompartmentId of Data Source.
+	// (Updatable) Compartment OCID of the data source
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Details specific to the data source type.
 	DataSourceDetails CloudGuardDataSourceDataSourceDetailsOutput `pulumi:"dataSourceDetails"`
 	// Information about the detector recipe and rule attached
 	DataSourceDetectorMappingInfos CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput `pulumi:"dataSourceDetectorMappingInfos"`
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider pulumi.StringOutput `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) Data Source display name.
+	// (Updatable) Data source display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -97,9 +107,9 @@ type CloudGuardDataSource struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayOutput `pulumi:"regionStatusDetails"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource.
 	State pulumi.StringOutput `pulumi:"state"`
-	// (Updatable) Status of DataSource. Default value is DISABLED.
+	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -108,7 +118,7 @@ type CloudGuardDataSource struct {
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The date and time the Data source was updated. Format defined by RFC3339.
+	// The date and time the data source was updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
 }
 
@@ -151,17 +161,17 @@ func GetCloudGuardDataSource(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering CloudGuardDataSource resources.
 type cloudGuardDataSourceState struct {
-	// (Updatable) CompartmentId of Data Source.
+	// (Updatable) Compartment OCID of the data source
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Details specific to the data source type.
 	DataSourceDetails *CloudGuardDataSourceDataSourceDetails `pulumi:"dataSourceDetails"`
 	// Information about the detector recipe and rule attached
 	DataSourceDetectorMappingInfos []CloudGuardDataSourceDataSourceDetectorMappingInfo `pulumi:"dataSourceDetectorMappingInfos"`
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider *string `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Data Source display name.
+	// (Updatable) Data source display name
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -169,9 +179,9 @@ type cloudGuardDataSourceState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Information about the region and status of query replication
 	RegionStatusDetails []CloudGuardDataSourceRegionStatusDetail `pulumi:"regionStatusDetails"`
-	// The current state of the resource.
+	// The current lifecycle state of the resource.
 	State *string `pulumi:"state"`
-	// (Updatable) Status of DataSource. Default value is DISABLED.
+	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -180,22 +190,22 @@ type cloudGuardDataSourceState struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The date and time the Data source was updated. Format defined by RFC3339.
+	// The date and time the data source was updated. Format defined by RFC3339.
 	TimeUpdated *string `pulumi:"timeUpdated"`
 }
 
 type CloudGuardDataSourceState struct {
-	// (Updatable) CompartmentId of Data Source.
+	// (Updatable) Compartment OCID of the data source
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Details specific to the data source type.
 	DataSourceDetails CloudGuardDataSourceDataSourceDetailsPtrInput
 	// Information about the detector recipe and rule attached
 	DataSourceDetectorMappingInfos CloudGuardDataSourceDataSourceDetectorMappingInfoArrayInput
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Data Source display name.
+	// (Updatable) Data source display name
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -203,9 +213,9 @@ type CloudGuardDataSourceState struct {
 	FreeformTags pulumi.MapInput
 	// Information about the region and status of query replication
 	RegionStatusDetails CloudGuardDataSourceRegionStatusDetailArrayInput
-	// The current state of the resource.
+	// The current lifecycle state of the resource.
 	State pulumi.StringPtrInput
-	// (Updatable) Status of DataSource. Default value is DISABLED.
+	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -214,7 +224,7 @@ type CloudGuardDataSourceState struct {
 	SystemTags pulumi.MapInput
 	// The date and time the Data source was created. Format defined by RFC3339.
 	TimeCreated pulumi.StringPtrInput
-	// The date and time the Data source was updated. Format defined by RFC3339.
+	// The date and time the data source was updated. Format defined by RFC3339.
 	TimeUpdated pulumi.StringPtrInput
 }
 
@@ -223,21 +233,21 @@ func (CloudGuardDataSourceState) ElementType() reflect.Type {
 }
 
 type cloudGuardDataSourceArgs struct {
-	// (Updatable) CompartmentId of Data Source.
+	// (Updatable) Compartment OCID of the data source
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Details specific to the data source type.
 	DataSourceDetails *CloudGuardDataSourceDataSourceDetails `pulumi:"dataSourceDetails"`
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider string `pulumi:"dataSourceFeedProvider"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) Data Source display name.
+	// (Updatable) Data source display name
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) Status of DataSource. Default value is DISABLED.
+	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -246,21 +256,21 @@ type cloudGuardDataSourceArgs struct {
 
 // The set of arguments for constructing a CloudGuardDataSource resource.
 type CloudGuardDataSourceArgs struct {
-	// (Updatable) CompartmentId of Data Source.
+	// (Updatable) Compartment OCID of the data source
 	CompartmentId pulumi.StringInput
 	// (Updatable) Details specific to the data source type.
 	DataSourceDetails CloudGuardDataSourceDataSourceDetailsPtrInput
-	// Possible type of dataSourceFeed Provider(LoggingQuery)
+	// Type of data source feed provider (LoggingQuery)
 	DataSourceFeedProvider pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) Data Source display name.
+	// (Updatable) Data source display name
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) Status of DataSource. Default value is DISABLED.
+	// (Updatable) Enablement status of data source.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -354,7 +364,7 @@ func (o CloudGuardDataSourceOutput) ToCloudGuardDataSourceOutputWithContext(ctx 
 	return o
 }
 
-// (Updatable) CompartmentId of Data Source.
+// (Updatable) Compartment OCID of the data source
 func (o CloudGuardDataSourceOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -371,7 +381,7 @@ func (o CloudGuardDataSourceOutput) DataSourceDetectorMappingInfos() CloudGuardD
 	}).(CloudGuardDataSourceDataSourceDetectorMappingInfoArrayOutput)
 }
 
-// Possible type of dataSourceFeed Provider(LoggingQuery)
+// Type of data source feed provider (LoggingQuery)
 func (o CloudGuardDataSourceOutput) DataSourceFeedProvider() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.DataSourceFeedProvider }).(pulumi.StringOutput)
 }
@@ -381,7 +391,7 @@ func (o CloudGuardDataSourceOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) Data Source display name.
+// (Updatable) Data source display name
 func (o CloudGuardDataSourceOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -400,12 +410,12 @@ func (o CloudGuardDataSourceOutput) RegionStatusDetails() CloudGuardDataSourceRe
 	}).(CloudGuardDataSourceRegionStatusDetailArrayOutput)
 }
 
-// The current state of the resource.
+// The current lifecycle state of the resource.
 func (o CloudGuardDataSourceOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-// (Updatable) Status of DataSource. Default value is DISABLED.
+// (Updatable) Enablement status of data source.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -423,7 +433,7 @@ func (o CloudGuardDataSourceOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The date and time the Data source was updated. Format defined by RFC3339.
+// The date and time the data source was updated. Format defined by RFC3339.
 func (o CloudGuardDataSourceOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudGuardDataSource) pulumi.StringOutput { return v.TimeUpdated }).(pulumi.StringOutput)
 }

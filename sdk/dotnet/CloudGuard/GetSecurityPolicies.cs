@@ -14,7 +14,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of security zone policies. Specify any compartment.
+        /// Returns a list of security zone policies (SecurityPolicySummary resources),
+        /// identified by compartmentId.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +45,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Security Policies in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a list of security zone policies. Specify any compartment.
+        /// Returns a list of security zone policies (SecurityPolicySummary resources),
+        /// identified by compartmentId.
         /// 
         /// 
         /// ## Example Usage
@@ -76,7 +78,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityPoliciesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -96,13 +98,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The unique identifier of the security zone policy (`SecurityPolicy`)
+        /// The unique identifier of the security zone policy. (`SecurityPolicy`)
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -116,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityPoliciesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -136,13 +138,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The unique identifier of the security zone policy (`SecurityPolicy`)
+        /// The unique identifier of the security zone policy. (`SecurityPolicy`)
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -158,16 +160,16 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityPoliciesResult
     {
         /// <summary>
-        /// The id of the security policy's compartment
+        /// The OCID of the security policy's compartment
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The security policy's full name
+        /// The security policy's display name
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetSecurityPoliciesFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can’t be changed after creation
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -175,7 +177,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityPoliciesSecurityPolicyCollectionResult> SecurityPolicyCollections;
         /// <summary>
-        /// The current state of the security policy
+        /// The current lifecycle state of the security policy
         /// </summary>
         public readonly string? State;
 

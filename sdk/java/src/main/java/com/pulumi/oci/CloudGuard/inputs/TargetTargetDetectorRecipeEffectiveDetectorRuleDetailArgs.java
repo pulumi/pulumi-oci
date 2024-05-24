@@ -35,14 +35,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     }
 
     /**
-     * ResponderRule configurations
+     * List of responder rule configurations
      * 
      */
     @Import(name="configurations")
     private @Nullable Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>> configurations;
 
     /**
-     * @return ResponderRule configurations
+     * @return List of responder rule configurations
      * 
      */
     public Optional<Output<List<TargetTargetDetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs>>> configurations() {
@@ -50,14 +50,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     }
 
     /**
-     * configuration allowed or not
+     * Configuration allowed or not
      * 
      */
     @Import(name="isConfigurationAllowed")
     private @Nullable Output<Boolean> isConfigurationAllowed;
 
     /**
-     * @return configuration allowed or not
+     * @return Configuration allowed or not
      * 
      */
     public Optional<Output<Boolean>> isConfigurationAllowed() {
@@ -65,14 +65,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     }
 
     /**
-     * Identifies state for ResponderRule
+     * Enabled state for the responder rule
      * 
      */
     @Import(name="isEnabled")
     private @Nullable Output<Boolean> isEnabled;
 
     /**
-     * @return Identifies state for ResponderRule
+     * @return Enabled state for the responder rule
      * 
      */
     public Optional<Output<Boolean>> isEnabled() {
@@ -80,14 +80,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     }
 
     /**
-     * user defined labels for a detector rule
+     * User-defined labels for a detector rule
      * 
      */
     @Import(name="labels")
     private @Nullable Output<List<String>> labels;
 
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     public Optional<Output<List<String>>> labels() {
@@ -95,14 +95,14 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
     }
 
     /**
-     * The Risk Level
+     * The risk level of the detector rule
      * 
      */
     @Import(name="riskLevel")
     private @Nullable Output<String> riskLevel;
 
     /**
-     * @return The Risk Level
+     * @return The risk level of the detector rule
      * 
      */
     public Optional<Output<String>> riskLevel() {
@@ -170,7 +170,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -181,7 +181,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -191,7 +191,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param configurations ResponderRule configurations
+         * @param configurations List of responder rule configurations
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param isConfigurationAllowed configuration allowed or not
+         * @param isConfigurationAllowed Configuration allowed or not
          * 
          * @return builder
          * 
@@ -212,7 +212,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param isConfigurationAllowed configuration allowed or not
+         * @param isConfigurationAllowed Configuration allowed or not
          * 
          * @return builder
          * 
@@ -222,7 +222,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param isEnabled Identifies state for ResponderRule
+         * @param isEnabled Enabled state for the responder rule
          * 
          * @return builder
          * 
@@ -233,7 +233,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param isEnabled Identifies state for ResponderRule
+         * @param isEnabled Enabled state for the responder rule
          * 
          * @return builder
          * 
@@ -243,7 +243,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param labels user defined labels for a detector rule
+         * @param labels User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -254,7 +254,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param labels user defined labels for a detector rule
+         * @param labels User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -264,7 +264,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param labels user defined labels for a detector rule
+         * @param labels User-defined labels for a detector rule
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param riskLevel The Risk Level
+         * @param riskLevel The risk level of the detector rule
          * 
          * @return builder
          * 
@@ -285,7 +285,7 @@ public final class TargetTargetDetectorRecipeEffectiveDetectorRuleDetailArgs ext
         }
 
         /**
-         * @param riskLevel The Risk Level
+         * @param riskLevel The risk level of the detector rule
          * 
          * @return builder
          * 

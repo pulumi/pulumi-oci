@@ -92,6 +92,7 @@ public final class GetJobRunResult {
      * 
      */
     private List<GetJobRunLogDetail> logDetails;
+    private String opcParentRptUrl;
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
@@ -223,6 +224,9 @@ public final class GetJobRunResult {
     public List<GetJobRunLogDetail> logDetails() {
         return this.logDetails;
     }
+    public String opcParentRptUrl() {
+        return this.opcParentRptUrl;
+    }
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      * 
@@ -284,6 +288,7 @@ public final class GetJobRunResult {
         private List<GetJobRunJobStorageMountConfigurationDetailsList> jobStorageMountConfigurationDetailsLists;
         private String lifecycleDetails;
         private List<GetJobRunLogDetail> logDetails;
+        private String opcParentRptUrl;
         private String projectId;
         private String state;
         private String timeAccepted;
@@ -308,6 +313,7 @@ public final class GetJobRunResult {
     	      this.jobStorageMountConfigurationDetailsLists = defaults.jobStorageMountConfigurationDetailsLists;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.logDetails = defaults.logDetails;
+    	      this.opcParentRptUrl = defaults.opcParentRptUrl;
     	      this.projectId = defaults.projectId;
     	      this.state = defaults.state;
     	      this.timeAccepted = defaults.timeAccepted;
@@ -462,6 +468,14 @@ public final class GetJobRunResult {
             return logDetails(List.of(logDetails));
         }
         @CustomType.Setter
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            if (opcParentRptUrl == null) {
+              throw new MissingRequiredPropertyException("GetJobRunResult", "opcParentRptUrl");
+            }
+            this.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectId(String projectId) {
             if (projectId == null) {
               throw new MissingRequiredPropertyException("GetJobRunResult", "projectId");
@@ -519,6 +533,7 @@ public final class GetJobRunResult {
             _resultValue.jobStorageMountConfigurationDetailsLists = jobStorageMountConfigurationDetailsLists;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.logDetails = logDetails;
+            _resultValue.opcParentRptUrl = opcParentRptUrl;
             _resultValue.projectId = projectId;
             _resultValue.state = state;
             _resultValue.timeAccepted = timeAccepted;

@@ -61,7 +61,7 @@ class GetGuardTargetsResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier
+        Compartment OCID
         """
         return pulumi.get(self, "compartment_id")
 
@@ -74,7 +74,7 @@ class GetGuardTargetsResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        ResponderRule display name.
+        Responder rule display name
         """
         return pulumi.get(self, "display_name")
 
@@ -100,7 +100,7 @@ class GetGuardTargetsResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the ResponderRule.
+        The current lifecycle state of the responder rule
         """
         return pulumi.get(self, "state")
 
@@ -141,9 +141,10 @@ def get_guard_targets(access_level: Optional[str] = None,
     """
     This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all Targets in a compartment
-    The ListTargets operation returns only the targets in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
+    Returns a list of targets (TargetCollection resource with page of TargetSummary
+    resources) for the target identified by compartmentId. By default, only the target
+    associated with the compartment is returned. Setting compartmentIdInSubtree to true
+    returns the entire hierarchy of targets in subcompartments.
 
     The parameter `accessLevel` specifies whether to return only those compartments for which the
     requestor has INSPECT permissions on at least one resource directly
@@ -153,7 +154,7 @@ def get_guard_targets(access_level: Optional[str] = None,
 
     The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
     `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+    To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
     set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
     ## Example Usage
@@ -172,11 +173,11 @@ def get_guard_targets(access_level: Optional[str] = None,
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param bool is_non_security_zone_targets_only_query: Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -213,9 +214,10 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
     """
     This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all Targets in a compartment
-    The ListTargets operation returns only the targets in `compartmentId` passed.
-    The list does not include any subcompartments of the compartmentId passed.
+    Returns a list of targets (TargetCollection resource with page of TargetSummary
+    resources) for the target identified by compartmentId. By default, only the target
+    associated with the compartment is returned. Setting compartmentIdInSubtree to true
+    returns the entire hierarchy of targets in subcompartments.
 
     The parameter `accessLevel` specifies whether to return only those compartments for which the
     requestor has INSPECT permissions on at least one resource directly
@@ -225,7 +227,7 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
 
     The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
     `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
-    To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+    To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
     set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
 
     ## Example Usage
@@ -244,10 +246,10 @@ def get_guard_targets_output(access_level: Optional[pulumi.Input[Optional[str]]]
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
     :param str display_name: A filter to return only resources that match the entire display name given.
     :param bool is_non_security_zone_targets_only_query: Default is false. When set to true, only the targets that would be deleted as part of security zone creation will be returned.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetGuardTargetsFilter {
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     private String name;
@@ -28,7 +28,7 @@ public final class GetGuardTargetsFilter {
 
     private GetGuardTargetsFilter() {}
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public String name() {

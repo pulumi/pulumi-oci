@@ -16,7 +16,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetResponderRecipe {
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     private @Nullable String compartmentId;
@@ -28,34 +28,34 @@ public final class TargetTargetResponderRecipe {
      */
     private @Nullable String description;
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
      */
     private @Nullable String displayName;
     /**
-     * @return List of responder rules associated with the recipe after applying all defaults
+     * @return List of currently enabled responder rules for the responder type for recipe after applying defaults
      * 
      */
     private @Nullable List<TargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private @Nullable String id;
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     private @Nullable String owner;
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for responder recipe
      * 
      */
     private String responderRecipeId;
     /**
-     * @return (Updatable) Override responder rules associated with reponder recipe in a target.
+     * @return (Updatable) List of overrides to be applied to responder rules associated with the target
      * 
      */
     private @Nullable List<TargetTargetResponderRecipeResponderRule> responderRules;
@@ -65,14 +65,14 @@ public final class TargetTargetResponderRecipe {
      */
     private @Nullable String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private @Nullable String timeUpdated;
 
     private TargetTargetResponderRecipe() {}
     /**
-     * @return Compartment Identifier where the resource is created
+     * @return Compartment OCID where the resource is created
      * 
      */
     public Optional<String> compartmentId() {
@@ -88,7 +88,7 @@ public final class TargetTargetResponderRecipe {
         return Optional.ofNullable(this.description);
     }
     /**
-     * @return (Updatable) DetectorTemplate identifier.
+     * @return (Updatable) Display name for the target.
      * 
      * Avoid entering confidential information.
      * 
@@ -97,35 +97,35 @@ public final class TargetTargetResponderRecipe {
         return Optional.ofNullable(this.displayName);
     }
     /**
-     * @return List of responder rules associated with the recipe after applying all defaults
+     * @return List of currently enabled responder rules for the responder type for recipe after applying defaults
      * 
      */
     public List<TargetTargetResponderRecipeEffectiveResponderRule> effectiveResponderRules() {
         return this.effectiveResponderRules == null ? List.of() : this.effectiveResponderRules;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
     /**
-     * @return Owner of ResponderRecipe
+     * @return Owner of target responder recipe
      * 
      */
     public Optional<String> owner() {
         return Optional.ofNullable(this.owner);
     }
     /**
-     * @return Identifier for ResponderRecipe.
+     * @return Unique identifier for responder recipe
      * 
      */
     public String responderRecipeId() {
         return this.responderRecipeId;
     }
     /**
-     * @return (Updatable) Override responder rules associated with reponder recipe in a target.
+     * @return (Updatable) List of overrides to be applied to responder rules associated with the target
      * 
      */
     public List<TargetTargetResponderRecipeResponderRule> responderRules() {
@@ -139,7 +139,7 @@ public final class TargetTargetResponderRecipe {
         return Optional.ofNullable(this.timeCreated);
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public Optional<String> timeUpdated() {

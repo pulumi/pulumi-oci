@@ -18,19 +18,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Comments;
         /// <summary>
-        /// DataSource OCID
+        /// Data source OCID.
         /// </summary>
         public readonly string DataSourceId;
         /// <summary>
-        /// Data source event date time
+        /// Data source event date and time
         /// </summary>
         public readonly string EventDate;
         /// <summary>
-        /// Event info of a data source.
+        /// This resource can have multiple subtypes, depending on the dataSourceFeedProvider value. For example, if dataSourceFeedProvider is LOGGINGQUERY, this resource will be of type LoggingEventInfo.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourceEventsDataSourceEventCollectionItemEventInfoResult> EventInfos;
         /// <summary>
-        /// A filter to return only resource their region matches the given region.
+        /// A filter to return only resource where their region matches the given region.
         /// </summary>
         public readonly string Region;
         /// <summary>
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Data source event created time
+        /// Data source event creation date and time
         /// </summary>
         public readonly string TimeCreated;
 

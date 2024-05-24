@@ -76,7 +76,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        Compartment Identifier where the resource is created.
+        Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -84,7 +84,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="dataMaskCategories")
     def data_mask_categories(self) -> Sequence[str]:
         """
-        Data Mask Categories
+        List of data mask rule categories
         """
         return pulumi.get(self, "data_mask_categories")
 
@@ -97,7 +97,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="dataMaskRuleStatus")
     def data_mask_rule_status(self) -> str:
         """
-        The status of the dataMaskRule.
+        The current status of the data mask rule
         """
         return pulumi.get(self, "data_mask_rule_status")
 
@@ -113,7 +113,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter
     def description(self) -> str:
         """
-        The data mask rule description.
+        The data mask rule description
         """
         return pulumi.get(self, "description")
 
@@ -121,7 +121,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        Data Mask Rule Identifier, can be renamed.
+        Data mask rule display name
         """
         return pulumi.get(self, "display_name")
 
@@ -137,7 +137,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="iamGroupId")
     def iam_group_id(self) -> str:
         """
-        IAM Group id associated with the data mask rule
+        IAM Group ID associated with the data mask rule
         """
         return pulumi.get(self, "iam_group_id")
 
@@ -145,7 +145,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can't be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -153,7 +153,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> str:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Additional details on the substate of the lifecycle state [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -161,7 +161,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
         """
         return pulumi.get(self, "state")
 
@@ -177,7 +177,7 @@ class GetDataMaskRuleResult:
     @pulumi.getter(name="targetSelecteds")
     def target_selecteds(self) -> Sequence['outputs.GetDataMaskRuleTargetSelectedResult']:
         """
-        Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         return pulumi.get(self, "target_selecteds")
 
@@ -227,7 +227,7 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
     """
     This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DataMaskRule object, identified by DataMaskRuleId.
+    Returns a DataMaskRule resource, identified by dataMaskRuleId.
 
     ## Example Usage
 
@@ -239,7 +239,7 @@ def get_data_mask_rule(data_mask_rule_id: Optional[str] = None,
     ```
 
 
-    :param str data_mask_rule_id: OCID of dataMaskRule
+    :param str data_mask_rule_id: OCID of the data mask rule
     """
     __args__ = dict()
     __args__['dataMaskRuleId'] = data_mask_rule_id
@@ -271,7 +271,7 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
     """
     This data source provides details about a specific Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a DataMaskRule object, identified by DataMaskRuleId.
+    Returns a DataMaskRule resource, identified by dataMaskRuleId.
 
     ## Example Usage
 
@@ -283,6 +283,6 @@ def get_data_mask_rule_output(data_mask_rule_id: Optional[pulumi.Input[str]] = N
     ```
 
 
-    :param str data_mask_rule_id: OCID of dataMaskRule
+    :param str data_mask_rule_id: OCID of the data mask rule
     """
     ...

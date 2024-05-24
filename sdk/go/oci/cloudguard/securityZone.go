@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
 //
-// Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+// Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+// through a CreateSecurityZoneDetails resource.
 //
 // ## Example Usage
 //
@@ -67,7 +68,7 @@ type SecurityZone struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
 	Description pulumi.StringOutput `pulumi:"description"`
-	// (Updatable) The security zone's name
+	// (Updatable) The security zone's display name
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -77,14 +78,14 @@ type SecurityZone struct {
 	InheritedByCompartments pulumi.StringArrayOutput `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId pulumi.StringOutput `pulumi:"securityZoneRecipeId"`
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId pulumi.StringOutput `pulumi:"securityZoneTargetId"`
-	// The current state of the security zone
+	// The current lifecycle state of the security zone
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -137,7 +138,7 @@ type securityZoneState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
 	Description *string `pulumi:"description"`
-	// (Updatable) The security zone's name
+	// (Updatable) The security zone's display name
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -147,14 +148,14 @@ type securityZoneState struct {
 	InheritedByCompartments []string `pulumi:"inheritedByCompartments"`
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId *string `pulumi:"securityZoneRecipeId"`
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId *string `pulumi:"securityZoneTargetId"`
-	// The current state of the security zone
+	// The current lifecycle state of the security zone
 	State *string `pulumi:"state"`
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -169,7 +170,7 @@ type SecurityZoneState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) The security zone's description
 	Description pulumi.StringPtrInput
-	// (Updatable) The security zone's name
+	// (Updatable) The security zone's display name
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
@@ -179,14 +180,14 @@ type SecurityZoneState struct {
 	InheritedByCompartments pulumi.StringArrayInput
 	// A message describing the current state in more detail. For example, this can be used to provide actionable information for a zone in the `Failed` state.
 	LifecycleDetails pulumi.StringPtrInput
-	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SecurityZoneRecipeId pulumi.StringPtrInput
 	// The OCID of the target associated with the security zone
 	SecurityZoneTargetId pulumi.StringPtrInput
-	// The current state of the security zone
+	// The current lifecycle state of the security zone
 	State pulumi.StringPtrInput
 	// The time the security zone was created. An RFC3339 formatted datetime string.
 	TimeCreated pulumi.StringPtrInput
@@ -205,13 +206,13 @@ type securityZoneArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) The security zone's description
 	Description *string `pulumi:"description"`
-	// (Updatable) The security zone's name
+	// (Updatable) The security zone's display name
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,13 +227,13 @@ type SecurityZoneArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) The security zone's description
 	Description pulumi.StringPtrInput
-	// (Updatable) The security zone's name
+	// (Updatable) The security zone's display name
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	//
 	// Avoid entering confidential information.
 	FreeformTags pulumi.MapInput
-	// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+	// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -341,7 +342,7 @@ func (o SecurityZoneOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.Description }).(pulumi.StringOutput)
 }
 
-// (Updatable) The security zone's name
+// (Updatable) The security zone's display name
 func (o SecurityZoneOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -363,7 +364,7 @@ func (o SecurityZoneOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+// (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -376,7 +377,7 @@ func (o SecurityZoneOutput) SecurityZoneTargetId() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.SecurityZoneTargetId }).(pulumi.StringOutput)
 }
 
-// The current state of the security zone
+// The current lifecycle state of the security zone
 func (o SecurityZoneOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *SecurityZone) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }

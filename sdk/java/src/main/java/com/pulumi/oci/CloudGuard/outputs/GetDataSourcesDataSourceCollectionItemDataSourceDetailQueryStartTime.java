@@ -11,26 +11,26 @@ import java.util.Objects;
 @CustomType
 public final class GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime {
     /**
-     * @return Time when the query can start, if not specified it can start immediately.
+     * @return Time when the query can start. If not specified it can start immediately
      * 
      */
     private String queryStartTime;
     /**
-     * @return policy used for deciding the query start time
+     * @return Start policy delay timing
      * 
      */
     private String startPolicyType;
 
     private GetDataSourcesDataSourceCollectionItemDataSourceDetailQueryStartTime() {}
     /**
-     * @return Time when the query can start, if not specified it can start immediately.
+     * @return Time when the query can start. If not specified it can start immediately
      * 
      */
     public String queryStartTime() {
         return this.queryStartTime;
     }
     /**
-     * @return policy used for deciding the query start time
+     * @return Start policy delay timing
      * 
      */
     public String startPolicyType() {

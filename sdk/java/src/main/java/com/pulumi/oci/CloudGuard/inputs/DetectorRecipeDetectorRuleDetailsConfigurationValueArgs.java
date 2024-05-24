@@ -15,14 +15,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
     public static final DetectorRecipeDetectorRuleDetailsConfigurationValueArgs Empty = new DetectorRecipeDetectorRuleDetailsConfigurationValueArgs();
 
     /**
-     * (Updatable) configuration list item type, either CUSTOM or MANAGED
+     * (Updatable) Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     @Import(name="listType", required=true)
     private Output<String> listType;
 
     /**
-     * @return (Updatable) configuration list item type, either CUSTOM or MANAGED
+     * @return (Updatable) Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     public Output<String> listType() {
@@ -30,14 +30,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
     }
 
     /**
-     * (Updatable) type of the managed list
+     * (Updatable) Type of content in the managed list
      * 
      */
     @Import(name="managedListType", required=true)
     private Output<String> managedListType;
 
     /**
-     * @return (Updatable) type of the managed list
+     * @return (Updatable) Type of content in the managed list
      * 
      */
     public Output<String> managedListType() {
@@ -45,14 +45,14 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
     }
 
     /**
-     * (Updatable) configuration value
+     * (Updatable) Configuration value
      * 
      */
     @Import(name="value", required=true)
     private Output<String> value;
 
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     public Output<String> value() {
@@ -86,7 +86,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         /**
-         * @param listType (Updatable) configuration list item type, either CUSTOM or MANAGED
+         * @param listType (Updatable) Configuration list item type (CUSTOM or MANAGED)
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         /**
-         * @param listType (Updatable) configuration list item type, either CUSTOM or MANAGED
+         * @param listType (Updatable) Configuration list item type (CUSTOM or MANAGED)
          * 
          * @return builder
          * 
@@ -107,7 +107,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         /**
-         * @param managedListType (Updatable) type of the managed list
+         * @param managedListType (Updatable) Type of content in the managed list
          * 
          * @return builder
          * 
@@ -118,7 +118,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         /**
-         * @param managedListType (Updatable) type of the managed list
+         * @param managedListType (Updatable) Type of content in the managed list
          * 
          * @return builder
          * 
@@ -128,7 +128,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value (Updatable) Configuration value
          * 
          * @return builder
          * 
@@ -139,7 +139,7 @@ public final class DetectorRecipeDetectorRuleDetailsConfigurationValueArgs exten
         }
 
         /**
-         * @param value (Updatable) configuration value
+         * @param value (Updatable) Configuration value
          * 
          * @return builder
          * 

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly int KeyEntitiesCount;
         /// <summary>
-        /// A filter to return only resources their query type matches the given LoggingQueryType.
+        /// A filter to return only resources where their query type matches the given LoggingQueryType.
         /// </summary>
         public readonly string LoggingQueryType;
 

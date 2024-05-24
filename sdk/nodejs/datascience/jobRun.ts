@@ -49,6 +49,7 @@ import * as utilities from "../utilities";
  *         logGroupId: testLogGroup.id,
  *         logId: testLog.id,
  *     },
+ *     opcParentRptUrl: jobRunOpcParentRptUrl,
  * });
  * ```
  *
@@ -145,6 +146,10 @@ export class JobRun extends pulumi.CustomResource {
      */
     public /*out*/ readonly logDetails!: pulumi.Output<outputs.DataScience.JobRunLogDetail[]>;
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    public readonly opcParentRptUrl!: pulumi.Output<string | undefined>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      *
      *
@@ -196,6 +201,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobStorageMountConfigurationDetailsLists"] = state ? state.jobStorageMountConfigurationDetailsLists : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["logDetails"] = state ? state.logDetails : undefined;
+            resourceInputs["opcParentRptUrl"] = state ? state.opcParentRptUrl : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeAccepted"] = state ? state.timeAccepted : undefined;
@@ -221,6 +227,7 @@ export class JobRun extends pulumi.CustomResource {
             resourceInputs["jobEnvironmentConfigurationOverrideDetails"] = args ? args.jobEnvironmentConfigurationOverrideDetails : undefined;
             resourceInputs["jobId"] = args ? args.jobId : undefined;
             resourceInputs["jobLogConfigurationOverrideDetails"] = args ? args.jobLogConfigurationOverrideDetails : undefined;
+            resourceInputs["opcParentRptUrl"] = args ? args.opcParentRptUrl : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["jobInfrastructureConfigurationDetails"] = undefined /*out*/;
@@ -298,6 +305,10 @@ export interface JobRunState {
      */
     logDetails?: pulumi.Input<pulumi.Input<inputs.DataScience.JobRunLogDetail>[]>;
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      *
      *
@@ -363,6 +374,10 @@ export interface JobRunArgs {
      * Logging configuration for resource.
      */
     jobLogConfigurationOverrideDetails?: pulumi.Input<inputs.DataScience.JobRunJobLogConfigurationOverrideDetails>;
+    /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     */
+    opcParentRptUrl?: pulumi.Input<string>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
      *

@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetGuardTargetTargetDetailTargetSecurityZoneRecipeResult
     {
         /// <summary>
-        /// Compartment Identifier
+        /// Compartment OCID
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -22,11 +22,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// ResponderRule description.
+        /// Responder rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// ResponderRule display name.
+        /// Responder rule display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier of TargetResponderRecipe that can't be changed after creation.
+        /// Unique identifier of target responder recipe that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -42,15 +42,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Owner of ResponderRecipe
+        /// Owner of target responder recipe
         /// </summary>
         public readonly string Owner;
         /// <summary>
-        /// The list of `SecurityPolicy` ids that are included in the recipe
+        /// The list of security policy IDs that are included in the recipe
         /// </summary>
         public readonly ImmutableArray<string> SecurityPolicies;
         /// <summary>
-        /// The current state of the ResponderRule.
+        /// The current lifecycle state of the responder rule
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

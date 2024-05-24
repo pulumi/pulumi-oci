@@ -7,7 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Creates a security zone for a compartment. A security zone enforces all security zone policies in a given security zone recipe. Any actions that violate a policy are denied. By default, any subcompartments are also in the same security zone.
+ * Creates a security zone (SecurityZone resource) for a compartment. Pass parameters
+ * through a CreateSecurityZoneDetails resource.
  *
  * ## Example Usage
  *
@@ -78,7 +79,7 @@ export class SecurityZone extends pulumi.CustomResource {
      */
     public readonly description!: pulumi.Output<string>;
     /**
-     * (Updatable) The security zone's name
+     * (Updatable) The security zone's display name
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -96,7 +97,7 @@ export class SecurityZone extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
      *
      * ** IMPORTANT **
@@ -108,7 +109,7 @@ export class SecurityZone extends pulumi.CustomResource {
      */
     public /*out*/ readonly securityZoneTargetId!: pulumi.Output<string>;
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
     /**
@@ -191,7 +192,7 @@ export interface SecurityZoneState {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The security zone's name
+     * (Updatable) The security zone's display name
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -209,7 +210,7 @@ export interface SecurityZoneState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
      *
      * ** IMPORTANT **
@@ -221,7 +222,7 @@ export interface SecurityZoneState {
      */
     securityZoneTargetId?: pulumi.Input<string>;
     /**
-     * The current state of the security zone
+     * The current lifecycle state of the security zone
      */
     state?: pulumi.Input<string>;
     /**
@@ -251,7 +252,7 @@ export interface SecurityZoneArgs {
      */
     description?: pulumi.Input<string>;
     /**
-     * (Updatable) The security zone's name
+     * (Updatable) The security zone's display name
      */
     displayName: pulumi.Input<string>;
     /**
@@ -261,7 +262,7 @@ export interface SecurityZoneArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) The OCID of the recipe (`SecurityRecipe`) for the security zone
+     * (Updatable) The OCID of the security zone recipe (`SecurityRecipe` resource) for the security zone
      *
      *
      * ** IMPORTANT **

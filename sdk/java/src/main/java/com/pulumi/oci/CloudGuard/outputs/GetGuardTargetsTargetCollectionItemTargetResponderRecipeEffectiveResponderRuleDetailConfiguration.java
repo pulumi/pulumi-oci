@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration {
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     private String configKey;
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     private String name;
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     private String value;
 
     private GetGuardTargetsTargetCollectionItemTargetResponderRecipeEffectiveResponderRuleDetailConfiguration() {}
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     public String configKey() {
         return this.configKey;
     }
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public String value() {

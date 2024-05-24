@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class DetectorRecipeDetectorRuleDetailsEntitiesMappingArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The display name of entity
+        /// (Updatable) Display name of the entity
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
 
         /// <summary>
-        /// (Updatable) Possible type of entity
+        /// (Updatable) Type of entity
         /// </summary>
         [Input("entityType")]
         public Input<string>? EntityType { get; set; }

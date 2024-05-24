@@ -47,7 +47,7 @@ class GetSecurityRecipesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The id of the compartment that contains the recipe
+        The OCID of the compartment that contains the recipe
         """
         return pulumi.get(self, "compartment_id")
 
@@ -55,7 +55,7 @@ class GetSecurityRecipesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        The recipe's name
+        The recipe's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -68,7 +68,7 @@ class GetSecurityRecipesResult:
     @pulumi.getter
     def id(self) -> Optional[str]:
         """
-        Unique identifier that is immutable on creation
+        Unique identifier that can’t be changed after creation
         """
         return pulumi.get(self, "id")
 
@@ -84,7 +84,7 @@ class GetSecurityRecipesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the recipe
+        The current lifecycle state of the recipe
         """
         return pulumi.get(self, "state")
 
@@ -112,7 +112,8 @@ def get_security_recipes(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a list of all security zone recipes in a compartment.
+    Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+    compartment, identified by compartmentId.
 
     ## Example Usage
 
@@ -127,10 +128,10 @@ def get_security_recipes(compartment_id: Optional[str] = None,
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str id: The unique identifier of the security zone recipe. (`SecurityRecipe`)
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
@@ -160,7 +161,8 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[str]] = No
     """
     This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a list of all security zone recipes in a compartment.
+    Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+    compartment, identified by compartmentId.
 
     ## Example Usage
 
@@ -175,9 +177,9 @@ def get_security_recipes_output(compartment_id: Optional[pulumi.Input[str]] = No
     ```
 
 
-    :param str compartment_id: The ID of the compartment in which to list resources.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str id: The unique identifier of the security zone recipe (`SecurityRecipe`)
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str id: The unique identifier of the security zone recipe. (`SecurityRecipe`)
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

@@ -22,14 +22,14 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     public static final CloudGuardDataSourceState Empty = new CloudGuardDataSourceState();
 
     /**
-     * (Updatable) CompartmentId of Data Source.
+     * (Updatable) Compartment OCID of the data source
      * 
      */
     @Import(name="compartmentId")
     private @Nullable Output<String> compartmentId;
 
     /**
-     * @return (Updatable) CompartmentId of Data Source.
+     * @return (Updatable) Compartment OCID of the data source
      * 
      */
     public Optional<Output<String>> compartmentId() {
@@ -67,14 +67,14 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     }
 
     /**
-     * Possible type of dataSourceFeed Provider(LoggingQuery)
+     * Type of data source feed provider (LoggingQuery)
      * 
      */
     @Import(name="dataSourceFeedProvider")
     private @Nullable Output<String> dataSourceFeedProvider;
 
     /**
-     * @return Possible type of dataSourceFeed Provider(LoggingQuery)
+     * @return Type of data source feed provider (LoggingQuery)
      * 
      */
     public Optional<Output<String>> dataSourceFeedProvider() {
@@ -97,14 +97,14 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Data Source display name.
+     * (Updatable) Data source display name
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) Data Source display name.
+     * @return (Updatable) Data source display name
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -146,14 +146,14 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     }
 
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource.
      * 
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource.
      * 
      */
     public Optional<Output<String>> state() {
@@ -161,7 +161,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     }
 
     /**
-     * (Updatable) Status of DataSource. Default value is DISABLED.
+     * (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -171,7 +171,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     private @Nullable Output<String> status;
 
     /**
-     * @return (Updatable) Status of DataSource. Default value is DISABLED.
+     * @return (Updatable) Enablement status of data source.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -212,14 +212,14 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
     }
 
     /**
-     * The date and time the Data source was updated. Format defined by RFC3339.
+     * The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The date and time the Data source was updated. Format defined by RFC3339.
+     * @return The date and time the data source was updated. Format defined by RFC3339.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -263,7 +263,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param compartmentId (Updatable) CompartmentId of Data Source.
+         * @param compartmentId (Updatable) Compartment OCID of the data source
          * 
          * @return builder
          * 
@@ -274,7 +274,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param compartmentId (Updatable) CompartmentId of Data Source.
+         * @param compartmentId (Updatable) Compartment OCID of the data source
          * 
          * @return builder
          * 
@@ -336,7 +336,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param dataSourceFeedProvider Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider Type of data source feed provider (LoggingQuery)
          * 
          * @return builder
          * 
@@ -347,7 +347,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param dataSourceFeedProvider Possible type of dataSourceFeed Provider(LoggingQuery)
+         * @param dataSourceFeedProvider Type of data source feed provider (LoggingQuery)
          * 
          * @return builder
          * 
@@ -378,7 +378,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param displayName (Updatable) Data Source display name.
+         * @param displayName (Updatable) Data source display name
          * 
          * @return builder
          * 
@@ -389,7 +389,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param displayName (Updatable) Data Source display name.
+         * @param displayName (Updatable) Data source display name
          * 
          * @return builder
          * 
@@ -455,7 +455,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource.
          * 
          * @return builder
          * 
@@ -466,7 +466,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param state The current state of the resource.
+         * @param state The current lifecycle state of the resource.
          * 
          * @return builder
          * 
@@ -476,7 +476,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * @param status (Updatable) Enablement status of data source.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -490,7 +490,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param status (Updatable) Status of DataSource. Default value is DISABLED.
+         * @param status (Updatable) Enablement status of data source.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -545,7 +545,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param timeUpdated The date and time the Data source was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the data source was updated. Format defined by RFC3339.
          * 
          * @return builder
          * 
@@ -556,7 +556,7 @@ public final class CloudGuardDataSourceState extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param timeUpdated The date and time the Data source was updated. Format defined by RFC3339.
+         * @param timeUpdated The date and time the data source was updated. Format defined by RFC3339.
          * 
          * @return builder
          * 

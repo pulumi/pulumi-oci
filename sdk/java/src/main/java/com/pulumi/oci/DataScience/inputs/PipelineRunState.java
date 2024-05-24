@@ -183,6 +183,21 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    @Import(name="opcParentRptUrl")
+    private @Nullable Output<String> opcParentRptUrl;
+
+    /**
+     * @return URL to fetch the Resource Principal Token from the parent resource.
+     * 
+     */
+    public Optional<Output<String>> opcParentRptUrl() {
+        return Optional.ofNullable(this.opcParentRptUrl);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
      * 
      */
@@ -352,6 +367,7 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
         this.lifecycleDetails = $.lifecycleDetails;
         this.logConfigurationOverrideDetails = $.logConfigurationOverrideDetails;
         this.logDetails = $.logDetails;
+        this.opcParentRptUrl = $.opcParentRptUrl;
         this.pipelineId = $.pipelineId;
         this.projectId = $.projectId;
         this.state = $.state;
@@ -619,6 +635,27 @@ public final class PipelineRunState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder logDetails(PipelineRunLogDetailArgs... logDetails) {
             return logDetails(List.of(logDetails));
+        }
+
+        /**
+         * @param opcParentRptUrl URL to fetch the Resource Principal Token from the parent resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(@Nullable Output<String> opcParentRptUrl) {
+            $.opcParentRptUrl = opcParentRptUrl;
+            return this;
+        }
+
+        /**
+         * @param opcParentRptUrl URL to fetch the Resource Principal Token from the parent resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder opcParentRptUrl(String opcParentRptUrl) {
+            return opcParentRptUrl(Output.of(opcParentRptUrl));
         }
 
         /**

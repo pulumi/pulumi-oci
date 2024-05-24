@@ -72,7 +72,7 @@ class GetSecurityPolicyResult:
     @pulumi.getter
     def category(self) -> str:
         """
-        The category of security policy
+        The category of the security policy
         """
         return pulumi.get(self, "category")
 
@@ -80,7 +80,7 @@ class GetSecurityPolicyResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        The id of the security policy's compartment
+        The OCID of the security policy's compartment
         """
         return pulumi.get(self, "compartment_id")
 
@@ -104,7 +104,7 @@ class GetSecurityPolicyResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        The security policy's full name
+        The security policy's display name
         """
         return pulumi.get(self, "display_name")
 
@@ -165,7 +165,7 @@ class GetSecurityPolicyResult:
     @pulumi.getter
     def state(self) -> str:
         """
-        The current state of the security policy
+        The current lifecycle state of the security policy
         """
         return pulumi.get(self, "state")
 
@@ -214,7 +214,9 @@ def get_security_policy(security_policy_id: Optional[str] = None,
     """
     This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+    Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+    (securityPolicyId). When a policy is enabled in a security zone, then any action in
+    the zone that attempts to violate that policy is blocked.
 
     ## Example Usage
 
@@ -226,7 +228,7 @@ def get_security_policy(security_policy_id: Optional[str] = None,
     ```
 
 
-    :param str security_policy_id: The unique identifier of the security zone policy (`SecurityPolicy`)
+    :param str security_policy_id: The unique identifier of the security zone policy. (`SecurityPolicy`)
     """
     __args__ = dict()
     __args__['securityPolicyId'] = security_policy_id
@@ -257,7 +259,9 @@ def get_security_policy_output(security_policy_id: Optional[pulumi.Input[str]] =
     """
     This data source provides details about a specific Security Policy resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Gets a security zone policy using its identifier. When a policy is enabled in a security zone, then any action in the zone that attempts to violate that policy is denied.
+    Returns a security zone policy (SecurityPolicy resource), identified by its unique ID
+    (securityPolicyId). When a policy is enabled in a security zone, then any action in
+    the zone that attempts to violate that policy is blocked.
 
     ## Example Usage
 
@@ -269,6 +273,6 @@ def get_security_policy_output(security_policy_id: Optional[pulumi.Input[str]] =
     ```
 
 
-    :param str security_policy_id: The unique identifier of the security zone policy (`SecurityPolicy`)
+    :param str security_policy_id: The unique identifier of the security zone policy. (`SecurityPolicy`)
     """
     ...

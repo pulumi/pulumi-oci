@@ -21,7 +21,7 @@ public final class GetDataSourceEventsResult {
      */
     private List<GetDataSourceEventsDataSourceEventCollection> dataSourceEventCollections;
     /**
-     * @return Attached data Source
+     * @return Unique identifier of data source.
      * 
      */
     private String dataSourceId;
@@ -46,7 +46,7 @@ public final class GetDataSourceEventsResult {
         return this.dataSourceEventCollections;
     }
     /**
-     * @return Attached data Source
+     * @return Unique identifier of data source.
      * 
      */
     public String dataSourceId() {

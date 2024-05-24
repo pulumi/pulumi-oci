@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+        /// Returns a security zone (SecurityZone resource) identified by securityZoneId.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Security Zone resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a security zone by its identifier. A security zone is associated with a security zone recipe and enforces all security zone policies in the recipe. Any actions in the zone's compartments that violate a policy are denied.
+        /// Returns a security zone (SecurityZone resource) identified by securityZoneId.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityZoneArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique identifier of the security zone (`SecurityZone`)
+        /// The unique identifier of the security zone (`SecurityZone` resource).
         /// </summary>
         [Input("securityZoneId", required: true)]
         public string SecurityZoneId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityZoneInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The unique identifier of the security zone (`SecurityZone`)
+        /// The unique identifier of the security zone (`SecurityZone` resource).
         /// </summary>
         [Input("securityZoneId", required: true)]
         public Input<string> SecurityZoneId { get; set; } = null!;
@@ -110,7 +110,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string Description;
         /// <summary>
-        /// The security zone's name
+        /// The security zone's display name
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can’t be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -131,7 +131,7 @@ namespace Pulumi.Oci.CloudGuard
         public readonly string LifecycleDetails;
         public readonly string SecurityZoneId;
         /// <summary>
-        /// The OCID of the recipe (`SecurityRecipe`) for the security zone
+        /// The OCID of the recipe (`SecurityRecipe` resource) for the security zone
         /// </summary>
         public readonly string SecurityZoneRecipeId;
         /// <summary>
@@ -139,7 +139,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string SecurityZoneTargetId;
         /// <summary>
-        /// The current state of the security zone
+        /// The current lifecycle state of the security zone
         /// </summary>
         public readonly string State;
         /// <summary>

@@ -15,14 +15,14 @@ public final class GetGuardTargetArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetGuardTargetArgs Empty = new GetGuardTargetArgs();
 
     /**
-     * OCID of target
+     * OCID of the target
      * 
      */
     @Import(name="targetId", required=true)
     private Output<String> targetId;
 
     /**
-     * @return OCID of target
+     * @return OCID of the target
      * 
      */
     public Output<String> targetId() {
@@ -54,7 +54,7 @@ public final class GetGuardTargetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param targetId OCID of target
+         * @param targetId OCID of the target
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetGuardTargetArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param targetId OCID of target
+         * @param targetId OCID of the target
          * 
          * @return builder
          * 

@@ -14,7 +14,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a list of all security zone recipes in a compartment.
+        /// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+        /// compartment, identified by compartmentId.
         /// 
         /// 
         /// ## Example Usage
@@ -44,7 +45,8 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides the list of Security Recipes in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Gets a list of all security zone recipes in a compartment.
+        /// Returns a list of security zone recipes (SecurityRecipeSummary resources) in a
+        /// compartment, identified by compartmentId.
         /// 
         /// 
         /// ## Example Usage
@@ -76,7 +78,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityRecipesArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public string CompartmentId { get; set; } = null!;
@@ -96,13 +98,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe`)
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
@@ -116,7 +118,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityRecipesInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -136,13 +138,13 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The unique identifier of the security zone recipe (`SecurityRecipe`)
+        /// The unique identifier of the security zone recipe. (`SecurityRecipe`)
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
 
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -158,16 +160,16 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetSecurityRecipesResult
     {
         /// <summary>
-        /// The id of the compartment that contains the recipe
+        /// The OCID of the compartment that contains the recipe
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// The recipe's name
+        /// The recipe's display name
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetSecurityRecipesFilterResult> Filters;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can’t be changed after creation
         /// </summary>
         public readonly string? Id;
         /// <summary>
@@ -175,7 +177,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetSecurityRecipesSecurityRecipeCollectionResult> SecurityRecipeCollections;
         /// <summary>
-        /// The current state of the recipe
+        /// The current lifecycle state of the recipe
         /// </summary>
         public readonly string? State;
 

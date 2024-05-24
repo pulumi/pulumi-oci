@@ -918,6 +918,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "CloudGuard/adhocQuery",
+  "fqn": "pulumi_oci.cloudguard",
+  "classes": {
+   "oci:CloudGuard/adhocQuery:AdhocQuery": "AdhocQuery"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "CloudGuard/cloudGuardConfiguration",
   "fqn": "pulumi_oci.cloudguard",
   "classes": {
@@ -966,6 +974,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "CloudGuard/savedQuery",
+  "fqn": "pulumi_oci.cloudguard",
+  "classes": {
+   "oci:CloudGuard/savedQuery:SavedQuery": "SavedQuery"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "CloudGuard/securityRecipe",
   "fqn": "pulumi_oci.cloudguard",
   "classes": {
@@ -986,6 +1002,14 @@ _utilities.register(
   "fqn": "pulumi_oci.cloudguard",
   "classes": {
    "oci:CloudGuard/target:Target": "Target"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "CloudGuard/wlpAgent",
+  "fqn": "pulumi_oci.cloudguard",
+  "classes": {
+   "oci:CloudGuard/wlpAgent:WlpAgent": "WlpAgent"
   }
  },
  {
@@ -2126,10 +2150,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/setSecurityAssessmentBaselineManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/setSecurityAssessmentBaselineManagement:SetSecurityAssessmentBaselineManagement": "SetSecurityAssessmentBaselineManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/setUserAssessmentBaseline",
   "fqn": "pulumi_oci.datasafe",
   "classes": {
    "oci:DataSafe/setUserAssessmentBaseline:SetUserAssessmentBaseline": "SetUserAssessmentBaseline"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DataSafe/setUserAssessmentBaselineManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/setUserAssessmentBaselineManagement:SetUserAssessmentBaselineManagement": "SetUserAssessmentBaselineManagement"
   }
  },
  {

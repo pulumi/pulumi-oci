@@ -137,14 +137,14 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The infrastructure configuration details of a pipeline or a step.
+     * (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     @Import(name="infrastructureConfigurationDetails")
     private @Nullable Output<PipelineInfrastructureConfigurationDetailsArgs> infrastructureConfigurationDetails;
 
     /**
-     * @return The infrastructure configuration details of a pipeline or a step.
+     * @return (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     public Optional<Output<PipelineInfrastructureConfigurationDetailsArgs>> infrastructureConfigurationDetails() {
@@ -476,7 +476,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param infrastructureConfigurationDetails The infrastructure configuration details of a pipeline or a step.
+         * @param infrastructureConfigurationDetails (Updatable) The infrastructure configuration details of a pipeline or a step.
          * 
          * @return builder
          * 
@@ -487,7 +487,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param infrastructureConfigurationDetails The infrastructure configuration details of a pipeline or a step.
+         * @param infrastructureConfigurationDetails (Updatable) The infrastructure configuration details of a pipeline or a step.
          * 
          * @return builder
          * 

@@ -117,6 +117,9 @@ namespace Pulumi.Oci.DataScience
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. See [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
+        /// <summary>
+        /// If set to true will delete related job runs.
+        /// </summary>
         public readonly bool DeleteRelatedJobRuns;
         /// <summary>
         /// A user-friendly display name for the resource.
@@ -142,6 +145,7 @@ namespace Pulumi.Oci.DataScience
         /// Customer logging details for pipeline run.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetPipelineRunLogDetailResult> LogDetails;
+        public readonly string OpcParentRptUrl;
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
         /// </summary>
@@ -210,6 +214,8 @@ namespace Pulumi.Oci.DataScience
 
             ImmutableArray<Outputs.GetPipelineRunLogDetailResult> logDetails,
 
+            string opcParentRptUrl,
+
             string pipelineId,
 
             string pipelineRunId,
@@ -244,6 +250,7 @@ namespace Pulumi.Oci.DataScience
             LifecycleDetails = lifecycleDetails;
             LogConfigurationOverrideDetails = logConfigurationOverrideDetails;
             LogDetails = logDetails;
+            OpcParentRptUrl = opcParentRptUrl;
             PipelineId = pipelineId;
             PipelineRunId = pipelineRunId;
             ProjectId = projectId;

@@ -13,13 +13,13 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeDetectorRuleDetailsConditionGroupGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) compartment associated with condition
+        /// (Updatable) Compartment OCID associated with condition
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) Base condition object
+        /// (Updatable) The base condition resource.
         /// </summary>
         [Input("condition", required: true)]
         public Input<string> Condition { get; set; } = null!;

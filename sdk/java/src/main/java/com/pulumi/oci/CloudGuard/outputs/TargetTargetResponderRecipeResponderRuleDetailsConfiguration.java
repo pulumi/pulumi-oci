@@ -11,38 +11,38 @@ import java.util.Objects;
 @CustomType
 public final class TargetTargetResponderRecipeResponderRuleDetailsConfiguration {
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return (Updatable) Unique identifier of the configuration
      * 
      */
     private String configKey;
     /**
-     * @return (Updatable) configuration name
+     * @return (Updatable) Configuration name
      * 
      */
     private String name;
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     private String value;
 
     private TargetTargetResponderRecipeResponderRuleDetailsConfiguration() {}
     /**
-     * @return (Updatable) Unique name of the configuration
+     * @return (Updatable) Unique identifier of the configuration
      * 
      */
     public String configKey() {
         return this.configKey;
     }
     /**
-     * @return (Updatable) configuration name
+     * @return (Updatable) Configuration name
      * 
      */
     public String name() {
         return this.name;
     }
     /**
-     * @return (Updatable) configuration value
+     * @return (Updatable) Configuration value
      * 
      */
     public String value() {

@@ -18,14 +18,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     public static final DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs Empty = new DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs();
 
     /**
-     * Unique name of the configuration
+     * Unique identifier of the configuration
      * 
      */
     @Import(name="configKey")
     private @Nullable Output<String> configKey;
 
     /**
-     * @return Unique name of the configuration
+     * @return Unique identifier of the configuration
      * 
      */
     public Optional<Output<String>> configKey() {
@@ -33,14 +33,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * configuration data type
+     * Configuration data type
      * 
      */
     @Import(name="dataType")
     private @Nullable Output<String> dataType;
 
     /**
-     * @return configuration data type
+     * @return Configuration data type
      * 
      */
     public Optional<Output<String>> dataType() {
@@ -48,14 +48,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * configuration name
+     * Configuration name
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return configuration name
+     * @return Configuration name
      * 
      */
     public Optional<Output<String>> name() {
@@ -63,14 +63,14 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
     }
 
     /**
-     * configuration value
+     * Configuration value
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public Optional<Output<String>> value() {
@@ -121,7 +121,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param configKey Unique name of the configuration
+         * @param configKey Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -132,7 +132,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param configKey Unique name of the configuration
+         * @param configKey Unique identifier of the configuration
          * 
          * @return builder
          * 
@@ -142,7 +142,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param dataType configuration data type
+         * @param dataType Configuration data type
          * 
          * @return builder
          * 
@@ -153,7 +153,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param dataType configuration data type
+         * @param dataType Configuration data type
          * 
          * @return builder
          * 
@@ -163,7 +163,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 
@@ -174,7 +174,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param name configuration name
+         * @param name Configuration name
          * 
          * @return builder
          * 
@@ -184,7 +184,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param value configuration value
+         * @param value Configuration value
          * 
          * @return builder
          * 
@@ -195,7 +195,7 @@ public final class DetectorRecipeEffectiveDetectorRuleDetailConfigurationArgs ex
         }
 
         /**
-         * @param value configuration value
+         * @param value Configuration value
          * 
          * @return builder
          * 

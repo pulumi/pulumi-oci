@@ -28,20 +28,20 @@ class DataMaskRuleArgs:
                  state: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a DataMaskRule resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the resource is created
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data Mask Categories
-        :param pulumi.Input[str] display_name: (Updatable) Data mask rule name.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID where the resource is created
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data mask rule categories
+        :param pulumi.Input[str] display_name: (Updatable) Data mask rule display name
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] iam_group_id: (Updatable) IAM Group id associated with the data mask rule
-        :param pulumi.Input['DataMaskRuleTargetSelectedArgs'] target_selected: (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
-        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The status of the dataMaskRule.
+        :param pulumi.Input[str] iam_group_id: (Updatable) IAM group ID associated with the data mask rule
+        :param pulumi.Input['DataMaskRuleTargetSelectedArgs'] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
+        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The current status of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The data mask rule description. Avoid entering confidential information.
+        :param pulumi.Input[str] description: The data mask rule description Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] state: The current state of the DataMaskRule.
+        :param pulumi.Input[str] state: The current lifecycle state of the data mask rule
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "data_mask_categories", data_mask_categories)
@@ -63,7 +63,7 @@ class DataMaskRuleArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) Compartment Identifier where the resource is created
+        (Updatable) Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -75,7 +75,7 @@ class DataMaskRuleArgs:
     @pulumi.getter(name="dataMaskCategories")
     def data_mask_categories(self) -> pulumi.Input[Sequence[pulumi.Input[str]]]:
         """
-        (Updatable) Data Mask Categories
+        (Updatable) Data mask rule categories
         """
         return pulumi.get(self, "data_mask_categories")
 
@@ -87,7 +87,7 @@ class DataMaskRuleArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) Data mask rule name.
+        (Updatable) Data mask rule display name
 
         Avoid entering confidential information.
         """
@@ -101,7 +101,7 @@ class DataMaskRuleArgs:
     @pulumi.getter(name="iamGroupId")
     def iam_group_id(self) -> pulumi.Input[str]:
         """
-        (Updatable) IAM Group id associated with the data mask rule
+        (Updatable) IAM group ID associated with the data mask rule
         """
         return pulumi.get(self, "iam_group_id")
 
@@ -113,7 +113,7 @@ class DataMaskRuleArgs:
     @pulumi.getter(name="targetSelected")
     def target_selected(self) -> pulumi.Input['DataMaskRuleTargetSelectedArgs']:
         """
-        (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         return pulumi.get(self, "target_selected")
 
@@ -125,7 +125,7 @@ class DataMaskRuleArgs:
     @pulumi.getter(name="dataMaskRuleStatus")
     def data_mask_rule_status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The status of the dataMaskRule.
+        (Updatable) The current status of the data mask rule
         """
         return pulumi.get(self, "data_mask_rule_status")
 
@@ -149,7 +149,7 @@ class DataMaskRuleArgs:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The data mask rule description. Avoid entering confidential information.
+        The data mask rule description Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -175,7 +175,7 @@ class DataMaskRuleArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
         """
         return pulumi.get(self, "state")
 
@@ -203,22 +203,22 @@ class _DataMaskRuleState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering DataMaskRule resources.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the resource is created
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data Mask Categories
-        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The status of the dataMaskRule.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID where the resource is created
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data mask rule categories
+        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The current status of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The data mask rule description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) Data mask rule name.
+        :param pulumi.Input[str] description: The data mask rule description Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Data mask rule display name
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] iam_group_id: (Updatable) IAM Group id associated with the data mask rule
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] state: The current state of the DataMaskRule.
+        :param pulumi.Input[str] iam_group_id: (Updatable) IAM group ID associated with the data mask rule
+        :param pulumi.Input[str] lifecyle_details: Additional details on the substate of the lifecycle state [DEPRECATE]
+        :param pulumi.Input[str] state: The current lifecycle state of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input['DataMaskRuleTargetSelectedArgs'] target_selected: (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        :param pulumi.Input['DataMaskRuleTargetSelectedArgs'] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
@@ -255,7 +255,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Compartment Identifier where the resource is created
+        (Updatable) Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -267,7 +267,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="dataMaskCategories")
     def data_mask_categories(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        (Updatable) Data Mask Categories
+        (Updatable) Data mask rule categories
         """
         return pulumi.get(self, "data_mask_categories")
 
@@ -279,7 +279,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="dataMaskRuleStatus")
     def data_mask_rule_status(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The status of the dataMaskRule.
+        (Updatable) The current status of the data mask rule
         """
         return pulumi.get(self, "data_mask_rule_status")
 
@@ -303,7 +303,7 @@ class _DataMaskRuleState:
     @pulumi.getter
     def description(self) -> Optional[pulumi.Input[str]]:
         """
-        The data mask rule description. Avoid entering confidential information.
+        The data mask rule description Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -315,7 +315,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Data mask rule name.
+        (Updatable) Data mask rule display name
 
         Avoid entering confidential information.
         """
@@ -343,7 +343,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="iamGroupId")
     def iam_group_id(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) IAM Group id associated with the data mask rule
+        (Updatable) IAM group ID associated with the data mask rule
         """
         return pulumi.get(self, "iam_group_id")
 
@@ -355,7 +355,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Additional details on the substate of the lifecycle state [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -367,7 +367,7 @@ class _DataMaskRuleState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
         """
         return pulumi.get(self, "state")
 
@@ -391,7 +391,7 @@ class _DataMaskRuleState:
     @pulumi.getter(name="targetSelected")
     def target_selected(self) -> Optional[pulumi.Input['DataMaskRuleTargetSelectedArgs']]:
         """
-        (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         return pulumi.get(self, "target_selected")
 
@@ -443,7 +443,7 @@ class DataMaskRule(pulumi.CustomResource):
         """
         This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a new DataMaskRule object definition.
+        Creates a new DataMaskRule resource definition.
 
         ## Example Usage
 
@@ -481,20 +481,20 @@ class DataMaskRule(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the resource is created
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data Mask Categories
-        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The status of the dataMaskRule.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID where the resource is created
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data mask rule categories
+        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The current status of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The data mask rule description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) Data mask rule name.
+        :param pulumi.Input[str] description: The data mask rule description Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Data mask rule display name
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] iam_group_id: (Updatable) IAM Group id associated with the data mask rule
-        :param pulumi.Input[str] state: The current state of the DataMaskRule.
-        :param pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']] target_selected: (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        :param pulumi.Input[str] iam_group_id: (Updatable) IAM group ID associated with the data mask rule
+        :param pulumi.Input[str] state: The current lifecycle state of the data mask rule
+        :param pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         ...
     @overload
@@ -505,7 +505,7 @@ class DataMaskRule(pulumi.CustomResource):
         """
         This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a new DataMaskRule object definition.
+        Creates a new DataMaskRule resource definition.
 
         ## Example Usage
 
@@ -630,22 +630,22 @@ class DataMaskRule(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier where the resource is created
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data Mask Categories
-        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The status of the dataMaskRule.
+        :param pulumi.Input[str] compartment_id: (Updatable) Compartment OCID where the resource is created
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] data_mask_categories: (Updatable) Data mask rule categories
+        :param pulumi.Input[str] data_mask_rule_status: (Updatable) The current status of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] description: The data mask rule description. Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) Data mask rule name.
+        :param pulumi.Input[str] description: The data mask rule description Avoid entering confidential information.
+        :param pulumi.Input[str] display_name: (Updatable) Data mask rule display name
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] iam_group_id: (Updatable) IAM Group id associated with the data mask rule
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] state: The current state of the DataMaskRule.
+        :param pulumi.Input[str] iam_group_id: (Updatable) IAM group ID associated with the data mask rule
+        :param pulumi.Input[str] lifecyle_details: Additional details on the substate of the lifecycle state [DEPRECATE]
+        :param pulumi.Input[str] state: The current lifecycle state of the data mask rule
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']] target_selected: (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        :param pulumi.Input[pulumi.InputType['DataMaskRuleTargetSelectedArgs']] target_selected: (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
         :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
         """
@@ -673,7 +673,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) Compartment Identifier where the resource is created
+        (Updatable) Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -681,7 +681,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="dataMaskCategories")
     def data_mask_categories(self) -> pulumi.Output[Sequence[str]]:
         """
-        (Updatable) Data Mask Categories
+        (Updatable) Data mask rule categories
         """
         return pulumi.get(self, "data_mask_categories")
 
@@ -689,7 +689,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="dataMaskRuleStatus")
     def data_mask_rule_status(self) -> pulumi.Output[str]:
         """
-        (Updatable) The status of the dataMaskRule.
+        (Updatable) The current status of the data mask rule
         """
         return pulumi.get(self, "data_mask_rule_status")
 
@@ -705,7 +705,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter
     def description(self) -> pulumi.Output[str]:
         """
-        The data mask rule description. Avoid entering confidential information.
+        The data mask rule description Avoid entering confidential information.
         """
         return pulumi.get(self, "description")
 
@@ -713,7 +713,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) Data mask rule name.
+        (Updatable) Data mask rule display name
 
         Avoid entering confidential information.
         """
@@ -733,7 +733,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="iamGroupId")
     def iam_group_id(self) -> pulumi.Output[str]:
         """
-        (Updatable) IAM Group id associated with the data mask rule
+        (Updatable) IAM group ID associated with the data mask rule
         """
         return pulumi.get(self, "iam_group_id")
 
@@ -741,7 +741,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> pulumi.Output[str]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        Additional details on the substate of the lifecycle state [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -749,7 +749,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        The current state of the DataMaskRule.
+        The current lifecycle state of the data mask rule
         """
         return pulumi.get(self, "state")
 
@@ -765,7 +765,7 @@ class DataMaskRule(pulumi.CustomResource):
     @pulumi.getter(name="targetSelected")
     def target_selected(self) -> pulumi.Output['outputs.DataMaskRuleTargetSelected']:
         """
-        (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         """
         return pulumi.get(self, "target_selected")
 

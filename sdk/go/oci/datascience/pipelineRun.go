@@ -52,7 +52,8 @@ import (
 //					LogGroupId:            pulumi.Any(testLogGroup.Id),
 //					LogId:                 pulumi.Any(testLog.Id),
 //				},
-//				ProjectId: pulumi.Any(testProject.Id),
+//				OpcParentRptUrl: pulumi.Any(pipelineRunOpcParentRptUrl),
+//				ProjectId:       pulumi.Any(testProject.Id),
 //				StepOverrideDetails: datascience.PipelineRunStepOverrideDetailArray{
 //					&datascience.PipelineRunStepOverrideDetailArgs{
 //						StepConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepConfigurationDetailsArgs{
@@ -61,6 +62,14 @@ import (
 //							MaximumRuntimeInMinutes: pulumi.Any(pipelineRunStepOverrideDetailsStepConfigurationDetailsMaximumRuntimeInMinutes),
 //						},
 //						StepName: pulumi.Any(pipelineRunStepOverrideDetailsStepName),
+//						StepContainerConfigurationDetails: &datascience.PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs{
+//							ContainerType:    pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsContainerType),
+//							Image:            pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImage),
+//							Cmds:             pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsCmd),
+//							Entrypoints:      pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsEntrypoint),
+//							ImageDigest:      pulumi.Any(pipelineRunStepOverrideDetailsStepContainerConfigurationDetailsImageDigest),
+//							ImageSignatureId: pulumi.Any(testImageSignature.Id),
+//						},
 //					},
 //				},
 //				SystemTags: pulumi.Any(pipelineRunSystemTags),
@@ -105,6 +114,8 @@ type PipelineRun struct {
 	LogConfigurationOverrideDetails PipelineRunLogConfigurationOverrideDetailsOutput `pulumi:"logConfigurationOverrideDetails"`
 	// Customer logging details for pipeline run.
 	LogDetails PipelineRunLogDetailArrayOutput `pulumi:"logDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrOutput `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId pulumi.StringOutput `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -190,6 +201,8 @@ type pipelineRunState struct {
 	LogConfigurationOverrideDetails *PipelineRunLogConfigurationOverrideDetails `pulumi:"logConfigurationOverrideDetails"`
 	// Customer logging details for pipeline run.
 	LogDetails []PipelineRunLogDetail `pulumi:"logDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId *string `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -237,6 +250,8 @@ type PipelineRunState struct {
 	LogConfigurationOverrideDetails PipelineRunLogConfigurationOverrideDetailsPtrInput
 	// Customer logging details for pipeline run.
 	LogDetails PipelineRunLogDetailArrayInput
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -280,6 +295,8 @@ type pipelineRunArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails *PipelineRunLogConfigurationOverrideDetails `pulumi:"logConfigurationOverrideDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId string `pulumi:"pipelineId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -308,6 +325,8 @@ type PipelineRunArgs struct {
 	FreeformTags pulumi.MapInput
 	// The pipeline log configuration details.
 	LogConfigurationOverrideDetails PipelineRunLogConfigurationOverrideDetailsPtrInput
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.
 	PipelineId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline run with.
@@ -464,6 +483,11 @@ func (o PipelineRunOutput) LogConfigurationOverrideDetails() PipelineRunLogConfi
 // Customer logging details for pipeline run.
 func (o PipelineRunOutput) LogDetails() PipelineRunLogDetailArrayOutput {
 	return o.ApplyT(func(v *PipelineRun) PipelineRunLogDetailArrayOutput { return v.LogDetails }).(PipelineRunLogDetailArrayOutput)
+}
+
+// URL to fetch the Resource Principal Token from the parent resource.
+func (o PipelineRunOutput) OpcParentRptUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *PipelineRun) pulumi.StringPtrOutput { return v.OpcParentRptUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pipeline for which pipeline run is created.

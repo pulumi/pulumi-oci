@@ -28,12 +28,12 @@ class TargetArgs:
                  target_responder_recipes: Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]] = None):
         """
         The set of arguments for constructing a Target resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[str] compartment_id: Compartment OCID where the resource is created
+        :param pulumi.Input[str] display_name: (Updatable) Display name for the target.
                
                Avoid entering confidential information.
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
+        :param pulumi.Input[str] target_resource_type: Type of resource that target support (COMPARTMENT/FACLOUD)
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
@@ -41,9 +41,9 @@ class TargetArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
-        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
+        :param pulumi.Input[str] state: (Updatable) The enablement state of the detector rule
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
@@ -66,7 +66,7 @@ class TargetArgs:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Input[str]:
         """
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -78,7 +78,7 @@ class TargetArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) DetectorTemplate identifier.
+        (Updatable) Display name for the target.
 
         Avoid entering confidential information.
         """
@@ -104,7 +104,7 @@ class TargetArgs:
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> pulumi.Input[str]:
         """
-        possible type of targets(COMPARTMENT/FACLOUD)
+        Type of resource that target support (COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -156,7 +156,7 @@ class TargetArgs:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The current state of the DetectorRule.
+        (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
@@ -168,7 +168,7 @@ class TargetArgs:
     @pulumi.getter(name="targetDetectorRecipes")
     def target_detector_recipes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]]:
         """
-        (Updatable) List of detector recipes to associate with target
+        (Updatable) List of detector recipes to attach to target
         """
         return pulumi.get(self, "target_detector_recipes")
 
@@ -180,7 +180,7 @@ class TargetArgs:
     @pulumi.getter(name="targetResponderRecipes")
     def target_responder_recipes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]]:
         """
-        (Updatable) List of responder recipes to associate with target
+        (Updatable) List of responder recipes to attach to target
         """
         return pulumi.get(self, "target_responder_recipes")
 
@@ -211,29 +211,29 @@ class _TargetState:
                  time_updated: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Target resources.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
+        :param pulumi.Input[str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[str] display_name: (Updatable) Display name for the target.
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] lifecyle_details: A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         :param pulumi.Input[int] recipe_count: Total number of recipes attached to target
-        :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
+        :param pulumi.Input[str] state: (Updatable) The enablement state of the detector rule
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetailArgs']]] target_details: Details specific to the target type.
-        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
-        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
+        :param pulumi.Input[str] target_resource_type: Type of resource that target support (COMPARTMENT/FACLOUD)
+        :param pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The date and time the target was last updated. Format defined by RFC3339.
         """
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
@@ -274,7 +274,7 @@ class _TargetState:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -312,7 +312,7 @@ class _TargetState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) DetectorTemplate identifier.
+        (Updatable) Display name for the target.
 
         Avoid entering confidential information.
         """
@@ -352,7 +352,7 @@ class _TargetState:
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> Optional[pulumi.Input[str]]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -376,7 +376,7 @@ class _TargetState:
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The current state of the DetectorRule.
+        (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
@@ -412,7 +412,7 @@ class _TargetState:
     @pulumi.getter(name="targetDetectorRecipes")
     def target_detector_recipes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetDetectorRecipeArgs']]]]:
         """
-        (Updatable) List of detector recipes to associate with target
+        (Updatable) List of detector recipes to attach to target
         """
         return pulumi.get(self, "target_detector_recipes")
 
@@ -436,7 +436,7 @@ class _TargetState:
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> Optional[pulumi.Input[str]]:
         """
-        possible type of targets(COMPARTMENT/FACLOUD)
+        Type of resource that target support (COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -448,7 +448,7 @@ class _TargetState:
     @pulumi.getter(name="targetResponderRecipes")
     def target_responder_recipes(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetTargetResponderRecipeArgs']]]]:
         """
-        (Updatable) List of responder recipes to associate with target
+        (Updatable) List of responder recipes to attach to target
         """
         return pulumi.get(self, "target_responder_recipes")
 
@@ -472,7 +472,7 @@ class _TargetState:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> Optional[pulumi.Input[str]]:
         """
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 
@@ -500,7 +500,7 @@ class Target(pulumi.CustomResource):
         """
         This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a new Target
+        Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
 
         ## Example Usage
 
@@ -511,7 +511,7 @@ class Target(pulumi.CustomResource):
         test_target = oci.cloud_guard.Target("test_target",
             compartment_id=compartment_id,
             display_name=target_display_name,
-            target_resource_id=test_target_resource["id"],
+            target_resource_id=test_resource["id"],
             target_resource_type=target_target_resource_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -560,22 +560,22 @@ class Target(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
+        :param pulumi.Input[str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[str] display_name: (Updatable) Display name for the target.
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
+        :param pulumi.Input[str] state: (Updatable) The enablement state of the detector rule
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetResponderRecipeArgs']]]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
+        :param pulumi.Input[str] target_resource_type: Type of resource that target support (COMPARTMENT/FACLOUD)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetResponderRecipeArgs']]]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
         """
         ...
     @overload
@@ -586,7 +586,7 @@ class Target(pulumi.CustomResource):
         """
         This resource provides the Target resource in Oracle Cloud Infrastructure Cloud Guard service.
 
-        Creates a new Target
+        Creates a target (Target resource), using parameters passed in a CreateTargetDetails resource.
 
         ## Example Usage
 
@@ -597,7 +597,7 @@ class Target(pulumi.CustomResource):
         test_target = oci.cloud_guard.Target("test_target",
             compartment_id=compartment_id,
             display_name=target_display_name,
-            target_resource_id=test_target_resource["id"],
+            target_resource_id=test_resource["id"],
             target_resource_type=target_target_resource_type,
             defined_tags={
                 "foo-namespace.bar-key": "value",
@@ -737,29 +737,29 @@ class Target(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] compartment_id: Compartment Identifier where the resource is created
+        :param pulumi.Input[str] compartment_id: Compartment OCID where the resource is created
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] description: The target description.
                
                Avoid entering confidential information.
-        :param pulumi.Input[str] display_name: (Updatable) DetectorTemplate identifier.
+        :param pulumi.Input[str] display_name: (Updatable) Display name for the target.
                
                Avoid entering confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
                
                Avoid entering confidential information.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] inherited_by_compartments: List of inherited compartments
-        :param pulumi.Input[str] lifecyle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        :param pulumi.Input[str] lifecyle_details: A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         :param pulumi.Input[int] recipe_count: Total number of recipes attached to target
-        :param pulumi.Input[str] state: (Updatable) The current state of the DetectorRule.
+        :param pulumi.Input[str] state: (Updatable) The enablement state of the detector rule
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetailArgs']]]] target_details: Details specific to the target type.
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to associate with target
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetDetectorRecipeArgs']]]] target_detector_recipes: (Updatable) List of detector recipes to attach to target
         :param pulumi.Input[str] target_resource_id: Resource ID which the target uses to monitor
-        :param pulumi.Input[str] target_resource_type: possible type of targets(COMPARTMENT/FACLOUD)
-        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetResponderRecipeArgs']]]] target_responder_recipes: (Updatable) List of responder recipes to associate with target
+        :param pulumi.Input[str] target_resource_type: Type of resource that target support (COMPARTMENT/FACLOUD)
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['TargetTargetResponderRecipeArgs']]]] target_responder_recipes: (Updatable) List of responder recipes to attach to target
         :param pulumi.Input[str] time_created: The date and time the target was created. Format defined by RFC3339.
-        :param pulumi.Input[str] time_updated: The date and time the target was updated. Format defined by RFC3339.
+        :param pulumi.Input[str] time_updated: The date and time the target was last updated. Format defined by RFC3339.
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
 
@@ -788,7 +788,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> pulumi.Output[str]:
         """
-        Compartment Identifier where the resource is created
+        Compartment OCID where the resource is created
         """
         return pulumi.get(self, "compartment_id")
 
@@ -814,7 +814,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) DetectorTemplate identifier.
+        (Updatable) Display name for the target.
 
         Avoid entering confidential information.
         """
@@ -842,7 +842,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="lifecyleDetails")
     def lifecyle_details(self) -> pulumi.Output[str]:
         """
-        A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
         """
         return pulumi.get(self, "lifecyle_details")
 
@@ -858,7 +858,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
-        (Updatable) The current state of the DetectorRule.
+        (Updatable) The enablement state of the detector rule
         """
         return pulumi.get(self, "state")
 
@@ -882,7 +882,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="targetDetectorRecipes")
     def target_detector_recipes(self) -> pulumi.Output[Sequence['outputs.TargetTargetDetectorRecipe']]:
         """
-        (Updatable) List of detector recipes to associate with target
+        (Updatable) List of detector recipes to attach to target
         """
         return pulumi.get(self, "target_detector_recipes")
 
@@ -898,7 +898,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="targetResourceType")
     def target_resource_type(self) -> pulumi.Output[str]:
         """
-        possible type of targets(COMPARTMENT/FACLOUD)
+        Type of resource that target support (COMPARTMENT/FACLOUD)
         """
         return pulumi.get(self, "target_resource_type")
 
@@ -906,7 +906,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="targetResponderRecipes")
     def target_responder_recipes(self) -> pulumi.Output[Sequence['outputs.TargetTargetResponderRecipe']]:
         """
-        (Updatable) List of responder recipes to associate with target
+        (Updatable) List of responder recipes to attach to target
         """
         return pulumi.get(self, "target_responder_recipes")
 
@@ -922,7 +922,7 @@ class Target(pulumi.CustomResource):
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> pulumi.Output[str]:
         """
-        The date and time the target was updated. Format defined by RFC3339.
+        The date and time the target was last updated. Format defined by RFC3339.
         """
         return pulumi.get(self, "time_updated")
 

@@ -22,7 +22,7 @@ class GetJobRunResult:
     """
     A collection of values returned by getJobRun.
     """
-    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
+    def __init__(__self__, asynchronous=None, compartment_id=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, job_configuration_override_details=None, job_environment_configuration_override_details=None, job_id=None, job_infrastructure_configuration_details=None, job_log_configuration_override_details=None, job_run_id=None, job_storage_mount_configuration_details_lists=None, lifecycle_details=None, log_details=None, opc_parent_rpt_url=None, project_id=None, state=None, time_accepted=None, time_finished=None, time_started=None):
         if asynchronous and not isinstance(asynchronous, bool):
             raise TypeError("Expected argument 'asynchronous' to be a bool")
         pulumi.set(__self__, "asynchronous", asynchronous)
@@ -71,6 +71,9 @@ class GetJobRunResult:
         if log_details and not isinstance(log_details, list):
             raise TypeError("Expected argument 'log_details' to be a list")
         pulumi.set(__self__, "log_details", log_details)
+        if opc_parent_rpt_url and not isinstance(opc_parent_rpt_url, str):
+            raise TypeError("Expected argument 'opc_parent_rpt_url' to be a str")
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         if project_id and not isinstance(project_id, str):
             raise TypeError("Expected argument 'project_id' to be a str")
         pulumi.set(__self__, "project_id", project_id)
@@ -210,6 +213,11 @@ class GetJobRunResult:
         return pulumi.get(self, "log_details")
 
     @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
+
+    @property
     @pulumi.getter(name="projectId")
     def project_id(self) -> str:
         """
@@ -272,6 +280,7 @@ class AwaitableGetJobRunResult(GetJobRunResult):
             job_storage_mount_configuration_details_lists=self.job_storage_mount_configuration_details_lists,
             lifecycle_details=self.lifecycle_details,
             log_details=self.log_details,
+            opc_parent_rpt_url=self.opc_parent_rpt_url,
             project_id=self.project_id,
             state=self.state,
             time_accepted=self.time_accepted,
@@ -320,6 +329,7 @@ def get_job_run(job_run_id: Optional[str] = None,
         job_storage_mount_configuration_details_lists=pulumi.get(__ret__, 'job_storage_mount_configuration_details_lists'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         log_details=pulumi.get(__ret__, 'log_details'),
+        opc_parent_rpt_url=pulumi.get(__ret__, 'opc_parent_rpt_url'),
         project_id=pulumi.get(__ret__, 'project_id'),
         state=pulumi.get(__ret__, 'state'),
         time_accepted=pulumi.get(__ret__, 'time_accepted'),

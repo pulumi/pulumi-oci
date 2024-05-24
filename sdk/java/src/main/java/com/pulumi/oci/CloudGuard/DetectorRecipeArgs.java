@@ -21,14 +21,14 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     public static final DetectorRecipeArgs Empty = new DetectorRecipeArgs();
 
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Import(name="compartmentId", required=true)
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -70,14 +70,14 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * detector for the rule
+     * Detector for the rule
      * 
      */
     @Import(name="detector")
     private @Nullable Output<String> detector;
 
     /**
-     * @return detector for the rule
+     * @return Detector for the rule
      * 
      */
     public Optional<Output<String>> detector() {
@@ -85,14 +85,14 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * (Updatable) Detector Rules to override from source detector recipe
+     * (Updatable) Detector rules to override from source detector recipe
      * 
      */
     @Import(name="detectorRules")
     private @Nullable Output<List<DetectorRecipeDetectorRuleArgs>> detectorRules;
 
     /**
-     * @return (Updatable) Detector Rules to override from source detector recipe
+     * @return (Updatable) Detector rules to override from source detector recipe
      * 
      */
     public Optional<Output<List<DetectorRecipeDetectorRuleArgs>>> detectorRules() {
@@ -138,7 +138,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -148,7 +148,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
     private @Nullable Output<String> sourceDetectorRecipeId;
 
     /**
-     * @return The id of the source detector recipe.
+     * @return The ID of the source detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -190,7 +190,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -201,7 +201,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param compartmentId (Updatable) Compartment Identifier
+         * @param compartmentId (Updatable) Compartment OCID
          * 
          * @return builder
          * 
@@ -257,7 +257,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector for the rule
          * 
          * @return builder
          * 
@@ -268,7 +268,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param detector detector for the rule
+         * @param detector Detector for the rule
          * 
          * @return builder
          * 
@@ -278,7 +278,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param detectorRules (Updatable) Detector Rules to override from source detector recipe
+         * @param detectorRules (Updatable) Detector rules to override from source detector recipe
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param detectorRules (Updatable) Detector Rules to override from source detector recipe
+         * @param detectorRules (Updatable) Detector rules to override from source detector recipe
          * 
          * @return builder
          * 
@@ -299,7 +299,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param detectorRules (Updatable) Detector Rules to override from source detector recipe
+         * @param detectorRules (Updatable) Detector rules to override from source detector recipe
          * 
          * @return builder
          * 
@@ -359,7 +359,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceDetectorRecipeId The id of the source detector recipe.
+         * @param sourceDetectorRecipeId The ID of the source detector recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -373,7 +373,7 @@ public final class DetectorRecipeArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param sourceDetectorRecipeId The id of the source detector recipe.
+         * @param sourceDetectorRecipeId The ID of the source detector recipe
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

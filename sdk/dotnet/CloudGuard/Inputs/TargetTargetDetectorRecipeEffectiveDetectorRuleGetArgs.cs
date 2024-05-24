@@ -13,7 +13,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
     public sealed class TargetTargetDetectorRecipeEffectiveDetectorRuleGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The id of the attached DataSource.
+        /// The ID of the attached data source
         /// </summary>
         [Input("dataSourceId")]
         public Input<string>? DataSourceId { get; set; }
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailGetArgs>? _details;
 
         /// <summary>
-        /// Details of ResponderRule.
+        /// Detailed information for a responder rule
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleDetailGetArgs> Details
         {
@@ -39,19 +39,19 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// detector for the rule
+        /// Detector type for the rule
         /// </summary>
         [Input("detector")]
         public Input<string>? Detector { get; set; }
 
         /// <summary>
-        /// The unique identifier of the detector rule.
+        /// The unique identifier of the detector rule
         /// </summary>
         [Input("detectorRuleId")]
         public Input<string>? DetectorRuleId { get; set; }
 
         /// <summary>
-        /// (Updatable) DetectorTemplate identifier.
+        /// (Updatable) Display name for the target.
         /// 
         /// Avoid entering confidential information.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingGetArgs>? _entitiesMappings;
 
         /// <summary>
-        /// Data Source entities mapping for a Detector Rule
+        /// Data source entities mapping for a detector rule
         /// </summary>
         public InputList<Inputs.TargetTargetDetectorRecipeEffectiveDetectorRuleEntitiesMappingGetArgs> EntitiesMappings
         {
@@ -80,7 +80,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         private InputList<string>? _managedListTypes;
 
         /// <summary>
-        /// List of cloudguard managed list types related to this rule
+        /// List of managed list types related to this rule
         /// </summary>
         public InputList<string> ManagedListTypes
         {
@@ -89,25 +89,25 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         }
 
         /// <summary>
-        /// Recommendation for TargetDetectorRecipeDetectorRule
+        /// Recommendation for TargetDetectorRecipeDetectorRule resource
         /// </summary>
         [Input("recommendation")]
         public Input<string>? Recommendation { get; set; }
 
         /// <summary>
-        /// resource type of the configuration to which the rule is applied
+        /// The type of resource which is monitored by the detector rule. For example, Instance, Database, VCN, Policy. To find the resource type for a particular rule, see [Detector Recipe Reference] (/iaas/cloud-guard/using/detect-recipes.htm#detect-recipes-reference).
         /// </summary>
         [Input("resourceType")]
         public Input<string>? ResourceType { get; set; }
 
         /// <summary>
-        /// service type of the configuration to which the rule is applied
+        /// Service type of the configuration to which the rule is applied
         /// </summary>
         [Input("serviceType")]
         public Input<string>? ServiceType { get; set; }
 
         /// <summary>
-        /// (Updatable) The current state of the DetectorRule.
+        /// (Updatable) The enablement state of the detector rule
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.CloudGuard.Inputs
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The date and time the target was updated. Format defined by RFC3339.
+        /// The date and time the target was last updated. Format defined by RFC3339.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

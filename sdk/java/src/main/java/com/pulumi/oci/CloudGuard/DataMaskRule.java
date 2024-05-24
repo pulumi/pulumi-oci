@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Data Mask Rule resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a new DataMaskRule object definition.
+ * Creates a new DataMaskRule resource definition.
  * 
  * ## Example Usage
  * 
@@ -82,42 +82,42 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/dataMaskRule:DataMaskRule")
 public class DataMaskRule extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier where the resource is created
+     * (Updatable) Compartment OCID where the resource is created
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier where the resource is created
+     * @return (Updatable) Compartment OCID where the resource is created
      * 
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
     }
     /**
-     * (Updatable) Data Mask Categories
+     * (Updatable) Data mask rule categories
      * 
      */
     @Export(name="dataMaskCategories", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dataMaskCategories;
 
     /**
-     * @return (Updatable) Data Mask Categories
+     * @return (Updatable) Data mask rule categories
      * 
      */
     public Output<List<String>> dataMaskCategories() {
         return this.dataMaskCategories;
     }
     /**
-     * (Updatable) The status of the dataMaskRule.
+     * (Updatable) The current status of the data mask rule
      * 
      */
     @Export(name="dataMaskRuleStatus", refs={String.class}, tree="[0]")
     private Output<String> dataMaskRuleStatus;
 
     /**
-     * @return (Updatable) The status of the dataMaskRule.
+     * @return (Updatable) The current status of the data mask rule
      * 
      */
     public Output<String> dataMaskRuleStatus() {
@@ -138,21 +138,21 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
         return this.definedTags;
     }
     /**
-     * The data mask rule description. Avoid entering confidential information.
+     * The data mask rule description Avoid entering confidential information.
      * 
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return The data mask rule description. Avoid entering confidential information.
+     * @return The data mask rule description Avoid entering confidential information.
      * 
      */
     public Output<String> description() {
         return this.description;
     }
     /**
-     * (Updatable) Data mask rule name.
+     * (Updatable) Data mask rule display name
      * 
      * Avoid entering confidential information.
      * 
@@ -161,7 +161,7 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) Data mask rule name.
+     * @return (Updatable) Data mask rule display name
      * 
      * Avoid entering confidential information.
      * 
@@ -188,42 +188,42 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * (Updatable) IAM Group id associated with the data mask rule
+     * (Updatable) IAM group ID associated with the data mask rule
      * 
      */
     @Export(name="iamGroupId", refs={String.class}, tree="[0]")
     private Output<String> iamGroupId;
 
     /**
-     * @return (Updatable) IAM Group id associated with the data mask rule
+     * @return (Updatable) IAM group ID associated with the data mask rule
      * 
      */
     public Output<String> iamGroupId() {
         return this.iamGroupId;
     }
     /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * Additional details on the substate of the lifecycle state [DEPRECATE]
      * 
      */
     @Export(name="lifecyleDetails", refs={String.class}, tree="[0]")
     private Output<String> lifecyleDetails;
 
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return Additional details on the substate of the lifecycle state [DEPRECATE]
      * 
      */
     public Output<String> lifecyleDetails() {
         return this.lifecyleDetails;
     }
     /**
-     * The current state of the DataMaskRule.
+     * The current lifecycle state of the data mask rule
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the DataMaskRule.
+     * @return The current lifecycle state of the data mask rule
      * 
      */
     public Output<String> state() {
@@ -244,14 +244,14 @@ public class DataMaskRule extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      * 
      */
     @Export(name="targetSelected", refs={DataMaskRuleTargetSelected.class}, tree="[0]")
     private Output<DataMaskRuleTargetSelected> targetSelected;
 
     /**
-     * @return (Updatable) Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+     * @return (Updatable) Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
      * 
      */
     public Output<DataMaskRuleTargetSelected> targetSelected() {

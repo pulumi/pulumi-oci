@@ -12,7 +12,8 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Security Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Creates a security zone recipe. A security zone recipe is a collection of security zone policies.
+    /// Creates a security zone recipe (SecurityRecipe resource), using parameters
+    /// passed in a CreateSecurityRecipeDetails resource.
     /// 
     /// ## Example Usage
     /// 
@@ -55,7 +56,7 @@ namespace Pulumi.Oci.CloudGuard
     public partial class SecurityRecipe : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The compartment in which to create the recipe
+        /// (Updatable) The OCID of the compartment in which to create the recipe
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
@@ -73,7 +74,9 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Description { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The recipe's name
+        /// (Updatable) The recipe's display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -99,7 +102,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<string> Owner { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+        /// (Updatable) The list of security policy IDs to include in the recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -109,7 +112,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<ImmutableArray<string>> SecurityPolicies { get; private set; } = null!;
 
         /// <summary>
-        /// The current state of the recipe
+        /// The current lifecycle state of the recipe
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
@@ -173,7 +176,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class SecurityRecipeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment in which to create the recipe
+        /// (Updatable) The OCID of the compartment in which to create the recipe
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
@@ -197,7 +200,9 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The recipe's name
+        /// (Updatable) The recipe's display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -220,7 +225,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _securityPolicies;
 
         /// <summary>
-        /// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+        /// (Updatable) The list of security policy IDs to include in the recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -241,7 +246,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class SecurityRecipeState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The compartment in which to create the recipe
+        /// (Updatable) The OCID of the compartment in which to create the recipe
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
@@ -265,7 +270,9 @@ namespace Pulumi.Oci.CloudGuard
         public Input<string>? Description { get; set; }
 
         /// <summary>
-        /// (Updatable) The recipe's name
+        /// (Updatable) The recipe's display name.
+        /// 
+        /// Avoid entering confidential information.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -300,7 +307,7 @@ namespace Pulumi.Oci.CloudGuard
         private InputList<string>? _securityPolicies;
 
         /// <summary>
-        /// (Updatable) The list of `SecurityPolicy` ids to include in the recipe
+        /// (Updatable) The list of security policy IDs to include in the recipe
         /// 
         /// 
         /// ** IMPORTANT **
@@ -313,7 +320,7 @@ namespace Pulumi.Oci.CloudGuard
         }
 
         /// <summary>
-        /// The current state of the recipe
+        /// The current lifecycle state of the recipe
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }

@@ -58,10 +58,12 @@ __all__ = [
     'PipelineRunLogDetail',
     'PipelineRunStepOverrideDetail',
     'PipelineRunStepOverrideDetailStepConfigurationDetails',
+    'PipelineRunStepOverrideDetailStepContainerConfigurationDetails',
     'PipelineRunStepRun',
     'PipelineStepArtifact',
     'PipelineStepDetail',
     'PipelineStepDetailStepConfigurationDetails',
+    'PipelineStepDetailStepContainerConfigurationDetails',
     'PipelineStepDetailStepInfrastructureConfigurationDetails',
     'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails',
     'GetFastLaunchJobConfigsFastLaunchJobConfigResult',
@@ -168,6 +170,7 @@ __all__ = [
     'GetPipelineRunLogDetailResult',
     'GetPipelineRunStepOverrideDetailResult',
     'GetPipelineRunStepOverrideDetailStepConfigurationDetailResult',
+    'GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult',
     'GetPipelineRunStepRunResult',
     'GetPipelineRunsFilterResult',
     'GetPipelineRunsPipelineRunResult',
@@ -177,10 +180,12 @@ __all__ = [
     'GetPipelineRunsPipelineRunLogDetailResult',
     'GetPipelineRunsPipelineRunStepOverrideDetailResult',
     'GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult',
+    'GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult',
     'GetPipelineRunsPipelineRunStepRunResult',
     'GetPipelineStepArtifactResult',
     'GetPipelineStepDetailResult',
     'GetPipelineStepDetailStepConfigurationDetailResult',
+    'GetPipelineStepDetailStepContainerConfigurationDetailResult',
     'GetPipelineStepDetailStepInfrastructureConfigurationDetailResult',
     'GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
     'GetPipelinesFilterResult',
@@ -192,6 +197,7 @@ __all__ = [
     'GetPipelinesPipelineStepArtifactResult',
     'GetPipelinesPipelineStepDetailResult',
     'GetPipelinesPipelineStepDetailStepConfigurationDetailResult',
+    'GetPipelinesPipelineStepDetailStepContainerConfigurationDetailResult',
     'GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult',
     'GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult',
     'GetPrivateEndpointsDataSciencePrivateEndpointResult',
@@ -3074,6 +3080,8 @@ class PipelineInfrastructureConfigurationDetails(dict):
             suggest = "shape_name"
         elif key == "shapeConfigDetails":
             suggest = "shape_config_details"
+        elif key == "subnetId":
+            suggest = "subnet_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PipelineInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
@@ -3089,22 +3097,26 @@ class PipelineInfrastructureConfigurationDetails(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  shape_name: str,
-                 shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None):
+                 shape_config_details: Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+                 subnet_id: Optional[str] = None):
         """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        :param 'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param int block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance.
+        :param str shape_name: (Updatable) The shape used to launch the instance for all step runs in the pipeline.
+        :param 'PipelineInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_name", shape_name)
         if shape_config_details is not None:
             pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> int:
         """
-        The size of the block storage volume to attach to the instance.
+        (Updatable) The size of the block storage volume to attach to the instance.
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
@@ -3112,7 +3124,7 @@ class PipelineInfrastructureConfigurationDetails(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
         """
-        The shape used to launch the instance for all step runs in the pipeline.
+        (Updatable) The shape used to launch the instance for all step runs in the pipeline.
         """
         return pulumi.get(self, "shape_name")
 
@@ -3120,9 +3132,17 @@ class PipelineInfrastructureConfigurationDetails(dict):
     @pulumi.getter(name="shapeConfigDetails")
     def shape_config_details(self) -> Optional['outputs.PipelineInfrastructureConfigurationDetailsShapeConfigDetails']:
         """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "shape_config_details")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[str]:
+        """
+        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -3148,8 +3168,8 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -3160,7 +3180,7 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -3168,7 +3188,7 @@ class PipelineInfrastructureConfigurationDetailsShapeConfigDetails(dict):
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
         return pulumi.get(self, "ocpus")
 
@@ -3539,6 +3559,8 @@ class PipelineRunStepOverrideDetail(dict):
             suggest = "step_configuration_details"
         elif key == "stepName":
             suggest = "step_name"
+        elif key == "stepContainerConfigurationDetails":
+            suggest = "step_container_configuration_details"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetail. Access the value via the '{suggest}' property getter instead.")
@@ -3553,13 +3575,17 @@ class PipelineRunStepOverrideDetail(dict):
 
     def __init__(__self__, *,
                  step_configuration_details: 'outputs.PipelineRunStepOverrideDetailStepConfigurationDetails',
-                 step_name: str):
+                 step_name: str,
+                 step_container_configuration_details: Optional['outputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetails'] = None):
         """
         :param 'PipelineRunStepOverrideDetailStepConfigurationDetailsArgs' step_configuration_details: The configuration details of a step.
         :param str step_name: The name of the step.
+        :param 'PipelineRunStepOverrideDetailStepContainerConfigurationDetailsArgs' step_container_configuration_details: Container Details for a step in pipeline.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
+        if step_container_configuration_details is not None:
+            pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
 
     @property
     @pulumi.getter(name="stepConfigurationDetails")
@@ -3576,6 +3602,14 @@ class PipelineRunStepOverrideDetail(dict):
         The name of the step.
         """
         return pulumi.get(self, "step_name")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Optional['outputs.PipelineRunStepOverrideDetailStepContainerConfigurationDetails']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
 
 
 @pulumi.output_type
@@ -3640,6 +3674,104 @@ class PipelineRunStepOverrideDetailStepConfigurationDetails(dict):
         A time bound for the execution of the step.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class PipelineRunStepOverrideDetailStepContainerConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containerType":
+            suggest = "container_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineRunStepOverrideDetailStepContainerConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineRunStepOverrideDetailStepContainerConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineRunStepOverrideDetailStepContainerConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 container_type: str,
+                 image: str,
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 image_digest: Optional[str] = None,
+                 image_signature_id: Optional[str] = None):
+        """
+        :param str container_type: The type of container.
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "image", image)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[str]:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[str]:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
 
 @pulumi.output_type
@@ -3860,6 +3992,8 @@ class PipelineStepDetail(dict):
             suggest = "job_id"
         elif key == "stepConfigurationDetails":
             suggest = "step_configuration_details"
+        elif key == "stepContainerConfigurationDetails":
+            suggest = "step_container_configuration_details"
         elif key == "stepInfrastructureConfigurationDetails":
             suggest = "step_infrastructure_configuration_details"
 
@@ -3882,6 +4016,7 @@ class PipelineStepDetail(dict):
                  is_artifact_uploaded: Optional[bool] = None,
                  job_id: Optional[str] = None,
                  step_configuration_details: Optional['outputs.PipelineStepDetailStepConfigurationDetails'] = None,
+                 step_container_configuration_details: Optional['outputs.PipelineStepDetailStepContainerConfigurationDetails'] = None,
                  step_infrastructure_configuration_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails'] = None):
         """
         :param str step_name: (Updatable) The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
@@ -3895,7 +4030,8 @@ class PipelineStepDetail(dict):
         :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
         :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
         :param 'PipelineStepDetailStepConfigurationDetailsArgs' step_configuration_details: (Updatable) The configuration details of a step.
-        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
+        :param 'PipelineStepDetailStepContainerConfigurationDetailsArgs' step_container_configuration_details: Container Details for a step in pipeline.
+        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsArgs' step_infrastructure_configuration_details: (Updatable) The infrastructure configuration details of a pipeline or a step.
         """
         pulumi.set(__self__, "step_name", step_name)
         pulumi.set(__self__, "step_type", step_type)
@@ -3909,6 +4045,8 @@ class PipelineStepDetail(dict):
             pulumi.set(__self__, "job_id", job_id)
         if step_configuration_details is not None:
             pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        if step_container_configuration_details is not None:
+            pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         if step_infrastructure_configuration_details is not None:
             pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
 
@@ -3973,10 +4111,18 @@ class PipelineStepDetail(dict):
         return pulumi.get(self, "step_configuration_details")
 
     @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Optional['outputs.PipelineStepDetailStepContainerConfigurationDetails']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
+
+    @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
     def step_infrastructure_configuration_details(self) -> Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetails']:
         """
-        The infrastructure configuration details of a pipeline or a step.
+        (Updatable) The infrastructure configuration details of a pipeline or a step.
         """
         return pulumi.get(self, "step_infrastructure_configuration_details")
 
@@ -4046,6 +4192,104 @@ class PipelineStepDetailStepConfigurationDetails(dict):
 
 
 @pulumi.output_type
+class PipelineStepDetailStepContainerConfigurationDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "containerType":
+            suggest = "container_type"
+        elif key == "imageDigest":
+            suggest = "image_digest"
+        elif key == "imageSignatureId":
+            suggest = "image_signature_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in PipelineStepDetailStepContainerConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        PipelineStepDetailStepContainerConfigurationDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        PipelineStepDetailStepContainerConfigurationDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 container_type: str,
+                 image: str,
+                 cmds: Optional[Sequence[str]] = None,
+                 entrypoints: Optional[Sequence[str]] = None,
+                 image_digest: Optional[str] = None,
+                 image_signature_id: Optional[str] = None):
+        """
+        :param str container_type: The type of container.
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "image", image)
+        if cmds is not None:
+            pulumi.set(__self__, "cmds", cmds)
+        if entrypoints is not None:
+            pulumi.set(__self__, "entrypoints", entrypoints)
+        if image_digest is not None:
+            pulumi.set(__self__, "image_digest", image_digest)
+        if image_signature_id is not None:
+            pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Optional[Sequence[str]]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> Optional[str]:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> Optional[str]:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
 class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -4056,6 +4300,8 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
             suggest = "shape_name"
         elif key == "shapeConfigDetails":
             suggest = "shape_config_details"
+        elif key == "subnetId":
+            suggest = "subnet_id"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in PipelineStepDetailStepInfrastructureConfigurationDetails. Access the value via the '{suggest}' property getter instead.")
@@ -4071,22 +4317,26 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  shape_name: str,
-                 shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None):
+                 shape_config_details: Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails'] = None,
+                 subnet_id: Optional[str] = None):
         """
-        :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
-        :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
-        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param int block_storage_size_in_gbs: (Updatable) The size of the block storage volume to attach to the instance.
+        :param str shape_name: (Updatable) The shape used to launch the instance for all step runs in the pipeline.
+        :param 'PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs' shape_config_details: (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        :param str subnet_id: (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_name", shape_name)
         if shape_config_details is not None:
             pulumi.set(__self__, "shape_config_details", shape_config_details)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
     def block_storage_size_in_gbs(self) -> int:
         """
-        The size of the block storage volume to attach to the instance.
+        (Updatable) The size of the block storage volume to attach to the instance.
         """
         return pulumi.get(self, "block_storage_size_in_gbs")
 
@@ -4094,7 +4344,7 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
     @pulumi.getter(name="shapeName")
     def shape_name(self) -> str:
         """
-        The shape used to launch the instance for all step runs in the pipeline.
+        (Updatable) The shape used to launch the instance for all step runs in the pipeline.
         """
         return pulumi.get(self, "shape_name")
 
@@ -4102,9 +4352,17 @@ class PipelineStepDetailStepInfrastructureConfigurationDetails(dict):
     @pulumi.getter(name="shapeConfigDetails")
     def shape_config_details(self) -> Optional['outputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails']:
         """
-        Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
+        (Updatable) Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         """
         return pulumi.get(self, "shape_config_details")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> Optional[str]:
+        """
+        (Updatable) The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -4130,8 +4388,8 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
                  memory_in_gbs: Optional[float] = None,
                  ocpus: Optional[float] = None):
         """
-        :param float memory_in_gbs: A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
-        :param float ocpus: A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        :param float memory_in_gbs: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        :param float ocpus: (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
@@ -4142,7 +4400,7 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[float]:
         """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
         """
         return pulumi.get(self, "memory_in_gbs")
 
@@ -4150,7 +4408,7 @@ class PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetails
     @pulumi.getter
     def ocpus(self) -> Optional[float]:
         """
-        A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+        (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
         """
         return pulumi.get(self, "ocpus")
 
@@ -5057,6 +5315,7 @@ class GetJobRunsJobRunResult(dict):
                  job_storage_mount_configuration_details_lists: Sequence['outputs.GetJobRunsJobRunJobStorageMountConfigurationDetailsListResult'],
                  lifecycle_details: str,
                  log_details: Sequence['outputs.GetJobRunsJobRunLogDetailResult'],
+                 opc_parent_rpt_url: str,
                  project_id: str,
                  state: str,
                  time_accepted: str,
@@ -5098,6 +5357,7 @@ class GetJobRunsJobRunResult(dict):
         pulumi.set(__self__, "job_storage_mount_configuration_details_lists", job_storage_mount_configuration_details_lists)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_details", log_details)
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_accepted", time_accepted)
@@ -5220,6 +5480,11 @@ class GetJobRunsJobRunResult(dict):
         Customer logging details for job run.
         """
         return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="projectId")
@@ -7300,6 +7565,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
                  model_deployment_configuration_details: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentConfigurationDetailResult'],
                  model_deployment_system_datas: Sequence['outputs.GetModelDeploymentsModelDeploymentModelDeploymentSystemDataResult'],
                  model_deployment_url: str,
+                 opc_parent_rpt_url: str,
                  project_id: str,
                  state: str,
                  time_created: str):
@@ -7332,6 +7598,7 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         pulumi.set(__self__, "model_deployment_configuration_details", model_deployment_configuration_details)
         pulumi.set(__self__, "model_deployment_system_datas", model_deployment_system_datas)
         pulumi.set(__self__, "model_deployment_url", model_deployment_url)
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
@@ -7431,6 +7698,11 @@ class GetModelDeploymentsModelDeploymentResult(dict):
         The URL to interact with the model deployment.
         """
         return pulumi.get(self, "model_deployment_url")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="projectId")
@@ -9700,15 +9972,18 @@ class GetPipelineInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  shape_config_details: Sequence['outputs.GetPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
+                 shape_name: str,
+                 subnet_id: str):
         """
         :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
         :param Sequence['GetPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_config_details", shape_config_details)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -9733,6 +10008,14 @@ class GetPipelineInfrastructureConfigurationDetailResult(dict):
         The shape used to launch the instance for all step runs in the pipeline.
         """
         return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -10001,12 +10284,15 @@ class GetPipelineRunLogDetailResult(dict):
 class GetPipelineRunStepOverrideDetailResult(dict):
     def __init__(__self__, *,
                  step_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
+                 step_container_configuration_details: Sequence['outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult'],
                  step_name: str):
         """
         :param Sequence['GetPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
         :param str step_name: The name of the step.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
 
     @property
@@ -10016,6 +10302,14 @@ class GetPipelineRunStepOverrideDetailResult(dict):
         The configuration details of a step.
         """
         return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Sequence['outputs.GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
@@ -10064,6 +10358,79 @@ class GetPipelineRunStepOverrideDetailStepConfigurationDetailResult(dict):
         A time bound for the execution of the step.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 container_type: str,
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param str container_type: The type of container.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
 
 @pulumi.output_type
@@ -10192,6 +10559,7 @@ class GetPipelineRunsPipelineRunResult(dict):
                  lifecycle_details: str,
                  log_configuration_override_details: Sequence['outputs.GetPipelineRunsPipelineRunLogConfigurationOverrideDetailResult'],
                  log_details: Sequence['outputs.GetPipelineRunsPipelineRunLogDetailResult'],
+                 opc_parent_rpt_url: str,
                  pipeline_id: str,
                  project_id: str,
                  state: str,
@@ -10237,6 +10605,7 @@ class GetPipelineRunsPipelineRunResult(dict):
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "log_configuration_override_details", log_configuration_override_details)
         pulumi.set(__self__, "log_details", log_details)
+        pulumi.set(__self__, "opc_parent_rpt_url", opc_parent_rpt_url)
         pulumi.set(__self__, "pipeline_id", pipeline_id)
         pulumi.set(__self__, "project_id", project_id)
         pulumi.set(__self__, "state", state)
@@ -10340,6 +10709,11 @@ class GetPipelineRunsPipelineRunResult(dict):
         Customer logging details for pipeline run.
         """
         return pulumi.get(self, "log_details")
+
+    @property
+    @pulumi.getter(name="opcParentRptUrl")
+    def opc_parent_rpt_url(self) -> str:
+        return pulumi.get(self, "opc_parent_rpt_url")
 
     @property
     @pulumi.getter(name="pipelineId")
@@ -10608,12 +10982,15 @@ class GetPipelineRunsPipelineRunLogDetailResult(dict):
 class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
     def __init__(__self__, *,
                  step_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult'],
+                 step_container_configuration_details: Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult'],
                  step_name: str):
         """
         :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
         :param str step_name: The name of the step.
         """
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
 
     @property
@@ -10623,6 +11000,14 @@ class GetPipelineRunsPipelineRunStepOverrideDetailResult(dict):
         The configuration details of a step.
         """
         return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Sequence['outputs.GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
 
     @property
     @pulumi.getter(name="stepName")
@@ -10671,6 +11056,79 @@ class GetPipelineRunsPipelineRunStepOverrideDetailStepConfigurationDetailResult(
         A time bound for the execution of the step.
         """
         return pulumi.get(self, "maximum_runtime_in_minutes")
+
+
+@pulumi.output_type
+class GetPipelineRunsPipelineRunStepOverrideDetailStepContainerConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 container_type: str,
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param str container_type: The type of container.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
 
 
 @pulumi.output_type
@@ -10818,6 +11276,7 @@ class GetPipelineStepDetailResult(dict):
                  is_artifact_uploaded: bool,
                  job_id: str,
                  step_configuration_details: Sequence['outputs.GetPipelineStepDetailStepConfigurationDetailResult'],
+                 step_container_configuration_details: Sequence['outputs.GetPipelineStepDetailStepContainerConfigurationDetailResult'],
                  step_infrastructure_configuration_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
                  step_name: str,
                  step_type: str):
@@ -10827,6 +11286,7 @@ class GetPipelineStepDetailResult(dict):
         :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
         :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
         :param Sequence['GetPipelineStepDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetPipelineStepDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
         :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: The type of step.
@@ -10836,6 +11296,7 @@ class GetPipelineStepDetailResult(dict):
         pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
         pulumi.set(__self__, "job_id", job_id)
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
         pulumi.set(__self__, "step_type", step_type)
@@ -10879,6 +11340,14 @@ class GetPipelineStepDetailResult(dict):
         The configuration details of a step.
         """
         return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Sequence['outputs.GetPipelineStepDetailStepContainerConfigurationDetailResult']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
 
     @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
@@ -10946,19 +11415,95 @@ class GetPipelineStepDetailStepConfigurationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetPipelineStepDetailStepContainerConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 container_type: str,
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param str container_type: The type of container.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
 class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  shape_config_details: Sequence['outputs.GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
+                 shape_name: str,
+                 subnet_id: str):
         """
         :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
         :param Sequence['GetPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_config_details", shape_config_details)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -10983,6 +11528,14 @@ class GetPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
         The shape used to launch the instance for all step runs in the pipeline.
         """
         return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -11305,15 +11858,18 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  shape_config_details: Sequence['outputs.GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
+                 shape_name: str,
+                 subnet_id: str):
         """
         :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
         :param Sequence['GetPipelinesPipelineInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_config_details", shape_config_details)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -11338,6 +11894,14 @@ class GetPipelinesPipelineInfrastructureConfigurationDetailResult(dict):
         The shape used to launch the instance for all step runs in the pipeline.
         """
         return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type
@@ -11481,6 +12045,7 @@ class GetPipelinesPipelineStepDetailResult(dict):
                  is_artifact_uploaded: bool,
                  job_id: str,
                  step_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepConfigurationDetailResult'],
+                 step_container_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepContainerConfigurationDetailResult'],
                  step_infrastructure_configuration_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult'],
                  step_name: str,
                  step_type: str):
@@ -11490,6 +12055,7 @@ class GetPipelinesPipelineStepDetailResult(dict):
         :param bool is_artifact_uploaded: A flag to indicate whether the artifact has been uploaded for this step or not.
         :param str job_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the job to be used as a step.
         :param Sequence['GetPipelinesPipelineStepDetailStepConfigurationDetailArgs'] step_configuration_details: The configuration details of a step.
+        :param Sequence['GetPipelinesPipelineStepDetailStepContainerConfigurationDetailArgs'] step_container_configuration_details: Container Details for a step in pipeline.
         :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailArgs'] step_infrastructure_configuration_details: The infrastructure configuration details of a pipeline or a step.
         :param str step_name: The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
         :param str step_type: The type of step.
@@ -11499,6 +12065,7 @@ class GetPipelinesPipelineStepDetailResult(dict):
         pulumi.set(__self__, "is_artifact_uploaded", is_artifact_uploaded)
         pulumi.set(__self__, "job_id", job_id)
         pulumi.set(__self__, "step_configuration_details", step_configuration_details)
+        pulumi.set(__self__, "step_container_configuration_details", step_container_configuration_details)
         pulumi.set(__self__, "step_infrastructure_configuration_details", step_infrastructure_configuration_details)
         pulumi.set(__self__, "step_name", step_name)
         pulumi.set(__self__, "step_type", step_type)
@@ -11542,6 +12109,14 @@ class GetPipelinesPipelineStepDetailResult(dict):
         The configuration details of a step.
         """
         return pulumi.get(self, "step_configuration_details")
+
+    @property
+    @pulumi.getter(name="stepContainerConfigurationDetails")
+    def step_container_configuration_details(self) -> Sequence['outputs.GetPipelinesPipelineStepDetailStepContainerConfigurationDetailResult']:
+        """
+        Container Details for a step in pipeline.
+        """
+        return pulumi.get(self, "step_container_configuration_details")
 
     @property
     @pulumi.getter(name="stepInfrastructureConfigurationDetails")
@@ -11609,19 +12184,95 @@ class GetPipelinesPipelineStepDetailStepConfigurationDetailResult(dict):
 
 
 @pulumi.output_type
+class GetPipelinesPipelineStepDetailStepContainerConfigurationDetailResult(dict):
+    def __init__(__self__, *,
+                 cmds: Sequence[str],
+                 container_type: str,
+                 entrypoints: Sequence[str],
+                 image: str,
+                 image_digest: str,
+                 image_signature_id: str):
+        """
+        :param Sequence[str] cmds: The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        :param str container_type: The type of container.
+        :param Sequence[str] entrypoints: The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        :param str image: The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        :param str image_digest: The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        :param str image_signature_id: OCID of the container image signature
+        """
+        pulumi.set(__self__, "cmds", cmds)
+        pulumi.set(__self__, "container_type", container_type)
+        pulumi.set(__self__, "entrypoints", entrypoints)
+        pulumi.set(__self__, "image", image)
+        pulumi.set(__self__, "image_digest", image_digest)
+        pulumi.set(__self__, "image_signature_id", image_signature_id)
+
+    @property
+    @pulumi.getter
+    def cmds(self) -> Sequence[str]:
+        """
+        The container image run [CMD](https://docs.docker.com/engine/reference/builder/#cmd) as a list of strings. Use `CMD` as arguments to the `ENTRYPOINT` or the only command to run in the absence of an `ENTRYPOINT`. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes.
+        """
+        return pulumi.get(self, "cmds")
+
+    @property
+    @pulumi.getter(name="containerType")
+    def container_type(self) -> str:
+        """
+        The type of container.
+        """
+        return pulumi.get(self, "container_type")
+
+    @property
+    @pulumi.getter
+    def entrypoints(self) -> Sequence[str]:
+        """
+        The container image run [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#entrypoint) as a list of strings. Accept the `CMD` as extra arguments. The combined size of `CMD` and `ENTRYPOINT` must be less than 2048 bytes. More information on how `CMD` and `ENTRYPOINT` interact are [here](https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact).
+        """
+        return pulumi.get(self, "entrypoints")
+
+    @property
+    @pulumi.getter
+    def image(self) -> str:
+        """
+        The full path to the Oracle Container Repository (OCIR) registry, image, and tag in a canonical format.
+        """
+        return pulumi.get(self, "image")
+
+    @property
+    @pulumi.getter(name="imageDigest")
+    def image_digest(self) -> str:
+        """
+        The digest of the container image. For example, `sha256:881303a6b2738834d795a32b4a98eb0e5e3d1cad590a712d1e04f9b2fa90a030`
+        """
+        return pulumi.get(self, "image_digest")
+
+    @property
+    @pulumi.getter(name="imageSignatureId")
+    def image_signature_id(self) -> str:
+        """
+        OCID of the container image signature
+        """
+        return pulumi.get(self, "image_signature_id")
+
+
+@pulumi.output_type
 class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(dict):
     def __init__(__self__, *,
                  block_storage_size_in_gbs: int,
                  shape_config_details: Sequence['outputs.GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailResult'],
-                 shape_name: str):
+                 shape_name: str,
+                 subnet_id: str):
         """
         :param int block_storage_size_in_gbs: The size of the block storage volume to attach to the instance.
         :param Sequence['GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailShapeConfigDetailArgs'] shape_config_details: Details for the pipeline step run shape configuration. Specify only when a flex shape is selected.
         :param str shape_name: The shape used to launch the instance for all step runs in the pipeline.
+        :param str subnet_id: The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
         """
         pulumi.set(__self__, "block_storage_size_in_gbs", block_storage_size_in_gbs)
         pulumi.set(__self__, "shape_config_details", shape_config_details)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "subnet_id", subnet_id)
 
     @property
     @pulumi.getter(name="blockStorageSizeInGbs")
@@ -11646,6 +12297,14 @@ class GetPipelinesPipelineStepDetailStepInfrastructureConfigurationDetailResult(
         The shape used to launch the instance for all step runs in the pipeline.
         """
         return pulumi.get(self, "shape_name")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The subnet to create a secondary vnic in to attach to the instance running the pipeline step.
+        """
+        return pulumi.get(self, "subnet_id")
 
 
 @pulumi.output_type

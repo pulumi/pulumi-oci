@@ -17,7 +17,7 @@ import javax.annotation.Nullable;
 public final class GetDataMaskRulesResult {
     private @Nullable String accessLevel;
     /**
-     * @return Compartment Identifier where the resource is created.
+     * @return Compartment OCID where the resource is created
      * 
      */
     private String compartmentId;
@@ -27,18 +27,18 @@ public final class GetDataMaskRulesResult {
      */
     private List<GetDataMaskRulesDataMaskRuleCollection> dataMaskRuleCollections;
     /**
-     * @return The status of the dataMaskRule.
+     * @return The current status of the data mask rule
      * 
      */
     private @Nullable String dataMaskRuleStatus;
     /**
-     * @return Data Mask Rule Identifier, can be renamed.
+     * @return Data mask rule display name
      * 
      */
     private @Nullable String displayName;
     private @Nullable List<GetDataMaskRulesFilter> filters;
     /**
-     * @return IAM Group id associated with the data mask rule
+     * @return IAM Group ID associated with the data mask rule
      * 
      */
     private @Nullable String iamGroupId;
@@ -48,7 +48,7 @@ public final class GetDataMaskRulesResult {
      */
     private String id;
     /**
-     * @return The current state of the DataMaskRule.
+     * @return The current lifecycle state of the data mask rule
      * 
      */
     private @Nullable String state;
@@ -60,7 +60,7 @@ public final class GetDataMaskRulesResult {
         return Optional.ofNullable(this.accessLevel);
     }
     /**
-     * @return Compartment Identifier where the resource is created.
+     * @return Compartment OCID where the resource is created
      * 
      */
     public String compartmentId() {
@@ -74,14 +74,14 @@ public final class GetDataMaskRulesResult {
         return this.dataMaskRuleCollections;
     }
     /**
-     * @return The status of the dataMaskRule.
+     * @return The current status of the data mask rule
      * 
      */
     public Optional<String> dataMaskRuleStatus() {
         return Optional.ofNullable(this.dataMaskRuleStatus);
     }
     /**
-     * @return Data Mask Rule Identifier, can be renamed.
+     * @return Data mask rule display name
      * 
      */
     public Optional<String> displayName() {
@@ -91,7 +91,7 @@ public final class GetDataMaskRulesResult {
         return this.filters == null ? List.of() : this.filters;
     }
     /**
-     * @return IAM Group id associated with the data mask rule
+     * @return IAM Group ID associated with the data mask rule
      * 
      */
     public Optional<String> iamGroupId() {
@@ -105,7 +105,7 @@ public final class GetDataMaskRulesResult {
         return this.id;
     }
     /**
-     * @return The current state of the DataMaskRule.
+     * @return The current lifecycle state of the data mask rule
      * 
      */
     public Optional<String> state() {

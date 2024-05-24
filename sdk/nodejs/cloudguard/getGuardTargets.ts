@@ -9,9 +9,10 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all Targets in a compartment
- * The ListTargets operation returns only the targets in `compartmentId` passed.
- * The list does not include any subcompartments of the compartmentId passed.
+ * Returns a list of targets (TargetCollection resource with page of TargetSummary
+ * resources) for the target identified by compartmentId. By default, only the target
+ * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+ * returns the entire hierarchy of targets in subcompartments.
  *
  * The parameter `accessLevel` specifies whether to return only those compartments for which the
  * requestor has INSPECT permissions on at least one resource directly
@@ -21,7 +22,7 @@ import * as utilities from "../utilities";
  *
  * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
  * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
- * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
  * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
  *
  * ## Example Usage
@@ -63,11 +64,11 @@ export interface GetGuardTargetsArgs {
      */
     accessLevel?: string;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: string;
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
     compartmentIdInSubtree?: boolean;
     /**
@@ -80,7 +81,7 @@ export interface GetGuardTargetsArgs {
      */
     isNonSecurityZoneTargetsOnlyQuery?: boolean;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: string;
 }
@@ -91,12 +92,12 @@ export interface GetGuardTargetsArgs {
 export interface GetGuardTargetsResult {
     readonly accessLevel?: string;
     /**
-     * Compartment Identifier
+     * Compartment OCID
      */
     readonly compartmentId: string;
     readonly compartmentIdInSubtree?: boolean;
     /**
-     * ResponderRule display name.
+     * Responder rule display name
      */
     readonly displayName?: string;
     readonly filters?: outputs.CloudGuard.GetGuardTargetsFilter[];
@@ -106,7 +107,7 @@ export interface GetGuardTargetsResult {
     readonly id: string;
     readonly isNonSecurityZoneTargetsOnlyQuery?: boolean;
     /**
-     * The current state of the ResponderRule.
+     * The current lifecycle state of the responder rule
      */
     readonly state?: string;
     /**
@@ -117,9 +118,10 @@ export interface GetGuardTargetsResult {
 /**
  * This data source provides the list of Targets in Oracle Cloud Infrastructure Cloud Guard service.
  *
- * Returns a list of all Targets in a compartment
- * The ListTargets operation returns only the targets in `compartmentId` passed.
- * The list does not include any subcompartments of the compartmentId passed.
+ * Returns a list of targets (TargetCollection resource with page of TargetSummary
+ * resources) for the target identified by compartmentId. By default, only the target
+ * associated with the compartment is returned. Setting compartmentIdInSubtree to true
+ * returns the entire hierarchy of targets in subcompartments.
  *
  * The parameter `accessLevel` specifies whether to return only those compartments for which the
  * requestor has INSPECT permissions on at least one resource directly
@@ -129,7 +131,7 @@ export interface GetGuardTargetsResult {
  *
  * The parameter `compartmentIdInSubtree` applies when you perform ListTargets on the
  * `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
- * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
+ * To get a full list of all targets in compartments and subcompartments in the tenancy (root compartment),
  * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
  *
  * ## Example Usage
@@ -161,11 +163,11 @@ export interface GetGuardTargetsOutputArgs {
      */
     accessLevel?: pulumi.Input<string>;
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
+     * Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
      */
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     /**
@@ -178,7 +180,7 @@ export interface GetGuardTargetsOutputArgs {
      */
     isNonSecurityZoneTargetsOnlyQuery?: pulumi.Input<boolean>;
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      */
     state?: pulumi.Input<string>;
 }

@@ -18,14 +18,14 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
     public static final GetSecurityPoliciesPlainArgs Empty = new GetSecurityPoliciesPlainArgs();
 
     /**
-     * The ID of the compartment in which to list resources.
+     * The OCID of the compartment in which to list resources.
      * 
      */
     @Import(name="compartmentId", required=true)
     private String compartmentId;
 
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -55,14 +55,14 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The unique identifier of the security zone policy (`SecurityPolicy`)
+     * The unique identifier of the security zone policy. (`SecurityPolicy`)
      * 
      */
     @Import(name="id")
     private @Nullable String id;
 
     /**
-     * @return The unique identifier of the security zone policy (`SecurityPolicy`)
+     * @return The unique identifier of the security zone policy. (`SecurityPolicy`)
      * 
      */
     public Optional<String> id() {
@@ -70,14 +70,14 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
     }
 
     /**
-     * The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     @Import(name="state")
     private @Nullable String state;
 
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public Optional<String> state() {
@@ -113,7 +113,7 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param compartmentId The ID of the compartment in which to list resources.
+         * @param compartmentId The OCID of the compartment in which to list resources.
          * 
          * @return builder
          * 
@@ -144,7 +144,7 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param id The unique identifier of the security zone policy (`SecurityPolicy`)
+         * @param id The unique identifier of the security zone policy. (`SecurityPolicy`)
          * 
          * @return builder
          * 
@@ -155,7 +155,7 @@ public final class GetSecurityPoliciesPlainArgs extends com.pulumi.resources.Inv
         }
 
         /**
-         * @param state The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+         * @param state The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
          * 
          * @return builder
          * 

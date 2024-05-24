@@ -19,7 +19,7 @@ public final class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
      */
     private @Nullable Integer keyEntitiesCount;
     /**
-     * @return (Updatable) Logging query type for data source (Sighting/Insight)
+     * @return (Updatable) Logging query type for data source
      * 
      */
     private String loggingQueryType;
@@ -33,7 +33,7 @@ public final class CloudGuardDataSourceDataSourceDetailsLoggingQueryDetails {
         return Optional.ofNullable(this.keyEntitiesCount);
     }
     /**
-     * @return (Updatable) Logging query type for data source (Sighting/Insight)
+     * @return (Updatable) Logging query type for data source
      * 
      */
     public String loggingQueryType() {

@@ -35,14 +35,14 @@ public final class DetectorRecipeDetectorRuleEntitiesMappingArgs extends com.pul
     }
 
     /**
-     * Possible type of entity
+     * Type of entity
      * 
      */
     @Import(name="entityType")
     private @Nullable Output<String> entityType;
 
     /**
-     * @return Possible type of entity
+     * @return Type of entity
      * 
      */
     public Optional<Output<String>> entityType() {
@@ -116,7 +116,7 @@ public final class DetectorRecipeDetectorRuleEntitiesMappingArgs extends com.pul
         }
 
         /**
-         * @param entityType Possible type of entity
+         * @param entityType Type of entity
          * 
          * @return builder
          * 
@@ -127,7 +127,7 @@ public final class DetectorRecipeDetectorRuleEntitiesMappingArgs extends com.pul
         }
 
         /**
-         * @param entityType Possible type of entity
+         * @param entityType Type of entity
          * 
          * @return builder
          * 

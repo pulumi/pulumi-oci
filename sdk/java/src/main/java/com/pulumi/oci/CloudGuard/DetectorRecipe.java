@@ -21,7 +21,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Detector Recipe resource in Oracle Cloud Infrastructure Cloud Guard service.
  * 
- * Creates a new DetectorRecipe object.
+ * Creates a new DetectorRecipe resource.
  * 
  * ## Import
  * 
@@ -35,14 +35,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:CloudGuard/detectorRecipe:DetectorRecipe")
 public class DetectorRecipe extends com.pulumi.resources.CustomResource {
     /**
-     * (Updatable) Compartment Identifier
+     * (Updatable) Compartment OCID
      * 
      */
     @Export(name="compartmentId", refs={String.class}, tree="[0]")
     private Output<String> compartmentId;
 
     /**
-     * @return (Updatable) Compartment Identifier
+     * @return (Updatable) Compartment OCID
      * 
      */
     public Output<String> compartmentId() {
@@ -81,28 +81,42 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.description;
     }
     /**
-     * detector for the rule
+     * Detector for the rule
      * 
      */
     @Export(name="detector", refs={String.class}, tree="[0]")
     private Output<String> detector;
 
     /**
-     * @return detector for the rule
+     * @return Detector for the rule
      * 
      */
     public Output<String> detector() {
         return this.detector;
     }
     /**
-     * (Updatable) Detector Rules to override from source detector recipe
+     * Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    @Export(name="detectorRecipeType", refs={String.class}, tree="[0]")
+    private Output<String> detectorRecipeType;
+
+    /**
+     * @return Recipe type ( STANDARD, ENTERPRISE )
+     * 
+     */
+    public Output<String> detectorRecipeType() {
+        return this.detectorRecipeType;
+    }
+    /**
+     * (Updatable) Detector rules to override from source detector recipe
      * 
      */
     @Export(name="detectorRules", refs={List.class,DetectorRecipeDetectorRule.class}, tree="[0,1]")
     private Output<List<DetectorRecipeDetectorRule>> detectorRules;
 
     /**
-     * @return (Updatable) Detector Rules to override from source detector recipe
+     * @return (Updatable) Detector rules to override from source detector recipe
      * 
      */
     public Output<List<DetectorRecipeDetectorRule>> detectorRules() {
@@ -173,7 +187,7 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.owner;
     }
     /**
-     * The id of the source detector recipe.
+     * The ID of the source detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -183,7 +197,7 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
     private Output<String> sourceDetectorRecipeId;
 
     /**
-     * @return The id of the source detector recipe.
+     * @return The ID of the source detector recipe
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -193,14 +207,14 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.sourceDetectorRecipeId;
     }
     /**
-     * The current state of the resource.
+     * The current lifecycle state of the resource
      * 
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
-     * @return The current state of the resource.
+     * @return The current lifecycle state of the resource
      * 
      */
     public Output<String> state() {
@@ -221,42 +235,42 @@ public class DetectorRecipe extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The recipe attached to targets
+     * List of target IDs to which the recipe is attached
      * 
      */
     @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> targetIds;
 
     /**
-     * @return The recipe attached to targets
+     * @return List of target IDs to which the recipe is attached
      * 
      */
     public Output<List<String>> targetIds() {
         return this.targetIds;
     }
     /**
-     * The date and time the detector recipe was created. Format defined by RFC3339.
+     * The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The date and time the detector recipe was created. Format defined by RFC3339.
+     * @return The date and time the detector recipe was created Format defined by RFC3339.
      * 
      */
     public Output<String> timeCreated() {
         return this.timeCreated;
     }
     /**
-     * The date and time the detector recipe was updated. Format defined by RFC3339.
+     * The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The date and time the detector recipe was updated. Format defined by RFC3339.
+     * @return The date and time the detector recipe was last updated Format defined by RFC3339.
      * 
      */
     public Output<String> timeUpdated() {

@@ -12,44 +12,20 @@ namespace Pulumi.Oci.CloudGuard
     /// <summary>
     /// This resource provides the Cloud Guard Configuration resource in Oracle Cloud Infrastructure Cloud Guard service.
     /// 
-    /// Update configuration details for a Cloud Guard tenancy, identified by root compartment OCID. The reporting region cannot be updated once created.
-    /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testCloudGuardConfiguration = new Oci.CloudGuard.CloudGuardConfiguration("test_cloud_guard_configuration", new()
-    ///     {
-    ///         CompartmentId = compartmentId,
-    ///         ReportingRegion = cloudGuardConfigurationReportingRegion,
-    ///         Status = cloudGuardConfigurationStatus,
-    ///         SelfManageResources = cloudGuardConfigurationSelfManageResources,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
-    /// ## Import
-    /// 
-    /// Import is not supported for this resource.
+    /// Updates configuration details for a Cloud Guard tenancy, identified by root compartment OCID.
+    /// The reporting region cannot be updated once created.
     /// </summary>
     [OciResourceType("oci:CloudGuard/cloudGuardConfiguration:CloudGuardConfiguration")]
     public partial class CloudGuardConfiguration : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The ID of the compartment in which to list resources.
+        /// (Updatable) The OCID of the compartment in which to list resources.
         /// </summary>
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The reporting region value
+        /// (Updatable) The reporting region
         /// </summary>
         [Output("reportingRegion")]
         public Output<string> ReportingRegion { get; private set; } = null!;
@@ -61,7 +37,7 @@ namespace Pulumi.Oci.CloudGuard
         public Output<bool> SelfManageResources { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Status of Cloud Guard Tenant
+        /// (Updatable) Status of Cloud Guard tenant
         /// 
         /// 
         /// ** IMPORTANT **
@@ -117,13 +93,13 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class CloudGuardConfigurationArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The ID of the compartment in which to list resources.
+        /// (Updatable) The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
         /// <summary>
-        /// (Updatable) The reporting region value
+        /// (Updatable) The reporting region
         /// </summary>
         [Input("reportingRegion", required: true)]
         public Input<string> ReportingRegion { get; set; } = null!;
@@ -135,7 +111,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<bool>? SelfManageResources { get; set; }
 
         /// <summary>
-        /// (Updatable) Status of Cloud Guard Tenant
+        /// (Updatable) Status of Cloud Guard tenant
         /// 
         /// 
         /// ** IMPORTANT **
@@ -153,13 +129,13 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class CloudGuardConfigurationState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The ID of the compartment in which to list resources.
+        /// (Updatable) The OCID of the compartment in which to list resources.
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
 
         /// <summary>
-        /// (Updatable) The reporting region value
+        /// (Updatable) The reporting region
         /// </summary>
         [Input("reportingRegion")]
         public Input<string>? ReportingRegion { get; set; }
@@ -171,7 +147,7 @@ namespace Pulumi.Oci.CloudGuard
         public Input<bool>? SelfManageResources { get; set; }
 
         /// <summary>
-        /// (Updatable) Status of Cloud Guard Tenant
+        /// (Updatable) Status of Cloud Guard tenant
         /// 
         /// 
         /// ** IMPORTANT **

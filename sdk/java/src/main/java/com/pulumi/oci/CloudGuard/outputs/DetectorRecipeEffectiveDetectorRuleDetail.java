@@ -5,6 +5,7 @@ package com.pulumi.oci.CloudGuard.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeEffectiveDetectorRuleDetailConfiguration;
+import com.pulumi.oci.CloudGuard.outputs.DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping;
 import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
@@ -15,74 +16,126 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DetectorRecipeEffectiveDetectorRuleDetail {
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     private @Nullable String condition;
     /**
-     * @return Configuration details
+     * @return List of detector rule configurations
      * 
      */
     private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
     /**
-     * @return configuration allowed or not
+     * @return The ID of the attached data source
+     * 
+     */
+    private @Nullable String dataSourceId;
+    /**
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
+     * 
+     */
+    private @Nullable String description;
+    /**
+     * @return Data source entities mapping for the detector rule
+     * 
+     */
+    private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping> entitiesMappings;
+    /**
+     * @return Can the rule be configured?
      * 
      */
     private @Nullable Boolean isConfigurationAllowed;
     /**
-     * @return Enables the control
+     * @return Enablement status for the rule
      * 
      */
     private @Nullable Boolean isEnabled;
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     private @Nullable List<String> labels;
     /**
-     * @return The Risk Level
+     * @return Recommendation for DetectorRecipeDetectorRule resource
+     * 
+     */
+    private @Nullable String recommendation;
+    /**
+     * @return The risk level for the rule
      * 
      */
     private @Nullable String riskLevel;
 
     private DetectorRecipeEffectiveDetectorRuleDetail() {}
     /**
-     * @return Base condition object
+     * @return The base condition resource.
      * 
      */
     public Optional<String> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
-     * @return Configuration details
+     * @return List of detector rule configurations
      * 
      */
     public List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations() {
         return this.configurations == null ? List.of() : this.configurations;
     }
     /**
-     * @return configuration allowed or not
+     * @return The ID of the attached data source
+     * 
+     */
+    public Optional<String> dataSourceId() {
+        return Optional.ofNullable(this.dataSourceId);
+    }
+    /**
+     * @return (Updatable) Detector recipe description.
+     * 
+     * Avoid entering confidential information.
+     * 
+     */
+    public Optional<String> description() {
+        return Optional.ofNullable(this.description);
+    }
+    /**
+     * @return Data source entities mapping for the detector rule
+     * 
+     */
+    public List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping> entitiesMappings() {
+        return this.entitiesMappings == null ? List.of() : this.entitiesMappings;
+    }
+    /**
+     * @return Can the rule be configured?
      * 
      */
     public Optional<Boolean> isConfigurationAllowed() {
         return Optional.ofNullable(this.isConfigurationAllowed);
     }
     /**
-     * @return Enables the control
+     * @return Enablement status for the rule
      * 
      */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }
     /**
-     * @return user defined labels for a detector rule
+     * @return User-defined labels for a detector rule
      * 
      */
     public List<String> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return The Risk Level
+     * @return Recommendation for DetectorRecipeDetectorRule resource
+     * 
+     */
+    public Optional<String> recommendation() {
+        return Optional.ofNullable(this.recommendation);
+    }
+    /**
+     * @return The risk level for the rule
      * 
      */
     public Optional<String> riskLevel() {
@@ -100,18 +153,26 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
     public static final class Builder {
         private @Nullable String condition;
         private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailConfiguration> configurations;
+        private @Nullable String dataSourceId;
+        private @Nullable String description;
+        private @Nullable List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping> entitiesMappings;
         private @Nullable Boolean isConfigurationAllowed;
         private @Nullable Boolean isEnabled;
         private @Nullable List<String> labels;
+        private @Nullable String recommendation;
         private @Nullable String riskLevel;
         public Builder() {}
         public Builder(DetectorRecipeEffectiveDetectorRuleDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.condition = defaults.condition;
     	      this.configurations = defaults.configurations;
+    	      this.dataSourceId = defaults.dataSourceId;
+    	      this.description = defaults.description;
+    	      this.entitiesMappings = defaults.entitiesMappings;
     	      this.isConfigurationAllowed = defaults.isConfigurationAllowed;
     	      this.isEnabled = defaults.isEnabled;
     	      this.labels = defaults.labels;
+    	      this.recommendation = defaults.recommendation;
     	      this.riskLevel = defaults.riskLevel;
         }
 
@@ -129,6 +190,27 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
         }
         public Builder configurations(DetectorRecipeEffectiveDetectorRuleDetailConfiguration... configurations) {
             return configurations(List.of(configurations));
+        }
+        @CustomType.Setter
+        public Builder dataSourceId(@Nullable String dataSourceId) {
+
+            this.dataSourceId = dataSourceId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder description(@Nullable String description) {
+
+            this.description = description;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder entitiesMappings(@Nullable List<DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping> entitiesMappings) {
+
+            this.entitiesMappings = entitiesMappings;
+            return this;
+        }
+        public Builder entitiesMappings(DetectorRecipeEffectiveDetectorRuleDetailEntitiesMapping... entitiesMappings) {
+            return entitiesMappings(List.of(entitiesMappings));
         }
         @CustomType.Setter
         public Builder isConfigurationAllowed(@Nullable Boolean isConfigurationAllowed) {
@@ -152,6 +234,12 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
             return labels(List.of(labels));
         }
         @CustomType.Setter
+        public Builder recommendation(@Nullable String recommendation) {
+
+            this.recommendation = recommendation;
+            return this;
+        }
+        @CustomType.Setter
         public Builder riskLevel(@Nullable String riskLevel) {
 
             this.riskLevel = riskLevel;
@@ -161,9 +249,13 @@ public final class DetectorRecipeEffectiveDetectorRuleDetail {
             final var _resultValue = new DetectorRecipeEffectiveDetectorRuleDetail();
             _resultValue.condition = condition;
             _resultValue.configurations = configurations;
+            _resultValue.dataSourceId = dataSourceId;
+            _resultValue.description = description;
+            _resultValue.entitiesMappings = entitiesMappings;
             _resultValue.isConfigurationAllowed = isConfigurationAllowed;
             _resultValue.isEnabled = isEnabled;
             _resultValue.labels = labels;
+            _resultValue.recommendation = recommendation;
             _resultValue.riskLevel = riskLevel;
             return _resultValue;
         }

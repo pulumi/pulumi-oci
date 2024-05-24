@@ -18,7 +18,7 @@ import java.util.Objects;
 @CustomType
 public final class GetGuardTargetsTargetCollectionItem {
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     private String compartmentId;
@@ -28,7 +28,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private Map<String,Object> definedTags;
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     private String description;
@@ -43,7 +43,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     private String id;
@@ -53,7 +53,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private List<String> inheritedByCompartments;
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     private String lifecyleDetails;
@@ -63,7 +63,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private Integer recipeCount;
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     private String state;
@@ -78,7 +78,7 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private List<GetGuardTargetsTargetCollectionItemTargetDetail> targetDetails;
     /**
-     * @return List of detector recipes associated with target
+     * @return List of detector recipes attached to target
      * 
      */
     private List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipe> targetDetectorRecipes;
@@ -88,12 +88,12 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private String targetResourceId;
     /**
-     * @return possible type of targets
+     * @return Type of target
      * 
      */
     private String targetResourceType;
     /**
-     * @return List of responder recipes associated with target
+     * @return List of responder recipes attached to target
      * 
      */
     private List<GetGuardTargetsTargetCollectionItemTargetResponderRecipe> targetResponderRecipes;
@@ -103,14 +103,14 @@ public final class GetGuardTargetsTargetCollectionItem {
      */
     private String timeCreated;
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     private String timeUpdated;
 
     private GetGuardTargetsTargetCollectionItem() {}
     /**
-     * @return The ID of the compartment in which to list resources.
+     * @return The OCID of the compartment in which to list resources.
      * 
      */
     public String compartmentId() {
@@ -124,7 +124,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.definedTags;
     }
     /**
-     * @return ResponderRule description.
+     * @return Responder rule description
      * 
      */
     public String description() {
@@ -145,7 +145,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.freeformTags;
     }
     /**
-     * @return Unique identifier of TargetResponderRecipe that can&#39;t be changed after creation.
+     * @return Unique identifier of target responder recipe that can&#39;t be changed after creation
      * 
      */
     public String id() {
@@ -159,7 +159,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.inheritedByCompartments;
     }
     /**
-     * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+     * @return A message describing the current lifecycle state in more detail. For example, can be used to provide actionable information for a resource in Failed state. [DEPRECATE]
      * 
      */
     public String lifecyleDetails() {
@@ -173,7 +173,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.recipeCount;
     }
     /**
-     * @return The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+     * @return The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
      * 
      */
     public String state() {
@@ -194,7 +194,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.targetDetails;
     }
     /**
-     * @return List of detector recipes associated with target
+     * @return List of detector recipes attached to target
      * 
      */
     public List<GetGuardTargetsTargetCollectionItemTargetDetectorRecipe> targetDetectorRecipes() {
@@ -208,14 +208,14 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.targetResourceId;
     }
     /**
-     * @return possible type of targets
+     * @return Type of target
      * 
      */
     public String targetResourceType() {
         return this.targetResourceType;
     }
     /**
-     * @return List of responder recipes associated with target
+     * @return List of responder recipes attached to target
      * 
      */
     public List<GetGuardTargetsTargetCollectionItemTargetResponderRecipe> targetResponderRecipes() {
@@ -229,7 +229,7 @@ public final class GetGuardTargetsTargetCollectionItem {
         return this.timeCreated;
     }
     /**
-     * @return The date and time the target was updated. Format defined by RFC3339.
+     * @return The date and time the target was last updated. Format defined by RFC3339.
      * 
      */
     public String timeUpdated() {

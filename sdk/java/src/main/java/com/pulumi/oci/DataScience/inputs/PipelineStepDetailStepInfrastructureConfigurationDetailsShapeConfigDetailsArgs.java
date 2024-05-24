@@ -16,14 +16,14 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
     public static final PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs Empty = new PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs();
 
     /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
      */
     @Import(name="memoryInGbs")
     private @Nullable Output<Double> memoryInGbs;
 
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
      * 
      */
     public Optional<Output<Double>> memoryInGbs() {
@@ -31,14 +31,14 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
     }
 
     /**
-     * A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
      * 
      */
     @Import(name="ocpus")
     private @Nullable Output<Double> ocpus;
 
     /**
-     * @return A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+     * @return (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
      * 
      */
     public Optional<Output<Double>> ocpus() {
@@ -71,7 +71,7 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
         }
 
         /**
-         * @param memoryInGbs A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * @param memoryInGbs (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
         }
 
         /**
-         * @param memoryInGbs A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
+         * @param memoryInGbs (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows memory to be specified. This specifies the size of the memory in GBs.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
         }
 
         /**
-         * @param ocpus A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * @param ocpus (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class PipelineStepDetailStepInfrastructureConfigurationDetailsShape
         }
 
         /**
-         * @param ocpus A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
+         * @param ocpus (Updatable) A pipeline step run instance of type VM.Standard.E3.Flex allows the ocpu count to be specified.
          * 
          * @return builder
          * 

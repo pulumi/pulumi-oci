@@ -62,6 +62,7 @@ import (
 //					LogGroupId:            pulumi.Any(testLogGroup.Id),
 //					LogId:                 pulumi.Any(testLog.Id),
 //				},
+//				OpcParentRptUrl: pulumi.Any(jobRunOpcParentRptUrl),
 //			})
 //			if err != nil {
 //				return err
@@ -110,6 +111,8 @@ type JobRun struct {
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayOutput `pulumi:"logDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrOutput `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	//
 	// ** IMPORTANT **
@@ -192,6 +195,8 @@ type jobRunState struct {
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// Customer logging details for job run.
 	LogDetails []JobRunLogDetail `pulumi:"logDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	//
 	// ** IMPORTANT **
@@ -236,6 +241,8 @@ type JobRunState struct {
 	LifecycleDetails pulumi.StringPtrInput
 	// Customer logging details for job run.
 	LogDetails JobRunLogDetailArrayInput
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	//
 	// ** IMPORTANT **
@@ -274,6 +281,8 @@ type jobRunArgs struct {
 	JobId string `pulumi:"jobId"`
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails *JobRunJobLogConfigurationOverrideDetails `pulumi:"jobLogConfigurationOverrideDetails"`
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl *string `pulumi:"opcParentRptUrl"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	//
 	// ** IMPORTANT **
@@ -301,6 +310,8 @@ type JobRunArgs struct {
 	JobId pulumi.StringInput
 	// Logging configuration for resource.
 	JobLogConfigurationOverrideDetails JobRunJobLogConfigurationOverrideDetailsPtrInput
+	// URL to fetch the Resource Principal Token from the parent resource.
+	OpcParentRptUrl pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.
 	//
 	// ** IMPORTANT **
@@ -471,6 +482,11 @@ func (o JobRunOutput) LifecycleDetails() pulumi.StringOutput {
 // Customer logging details for job run.
 func (o JobRunOutput) LogDetails() JobRunLogDetailArrayOutput {
 	return o.ApplyT(func(v *JobRun) JobRunLogDetailArrayOutput { return v.LogDetails }).(JobRunLogDetailArrayOutput)
+}
+
+// URL to fetch the Resource Principal Token from the parent resource.
+func (o JobRunOutput) OpcParentRptUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *JobRun) pulumi.StringPtrOutput { return v.OpcParentRptUrl }).(pulumi.StringPtrOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the job with.

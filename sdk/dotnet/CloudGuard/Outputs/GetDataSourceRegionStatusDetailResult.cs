@@ -14,11 +14,11 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataSourceRegionStatusDetailResult
     {
         /// <summary>
-        /// Data Source replication region.
+        /// Data source replication region
         /// </summary>
         public readonly string Region;
         /// <summary>
-        /// Status of data Source
+        /// Enablement status of the data source
         /// </summary>
         public readonly string Status;
 

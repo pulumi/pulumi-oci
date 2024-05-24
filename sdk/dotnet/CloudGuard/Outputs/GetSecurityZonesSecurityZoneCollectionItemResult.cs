@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetSecurityZonesSecurityZoneCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -34,7 +34,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// The unique identifier of the security zone (`SecurityZone`)
+        /// The unique identifier of the security zone (`SecurityZone` resource).
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -46,7 +46,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// The OCID of the recipe (`SecurityRecipe`) for the security zone
+        /// The OCID of the recipe (`SecurityRecipe` resource) for the security zone
         /// </summary>
         public readonly string SecurityZoneRecipeId;
         /// <summary>
@@ -54,7 +54,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly string SecurityZoneTargetId;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>

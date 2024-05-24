@@ -14,7 +14,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a DataSource identified by dataSourceId
+        /// Returns a data source (DataSource resource) identified by dataSourceId.
         /// 
         /// ## Example Usage
         /// 
@@ -40,7 +40,7 @@ namespace Pulumi.Oci.CloudGuard
         /// <summary>
         /// This data source provides details about a specific Data Source resource in Oracle Cloud Infrastructure Cloud Guard service.
         /// 
-        /// Returns a DataSource identified by dataSourceId
+        /// Returns a data source (DataSource resource) identified by dataSourceId.
         /// 
         /// ## Example Usage
         /// 
@@ -68,7 +68,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataSourceArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// DataSource OCID
+        /// Data source OCID.
         /// </summary>
         [Input("dataSourceId", required: true)]
         public string DataSourceId { get; set; } = null!;
@@ -82,7 +82,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataSourceInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// DataSource OCID
+        /// Data source OCID.
         /// </summary>
         [Input("dataSourceId", required: true)]
         public Input<string> DataSourceId { get; set; } = null!;
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.CloudGuard
     public sealed class GetDataSourceResult
     {
         /// <summary>
-        /// CompartmentId of Data source.
+        /// Compartment OCID of data source
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
@@ -119,7 +119,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// DisplayName of Data source.
+        /// Display name of the data source
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -127,7 +127,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Ocid for Data source
+        /// OCID for the data source
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -135,11 +135,11 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataSourceRegionStatusDetailResult> RegionStatusDetails;
         /// <summary>
-        /// The current state of the resource.
+        /// The current lifecycle state of the resource.
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Status of data Source
+        /// Enablement status of the data source
         /// </summary>
         public readonly string Status;
         /// <summary>
@@ -151,7 +151,7 @@ namespace Pulumi.Oci.CloudGuard
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The date and time the Data source was updated. Format defined by RFC3339.
+        /// The date and time the data source was updated. Format defined by RFC3339.
         /// </summary>
         public readonly string TimeUpdated;
 

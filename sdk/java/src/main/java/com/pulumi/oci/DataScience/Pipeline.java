@@ -42,6 +42,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.DataScience.PipelineArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepConfigurationDetailsArgs;
+ * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepContainerConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs;
  * import com.pulumi.oci.DataScience.inputs.PipelineConfigurationDetailsArgs;
@@ -76,6 +77,14 @@ import javax.annotation.Nullable;
  *                     .environmentVariables(pipelineStepDetailsStepConfigurationDetailsEnvironmentVariables)
  *                     .maximumRuntimeInMinutes(pipelineStepDetailsStepConfigurationDetailsMaximumRuntimeInMinutes)
  *                     .build())
+ *                 .stepContainerConfigurationDetails(PipelineStepDetailStepContainerConfigurationDetailsArgs.builder()
+ *                     .containerType(pipelineStepDetailsStepContainerConfigurationDetailsContainerType)
+ *                     .image(pipelineStepDetailsStepContainerConfigurationDetailsImage)
+ *                     .cmds(pipelineStepDetailsStepContainerConfigurationDetailsCmd)
+ *                     .entrypoints(pipelineStepDetailsStepContainerConfigurationDetailsEntrypoint)
+ *                     .imageDigest(pipelineStepDetailsStepContainerConfigurationDetailsImageDigest)
+ *                     .imageSignatureId(testImageSignature.id())
+ *                     .build())
  *                 .stepInfrastructureConfigurationDetails(PipelineStepDetailStepInfrastructureConfigurationDetailsArgs.builder()
  *                     .blockStorageSizeInGbs(pipelineStepDetailsStepInfrastructureConfigurationDetailsBlockStorageSizeInGbs)
  *                     .shapeConfigDetails(PipelineStepDetailStepInfrastructureConfigurationDetailsShapeConfigDetailsArgs.builder()
@@ -83,6 +92,7 @@ import javax.annotation.Nullable;
  *                         .ocpus(pipelineStepDetailsStepInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
  *                         .build())
  *                     .shapeName(testShape.name())
+ *                     .subnetId(testSubnet.id())
  *                     .build())
  *                 .build())
  *             .configurationDetails(PipelineConfigurationDetailsArgs.builder()
@@ -102,6 +112,7 @@ import javax.annotation.Nullable;
  *                     .memoryInGbs(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsMemoryInGbs)
  *                     .ocpus(pipelineInfrastructureConfigurationDetailsShapeConfigDetailsOcpus)
  *                     .build())
+ *                 .subnetId(testSubnet.id())
  *                 .build())
  *             .logConfigurationDetails(PipelineLogConfigurationDetailsArgs.builder()
  *                 .enableAutoLogCreation(pipelineLogConfigurationDetailsEnableAutoLogCreation)
@@ -233,14 +244,14 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * The infrastructure configuration details of a pipeline or a step.
+     * (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     @Export(name="infrastructureConfigurationDetails", refs={PipelineInfrastructureConfigurationDetails.class}, tree="[0]")
     private Output<PipelineInfrastructureConfigurationDetails> infrastructureConfigurationDetails;
 
     /**
-     * @return The infrastructure configuration details of a pipeline or a step.
+     * @return (Updatable) The infrastructure configuration details of a pipeline or a step.
      * 
      */
     public Output<PipelineInfrastructureConfigurationDetails> infrastructureConfigurationDetails() {

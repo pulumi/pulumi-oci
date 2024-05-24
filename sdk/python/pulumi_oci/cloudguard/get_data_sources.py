@@ -64,7 +64,7 @@ class GetDataSourcesResult:
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
         """
-        CompartmentId of Data source.
+        Compartment OCID of data source
         """
         return pulumi.get(self, "compartment_id")
 
@@ -93,7 +93,7 @@ class GetDataSourcesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        DisplayName of Data source.
+        Display name of the data source
         """
         return pulumi.get(self, "display_name")
 
@@ -114,7 +114,7 @@ class GetDataSourcesResult:
     @pulumi.getter(name="loggingQueryType")
     def logging_query_type(self) -> Optional[str]:
         """
-        Logging query type for data source (Sighting/Insight)
+        Type of logging query for data source (Sighting/Insight)
         """
         return pulumi.get(self, "logging_query_type")
 
@@ -122,7 +122,7 @@ class GetDataSourcesResult:
     @pulumi.getter
     def state(self) -> Optional[str]:
         """
-        The current state of the resource.
+        The current lifecycle state of the resource.
         """
         return pulumi.get(self, "state")
 
@@ -157,9 +157,11 @@ def get_data_sources(access_level: Optional[str] = None,
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all Data Sources in a compartment
+    Returns a list of all data sources (DataSource resources) for a compartment
+    identified by compartmentId. List is returned in a DataSourceCollection resource
+    with page of DataSourceSummary resources.
 
-    The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+    The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
     The list does not include any subcompartments of the compartmentId passed.
 
     The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -168,7 +170,7 @@ def get_data_sources(access_level: Optional[str] = None,
     Principal doesn't have access to even one of the child compartments. This is valid only when
     `compartmentIdInSubtree` is set to `true`.
 
-    The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+    The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
     `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
     To get a full list of all compartments and subcompartments in the tenancy (root compartment),
     set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -190,12 +192,12 @@ def get_data_sources(access_level: Optional[str] = None,
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str data_source_feed_provider: A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
+    :param str data_source_feed_provider: A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str logging_query_type: A filter to return only resources their query type matches the given LoggingQueryType.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str logging_query_type: A filter to return only resources where their query type matches the given LoggingQueryType.
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     __args__ = dict()
     __args__['accessLevel'] = access_level
@@ -235,9 +237,11 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     """
     This data source provides the list of Data Sources in Oracle Cloud Infrastructure Cloud Guard service.
 
-    Returns a list of all Data Sources in a compartment
+    Returns a list of all data sources (DataSource resources) for a compartment
+    identified by compartmentId. List is returned in a DataSourceCollection resource
+    with page of DataSourceSummary resources.
 
-    The ListDataSources operation returns only the data Sources in `compartmentId` passed.
+    The ListAdhocQueries operation returns only the adhoc queries in 'compartmentId' passed.
     The list does not include any subcompartments of the compartmentId passed.
 
     The parameter `accessLevel` specifies whether to return only those compartments for which the
@@ -246,7 +250,7 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
     Principal doesn't have access to even one of the child compartments. This is valid only when
     `compartmentIdInSubtree` is set to `true`.
 
-    The parameter `compartmentIdInSubtree` applies when you perform ListdataSources on the
+    The parameter `compartmentIdInSubtree` applies when you perform ListAdhocQueries on the
     `compartmentId` passed and when it is set to true, the entire hierarchy of compartments can be returned.
     To get a full list of all compartments and subcompartments in the tenancy (root compartment),
     set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ACCESSIBLE.
@@ -268,11 +272,11 @@ def get_data_sources_output(access_level: Optional[pulumi.Input[Optional[str]]] 
 
 
     :param str access_level: Valid values are `RESTRICTED` and `ACCESSIBLE`. Default is `RESTRICTED`. Setting this to `ACCESSIBLE` returns only those compartments for which the user has INSPECT permissions directly or indirectly (permissions can be on a resource in a subcompartment). When set to `RESTRICTED` permissions are checked and no partial results are displayed.
-    :param str compartment_id: The ID of the compartment in which to list resources.
-    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the the setting of `accessLevel`.
-    :param str data_source_feed_provider: A filter to return only resources their feedProvider matches the given DataSourceFeedProvider.
+    :param str compartment_id: The OCID of the compartment in which to list resources.
+    :param bool compartment_id_in_subtree: Default is false. When set to true, the hierarchy of compartments is traversed and all compartments and subcompartments in the tenancy are returned depending on the setting of `accessLevel`.
+    :param str data_source_feed_provider: A filter to return only resources when their feed provider matches the given feed provider (`DataSourceFeedProvider` resource).
     :param str display_name: A filter to return only resources that match the entire display name given.
-    :param str logging_query_type: A filter to return only resources their query type matches the given LoggingQueryType.
-    :param str state: The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+    :param str logging_query_type: A filter to return only resources where their query type matches the given LoggingQueryType.
+    :param str state: The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
     """
     ...

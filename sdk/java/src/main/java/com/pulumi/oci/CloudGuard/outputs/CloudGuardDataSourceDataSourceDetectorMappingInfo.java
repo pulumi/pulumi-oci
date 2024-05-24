@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class CloudGuardDataSourceDataSourceDetectorMappingInfo {
     /**
-     * @return Id of the attached detectorRecipeId to the Data Source.
+     * @return ID of the detector recipe attached to the data source
      * 
      */
     private @Nullable String detectorRecipeId;
     /**
-     * @return Id of the attached detectorRuleId to the Data Source.
+     * @return ID of the detector rule attached to the data source
      * 
      */
     private @Nullable String detectorRuleId;
 
     private CloudGuardDataSourceDataSourceDetectorMappingInfo() {}
     /**
-     * @return Id of the attached detectorRecipeId to the Data Source.
+     * @return ID of the detector recipe attached to the data source
      * 
      */
     public Optional<String> detectorRecipeId() {
         return Optional.ofNullable(this.detectorRecipeId);
     }
     /**
-     * @return Id of the attached detectorRuleId to the Data Source.
+     * @return ID of the detector rule attached to the data source
      * 
      */
     public Optional<String> detectorRuleId() {

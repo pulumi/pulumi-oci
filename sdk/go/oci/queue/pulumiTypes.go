@@ -234,7 +234,7 @@ type GetQueuesQueueCollectionItem struct {
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint string `pulumi:"messagesEndpoint"`
-	PurgeQueue       bool   `pulumi:"purgeQueue"`
+	PurgeTrigger     int    `pulumi:"purgeTrigger"`
 	PurgeType        string `pulumi:"purgeType"`
 	// The retention period of the messages in the queue, in seconds.
 	RetentionInSeconds int `pulumi:"retentionInSeconds"`
@@ -284,7 +284,7 @@ type GetQueuesQueueCollectionItemArgs struct {
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// The endpoint to use to consume or publish messages in the queue.
 	MessagesEndpoint pulumi.StringInput `pulumi:"messagesEndpoint"`
-	PurgeQueue       pulumi.BoolInput   `pulumi:"purgeQueue"`
+	PurgeTrigger     pulumi.IntInput    `pulumi:"purgeTrigger"`
 	PurgeType        pulumi.StringInput `pulumi:"purgeType"`
 	// The retention period of the messages in the queue, in seconds.
 	RetentionInSeconds pulumi.IntInput `pulumi:"retentionInSeconds"`
@@ -403,8 +403,8 @@ func (o GetQueuesQueueCollectionItemOutput) MessagesEndpoint() pulumi.StringOutp
 	return o.ApplyT(func(v GetQueuesQueueCollectionItem) string { return v.MessagesEndpoint }).(pulumi.StringOutput)
 }
 
-func (o GetQueuesQueueCollectionItemOutput) PurgeQueue() pulumi.BoolOutput {
-	return o.ApplyT(func(v GetQueuesQueueCollectionItem) bool { return v.PurgeQueue }).(pulumi.BoolOutput)
+func (o GetQueuesQueueCollectionItemOutput) PurgeTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetQueuesQueueCollectionItem) int { return v.PurgeTrigger }).(pulumi.IntOutput)
 }
 
 func (o GetQueuesQueueCollectionItemOutput) PurgeType() pulumi.StringOutput {

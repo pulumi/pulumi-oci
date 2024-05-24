@@ -15,14 +15,14 @@ public final class GetSecurityPolicyArgs extends com.pulumi.resources.InvokeArgs
     public static final GetSecurityPolicyArgs Empty = new GetSecurityPolicyArgs();
 
     /**
-     * The unique identifier of the security zone policy (`SecurityPolicy`)
+     * The unique identifier of the security zone policy. (`SecurityPolicy`)
      * 
      */
     @Import(name="securityPolicyId", required=true)
     private Output<String> securityPolicyId;
 
     /**
-     * @return The unique identifier of the security zone policy (`SecurityPolicy`)
+     * @return The unique identifier of the security zone policy. (`SecurityPolicy`)
      * 
      */
     public Output<String> securityPolicyId() {
@@ -54,7 +54,7 @@ public final class GetSecurityPolicyArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param securityPolicyId The unique identifier of the security zone policy (`SecurityPolicy`)
+         * @param securityPolicyId The unique identifier of the security zone policy. (`SecurityPolicy`)
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetSecurityPolicyArgs extends com.pulumi.resources.InvokeArgs
         }
 
         /**
-         * @param securityPolicyId The unique identifier of the security zone policy (`SecurityPolicy`)
+         * @param securityPolicyId The unique identifier of the security zone policy. (`SecurityPolicy`)
          * 
          * @return builder
          * 

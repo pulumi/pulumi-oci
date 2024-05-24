@@ -10,7 +10,6 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Queue.QueueArgs;
 import com.pulumi.oci.Queue.inputs.QueueState;
 import com.pulumi.oci.Utilities;
-import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -54,6 +53,8 @@ import javax.annotation.Nullable;
  *             .channelConsumptionLimit(queueChannelConsumptionLimit)
  *             .customEncryptionKeyId(testKey.id())
  *             .deadLetterQueueDeliveryCount(queueDeadLetterQueueDeliveryCount)
+ *             .purgeTrigger(purgeTrigger)
+ *             .purgeType(purgeType)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
  *             .retentionInSeconds(queueRetentionInSeconds)
@@ -204,15 +205,37 @@ public class Queue extends com.pulumi.resources.CustomResource {
     public Output<String> messagesEndpoint() {
         return this.messagesEndpoint;
     }
-    @Export(name="purgeQueue", refs={Boolean.class}, tree="[0]")
-    private Output</* @Nullable */ Boolean> purgeQueue;
+    /**
+     * (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     * 
+     */
+    @Export(name="purgeTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> purgeTrigger;
 
-    public Output<Optional<Boolean>> purgeQueue() {
-        return Codegen.optional(this.purgeQueue);
+    /**
+     * @return (Updatable) An optional property when incremented triggers Purge. Could be set to any integer value.
+     * 
+     */
+    public Output<Optional<Integer>> purgeTrigger() {
+        return Codegen.optional(this.purgeTrigger);
     }
+    /**
+     * (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     @Export(name="purgeType", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> purgeType;
 
+    /**
+     * @return (Updatable) An optional value that specifies the purge behavior for the Queue. Could be set to NORMAL, DLQ or BOTH. If unset, the default value is NORMAL
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
     public Output<Optional<String>> purgeType() {
         return Codegen.optional(this.purgeType);
     }

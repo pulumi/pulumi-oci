@@ -12,38 +12,38 @@ import javax.annotation.Nullable;
 @CustomType
 public final class TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue {
     /**
-     * @return configuration list item type, either CUSTOM or MANAGED
+     * @return Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     private @Nullable String listType;
     /**
-     * @return type of the managed list
+     * @return Type of content in the managed list
      * 
      */
     private @Nullable String managedListType;
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     private @Nullable String value;
 
     private TargetTargetDetectorRecipeDetectorRuleDetailsConfigurationValue() {}
     /**
-     * @return configuration list item type, either CUSTOM or MANAGED
+     * @return Configuration list item type (CUSTOM or MANAGED)
      * 
      */
     public Optional<String> listType() {
         return Optional.ofNullable(this.listType);
     }
     /**
-     * @return type of the managed list
+     * @return Type of content in the managed list
      * 
      */
     public Optional<String> managedListType() {
         return Optional.ofNullable(this.managedListType);
     }
     /**
-     * @return configuration value
+     * @return Configuration value
      * 
      */
     public Optional<String> value() {

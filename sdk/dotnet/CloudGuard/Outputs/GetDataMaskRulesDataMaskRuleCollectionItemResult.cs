@@ -14,15 +14,15 @@ namespace Pulumi.Oci.CloudGuard.Outputs
     public sealed class GetDataMaskRulesDataMaskRuleCollectionItemResult
     {
         /// <summary>
-        /// The ID of the compartment in which to list resources.
+        /// The OCID of the compartment in which to list resources.
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// Data Mask Categories
+        /// List of data mask rule categories
         /// </summary>
         public readonly ImmutableArray<string> DataMaskCategories;
         /// <summary>
-        /// The status of the dataMaskRule.
+        /// The status of the data mask rule
         /// </summary>
         public readonly string DataMaskRuleStatus;
         /// <summary>
@@ -30,7 +30,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// The data mask rule description.
+        /// The data mask rule description
         /// </summary>
         public readonly string Description;
         /// <summary>
@@ -42,19 +42,19 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// OCID of iamGroup
+        /// OCID of the IAM group
         /// </summary>
         public readonly string IamGroupId;
         /// <summary>
-        /// Unique identifier that is immutable on creation
+        /// Unique identifier that can't be changed after creation
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
+        /// Additional details on the substate of the lifecycle state [DEPRECATE]
         /// </summary>
         public readonly string LifecyleDetails;
         /// <summary>
-        /// The field life cycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
+        /// The field lifecycle state. Only one state can be provided. Default value for state is active. If no value is specified state is active.
         /// </summary>
         public readonly string State;
         /// <summary>
@@ -62,7 +62,7 @@ namespace Pulumi.Oci.CloudGuard.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// Target Selection eg select ALL or select on basis of TargetResourceTypes or TargetIds.
+        /// Specification of how targets are to be selected (select ALL, or select by TargetResourceType or TargetId).
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDataMaskRulesDataMaskRuleCollectionItemTargetSelectedResult> TargetSelecteds;
         /// <summary>

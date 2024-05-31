@@ -29,6 +29,14 @@ namespace Pulumi.Oci.Jms
     ///     {
     ///         CompartmentId = tenancyOcid,
     ///         Format = javaDownloadReportFormat,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
+    ///         FreeformTags = 
+    ///         {
+    ///             { "bar-key", "value" },
+    ///         },
     ///         TimeEnd = javaDownloadReportTimeEnd,
     ///         TimeStart = javaDownloadReportTimeStart,
     ///     });
@@ -97,6 +105,12 @@ namespace Pulumi.Oci.Jms
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
+        [Output("sortBy")]
+        public Output<string> SortBy { get; private set; } = null!;
+
+        [Output("sortOrder")]
+        public Output<string> SortOrder { get; private set; } = null!;
+
         /// <summary>
         /// The current state of the Java download report.
         /// </summary>
@@ -110,7 +124,7 @@ namespace Pulumi.Oci.Jms
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the Java download report was created. An RFC3339 formatted datetime string.
+        /// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -183,11 +197,35 @@ namespace Pulumi.Oci.Jms
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// The format of the report that is generated.
         /// </summary>
         [Input("format", required: true)]
         public Input<string> Format { get; set; } = null!;
+
+        [Input("freeformTags")]
+        private InputMap<object>? _freeformTags;
+
+        /// <summary>
+        /// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        /// </summary>
+        public InputMap<object> FreeformTags
+        {
+            get => _freeformTags ?? (_freeformTags = new InputMap<object>());
+            set => _freeformTags = value;
+        }
 
         /// <summary>
         /// The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -285,6 +323,12 @@ namespace Pulumi.Oci.Jms
             set => _freeformTags = value;
         }
 
+        [Input("sortBy")]
+        public Input<string>? SortBy { get; set; }
+
+        [Input("sortOrder")]
+        public Input<string>? SortOrder { get; set; }
+
         /// <summary>
         /// The current state of the Java download report.
         /// </summary>
@@ -304,7 +348,7 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
-        /// The time the Java download report was created. An RFC3339 formatted datetime string.
+        /// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

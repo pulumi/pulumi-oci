@@ -3495,7 +3495,7 @@ type BdsInstanceClusterDetail struct {
 	JupyterHubUrl *string `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion *string `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster.
+	// BDS-assigned Operating System version for the node.
 	OsVersion *string `pulumi:"osVersion"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -3539,7 +3539,7 @@ type BdsInstanceClusterDetailArgs struct {
 	JupyterHubUrl pulumi.StringPtrInput `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion pulumi.StringPtrInput `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster.
+	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// The time the BDS instance was created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
@@ -3658,7 +3658,7 @@ func (o BdsInstanceClusterDetailOutput) OdhVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OdhVersion }).(pulumi.StringPtrOutput)
 }
 
-// Oracle Linux version installed in the cluster.
+// BDS-assigned Operating System version for the node.
 func (o BdsInstanceClusterDetailOutput) OsVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceClusterDetail) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
@@ -5408,6 +5408,10 @@ type BdsInstanceNode struct {
 	InstanceId *string `pulumi:"instanceId"`
 	// IP address of the node
 	IpAddress *string `pulumi:"ipAddress"`
+	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+	IsRebootRequired *bool `pulumi:"isRebootRequired"`
+	// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+	LocalDisksTotalSizeInGbs *float64 `pulumi:"localDisksTotalSizeInGbs"`
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs *int `pulumi:"memoryInGbs"`
 	// The Big Data Service cluster node type.
@@ -5416,6 +5420,8 @@ type BdsInstanceNode struct {
 	Nvmes *int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus *int `pulumi:"ocpus"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion *string `pulumi:"osVersion"`
 	// (Updatable) Shape of the node.
 	Shape *string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
@@ -5458,6 +5464,10 @@ type BdsInstanceNodeArgs struct {
 	InstanceId pulumi.StringPtrInput `pulumi:"instanceId"`
 	// IP address of the node
 	IpAddress pulumi.StringPtrInput `pulumi:"ipAddress"`
+	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+	IsRebootRequired pulumi.BoolPtrInput `pulumi:"isRebootRequired"`
+	// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+	LocalDisksTotalSizeInGbs pulumi.Float64PtrInput `pulumi:"localDisksTotalSizeInGbs"`
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntPtrInput `pulumi:"memoryInGbs"`
 	// The Big Data Service cluster node type.
@@ -5466,6 +5476,8 @@ type BdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntPtrInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntPtrInput `pulumi:"ocpus"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion pulumi.StringPtrInput `pulumi:"osVersion"`
 	// (Updatable) Shape of the node.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access
@@ -5571,6 +5583,16 @@ func (o BdsInstanceNodeOutput) IpAddress() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *string { return v.IpAddress }).(pulumi.StringPtrOutput)
 }
 
+// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+func (o BdsInstanceNodeOutput) IsRebootRequired() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *bool { return v.IsRebootRequired }).(pulumi.BoolPtrOutput)
+}
+
+// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+func (o BdsInstanceNodeOutput) LocalDisksTotalSizeInGbs() pulumi.Float64PtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64PtrOutput)
+}
+
 // The total amount of memory available to the node, in gigabytes.
 func (o BdsInstanceNodeOutput) MemoryInGbs() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.MemoryInGbs }).(pulumi.IntPtrOutput)
@@ -5589,6 +5611,11 @@ func (o BdsInstanceNodeOutput) Nvmes() pulumi.IntPtrOutput {
 // The total number of OCPUs available to the node.
 func (o BdsInstanceNodeOutput) Ocpus() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v BdsInstanceNode) *int { return v.Ocpus }).(pulumi.IntPtrOutput)
+}
+
+// BDS-assigned Operating System version for the node.
+func (o BdsInstanceNodeOutput) OsVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v BdsInstanceNode) *string { return v.OsVersion }).(pulumi.StringPtrOutput)
 }
 
 // (Updatable) Shape of the node.
@@ -5864,6 +5891,118 @@ func (o BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayO
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceOperationCertificateManagementsManagementHostCertDetail {
 		return vs[0].([]BdsInstanceOperationCertificateManagementsManagementHostCertDetail)[vs[1].(int)]
 	}).(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput)
+}
+
+type BdsInstanceOsPatchActionPatchingConfig struct {
+	BatchSize                     *int   `pulumi:"batchSize"`
+	PatchingConfigStrategy        string `pulumi:"patchingConfigStrategy"`
+	ToleranceThresholdPerBatch    *int   `pulumi:"toleranceThresholdPerBatch"`
+	WaitTimeBetweenBatchInSeconds *int   `pulumi:"waitTimeBetweenBatchInSeconds"`
+}
+
+// BdsInstanceOsPatchActionPatchingConfigInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigArgs and BdsInstanceOsPatchActionPatchingConfigOutput values.
+// You can construct a concrete instance of `BdsInstanceOsPatchActionPatchingConfigInput` via:
+//
+//	BdsInstanceOsPatchActionPatchingConfigArgs{...}
+type BdsInstanceOsPatchActionPatchingConfigInput interface {
+	pulumi.Input
+
+	ToBdsInstanceOsPatchActionPatchingConfigOutput() BdsInstanceOsPatchActionPatchingConfigOutput
+	ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(context.Context) BdsInstanceOsPatchActionPatchingConfigOutput
+}
+
+type BdsInstanceOsPatchActionPatchingConfigArgs struct {
+	BatchSize                     pulumi.IntPtrInput `pulumi:"batchSize"`
+	PatchingConfigStrategy        pulumi.StringInput `pulumi:"patchingConfigStrategy"`
+	ToleranceThresholdPerBatch    pulumi.IntPtrInput `pulumi:"toleranceThresholdPerBatch"`
+	WaitTimeBetweenBatchInSeconds pulumi.IntPtrInput `pulumi:"waitTimeBetweenBatchInSeconds"`
+}
+
+func (BdsInstanceOsPatchActionPatchingConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceOsPatchActionPatchingConfigArgs) ToBdsInstanceOsPatchActionPatchingConfigOutput() BdsInstanceOsPatchActionPatchingConfigOutput {
+	return i.ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceOsPatchActionPatchingConfigArgs) ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigOutput)
+}
+
+// BdsInstanceOsPatchActionPatchingConfigArrayInput is an input type that accepts BdsInstanceOsPatchActionPatchingConfigArray and BdsInstanceOsPatchActionPatchingConfigArrayOutput values.
+// You can construct a concrete instance of `BdsInstanceOsPatchActionPatchingConfigArrayInput` via:
+//
+//	BdsInstanceOsPatchActionPatchingConfigArray{ BdsInstanceOsPatchActionPatchingConfigArgs{...} }
+type BdsInstanceOsPatchActionPatchingConfigArrayInput interface {
+	pulumi.Input
+
+	ToBdsInstanceOsPatchActionPatchingConfigArrayOutput() BdsInstanceOsPatchActionPatchingConfigArrayOutput
+	ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(context.Context) BdsInstanceOsPatchActionPatchingConfigArrayOutput
+}
+
+type BdsInstanceOsPatchActionPatchingConfigArray []BdsInstanceOsPatchActionPatchingConfigInput
+
+func (BdsInstanceOsPatchActionPatchingConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (i BdsInstanceOsPatchActionPatchingConfigArray) ToBdsInstanceOsPatchActionPatchingConfigArrayOutput() BdsInstanceOsPatchActionPatchingConfigArrayOutput {
+	return i.ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(context.Background())
+}
+
+func (i BdsInstanceOsPatchActionPatchingConfigArray) ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(BdsInstanceOsPatchActionPatchingConfigArrayOutput)
+}
+
+type BdsInstanceOsPatchActionPatchingConfigOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceOsPatchActionPatchingConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToBdsInstanceOsPatchActionPatchingConfigOutput() BdsInstanceOsPatchActionPatchingConfigOutput {
+	return o
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToBdsInstanceOsPatchActionPatchingConfigOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigOutput {
+	return o
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) BatchSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.BatchSize }).(pulumi.IntPtrOutput)
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) PatchingConfigStrategy() pulumi.StringOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) string { return v.PatchingConfigStrategy }).(pulumi.StringOutput)
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) ToleranceThresholdPerBatch() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.ToleranceThresholdPerBatch }).(pulumi.IntPtrOutput)
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigOutput) WaitTimeBetweenBatchInSeconds() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v BdsInstanceOsPatchActionPatchingConfig) *int { return v.WaitTimeBetweenBatchInSeconds }).(pulumi.IntPtrOutput)
+}
+
+type BdsInstanceOsPatchActionPatchingConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (BdsInstanceOsPatchActionPatchingConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]BdsInstanceOsPatchActionPatchingConfig)(nil)).Elem()
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) ToBdsInstanceOsPatchActionPatchingConfigArrayOutput() BdsInstanceOsPatchActionPatchingConfigArrayOutput {
+	return o
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) ToBdsInstanceOsPatchActionPatchingConfigArrayOutputWithContext(ctx context.Context) BdsInstanceOsPatchActionPatchingConfigArrayOutput {
+	return o
+}
+
+func (o BdsInstanceOsPatchActionPatchingConfigArrayOutput) Index(i pulumi.IntInput) BdsInstanceOsPatchActionPatchingConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) BdsInstanceOsPatchActionPatchingConfig {
+		return vs[0].([]BdsInstanceOsPatchActionPatchingConfig)[vs[1].(int)]
+	}).(BdsInstanceOsPatchActionPatchingConfigOutput)
 }
 
 type BdsInstanceUtilNode struct {
@@ -12120,7 +12259,7 @@ type GetBdsInstanceClusterDetail struct {
 	JupyterHubUrl string `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion string `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster.
+	// BDS-assigned Operating System version for the node.
 	OsVersion string `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -12164,7 +12303,7 @@ type GetBdsInstanceClusterDetailArgs struct {
 	JupyterHubUrl pulumi.StringInput `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster.
+	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -12283,7 +12422,7 @@ func (o GetBdsInstanceClusterDetailOutput) OdhVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
 }
 
-// Oracle Linux version installed in the cluster.
+// BDS-assigned Operating System version for the node.
 func (o GetBdsInstanceClusterDetailOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceClusterDetail) string { return v.OsVersion }).(pulumi.StringOutput)
 }
@@ -14166,6 +14305,10 @@ type GetBdsInstanceNode struct {
 	InstanceId string `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress string `pulumi:"ipAddress"`
+	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+	LocalDisksTotalSizeInGbs float64 `pulumi:"localDisksTotalSizeInGbs"`
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
 	// Cluster node type.
@@ -14174,6 +14317,8 @@ type GetBdsInstanceNode struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -14216,6 +14361,10 @@ type GetBdsInstanceNodeArgs struct {
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+	LocalDisksTotalSizeInGbs pulumi.Float64Input `pulumi:"localDisksTotalSizeInGbs"`
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
 	// Cluster node type.
@@ -14224,6 +14373,8 @@ type GetBdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -14329,6 +14480,16 @@ func (o GetBdsInstanceNodeOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+func (o GetBdsInstanceNodeOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+}
+
+// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+func (o GetBdsInstanceNodeOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBdsInstanceNode) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstanceNodeOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) int { return v.MemoryInGbs }).(pulumi.IntOutput)
@@ -14347,6 +14508,11 @@ func (o GetBdsInstanceNodeOutput) Nvmes() pulumi.IntOutput {
 // The total number of OCPUs available to the node.
 func (o GetBdsInstanceNodeOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstanceNode) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// BDS-assigned Operating System version for the node.
+func (o GetBdsInstanceNodeOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstanceNode) string { return v.OsVersion }).(pulumi.StringOutput)
 }
 
 // Shape of the node.
@@ -16097,7 +16263,7 @@ type GetBdsInstancesBdsInstanceClusterDetail struct {
 	JupyterHubUrl string `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion string `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster.
+	// BDS-assigned Operating System version for the node.
 	OsVersion string `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -16141,7 +16307,7 @@ type GetBdsInstancesBdsInstanceClusterDetailArgs struct {
 	JupyterHubUrl pulumi.StringInput `pulumi:"jupyterHubUrl"`
 	// Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
 	OdhVersion pulumi.StringInput `pulumi:"odhVersion"`
-	// Oracle Linux version installed in the cluster.
+	// BDS-assigned Operating System version for the node.
 	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// The time the cluster was created, shown as an RFC 3339 formatted datetime string.
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -16260,7 +16426,7 @@ func (o GetBdsInstancesBdsInstanceClusterDetailOutput) OdhVersion() pulumi.Strin
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.OdhVersion }).(pulumi.StringOutput)
 }
 
-// Oracle Linux version installed in the cluster.
+// BDS-assigned Operating System version for the node.
 func (o GetBdsInstancesBdsInstanceClusterDetailOutput) OsVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceClusterDetail) string { return v.OsVersion }).(pulumi.StringOutput)
 }
@@ -17403,6 +17569,10 @@ type GetBdsInstancesBdsInstanceNode struct {
 	InstanceId string `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress string `pulumi:"ipAddress"`
+	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+	IsRebootRequired bool `pulumi:"isRebootRequired"`
+	// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+	LocalDisksTotalSizeInGbs float64 `pulumi:"localDisksTotalSizeInGbs"`
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs int `pulumi:"memoryInGbs"`
 	// Cluster node type.
@@ -17411,6 +17581,8 @@ type GetBdsInstancesBdsInstanceNode struct {
 	Nvmes int `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus int `pulumi:"ocpus"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion string `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape string `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -17453,6 +17625,10 @@ type GetBdsInstancesBdsInstanceNodeArgs struct {
 	InstanceId pulumi.StringInput `pulumi:"instanceId"`
 	// IP address of the node.
 	IpAddress pulumi.StringInput `pulumi:"ipAddress"`
+	// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+	IsRebootRequired pulumi.BoolInput `pulumi:"isRebootRequired"`
+	// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+	LocalDisksTotalSizeInGbs pulumi.Float64Input `pulumi:"localDisksTotalSizeInGbs"`
 	// The total amount of memory available to the node, in gigabytes.
 	MemoryInGbs pulumi.IntInput `pulumi:"memoryInGbs"`
 	// Cluster node type.
@@ -17461,6 +17637,8 @@ type GetBdsInstancesBdsInstanceNodeArgs struct {
 	Nvmes pulumi.IntInput `pulumi:"nvmes"`
 	// The total number of OCPUs available to the node.
 	Ocpus pulumi.IntInput `pulumi:"ocpus"`
+	// BDS-assigned Operating System version for the node.
+	OsVersion pulumi.StringInput `pulumi:"osVersion"`
 	// Shape of the node.
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// The fingerprint of the SSH key used for node access.
@@ -17568,6 +17746,16 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) IpAddress() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.IpAddress }).(pulumi.StringOutput)
 }
 
+// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+func (o GetBdsInstancesBdsInstanceNodeOutput) IsRebootRequired() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) bool { return v.IsRebootRequired }).(pulumi.BoolOutput)
+}
+
+// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+func (o GetBdsInstancesBdsInstanceNodeOutput) LocalDisksTotalSizeInGbs() pulumi.Float64Output {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) float64 { return v.LocalDisksTotalSizeInGbs }).(pulumi.Float64Output)
+}
+
 // The total amount of memory available to the node, in gigabytes.
 func (o GetBdsInstancesBdsInstanceNodeOutput) MemoryInGbs() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) int { return v.MemoryInGbs }).(pulumi.IntOutput)
@@ -17586,6 +17774,11 @@ func (o GetBdsInstancesBdsInstanceNodeOutput) Nvmes() pulumi.IntOutput {
 // The total number of OCPUs available to the node.
 func (o GetBdsInstancesBdsInstanceNodeOutput) Ocpus() pulumi.IntOutput {
 	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) int { return v.Ocpus }).(pulumi.IntOutput)
+}
+
+// BDS-assigned Operating System version for the node.
+func (o GetBdsInstancesBdsInstanceNodeOutput) OsVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetBdsInstancesBdsInstanceNode) string { return v.OsVersion }).(pulumi.StringOutput)
 }
 
 // Shape of the node.
@@ -18413,6 +18606,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceNodeAttachedBlockVolumeArrayInput)(nil)).Elem(), BdsInstanceNodeAttachedBlockVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayInput)(nil)).Elem(), BdsInstanceOperationCertificateManagementsManagementHostCertDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceOsPatchActionPatchingConfigArrayInput)(nil)).Elem(), BdsInstanceOsPatchActionPatchingConfigArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodePtrInput)(nil)).Elem(), BdsInstanceUtilNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*BdsInstanceUtilNodeShapeConfigInput)(nil)).Elem(), BdsInstanceUtilNodeShapeConfigArgs{})
@@ -18673,6 +18868,8 @@ func init() {
 	pulumi.RegisterOutputType(BdsInstanceNodeAttachedBlockVolumeArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailOutput{})
 	pulumi.RegisterOutputType(BdsInstanceOperationCertificateManagementsManagementHostCertDetailArrayOutput{})
+	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigOutput{})
+	pulumi.RegisterOutputType(BdsInstanceOsPatchActionPatchingConfigArrayOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodePtrOutput{})
 	pulumi.RegisterOutputType(BdsInstanceUtilNodeShapeConfigOutput{})

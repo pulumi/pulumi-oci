@@ -29,6 +29,10 @@ namespace Pulumi.Oci.Jms
     ///         CompartmentId = tenancyOcid,
     ///         LicenseAcceptanceStatus = javaLicenseAcceptanceRecordLicenseAcceptanceStatus,
     ///         LicenseType = javaLicenseAcceptanceRecordLicenseType,
+    ///         DefinedTags = 
+    ///         {
+    ///             { "foo-namespace.bar-key", "value" },
+    ///         },
     ///     });
     /// 
     /// });
@@ -54,7 +58,7 @@ namespace Pulumi.Oci.Jms
         public Output<ImmutableArray<Outputs.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy>> CreatedBies { get; private set; } = null!;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
@@ -100,13 +104,13 @@ namespace Pulumi.Oci.Jms
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Output("timeAccepted")]
         public Output<string> TimeAccepted { get; private set; } = null!;
 
         /// <summary>
-        /// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Output("timeLastUpdated")]
         public Output<string> TimeLastUpdated { get; private set; } = null!;
@@ -163,6 +167,18 @@ namespace Pulumi.Oci.Jms
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("definedTags")]
+        private InputMap<object>? _definedTags;
+
+        /// <summary>
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        /// </summary>
+        public InputMap<object> DefinedTags
+        {
+            get => _definedTags ?? (_definedTags = new InputMap<object>());
+            set => _definedTags = value;
+        }
+
         /// <summary>
         /// (Updatable) Status of license acceptance.
         /// </summary>
@@ -209,7 +225,7 @@ namespace Pulumi.Oci.Jms
         private InputMap<object>? _definedTags;
 
         /// <summary>
-        /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         /// </summary>
         public InputMap<object> DefinedTags
         {
@@ -276,13 +292,13 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
-        /// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Input("timeAccepted")]
         public Input<string>? TimeAccepted { get; set; }
 
         /// <summary>
-        /// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         [Input("timeLastUpdated")]
         public Input<string>? TimeLastUpdated { get; set; }

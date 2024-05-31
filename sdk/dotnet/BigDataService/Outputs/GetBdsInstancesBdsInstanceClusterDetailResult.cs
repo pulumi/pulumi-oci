@@ -62,7 +62,7 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string OdhVersion;
         /// <summary>
-        /// Oracle Linux version installed in the cluster.
+        /// BDS-assigned Operating System version for the node.
         /// </summary>
         public readonly string OsVersion;
         /// <summary>

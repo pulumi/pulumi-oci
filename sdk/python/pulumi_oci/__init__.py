@@ -766,6 +766,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "BigDataService/bdsInstanceOsPatchAction",
+  "fqn": "pulumi_oci.bigdataservice",
+  "classes": {
+   "oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction": "BdsInstanceOsPatchAction"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "BigDataService/bdsInstancePatchAction",
   "fqn": "pulumi_oci.bigdataservice",
   "classes": {

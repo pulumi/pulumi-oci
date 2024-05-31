@@ -52,6 +52,7 @@ import javax.annotation.Nullable;
  *             .compartmentId(tenancyOcid)
  *             .licenseAcceptanceStatus(javaLicenseAcceptanceRecordLicenseAcceptanceStatus)
  *             .licenseType(javaLicenseAcceptanceRecordLicenseType)
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .build());
  * 
  *     }
@@ -96,14 +97,14 @@ public class JavaDownloadsJavaLicenseAcceptanceRecord extends com.pulumi.resourc
         return this.createdBies;
     }
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
     @Export(name="definedTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
     public Output<Map<String,Object>> definedTags() {
@@ -200,28 +201,28 @@ public class JavaDownloadsJavaLicenseAcceptanceRecord extends com.pulumi.resourc
         return this.systemTags;
     }
     /**
-     * The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeAccepted", refs={String.class}, tree="[0]")
     private Output<String> timeAccepted;
 
     /**
-     * @return The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Output<String> timeAccepted() {
         return this.timeAccepted;
     }
     /**
-     * The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Export(name="timeLastUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeLastUpdated;
 
     /**
-     * @return The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Output<String> timeLastUpdated() {

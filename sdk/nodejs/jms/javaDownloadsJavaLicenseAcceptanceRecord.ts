@@ -21,6 +21,9 @@ import * as utilities from "../utilities";
  *     compartmentId: tenancyOcid,
  *     licenseAcceptanceStatus: javaLicenseAcceptanceRecordLicenseAcceptanceStatus,
  *     licenseType: javaLicenseAcceptanceRecordLicenseType,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
  * });
  * ```
  *
@@ -65,9 +68,9 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
      */
     public /*out*/ readonly createdBies!: pulumi.Output<outputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
@@ -97,11 +100,11 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public /*out*/ readonly timeAccepted!: pulumi.Output<string>;
     /**
-     * The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     public /*out*/ readonly timeLastUpdated!: pulumi.Output<string>;
 
@@ -141,10 +144,10 @@ export class JavaDownloadsJavaLicenseAcceptanceRecord extends pulumi.CustomResou
                 throw new Error("Missing required property 'licenseType'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["licenseAcceptanceStatus"] = args ? args.licenseAcceptanceStatus : undefined;
             resourceInputs["licenseType"] = args ? args.licenseType : undefined;
             resourceInputs["createdBies"] = undefined /*out*/;
-            resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["freeformTags"] = undefined /*out*/;
             resourceInputs["lastUpdatedBies"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -170,7 +173,7 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordState {
      */
     createdBies?: pulumi.Input<pulumi.Input<inputs.Jms.JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy>[]>;
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
@@ -202,11 +205,11 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     timeAccepted?: pulumi.Input<string>;
     /**
-     * The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     timeLastUpdated?: pulumi.Input<string>;
 }
@@ -219,6 +222,10 @@ export interface JavaDownloadsJavaLicenseAcceptanceRecordArgs {
      * The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
      */
     compartmentId: pulumi.Input<string>;
+    /**
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Status of license acceptance.
      */

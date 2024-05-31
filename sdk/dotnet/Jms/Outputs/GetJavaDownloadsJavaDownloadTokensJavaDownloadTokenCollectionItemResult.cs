@@ -70,19 +70,19 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        /// The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         public readonly string TimeExpires;
         /// <summary>
-        /// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         public readonly string TimeLastUsed;
         /// <summary>
-        /// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         public readonly string TimeUpdated;
         /// <summary>

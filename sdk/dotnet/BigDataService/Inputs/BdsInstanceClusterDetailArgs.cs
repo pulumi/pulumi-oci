@@ -85,7 +85,7 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? OdhVersion { get; set; }
 
         /// <summary>
-        /// Oracle Linux version installed in the cluster.
+        /// BDS-assigned Operating System version for the node.
         /// </summary>
         [Input("osVersion")]
         public Input<string>? OsVersion { get; set; }

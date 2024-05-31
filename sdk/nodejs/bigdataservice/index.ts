@@ -30,6 +30,11 @@ export type BdsInstanceOperationCertificateManagementsManagement = import("./bds
 export const BdsInstanceOperationCertificateManagementsManagement: typeof import("./bdsInstanceOperationCertificateManagementsManagement").BdsInstanceOperationCertificateManagementsManagement = null as any;
 utilities.lazyLoad(exports, ["BdsInstanceOperationCertificateManagementsManagement"], () => require("./bdsInstanceOperationCertificateManagementsManagement"));
 
+export { BdsInstanceOsPatchActionArgs, BdsInstanceOsPatchActionState } from "./bdsInstanceOsPatchAction";
+export type BdsInstanceOsPatchAction = import("./bdsInstanceOsPatchAction").BdsInstanceOsPatchAction;
+export const BdsInstanceOsPatchAction: typeof import("./bdsInstanceOsPatchAction").BdsInstanceOsPatchAction = null as any;
+utilities.lazyLoad(exports, ["BdsInstanceOsPatchAction"], () => require("./bdsInstanceOsPatchAction"));
+
 export { BdsInstancePatchActionArgs, BdsInstancePatchActionState } from "./bdsInstancePatchAction";
 export type BdsInstancePatchAction = import("./bdsInstancePatchAction").BdsInstancePatchAction;
 export const BdsInstancePatchAction: typeof import("./bdsInstancePatchAction").BdsInstancePatchAction = null as any;
@@ -110,6 +115,8 @@ const _module = {
                 return new BdsInstanceMetastoreConfig(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstanceOperationCertificateManagementsManagement:BdsInstanceOperationCertificateManagementsManagement":
                 return new BdsInstanceOperationCertificateManagementsManagement(name, <any>undefined, { urn })
+            case "oci:BigDataService/bdsInstanceOsPatchAction:BdsInstanceOsPatchAction":
+                return new BdsInstanceOsPatchAction(name, <any>undefined, { urn })
             case "oci:BigDataService/bdsInstancePatchAction:BdsInstancePatchAction":
                 return new BdsInstancePatchAction(name, <any>undefined, { urn })
             default:
@@ -122,4 +129,5 @@ pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstance", _modu
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceApiKey", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceMetastoreConfig", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOperationCertificateManagementsManagement", _module)
+pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstanceOsPatchAction", _module)
 pulumi.runtime.registerResourceModule("oci", "BigDataService/bdsInstancePatchAction", _module)

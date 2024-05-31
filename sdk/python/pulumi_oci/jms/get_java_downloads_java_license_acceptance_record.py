@@ -152,7 +152,7 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordResult:
     @pulumi.getter(name="timeAccepted")
     def time_accepted(self) -> str:
         """
-        The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_accepted")
 
@@ -160,7 +160,7 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordResult:
     @pulumi.getter(name="timeLastUpdated")
     def time_last_updated(self) -> str:
         """
-        The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_last_updated")
 

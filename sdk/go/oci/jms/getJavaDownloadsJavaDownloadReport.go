@@ -79,14 +79,18 @@ type LookupJavaDownloadsJavaDownloadReportResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
 	Id                   string `pulumi:"id"`
 	JavaDownloadReportId string `pulumi:"javaDownloadReportId"`
+	SortBy               string `pulumi:"sortBy"`
+	SortOrder            string `pulumi:"sortOrder"`
 	// The current state of the Java download report.
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the Java download report was created. An RFC3339 formatted datetime string.
+	// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	TimeEnd     string `pulumi:"timeEnd"`
-	TimeStart   string `pulumi:"timeStart"`
+	// The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeEnd string `pulumi:"timeEnd"`
+	// The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	TimeStart string `pulumi:"timeStart"`
 }
 
 func LookupJavaDownloadsJavaDownloadReportOutput(ctx *pulumi.Context, args LookupJavaDownloadsJavaDownloadReportOutputArgs, opts ...pulumi.InvokeOption) LookupJavaDownloadsJavaDownloadReportResultOutput {
@@ -183,6 +187,14 @@ func (o LookupJavaDownloadsJavaDownloadReportResultOutput) JavaDownloadReportId(
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.JavaDownloadReportId }).(pulumi.StringOutput)
 }
 
+func (o LookupJavaDownloadsJavaDownloadReportResultOutput) SortBy() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.SortBy }).(pulumi.StringOutput)
+}
+
+func (o LookupJavaDownloadsJavaDownloadReportResultOutput) SortOrder() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.SortOrder }).(pulumi.StringOutput)
+}
+
 // The current state of the Java download report.
 func (o LookupJavaDownloadsJavaDownloadReportResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.State }).(pulumi.StringOutput)
@@ -193,15 +205,17 @@ func (o LookupJavaDownloadsJavaDownloadReportResultOutput) SystemTags() pulumi.M
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the Java download report was created. An RFC3339 formatted datetime string.
+// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o LookupJavaDownloadsJavaDownloadReportResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o LookupJavaDownloadsJavaDownloadReportResultOutput) TimeEnd() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.TimeEnd }).(pulumi.StringOutput)
 }
 
+// The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o LookupJavaDownloadsJavaDownloadReportResultOutput) TimeStart() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadReportResult) string { return v.TimeStart }).(pulumi.StringOutput)
 }

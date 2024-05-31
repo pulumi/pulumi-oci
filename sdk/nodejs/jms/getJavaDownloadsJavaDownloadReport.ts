@@ -85,6 +85,8 @@ export interface GetJavaDownloadsJavaDownloadReportResult {
      */
     readonly id: string;
     readonly javaDownloadReportId: string;
+    readonly sortBy: string;
+    readonly sortOrder: string;
     /**
      * The current state of the Java download report.
      */
@@ -94,10 +96,16 @@ export interface GetJavaDownloadsJavaDownloadReportResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the Java download report was created. An RFC3339 formatted datetime string.
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeCreated: string;
+    /**
+     * The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     readonly timeEnd: string;
+    /**
+     * The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
     readonly timeStart: string;
 }
 /**

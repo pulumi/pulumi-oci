@@ -51,14 +51,14 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
     }
 
     /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
     @Import(name="definedTags")
     private @Nullable Output<Map<String,Object>> definedTags;
 
     /**
-     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * @return (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      * 
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
@@ -162,14 +162,14 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
     }
 
     /**
-     * The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Import(name="timeAccepted")
     private @Nullable Output<String> timeAccepted;
 
     /**
-     * @return The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Optional<Output<String>> timeAccepted() {
@@ -177,14 +177,14 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
     }
 
     /**
-     * The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     @Import(name="timeLastUpdated")
     private @Nullable Output<String> timeLastUpdated;
 
     /**
-     * @return The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public Optional<Output<String>> timeLastUpdated() {
@@ -278,7 +278,7 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
         }
 
         /**
-         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
          * 
          * @return builder
          * 
@@ -441,7 +441,7 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
         }
 
         /**
-         * @param timeAccepted The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeAccepted The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 
@@ -452,7 +452,7 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
         }
 
         /**
-         * @param timeAccepted The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeAccepted The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 
@@ -462,7 +462,7 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
         }
 
         /**
-         * @param timeLastUpdated The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeLastUpdated The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 
@@ -473,7 +473,7 @@ public final class JavaDownloadsJavaLicenseAcceptanceRecordState extends com.pul
         }
 
         /**
-         * @param timeLastUpdated The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         * @param timeLastUpdated The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
          * 
          * @return builder
          * 

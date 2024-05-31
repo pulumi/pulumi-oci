@@ -13,6 +13,7 @@ namespace Pulumi.Oci.Jms
     /// This resource provides the Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
     /// 
     /// Creates a new JavaDownloadToken in the tenancy with specified attributes.
+    /// Ensure that you review the license terms before token generation. Visit the &lt;a href="https://www.oracle.com/java/technologies/downloads"/&gt;Oracle Java Downloads&lt;/a&gt; page to understand the license terms of the Java version for which you are generating a token. By generating a token, you agree to the associated license terms. See &lt;a href="https://www.oracle.com/cis/java/technologies/javase/jdk-faqs.html"&gt;Oracle JDK Licensing - FAQs&lt;/a&gt; for detailed information.
     /// 
     /// ## Example Usage
     /// 
@@ -132,7 +133,7 @@ namespace Pulumi.Oci.Jms
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -148,13 +149,13 @@ namespace Pulumi.Oci.Jms
         public Output<string> TimeExpires { get; private set; } = null!;
 
         /// <summary>
-        /// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeLastUsed")]
         public Output<string> TimeLastUsed { get; private set; } = null!;
 
         /// <summary>
-        /// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Output("timeUpdated")]
         public Output<string> TimeUpdated { get; private set; } = null!;
@@ -410,7 +411,7 @@ namespace Pulumi.Oci.Jms
         }
 
         /// <summary>
-        /// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }
@@ -426,13 +427,13 @@ namespace Pulumi.Oci.Jms
         public Input<string>? TimeExpires { get; set; }
 
         /// <summary>
-        /// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeLastUsed")]
         public Input<string>? TimeLastUsed { get; set; }
 
         /// <summary>
-        /// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        /// The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         [Input("timeUpdated")]
         public Input<string>? TimeUpdated { get; set; }

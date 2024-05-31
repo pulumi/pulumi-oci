@@ -5057,7 +5057,7 @@ export namespace BigDataService {
          */
         odhVersion?: pulumi.Input<string>;
         /**
-         * Oracle Linux version installed in the cluster.
+         * BDS-assigned Operating System version for the node.
          */
         osVersion?: pulumi.Input<string>;
         /**
@@ -5258,6 +5258,14 @@ export namespace BigDataService {
          */
         ipAddress?: pulumi.Input<string>;
         /**
+         * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+         */
+        isRebootRequired?: pulumi.Input<boolean>;
+        /**
+         * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+         */
+        localDisksTotalSizeInGbs?: pulumi.Input<number>;
+        /**
          * The total amount of memory available to the node, in gigabytes.
          */
         memoryInGbs?: pulumi.Input<number>;
@@ -5273,6 +5281,10 @@ export namespace BigDataService {
          * The total number of OCPUs available to the node.
          */
         ocpus?: pulumi.Input<number>;
+        /**
+         * BDS-assigned Operating System version for the node.
+         */
+        osVersion?: pulumi.Input<string>;
         /**
          * (Updatable) Shape of the node.
          */
@@ -5323,6 +5335,13 @@ export namespace BigDataService {
          * Private key of the provided certificate
          */
         privateKey?: pulumi.Input<string>;
+    }
+
+    export interface BdsInstanceOsPatchActionPatchingConfig {
+        batchSize?: pulumi.Input<number>;
+        patchingConfigStrategy: pulumi.Input<string>;
+        toleranceThresholdPerBatch?: pulumi.Input<number>;
+        waitTimeBetweenBatchInSeconds?: pulumi.Input<number>;
     }
 
     export interface BdsInstanceUtilNode {
@@ -62714,6 +62733,7 @@ export namespace LoadBalancer {
          * *  TLSv1
          * *  TLSv1.1
          * *  TLSv1.2
+         * *  TLSv1.3
          *
          * If this field is not specified, TLSv1.2 is the default.
          *
@@ -63032,6 +63052,7 @@ export namespace LoadBalancer {
          * *  TLSv1
          * *  TLSv1.1
          * *  TLSv1.2
+         * *  TLSv1.3
          *
          * If this field is not specified, TLSv1.2 is the default.
          *

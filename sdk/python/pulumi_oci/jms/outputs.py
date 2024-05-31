@@ -3159,7 +3159,7 @@ class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult(
         :param str family_display_name: The Java family display name.
         :param str family_version: Unique Java family version identifier.
         :param str os_family: Target Operating System family of the artifact.
-        :param str package_type: The package type(typically the file extension) of the artifact.
+        :param str package_type: The package type (typically the file extension) of the artifact.
         :param str package_type_detail: Packaging type detail of the artifact.
         :param str release_version: Unique Java release version identifier.
         :param str time_downloaded: Timestamp of download.
@@ -3227,7 +3227,7 @@ class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollectionItemResult(
     @pulumi.getter(name="packageType")
     def package_type(self) -> str:
         """
-        The package type(typically the file extension) of the artifact.
+        The package type (typically the file extension) of the artifact.
         """
         return pulumi.get(self, "package_type")
 
@@ -3348,6 +3348,8 @@ class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult(
                  format: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 sort_by: str,
+                 sort_order: str,
                  state: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -3366,7 +3368,9 @@ class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult(
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Java download report.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the Java download report was created. An RFC3339 formatted datetime string.
+        :param str time_created: The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param str time_end: The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_start: The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         pulumi.set(__self__, "checksum_type", checksum_type)
         pulumi.set(__self__, "checksum_value", checksum_value)
@@ -3378,6 +3382,8 @@ class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult(
         pulumi.set(__self__, "format", format)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "sort_by", sort_by)
+        pulumi.set(__self__, "sort_order", sort_order)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -3465,6 +3471,16 @@ class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult(
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="sortBy")
+    def sort_by(self) -> str:
+        return pulumi.get(self, "sort_by")
+
+    @property
+    @pulumi.getter(name="sortOrder")
+    def sort_order(self) -> str:
+        return pulumi.get(self, "sort_order")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -3484,18 +3500,24 @@ class GetJavaDownloadsJavaDownloadReportsJavaDownloadReportCollectionItemResult(
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the Java download report was created. An RFC3339 formatted datetime string.
+        The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeEnd")
     def time_end(self) -> str:
+        """
+        The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
     def time_start(self) -> str:
+        """
+        The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
         return pulumi.get(self, "time_start")
 
 
@@ -3695,10 +3717,10 @@ class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult(di
         :param str lifecycle_details: Possible lifecycle substates.
         :param str state: A filter to return only resources their lifecycleState matches the given lifecycleState.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_created: The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
-        :param str time_expires: The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
-        :param str time_last_used: The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
-        :param str time_updated: The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        :param str time_created: The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param str time_expires: The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param str time_last_used: The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
+        :param str time_updated: The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param str value: Unique JavaDownloadToken value.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -3837,7 +3859,7 @@ class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult(di
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -3845,7 +3867,7 @@ class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult(di
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> str:
         """
-        The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_expires")
 
@@ -3853,7 +3875,7 @@ class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult(di
     @pulumi.getter(name="timeLastUsed")
     def time_last_used(self) -> str:
         """
-        The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_last_used")
 
@@ -3861,7 +3883,7 @@ class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollectionItemResult(di
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 
@@ -4099,8 +4121,8 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCol
         :param str license_type: Unique Java license type.
         :param str state: The current state of the JavaLicenseAcceptanceRecord.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param str time_accepted: The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-        :param str time_last_updated: The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_accepted: The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        :param str time_last_updated: The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "created_bies", created_bies)
@@ -4199,7 +4221,7 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCol
     @pulumi.getter(name="timeAccepted")
     def time_accepted(self) -> str:
         """
-        The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_accepted")
 
@@ -4207,7 +4229,7 @@ class GetJavaDownloadsJavaLicenseAcceptanceRecordsJavaLicenseAcceptanceRecordCol
     @pulumi.getter(name="timeLastUpdated")
     def time_last_updated(self) -> str:
         """
-        The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         """
         return pulumi.get(self, "time_last_updated")
 

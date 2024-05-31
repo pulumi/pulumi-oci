@@ -22,7 +22,7 @@ class GetJavaDownloadsJavaDownloadReportResult:
     """
     A collection of values returned by getJavaDownloadsJavaDownloadReport.
     """
-    def __init__(__self__, checksum_type=None, checksum_value=None, compartment_id=None, created_bies=None, defined_tags=None, display_name=None, file_size_in_bytes=None, format=None, freeform_tags=None, id=None, java_download_report_id=None, state=None, system_tags=None, time_created=None, time_end=None, time_start=None):
+    def __init__(__self__, checksum_type=None, checksum_value=None, compartment_id=None, created_bies=None, defined_tags=None, display_name=None, file_size_in_bytes=None, format=None, freeform_tags=None, id=None, java_download_report_id=None, sort_by=None, sort_order=None, state=None, system_tags=None, time_created=None, time_end=None, time_start=None):
         if checksum_type and not isinstance(checksum_type, str):
             raise TypeError("Expected argument 'checksum_type' to be a str")
         pulumi.set(__self__, "checksum_type", checksum_type)
@@ -56,6 +56,12 @@ class GetJavaDownloadsJavaDownloadReportResult:
         if java_download_report_id and not isinstance(java_download_report_id, str):
             raise TypeError("Expected argument 'java_download_report_id' to be a str")
         pulumi.set(__self__, "java_download_report_id", java_download_report_id)
+        if sort_by and not isinstance(sort_by, str):
+            raise TypeError("Expected argument 'sort_by' to be a str")
+        pulumi.set(__self__, "sort_by", sort_by)
+        if sort_order and not isinstance(sort_order, str):
+            raise TypeError("Expected argument 'sort_order' to be a str")
+        pulumi.set(__self__, "sort_order", sort_order)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -158,6 +164,16 @@ class GetJavaDownloadsJavaDownloadReportResult:
         return pulumi.get(self, "java_download_report_id")
 
     @property
+    @pulumi.getter(name="sortBy")
+    def sort_by(self) -> str:
+        return pulumi.get(self, "sort_by")
+
+    @property
+    @pulumi.getter(name="sortOrder")
+    def sort_order(self) -> str:
+        return pulumi.get(self, "sort_order")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -177,18 +193,24 @@ class GetJavaDownloadsJavaDownloadReportResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the Java download report was created. An RFC3339 formatted datetime string.
+        The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
     @property
     @pulumi.getter(name="timeEnd")
     def time_end(self) -> str:
+        """
+        The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
         return pulumi.get(self, "time_end")
 
     @property
     @pulumi.getter(name="timeStart")
     def time_start(self) -> str:
+        """
+        The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        """
         return pulumi.get(self, "time_start")
 
 
@@ -209,6 +231,8 @@ class AwaitableGetJavaDownloadsJavaDownloadReportResult(GetJavaDownloadsJavaDown
             freeform_tags=self.freeform_tags,
             id=self.id,
             java_download_report_id=self.java_download_report_id,
+            sort_by=self.sort_by,
+            sort_order=self.sort_order,
             state=self.state,
             system_tags=self.system_tags,
             time_created=self.time_created,
@@ -252,6 +276,8 @@ def get_java_downloads_java_download_report(java_download_report_id: Optional[st
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         java_download_report_id=pulumi.get(__ret__, 'java_download_report_id'),
+        sort_by=pulumi.get(__ret__, 'sort_by'),
+        sort_order=pulumi.get(__ret__, 'sort_order'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),

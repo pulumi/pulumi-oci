@@ -54,11 +54,11 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string TimeAccepted;
         /// <summary>
-        /// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         /// </summary>
         public readonly string TimeLastUpdated;
 

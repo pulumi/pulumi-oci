@@ -67,6 +67,18 @@ namespace Pulumi.Oci.BigDataService.Inputs
         public Input<string>? IpAddress { get; set; }
 
         /// <summary>
+        /// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        /// </summary>
+        [Input("isRebootRequired")]
+        public Input<bool>? IsRebootRequired { get; set; }
+
+        /// <summary>
+        /// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+        /// </summary>
+        [Input("localDisksTotalSizeInGbs")]
+        public Input<double>? LocalDisksTotalSizeInGbs { get; set; }
+
+        /// <summary>
         /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
         [Input("memoryInGbs")]
@@ -89,6 +101,12 @@ namespace Pulumi.Oci.BigDataService.Inputs
         /// </summary>
         [Input("ocpus")]
         public Input<int>? Ocpus { get; set; }
+
+        /// <summary>
+        /// BDS-assigned Operating System version for the node.
+        /// </summary>
+        [Input("osVersion")]
+        public Input<string>? OsVersion { get; set; }
 
         /// <summary>
         /// (Updatable) Shape of the node.

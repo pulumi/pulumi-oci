@@ -72,7 +72,7 @@ public final class BdsInstanceClusterDetail {
      */
     private @Nullable String odhVersion;
     /**
-     * @return Oracle Linux version installed in the cluster.
+     * @return BDS-assigned Operating System version for the node.
      * 
      */
     private @Nullable String osVersion;
@@ -173,7 +173,7 @@ public final class BdsInstanceClusterDetail {
         return Optional.ofNullable(this.odhVersion);
     }
     /**
-     * @return Oracle Linux version installed in the cluster.
+     * @return BDS-assigned Operating System version for the node.
      * 
      */
     public Optional<String> osVersion() {

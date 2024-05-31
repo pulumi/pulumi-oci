@@ -34,6 +34,9 @@ import (
 //				CompartmentId:           pulumi.Any(tenancyOcid),
 //				LicenseAcceptanceStatus: pulumi.Any(javaLicenseAcceptanceRecordLicenseAcceptanceStatus),
 //				LicenseType:             pulumi.Any(javaLicenseAcceptanceRecordLicenseType),
+//				DefinedTags: pulumi.Map{
+//					"foo-namespace.bar-key": pulumi.Any("value"),
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -54,7 +57,7 @@ type JavaDownloadsJavaLicenseAcceptanceRecord struct {
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// An authorized principal.
 	CreatedBies JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput `pulumi:"createdBies"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
@@ -71,9 +74,9 @@ type JavaDownloadsJavaLicenseAcceptanceRecord struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeAccepted pulumi.StringOutput `pulumi:"timeAccepted"`
-	// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeLastUpdated pulumi.StringOutput `pulumi:"timeLastUpdated"`
 }
 
@@ -120,7 +123,7 @@ type javaDownloadsJavaLicenseAcceptanceRecordState struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// An authorized principal.
 	CreatedBies []JavaDownloadsJavaLicenseAcceptanceRecordCreatedBy `pulumi:"createdBies"`
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -137,9 +140,9 @@ type javaDownloadsJavaLicenseAcceptanceRecordState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeAccepted *string `pulumi:"timeAccepted"`
-	// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeLastUpdated *string `pulumi:"timeLastUpdated"`
 }
 
@@ -148,7 +151,7 @@ type JavaDownloadsJavaLicenseAcceptanceRecordState struct {
 	CompartmentId pulumi.StringPtrInput
 	// An authorized principal.
 	CreatedBies JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayInput
-	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 	DefinedTags pulumi.MapInput
 	// Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
 	FreeformTags pulumi.MapInput
@@ -165,9 +168,9 @@ type JavaDownloadsJavaLicenseAcceptanceRecordState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeAccepted pulumi.StringPtrInput
-	// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeLastUpdated pulumi.StringPtrInput
 }
 
@@ -178,6 +181,8 @@ func (JavaDownloadsJavaLicenseAcceptanceRecordState) ElementType() reflect.Type 
 type javaDownloadsJavaLicenseAcceptanceRecordArgs struct {
 	// The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
 	CompartmentId string `pulumi:"compartmentId"`
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Status of license acceptance.
 	LicenseAcceptanceStatus string `pulumi:"licenseAcceptanceStatus"`
 	// License type for the Java version.
@@ -191,6 +196,8 @@ type javaDownloadsJavaLicenseAcceptanceRecordArgs struct {
 type JavaDownloadsJavaLicenseAcceptanceRecordArgs struct {
 	// The tenancy [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the user accepting the license.
 	CompartmentId pulumi.StringInput
+	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+	DefinedTags pulumi.MapInput
 	// (Updatable) Status of license acceptance.
 	LicenseAcceptanceStatus pulumi.StringInput
 	// License type for the Java version.
@@ -299,7 +306,7 @@ func (o JavaDownloadsJavaLicenseAcceptanceRecordOutput) CreatedBies() JavaDownlo
 	}).(JavaDownloadsJavaLicenseAcceptanceRecordCreatedByArrayOutput)
 }
 
-// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
 func (o JavaDownloadsJavaLicenseAcceptanceRecordOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *JavaDownloadsJavaLicenseAcceptanceRecord) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
@@ -341,12 +348,12 @@ func (o JavaDownloadsJavaLicenseAcceptanceRecordOutput) SystemTags() pulumi.MapO
 	return o.ApplyT(func(v *JavaDownloadsJavaLicenseAcceptanceRecord) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o JavaDownloadsJavaLicenseAcceptanceRecordOutput) TimeAccepted() pulumi.StringOutput {
 	return o.ApplyT(func(v *JavaDownloadsJavaLicenseAcceptanceRecord) pulumi.StringOutput { return v.TimeAccepted }).(pulumi.StringOutput)
 }
 
-// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o JavaDownloadsJavaLicenseAcceptanceRecordOutput) TimeLastUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v *JavaDownloadsJavaLicenseAcceptanceRecord) pulumi.StringOutput { return v.TimeLastUpdated }).(pulumi.StringOutput)
 }

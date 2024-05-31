@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.BigDataService.inputs.BdsInstanceNodeAttachedBlockVolumeArgs;
+import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -139,6 +141,36 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
+     * Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     * 
+     */
+    @Import(name="isRebootRequired")
+    private @Nullable Output<Boolean> isRebootRequired;
+
+    /**
+     * @return Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     * 
+     */
+    public Optional<Output<Boolean>> isRebootRequired() {
+        return Optional.ofNullable(this.isRebootRequired);
+    }
+
+    /**
+     * The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     * 
+     */
+    @Import(name="localDisksTotalSizeInGbs")
+    private @Nullable Output<Double> localDisksTotalSizeInGbs;
+
+    /**
+     * @return The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     * 
+     */
+    public Optional<Output<Double>> localDisksTotalSizeInGbs() {
+        return Optional.ofNullable(this.localDisksTotalSizeInGbs);
+    }
+
+    /**
      * The total amount of memory available to the node, in gigabytes.
      * 
      */
@@ -196,6 +228,21 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
      */
     public Optional<Output<Integer>> ocpus() {
         return Optional.ofNullable(this.ocpus);
+    }
+
+    /**
+     * BDS-assigned Operating System version for the node.
+     * 
+     */
+    @Import(name="osVersion")
+    private @Nullable Output<String> osVersion;
+
+    /**
+     * @return BDS-assigned Operating System version for the node.
+     * 
+     */
+    public Optional<Output<String>> osVersion() {
+        return Optional.ofNullable(this.osVersion);
     }
 
     /**
@@ -299,10 +346,13 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         this.imageId = $.imageId;
         this.instanceId = $.instanceId;
         this.ipAddress = $.ipAddress;
+        this.isRebootRequired = $.isRebootRequired;
+        this.localDisksTotalSizeInGbs = $.localDisksTotalSizeInGbs;
         this.memoryInGbs = $.memoryInGbs;
         this.nodeType = $.nodeType;
         this.nvmes = $.nvmes;
         this.ocpus = $.ocpus;
+        this.osVersion = $.osVersion;
         this.shape = $.shape;
         this.sshFingerprint = $.sshFingerprint;
         this.state = $.state;
@@ -508,6 +558,48 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
+         * @param isRebootRequired Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRebootRequired(@Nullable Output<Boolean> isRebootRequired) {
+            $.isRebootRequired = isRebootRequired;
+            return this;
+        }
+
+        /**
+         * @param isRebootRequired Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isRebootRequired(Boolean isRebootRequired) {
+            return isRebootRequired(Output.of(isRebootRequired));
+        }
+
+        /**
+         * @param localDisksTotalSizeInGbs The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localDisksTotalSizeInGbs(@Nullable Output<Double> localDisksTotalSizeInGbs) {
+            $.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            return this;
+        }
+
+        /**
+         * @param localDisksTotalSizeInGbs The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
+            return localDisksTotalSizeInGbs(Output.of(localDisksTotalSizeInGbs));
+        }
+
+        /**
          * @param memoryInGbs The total amount of memory available to the node, in gigabytes.
          * 
          * @return builder
@@ -589,6 +681,27 @@ public final class BdsInstanceNodeArgs extends com.pulumi.resources.ResourceArgs
          */
         public Builder ocpus(Integer ocpus) {
             return ocpus(Output.of(ocpus));
+        }
+
+        /**
+         * @param osVersion BDS-assigned Operating System version for the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osVersion(@Nullable Output<String> osVersion) {
+            $.osVersion = osVersion;
+            return this;
+        }
+
+        /**
+         * @param osVersion BDS-assigned Operating System version for the node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder osVersion(String osVersion) {
+            return osVersion(Output.of(osVersion));
         }
 
         /**

@@ -6,7 +6,9 @@ package com.pulumi.oci.Jms;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Object;
 import java.lang.String;
+import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -32,6 +34,21 @@ public final class JavaDownloadsJavaDownloadReportArgs extends com.pulumi.resour
     }
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * 
+     */
+    @Import(name="definedTags")
+    private @Nullable Output<Map<String,Object>> definedTags;
+
+    /**
+     * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> definedTags() {
+        return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
      * The format of the report that is generated.
      * 
      */
@@ -44,6 +61,21 @@ public final class JavaDownloadsJavaDownloadReportArgs extends com.pulumi.resour
      */
     public Output<String> format() {
         return this.format;
+    }
+
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * 
+     */
+    @Import(name="freeformTags")
+    private @Nullable Output<Map<String,Object>> freeformTags;
+
+    /**
+     * @return Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     * 
+     */
+    public Optional<Output<Map<String,Object>>> freeformTags() {
+        return Optional.ofNullable(this.freeformTags);
     }
 
     /**
@@ -86,7 +118,9 @@ public final class JavaDownloadsJavaDownloadReportArgs extends com.pulumi.resour
 
     private JavaDownloadsJavaDownloadReportArgs(JavaDownloadsJavaDownloadReportArgs $) {
         this.compartmentId = $.compartmentId;
+        this.definedTags = $.definedTags;
         this.format = $.format;
+        this.freeformTags = $.freeformTags;
         this.timeEnd = $.timeEnd;
         this.timeStart = $.timeStart;
     }
@@ -131,6 +165,27 @@ public final class JavaDownloadsJavaDownloadReportArgs extends com.pulumi.resour
         }
 
         /**
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(@Nullable Output<Map<String,Object>> definedTags) {
+            $.definedTags = definedTags;
+            return this;
+        }
+
+        /**
+         * @param definedTags Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder definedTags(Map<String,Object> definedTags) {
+            return definedTags(Output.of(definedTags));
+        }
+
+        /**
          * @param format The format of the report that is generated.
          * 
          * @return builder
@@ -149,6 +204,27 @@ public final class JavaDownloadsJavaDownloadReportArgs extends com.pulumi.resour
          */
         public Builder format(String format) {
             return format(Output.of(format));
+        }
+
+        /**
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(@Nullable Output<Map<String,Object>> freeformTags) {
+            $.freeformTags = freeformTags;
+            return this;
+        }
+
+        /**
+         * @param freeformTags Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder freeformTags(Map<String,Object> freeformTags) {
+            return freeformTags(Output.of(freeformTags));
         }
 
         /**

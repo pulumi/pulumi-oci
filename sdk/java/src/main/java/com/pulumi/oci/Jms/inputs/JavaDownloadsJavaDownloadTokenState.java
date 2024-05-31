@@ -217,14 +217,14 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
     }
 
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -253,14 +253,14 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
     }
 
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeLastUsed")
     private @Nullable Output<String> timeLastUsed;
 
     /**
-     * @return The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeLastUsed() {
@@ -268,14 +268,14 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
     }
 
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeUpdated")
     private @Nullable Output<String> timeUpdated;
 
     /**
-     * @return The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeUpdated() {
@@ -642,7 +642,7 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
         }
 
         /**
-         * @param timeCreated The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+         * @param timeCreated The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -653,7 +653,7 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
         }
 
         /**
-         * @param timeCreated The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+         * @param timeCreated The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -690,7 +690,7 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
         }
 
         /**
-         * @param timeLastUsed The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+         * @param timeLastUsed The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -701,7 +701,7 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
         }
 
         /**
-         * @param timeLastUsed The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+         * @param timeLastUsed The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -711,7 +711,7 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
         }
 
         /**
-         * @param timeUpdated The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -722,7 +722,7 @@ public final class JavaDownloadsJavaDownloadTokenState extends com.pulumi.resour
         }
 
         /**
-         * @param timeUpdated The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+         * @param timeUpdated The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 

@@ -46,6 +46,7 @@ __all__ = [
     'BdsInstanceNode',
     'BdsInstanceNodeAttachedBlockVolume',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetail',
+    'BdsInstanceOsPatchActionPatchingConfig',
     'BdsInstanceUtilNode',
     'BdsInstanceUtilNodeShapeConfig',
     'BdsInstanceWorkerNode',
@@ -1656,7 +1657,7 @@ class BdsInstanceClusterDetail(dict):
         :param str hue_server_url: The URL of the Hue server.
         :param str jupyter_hub_url: The URL of the Jupyterhub.
         :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        :param str os_version: Oracle Linux version installed in the cluster.
+        :param str os_version: BDS-assigned Operating System version for the node.
         :param str time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
@@ -1791,7 +1792,7 @@ class BdsInstanceClusterDetail(dict):
     @pulumi.getter(name="osVersion")
     def os_version(self) -> Optional[str]:
         """
-        Oracle Linux version installed in the cluster.
+        BDS-assigned Operating System version for the node.
         """
         return pulumi.get(self, "os_version")
 
@@ -2457,10 +2458,16 @@ class BdsInstanceNode(dict):
             suggest = "instance_id"
         elif key == "ipAddress":
             suggest = "ip_address"
+        elif key == "isRebootRequired":
+            suggest = "is_reboot_required"
+        elif key == "localDisksTotalSizeInGbs":
+            suggest = "local_disks_total_size_in_gbs"
         elif key == "memoryInGbs":
             suggest = "memory_in_gbs"
         elif key == "nodeType":
             suggest = "node_type"
+        elif key == "osVersion":
+            suggest = "os_version"
         elif key == "sshFingerprint":
             suggest = "ssh_fingerprint"
         elif key == "subnetId":
@@ -2490,10 +2497,13 @@ class BdsInstanceNode(dict):
                  image_id: Optional[str] = None,
                  instance_id: Optional[str] = None,
                  ip_address: Optional[str] = None,
+                 is_reboot_required: Optional[bool] = None,
+                 local_disks_total_size_in_gbs: Optional[float] = None,
                  memory_in_gbs: Optional[int] = None,
                  node_type: Optional[str] = None,
                  nvmes: Optional[int] = None,
                  ocpus: Optional[int] = None,
+                 os_version: Optional[str] = None,
                  shape: Optional[str] = None,
                  ssh_fingerprint: Optional[str] = None,
                  state: Optional[str] = None,
@@ -2509,10 +2519,13 @@ class BdsInstanceNode(dict):
         :param str image_id: The OCID of the image from which the node was created
         :param str instance_id: The OCID of the underlying compute instance
         :param str ip_address: IP address of the node
+        :param bool is_reboot_required: Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        :param float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param str node_type: The Big Data Service cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+        :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: (Updatable) Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access
         :param str state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -2536,6 +2549,10 @@ class BdsInstanceNode(dict):
             pulumi.set(__self__, "instance_id", instance_id)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if is_reboot_required is not None:
+            pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        if local_disks_total_size_in_gbs is not None:
+            pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if node_type is not None:
@@ -2544,6 +2561,8 @@ class BdsInstanceNode(dict):
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if ssh_fingerprint is not None:
@@ -2622,6 +2641,22 @@ class BdsInstanceNode(dict):
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> Optional[bool]:
+        """
+        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @property
+    @pulumi.getter(name="localDisksTotalSizeInGbs")
+    def local_disks_total_size_in_gbs(self) -> Optional[float]:
+        """
+        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+        """
+        return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[int]:
         """
@@ -2652,6 +2687,14 @@ class BdsInstanceNode(dict):
         The total number of OCPUs available to the node.
         """
         return pulumi.get(self, "ocpus")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[str]:
+        """
+        BDS-assigned Operating System version for the node.
+        """
+        return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter
@@ -2812,6 +2855,65 @@ class BdsInstanceOperationCertificateManagementsManagementHostCertDetail(dict):
         Private key of the provided certificate
         """
         return pulumi.get(self, "private_key")
+
+
+@pulumi.output_type
+class BdsInstanceOsPatchActionPatchingConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "patchingConfigStrategy":
+            suggest = "patching_config_strategy"
+        elif key == "batchSize":
+            suggest = "batch_size"
+        elif key == "toleranceThresholdPerBatch":
+            suggest = "tolerance_threshold_per_batch"
+        elif key == "waitTimeBetweenBatchInSeconds":
+            suggest = "wait_time_between_batch_in_seconds"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in BdsInstanceOsPatchActionPatchingConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        BdsInstanceOsPatchActionPatchingConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        BdsInstanceOsPatchActionPatchingConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 patching_config_strategy: str,
+                 batch_size: Optional[int] = None,
+                 tolerance_threshold_per_batch: Optional[int] = None,
+                 wait_time_between_batch_in_seconds: Optional[int] = None):
+        pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
+        if batch_size is not None:
+            pulumi.set(__self__, "batch_size", batch_size)
+        if tolerance_threshold_per_batch is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_batch", tolerance_threshold_per_batch)
+        if wait_time_between_batch_in_seconds is not None:
+            pulumi.set(__self__, "wait_time_between_batch_in_seconds", wait_time_between_batch_in_seconds)
+
+    @property
+    @pulumi.getter(name="patchingConfigStrategy")
+    def patching_config_strategy(self) -> str:
+        return pulumi.get(self, "patching_config_strategy")
+
+    @property
+    @pulumi.getter(name="batchSize")
+    def batch_size(self) -> Optional[int]:
+        return pulumi.get(self, "batch_size")
+
+    @property
+    @pulumi.getter(name="toleranceThresholdPerBatch")
+    def tolerance_threshold_per_batch(self) -> Optional[int]:
+        return pulumi.get(self, "tolerance_threshold_per_batch")
+
+    @property
+    @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
+    def wait_time_between_batch_in_seconds(self) -> Optional[int]:
+        return pulumi.get(self, "wait_time_between_batch_in_seconds")
 
 
 @pulumi.output_type
@@ -4893,7 +4995,7 @@ class GetBdsInstanceClusterDetailResult(dict):
         :param str hue_server_url: The URL of the Hue server.
         :param str jupyter_hub_url: The URL of the Jupyterhub.
         :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        :param str os_version: Oracle Linux version installed in the cluster.
+        :param str os_version: BDS-assigned Operating System version for the node.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
@@ -5013,7 +5115,7 @@ class GetBdsInstanceClusterDetailResult(dict):
     @pulumi.getter(name="osVersion")
     def os_version(self) -> str:
         """
-        Oracle Linux version installed in the cluster.
+        BDS-assigned Operating System version for the node.
         """
         return pulumi.get(self, "os_version")
 
@@ -5761,10 +5863,13 @@ class GetBdsInstanceNodeResult(dict):
                  image_id: str,
                  instance_id: str,
                  ip_address: str,
+                 is_reboot_required: bool,
+                 local_disks_total_size_in_gbs: float,
                  memory_in_gbs: int,
                  node_type: str,
                  nvmes: int,
                  ocpus: int,
+                 os_version: str,
                  shape: str,
                  ssh_fingerprint: str,
                  state: str,
@@ -5780,10 +5885,13 @@ class GetBdsInstanceNodeResult(dict):
         :param str image_id: The OCID of the image from which the node was created.
         :param str instance_id: The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
         :param str ip_address: IP address of the node.
+        :param bool is_reboot_required: Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        :param float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param str node_type: Cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+        :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
         :param str state: The state of the cluster.
@@ -5799,10 +5907,13 @@ class GetBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "node_type", node_type)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
         pulumi.set(__self__, "state", state)
@@ -5875,6 +5986,22 @@ class GetBdsInstanceNodeResult(dict):
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> bool:
+        """
+        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @property
+    @pulumi.getter(name="localDisksTotalSizeInGbs")
+    def local_disks_total_size_in_gbs(self) -> float:
+        """
+        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+        """
+        return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> int:
         """
@@ -5905,6 +6032,14 @@ class GetBdsInstanceNodeResult(dict):
         The total number of OCPUs available to the node.
         """
         return pulumi.get(self, "ocpus")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> str:
+        """
+        BDS-assigned Operating System version for the node.
+        """
+        return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter
@@ -6806,7 +6941,7 @@ class GetBdsInstancesBdsInstanceClusterDetailResult(dict):
         :param str hue_server_url: The URL of the Hue server.
         :param str jupyter_hub_url: The URL of the Jupyterhub.
         :param str odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        :param str os_version: Oracle Linux version installed in the cluster.
+        :param str os_version: BDS-assigned Operating System version for the node.
         :param str time_created: The time the cluster was created, shown as an RFC 3339 formatted datetime string.
         :param str time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
@@ -6926,7 +7061,7 @@ class GetBdsInstancesBdsInstanceClusterDetailResult(dict):
     @pulumi.getter(name="osVersion")
     def os_version(self) -> str:
         """
-        Oracle Linux version installed in the cluster.
+        BDS-assigned Operating System version for the node.
         """
         return pulumi.get(self, "os_version")
 
@@ -7375,10 +7510,13 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
                  image_id: str,
                  instance_id: str,
                  ip_address: str,
+                 is_reboot_required: bool,
+                 local_disks_total_size_in_gbs: float,
                  memory_in_gbs: int,
                  node_type: str,
                  nvmes: int,
                  ocpus: int,
+                 os_version: str,
                  shape: str,
                  ssh_fingerprint: str,
                  state: str,
@@ -7394,10 +7532,13 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         :param str image_id: The OCID of the image from which the node was created.
         :param str instance_id: The OCID of the underlying Oracle Cloud Infrastructure Compute instance.
         :param str ip_address: IP address of the node.
+        :param bool is_reboot_required: Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        :param float local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
         :param int memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param str node_type: Cluster node type.
         :param int nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param int ocpus: The total number of OCPUs available to the node.
+        :param str os_version: BDS-assigned Operating System version for the node.
         :param str shape: Shape of the node.
         :param str ssh_fingerprint: The fingerprint of the SSH key used for node access.
         :param str state: The state of the cluster.
@@ -7413,10 +7554,13 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         pulumi.set(__self__, "image_id", image_id)
         pulumi.set(__self__, "instance_id", instance_id)
         pulumi.set(__self__, "ip_address", ip_address)
+        pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
         pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         pulumi.set(__self__, "node_type", node_type)
         pulumi.set(__self__, "nvmes", nvmes)
         pulumi.set(__self__, "ocpus", ocpus)
+        pulumi.set(__self__, "os_version", os_version)
         pulumi.set(__self__, "shape", shape)
         pulumi.set(__self__, "ssh_fingerprint", ssh_fingerprint)
         pulumi.set(__self__, "state", state)
@@ -7489,6 +7633,22 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         return pulumi.get(self, "ip_address")
 
     @property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> bool:
+        """
+        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @property
+    @pulumi.getter(name="localDisksTotalSizeInGbs")
+    def local_disks_total_size_in_gbs(self) -> float:
+        """
+        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+        """
+        return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> int:
         """
@@ -7519,6 +7679,14 @@ class GetBdsInstancesBdsInstanceNodeResult(dict):
         The total number of OCPUs available to the node.
         """
         return pulumi.get(self, "ocpus")
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> str:
+        """
+        BDS-assigned Operating System version for the node.
+        """
+        return pulumi.get(self, "os_version")
 
     @property
     @pulumi.getter

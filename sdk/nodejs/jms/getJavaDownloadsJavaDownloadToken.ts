@@ -102,19 +102,19 @@ export interface GetJavaDownloadsJavaDownloadTokenResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeCreated: string;
     /**
-     * The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+     * The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeExpires: string;
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeLastUsed: string;
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     readonly timeUpdated: string;
     /**

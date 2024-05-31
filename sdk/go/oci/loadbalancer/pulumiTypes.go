@@ -1057,6 +1057,7 @@ type BackendSetSslConfiguration struct {
 	// *  TLSv1
 	// *  TLSv1.1
 	// *  TLSv1.2
+	// *  TLSv1.3
 	//
 	// If this field is not specified, TLSv1.2 is the default.
 	//
@@ -1123,6 +1124,7 @@ type BackendSetSslConfigurationArgs struct {
 	// *  TLSv1
 	// *  TLSv1.1
 	// *  TLSv1.2
+	// *  TLSv1.3
 	//
 	// If this field is not specified, TLSv1.2 is the default.
 	//
@@ -1263,6 +1265,7 @@ func (o BackendSetSslConfigurationOutput) CipherSuiteName() pulumi.StringPtrOutp
 // *  TLSv1
 // *  TLSv1.1
 // *  TLSv1.2
+// *  TLSv1.3
 //
 // If this field is not specified, TLSv1.2 is the default.
 //
@@ -1378,6 +1381,7 @@ func (o BackendSetSslConfigurationPtrOutput) CipherSuiteName() pulumi.StringPtrO
 // *  TLSv1
 // *  TLSv1.1
 // *  TLSv1.2
+// *  TLSv1.3
 //
 // If this field is not specified, TLSv1.2 is the default.
 //
@@ -1645,6 +1649,7 @@ type ListenerSslConfiguration struct {
 	// *  TLSv1
 	// *  TLSv1.1
 	// *  TLSv1.2
+	// *  TLSv1.3
 	//
 	// If this field is not specified, TLSv1.2 is the default.
 	//
@@ -1713,6 +1718,7 @@ type ListenerSslConfigurationArgs struct {
 	// *  TLSv1
 	// *  TLSv1.1
 	// *  TLSv1.2
+	// *  TLSv1.3
 	//
 	// If this field is not specified, TLSv1.2 is the default.
 	//
@@ -1858,6 +1864,7 @@ func (o ListenerSslConfigurationOutput) HasSessionResumption() pulumi.BoolPtrOut
 // *  TLSv1
 // *  TLSv1.1
 // *  TLSv1.2
+// *  TLSv1.3
 //
 // If this field is not specified, TLSv1.2 is the default.
 //
@@ -1983,6 +1990,7 @@ func (o ListenerSslConfigurationPtrOutput) HasSessionResumption() pulumi.BoolPtr
 // *  TLSv1
 // *  TLSv1.1
 // *  TLSv1.2
+// *  TLSv1.3
 //
 // If this field is not specified, TLSv1.2 is the default.
 //

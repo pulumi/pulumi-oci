@@ -10,6 +10,7 @@ import * as utilities from "../utilities";
  * This resource provides the Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
  *
  * Creates a new JavaDownloadToken in the tenancy with specified attributes.
+ * Ensure that you review the license terms before token generation. Visit the <a href="https://www.oracle.com/java/technologies/downloads"/>Oracle Java Downloads</a> page to understand the license terms of the Java version for which you are generating a token. By generating a token, you agree to the associated license terms. See <a href="https://www.oracle.com/cis/java/technologies/javase/jdk-faqs.html">Oracle JDK Licensing - FAQs</a> for detailed information.
  *
  * ## Example Usage
  *
@@ -119,7 +120,7 @@ export class JavaDownloadsJavaDownloadToken extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -131,11 +132,11 @@ export class JavaDownloadsJavaDownloadToken extends pulumi.CustomResource {
      */
     public readonly timeExpires!: pulumi.Output<string>;
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     public /*out*/ readonly timeLastUsed!: pulumi.Output<string>;
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     public /*out*/ readonly timeUpdated!: pulumi.Output<string>;
     /**
@@ -275,7 +276,7 @@ export interface JavaDownloadsJavaDownloadTokenState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -287,11 +288,11 @@ export interface JavaDownloadsJavaDownloadTokenState {
      */
     timeExpires?: pulumi.Input<string>;
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     timeLastUsed?: pulumi.Input<string>;
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     timeUpdated?: pulumi.Input<string>;
     /**

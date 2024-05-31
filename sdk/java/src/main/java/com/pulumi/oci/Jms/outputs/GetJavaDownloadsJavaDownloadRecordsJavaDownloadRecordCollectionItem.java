@@ -41,7 +41,7 @@ public final class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollecti
      */
     private String osFamily;
     /**
-     * @return The package type(typically the file extension) of the artifact.
+     * @return The package type (typically the file extension) of the artifact.
      * 
      */
     private String packageType;
@@ -105,7 +105,7 @@ public final class GetJavaDownloadsJavaDownloadRecordsJavaDownloadRecordCollecti
         return this.osFamily;
     }
     /**
-     * @return The package type(typically the file extension) of the artifact.
+     * @return The package type (typically the file extension) of the artifact.
      * 
      */
     public String packageType() {

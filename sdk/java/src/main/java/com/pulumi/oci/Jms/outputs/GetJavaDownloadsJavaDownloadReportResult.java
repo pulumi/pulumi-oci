@@ -65,6 +65,8 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
      */
     private String id;
     private String javaDownloadReportId;
+    private String sortBy;
+    private String sortOrder;
     /**
      * @return The current state of the Java download report.
      * 
@@ -76,11 +78,19 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the Java download report was created. An RFC3339 formatted datetime string.
+     * @return The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeCreated;
+    /**
+     * @return The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
     private String timeEnd;
+    /**
+     * @return The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
     private String timeStart;
 
     private GetJavaDownloadsJavaDownloadReportResult() {}
@@ -157,6 +167,12 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
     public String javaDownloadReportId() {
         return this.javaDownloadReportId;
     }
+    public String sortBy() {
+        return this.sortBy;
+    }
+    public String sortOrder() {
+        return this.sortOrder;
+    }
     /**
      * @return The current state of the Java download report.
      * 
@@ -172,15 +188,23 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
         return this.systemTags;
     }
     /**
-     * @return The time the Java download report was created. An RFC3339 formatted datetime string.
+     * @return The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
     public String timeEnd() {
         return this.timeEnd;
     }
+    /**
+     * @return The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * 
+     */
     public String timeStart() {
         return this.timeStart;
     }
@@ -205,6 +229,8 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
         private Map<String,Object> freeformTags;
         private String id;
         private String javaDownloadReportId;
+        private String sortBy;
+        private String sortOrder;
         private String state;
         private Map<String,Object> systemTags;
         private String timeCreated;
@@ -224,6 +250,8 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.javaDownloadReportId = defaults.javaDownloadReportId;
+    	      this.sortBy = defaults.sortBy;
+    	      this.sortOrder = defaults.sortOrder;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
@@ -323,6 +351,22 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
             return this;
         }
         @CustomType.Setter
+        public Builder sortBy(String sortBy) {
+            if (sortBy == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadReportResult", "sortBy");
+            }
+            this.sortBy = sortBy;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sortOrder(String sortOrder) {
+            if (sortOrder == null) {
+              throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadReportResult", "sortOrder");
+            }
+            this.sortOrder = sortOrder;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetJavaDownloadsJavaDownloadReportResult", "state");
@@ -375,6 +419,8 @@ public final class GetJavaDownloadsJavaDownloadReportResult {
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.javaDownloadReportId = javaDownloadReportId;
+            _resultValue.sortBy = sortBy;
+            _resultValue.sortOrder = sortOrder;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;

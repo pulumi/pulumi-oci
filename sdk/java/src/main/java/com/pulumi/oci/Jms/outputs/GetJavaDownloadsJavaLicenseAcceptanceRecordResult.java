@@ -67,12 +67,12 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordResult {
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     private String timeAccepted;
     /**
-     * @return The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     private String timeLastUpdated;
@@ -152,14 +152,14 @@ public final class GetJavaDownloadsJavaLicenseAcceptanceRecordResult {
         return this.systemTags;
     }
     /**
-     * @return The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public String timeAccepted() {
         return this.timeAccepted;
     }
     /**
-     * @return The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * @return The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      * 
      */
     public String timeLastUpdated() {

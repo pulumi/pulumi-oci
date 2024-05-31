@@ -196,14 +196,14 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
     }
 
     /**
-     * Oracle Linux version installed in the cluster.
+     * BDS-assigned Operating System version for the node.
      * 
      */
     @Import(name="osVersion")
     private @Nullable Output<String> osVersion;
 
     /**
-     * @return Oracle Linux version installed in the cluster.
+     * @return BDS-assigned Operating System version for the node.
      * 
      */
     public Optional<Output<String>> osVersion() {
@@ -531,7 +531,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param osVersion Oracle Linux version installed in the cluster.
+         * @param osVersion BDS-assigned Operating System version for the node.
          * 
          * @return builder
          * 
@@ -542,7 +542,7 @@ public final class BdsInstanceClusterDetailArgs extends com.pulumi.resources.Res
         }
 
         /**
-         * @param osVersion Oracle Linux version installed in the cluster.
+         * @param osVersion BDS-assigned Operating System version for the node.
          * 
          * @return builder
          * 

@@ -87,22 +87,22 @@ public final class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection
      */
     private Map<String,Object> systemTags;
     /**
-     * @return The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeCreated;
     /**
-     * @return The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+     * @return The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeExpires;
     /**
-     * @return The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeLastUsed;
     /**
-     * @return The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     private String timeUpdated;
@@ -212,28 +212,28 @@ public final class GetJavaDownloadsJavaDownloadTokensJavaDownloadTokenCollection
         return this.systemTags;
     }
     /**
-     * @return The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeCreated() {
         return this.timeCreated;
     }
     /**
-     * @return The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+     * @return The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeExpires() {
         return this.timeExpires;
     }
     /**
-     * @return The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeLastUsed() {
         return this.timeLastUsed;
     }
     /**
-     * @return The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public String timeUpdated() {

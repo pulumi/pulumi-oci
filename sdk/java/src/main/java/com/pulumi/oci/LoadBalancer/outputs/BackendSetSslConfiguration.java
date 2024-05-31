@@ -51,6 +51,7 @@ public final class BackendSetSslConfiguration {
      * *  TLSv1
      * *  TLSv1.1
      * *  TLSv1.2
+     * *  TLSv1.3
      * 
      * If this field is not specified, TLSv1.2 is the default.
      * 
@@ -135,6 +136,7 @@ public final class BackendSetSslConfiguration {
      * *  TLSv1
      * *  TLSv1.1
      * *  TLSv1.2
+     * *  TLSv1.3
      * 
      * If this field is not specified, TLSv1.2 is the default.
      * 

@@ -46,6 +46,14 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// </summary>
         public readonly string? IpAddress;
         /// <summary>
+        /// Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        /// </summary>
+        public readonly bool? IsRebootRequired;
+        /// <summary>
+        /// The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+        /// </summary>
+        public readonly double? LocalDisksTotalSizeInGbs;
+        /// <summary>
         /// The total amount of memory available to the node, in gigabytes.
         /// </summary>
         public readonly int? MemoryInGbs;
@@ -61,6 +69,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
         /// The total number of OCPUs available to the node.
         /// </summary>
         public readonly int? Ocpus;
+        /// <summary>
+        /// BDS-assigned Operating System version for the node.
+        /// </summary>
+        public readonly string? OsVersion;
         /// <summary>
         /// (Updatable) Shape of the node.
         /// </summary>
@@ -104,6 +116,10 @@ namespace Pulumi.Oci.BigDataService.Outputs
 
             string? ipAddress,
 
+            bool? isRebootRequired,
+
+            double? localDisksTotalSizeInGbs,
+
             int? memoryInGbs,
 
             string? nodeType,
@@ -111,6 +127,8 @@ namespace Pulumi.Oci.BigDataService.Outputs
             int? nvmes,
 
             int? ocpus,
+
+            string? osVersion,
 
             string? shape,
 
@@ -132,10 +150,13 @@ namespace Pulumi.Oci.BigDataService.Outputs
             ImageId = imageId;
             InstanceId = instanceId;
             IpAddress = ipAddress;
+            IsRebootRequired = isRebootRequired;
+            LocalDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             MemoryInGbs = memoryInGbs;
             NodeType = nodeType;
             Nvmes = nvmes;
             Ocpus = ocpus;
+            OsVersion = osVersion;
             Shape = shape;
             SshFingerprint = sshFingerprint;
             State = state;

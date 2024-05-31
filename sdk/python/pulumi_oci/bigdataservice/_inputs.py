@@ -45,6 +45,7 @@ __all__ = [
     'BdsInstanceNodeArgs',
     'BdsInstanceNodeAttachedBlockVolumeArgs',
     'BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs',
+    'BdsInstanceOsPatchActionPatchingConfigArgs',
     'BdsInstanceUtilNodeArgs',
     'BdsInstanceUtilNodeShapeConfigArgs',
     'BdsInstanceWorkerNodeArgs',
@@ -1409,7 +1410,7 @@ class BdsInstanceClusterDetailArgs:
         :param pulumi.Input[str] hue_server_url: The URL of the Hue server.
         :param pulumi.Input[str] jupyter_hub_url: The URL of the Jupyterhub.
         :param pulumi.Input[str] odh_version: Version of the ODH (Oracle Distribution including Apache Hadoop) installed on the cluster.
-        :param pulumi.Input[str] os_version: Oracle Linux version installed in the cluster.
+        :param pulumi.Input[str] os_version: BDS-assigned Operating System version for the node.
         :param pulumi.Input[str] time_created: The time the BDS instance was created. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_refreshed: The time the cluster was automatically or manually refreshed, shown as an RFC 3339 formatted datetime string.
         """
@@ -1592,7 +1593,7 @@ class BdsInstanceClusterDetailArgs:
     @pulumi.getter(name="osVersion")
     def os_version(self) -> Optional[pulumi.Input[str]]:
         """
-        Oracle Linux version installed in the cluster.
+        BDS-assigned Operating System version for the node.
         """
         return pulumi.get(self, "os_version")
 
@@ -2219,10 +2220,13 @@ class BdsInstanceNodeArgs:
                  image_id: Optional[pulumi.Input[str]] = None,
                  instance_id: Optional[pulumi.Input[str]] = None,
                  ip_address: Optional[pulumi.Input[str]] = None,
+                 is_reboot_required: Optional[pulumi.Input[bool]] = None,
+                 local_disks_total_size_in_gbs: Optional[pulumi.Input[float]] = None,
                  memory_in_gbs: Optional[pulumi.Input[int]] = None,
                  node_type: Optional[pulumi.Input[str]] = None,
                  nvmes: Optional[pulumi.Input[int]] = None,
                  ocpus: Optional[pulumi.Input[int]] = None,
+                 os_version: Optional[pulumi.Input[str]] = None,
                  shape: Optional[pulumi.Input[str]] = None,
                  ssh_fingerprint: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
@@ -2238,10 +2242,13 @@ class BdsInstanceNodeArgs:
         :param pulumi.Input[str] image_id: The OCID of the image from which the node was created
         :param pulumi.Input[str] instance_id: The OCID of the underlying compute instance
         :param pulumi.Input[str] ip_address: IP address of the node
+        :param pulumi.Input[bool] is_reboot_required: Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        :param pulumi.Input[float] local_disks_total_size_in_gbs: The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
         :param pulumi.Input[int] memory_in_gbs: The total amount of memory available to the node, in gigabytes.
         :param pulumi.Input[str] node_type: The Big Data Service cluster node type.
         :param pulumi.Input[int] nvmes: The number of NVMe drives to be used for storage. A single drive has 6.8 TB available.
         :param pulumi.Input[int] ocpus: The total number of OCPUs available to the node.
+        :param pulumi.Input[str] os_version: BDS-assigned Operating System version for the node.
         :param pulumi.Input[str] shape: (Updatable) Shape of the node.
         :param pulumi.Input[str] ssh_fingerprint: The fingerprint of the SSH key used for node access
         :param pulumi.Input[str] state: (Updatable) The target state for the Bds Instance. Could be set to `ACTIVE` or `INACTIVE` to start/stop the bds instance.
@@ -2265,6 +2272,10 @@ class BdsInstanceNodeArgs:
             pulumi.set(__self__, "instance_id", instance_id)
         if ip_address is not None:
             pulumi.set(__self__, "ip_address", ip_address)
+        if is_reboot_required is not None:
+            pulumi.set(__self__, "is_reboot_required", is_reboot_required)
+        if local_disks_total_size_in_gbs is not None:
+            pulumi.set(__self__, "local_disks_total_size_in_gbs", local_disks_total_size_in_gbs)
         if memory_in_gbs is not None:
             pulumi.set(__self__, "memory_in_gbs", memory_in_gbs)
         if node_type is not None:
@@ -2273,6 +2284,8 @@ class BdsInstanceNodeArgs:
             pulumi.set(__self__, "nvmes", nvmes)
         if ocpus is not None:
             pulumi.set(__self__, "ocpus", ocpus)
+        if os_version is not None:
+            pulumi.set(__self__, "os_version", os_version)
         if shape is not None:
             pulumi.set(__self__, "shape", shape)
         if ssh_fingerprint is not None:
@@ -2383,6 +2396,30 @@ class BdsInstanceNodeArgs:
         pulumi.set(self, "ip_address", value)
 
     @property
+    @pulumi.getter(name="isRebootRequired")
+    def is_reboot_required(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+        """
+        return pulumi.get(self, "is_reboot_required")
+
+    @is_reboot_required.setter
+    def is_reboot_required(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_reboot_required", value)
+
+    @property
+    @pulumi.getter(name="localDisksTotalSizeInGbs")
+    def local_disks_total_size_in_gbs(self) -> Optional[pulumi.Input[float]]:
+        """
+        The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+        """
+        return pulumi.get(self, "local_disks_total_size_in_gbs")
+
+    @local_disks_total_size_in_gbs.setter
+    def local_disks_total_size_in_gbs(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "local_disks_total_size_in_gbs", value)
+
+    @property
     @pulumi.getter(name="memoryInGbs")
     def memory_in_gbs(self) -> Optional[pulumi.Input[int]]:
         """
@@ -2429,6 +2466,18 @@ class BdsInstanceNodeArgs:
     @ocpus.setter
     def ocpus(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "ocpus", value)
+
+    @property
+    @pulumi.getter(name="osVersion")
+    def os_version(self) -> Optional[pulumi.Input[str]]:
+        """
+        BDS-assigned Operating System version for the node.
+        """
+        return pulumi.get(self, "os_version")
+
+    @os_version.setter
+    def os_version(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "os_version", value)
 
     @property
     @pulumi.getter
@@ -2595,6 +2644,58 @@ class BdsInstanceOperationCertificateManagementsManagementHostCertDetailArgs:
     @private_key.setter
     def private_key(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "private_key", value)
+
+
+@pulumi.input_type
+class BdsInstanceOsPatchActionPatchingConfigArgs:
+    def __init__(__self__, *,
+                 patching_config_strategy: pulumi.Input[str],
+                 batch_size: Optional[pulumi.Input[int]] = None,
+                 tolerance_threshold_per_batch: Optional[pulumi.Input[int]] = None,
+                 wait_time_between_batch_in_seconds: Optional[pulumi.Input[int]] = None):
+        pulumi.set(__self__, "patching_config_strategy", patching_config_strategy)
+        if batch_size is not None:
+            pulumi.set(__self__, "batch_size", batch_size)
+        if tolerance_threshold_per_batch is not None:
+            pulumi.set(__self__, "tolerance_threshold_per_batch", tolerance_threshold_per_batch)
+        if wait_time_between_batch_in_seconds is not None:
+            pulumi.set(__self__, "wait_time_between_batch_in_seconds", wait_time_between_batch_in_seconds)
+
+    @property
+    @pulumi.getter(name="patchingConfigStrategy")
+    def patching_config_strategy(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "patching_config_strategy")
+
+    @patching_config_strategy.setter
+    def patching_config_strategy(self, value: pulumi.Input[str]):
+        pulumi.set(self, "patching_config_strategy", value)
+
+    @property
+    @pulumi.getter(name="batchSize")
+    def batch_size(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "batch_size")
+
+    @batch_size.setter
+    def batch_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "batch_size", value)
+
+    @property
+    @pulumi.getter(name="toleranceThresholdPerBatch")
+    def tolerance_threshold_per_batch(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "tolerance_threshold_per_batch")
+
+    @tolerance_threshold_per_batch.setter
+    def tolerance_threshold_per_batch(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "tolerance_threshold_per_batch", value)
+
+    @property
+    @pulumi.getter(name="waitTimeBetweenBatchInSeconds")
+    def wait_time_between_batch_in_seconds(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "wait_time_between_batch_in_seconds")
+
+    @wait_time_between_batch_in_seconds.setter
+    def wait_time_between_batch_in_seconds(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "wait_time_between_batch_in_seconds", value)
 
 
 @pulumi.input_type

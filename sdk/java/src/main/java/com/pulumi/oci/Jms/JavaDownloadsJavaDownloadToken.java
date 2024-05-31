@@ -23,6 +23,7 @@ import javax.annotation.Nullable;
  * This resource provides the Java Download Token resource in Oracle Cloud Infrastructure Jms Java Downloads service.
  * 
  * Creates a new JavaDownloadToken in the tenancy with specified attributes.
+ * Ensure that you review the license terms before token generation. Visit the &lt;a href=&#34;https://www.oracle.com/java/technologies/downloads&#34;/&gt;Oracle Java Downloads&lt;/a&gt; page to understand the license terms of the Java version for which you are generating a token. By generating a token, you agree to the associated license terms. See &lt;a href=&#34;https://www.oracle.com/cis/java/technologies/javase/jdk-faqs.html&#34;&gt;Oracle JDK Licensing - FAQs&lt;/a&gt; for detailed information.
  * 
  * ## Example Usage
  * 
@@ -257,14 +258,14 @@ public class JavaDownloadsJavaDownloadToken extends com.pulumi.resources.CustomR
         return this.systemTags;
     }
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {
@@ -291,28 +292,28 @@ public class JavaDownloadsJavaDownloadToken extends com.pulumi.resources.CustomR
         return this.timeExpires;
     }
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeLastUsed", refs={String.class}, tree="[0]")
     private Output<String> timeLastUsed;
 
     /**
-     * @return The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Output<String> timeLastUsed() {
         return this.timeLastUsed;
     }
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeUpdated", refs={String.class}, tree="[0]")
     private Output<String> timeUpdated;
 
     /**
-     * @return The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * @return The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Output<String> timeUpdated() {

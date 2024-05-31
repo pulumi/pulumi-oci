@@ -87,13 +87,13 @@ type LookupJavaDownloadsJavaDownloadTokenResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+	// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
-	// The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+	// The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeExpires string `pulumi:"timeExpires"`
-	// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+	// The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeLastUsed string `pulumi:"timeLastUsed"`
-	// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+	// The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 	TimeUpdated string `pulumi:"timeUpdated"`
 	// Uniquely generated value for the JavaDownloadToken.
 	Value string `pulumi:"value"`
@@ -215,22 +215,22 @@ func (o LookupJavaDownloadsJavaDownloadTokenResultOutput) SystemTags() pulumi.Ma
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadTokenResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+// The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o LookupJavaDownloadsJavaDownloadTokenResultOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadTokenResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+// The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o LookupJavaDownloadsJavaDownloadTokenResultOutput) TimeExpires() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadTokenResult) string { return v.TimeExpires }).(pulumi.StringOutput)
 }
 
-// The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+// The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o LookupJavaDownloadsJavaDownloadTokenResultOutput) TimeLastUsed() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadTokenResult) string { return v.TimeLastUsed }).(pulumi.StringOutput)
 }
 
-// The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+// The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
 func (o LookupJavaDownloadsJavaDownloadTokenResultOutput) TimeUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaDownloadTokenResult) string { return v.TimeUpdated }).(pulumi.StringOutput)
 }

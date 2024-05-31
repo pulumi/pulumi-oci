@@ -71,7 +71,7 @@ public final class GetBdsInstanceClusterDetail {
      */
     private String odhVersion;
     /**
-     * @return Oracle Linux version installed in the cluster.
+     * @return BDS-assigned Operating System version for the node.
      * 
      */
     private String osVersion;
@@ -172,7 +172,7 @@ public final class GetBdsInstanceClusterDetail {
         return this.odhVersion;
     }
     /**
-     * @return Oracle Linux version installed in the cluster.
+     * @return BDS-assigned Operating System version for the node.
      * 
      */
     public String osVersion() {

@@ -154,6 +154,20 @@ public final class JavaDownloadsJavaDownloadReportState extends com.pulumi.resou
         return Optional.ofNullable(this.freeformTags);
     }
 
+    @Import(name="sortBy")
+    private @Nullable Output<String> sortBy;
+
+    public Optional<Output<String>> sortBy() {
+        return Optional.ofNullable(this.sortBy);
+    }
+
+    @Import(name="sortOrder")
+    private @Nullable Output<String> sortOrder;
+
+    public Optional<Output<String>> sortOrder() {
+        return Optional.ofNullable(this.sortOrder);
+    }
+
     /**
      * The current state of the Java download report.
      * 
@@ -185,14 +199,14 @@ public final class JavaDownloadsJavaDownloadReportState extends com.pulumi.resou
     }
 
     /**
-     * The time the Java download report was created. An RFC3339 formatted datetime string.
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the Java download report was created. An RFC3339 formatted datetime string.
+     * @return The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -247,6 +261,8 @@ public final class JavaDownloadsJavaDownloadReportState extends com.pulumi.resou
         this.fileSizeInBytes = $.fileSizeInBytes;
         this.format = $.format;
         this.freeformTags = $.freeformTags;
+        this.sortBy = $.sortBy;
+        this.sortOrder = $.sortOrder;
         this.state = $.state;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -471,6 +487,24 @@ public final class JavaDownloadsJavaDownloadReportState extends com.pulumi.resou
             return freeformTags(Output.of(freeformTags));
         }
 
+        public Builder sortBy(@Nullable Output<String> sortBy) {
+            $.sortBy = sortBy;
+            return this;
+        }
+
+        public Builder sortBy(String sortBy) {
+            return sortBy(Output.of(sortBy));
+        }
+
+        public Builder sortOrder(@Nullable Output<String> sortOrder) {
+            $.sortOrder = sortOrder;
+            return this;
+        }
+
+        public Builder sortOrder(String sortOrder) {
+            return sortOrder(Output.of(sortOrder));
+        }
+
         /**
          * @param state The current state of the Java download report.
          * 
@@ -514,7 +548,7 @@ public final class JavaDownloadsJavaDownloadReportState extends com.pulumi.resou
         }
 
         /**
-         * @param timeCreated The time the Java download report was created. An RFC3339 formatted datetime string.
+         * @param timeCreated The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 
@@ -525,7 +559,7 @@ public final class JavaDownloadsJavaDownloadReportState extends com.pulumi.resou
         }
 
         /**
-         * @param timeCreated The time the Java download report was created. An RFC3339 formatted datetime string.
+         * @param timeCreated The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * 
          * @return builder
          * 

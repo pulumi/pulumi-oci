@@ -86,11 +86,11 @@ export interface GetJavaDownloadsJavaLicenseAcceptanceRecordResult {
      */
     readonly systemTags: {[key: string]: any};
     /**
-     * The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     readonly timeAccepted: string;
     /**
-     * The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     * The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */
     readonly timeLastUpdated: string;
 }

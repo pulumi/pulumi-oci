@@ -79,9 +79,9 @@ type LookupJavaDownloadsJavaLicenseAcceptanceRecordResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeAccepted string `pulumi:"timeAccepted"`
-	// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+	// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 	TimeLastUpdated string `pulumi:"timeLastUpdated"`
 }
 
@@ -189,12 +189,12 @@ func (o LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput) SystemTags()
 	}).(pulumi.MapOutput)
 }
 
-// The date and time of license acceptance(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The date and time of license acceptance (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput) TimeAccepted() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaLicenseAcceptanceRecordResult) string { return v.TimeAccepted }).(pulumi.StringOutput)
 }
 
-// The date and time of last update(formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+// The date and time of last update (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
 func (o LookupJavaDownloadsJavaLicenseAcceptanceRecordResultOutput) TimeLastUpdated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupJavaDownloadsJavaLicenseAcceptanceRecordResult) string { return v.TimeLastUpdated }).(pulumi.StringOutput)
 }

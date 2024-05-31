@@ -21,6 +21,12 @@ import * as utilities from "../utilities";
  * const testJavaDownloadReport = new oci.jms.JavaDownloadsJavaDownloadReport("test_java_download_report", {
  *     compartmentId: tenancyOcid,
  *     format: javaDownloadReportFormat,
+ *     definedTags: {
+ *         "foo-namespace.bar-key": "value",
+ *     },
+ *     freeformTags: {
+ *         "bar-key": "value",
+ *     },
  *     timeEnd: javaDownloadReportTimeEnd,
  *     timeStart: javaDownloadReportTimeStart,
  * });
@@ -77,7 +83,7 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
      */
-    public /*out*/ readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
      * Display name for the Java download report.
      */
@@ -93,7 +99,9 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
     /**
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
-    public /*out*/ readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
+    public /*out*/ readonly sortBy!: pulumi.Output<string>;
+    public /*out*/ readonly sortOrder!: pulumi.Output<string>;
     /**
      * The current state of the Java download report.
      */
@@ -103,7 +111,7 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the Java download report was created. An RFC3339 formatted datetime string.
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -141,6 +149,8 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
             resourceInputs["fileSizeInBytes"] = state ? state.fileSizeInBytes : undefined;
             resourceInputs["format"] = state ? state.format : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["sortBy"] = state ? state.sortBy : undefined;
+            resourceInputs["sortOrder"] = state ? state.sortOrder : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -155,16 +165,18 @@ export class JavaDownloadsJavaDownloadReport extends pulumi.CustomResource {
                 throw new Error("Missing required property 'format'");
             }
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
+            resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["format"] = args ? args.format : undefined;
+            resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["timeEnd"] = args ? args.timeEnd : undefined;
             resourceInputs["timeStart"] = args ? args.timeStart : undefined;
             resourceInputs["checksumType"] = undefined /*out*/;
             resourceInputs["checksumValue"] = undefined /*out*/;
             resourceInputs["createdBies"] = undefined /*out*/;
-            resourceInputs["definedTags"] = undefined /*out*/;
             resourceInputs["displayName"] = undefined /*out*/;
             resourceInputs["fileSizeInBytes"] = undefined /*out*/;
-            resourceInputs["freeformTags"] = undefined /*out*/;
+            resourceInputs["sortBy"] = undefined /*out*/;
+            resourceInputs["sortOrder"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
@@ -214,6 +226,8 @@ export interface JavaDownloadsJavaDownloadReportState {
      * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    sortBy?: pulumi.Input<string>;
+    sortOrder?: pulumi.Input<string>;
     /**
      * The current state of the Java download report.
      */
@@ -223,7 +237,7 @@ export interface JavaDownloadsJavaDownloadReportState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the Java download report was created. An RFC3339 formatted datetime string.
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -249,9 +263,17 @@ export interface JavaDownloadsJavaDownloadReportArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+     */
+    definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
      * The format of the report that is generated.
      */
     format: pulumi.Input<string>;
+    /**
+     * Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+     */
+    freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
      */

@@ -6,6 +6,8 @@ package com.pulumi.oci.BigDataService.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.BigDataService.outputs.GetBdsInstanceNodeAttachedBlockVolume;
+import java.lang.Boolean;
+import java.lang.Double;
 import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
@@ -54,6 +56,16 @@ public final class GetBdsInstanceNode {
      */
     private String ipAddress;
     /**
+     * @return Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     * 
+     */
+    private Boolean isRebootRequired;
+    /**
+     * @return The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     * 
+     */
+    private Double localDisksTotalSizeInGbs;
+    /**
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
@@ -73,6 +85,11 @@ public final class GetBdsInstanceNode {
      * 
      */
     private Integer ocpus;
+    /**
+     * @return BDS-assigned Operating System version for the node.
+     * 
+     */
+    private String osVersion;
     /**
      * @return Shape of the node.
      * 
@@ -162,6 +179,20 @@ public final class GetBdsInstanceNode {
         return this.ipAddress;
     }
     /**
+     * @return Indicates if the node requires a reboot to either reflect the latest os kernel or take actions for maintenance reboot.
+     * 
+     */
+    public Boolean isRebootRequired() {
+        return this.isRebootRequired;
+    }
+    /**
+     * @return The aggregate size of all local disks, in gigabytes. If the instance does not have any local disks, this field is null.
+     * 
+     */
+    public Double localDisksTotalSizeInGbs() {
+        return this.localDisksTotalSizeInGbs;
+    }
+    /**
      * @return The total amount of memory available to the node, in gigabytes.
      * 
      */
@@ -188,6 +219,13 @@ public final class GetBdsInstanceNode {
      */
     public Integer ocpus() {
         return this.ocpus;
+    }
+    /**
+     * @return BDS-assigned Operating System version for the node.
+     * 
+     */
+    public String osVersion() {
+        return this.osVersion;
     }
     /**
      * @return Shape of the node.
@@ -249,10 +287,13 @@ public final class GetBdsInstanceNode {
         private String imageId;
         private String instanceId;
         private String ipAddress;
+        private Boolean isRebootRequired;
+        private Double localDisksTotalSizeInGbs;
         private Integer memoryInGbs;
         private String nodeType;
         private Integer nvmes;
         private Integer ocpus;
+        private String osVersion;
         private String shape;
         private String sshFingerprint;
         private String state;
@@ -270,10 +311,13 @@ public final class GetBdsInstanceNode {
     	      this.imageId = defaults.imageId;
     	      this.instanceId = defaults.instanceId;
     	      this.ipAddress = defaults.ipAddress;
+    	      this.isRebootRequired = defaults.isRebootRequired;
+    	      this.localDisksTotalSizeInGbs = defaults.localDisksTotalSizeInGbs;
     	      this.memoryInGbs = defaults.memoryInGbs;
     	      this.nodeType = defaults.nodeType;
     	      this.nvmes = defaults.nvmes;
     	      this.ocpus = defaults.ocpus;
+    	      this.osVersion = defaults.osVersion;
     	      this.shape = defaults.shape;
     	      this.sshFingerprint = defaults.sshFingerprint;
     	      this.state = defaults.state;
@@ -350,6 +394,22 @@ public final class GetBdsInstanceNode {
             return this;
         }
         @CustomType.Setter
+        public Builder isRebootRequired(Boolean isRebootRequired) {
+            if (isRebootRequired == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "isRebootRequired");
+            }
+            this.isRebootRequired = isRebootRequired;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder localDisksTotalSizeInGbs(Double localDisksTotalSizeInGbs) {
+            if (localDisksTotalSizeInGbs == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "localDisksTotalSizeInGbs");
+            }
+            this.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
+            return this;
+        }
+        @CustomType.Setter
         public Builder memoryInGbs(Integer memoryInGbs) {
             if (memoryInGbs == null) {
               throw new MissingRequiredPropertyException("GetBdsInstanceNode", "memoryInGbs");
@@ -379,6 +439,14 @@ public final class GetBdsInstanceNode {
               throw new MissingRequiredPropertyException("GetBdsInstanceNode", "ocpus");
             }
             this.ocpus = ocpus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder osVersion(String osVersion) {
+            if (osVersion == null) {
+              throw new MissingRequiredPropertyException("GetBdsInstanceNode", "osVersion");
+            }
+            this.osVersion = osVersion;
             return this;
         }
         @CustomType.Setter
@@ -439,10 +507,13 @@ public final class GetBdsInstanceNode {
             _resultValue.imageId = imageId;
             _resultValue.instanceId = instanceId;
             _resultValue.ipAddress = ipAddress;
+            _resultValue.isRebootRequired = isRebootRequired;
+            _resultValue.localDisksTotalSizeInGbs = localDisksTotalSizeInGbs;
             _resultValue.memoryInGbs = memoryInGbs;
             _resultValue.nodeType = nodeType;
             _resultValue.nvmes = nvmes;
             _resultValue.ocpus = ocpus;
+            _resultValue.osVersion = osVersion;
             _resultValue.shape = shape;
             _resultValue.sshFingerprint = sshFingerprint;
             _resultValue.state = state;

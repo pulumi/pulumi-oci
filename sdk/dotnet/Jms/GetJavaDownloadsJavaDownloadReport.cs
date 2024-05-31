@@ -138,6 +138,8 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly string Id;
         public readonly string JavaDownloadReportId;
+        public readonly string SortBy;
+        public readonly string SortOrder;
         /// <summary>
         /// The current state of the Java download report.
         /// </summary>
@@ -147,10 +149,16 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
-        /// The time the Java download report was created. An RFC3339 formatted datetime string.
+        /// The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The end time until when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
         public readonly string TimeEnd;
+        /// <summary>
+        /// The start time from when the download records are included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+        /// </summary>
         public readonly string TimeStart;
 
         [OutputConstructor]
@@ -177,6 +185,10 @@ namespace Pulumi.Oci.Jms
 
             string javaDownloadReportId,
 
+            string sortBy,
+
+            string sortOrder,
+
             string state,
 
             ImmutableDictionary<string, object> systemTags,
@@ -198,6 +210,8 @@ namespace Pulumi.Oci.Jms
             FreeformTags = freeformTags;
             Id = id;
             JavaDownloadReportId = javaDownloadReportId;
+            SortBy = sortBy;
+            SortOrder = sortOrder;
             State = state;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

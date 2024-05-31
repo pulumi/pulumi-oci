@@ -51,6 +51,8 @@ import javax.annotation.Nullable;
  *         var testJavaDownloadReport = new JavaDownloadsJavaDownloadReport("testJavaDownloadReport", JavaDownloadsJavaDownloadReportArgs.builder()
  *             .compartmentId(tenancyOcid)
  *             .format(javaDownloadReportFormat)
+ *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
+ *             .freeformTags(Map.of("bar-key", "value"))
  *             .timeEnd(javaDownloadReportTimeEnd)
  *             .timeStart(javaDownloadReportTimeStart)
  *             .build());
@@ -194,6 +196,18 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
     public Output<Map<String,Object>> freeformTags() {
         return this.freeformTags;
     }
+    @Export(name="sortBy", refs={String.class}, tree="[0]")
+    private Output<String> sortBy;
+
+    public Output<String> sortBy() {
+        return this.sortBy;
+    }
+    @Export(name="sortOrder", refs={String.class}, tree="[0]")
+    private Output<String> sortOrder;
+
+    public Output<String> sortOrder() {
+        return this.sortOrder;
+    }
     /**
      * The current state of the Java download report.
      * 
@@ -223,14 +237,14 @@ public class JavaDownloadsJavaDownloadReport extends com.pulumi.resources.Custom
         return this.systemTags;
     }
     /**
-     * The time the Java download report was created. An RFC3339 formatted datetime string.
+     * The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the Java download report was created. An RFC3339 formatted datetime string.
+     * @return The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * 
      */
     public Output<String> timeCreated() {

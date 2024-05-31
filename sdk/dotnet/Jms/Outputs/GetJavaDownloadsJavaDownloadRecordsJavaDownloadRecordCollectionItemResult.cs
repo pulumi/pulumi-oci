@@ -38,7 +38,7 @@ namespace Pulumi.Oci.Jms.Outputs
         /// </summary>
         public readonly string OsFamily;
         /// <summary>
-        /// The package type(typically the file extension) of the artifact.
+        /// The package type (typically the file extension) of the artifact.
         /// </summary>
         public readonly string PackageType;
         /// <summary>

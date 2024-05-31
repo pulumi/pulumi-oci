@@ -18,12 +18,16 @@ class JavaDownloadsJavaDownloadReportArgs:
     def __init__(__self__, *,
                  compartment_id: pulumi.Input[str],
                  format: pulumi.Input[str],
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_end: Optional[pulumi.Input[str]] = None,
                  time_start: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a JavaDownloadsJavaDownloadReport resource.
         :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
         :param pulumi.Input[str] format: The format of the report that is generated.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[str] time_end: The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[str] time_start: The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
                
@@ -33,6 +37,10 @@ class JavaDownloadsJavaDownloadReportArgs:
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "format", format)
+        if defined_tags is not None:
+            pulumi.set(__self__, "defined_tags", defined_tags)
+        if freeform_tags is not None:
+            pulumi.set(__self__, "freeform_tags", freeform_tags)
         if time_end is not None:
             pulumi.set(__self__, "time_end", time_end)
         if time_start is not None:
@@ -61,6 +69,30 @@ class JavaDownloadsJavaDownloadReportArgs:
     @format.setter
     def format(self, value: pulumi.Input[str]):
         pulumi.set(self, "format", value)
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @defined_tags.setter
+    def defined_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "defined_tags", value)
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
+        """
+        Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @freeform_tags.setter
+    def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
+        pulumi.set(self, "freeform_tags", value)
 
     @property
     @pulumi.getter(name="timeEnd")
@@ -103,6 +135,8 @@ class _JavaDownloadsJavaDownloadReportState:
                  file_size_in_bytes: Optional[pulumi.Input[str]] = None,
                  format: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 sort_by: Optional[pulumi.Input[str]] = None,
+                 sort_order: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -121,7 +155,7 @@ class _JavaDownloadsJavaDownloadReportState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[str] state: The current state of the Java download report.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the Java download report was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param pulumi.Input[str] time_end: The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[str] time_start: The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
                
@@ -147,6 +181,10 @@ class _JavaDownloadsJavaDownloadReportState:
             pulumi.set(__self__, "format", format)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if sort_by is not None:
+            pulumi.set(__self__, "sort_by", sort_by)
+        if sort_order is not None:
+            pulumi.set(__self__, "sort_order", sort_order)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
@@ -267,6 +305,24 @@ class _JavaDownloadsJavaDownloadReportState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="sortBy")
+    def sort_by(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "sort_by")
+
+    @sort_by.setter
+    def sort_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sort_by", value)
+
+    @property
+    @pulumi.getter(name="sortOrder")
+    def sort_order(self) -> Optional[pulumi.Input[str]]:
+        return pulumi.get(self, "sort_order")
+
+    @sort_order.setter
+    def sort_order(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sort_order", value)
+
+    @property
     @pulumi.getter
     def state(self) -> Optional[pulumi.Input[str]]:
         """
@@ -294,7 +350,7 @@ class _JavaDownloadsJavaDownloadReportState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the Java download report was created. An RFC3339 formatted datetime string.
+        The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -337,7 +393,9 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  format: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_end: Optional[pulumi.Input[str]] = None,
                  time_start: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -356,6 +414,12 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         test_java_download_report = oci.jms.JavaDownloadsJavaDownloadReport("test_java_download_report",
             compartment_id=tenancy_ocid,
             format=java_download_report_format,
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            freeform_tags={
+                "bar-key": "value",
+            },
             time_end=java_download_report_time_end,
             time_start=java_download_report_time_start)
         ```
@@ -367,7 +431,9 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) here should be the tenancy OCID.
+        :param pulumi.Input[Mapping[str, Any]] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`. (See [Understanding Free-form Tags](https://docs.cloud.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm)).
         :param pulumi.Input[str] format: The format of the report that is generated.
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[str] time_end: The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[str] time_start: The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
                
@@ -396,6 +462,12 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         test_java_download_report = oci.jms.JavaDownloadsJavaDownloadReport("test_java_download_report",
             compartment_id=tenancy_ocid,
             format=java_download_report_format,
+            defined_tags={
+                "foo-namespace.bar-key": "value",
+            },
+            freeform_tags={
+                "bar-key": "value",
+            },
             time_end=java_download_report_time_end,
             time_start=java_download_report_time_start)
         ```
@@ -420,7 +492,9 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  format: Optional[pulumi.Input[str]] = None,
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_end: Optional[pulumi.Input[str]] = None,
                  time_start: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -435,18 +509,20 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["defined_tags"] = defined_tags
             if format is None and not opts.urn:
                 raise TypeError("Missing required property 'format'")
             __props__.__dict__["format"] = format
+            __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["time_end"] = time_end
             __props__.__dict__["time_start"] = time_start
             __props__.__dict__["checksum_type"] = None
             __props__.__dict__["checksum_value"] = None
             __props__.__dict__["created_bies"] = None
-            __props__.__dict__["defined_tags"] = None
             __props__.__dict__["display_name"] = None
             __props__.__dict__["file_size_in_bytes"] = None
-            __props__.__dict__["freeform_tags"] = None
+            __props__.__dict__["sort_by"] = None
+            __props__.__dict__["sort_order"] = None
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["time_created"] = None
@@ -469,6 +545,8 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
             file_size_in_bytes: Optional[pulumi.Input[str]] = None,
             format: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            sort_by: Optional[pulumi.Input[str]] = None,
+            sort_order: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -492,7 +570,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: Simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`. (See [Managing Tags and Tag Namespaces](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/understandingfreeformtags.htm).)
         :param pulumi.Input[str] state: The current state of the Java download report.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). System tags can be viewed by users, but can only be created by the system.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the Java download report was created. An RFC3339 formatted datetime string.
+        :param pulumi.Input[str] time_created: The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         :param pulumi.Input[str] time_end: The end time until when the download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
         :param pulumi.Input[str] time_start: The start time from when download records have to be included (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)). 
                
@@ -513,6 +591,8 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         __props__.__dict__["file_size_in_bytes"] = file_size_in_bytes
         __props__.__dict__["format"] = format
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["sort_by"] = sort_by
+        __props__.__dict__["sort_order"] = sort_order
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -593,6 +673,16 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="sortBy")
+    def sort_by(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "sort_by")
+
+    @property
+    @pulumi.getter(name="sortOrder")
+    def sort_order(self) -> pulumi.Output[str]:
+        return pulumi.get(self, "sort_order")
+
+    @property
     @pulumi.getter
     def state(self) -> pulumi.Output[str]:
         """
@@ -612,7 +702,7 @@ class JavaDownloadsJavaDownloadReport(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the Java download report was created. An RFC3339 formatted datetime string.
+        The time the Java download report was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 

@@ -205,7 +205,7 @@ class GetJavaDownloadsJavaDownloadTokenResult:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> str:
         """
-        The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_created")
 
@@ -213,7 +213,7 @@ class GetJavaDownloadsJavaDownloadTokenResult:
     @pulumi.getter(name="timeExpires")
     def time_expires(self) -> str:
         """
-        The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+        The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_expires")
 
@@ -221,7 +221,7 @@ class GetJavaDownloadsJavaDownloadTokenResult:
     @pulumi.getter(name="timeLastUsed")
     def time_last_used(self) -> str:
         """
-        The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_last_used")
 
@@ -229,7 +229,7 @@ class GetJavaDownloadsJavaDownloadTokenResult:
     @pulumi.getter(name="timeUpdated")
     def time_updated(self) -> str:
         """
-        The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+        The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
         """
         return pulumi.get(self, "time_updated")
 

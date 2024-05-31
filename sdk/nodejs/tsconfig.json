@@ -184,6 +184,7 @@
         "bigdataservice/bdsInstanceApiKey.ts",
         "bigdataservice/bdsInstanceMetastoreConfig.ts",
         "bigdataservice/bdsInstanceOperationCertificateManagementsManagement.ts",
+        "bigdataservice/bdsInstanceOsPatchAction.ts",
         "bigdataservice/bdsInstancePatchAction.ts",
         "bigdataservice/getAutoScalingConfiguration.ts",
         "bigdataservice/getAutoScalingConfigurations.ts",

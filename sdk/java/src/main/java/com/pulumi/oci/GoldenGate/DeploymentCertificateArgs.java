@@ -6,8 +6,11 @@ package com.pulumi.oci.GoldenGate;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
+import java.util.Optional;
+import javax.annotation.Nullable;
 
 
 public final class DeploymentCertificateArgs extends com.pulumi.resources.ResourceArgs {
@@ -15,14 +18,14 @@ public final class DeploymentCertificateArgs extends com.pulumi.resources.Resour
     public static final DeploymentCertificateArgs Empty = new DeploymentCertificateArgs();
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     @Import(name="certificateContent", required=true)
     private Output<String> certificateContent;
 
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public Output<String> certificateContent() {
@@ -42,6 +45,21 @@ public final class DeploymentCertificateArgs extends com.pulumi.resources.Resour
      */
     public Output<String> deploymentId() {
         return this.deploymentId;
+    }
+
+    /**
+     * Whether to override locks (if any exist).
+     * 
+     */
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    /**
+     * @return Whether to override locks (if any exist).
+     * 
+     */
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
     }
 
     /**
@@ -70,6 +88,7 @@ public final class DeploymentCertificateArgs extends com.pulumi.resources.Resour
     private DeploymentCertificateArgs(DeploymentCertificateArgs $) {
         this.certificateContent = $.certificateContent;
         this.deploymentId = $.deploymentId;
+        this.isLockOverride = $.isLockOverride;
         this.key = $.key;
     }
 
@@ -92,7 +111,7 @@ public final class DeploymentCertificateArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param certificateContent A PEM-encoded SSL certificate.
+         * @param certificateContent The base64 encoded content of the PEM file containing the SSL certificate.
          * 
          * @return builder
          * 
@@ -103,7 +122,7 @@ public final class DeploymentCertificateArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param certificateContent A PEM-encoded SSL certificate.
+         * @param certificateContent The base64 encoded content of the PEM file containing the SSL certificate.
          * 
          * @return builder
          * 
@@ -131,6 +150,27 @@ public final class DeploymentCertificateArgs extends com.pulumi.resources.Resour
          */
         public Builder deploymentId(String deploymentId) {
             return deploymentId(Output.of(deploymentId));
+        }
+
+        /**
+         * @param isLockOverride Whether to override locks (if any exist).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
+         * @param isLockOverride Whether to override locks (if any exist).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
         }
 
         /**

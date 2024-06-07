@@ -115,6 +115,9 @@ namespace Pulumi.Oci.GoldenGate
         [Output("isLatestVersion")]
         public Output<bool> IsLatestVersion { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) True if this object is publicly available.
         /// </summary>
@@ -156,6 +159,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("loadBalancerSubnetId")]
         public Output<string> LoadBalancerSubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.DeploymentLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
@@ -215,7 +224,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> StorageUtilizationInBytes { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
@@ -374,6 +383,9 @@ namespace Pulumi.Oci.GoldenGate
         [Input("isAutoScalingEnabled", required: true)]
         public Input<bool> IsAutoScalingEnabled { get; set; } = null!;
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// (Updatable) True if this object is publicly available.
         /// </summary>
@@ -391,6 +403,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("loadBalancerSubnetId")]
         public Input<string>? LoadBalancerSubnetId { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.DeploymentLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DeploymentLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DeploymentLockArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
@@ -426,7 +450,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? State { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
@@ -553,6 +577,9 @@ namespace Pulumi.Oci.GoldenGate
         [Input("isLatestVersion")]
         public Input<bool>? IsLatestVersion { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// (Updatable) True if this object is publicly available.
         /// </summary>
@@ -594,6 +621,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("loadBalancerSubnetId")]
         public Input<string>? LoadBalancerSubnetId { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.DeploymentLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DeploymentLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DeploymentLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// (Updatable) Defines the maintenance configuration for create operation.
@@ -659,7 +698,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? StorageUtilizationInBytes { get; set; }
 
         /// <summary>
-        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }

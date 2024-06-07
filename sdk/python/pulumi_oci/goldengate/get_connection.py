@@ -22,7 +22,7 @@ class GetConnectionResult:
     """
     A collection of values returned by getConnection.
     """
-    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, region=None, routing_method=None, sas_token=None, secret_access_key=None, security_protocol=None, servers=None, service_account_key_file=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
+    def __init__(__self__, access_key_id=None, account_key=None, account_name=None, additional_attributes=None, authentication_mode=None, authentication_type=None, azure_tenant_id=None, bootstrap_servers=None, client_id=None, client_secret=None, compartment_id=None, connection_factory=None, connection_id=None, connection_string=None, connection_type=None, connection_url=None, consumer_properties=None, core_site_xml=None, database_id=None, database_name=None, db_system_id=None, defined_tags=None, deployment_id=None, description=None, display_name=None, endpoint=None, fingerprint=None, freeform_tags=None, host=None, id=None, ingress_ips=None, is_lock_override=None, jndi_connection_factory=None, jndi_initial_context_factory=None, jndi_provider_url=None, jndi_security_credentials=None, jndi_security_principal=None, key_id=None, key_store=None, key_store_password=None, lifecycle_details=None, locks=None, nsg_ids=None, password=None, port=None, private_ip=None, private_key_file=None, private_key_passphrase=None, producer_properties=None, public_key_fingerprint=None, redis_cluster_id=None, region=None, routing_method=None, sas_token=None, secret_access_key=None, security_protocol=None, servers=None, service_account_key_file=None, session_mode=None, should_use_jndi=None, should_validate_server_certificate=None, ssl_ca=None, ssl_cert=None, ssl_client_keystash=None, ssl_client_keystoredb=None, ssl_crl=None, ssl_key=None, ssl_key_password=None, ssl_mode=None, ssl_server_certificate=None, state=None, stream_pool_id=None, subnet_id=None, system_tags=None, technology_type=None, tenancy_id=None, time_created=None, time_updated=None, trust_store=None, trust_store_password=None, url=None, user_id=None, username=None, vault_id=None, wallet=None):
         if access_key_id and not isinstance(access_key_id, str):
             raise TypeError("Expected argument 'access_key_id' to be a str")
         pulumi.set(__self__, "access_key_id", access_key_id)
@@ -35,6 +35,9 @@ class GetConnectionResult:
         if additional_attributes and not isinstance(additional_attributes, list):
             raise TypeError("Expected argument 'additional_attributes' to be a list")
         pulumi.set(__self__, "additional_attributes", additional_attributes)
+        if authentication_mode and not isinstance(authentication_mode, str):
+            raise TypeError("Expected argument 'authentication_mode' to be a str")
+        pulumi.set(__self__, "authentication_mode", authentication_mode)
         if authentication_type and not isinstance(authentication_type, str):
             raise TypeError("Expected argument 'authentication_type' to be a str")
         pulumi.set(__self__, "authentication_type", authentication_type)
@@ -113,6 +116,9 @@ class GetConnectionResult:
         if ingress_ips and not isinstance(ingress_ips, list):
             raise TypeError("Expected argument 'ingress_ips' to be a list")
         pulumi.set(__self__, "ingress_ips", ingress_ips)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if jndi_connection_factory and not isinstance(jndi_connection_factory, str):
             raise TypeError("Expected argument 'jndi_connection_factory' to be a str")
         pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
@@ -140,6 +146,9 @@ class GetConnectionResult:
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if nsg_ids and not isinstance(nsg_ids, list):
             raise TypeError("Expected argument 'nsg_ids' to be a list")
         pulumi.set(__self__, "nsg_ids", nsg_ids)
@@ -164,6 +173,9 @@ class GetConnectionResult:
         if public_key_fingerprint and not isinstance(public_key_fingerprint, str):
             raise TypeError("Expected argument 'public_key_fingerprint' to be a str")
         pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        if redis_cluster_id and not isinstance(redis_cluster_id, str):
+            raise TypeError("Expected argument 'redis_cluster_id' to be a str")
+        pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
         if region and not isinstance(region, str):
             raise TypeError("Expected argument 'region' to be a str")
         pulumi.set(__self__, "region", region)
@@ -200,6 +212,12 @@ class GetConnectionResult:
         if ssl_cert and not isinstance(ssl_cert, str):
             raise TypeError("Expected argument 'ssl_cert' to be a str")
         pulumi.set(__self__, "ssl_cert", ssl_cert)
+        if ssl_client_keystash and not isinstance(ssl_client_keystash, str):
+            raise TypeError("Expected argument 'ssl_client_keystash' to be a str")
+        pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
+        if ssl_client_keystoredb and not isinstance(ssl_client_keystoredb, str):
+            raise TypeError("Expected argument 'ssl_client_keystoredb' to be a str")
+        pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
         if ssl_crl and not isinstance(ssl_crl, str):
             raise TypeError("Expected argument 'ssl_crl' to be a str")
         pulumi.set(__self__, "ssl_crl", ssl_crl)
@@ -212,6 +230,9 @@ class GetConnectionResult:
         if ssl_mode and not isinstance(ssl_mode, str):
             raise TypeError("Expected argument 'ssl_mode' to be a str")
         pulumi.set(__self__, "ssl_mode", ssl_mode)
+        if ssl_server_certificate and not isinstance(ssl_server_certificate, str):
+            raise TypeError("Expected argument 'ssl_server_certificate' to be a str")
+        pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -286,6 +307,14 @@ class GetConnectionResult:
         An array of name-value pair attribute entries. Used as additional parameters in connection string.
         """
         return pulumi.get(self, "additional_attributes")
+
+    @property
+    @pulumi.getter(name="authenticationMode")
+    def authentication_mode(self) -> str:
+        """
+        Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        """
+        return pulumi.get(self, "authentication_mode")
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -489,6 +518,11 @@ class GetConnectionResult:
         return pulumi.get(self, "ingress_ips")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="jndiConnectionFactory")
     def jndi_connection_factory(self) -> str:
         """
@@ -552,6 +586,14 @@ class GetConnectionResult:
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetConnectionLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -600,6 +642,14 @@ class GetConnectionResult:
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> str:
         return pulumi.get(self, "public_key_fingerprint")
+
+    @property
+    @pulumi.getter(name="redisClusterId")
+    def redis_cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        """
+        return pulumi.get(self, "redis_cluster_id")
 
     @property
     @pulumi.getter
@@ -689,6 +739,16 @@ class GetConnectionResult:
         return pulumi.get(self, "ssl_cert")
 
     @property
+    @pulumi.getter(name="sslClientKeystash")
+    def ssl_client_keystash(self) -> str:
+        return pulumi.get(self, "ssl_client_keystash")
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredb")
+    def ssl_client_keystoredb(self) -> str:
+        return pulumi.get(self, "ssl_client_keystoredb")
+
+    @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> str:
         return pulumi.get(self, "ssl_crl")
@@ -710,6 +770,11 @@ class GetConnectionResult:
         SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         """
         return pulumi.get(self, "ssl_mode")
+
+    @property
+    @pulumi.getter(name="sslServerCertificate")
+    def ssl_server_certificate(self) -> str:
+        return pulumi.get(self, "ssl_server_certificate")
 
     @property
     @pulumi.getter
@@ -833,6 +898,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             account_key=self.account_key,
             account_name=self.account_name,
             additional_attributes=self.additional_attributes,
+            authentication_mode=self.authentication_mode,
             authentication_type=self.authentication_type,
             azure_tenant_id=self.azure_tenant_id,
             bootstrap_servers=self.bootstrap_servers,
@@ -859,6 +925,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             host=self.host,
             id=self.id,
             ingress_ips=self.ingress_ips,
+            is_lock_override=self.is_lock_override,
             jndi_connection_factory=self.jndi_connection_factory,
             jndi_initial_context_factory=self.jndi_initial_context_factory,
             jndi_provider_url=self.jndi_provider_url,
@@ -868,6 +935,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             key_store=self.key_store,
             key_store_password=self.key_store_password,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             nsg_ids=self.nsg_ids,
             password=self.password,
             port=self.port,
@@ -876,6 +944,7 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             private_key_passphrase=self.private_key_passphrase,
             producer_properties=self.producer_properties,
             public_key_fingerprint=self.public_key_fingerprint,
+            redis_cluster_id=self.redis_cluster_id,
             region=self.region,
             routing_method=self.routing_method,
             sas_token=self.sas_token,
@@ -888,10 +957,13 @@ class AwaitableGetConnectionResult(GetConnectionResult):
             should_validate_server_certificate=self.should_validate_server_certificate,
             ssl_ca=self.ssl_ca,
             ssl_cert=self.ssl_cert,
+            ssl_client_keystash=self.ssl_client_keystash,
+            ssl_client_keystoredb=self.ssl_client_keystoredb,
             ssl_crl=self.ssl_crl,
             ssl_key=self.ssl_key,
             ssl_key_password=self.ssl_key_password,
             ssl_mode=self.ssl_mode,
+            ssl_server_certificate=self.ssl_server_certificate,
             state=self.state,
             stream_pool_id=self.stream_pool_id,
             subnet_id=self.subnet_id,
@@ -938,6 +1010,7 @@ def get_connection(connection_id: Optional[str] = None,
         account_key=pulumi.get(__ret__, 'account_key'),
         account_name=pulumi.get(__ret__, 'account_name'),
         additional_attributes=pulumi.get(__ret__, 'additional_attributes'),
+        authentication_mode=pulumi.get(__ret__, 'authentication_mode'),
         authentication_type=pulumi.get(__ret__, 'authentication_type'),
         azure_tenant_id=pulumi.get(__ret__, 'azure_tenant_id'),
         bootstrap_servers=pulumi.get(__ret__, 'bootstrap_servers'),
@@ -964,6 +1037,7 @@ def get_connection(connection_id: Optional[str] = None,
         host=pulumi.get(__ret__, 'host'),
         id=pulumi.get(__ret__, 'id'),
         ingress_ips=pulumi.get(__ret__, 'ingress_ips'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         jndi_connection_factory=pulumi.get(__ret__, 'jndi_connection_factory'),
         jndi_initial_context_factory=pulumi.get(__ret__, 'jndi_initial_context_factory'),
         jndi_provider_url=pulumi.get(__ret__, 'jndi_provider_url'),
@@ -973,6 +1047,7 @@ def get_connection(connection_id: Optional[str] = None,
         key_store=pulumi.get(__ret__, 'key_store'),
         key_store_password=pulumi.get(__ret__, 'key_store_password'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         nsg_ids=pulumi.get(__ret__, 'nsg_ids'),
         password=pulumi.get(__ret__, 'password'),
         port=pulumi.get(__ret__, 'port'),
@@ -981,6 +1056,7 @@ def get_connection(connection_id: Optional[str] = None,
         private_key_passphrase=pulumi.get(__ret__, 'private_key_passphrase'),
         producer_properties=pulumi.get(__ret__, 'producer_properties'),
         public_key_fingerprint=pulumi.get(__ret__, 'public_key_fingerprint'),
+        redis_cluster_id=pulumi.get(__ret__, 'redis_cluster_id'),
         region=pulumi.get(__ret__, 'region'),
         routing_method=pulumi.get(__ret__, 'routing_method'),
         sas_token=pulumi.get(__ret__, 'sas_token'),
@@ -993,10 +1069,13 @@ def get_connection(connection_id: Optional[str] = None,
         should_validate_server_certificate=pulumi.get(__ret__, 'should_validate_server_certificate'),
         ssl_ca=pulumi.get(__ret__, 'ssl_ca'),
         ssl_cert=pulumi.get(__ret__, 'ssl_cert'),
+        ssl_client_keystash=pulumi.get(__ret__, 'ssl_client_keystash'),
+        ssl_client_keystoredb=pulumi.get(__ret__, 'ssl_client_keystoredb'),
         ssl_crl=pulumi.get(__ret__, 'ssl_crl'),
         ssl_key=pulumi.get(__ret__, 'ssl_key'),
         ssl_key_password=pulumi.get(__ret__, 'ssl_key_password'),
         ssl_mode=pulumi.get(__ret__, 'ssl_mode'),
+        ssl_server_certificate=pulumi.get(__ret__, 'ssl_server_certificate'),
         state=pulumi.get(__ret__, 'state'),
         stream_pool_id=pulumi.get(__ret__, 'stream_pool_id'),
         subnet_id=pulumi.get(__ret__, 'subnet_id'),

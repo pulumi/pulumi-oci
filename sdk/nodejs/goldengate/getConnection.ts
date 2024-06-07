@@ -58,6 +58,10 @@ export interface GetConnectionResult {
      */
     readonly additionalAttributes: outputs.GoldenGate.GetConnectionAdditionalAttribute[];
     /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     */
+    readonly authenticationMode: string;
+    /**
      * Used authentication mechanism to be provided for the following connection types:
      * * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
      * * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -154,6 +158,7 @@ export interface GetConnectionResult {
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
     readonly ingressIps: outputs.GoldenGate.GetConnectionIngressIp[];
+    readonly isLockOverride: boolean;
     /**
      * The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
@@ -182,6 +187,10 @@ export interface GetConnectionResult {
      */
     readonly lifecycleDetails: string;
     /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.GoldenGate.GetConnectionLock[];
+    /**
      * An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     readonly nsgIds: string[];
@@ -199,6 +208,10 @@ export interface GetConnectionResult {
     readonly privateKeyPassphrase: string;
     readonly producerProperties: string;
     readonly publicKeyFingerprint: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     */
+    readonly redisClusterId: string;
     /**
      * The name of the region. e.g.: us-ashburn-1
      */
@@ -238,6 +251,8 @@ export interface GetConnectionResult {
      */
     readonly sslCa: string;
     readonly sslCert: string;
+    readonly sslClientKeystash: string;
+    readonly sslClientKeystoredb: string;
     readonly sslCrl: string;
     readonly sslKey: string;
     readonly sslKeyPassword: string;
@@ -245,6 +260,7 @@ export interface GetConnectionResult {
      * SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
      */
     readonly sslMode: string;
+    readonly sslServerCertificate: string;
     /**
      * Possible lifecycle states for connection.
      */

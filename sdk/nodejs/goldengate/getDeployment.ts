@@ -109,6 +109,7 @@ export interface GetDeploymentResult {
      * Indicates if the resource is the the latest available version.
      */
     readonly isLatestVersion: boolean;
+    readonly isLockOverride: boolean;
     /**
      * True if this object is publicly available.
      */
@@ -137,6 +138,10 @@ export interface GetDeploymentResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
      */
     readonly loadBalancerSubnetId: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.GoldenGate.GetDeploymentLock[];
     /**
      * Attributes for configuring automatic deployment maintenance.
      */
@@ -178,7 +183,7 @@ export interface GetDeploymentResult {
      */
     readonly storageUtilizationInBytes: string;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
     readonly subnetId: string;
     /**

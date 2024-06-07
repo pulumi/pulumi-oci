@@ -118,7 +118,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string AuthorityKeyId;
         /// <summary>
-        /// A PEM-encoded SSL certificate.
+        /// The base64 encoded content of the PEM file containing the SSL certificate.
         /// </summary>
         public readonly string CertificateContent;
         public readonly string CertificateKey;
@@ -131,6 +131,7 @@ namespace Pulumi.Oci.GoldenGate
         /// Indicates if the certificate is ca.
         /// </summary>
         public readonly bool IsCa;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// Indicates if the certificate is self signed.
         /// </summary>
@@ -210,6 +211,8 @@ namespace Pulumi.Oci.GoldenGate
 
             bool isCa,
 
+            bool isLockOverride,
+
             bool isSelfSigned,
 
             string issuer,
@@ -248,6 +251,7 @@ namespace Pulumi.Oci.GoldenGate
             DeploymentId = deploymentId;
             Id = id;
             IsCa = isCa;
+            IsLockOverride = isLockOverride;
             IsSelfSigned = isSelfSigned;
             Issuer = issuer;
             Key = key;

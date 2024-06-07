@@ -20,6 +20,10 @@ public final class GetDeploymentCertificatesResult {
      * 
      */
     private List<GetDeploymentCertificatesCertificateCollection> certificateCollections;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
     private String deploymentId;
     private @Nullable List<GetDeploymentCertificatesFilter> filters;
     /**
@@ -41,6 +45,10 @@ public final class GetDeploymentCertificatesResult {
     public List<GetDeploymentCertificatesCertificateCollection> certificateCollections() {
         return this.certificateCollections;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     * 
+     */
     public String deploymentId() {
         return this.deploymentId;
     }

@@ -15,11 +15,13 @@ __all__ = ['ConnectionAssignmentArgs', 'ConnectionAssignment']
 class ConnectionAssignmentArgs:
     def __init__(__self__, *,
                  connection_id: pulumi.Input[str],
-                 deployment_id: pulumi.Input[str]):
+                 deployment_id: pulumi.Input[str],
+                 is_lock_override: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a ConnectionAssignment resource.
         :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
                
                
                ** IMPORTANT **
@@ -27,6 +29,8 @@ class ConnectionAssignmentArgs:
         """
         pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "deployment_id", deployment_id)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
 
     @property
     @pulumi.getter(name="connectionId")
@@ -44,17 +48,29 @@ class ConnectionAssignmentArgs:
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Input[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
     def deployment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "deployment_id", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to override locks (if any exist).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
 
 
 @pulumi.input_type
@@ -64,6 +80,7 @@ class _ConnectionAssignmentState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  connection_id: Optional[pulumi.Input[str]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_updated: Optional[pulumi.Input[str]] = None):
@@ -72,7 +89,8 @@ class _ConnectionAssignmentState:
         :param pulumi.Input[str] alias_name: Credential store alias.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
                
                
                ** IMPORTANT **
@@ -89,6 +107,8 @@ class _ConnectionAssignmentState:
             pulumi.set(__self__, "connection_id", connection_id)
         if deployment_id is not None:
             pulumi.set(__self__, "deployment_id", deployment_id)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if time_created is not None:
@@ -136,17 +156,29 @@ class _ConnectionAssignmentState:
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         """
         return pulumi.get(self, "deployment_id")
 
     @deployment_id.setter
     def deployment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "deployment_id", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to override locks (if any exist).
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
 
     @property
     @pulumi.getter
@@ -192,6 +224,7 @@ class ConnectionAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  connection_id: Optional[pulumi.Input[str]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         """
         This resource provides the Connection Assignment resource in Oracle Cloud Infrastructure Golden Gate service.
@@ -206,7 +239,8 @@ class ConnectionAssignment(pulumi.CustomResource):
 
         test_connection_assignment = oci.golden_gate.ConnectionAssignment("test_connection_assignment",
             connection_id=test_connection["id"],
-            deployment_id=test_deployment["id"])
+            deployment_id=test_deployment["id"],
+            is_lock_override=connection_assignment_is_lock_override)
         ```
 
         ## Import
@@ -220,7 +254,8 @@ class ConnectionAssignment(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
                
                
                ** IMPORTANT **
@@ -245,7 +280,8 @@ class ConnectionAssignment(pulumi.CustomResource):
 
         test_connection_assignment = oci.golden_gate.ConnectionAssignment("test_connection_assignment",
             connection_id=test_connection["id"],
-            deployment_id=test_deployment["id"])
+            deployment_id=test_deployment["id"],
+            is_lock_override=connection_assignment_is_lock_override)
         ```
 
         ## Import
@@ -273,6 +309,7 @@ class ConnectionAssignment(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  connection_id: Optional[pulumi.Input[str]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -288,6 +325,7 @@ class ConnectionAssignment(pulumi.CustomResource):
             if deployment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'deployment_id'")
             __props__.__dict__["deployment_id"] = deployment_id
+            __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["alias_name"] = None
             __props__.__dict__["compartment_id"] = None
             __props__.__dict__["state"] = None
@@ -307,6 +345,7 @@ class ConnectionAssignment(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             connection_id: Optional[pulumi.Input[str]] = None,
             deployment_id: Optional[pulumi.Input[str]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             state: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
             time_updated: Optional[pulumi.Input[str]] = None) -> 'ConnectionAssignment':
@@ -320,7 +359,8 @@ class ConnectionAssignment(pulumi.CustomResource):
         :param pulumi.Input[str] alias_name: Credential store alias.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[str] connection_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
-        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
                
                
                ** IMPORTANT **
@@ -337,6 +377,7 @@ class ConnectionAssignment(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["connection_id"] = connection_id
         __props__.__dict__["deployment_id"] = deployment_id
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["state"] = state
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_updated"] = time_updated
@@ -370,13 +411,21 @@ class ConnectionAssignment(pulumi.CustomResource):
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> pulumi.Output[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
+        return pulumi.get(self, "deployment_id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        """
+        Whether to override locks (if any exist).
 
 
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        return pulumi.get(self, "deployment_id")
+        return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter

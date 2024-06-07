@@ -31,8 +31,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := GoldenGate.NewConnectionAssignment(ctx, "test_connection_assignment", &GoldenGate.ConnectionAssignmentArgs{
-//				ConnectionId: pulumi.Any(testConnection.Id),
-//				DeploymentId: pulumi.Any(testDeployment.Id),
+//				ConnectionId:   pulumi.Any(testConnection.Id),
+//				DeploymentId:   pulumi.Any(testDeployment.Id),
+//				IsLockOverride: pulumi.Any(connectionAssignmentIsLockOverride),
 //			})
 //			if err != nil {
 //				return err
@@ -60,10 +61,12 @@ type ConnectionAssignment struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringOutput `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
+	// Whether to override locks (if any exist).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// Possible lifecycle states for connection assignments.
 	State pulumi.StringOutput `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -115,10 +118,12 @@ type connectionAssignmentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId *string `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId *string `pulumi:"deploymentId"`
+	// Whether to override locks (if any exist).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DeploymentId *string `pulumi:"deploymentId"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// Possible lifecycle states for connection assignments.
 	State *string `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -135,10 +140,12 @@ type ConnectionAssignmentState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId pulumi.StringPtrInput
+	// Whether to override locks (if any exist).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DeploymentId pulumi.StringPtrInput
+	IsLockOverride pulumi.BoolPtrInput
 	// Possible lifecycle states for connection assignments.
 	State pulumi.StringPtrInput
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -155,10 +162,12 @@ type connectionAssignmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId string `pulumi:"connectionId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId string `pulumi:"deploymentId"`
+	// Whether to override locks (if any exist).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DeploymentId string `pulumi:"deploymentId"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 }
 
 // The set of arguments for constructing a ConnectionAssignment resource.
@@ -166,10 +175,12 @@ type ConnectionAssignmentArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	ConnectionId pulumi.StringInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId pulumi.StringInput
+	// Whether to override locks (if any exist).
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	DeploymentId pulumi.StringInput
+	IsLockOverride pulumi.BoolPtrInput
 }
 
 func (ConnectionAssignmentArgs) ElementType() reflect.Type {
@@ -275,11 +286,16 @@ func (o ConnectionAssignmentOutput) ConnectionId() pulumi.StringOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+func (o ConnectionAssignmentOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// Whether to override locks (if any exist).
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o ConnectionAssignmentOutput) DeploymentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *ConnectionAssignment) pulumi.StringOutput { return v.DeploymentId }).(pulumi.StringOutput)
+func (o ConnectionAssignmentOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *ConnectionAssignment) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // Possible lifecycle states for connection assignments.

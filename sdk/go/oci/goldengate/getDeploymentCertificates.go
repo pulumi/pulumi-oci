@@ -64,8 +64,9 @@ type GetDeploymentCertificatesArgs struct {
 type GetDeploymentCertificatesResult struct {
 	// The list of certificate_collection.
 	CertificateCollections []GetDeploymentCertificatesCertificateCollection `pulumi:"certificateCollections"`
-	DeploymentId           string                                           `pulumi:"deploymentId"`
-	Filters                []GetDeploymentCertificatesFilter                `pulumi:"filters"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+	DeploymentId string                            `pulumi:"deploymentId"`
+	Filters      []GetDeploymentCertificatesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// Possible certificate lifecycle states.
@@ -120,6 +121,7 @@ func (o GetDeploymentCertificatesResultOutput) CertificateCollections() GetDeplo
 	}).(GetDeploymentCertificatesCertificateCollectionArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 func (o GetDeploymentCertificatesResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }

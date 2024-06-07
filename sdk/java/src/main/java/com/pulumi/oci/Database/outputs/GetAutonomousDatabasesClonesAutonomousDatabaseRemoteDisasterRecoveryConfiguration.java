@@ -12,17 +12,25 @@ import java.util.Objects;
 @CustomType
 public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration {
     /**
-     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     private String disasterRecoveryType;
     private Boolean isReplicateAutomaticBackups;
+    /**
+     * @return Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     * 
+     */
     private Boolean isSnapshotStandby;
+    /**
+     * @return Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     * 
+     */
     private String timeSnapshotStandbyEnabledTill;
 
     private GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfiguration() {}
     /**
-     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * @return Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
      * 
      */
     public String disasterRecoveryType() {
@@ -31,9 +39,17 @@ public final class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterR
     public Boolean isReplicateAutomaticBackups() {
         return this.isReplicateAutomaticBackups;
     }
+    /**
+     * @return Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+     * 
+     */
     public Boolean isSnapshotStandby() {
         return this.isSnapshotStandby;
     }
+    /**
+     * @return Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+     * 
+     */
     public String timeSnapshotStandbyEnabledTill() {
         return this.timeSnapshotStandbyEnabledTill;
     }

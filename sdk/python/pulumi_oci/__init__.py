@@ -93,6 +93,8 @@ if typing.TYPE_CHECKING:
     datasafe = __datasafe
     import pulumi_oci.datascience as __datascience
     datascience = __datascience
+    import pulumi_oci.demandsignal as __demandsignal
+    demandsignal = __demandsignal
     import pulumi_oci.devops as __devops
     devops = __devops
     import pulumi_oci.disasterrecovery as __disasterrecovery
@@ -280,6 +282,7 @@ else:
     datalabellingservice = _utilities.lazy_import('pulumi_oci.datalabellingservice')
     datasafe = _utilities.lazy_import('pulumi_oci.datasafe')
     datascience = _utilities.lazy_import('pulumi_oci.datascience')
+    demandsignal = _utilities.lazy_import('pulumi_oci.demandsignal')
     devops = _utilities.lazy_import('pulumi_oci.devops')
     disasterrecovery = _utilities.lazy_import('pulumi_oci.disasterrecovery')
     dns = _utilities.lazy_import('pulumi_oci.dns')
@@ -3106,6 +3109,14 @@ _utilities.register(
   "fqn": "pulumi_oci.databasetools",
   "classes": {
    "oci:DatabaseTools/databaseToolsPrivateEndpoint:DatabaseToolsPrivateEndpoint": "DatabaseToolsPrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DemandSignal/occDemandSignal",
+  "fqn": "pulumi_oci.demandsignal",
+  "classes": {
+   "oci:DemandSignal/occDemandSignal:OccDemandSignal": "OccDemandSignal"
   }
  },
  {

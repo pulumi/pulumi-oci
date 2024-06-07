@@ -12,6 +12,7 @@ import com.pulumi.oci.GoldenGate.inputs.ConnectionState;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.ConnectionIngressIp;
+import com.pulumi.oci.GoldenGate.outputs.ConnectionLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Integer;
@@ -40,6 +41,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.GoldenGate.ConnectionArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionAdditionalAttributeArgs;
  * import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -65,6 +67,7 @@ import javax.annotation.Nullable;
  *                 .name(connectionAdditionalAttributesName)
  *                 .value(connectionAdditionalAttributesValue)
  *                 .build())
+ *             .authenticationMode(connectionAuthenticationMode)
  *             .authenticationType(connectionAuthenticationType)
  *             .azureTenantId(testAzureTenant.id())
  *             .bootstrapServers(ConnectionBootstrapServerArgs.builder()
@@ -97,6 +100,10 @@ import javax.annotation.Nullable;
  *             .keyId(testKey.id())
  *             .keyStore(connectionKeyStore)
  *             .keyStorePassword(connectionKeyStorePassword)
+ *             .locks(ConnectionLockArgs.builder()
+ *                 .type(connectionLocksType)
+ *                 .message(connectionLocksMessage)
+ *                 .build())
  *             .nsgIds(connectionNsgIds)
  *             .password(connectionPassword)
  *             .port(connectionPort)
@@ -105,6 +112,7 @@ import javax.annotation.Nullable;
  *             .privateKeyPassphrase(connectionPrivateKeyPassphrase)
  *             .producerProperties(connectionProducerProperties)
  *             .publicKeyFingerprint(connectionPublicKeyFingerprint)
+ *             .redisClusterId(testRedisCluster.id())
  *             .region(connectionRegion)
  *             .routingMethod(connectionRoutingMethod)
  *             .sasToken(connectionSasToken)
@@ -117,10 +125,13 @@ import javax.annotation.Nullable;
  *             .shouldValidateServerCertificate(connectionShouldValidateServerCertificate)
  *             .sslCa(connectionSslCa)
  *             .sslCert(connectionSslCert)
+ *             .sslClientKeystash(connectionSslClientKeystash)
+ *             .sslClientKeystoredb(connectionSslClientKeystoredb)
  *             .sslCrl(connectionSslCrl)
  *             .sslKey(connectionSslKey)
  *             .sslKeyPassword(connectionSslKeyPassword)
  *             .sslMode(connectionSslMode)
+ *             .sslServerCertificate(connectionSslServerCertificate)
  *             .streamPoolId(testStreamPool.id())
  *             .subnetId(testSubnet.id())
  *             .tenancyId(testTenancy.id())
@@ -205,6 +216,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<List<ConnectionAdditionalAttribute>> additionalAttributes() {
         return this.additionalAttributes;
+    }
+    /**
+     * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     * 
+     */
+    @Export(name="authenticationMode", refs={String.class}, tree="[0]")
+    private Output<String> authenticationMode;
+
+    /**
+     * @return (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     * 
+     */
+    public Output<String> authenticationMode() {
+        return this.authenticationMode;
     }
     /**
      * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -544,6 +569,12 @@ public class Connection extends com.pulumi.resources.CustomResource {
     public Output<List<ConnectionIngressIp>> ingressIps() {
         return this.ingressIps;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
@@ -671,6 +702,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.lifecycleDetails;
     }
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,ConnectionLock.class}, tree="[0,1]")
+    private Output<List<ConnectionLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<ConnectionLock>> locks() {
+        return this.locks;
+    }
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -783,6 +828,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> publicKeyFingerprint() {
         return this.publicKeyFingerprint;
+    }
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     * 
+     */
+    @Export(name="redisClusterId", refs={String.class}, tree="[0]")
+    private Output<String> redisClusterId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     * 
+     */
+    public Output<String> redisClusterId() {
+        return this.redisClusterId;
     }
     /**
      * (Updatable) The name of the region. e.g.: us-ashburn-1
@@ -953,6 +1012,34 @@ public class Connection extends com.pulumi.resources.CustomResource {
         return this.sslCert;
     }
     /**
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * 
+     */
+    @Export(name="sslClientKeystash", refs={String.class}, tree="[0]")
+    private Output<String> sslClientKeystash;
+
+    /**
+     * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * 
+     */
+    public Output<String> sslClientKeystash() {
+        return this.sslClientKeystash;
+    }
+    /**
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * 
+     */
+    @Export(name="sslClientKeystoredb", refs={String.class}, tree="[0]")
+    private Output<String> sslClientKeystoredb;
+
+    /**
+     * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * 
+     */
+    public Output<String> sslClientKeystoredb() {
+        return this.sslClientKeystoredb;
+    }
+    /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      * 
      */
@@ -1007,6 +1094,20 @@ public class Connection extends com.pulumi.resources.CustomResource {
      */
     public Output<String> sslMode() {
         return this.sslMode;
+    }
+    /**
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * 
+     */
+    @Export(name="sslServerCertificate", refs={String.class}, tree="[0]")
+    private Output<String> sslServerCertificate;
+
+    /**
+     * @return (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * 
+     */
+    public Output<String> sslServerCertificate() {
+        return this.sslServerCertificate;
     }
     /**
      * Possible lifecycle states for connection.

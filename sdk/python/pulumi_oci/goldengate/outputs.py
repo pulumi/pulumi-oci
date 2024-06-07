@@ -14,8 +14,11 @@ __all__ = [
     'ConnectionAdditionalAttribute',
     'ConnectionBootstrapServer',
     'ConnectionIngressIp',
+    'ConnectionLock',
+    'DeploymentBackupLock',
     'DeploymentDeploymentDiagnosticData',
     'DeploymentIngressIp',
+    'DeploymentLock',
     'DeploymentMaintenanceConfiguration',
     'DeploymentMaintenanceWindow',
     'DeploymentOggData',
@@ -25,23 +28,28 @@ __all__ = [
     'GetConnectionAssignmentsFilterResult',
     'GetConnectionBootstrapServerResult',
     'GetConnectionIngressIpResult',
+    'GetConnectionLockResult',
     'GetConnectionsConnectionCollectionResult',
     'GetConnectionsConnectionCollectionItemResult',
     'GetConnectionsConnectionCollectionItemAdditionalAttributeResult',
     'GetConnectionsConnectionCollectionItemBootstrapServerResult',
     'GetConnectionsConnectionCollectionItemIngressIpResult',
+    'GetConnectionsConnectionCollectionItemLockResult',
     'GetConnectionsFilterResult',
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionResult',
     'GetDatabaseRegistrationsDatabaseRegistrationCollectionItemResult',
     'GetDatabaseRegistrationsFilterResult',
+    'GetDeploymentBackupLockResult',
     'GetDeploymentBackupsDeploymentBackupCollectionResult',
     'GetDeploymentBackupsDeploymentBackupCollectionItemResult',
+    'GetDeploymentBackupsDeploymentBackupCollectionItemLockResult',
     'GetDeploymentBackupsFilterResult',
     'GetDeploymentCertificatesCertificateCollectionResult',
     'GetDeploymentCertificatesCertificateCollectionItemResult',
     'GetDeploymentCertificatesFilterResult',
     'GetDeploymentDeploymentDiagnosticDataResult',
     'GetDeploymentIngressIpResult',
+    'GetDeploymentLockResult',
     'GetDeploymentMaintenanceConfigurationResult',
     'GetDeploymentMaintenanceWindowResult',
     'GetDeploymentOggDataResult',
@@ -59,6 +67,7 @@ __all__ = [
     'GetDeploymentsDeploymentCollectionItemResult',
     'GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataResult',
     'GetDeploymentsDeploymentCollectionItemIngressIpResult',
+    'GetDeploymentsDeploymentCollectionItemLockResult',
     'GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult',
     'GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult',
     'GetDeploymentsDeploymentCollectionItemOggDataResult',
@@ -207,6 +216,152 @@ class ConnectionIngressIp(dict):
 
 
 @pulumi.output_type
+class ConnectionLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConnectionLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConnectionLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConnectionLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
+class DeploymentBackupLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentBackupLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentBackupLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentBackupLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+
+@pulumi.output_type
 class DeploymentDeploymentDiagnosticData(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -340,6 +495,79 @@ class DeploymentIngressIp(dict):
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class DeploymentLock(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "relatedResourceId":
+            suggest = "related_resource_id"
+        elif key == "timeCreated":
+            suggest = "time_created"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DeploymentLock. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DeploymentLock.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DeploymentLock.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 type: str,
+                 message: Optional[str] = None,
+                 related_resource_id: Optional[str] = None,
+                 time_created: Optional[str] = None):
+        """
+        :param str type: Type of the lock.
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[str]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[str]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[str]:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
 
 
 @pulumi.output_type
@@ -525,11 +753,11 @@ class DeploymentOggData(dict):
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param str admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param str admin_username: (Updatable) The GoldenGate deployment console username.
-        :param str certificate: (Updatable) A PEM-encoded SSL certificate.
+        :param str certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param str credential_store: (Updatable) The type of credential store for OGG.
         :param str identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        :param str key: (Updatable) A PEM-encoded private key.
-        :param str ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        :param str key: (Updatable) The base64 encoded content of the PEM file containing the private key.
+        :param str ogg_version: Version of OGG
         :param str password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         pulumi.set(__self__, "deployment_name", deployment_name)
@@ -578,7 +806,7 @@ class DeploymentOggData(dict):
     @pulumi.getter
     def certificate(self) -> Optional[str]:
         """
-        (Updatable) A PEM-encoded SSL certificate.
+        (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate")
 
@@ -602,7 +830,7 @@ class DeploymentOggData(dict):
     @pulumi.getter
     def key(self) -> Optional[str]:
         """
-        (Updatable) A PEM-encoded private key.
+        (Updatable) The base64 encoded content of the PEM file containing the private key.
         """
         return pulumi.get(self, "key")
 
@@ -610,7 +838,7 @@ class DeploymentOggData(dict):
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[str]:
         """
-        (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        Version of OGG
         """
         return pulumi.get(self, "ogg_version")
 
@@ -672,6 +900,7 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
                  connection_id: str,
                  deployment_id: str,
                  id: str,
+                 is_lock_override: bool,
                  state: str,
                  time_created: str,
                  time_updated: str):
@@ -690,6 +919,7 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
         pulumi.set(__self__, "connection_id", connection_id)
         pulumi.set(__self__, "deployment_id", deployment_id)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -733,6 +963,11 @@ class GetConnectionAssignmentsConnectionAssignmentCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter
@@ -857,6 +1092,57 @@ class GetConnectionIngressIpResult(dict):
 
 
 @pulumi.output_type
+class GetConnectionLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetConnectionsConnectionCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetConnectionsConnectionCollectionItemResult']):
@@ -875,6 +1161,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  account_key: str,
                  account_name: str,
                  additional_attributes: Sequence['outputs.GetConnectionsConnectionCollectionItemAdditionalAttributeResult'],
+                 authentication_mode: str,
                  authentication_type: str,
                  azure_tenant_id: str,
                  bootstrap_servers: Sequence['outputs.GetConnectionsConnectionCollectionItemBootstrapServerResult'],
@@ -900,6 +1187,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  host: str,
                  id: str,
                  ingress_ips: Sequence['outputs.GetConnectionsConnectionCollectionItemIngressIpResult'],
+                 is_lock_override: bool,
                  jndi_connection_factory: str,
                  jndi_initial_context_factory: str,
                  jndi_provider_url: str,
@@ -909,6 +1197,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  key_store: str,
                  key_store_password: str,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetConnectionsConnectionCollectionItemLockResult'],
                  nsg_ids: Sequence[str],
                  password: str,
                  port: int,
@@ -917,6 +1206,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  private_key_passphrase: str,
                  producer_properties: str,
                  public_key_fingerprint: str,
+                 redis_cluster_id: str,
                  region: str,
                  routing_method: str,
                  sas_token: str,
@@ -929,10 +1219,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
                  should_validate_server_certificate: bool,
                  ssl_ca: str,
                  ssl_cert: str,
+                 ssl_client_keystash: str,
+                 ssl_client_keystoredb: str,
                  ssl_crl: str,
                  ssl_key: str,
                  ssl_key_password: str,
                  ssl_mode: str,
+                 ssl_server_certificate: str,
                  state: str,
                  stream_pool_id: str,
                  subnet_id: str,
@@ -952,6 +1245,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str access_key_id: Access key ID to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
         :param str account_name: Sets the Azure storage account name.
         :param Sequence['GetConnectionsConnectionCollectionItemAdditionalAttributeArgs'] additional_attributes: An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param str authentication_mode: Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param str authentication_type: Used authentication mechanism to be provided for the following connection types:
                * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
                * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -987,10 +1281,12 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         :param str jndi_security_principal: Specifies the identity of the principal (user) to be authenticated. e.g.: 'admin2'
         :param str key_id: Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetConnectionsConnectionCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence[str] nsg_ids: An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param int port: The port of an endpoint usually specified for a connection.
         :param str private_ip: Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host  field, or make sure the host name is resolvable in the target VCN.
                The private IP address of the connection's endpoint in the customer's VCN, typically a database endpoint or a big data endpoint (e.g. Kafka bootstrap server). In case the privateIp is provided, the subnetId must also be provided. In case the privateIp (and the subnetId) is not provided it is assumed the datasource is publicly accessible. In case the connection is accessible only privately, the lack of privateIp will result in not being able to access the connection.
+        :param str redis_cluster_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param str region: The name of the region. e.g.: us-ashburn-1
         :param str routing_method: Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param str security_protocol: Security Protocol to be provided for the following connection types:
@@ -1020,6 +1316,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "account_key", account_key)
         pulumi.set(__self__, "account_name", account_name)
         pulumi.set(__self__, "additional_attributes", additional_attributes)
+        pulumi.set(__self__, "authentication_mode", authentication_mode)
         pulumi.set(__self__, "authentication_type", authentication_type)
         pulumi.set(__self__, "azure_tenant_id", azure_tenant_id)
         pulumi.set(__self__, "bootstrap_servers", bootstrap_servers)
@@ -1045,6 +1342,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "host", host)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ingress_ips", ingress_ips)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
         pulumi.set(__self__, "jndi_initial_context_factory", jndi_initial_context_factory)
         pulumi.set(__self__, "jndi_provider_url", jndi_provider_url)
@@ -1054,6 +1352,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "key_store", key_store)
         pulumi.set(__self__, "key_store_password", key_store_password)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "nsg_ids", nsg_ids)
         pulumi.set(__self__, "password", password)
         pulumi.set(__self__, "port", port)
@@ -1062,6 +1361,7 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "private_key_passphrase", private_key_passphrase)
         pulumi.set(__self__, "producer_properties", producer_properties)
         pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
         pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "routing_method", routing_method)
         pulumi.set(__self__, "sas_token", sas_token)
@@ -1074,10 +1374,13 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         pulumi.set(__self__, "should_validate_server_certificate", should_validate_server_certificate)
         pulumi.set(__self__, "ssl_ca", ssl_ca)
         pulumi.set(__self__, "ssl_cert", ssl_cert)
+        pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
+        pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
         pulumi.set(__self__, "ssl_crl", ssl_crl)
         pulumi.set(__self__, "ssl_key", ssl_key)
         pulumi.set(__self__, "ssl_key_password", ssl_key_password)
         pulumi.set(__self__, "ssl_mode", ssl_mode)
+        pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -1122,6 +1425,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         An array of name-value pair attribute entries. Used as additional parameters in connection string.
         """
         return pulumi.get(self, "additional_attributes")
+
+    @property
+    @pulumi.getter(name="authenticationMode")
+    def authentication_mode(self) -> str:
+        """
+        Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        """
+        return pulumi.get(self, "authentication_mode")
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -1320,6 +1631,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "ingress_ips")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="jndiConnectionFactory")
     def jndi_connection_factory(self) -> str:
         """
@@ -1383,6 +1699,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetConnectionsConnectionCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Sequence[str]:
         """
@@ -1431,6 +1755,14 @@ class GetConnectionsConnectionCollectionItemResult(dict):
     @pulumi.getter(name="publicKeyFingerprint")
     def public_key_fingerprint(self) -> str:
         return pulumi.get(self, "public_key_fingerprint")
+
+    @property
+    @pulumi.getter(name="redisClusterId")
+    def redis_cluster_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        """
+        return pulumi.get(self, "redis_cluster_id")
 
     @property
     @pulumi.getter
@@ -1520,6 +1852,16 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         return pulumi.get(self, "ssl_cert")
 
     @property
+    @pulumi.getter(name="sslClientKeystash")
+    def ssl_client_keystash(self) -> str:
+        return pulumi.get(self, "ssl_client_keystash")
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredb")
+    def ssl_client_keystoredb(self) -> str:
+        return pulumi.get(self, "ssl_client_keystoredb")
+
+    @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> str:
         return pulumi.get(self, "ssl_crl")
@@ -1541,6 +1883,11 @@ class GetConnectionsConnectionCollectionItemResult(dict):
         SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         """
         return pulumi.get(self, "ssl_mode")
+
+    @property
+    @pulumi.getter(name="sslServerCertificate")
+    def ssl_server_certificate(self) -> str:
+        return pulumi.get(self, "ssl_server_certificate")
 
     @property
     @pulumi.getter
@@ -1745,6 +2092,57 @@ class GetConnectionsConnectionCollectionItemIngressIpResult(dict):
         A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
         """
         return pulumi.get(self, "ingress_ip")
+
+
+@pulumi.output_type
+class GetConnectionsConnectionCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
 
 
 @pulumi.output_type
@@ -2105,6 +2503,57 @@ class GetDatabaseRegistrationsFilterResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentBackupLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDeploymentBackupsDeploymentBackupCollectionResult(dict):
     def __init__(__self__, *,
                  items: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemResult']):
@@ -2124,11 +2573,14 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
                  compartment_id: str,
                  defined_tags: Mapping[str, Any],
                  deployment_id: str,
+                 deployment_type: str,
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_automatic: bool,
+                 is_lock_override: bool,
                  lifecycle_details: str,
+                 locks: Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemLockResult'],
                  namespace: str,
                  object: str,
                  ogg_version: str,
@@ -2145,11 +2597,13 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         :param str compartment_id: The OCID of the compartment that contains the work request. Work requests should be scoped  to the same compartment as the resource the work request affects. If the work request concerns  multiple resources, and those resources are not in the same compartment, it is up to the service team  to pick the primary resource whose compartment should be used.
         :param Mapping[str, Any] defined_tags: Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param str deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
+        :param str deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param str display_name: A filter to return only the resources that match the entire 'displayName' given.
         :param Mapping[str, Any] freeform_tags: A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
         :param bool is_automatic: True if this object is automatically created
         :param str lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param Sequence['GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param str namespace: Name of namespace that serves as a container for all of your buckets
         :param str object: Name of the object to be uploaded to object storage
         :param str ogg_version: Version of OGG
@@ -2166,11 +2620,14 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "deployment_id", deployment_id)
+        pulumi.set(__self__, "deployment_type", deployment_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_automatic", is_automatic)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "namespace", namespace)
         pulumi.set(__self__, "object", object)
         pulumi.set(__self__, "ogg_version", ogg_version)
@@ -2223,6 +2680,14 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         return pulumi.get(self, "deployment_id")
 
     @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        """
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -2255,12 +2720,25 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
         return pulumi.get(self, "is_automatic")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDeploymentBackupsDeploymentBackupCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -2344,6 +2822,57 @@ class GetDeploymentBackupsDeploymentBackupCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentBackupsDeploymentBackupCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDeploymentBackupsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -2389,6 +2918,7 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
                  certificate_content: str,
                  deployment_id: str,
                  is_ca: bool,
+                 is_lock_override: bool,
                  is_self_signed: bool,
                  issuer: str,
                  key: str,
@@ -2406,18 +2936,32 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
                  time_valid_to: str,
                  version: str):
         """
+        :param str authority_key_id: The Certificate authority key id.
+        :param str certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param str deployment_id: A unique Deployment identifier.
+        :param bool is_ca: Indicates if the certificate is ca.
         :param bool is_self_signed: Indicates if the certificate is self signed.
+        :param str issuer: The Certificate issuer.
         :param str key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
+        :param str md5hash: The Certificate md5Hash.
+        :param str public_key: The Certificate public key.
+        :param str public_key_algorithm: The Certificate public key algorithm.
+        :param str public_key_size: The Certificate public key size.
+        :param str serial: The Certificate serial.
+        :param str sha1hash: The Certificate sha1 hash.
         :param str state: A filter to return only connections having the 'lifecycleState' given.
         :param str subject: The Certificate subject.
+        :param str subject_key_id: The Certificate subject key id.
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str time_valid_from: The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_valid_to: The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str version: The Certificate version.
         """
         pulumi.set(__self__, "authority_key_id", authority_key_id)
         pulumi.set(__self__, "certificate_content", certificate_content)
         pulumi.set(__self__, "deployment_id", deployment_id)
         pulumi.set(__self__, "is_ca", is_ca)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "is_self_signed", is_self_signed)
         pulumi.set(__self__, "issuer", issuer)
         pulumi.set(__self__, "key", key)
@@ -2438,11 +2982,17 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter(name="authorityKeyId")
     def authority_key_id(self) -> str:
+        """
+        The Certificate authority key id.
+        """
         return pulumi.get(self, "authority_key_id")
 
     @property
     @pulumi.getter(name="certificateContent")
     def certificate_content(self) -> str:
+        """
+        The base64 encoded content of the PEM file containing the SSL certificate.
+        """
         return pulumi.get(self, "certificate_content")
 
     @property
@@ -2456,7 +3006,15 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter(name="isCa")
     def is_ca(self) -> bool:
+        """
+        Indicates if the certificate is ca.
+        """
         return pulumi.get(self, "is_ca")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter(name="isSelfSigned")
@@ -2469,6 +3027,9 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter
     def issuer(self) -> str:
+        """
+        The Certificate issuer.
+        """
         return pulumi.get(self, "issuer")
 
     @property
@@ -2482,31 +3043,49 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter
     def md5hash(self) -> str:
+        """
+        The Certificate md5Hash.
+        """
         return pulumi.get(self, "md5hash")
 
     @property
     @pulumi.getter(name="publicKey")
     def public_key(self) -> str:
+        """
+        The Certificate public key.
+        """
         return pulumi.get(self, "public_key")
 
     @property
     @pulumi.getter(name="publicKeyAlgorithm")
     def public_key_algorithm(self) -> str:
+        """
+        The Certificate public key algorithm.
+        """
         return pulumi.get(self, "public_key_algorithm")
 
     @property
     @pulumi.getter(name="publicKeySize")
     def public_key_size(self) -> str:
+        """
+        The Certificate public key size.
+        """
         return pulumi.get(self, "public_key_size")
 
     @property
     @pulumi.getter
     def serial(self) -> str:
+        """
+        The Certificate serial.
+        """
         return pulumi.get(self, "serial")
 
     @property
     @pulumi.getter
     def sha1hash(self) -> str:
+        """
+        The Certificate sha1 hash.
+        """
         return pulumi.get(self, "sha1hash")
 
     @property
@@ -2528,6 +3107,9 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter(name="subjectKeyId")
     def subject_key_id(self) -> str:
+        """
+        The Certificate subject key id.
+        """
         return pulumi.get(self, "subject_key_id")
 
     @property
@@ -2541,6 +3123,9 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter(name="timeValidFrom")
     def time_valid_from(self) -> str:
+        """
+        The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
         return pulumi.get(self, "time_valid_from")
 
     @property
@@ -2554,6 +3139,9 @@ class GetDeploymentCertificatesCertificateCollectionItemResult(dict):
     @property
     @pulumi.getter
     def version(self) -> str:
+        """
+        The Certificate version.
+        """
         return pulumi.get(self, "version")
 
 
@@ -2676,6 +3264,57 @@ class GetDeploymentIngressIpResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDeploymentMaintenanceConfigurationResult(dict):
     def __init__(__self__, *,
                  bundle_release_upgrade_period_in_days: int,
@@ -2780,7 +3419,7 @@ class GetDeploymentOggDataResult(dict):
                  password_secret_id: str):
         """
         :param str admin_username: The GoldenGate deployment console username.
-        :param str certificate: A PEM-encoded SSL certificate.
+        :param str certificate: The base64 encoded content of the PEM file containing the SSL certificate.
         :param str credential_store: The type of credential store for OGG.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
@@ -2814,7 +3453,7 @@ class GetDeploymentOggDataResult(dict):
     @pulumi.getter
     def certificate(self) -> str:
         """
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate")
 
@@ -3606,6 +4245,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  is_auto_scaling_enabled: bool,
                  is_healthy: bool,
                  is_latest_version: bool,
+                 is_lock_override: bool,
                  is_public: bool,
                  is_storage_utilization_limit_exceeded: bool,
                  license_model: str,
@@ -3613,6 +4253,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
                  lifecycle_sub_state: str,
                  load_balancer_id: str,
                  load_balancer_subnet_id: str,
+                 locks: Sequence['outputs.GetDeploymentsDeploymentCollectionItemLockResult'],
                  maintenance_configurations: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult'],
                  maintenance_windows: Sequence['outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindowResult'],
                  next_maintenance_action_type: str,
@@ -3654,6 +4295,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str lifecycle_sub_state: A filter to return only the resources that match the 'lifecycleSubState' given.
         :param str load_balancer_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the loadbalancer in the customer's subnet. The loadbalancer of the public deployment created in the customer subnet.
         :param str load_balancer_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+        :param Sequence['GetDeploymentsDeploymentCollectionItemLockArgs'] locks: Locks associated with this resource.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs'] maintenance_configurations: Attributes for configuring automatic deployment maintenance.
         :param Sequence['GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs'] maintenance_windows: Defines the maintenance window, when automatic actions can be performed.
         :param str next_maintenance_action_type: Type of the next maintenance.
@@ -3664,7 +4306,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         :param str public_ip_address: The public IP address representing the access point for the Deployment.
         :param str state: A filter to return only the resources that match the 'lifecycleState' given.
         :param str storage_utilization_in_bytes: The amount of storage being utilized (in bytes)
-        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         :param Mapping[str, Any] system_tags: The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
         :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         :param str time_of_next_maintenance: The time of next maintenance schedule. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -3688,6 +4330,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "is_auto_scaling_enabled", is_auto_scaling_enabled)
         pulumi.set(__self__, "is_healthy", is_healthy)
         pulumi.set(__self__, "is_latest_version", is_latest_version)
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         pulumi.set(__self__, "is_public", is_public)
         pulumi.set(__self__, "is_storage_utilization_limit_exceeded", is_storage_utilization_limit_exceeded)
         pulumi.set(__self__, "license_model", license_model)
@@ -3695,6 +4338,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         pulumi.set(__self__, "lifecycle_sub_state", lifecycle_sub_state)
         pulumi.set(__self__, "load_balancer_id", load_balancer_id)
         pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
+        pulumi.set(__self__, "locks", locks)
         pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
         pulumi.set(__self__, "maintenance_windows", maintenance_windows)
         pulumi.set(__self__, "next_maintenance_action_type", next_maintenance_action_type)
@@ -3842,6 +4486,11 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         return pulumi.get(self, "is_latest_version")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> bool:
         """
@@ -3896,6 +4545,14 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDeploymentsDeploymentCollectionItemLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="maintenanceConfigurations")
@@ -3981,7 +4638,7 @@ class GetDeploymentsDeploymentCollectionItemResult(dict):
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -4126,6 +4783,57 @@ class GetDeploymentsDeploymentCollectionItemIngressIpResult(dict):
 
 
 @pulumi.output_type
+class GetDeploymentsDeploymentCollectionItemLockResult(dict):
+    def __init__(__self__, *,
+                 message: str,
+                 related_resource_id: str,
+                 time_created: str,
+                 type: str):
+        """
+        :param str message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param str related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param str time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        :param str type: Type of the lock.
+        """
+        pulumi.set(__self__, "message", message)
+        pulumi.set(__self__, "related_resource_id", related_resource_id)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "type", type)
+
+    @property
+    @pulumi.getter
+    def message(self) -> str:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> str:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter
+    def type(self) -> str:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+
+@pulumi.output_type
 class GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationResult(dict):
     def __init__(__self__, *,
                  bundle_release_upgrade_period_in_days: int,
@@ -4230,7 +4938,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
                  password_secret_id: str):
         """
         :param str admin_username: The GoldenGate deployment console username.
-        :param str certificate: A PEM-encoded SSL certificate.
+        :param str certificate: The base64 encoded content of the PEM file containing the SSL certificate.
         :param str credential_store: The type of credential store for OGG.
         :param str deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param str identity_domain_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
@@ -4264,7 +4972,7 @@ class GetDeploymentsDeploymentCollectionItemOggDataResult(dict):
     @pulumi.getter
     def certificate(self) -> str:
         """
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate")
 

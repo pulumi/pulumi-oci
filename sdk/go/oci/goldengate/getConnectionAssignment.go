@@ -68,7 +68,8 @@ type LookupConnectionAssignmentResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// Possible lifecycle states for connection assignments.
 	State string `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -142,6 +143,10 @@ func (o LookupConnectionAssignmentResultOutput) DeploymentId() pulumi.StringOutp
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
 func (o LookupConnectionAssignmentResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionAssignmentResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionAssignmentResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConnectionAssignmentResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // Possible lifecycle states for connection assignments.

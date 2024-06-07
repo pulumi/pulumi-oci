@@ -172,6 +172,7 @@ __all__ = [
     'GetAutonomousContainerPatchesFilterArgs',
     'GetAutonomousDatabaseBackupsFilterArgs',
     'GetAutonomousDatabaseDataguardAssociationsFilterArgs',
+    'GetAutonomousDatabasePeersFilterArgs',
     'GetAutonomousDatabaseRefreshableClonesFilterArgs',
     'GetAutonomousDatabaseSoftwareImagesFilterArgs',
     'GetAutonomousDatabasesClonesFilterArgs',
@@ -1811,7 +1812,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
         :param pulumi.Input[str] id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param pulumi.Input[str] kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param pulumi.Input[str] time_activated: The date and time the kms key activated.
-        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param pulumi.Input[str] vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -1862,7 +1863,7 @@ class AutonomousDatabaseKeyHistoryEntryArgs:
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -2037,7 +2038,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
                  is_snapshot_standby: Optional[pulumi.Input[bool]] = None,
                  time_snapshot_standby_enabled_till: Optional[pulumi.Input[str]] = None):
         """
-        :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param pulumi.Input[str] disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param pulumi.Input[bool] is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param pulumi.Input[bool] is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param pulumi.Input[str] time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
@@ -2055,7 +2056,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs:
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -11489,6 +11490,45 @@ class GetAutonomousDatabaseBackupsFilterArgs:
 
 @pulumi.input_type
 class GetAutonomousDatabaseDataguardAssociationsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetAutonomousDatabasePeersFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

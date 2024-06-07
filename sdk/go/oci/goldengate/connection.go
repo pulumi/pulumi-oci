@@ -44,6 +44,7 @@ import (
 //						Value: pulumi.Any(connectionAdditionalAttributesValue),
 //					},
 //				},
+//				AuthenticationMode: pulumi.Any(connectionAuthenticationMode),
 //				AuthenticationType: pulumi.Any(connectionAuthenticationType),
 //				AzureTenantId:      pulumi.Any(testAzureTenant.Id),
 //				BootstrapServers: goldengate.ConnectionBootstrapServerArray{
@@ -73,15 +74,21 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
-//				Host:                            pulumi.Any(connectionHost),
-//				JndiConnectionFactory:           pulumi.Any(connectionJndiConnectionFactory),
-//				JndiInitialContextFactory:       pulumi.Any(connectionJndiInitialContextFactory),
-//				JndiProviderUrl:                 pulumi.Any(connectionJndiProviderUrl),
-//				JndiSecurityCredentials:         pulumi.Any(connectionJndiSecurityCredentials),
-//				JndiSecurityPrincipal:           pulumi.Any(connectionJndiSecurityPrincipal),
-//				KeyId:                           pulumi.Any(testKey.Id),
-//				KeyStore:                        pulumi.Any(connectionKeyStore),
-//				KeyStorePassword:                pulumi.Any(connectionKeyStorePassword),
+//				Host:                      pulumi.Any(connectionHost),
+//				JndiConnectionFactory:     pulumi.Any(connectionJndiConnectionFactory),
+//				JndiInitialContextFactory: pulumi.Any(connectionJndiInitialContextFactory),
+//				JndiProviderUrl:           pulumi.Any(connectionJndiProviderUrl),
+//				JndiSecurityCredentials:   pulumi.Any(connectionJndiSecurityCredentials),
+//				JndiSecurityPrincipal:     pulumi.Any(connectionJndiSecurityPrincipal),
+//				KeyId:                     pulumi.Any(testKey.Id),
+//				KeyStore:                  pulumi.Any(connectionKeyStore),
+//				KeyStorePassword:          pulumi.Any(connectionKeyStorePassword),
+//				Locks: goldengate.ConnectionLockArray{
+//					&goldengate.ConnectionLockArgs{
+//						Type:    pulumi.Any(connectionLocksType),
+//						Message: pulumi.Any(connectionLocksMessage),
+//					},
+//				},
 //				NsgIds:                          pulumi.Any(connectionNsgIds),
 //				Password:                        pulumi.Any(connectionPassword),
 //				Port:                            pulumi.Any(connectionPort),
@@ -90,6 +97,7 @@ import (
 //				PrivateKeyPassphrase:            pulumi.Any(connectionPrivateKeyPassphrase),
 //				ProducerProperties:              pulumi.Any(connectionProducerProperties),
 //				PublicKeyFingerprint:            pulumi.Any(connectionPublicKeyFingerprint),
+//				RedisClusterId:                  pulumi.Any(testRedisCluster.Id),
 //				Region:                          pulumi.Any(connectionRegion),
 //				RoutingMethod:                   pulumi.Any(connectionRoutingMethod),
 //				SasToken:                        pulumi.Any(connectionSasToken),
@@ -102,10 +110,13 @@ import (
 //				ShouldValidateServerCertificate: pulumi.Any(connectionShouldValidateServerCertificate),
 //				SslCa:                           pulumi.Any(connectionSslCa),
 //				SslCert:                         pulumi.Any(connectionSslCert),
+//				SslClientKeystash:               pulumi.Any(connectionSslClientKeystash),
+//				SslClientKeystoredb:             pulumi.Any(connectionSslClientKeystoredb),
 //				SslCrl:                          pulumi.Any(connectionSslCrl),
 //				SslKey:                          pulumi.Any(connectionSslKey),
 //				SslKeyPassword:                  pulumi.Any(connectionSslKeyPassword),
 //				SslMode:                         pulumi.Any(connectionSslMode),
+//				SslServerCertificate:            pulumi.Any(connectionSslServerCertificate),
 //				StreamPoolId:                    pulumi.Any(testStreamPool.Id),
 //				SubnetId:                        pulumi.Any(testSubnet.Id),
 //				TenancyId:                       pulumi.Any(testTenancy.Id),
@@ -144,6 +155,8 @@ type Connection struct {
 	AccountName pulumi.StringOutput `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes ConnectionAdditionalAttributeArrayOutput `pulumi:"additionalAttributes"`
+	// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode pulumi.StringOutput `pulumi:"authenticationMode"`
 	// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType pulumi.StringOutput `pulumi:"authenticationType"`
 	// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -192,7 +205,8 @@ type Connection struct {
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringOutput `pulumi:"host"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-	IngressIps ConnectionIngressIpArrayOutput `pulumi:"ingressIps"`
+	IngressIps     ConnectionIngressIpArrayOutput `pulumi:"ingressIps"`
+	IsLockOverride pulumi.BoolOutput              `pulumi:"isLockOverride"`
 	// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory pulumi.StringOutput `pulumi:"jndiConnectionFactory"`
 	// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -211,6 +225,8 @@ type Connection struct {
 	KeyStorePassword pulumi.StringOutput `pulumi:"keyStorePassword"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks ConnectionLockArrayOutput `pulumi:"locks"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayOutput `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
@@ -228,6 +244,8 @@ type Connection struct {
 	ProducerProperties pulumi.StringOutput `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint pulumi.StringOutput `pulumi:"publicKeyFingerprint"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId pulumi.StringOutput `pulumi:"redisClusterId"`
 	// (Updatable) The name of the region. e.g.: us-ashburn-1
 	Region pulumi.StringOutput `pulumi:"region"`
 	// (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -252,6 +270,10 @@ type Connection struct {
 	SslCa pulumi.StringOutput `pulumi:"sslCa"`
 	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringOutput `pulumi:"sslCert"`
+	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+	SslClientKeystash pulumi.StringOutput `pulumi:"sslClientKeystash"`
+	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+	SslClientKeystoredb pulumi.StringOutput `pulumi:"sslClientKeystoredb"`
 	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringOutput `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -260,6 +282,8 @@ type Connection struct {
 	SslKeyPassword pulumi.StringOutput `pulumi:"sslKeyPassword"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringOutput `pulumi:"sslMode"`
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	SslServerCertificate pulumi.StringOutput `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -372,6 +396,8 @@ type connectionState struct {
 	AccountName *string `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []ConnectionAdditionalAttribute `pulumi:"additionalAttributes"`
+	// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode *string `pulumi:"authenticationMode"`
 	// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType *string `pulumi:"authenticationType"`
 	// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -420,7 +446,8 @@ type connectionState struct {
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host *string `pulumi:"host"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-	IngressIps []ConnectionIngressIp `pulumi:"ingressIps"`
+	IngressIps     []ConnectionIngressIp `pulumi:"ingressIps"`
+	IsLockOverride *bool                 `pulumi:"isLockOverride"`
 	// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory *string `pulumi:"jndiConnectionFactory"`
 	// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -439,6 +466,8 @@ type connectionState struct {
 	KeyStorePassword *string `pulumi:"keyStorePassword"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []ConnectionLock `pulumi:"locks"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
@@ -456,6 +485,8 @@ type connectionState struct {
 	ProducerProperties *string `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint *string `pulumi:"publicKeyFingerprint"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId *string `pulumi:"redisClusterId"`
 	// (Updatable) The name of the region. e.g.: us-ashburn-1
 	Region *string `pulumi:"region"`
 	// (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -480,6 +511,10 @@ type connectionState struct {
 	SslCa *string `pulumi:"sslCa"`
 	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
 	SslCert *string `pulumi:"sslCert"`
+	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+	SslClientKeystash *string `pulumi:"sslClientKeystash"`
+	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
 	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -488,6 +523,8 @@ type connectionState struct {
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode *string `pulumi:"sslMode"`
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	SslServerCertificate *string `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State *string `pulumi:"state"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -532,6 +569,8 @@ type ConnectionState struct {
 	AccountName pulumi.StringPtrInput
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes ConnectionAdditionalAttributeArrayInput
+	// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode pulumi.StringPtrInput
 	// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType pulumi.StringPtrInput
 	// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -580,7 +619,8 @@ type ConnectionState struct {
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
 	Host pulumi.StringPtrInput
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-	IngressIps ConnectionIngressIpArrayInput
+	IngressIps     ConnectionIngressIpArrayInput
+	IsLockOverride pulumi.BoolPtrInput
 	// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory pulumi.StringPtrInput
 	// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -599,6 +639,8 @@ type ConnectionState struct {
 	KeyStorePassword pulumi.StringPtrInput
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks ConnectionLockArrayInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
@@ -616,6 +658,8 @@ type ConnectionState struct {
 	ProducerProperties pulumi.StringPtrInput
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId pulumi.StringPtrInput
 	// (Updatable) The name of the region. e.g.: us-ashburn-1
 	Region pulumi.StringPtrInput
 	// (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -640,6 +684,10 @@ type ConnectionState struct {
 	SslCa pulumi.StringPtrInput
 	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringPtrInput
+	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+	SslClientKeystash pulumi.StringPtrInput
+	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+	SslClientKeystoredb pulumi.StringPtrInput
 	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
 	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -648,6 +696,8 @@ type ConnectionState struct {
 	SslKeyPassword pulumi.StringPtrInput
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringPtrInput
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	SslServerCertificate pulumi.StringPtrInput
 	// Possible lifecycle states for connection.
 	State pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -696,6 +746,8 @@ type connectionArgs struct {
 	AccountName *string `pulumi:"accountName"`
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []ConnectionAdditionalAttribute `pulumi:"additionalAttributes"`
+	// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode *string `pulumi:"authenticationMode"`
 	// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType *string `pulumi:"authenticationType"`
 	// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -742,7 +794,8 @@ type connectionArgs struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
-	Host *string `pulumi:"host"`
+	Host           *string `pulumi:"host"`
+	IsLockOverride *bool   `pulumi:"isLockOverride"`
 	// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory *string `pulumi:"jndiConnectionFactory"`
 	// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -759,6 +812,8 @@ type connectionArgs struct {
 	KeyStore *string `pulumi:"keyStore"`
 	// (Updatable) The KeyStore password.
 	KeyStorePassword *string `pulumi:"keyStorePassword"`
+	// Locks associated with this resource.
+	Locks []ConnectionLock `pulumi:"locks"`
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds []string `pulumi:"nsgIds"`
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
@@ -776,6 +831,8 @@ type connectionArgs struct {
 	ProducerProperties *string `pulumi:"producerProperties"`
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint *string `pulumi:"publicKeyFingerprint"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId *string `pulumi:"redisClusterId"`
 	// (Updatable) The name of the region. e.g.: us-ashburn-1
 	Region *string `pulumi:"region"`
 	// (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -800,6 +857,10 @@ type connectionArgs struct {
 	SslCa *string `pulumi:"sslCa"`
 	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
 	SslCert *string `pulumi:"sslCert"`
+	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+	SslClientKeystash *string `pulumi:"sslClientKeystash"`
+	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+	SslClientKeystoredb *string `pulumi:"sslClientKeystoredb"`
 	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
 	SslCrl *string `pulumi:"sslCrl"`
 	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -808,6 +869,8 @@ type connectionArgs struct {
 	SslKeyPassword *string `pulumi:"sslKeyPassword"`
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode *string `pulumi:"sslMode"`
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	SslServerCertificate *string `pulumi:"sslServerCertificate"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId *string `pulumi:"streamPoolId"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -845,6 +908,8 @@ type ConnectionArgs struct {
 	AccountName pulumi.StringPtrInput
 	// (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes ConnectionAdditionalAttributeArrayInput
+	// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode pulumi.StringPtrInput
 	// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 	AuthenticationType pulumi.StringPtrInput
 	// (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
@@ -891,7 +956,8 @@ type ConnectionArgs struct {
 	FreeformTags pulumi.MapInput
 	// (Updatable) The name or address of a host. In case of Generic connection type host and port separated by colon. Example: `"server.example.com:1234"`
 	// For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
-	Host pulumi.StringPtrInput
+	Host           pulumi.StringPtrInput
+	IsLockOverride pulumi.BoolPtrInput
 	// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory pulumi.StringPtrInput
 	// (Updatable) The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -908,6 +974,8 @@ type ConnectionArgs struct {
 	KeyStore pulumi.StringPtrInput
 	// (Updatable) The KeyStore password.
 	KeyStorePassword pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks ConnectionLockArrayInput
 	// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds pulumi.StringArrayInput
 	// (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
@@ -925,6 +993,8 @@ type ConnectionArgs struct {
 	ProducerProperties pulumi.StringPtrInput
 	// (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 	PublicKeyFingerprint pulumi.StringPtrInput
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId pulumi.StringPtrInput
 	// (Updatable) The name of the region. e.g.: us-ashburn-1
 	Region pulumi.StringPtrInput
 	// (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -949,6 +1019,10 @@ type ConnectionArgs struct {
 	SslCa pulumi.StringPtrInput
 	// (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
 	SslCert pulumi.StringPtrInput
+	// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+	SslClientKeystash pulumi.StringPtrInput
+	// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+	SslClientKeystoredb pulumi.StringPtrInput
 	// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
 	SslCrl pulumi.StringPtrInput
 	// (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
@@ -957,6 +1031,8 @@ type ConnectionArgs struct {
 	SslKeyPassword pulumi.StringPtrInput
 	// (Updatable) SSL modes for PostgreSQL.
 	SslMode pulumi.StringPtrInput
+	// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+	SslServerCertificate pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
 	StreamPoolId pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -1091,6 +1167,11 @@ func (o ConnectionOutput) AdditionalAttributes() ConnectionAdditionalAttributeAr
 	return o.ApplyT(func(v *Connection) ConnectionAdditionalAttributeArrayOutput { return v.AdditionalAttributes }).(ConnectionAdditionalAttributeArrayOutput)
 }
 
+// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+func (o ConnectionOutput) AuthenticationMode() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AuthenticationMode }).(pulumi.StringOutput)
+}
+
 // (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
 func (o ConnectionOutput) AuthenticationType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.AuthenticationType }).(pulumi.StringOutput)
@@ -1212,6 +1293,10 @@ func (o ConnectionOutput) IngressIps() ConnectionIngressIpArrayOutput {
 	return o.ApplyT(func(v *Connection) ConnectionIngressIpArrayOutput { return v.IngressIps }).(ConnectionIngressIpArrayOutput)
 }
 
+func (o ConnectionOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Connection) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 func (o ConnectionOutput) JndiConnectionFactory() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.JndiConnectionFactory }).(pulumi.StringOutput)
@@ -1257,6 +1342,11 @@ func (o ConnectionOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o ConnectionOutput) Locks() ConnectionLockArrayOutput {
+	return o.ApplyT(func(v *Connection) ConnectionLockArrayOutput { return v.Locks }).(ConnectionLockArrayOutput)
+}
+
 // (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o ConnectionOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringArrayOutput { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -1296,6 +1386,11 @@ func (o ConnectionOutput) ProducerProperties() pulumi.StringOutput {
 // (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
 func (o ConnectionOutput) PublicKeyFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+func (o ConnectionOutput) RedisClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.RedisClusterId }).(pulumi.StringOutput)
 }
 
 // (Updatable) The name of the region. e.g.: us-ashburn-1
@@ -1358,6 +1453,16 @@ func (o ConnectionOutput) SslCert() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCert }).(pulumi.StringOutput)
 }
 
+// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+func (o ConnectionOutput) SslClientKeystash() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslClientKeystash }).(pulumi.StringOutput)
+}
+
+// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+func (o ConnectionOutput) SslClientKeystoredb() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslClientKeystoredb }).(pulumi.StringOutput)
+}
+
 // (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
 func (o ConnectionOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslCrl }).(pulumi.StringOutput)
@@ -1376,6 +1481,11 @@ func (o ConnectionOutput) SslKeyPassword() pulumi.StringOutput {
 // (Updatable) SSL modes for PostgreSQL.
 func (o ConnectionOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslMode }).(pulumi.StringOutput)
+}
+
+// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+func (o ConnectionOutput) SslServerCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v *Connection) pulumi.StringOutput { return v.SslServerCertificate }).(pulumi.StringOutput)
 }
 
 // Possible lifecycle states for connection.

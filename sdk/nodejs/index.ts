@@ -54,6 +54,7 @@ import * as dataintegration from "./dataintegration";
 import * as datalabellingservice from "./datalabellingservice";
 import * as datasafe from "./datasafe";
 import * as datascience from "./datascience";
+import * as demandsignal from "./demandsignal";
 import * as devops from "./devops";
 import * as disasterrecovery from "./disasterrecovery";
 import * as dns from "./dns";
@@ -171,6 +172,7 @@ export {
     datalabellingservice,
     datasafe,
     datascience,
+    demandsignal,
     devops,
     disasterrecovery,
     dns,

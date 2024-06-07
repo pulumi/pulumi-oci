@@ -22,7 +22,7 @@ class GetDeploymentResult:
     """
     A collection of values returned by getDeployment.
     """
-    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
+    def __init__(__self__, compartment_id=None, cpu_core_count=None, defined_tags=None, deployment_backup_id=None, deployment_diagnostic_datas=None, deployment_id=None, deployment_type=None, deployment_url=None, description=None, display_name=None, fqdn=None, freeform_tags=None, id=None, ingress_ips=None, is_auto_scaling_enabled=None, is_healthy=None, is_latest_version=None, is_lock_override=None, is_public=None, is_storage_utilization_limit_exceeded=None, license_model=None, lifecycle_details=None, lifecycle_sub_state=None, load_balancer_id=None, load_balancer_subnet_id=None, locks=None, maintenance_configurations=None, maintenance_windows=None, next_maintenance_action_type=None, next_maintenance_description=None, nsg_ids=None, ogg_datas=None, private_ip_address=None, public_ip_address=None, state=None, storage_utilization_in_bytes=None, subnet_id=None, system_tags=None, time_created=None, time_of_next_maintenance=None, time_ogg_version_supported_until=None, time_updated=None, time_upgrade_required=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -74,6 +74,9 @@ class GetDeploymentResult:
         if is_latest_version and not isinstance(is_latest_version, bool):
             raise TypeError("Expected argument 'is_latest_version' to be a bool")
         pulumi.set(__self__, "is_latest_version", is_latest_version)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_public and not isinstance(is_public, bool):
             raise TypeError("Expected argument 'is_public' to be a bool")
         pulumi.set(__self__, "is_public", is_public)
@@ -95,6 +98,9 @@ class GetDeploymentResult:
         if load_balancer_subnet_id and not isinstance(load_balancer_subnet_id, str):
             raise TypeError("Expected argument 'load_balancer_subnet_id' to be a str")
         pulumi.set(__self__, "load_balancer_subnet_id", load_balancer_subnet_id)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if maintenance_configurations and not isinstance(maintenance_configurations, list):
             raise TypeError("Expected argument 'maintenance_configurations' to be a list")
         pulumi.set(__self__, "maintenance_configurations", maintenance_configurations)
@@ -281,6 +287,11 @@ class GetDeploymentResult:
         return pulumi.get(self, "is_latest_version")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="isPublic")
     def is_public(self) -> bool:
         """
@@ -335,6 +346,14 @@ class GetDeploymentResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         """
         return pulumi.get(self, "load_balancer_subnet_id")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDeploymentLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter(name="maintenanceConfigurations")
@@ -420,7 +439,7 @@ class GetDeploymentResult:
     @pulumi.getter(name="subnetId")
     def subnet_id(self) -> str:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         """
         return pulumi.get(self, "subnet_id")
 
@@ -496,6 +515,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             is_auto_scaling_enabled=self.is_auto_scaling_enabled,
             is_healthy=self.is_healthy,
             is_latest_version=self.is_latest_version,
+            is_lock_override=self.is_lock_override,
             is_public=self.is_public,
             is_storage_utilization_limit_exceeded=self.is_storage_utilization_limit_exceeded,
             license_model=self.license_model,
@@ -503,6 +523,7 @@ class AwaitableGetDeploymentResult(GetDeploymentResult):
             lifecycle_sub_state=self.lifecycle_sub_state,
             load_balancer_id=self.load_balancer_id,
             load_balancer_subnet_id=self.load_balancer_subnet_id,
+            locks=self.locks,
             maintenance_configurations=self.maintenance_configurations,
             maintenance_windows=self.maintenance_windows,
             next_maintenance_action_type=self.next_maintenance_action_type,
@@ -564,6 +585,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         is_auto_scaling_enabled=pulumi.get(__ret__, 'is_auto_scaling_enabled'),
         is_healthy=pulumi.get(__ret__, 'is_healthy'),
         is_latest_version=pulumi.get(__ret__, 'is_latest_version'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         is_public=pulumi.get(__ret__, 'is_public'),
         is_storage_utilization_limit_exceeded=pulumi.get(__ret__, 'is_storage_utilization_limit_exceeded'),
         license_model=pulumi.get(__ret__, 'license_model'),
@@ -571,6 +593,7 @@ def get_deployment(deployment_id: Optional[str] = None,
         lifecycle_sub_state=pulumi.get(__ret__, 'lifecycle_sub_state'),
         load_balancer_id=pulumi.get(__ret__, 'load_balancer_id'),
         load_balancer_subnet_id=pulumi.get(__ret__, 'load_balancer_subnet_id'),
+        locks=pulumi.get(__ret__, 'locks'),
         maintenance_configurations=pulumi.get(__ret__, 'maintenance_configurations'),
         maintenance_windows=pulumi.get(__ret__, 'maintenance_windows'),
         next_maintenance_action_type=pulumi.get(__ret__, 'next_maintenance_action_type'),

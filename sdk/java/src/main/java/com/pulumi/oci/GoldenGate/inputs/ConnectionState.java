@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionAdditionalAttributeArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionBootstrapServerArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionIngressIpArgs;
+import com.pulumi.oci.GoldenGate.inputs.ConnectionLockArgs;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -81,6 +82,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<ConnectionAdditionalAttributeArgs>>> additionalAttributes() {
         return Optional.ofNullable(this.additionalAttributes);
+    }
+
+    /**
+     * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     * 
+     */
+    @Import(name="authenticationMode")
+    private @Nullable Output<String> authenticationMode;
+
+    /**
+     * @return (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     * 
+     */
+    public Optional<Output<String>> authenticationMode() {
+        return Optional.ofNullable(this.authenticationMode);
     }
 
     /**
@@ -445,6 +461,13 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.ingressIps);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
@@ -581,6 +604,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<ConnectionLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<ConnectionLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
+    }
+
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -700,6 +738,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> publicKeyFingerprint() {
         return Optional.ofNullable(this.publicKeyFingerprint);
+    }
+
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     * 
+     */
+    @Import(name="redisClusterId")
+    private @Nullable Output<String> redisClusterId;
+
+    /**
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     * 
+     */
+    public Optional<Output<String>> redisClusterId() {
+        return Optional.ofNullable(this.redisClusterId);
     }
 
     /**
@@ -883,6 +936,36 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * 
+     */
+    @Import(name="sslClientKeystash")
+    private @Nullable Output<String> sslClientKeystash;
+
+    /**
+     * @return (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     * 
+     */
+    public Optional<Output<String>> sslClientKeystash() {
+        return Optional.ofNullable(this.sslClientKeystash);
+    }
+
+    /**
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * 
+     */
+    @Import(name="sslClientKeystoredb")
+    private @Nullable Output<String> sslClientKeystoredb;
+
+    /**
+     * @return (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     * 
+     */
+    public Optional<Output<String>> sslClientKeystoredb() {
+        return Optional.ofNullable(this.sslClientKeystoredb);
+    }
+
+    /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      * 
      */
@@ -940,6 +1023,21 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> sslMode() {
         return Optional.ofNullable(this.sslMode);
+    }
+
+    /**
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * 
+     */
+    @Import(name="sslServerCertificate")
+    private @Nullable Output<String> sslServerCertificate;
+
+    /**
+     * @return (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     * 
+     */
+    public Optional<Output<String>> sslServerCertificate() {
+        return Optional.ofNullable(this.sslServerCertificate);
     }
 
     /**
@@ -1180,6 +1278,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.accountKey = $.accountKey;
         this.accountName = $.accountName;
         this.additionalAttributes = $.additionalAttributes;
+        this.authenticationMode = $.authenticationMode;
         this.authenticationType = $.authenticationType;
         this.azureTenantId = $.azureTenantId;
         this.bootstrapServers = $.bootstrapServers;
@@ -1204,6 +1303,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.freeformTags = $.freeformTags;
         this.host = $.host;
         this.ingressIps = $.ingressIps;
+        this.isLockOverride = $.isLockOverride;
         this.jndiConnectionFactory = $.jndiConnectionFactory;
         this.jndiInitialContextFactory = $.jndiInitialContextFactory;
         this.jndiProviderUrl = $.jndiProviderUrl;
@@ -1213,6 +1313,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.keyStore = $.keyStore;
         this.keyStorePassword = $.keyStorePassword;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.nsgIds = $.nsgIds;
         this.password = $.password;
         this.port = $.port;
@@ -1221,6 +1322,7 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.privateKeyPassphrase = $.privateKeyPassphrase;
         this.producerProperties = $.producerProperties;
         this.publicKeyFingerprint = $.publicKeyFingerprint;
+        this.redisClusterId = $.redisClusterId;
         this.region = $.region;
         this.routingMethod = $.routingMethod;
         this.sasToken = $.sasToken;
@@ -1233,10 +1335,13 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         this.shouldValidateServerCertificate = $.shouldValidateServerCertificate;
         this.sslCa = $.sslCa;
         this.sslCert = $.sslCert;
+        this.sslClientKeystash = $.sslClientKeystash;
+        this.sslClientKeystoredb = $.sslClientKeystoredb;
         this.sslCrl = $.sslCrl;
         this.sslKey = $.sslKey;
         this.sslKeyPassword = $.sslKeyPassword;
         this.sslMode = $.sslMode;
+        this.sslServerCertificate = $.sslServerCertificate;
         this.state = $.state;
         this.streamPoolId = $.streamPoolId;
         this.subnetId = $.subnetId;
@@ -1364,6 +1469,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder additionalAttributes(ConnectionAdditionalAttributeArgs... additionalAttributes) {
             return additionalAttributes(List.of(additionalAttributes));
+        }
+
+        /**
+         * @param authenticationMode (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authenticationMode(@Nullable Output<String> authenticationMode) {
+            $.authenticationMode = authenticationMode;
+            return this;
+        }
+
+        /**
+         * @param authenticationMode (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder authenticationMode(String authenticationMode) {
+            return authenticationMode(Output.of(authenticationMode));
         }
 
         /**
@@ -1892,6 +2018,15 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
             return ingressIps(List.of(ingressIps));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param jndiConnectionFactory (Updatable) The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
          * 
@@ -2082,6 +2217,37 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<ConnectionLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<ConnectionLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(ConnectionLockArgs... locks) {
+            return locks(List.of(locks));
+        }
+
+        /**
          * @param nsgIds (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
          * 
          * @return builder
@@ -2259,6 +2425,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder publicKeyFingerprint(String publicKeyFingerprint) {
             return publicKeyFingerprint(Output.of(publicKeyFingerprint));
+        }
+
+        /**
+         * @param redisClusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder redisClusterId(@Nullable Output<String> redisClusterId) {
+            $.redisClusterId = redisClusterId;
+            return this;
+        }
+
+        /**
+         * @param redisClusterId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder redisClusterId(String redisClusterId) {
+            return redisClusterId(Output.of(redisClusterId));
         }
 
         /**
@@ -2514,6 +2701,48 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param sslClientKeystash (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystash(@Nullable Output<String> sslClientKeystash) {
+            $.sslClientKeystash = sslClientKeystash;
+            return this;
+        }
+
+        /**
+         * @param sslClientKeystash (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystash(String sslClientKeystash) {
+            return sslClientKeystash(Output.of(sslClientKeystash));
+        }
+
+        /**
+         * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystoredb(@Nullable Output<String> sslClientKeystoredb) {
+            $.sslClientKeystoredb = sslClientKeystoredb;
+            return this;
+        }
+
+        /**
+         * @param sslClientKeystoredb (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslClientKeystoredb(String sslClientKeystoredb) {
+            return sslClientKeystoredb(Output.of(sslClientKeystoredb));
+        }
+
+        /**
          * @param sslCrl (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
          * 
          * @return builder
@@ -2595,6 +2824,27 @@ public final class ConnectionState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder sslMode(String sslMode) {
             return sslMode(Output.of(sslMode));
+        }
+
+        /**
+         * @param sslServerCertificate (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslServerCertificate(@Nullable Output<String> sslServerCertificate) {
+            $.sslServerCertificate = sslServerCertificate;
+            return this;
+        }
+
+        /**
+         * @param sslServerCertificate (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sslServerCertificate(String sslServerCertificate) {
+            return sslServerCertificate(Output.of(sslServerCertificate));
         }
 
         /**

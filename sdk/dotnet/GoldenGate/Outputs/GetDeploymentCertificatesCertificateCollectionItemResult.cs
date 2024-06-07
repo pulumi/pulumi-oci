@@ -13,27 +13,58 @@ namespace Pulumi.Oci.GoldenGate.Outputs
     [OutputType]
     public sealed class GetDeploymentCertificatesCertificateCollectionItemResult
     {
+        /// <summary>
+        /// The Certificate authority key id.
+        /// </summary>
         public readonly string AuthorityKeyId;
+        /// <summary>
+        /// The base64 encoded content of the PEM file containing the SSL certificate.
+        /// </summary>
         public readonly string CertificateContent;
         /// <summary>
         /// A unique Deployment identifier.
         /// </summary>
         public readonly string DeploymentId;
+        /// <summary>
+        /// Indicates if the certificate is ca.
+        /// </summary>
         public readonly bool IsCa;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// Indicates if the certificate is self signed.
         /// </summary>
         public readonly bool IsSelfSigned;
+        /// <summary>
+        /// The Certificate issuer.
+        /// </summary>
         public readonly string Issuer;
         /// <summary>
         /// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         /// </summary>
         public readonly string Key;
+        /// <summary>
+        /// The Certificate md5Hash.
+        /// </summary>
         public readonly string Md5hash;
+        /// <summary>
+        /// The Certificate public key.
+        /// </summary>
         public readonly string PublicKey;
+        /// <summary>
+        /// The Certificate public key algorithm.
+        /// </summary>
         public readonly string PublicKeyAlgorithm;
+        /// <summary>
+        /// The Certificate public key size.
+        /// </summary>
         public readonly string PublicKeySize;
+        /// <summary>
+        /// The Certificate serial.
+        /// </summary>
         public readonly string Serial;
+        /// <summary>
+        /// The Certificate sha1 hash.
+        /// </summary>
         public readonly string Sha1hash;
         /// <summary>
         /// A filter to return only connections having the 'lifecycleState' given.
@@ -43,16 +74,25 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The Certificate subject.
         /// </summary>
         public readonly string Subject;
+        /// <summary>
+        /// The Certificate subject key id.
+        /// </summary>
         public readonly string SubjectKeyId;
         /// <summary>
         /// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeCreated;
+        /// <summary>
+        /// The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        /// </summary>
         public readonly string TimeValidFrom;
         /// <summary>
         /// The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
         /// </summary>
         public readonly string TimeValidTo;
+        /// <summary>
+        /// The Certificate version.
+        /// </summary>
         public readonly string Version;
 
         [OutputConstructor]
@@ -64,6 +104,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             string deploymentId,
 
             bool isCa,
+
+            bool isLockOverride,
 
             bool isSelfSigned,
 
@@ -101,6 +143,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             CertificateContent = certificateContent;
             DeploymentId = deploymentId;
             IsCa = isCa;
+            IsLockOverride = isLockOverride;
             IsSelfSigned = isSelfSigned;
             Issuer = issuer;
             Key = key;

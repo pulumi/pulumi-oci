@@ -91,6 +91,7 @@ type LookupDeploymentResult struct {
 	IsHealthy bool `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
 	IsLatestVersion bool `pulumi:"isLatestVersion"`
+	IsLockOverride  bool `pulumi:"isLockOverride"`
 	// True if this object is publicly available.
 	IsPublic bool `pulumi:"isPublic"`
 	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -105,6 +106,8 @@ type LookupDeploymentResult struct {
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
 	LoadBalancerSubnetId string `pulumi:"loadBalancerSubnetId"`
+	// Locks associated with this resource.
+	Locks []GetDeploymentLock `pulumi:"locks"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations []GetDeploymentMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
@@ -125,7 +128,7 @@ type LookupDeploymentResult struct {
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -265,6 +268,10 @@ func (o LookupDeploymentResultOutput) IsLatestVersion() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsLatestVersion }).(pulumi.BoolOutput)
 }
 
+func (o LookupDeploymentResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // True if this object is publicly available.
 func (o LookupDeploymentResultOutput) IsPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) bool { return v.IsPublic }).(pulumi.BoolOutput)
@@ -298,6 +305,11 @@ func (o LookupDeploymentResultOutput) LoadBalancerId() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
 func (o LookupDeploymentResultOutput) LoadBalancerSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupDeploymentResultOutput) Locks() GetDeploymentLockArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentResult) []GetDeploymentLock { return v.Locks }).(GetDeploymentLockArrayOutput)
 }
 
 // Attributes for configuring automatic deployment maintenance.
@@ -352,7 +364,7 @@ func (o LookupDeploymentResultOutput) StorageUtilizationInBytes() pulumi.StringO
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.StorageUtilizationInBytes }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 func (o LookupDeploymentResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentResult) string { return v.SubnetId }).(pulumi.StringOutput)
 }

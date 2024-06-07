@@ -177,6 +177,10 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly disasterRecoveryRegionType: string;
     /**
+     * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     */
+    readonly disasterRecoveryType: string;
+    /**
      * The user-friendly name for the Autonomous Database. The name does not have to be unique.
      */
     readonly displayName: string;

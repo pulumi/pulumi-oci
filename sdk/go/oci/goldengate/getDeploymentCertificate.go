@@ -63,14 +63,15 @@ type LookupDeploymentCertificateArgs struct {
 type LookupDeploymentCertificateResult struct {
 	// The Certificate authority key id.
 	AuthorityKeyId string `pulumi:"authorityKeyId"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent string `pulumi:"certificateContent"`
 	CertificateKey     string `pulumi:"certificateKey"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
 	Id           string `pulumi:"id"`
 	// Indicates if the certificate is ca.
-	IsCa bool `pulumi:"isCa"`
+	IsCa           bool `pulumi:"isCa"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Indicates if the certificate is self signed.
 	IsSelfSigned bool `pulumi:"isSelfSigned"`
 	// The Certificate issuer.
@@ -150,7 +151,7 @@ func (o LookupDeploymentCertificateResultOutput) AuthorityKeyId() pulumi.StringO
 	return o.ApplyT(func(v LookupDeploymentCertificateResult) string { return v.AuthorityKeyId }).(pulumi.StringOutput)
 }
 
-// A PEM-encoded SSL certificate.
+// The base64 encoded content of the PEM file containing the SSL certificate.
 func (o LookupDeploymentCertificateResultOutput) CertificateContent() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentCertificateResult) string { return v.CertificateContent }).(pulumi.StringOutput)
 }
@@ -171,6 +172,10 @@ func (o LookupDeploymentCertificateResultOutput) Id() pulumi.StringOutput {
 // Indicates if the certificate is ca.
 func (o LookupDeploymentCertificateResultOutput) IsCa() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentCertificateResult) bool { return v.IsCa }).(pulumi.BoolOutput)
+}
+
+func (o LookupDeploymentCertificateResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentCertificateResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // Indicates if the certificate is self signed.

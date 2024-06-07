@@ -107,6 +107,7 @@ export class Deployment extends pulumi.CustomResource {
      * Indicates if the resource is the the latest available version.
      */
     public /*out*/ readonly isLatestVersion!: pulumi.Output<boolean>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * (Updatable) True if this object is publicly available.
      */
@@ -135,6 +136,10 @@ export class Deployment extends pulumi.CustomResource {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
      */
     public readonly loadBalancerSubnetId!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.GoldenGate.DeploymentLock[]>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
@@ -173,7 +178,7 @@ export class Deployment extends pulumi.CustomResource {
      */
     public /*out*/ readonly storageUtilizationInBytes!: pulumi.Output<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
     public readonly subnetId!: pulumi.Output<string>;
     /**
@@ -229,6 +234,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["isAutoScalingEnabled"] = state ? state.isAutoScalingEnabled : undefined;
             resourceInputs["isHealthy"] = state ? state.isHealthy : undefined;
             resourceInputs["isLatestVersion"] = state ? state.isLatestVersion : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["isPublic"] = state ? state.isPublic : undefined;
             resourceInputs["isStorageUtilizationLimitExceeded"] = state ? state.isStorageUtilizationLimitExceeded : undefined;
             resourceInputs["licenseModel"] = state ? state.licenseModel : undefined;
@@ -236,6 +242,7 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["lifecycleSubState"] = state ? state.lifecycleSubState : undefined;
             resourceInputs["loadBalancerId"] = state ? state.loadBalancerId : undefined;
             resourceInputs["loadBalancerSubnetId"] = state ? state.loadBalancerSubnetId : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["maintenanceConfiguration"] = state ? state.maintenanceConfiguration : undefined;
             resourceInputs["maintenanceWindow"] = state ? state.maintenanceWindow : undefined;
             resourceInputs["nextMaintenanceActionType"] = state ? state.nextMaintenanceActionType : undefined;
@@ -286,9 +293,11 @@ export class Deployment extends pulumi.CustomResource {
             resourceInputs["fqdn"] = args ? args.fqdn : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["isAutoScalingEnabled"] = args ? args.isAutoScalingEnabled : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
             resourceInputs["isPublic"] = args ? args.isPublic : undefined;
             resourceInputs["licenseModel"] = args ? args.licenseModel : undefined;
             resourceInputs["loadBalancerSubnetId"] = args ? args.loadBalancerSubnetId : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["maintenanceConfiguration"] = args ? args.maintenanceConfiguration : undefined;
             resourceInputs["maintenanceWindow"] = args ? args.maintenanceWindow : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
@@ -385,6 +394,7 @@ export interface DeploymentState {
      * Indicates if the resource is the the latest available version.
      */
     isLatestVersion?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * (Updatable) True if this object is publicly available.
      */
@@ -413,6 +423,10 @@ export interface DeploymentState {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
      */
     loadBalancerSubnetId?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentLock>[]>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
@@ -451,7 +465,7 @@ export interface DeploymentState {
      */
     storageUtilizationInBytes?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
     subnetId?: pulumi.Input<string>;
     /**
@@ -524,6 +538,7 @@ export interface DeploymentArgs {
      * (Updatable) Indicates if auto scaling is enabled for the Deployment's CPU core count.
      */
     isAutoScalingEnabled: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * (Updatable) True if this object is publicly available.
      */
@@ -536,6 +551,10 @@ export interface DeploymentArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
      */
     loadBalancerSubnetId?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentLock>[]>;
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
      */
@@ -554,7 +573,7 @@ export interface DeploymentArgs {
     oggData?: pulumi.Input<inputs.GoldenGate.DeploymentOggData>;
     state?: pulumi.Input<string>;
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      */
     subnetId: pulumi.Input<string>;
 }

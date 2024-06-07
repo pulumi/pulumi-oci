@@ -23540,7 +23540,7 @@ export namespace Database {
          */
         timeActivated?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
          */
         vaultId?: pulumi.Input<string>;
     }
@@ -23589,7 +23589,7 @@ export namespace Database {
 
     export interface AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
         /**
-         * Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+         * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
          */
         disasterRecoveryType?: pulumi.Input<string>;
         /**
@@ -25657,6 +25657,18 @@ export namespace Database {
     }
 
     export interface GetAutonomousDatabaseDataguardAssociationsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetAutonomousDatabasePeersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetAutonomousDatabasePeersFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -30549,6 +30561,83 @@ export namespace DatabaseTools {
     }
 }
 
+export namespace DemandSignal {
+    export interface GetOccDemandSignalsFilter {
+        name: string;
+        regex?: boolean;
+        /**
+         * The values of forecast.
+         */
+        values: string[];
+    }
+
+    export interface GetOccDemandSignalsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        /**
+         * The values of forecast.
+         */
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface OccDemandSignalOccDemandSignal {
+        /**
+         * The name of the resource for the data.
+         */
+        resourceType: pulumi.Input<string>;
+        /**
+         * The units of the data.
+         */
+        units: pulumi.Input<string>;
+        /**
+         * The values of forecast.
+         */
+        values: pulumi.Input<pulumi.Input<inputs.DemandSignal.OccDemandSignalOccDemandSignalValue>[]>;
+    }
+
+    export interface OccDemandSignalOccDemandSignalValue {
+        /**
+         * Space provided for users to make comments regarding the value.
+         */
+        comments?: pulumi.Input<string>;
+        /**
+         * The date of the Demand Signal Value.
+         */
+        timeExpected: pulumi.Input<string>;
+        /**
+         * The Demand Signal Value.
+         */
+        value: pulumi.Input<number>;
+    }
+
+    export interface OccDemandSignalPatchOperation {
+        /**
+         * (Updatable)
+         */
+        from: pulumi.Input<string>;
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `INSERT_MULTIPLE`, `MERGE`, `MOVE`, `PROHIBIT`, `REMOVE`, `REPLACE`, `REQUIRE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        position?: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selectedItem?: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<{[key: string]: any}>;
+    }
+}
+
 export namespace DevOps {
     export interface BuildPipelineBuildPipelineParameters {
         /**
@@ -33985,6 +34074,44 @@ export namespace GoldenGate {
         ingressIp?: pulumi.Input<string>;
     }
 
+    export interface ConnectionLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface DeploymentBackupLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
+    }
+
     export interface DeploymentDeploymentDiagnosticData {
         /**
          * Name of the bucket where the object is to be uploaded in the object storage
@@ -34017,6 +34144,25 @@ export namespace GoldenGate {
          * A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
          */
         ingressIp?: pulumi.Input<string>;
+    }
+
+    export interface DeploymentLock {
+        /**
+         * A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+         */
+        message?: pulumi.Input<string>;
+        /**
+         * The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+         */
+        relatedResourceId?: pulumi.Input<string>;
+        /**
+         * The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * Type of the lock.
+         */
+        type: pulumi.Input<string>;
     }
 
     export interface DeploymentMaintenanceConfiguration {
@@ -34063,7 +34209,7 @@ export namespace GoldenGate {
          */
         adminUsername?: pulumi.Input<string>;
         /**
-         * (Updatable) A PEM-encoded SSL certificate.
+         * (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
          */
         certificate?: pulumi.Input<string>;
         /**
@@ -34079,11 +34225,11 @@ export namespace GoldenGate {
          */
         identityDomainId?: pulumi.Input<string>;
         /**
-         * (Updatable) A PEM-encoded private key.
+         * (Updatable) The base64 encoded content of the PEM file containing the private key.
          */
         key?: pulumi.Input<string>;
         /**
-         * (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+         * Version of OGG
          */
         oggVersion?: pulumi.Input<string>;
         /**

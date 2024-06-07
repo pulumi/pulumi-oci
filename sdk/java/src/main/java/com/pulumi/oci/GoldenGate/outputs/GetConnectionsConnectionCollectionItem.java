@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemAdditionalAttribute;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemBootstrapServer;
 import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemIngressIp;
+import com.pulumi.oci.GoldenGate.outputs.GetConnectionsConnectionCollectionItemLock;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
@@ -34,6 +35,11 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
+    /**
+     * @return Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     * 
+     */
+    private String authenticationMode;
     /**
      * @return Used authentication mechanism to be provided for the following connection types:
      * * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
@@ -151,6 +157,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
+    private Boolean isLockOverride;
     /**
      * @return The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
@@ -185,6 +192,11 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String lifecycleDetails;
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetConnectionsConnectionCollectionItemLock> locks;
+    /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -205,6 +217,11 @@ public final class GetConnectionsConnectionCollectionItem {
     private String privateKeyPassphrase;
     private String producerProperties;
     private String publicKeyFingerprint;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     * 
+     */
+    private String redisClusterId;
     /**
      * @return The name of the region. e.g.: us-ashburn-1
      * 
@@ -252,6 +269,8 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     private String sslCa;
     private String sslCert;
+    private String sslClientKeystash;
+    private String sslClientKeystoredb;
     private String sslCrl;
     private String sslKey;
     private String sslKeyPassword;
@@ -260,6 +279,7 @@ public final class GetConnectionsConnectionCollectionItem {
      * 
      */
     private String sslMode;
+    private String sslServerCertificate;
     /**
      * @return A filter to return only connections having the &#39;lifecycleState&#39; given.
      * 
@@ -348,6 +368,13 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     public List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes() {
         return this.additionalAttributes;
+    }
+    /**
+     * @return Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     * 
+     */
+    public String authenticationMode() {
+        return this.authenticationMode;
     }
     /**
      * @return Used authentication mechanism to be provided for the following connection types:
@@ -516,6 +543,9 @@ public final class GetConnectionsConnectionCollectionItem {
     public List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps() {
         return this.ingressIps;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return The Connection Factory can be looked up using this name. e.g.: &#39;ConnectionFactory&#39;
      * 
@@ -568,6 +598,13 @@ public final class GetConnectionsConnectionCollectionItem {
         return this.lifecycleDetails;
     }
     /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetConnectionsConnectionCollectionItemLock> locks() {
+        return this.locks;
+    }
+    /**
      * @return An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      * 
      */
@@ -603,6 +640,13 @@ public final class GetConnectionsConnectionCollectionItem {
     }
     public String publicKeyFingerprint() {
         return this.publicKeyFingerprint;
+    }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     * 
+     */
+    public String redisClusterId() {
+        return this.redisClusterId;
     }
     /**
      * @return The name of the region. e.g.: us-ashburn-1
@@ -675,6 +719,12 @@ public final class GetConnectionsConnectionCollectionItem {
     public String sslCert() {
         return this.sslCert;
     }
+    public String sslClientKeystash() {
+        return this.sslClientKeystash;
+    }
+    public String sslClientKeystoredb() {
+        return this.sslClientKeystoredb;
+    }
     public String sslCrl() {
         return this.sslCrl;
     }
@@ -690,6 +740,9 @@ public final class GetConnectionsConnectionCollectionItem {
      */
     public String sslMode() {
         return this.sslMode;
+    }
+    public String sslServerCertificate() {
+        return this.sslServerCertificate;
     }
     /**
      * @return A filter to return only connections having the &#39;lifecycleState&#39; given.
@@ -798,6 +851,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String accountKey;
         private String accountName;
         private List<GetConnectionsConnectionCollectionItemAdditionalAttribute> additionalAttributes;
+        private String authenticationMode;
         private String authenticationType;
         private String azureTenantId;
         private List<GetConnectionsConnectionCollectionItemBootstrapServer> bootstrapServers;
@@ -823,6 +877,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String host;
         private String id;
         private List<GetConnectionsConnectionCollectionItemIngressIp> ingressIps;
+        private Boolean isLockOverride;
         private String jndiConnectionFactory;
         private String jndiInitialContextFactory;
         private String jndiProviderUrl;
@@ -832,6 +887,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String keyStore;
         private String keyStorePassword;
         private String lifecycleDetails;
+        private List<GetConnectionsConnectionCollectionItemLock> locks;
         private List<String> nsgIds;
         private String password;
         private Integer port;
@@ -840,6 +896,7 @@ public final class GetConnectionsConnectionCollectionItem {
         private String privateKeyPassphrase;
         private String producerProperties;
         private String publicKeyFingerprint;
+        private String redisClusterId;
         private String region;
         private String routingMethod;
         private String sasToken;
@@ -852,10 +909,13 @@ public final class GetConnectionsConnectionCollectionItem {
         private Boolean shouldValidateServerCertificate;
         private String sslCa;
         private String sslCert;
+        private String sslClientKeystash;
+        private String sslClientKeystoredb;
         private String sslCrl;
         private String sslKey;
         private String sslKeyPassword;
         private String sslMode;
+        private String sslServerCertificate;
         private String state;
         private String streamPoolId;
         private String subnetId;
@@ -878,6 +938,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.accountKey = defaults.accountKey;
     	      this.accountName = defaults.accountName;
     	      this.additionalAttributes = defaults.additionalAttributes;
+    	      this.authenticationMode = defaults.authenticationMode;
     	      this.authenticationType = defaults.authenticationType;
     	      this.azureTenantId = defaults.azureTenantId;
     	      this.bootstrapServers = defaults.bootstrapServers;
@@ -903,6 +964,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.host = defaults.host;
     	      this.id = defaults.id;
     	      this.ingressIps = defaults.ingressIps;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.jndiConnectionFactory = defaults.jndiConnectionFactory;
     	      this.jndiInitialContextFactory = defaults.jndiInitialContextFactory;
     	      this.jndiProviderUrl = defaults.jndiProviderUrl;
@@ -912,6 +974,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.keyStore = defaults.keyStore;
     	      this.keyStorePassword = defaults.keyStorePassword;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.nsgIds = defaults.nsgIds;
     	      this.password = defaults.password;
     	      this.port = defaults.port;
@@ -920,6 +983,7 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.privateKeyPassphrase = defaults.privateKeyPassphrase;
     	      this.producerProperties = defaults.producerProperties;
     	      this.publicKeyFingerprint = defaults.publicKeyFingerprint;
+    	      this.redisClusterId = defaults.redisClusterId;
     	      this.region = defaults.region;
     	      this.routingMethod = defaults.routingMethod;
     	      this.sasToken = defaults.sasToken;
@@ -932,10 +996,13 @@ public final class GetConnectionsConnectionCollectionItem {
     	      this.shouldValidateServerCertificate = defaults.shouldValidateServerCertificate;
     	      this.sslCa = defaults.sslCa;
     	      this.sslCert = defaults.sslCert;
+    	      this.sslClientKeystash = defaults.sslClientKeystash;
+    	      this.sslClientKeystoredb = defaults.sslClientKeystoredb;
     	      this.sslCrl = defaults.sslCrl;
     	      this.sslKey = defaults.sslKey;
     	      this.sslKeyPassword = defaults.sslKeyPassword;
     	      this.sslMode = defaults.sslMode;
+    	      this.sslServerCertificate = defaults.sslServerCertificate;
     	      this.state = defaults.state;
     	      this.streamPoolId = defaults.streamPoolId;
     	      this.subnetId = defaults.subnetId;
@@ -987,6 +1054,14 @@ public final class GetConnectionsConnectionCollectionItem {
         }
         public Builder additionalAttributes(GetConnectionsConnectionCollectionItemAdditionalAttribute... additionalAttributes) {
             return additionalAttributes(List.of(additionalAttributes));
+        }
+        @CustomType.Setter
+        public Builder authenticationMode(String authenticationMode) {
+            if (authenticationMode == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "authenticationMode");
+            }
+            this.authenticationMode = authenticationMode;
+            return this;
         }
         @CustomType.Setter
         public Builder authenticationType(String authenticationType) {
@@ -1195,6 +1270,14 @@ public final class GetConnectionsConnectionCollectionItem {
             return ingressIps(List.of(ingressIps));
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder jndiConnectionFactory(String jndiConnectionFactory) {
             if (jndiConnectionFactory == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "jndiConnectionFactory");
@@ -1267,6 +1350,17 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder locks(List<GetConnectionsConnectionCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetConnectionsConnectionCollectionItemLock... locks) {
+            return locks(List.of(locks));
+        }
+        @CustomType.Setter
         public Builder nsgIds(List<String> nsgIds) {
             if (nsgIds == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "nsgIds");
@@ -1331,6 +1425,14 @@ public final class GetConnectionsConnectionCollectionItem {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "publicKeyFingerprint");
             }
             this.publicKeyFingerprint = publicKeyFingerprint;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder redisClusterId(String redisClusterId) {
+            if (redisClusterId == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "redisClusterId");
+            }
+            this.redisClusterId = redisClusterId;
             return this;
         }
         @CustomType.Setter
@@ -1430,6 +1532,22 @@ public final class GetConnectionsConnectionCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder sslClientKeystash(String sslClientKeystash) {
+            if (sslClientKeystash == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslClientKeystash");
+            }
+            this.sslClientKeystash = sslClientKeystash;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sslClientKeystoredb(String sslClientKeystoredb) {
+            if (sslClientKeystoredb == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslClientKeystoredb");
+            }
+            this.sslClientKeystoredb = sslClientKeystoredb;
+            return this;
+        }
+        @CustomType.Setter
         public Builder sslCrl(String sslCrl) {
             if (sslCrl == null) {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslCrl");
@@ -1459,6 +1577,14 @@ public final class GetConnectionsConnectionCollectionItem {
               throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslMode");
             }
             this.sslMode = sslMode;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder sslServerCertificate(String sslServerCertificate) {
+            if (sslServerCertificate == null) {
+              throw new MissingRequiredPropertyException("GetConnectionsConnectionCollectionItem", "sslServerCertificate");
+            }
+            this.sslServerCertificate = sslServerCertificate;
             return this;
         }
         @CustomType.Setter
@@ -1587,6 +1713,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.accountKey = accountKey;
             _resultValue.accountName = accountName;
             _resultValue.additionalAttributes = additionalAttributes;
+            _resultValue.authenticationMode = authenticationMode;
             _resultValue.authenticationType = authenticationType;
             _resultValue.azureTenantId = azureTenantId;
             _resultValue.bootstrapServers = bootstrapServers;
@@ -1612,6 +1739,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.host = host;
             _resultValue.id = id;
             _resultValue.ingressIps = ingressIps;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.jndiConnectionFactory = jndiConnectionFactory;
             _resultValue.jndiInitialContextFactory = jndiInitialContextFactory;
             _resultValue.jndiProviderUrl = jndiProviderUrl;
@@ -1621,6 +1749,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.keyStore = keyStore;
             _resultValue.keyStorePassword = keyStorePassword;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.nsgIds = nsgIds;
             _resultValue.password = password;
             _resultValue.port = port;
@@ -1629,6 +1758,7 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.privateKeyPassphrase = privateKeyPassphrase;
             _resultValue.producerProperties = producerProperties;
             _resultValue.publicKeyFingerprint = publicKeyFingerprint;
+            _resultValue.redisClusterId = redisClusterId;
             _resultValue.region = region;
             _resultValue.routingMethod = routingMethod;
             _resultValue.sasToken = sasToken;
@@ -1641,10 +1771,13 @@ public final class GetConnectionsConnectionCollectionItem {
             _resultValue.shouldValidateServerCertificate = shouldValidateServerCertificate;
             _resultValue.sslCa = sslCa;
             _resultValue.sslCert = sslCert;
+            _resultValue.sslClientKeystash = sslClientKeystash;
+            _resultValue.sslClientKeystoredb = sslClientKeystoredb;
             _resultValue.sslCrl = sslCrl;
             _resultValue.sslKey = sslKey;
             _resultValue.sslKeyPassword = sslKeyPassword;
             _resultValue.sslMode = sslMode;
+            _resultValue.sslServerCertificate = sslServerCertificate;
             _resultValue.state = state;
             _resultValue.streamPoolId = streamPoolId;
             _resultValue.subnetId = subnetId;

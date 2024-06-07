@@ -34,6 +34,7 @@ import (
 //				CertificateContent: pulumi.Any(deploymentCertificateCertificateContent),
 //				DeploymentId:       pulumi.Any(testDeployment.Id),
 //				Key:                pulumi.Any(deploymentCertificateKey),
+//				IsLockOverride:     pulumi.Any(deploymentCertificateIsLockOverride),
 //			})
 //			if err != nil {
 //				return err
@@ -56,12 +57,14 @@ type DeploymentCertificate struct {
 
 	// The Certificate authority key id.
 	AuthorityKeyId pulumi.StringOutput `pulumi:"authorityKeyId"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent pulumi.StringOutput `pulumi:"certificateContent"`
 	// A unique Deployment identifier.
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
 	// Indicates if the certificate is ca.
 	IsCa pulumi.BoolOutput `pulumi:"isCa"`
+	// Whether to override locks (if any exist).
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// Indicates if the certificate is self signed.
 	IsSelfSigned pulumi.BoolOutput `pulumi:"isSelfSigned"`
 	// The Certificate issuer.
@@ -140,12 +143,14 @@ func GetDeploymentCertificate(ctx *pulumi.Context,
 type deploymentCertificateState struct {
 	// The Certificate authority key id.
 	AuthorityKeyId *string `pulumi:"authorityKeyId"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent *string `pulumi:"certificateContent"`
 	// A unique Deployment identifier.
 	DeploymentId *string `pulumi:"deploymentId"`
 	// Indicates if the certificate is ca.
 	IsCa *bool `pulumi:"isCa"`
+	// Whether to override locks (if any exist).
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// Indicates if the certificate is self signed.
 	IsSelfSigned *bool `pulumi:"isSelfSigned"`
 	// The Certificate issuer.
@@ -186,12 +191,14 @@ type deploymentCertificateState struct {
 type DeploymentCertificateState struct {
 	// The Certificate authority key id.
 	AuthorityKeyId pulumi.StringPtrInput
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent pulumi.StringPtrInput
 	// A unique Deployment identifier.
 	DeploymentId pulumi.StringPtrInput
 	// Indicates if the certificate is ca.
 	IsCa pulumi.BoolPtrInput
+	// Whether to override locks (if any exist).
+	IsLockOverride pulumi.BoolPtrInput
 	// Indicates if the certificate is self signed.
 	IsSelfSigned pulumi.BoolPtrInput
 	// The Certificate issuer.
@@ -234,10 +241,12 @@ func (DeploymentCertificateState) ElementType() reflect.Type {
 }
 
 type deploymentCertificateArgs struct {
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent string `pulumi:"certificateContent"`
 	// A unique Deployment identifier.
 	DeploymentId string `pulumi:"deploymentId"`
+	// Whether to override locks (if any exist).
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	//
 	// ** IMPORTANT **
@@ -247,10 +256,12 @@ type deploymentCertificateArgs struct {
 
 // The set of arguments for constructing a DeploymentCertificate resource.
 type DeploymentCertificateArgs struct {
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent pulumi.StringInput
 	// A unique Deployment identifier.
 	DeploymentId pulumi.StringInput
+	// Whether to override locks (if any exist).
+	IsLockOverride pulumi.BoolPtrInput
 	// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
 	//
 	// ** IMPORTANT **
@@ -350,7 +361,7 @@ func (o DeploymentCertificateOutput) AuthorityKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentCertificate) pulumi.StringOutput { return v.AuthorityKeyId }).(pulumi.StringOutput)
 }
 
-// A PEM-encoded SSL certificate.
+// The base64 encoded content of the PEM file containing the SSL certificate.
 func (o DeploymentCertificateOutput) CertificateContent() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentCertificate) pulumi.StringOutput { return v.CertificateContent }).(pulumi.StringOutput)
 }
@@ -363,6 +374,11 @@ func (o DeploymentCertificateOutput) DeploymentId() pulumi.StringOutput {
 // Indicates if the certificate is ca.
 func (o DeploymentCertificateOutput) IsCa() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeploymentCertificate) pulumi.BoolOutput { return v.IsCa }).(pulumi.BoolOutput)
+}
+
+// Whether to override locks (if any exist).
+func (o DeploymentCertificateOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeploymentCertificate) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // Indicates if the certificate is self signed.

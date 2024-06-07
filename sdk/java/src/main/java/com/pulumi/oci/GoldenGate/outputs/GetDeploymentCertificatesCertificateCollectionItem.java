@@ -11,30 +11,71 @@ import java.util.Objects;
 
 @CustomType
 public final class GetDeploymentCertificatesCertificateCollectionItem {
+    /**
+     * @return The Certificate authority key id.
+     * 
+     */
     private String authorityKeyId;
+    /**
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
+     * 
+     */
     private String certificateContent;
     /**
      * @return A unique Deployment identifier.
      * 
      */
     private String deploymentId;
+    /**
+     * @return Indicates if the certificate is ca.
+     * 
+     */
     private Boolean isCa;
+    private Boolean isLockOverride;
     /**
      * @return Indicates if the certificate is self signed.
      * 
      */
     private Boolean isSelfSigned;
+    /**
+     * @return The Certificate issuer.
+     * 
+     */
     private String issuer;
     /**
      * @return The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
      * 
      */
     private String key;
+    /**
+     * @return The Certificate md5Hash.
+     * 
+     */
     private String md5hash;
+    /**
+     * @return The Certificate public key.
+     * 
+     */
     private String publicKey;
+    /**
+     * @return The Certificate public key algorithm.
+     * 
+     */
     private String publicKeyAlgorithm;
+    /**
+     * @return The Certificate public key size.
+     * 
+     */
     private String publicKeySize;
+    /**
+     * @return The Certificate serial.
+     * 
+     */
     private String serial;
+    /**
+     * @return The Certificate sha1 hash.
+     * 
+     */
     private String sha1hash;
     /**
      * @return A filter to return only connections having the &#39;lifecycleState&#39; given.
@@ -46,24 +87,44 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
      * 
      */
     private String subject;
+    /**
+     * @return The Certificate subject key id.
+     * 
+     */
     private String subjectKeyId;
     /**
      * @return The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     private String timeCreated;
+    /**
+     * @return The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
     private String timeValidFrom;
     /**
      * @return The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
      * 
      */
     private String timeValidTo;
+    /**
+     * @return The Certificate version.
+     * 
+     */
     private String version;
 
     private GetDeploymentCertificatesCertificateCollectionItem() {}
+    /**
+     * @return The Certificate authority key id.
+     * 
+     */
     public String authorityKeyId() {
         return this.authorityKeyId;
     }
+    /**
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
+     * 
+     */
     public String certificateContent() {
         return this.certificateContent;
     }
@@ -74,8 +135,15 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     public String deploymentId() {
         return this.deploymentId;
     }
+    /**
+     * @return Indicates if the certificate is ca.
+     * 
+     */
     public Boolean isCa() {
         return this.isCa;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
     }
     /**
      * @return Indicates if the certificate is self signed.
@@ -84,6 +152,10 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     public Boolean isSelfSigned() {
         return this.isSelfSigned;
     }
+    /**
+     * @return The Certificate issuer.
+     * 
+     */
     public String issuer() {
         return this.issuer;
     }
@@ -94,21 +166,45 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     public String key() {
         return this.key;
     }
+    /**
+     * @return The Certificate md5Hash.
+     * 
+     */
     public String md5hash() {
         return this.md5hash;
     }
+    /**
+     * @return The Certificate public key.
+     * 
+     */
     public String publicKey() {
         return this.publicKey;
     }
+    /**
+     * @return The Certificate public key algorithm.
+     * 
+     */
     public String publicKeyAlgorithm() {
         return this.publicKeyAlgorithm;
     }
+    /**
+     * @return The Certificate public key size.
+     * 
+     */
     public String publicKeySize() {
         return this.publicKeySize;
     }
+    /**
+     * @return The Certificate serial.
+     * 
+     */
     public String serial() {
         return this.serial;
     }
+    /**
+     * @return The Certificate sha1 hash.
+     * 
+     */
     public String sha1hash() {
         return this.sha1hash;
     }
@@ -126,6 +222,10 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     public String subject() {
         return this.subject;
     }
+    /**
+     * @return The Certificate subject key id.
+     * 
+     */
     public String subjectKeyId() {
         return this.subjectKeyId;
     }
@@ -136,6 +236,10 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     public String timeCreated() {
         return this.timeCreated;
     }
+    /**
+     * @return The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+     * 
+     */
     public String timeValidFrom() {
         return this.timeValidFrom;
     }
@@ -146,6 +250,10 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     public String timeValidTo() {
         return this.timeValidTo;
     }
+    /**
+     * @return The Certificate version.
+     * 
+     */
     public String version() {
         return this.version;
     }
@@ -163,6 +271,7 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
         private String certificateContent;
         private String deploymentId;
         private Boolean isCa;
+        private Boolean isLockOverride;
         private Boolean isSelfSigned;
         private String issuer;
         private String key;
@@ -186,6 +295,7 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
     	      this.certificateContent = defaults.certificateContent;
     	      this.deploymentId = defaults.deploymentId;
     	      this.isCa = defaults.isCa;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.isSelfSigned = defaults.isSelfSigned;
     	      this.issuer = defaults.issuer;
     	      this.key = defaults.key;
@@ -234,6 +344,14 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
               throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "isCa");
             }
             this.isCa = isCa;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificatesCertificateCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
             return this;
         }
         @CustomType.Setter
@@ -370,6 +488,7 @@ public final class GetDeploymentCertificatesCertificateCollectionItem {
             _resultValue.certificateContent = certificateContent;
             _resultValue.deploymentId = deploymentId;
             _resultValue.isCa = isCa;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.isSelfSigned = isSelfSigned;
             _resultValue.issuer = issuer;
             _resultValue.key = key;

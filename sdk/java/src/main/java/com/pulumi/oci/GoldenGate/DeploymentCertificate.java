@@ -48,6 +48,7 @@ import javax.annotation.Nullable;
  *             .certificateContent(deploymentCertificateCertificateContent)
  *             .deploymentId(testDeployment.id())
  *             .key(deploymentCertificateKey)
+ *             .isLockOverride(deploymentCertificateIsLockOverride)
  *             .build());
  * 
  *     }
@@ -82,14 +83,14 @@ public class DeploymentCertificate extends com.pulumi.resources.CustomResource {
         return this.authorityKeyId;
     }
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     @Export(name="certificateContent", refs={String.class}, tree="[0]")
     private Output<String> certificateContent;
 
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public Output<String> certificateContent() {
@@ -122,6 +123,20 @@ public class DeploymentCertificate extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isCa() {
         return this.isCa;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     * 
+     */
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    /**
+     * @return Whether to override locks (if any exist).
+     * 
+     */
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
     }
     /**
      * Indicates if the certificate is self signed.

@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *     certificateContent: deploymentCertificateCertificateContent,
  *     deploymentId: testDeployment.id,
  *     key: deploymentCertificateKey,
+ *     isLockOverride: deploymentCertificateIsLockOverride,
  * });
  * ```
  *
@@ -63,7 +64,7 @@ export class DeploymentCertificate extends pulumi.CustomResource {
      */
     public /*out*/ readonly authorityKeyId!: pulumi.Output<string>;
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      */
     public readonly certificateContent!: pulumi.Output<string>;
     /**
@@ -74,6 +75,10 @@ export class DeploymentCertificate extends pulumi.CustomResource {
      * Indicates if the certificate is ca.
      */
     public /*out*/ readonly isCa!: pulumi.Output<boolean>;
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * Indicates if the certificate is self signed.
      */
@@ -160,6 +165,7 @@ export class DeploymentCertificate extends pulumi.CustomResource {
             resourceInputs["certificateContent"] = state ? state.certificateContent : undefined;
             resourceInputs["deploymentId"] = state ? state.deploymentId : undefined;
             resourceInputs["isCa"] = state ? state.isCa : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["isSelfSigned"] = state ? state.isSelfSigned : undefined;
             resourceInputs["issuer"] = state ? state.issuer : undefined;
             resourceInputs["key"] = state ? state.key : undefined;
@@ -189,6 +195,7 @@ export class DeploymentCertificate extends pulumi.CustomResource {
             }
             resourceInputs["certificateContent"] = args ? args.certificateContent : undefined;
             resourceInputs["deploymentId"] = args ? args.deploymentId : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
             resourceInputs["key"] = args ? args.key : undefined;
             resourceInputs["authorityKeyId"] = undefined /*out*/;
             resourceInputs["isCa"] = undefined /*out*/;
@@ -222,7 +229,7 @@ export interface DeploymentCertificateState {
      */
     authorityKeyId?: pulumi.Input<string>;
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      */
     certificateContent?: pulumi.Input<string>;
     /**
@@ -233,6 +240,10 @@ export interface DeploymentCertificateState {
      * Indicates if the certificate is ca.
      */
     isCa?: pulumi.Input<boolean>;
+    /**
+     * Whether to override locks (if any exist).
+     */
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * Indicates if the certificate is self signed.
      */
@@ -308,13 +319,17 @@ export interface DeploymentCertificateState {
  */
 export interface DeploymentCertificateArgs {
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      */
     certificateContent: pulumi.Input<string>;
     /**
      * A unique Deployment identifier.
      */
     deploymentId: pulumi.Input<string>;
+    /**
+     * Whether to override locks (if any exist).
+     */
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
      *

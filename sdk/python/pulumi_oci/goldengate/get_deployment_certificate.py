@@ -21,7 +21,7 @@ class GetDeploymentCertificateResult:
     """
     A collection of values returned by getDeploymentCertificate.
     """
-    def __init__(__self__, authority_key_id=None, certificate_content=None, certificate_key=None, deployment_id=None, id=None, is_ca=None, is_self_signed=None, issuer=None, key=None, md5hash=None, public_key=None, public_key_algorithm=None, public_key_size=None, serial=None, sha1hash=None, state=None, subject=None, subject_key_id=None, time_created=None, time_valid_from=None, time_valid_to=None, version=None):
+    def __init__(__self__, authority_key_id=None, certificate_content=None, certificate_key=None, deployment_id=None, id=None, is_ca=None, is_lock_override=None, is_self_signed=None, issuer=None, key=None, md5hash=None, public_key=None, public_key_algorithm=None, public_key_size=None, serial=None, sha1hash=None, state=None, subject=None, subject_key_id=None, time_created=None, time_valid_from=None, time_valid_to=None, version=None):
         if authority_key_id and not isinstance(authority_key_id, str):
             raise TypeError("Expected argument 'authority_key_id' to be a str")
         pulumi.set(__self__, "authority_key_id", authority_key_id)
@@ -40,6 +40,9 @@ class GetDeploymentCertificateResult:
         if is_ca and not isinstance(is_ca, bool):
             raise TypeError("Expected argument 'is_ca' to be a bool")
         pulumi.set(__self__, "is_ca", is_ca)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_self_signed and not isinstance(is_self_signed, bool):
             raise TypeError("Expected argument 'is_self_signed' to be a bool")
         pulumi.set(__self__, "is_self_signed", is_self_signed)
@@ -101,7 +104,7 @@ class GetDeploymentCertificateResult:
     @pulumi.getter(name="certificateContent")
     def certificate_content(self) -> str:
         """
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate_content")
 
@@ -130,6 +133,11 @@ class GetDeploymentCertificateResult:
         Indicates if the certificate is ca.
         """
         return pulumi.get(self, "is_ca")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter(name="isSelfSigned")
@@ -272,6 +280,7 @@ class AwaitableGetDeploymentCertificateResult(GetDeploymentCertificateResult):
             deployment_id=self.deployment_id,
             id=self.id,
             is_ca=self.is_ca,
+            is_lock_override=self.is_lock_override,
             is_self_signed=self.is_self_signed,
             issuer=self.issuer,
             key=self.key,
@@ -325,6 +334,7 @@ def get_deployment_certificate(certificate_key: Optional[str] = None,
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         id=pulumi.get(__ret__, 'id'),
         is_ca=pulumi.get(__ret__, 'is_ca'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         is_self_signed=pulumi.get(__ret__, 'is_self_signed'),
         issuer=pulumi.get(__ret__, 'issuer'),
         key=pulumi.get(__ret__, 'key'),

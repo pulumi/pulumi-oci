@@ -189,6 +189,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String disasterRecoveryRegionType;
     /**
+     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    private String disasterRecoveryType;
+    /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
      * 
      */
@@ -857,6 +862,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public String disasterRecoveryRegionType() {
         return this.disasterRecoveryRegionType;
+    }
+    /**
+     * @return Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+     * 
+     */
+    public String disasterRecoveryType() {
+        return this.disasterRecoveryType;
     }
     /**
      * @return A filter to return only resources that match the entire display name given. The match is not case sensitive.
@@ -1534,6 +1546,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private String dbWorkload;
         private Map<String,Object> definedTags;
         private String disasterRecoveryRegionType;
+        private String disasterRecoveryType;
         private String displayName;
         private Integer failedDataRecoveryInSeconds;
         private Map<String,Object> freeformTags;
@@ -1668,6 +1681,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.dbWorkload = defaults.dbWorkload;
     	      this.definedTags = defaults.definedTags;
     	      this.disasterRecoveryRegionType = defaults.disasterRecoveryRegionType;
+    	      this.disasterRecoveryType = defaults.disasterRecoveryType;
     	      this.displayName = defaults.displayName;
     	      this.failedDataRecoveryInSeconds = defaults.failedDataRecoveryInSeconds;
     	      this.freeformTags = defaults.freeformTags;
@@ -2065,6 +2079,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "disasterRecoveryRegionType");
             }
             this.disasterRecoveryRegionType = disasterRecoveryRegionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder disasterRecoveryType(String disasterRecoveryType) {
+            if (disasterRecoveryType == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "disasterRecoveryType");
+            }
+            this.disasterRecoveryType = disasterRecoveryType;
             return this;
         }
         @CustomType.Setter
@@ -2911,6 +2933,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.dbWorkload = dbWorkload;
             _resultValue.definedTags = definedTags;
             _resultValue.disasterRecoveryRegionType = disasterRecoveryRegionType;
+            _resultValue.disasterRecoveryType = disasterRecoveryType;
             _resultValue.displayName = displayName;
             _resultValue.failedDataRecoveryInSeconds = failedDataRecoveryInSeconds;
             _resultValue.freeformTags = freeformTags;

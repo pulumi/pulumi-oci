@@ -221,6 +221,9 @@ __all__ = [
     'GetAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabaseLongTermBackupScheduleResult',
+    'GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionResult',
+    'GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult',
+    'GetAutonomousDatabasePeersFilterResult',
     'GetAutonomousDatabaseRefreshableClonesFilterResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult',
@@ -2180,7 +2183,7 @@ class AutonomousDatabaseKeyHistoryEntry(dict):
         :param str id: The id of the Autonomous Database [Vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts) service key management history entry.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
         :param str time_activated: The date and time the kms key activated.
-        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        :param str vault_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         if id is not None:
             pulumi.set(__self__, "id", id)
@@ -2219,7 +2222,7 @@ class AutonomousDatabaseKeyHistoryEntry(dict):
     @pulumi.getter(name="vaultId")
     def vault_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and `secretId` are required for Customer Managed Keys.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
         """
         return pulumi.get(self, "vault_id")
 
@@ -2423,7 +2426,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
                  is_snapshot_standby: Optional[bool] = None,
                  time_snapshot_standby_enabled_till: Optional[str] = None):
         """
-        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param bool is_replicate_automatic_backups: If true, 7 days worth of backups are replicated across regions for Cross-Region ADB or Backup-Based DR between Primary and Standby. If false, the backups taken on the Primary are not replicated to the Standby database.
         :param bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
         :param str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
@@ -2441,7 +2444,7 @@ class AutonomousDatabaseRemoteDisasterRecoveryConfiguration(dict):
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> Optional[str]:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -15770,6 +15773,80 @@ class GetAutonomousDatabaseLongTermBackupScheduleResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult']):
+        """
+        :param Sequence['GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemArgs'] items: This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult']:
+        """
+        This array holds details about Autonomous Database Peers for Oracle an Autonomous Database.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 region: str):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        :param str region: The name of the region where this peer Autonomous Database clone exists.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Autonomous Database.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The name of the region where this peer Autonomous Database clone exists.
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasePeersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseRefreshableClonesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -16252,6 +16329,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  db_workload: str,
                  defined_tags: Mapping[str, Any],
                  disaster_recovery_region_type: str,
+                 disaster_recovery_type: str,
                  display_name: str,
                  failed_data_recovery_in_seconds: int,
                  freeform_tags: Mapping[str, Any],
@@ -16380,6 +16458,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str db_workload: A filter to return only autonomous database resources that match the specified workload type.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str disaster_recovery_region_type: The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
         :param int failed_data_recovery_in_seconds: Indicates the number of seconds of data loss for a Data Guard failover.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
@@ -16501,6 +16580,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "db_workload", db_workload)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "disaster_recovery_region_type", disaster_recovery_region_type)
+        pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "failed_data_recovery_in_seconds", failed_data_recovery_in_seconds)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -16865,6 +16945,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
         """
         return pulumi.get(self, "disaster_recovery_region_type")
+
+    @property
+    @pulumi.getter(name="disasterRecoveryType")
+    def disaster_recovery_type(self) -> str:
+        """
+        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        """
+        return pulumi.get(self, "disaster_recovery_type")
 
     @property
     @pulumi.getter(name="displayName")
@@ -20178,7 +20266,9 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
                  is_snapshot_standby: bool,
                  time_snapshot_standby_enabled_till: str):
         """
-        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param str disaster_recovery_type: Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        :param bool is_snapshot_standby: Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        :param str time_snapshot_standby_enabled_till: Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
         """
         pulumi.set(__self__, "disaster_recovery_type", disaster_recovery_type)
         pulumi.set(__self__, "is_replicate_automatic_backups", is_replicate_automatic_backups)
@@ -20189,7 +20279,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
     @pulumi.getter(name="disasterRecoveryType")
     def disaster_recovery_type(self) -> str:
         """
-        Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+        Indicates the disaster recovery (DR) type of the Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
         """
         return pulumi.get(self, "disaster_recovery_type")
 
@@ -20201,11 +20291,17 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfig
     @property
     @pulumi.getter(name="isSnapshotStandby")
     def is_snapshot_standby(self) -> bool:
+        """
+        Indicates if user wants to convert to a snapshot standby. For example, true would set a standby database to snapshot standby database. False would set a snapshot standby database back to regular standby database.
+        """
         return pulumi.get(self, "is_snapshot_standby")
 
     @property
     @pulumi.getter(name="timeSnapshotStandbyEnabledTill")
     def time_snapshot_standby_enabled_till(self) -> str:
+        """
+        Time and date stored as an RFC 3339 formatted timestamp string. For example, 2022-01-01T12:00:00.000Z would set a limit for the snapshot standby to be converted back to a cross-region standby database.
+        """
         return pulumi.get(self, "time_snapshot_standby_enabled_till")
 
 

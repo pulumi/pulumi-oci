@@ -10,6 +10,7 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.ConnectionAssignmentArgs;
 import com.pulumi.oci.GoldenGate.inputs.ConnectionAssignmentState;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.String;
 import javax.annotation.Nullable;
 
@@ -46,6 +47,7 @@ import javax.annotation.Nullable;
  *         var testConnectionAssignment = new ConnectionAssignment("testConnectionAssignment", ConnectionAssignmentArgs.builder()
  *             .connectionId(testConnection.id())
  *             .deploymentId(testDeployment.id())
+ *             .isLockOverride(connectionAssignmentIsLockOverride)
  *             .build());
  * 
  *     }
@@ -110,9 +112,6 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="deploymentId", refs={String.class}, tree="[0]")
     private Output<String> deploymentId;
@@ -120,12 +119,29 @@ public class ConnectionAssignment extends com.pulumi.resources.CustomResource {
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
      * 
+     */
+    public Output<String> deploymentId() {
+        return this.deploymentId;
+    }
+    /**
+     * Whether to override locks (if any exist).
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> deploymentId() {
-        return this.deploymentId;
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    /**
+     * @return Whether to override locks (if any exist).
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
     }
     /**
      * Possible lifecycle states for connection assignments.

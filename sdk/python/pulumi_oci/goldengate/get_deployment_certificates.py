@@ -51,6 +51,9 @@ class GetDeploymentCertificatesResult:
     @property
     @pulumi.getter(name="deploymentId")
     def deployment_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        """
         return pulumi.get(self, "deployment_id")
 
     @property

@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -64,6 +66,10 @@ export interface GetDeploymentBackupResult {
      */
     readonly deploymentId: string;
     /**
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     */
+    readonly deploymentType: string;
+    /**
      * An object's Display Name.
      */
     readonly displayName: string;
@@ -79,10 +85,15 @@ export interface GetDeploymentBackupResult {
      * True if this object is automatically created
      */
     readonly isAutomatic: boolean;
+    readonly isLockOverride: boolean;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     readonly lifecycleDetails: string;
+    /**
+     * Locks associated with this resource.
+     */
+    readonly locks: outputs.GoldenGate.GetDeploymentBackupLock[];
     /**
      * Name of namespace that serves as a container for all of your buckets
      */

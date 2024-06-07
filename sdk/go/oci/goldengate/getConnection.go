@@ -65,6 +65,8 @@ type LookupConnectionResult struct {
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionAdditionalAttribute `pulumi:"additionalAttributes"`
+	// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode string `pulumi:"authenticationMode"`
 	// Used authentication mechanism to be provided for the following connection types:
 	// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
 	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -119,7 +121,8 @@ type LookupConnectionResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id string `pulumi:"id"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-	IngressIps []GetConnectionIngressIp `pulumi:"ingressIps"`
+	IngressIps     []GetConnectionIngressIp `pulumi:"ingressIps"`
+	IsLockOverride bool                     `pulumi:"isLockOverride"`
 	// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory string `pulumi:"jndiConnectionFactory"`
 	// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -135,6 +138,8 @@ type LookupConnectionResult struct {
 	KeyStorePassword string `pulumi:"keyStorePassword"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetConnectionLock `pulumi:"locks"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds   []string `pulumi:"nsgIds"`
 	Password string   `pulumi:"password"`
@@ -147,6 +152,8 @@ type LookupConnectionResult struct {
 	PrivateKeyPassphrase string `pulumi:"privateKeyPassphrase"`
 	ProducerProperties   string `pulumi:"producerProperties"`
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId string `pulumi:"redisClusterId"`
 	// The name of the region. e.g.: us-ashburn-1
 	Region string `pulumi:"region"`
 	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -168,13 +175,16 @@ type LookupConnectionResult struct {
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
 	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-	SslCa          string `pulumi:"sslCa"`
-	SslCert        string `pulumi:"sslCert"`
-	SslCrl         string `pulumi:"sslCrl"`
-	SslKey         string `pulumi:"sslKey"`
-	SslKeyPassword string `pulumi:"sslKeyPassword"`
+	SslCa               string `pulumi:"sslCa"`
+	SslCert             string `pulumi:"sslCert"`
+	SslClientKeystash   string `pulumi:"sslClientKeystash"`
+	SslClientKeystoredb string `pulumi:"sslClientKeystoredb"`
+	SslCrl              string `pulumi:"sslCrl"`
+	SslKey              string `pulumi:"sslKey"`
+	SslKeyPassword      string `pulumi:"sslKeyPassword"`
 	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
-	SslMode string `pulumi:"sslMode"`
+	SslMode              string `pulumi:"sslMode"`
+	SslServerCertificate string `pulumi:"sslServerCertificate"`
 	// Possible lifecycle states for connection.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -259,6 +269,11 @@ func (o LookupConnectionResultOutput) AccountName() pulumi.StringOutput {
 // An array of name-value pair attribute entries. Used as additional parameters in connection string.
 func (o LookupConnectionResultOutput) AdditionalAttributes() GetConnectionAdditionalAttributeArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionAdditionalAttribute { return v.AdditionalAttributes }).(GetConnectionAdditionalAttributeArrayOutput)
+}
+
+// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+func (o LookupConnectionResultOutput) AuthenticationMode() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.AuthenticationMode }).(pulumi.StringOutput)
 }
 
 // Used authentication mechanism to be provided for the following connection types:
@@ -394,6 +409,10 @@ func (o LookupConnectionResultOutput) IngressIps() GetConnectionIngressIpArrayOu
 	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionIngressIp { return v.IngressIps }).(GetConnectionIngressIpArrayOutput)
 }
 
+func (o LookupConnectionResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupConnectionResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 func (o LookupConnectionResultOutput) JndiConnectionFactory() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.JndiConnectionFactory }).(pulumi.StringOutput)
@@ -436,6 +455,11 @@ func (o LookupConnectionResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o LookupConnectionResultOutput) Locks() GetConnectionLockArrayOutput {
+	return o.ApplyT(func(v LookupConnectionResult) []GetConnectionLock { return v.Locks }).(GetConnectionLockArrayOutput)
+}
+
 // An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o LookupConnectionResultOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupConnectionResult) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -470,6 +494,11 @@ func (o LookupConnectionResultOutput) ProducerProperties() pulumi.StringOutput {
 
 func (o LookupConnectionResultOutput) PublicKeyFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+func (o LookupConnectionResultOutput) RedisClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.RedisClusterId }).(pulumi.StringOutput)
 }
 
 // The name of the region. e.g.: us-ashburn-1
@@ -531,6 +560,14 @@ func (o LookupConnectionResultOutput) SslCert() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCert }).(pulumi.StringOutput)
 }
 
+func (o LookupConnectionResultOutput) SslClientKeystash() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystash }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) SslClientKeystoredb() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslClientKeystoredb }).(pulumi.StringOutput)
+}
+
 func (o LookupConnectionResultOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslCrl }).(pulumi.StringOutput)
 }
@@ -546,6 +583,10 @@ func (o LookupConnectionResultOutput) SslKeyPassword() pulumi.StringOutput {
 // SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 func (o LookupConnectionResultOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+func (o LookupConnectionResultOutput) SslServerCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupConnectionResult) string { return v.SslServerCertificate }).(pulumi.StringOutput)
 }
 
 // Possible lifecycle states for connection.

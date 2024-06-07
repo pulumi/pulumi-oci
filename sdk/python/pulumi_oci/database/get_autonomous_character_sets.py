@@ -119,6 +119,8 @@ def get_autonomous_character_sets(character_set_type: Optional[str] = None,
     :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
     :param bool is_dedicated: Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
     :param bool is_shared: Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+           
+           :
     """
     __args__ = dict()
     __args__['characterSetType'] = character_set_type
@@ -163,5 +165,7 @@ def get_autonomous_character_sets_output(character_set_type: Optional[pulumi.Inp
     :param str character_set_type: Specifies whether this request pertains to database character sets or national character sets.
     :param bool is_dedicated: Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
     :param bool is_shared: Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+           
+           :
     """
     ...

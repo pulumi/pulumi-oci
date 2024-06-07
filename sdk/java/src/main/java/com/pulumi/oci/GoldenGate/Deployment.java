@@ -11,6 +11,7 @@ import com.pulumi.oci.GoldenGate.DeploymentArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentState;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentIngressIp;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentLock;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.DeploymentOggData;
@@ -249,6 +250,12 @@ public class Deployment extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isLatestVersion() {
         return this.isLatestVersion;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * (Updatable) True if this object is publicly available.
      * 
@@ -346,6 +353,20 @@ public class Deployment extends com.pulumi.resources.CustomResource {
      */
     public Output<String> loadBalancerSubnetId() {
         return this.loadBalancerSubnetId;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,DeploymentLock.class}, tree="[0,1]")
+    private Output<List<DeploymentLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<DeploymentLock>> locks() {
+        return this.locks;
     }
     /**
      * (Updatable) Defines the maintenance configuration for create operation.
@@ -480,14 +501,14 @@ public class Deployment extends com.pulumi.resources.CustomResource {
         return this.storageUtilizationInBytes;
     }
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      * 
      */
     public Output<String> subnetId() {

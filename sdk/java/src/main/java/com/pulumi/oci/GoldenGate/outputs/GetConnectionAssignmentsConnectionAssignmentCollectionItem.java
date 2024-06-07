@@ -5,6 +5,7 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 
@@ -35,6 +36,7 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
      * 
      */
     private String id;
+    private Boolean isLockOverride;
     /**
      * @return A filter to return only connection assignments having the &#39;lifecycleState&#39; given.
      * 
@@ -87,6 +89,9 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
     public String id() {
         return this.id;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return A filter to return only connection assignments having the &#39;lifecycleState&#39; given.
      * 
@@ -123,6 +128,7 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
         private String connectionId;
         private String deploymentId;
         private String id;
+        private Boolean isLockOverride;
         private String state;
         private String timeCreated;
         private String timeUpdated;
@@ -134,6 +140,7 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
     	      this.connectionId = defaults.connectionId;
     	      this.deploymentId = defaults.deploymentId;
     	      this.id = defaults.id;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.state = defaults.state;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -180,6 +187,14 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetConnectionAssignmentsConnectionAssignmentCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetConnectionAssignmentsConnectionAssignmentCollectionItem", "state");
@@ -210,6 +225,7 @@ public final class GetConnectionAssignmentsConnectionAssignmentCollectionItem {
             _resultValue.connectionId = connectionId;
             _resultValue.deploymentId = deploymentId;
             _resultValue.id = id;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.state = state;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

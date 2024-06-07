@@ -17,7 +17,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
      */
     private String adminUsername;
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     private String certificate;
@@ -60,7 +60,7 @@ public final class GetDeploymentsDeploymentCollectionItemOggData {
         return this.adminUsername;
     }
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public String certificate() {

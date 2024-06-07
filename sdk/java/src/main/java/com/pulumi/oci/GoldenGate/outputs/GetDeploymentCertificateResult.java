@@ -17,7 +17,7 @@ public final class GetDeploymentCertificateResult {
      */
     private String authorityKeyId;
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     private String certificateContent;
@@ -33,6 +33,7 @@ public final class GetDeploymentCertificateResult {
      * 
      */
     private Boolean isCa;
+    private Boolean isLockOverride;
     /**
      * @return Indicates if the certificate is self signed.
      * 
@@ -123,7 +124,7 @@ public final class GetDeploymentCertificateResult {
         return this.authorityKeyId;
     }
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public String certificateContent() {
@@ -148,6 +149,9 @@ public final class GetDeploymentCertificateResult {
      */
     public Boolean isCa() {
         return this.isCa;
+    }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
     }
     /**
      * @return Indicates if the certificate is self signed.
@@ -277,6 +281,7 @@ public final class GetDeploymentCertificateResult {
         private String deploymentId;
         private String id;
         private Boolean isCa;
+        private Boolean isLockOverride;
         private Boolean isSelfSigned;
         private String issuer;
         private String key;
@@ -302,6 +307,7 @@ public final class GetDeploymentCertificateResult {
     	      this.deploymentId = defaults.deploymentId;
     	      this.id = defaults.id;
     	      this.isCa = defaults.isCa;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.isSelfSigned = defaults.isSelfSigned;
     	      this.issuer = defaults.issuer;
     	      this.key = defaults.key;
@@ -366,6 +372,14 @@ public final class GetDeploymentCertificateResult {
               throw new MissingRequiredPropertyException("GetDeploymentCertificateResult", "isCa");
             }
             this.isCa = isCa;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentCertificateResult", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
             return this;
         }
         @CustomType.Setter
@@ -504,6 +518,7 @@ public final class GetDeploymentCertificateResult {
             _resultValue.deploymentId = deploymentId;
             _resultValue.id = id;
             _resultValue.isCa = isCa;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.isSelfSigned = isSelfSigned;
             _resultValue.issuer = issuer;
             _resultValue.key = key;

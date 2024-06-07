@@ -63,6 +63,7 @@ export interface GetConnectionAssignmentResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
      */
     readonly id: string;
+    readonly isLockOverride: boolean;
     /**
      * Possible lifecycle states for connection assignments.
      */

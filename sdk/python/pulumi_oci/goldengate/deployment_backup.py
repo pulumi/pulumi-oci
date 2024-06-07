@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['DeploymentBackupArgs', 'DeploymentBackup']
 
@@ -21,7 +23,9 @@ class DeploymentBackupArgs:
                  namespace: pulumi.Input[str],
                  object: pulumi.Input[str],
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
-                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
+                 freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]] = None):
         """
         The set of arguments for constructing a DeploymentBackup resource.
         :param pulumi.Input[str] bucket: Name of the bucket where the object is to be uploaded in the object storage
@@ -36,6 +40,7 @@ class DeploymentBackupArgs:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]] locks: Locks associated with this resource.
         """
         pulumi.set(__self__, "bucket", bucket)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +52,10 @@ class DeploymentBackupArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
 
     @property
     @pulumi.getter
@@ -148,6 +157,27 @@ class DeploymentBackupArgs:
     def freeform_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "freeform_tags", value)
 
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
 
 @pulumi.input_type
 class _DeploymentBackupState:
@@ -157,10 +187,13 @@ class _DeploymentBackupState:
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
+                 deployment_type: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  is_automatic: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  ogg_version: Optional[pulumi.Input[str]] = None,
@@ -178,10 +211,12 @@ class _DeploymentBackupState:
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_automatic: True if this object is automatically created
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
                
@@ -207,14 +242,20 @@ class _DeploymentBackupState:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if deployment_id is not None:
             pulumi.set(__self__, "deployment_id", deployment_id)
+        if deployment_type is not None:
+            pulumi.set(__self__, "deployment_type", deployment_type)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if is_automatic is not None:
             pulumi.set(__self__, "is_automatic", is_automatic)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if namespace is not None:
             pulumi.set(__self__, "namespace", namespace)
         if object is not None:
@@ -297,6 +338,18 @@ class _DeploymentBackupState:
         pulumi.set(self, "deployment_id", value)
 
     @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @deployment_type.setter
+    def deployment_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "deployment_type", value)
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
@@ -333,6 +386,15 @@ class _DeploymentBackupState:
         pulumi.set(self, "is_automatic", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -343,6 +405,18 @@ class _DeploymentBackupState:
     @lifecycle_details.setter
     def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DeploymentBackupLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter
@@ -480,6 +554,8 @@ class DeploymentBackup(pulumi.CustomResource):
                  deployment_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentBackupLockArgs']]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -506,7 +582,11 @@ class DeploymentBackup(pulumi.CustomResource):
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            locks=[oci.golden_gate.DeploymentBackupLockArgs(
+                type=deployment_backup_locks_type,
+                message=deployment_backup_locks_message,
+            )])
         ```
 
         ## Import
@@ -525,6 +605,7 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentBackupLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
                
@@ -561,7 +642,11 @@ class DeploymentBackup(pulumi.CustomResource):
             },
             freeform_tags={
                 "bar-key": "value",
-            })
+            },
+            locks=[oci.golden_gate.DeploymentBackupLockArgs(
+                type=deployment_backup_locks_type,
+                message=deployment_backup_locks_message,
+            )])
         ```
 
         ## Import
@@ -593,6 +678,8 @@ class DeploymentBackup(pulumi.CustomResource):
                  deployment_id: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentBackupLockArgs']]]]] = None,
                  namespace: Optional[pulumi.Input[str]] = None,
                  object: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -618,6 +705,8 @@ class DeploymentBackup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_lock_override"] = is_lock_override
+            __props__.__dict__["locks"] = locks
             if namespace is None and not opts.urn:
                 raise TypeError("Missing required property 'namespace'")
             __props__.__dict__["namespace"] = namespace
@@ -625,6 +714,7 @@ class DeploymentBackup(pulumi.CustomResource):
                 raise TypeError("Missing required property 'object'")
             __props__.__dict__["object"] = object
             __props__.__dict__["backup_type"] = None
+            __props__.__dict__["deployment_type"] = None
             __props__.__dict__["is_automatic"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["ogg_version"] = None
@@ -650,10 +740,13 @@ class DeploymentBackup(pulumi.CustomResource):
             compartment_id: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             deployment_id: Optional[pulumi.Input[str]] = None,
+            deployment_type: Optional[pulumi.Input[str]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             is_automatic: Optional[pulumi.Input[bool]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentBackupLockArgs']]]]] = None,
             namespace: Optional[pulumi.Input[str]] = None,
             object: Optional[pulumi.Input[str]] = None,
             ogg_version: Optional[pulumi.Input[str]] = None,
@@ -676,10 +769,12 @@ class DeploymentBackup(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Tags defined for this resource. Each key is predefined and scoped to a namespace.  Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] deployment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        :param pulumi.Input[str] deployment_type: The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
         :param pulumi.Input[str] display_name: An object's Display Name.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_automatic: True if this object is automatically created
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DeploymentBackupLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[str] namespace: Name of namespace that serves as a container for all of your buckets
         :param pulumi.Input[str] object: Name of the object to be uploaded to object storage
                
@@ -704,10 +799,13 @@ class DeploymentBackup(pulumi.CustomResource):
         __props__.__dict__["compartment_id"] = compartment_id
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["deployment_id"] = deployment_id
+        __props__.__dict__["deployment_type"] = deployment_type
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["is_automatic"] = is_automatic
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["namespace"] = namespace
         __props__.__dict__["object"] = object
         __props__.__dict__["ogg_version"] = ogg_version
@@ -761,6 +859,14 @@ class DeploymentBackup(pulumi.CustomResource):
         return pulumi.get(self, "deployment_id")
 
     @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> pulumi.Output[str]:
+        """
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
@@ -785,12 +891,25 @@ class DeploymentBackup(pulumi.CustomResource):
         return pulumi.get(self, "is_automatic")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
         Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.DeploymentBackupLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter

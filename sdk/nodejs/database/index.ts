@@ -335,6 +335,11 @@ export const getAutonomousDatabaseInstanceWalletManagement: typeof import("./get
 export const getAutonomousDatabaseInstanceWalletManagementOutput: typeof import("./getAutonomousDatabaseInstanceWalletManagement").getAutonomousDatabaseInstanceWalletManagementOutput = null as any;
 utilities.lazyLoad(exports, ["getAutonomousDatabaseInstanceWalletManagement","getAutonomousDatabaseInstanceWalletManagementOutput"], () => require("./getAutonomousDatabaseInstanceWalletManagement"));
 
+export { GetAutonomousDatabasePeersArgs, GetAutonomousDatabasePeersResult, GetAutonomousDatabasePeersOutputArgs } from "./getAutonomousDatabasePeers";
+export const getAutonomousDatabasePeers: typeof import("./getAutonomousDatabasePeers").getAutonomousDatabasePeers = null as any;
+export const getAutonomousDatabasePeersOutput: typeof import("./getAutonomousDatabasePeers").getAutonomousDatabasePeersOutput = null as any;
+utilities.lazyLoad(exports, ["getAutonomousDatabasePeers","getAutonomousDatabasePeersOutput"], () => require("./getAutonomousDatabasePeers"));
+
 export { GetAutonomousDatabaseRefreshableClonesArgs, GetAutonomousDatabaseRefreshableClonesResult, GetAutonomousDatabaseRefreshableClonesOutputArgs } from "./getAutonomousDatabaseRefreshableClones";
 export const getAutonomousDatabaseRefreshableClones: typeof import("./getAutonomousDatabaseRefreshableClones").getAutonomousDatabaseRefreshableClones = null as any;
 export const getAutonomousDatabaseRefreshableClonesOutput: typeof import("./getAutonomousDatabaseRefreshableClones").getAutonomousDatabaseRefreshableClonesOutput = null as any;

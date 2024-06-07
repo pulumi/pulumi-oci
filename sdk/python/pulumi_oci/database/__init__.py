@@ -71,6 +71,7 @@ from .get_autonomous_database_backups import *
 from .get_autonomous_database_dataguard_association import *
 from .get_autonomous_database_dataguard_associations import *
 from .get_autonomous_database_instance_wallet_management import *
+from .get_autonomous_database_peers import *
 from .get_autonomous_database_refreshable_clones import *
 from .get_autonomous_database_regional_wallet_management import *
 from .get_autonomous_database_software_image import *

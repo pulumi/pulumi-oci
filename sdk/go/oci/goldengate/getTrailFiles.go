@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
 //
-// Lists the TrailFiles for a deployment.
+// Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
 //
 // ## Example Usage
 //

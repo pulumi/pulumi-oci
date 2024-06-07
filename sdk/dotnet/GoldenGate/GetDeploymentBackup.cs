@@ -121,6 +121,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string DeploymentId;
         /// <summary>
+        /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        /// </summary>
+        public readonly string DeploymentType;
+        /// <summary>
         /// An object's Display Name.
         /// </summary>
         public readonly string DisplayName;
@@ -136,10 +140,15 @@ namespace Pulumi.Oci.GoldenGate
         /// True if this object is automatically created
         /// </summary>
         public readonly bool IsAutomatic;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         public readonly string LifecycleDetails;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentBackupLockResult> Locks;
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets
         /// </summary>
@@ -195,6 +204,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string deploymentId,
 
+            string deploymentType,
+
             string displayName,
 
             ImmutableDictionary<string, object> freeformTags,
@@ -203,7 +214,11 @@ namespace Pulumi.Oci.GoldenGate
 
             bool isAutomatic,
 
+            bool isLockOverride,
+
             string lifecycleDetails,
+
+            ImmutableArray<Outputs.GetDeploymentBackupLockResult> locks,
 
             string @namespace,
 
@@ -231,11 +246,14 @@ namespace Pulumi.Oci.GoldenGate
             DefinedTags = definedTags;
             DeploymentBackupId = deploymentBackupId;
             DeploymentId = deploymentId;
+            DeploymentType = deploymentType;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
             IsAutomatic = isAutomatic;
+            IsLockOverride = isLockOverride;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             Namespace = @namespace;
             Object = @object;
             OggVersion = oggVersion;

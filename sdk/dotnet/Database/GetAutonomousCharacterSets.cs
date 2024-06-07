@@ -93,6 +93,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+        /// 
+        /// :
         /// </summary>
         [Input("isShared")]
         public bool? IsShared { get; set; }
@@ -127,6 +129,8 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+        /// 
+        /// :
         /// </summary>
         [Input("isShared")]
         public Input<bool>? IsShared { get; set; }

@@ -69,6 +69,8 @@ type LookupDeploymentBackupResult struct {
 	DeploymentBackupId string                 `pulumi:"deploymentBackupId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId string `pulumi:"deploymentId"`
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType string `pulumi:"deploymentType"`
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -76,9 +78,12 @@ type LookupDeploymentBackupResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	Id string `pulumi:"id"`
 	// True if this object is automatically created
-	IsAutomatic bool `pulumi:"isAutomatic"`
+	IsAutomatic    bool `pulumi:"isAutomatic"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDeploymentBackupLock `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -168,6 +173,11 @@ func (o LookupDeploymentBackupResultOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+func (o LookupDeploymentBackupResultOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
 // An object's Display Name.
 func (o LookupDeploymentBackupResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -188,9 +198,18 @@ func (o LookupDeploymentBackupResultOutput) IsAutomatic() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
 }
 
+func (o LookupDeploymentBackupResultOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o LookupDeploymentBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDeploymentBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o LookupDeploymentBackupResultOutput) Locks() GetDeploymentBackupLockArrayOutput {
+	return o.ApplyT(func(v LookupDeploymentBackupResult) []GetDeploymentBackupLock { return v.Locks }).(GetDeploymentBackupLockArrayOutput)
 }
 
 // Name of namespace that serves as a container for all of your buckets

@@ -38,6 +38,8 @@ import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociations
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseDataguardAssociationsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseInstanceWalletManagementPlainArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
+import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersPlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesArgs;
 import com.pulumi.oci.Database.inputs.GetAutonomousDatabaseRefreshableClonesPlainArgs;
@@ -268,6 +270,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseBackupsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDataguardAssociationsResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseInstanceWalletManagementResult;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasePeersResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRefreshableClonesResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRegionalWalletManagementResult;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResult;
@@ -3469,6 +3472,182 @@ public final class DatabaseFunctions {
      */
     public static CompletableFuture<GetAutonomousDatabaseInstanceWalletManagementResult> getAutonomousDatabaseInstanceWalletManagementPlain(GetAutonomousDatabaseInstanceWalletManagementPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabaseInstanceWalletManagement:getAutonomousDatabaseInstanceWalletManagement", TypeShape.of(GetAutonomousDatabaseInstanceWalletManagementResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasePeers = DatabaseFunctions.getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabasePeersResult> getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs args) {
+        return getAutonomousDatabasePeers(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasePeers = DatabaseFunctions.getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabasePeersResult> getAutonomousDatabasePeersPlain(GetAutonomousDatabasePeersPlainArgs args) {
+        return getAutonomousDatabasePeersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasePeers = DatabaseFunctions.getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetAutonomousDatabasePeersResult> getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", TypeShape.of(GetAutonomousDatabasePeersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Autonomous Database Peers in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetAutonomousDatabasePeersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testAutonomousDatabasePeers = DatabaseFunctions.getAutonomousDatabasePeers(GetAutonomousDatabasePeersArgs.builder()
+     *             .autonomousDatabaseId(testAutonomousDatabase.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetAutonomousDatabasePeersResult> getAutonomousDatabasePeersPlain(GetAutonomousDatabasePeersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getAutonomousDatabasePeers:getAutonomousDatabasePeers", TypeShape.of(GetAutonomousDatabasePeersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Autonomous Database Refreshable Clones in Oracle Cloud Infrastructure Database service.

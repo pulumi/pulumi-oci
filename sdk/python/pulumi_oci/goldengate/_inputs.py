@@ -13,8 +13,11 @@ __all__ = [
     'ConnectionAdditionalAttributeArgs',
     'ConnectionBootstrapServerArgs',
     'ConnectionIngressIpArgs',
+    'ConnectionLockArgs',
+    'DeploymentBackupLockArgs',
     'DeploymentDeploymentDiagnosticDataArgs',
     'DeploymentIngressIpArgs',
+    'DeploymentLockArgs',
     'DeploymentMaintenanceConfigurationArgs',
     'DeploymentMaintenanceWindowArgs',
     'DeploymentOggDataArgs',
@@ -152,6 +155,146 @@ class ConnectionIngressIpArgs:
 
 
 @pulumi.input_type
+class ConnectionLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+@pulumi.input_type
+class DeploymentBackupLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
+
+
+@pulumi.input_type
 class DeploymentDeploymentDiagnosticDataArgs:
     def __init__(__self__, *,
                  bucket: Optional[pulumi.Input[str]] = None,
@@ -275,6 +418,76 @@ class DeploymentIngressIpArgs:
     @ingress_ip.setter
     def ingress_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ingress_ip", value)
+
+
+@pulumi.input_type
+class DeploymentLockArgs:
+    def __init__(__self__, *,
+                 type: pulumi.Input[str],
+                 message: Optional[pulumi.Input[str]] = None,
+                 related_resource_id: Optional[pulumi.Input[str]] = None,
+                 time_created: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] type: Type of the lock.
+        :param pulumi.Input[str] message: A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        :param pulumi.Input[str] related_resource_id: The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        :param pulumi.Input[str] time_created: The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        pulumi.set(__self__, "type", type)
+        if message is not None:
+            pulumi.set(__self__, "message", message)
+        if related_resource_id is not None:
+            pulumi.set(__self__, "related_resource_id", related_resource_id)
+        if time_created is not None:
+            pulumi.set(__self__, "time_created", time_created)
+
+    @property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[str]:
+        """
+        Type of the lock.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[str]):
+        pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter
+    def message(self) -> Optional[pulumi.Input[str]]:
+        """
+        A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+        """
+        return pulumi.get(self, "message")
+
+    @message.setter
+    def message(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "message", value)
+
+    @property
+    @pulumi.getter(name="relatedResourceId")
+    def related_resource_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+        """
+        return pulumi.get(self, "related_resource_id")
+
+    @related_resource_id.setter
+    def related_resource_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "related_resource_id", value)
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> Optional[pulumi.Input[str]]:
+        """
+        The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+        """
+        return pulumi.get(self, "time_created")
+
+    @time_created.setter
+    def time_created(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "time_created", value)
 
 
 @pulumi.input_type
@@ -417,11 +630,11 @@ class DeploymentOggDataArgs:
         :param pulumi.Input[str] deployment_name: The name given to the GoldenGate service deployment. The name must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
         :param pulumi.Input[str] admin_password: (Updatable) The password associated with the GoldenGate deployment console username. The password must be 8 to 30 characters long and must contain at least 1 uppercase, 1 lowercase, 1 numeric, and 1 special character. Special characters such as ‘$’, ‘^’, or ‘?’ are not allowed. This field will be deprecated and replaced by "passwordSecretId".
         :param pulumi.Input[str] admin_username: (Updatable) The GoldenGate deployment console username.
-        :param pulumi.Input[str] certificate: (Updatable) A PEM-encoded SSL certificate.
+        :param pulumi.Input[str] certificate: (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[str] credential_store: (Updatable) The type of credential store for OGG.
         :param pulumi.Input[str] identity_domain_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
-        :param pulumi.Input[str] key: (Updatable) A PEM-encoded private key.
-        :param pulumi.Input[str] ogg_version: (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        :param pulumi.Input[str] key: (Updatable) The base64 encoded content of the PEM file containing the private key.
+        :param pulumi.Input[str] ogg_version: Version of OGG
         :param pulumi.Input[str] password_secret_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
         """
         pulumi.set(__self__, "deployment_name", deployment_name)
@@ -482,7 +695,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter
     def certificate(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A PEM-encoded SSL certificate.
+        (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate")
 
@@ -518,7 +731,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter
     def key(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) A PEM-encoded private key.
+        (Updatable) The base64 encoded content of the PEM file containing the private key.
         """
         return pulumi.get(self, "key")
 
@@ -530,7 +743,7 @@ class DeploymentOggDataArgs:
     @pulumi.getter(name="oggVersion")
     def ogg_version(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        Version of OGG
         """
         return pulumi.get(self, "ogg_version")
 

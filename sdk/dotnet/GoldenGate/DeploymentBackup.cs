@@ -40,6 +40,14 @@ namespace Pulumi.Oci.GoldenGate
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.GoldenGate.Inputs.DeploymentBackupLockArgs
+    ///             {
+    ///                 Type = deploymentBackupLocksType,
+    ///                 Message = deploymentBackupLocksMessage,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -87,6 +95,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> DeploymentId { get; private set; } = null!;
 
         /// <summary>
+        /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        /// </summary>
+        [Output("deploymentType")]
+        public Output<string> DeploymentType { get; private set; } = null!;
+
+        /// <summary>
         /// An object's Display Name.
         /// </summary>
         [Output("displayName")]
@@ -104,11 +118,20 @@ namespace Pulumi.Oci.GoldenGate
         [Output("isAutomatic")]
         public Output<bool> IsAutomatic { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
         public Output<string> LifecycleDetails { get; private set; } = null!;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.DeploymentBackupLock>> Locks { get; private set; } = null!;
 
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets
@@ -268,6 +291,21 @@ namespace Pulumi.Oci.GoldenGate
             set => _freeformTags = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.DeploymentBackupLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DeploymentBackupLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DeploymentBackupLockArgs>());
+            set => _locks = value;
+        }
+
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets
         /// </summary>
@@ -329,6 +367,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? DeploymentId { get; set; }
 
         /// <summary>
+        /// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        /// </summary>
+        [Input("deploymentType")]
+        public Input<string>? DeploymentType { get; set; }
+
+        /// <summary>
         /// An object's Display Name.
         /// </summary>
         [Input("displayName")]
@@ -352,11 +396,26 @@ namespace Pulumi.Oci.GoldenGate
         [Input("isAutomatic")]
         public Input<bool>? IsAutomatic { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.DeploymentBackupLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.DeploymentBackupLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.DeploymentBackupLockGetArgs>());
+            set => _locks = value;
+        }
 
         /// <summary>
         /// Name of namespace that serves as a container for all of your buckets

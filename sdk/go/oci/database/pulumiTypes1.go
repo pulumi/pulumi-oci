@@ -13,6 +13,423 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetKeyStoreTypeDetail struct {
+	// The administrator username to connect to Oracle Key Vault
+	AdminUsername string `pulumi:"adminUsername"`
+	// The list of Oracle Key Vault connection IP addresses.
+	ConnectionIps []string `pulumi:"connectionIps"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SecretId string `pulumi:"secretId"`
+	// The type of key store.
+	Type string `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetKeyStoreTypeDetailInput is an input type that accepts GetKeyStoreTypeDetailArgs and GetKeyStoreTypeDetailOutput values.
+// You can construct a concrete instance of `GetKeyStoreTypeDetailInput` via:
+//
+//	GetKeyStoreTypeDetailArgs{...}
+type GetKeyStoreTypeDetailInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreTypeDetailOutput() GetKeyStoreTypeDetailOutput
+	ToGetKeyStoreTypeDetailOutputWithContext(context.Context) GetKeyStoreTypeDetailOutput
+}
+
+type GetKeyStoreTypeDetailArgs struct {
+	// The administrator username to connect to Oracle Key Vault
+	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
+	// The list of Oracle Key Vault connection IP addresses.
+	ConnectionIps pulumi.StringArrayInput `pulumi:"connectionIps"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// The type of key store.
+	Type pulumi.StringInput `pulumi:"type"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetKeyStoreTypeDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (i GetKeyStoreTypeDetailArgs) ToGetKeyStoreTypeDetailOutput() GetKeyStoreTypeDetailOutput {
+	return i.ToGetKeyStoreTypeDetailOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreTypeDetailArgs) ToGetKeyStoreTypeDetailOutputWithContext(ctx context.Context) GetKeyStoreTypeDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreTypeDetailOutput)
+}
+
+// GetKeyStoreTypeDetailArrayInput is an input type that accepts GetKeyStoreTypeDetailArray and GetKeyStoreTypeDetailArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoreTypeDetailArrayInput` via:
+//
+//	GetKeyStoreTypeDetailArray{ GetKeyStoreTypeDetailArgs{...} }
+type GetKeyStoreTypeDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreTypeDetailArrayOutput() GetKeyStoreTypeDetailArrayOutput
+	ToGetKeyStoreTypeDetailArrayOutputWithContext(context.Context) GetKeyStoreTypeDetailArrayOutput
+}
+
+type GetKeyStoreTypeDetailArray []GetKeyStoreTypeDetailInput
+
+func (GetKeyStoreTypeDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (i GetKeyStoreTypeDetailArray) ToGetKeyStoreTypeDetailArrayOutput() GetKeyStoreTypeDetailArrayOutput {
+	return i.ToGetKeyStoreTypeDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreTypeDetailArray) ToGetKeyStoreTypeDetailArrayOutputWithContext(ctx context.Context) GetKeyStoreTypeDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreTypeDetailArrayOutput)
+}
+
+type GetKeyStoreTypeDetailOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreTypeDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (o GetKeyStoreTypeDetailOutput) ToGetKeyStoreTypeDetailOutput() GetKeyStoreTypeDetailOutput {
+	return o
+}
+
+func (o GetKeyStoreTypeDetailOutput) ToGetKeyStoreTypeDetailOutputWithContext(ctx context.Context) GetKeyStoreTypeDetailOutput {
+	return o
+}
+
+// The administrator username to connect to Oracle Key Vault
+func (o GetKeyStoreTypeDetailOutput) AdminUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreTypeDetail) string { return v.AdminUsername }).(pulumi.StringOutput)
+}
+
+// The list of Oracle Key Vault connection IP addresses.
+func (o GetKeyStoreTypeDetailOutput) ConnectionIps() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetKeyStoreTypeDetail) []string { return v.ConnectionIps }).(pulumi.StringArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetKeyStoreTypeDetailOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreTypeDetail) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// The type of key store.
+func (o GetKeyStoreTypeDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreTypeDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetKeyStoreTypeDetailOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreTypeDetail) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetKeyStoreTypeDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreTypeDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreTypeDetail)(nil)).Elem()
+}
+
+func (o GetKeyStoreTypeDetailArrayOutput) ToGetKeyStoreTypeDetailArrayOutput() GetKeyStoreTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreTypeDetailArrayOutput) ToGetKeyStoreTypeDetailArrayOutputWithContext(ctx context.Context) GetKeyStoreTypeDetailArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreTypeDetailArrayOutput) Index(i pulumi.IntInput) GetKeyStoreTypeDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoreTypeDetail {
+		return vs[0].([]GetKeyStoreTypeDetail)[vs[1].(int)]
+	}).(GetKeyStoreTypeDetailOutput)
+}
+
+type GetKeyStoresFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetKeyStoresFilterInput is an input type that accepts GetKeyStoresFilterArgs and GetKeyStoresFilterOutput values.
+// You can construct a concrete instance of `GetKeyStoresFilterInput` via:
+//
+//	GetKeyStoresFilterArgs{...}
+type GetKeyStoresFilterInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresFilterOutput() GetKeyStoresFilterOutput
+	ToGetKeyStoresFilterOutputWithContext(context.Context) GetKeyStoresFilterOutput
+}
+
+type GetKeyStoresFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetKeyStoresFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresFilter)(nil)).Elem()
+}
+
+func (i GetKeyStoresFilterArgs) ToGetKeyStoresFilterOutput() GetKeyStoresFilterOutput {
+	return i.ToGetKeyStoresFilterOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresFilterArgs) ToGetKeyStoresFilterOutputWithContext(ctx context.Context) GetKeyStoresFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresFilterOutput)
+}
+
+// GetKeyStoresFilterArrayInput is an input type that accepts GetKeyStoresFilterArray and GetKeyStoresFilterArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresFilterArrayInput` via:
+//
+//	GetKeyStoresFilterArray{ GetKeyStoresFilterArgs{...} }
+type GetKeyStoresFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresFilterArrayOutput() GetKeyStoresFilterArrayOutput
+	ToGetKeyStoresFilterArrayOutputWithContext(context.Context) GetKeyStoresFilterArrayOutput
+}
+
+type GetKeyStoresFilterArray []GetKeyStoresFilterInput
+
+func (GetKeyStoresFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresFilter)(nil)).Elem()
+}
+
+func (i GetKeyStoresFilterArray) ToGetKeyStoresFilterArrayOutput() GetKeyStoresFilterArrayOutput {
+	return i.ToGetKeyStoresFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresFilterArray) ToGetKeyStoresFilterArrayOutputWithContext(ctx context.Context) GetKeyStoresFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresFilterArrayOutput)
+}
+
+type GetKeyStoresFilterOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresFilter)(nil)).Elem()
+}
+
+func (o GetKeyStoresFilterOutput) ToGetKeyStoresFilterOutput() GetKeyStoresFilterOutput {
+	return o
+}
+
+func (o GetKeyStoresFilterOutput) ToGetKeyStoresFilterOutputWithContext(ctx context.Context) GetKeyStoresFilterOutput {
+	return o
+}
+
+func (o GetKeyStoresFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetKeyStoresFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetKeyStoresFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetKeyStoresFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetKeyStoresFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresFilter)(nil)).Elem()
+}
+
+func (o GetKeyStoresFilterArrayOutput) ToGetKeyStoresFilterArrayOutput() GetKeyStoresFilterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresFilterArrayOutput) ToGetKeyStoresFilterArrayOutputWithContext(ctx context.Context) GetKeyStoresFilterArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresFilterArrayOutput) Index(i pulumi.IntInput) GetKeyStoresFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresFilter {
+		return vs[0].([]GetKeyStoresFilter)[vs[1].(int)]
+	}).(GetKeyStoresFilterOutput)
+}
+
+type GetKeyStoresKeyStore struct {
+	// List of databases associated with the key store.
+	AssociatedDatabases []GetKeyStoresKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The current state of the key store.
+	State string `pulumi:"state"`
+	// The date and time that the key store was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Key store type details.
+	TypeDetails []GetKeyStoresKeyStoreTypeDetail `pulumi:"typeDetails"`
+}
+
+// GetKeyStoresKeyStoreInput is an input type that accepts GetKeyStoresKeyStoreArgs and GetKeyStoresKeyStoreOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreInput` via:
+//
+//	GetKeyStoresKeyStoreArgs{...}
+type GetKeyStoresKeyStoreInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreOutput() GetKeyStoresKeyStoreOutput
+	ToGetKeyStoresKeyStoreOutputWithContext(context.Context) GetKeyStoresKeyStoreOutput
+}
+
+type GetKeyStoresKeyStoreArgs struct {
+	// List of databases associated with the key store.
+	AssociatedDatabases GetKeyStoresKeyStoreAssociatedDatabaseArrayInput `pulumi:"associatedDatabases"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// The user-friendly name for the key store. The name does not need to be unique.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The current state of the key store.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time that the key store was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Key store type details.
+	TypeDetails GetKeyStoresKeyStoreTypeDetailArrayInput `pulumi:"typeDetails"`
+}
+
+func (GetKeyStoresKeyStoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStore)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreArgs) ToGetKeyStoresKeyStoreOutput() GetKeyStoresKeyStoreOutput {
+	return i.ToGetKeyStoresKeyStoreOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreArgs) ToGetKeyStoresKeyStoreOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreOutput)
+}
+
+// GetKeyStoresKeyStoreArrayInput is an input type that accepts GetKeyStoresKeyStoreArray and GetKeyStoresKeyStoreArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoresKeyStoreArrayInput` via:
+//
+//	GetKeyStoresKeyStoreArray{ GetKeyStoresKeyStoreArgs{...} }
+type GetKeyStoresKeyStoreArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoresKeyStoreArrayOutput() GetKeyStoresKeyStoreArrayOutput
+	ToGetKeyStoresKeyStoreArrayOutputWithContext(context.Context) GetKeyStoresKeyStoreArrayOutput
+}
+
+type GetKeyStoresKeyStoreArray []GetKeyStoresKeyStoreInput
+
+func (GetKeyStoresKeyStoreArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStore)(nil)).Elem()
+}
+
+func (i GetKeyStoresKeyStoreArray) ToGetKeyStoresKeyStoreArrayOutput() GetKeyStoresKeyStoreArrayOutput {
+	return i.ToGetKeyStoresKeyStoreArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoresKeyStoreArray) ToGetKeyStoresKeyStoreArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoresKeyStoreArrayOutput)
+}
+
+type GetKeyStoresKeyStoreOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoresKeyStore)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreOutput) ToGetKeyStoresKeyStoreOutput() GetKeyStoresKeyStoreOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreOutput) ToGetKeyStoresKeyStoreOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreOutput {
+	return o
+}
+
+// List of databases associated with the key store.
+func (o GetKeyStoresKeyStoreOutput) AssociatedDatabases() GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) []GetKeyStoresKeyStoreAssociatedDatabase { return v.AssociatedDatabases }).(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetKeyStoresKeyStoreOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetKeyStoresKeyStoreOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// The user-friendly name for the key store. The name does not need to be unique.
+func (o GetKeyStoresKeyStoreOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetKeyStoresKeyStoreOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoresKeyStoreOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetKeyStoresKeyStoreOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The current state of the key store.
+func (o GetKeyStoresKeyStoreOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time that the key store was created.
+func (o GetKeyStoresKeyStoreOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Key store type details.
+func (o GetKeyStoresKeyStoreOutput) TypeDetails() GetKeyStoresKeyStoreTypeDetailArrayOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) []GetKeyStoresKeyStoreTypeDetail { return v.TypeDetails }).(GetKeyStoresKeyStoreTypeDetailArrayOutput)
+}
+
+type GetKeyStoresKeyStoreArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoresKeyStoreArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoresKeyStore)(nil)).Elem()
+}
+
+func (o GetKeyStoresKeyStoreArrayOutput) ToGetKeyStoresKeyStoreArrayOutput() GetKeyStoresKeyStoreArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreArrayOutput) ToGetKeyStoresKeyStoreArrayOutputWithContext(ctx context.Context) GetKeyStoresKeyStoreArrayOutput {
+	return o
+}
+
+func (o GetKeyStoresKeyStoreArrayOutput) Index(i pulumi.IntInput) GetKeyStoresKeyStoreOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoresKeyStore {
+		return vs[0].([]GetKeyStoresKeyStore)[vs[1].(int)]
+	}).(GetKeyStoresKeyStoreOutput)
+}
+
 type GetKeyStoresKeyStoreAssociatedDatabase struct {
 	// The name of the database that is associated with the key store.
 	DbName string `pulumi:"dbName"`
@@ -7750,6 +8167,12 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreTypeDetailInput)(nil)).Elem(), GetKeyStoreTypeDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreTypeDetailArrayInput)(nil)).Elem(), GetKeyStoreTypeDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresFilterInput)(nil)).Elem(), GetKeyStoresFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresFilterArrayInput)(nil)).Elem(), GetKeyStoresFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreInput)(nil)).Elem(), GetKeyStoresKeyStoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoresKeyStoreAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresKeyStoreTypeDetailInput)(nil)).Elem(), GetKeyStoresKeyStoreTypeDetailArgs{})
@@ -7864,6 +8287,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetKeyStoreTypeDetailOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreTypeDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresFilterOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreOutput{})
+	pulumi.RegisterOutputType(GetKeyStoresKeyStoreArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresKeyStoreTypeDetailOutput{})

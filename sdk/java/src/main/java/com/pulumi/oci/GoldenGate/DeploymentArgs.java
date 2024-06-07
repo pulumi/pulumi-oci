@@ -6,6 +6,7 @@ package com.pulumi.oci.GoldenGate;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentLockArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceConfigurationArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentMaintenanceWindowArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentOggDataArgs;
@@ -174,6 +175,13 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         return this.isAutoScalingEnabled;
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * (Updatable) True if this object is publicly available.
      * 
@@ -217,6 +225,21 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> loadBalancerSubnetId() {
         return Optional.ofNullable(this.loadBalancerSubnetId);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<DeploymentLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<DeploymentLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -287,14 +310,14 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      * 
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
-     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+     * @return (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      * 
      */
     public Output<String> subnetId() {
@@ -314,9 +337,11 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         this.fqdn = $.fqdn;
         this.freeformTags = $.freeformTags;
         this.isAutoScalingEnabled = $.isAutoScalingEnabled;
+        this.isLockOverride = $.isLockOverride;
         this.isPublic = $.isPublic;
         this.licenseModel = $.licenseModel;
         this.loadBalancerSubnetId = $.loadBalancerSubnetId;
+        this.locks = $.locks;
         this.maintenanceConfiguration = $.maintenanceConfiguration;
         this.maintenanceWindow = $.maintenanceWindow;
         this.nsgIds = $.nsgIds;
@@ -553,6 +578,15 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
             return isAutoScalingEnabled(Output.of(isAutoScalingEnabled));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param isPublic (Updatable) True if this object is publicly available.
          * 
@@ -614,6 +648,37 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
             return loadBalancerSubnetId(Output.of(loadBalancerSubnetId));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<DeploymentLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<DeploymentLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(DeploymentLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**
@@ -720,7 +785,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
          * 
          * @return builder
          * 
@@ -731,7 +796,7 @@ public final class DeploymentArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+         * @param subnetId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
          * 
          * @return builder
          * 

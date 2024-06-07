@@ -9,11 +9,13 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.GoldenGate.DeploymentBackupArgs;
 import com.pulumi.oci.GoldenGate.inputs.DeploymentBackupState;
+import com.pulumi.oci.GoldenGate.outputs.DeploymentBackupLock;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import javax.annotation.Nullable;
 
@@ -34,6 +36,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.GoldenGate.DeploymentBackup;
  * import com.pulumi.oci.GoldenGate.DeploymentBackupArgs;
+ * import com.pulumi.oci.GoldenGate.inputs.DeploymentBackupLockArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -56,6 +59,10 @@ import javax.annotation.Nullable;
  *             .object(deploymentBackupObject)
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .locks(DeploymentBackupLockArgs.builder()
+ *                 .type(deploymentBackupLocksType)
+ *                 .message(deploymentBackupLocksMessage)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -146,6 +153,20 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
         return this.deploymentId;
     }
     /**
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    @Export(name="deploymentType", refs={String.class}, tree="[0]")
+    private Output<String> deploymentType;
+
+    /**
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    public Output<String> deploymentType() {
+        return this.deploymentType;
+    }
+    /**
      * An object&#39;s Display Name.
      * 
      */
@@ -187,6 +208,12 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
     public Output<Boolean> isAutomatic() {
         return this.isAutomatic;
     }
+    @Export(name="isLockOverride", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isLockOverride;
+
+    public Output<Boolean> isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -200,6 +227,20 @@ public class DeploymentBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Export(name="locks", refs={List.class,DeploymentBackupLock.class}, tree="[0,1]")
+    private Output<List<DeploymentBackupLock>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Output<List<DeploymentBackupLock>> locks() {
+        return this.locks;
     }
     /**
      * Name of namespace that serves as a container for all of your buckets

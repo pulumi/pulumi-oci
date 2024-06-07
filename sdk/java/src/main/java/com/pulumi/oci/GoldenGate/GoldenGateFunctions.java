@@ -3755,7 +3755,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment.
+     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -3801,7 +3801,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment.
+     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -3847,7 +3847,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment.
+     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -3893,7 +3893,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Files in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the TrailFiles for a deployment.
+     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -4127,7 +4127,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -4174,7 +4174,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -4221,7 +4221,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 
@@ -4268,7 +4268,7 @@ public final class GoldenGateFunctions {
     /**
      * This data source provides the list of Trail Sequences in Oracle Cloud Infrastructure Golden Gate service.
      * 
-     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      * 
      * ## Example Usage
      * 

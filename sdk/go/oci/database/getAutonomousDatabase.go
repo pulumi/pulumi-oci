@@ -128,6 +128,8 @@ type LookupAutonomousDatabaseResult struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
 	DisasterRecoveryRegionType string `pulumi:"disasterRecoveryRegionType"`
+	// Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+	DisasterRecoveryType string `pulumi:"disasterRecoveryType"`
 	// The user-friendly name for the Autonomous Database. The name does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// Indicates the number of seconds of data loss for a Data Guard failover.
@@ -527,6 +529,11 @@ func (o LookupAutonomousDatabaseResultOutput) DefinedTags() pulumi.MapOutput {
 // The disaster recovery (DR) region type of the Autonomous Database. For Autonomous Database Serverless instances, DR associations have designated primary and standby regions. These region types do not change when the database changes roles. The standby region in DR associations can be the same region as the primary region, or they can be in a remote regions. Some database administration operations may be available only in the primary region of the DR association, and cannot be performed when the database using the primary role is operating in a remote region.
 func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryRegionType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisasterRecoveryRegionType }).(pulumi.StringOutput)
+}
+
+// Indicates the disaster recovery (DR) type of the Shared Autonomous Database. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.
+func (o LookupAutonomousDatabaseResultOutput) DisasterRecoveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.DisasterRecoveryType }).(pulumi.StringOutput)
 }
 
 // The user-friendly name for the Autonomous Database. The name does not have to be unique.

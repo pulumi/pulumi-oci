@@ -113,6 +113,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionAdditionalAttributeResult> AdditionalAttributes;
         /// <summary>
+        /// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        /// </summary>
+        public readonly string AuthenticationMode;
+        /// <summary>
         /// Used authentication mechanism to be provided for the following connection types:
         /// * AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS, SNOWFLAKE
         /// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -209,6 +213,7 @@ namespace Pulumi.Oci.GoldenGate
         /// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetConnectionIngressIpResult> IngressIps;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         /// </summary>
@@ -237,6 +242,10 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetConnectionLockResult> Locks;
+        /// <summary>
         /// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         public readonly ImmutableArray<string> NsgIds;
@@ -254,6 +263,10 @@ namespace Pulumi.Oci.GoldenGate
         public readonly string PrivateKeyPassphrase;
         public readonly string ProducerProperties;
         public readonly string PublicKeyFingerprint;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        /// </summary>
+        public readonly string RedisClusterId;
         /// <summary>
         /// The name of the region. e.g.: us-ashburn-1
         /// </summary>
@@ -293,6 +306,8 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string SslCa;
         public readonly string SslCert;
+        public readonly string SslClientKeystash;
+        public readonly string SslClientKeystoredb;
         public readonly string SslCrl;
         public readonly string SslKey;
         public readonly string SslKeyPassword;
@@ -300,6 +315,7 @@ namespace Pulumi.Oci.GoldenGate
         /// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
         /// </summary>
         public readonly string SslMode;
+        public readonly string SslServerCertificate;
         /// <summary>
         /// Possible lifecycle states for connection.
         /// </summary>
@@ -362,6 +378,8 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetConnectionAdditionalAttributeResult> additionalAttributes,
 
+            string authenticationMode,
+
             string authenticationType,
 
             string azureTenantId,
@@ -414,6 +432,8 @@ namespace Pulumi.Oci.GoldenGate
 
             ImmutableArray<Outputs.GetConnectionIngressIpResult> ingressIps,
 
+            bool isLockOverride,
+
             string jndiConnectionFactory,
 
             string jndiInitialContextFactory,
@@ -432,6 +452,8 @@ namespace Pulumi.Oci.GoldenGate
 
             string lifecycleDetails,
 
+            ImmutableArray<Outputs.GetConnectionLockResult> locks,
+
             ImmutableArray<string> nsgIds,
 
             string password,
@@ -447,6 +469,8 @@ namespace Pulumi.Oci.GoldenGate
             string producerProperties,
 
             string publicKeyFingerprint,
+
+            string redisClusterId,
 
             string region,
 
@@ -472,6 +496,10 @@ namespace Pulumi.Oci.GoldenGate
 
             string sslCert,
 
+            string sslClientKeystash,
+
+            string sslClientKeystoredb,
+
             string sslCrl,
 
             string sslKey,
@@ -479,6 +507,8 @@ namespace Pulumi.Oci.GoldenGate
             string sslKeyPassword,
 
             string sslMode,
+
+            string sslServerCertificate,
 
             string state,
 
@@ -514,6 +544,7 @@ namespace Pulumi.Oci.GoldenGate
             AccountKey = accountKey;
             AccountName = accountName;
             AdditionalAttributes = additionalAttributes;
+            AuthenticationMode = authenticationMode;
             AuthenticationType = authenticationType;
             AzureTenantId = azureTenantId;
             BootstrapServers = bootstrapServers;
@@ -540,6 +571,7 @@ namespace Pulumi.Oci.GoldenGate
             Host = host;
             Id = id;
             IngressIps = ingressIps;
+            IsLockOverride = isLockOverride;
             JndiConnectionFactory = jndiConnectionFactory;
             JndiInitialContextFactory = jndiInitialContextFactory;
             JndiProviderUrl = jndiProviderUrl;
@@ -549,6 +581,7 @@ namespace Pulumi.Oci.GoldenGate
             KeyStore = keyStore;
             KeyStorePassword = keyStorePassword;
             LifecycleDetails = lifecycleDetails;
+            Locks = locks;
             NsgIds = nsgIds;
             Password = password;
             Port = port;
@@ -557,6 +590,7 @@ namespace Pulumi.Oci.GoldenGate
             PrivateKeyPassphrase = privateKeyPassphrase;
             ProducerProperties = producerProperties;
             PublicKeyFingerprint = publicKeyFingerprint;
+            RedisClusterId = redisClusterId;
             Region = region;
             RoutingMethod = routingMethod;
             SasToken = sasToken;
@@ -569,10 +603,13 @@ namespace Pulumi.Oci.GoldenGate
             ShouldValidateServerCertificate = shouldValidateServerCertificate;
             SslCa = sslCa;
             SslCert = sslCert;
+            SslClientKeystash = sslClientKeystash;
+            SslClientKeystoredb = sslClientKeystoredb;
             SslCrl = sslCrl;
             SslKey = sslKey;
             SslKeyPassword = sslKeyPassword;
             SslMode = sslMode;
+            SslServerCertificate = sslServerCertificate;
             State = state;
             StreamPoolId = streamPoolId;
             SubnetId = subnetId;

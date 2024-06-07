@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -28,6 +30,10 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         "bar-key": "value",
  *     },
+ *     locks: [{
+ *         type: deploymentBackupLocksType,
+ *         message: deploymentBackupLocksMessage,
+ *     }],
  * });
  * ```
  *
@@ -88,6 +94,10 @@ export class DeploymentBackup extends pulumi.CustomResource {
      */
     public readonly deploymentId!: pulumi.Output<string>;
     /**
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     */
+    public /*out*/ readonly deploymentType!: pulumi.Output<string>;
+    /**
      * An object's Display Name.
      */
     public readonly displayName!: pulumi.Output<string>;
@@ -99,10 +109,15 @@ export class DeploymentBackup extends pulumi.CustomResource {
      * True if this object is automatically created
      */
     public /*out*/ readonly isAutomatic!: pulumi.Output<boolean>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.GoldenGate.DeploymentBackupLock[]>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */
@@ -166,10 +181,13 @@ export class DeploymentBackup extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["deploymentId"] = state ? state.deploymentId : undefined;
+            resourceInputs["deploymentType"] = state ? state.deploymentType : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["isAutomatic"] = state ? state.isAutomatic : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["namespace"] = state ? state.namespace : undefined;
             resourceInputs["object"] = state ? state.object : undefined;
             resourceInputs["oggVersion"] = state ? state.oggVersion : undefined;
@@ -206,9 +224,12 @@ export class DeploymentBackup extends pulumi.CustomResource {
             resourceInputs["deploymentId"] = args ? args.deploymentId : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["namespace"] = args ? args.namespace : undefined;
             resourceInputs["object"] = args ? args.object : undefined;
             resourceInputs["backupType"] = undefined /*out*/;
+            resourceInputs["deploymentType"] = undefined /*out*/;
             resourceInputs["isAutomatic"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["oggVersion"] = undefined /*out*/;
@@ -250,6 +271,10 @@ export interface DeploymentBackupState {
      */
     deploymentId?: pulumi.Input<string>;
     /**
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     */
+    deploymentType?: pulumi.Input<string>;
+    /**
      * An object's Display Name.
      */
     displayName?: pulumi.Input<string>;
@@ -261,10 +286,15 @@ export interface DeploymentBackupState {
      * True if this object is automatically created
      */
     isAutomatic?: pulumi.Input<boolean>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentBackupLock>[]>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */
@@ -339,6 +369,11 @@ export interface DeploymentBackupArgs {
      * (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    isLockOverride?: pulumi.Input<boolean>;
+    /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.DeploymentBackupLock>[]>;
     /**
      * Name of namespace that serves as a container for all of your buckets
      */

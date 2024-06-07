@@ -32,14 +32,14 @@ public final class DeploymentCertificateState extends com.pulumi.resources.Resou
     }
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     @Import(name="certificateContent")
     private @Nullable Output<String> certificateContent;
 
     /**
-     * @return A PEM-encoded SSL certificate.
+     * @return The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public Optional<Output<String>> certificateContent() {
@@ -74,6 +74,21 @@ public final class DeploymentCertificateState extends com.pulumi.resources.Resou
      */
     public Optional<Output<Boolean>> isCa() {
         return Optional.ofNullable(this.isCa);
+    }
+
+    /**
+     * Whether to override locks (if any exist).
+     * 
+     */
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    /**
+     * @return Whether to override locks (if any exist).
+     * 
+     */
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
     }
 
     /**
@@ -329,6 +344,7 @@ public final class DeploymentCertificateState extends com.pulumi.resources.Resou
         this.certificateContent = $.certificateContent;
         this.deploymentId = $.deploymentId;
         this.isCa = $.isCa;
+        this.isLockOverride = $.isLockOverride;
         this.isSelfSigned = $.isSelfSigned;
         this.issuer = $.issuer;
         this.key = $.key;
@@ -387,7 +403,7 @@ public final class DeploymentCertificateState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param certificateContent A PEM-encoded SSL certificate.
+         * @param certificateContent The base64 encoded content of the PEM file containing the SSL certificate.
          * 
          * @return builder
          * 
@@ -398,7 +414,7 @@ public final class DeploymentCertificateState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param certificateContent A PEM-encoded SSL certificate.
+         * @param certificateContent The base64 encoded content of the PEM file containing the SSL certificate.
          * 
          * @return builder
          * 
@@ -447,6 +463,27 @@ public final class DeploymentCertificateState extends com.pulumi.resources.Resou
          */
         public Builder isCa(Boolean isCa) {
             return isCa(Output.of(isCa));
+        }
+
+        /**
+         * @param isLockOverride Whether to override locks (if any exist).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
+         * @param isLockOverride Whether to override locks (if any exist).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
         }
 
         /**

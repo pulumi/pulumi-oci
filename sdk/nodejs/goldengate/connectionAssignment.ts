@@ -18,6 +18,7 @@ import * as utilities from "../utilities";
  * const testConnectionAssignment = new oci.goldengate.ConnectionAssignment("test_connection_assignment", {
  *     connectionId: testConnection.id,
  *     deploymentId: testDeployment.id,
+ *     isLockOverride: connectionAssignmentIsLockOverride,
  * });
  * ```
  *
@@ -70,13 +71,17 @@ export class ConnectionAssignment extends pulumi.CustomResource {
      */
     public readonly connectionId!: pulumi.Output<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    public readonly deploymentId!: pulumi.Output<string>;
+    /**
+     * Whether to override locks (if any exist).
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly deploymentId!: pulumi.Output<string>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * Possible lifecycle states for connection assignments.
      */
@@ -107,6 +112,7 @@ export class ConnectionAssignment extends pulumi.CustomResource {
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["connectionId"] = state ? state.connectionId : undefined;
             resourceInputs["deploymentId"] = state ? state.deploymentId : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
@@ -120,6 +126,7 @@ export class ConnectionAssignment extends pulumi.CustomResource {
             }
             resourceInputs["connectionId"] = args ? args.connectionId : undefined;
             resourceInputs["deploymentId"] = args ? args.deploymentId : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
             resourceInputs["aliasName"] = undefined /*out*/;
             resourceInputs["compartmentId"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
@@ -148,13 +155,17 @@ export interface ConnectionAssignmentState {
      */
     connectionId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    deploymentId?: pulumi.Input<string>;
+    /**
+     * Whether to override locks (if any exist).
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    deploymentId?: pulumi.Input<string>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * Possible lifecycle states for connection assignments.
      */
@@ -178,11 +189,15 @@ export interface ConnectionAssignmentArgs {
      */
     connectionId: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+     */
+    deploymentId: pulumi.Input<string>;
+    /**
+     * Whether to override locks (if any exist).
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    deploymentId: pulumi.Input<string>;
+    isLockOverride?: pulumi.Input<boolean>;
 }

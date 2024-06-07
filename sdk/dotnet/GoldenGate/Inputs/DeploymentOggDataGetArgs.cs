@@ -35,7 +35,7 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? AdminUsername { get; set; }
 
         /// <summary>
-        /// (Updatable) A PEM-encoded SSL certificate.
+        /// (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
         /// </summary>
         [Input("certificate")]
         public Input<string>? Certificate { get; set; }
@@ -59,13 +59,13 @@ namespace Pulumi.Oci.GoldenGate.Inputs
         public Input<string>? IdentityDomainId { get; set; }
 
         /// <summary>
-        /// (Updatable) A PEM-encoded private key.
+        /// (Updatable) The base64 encoded content of the PEM file containing the private key.
         /// </summary>
         [Input("key")]
         public Input<string>? Key { get; set; }
 
         /// <summary>
-        /// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+        /// Version of OGG
         /// </summary>
         [Input("oggVersion")]
         public Input<string>? OggVersion { get; set; }

@@ -23,7 +23,7 @@ public final class DeploymentOggData {
      */
     private @Nullable String adminUsername;
     /**
-     * @return (Updatable) A PEM-encoded SSL certificate.
+     * @return (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     private @Nullable String certificate;
@@ -43,12 +43,12 @@ public final class DeploymentOggData {
      */
     private @Nullable String identityDomainId;
     /**
-     * @return (Updatable) A PEM-encoded private key.
+     * @return (Updatable) The base64 encoded content of the PEM file containing the private key.
      * 
      */
     private @Nullable String key;
     /**
-     * @return (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+     * @return Version of OGG
      * 
      */
     private @Nullable String oggVersion;
@@ -74,7 +74,7 @@ public final class DeploymentOggData {
         return Optional.ofNullable(this.adminUsername);
     }
     /**
-     * @return (Updatable) A PEM-encoded SSL certificate.
+     * @return (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public Optional<String> certificate() {
@@ -102,14 +102,14 @@ public final class DeploymentOggData {
         return Optional.ofNullable(this.identityDomainId);
     }
     /**
-     * @return (Updatable) A PEM-encoded private key.
+     * @return (Updatable) The base64 encoded content of the PEM file containing the private key.
      * 
      */
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
     /**
-     * @return (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+     * @return Version of OGG
      * 
      */
     public Optional<String> oggVersion() {

@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetDeploymentBackupResult',
@@ -21,7 +22,7 @@ class GetDeploymentBackupResult:
     """
     A collection of values returned by getDeploymentBackup.
     """
-    def __init__(__self__, backup_type=None, bucket=None, compartment_id=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, display_name=None, freeform_tags=None, id=None, is_automatic=None, lifecycle_details=None, namespace=None, object=None, ogg_version=None, size_in_bytes=None, state=None, system_tags=None, time_backup_finished=None, time_created=None, time_of_backup=None, time_updated=None):
+    def __init__(__self__, backup_type=None, bucket=None, compartment_id=None, defined_tags=None, deployment_backup_id=None, deployment_id=None, deployment_type=None, display_name=None, freeform_tags=None, id=None, is_automatic=None, is_lock_override=None, lifecycle_details=None, locks=None, namespace=None, object=None, ogg_version=None, size_in_bytes=None, state=None, system_tags=None, time_backup_finished=None, time_created=None, time_of_backup=None, time_updated=None):
         if backup_type and not isinstance(backup_type, str):
             raise TypeError("Expected argument 'backup_type' to be a str")
         pulumi.set(__self__, "backup_type", backup_type)
@@ -40,6 +41,9 @@ class GetDeploymentBackupResult:
         if deployment_id and not isinstance(deployment_id, str):
             raise TypeError("Expected argument 'deployment_id' to be a str")
         pulumi.set(__self__, "deployment_id", deployment_id)
+        if deployment_type and not isinstance(deployment_type, str):
+            raise TypeError("Expected argument 'deployment_type' to be a str")
+        pulumi.set(__self__, "deployment_type", deployment_type)
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
@@ -52,9 +56,15 @@ class GetDeploymentBackupResult:
         if is_automatic and not isinstance(is_automatic, bool):
             raise TypeError("Expected argument 'is_automatic' to be a bool")
         pulumi.set(__self__, "is_automatic", is_automatic)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks and not isinstance(locks, list):
+            raise TypeError("Expected argument 'locks' to be a list")
+        pulumi.set(__self__, "locks", locks)
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
@@ -132,6 +142,14 @@ class GetDeploymentBackupResult:
         return pulumi.get(self, "deployment_id")
 
     @property
+    @pulumi.getter(name="deploymentType")
+    def deployment_type(self) -> str:
+        """
+        The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+        """
+        return pulumi.get(self, "deployment_type")
+
+    @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
@@ -164,12 +182,25 @@ class GetDeploymentBackupResult:
         return pulumi.get(self, "is_automatic")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
         Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
         """
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Sequence['outputs.GetDeploymentBackupLockResult']:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
 
     @property
     @pulumi.getter
@@ -264,11 +295,14 @@ class AwaitableGetDeploymentBackupResult(GetDeploymentBackupResult):
             defined_tags=self.defined_tags,
             deployment_backup_id=self.deployment_backup_id,
             deployment_id=self.deployment_id,
+            deployment_type=self.deployment_type,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_automatic=self.is_automatic,
+            is_lock_override=self.is_lock_override,
             lifecycle_details=self.lifecycle_details,
+            locks=self.locks,
             namespace=self.namespace,
             object=self.object,
             ogg_version=self.ogg_version,
@@ -312,11 +346,14 @@ def get_deployment_backup(deployment_backup_id: Optional[str] = None,
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         deployment_backup_id=pulumi.get(__ret__, 'deployment_backup_id'),
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
+        deployment_type=pulumi.get(__ret__, 'deployment_type'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_automatic=pulumi.get(__ret__, 'is_automatic'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
+        locks=pulumi.get(__ret__, 'locks'),
         namespace=pulumi.get(__ret__, 'namespace'),
         object=pulumi.get(__ret__, 'object'),
         ogg_version=pulumi.get(__ret__, 'ogg_version'),

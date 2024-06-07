@@ -33,6 +33,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
         /// </summary>
         public readonly string Id;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// A filter to return only connection assignments having the 'lifecycleState' given.
         /// </summary>
@@ -58,6 +59,8 @@ namespace Pulumi.Oci.GoldenGate.Outputs
 
             string id,
 
+            bool isLockOverride,
+
             string state,
 
             string timeCreated,
@@ -69,6 +72,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
             ConnectionId = connectionId;
             DeploymentId = deploymentId;
             Id = id;
+            IsLockOverride = isLockOverride;
             State = state;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

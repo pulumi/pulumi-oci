@@ -5,10 +5,12 @@ package com.pulumi.oci.GoldenGate.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentBackupsDeploymentBackupCollectionItemLock;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -40,6 +42,11 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
      */
     private String deploymentId;
     /**
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    private String deploymentType;
+    /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
@@ -59,11 +66,17 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
      * 
      */
     private Boolean isAutomatic;
+    private Boolean isLockOverride;
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     private String lifecycleDetails;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetDeploymentBackupsDeploymentBackupCollectionItemLock> locks;
     /**
      * @return Name of namespace that serves as a container for all of your buckets
      * 
@@ -152,6 +165,13 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
         return this.deploymentId;
     }
     /**
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    public String deploymentType() {
+        return this.deploymentType;
+    }
+    /**
      * @return A filter to return only the resources that match the entire &#39;displayName&#39; given.
      * 
      */
@@ -179,12 +199,22 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
     public Boolean isAutomatic() {
         return this.isAutomatic;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
      */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetDeploymentBackupsDeploymentBackupCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return Name of namespace that serves as a container for all of your buckets
@@ -271,11 +301,14 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
         private String compartmentId;
         private Map<String,Object> definedTags;
         private String deploymentId;
+        private String deploymentType;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAutomatic;
+        private Boolean isLockOverride;
         private String lifecycleDetails;
+        private List<GetDeploymentBackupsDeploymentBackupCollectionItemLock> locks;
         private String namespace;
         private String object;
         private String oggVersion;
@@ -294,11 +327,14 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.deploymentId = defaults.deploymentId;
+    	      this.deploymentType = defaults.deploymentType;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAutomatic = defaults.isAutomatic;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.locks = defaults.locks;
     	      this.namespace = defaults.namespace;
     	      this.object = defaults.object;
     	      this.oggVersion = defaults.oggVersion;
@@ -352,6 +388,14 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder deploymentType(String deploymentType) {
+            if (deploymentType == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupsDeploymentBackupCollectionItem", "deploymentType");
+            }
+            this.deploymentType = deploymentType;
+            return this;
+        }
+        @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
               throw new MissingRequiredPropertyException("GetDeploymentBackupsDeploymentBackupCollectionItem", "displayName");
@@ -384,12 +428,31 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupsDeploymentBackupCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDeploymentBackupsDeploymentBackupCollectionItem", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetDeploymentBackupsDeploymentBackupCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentBackupsDeploymentBackupCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetDeploymentBackupsDeploymentBackupCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder namespace(String namespace) {
@@ -478,11 +541,14 @@ public final class GetDeploymentBackupsDeploymentBackupCollectionItem {
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.deploymentId = deploymentId;
+            _resultValue.deploymentType = deploymentType;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isAutomatic = isAutomatic;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.locks = locks;
             _resultValue.namespace = namespace;
             _resultValue.object = object;
             _resultValue.oggVersion = oggVersion;

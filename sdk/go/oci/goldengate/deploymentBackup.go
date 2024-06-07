@@ -43,6 +43,12 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				Locks: goldengate.DeploymentBackupLockArray{
+//					&goldengate.DeploymentBackupLockArgs{
+//						Type:    pulumi.Any(deploymentBackupLocksType),
+//						Message: pulumi.Any(deploymentBackupLocksMessage),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -73,14 +79,19 @@ type DeploymentBackup struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringOutput `pulumi:"deploymentId"`
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType pulumi.StringOutput `pulumi:"deploymentType"`
 	// An object's Display Name.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// True if this object is automatically created
-	IsAutomatic pulumi.BoolOutput `pulumi:"isAutomatic"`
+	IsAutomatic    pulumi.BoolOutput `pulumi:"isAutomatic"`
+	IsLockOverride pulumi.BoolOutput `pulumi:"isLockOverride"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks DeploymentBackupLockArrayOutput `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringOutput `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -164,14 +175,19 @@ type deploymentBackupState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId *string `pulumi:"deploymentId"`
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType *string `pulumi:"deploymentType"`
 	// An object's Display Name.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// True if this object is automatically created
-	IsAutomatic *bool `pulumi:"isAutomatic"`
+	IsAutomatic    *bool `pulumi:"isAutomatic"`
+	IsLockOverride *bool `pulumi:"isLockOverride"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []DeploymentBackupLock `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace *string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -208,14 +224,19 @@ type DeploymentBackupState struct {
 	DefinedTags pulumi.MapInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
 	DeploymentId pulumi.StringPtrInput
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType pulumi.StringPtrInput
 	// An object's Display Name.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// True if this object is automatically created
-	IsAutomatic pulumi.BoolPtrInput
+	IsAutomatic    pulumi.BoolPtrInput
+	IsLockOverride pulumi.BoolPtrInput
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringPtrInput
+	// Locks associated with this resource.
+	Locks DeploymentBackupLockArrayInput
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringPtrInput
 	// Name of the object to be uploaded to object storage
@@ -257,7 +278,10 @@ type deploymentBackupArgs struct {
 	// An object's Display Name.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	FreeformTags   map[string]interface{} `pulumi:"freeformTags"`
+	IsLockOverride *bool                  `pulumi:"isLockOverride"`
+	// Locks associated with this resource.
+	Locks []DeploymentBackupLock `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -280,7 +304,10 @@ type DeploymentBackupArgs struct {
 	// An object's Display Name.
 	DisplayName pulumi.StringInput
 	// (Updatable) A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
-	FreeformTags pulumi.MapInput
+	FreeformTags   pulumi.MapInput
+	IsLockOverride pulumi.BoolPtrInput
+	// Locks associated with this resource.
+	Locks DeploymentBackupLockArrayInput
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringInput
 	// Name of the object to be uploaded to object storage
@@ -402,6 +429,11 @@ func (o DeploymentBackupOutput) DeploymentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+func (o DeploymentBackupOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
 // An object's Display Name.
 func (o DeploymentBackupOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
@@ -417,9 +449,18 @@ func (o DeploymentBackupOutput) IsAutomatic() pulumi.BoolOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.BoolOutput { return v.IsAutomatic }).(pulumi.BoolOutput)
 }
 
+func (o DeploymentBackupOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DeploymentBackup) pulumi.BoolOutput { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o DeploymentBackupOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DeploymentBackup) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o DeploymentBackupOutput) Locks() DeploymentBackupLockArrayOutput {
+	return o.ApplyT(func(v *DeploymentBackup) DeploymentBackupLockArrayOutput { return v.Locks }).(DeploymentBackupLockArrayOutput)
 }
 
 // Name of namespace that serves as a container for all of your buckets

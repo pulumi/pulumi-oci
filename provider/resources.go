@@ -79,6 +79,7 @@ const (
 	databaseMigrationMod            = "DatabaseMigration"            // Database Migration
 	databaseMod                     = "Database"                     // Database
 	databaseToolsMod                = "DatabaseTools"                // Database Tools
+	demandSignalMod                 = "DemandSignal"                 // Demand Signal
 	devopsMod                       = "DevOps"                       // DevOps
 	disasterRecoveryMod             = "DisasterRecovery"             // Disaster Recovery
 	dnsMod                          = "Dns"                          // DNS
@@ -197,6 +198,7 @@ var mappedMods = map[string]string{
 	"dataflow":                       dataFlowMod,
 	"dataintegration":                dataIntegrationMod,
 	"datascience":                    dataScienceMod,
+	"demand_signal":                  demandSignalMod,
 	"devops":                         devopsMod,
 	"disaster_recovery":              disasterRecoveryMod,
 	"dns":                            dnsMod,

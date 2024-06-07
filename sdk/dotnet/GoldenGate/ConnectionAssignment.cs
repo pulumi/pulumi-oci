@@ -28,6 +28,7 @@ namespace Pulumi.Oci.GoldenGate
     ///     {
     ///         ConnectionId = testConnection.Id,
     ///         DeploymentId = testDeployment.Id,
+    ///         IsLockOverride = connectionAssignmentIsLockOverride,
     ///     });
     /// 
     /// });
@@ -63,14 +64,20 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> ConnectionId { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        [Output("deploymentId")]
+        public Output<string> DeploymentId { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether to override locks (if any exist).
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("deploymentId")]
-        public Output<string> DeploymentId { get; private set; } = null!;
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
 
         /// <summary>
         /// Possible lifecycle states for connection assignments.
@@ -143,14 +150,20 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string> ConnectionId { get; set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        [Input("deploymentId", required: true)]
+        public Input<string> DeploymentId { get; set; } = null!;
+
+        /// <summary>
+        /// Whether to override locks (if any exist).
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("deploymentId", required: true)]
-        public Input<string> DeploymentId { get; set; } = null!;
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
 
         public ConnectionAssignmentArgs()
         {
@@ -179,14 +192,20 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? ConnectionId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced. 
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
+        [Input("deploymentId")]
+        public Input<string>? DeploymentId { get; set; }
+
+        /// <summary>
+        /// Whether to override locks (if any exist).
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("deploymentId")]
-        public Input<string>? DeploymentId { get; set; }
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
 
         /// <summary>
         /// Possible lifecycle states for connection assignments.

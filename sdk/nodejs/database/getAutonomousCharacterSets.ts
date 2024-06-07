@@ -51,6 +51,8 @@ export interface GetAutonomousCharacterSetsArgs {
     isDedicated?: boolean;
     /**
      * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     *
+     * :
      */
     isShared?: boolean;
 }
@@ -109,6 +111,8 @@ export interface GetAutonomousCharacterSetsOutputArgs {
     isDedicated?: pulumi.Input<boolean>;
     /**
      * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     *
+     * :
      */
     isShared?: pulumi.Input<boolean>;
 }

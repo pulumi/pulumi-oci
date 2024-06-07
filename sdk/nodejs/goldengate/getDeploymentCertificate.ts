@@ -53,7 +53,7 @@ export interface GetDeploymentCertificateResult {
      */
     readonly authorityKeyId: string;
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      */
     readonly certificateContent: string;
     readonly certificateKey: string;
@@ -66,6 +66,7 @@ export interface GetDeploymentCertificateResult {
      * Indicates if the certificate is ca.
      */
     readonly isCa: boolean;
+    readonly isLockOverride: boolean;
     /**
      * Indicates if the certificate is self signed.
      */

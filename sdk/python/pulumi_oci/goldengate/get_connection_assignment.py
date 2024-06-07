@@ -21,7 +21,7 @@ class GetConnectionAssignmentResult:
     """
     A collection of values returned by getConnectionAssignment.
     """
-    def __init__(__self__, alias_name=None, compartment_id=None, connection_assignment_id=None, connection_id=None, deployment_id=None, id=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, alias_name=None, compartment_id=None, connection_assignment_id=None, connection_id=None, deployment_id=None, id=None, is_lock_override=None, state=None, time_created=None, time_updated=None):
         if alias_name and not isinstance(alias_name, str):
             raise TypeError("Expected argument 'alias_name' to be a str")
         pulumi.set(__self__, "alias_name", alias_name)
@@ -40,6 +40,9 @@ class GetConnectionAssignmentResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_lock_override and not isinstance(is_lock_override, bool):
+            raise TypeError("Expected argument 'is_lock_override' to be a bool")
+        pulumi.set(__self__, "is_lock_override", is_lock_override)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
@@ -96,6 +99,11 @@ class GetConnectionAssignmentResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> bool:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
@@ -132,6 +140,7 @@ class AwaitableGetConnectionAssignmentResult(GetConnectionAssignmentResult):
             connection_id=self.connection_id,
             deployment_id=self.deployment_id,
             id=self.id,
+            is_lock_override=self.is_lock_override,
             state=self.state,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -168,6 +177,7 @@ def get_connection_assignment(connection_assignment_id: Optional[str] = None,
         connection_id=pulumi.get(__ret__, 'connection_id'),
         deployment_id=pulumi.get(__ret__, 'deployment_id'),
         id=pulumi.get(__ret__, 'id'),
+        is_lock_override=pulumi.get(__ret__, 'is_lock_override'),
         state=pulumi.get(__ret__, 'state'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))

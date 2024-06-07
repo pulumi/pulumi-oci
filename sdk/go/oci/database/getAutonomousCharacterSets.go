@@ -60,6 +60,8 @@ type GetAutonomousCharacterSetsArgs struct {
 	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
 	IsDedicated *bool `pulumi:"isDedicated"`
 	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	//
+	// :
 	IsShared *bool `pulumi:"isShared"`
 }
 
@@ -96,6 +98,8 @@ type GetAutonomousCharacterSetsOutputArgs struct {
 	// Specifies if the request is for an Autonomous Database Dedicated instance. The default request is for an Autonomous Database Dedicated instance.
 	IsDedicated pulumi.BoolPtrInput `pulumi:"isDedicated"`
 	// Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+	//
+	// :
 	IsShared pulumi.BoolPtrInput `pulumi:"isShared"`
 }
 

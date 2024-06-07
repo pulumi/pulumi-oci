@@ -5,10 +5,12 @@ package com.pulumi.oci.GoldenGate.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.GoldenGate.inputs.DeploymentBackupLockArgs;
 import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -95,6 +97,21 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
     }
 
     /**
+     * The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    @Import(name="deploymentType")
+    private @Nullable Output<String> deploymentType;
+
+    /**
+     * @return The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+     * 
+     */
+    public Optional<Output<String>> deploymentType() {
+        return Optional.ofNullable(this.deploymentType);
+    }
+
+    /**
      * An object&#39;s Display Name.
      * 
      */
@@ -139,6 +156,13 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         return Optional.ofNullable(this.isAutomatic);
     }
 
+    @Import(name="isLockOverride")
+    private @Nullable Output<Boolean> isLockOverride;
+
+    public Optional<Output<Boolean>> isLockOverride() {
+        return Optional.ofNullable(this.isLockOverride);
+    }
+
     /**
      * Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
      * 
@@ -152,6 +176,21 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
      */
     public Optional<Output<String>> lifecycleDetails() {
         return Optional.ofNullable(this.lifecycleDetails);
+    }
+
+    /**
+     * Locks associated with this resource.
+     * 
+     */
+    @Import(name="locks")
+    private @Nullable Output<List<DeploymentBackupLockArgs>> locks;
+
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public Optional<Output<List<DeploymentBackupLockArgs>>> locks() {
+        return Optional.ofNullable(this.locks);
     }
 
     /**
@@ -318,10 +357,13 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
         this.deploymentId = $.deploymentId;
+        this.deploymentType = $.deploymentType;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.isAutomatic = $.isAutomatic;
+        this.isLockOverride = $.isLockOverride;
         this.lifecycleDetails = $.lifecycleDetails;
+        this.locks = $.locks;
         this.namespace = $.namespace;
         this.object = $.object;
         this.oggVersion = $.oggVersion;
@@ -458,6 +500,27 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
         }
 
         /**
+         * @param deploymentType The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(@Nullable Output<String> deploymentType) {
+            $.deploymentType = deploymentType;
+            return this;
+        }
+
+        /**
+         * @param deploymentType The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value &#39;OGG&#39; is maintained for backward compatibility purposes.  Its use is discouraged in favor of &#39;DATABASE_ORACLE&#39;.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder deploymentType(String deploymentType) {
+            return deploymentType(Output.of(deploymentType));
+        }
+
+        /**
          * @param displayName An object&#39;s Display Name.
          * 
          * @return builder
@@ -520,6 +583,15 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
             return isAutomatic(Output.of(isAutomatic));
         }
 
+        public Builder isLockOverride(@Nullable Output<Boolean> isLockOverride) {
+            $.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        public Builder isLockOverride(Boolean isLockOverride) {
+            return isLockOverride(Output.of(isLockOverride));
+        }
+
         /**
          * @param lifecycleDetails Describes the object&#39;s current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
          * 
@@ -539,6 +611,37 @@ public final class DeploymentBackupState extends com.pulumi.resources.ResourceAr
          */
         public Builder lifecycleDetails(String lifecycleDetails) {
             return lifecycleDetails(Output.of(lifecycleDetails));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(@Nullable Output<List<DeploymentBackupLockArgs>> locks) {
+            $.locks = locks;
+            return this;
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(List<DeploymentBackupLockArgs> locks) {
+            return locks(Output.of(locks));
+        }
+
+        /**
+         * @param locks Locks associated with this resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder locks(DeploymentBackupLockArgs... locks) {
+            return locks(List.of(locks));
         }
 
         /**

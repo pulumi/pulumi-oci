@@ -19,7 +19,7 @@ namespace Pulumi.Oci.GoldenGate.Outputs
         /// </summary>
         public readonly string AdminUsername;
         /// <summary>
-        /// A PEM-encoded SSL certificate.
+        /// The base64 encoded content of the PEM file containing the SSL certificate.
         /// </summary>
         public readonly string Certificate;
         /// <summary>

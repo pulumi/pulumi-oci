@@ -29,6 +29,7 @@ import * as utilities from "../utilities";
  *         name: connectionAdditionalAttributesName,
  *         value: connectionAdditionalAttributesValue,
  *     }],
+ *     authenticationMode: connectionAuthenticationMode,
  *     authenticationType: connectionAuthenticationType,
  *     azureTenantId: testAzureTenant.id,
  *     bootstrapServers: [{
@@ -65,6 +66,10 @@ import * as utilities from "../utilities";
  *     keyId: testKey.id,
  *     keyStore: connectionKeyStore,
  *     keyStorePassword: connectionKeyStorePassword,
+ *     locks: [{
+ *         type: connectionLocksType,
+ *         message: connectionLocksMessage,
+ *     }],
  *     nsgIds: connectionNsgIds,
  *     password: connectionPassword,
  *     port: connectionPort,
@@ -73,6 +78,7 @@ import * as utilities from "../utilities";
  *     privateKeyPassphrase: connectionPrivateKeyPassphrase,
  *     producerProperties: connectionProducerProperties,
  *     publicKeyFingerprint: connectionPublicKeyFingerprint,
+ *     redisClusterId: testRedisCluster.id,
  *     region: connectionRegion,
  *     routingMethod: connectionRoutingMethod,
  *     sasToken: connectionSasToken,
@@ -85,10 +91,13 @@ import * as utilities from "../utilities";
  *     shouldValidateServerCertificate: connectionShouldValidateServerCertificate,
  *     sslCa: connectionSslCa,
  *     sslCert: connectionSslCert,
+ *     sslClientKeystash: connectionSslClientKeystash,
+ *     sslClientKeystoredb: connectionSslClientKeystoredb,
  *     sslCrl: connectionSslCrl,
  *     sslKey: connectionSslKey,
  *     sslKeyPassword: connectionSslKeyPassword,
  *     sslMode: connectionSslMode,
+ *     sslServerCertificate: connectionSslServerCertificate,
  *     streamPoolId: testStreamPool.id,
  *     subnetId: testSubnet.id,
  *     tenancyId: testTenancy.id,
@@ -154,6 +163,10 @@ export class Connection extends pulumi.CustomResource {
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      */
     public readonly additionalAttributes!: pulumi.Output<outputs.GoldenGate.ConnectionAdditionalAttribute[]>;
+    /**
+     * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     */
+    public readonly authenticationMode!: pulumi.Output<string>;
     /**
      * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
@@ -251,6 +264,7 @@ export class Connection extends pulumi.CustomResource {
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
     public /*out*/ readonly ingressIps!: pulumi.Output<outputs.GoldenGate.ConnectionIngressIp[]>;
+    public readonly isLockOverride!: pulumi.Output<boolean>;
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
@@ -288,6 +302,10 @@ export class Connection extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
+     * Locks associated with this resource.
+     */
+    public readonly locks!: pulumi.Output<outputs.GoldenGate.ConnectionLock[]>;
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     public readonly nsgIds!: pulumi.Output<string[]>;
@@ -320,6 +338,10 @@ export class Connection extends pulumi.CustomResource {
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
     public readonly publicKeyFingerprint!: pulumi.Output<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     */
+    public readonly redisClusterId!: pulumi.Output<string>;
     /**
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
@@ -369,6 +391,14 @@ export class Connection extends pulumi.CustomResource {
      */
     public readonly sslCert!: pulumi.Output<string>;
     /**
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     */
+    public readonly sslClientKeystash!: pulumi.Output<string>;
+    /**
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     */
+    public readonly sslClientKeystoredb!: pulumi.Output<string>;
+    /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
     public readonly sslCrl!: pulumi.Output<string>;
@@ -384,6 +414,10 @@ export class Connection extends pulumi.CustomResource {
      * (Updatable) SSL modes for PostgreSQL.
      */
     public readonly sslMode!: pulumi.Output<string>;
+    /**
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     */
+    public readonly sslServerCertificate!: pulumi.Output<string>;
     /**
      * Possible lifecycle states for connection.
      */
@@ -465,6 +499,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["accountKey"] = state ? state.accountKey : undefined;
             resourceInputs["accountName"] = state ? state.accountName : undefined;
             resourceInputs["additionalAttributes"] = state ? state.additionalAttributes : undefined;
+            resourceInputs["authenticationMode"] = state ? state.authenticationMode : undefined;
             resourceInputs["authenticationType"] = state ? state.authenticationType : undefined;
             resourceInputs["azureTenantId"] = state ? state.azureTenantId : undefined;
             resourceInputs["bootstrapServers"] = state ? state.bootstrapServers : undefined;
@@ -489,6 +524,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["host"] = state ? state.host : undefined;
             resourceInputs["ingressIps"] = state ? state.ingressIps : undefined;
+            resourceInputs["isLockOverride"] = state ? state.isLockOverride : undefined;
             resourceInputs["jndiConnectionFactory"] = state ? state.jndiConnectionFactory : undefined;
             resourceInputs["jndiInitialContextFactory"] = state ? state.jndiInitialContextFactory : undefined;
             resourceInputs["jndiProviderUrl"] = state ? state.jndiProviderUrl : undefined;
@@ -498,6 +534,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["keyStore"] = state ? state.keyStore : undefined;
             resourceInputs["keyStorePassword"] = state ? state.keyStorePassword : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
+            resourceInputs["locks"] = state ? state.locks : undefined;
             resourceInputs["nsgIds"] = state ? state.nsgIds : undefined;
             resourceInputs["password"] = state ? state.password : undefined;
             resourceInputs["port"] = state ? state.port : undefined;
@@ -506,6 +543,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["privateKeyPassphrase"] = state ? state.privateKeyPassphrase : undefined;
             resourceInputs["producerProperties"] = state ? state.producerProperties : undefined;
             resourceInputs["publicKeyFingerprint"] = state ? state.publicKeyFingerprint : undefined;
+            resourceInputs["redisClusterId"] = state ? state.redisClusterId : undefined;
             resourceInputs["region"] = state ? state.region : undefined;
             resourceInputs["routingMethod"] = state ? state.routingMethod : undefined;
             resourceInputs["sasToken"] = state ? state.sasToken : undefined;
@@ -518,10 +556,13 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["shouldValidateServerCertificate"] = state ? state.shouldValidateServerCertificate : undefined;
             resourceInputs["sslCa"] = state ? state.sslCa : undefined;
             resourceInputs["sslCert"] = state ? state.sslCert : undefined;
+            resourceInputs["sslClientKeystash"] = state ? state.sslClientKeystash : undefined;
+            resourceInputs["sslClientKeystoredb"] = state ? state.sslClientKeystoredb : undefined;
             resourceInputs["sslCrl"] = state ? state.sslCrl : undefined;
             resourceInputs["sslKey"] = state ? state.sslKey : undefined;
             resourceInputs["sslKeyPassword"] = state ? state.sslKeyPassword : undefined;
             resourceInputs["sslMode"] = state ? state.sslMode : undefined;
+            resourceInputs["sslServerCertificate"] = state ? state.sslServerCertificate : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["streamPoolId"] = state ? state.streamPoolId : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
@@ -555,6 +596,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["accountKey"] = args ? args.accountKey : undefined;
             resourceInputs["accountName"] = args ? args.accountName : undefined;
             resourceInputs["additionalAttributes"] = args ? args.additionalAttributes : undefined;
+            resourceInputs["authenticationMode"] = args ? args.authenticationMode : undefined;
             resourceInputs["authenticationType"] = args ? args.authenticationType : undefined;
             resourceInputs["azureTenantId"] = args ? args.azureTenantId : undefined;
             resourceInputs["bootstrapServers"] = args ? args.bootstrapServers : undefined;
@@ -578,6 +620,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["fingerprint"] = args ? args.fingerprint : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["host"] = args ? args.host : undefined;
+            resourceInputs["isLockOverride"] = args ? args.isLockOverride : undefined;
             resourceInputs["jndiConnectionFactory"] = args ? args.jndiConnectionFactory : undefined;
             resourceInputs["jndiInitialContextFactory"] = args ? args.jndiInitialContextFactory : undefined;
             resourceInputs["jndiProviderUrl"] = args ? args.jndiProviderUrl : undefined;
@@ -586,6 +629,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["keyId"] = args ? args.keyId : undefined;
             resourceInputs["keyStore"] = args ? args.keyStore : undefined;
             resourceInputs["keyStorePassword"] = args?.keyStorePassword ? pulumi.secret(args.keyStorePassword) : undefined;
+            resourceInputs["locks"] = args ? args.locks : undefined;
             resourceInputs["nsgIds"] = args ? args.nsgIds : undefined;
             resourceInputs["password"] = args?.password ? pulumi.secret(args.password) : undefined;
             resourceInputs["port"] = args ? args.port : undefined;
@@ -594,6 +638,7 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["privateKeyPassphrase"] = args?.privateKeyPassphrase ? pulumi.secret(args.privateKeyPassphrase) : undefined;
             resourceInputs["producerProperties"] = args ? args.producerProperties : undefined;
             resourceInputs["publicKeyFingerprint"] = args ? args.publicKeyFingerprint : undefined;
+            resourceInputs["redisClusterId"] = args ? args.redisClusterId : undefined;
             resourceInputs["region"] = args ? args.region : undefined;
             resourceInputs["routingMethod"] = args ? args.routingMethod : undefined;
             resourceInputs["sasToken"] = args ? args.sasToken : undefined;
@@ -606,10 +651,13 @@ export class Connection extends pulumi.CustomResource {
             resourceInputs["shouldValidateServerCertificate"] = args ? args.shouldValidateServerCertificate : undefined;
             resourceInputs["sslCa"] = args ? args.sslCa : undefined;
             resourceInputs["sslCert"] = args ? args.sslCert : undefined;
+            resourceInputs["sslClientKeystash"] = args ? args.sslClientKeystash : undefined;
+            resourceInputs["sslClientKeystoredb"] = args ? args.sslClientKeystoredb : undefined;
             resourceInputs["sslCrl"] = args ? args.sslCrl : undefined;
             resourceInputs["sslKey"] = args ? args.sslKey : undefined;
             resourceInputs["sslKeyPassword"] = args?.sslKeyPassword ? pulumi.secret(args.sslKeyPassword) : undefined;
             resourceInputs["sslMode"] = args ? args.sslMode : undefined;
+            resourceInputs["sslServerCertificate"] = args ? args.sslServerCertificate : undefined;
             resourceInputs["streamPoolId"] = args ? args.streamPoolId : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
             resourceInputs["technologyType"] = args ? args.technologyType : undefined;
@@ -655,6 +703,10 @@ export interface ConnectionState {
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[]>;
+    /**
+     * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     */
+    authenticationMode?: pulumi.Input<string>;
     /**
      * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
@@ -752,6 +804,7 @@ export interface ConnectionState {
      * List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
      */
     ingressIps?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionIngressIp>[]>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
@@ -789,6 +842,10 @@ export interface ConnectionState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionLock>[]>;
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -821,6 +878,10 @@ export interface ConnectionState {
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
     publicKeyFingerprint?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     */
+    redisClusterId?: pulumi.Input<string>;
     /**
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
@@ -870,6 +931,14 @@ export interface ConnectionState {
      */
     sslCert?: pulumi.Input<string>;
     /**
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     */
+    sslClientKeystash?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     */
+    sslClientKeystoredb?: pulumi.Input<string>;
+    /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
     sslCrl?: pulumi.Input<string>;
@@ -885,6 +954,10 @@ export interface ConnectionState {
      * (Updatable) SSL modes for PostgreSQL.
      */
     sslMode?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     */
+    sslServerCertificate?: pulumi.Input<string>;
     /**
      * Possible lifecycle states for connection.
      */
@@ -970,6 +1043,10 @@ export interface ConnectionArgs {
      * (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
      */
     additionalAttributes?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionAdditionalAttribute>[]>;
+    /**
+     * (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+     */
+    authenticationMode?: pulumi.Input<string>;
     /**
      * (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
      */
@@ -1063,6 +1140,7 @@ export interface ConnectionArgs {
      * For multiple hosts, provide a comma separated list. Example: `"server1.example.com:1000,server1.example.com:2000"`
      */
     host?: pulumi.Input<string>;
+    isLockOverride?: pulumi.Input<boolean>;
     /**
      * (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
      */
@@ -1096,6 +1174,10 @@ export interface ConnectionArgs {
      */
     keyStorePassword?: pulumi.Input<string>;
     /**
+     * Locks associated with this resource.
+     */
+    locks?: pulumi.Input<pulumi.Input<inputs.GoldenGate.ConnectionLock>[]>;
+    /**
      * (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
      */
     nsgIds?: pulumi.Input<pulumi.Input<string>[]>;
@@ -1128,6 +1210,10 @@ export interface ConnectionArgs {
      * (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
      */
     publicKeyFingerprint?: pulumi.Input<string>;
+    /**
+     * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     */
+    redisClusterId?: pulumi.Input<string>;
     /**
      * (Updatable) The name of the region. e.g.: us-ashburn-1
      */
@@ -1177,6 +1263,14 @@ export interface ConnectionArgs {
      */
     sslCert?: pulumi.Input<string>;
     /**
+     * (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+     */
+    sslClientKeystash?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+     */
+    sslClientKeystoredb?: pulumi.Input<string>;
+    /**
      * (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
      */
     sslCrl?: pulumi.Input<string>;
@@ -1192,6 +1286,10 @@ export interface ConnectionArgs {
      * (Updatable) SSL modes for PostgreSQL.
      */
     sslMode?: pulumi.Input<string>;
+    /**
+     * (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+     */
+    sslServerCertificate?: pulumi.Input<string>;
     /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
      */

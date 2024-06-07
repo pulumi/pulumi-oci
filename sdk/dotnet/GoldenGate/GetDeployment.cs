@@ -164,6 +164,7 @@ namespace Pulumi.Oci.GoldenGate
         /// Indicates if the resource is the the latest available version.
         /// </summary>
         public readonly bool IsLatestVersion;
+        public readonly bool IsLockOverride;
         /// <summary>
         /// True if this object is publicly available.
         /// </summary>
@@ -192,6 +193,10 @@ namespace Pulumi.Oci.GoldenGate
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
         /// </summary>
         public readonly string LoadBalancerSubnetId;
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDeploymentLockResult> Locks;
         /// <summary>
         /// Attributes for configuring automatic deployment maintenance.
         /// </summary>
@@ -233,7 +238,7 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         public readonly string StorageUtilizationInBytes;
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
@@ -297,6 +302,8 @@ namespace Pulumi.Oci.GoldenGate
 
             bool isLatestVersion,
 
+            bool isLockOverride,
+
             bool isPublic,
 
             bool isStorageUtilizationLimitExceeded,
@@ -310,6 +317,8 @@ namespace Pulumi.Oci.GoldenGate
             string loadBalancerId,
 
             string loadBalancerSubnetId,
+
+            ImmutableArray<Outputs.GetDeploymentLockResult> locks,
 
             ImmutableArray<Outputs.GetDeploymentMaintenanceConfigurationResult> maintenanceConfigurations,
 
@@ -362,6 +371,7 @@ namespace Pulumi.Oci.GoldenGate
             IsAutoScalingEnabled = isAutoScalingEnabled;
             IsHealthy = isHealthy;
             IsLatestVersion = isLatestVersion;
+            IsLockOverride = isLockOverride;
             IsPublic = isPublic;
             IsStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             LicenseModel = licenseModel;
@@ -369,6 +379,7 @@ namespace Pulumi.Oci.GoldenGate
             LifecycleSubState = lifecycleSubState;
             LoadBalancerId = loadBalancerId;
             LoadBalancerSubnetId = loadBalancerSubnetId;
+            Locks = locks;
             MaintenanceConfigurations = maintenanceConfigurations;
             MaintenanceWindows = maintenanceWindows;
             NextMaintenanceActionType = nextMaintenanceActionType;

@@ -24,6 +24,7 @@ class ConnectionArgs:
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+                 authentication_mode: Optional[pulumi.Input[str]] = None,
                  authentication_type: Optional[pulumi.Input[str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
@@ -44,6 +45,7 @@ class ConnectionArgs:
                  fingerprint: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  jndi_connection_factory: Optional[pulumi.Input[str]] = None,
                  jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
                  jndi_provider_url: Optional[pulumi.Input[str]] = None,
@@ -52,6 +54,7 @@ class ConnectionArgs:
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -60,6 +63,7 @@ class ConnectionArgs:
                  private_key_passphrase: Optional[pulumi.Input[str]] = None,
                  producer_properties: Optional[pulumi.Input[str]] = None,
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+                 redis_cluster_id: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  routing_method: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
@@ -72,10 +76,13 @@ class ConnectionArgs:
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystash: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystoredb: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
                  ssl_key: Optional[pulumi.Input[str]] = None,
                  ssl_key_password: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
+                 ssl_server_certificate: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  tenancy_id: Optional[pulumi.Input[str]] = None,
@@ -96,6 +103,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param pulumi.Input[str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -125,6 +133,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
@@ -134,6 +143,7 @@ class ConnectionArgs:
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
@@ -146,10 +156,13 @@ class ConnectionArgs:
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
+        :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param pulumi.Input[str] tenancy_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the related Oracle Cloud Infrastructure tenancy.
@@ -176,6 +189,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "account_name", account_name)
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
+        if authentication_mode is not None:
+            pulumi.set(__self__, "authentication_mode", authentication_mode)
         if authentication_type is not None:
             pulumi.set(__self__, "authentication_type", authentication_type)
         if azure_tenant_id is not None:
@@ -216,6 +231,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if host is not None:
             pulumi.set(__self__, "host", host)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if jndi_connection_factory is not None:
             pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
         if jndi_initial_context_factory is not None:
@@ -232,6 +249,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "key_store", key_store)
         if key_store_password is not None:
             pulumi.set(__self__, "key_store_password", key_store_password)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if password is not None:
@@ -248,6 +267,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "producer_properties", producer_properties)
         if public_key_fingerprint is not None:
             pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        if redis_cluster_id is not None:
+            pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
         if region is not None:
             pulumi.set(__self__, "region", region)
         if routing_method is not None:
@@ -272,6 +293,10 @@ class ConnectionArgs:
             pulumi.set(__self__, "ssl_ca", ssl_ca)
         if ssl_cert is not None:
             pulumi.set(__self__, "ssl_cert", ssl_cert)
+        if ssl_client_keystash is not None:
+            pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
+        if ssl_client_keystoredb is not None:
+            pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
         if ssl_crl is not None:
             pulumi.set(__self__, "ssl_crl", ssl_crl)
         if ssl_key is not None:
@@ -280,6 +305,8 @@ class ConnectionArgs:
             pulumi.set(__self__, "ssl_key_password", ssl_key_password)
         if ssl_mode is not None:
             pulumi.set(__self__, "ssl_mode", ssl_mode)
+        if ssl_server_certificate is not None:
+            pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         if stream_pool_id is not None:
             pulumi.set(__self__, "stream_pool_id", stream_pool_id)
         if subnet_id is not None:
@@ -396,6 +423,18 @@ class ConnectionArgs:
     @additional_attributes.setter
     def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
+
+    @property
+    @pulumi.getter(name="authenticationMode")
+    def authentication_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        """
+        return pulumi.get(self, "authentication_mode")
+
+    @authentication_mode.setter
+    def authentication_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "authentication_mode", value)
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -639,6 +678,15 @@ class ConnectionArgs:
         pulumi.set(self, "host", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="jndiConnectionFactory")
     def jndi_connection_factory(self) -> Optional[pulumi.Input[str]]:
         """
@@ -733,6 +781,18 @@ class ConnectionArgs:
     @key_store_password.setter
     def key_store_password(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "key_store_password", value)
+
+    @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]):
+        pulumi.set(self, "locks", value)
 
     @property
     @pulumi.getter(name="nsgIds")
@@ -830,6 +890,18 @@ class ConnectionArgs:
     @public_key_fingerprint.setter
     def public_key_fingerprint(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "public_key_fingerprint", value)
+
+    @property
+    @pulumi.getter(name="redisClusterId")
+    def redis_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        """
+        return pulumi.get(self, "redis_cluster_id")
+
+    @redis_cluster_id.setter
+    def redis_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "redis_cluster_id", value)
 
     @property
     @pulumi.getter
@@ -976,6 +1048,30 @@ class ConnectionArgs:
         pulumi.set(self, "ssl_cert", value)
 
     @property
+    @pulumi.getter(name="sslClientKeystash")
+    def ssl_client_keystash(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        """
+        return pulumi.get(self, "ssl_client_keystash")
+
+    @ssl_client_keystash.setter
+    def ssl_client_keystash(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_client_keystash", value)
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredb")
+    def ssl_client_keystoredb(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        """
+        return pulumi.get(self, "ssl_client_keystoredb")
+
+    @ssl_client_keystoredb.setter
+    def ssl_client_keystoredb(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_client_keystoredb", value)
+
+    @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1022,6 +1118,18 @@ class ConnectionArgs:
     @ssl_mode.setter
     def ssl_mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ssl_mode", value)
+
+    @property
+    @pulumi.getter(name="sslServerCertificate")
+    def ssl_server_certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        """
+        return pulumi.get(self, "ssl_server_certificate")
+
+    @ssl_server_certificate.setter
+    def ssl_server_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_server_certificate", value)
 
     @property
     @pulumi.getter(name="streamPoolId")
@@ -1154,6 +1262,7 @@ class _ConnectionState:
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]] = None,
+                 authentication_mode: Optional[pulumi.Input[str]] = None,
                  authentication_type: Optional[pulumi.Input[str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]]] = None,
@@ -1178,6 +1287,7 @@ class _ConnectionState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
                  ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionIngressIpArgs']]]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  jndi_connection_factory: Optional[pulumi.Input[str]] = None,
                  jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
                  jndi_provider_url: Optional[pulumi.Input[str]] = None,
@@ -1187,6 +1297,7 @@ class _ConnectionState:
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -1195,6 +1306,7 @@ class _ConnectionState:
                  private_key_passphrase: Optional[pulumi.Input[str]] = None,
                  producer_properties: Optional[pulumi.Input[str]] = None,
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+                 redis_cluster_id: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  routing_method: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
@@ -1207,10 +1319,13 @@ class _ConnectionState:
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystash: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystoredb: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
                  ssl_key: Optional[pulumi.Input[str]] = None,
                  ssl_key_password: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
+                 ssl_server_certificate: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
@@ -1232,6 +1347,7 @@ class _ConnectionState:
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param pulumi.Input[str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input['ConnectionBootstrapServerArgs']]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -1266,6 +1382,7 @@ class _ConnectionState:
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
@@ -1275,6 +1392,7 @@ class _ConnectionState:
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
@@ -1287,10 +1405,13 @@ class _ConnectionState:
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
+        :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
         :param pulumi.Input[str] state: Possible lifecycle states for connection.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -1318,6 +1439,8 @@ class _ConnectionState:
             pulumi.set(__self__, "account_name", account_name)
         if additional_attributes is not None:
             pulumi.set(__self__, "additional_attributes", additional_attributes)
+        if authentication_mode is not None:
+            pulumi.set(__self__, "authentication_mode", authentication_mode)
         if authentication_type is not None:
             pulumi.set(__self__, "authentication_type", authentication_type)
         if azure_tenant_id is not None:
@@ -1366,6 +1489,8 @@ class _ConnectionState:
             pulumi.set(__self__, "host", host)
         if ingress_ips is not None:
             pulumi.set(__self__, "ingress_ips", ingress_ips)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if jndi_connection_factory is not None:
             pulumi.set(__self__, "jndi_connection_factory", jndi_connection_factory)
         if jndi_initial_context_factory is not None:
@@ -1384,6 +1509,8 @@ class _ConnectionState:
             pulumi.set(__self__, "key_store_password", key_store_password)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if locks is not None:
+            pulumi.set(__self__, "locks", locks)
         if nsg_ids is not None:
             pulumi.set(__self__, "nsg_ids", nsg_ids)
         if password is not None:
@@ -1400,6 +1527,8 @@ class _ConnectionState:
             pulumi.set(__self__, "producer_properties", producer_properties)
         if public_key_fingerprint is not None:
             pulumi.set(__self__, "public_key_fingerprint", public_key_fingerprint)
+        if redis_cluster_id is not None:
+            pulumi.set(__self__, "redis_cluster_id", redis_cluster_id)
         if region is not None:
             pulumi.set(__self__, "region", region)
         if routing_method is not None:
@@ -1424,6 +1553,10 @@ class _ConnectionState:
             pulumi.set(__self__, "ssl_ca", ssl_ca)
         if ssl_cert is not None:
             pulumi.set(__self__, "ssl_cert", ssl_cert)
+        if ssl_client_keystash is not None:
+            pulumi.set(__self__, "ssl_client_keystash", ssl_client_keystash)
+        if ssl_client_keystoredb is not None:
+            pulumi.set(__self__, "ssl_client_keystoredb", ssl_client_keystoredb)
         if ssl_crl is not None:
             pulumi.set(__self__, "ssl_crl", ssl_crl)
         if ssl_key is not None:
@@ -1432,6 +1565,8 @@ class _ConnectionState:
             pulumi.set(__self__, "ssl_key_password", ssl_key_password)
         if ssl_mode is not None:
             pulumi.set(__self__, "ssl_mode", ssl_mode)
+        if ssl_server_certificate is not None:
+            pulumi.set(__self__, "ssl_server_certificate", ssl_server_certificate)
         if state is not None:
             pulumi.set(__self__, "state", state)
         if stream_pool_id is not None:
@@ -1510,6 +1645,18 @@ class _ConnectionState:
     @additional_attributes.setter
     def additional_attributes(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionAdditionalAttributeArgs']]]]):
         pulumi.set(self, "additional_attributes", value)
+
+    @property
+    @pulumi.getter(name="authenticationMode")
+    def authentication_mode(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        """
+        return pulumi.get(self, "authentication_mode")
+
+    @authentication_mode.setter
+    def authentication_mode(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "authentication_mode", value)
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -1801,6 +1948,15 @@ class _ConnectionState:
         pulumi.set(self, "ingress_ips", value)
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
+    @property
     @pulumi.getter(name="jndiConnectionFactory")
     def jndi_connection_factory(self) -> Optional[pulumi.Input[str]]:
         """
@@ -1909,6 +2065,18 @@ class _ConnectionState:
         pulumi.set(self, "lifecycle_details", value)
 
     @property
+    @pulumi.getter
+    def locks(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @locks.setter
+    def locks(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConnectionLockArgs']]]]):
+        pulumi.set(self, "locks", value)
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
@@ -2004,6 +2172,18 @@ class _ConnectionState:
     @public_key_fingerprint.setter
     def public_key_fingerprint(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "public_key_fingerprint", value)
+
+    @property
+    @pulumi.getter(name="redisClusterId")
+    def redis_cluster_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        """
+        return pulumi.get(self, "redis_cluster_id")
+
+    @redis_cluster_id.setter
+    def redis_cluster_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "redis_cluster_id", value)
 
     @property
     @pulumi.getter
@@ -2150,6 +2330,30 @@ class _ConnectionState:
         pulumi.set(self, "ssl_cert", value)
 
     @property
+    @pulumi.getter(name="sslClientKeystash")
+    def ssl_client_keystash(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        """
+        return pulumi.get(self, "ssl_client_keystash")
+
+    @ssl_client_keystash.setter
+    def ssl_client_keystash(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_client_keystash", value)
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredb")
+    def ssl_client_keystoredb(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        """
+        return pulumi.get(self, "ssl_client_keystoredb")
+
+    @ssl_client_keystoredb.setter
+    def ssl_client_keystoredb(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_client_keystoredb", value)
+
+    @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> Optional[pulumi.Input[str]]:
         """
@@ -2196,6 +2400,18 @@ class _ConnectionState:
     @ssl_mode.setter
     def ssl_mode(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ssl_mode", value)
+
+    @property
+    @pulumi.getter(name="sslServerCertificate")
+    def ssl_server_certificate(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        """
+        return pulumi.get(self, "ssl_server_certificate")
+
+    @ssl_server_certificate.setter
+    def ssl_server_certificate(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ssl_server_certificate", value)
 
     @property
     @pulumi.getter
@@ -2390,6 +2606,7 @@ class Connection(pulumi.CustomResource):
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
+                 authentication_mode: Optional[pulumi.Input[str]] = None,
                  authentication_type: Optional[pulumi.Input[str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]]] = None,
@@ -2413,6 +2630,7 @@ class Connection(pulumi.CustomResource):
                  fingerprint: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  jndi_connection_factory: Optional[pulumi.Input[str]] = None,
                  jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
                  jndi_provider_url: Optional[pulumi.Input[str]] = None,
@@ -2421,6 +2639,7 @@ class Connection(pulumi.CustomResource):
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLockArgs']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -2429,6 +2648,7 @@ class Connection(pulumi.CustomResource):
                  private_key_passphrase: Optional[pulumi.Input[str]] = None,
                  producer_properties: Optional[pulumi.Input[str]] = None,
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+                 redis_cluster_id: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  routing_method: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
@@ -2441,10 +2661,13 @@ class Connection(pulumi.CustomResource):
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystash: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystoredb: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
                  ssl_key: Optional[pulumi.Input[str]] = None,
                  ssl_key_password: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
+                 ssl_server_certificate: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  technology_type: Optional[pulumi.Input[str]] = None,
@@ -2480,6 +2703,7 @@ class Connection(pulumi.CustomResource):
                 name=connection_additional_attributes_name,
                 value=connection_additional_attributes_value,
             )],
+            authentication_mode=connection_authentication_mode,
             authentication_type=connection_authentication_type,
             azure_tenant_id=test_azure_tenant["id"],
             bootstrap_servers=[oci.golden_gate.ConnectionBootstrapServerArgs(
@@ -2516,6 +2740,10 @@ class Connection(pulumi.CustomResource):
             key_id=test_key["id"],
             key_store=connection_key_store,
             key_store_password=connection_key_store_password,
+            locks=[oci.golden_gate.ConnectionLockArgs(
+                type=connection_locks_type,
+                message=connection_locks_message,
+            )],
             nsg_ids=connection_nsg_ids,
             password=connection_password,
             port=connection_port,
@@ -2524,6 +2752,7 @@ class Connection(pulumi.CustomResource):
             private_key_passphrase=connection_private_key_passphrase,
             producer_properties=connection_producer_properties,
             public_key_fingerprint=connection_public_key_fingerprint,
+            redis_cluster_id=test_redis_cluster["id"],
             region=connection_region,
             routing_method=connection_routing_method,
             sas_token=connection_sas_token,
@@ -2536,10 +2765,13 @@ class Connection(pulumi.CustomResource):
             should_validate_server_certificate=connection_should_validate_server_certificate,
             ssl_ca=connection_ssl_ca,
             ssl_cert=connection_ssl_cert,
+            ssl_client_keystash=connection_ssl_client_keystash,
+            ssl_client_keystoredb=connection_ssl_client_keystoredb,
             ssl_crl=connection_ssl_crl,
             ssl_key=connection_ssl_key,
             ssl_key_password=connection_ssl_key_password,
             ssl_mode=connection_ssl_mode,
+            ssl_server_certificate=connection_ssl_server_certificate,
             stream_pool_id=test_stream_pool["id"],
             subnet_id=test_subnet["id"],
             tenancy_id=test_tenancy["id"],
@@ -2566,6 +2798,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param pulumi.Input[str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -2598,6 +2831,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] key_id: (Updatable) Refers to the customer's master key OCID.  If provided, it references a key to manage secrets. Customers must add policies to permit GoldenGate to use this key.
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
@@ -2607,6 +2841,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
@@ -2619,10 +2854,13 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
+        :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
         :param pulumi.Input[str] technology_type: The Kafka (e.g. Confluent) Schema Registry technology type.
@@ -2667,6 +2905,7 @@ class Connection(pulumi.CustomResource):
                 name=connection_additional_attributes_name,
                 value=connection_additional_attributes_value,
             )],
+            authentication_mode=connection_authentication_mode,
             authentication_type=connection_authentication_type,
             azure_tenant_id=test_azure_tenant["id"],
             bootstrap_servers=[oci.golden_gate.ConnectionBootstrapServerArgs(
@@ -2703,6 +2942,10 @@ class Connection(pulumi.CustomResource):
             key_id=test_key["id"],
             key_store=connection_key_store,
             key_store_password=connection_key_store_password,
+            locks=[oci.golden_gate.ConnectionLockArgs(
+                type=connection_locks_type,
+                message=connection_locks_message,
+            )],
             nsg_ids=connection_nsg_ids,
             password=connection_password,
             port=connection_port,
@@ -2711,6 +2954,7 @@ class Connection(pulumi.CustomResource):
             private_key_passphrase=connection_private_key_passphrase,
             producer_properties=connection_producer_properties,
             public_key_fingerprint=connection_public_key_fingerprint,
+            redis_cluster_id=test_redis_cluster["id"],
             region=connection_region,
             routing_method=connection_routing_method,
             sas_token=connection_sas_token,
@@ -2723,10 +2967,13 @@ class Connection(pulumi.CustomResource):
             should_validate_server_certificate=connection_should_validate_server_certificate,
             ssl_ca=connection_ssl_ca,
             ssl_cert=connection_ssl_cert,
+            ssl_client_keystash=connection_ssl_client_keystash,
+            ssl_client_keystoredb=connection_ssl_client_keystoredb,
             ssl_crl=connection_ssl_crl,
             ssl_key=connection_ssl_key,
             ssl_key_password=connection_ssl_key_password,
             ssl_mode=connection_ssl_mode,
+            ssl_server_certificate=connection_ssl_server_certificate,
             stream_pool_id=test_stream_pool["id"],
             subnet_id=test_subnet["id"],
             tenancy_id=test_tenancy["id"],
@@ -2766,6 +3013,7 @@ class Connection(pulumi.CustomResource):
                  account_key: Optional[pulumi.Input[str]] = None,
                  account_name: Optional[pulumi.Input[str]] = None,
                  additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
+                 authentication_mode: Optional[pulumi.Input[str]] = None,
                  authentication_type: Optional[pulumi.Input[str]] = None,
                  azure_tenant_id: Optional[pulumi.Input[str]] = None,
                  bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]]] = None,
@@ -2789,6 +3037,7 @@ class Connection(pulumi.CustomResource):
                  fingerprint: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  host: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  jndi_connection_factory: Optional[pulumi.Input[str]] = None,
                  jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
                  jndi_provider_url: Optional[pulumi.Input[str]] = None,
@@ -2797,6 +3046,7 @@ class Connection(pulumi.CustomResource):
                  key_id: Optional[pulumi.Input[str]] = None,
                  key_store: Optional[pulumi.Input[str]] = None,
                  key_store_password: Optional[pulumi.Input[str]] = None,
+                 locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLockArgs']]]]] = None,
                  nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  password: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
@@ -2805,6 +3055,7 @@ class Connection(pulumi.CustomResource):
                  private_key_passphrase: Optional[pulumi.Input[str]] = None,
                  producer_properties: Optional[pulumi.Input[str]] = None,
                  public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+                 redis_cluster_id: Optional[pulumi.Input[str]] = None,
                  region: Optional[pulumi.Input[str]] = None,
                  routing_method: Optional[pulumi.Input[str]] = None,
                  sas_token: Optional[pulumi.Input[str]] = None,
@@ -2817,10 +3068,13 @@ class Connection(pulumi.CustomResource):
                  should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
                  ssl_ca: Optional[pulumi.Input[str]] = None,
                  ssl_cert: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystash: Optional[pulumi.Input[str]] = None,
+                 ssl_client_keystoredb: Optional[pulumi.Input[str]] = None,
                  ssl_crl: Optional[pulumi.Input[str]] = None,
                  ssl_key: Optional[pulumi.Input[str]] = None,
                  ssl_key_password: Optional[pulumi.Input[str]] = None,
                  ssl_mode: Optional[pulumi.Input[str]] = None,
+                 ssl_server_certificate: Optional[pulumi.Input[str]] = None,
                  stream_pool_id: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
                  technology_type: Optional[pulumi.Input[str]] = None,
@@ -2845,6 +3099,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["account_key"] = account_key
             __props__.__dict__["account_name"] = account_name
             __props__.__dict__["additional_attributes"] = additional_attributes
+            __props__.__dict__["authentication_mode"] = authentication_mode
             __props__.__dict__["authentication_type"] = authentication_type
             __props__.__dict__["azure_tenant_id"] = azure_tenant_id
             __props__.__dict__["bootstrap_servers"] = bootstrap_servers
@@ -2874,6 +3129,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["fingerprint"] = fingerprint
             __props__.__dict__["freeform_tags"] = freeform_tags
             __props__.__dict__["host"] = host
+            __props__.__dict__["is_lock_override"] = is_lock_override
             __props__.__dict__["jndi_connection_factory"] = jndi_connection_factory
             __props__.__dict__["jndi_initial_context_factory"] = jndi_initial_context_factory
             __props__.__dict__["jndi_provider_url"] = jndi_provider_url
@@ -2882,6 +3138,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["key_id"] = key_id
             __props__.__dict__["key_store"] = key_store
             __props__.__dict__["key_store_password"] = None if key_store_password is None else pulumi.Output.secret(key_store_password)
+            __props__.__dict__["locks"] = locks
             __props__.__dict__["nsg_ids"] = nsg_ids
             __props__.__dict__["password"] = None if password is None else pulumi.Output.secret(password)
             __props__.__dict__["port"] = port
@@ -2890,6 +3147,7 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["private_key_passphrase"] = None if private_key_passphrase is None else pulumi.Output.secret(private_key_passphrase)
             __props__.__dict__["producer_properties"] = producer_properties
             __props__.__dict__["public_key_fingerprint"] = public_key_fingerprint
+            __props__.__dict__["redis_cluster_id"] = redis_cluster_id
             __props__.__dict__["region"] = region
             __props__.__dict__["routing_method"] = routing_method
             __props__.__dict__["sas_token"] = sas_token
@@ -2902,10 +3160,13 @@ class Connection(pulumi.CustomResource):
             __props__.__dict__["should_validate_server_certificate"] = should_validate_server_certificate
             __props__.__dict__["ssl_ca"] = ssl_ca
             __props__.__dict__["ssl_cert"] = ssl_cert
+            __props__.__dict__["ssl_client_keystash"] = ssl_client_keystash
+            __props__.__dict__["ssl_client_keystoredb"] = ssl_client_keystoredb
             __props__.__dict__["ssl_crl"] = ssl_crl
             __props__.__dict__["ssl_key"] = ssl_key
             __props__.__dict__["ssl_key_password"] = None if ssl_key_password is None else pulumi.Output.secret(ssl_key_password)
             __props__.__dict__["ssl_mode"] = ssl_mode
+            __props__.__dict__["ssl_server_certificate"] = ssl_server_certificate
             __props__.__dict__["stream_pool_id"] = stream_pool_id
             __props__.__dict__["subnet_id"] = subnet_id
             if technology_type is None and not opts.urn:
@@ -2941,6 +3202,7 @@ class Connection(pulumi.CustomResource):
             account_key: Optional[pulumi.Input[str]] = None,
             account_name: Optional[pulumi.Input[str]] = None,
             additional_attributes: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]]] = None,
+            authentication_mode: Optional[pulumi.Input[str]] = None,
             authentication_type: Optional[pulumi.Input[str]] = None,
             azure_tenant_id: Optional[pulumi.Input[str]] = None,
             bootstrap_servers: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]]] = None,
@@ -2965,6 +3227,7 @@ class Connection(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             host: Optional[pulumi.Input[str]] = None,
             ingress_ips: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionIngressIpArgs']]]]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             jndi_connection_factory: Optional[pulumi.Input[str]] = None,
             jndi_initial_context_factory: Optional[pulumi.Input[str]] = None,
             jndi_provider_url: Optional[pulumi.Input[str]] = None,
@@ -2974,6 +3237,7 @@ class Connection(pulumi.CustomResource):
             key_store: Optional[pulumi.Input[str]] = None,
             key_store_password: Optional[pulumi.Input[str]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
+            locks: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLockArgs']]]]] = None,
             nsg_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             password: Optional[pulumi.Input[str]] = None,
             port: Optional[pulumi.Input[int]] = None,
@@ -2982,6 +3246,7 @@ class Connection(pulumi.CustomResource):
             private_key_passphrase: Optional[pulumi.Input[str]] = None,
             producer_properties: Optional[pulumi.Input[str]] = None,
             public_key_fingerprint: Optional[pulumi.Input[str]] = None,
+            redis_cluster_id: Optional[pulumi.Input[str]] = None,
             region: Optional[pulumi.Input[str]] = None,
             routing_method: Optional[pulumi.Input[str]] = None,
             sas_token: Optional[pulumi.Input[str]] = None,
@@ -2994,10 +3259,13 @@ class Connection(pulumi.CustomResource):
             should_validate_server_certificate: Optional[pulumi.Input[bool]] = None,
             ssl_ca: Optional[pulumi.Input[str]] = None,
             ssl_cert: Optional[pulumi.Input[str]] = None,
+            ssl_client_keystash: Optional[pulumi.Input[str]] = None,
+            ssl_client_keystoredb: Optional[pulumi.Input[str]] = None,
             ssl_crl: Optional[pulumi.Input[str]] = None,
             ssl_key: Optional[pulumi.Input[str]] = None,
             ssl_key_password: Optional[pulumi.Input[str]] = None,
             ssl_mode: Optional[pulumi.Input[str]] = None,
+            ssl_server_certificate: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
             stream_pool_id: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
@@ -3024,6 +3292,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] account_key: (Updatable) Azure storage account key. This property is required when 'authenticationType' is set to 'SHARED_KEY'. e.g.: pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
         :param pulumi.Input[str] account_name: (Updatable) Sets the Azure storage account name.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionAdditionalAttributeArgs']]]] additional_attributes: (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
+        :param pulumi.Input[str] authentication_mode: (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
         :param pulumi.Input[str] authentication_type: (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         :param pulumi.Input[str] azure_tenant_id: (Updatable) Azure tenant ID of the application. This property is required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.: 14593954-d337-4a61-a364-9f758c64f97f
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionBootstrapServerArgs']]]] bootstrap_servers: (Updatable) Kafka bootstrap. Equivalent of bootstrap.servers configuration property in Kafka: list of KafkaBootstrapServer objects specified by host/port. Used for establishing the initial connection to the Kafka cluster. Example: `"server1.example.com:9092,server2.example.com:9092"`
@@ -3058,6 +3327,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] key_store: (Updatable) The base64 encoded content of the KeyStore file.
         :param pulumi.Input[str] key_store_password: (Updatable) The KeyStore password.
         :param pulumi.Input[str] lifecycle_details: Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConnectionLockArgs']]]] locks: Locks associated with this resource.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         :param pulumi.Input[str] password: (Updatable) The password Oracle GoldenGate uses to connect the associated system of the given technology. It must conform to the specific security requirements including length, case sensitivity, and so on.
         :param pulumi.Input[int] port: (Updatable) The port of an endpoint usually specified for a connection.
@@ -3067,6 +3337,7 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[str] private_key_passphrase: (Updatable) Password if the private key file is encrypted.
         :param pulumi.Input[str] producer_properties: (Updatable) The base64 encoded content of the producer.properties file.
         :param pulumi.Input[str] public_key_fingerprint: (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+        :param pulumi.Input[str] redis_cluster_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
         :param pulumi.Input[str] region: (Updatable) The name of the region. e.g.: us-ashburn-1
         :param pulumi.Input[str] routing_method: (Updatable) Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
         :param pulumi.Input[str] sas_token: (Updatable) Credential that uses a shared access signature (SAS) to authenticate to an Azure Service. This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'. e.g.: ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
@@ -3079,10 +3350,13 @@ class Connection(pulumi.CustomResource):
         :param pulumi.Input[bool] should_validate_server_certificate: (Updatable) If set to true, the driver validates the certificate that is sent by the database server.
         :param pulumi.Input[str] ssl_ca: (Updatable) Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
         :param pulumi.Input[str] ssl_cert: (Updatable) Client Certificate - The base64 encoded content of client-cert.pem file  containing the client public key (for 2-way SSL).
+        :param pulumi.Input[str] ssl_client_keystash: (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        :param pulumi.Input[str] ssl_client_keystoredb: (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
         :param pulumi.Input[str] ssl_crl: (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         :param pulumi.Input[str] ssl_key: (Updatable) Client Key - The client-key.pem containing the client private key (for 2-way SSL).
         :param pulumi.Input[str] ssl_key_password: (Updatable) The password for the cert inside of the KeyStore. In case it differs from the KeyStore password, it should be provided.
         :param pulumi.Input[str] ssl_mode: (Updatable) SSL modes for PostgreSQL.
+        :param pulumi.Input[str] ssl_server_certificate: (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
         :param pulumi.Input[str] state: Possible lifecycle states for connection.
         :param pulumi.Input[str] stream_pool_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
         :param pulumi.Input[str] subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
@@ -3110,6 +3384,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["account_key"] = account_key
         __props__.__dict__["account_name"] = account_name
         __props__.__dict__["additional_attributes"] = additional_attributes
+        __props__.__dict__["authentication_mode"] = authentication_mode
         __props__.__dict__["authentication_type"] = authentication_type
         __props__.__dict__["azure_tenant_id"] = azure_tenant_id
         __props__.__dict__["bootstrap_servers"] = bootstrap_servers
@@ -3134,6 +3409,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["host"] = host
         __props__.__dict__["ingress_ips"] = ingress_ips
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["jndi_connection_factory"] = jndi_connection_factory
         __props__.__dict__["jndi_initial_context_factory"] = jndi_initial_context_factory
         __props__.__dict__["jndi_provider_url"] = jndi_provider_url
@@ -3143,6 +3419,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["key_store"] = key_store
         __props__.__dict__["key_store_password"] = key_store_password
         __props__.__dict__["lifecycle_details"] = lifecycle_details
+        __props__.__dict__["locks"] = locks
         __props__.__dict__["nsg_ids"] = nsg_ids
         __props__.__dict__["password"] = password
         __props__.__dict__["port"] = port
@@ -3151,6 +3428,7 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["private_key_passphrase"] = private_key_passphrase
         __props__.__dict__["producer_properties"] = producer_properties
         __props__.__dict__["public_key_fingerprint"] = public_key_fingerprint
+        __props__.__dict__["redis_cluster_id"] = redis_cluster_id
         __props__.__dict__["region"] = region
         __props__.__dict__["routing_method"] = routing_method
         __props__.__dict__["sas_token"] = sas_token
@@ -3163,10 +3441,13 @@ class Connection(pulumi.CustomResource):
         __props__.__dict__["should_validate_server_certificate"] = should_validate_server_certificate
         __props__.__dict__["ssl_ca"] = ssl_ca
         __props__.__dict__["ssl_cert"] = ssl_cert
+        __props__.__dict__["ssl_client_keystash"] = ssl_client_keystash
+        __props__.__dict__["ssl_client_keystoredb"] = ssl_client_keystoredb
         __props__.__dict__["ssl_crl"] = ssl_crl
         __props__.__dict__["ssl_key"] = ssl_key
         __props__.__dict__["ssl_key_password"] = ssl_key_password
         __props__.__dict__["ssl_mode"] = ssl_mode
+        __props__.__dict__["ssl_server_certificate"] = ssl_server_certificate
         __props__.__dict__["state"] = state
         __props__.__dict__["stream_pool_id"] = stream_pool_id
         __props__.__dict__["subnet_id"] = subnet_id
@@ -3215,6 +3496,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) An array of name-value pair attribute entries. Used as additional parameters in connection string.
         """
         return pulumi.get(self, "additional_attributes")
+
+    @property
+    @pulumi.getter(name="authenticationMode")
+    def authentication_mode(self) -> pulumi.Output[str]:
+        """
+        (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        """
+        return pulumi.get(self, "authentication_mode")
 
     @property
     @pulumi.getter(name="authenticationType")
@@ -3410,6 +3699,11 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "ingress_ips")
 
     @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        return pulumi.get(self, "is_lock_override")
+
+    @property
     @pulumi.getter(name="jndiConnectionFactory")
     def jndi_connection_factory(self) -> pulumi.Output[str]:
         """
@@ -3482,6 +3776,14 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def locks(self) -> pulumi.Output[Sequence['outputs.ConnectionLock']]:
+        """
+        Locks associated with this resource.
+        """
+        return pulumi.get(self, "locks")
+
+    @property
     @pulumi.getter(name="nsgIds")
     def nsg_ids(self) -> pulumi.Output[Sequence[str]]:
         """
@@ -3545,6 +3847,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) The fingerprint of the API Key of the user specified by the userId. See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
         """
         return pulumi.get(self, "public_key_fingerprint")
+
+    @property
+    @pulumi.getter(name="redisClusterId")
+    def redis_cluster_id(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        """
+        return pulumi.get(self, "redis_cluster_id")
 
     @property
     @pulumi.getter
@@ -3643,6 +3953,22 @@ class Connection(pulumi.CustomResource):
         return pulumi.get(self, "ssl_cert")
 
     @property
+    @pulumi.getter(name="sslClientKeystash")
+    def ssl_client_keystash(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        """
+        return pulumi.get(self, "ssl_client_keystash")
+
+    @property
+    @pulumi.getter(name="sslClientKeystoredb")
+    def ssl_client_keystoredb(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        """
+        return pulumi.get(self, "ssl_client_keystoredb")
+
+    @property
     @pulumi.getter(name="sslCrl")
     def ssl_crl(self) -> pulumi.Output[str]:
         """
@@ -3673,6 +3999,14 @@ class Connection(pulumi.CustomResource):
         (Updatable) SSL modes for PostgreSQL.
         """
         return pulumi.get(self, "ssl_mode")
+
+    @property
+    @pulumi.getter(name="sslServerCertificate")
+    def ssl_server_certificate(self) -> pulumi.Output[str]:
+        """
+        (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        """
+        return pulumi.get(self, "ssl_server_certificate")
 
     @property
     @pulumi.getter

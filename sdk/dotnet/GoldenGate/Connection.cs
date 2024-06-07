@@ -41,6 +41,7 @@ namespace Pulumi.Oci.GoldenGate
     ///                 Value = connectionAdditionalAttributesValue,
     ///             },
     ///         },
+    ///         AuthenticationMode = connectionAuthenticationMode,
     ///         AuthenticationType = connectionAuthenticationType,
     ///         AzureTenantId = testAzureTenant.Id,
     ///         BootstrapServers = new[]
@@ -83,6 +84,14 @@ namespace Pulumi.Oci.GoldenGate
     ///         KeyId = testKey.Id,
     ///         KeyStore = connectionKeyStore,
     ///         KeyStorePassword = connectionKeyStorePassword,
+    ///         Locks = new[]
+    ///         {
+    ///             new Oci.GoldenGate.Inputs.ConnectionLockArgs
+    ///             {
+    ///                 Type = connectionLocksType,
+    ///                 Message = connectionLocksMessage,
+    ///             },
+    ///         },
     ///         NsgIds = connectionNsgIds,
     ///         Password = connectionPassword,
     ///         Port = connectionPort,
@@ -91,6 +100,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         PrivateKeyPassphrase = connectionPrivateKeyPassphrase,
     ///         ProducerProperties = connectionProducerProperties,
     ///         PublicKeyFingerprint = connectionPublicKeyFingerprint,
+    ///         RedisClusterId = testRedisCluster.Id,
     ///         Region = connectionRegion,
     ///         RoutingMethod = connectionRoutingMethod,
     ///         SasToken = connectionSasToken,
@@ -103,10 +113,13 @@ namespace Pulumi.Oci.GoldenGate
     ///         ShouldValidateServerCertificate = connectionShouldValidateServerCertificate,
     ///         SslCa = connectionSslCa,
     ///         SslCert = connectionSslCert,
+    ///         SslClientKeystash = connectionSslClientKeystash,
+    ///         SslClientKeystoredb = connectionSslClientKeystoredb,
     ///         SslCrl = connectionSslCrl,
     ///         SslKey = connectionSslKey,
     ///         SslKeyPassword = connectionSslKeyPassword,
     ///         SslMode = connectionSslMode,
+    ///         SslServerCertificate = connectionSslServerCertificate,
     ///         StreamPoolId = testStreamPool.Id,
     ///         SubnetId = testSubnet.Id,
     ///         TenancyId = testTenancy.Id,
@@ -156,6 +169,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("additionalAttributes")]
         public Output<ImmutableArray<Outputs.ConnectionAdditionalAttribute>> AdditionalAttributes { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        /// </summary>
+        [Output("authenticationMode")]
+        public Output<string> AuthenticationMode { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -302,6 +321,9 @@ namespace Pulumi.Oci.GoldenGate
         [Output("ingressIps")]
         public Output<ImmutableArray<Outputs.ConnectionIngressIp>> IngressIps { get; private set; } = null!;
 
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         /// </summary>
@@ -357,6 +379,12 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        [Output("locks")]
+        public Output<ImmutableArray<Outputs.ConnectionLock>> Locks { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
         /// </summary>
         [Output("nsgIds")]
@@ -404,6 +432,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("publicKeyFingerprint")]
         public Output<string> PublicKeyFingerprint { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        /// </summary>
+        [Output("redisClusterId")]
+        public Output<string> RedisClusterId { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The name of the region. e.g.: us-ashburn-1
@@ -478,6 +512,18 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> SslCert { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        /// </summary>
+        [Output("sslClientKeystash")]
+        public Output<string> SslClientKeystash { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        /// </summary>
+        [Output("sslClientKeystoredb")]
+        public Output<string> SslClientKeystoredb { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         /// </summary>
         [Output("sslCrl")]
@@ -500,6 +546,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("sslMode")]
         public Output<string> SslMode { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        /// </summary>
+        [Output("sslServerCertificate")]
+        public Output<string> SslServerCertificate { get; private set; } = null!;
 
         /// <summary>
         /// Possible lifecycle states for connection.
@@ -680,6 +732,12 @@ namespace Pulumi.Oci.GoldenGate
         }
 
         /// <summary>
+        /// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        /// </summary>
+        [Input("authenticationMode")]
+        public Input<string>? AuthenticationMode { get; set; }
+
+        /// <summary>
         /// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
         /// </summary>
         [Input("authenticationType")]
@@ -836,6 +894,9 @@ namespace Pulumi.Oci.GoldenGate
         [Input("host")]
         public Input<string>? Host { get; set; }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         /// </summary>
@@ -892,6 +953,18 @@ namespace Pulumi.Oci.GoldenGate
                 var emptySecret = Output.CreateSecret(0);
                 _keyStorePassword = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
             }
+        }
+
+        [Input("locks")]
+        private InputList<Inputs.ConnectionLockArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ConnectionLockArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ConnectionLockArgs>());
+            set => _locks = value;
         }
 
         [Input("nsgIds")]
@@ -980,6 +1053,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? PublicKeyFingerprint { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        /// </summary>
+        [Input("redisClusterId")]
+        public Input<string>? RedisClusterId { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the region. e.g.: us-ashburn-1
         /// </summary>
         [Input("region")]
@@ -1052,6 +1131,18 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslCert { get; set; }
 
         /// <summary>
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        /// </summary>
+        [Input("sslClientKeystash")]
+        public Input<string>? SslClientKeystash { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        /// </summary>
+        [Input("sslClientKeystoredb")]
+        public Input<string>? SslClientKeystoredb { get; set; }
+
+        /// <summary>
         /// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         /// </summary>
         [Input("sslCrl")]
@@ -1084,6 +1175,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("sslMode")]
         public Input<string>? SslMode { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        /// </summary>
+        [Input("sslServerCertificate")]
+        public Input<string>? SslServerCertificate { get; set; }
 
         /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -1201,6 +1298,12 @@ namespace Pulumi.Oci.GoldenGate
             get => _additionalAttributes ?? (_additionalAttributes = new InputList<Inputs.ConnectionAdditionalAttributeGetArgs>());
             set => _additionalAttributes = value;
         }
+
+        /// <summary>
+        /// (Updatable) Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+        /// </summary>
+        [Input("authenticationMode")]
+        public Input<string>? AuthenticationMode { get; set; }
 
         /// <summary>
         /// (Updatable) Authentication type for Java Message Service.  If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -1371,6 +1474,9 @@ namespace Pulumi.Oci.GoldenGate
             set => _ingressIps = value;
         }
 
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
+
         /// <summary>
         /// (Updatable) The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
         /// </summary>
@@ -1434,6 +1540,18 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("lifecycleDetails")]
         public Input<string>? LifecycleDetails { get; set; }
+
+        [Input("locks")]
+        private InputList<Inputs.ConnectionLockGetArgs>? _locks;
+
+        /// <summary>
+        /// Locks associated with this resource.
+        /// </summary>
+        public InputList<Inputs.ConnectionLockGetArgs> Locks
+        {
+            get => _locks ?? (_locks = new InputList<Inputs.ConnectionLockGetArgs>());
+            set => _locks = value;
+        }
 
         [Input("nsgIds")]
         private InputList<string>? _nsgIds;
@@ -1521,6 +1639,12 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? PublicKeyFingerprint { get; set; }
 
         /// <summary>
+        /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+        /// </summary>
+        [Input("redisClusterId")]
+        public Input<string>? RedisClusterId { get; set; }
+
+        /// <summary>
         /// (Updatable) The name of the region. e.g.: us-ashburn-1
         /// </summary>
         [Input("region")]
@@ -1593,6 +1717,18 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? SslCert { get; set; }
 
         /// <summary>
+        /// (Updatable) The base64 encoded keystash file which contains the encrypted password to the key database file.
+        /// </summary>
+        [Input("sslClientKeystash")]
+        public Input<string>? SslClientKeystash { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded keystore file created at the client containing the server certificate / CA root certificate.
+        /// </summary>
+        [Input("sslClientKeystoredb")]
+        public Input<string>? SslClientKeystoredb { get; set; }
+
+        /// <summary>
         /// (Updatable) Certificates revoked by certificate authorities (CA). Server certificate must not be on this list (for 1 and 2-way SSL). Note: This is an optional and that too only applicable if TLS/MTLS option is selected.
         /// </summary>
         [Input("sslCrl")]
@@ -1625,6 +1761,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("sslMode")]
         public Input<string>? SslMode { get; set; }
+
+        /// <summary>
+        /// (Updatable) The base64 encoded file which contains the self-signed server certificate / Certificate Authority (CA) certificate.
+        /// </summary>
+        [Input("sslServerCertificate")]
+        public Input<string>? SslServerCertificate { get; set; }
 
         /// <summary>
         /// Possible lifecycle states for connection.

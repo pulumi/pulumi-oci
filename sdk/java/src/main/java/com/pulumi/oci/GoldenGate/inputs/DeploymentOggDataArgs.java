@@ -47,14 +47,14 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A PEM-encoded SSL certificate.
+     * (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     @Import(name="certificate")
     private @Nullable Output<String> certificate;
 
     /**
-     * @return (Updatable) A PEM-encoded SSL certificate.
+     * @return (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
      * 
      */
     public Optional<Output<String>> certificate() {
@@ -107,14 +107,14 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) A PEM-encoded private key.
+     * (Updatable) The base64 encoded content of the PEM file containing the private key.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return (Updatable) A PEM-encoded private key.
+     * @return (Updatable) The base64 encoded content of the PEM file containing the private key.
      * 
      */
     public Optional<Output<String>> key() {
@@ -122,14 +122,14 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+     * Version of OGG
      * 
      */
     @Import(name="oggVersion")
     private @Nullable Output<String> oggVersion;
 
     /**
-     * @return (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+     * @return Version of OGG
      * 
      */
     public Optional<Output<String>> oggVersion() {
@@ -226,7 +226,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param certificate (Updatable) A PEM-encoded SSL certificate.
+         * @param certificate (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
          * 
          * @return builder
          * 
@@ -237,7 +237,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param certificate (Updatable) A PEM-encoded SSL certificate.
+         * @param certificate (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
          * 
          * @return builder
          * 
@@ -310,7 +310,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param key (Updatable) A PEM-encoded private key.
+         * @param key (Updatable) The base64 encoded content of the PEM file containing the private key.
          * 
          * @return builder
          * 
@@ -321,7 +321,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param key (Updatable) A PEM-encoded private key.
+         * @param key (Updatable) The base64 encoded content of the PEM file containing the private key.
          * 
          * @return builder
          * 
@@ -331,7 +331,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param oggVersion (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+         * @param oggVersion Version of OGG
          * 
          * @return builder
          * 
@@ -342,7 +342,7 @@ public final class DeploymentOggDataArgs extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param oggVersion (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+         * @param oggVersion Version of OGG
          * 
          * @return builder
          * 

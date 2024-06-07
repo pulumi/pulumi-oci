@@ -131,6 +131,9 @@ namespace Pulumi.Oci.GoldenGate
         /// The list of certificate_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDeploymentCertificatesCertificateCollectionResult> CertificateCollections;
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment being referenced.
+        /// </summary>
         public readonly string DeploymentId;
         public readonly ImmutableArray<Outputs.GetDeploymentCertificatesFilterResult> Filters;
         /// <summary>

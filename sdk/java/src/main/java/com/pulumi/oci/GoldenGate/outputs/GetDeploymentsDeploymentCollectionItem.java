@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticData;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemIngressIp;
+import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemLock;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemMaintenanceWindow;
 import com.pulumi.oci.GoldenGate.outputs.GetDeploymentsDeploymentCollectionItemOggData;
@@ -100,6 +101,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private Boolean isLatestVersion;
+    private Boolean isLockOverride;
     /**
      * @return True if this object is publicly available.
      * 
@@ -135,6 +137,11 @@ public final class GetDeploymentsDeploymentCollectionItem {
      * 
      */
     private String loadBalancerSubnetId;
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    private List<GetDeploymentsDeploymentCollectionItemLock> locks;
     /**
      * @return Attributes for configuring automatic deployment maintenance.
      * 
@@ -186,7 +193,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     private String storageUtilizationInBytes;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      * 
      */
     private String subnetId;
@@ -334,6 +341,9 @@ public final class GetDeploymentsDeploymentCollectionItem {
     public Boolean isLatestVersion() {
         return this.isLatestVersion;
     }
+    public Boolean isLockOverride() {
+        return this.isLockOverride;
+    }
     /**
      * @return True if this object is publicly available.
      * 
@@ -382,6 +392,13 @@ public final class GetDeploymentsDeploymentCollectionItem {
      */
     public String loadBalancerSubnetId() {
         return this.loadBalancerSubnetId;
+    }
+    /**
+     * @return Locks associated with this resource.
+     * 
+     */
+    public List<GetDeploymentsDeploymentCollectionItemLock> locks() {
+        return this.locks;
     }
     /**
      * @return Attributes for configuring automatic deployment maintenance.
@@ -454,7 +471,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         return this.storageUtilizationInBytes;
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment&#39;s private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
      * 
      */
     public String subnetId() {
@@ -528,6 +545,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private Boolean isAutoScalingEnabled;
         private Boolean isHealthy;
         private Boolean isLatestVersion;
+        private Boolean isLockOverride;
         private Boolean isPublic;
         private Boolean isStorageUtilizationLimitExceeded;
         private String licenseModel;
@@ -535,6 +553,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
         private String lifecycleSubState;
         private String loadBalancerId;
         private String loadBalancerSubnetId;
+        private List<GetDeploymentsDeploymentCollectionItemLock> locks;
         private List<GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration> maintenanceConfigurations;
         private List<GetDeploymentsDeploymentCollectionItemMaintenanceWindow> maintenanceWindows;
         private String nextMaintenanceActionType;
@@ -571,6 +590,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.isAutoScalingEnabled = defaults.isAutoScalingEnabled;
     	      this.isHealthy = defaults.isHealthy;
     	      this.isLatestVersion = defaults.isLatestVersion;
+    	      this.isLockOverride = defaults.isLockOverride;
     	      this.isPublic = defaults.isPublic;
     	      this.isStorageUtilizationLimitExceeded = defaults.isStorageUtilizationLimitExceeded;
     	      this.licenseModel = defaults.licenseModel;
@@ -578,6 +598,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
     	      this.lifecycleSubState = defaults.lifecycleSubState;
     	      this.loadBalancerId = defaults.loadBalancerId;
     	      this.loadBalancerSubnetId = defaults.loadBalancerSubnetId;
+    	      this.locks = defaults.locks;
     	      this.maintenanceConfigurations = defaults.maintenanceConfigurations;
     	      this.maintenanceWindows = defaults.maintenanceWindows;
     	      this.nextMaintenanceActionType = defaults.nextMaintenanceActionType;
@@ -732,6 +753,14 @@ public final class GetDeploymentsDeploymentCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isLockOverride(Boolean isLockOverride) {
+            if (isLockOverride == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "isLockOverride");
+            }
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isPublic(Boolean isPublic) {
             if (isPublic == null) {
               throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "isPublic");
@@ -786,6 +815,17 @@ public final class GetDeploymentsDeploymentCollectionItem {
             }
             this.loadBalancerSubnetId = loadBalancerSubnetId;
             return this;
+        }
+        @CustomType.Setter
+        public Builder locks(List<GetDeploymentsDeploymentCollectionItemLock> locks) {
+            if (locks == null) {
+              throw new MissingRequiredPropertyException("GetDeploymentsDeploymentCollectionItem", "locks");
+            }
+            this.locks = locks;
+            return this;
+        }
+        public Builder locks(GetDeploymentsDeploymentCollectionItemLock... locks) {
+            return locks(List.of(locks));
         }
         @CustomType.Setter
         public Builder maintenanceConfigurations(List<GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration> maintenanceConfigurations) {
@@ -953,6 +993,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.isAutoScalingEnabled = isAutoScalingEnabled;
             _resultValue.isHealthy = isHealthy;
             _resultValue.isLatestVersion = isLatestVersion;
+            _resultValue.isLockOverride = isLockOverride;
             _resultValue.isPublic = isPublic;
             _resultValue.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
             _resultValue.licenseModel = licenseModel;
@@ -960,6 +1001,7 @@ public final class GetDeploymentsDeploymentCollectionItem {
             _resultValue.lifecycleSubState = lifecycleSubState;
             _resultValue.loadBalancerId = loadBalancerId;
             _resultValue.loadBalancerSubnetId = loadBalancerSubnetId;
+            _resultValue.locks = locks;
             _resultValue.maintenanceConfigurations = maintenanceConfigurations;
             _resultValue.maintenanceWindows = maintenanceWindows;
             _resultValue.nextMaintenanceActionType = nextMaintenanceActionType;

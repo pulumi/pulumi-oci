@@ -57,12 +57,16 @@ public final class GetAutonomousCharacterSetsPlainArgs extends com.pulumi.resour
     /**
      * Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
      * 
+     * :
+     * 
      */
     @Import(name="isShared")
     private @Nullable Boolean isShared;
 
     /**
      * @return Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+     * 
+     * :
      * 
      */
     public Optional<Boolean> isShared() {
@@ -129,6 +133,8 @@ public final class GetAutonomousCharacterSetsPlainArgs extends com.pulumi.resour
 
         /**
          * @param isShared Specifies whether this request is for Autonomous Database on Shared infrastructure. By default, this request will be for Autonomous Database on Dedicated Exadata Infrastructure.
+         * 
+         * :
          * 
          * @return builder
          * 

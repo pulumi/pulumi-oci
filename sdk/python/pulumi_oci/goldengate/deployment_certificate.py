@@ -16,26 +16,30 @@ class DeploymentCertificateArgs:
     def __init__(__self__, *,
                  certificate_content: pulumi.Input[str],
                  deployment_id: pulumi.Input[str],
-                 key: pulumi.Input[str]):
+                 key: pulumi.Input[str],
+                 is_lock_override: Optional[pulumi.Input[bool]] = None):
         """
         The set of arguments for constructing a DeploymentCertificate resource.
-        :param pulumi.Input[str] certificate_content: A PEM-encoded SSL certificate.
+        :param pulumi.Input[str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[str] deployment_id: A unique Deployment identifier.
         :param pulumi.Input[str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
         """
         pulumi.set(__self__, "certificate_content", certificate_content)
         pulumi.set(__self__, "deployment_id", deployment_id)
         pulumi.set(__self__, "key", key)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
 
     @property
     @pulumi.getter(name="certificateContent")
     def certificate_content(self) -> pulumi.Input[str]:
         """
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate_content")
 
@@ -71,6 +75,18 @@ class DeploymentCertificateArgs:
     def key(self, value: pulumi.Input[str]):
         pulumi.set(self, "key", value)
 
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to override locks (if any exist).
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
+
 
 @pulumi.input_type
 class _DeploymentCertificateState:
@@ -79,6 +95,7 @@ class _DeploymentCertificateState:
                  certificate_content: Optional[pulumi.Input[str]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
                  is_ca: Optional[pulumi.Input[bool]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  is_self_signed: Optional[pulumi.Input[bool]] = None,
                  issuer: Optional[pulumi.Input[str]] = None,
                  key: Optional[pulumi.Input[str]] = None,
@@ -98,9 +115,10 @@ class _DeploymentCertificateState:
         """
         Input properties used for looking up and filtering DeploymentCertificate resources.
         :param pulumi.Input[str] authority_key_id: The Certificate authority key id.
-        :param pulumi.Input[str] certificate_content: A PEM-encoded SSL certificate.
+        :param pulumi.Input[str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[str] deployment_id: A unique Deployment identifier.
         :param pulumi.Input[bool] is_ca: Indicates if the certificate is ca.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
         :param pulumi.Input[bool] is_self_signed: Indicates if the certificate is self signed.
         :param pulumi.Input[str] issuer: The Certificate issuer.
         :param pulumi.Input[str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
@@ -130,6 +148,8 @@ class _DeploymentCertificateState:
             pulumi.set(__self__, "deployment_id", deployment_id)
         if is_ca is not None:
             pulumi.set(__self__, "is_ca", is_ca)
+        if is_lock_override is not None:
+            pulumi.set(__self__, "is_lock_override", is_lock_override)
         if is_self_signed is not None:
             pulumi.set(__self__, "is_self_signed", is_self_signed)
         if issuer is not None:
@@ -179,7 +199,7 @@ class _DeploymentCertificateState:
     @pulumi.getter(name="certificateContent")
     def certificate_content(self) -> Optional[pulumi.Input[str]]:
         """
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate_content")
 
@@ -210,6 +230,18 @@ class _DeploymentCertificateState:
     @is_ca.setter
     def is_ca(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_ca", value)
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Whether to override locks (if any exist).
+        """
+        return pulumi.get(self, "is_lock_override")
+
+    @is_lock_override.setter
+    def is_lock_override(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_lock_override", value)
 
     @property
     @pulumi.getter(name="isSelfSigned")
@@ -415,6 +447,7 @@ class DeploymentCertificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  certificate_content: Optional[pulumi.Input[str]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
@@ -431,7 +464,8 @@ class DeploymentCertificate(pulumi.CustomResource):
         test_deployment_certificate = oci.golden_gate.DeploymentCertificate("test_deployment_certificate",
             certificate_content=deployment_certificate_certificate_content,
             deployment_id=test_deployment["id"],
-            key=deployment_certificate_key)
+            key=deployment_certificate_key,
+            is_lock_override=deployment_certificate_is_lock_override)
         ```
 
         ## Import
@@ -444,8 +478,9 @@ class DeploymentCertificate(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] certificate_content: A PEM-encoded SSL certificate.
+        :param pulumi.Input[str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[str] deployment_id: A unique Deployment identifier.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
         :param pulumi.Input[str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
                
                
@@ -472,7 +507,8 @@ class DeploymentCertificate(pulumi.CustomResource):
         test_deployment_certificate = oci.golden_gate.DeploymentCertificate("test_deployment_certificate",
             certificate_content=deployment_certificate_certificate_content,
             deployment_id=test_deployment["id"],
-            key=deployment_certificate_key)
+            key=deployment_certificate_key,
+            is_lock_override=deployment_certificate_is_lock_override)
         ```
 
         ## Import
@@ -500,6 +536,7 @@ class DeploymentCertificate(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  certificate_content: Optional[pulumi.Input[str]] = None,
                  deployment_id: Optional[pulumi.Input[str]] = None,
+                 is_lock_override: Optional[pulumi.Input[bool]] = None,
                  key: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -516,6 +553,7 @@ class DeploymentCertificate(pulumi.CustomResource):
             if deployment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'deployment_id'")
             __props__.__dict__["deployment_id"] = deployment_id
+            __props__.__dict__["is_lock_override"] = is_lock_override
             if key is None and not opts.urn:
                 raise TypeError("Missing required property 'key'")
             __props__.__dict__["key"] = key
@@ -550,6 +588,7 @@ class DeploymentCertificate(pulumi.CustomResource):
             certificate_content: Optional[pulumi.Input[str]] = None,
             deployment_id: Optional[pulumi.Input[str]] = None,
             is_ca: Optional[pulumi.Input[bool]] = None,
+            is_lock_override: Optional[pulumi.Input[bool]] = None,
             is_self_signed: Optional[pulumi.Input[bool]] = None,
             issuer: Optional[pulumi.Input[str]] = None,
             key: Optional[pulumi.Input[str]] = None,
@@ -574,9 +613,10 @@ class DeploymentCertificate(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] authority_key_id: The Certificate authority key id.
-        :param pulumi.Input[str] certificate_content: A PEM-encoded SSL certificate.
+        :param pulumi.Input[str] certificate_content: The base64 encoded content of the PEM file containing the SSL certificate.
         :param pulumi.Input[str] deployment_id: A unique Deployment identifier.
         :param pulumi.Input[bool] is_ca: Indicates if the certificate is ca.
+        :param pulumi.Input[bool] is_lock_override: Whether to override locks (if any exist).
         :param pulumi.Input[bool] is_self_signed: Indicates if the certificate is self signed.
         :param pulumi.Input[str] issuer: The Certificate issuer.
         :param pulumi.Input[str] key: The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
@@ -606,6 +646,7 @@ class DeploymentCertificate(pulumi.CustomResource):
         __props__.__dict__["certificate_content"] = certificate_content
         __props__.__dict__["deployment_id"] = deployment_id
         __props__.__dict__["is_ca"] = is_ca
+        __props__.__dict__["is_lock_override"] = is_lock_override
         __props__.__dict__["is_self_signed"] = is_self_signed
         __props__.__dict__["issuer"] = issuer
         __props__.__dict__["key"] = key
@@ -636,7 +677,7 @@ class DeploymentCertificate(pulumi.CustomResource):
     @pulumi.getter(name="certificateContent")
     def certificate_content(self) -> pulumi.Output[str]:
         """
-        A PEM-encoded SSL certificate.
+        The base64 encoded content of the PEM file containing the SSL certificate.
         """
         return pulumi.get(self, "certificate_content")
 
@@ -655,6 +696,14 @@ class DeploymentCertificate(pulumi.CustomResource):
         Indicates if the certificate is ca.
         """
         return pulumi.get(self, "is_ca")
+
+    @property
+    @pulumi.getter(name="isLockOverride")
+    def is_lock_override(self) -> pulumi.Output[bool]:
+        """
+        Whether to override locks (if any exist).
+        """
+        return pulumi.get(self, "is_lock_override")
 
     @property
     @pulumi.getter(name="isSelfSigned")

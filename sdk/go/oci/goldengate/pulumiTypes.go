@@ -334,6 +334,254 @@ func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngre
 	}).(ConnectionIngressIpOutput)
 }
 
+type ConnectionLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// ConnectionLockInput is an input type that accepts ConnectionLockArgs and ConnectionLockOutput values.
+// You can construct a concrete instance of `ConnectionLockInput` via:
+//
+//	ConnectionLockArgs{...}
+type ConnectionLockInput interface {
+	pulumi.Input
+
+	ToConnectionLockOutput() ConnectionLockOutput
+	ToConnectionLockOutputWithContext(context.Context) ConnectionLockOutput
+}
+
+type ConnectionLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (ConnectionLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionLock)(nil)).Elem()
+}
+
+func (i ConnectionLockArgs) ToConnectionLockOutput() ConnectionLockOutput {
+	return i.ToConnectionLockOutputWithContext(context.Background())
+}
+
+func (i ConnectionLockArgs) ToConnectionLockOutputWithContext(ctx context.Context) ConnectionLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionLockOutput)
+}
+
+// ConnectionLockArrayInput is an input type that accepts ConnectionLockArray and ConnectionLockArrayOutput values.
+// You can construct a concrete instance of `ConnectionLockArrayInput` via:
+//
+//	ConnectionLockArray{ ConnectionLockArgs{...} }
+type ConnectionLockArrayInput interface {
+	pulumi.Input
+
+	ToConnectionLockArrayOutput() ConnectionLockArrayOutput
+	ToConnectionLockArrayOutputWithContext(context.Context) ConnectionLockArrayOutput
+}
+
+type ConnectionLockArray []ConnectionLockInput
+
+func (ConnectionLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionLock)(nil)).Elem()
+}
+
+func (i ConnectionLockArray) ToConnectionLockArrayOutput() ConnectionLockArrayOutput {
+	return i.ToConnectionLockArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionLockArray) ToConnectionLockArrayOutputWithContext(ctx context.Context) ConnectionLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionLockArrayOutput)
+}
+
+type ConnectionLockOutput struct{ *pulumi.OutputState }
+
+func (ConnectionLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionLock)(nil)).Elem()
+}
+
+func (o ConnectionLockOutput) ToConnectionLockOutput() ConnectionLockOutput {
+	return o
+}
+
+func (o ConnectionLockOutput) ToConnectionLockOutputWithContext(ctx context.Context) ConnectionLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o ConnectionLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o ConnectionLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o ConnectionLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o ConnectionLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v ConnectionLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type ConnectionLockArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionLock)(nil)).Elem()
+}
+
+func (o ConnectionLockArrayOutput) ToConnectionLockArrayOutput() ConnectionLockArrayOutput {
+	return o
+}
+
+func (o ConnectionLockArrayOutput) ToConnectionLockArrayOutputWithContext(ctx context.Context) ConnectionLockArrayOutput {
+	return o
+}
+
+func (o ConnectionLockArrayOutput) Index(i pulumi.IntInput) ConnectionLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionLock {
+		return vs[0].([]ConnectionLock)[vs[1].(int)]
+	}).(ConnectionLockOutput)
+}
+
+type DeploymentBackupLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DeploymentBackupLockInput is an input type that accepts DeploymentBackupLockArgs and DeploymentBackupLockOutput values.
+// You can construct a concrete instance of `DeploymentBackupLockInput` via:
+//
+//	DeploymentBackupLockArgs{...}
+type DeploymentBackupLockInput interface {
+	pulumi.Input
+
+	ToDeploymentBackupLockOutput() DeploymentBackupLockOutput
+	ToDeploymentBackupLockOutputWithContext(context.Context) DeploymentBackupLockOutput
+}
+
+type DeploymentBackupLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DeploymentBackupLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentBackupLock)(nil)).Elem()
+}
+
+func (i DeploymentBackupLockArgs) ToDeploymentBackupLockOutput() DeploymentBackupLockOutput {
+	return i.ToDeploymentBackupLockOutputWithContext(context.Background())
+}
+
+func (i DeploymentBackupLockArgs) ToDeploymentBackupLockOutputWithContext(ctx context.Context) DeploymentBackupLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupLockOutput)
+}
+
+// DeploymentBackupLockArrayInput is an input type that accepts DeploymentBackupLockArray and DeploymentBackupLockArrayOutput values.
+// You can construct a concrete instance of `DeploymentBackupLockArrayInput` via:
+//
+//	DeploymentBackupLockArray{ DeploymentBackupLockArgs{...} }
+type DeploymentBackupLockArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentBackupLockArrayOutput() DeploymentBackupLockArrayOutput
+	ToDeploymentBackupLockArrayOutputWithContext(context.Context) DeploymentBackupLockArrayOutput
+}
+
+type DeploymentBackupLockArray []DeploymentBackupLockInput
+
+func (DeploymentBackupLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentBackupLock)(nil)).Elem()
+}
+
+func (i DeploymentBackupLockArray) ToDeploymentBackupLockArrayOutput() DeploymentBackupLockArrayOutput {
+	return i.ToDeploymentBackupLockArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentBackupLockArray) ToDeploymentBackupLockArrayOutputWithContext(ctx context.Context) DeploymentBackupLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentBackupLockArrayOutput)
+}
+
+type DeploymentBackupLockOutput struct{ *pulumi.OutputState }
+
+func (DeploymentBackupLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentBackupLock)(nil)).Elem()
+}
+
+func (o DeploymentBackupLockOutput) ToDeploymentBackupLockOutput() DeploymentBackupLockOutput {
+	return o
+}
+
+func (o DeploymentBackupLockOutput) ToDeploymentBackupLockOutputWithContext(ctx context.Context) DeploymentBackupLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DeploymentBackupLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentBackupLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DeploymentBackupLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentBackupLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o DeploymentBackupLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentBackupLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DeploymentBackupLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentBackupLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DeploymentBackupLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentBackupLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentBackupLock)(nil)).Elem()
+}
+
+func (o DeploymentBackupLockArrayOutput) ToDeploymentBackupLockArrayOutput() DeploymentBackupLockArrayOutput {
+	return o
+}
+
+func (o DeploymentBackupLockArrayOutput) ToDeploymentBackupLockArrayOutputWithContext(ctx context.Context) DeploymentBackupLockArrayOutput {
+	return o
+}
+
+func (o DeploymentBackupLockArrayOutput) Index(i pulumi.IntInput) DeploymentBackupLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentBackupLock {
+		return vs[0].([]DeploymentBackupLock)[vs[1].(int)]
+	}).(DeploymentBackupLockOutput)
+}
+
 type DeploymentDeploymentDiagnosticData struct {
 	// Name of the bucket where the object is to be uploaded in the object storage
 	Bucket *string `pulumi:"bucket"`
@@ -571,6 +819,130 @@ func (o DeploymentIngressIpArrayOutput) Index(i pulumi.IntInput) DeploymentIngre
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentIngressIp {
 		return vs[0].([]DeploymentIngressIp)[vs[1].(int)]
 	}).(DeploymentIngressIpOutput)
+}
+
+type DeploymentLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message *string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId *string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated *string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// DeploymentLockInput is an input type that accepts DeploymentLockArgs and DeploymentLockOutput values.
+// You can construct a concrete instance of `DeploymentLockInput` via:
+//
+//	DeploymentLockArgs{...}
+type DeploymentLockInput interface {
+	pulumi.Input
+
+	ToDeploymentLockOutput() DeploymentLockOutput
+	ToDeploymentLockOutputWithContext(context.Context) DeploymentLockOutput
+}
+
+type DeploymentLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringPtrInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringPtrInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringPtrInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (DeploymentLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentLock)(nil)).Elem()
+}
+
+func (i DeploymentLockArgs) ToDeploymentLockOutput() DeploymentLockOutput {
+	return i.ToDeploymentLockOutputWithContext(context.Background())
+}
+
+func (i DeploymentLockArgs) ToDeploymentLockOutputWithContext(ctx context.Context) DeploymentLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentLockOutput)
+}
+
+// DeploymentLockArrayInput is an input type that accepts DeploymentLockArray and DeploymentLockArrayOutput values.
+// You can construct a concrete instance of `DeploymentLockArrayInput` via:
+//
+//	DeploymentLockArray{ DeploymentLockArgs{...} }
+type DeploymentLockArrayInput interface {
+	pulumi.Input
+
+	ToDeploymentLockArrayOutput() DeploymentLockArrayOutput
+	ToDeploymentLockArrayOutputWithContext(context.Context) DeploymentLockArrayOutput
+}
+
+type DeploymentLockArray []DeploymentLockInput
+
+func (DeploymentLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentLock)(nil)).Elem()
+}
+
+func (i DeploymentLockArray) ToDeploymentLockArrayOutput() DeploymentLockArrayOutput {
+	return i.ToDeploymentLockArrayOutputWithContext(context.Background())
+}
+
+func (i DeploymentLockArray) ToDeploymentLockArrayOutputWithContext(ctx context.Context) DeploymentLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DeploymentLockArrayOutput)
+}
+
+type DeploymentLockOutput struct{ *pulumi.OutputState }
+
+func (DeploymentLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DeploymentLock)(nil)).Elem()
+}
+
+func (o DeploymentLockOutput) ToDeploymentLockOutput() DeploymentLockOutput {
+	return o
+}
+
+func (o DeploymentLockOutput) ToDeploymentLockOutputWithContext(ctx context.Context) DeploymentLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o DeploymentLockOutput) Message() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentLock) *string { return v.Message }).(pulumi.StringPtrOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o DeploymentLockOutput) RelatedResourceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentLock) *string { return v.RelatedResourceId }).(pulumi.StringPtrOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o DeploymentLockOutput) TimeCreated() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DeploymentLock) *string { return v.TimeCreated }).(pulumi.StringPtrOutput)
+}
+
+// Type of the lock.
+func (o DeploymentLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v DeploymentLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type DeploymentLockArrayOutput struct{ *pulumi.OutputState }
+
+func (DeploymentLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DeploymentLock)(nil)).Elem()
+}
+
+func (o DeploymentLockArrayOutput) ToDeploymentLockArrayOutput() DeploymentLockArrayOutput {
+	return o
+}
+
+func (o DeploymentLockArrayOutput) ToDeploymentLockArrayOutputWithContext(ctx context.Context) DeploymentLockArrayOutput {
+	return o
+}
+
+func (o DeploymentLockArrayOutput) Index(i pulumi.IntInput) DeploymentLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DeploymentLock {
+		return vs[0].([]DeploymentLock)[vs[1].(int)]
+	}).(DeploymentLockOutput)
 }
 
 type DeploymentMaintenanceConfiguration struct {
@@ -947,7 +1319,7 @@ type DeploymentOggData struct {
 	AdminPassword *string `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername *string `pulumi:"adminUsername"`
-	// (Updatable) A PEM-encoded SSL certificate.
+	// (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
 	Certificate *string `pulumi:"certificate"`
 	// (Updatable) The type of credential store for OGG.
 	CredentialStore *string `pulumi:"credentialStore"`
@@ -955,9 +1327,9 @@ type DeploymentOggData struct {
 	DeploymentName string `pulumi:"deploymentName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId *string `pulumi:"identityDomainId"`
-	// (Updatable) A PEM-encoded private key.
+	// (Updatable) The base64 encoded content of the PEM file containing the private key.
 	Key *string `pulumi:"key"`
-	// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+	// Version of OGG
 	OggVersion *string `pulumi:"oggVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
 	PasswordSecretId *string `pulumi:"passwordSecretId"`
@@ -979,7 +1351,7 @@ type DeploymentOggDataArgs struct {
 	AdminPassword pulumi.StringPtrInput `pulumi:"adminPassword"`
 	// (Updatable) The GoldenGate deployment console username.
 	AdminUsername pulumi.StringPtrInput `pulumi:"adminUsername"`
-	// (Updatable) A PEM-encoded SSL certificate.
+	// (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
 	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
 	// (Updatable) The type of credential store for OGG.
 	CredentialStore pulumi.StringPtrInput `pulumi:"credentialStore"`
@@ -987,9 +1359,9 @@ type DeploymentOggDataArgs struct {
 	DeploymentName pulumi.StringInput `pulumi:"deploymentName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Identity Domain when IAM credential store is used.
 	IdentityDomainId pulumi.StringPtrInput `pulumi:"identityDomainId"`
-	// (Updatable) A PEM-encoded private key.
+	// (Updatable) The base64 encoded content of the PEM file containing the private key.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+	// Version of OGG
 	OggVersion pulumi.StringPtrInput `pulumi:"oggVersion"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the deployment password is stored.
 	PasswordSecretId pulumi.StringPtrInput `pulumi:"passwordSecretId"`
@@ -1082,7 +1454,7 @@ func (o DeploymentOggDataOutput) AdminUsername() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.AdminUsername }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A PEM-encoded SSL certificate.
+// (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
 func (o DeploymentOggDataOutput) Certificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.Certificate }).(pulumi.StringPtrOutput)
 }
@@ -1102,12 +1474,12 @@ func (o DeploymentOggDataOutput) IdentityDomainId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.IdentityDomainId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A PEM-encoded private key.
+// (Updatable) The base64 encoded content of the PEM file containing the private key.
 func (o DeploymentOggDataOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+// Version of OGG
 func (o DeploymentOggDataOutput) OggVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DeploymentOggData) *string { return v.OggVersion }).(pulumi.StringPtrOutput)
 }
@@ -1161,7 +1533,7 @@ func (o DeploymentOggDataPtrOutput) AdminUsername() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A PEM-encoded SSL certificate.
+// (Updatable) The base64 encoded content of the PEM file containing the SSL certificate.
 func (o DeploymentOggDataPtrOutput) Certificate() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -1201,7 +1573,7 @@ func (o DeploymentOggDataPtrOutput) IdentityDomainId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) A PEM-encoded private key.
+// (Updatable) The base64 encoded content of the PEM file containing the private key.
 func (o DeploymentOggDataPtrOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -1211,7 +1583,7 @@ func (o DeploymentOggDataPtrOutput) Key() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) Version of ogg to use by deployment. By updating version you can upgrade your deployment to a newer version. Downgrade to older version is not supported.
+// Version of OGG
 func (o DeploymentOggDataPtrOutput) OggVersion() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DeploymentOggData) *string {
 		if v == nil {
@@ -1443,7 +1815,8 @@ type GetConnectionAssignmentsConnectionAssignmentCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId string `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-	Id string `pulumi:"id"`
+	Id             string `pulumi:"id"`
+	IsLockOverride bool   `pulumi:"isLockOverride"`
 	// A filter to return only connection assignments having the 'lifecycleState' given.
 	State string `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1473,7 +1846,8 @@ type GetConnectionAssignmentsConnectionAssignmentCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
-	Id pulumi.StringInput `pulumi:"id"`
+	Id             pulumi.StringInput `pulumi:"id"`
+	IsLockOverride pulumi.BoolInput   `pulumi:"isLockOverride"`
 	// A filter to return only connection assignments having the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
@@ -1556,6 +1930,10 @@ func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) Deploy
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection assignment being referenced.
 func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionAssignmentsConnectionAssignmentCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConnectionAssignmentsConnectionAssignmentCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // A filter to return only connection assignments having the 'lifecycleState' given.
@@ -1923,6 +2301,130 @@ func (o GetConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) GetConnectio
 	}).(GetConnectionIngressIpOutput)
 }
 
+type GetConnectionLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetConnectionLockInput is an input type that accepts GetConnectionLockArgs and GetConnectionLockOutput values.
+// You can construct a concrete instance of `GetConnectionLockInput` via:
+//
+//	GetConnectionLockArgs{...}
+type GetConnectionLockInput interface {
+	pulumi.Input
+
+	ToGetConnectionLockOutput() GetConnectionLockOutput
+	ToGetConnectionLockOutputWithContext(context.Context) GetConnectionLockOutput
+}
+
+type GetConnectionLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetConnectionLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionLock)(nil)).Elem()
+}
+
+func (i GetConnectionLockArgs) ToGetConnectionLockOutput() GetConnectionLockOutput {
+	return i.ToGetConnectionLockOutputWithContext(context.Background())
+}
+
+func (i GetConnectionLockArgs) ToGetConnectionLockOutputWithContext(ctx context.Context) GetConnectionLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionLockOutput)
+}
+
+// GetConnectionLockArrayInput is an input type that accepts GetConnectionLockArray and GetConnectionLockArrayOutput values.
+// You can construct a concrete instance of `GetConnectionLockArrayInput` via:
+//
+//	GetConnectionLockArray{ GetConnectionLockArgs{...} }
+type GetConnectionLockArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionLockArrayOutput() GetConnectionLockArrayOutput
+	ToGetConnectionLockArrayOutputWithContext(context.Context) GetConnectionLockArrayOutput
+}
+
+type GetConnectionLockArray []GetConnectionLockInput
+
+func (GetConnectionLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionLock)(nil)).Elem()
+}
+
+func (i GetConnectionLockArray) ToGetConnectionLockArrayOutput() GetConnectionLockArrayOutput {
+	return i.ToGetConnectionLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionLockArray) ToGetConnectionLockArrayOutputWithContext(ctx context.Context) GetConnectionLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionLockArrayOutput)
+}
+
+type GetConnectionLockOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionLock)(nil)).Elem()
+}
+
+func (o GetConnectionLockOutput) ToGetConnectionLockOutput() GetConnectionLockOutput {
+	return o
+}
+
+func (o GetConnectionLockOutput) ToGetConnectionLockOutputWithContext(ctx context.Context) GetConnectionLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetConnectionLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetConnectionLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetConnectionLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetConnectionLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionLock)(nil)).Elem()
+}
+
+func (o GetConnectionLockArrayOutput) ToGetConnectionLockArrayOutput() GetConnectionLockArrayOutput {
+	return o
+}
+
+func (o GetConnectionLockArrayOutput) ToGetConnectionLockArrayOutputWithContext(ctx context.Context) GetConnectionLockArrayOutput {
+	return o
+}
+
+func (o GetConnectionLockArrayOutput) Index(i pulumi.IntInput) GetConnectionLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionLock {
+		return vs[0].([]GetConnectionLock)[vs[1].(int)]
+	}).(GetConnectionLockOutput)
+}
+
 type GetConnectionsConnectionCollection struct {
 	Items []GetConnectionsConnectionCollectionItem `pulumi:"items"`
 }
@@ -2025,6 +2527,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	AccountName string `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes []GetConnectionsConnectionCollectionItemAdditionalAttribute `pulumi:"additionalAttributes"`
+	// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode string `pulumi:"authenticationMode"`
 	// Used authentication mechanism to be provided for the following connection types:
 	// * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
 	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -2078,7 +2582,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id string `pulumi:"id"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-	IngressIps []GetConnectionsConnectionCollectionItemIngressIp `pulumi:"ingressIps"`
+	IngressIps     []GetConnectionsConnectionCollectionItemIngressIp `pulumi:"ingressIps"`
+	IsLockOverride bool                                              `pulumi:"isLockOverride"`
 	// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory string `pulumi:"jndiConnectionFactory"`
 	// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -2094,6 +2599,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	KeyStorePassword string `pulumi:"keyStorePassword"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetConnectionsConnectionCollectionItemLock `pulumi:"locks"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds   []string `pulumi:"nsgIds"`
 	Password string   `pulumi:"password"`
@@ -2106,6 +2613,8 @@ type GetConnectionsConnectionCollectionItem struct {
 	PrivateKeyPassphrase string `pulumi:"privateKeyPassphrase"`
 	ProducerProperties   string `pulumi:"producerProperties"`
 	PublicKeyFingerprint string `pulumi:"publicKeyFingerprint"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId string `pulumi:"redisClusterId"`
 	// The name of the region. e.g.: us-ashburn-1
 	Region string `pulumi:"region"`
 	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -2127,13 +2636,16 @@ type GetConnectionsConnectionCollectionItem struct {
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate bool `pulumi:"shouldValidateServerCertificate"`
 	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-	SslCa          string `pulumi:"sslCa"`
-	SslCert        string `pulumi:"sslCert"`
-	SslCrl         string `pulumi:"sslCrl"`
-	SslKey         string `pulumi:"sslKey"`
-	SslKeyPassword string `pulumi:"sslKeyPassword"`
+	SslCa               string `pulumi:"sslCa"`
+	SslCert             string `pulumi:"sslCert"`
+	SslClientKeystash   string `pulumi:"sslClientKeystash"`
+	SslClientKeystoredb string `pulumi:"sslClientKeystoredb"`
+	SslCrl              string `pulumi:"sslCrl"`
+	SslKey              string `pulumi:"sslKey"`
+	SslKeyPassword      string `pulumi:"sslKeyPassword"`
 	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
-	SslMode string `pulumi:"sslMode"`
+	SslMode              string `pulumi:"sslMode"`
+	SslServerCertificate string `pulumi:"sslServerCertificate"`
 	// A filter to return only connections having the 'lifecycleState' given.
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -2182,6 +2694,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	AccountName pulumi.StringInput `pulumi:"accountName"`
 	// An array of name-value pair attribute entries. Used as additional parameters in connection string.
 	AdditionalAttributes GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+	AuthenticationMode pulumi.StringInput `pulumi:"authenticationMode"`
 	// Used authentication mechanism to be provided for the following connection types:
 	// * SNOWFLAKE, AZURE_DATA_LAKE_STORAGE, ELASTICSEARCH, KAFKA_SCHEMA_REGISTRY, REDIS
 	// * JAVA_MESSAGE_SERVICE - If not provided, default is NONE. Optional until 2024-06-27, in the release after it will be made required.
@@ -2235,7 +2749,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
 	// List of ingress IP addresses from where the GoldenGate deployment connects to this connection's privateIp.  Customers may optionally set up ingress security rules to restrict traffic from these IP addresses.
-	IngressIps GetConnectionsConnectionCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
+	IngressIps     GetConnectionsConnectionCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
+	IsLockOverride pulumi.BoolInput                                          `pulumi:"isLockOverride"`
 	// The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 	JndiConnectionFactory pulumi.StringInput `pulumi:"jndiConnectionFactory"`
 	// The implementation of javax.naming.spi.InitialContextFactory interface that the client uses to obtain initial naming context. e.g.: 'org.apache.activemq.jndi.ActiveMQInitialContextFactory'
@@ -2251,6 +2766,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	KeyStorePassword pulumi.StringInput `pulumi:"keyStorePassword"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetConnectionsConnectionCollectionItemLockArrayInput `pulumi:"locks"`
 	// An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 	NsgIds   pulumi.StringArrayInput `pulumi:"nsgIds"`
 	Password pulumi.StringInput      `pulumi:"password"`
@@ -2263,6 +2780,8 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	PrivateKeyPassphrase pulumi.StringInput `pulumi:"privateKeyPassphrase"`
 	ProducerProperties   pulumi.StringInput `pulumi:"producerProperties"`
 	PublicKeyFingerprint pulumi.StringInput `pulumi:"publicKeyFingerprint"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+	RedisClusterId pulumi.StringInput `pulumi:"redisClusterId"`
 	// The name of the region. e.g.: us-ashburn-1
 	Region pulumi.StringInput `pulumi:"region"`
 	// Controls the network traffic direction to the target: SHARED_SERVICE_ENDPOINT: Traffic flows through the Goldengate Service's network to public hosts. Cannot be used for private targets.  SHARED_DEPLOYMENT_ENDPOINT: Network traffic flows from the assigned deployment's private endpoint through the deployment's subnet. DEDICATED_ENDPOINT: A dedicated private endpoint is created in the target VCN subnet for the connection. The subnetId is required when DEDICATED_ENDPOINT networking is selected.
@@ -2284,13 +2803,16 @@ type GetConnectionsConnectionCollectionItemArgs struct {
 	// If set to true, the driver validates the certificate that is sent by the database server.
 	ShouldValidateServerCertificate pulumi.BoolInput `pulumi:"shouldValidateServerCertificate"`
 	// Database Certificate - The base64 encoded content of pem file containing the server public key (for 1-way SSL).
-	SslCa          pulumi.StringInput `pulumi:"sslCa"`
-	SslCert        pulumi.StringInput `pulumi:"sslCert"`
-	SslCrl         pulumi.StringInput `pulumi:"sslCrl"`
-	SslKey         pulumi.StringInput `pulumi:"sslKey"`
-	SslKeyPassword pulumi.StringInput `pulumi:"sslKeyPassword"`
+	SslCa               pulumi.StringInput `pulumi:"sslCa"`
+	SslCert             pulumi.StringInput `pulumi:"sslCert"`
+	SslClientKeystash   pulumi.StringInput `pulumi:"sslClientKeystash"`
+	SslClientKeystoredb pulumi.StringInput `pulumi:"sslClientKeystoredb"`
+	SslCrl              pulumi.StringInput `pulumi:"sslCrl"`
+	SslKey              pulumi.StringInput `pulumi:"sslKey"`
+	SslKeyPassword      pulumi.StringInput `pulumi:"sslKeyPassword"`
 	// SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
-	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	SslMode              pulumi.StringInput `pulumi:"sslMode"`
+	SslServerCertificate pulumi.StringInput `pulumi:"sslServerCertificate"`
 	// A filter to return only connections having the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the stream pool being referenced.
@@ -2390,6 +2912,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) AdditionalAttributes() Get
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemAdditionalAttribute {
 		return v.AdditionalAttributes
 	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
+}
+
+// Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections, when a databaseId is provided. The default value is MTLS.
+func (o GetConnectionsConnectionCollectionItemOutput) AuthenticationMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.AuthenticationMode }).(pulumi.StringOutput)
 }
 
 // Used authentication mechanism to be provided for the following connection types:
@@ -2525,6 +3052,10 @@ func (o GetConnectionsConnectionCollectionItemOutput) IngressIps() GetConnection
 	}).(GetConnectionsConnectionCollectionItemIngressIpArrayOutput)
 }
 
+func (o GetConnectionsConnectionCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // The Connection Factory can be looked up using this name. e.g.: 'ConnectionFactory'
 func (o GetConnectionsConnectionCollectionItemOutput) JndiConnectionFactory() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.JndiConnectionFactory }).(pulumi.StringOutput)
@@ -2567,6 +3098,13 @@ func (o GetConnectionsConnectionCollectionItemOutput) LifecycleDetails() pulumi.
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
+// Locks associated with this resource.
+func (o GetConnectionsConnectionCollectionItemOutput) Locks() GetConnectionsConnectionCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemLock {
+		return v.Locks
+	}).(GetConnectionsConnectionCollectionItemLockArrayOutput)
+}
+
 // An array of Network Security Group OCIDs used to define network access for either Deployments or Connections.
 func (o GetConnectionsConnectionCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
@@ -2601,6 +3139,11 @@ func (o GetConnectionsConnectionCollectionItemOutput) ProducerProperties() pulum
 
 func (o GetConnectionsConnectionCollectionItemOutput) PublicKeyFingerprint() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PublicKeyFingerprint }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+func (o GetConnectionsConnectionCollectionItemOutput) RedisClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.RedisClusterId }).(pulumi.StringOutput)
 }
 
 // The name of the region. e.g.: us-ashburn-1
@@ -2662,6 +3205,14 @@ func (o GetConnectionsConnectionCollectionItemOutput) SslCert() pulumi.StringOut
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCert }).(pulumi.StringOutput)
 }
 
+func (o GetConnectionsConnectionCollectionItemOutput) SslClientKeystash() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslClientKeystash }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslClientKeystoredb() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslClientKeystoredb }).(pulumi.StringOutput)
+}
+
 func (o GetConnectionsConnectionCollectionItemOutput) SslCrl() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCrl }).(pulumi.StringOutput)
 }
@@ -2677,6 +3228,10 @@ func (o GetConnectionsConnectionCollectionItemOutput) SslKeyPassword() pulumi.St
 // SSL mode to be provided for the following connection types: MYSQL, POSTGRESQL.
 func (o GetConnectionsConnectionCollectionItemOutput) SslMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslServerCertificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslServerCertificate }).(pulumi.StringOutput)
 }
 
 // A filter to return only connections having the 'lifecycleState' given.
@@ -3096,6 +3651,130 @@ func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) Index(i pulu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemIngressIp {
 		return vs[0].([]GetConnectionsConnectionCollectionItemIngressIp)[vs[1].(int)]
 	}).(GetConnectionsConnectionCollectionItemIngressIpOutput)
+}
+
+type GetConnectionsConnectionCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetConnectionsConnectionCollectionItemLockInput is an input type that accepts GetConnectionsConnectionCollectionItemLockArgs and GetConnectionsConnectionCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemLockInput` via:
+//
+//	GetConnectionsConnectionCollectionItemLockArgs{...}
+type GetConnectionsConnectionCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemLockOutput() GetConnectionsConnectionCollectionItemLockOutput
+	ToGetConnectionsConnectionCollectionItemLockOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemLockOutput
+}
+
+type GetConnectionsConnectionCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetConnectionsConnectionCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemLockArgs) ToGetConnectionsConnectionCollectionItemLockOutput() GetConnectionsConnectionCollectionItemLockOutput {
+	return i.ToGetConnectionsConnectionCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemLockArgs) ToGetConnectionsConnectionCollectionItemLockOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemLockOutput)
+}
+
+// GetConnectionsConnectionCollectionItemLockArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemLockArray and GetConnectionsConnectionCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemLockArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemLockArray{ GetConnectionsConnectionCollectionItemLockArgs{...} }
+type GetConnectionsConnectionCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemLockArrayOutput() GetConnectionsConnectionCollectionItemLockArrayOutput
+	ToGetConnectionsConnectionCollectionItemLockArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemLockArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemLockArray []GetConnectionsConnectionCollectionItemLockInput
+
+func (GetConnectionsConnectionCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemLockArray) ToGetConnectionsConnectionCollectionItemLockArrayOutput() GetConnectionsConnectionCollectionItemLockArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemLockArray) ToGetConnectionsConnectionCollectionItemLockArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemLockArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemLockOutput) ToGetConnectionsConnectionCollectionItemLockOutput() GetConnectionsConnectionCollectionItemLockOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemLockOutput) ToGetConnectionsConnectionCollectionItemLockOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetConnectionsConnectionCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetConnectionsConnectionCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionsConnectionCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetConnectionsConnectionCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemLockArrayOutput) ToGetConnectionsConnectionCollectionItemLockArrayOutput() GetConnectionsConnectionCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemLockArrayOutput) ToGetConnectionsConnectionCollectionItemLockArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemLock {
+		return vs[0].([]GetConnectionsConnectionCollectionItemLock)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemLockOutput)
 }
 
 type GetConnectionsFilter struct {
@@ -3733,6 +4412,130 @@ func (o GetDatabaseRegistrationsFilterArrayOutput) Index(i pulumi.IntInput) GetD
 	}).(GetDatabaseRegistrationsFilterOutput)
 }
 
+type GetDeploymentBackupLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetDeploymentBackupLockInput is an input type that accepts GetDeploymentBackupLockArgs and GetDeploymentBackupLockOutput values.
+// You can construct a concrete instance of `GetDeploymentBackupLockInput` via:
+//
+//	GetDeploymentBackupLockArgs{...}
+type GetDeploymentBackupLockInput interface {
+	pulumi.Input
+
+	ToGetDeploymentBackupLockOutput() GetDeploymentBackupLockOutput
+	ToGetDeploymentBackupLockOutputWithContext(context.Context) GetDeploymentBackupLockOutput
+}
+
+type GetDeploymentBackupLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDeploymentBackupLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentBackupLock)(nil)).Elem()
+}
+
+func (i GetDeploymentBackupLockArgs) ToGetDeploymentBackupLockOutput() GetDeploymentBackupLockOutput {
+	return i.ToGetDeploymentBackupLockOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentBackupLockArgs) ToGetDeploymentBackupLockOutputWithContext(ctx context.Context) GetDeploymentBackupLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentBackupLockOutput)
+}
+
+// GetDeploymentBackupLockArrayInput is an input type that accepts GetDeploymentBackupLockArray and GetDeploymentBackupLockArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentBackupLockArrayInput` via:
+//
+//	GetDeploymentBackupLockArray{ GetDeploymentBackupLockArgs{...} }
+type GetDeploymentBackupLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentBackupLockArrayOutput() GetDeploymentBackupLockArrayOutput
+	ToGetDeploymentBackupLockArrayOutputWithContext(context.Context) GetDeploymentBackupLockArrayOutput
+}
+
+type GetDeploymentBackupLockArray []GetDeploymentBackupLockInput
+
+func (GetDeploymentBackupLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentBackupLock)(nil)).Elem()
+}
+
+func (i GetDeploymentBackupLockArray) ToGetDeploymentBackupLockArrayOutput() GetDeploymentBackupLockArrayOutput {
+	return i.ToGetDeploymentBackupLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentBackupLockArray) ToGetDeploymentBackupLockArrayOutputWithContext(ctx context.Context) GetDeploymentBackupLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentBackupLockArrayOutput)
+}
+
+type GetDeploymentBackupLockOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentBackupLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentBackupLock)(nil)).Elem()
+}
+
+func (o GetDeploymentBackupLockOutput) ToGetDeploymentBackupLockOutput() GetDeploymentBackupLockOutput {
+	return o
+}
+
+func (o GetDeploymentBackupLockOutput) ToGetDeploymentBackupLockOutputWithContext(ctx context.Context) GetDeploymentBackupLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDeploymentBackupLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDeploymentBackupLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentBackupLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetDeploymentBackupLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDeploymentBackupLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentBackupLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentBackupLock)(nil)).Elem()
+}
+
+func (o GetDeploymentBackupLockArrayOutput) ToGetDeploymentBackupLockArrayOutput() GetDeploymentBackupLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentBackupLockArrayOutput) ToGetDeploymentBackupLockArrayOutputWithContext(ctx context.Context) GetDeploymentBackupLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentBackupLockArrayOutput) Index(i pulumi.IntInput) GetDeploymentBackupLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentBackupLock {
+		return vs[0].([]GetDeploymentBackupLock)[vs[1].(int)]
+	}).(GetDeploymentBackupLockOutput)
+}
+
 type GetDeploymentBackupsDeploymentBackupCollection struct {
 	Items []GetDeploymentBackupsDeploymentBackupCollectionItem `pulumi:"items"`
 }
@@ -3840,6 +4643,8 @@ type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId string `pulumi:"deploymentId"`
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType string `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName string `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -3847,9 +4652,12 @@ type GetDeploymentBackupsDeploymentBackupCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	Id string `pulumi:"id"`
 	// True if this object is automatically created
-	IsAutomatic bool `pulumi:"isAutomatic"`
+	IsAutomatic    bool `pulumi:"isAutomatic"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks []GetDeploymentBackupsDeploymentBackupCollectionItemLock `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace string `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -3894,6 +4702,8 @@ type GetDeploymentBackupsDeploymentBackupCollectionItemArgs struct {
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deployment in which to list resources.
 	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+	DeploymentType pulumi.StringInput `pulumi:"deploymentType"`
 	// A filter to return only the resources that match the entire 'displayName' given.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// A simple key-value pair that is applied without any predefined name, type, or scope. Exists for cross-compatibility only.  Example: `{"bar-key": "value"}`
@@ -3901,9 +4711,12 @@ type GetDeploymentBackupsDeploymentBackupCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup being referenced.
 	Id pulumi.StringInput `pulumi:"id"`
 	// True if this object is automatically created
-	IsAutomatic pulumi.BoolInput `pulumi:"isAutomatic"`
+	IsAutomatic    pulumi.BoolInput `pulumi:"isAutomatic"`
+	IsLockOverride pulumi.BoolInput `pulumi:"isLockOverride"`
 	// Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// Locks associated with this resource.
+	Locks GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayInput `pulumi:"locks"`
 	// Name of namespace that serves as a container for all of your buckets
 	Namespace pulumi.StringInput `pulumi:"namespace"`
 	// Name of the object to be uploaded to object storage
@@ -4004,6 +4817,11 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) DeploymentId()
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
+// The type of deployment, which can be any one of the Allowed values.  NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.  Its use is discouraged in favor of 'DATABASE_ORACLE'.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) DeploymentType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.DeploymentType }).(pulumi.StringOutput)
+}
+
 // A filter to return only the resources that match the entire 'displayName' given.
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
@@ -4026,9 +4844,20 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) IsAutomatic() 
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) bool { return v.IsAutomatic }).(pulumi.BoolOutput)
 }
 
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // Describes the object's current state in detail. For example, it can be used to provide actionable information for a resource in a Failed state.
 func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemOutput) Locks() GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItem) []GetDeploymentBackupsDeploymentBackupCollectionItemLock {
+		return v.Locks
+	}).(GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput)
 }
 
 // Name of namespace that serves as a container for all of your buckets
@@ -4099,6 +4928,130 @@ func (o GetDeploymentBackupsDeploymentBackupCollectionItemArrayOutput) Index(i p
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentBackupsDeploymentBackupCollectionItem {
 		return vs[0].([]GetDeploymentBackupsDeploymentBackupCollectionItem)[vs[1].(int)]
 	}).(GetDeploymentBackupsDeploymentBackupCollectionItemOutput)
+}
+
+type GetDeploymentBackupsDeploymentBackupCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetDeploymentBackupsDeploymentBackupCollectionItemLockInput is an input type that accepts GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs and GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDeploymentBackupsDeploymentBackupCollectionItemLockInput` via:
+//
+//	GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs{...}
+type GetDeploymentBackupsDeploymentBackupCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutput() GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput
+	ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutputWithContext(context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput
+}
+
+type GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutput() GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput {
+	return i.ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutputWithContext(ctx context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput)
+}
+
+// GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayInput is an input type that accepts GetDeploymentBackupsDeploymentBackupCollectionItemLockArray and GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayInput` via:
+//
+//	GetDeploymentBackupsDeploymentBackupCollectionItemLockArray{ GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs{...} }
+type GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput() GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput
+	ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutputWithContext(context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput
+}
+
+type GetDeploymentBackupsDeploymentBackupCollectionItemLockArray []GetDeploymentBackupsDeploymentBackupCollectionItemLockInput
+
+func (GetDeploymentBackupsDeploymentBackupCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentBackupsDeploymentBackupCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDeploymentBackupsDeploymentBackupCollectionItemLockArray) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput() GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput {
+	return i.ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentBackupsDeploymentBackupCollectionItemLockArray) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput)
+}
+
+type GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutput() GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockOutputWithContext(ctx context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentBackupsDeploymentBackupCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentBackupsDeploymentBackupCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput() GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput) ToGetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentBackupsDeploymentBackupCollectionItemLock {
+		return vs[0].([]GetDeploymentBackupsDeploymentBackupCollectionItemLock)[vs[1].(int)]
+	}).(GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput)
 }
 
 type GetDeploymentBackupsFilter struct {
@@ -4304,33 +5257,47 @@ func (o GetDeploymentCertificatesCertificateCollectionArrayOutput) Index(i pulum
 }
 
 type GetDeploymentCertificatesCertificateCollectionItem struct {
-	AuthorityKeyId     string `pulumi:"authorityKeyId"`
+	// The Certificate authority key id.
+	AuthorityKeyId string `pulumi:"authorityKeyId"`
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent string `pulumi:"certificateContent"`
 	// A unique Deployment identifier.
 	DeploymentId string `pulumi:"deploymentId"`
-	IsCa         bool   `pulumi:"isCa"`
+	// Indicates if the certificate is ca.
+	IsCa           bool `pulumi:"isCa"`
+	IsLockOverride bool `pulumi:"isLockOverride"`
 	// Indicates if the certificate is self signed.
-	IsSelfSigned bool   `pulumi:"isSelfSigned"`
-	Issuer       string `pulumi:"issuer"`
+	IsSelfSigned bool `pulumi:"isSelfSigned"`
+	// The Certificate issuer.
+	Issuer string `pulumi:"issuer"`
 	// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-	Key                string `pulumi:"key"`
-	Md5hash            string `pulumi:"md5hash"`
-	PublicKey          string `pulumi:"publicKey"`
+	Key string `pulumi:"key"`
+	// The Certificate md5Hash.
+	Md5hash string `pulumi:"md5hash"`
+	// The Certificate public key.
+	PublicKey string `pulumi:"publicKey"`
+	// The Certificate public key algorithm.
 	PublicKeyAlgorithm string `pulumi:"publicKeyAlgorithm"`
-	PublicKeySize      string `pulumi:"publicKeySize"`
-	Serial             string `pulumi:"serial"`
-	Sha1hash           string `pulumi:"sha1hash"`
+	// The Certificate public key size.
+	PublicKeySize string `pulumi:"publicKeySize"`
+	// The Certificate serial.
+	Serial string `pulumi:"serial"`
+	// The Certificate sha1 hash.
+	Sha1hash string `pulumi:"sha1hash"`
 	// A filter to return only connections having the 'lifecycleState' given.
 	State string `pulumi:"state"`
 	// The Certificate subject.
-	Subject      string `pulumi:"subject"`
+	Subject string `pulumi:"subject"`
+	// The Certificate subject key id.
 	SubjectKeyId string `pulumi:"subjectKeyId"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated   string `pulumi:"timeCreated"`
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeValidFrom string `pulumi:"timeValidFrom"`
 	// The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeValidTo string `pulumi:"timeValidTo"`
-	Version     string `pulumi:"version"`
+	// The Certificate version.
+	Version string `pulumi:"version"`
 }
 
 // GetDeploymentCertificatesCertificateCollectionItemInput is an input type that accepts GetDeploymentCertificatesCertificateCollectionItemArgs and GetDeploymentCertificatesCertificateCollectionItemOutput values.
@@ -4345,33 +5312,47 @@ type GetDeploymentCertificatesCertificateCollectionItemInput interface {
 }
 
 type GetDeploymentCertificatesCertificateCollectionItemArgs struct {
-	AuthorityKeyId     pulumi.StringInput `pulumi:"authorityKeyId"`
+	// The Certificate authority key id.
+	AuthorityKeyId pulumi.StringInput `pulumi:"authorityKeyId"`
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	CertificateContent pulumi.StringInput `pulumi:"certificateContent"`
 	// A unique Deployment identifier.
 	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
-	IsCa         pulumi.BoolInput   `pulumi:"isCa"`
+	// Indicates if the certificate is ca.
+	IsCa           pulumi.BoolInput `pulumi:"isCa"`
+	IsLockOverride pulumi.BoolInput `pulumi:"isLockOverride"`
 	// Indicates if the certificate is self signed.
-	IsSelfSigned pulumi.BoolInput   `pulumi:"isSelfSigned"`
-	Issuer       pulumi.StringInput `pulumi:"issuer"`
+	IsSelfSigned pulumi.BoolInput `pulumi:"isSelfSigned"`
+	// The Certificate issuer.
+	Issuer pulumi.StringInput `pulumi:"issuer"`
 	// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter.
-	Key                pulumi.StringInput `pulumi:"key"`
-	Md5hash            pulumi.StringInput `pulumi:"md5hash"`
-	PublicKey          pulumi.StringInput `pulumi:"publicKey"`
+	Key pulumi.StringInput `pulumi:"key"`
+	// The Certificate md5Hash.
+	Md5hash pulumi.StringInput `pulumi:"md5hash"`
+	// The Certificate public key.
+	PublicKey pulumi.StringInput `pulumi:"publicKey"`
+	// The Certificate public key algorithm.
 	PublicKeyAlgorithm pulumi.StringInput `pulumi:"publicKeyAlgorithm"`
-	PublicKeySize      pulumi.StringInput `pulumi:"publicKeySize"`
-	Serial             pulumi.StringInput `pulumi:"serial"`
-	Sha1hash           pulumi.StringInput `pulumi:"sha1hash"`
+	// The Certificate public key size.
+	PublicKeySize pulumi.StringInput `pulumi:"publicKeySize"`
+	// The Certificate serial.
+	Serial pulumi.StringInput `pulumi:"serial"`
+	// The Certificate sha1 hash.
+	Sha1hash pulumi.StringInput `pulumi:"sha1hash"`
 	// A filter to return only connections having the 'lifecycleState' given.
 	State pulumi.StringInput `pulumi:"state"`
 	// The Certificate subject.
-	Subject      pulumi.StringInput `pulumi:"subject"`
+	Subject pulumi.StringInput `pulumi:"subject"`
+	// The Certificate subject key id.
 	SubjectKeyId pulumi.StringInput `pulumi:"subjectKeyId"`
 	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
-	TimeCreated   pulumi.StringInput `pulumi:"timeCreated"`
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeValidFrom pulumi.StringInput `pulumi:"timeValidFrom"`
 	// The time the certificate is valid to. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 	TimeValidTo pulumi.StringInput `pulumi:"timeValidTo"`
-	Version     pulumi.StringInput `pulumi:"version"`
+	// The Certificate version.
+	Version pulumi.StringInput `pulumi:"version"`
 }
 
 func (GetDeploymentCertificatesCertificateCollectionItemArgs) ElementType() reflect.Type {
@@ -4425,10 +5406,12 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) ToGetDeploymen
 	return o
 }
 
+// The Certificate authority key id.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) AuthorityKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.AuthorityKeyId }).(pulumi.StringOutput)
 }
 
+// The base64 encoded content of the PEM file containing the SSL certificate.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) CertificateContent() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.CertificateContent }).(pulumi.StringOutput)
 }
@@ -4438,8 +5421,13 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) DeploymentId()
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.DeploymentId }).(pulumi.StringOutput)
 }
 
+// Indicates if the certificate is ca.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) IsCa() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) bool { return v.IsCa }).(pulumi.BoolOutput)
+}
+
+func (o GetDeploymentCertificatesCertificateCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
 }
 
 // Indicates if the certificate is self signed.
@@ -4447,6 +5435,7 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) IsSelfSigned()
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) bool { return v.IsSelfSigned }).(pulumi.BoolOutput)
 }
 
+// The Certificate issuer.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Issuer() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Issuer }).(pulumi.StringOutput)
 }
@@ -4456,26 +5445,32 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Key() pulumi.S
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Key }).(pulumi.StringOutput)
 }
 
+// The Certificate md5Hash.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Md5hash() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Md5hash }).(pulumi.StringOutput)
 }
 
+// The Certificate public key.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) PublicKey() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.PublicKey }).(pulumi.StringOutput)
 }
 
+// The Certificate public key algorithm.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) PublicKeyAlgorithm() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.PublicKeyAlgorithm }).(pulumi.StringOutput)
 }
 
+// The Certificate public key size.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) PublicKeySize() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.PublicKeySize }).(pulumi.StringOutput)
 }
 
+// The Certificate serial.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Serial() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Serial }).(pulumi.StringOutput)
 }
 
+// The Certificate sha1 hash.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Sha1hash() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Sha1hash }).(pulumi.StringOutput)
 }
@@ -4490,6 +5485,7 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Subject() pulu
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Subject }).(pulumi.StringOutput)
 }
 
+// The Certificate subject key id.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) SubjectKeyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.SubjectKeyId }).(pulumi.StringOutput)
 }
@@ -4499,6 +5495,7 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) TimeCreated() 
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
+// The time the certificate is valid from. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) TimeValidFrom() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.TimeValidFrom }).(pulumi.StringOutput)
 }
@@ -4508,6 +5505,7 @@ func (o GetDeploymentCertificatesCertificateCollectionItemOutput) TimeValidTo() 
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.TimeValidTo }).(pulumi.StringOutput)
 }
 
+// The Certificate version.
 func (o GetDeploymentCertificatesCertificateCollectionItemOutput) Version() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentCertificatesCertificateCollectionItem) string { return v.Version }).(pulumi.StringOutput)
 }
@@ -4877,6 +5875,130 @@ func (o GetDeploymentIngressIpArrayOutput) Index(i pulumi.IntInput) GetDeploymen
 	}).(GetDeploymentIngressIpOutput)
 }
 
+type GetDeploymentLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetDeploymentLockInput is an input type that accepts GetDeploymentLockArgs and GetDeploymentLockOutput values.
+// You can construct a concrete instance of `GetDeploymentLockInput` via:
+//
+//	GetDeploymentLockArgs{...}
+type GetDeploymentLockInput interface {
+	pulumi.Input
+
+	ToGetDeploymentLockOutput() GetDeploymentLockOutput
+	ToGetDeploymentLockOutputWithContext(context.Context) GetDeploymentLockOutput
+}
+
+type GetDeploymentLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDeploymentLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentLock)(nil)).Elem()
+}
+
+func (i GetDeploymentLockArgs) ToGetDeploymentLockOutput() GetDeploymentLockOutput {
+	return i.ToGetDeploymentLockOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentLockArgs) ToGetDeploymentLockOutputWithContext(ctx context.Context) GetDeploymentLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentLockOutput)
+}
+
+// GetDeploymentLockArrayInput is an input type that accepts GetDeploymentLockArray and GetDeploymentLockArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentLockArrayInput` via:
+//
+//	GetDeploymentLockArray{ GetDeploymentLockArgs{...} }
+type GetDeploymentLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentLockArrayOutput() GetDeploymentLockArrayOutput
+	ToGetDeploymentLockArrayOutputWithContext(context.Context) GetDeploymentLockArrayOutput
+}
+
+type GetDeploymentLockArray []GetDeploymentLockInput
+
+func (GetDeploymentLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentLock)(nil)).Elem()
+}
+
+func (i GetDeploymentLockArray) ToGetDeploymentLockArrayOutput() GetDeploymentLockArrayOutput {
+	return i.ToGetDeploymentLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentLockArray) ToGetDeploymentLockArrayOutputWithContext(ctx context.Context) GetDeploymentLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentLockArrayOutput)
+}
+
+type GetDeploymentLockOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentLock)(nil)).Elem()
+}
+
+func (o GetDeploymentLockOutput) ToGetDeploymentLockOutput() GetDeploymentLockOutput {
+	return o
+}
+
+func (o GetDeploymentLockOutput) ToGetDeploymentLockOutputWithContext(ctx context.Context) GetDeploymentLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDeploymentLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDeploymentLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetDeploymentLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDeploymentLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentLock)(nil)).Elem()
+}
+
+func (o GetDeploymentLockArrayOutput) ToGetDeploymentLockArrayOutput() GetDeploymentLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentLockArrayOutput) ToGetDeploymentLockArrayOutputWithContext(ctx context.Context) GetDeploymentLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentLockArrayOutput) Index(i pulumi.IntInput) GetDeploymentLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentLock {
+		return vs[0].([]GetDeploymentLock)[vs[1].(int)]
+	}).(GetDeploymentLockOutput)
+}
+
 type GetDeploymentMaintenanceConfiguration struct {
 	// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
 	BundleReleaseUpgradePeriodInDays int `pulumi:"bundleReleaseUpgradePeriodInDays"`
@@ -5120,7 +6242,7 @@ type GetDeploymentOggData struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	// The GoldenGate deployment console username.
 	AdminUsername string `pulumi:"adminUsername"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	Certificate string `pulumi:"certificate"`
 	// The type of credential store for OGG.
 	CredentialStore string `pulumi:"credentialStore"`
@@ -5150,7 +6272,7 @@ type GetDeploymentOggDataArgs struct {
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
 	// The GoldenGate deployment console username.
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	Certificate pulumi.StringInput `pulumi:"certificate"`
 	// The type of credential store for OGG.
 	CredentialStore pulumi.StringInput `pulumi:"credentialStore"`
@@ -5225,7 +6347,7 @@ func (o GetDeploymentOggDataOutput) AdminUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
-// A PEM-encoded SSL certificate.
+// The base64 encoded content of the PEM file containing the SSL certificate.
 func (o GetDeploymentOggDataOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentOggData) string { return v.Certificate }).(pulumi.StringOutput)
 }
@@ -6834,6 +7956,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	IsHealthy bool `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
 	IsLatestVersion bool `pulumi:"isLatestVersion"`
+	IsLockOverride  bool `pulumi:"isLockOverride"`
 	// True if this object is publicly available.
 	IsPublic bool `pulumi:"isPublic"`
 	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -6848,6 +7971,8 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	LoadBalancerId string `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
 	LoadBalancerSubnetId string `pulumi:"loadBalancerSubnetId"`
+	// Locks associated with this resource.
+	Locks []GetDeploymentsDeploymentCollectionItemLock `pulumi:"locks"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations []GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
@@ -6868,7 +7993,7 @@ type GetDeploymentsDeploymentCollectionItem struct {
 	State string `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes string `pulumi:"storageUtilizationInBytes"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId string `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -6928,6 +8053,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	IsHealthy pulumi.BoolInput `pulumi:"isHealthy"`
 	// Indicates if the resource is the the latest available version.
 	IsLatestVersion pulumi.BoolInput `pulumi:"isLatestVersion"`
+	IsLockOverride  pulumi.BoolInput `pulumi:"isLockOverride"`
 	// True if this object is publicly available.
 	IsPublic pulumi.BoolInput `pulumi:"isPublic"`
 	// Indicator will be true if the amount of storage being utilized exceeds the allowable storage utilization limit.  Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate service.
@@ -6942,6 +8068,8 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	LoadBalancerId pulumi.StringInput `pulumi:"loadBalancerId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
 	LoadBalancerSubnetId pulumi.StringInput `pulumi:"loadBalancerSubnetId"`
+	// Locks associated with this resource.
+	Locks GetDeploymentsDeploymentCollectionItemLockArrayInput `pulumi:"locks"`
 	// Attributes for configuring automatic deployment maintenance.
 	MaintenanceConfigurations GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput `pulumi:"maintenanceConfigurations"`
 	// Defines the maintenance window, when automatic actions can be performed.
@@ -6962,7 +8090,7 @@ type GetDeploymentsDeploymentCollectionItemArgs struct {
 	State pulumi.StringInput `pulumi:"state"`
 	// The amount of storage being utilized (in bytes)
 	StorageUtilizationInBytes pulumi.StringInput `pulumi:"storageUtilizationInBytes"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 	SubnetId pulumi.StringInput `pulumi:"subnetId"`
 	// The system tags associated with this resource, if any. The system tags are set by Oracle Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{orcl-cloud: {free-tier-retain: true}}`
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
@@ -7113,6 +8241,10 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) IsLatestVersion() pulumi.B
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsLatestVersion }).(pulumi.BoolOutput)
 }
 
+func (o GetDeploymentsDeploymentCollectionItemOutput) IsLockOverride() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsLockOverride }).(pulumi.BoolOutput)
+}
+
 // True if this object is publicly available.
 func (o GetDeploymentsDeploymentCollectionItemOutput) IsPublic() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) bool { return v.IsPublic }).(pulumi.BoolOutput)
@@ -7146,6 +8278,13 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) LoadBalancerId() pulumi.St
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy. Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy. For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
 func (o GetDeploymentsDeploymentCollectionItemOutput) LoadBalancerSubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.LoadBalancerSubnetId }).(pulumi.StringOutput)
+}
+
+// Locks associated with this resource.
+func (o GetDeploymentsDeploymentCollectionItemOutput) Locks() GetDeploymentsDeploymentCollectionItemLockArrayOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) []GetDeploymentsDeploymentCollectionItemLock {
+		return v.Locks
+	}).(GetDeploymentsDeploymentCollectionItemLockArrayOutput)
 }
 
 // Attributes for configuring automatic deployment maintenance.
@@ -7204,7 +8343,7 @@ func (o GetDeploymentsDeploymentCollectionItemOutput) StorageUtilizationInBytes(
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.StorageUtilizationInBytes }).(pulumi.StringOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint. The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025, after which the private subnet will be enforced.
 func (o GetDeploymentsDeploymentCollectionItemOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
 }
@@ -7504,6 +8643,130 @@ func (o GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput) Index(i pulu
 	}).(GetDeploymentsDeploymentCollectionItemIngressIpOutput)
 }
 
+type GetDeploymentsDeploymentCollectionItemLock struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message string `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId string `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type string `pulumi:"type"`
+}
+
+// GetDeploymentsDeploymentCollectionItemLockInput is an input type that accepts GetDeploymentsDeploymentCollectionItemLockArgs and GetDeploymentsDeploymentCollectionItemLockOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemLockInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemLockArgs{...}
+type GetDeploymentsDeploymentCollectionItemLockInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemLockOutput() GetDeploymentsDeploymentCollectionItemLockOutput
+	ToGetDeploymentsDeploymentCollectionItemLockOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemLockOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemLockArgs struct {
+	// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+	Message pulumi.StringInput `pulumi:"message"`
+	// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+	RelatedResourceId pulumi.StringInput `pulumi:"relatedResourceId"`
+	// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// Type of the lock.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDeploymentsDeploymentCollectionItemLockArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemLockArgs) ToGetDeploymentsDeploymentCollectionItemLockOutput() GetDeploymentsDeploymentCollectionItemLockOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemLockOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemLockArgs) ToGetDeploymentsDeploymentCollectionItemLockOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemLockOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemLockOutput)
+}
+
+// GetDeploymentsDeploymentCollectionItemLockArrayInput is an input type that accepts GetDeploymentsDeploymentCollectionItemLockArray and GetDeploymentsDeploymentCollectionItemLockArrayOutput values.
+// You can construct a concrete instance of `GetDeploymentsDeploymentCollectionItemLockArrayInput` via:
+//
+//	GetDeploymentsDeploymentCollectionItemLockArray{ GetDeploymentsDeploymentCollectionItemLockArgs{...} }
+type GetDeploymentsDeploymentCollectionItemLockArrayInput interface {
+	pulumi.Input
+
+	ToGetDeploymentsDeploymentCollectionItemLockArrayOutput() GetDeploymentsDeploymentCollectionItemLockArrayOutput
+	ToGetDeploymentsDeploymentCollectionItemLockArrayOutputWithContext(context.Context) GetDeploymentsDeploymentCollectionItemLockArrayOutput
+}
+
+type GetDeploymentsDeploymentCollectionItemLockArray []GetDeploymentsDeploymentCollectionItemLockInput
+
+func (GetDeploymentsDeploymentCollectionItemLockArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemLock)(nil)).Elem()
+}
+
+func (i GetDeploymentsDeploymentCollectionItemLockArray) ToGetDeploymentsDeploymentCollectionItemLockArrayOutput() GetDeploymentsDeploymentCollectionItemLockArrayOutput {
+	return i.ToGetDeploymentsDeploymentCollectionItemLockArrayOutputWithContext(context.Background())
+}
+
+func (i GetDeploymentsDeploymentCollectionItemLockArray) ToGetDeploymentsDeploymentCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemLockArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDeploymentsDeploymentCollectionItemLockArrayOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemLockOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemLockOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemLockOutput) ToGetDeploymentsDeploymentCollectionItemLockOutput() GetDeploymentsDeploymentCollectionItemLockOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemLockOutput) ToGetDeploymentsDeploymentCollectionItemLockOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemLockOutput {
+	return o
+}
+
+// A message added by the creator of the lock. This is typically used to give an indication of why the resource is locked.
+func (o GetDeploymentsDeploymentCollectionItemLockOutput) Message() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemLock) string { return v.Message }).(pulumi.StringOutput)
+}
+
+// The id of the resource that is locking this resource. Indicates that deleting this resource will remove the lock.
+func (o GetDeploymentsDeploymentCollectionItemLockOutput) RelatedResourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemLock) string { return v.RelatedResourceId }).(pulumi.StringOutput)
+}
+
+// The time the resource was created. The format is defined by [RFC3339](https://tools.ietf.org/html/rfc3339), such as `2016-08-25T21:10:29.600Z`.
+func (o GetDeploymentsDeploymentCollectionItemLockOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemLock) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// Type of the lock.
+func (o GetDeploymentsDeploymentCollectionItemLockOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemLock) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDeploymentsDeploymentCollectionItemLockArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDeploymentsDeploymentCollectionItemLockArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDeploymentsDeploymentCollectionItemLock)(nil)).Elem()
+}
+
+func (o GetDeploymentsDeploymentCollectionItemLockArrayOutput) ToGetDeploymentsDeploymentCollectionItemLockArrayOutput() GetDeploymentsDeploymentCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemLockArrayOutput) ToGetDeploymentsDeploymentCollectionItemLockArrayOutputWithContext(ctx context.Context) GetDeploymentsDeploymentCollectionItemLockArrayOutput {
+	return o
+}
+
+func (o GetDeploymentsDeploymentCollectionItemLockArrayOutput) Index(i pulumi.IntInput) GetDeploymentsDeploymentCollectionItemLockOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDeploymentsDeploymentCollectionItemLock {
+		return vs[0].([]GetDeploymentsDeploymentCollectionItemLock)[vs[1].(int)]
+	}).(GetDeploymentsDeploymentCollectionItemLockOutput)
+}
+
 type GetDeploymentsDeploymentCollectionItemMaintenanceConfiguration struct {
 	// Defines auto upgrade period for bundle releases. Manually configured period cannot be longer than service defined period for bundle releases. This period must be shorter or equal to major release upgrade period. Not passing this field during create will equate to using the service default.
 	BundleReleaseUpgradePeriodInDays int `pulumi:"bundleReleaseUpgradePeriodInDays"`
@@ -7757,7 +9020,7 @@ type GetDeploymentsDeploymentCollectionItemOggData struct {
 	AdminPassword string `pulumi:"adminPassword"`
 	// The GoldenGate deployment console username.
 	AdminUsername string `pulumi:"adminUsername"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	Certificate string `pulumi:"certificate"`
 	// The type of credential store for OGG.
 	CredentialStore string `pulumi:"credentialStore"`
@@ -7787,7 +9050,7 @@ type GetDeploymentsDeploymentCollectionItemOggDataArgs struct {
 	AdminPassword pulumi.StringInput `pulumi:"adminPassword"`
 	// The GoldenGate deployment console username.
 	AdminUsername pulumi.StringInput `pulumi:"adminUsername"`
-	// A PEM-encoded SSL certificate.
+	// The base64 encoded content of the PEM file containing the SSL certificate.
 	Certificate pulumi.StringInput `pulumi:"certificate"`
 	// The type of credential store for OGG.
 	CredentialStore pulumi.StringInput `pulumi:"credentialStore"`
@@ -7862,7 +9125,7 @@ func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) AdminUsername() pul
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.AdminUsername }).(pulumi.StringOutput)
 }
 
-// A PEM-encoded SSL certificate.
+// The base64 encoded content of the PEM file containing the SSL certificate.
 func (o GetDeploymentsDeploymentCollectionItemOggDataOutput) Certificate() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDeploymentsDeploymentCollectionItemOggData) string { return v.Certificate }).(pulumi.StringOutput)
 }
@@ -9476,10 +10739,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionBootstrapServerArrayInput)(nil)).Elem(), ConnectionBootstrapServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpInput)(nil)).Elem(), ConnectionIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionLockInput)(nil)).Elem(), ConnectionLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionLockArrayInput)(nil)).Elem(), ConnectionLockArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentBackupLockInput)(nil)).Elem(), DeploymentBackupLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentBackupLockArrayInput)(nil)).Elem(), DeploymentBackupLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), DeploymentDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentIngressIpInput)(nil)).Elem(), DeploymentIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentIngressIpArrayInput)(nil)).Elem(), DeploymentIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentLockInput)(nil)).Elem(), DeploymentLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentLockArrayInput)(nil)).Elem(), DeploymentLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceConfigurationInput)(nil)).Elem(), DeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceConfigurationPtrInput)(nil)).Elem(), DeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentMaintenanceWindowInput)(nil)).Elem(), DeploymentMaintenanceWindowArgs{})
@@ -9498,6 +10767,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionBootstrapServerArrayInput)(nil)).Elem(), GetConnectionBootstrapServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpInput)(nil)).Elem(), GetConnectionIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpArrayInput)(nil)).Elem(), GetConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionLockInput)(nil)).Elem(), GetConnectionLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionLockArrayInput)(nil)).Elem(), GetConnectionLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArgs{})
@@ -9508,6 +10779,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemBootstrapServerArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemBootstrapServerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemLockInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemLockArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterInput)(nil)).Elem(), GetConnectionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterArrayInput)(nil)).Elem(), GetConnectionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsDatabaseRegistrationCollectionInput)(nil)).Elem(), GetDatabaseRegistrationsDatabaseRegistrationCollectionArgs{})
@@ -9516,10 +10789,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArrayInput)(nil)).Elem(), GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsFilterInput)(nil)).Elem(), GetDatabaseRegistrationsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDatabaseRegistrationsFilterArrayInput)(nil)).Elem(), GetDatabaseRegistrationsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupLockInput)(nil)).Elem(), GetDeploymentBackupLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupLockArrayInput)(nil)).Elem(), GetDeploymentBackupLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionArrayInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemArrayInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemLockInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayInput)(nil)).Elem(), GetDeploymentBackupsDeploymentBackupCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterInput)(nil)).Elem(), GetDeploymentBackupsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentBackupsFilterArrayInput)(nil)).Elem(), GetDeploymentBackupsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentCertificatesCertificateCollectionInput)(nil)).Elem(), GetDeploymentCertificatesCertificateCollectionArgs{})
@@ -9532,6 +10809,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentIngressIpInput)(nil)).Elem(), GetDeploymentIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentIngressIpArrayInput)(nil)).Elem(), GetDeploymentIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentLockInput)(nil)).Elem(), GetDeploymentLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentLockArrayInput)(nil)).Elem(), GetDeploymentLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceConfigurationArrayInput)(nil)).Elem(), GetDeploymentMaintenanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentMaintenanceWindowInput)(nil)).Elem(), GetDeploymentMaintenanceWindowArgs{})
@@ -9566,6 +10845,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIpInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemIngressIpArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemIngressIpArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemLockInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemLockArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemLockArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemLockArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentsDeploymentCollectionItemMaintenanceWindowInput)(nil)).Elem(), GetDeploymentsDeploymentCollectionItemMaintenanceWindowArgs{})
@@ -9604,10 +10885,16 @@ func init() {
 	pulumi.RegisterOutputType(ConnectionBootstrapServerArrayOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpOutput{})
 	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(ConnectionLockOutput{})
+	pulumi.RegisterOutputType(ConnectionLockArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentBackupLockOutput{})
+	pulumi.RegisterOutputType(DeploymentBackupLockArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataOutput{})
 	pulumi.RegisterOutputType(DeploymentDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentIngressIpOutput{})
 	pulumi.RegisterOutputType(DeploymentIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(DeploymentLockOutput{})
+	pulumi.RegisterOutputType(DeploymentLockArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceConfigurationOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(DeploymentMaintenanceWindowOutput{})
@@ -9626,6 +10913,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionBootstrapServerArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionIngressIpOutput{})
 	pulumi.RegisterOutputType(GetConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionLockOutput{})
+	pulumi.RegisterOutputType(GetConnectionLockArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemOutput{})
@@ -9636,6 +10925,8 @@ func init() {
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemBootstrapServerArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpOutput{})
 	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterOutput{})
 	pulumi.RegisterOutputType(GetConnectionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsDatabaseRegistrationCollectionOutput{})
@@ -9644,10 +10935,14 @@ func init() {
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsDatabaseRegistrationCollectionItemArrayOutput{})
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsFilterOutput{})
 	pulumi.RegisterOutputType(GetDatabaseRegistrationsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentBackupLockOutput{})
+	pulumi.RegisterOutputType(GetDeploymentBackupLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDeploymentBackupsDeploymentBackupCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterOutput{})
 	pulumi.RegisterOutputType(GetDeploymentBackupsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentCertificatesCertificateCollectionOutput{})
@@ -9660,6 +10955,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentIngressIpOutput{})
 	pulumi.RegisterOutputType(GetDeploymentIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentLockOutput{})
+	pulumi.RegisterOutputType(GetDeploymentLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentMaintenanceWindowOutput{})
@@ -9694,6 +10991,8 @@ func init() {
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemDeploymentDiagnosticDataArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemIngressIpOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemLockOutput{})
+	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemLockArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentsDeploymentCollectionItemMaintenanceWindowOutput{})

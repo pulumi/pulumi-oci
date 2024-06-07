@@ -29,6 +29,7 @@ namespace Pulumi.Oci.GoldenGate
     ///         CertificateContent = deploymentCertificateCertificateContent,
     ///         DeploymentId = testDeployment.Id,
     ///         Key = deploymentCertificateKey,
+    ///         IsLockOverride = deploymentCertificateIsLockOverride,
     ///     });
     /// 
     /// });
@@ -52,7 +53,7 @@ namespace Pulumi.Oci.GoldenGate
         public Output<string> AuthorityKeyId { get; private set; } = null!;
 
         /// <summary>
-        /// A PEM-encoded SSL certificate.
+        /// The base64 encoded content of the PEM file containing the SSL certificate.
         /// </summary>
         [Output("certificateContent")]
         public Output<string> CertificateContent { get; private set; } = null!;
@@ -68,6 +69,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Output("isCa")]
         public Output<bool> IsCa { get; private set; } = null!;
+
+        /// <summary>
+        /// Whether to override locks (if any exist).
+        /// </summary>
+        [Output("isLockOverride")]
+        public Output<bool> IsLockOverride { get; private set; } = null!;
 
         /// <summary>
         /// Indicates if the certificate is self signed.
@@ -216,7 +223,7 @@ namespace Pulumi.Oci.GoldenGate
     public sealed class DeploymentCertificateArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// A PEM-encoded SSL certificate.
+        /// The base64 encoded content of the PEM file containing the SSL certificate.
         /// </summary>
         [Input("certificateContent", required: true)]
         public Input<string> CertificateContent { get; set; } = null!;
@@ -226,6 +233,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("deploymentId", required: true)]
         public Input<string> DeploymentId { get; set; } = null!;
+
+        /// <summary>
+        /// Whether to override locks (if any exist).
+        /// </summary>
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
 
         /// <summary>
         /// The identifier key (unique name in the scope of the deployment) of the certificate being referenced.  It must be 1 to 32 characters long, must contain only alphanumeric characters and must start with a letter. 
@@ -252,7 +265,7 @@ namespace Pulumi.Oci.GoldenGate
         public Input<string>? AuthorityKeyId { get; set; }
 
         /// <summary>
-        /// A PEM-encoded SSL certificate.
+        /// The base64 encoded content of the PEM file containing the SSL certificate.
         /// </summary>
         [Input("certificateContent")]
         public Input<string>? CertificateContent { get; set; }
@@ -268,6 +281,12 @@ namespace Pulumi.Oci.GoldenGate
         /// </summary>
         [Input("isCa")]
         public Input<bool>? IsCa { get; set; }
+
+        /// <summary>
+        /// Whether to override locks (if any exist).
+        /// </summary>
+        [Input("isLockOverride")]
+        public Input<bool>? IsLockOverride { get; set; }
 
         /// <summary>
         /// Indicates if the certificate is self signed.

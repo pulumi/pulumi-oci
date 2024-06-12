@@ -14,6 +14,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
     public sealed class GetAlarmStatusesAlarmStatusResult
     {
         /// <summary>
+        /// Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// </summary>
+        public readonly string AlarmSummary;
+        /// <summary>
         /// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
         /// </summary>
         public readonly string DisplayName;
@@ -22,7 +26,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         /// </summary>
         public readonly string RuleName;
         /// <summary>
@@ -44,6 +48,8 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
         [OutputConstructor]
         private GetAlarmStatusesAlarmStatusResult(
+            string alarmSummary,
+
             string displayName,
 
             string id,
@@ -58,6 +64,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             string timestampTriggered)
         {
+            AlarmSummary = alarmSummary;
             DisplayName = displayName;
             Id = id;
             RuleName = ruleName;

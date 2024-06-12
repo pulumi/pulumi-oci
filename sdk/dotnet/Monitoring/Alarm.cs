@@ -45,11 +45,13 @@ namespace Pulumi.Oci.Monitoring
     ///         Namespace = alarmNamespace,
     ///         Query = alarmQuery,
     ///         Severity = alarmSeverity,
+    ///         AlarmSummary = alarmAlarmSummary,
     ///         Body = alarmBody,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
     ///         },
+    ///         EvaluationSlackDuration = alarmEvaluationSlackDuration,
     ///         FreeformTags = 
     ///         {
     ///             { "Department", "Finance" },
@@ -57,6 +59,7 @@ namespace Pulumi.Oci.Monitoring
     ///         IsNotificationsPerMetricDimensionEnabled = alarmIsNotificationsPerMetricDimensionEnabled,
     ///         MessageFormat = alarmMessageFormat,
     ///         MetricCompartmentIdInSubtree = alarmMetricCompartmentIdInSubtree,
+    ///         NotificationTitle = alarmNotificationTitle,
     ///         NotificationVersion = alarmNotificationVersion,
     ///         Overrides = new[]
     ///         {
@@ -97,7 +100,13 @@ namespace Pulumi.Oci.Monitoring
     public partial class Alarm : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// </summary>
+        [Output("alarmSummary")]
+        public Output<string> AlarmSummary { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Output("body")]
         public Output<string> Body { get; private set; } = null!;
@@ -129,6 +138,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+        /// </summary>
+        [Output("evaluationSlackDuration")]
+        public Output<string> EvaluationSlackDuration { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
@@ -176,6 +191,12 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> Namespace { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// </summary>
+        [Output("notificationTitle")]
+        public Output<string> NotificationTitle { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
         /// </summary>
         [Output("notificationVersion")]
@@ -204,7 +225,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> PendingDuration { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
         /// 
@@ -220,7 +241,9 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 
-        /// -----
+        /// ----- Example of absence alarm with custom absence detection period of 20 hours:
+        /// 
+        /// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         /// </summary>
         [Output("query")]
         public Output<string> Query { get; private set; } = null!;
@@ -248,7 +271,7 @@ namespace Pulumi.Oci.Monitoring
         public Output<string> ResourceGroup { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         /// </summary>
         [Output("ruleName")]
         public Output<string> RuleName { get; private set; } = null!;
@@ -330,7 +353,13 @@ namespace Pulumi.Oci.Monitoring
     public sealed class AlarmArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// </summary>
+        [Input("alarmSummary")]
+        public Input<string>? AlarmSummary { get; set; }
+
+        /// <summary>
+        /// (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Input("body")]
         public Input<string>? Body { get; set; }
@@ -374,6 +403,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+        /// </summary>
+        [Input("evaluationSlackDuration")]
+        public Input<string>? EvaluationSlackDuration { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
@@ -427,6 +462,12 @@ namespace Pulumi.Oci.Monitoring
         public Input<string> Namespace { get; set; } = null!;
 
         /// <summary>
+        /// (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// </summary>
+        [Input("notificationTitle")]
+        public Input<string>? NotificationTitle { get; set; }
+
+        /// <summary>
         /// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
         /// </summary>
         [Input("notificationVersion")]
@@ -461,7 +502,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? PendingDuration { get; set; }
 
         /// <summary>
-        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
         /// 
@@ -477,7 +518,9 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 
-        /// -----
+        /// ----- Example of absence alarm with custom absence detection period of 20 hours:
+        /// 
+        /// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         /// </summary>
         [Input("query", required: true)]
         public Input<string> Query { get; set; } = null!;
@@ -505,7 +548,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? ResourceGroup { get; set; }
 
         /// <summary>
-        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         /// </summary>
         [Input("ruleName")]
         public Input<string>? RuleName { get; set; }
@@ -531,7 +574,13 @@ namespace Pulumi.Oci.Monitoring
     public sealed class AlarmState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// (Updatable) The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// (Updatable) Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// </summary>
+        [Input("alarmSummary")]
+        public Input<string>? AlarmSummary { get; set; }
+
+        /// <summary>
+        /// (Updatable) The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         [Input("body")]
         public Input<string>? Body { get; set; }
@@ -575,6 +624,12 @@ namespace Pulumi.Oci.Monitoring
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
+
+        /// <summary>
+        /// (Updatable) Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+        /// </summary>
+        [Input("evaluationSlackDuration")]
+        public Input<string>? EvaluationSlackDuration { get; set; }
 
         [Input("freeformTags")]
         private InputMap<object>? _freeformTags;
@@ -628,6 +683,12 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? Namespace { get; set; }
 
         /// <summary>
+        /// (Updatable) Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// </summary>
+        [Input("notificationTitle")]
+        public Input<string>? NotificationTitle { get; set; }
+
+        /// <summary>
         /// (Updatable) The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
         /// </summary>
         [Input("notificationVersion")]
@@ -662,7 +723,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? PendingDuration { get; set; }
 
         /// <summary>
-        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// (Updatable) The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// 
         /// Example of threshold alarm:
         /// 
@@ -678,7 +739,9 @@ namespace Pulumi.Oci.Monitoring
         /// 
         /// CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
         /// 
-        /// -----
+        /// ----- Example of absence alarm with custom absence detection period of 20 hours:
+        /// 
+        /// ----- CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h) -----
         /// </summary>
         [Input("query")]
         public Input<string>? Query { get; set; }
@@ -706,7 +769,7 @@ namespace Pulumi.Oci.Monitoring
         public Input<string>? ResourceGroup { get; set; }
 
         /// <summary>
-        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// (Updatable) Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         /// </summary>
         [Input("ruleName")]
         public Input<string>? RuleName { get; set; }

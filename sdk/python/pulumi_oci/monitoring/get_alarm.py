@@ -22,10 +22,13 @@ class GetAlarmResult:
     """
     A collection of values returned by getAlarm.
     """
-    def __init__(__self__, alarm_id=None, body=None, compartment_id=None, defined_tags=None, destinations=None, display_name=None, freeform_tags=None, id=None, is_enabled=None, is_notifications_per_metric_dimension_enabled=None, message_format=None, metric_compartment_id=None, metric_compartment_id_in_subtree=None, namespace=None, notification_version=None, overrides=None, pending_duration=None, query=None, repeat_notification_duration=None, resolution=None, resource_group=None, rule_name=None, severity=None, state=None, suppressions=None, time_created=None, time_updated=None):
+    def __init__(__self__, alarm_id=None, alarm_summary=None, body=None, compartment_id=None, defined_tags=None, destinations=None, display_name=None, evaluation_slack_duration=None, freeform_tags=None, id=None, is_enabled=None, is_notifications_per_metric_dimension_enabled=None, message_format=None, metric_compartment_id=None, metric_compartment_id_in_subtree=None, namespace=None, notification_title=None, notification_version=None, overrides=None, pending_duration=None, query=None, repeat_notification_duration=None, resolution=None, resource_group=None, rule_name=None, severity=None, state=None, suppressions=None, time_created=None, time_updated=None):
         if alarm_id and not isinstance(alarm_id, str):
             raise TypeError("Expected argument 'alarm_id' to be a str")
         pulumi.set(__self__, "alarm_id", alarm_id)
+        if alarm_summary and not isinstance(alarm_summary, str):
+            raise TypeError("Expected argument 'alarm_summary' to be a str")
+        pulumi.set(__self__, "alarm_summary", alarm_summary)
         if body and not isinstance(body, str):
             raise TypeError("Expected argument 'body' to be a str")
         pulumi.set(__self__, "body", body)
@@ -41,6 +44,9 @@ class GetAlarmResult:
         if display_name and not isinstance(display_name, str):
             raise TypeError("Expected argument 'display_name' to be a str")
         pulumi.set(__self__, "display_name", display_name)
+        if evaluation_slack_duration and not isinstance(evaluation_slack_duration, str):
+            raise TypeError("Expected argument 'evaluation_slack_duration' to be a str")
+        pulumi.set(__self__, "evaluation_slack_duration", evaluation_slack_duration)
         if freeform_tags and not isinstance(freeform_tags, dict):
             raise TypeError("Expected argument 'freeform_tags' to be a dict")
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -65,6 +71,9 @@ class GetAlarmResult:
         if namespace and not isinstance(namespace, str):
             raise TypeError("Expected argument 'namespace' to be a str")
         pulumi.set(__self__, "namespace", namespace)
+        if notification_title and not isinstance(notification_title, str):
+            raise TypeError("Expected argument 'notification_title' to be a str")
+        pulumi.set(__self__, "notification_title", notification_title)
         if notification_version and not isinstance(notification_version, str):
             raise TypeError("Expected argument 'notification_version' to be a str")
         pulumi.set(__self__, "notification_version", notification_version)
@@ -111,10 +120,18 @@ class GetAlarmResult:
         return pulumi.get(self, "alarm_id")
 
     @property
+    @pulumi.getter(name="alarmSummary")
+    def alarm_summary(self) -> str:
+        """
+        Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        """
+        return pulumi.get(self, "alarm_summary")
+
+    @property
     @pulumi.getter
     def body(self) -> str:
         """
-        The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         """
         return pulumi.get(self, "body")
 
@@ -149,6 +166,14 @@ class GetAlarmResult:
         A user-friendly name for the alarm. It does not have to be unique, and it's changeable.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="evaluationSlackDuration")
+    def evaluation_slack_duration(self) -> str:
+        """
+        Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+        """
+        return pulumi.get(self, "evaluation_slack_duration")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -218,6 +243,14 @@ class GetAlarmResult:
         return pulumi.get(self, "namespace")
 
     @property
+    @pulumi.getter(name="notificationTitle")
+    def notification_title(self) -> str:
+        """
+        Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        """
+        return pulumi.get(self, "notification_title")
+
+    @property
     @pulumi.getter(name="notificationVersion")
     def notification_version(self) -> str:
         """
@@ -245,7 +278,7 @@ class GetAlarmResult:
     @pulumi.getter
     def query(self) -> str:
         """
-        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         """
         return pulumi.get(self, "query")
 
@@ -269,7 +302,7 @@ class GetAlarmResult:
     @pulumi.getter(name="resourceGroup")
     def resource_group(self) -> str:
         """
-        Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
+        Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         """
         return pulumi.get(self, "resource_group")
 
@@ -277,7 +310,7 @@ class GetAlarmResult:
     @pulumi.getter(name="ruleName")
     def rule_name(self) -> str:
         """
-        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         """
         return pulumi.get(self, "rule_name")
 
@@ -329,11 +362,13 @@ class AwaitableGetAlarmResult(GetAlarmResult):
             yield self
         return GetAlarmResult(
             alarm_id=self.alarm_id,
+            alarm_summary=self.alarm_summary,
             body=self.body,
             compartment_id=self.compartment_id,
             defined_tags=self.defined_tags,
             destinations=self.destinations,
             display_name=self.display_name,
+            evaluation_slack_duration=self.evaluation_slack_duration,
             freeform_tags=self.freeform_tags,
             id=self.id,
             is_enabled=self.is_enabled,
@@ -342,6 +377,7 @@ class AwaitableGetAlarmResult(GetAlarmResult):
             metric_compartment_id=self.metric_compartment_id,
             metric_compartment_id_in_subtree=self.metric_compartment_id_in_subtree,
             namespace=self.namespace,
+            notification_title=self.notification_title,
             notification_version=self.notification_version,
             overrides=self.overrides,
             pending_duration=self.pending_duration,
@@ -391,11 +427,13 @@ def get_alarm(alarm_id: Optional[str] = None,
 
     return AwaitableGetAlarmResult(
         alarm_id=pulumi.get(__ret__, 'alarm_id'),
+        alarm_summary=pulumi.get(__ret__, 'alarm_summary'),
         body=pulumi.get(__ret__, 'body'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         destinations=pulumi.get(__ret__, 'destinations'),
         display_name=pulumi.get(__ret__, 'display_name'),
+        evaluation_slack_duration=pulumi.get(__ret__, 'evaluation_slack_duration'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
         is_enabled=pulumi.get(__ret__, 'is_enabled'),
@@ -404,6 +442,7 @@ def get_alarm(alarm_id: Optional[str] = None,
         metric_compartment_id=pulumi.get(__ret__, 'metric_compartment_id'),
         metric_compartment_id_in_subtree=pulumi.get(__ret__, 'metric_compartment_id_in_subtree'),
         namespace=pulumi.get(__ret__, 'namespace'),
+        notification_title=pulumi.get(__ret__, 'notification_title'),
         notification_version=pulumi.get(__ret__, 'notification_version'),
         overrides=pulumi.get(__ret__, 'overrides'),
         pending_duration=pulumi.get(__ret__, 'pending_duration'),

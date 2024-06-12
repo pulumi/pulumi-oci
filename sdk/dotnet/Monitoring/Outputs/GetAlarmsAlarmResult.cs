@@ -14,7 +14,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
     public sealed class GetAlarmsAlarmResult
     {
         /// <summary>
-        /// The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+        /// Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+        /// </summary>
+        public readonly string AlarmSummary;
+        /// <summary>
+        /// The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
         /// </summary>
         public readonly string Body;
         /// <summary>
@@ -33,6 +37,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
         /// </summary>
         public readonly string DisplayName;
+        /// <summary>
+        /// Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+        /// </summary>
+        public readonly string EvaluationSlackDuration;
         /// <summary>
         /// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"Department": "Finance"}`
         /// </summary>
@@ -69,6 +77,10 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
+        /// Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+        /// </summary>
+        public readonly string NotificationTitle;
+        /// <summary>
         /// The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
         /// </summary>
         public readonly string NotificationVersion;
@@ -81,7 +93,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string PendingDuration;
         /// <summary>
-        /// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+        /// The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
         /// </summary>
         public readonly string Query;
         /// <summary>
@@ -93,11 +105,11 @@ namespace Pulumi.Oci.Monitoring.Outputs
         /// </summary>
         public readonly string Resolution;
         /// <summary>
-        /// Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
+        /// Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
         /// </summary>
         public readonly string ResourceGroup;
         /// <summary>
-        /// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+        /// Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
         /// </summary>
         public readonly string RuleName;
         /// <summary>
@@ -123,6 +135,8 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
         [OutputConstructor]
         private GetAlarmsAlarmResult(
+            string alarmSummary,
+
             string body,
 
             string compartmentId,
@@ -132,6 +146,8 @@ namespace Pulumi.Oci.Monitoring.Outputs
             ImmutableArray<string> destinations,
 
             string displayName,
+
+            string evaluationSlackDuration,
 
             ImmutableDictionary<string, object> freeformTags,
 
@@ -148,6 +164,8 @@ namespace Pulumi.Oci.Monitoring.Outputs
             bool metricCompartmentIdInSubtree,
 
             string @namespace,
+
+            string notificationTitle,
 
             string notificationVersion,
 
@@ -175,11 +193,13 @@ namespace Pulumi.Oci.Monitoring.Outputs
 
             string timeUpdated)
         {
+            AlarmSummary = alarmSummary;
             Body = body;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
             Destinations = destinations;
             DisplayName = displayName;
+            EvaluationSlackDuration = evaluationSlackDuration;
             FreeformTags = freeformTags;
             Id = id;
             IsEnabled = isEnabled;
@@ -188,6 +208,7 @@ namespace Pulumi.Oci.Monitoring.Outputs
             MetricCompartmentId = metricCompartmentId;
             MetricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
             Namespace = @namespace;
+            NotificationTitle = notificationTitle;
             NotificationVersion = notificationVersion;
             Overrides = overrides;
             PendingDuration = pendingDuration;

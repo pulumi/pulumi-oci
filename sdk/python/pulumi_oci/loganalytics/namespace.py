@@ -151,7 +151,7 @@ class Namespace(pulumi.CustomResource):
         Namespace can be imported using the `compartment_id` and `namespace`, e.g.
 
         ```sh
-        $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/<compartment_id>/namespace/<namespace>"
+        $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/{compartment_id}/namespace/{namespace}"
         ```
 
         :param str resource_name: The name of the resource.
@@ -188,7 +188,7 @@ class Namespace(pulumi.CustomResource):
         Namespace can be imported using the `compartment_id` and `namespace`, e.g.
 
         ```sh
-        $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/<compartment_id>/namespace/<namespace>"
+        $ pulumi import oci:LogAnalytics/namespace:Namespace test_namespace "compartmentId/{compartment_id}/namespace/{namespace}"
         ```
 
         :param str resource_name: The name of the resource.

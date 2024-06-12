@@ -17,7 +17,12 @@ import java.util.Objects;
 @CustomType
 public final class GetAlarmsAlarm {
     /**
-     * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+     * @return Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * 
+     */
+    private String alarmSummary;
+    /**
+     * @return The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
     private String body;
@@ -41,6 +46,11 @@ public final class GetAlarmsAlarm {
      * 
      */
     private String displayName;
+    /**
+     * @return Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     * 
+     */
+    private String evaluationSlackDuration;
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
@@ -85,6 +95,11 @@ public final class GetAlarmsAlarm {
      */
     private String namespace;
     /**
+     * @return Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+     * 
+     */
+    private String notificationTitle;
+    /**
      * @return The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
      * 
      */
@@ -100,7 +115,7 @@ public final class GetAlarmsAlarm {
      */
     private String pendingDuration;
     /**
-     * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
      */
     private String query;
@@ -115,12 +130,12 @@ public final class GetAlarmsAlarm {
      */
     private String resolution;
     /**
-     * @return Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
+     * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
     private String resourceGroup;
     /**
-     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     private String ruleName;
@@ -152,7 +167,14 @@ public final class GetAlarmsAlarm {
 
     private GetAlarmsAlarm() {}
     /**
-     * @return The human-readable content of the delivered alarm notification. Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
+     * @return Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * 
+     */
+    public String alarmSummary() {
+        return this.alarmSummary;
+    }
+    /**
+     * @return The human-readable content of the delivered alarm notification. Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). Oracle recommends providing guidance to operators for resolving the alarm condition. Consider adding links to standard runbook practices. Avoid entering confidential information.  Example: `High CPU usage alert. Follow runbook instructions for resolution.`
      * 
      */
     public String body() {
@@ -185,6 +207,13 @@ public final class GetAlarmsAlarm {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a string in ISO 8601 format (`PT10M` for ten minutes or `PT1H` for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     * 
+     */
+    public String evaluationSlackDuration() {
+        return this.evaluationSlackDuration;
     }
     /**
      * @return Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
@@ -246,6 +275,13 @@ public final class GetAlarmsAlarm {
         return this.namespace;
     }
     /**
+     * @return Customizable notification title (`title` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+     * 
+     */
+    public String notificationTitle() {
+        return this.notificationTitle;
+    }
+    /**
      * @return The version of the alarm notification to be delivered. Allowed value: `1.X` The value must start with a number (up to four digits), followed by a period and an uppercase X.
      * 
      */
@@ -267,7 +303,7 @@ public final class GetAlarmsAlarm {
         return this.pendingDuration;
     }
     /**
-     * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * @return The Monitoring Query Language (MQL) expression to evaluate for the alarm. The Alarms feature of the Monitoring service interprets results for each returned time series as Boolean values, where zero represents false and a non-zero value represents true. A true value means that the trigger rule condition has been met. The query must specify a metric, statistic, interval, and trigger rule (threshold or absence). Supported values for interval depend on the specified time range. More interval values are supported for smaller time ranges. You can optionally specify dimensions and grouping functions. Also, you can customize the  [absence detection period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm). Supported grouping functions: `grouping()`, `groupBy()`. For information about writing MQL expressions, see [Editing the MQL Expression for a Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For details about MQL, see [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For available dimensions, review the metric definition for the supported service. See [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * 
      */
     public String query() {
@@ -288,14 +324,14 @@ public final class GetAlarmsAlarm {
         return this.resolution;
     }
     /**
-     * @return Resource group to match for metric data retrieved by the alarm. A resource group is a custom string that you can match when retrieving custom metrics. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
+     * @return Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric. A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).  Example: `frontend-fleet`
      * 
      */
     public String resourceGroup() {
         return this.resourceGroup;
     }
     /**
-     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     public String ruleName() {
@@ -346,11 +382,13 @@ public final class GetAlarmsAlarm {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String alarmSummary;
         private String body;
         private String compartmentId;
         private Map<String,Object> definedTags;
         private List<String> destinations;
         private String displayName;
+        private String evaluationSlackDuration;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isEnabled;
@@ -359,6 +397,7 @@ public final class GetAlarmsAlarm {
         private String metricCompartmentId;
         private Boolean metricCompartmentIdInSubtree;
         private String namespace;
+        private String notificationTitle;
         private String notificationVersion;
         private List<GetAlarmsAlarmOverride> overrides;
         private String pendingDuration;
@@ -375,11 +414,13 @@ public final class GetAlarmsAlarm {
         public Builder() {}
         public Builder(GetAlarmsAlarm defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alarmSummary = defaults.alarmSummary;
     	      this.body = defaults.body;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
     	      this.destinations = defaults.destinations;
     	      this.displayName = defaults.displayName;
+    	      this.evaluationSlackDuration = defaults.evaluationSlackDuration;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isEnabled = defaults.isEnabled;
@@ -388,6 +429,7 @@ public final class GetAlarmsAlarm {
     	      this.metricCompartmentId = defaults.metricCompartmentId;
     	      this.metricCompartmentIdInSubtree = defaults.metricCompartmentIdInSubtree;
     	      this.namespace = defaults.namespace;
+    	      this.notificationTitle = defaults.notificationTitle;
     	      this.notificationVersion = defaults.notificationVersion;
     	      this.overrides = defaults.overrides;
     	      this.pendingDuration = defaults.pendingDuration;
@@ -403,6 +445,14 @@ public final class GetAlarmsAlarm {
     	      this.timeUpdated = defaults.timeUpdated;
         }
 
+        @CustomType.Setter
+        public Builder alarmSummary(String alarmSummary) {
+            if (alarmSummary == null) {
+              throw new MissingRequiredPropertyException("GetAlarmsAlarm", "alarmSummary");
+            }
+            this.alarmSummary = alarmSummary;
+            return this;
+        }
         @CustomType.Setter
         public Builder body(String body) {
             if (body == null) {
@@ -444,6 +494,14 @@ public final class GetAlarmsAlarm {
               throw new MissingRequiredPropertyException("GetAlarmsAlarm", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder evaluationSlackDuration(String evaluationSlackDuration) {
+            if (evaluationSlackDuration == null) {
+              throw new MissingRequiredPropertyException("GetAlarmsAlarm", "evaluationSlackDuration");
+            }
+            this.evaluationSlackDuration = evaluationSlackDuration;
             return this;
         }
         @CustomType.Setter
@@ -508,6 +566,14 @@ public final class GetAlarmsAlarm {
               throw new MissingRequiredPropertyException("GetAlarmsAlarm", "namespace");
             }
             this.namespace = namespace;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder notificationTitle(String notificationTitle) {
+            if (notificationTitle == null) {
+              throw new MissingRequiredPropertyException("GetAlarmsAlarm", "notificationTitle");
+            }
+            this.notificationTitle = notificationTitle;
             return this;
         }
         @CustomType.Setter
@@ -622,11 +688,13 @@ public final class GetAlarmsAlarm {
         }
         public GetAlarmsAlarm build() {
             final var _resultValue = new GetAlarmsAlarm();
+            _resultValue.alarmSummary = alarmSummary;
             _resultValue.body = body;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
             _resultValue.destinations = destinations;
             _resultValue.displayName = displayName;
+            _resultValue.evaluationSlackDuration = evaluationSlackDuration;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isEnabled = isEnabled;
@@ -635,6 +703,7 @@ public final class GetAlarmsAlarm {
             _resultValue.metricCompartmentId = metricCompartmentId;
             _resultValue.metricCompartmentIdInSubtree = metricCompartmentIdInSubtree;
             _resultValue.namespace = namespace;
+            _resultValue.notificationTitle = notificationTitle;
             _resultValue.notificationVersion = notificationVersion;
             _resultValue.overrides = overrides;
             _resultValue.pendingDuration = pendingDuration;

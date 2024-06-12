@@ -13,6 +13,11 @@ import java.util.Objects;
 @CustomType
 public final class GetAlarmStatusesAlarmStatus {
     /**
+     * @return Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * 
+     */
+    private String alarmSummary;
+    /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
@@ -23,7 +28,7 @@ public final class GetAlarmStatusesAlarmStatus {
      */
     private String id;
     /**
-     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     private String ruleName;
@@ -50,6 +55,13 @@ public final class GetAlarmStatusesAlarmStatus {
 
     private GetAlarmStatusesAlarmStatus() {}
     /**
+     * @return Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * 
+     */
+    public String alarmSummary() {
+        return this.alarmSummary;
+    }
+    /**
      * @return A filter to return only resources that match the given display name exactly. Use this filter to list an alarm by name. Alternatively, when you know the alarm OCID, use the GetAlarm operation.
      * 
      */
@@ -64,7 +76,7 @@ public final class GetAlarmStatusesAlarmStatus {
         return this.id;
     }
     /**
-     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.  Minimum number of characters: 3. Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
+     * @return Identifier of the alarm&#39;s base values for alarm evaluation, for use when the alarm contains overrides.  Default value is `BASE`. For information about alarm overrides, see [AlarmOverride](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/datatypes/AlarmOverride).
      * 
      */
     public String ruleName() {
@@ -108,6 +120,7 @@ public final class GetAlarmStatusesAlarmStatus {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String alarmSummary;
         private String displayName;
         private String id;
         private String ruleName;
@@ -118,6 +131,7 @@ public final class GetAlarmStatusesAlarmStatus {
         public Builder() {}
         public Builder(GetAlarmStatusesAlarmStatus defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alarmSummary = defaults.alarmSummary;
     	      this.displayName = defaults.displayName;
     	      this.id = defaults.id;
     	      this.ruleName = defaults.ruleName;
@@ -127,6 +141,14 @@ public final class GetAlarmStatusesAlarmStatus {
     	      this.timestampTriggered = defaults.timestampTriggered;
         }
 
+        @CustomType.Setter
+        public Builder alarmSummary(String alarmSummary) {
+            if (alarmSummary == null) {
+              throw new MissingRequiredPropertyException("GetAlarmStatusesAlarmStatus", "alarmSummary");
+            }
+            this.alarmSummary = alarmSummary;
+            return this;
+        }
         @CustomType.Setter
         public Builder displayName(String displayName) {
             if (displayName == null) {
@@ -188,6 +210,7 @@ public final class GetAlarmStatusesAlarmStatus {
         }
         public GetAlarmStatusesAlarmStatus build() {
             final var _resultValue = new GetAlarmStatusesAlarmStatus();
+            _resultValue.alarmSummary = alarmSummary;
             _resultValue.displayName = displayName;
             _resultValue.id = id;
             _resultValue.ruleName = ruleName;

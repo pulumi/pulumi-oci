@@ -11,6 +11,11 @@ import java.util.Objects;
 @CustomType
 public final class GetAlarmHistoryCollectionEntry {
     /**
+     * @return Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * 
+     */
+    private String alarmSummary;
+    /**
      * @return Description for this alarm history entry.
      * 
      */
@@ -27,6 +32,13 @@ public final class GetAlarmHistoryCollectionEntry {
     private String timestampTriggered;
 
     private GetAlarmHistoryCollectionEntry() {}
+    /**
+     * @return Customizable alarm summary (`alarmSummary` [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)). Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm). The alarm summary appears within the body of the alarm message and in responses to  [ListAlarmStatus](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmStatusSummary/ListAlarmsStatus)  [GetAlarmHistory](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmHistoryCollection/GetAlarmHistory) and [RetrieveDimensionStates](https://docs.cloud.oracle.com/iaas/api/#/en/monitoring/latest/AlarmDimensionStatesCollection/RetrieveDimensionStates).
+     * 
+     */
+    public String alarmSummary() {
+        return this.alarmSummary;
+    }
     /**
      * @return Description for this alarm history entry.
      * 
@@ -58,17 +70,27 @@ public final class GetAlarmHistoryCollectionEntry {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String alarmSummary;
         private String summary;
         private String timestamp;
         private String timestampTriggered;
         public Builder() {}
         public Builder(GetAlarmHistoryCollectionEntry defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.alarmSummary = defaults.alarmSummary;
     	      this.summary = defaults.summary;
     	      this.timestamp = defaults.timestamp;
     	      this.timestampTriggered = defaults.timestampTriggered;
         }
 
+        @CustomType.Setter
+        public Builder alarmSummary(String alarmSummary) {
+            if (alarmSummary == null) {
+              throw new MissingRequiredPropertyException("GetAlarmHistoryCollectionEntry", "alarmSummary");
+            }
+            this.alarmSummary = alarmSummary;
+            return this;
+        }
         @CustomType.Setter
         public Builder summary(String summary) {
             if (summary == null) {
@@ -95,6 +117,7 @@ public final class GetAlarmHistoryCollectionEntry {
         }
         public GetAlarmHistoryCollectionEntry build() {
             final var _resultValue = new GetAlarmHistoryCollectionEntry();
+            _resultValue.alarmSummary = alarmSummary;
             _resultValue.summary = summary;
             _resultValue.timestamp = timestamp;
             _resultValue.timestampTriggered = timestampTriggered;

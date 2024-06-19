@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseLongTermBackupSchedule;
+import com.pulumi.oci.Database.outputs.GetAutonomousDatabasePublicConnectionUrl;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.GetAutonomousDatabaseScheduledOperation;
@@ -446,6 +447,16 @@ public final class GetAutonomousDatabaseResult {
      * 
      */
     private List<Double> provisionableCpuses;
+    /**
+     * @return The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     * 
+     */
+    private List<GetAutonomousDatabasePublicConnectionUrl> publicConnectionUrls;
+    /**
+     * @return The public endpoint for the private endpoint enabled resource.
+     * 
+     */
+    private String publicEndpoint;
     /**
      * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
@@ -1228,6 +1239,20 @@ public final class GetAutonomousDatabaseResult {
         return this.provisionableCpuses;
     }
     /**
+     * @return The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     * 
+     */
+    public List<GetAutonomousDatabasePublicConnectionUrl> publicConnectionUrls() {
+        return this.publicConnectionUrls;
+    }
+    /**
+     * @return The public endpoint for the private endpoint enabled resource.
+     * 
+     */
+    public String publicEndpoint() {
+        return this.publicEndpoint;
+    }
+    /**
      * @return The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
@@ -1605,6 +1630,8 @@ public final class GetAutonomousDatabaseResult {
         private String privateEndpointIp;
         private String privateEndpointLabel;
         private List<Double> provisionableCpuses;
+        private List<GetAutonomousDatabasePublicConnectionUrl> publicConnectionUrls;
+        private String publicEndpoint;
         private String refreshableMode;
         private String refreshableStatus;
         private List<GetAutonomousDatabaseRemoteDisasterRecoveryConfiguration> remoteDisasterRecoveryConfigurations;
@@ -1740,6 +1767,8 @@ public final class GetAutonomousDatabaseResult {
     	      this.privateEndpointIp = defaults.privateEndpointIp;
     	      this.privateEndpointLabel = defaults.privateEndpointLabel;
     	      this.provisionableCpuses = defaults.provisionableCpuses;
+    	      this.publicConnectionUrls = defaults.publicConnectionUrls;
+    	      this.publicEndpoint = defaults.publicEndpoint;
     	      this.refreshableMode = defaults.refreshableMode;
     	      this.refreshableStatus = defaults.refreshableStatus;
     	      this.remoteDisasterRecoveryConfigurations = defaults.remoteDisasterRecoveryConfigurations;
@@ -2516,6 +2545,25 @@ public final class GetAutonomousDatabaseResult {
             return provisionableCpuses(List.of(provisionableCpuses));
         }
         @CustomType.Setter
+        public Builder publicConnectionUrls(List<GetAutonomousDatabasePublicConnectionUrl> publicConnectionUrls) {
+            if (publicConnectionUrls == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "publicConnectionUrls");
+            }
+            this.publicConnectionUrls = publicConnectionUrls;
+            return this;
+        }
+        public Builder publicConnectionUrls(GetAutonomousDatabasePublicConnectionUrl... publicConnectionUrls) {
+            return publicConnectionUrls(List.of(publicConnectionUrls));
+        }
+        @CustomType.Setter
+        public Builder publicEndpoint(String publicEndpoint) {
+            if (publicEndpoint == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "publicEndpoint");
+            }
+            this.publicEndpoint = publicEndpoint;
+            return this;
+        }
+        @CustomType.Setter
         public Builder refreshableMode(String refreshableMode) {
             if (refreshableMode == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabaseResult", "refreshableMode");
@@ -2992,6 +3040,8 @@ public final class GetAutonomousDatabaseResult {
             _resultValue.privateEndpointIp = privateEndpointIp;
             _resultValue.privateEndpointLabel = privateEndpointLabel;
             _resultValue.provisionableCpuses = provisionableCpuses;
+            _resultValue.publicConnectionUrls = publicConnectionUrls;
+            _resultValue.publicEndpoint = publicEndpoint;
             _resultValue.refreshableMode = refreshableMode;
             _resultValue.refreshableStatus = refreshableStatus;
             _resultValue.remoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;

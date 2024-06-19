@@ -341,6 +341,14 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly ImmutableArray<double> ProvisionableCpuses;
         /// <summary>
+        /// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult> PublicConnectionUrls;
+        /// <summary>
+        /// The public endpoint for the private endpoint enabled resource.
+        /// </summary>
+        public readonly string PublicEndpoint;
+        /// <summary>
         /// The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
         public readonly string RefreshableMode;
@@ -669,6 +677,10 @@ namespace Pulumi.Oci.Database.Outputs
 
             ImmutableArray<double> provisionableCpuses,
 
+            ImmutableArray<Outputs.GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult> publicConnectionUrls,
+
+            string publicEndpoint,
+
             string refreshableMode,
 
             string refreshableStatus,
@@ -847,6 +859,8 @@ namespace Pulumi.Oci.Database.Outputs
             PrivateEndpointIp = privateEndpointIp;
             PrivateEndpointLabel = privateEndpointLabel;
             ProvisionableCpuses = provisionableCpuses;
+            PublicConnectionUrls = publicConnectionUrls;
+            PublicEndpoint = publicEndpoint;
             RefreshableMode = refreshableMode;
             RefreshableStatus = refreshableStatus;
             RemoteDisasterRecoveryConfigurations = remoteDisasterRecoveryConfigurations;

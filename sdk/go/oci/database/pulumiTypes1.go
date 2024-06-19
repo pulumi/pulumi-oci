@@ -13,6 +13,439 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetFlexComponentsFlexComponentCollectionItem struct {
+	// The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+	AvailableCoreCount int `pulumi:"availableCoreCount"`
+	// The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+	AvailableDbStorageInGbs int `pulumi:"availableDbStorageInGbs"`
+	// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+	MinimumCoreCount int `pulumi:"minimumCoreCount"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name string `pulumi:"name"`
+}
+
+// GetFlexComponentsFlexComponentCollectionItemInput is an input type that accepts GetFlexComponentsFlexComponentCollectionItemArgs and GetFlexComponentsFlexComponentCollectionItemOutput values.
+// You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionItemInput` via:
+//
+//	GetFlexComponentsFlexComponentCollectionItemArgs{...}
+type GetFlexComponentsFlexComponentCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetFlexComponentsFlexComponentCollectionItemOutput() GetFlexComponentsFlexComponentCollectionItemOutput
+	ToGetFlexComponentsFlexComponentCollectionItemOutputWithContext(context.Context) GetFlexComponentsFlexComponentCollectionItemOutput
+}
+
+type GetFlexComponentsFlexComponentCollectionItemArgs struct {
+	// The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+	AvailableCoreCount pulumi.IntInput `pulumi:"availableCoreCount"`
+	// The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+	AvailableDbStorageInGbs pulumi.IntInput `pulumi:"availableDbStorageInGbs"`
+	// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+	MinimumCoreCount pulumi.IntInput `pulumi:"minimumCoreCount"`
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetFlexComponentsFlexComponentCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionItem)(nil)).Elem()
+}
+
+func (i GetFlexComponentsFlexComponentCollectionItemArgs) ToGetFlexComponentsFlexComponentCollectionItemOutput() GetFlexComponentsFlexComponentCollectionItemOutput {
+	return i.ToGetFlexComponentsFlexComponentCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetFlexComponentsFlexComponentCollectionItemArgs) ToGetFlexComponentsFlexComponentCollectionItemOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlexComponentsFlexComponentCollectionItemOutput)
+}
+
+// GetFlexComponentsFlexComponentCollectionItemArrayInput is an input type that accepts GetFlexComponentsFlexComponentCollectionItemArray and GetFlexComponentsFlexComponentCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionItemArrayInput` via:
+//
+//	GetFlexComponentsFlexComponentCollectionItemArray{ GetFlexComponentsFlexComponentCollectionItemArgs{...} }
+type GetFlexComponentsFlexComponentCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetFlexComponentsFlexComponentCollectionItemArrayOutput() GetFlexComponentsFlexComponentCollectionItemArrayOutput
+	ToGetFlexComponentsFlexComponentCollectionItemArrayOutputWithContext(context.Context) GetFlexComponentsFlexComponentCollectionItemArrayOutput
+}
+
+type GetFlexComponentsFlexComponentCollectionItemArray []GetFlexComponentsFlexComponentCollectionItemInput
+
+func (GetFlexComponentsFlexComponentCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlexComponentsFlexComponentCollectionItem)(nil)).Elem()
+}
+
+func (i GetFlexComponentsFlexComponentCollectionItemArray) ToGetFlexComponentsFlexComponentCollectionItemArrayOutput() GetFlexComponentsFlexComponentCollectionItemArrayOutput {
+	return i.ToGetFlexComponentsFlexComponentCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetFlexComponentsFlexComponentCollectionItemArray) ToGetFlexComponentsFlexComponentCollectionItemArrayOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlexComponentsFlexComponentCollectionItemArrayOutput)
+}
+
+type GetFlexComponentsFlexComponentCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetFlexComponentsFlexComponentCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionItem)(nil)).Elem()
+}
+
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) ToGetFlexComponentsFlexComponentCollectionItemOutput() GetFlexComponentsFlexComponentCollectionItemOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) ToGetFlexComponentsFlexComponentCollectionItemOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionItemOutput {
+	return o
+}
+
+// The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) AvailableCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.AvailableCoreCount }).(pulumi.IntOutput)
+}
+
+// The maximum  storage that can be enabled on the Storage Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) AvailableDbStorageInGbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.AvailableDbStorageInGbs }).(pulumi.IntOutput)
+}
+
+// The minimum number of CPU cores that can be enabled on the DB Server for this Flex Component.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) MinimumCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) int { return v.MinimumCoreCount }).(pulumi.IntOutput)
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetFlexComponentsFlexComponentCollectionItemOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollectionItem) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetFlexComponentsFlexComponentCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFlexComponentsFlexComponentCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlexComponentsFlexComponentCollectionItem)(nil)).Elem()
+}
+
+func (o GetFlexComponentsFlexComponentCollectionItemArrayOutput) ToGetFlexComponentsFlexComponentCollectionItemArrayOutput() GetFlexComponentsFlexComponentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionItemArrayOutput) ToGetFlexComponentsFlexComponentCollectionItemArrayOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionItemArrayOutput) Index(i pulumi.IntInput) GetFlexComponentsFlexComponentCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFlexComponentsFlexComponentCollectionItem {
+		return vs[0].([]GetFlexComponentsFlexComponentCollectionItem)[vs[1].(int)]
+	}).(GetFlexComponentsFlexComponentCollectionItemOutput)
+}
+
+type GetGiVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetGiVersionsFilterInput is an input type that accepts GetGiVersionsFilterArgs and GetGiVersionsFilterOutput values.
+// You can construct a concrete instance of `GetGiVersionsFilterInput` via:
+//
+//	GetGiVersionsFilterArgs{...}
+type GetGiVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetGiVersionsFilterOutput() GetGiVersionsFilterOutput
+	ToGetGiVersionsFilterOutputWithContext(context.Context) GetGiVersionsFilterOutput
+}
+
+type GetGiVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGiVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionsFilter)(nil)).Elem()
+}
+
+func (i GetGiVersionsFilterArgs) ToGetGiVersionsFilterOutput() GetGiVersionsFilterOutput {
+	return i.ToGetGiVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionsFilterArgs) ToGetGiVersionsFilterOutputWithContext(ctx context.Context) GetGiVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionsFilterOutput)
+}
+
+// GetGiVersionsFilterArrayInput is an input type that accepts GetGiVersionsFilterArray and GetGiVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetGiVersionsFilterArrayInput` via:
+//
+//	GetGiVersionsFilterArray{ GetGiVersionsFilterArgs{...} }
+type GetGiVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetGiVersionsFilterArrayOutput() GetGiVersionsFilterArrayOutput
+	ToGetGiVersionsFilterArrayOutputWithContext(context.Context) GetGiVersionsFilterArrayOutput
+}
+
+type GetGiVersionsFilterArray []GetGiVersionsFilterInput
+
+func (GetGiVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionsFilter)(nil)).Elem()
+}
+
+func (i GetGiVersionsFilterArray) ToGetGiVersionsFilterArrayOutput() GetGiVersionsFilterArrayOutput {
+	return i.ToGetGiVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionsFilterArray) ToGetGiVersionsFilterArrayOutputWithContext(ctx context.Context) GetGiVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionsFilterArrayOutput)
+}
+
+type GetGiVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionsFilter)(nil)).Elem()
+}
+
+func (o GetGiVersionsFilterOutput) ToGetGiVersionsFilterOutput() GetGiVersionsFilterOutput {
+	return o
+}
+
+func (o GetGiVersionsFilterOutput) ToGetGiVersionsFilterOutputWithContext(ctx context.Context) GetGiVersionsFilterOutput {
+	return o
+}
+
+func (o GetGiVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGiVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetGiVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetGiVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetGiVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGiVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGiVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionsFilter)(nil)).Elem()
+}
+
+func (o GetGiVersionsFilterArrayOutput) ToGetGiVersionsFilterArrayOutput() GetGiVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetGiVersionsFilterArrayOutput) ToGetGiVersionsFilterArrayOutputWithContext(ctx context.Context) GetGiVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetGiVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetGiVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGiVersionsFilter {
+		return vs[0].([]GetGiVersionsFilter)[vs[1].(int)]
+	}).(GetGiVersionsFilterOutput)
+}
+
+type GetGiVersionsGiVersion struct {
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	Version string `pulumi:"version"`
+}
+
+// GetGiVersionsGiVersionInput is an input type that accepts GetGiVersionsGiVersionArgs and GetGiVersionsGiVersionOutput values.
+// You can construct a concrete instance of `GetGiVersionsGiVersionInput` via:
+//
+//	GetGiVersionsGiVersionArgs{...}
+type GetGiVersionsGiVersionInput interface {
+	pulumi.Input
+
+	ToGetGiVersionsGiVersionOutput() GetGiVersionsGiVersionOutput
+	ToGetGiVersionsGiVersionOutputWithContext(context.Context) GetGiVersionsGiVersionOutput
+}
+
+type GetGiVersionsGiVersionArgs struct {
+	// A valid Oracle Grid Infrastructure (GI) software version.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetGiVersionsGiVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionsGiVersion)(nil)).Elem()
+}
+
+func (i GetGiVersionsGiVersionArgs) ToGetGiVersionsGiVersionOutput() GetGiVersionsGiVersionOutput {
+	return i.ToGetGiVersionsGiVersionOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionsGiVersionArgs) ToGetGiVersionsGiVersionOutputWithContext(ctx context.Context) GetGiVersionsGiVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionsGiVersionOutput)
+}
+
+// GetGiVersionsGiVersionArrayInput is an input type that accepts GetGiVersionsGiVersionArray and GetGiVersionsGiVersionArrayOutput values.
+// You can construct a concrete instance of `GetGiVersionsGiVersionArrayInput` via:
+//
+//	GetGiVersionsGiVersionArray{ GetGiVersionsGiVersionArgs{...} }
+type GetGiVersionsGiVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetGiVersionsGiVersionArrayOutput() GetGiVersionsGiVersionArrayOutput
+	ToGetGiVersionsGiVersionArrayOutputWithContext(context.Context) GetGiVersionsGiVersionArrayOutput
+}
+
+type GetGiVersionsGiVersionArray []GetGiVersionsGiVersionInput
+
+func (GetGiVersionsGiVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionsGiVersion)(nil)).Elem()
+}
+
+func (i GetGiVersionsGiVersionArray) ToGetGiVersionsGiVersionArrayOutput() GetGiVersionsGiVersionArrayOutput {
+	return i.ToGetGiVersionsGiVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionsGiVersionArray) ToGetGiVersionsGiVersionArrayOutputWithContext(ctx context.Context) GetGiVersionsGiVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionsGiVersionArrayOutput)
+}
+
+type GetGiVersionsGiVersionOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionsGiVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionsGiVersion)(nil)).Elem()
+}
+
+func (o GetGiVersionsGiVersionOutput) ToGetGiVersionsGiVersionOutput() GetGiVersionsGiVersionOutput {
+	return o
+}
+
+func (o GetGiVersionsGiVersionOutput) ToGetGiVersionsGiVersionOutputWithContext(ctx context.Context) GetGiVersionsGiVersionOutput {
+	return o
+}
+
+// A valid Oracle Grid Infrastructure (GI) software version.
+func (o GetGiVersionsGiVersionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGiVersionsGiVersion) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetGiVersionsGiVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionsGiVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionsGiVersion)(nil)).Elem()
+}
+
+func (o GetGiVersionsGiVersionArrayOutput) ToGetGiVersionsGiVersionArrayOutput() GetGiVersionsGiVersionArrayOutput {
+	return o
+}
+
+func (o GetGiVersionsGiVersionArrayOutput) ToGetGiVersionsGiVersionArrayOutputWithContext(ctx context.Context) GetGiVersionsGiVersionArrayOutput {
+	return o
+}
+
+func (o GetGiVersionsGiVersionArrayOutput) Index(i pulumi.IntInput) GetGiVersionsGiVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGiVersionsGiVersion {
+		return vs[0].([]GetGiVersionsGiVersion)[vs[1].(int)]
+	}).(GetGiVersionsGiVersionOutput)
+}
+
+type GetKeyStoreAssociatedDatabase struct {
+	// The name of the database that is associated with the key store.
+	DbName string `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id string `pulumi:"id"`
+}
+
+// GetKeyStoreAssociatedDatabaseInput is an input type that accepts GetKeyStoreAssociatedDatabaseArgs and GetKeyStoreAssociatedDatabaseOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedDatabaseInput` via:
+//
+//	GetKeyStoreAssociatedDatabaseArgs{...}
+type GetKeyStoreAssociatedDatabaseInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedDatabaseOutput() GetKeyStoreAssociatedDatabaseOutput
+	ToGetKeyStoreAssociatedDatabaseOutputWithContext(context.Context) GetKeyStoreAssociatedDatabaseOutput
+}
+
+type GetKeyStoreAssociatedDatabaseArgs struct {
+	// The name of the database that is associated with the key store.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+	Id pulumi.StringInput `pulumi:"id"`
+}
+
+func (GetKeyStoreAssociatedDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedDatabaseArgs) ToGetKeyStoreAssociatedDatabaseOutput() GetKeyStoreAssociatedDatabaseOutput {
+	return i.ToGetKeyStoreAssociatedDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedDatabaseArgs) ToGetKeyStoreAssociatedDatabaseOutputWithContext(ctx context.Context) GetKeyStoreAssociatedDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedDatabaseOutput)
+}
+
+// GetKeyStoreAssociatedDatabaseArrayInput is an input type that accepts GetKeyStoreAssociatedDatabaseArray and GetKeyStoreAssociatedDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetKeyStoreAssociatedDatabaseArrayInput` via:
+//
+//	GetKeyStoreAssociatedDatabaseArray{ GetKeyStoreAssociatedDatabaseArgs{...} }
+type GetKeyStoreAssociatedDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetKeyStoreAssociatedDatabaseArrayOutput() GetKeyStoreAssociatedDatabaseArrayOutput
+	ToGetKeyStoreAssociatedDatabaseArrayOutputWithContext(context.Context) GetKeyStoreAssociatedDatabaseArrayOutput
+}
+
+type GetKeyStoreAssociatedDatabaseArray []GetKeyStoreAssociatedDatabaseInput
+
+func (GetKeyStoreAssociatedDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (i GetKeyStoreAssociatedDatabaseArray) ToGetKeyStoreAssociatedDatabaseArrayOutput() GetKeyStoreAssociatedDatabaseArrayOutput {
+	return i.ToGetKeyStoreAssociatedDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetKeyStoreAssociatedDatabaseArray) ToGetKeyStoreAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetKeyStoreAssociatedDatabaseArrayOutput)
+}
+
+type GetKeyStoreAssociatedDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedDatabaseOutput) ToGetKeyStoreAssociatedDatabaseOutput() GetKeyStoreAssociatedDatabaseOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedDatabaseOutput) ToGetKeyStoreAssociatedDatabaseOutputWithContext(ctx context.Context) GetKeyStoreAssociatedDatabaseOutput {
+	return o
+}
+
+// The name of the database that is associated with the key store.
+func (o GetKeyStoreAssociatedDatabaseOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedDatabase) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store.
+func (o GetKeyStoreAssociatedDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetKeyStoreAssociatedDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+type GetKeyStoreAssociatedDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetKeyStoreAssociatedDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetKeyStoreAssociatedDatabase)(nil)).Elem()
+}
+
+func (o GetKeyStoreAssociatedDatabaseArrayOutput) ToGetKeyStoreAssociatedDatabaseArrayOutput() GetKeyStoreAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedDatabaseArrayOutput) ToGetKeyStoreAssociatedDatabaseArrayOutputWithContext(ctx context.Context) GetKeyStoreAssociatedDatabaseArrayOutput {
+	return o
+}
+
+func (o GetKeyStoreAssociatedDatabaseArrayOutput) Index(i pulumi.IntInput) GetKeyStoreAssociatedDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetKeyStoreAssociatedDatabase {
+		return vs[0].([]GetKeyStoreAssociatedDatabase)[vs[1].(int)]
+	}).(GetKeyStoreAssociatedDatabaseOutput)
+}
+
 type GetKeyStoreTypeDetail struct {
 	// The administrator username to connect to Oracle Key Vault
 	AdminUsername string `pulumi:"adminUsername"`
@@ -8167,6 +8600,14 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionItemInput)(nil)).Elem(), GetFlexComponentsFlexComponentCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionItemArrayInput)(nil)).Elem(), GetFlexComponentsFlexComponentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsFilterInput)(nil)).Elem(), GetGiVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsFilterArrayInput)(nil)).Elem(), GetGiVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsGiVersionInput)(nil)).Elem(), GetGiVersionsGiVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsGiVersionArrayInput)(nil)).Elem(), GetGiVersionsGiVersionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedDatabaseInput)(nil)).Elem(), GetKeyStoreAssociatedDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreAssociatedDatabaseArrayInput)(nil)).Elem(), GetKeyStoreAssociatedDatabaseArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreTypeDetailInput)(nil)).Elem(), GetKeyStoreTypeDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoreTypeDetailArrayInput)(nil)).Elem(), GetKeyStoreTypeDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyStoresFilterInput)(nil)).Elem(), GetKeyStoresFilterArgs{})
@@ -8287,6 +8728,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetFlexComponentsFlexComponentCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetFlexComponentsFlexComponentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetGiVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetGiVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGiVersionsGiVersionOutput{})
+	pulumi.RegisterOutputType(GetGiVersionsGiVersionArrayOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedDatabaseOutput{})
+	pulumi.RegisterOutputType(GetKeyStoreAssociatedDatabaseArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreTypeDetailOutput{})
 	pulumi.RegisterOutputType(GetKeyStoreTypeDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyStoresFilterOutput{})

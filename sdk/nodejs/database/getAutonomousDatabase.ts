@@ -379,6 +379,14 @@ export interface GetAutonomousDatabaseResult {
      */
     readonly provisionableCpuses: number[];
     /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     */
+    readonly publicConnectionUrls: outputs.Database.GetAutonomousDatabasePublicConnectionUrl[];
+    /**
+     * The public endpoint for the private endpoint enabled resource.
+     */
+    readonly publicEndpoint: string;
+    /**
      * The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */
     readonly refreshableMode: string;

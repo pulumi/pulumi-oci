@@ -438,6 +438,14 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      */
     public /*out*/ readonly provisionableCpuses!: pulumi.Output<number[]>;
     /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     */
+    public /*out*/ readonly publicConnectionUrls!: pulumi.Output<outputs.Database.AutonomousDatabasePublicConnectionUrl[]>;
+    /**
+     * The public endpoint for the private endpoint enabled resource.
+     */
+    public /*out*/ readonly publicEndpoint!: pulumi.Output<string>;
+    /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */
     public readonly refreshableMode!: pulumi.Output<string>;
@@ -747,6 +755,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["privateEndpointIp"] = state ? state.privateEndpointIp : undefined;
             resourceInputs["privateEndpointLabel"] = state ? state.privateEndpointLabel : undefined;
             resourceInputs["provisionableCpuses"] = state ? state.provisionableCpuses : undefined;
+            resourceInputs["publicConnectionUrls"] = state ? state.publicConnectionUrls : undefined;
+            resourceInputs["publicEndpoint"] = state ? state.publicEndpoint : undefined;
             resourceInputs["refreshableMode"] = state ? state.refreshableMode : undefined;
             resourceInputs["refreshableStatus"] = state ? state.refreshableStatus : undefined;
             resourceInputs["remoteDisasterRecoveryConfigurations"] = state ? state.remoteDisasterRecoveryConfigurations : undefined;
@@ -907,6 +917,8 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["peerDbIds"] = undefined /*out*/;
             resourceInputs["privateEndpoint"] = undefined /*out*/;
             resourceInputs["provisionableCpuses"] = undefined /*out*/;
+            resourceInputs["publicConnectionUrls"] = undefined /*out*/;
+            resourceInputs["publicEndpoint"] = undefined /*out*/;
             resourceInputs["refreshableStatus"] = undefined /*out*/;
             resourceInputs["remoteDisasterRecoveryConfigurations"] = undefined /*out*/;
             resourceInputs["role"] = undefined /*out*/;
@@ -1332,6 +1344,14 @@ export interface AutonomousDatabaseState {
      * An array of CPU values that an Autonomous Database can be scaled to.
      */
     provisionableCpuses?: pulumi.Input<pulumi.Input<number>[]>;
+    /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     */
+    publicConnectionUrls?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousDatabasePublicConnectionUrl>[]>;
+    /**
+     * The public endpoint for the private endpoint enabled resource.
+     */
+    publicEndpoint?: pulumi.Input<string>;
     /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      */

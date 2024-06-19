@@ -14,6 +14,7 @@ import com.pulumi.oci.Database.inputs.AutonomousDatabaseDbToolsDetailArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseKeyHistoryEntryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLocalStandbyDbArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseLongTermBackupScheduleArgs;
+import com.pulumi.oci.Database.inputs.AutonomousDatabasePublicConnectionUrlArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseResourcePoolSummaryArgs;
 import com.pulumi.oci.Database.inputs.AutonomousDatabaseScheduledOperationArgs;
@@ -1410,6 +1411,36 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
     }
 
     /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     * 
+     */
+    @Import(name="publicConnectionUrls")
+    private @Nullable Output<List<AutonomousDatabasePublicConnectionUrlArgs>> publicConnectionUrls;
+
+    /**
+     * @return The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     * 
+     */
+    public Optional<Output<List<AutonomousDatabasePublicConnectionUrlArgs>>> publicConnectionUrls() {
+        return Optional.ofNullable(this.publicConnectionUrls);
+    }
+
+    /**
+     * The public endpoint for the private endpoint enabled resource.
+     * 
+     */
+    @Import(name="publicEndpoint")
+    private @Nullable Output<String> publicEndpoint;
+
+    /**
+     * @return The public endpoint for the private endpoint enabled resource.
+     * 
+     */
+    public Optional<Output<String>> publicEndpoint() {
+        return Optional.ofNullable(this.publicEndpoint);
+    }
+
+    /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
      * 
      */
@@ -2237,6 +2268,8 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
         this.privateEndpointIp = $.privateEndpointIp;
         this.privateEndpointLabel = $.privateEndpointLabel;
         this.provisionableCpuses = $.provisionableCpuses;
+        this.publicConnectionUrls = $.publicConnectionUrls;
+        this.publicEndpoint = $.publicEndpoint;
         this.refreshableMode = $.refreshableMode;
         this.refreshableStatus = $.refreshableStatus;
         this.remoteDisasterRecoveryConfigurations = $.remoteDisasterRecoveryConfigurations;
@@ -4319,6 +4352,58 @@ public final class AutonomousDatabaseState extends com.pulumi.resources.Resource
          */
         public Builder provisionableCpuses(Double... provisionableCpuses) {
             return provisionableCpuses(List.of(provisionableCpuses));
+        }
+
+        /**
+         * @param publicConnectionUrls The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicConnectionUrls(@Nullable Output<List<AutonomousDatabasePublicConnectionUrlArgs>> publicConnectionUrls) {
+            $.publicConnectionUrls = publicConnectionUrls;
+            return this;
+        }
+
+        /**
+         * @param publicConnectionUrls The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicConnectionUrls(List<AutonomousDatabasePublicConnectionUrlArgs> publicConnectionUrls) {
+            return publicConnectionUrls(Output.of(publicConnectionUrls));
+        }
+
+        /**
+         * @param publicConnectionUrls The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicConnectionUrls(AutonomousDatabasePublicConnectionUrlArgs... publicConnectionUrls) {
+            return publicConnectionUrls(List.of(publicConnectionUrls));
+        }
+
+        /**
+         * @param publicEndpoint The public endpoint for the private endpoint enabled resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicEndpoint(@Nullable Output<String> publicEndpoint) {
+            $.publicEndpoint = publicEndpoint;
+            return this;
+        }
+
+        /**
+         * @param publicEndpoint The public endpoint for the private endpoint enabled resource.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder publicEndpoint(String publicEndpoint) {
+            return publicEndpoint(Output.of(publicEndpoint));
         }
 
         /**

@@ -65,6 +65,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &MaskingPoliciesMaskingColumn{}
 	case "oci:DataSafe/maskingPolicy:MaskingPolicy":
 		r = &MaskingPolicy{}
+	case "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement":
+		r = &MaskingPolicyHealthReportManagement{}
 	case "oci:DataSafe/maskingReportManagement:MaskingReportManagement":
 		r = &MaskingReportManagement{}
 	case "oci:DataSafe/onPremConnector:OnPremConnector":
@@ -240,6 +242,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"DataSafe/maskingPolicy",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DataSafe/maskingPolicyHealthReportManagement",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

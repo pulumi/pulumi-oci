@@ -35,6 +35,7 @@ __all__ = [
     'AutonomousDatabaseKeyHistoryEntry',
     'AutonomousDatabaseLocalStandbyDb',
     'AutonomousDatabaseLongTermBackupSchedule',
+    'AutonomousDatabasePublicConnectionUrl',
     'AutonomousDatabaseRemoteDisasterRecoveryConfiguration',
     'AutonomousDatabaseResourcePoolSummary',
     'AutonomousDatabaseScheduledOperation',
@@ -224,6 +225,7 @@ __all__ = [
     'GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionResult',
     'GetAutonomousDatabasePeersAutonomousDatabasePeerCollectionItemResult',
     'GetAutonomousDatabasePeersFilterResult',
+    'GetAutonomousDatabasePublicConnectionUrlResult',
     'GetAutonomousDatabaseRefreshableClonesFilterResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionResult',
     'GetAutonomousDatabaseRefreshableClonesRefreshableCloneCollectionItemResult',
@@ -246,6 +248,7 @@ __all__ = [
     'GetAutonomousDatabasesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult',
+    'GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult',
     'GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult',
     'GetAutonomousDatabasesAutonomousDatabaseResourcePoolSummaryResult',
     'GetAutonomousDatabasesAutonomousDatabaseScheduledOperationResult',
@@ -262,6 +265,7 @@ __all__ = [
     'GetAutonomousDatabasesClonesAutonomousDatabaseKeyHistoryEntryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLocalStandbyDbResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult',
+    'GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseResourcePoolSummaryResult',
     'GetAutonomousDatabasesClonesAutonomousDatabaseScheduledOperationResult',
@@ -2393,6 +2397,140 @@ class AutonomousDatabaseLongTermBackupSchedule(dict):
         The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         """
         return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
+class AutonomousDatabasePublicConnectionUrl(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "apexUrl":
+            suggest = "apex_url"
+        elif key == "databaseTransformsUrl":
+            suggest = "database_transforms_url"
+        elif key == "graphStudioUrl":
+            suggest = "graph_studio_url"
+        elif key == "machineLearningNotebookUrl":
+            suggest = "machine_learning_notebook_url"
+        elif key == "machineLearningUserManagementUrl":
+            suggest = "machine_learning_user_management_url"
+        elif key == "mongoDbUrl":
+            suggest = "mongo_db_url"
+        elif key == "ordsUrl":
+            suggest = "ords_url"
+        elif key == "sqlDevWebUrl":
+            suggest = "sql_dev_web_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in AutonomousDatabasePublicConnectionUrl. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        AutonomousDatabasePublicConnectionUrl.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        AutonomousDatabasePublicConnectionUrl.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 apex_url: Optional[str] = None,
+                 database_transforms_url: Optional[str] = None,
+                 graph_studio_url: Optional[str] = None,
+                 machine_learning_notebook_url: Optional[str] = None,
+                 machine_learning_user_management_url: Optional[str] = None,
+                 mongo_db_url: Optional[str] = None,
+                 ords_url: Optional[str] = None,
+                 sql_dev_web_url: Optional[str] = None):
+        """
+        :param str apex_url: Oracle Application Express (APEX) URL.
+        :param str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        if apex_url is not None:
+            pulumi.set(__self__, "apex_url", apex_url)
+        if database_transforms_url is not None:
+            pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if graph_studio_url is not None:
+            pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        if machine_learning_notebook_url is not None:
+            pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        if machine_learning_user_management_url is not None:
+            pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mongo_db_url is not None:
+            pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        if ords_url is not None:
+            pulumi.set(__self__, "ords_url", ords_url)
+        if sql_dev_web_url is not None:
+            pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> Optional[str]:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> Optional[str]:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> Optional[str]:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> Optional[str]:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> Optional[str]:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> Optional[str]:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> Optional[str]:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> Optional[str]:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
 
 
 @pulumi.output_type
@@ -15847,6 +15985,101 @@ class GetAutonomousDatabasePeersFilterResult(dict):
 
 
 @pulumi.output_type
+class GetAutonomousDatabasePublicConnectionUrlResult(dict):
+    def __init__(__self__, *,
+                 apex_url: str,
+                 database_transforms_url: str,
+                 graph_studio_url: str,
+                 machine_learning_notebook_url: str,
+                 machine_learning_user_management_url: str,
+                 mongo_db_url: str,
+                 ords_url: str,
+                 sql_dev_web_url: str):
+        """
+        :param str apex_url: Oracle Application Express (APEX) URL.
+        :param str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        pulumi.set(__self__, "apex_url", apex_url)
+        pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> str:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> str:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> str:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> str:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> str:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> str:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> str:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> str:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+
+@pulumi.output_type
 class GetAutonomousDatabaseRefreshableClonesFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -16380,6 +16613,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  private_endpoint_ip: str,
                  private_endpoint_label: str,
                  provisionable_cpuses: Sequence[float],
+                 public_connection_urls: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult'],
+                 public_endpoint: str,
                  refreshable_mode: str,
                  refreshable_status: str,
                  remote_disaster_recovery_configurations: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult'],
@@ -16508,6 +16743,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param str private_endpoint_label: The private endpoint label for the resource.
         :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
+        :param Sequence['GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlArgs'] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        :param str public_endpoint: The public endpoint for the private endpoint enabled resource.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param Sequence['GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
@@ -16631,6 +16868,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
         pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        pulumi.set(__self__, "public_connection_urls", public_connection_urls)
+        pulumi.set(__self__, "public_endpoint", public_endpoint)
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         pulumi.set(__self__, "refreshable_status", refreshable_status)
         pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
@@ -17351,6 +17590,22 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         An array of CPU values that an Autonomous Database can be scaled to.
         """
         return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="publicConnectionUrls")
+    def public_connection_urls(self) -> Sequence['outputs.GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult']:
+        """
+        The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        """
+        return pulumi.get(self, "public_connection_urls")
+
+    @property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> str:
+        """
+        The public endpoint for the private endpoint enabled resource.
+        """
+        return pulumi.get(self, "public_endpoint")
 
     @property
     @pulumi.getter(name="refreshableMode")
@@ -18257,6 +18512,101 @@ class GetAutonomousDatabasesAutonomousDatabaseLongTermBackupScheduleResult(dict)
 
 
 @pulumi.output_type
+class GetAutonomousDatabasesAutonomousDatabasePublicConnectionUrlResult(dict):
+    def __init__(__self__, *,
+                 apex_url: str,
+                 database_transforms_url: str,
+                 graph_studio_url: str,
+                 machine_learning_notebook_url: str,
+                 machine_learning_user_management_url: str,
+                 mongo_db_url: str,
+                 ords_url: str,
+                 sql_dev_web_url: str):
+        """
+        :param str apex_url: Oracle Application Express (APEX) URL.
+        :param str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        pulumi.set(__self__, "apex_url", apex_url)
+        pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> str:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> str:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> str:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> str:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> str:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> str:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> str:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> str:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+
+@pulumi.output_type
 class GetAutonomousDatabasesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult(dict):
     def __init__(__self__, *,
                  disaster_recovery_type: str,
@@ -18527,6 +18877,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  private_endpoint_ip: str,
                  private_endpoint_label: str,
                  provisionable_cpuses: Sequence[float],
+                 public_connection_urls: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult'],
+                 public_endpoint: str,
                  refreshable_mode: str,
                  refreshable_status: str,
                  remote_disaster_recovery_configurations: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationResult'],
@@ -18645,6 +18997,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param str private_endpoint_ip: The private endpoint Ip address for the resource.
         :param str private_endpoint_label: The resource's private endpoint label. Setting this to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
         :param Sequence[float] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
+        :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlArgs'] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        :param str public_endpoint: The public endpoint for the private endpoint enabled resource.
         :param str refreshable_mode: The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param str refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param Sequence['GetAutonomousDatabasesClonesAutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs'] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
@@ -18757,6 +19111,8 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "private_endpoint_ip", private_endpoint_ip)
         pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
         pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        pulumi.set(__self__, "public_connection_urls", public_connection_urls)
+        pulumi.set(__self__, "public_endpoint", public_endpoint)
         pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         pulumi.set(__self__, "refreshable_status", refreshable_status)
         pulumi.set(__self__, "remote_disaster_recovery_configurations", remote_disaster_recovery_configurations)
@@ -19406,6 +19762,22 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         An array of CPU values that an Autonomous Database can be scaled to.
         """
         return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="publicConnectionUrls")
+    def public_connection_urls(self) -> Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult']:
+        """
+        The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        """
+        return pulumi.get(self, "public_connection_urls")
+
+    @property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> str:
+        """
+        The public endpoint for the private endpoint enabled resource.
+        """
+        return pulumi.get(self, "public_endpoint")
 
     @property
     @pulumi.getter(name="refreshableMode")
@@ -20256,6 +20628,101 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseLongTermBackupScheduleResult
         The timestamp for the long-term backup schedule. For a MONTHLY cadence, months having fewer days than the provided date will have the backup taken on the last day of that month.
         """
         return pulumi.get(self, "time_of_backup")
+
+
+@pulumi.output_type
+class GetAutonomousDatabasesClonesAutonomousDatabasePublicConnectionUrlResult(dict):
+    def __init__(__self__, *,
+                 apex_url: str,
+                 database_transforms_url: str,
+                 graph_studio_url: str,
+                 machine_learning_notebook_url: str,
+                 machine_learning_user_management_url: str,
+                 mongo_db_url: str,
+                 ords_url: str,
+                 sql_dev_web_url: str):
+        """
+        :param str apex_url: Oracle Application Express (APEX) URL.
+        :param str database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param str graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param str machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param str machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param str mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param str ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param str sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        pulumi.set(__self__, "apex_url", apex_url)
+        pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        pulumi.set(__self__, "ords_url", ords_url)
+        pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> str:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> str:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> str:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> str:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> str:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> str:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> str:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> str:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
 
 
 @pulumi.output_type

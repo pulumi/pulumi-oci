@@ -18,6 +18,7 @@ import com.pulumi.oci.Database.outputs.AutonomousDatabaseDbToolsDetail;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseKeyHistoryEntry;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLocalStandbyDb;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseLongTermBackupSchedule;
+import com.pulumi.oci.Database.outputs.AutonomousDatabasePublicConnectionUrl;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseRemoteDisasterRecoveryConfiguration;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseResourcePoolSummary;
 import com.pulumi.oci.Database.outputs.AutonomousDatabaseScheduledOperation;
@@ -1336,6 +1337,34 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      */
     public Output<List<Double>> provisionableCpuses() {
         return this.provisionableCpuses;
+    }
+    /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     * 
+     */
+    @Export(name="publicConnectionUrls", refs={List.class,AutonomousDatabasePublicConnectionUrl.class}, tree="[0,1]")
+    private Output<List<AutonomousDatabasePublicConnectionUrl>> publicConnectionUrls;
+
+    /**
+     * @return The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+     * 
+     */
+    public Output<List<AutonomousDatabasePublicConnectionUrl>> publicConnectionUrls() {
+        return this.publicConnectionUrls;
+    }
+    /**
+     * The public endpoint for the private endpoint enabled resource.
+     * 
+     */
+    @Export(name="publicEndpoint", refs={String.class}, tree="[0]")
+    private Output<String> publicEndpoint;
+
+    /**
+     * @return The public endpoint for the private endpoint enabled resource.
+     * 
+     */
+    public Output<String> publicEndpoint() {
+        return this.publicEndpoint;
     }
     /**
      * (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.

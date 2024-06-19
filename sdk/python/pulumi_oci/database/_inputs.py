@@ -34,6 +34,7 @@ __all__ = [
     'AutonomousDatabaseKeyHistoryEntryArgs',
     'AutonomousDatabaseLocalStandbyDbArgs',
     'AutonomousDatabaseLongTermBackupScheduleArgs',
+    'AutonomousDatabasePublicConnectionUrlArgs',
     'AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs',
     'AutonomousDatabaseResourcePoolSummaryArgs',
     'AutonomousDatabaseScheduledOperationArgs',
@@ -2028,6 +2029,141 @@ class AutonomousDatabaseLongTermBackupScheduleArgs:
     @time_of_backup.setter
     def time_of_backup(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "time_of_backup", value)
+
+
+@pulumi.input_type
+class AutonomousDatabasePublicConnectionUrlArgs:
+    def __init__(__self__, *,
+                 apex_url: Optional[pulumi.Input[str]] = None,
+                 database_transforms_url: Optional[pulumi.Input[str]] = None,
+                 graph_studio_url: Optional[pulumi.Input[str]] = None,
+                 machine_learning_notebook_url: Optional[pulumi.Input[str]] = None,
+                 machine_learning_user_management_url: Optional[pulumi.Input[str]] = None,
+                 mongo_db_url: Optional[pulumi.Input[str]] = None,
+                 ords_url: Optional[pulumi.Input[str]] = None,
+                 sql_dev_web_url: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] apex_url: Oracle Application Express (APEX) URL.
+        :param pulumi.Input[str] database_transforms_url: The URL of the Database Transforms for the Autonomous Database.
+        :param pulumi.Input[str] graph_studio_url: The URL of the Graph Studio for the Autonomous Database.
+        :param pulumi.Input[str] machine_learning_notebook_url: The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        :param pulumi.Input[str] machine_learning_user_management_url: Oracle Machine Learning user management URL.
+        :param pulumi.Input[str] mongo_db_url: The URL of the MongoDB API for the Autonomous Database.
+        :param pulumi.Input[str] ords_url: The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        :param pulumi.Input[str] sql_dev_web_url: Oracle SQL Developer Web URL.
+        """
+        if apex_url is not None:
+            pulumi.set(__self__, "apex_url", apex_url)
+        if database_transforms_url is not None:
+            pulumi.set(__self__, "database_transforms_url", database_transforms_url)
+        if graph_studio_url is not None:
+            pulumi.set(__self__, "graph_studio_url", graph_studio_url)
+        if machine_learning_notebook_url is not None:
+            pulumi.set(__self__, "machine_learning_notebook_url", machine_learning_notebook_url)
+        if machine_learning_user_management_url is not None:
+            pulumi.set(__self__, "machine_learning_user_management_url", machine_learning_user_management_url)
+        if mongo_db_url is not None:
+            pulumi.set(__self__, "mongo_db_url", mongo_db_url)
+        if ords_url is not None:
+            pulumi.set(__self__, "ords_url", ords_url)
+        if sql_dev_web_url is not None:
+            pulumi.set(__self__, "sql_dev_web_url", sql_dev_web_url)
+
+    @property
+    @pulumi.getter(name="apexUrl")
+    def apex_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Oracle Application Express (APEX) URL.
+        """
+        return pulumi.get(self, "apex_url")
+
+    @apex_url.setter
+    def apex_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "apex_url", value)
+
+    @property
+    @pulumi.getter(name="databaseTransformsUrl")
+    def database_transforms_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the Database Transforms for the Autonomous Database.
+        """
+        return pulumi.get(self, "database_transforms_url")
+
+    @database_transforms_url.setter
+    def database_transforms_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_transforms_url", value)
+
+    @property
+    @pulumi.getter(name="graphStudioUrl")
+    def graph_studio_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the Graph Studio for the Autonomous Database.
+        """
+        return pulumi.get(self, "graph_studio_url")
+
+    @graph_studio_url.setter
+    def graph_studio_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "graph_studio_url", value)
+
+    @property
+    @pulumi.getter(name="machineLearningNotebookUrl")
+    def machine_learning_notebook_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+        """
+        return pulumi.get(self, "machine_learning_notebook_url")
+
+    @machine_learning_notebook_url.setter
+    def machine_learning_notebook_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "machine_learning_notebook_url", value)
+
+    @property
+    @pulumi.getter(name="machineLearningUserManagementUrl")
+    def machine_learning_user_management_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Oracle Machine Learning user management URL.
+        """
+        return pulumi.get(self, "machine_learning_user_management_url")
+
+    @machine_learning_user_management_url.setter
+    def machine_learning_user_management_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "machine_learning_user_management_url", value)
+
+    @property
+    @pulumi.getter(name="mongoDbUrl")
+    def mongo_db_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The URL of the MongoDB API for the Autonomous Database.
+        """
+        return pulumi.get(self, "mongo_db_url")
+
+    @mongo_db_url.setter
+    def mongo_db_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "mongo_db_url", value)
+
+    @property
+    @pulumi.getter(name="ordsUrl")
+    def ords_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+        """
+        return pulumi.get(self, "ords_url")
+
+    @ords_url.setter
+    def ords_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ords_url", value)
+
+    @property
+    @pulumi.getter(name="sqlDevWebUrl")
+    def sql_dev_web_url(self) -> Optional[pulumi.Input[str]]:
+        """
+        Oracle SQL Developer Web URL.
+        """
+        return pulumi.get(self, "sql_dev_web_url")
+
+    @sql_dev_web_url.setter
+    def sql_dev_web_url(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "sql_dev_web_url", value)
 
 
 @pulumi.input_type

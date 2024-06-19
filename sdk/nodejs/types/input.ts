@@ -23587,6 +23587,41 @@ export namespace Database {
         timeOfBackup?: pulumi.Input<string>;
     }
 
+    export interface AutonomousDatabasePublicConnectionUrl {
+        /**
+         * Oracle Application Express (APEX) URL.
+         */
+        apexUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Database Transforms for the Autonomous Database.
+         */
+        databaseTransformsUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Graph Studio for the Autonomous Database.
+         */
+        graphStudioUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the Oracle Machine Learning (OML) Notebook for the Autonomous Database.
+         */
+        machineLearningNotebookUrl?: pulumi.Input<string>;
+        /**
+         * Oracle Machine Learning user management URL.
+         */
+        machineLearningUserManagementUrl?: pulumi.Input<string>;
+        /**
+         * The URL of the MongoDB API for the Autonomous Database.
+         */
+        mongoDbUrl?: pulumi.Input<string>;
+        /**
+         * The Oracle REST Data Services (ORDS) URL of the Web Access for the Autonomous Database.
+         */
+        ordsUrl?: pulumi.Input<string>;
+        /**
+         * Oracle SQL Developer Web URL.
+         */
+        sqlDevWebUrl?: pulumi.Input<string>;
+    }
+
     export interface AutonomousDatabaseRemoteDisasterRecoveryConfiguration {
         /**
          * Indicates the disaster recovery (DR) type of the standby Autonomous Database Serverless instance. Autonomous Data Guard (ADG) DR type provides business critical DR with a faster recovery time objective (RTO) during failover or switchover. Backup-based DR type provides lower cost DR with a slower RTO during failover or switchover.

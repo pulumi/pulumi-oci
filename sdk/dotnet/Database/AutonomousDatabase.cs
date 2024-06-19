@@ -584,6 +584,18 @@ namespace Pulumi.Oci.Database
         public Output<ImmutableArray<double>> ProvisionableCpuses { get; private set; } = null!;
 
         /// <summary>
+        /// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        /// </summary>
+        [Output("publicConnectionUrls")]
+        public Output<ImmutableArray<Outputs.AutonomousDatabasePublicConnectionUrl>> PublicConnectionUrls { get; private set; } = null!;
+
+        /// <summary>
+        /// The public endpoint for the private endpoint enabled resource.
+        /// </summary>
+        [Output("publicEndpoint")]
+        public Output<string> PublicEndpoint { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         /// </summary>
         [Output("refreshableMode")]
@@ -2201,6 +2213,24 @@ namespace Pulumi.Oci.Database
             get => _provisionableCpuses ?? (_provisionableCpuses = new InputList<double>());
             set => _provisionableCpuses = value;
         }
+
+        [Input("publicConnectionUrls")]
+        private InputList<Inputs.AutonomousDatabasePublicConnectionUrlGetArgs>? _publicConnectionUrls;
+
+        /// <summary>
+        /// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        /// </summary>
+        public InputList<Inputs.AutonomousDatabasePublicConnectionUrlGetArgs> PublicConnectionUrls
+        {
+            get => _publicConnectionUrls ?? (_publicConnectionUrls = new InputList<Inputs.AutonomousDatabasePublicConnectionUrlGetArgs>());
+            set => _publicConnectionUrls = value;
+        }
+
+        /// <summary>
+        /// The public endpoint for the private endpoint enabled resource.
+        /// </summary>
+        [Input("publicEndpoint")]
+        public Input<string>? PublicEndpoint { get; set; }
 
         /// <summary>
         /// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.

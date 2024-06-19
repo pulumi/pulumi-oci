@@ -2041,6 +2041,14 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DataSafe/maskingPolicyHealthReportManagement",
+  "fqn": "pulumi_oci.datasafe",
+  "classes": {
+   "oci:DataSafe/maskingPolicyHealthReportManagement:MaskingPolicyHealthReportManagement": "MaskingPolicyHealthReportManagement"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DataSafe/maskingReportManagement",
   "fqn": "pulumi_oci.datasafe",
   "classes": {

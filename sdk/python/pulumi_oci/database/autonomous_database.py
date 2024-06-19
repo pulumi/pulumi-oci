@@ -1499,6 +1499,8 @@ class _AutonomousDatabaseState:
                  private_endpoint_ip: Optional[pulumi.Input[str]] = None,
                  private_endpoint_label: Optional[pulumi.Input[str]] = None,
                  provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+                 public_connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]] = None,
+                 public_endpoint: Optional[pulumi.Input[str]] = None,
                  refreshable_mode: Optional[pulumi.Input[str]] = None,
                  refreshable_status: Optional[pulumi.Input[str]] = None,
                  remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] = None,
@@ -1678,6 +1680,8 @@ class _AutonomousDatabaseState:
                * Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
                * Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
+        :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        :param pulumi.Input[str] public_endpoint: The public endpoint for the private endpoint enabled resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[str] refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
@@ -1929,6 +1933,10 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "private_endpoint_label", private_endpoint_label)
         if provisionable_cpuses is not None:
             pulumi.set(__self__, "provisionable_cpuses", provisionable_cpuses)
+        if public_connection_urls is not None:
+            pulumi.set(__self__, "public_connection_urls", public_connection_urls)
+        if public_endpoint is not None:
+            pulumi.set(__self__, "public_endpoint", public_endpoint)
         if refreshable_mode is not None:
             pulumi.set(__self__, "refreshable_mode", refreshable_mode)
         if refreshable_status is not None:
@@ -3092,6 +3100,30 @@ class _AutonomousDatabaseState:
         pulumi.set(self, "provisionable_cpuses", value)
 
     @property
+    @pulumi.getter(name="publicConnectionUrls")
+    def public_connection_urls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]]:
+        """
+        The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        """
+        return pulumi.get(self, "public_connection_urls")
+
+    @public_connection_urls.setter
+    def public_connection_urls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabasePublicConnectionUrlArgs']]]]):
+        pulumi.set(self, "public_connection_urls", value)
+
+    @property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> Optional[pulumi.Input[str]]:
+        """
+        The public endpoint for the private endpoint enabled resource.
+        """
+        return pulumi.get(self, "public_endpoint")
+
+    @public_endpoint.setter
+    def public_endpoint(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "public_endpoint", value)
+
+    @property
     @pulumi.getter(name="refreshableMode")
     def refreshable_mode(self) -> Optional[pulumi.Input[str]]:
         """
@@ -4159,6 +4191,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["peer_db_ids"] = None
             __props__.__dict__["private_endpoint"] = None
             __props__.__dict__["provisionable_cpuses"] = None
+            __props__.__dict__["public_connection_urls"] = None
+            __props__.__dict__["public_endpoint"] = None
             __props__.__dict__["refreshable_status"] = None
             __props__.__dict__["remote_disaster_recovery_configurations"] = None
             __props__.__dict__["role"] = None
@@ -4281,6 +4315,8 @@ class AutonomousDatabase(pulumi.CustomResource):
             private_endpoint_ip: Optional[pulumi.Input[str]] = None,
             private_endpoint_label: Optional[pulumi.Input[str]] = None,
             provisionable_cpuses: Optional[pulumi.Input[Sequence[pulumi.Input[float]]]] = None,
+            public_connection_urls: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabasePublicConnectionUrlArgs']]]]] = None,
+            public_endpoint: Optional[pulumi.Input[str]] = None,
             refreshable_mode: Optional[pulumi.Input[str]] = None,
             refreshable_status: Optional[pulumi.Input[str]] = None,
             remote_disaster_recovery_configurations: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]]] = None,
@@ -4465,6 +4501,8 @@ class AutonomousDatabase(pulumi.CustomResource):
                * Resetting the endpoint label to an empty string, after the creation of the private endpoint database, changes the private endpoint database to a public endpoint database.
                * Setting the endpoint label to a non-empty string value, updates to a new private endpoint database, when the database is disabled and re-enabled.
         :param pulumi.Input[Sequence[pulumi.Input[float]]] provisionable_cpuses: An array of CPU values that an Autonomous Database can be scaled to.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabasePublicConnectionUrlArgs']]]] public_connection_urls: The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        :param pulumi.Input[str] public_endpoint: The public endpoint for the private endpoint enabled resource.
         :param pulumi.Input[str] refreshable_mode: (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[str] refreshable_status: The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseRemoteDisasterRecoveryConfigurationArgs']]]] remote_disaster_recovery_configurations: Configurations of a Disaster Recovery.
@@ -4632,6 +4670,8 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["private_endpoint_ip"] = private_endpoint_ip
         __props__.__dict__["private_endpoint_label"] = private_endpoint_label
         __props__.__dict__["provisionable_cpuses"] = provisionable_cpuses
+        __props__.__dict__["public_connection_urls"] = public_connection_urls
+        __props__.__dict__["public_endpoint"] = public_endpoint
         __props__.__dict__["refreshable_mode"] = refreshable_mode
         __props__.__dict__["refreshable_status"] = refreshable_status
         __props__.__dict__["remote_disaster_recovery_configurations"] = remote_disaster_recovery_configurations
@@ -5408,6 +5448,22 @@ class AutonomousDatabase(pulumi.CustomResource):
         An array of CPU values that an Autonomous Database can be scaled to.
         """
         return pulumi.get(self, "provisionable_cpuses")
+
+    @property
+    @pulumi.getter(name="publicConnectionUrls")
+    def public_connection_urls(self) -> pulumi.Output[Sequence['outputs.AutonomousDatabasePublicConnectionUrl']]:
+        """
+        The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+        """
+        return pulumi.get(self, "public_connection_urls")
+
+    @property
+    @pulumi.getter(name="publicEndpoint")
+    def public_endpoint(self) -> pulumi.Output[str]:
+        """
+        The public endpoint for the private endpoint enabled resource.
+        """
+        return pulumi.get(self, "public_endpoint")
 
     @property
     @pulumi.getter(name="refreshableMode")

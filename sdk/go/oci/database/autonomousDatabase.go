@@ -246,6 +246,10 @@ type AutonomousDatabase struct {
 	PrivateEndpointLabel pulumi.StringOutput `pulumi:"privateEndpointLabel"`
 	// An array of CPU values that an Autonomous Database can be scaled to.
 	ProvisionableCpuses pulumi.Float64ArrayOutput `pulumi:"provisionableCpuses"`
+	// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+	PublicConnectionUrls AutonomousDatabasePublicConnectionUrlArrayOutput `pulumi:"publicConnectionUrls"`
+	// The public endpoint for the private endpoint enabled resource.
+	PublicEndpoint pulumi.StringOutput `pulumi:"publicEndpoint"`
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode pulumi.StringOutput `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -632,6 +636,10 @@ type autonomousDatabaseState struct {
 	PrivateEndpointLabel *string `pulumi:"privateEndpointLabel"`
 	// An array of CPU values that an Autonomous Database can be scaled to.
 	ProvisionableCpuses []float64 `pulumi:"provisionableCpuses"`
+	// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+	PublicConnectionUrls []AutonomousDatabasePublicConnectionUrl `pulumi:"publicConnectionUrls"`
+	// The public endpoint for the private endpoint enabled resource.
+	PublicEndpoint *string `pulumi:"publicEndpoint"`
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode *string `pulumi:"refreshableMode"`
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -976,6 +984,10 @@ type AutonomousDatabaseState struct {
 	PrivateEndpointLabel pulumi.StringPtrInput
 	// An array of CPU values that an Autonomous Database can be scaled to.
 	ProvisionableCpuses pulumi.Float64ArrayInput
+	// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+	PublicConnectionUrls AutonomousDatabasePublicConnectionUrlArrayInput
+	// The public endpoint for the private endpoint enabled resource.
+	PublicEndpoint pulumi.StringPtrInput
 	// (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.
 	RefreshableMode pulumi.StringPtrInput
 	// The refresh status of the clone. REFRESHING indicates that the clone is currently being refreshed with data from the source Autonomous Database.
@@ -2140,6 +2152,18 @@ func (o AutonomousDatabaseOutput) PrivateEndpointLabel() pulumi.StringOutput {
 // An array of CPU values that an Autonomous Database can be scaled to.
 func (o AutonomousDatabaseOutput) ProvisionableCpuses() pulumi.Float64ArrayOutput {
 	return o.ApplyT(func(v *AutonomousDatabase) pulumi.Float64ArrayOutput { return v.ProvisionableCpuses }).(pulumi.Float64ArrayOutput)
+}
+
+// The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or that has a direct connection to your VCN.
+func (o AutonomousDatabaseOutput) PublicConnectionUrls() AutonomousDatabasePublicConnectionUrlArrayOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) AutonomousDatabasePublicConnectionUrlArrayOutput {
+		return v.PublicConnectionUrls
+	}).(AutonomousDatabasePublicConnectionUrlArrayOutput)
+}
+
+// The public endpoint for the private endpoint enabled resource.
+func (o AutonomousDatabaseOutput) PublicEndpoint() pulumi.StringOutput {
+	return o.ApplyT(func(v *AutonomousDatabase) pulumi.StringOutput { return v.PublicEndpoint }).(pulumi.StringOutput)
 }
 
 // (Updatable) The refresh mode of the clone. AUTOMATIC indicates that the clone is automatically being refreshed with data from the source Autonomous Database.

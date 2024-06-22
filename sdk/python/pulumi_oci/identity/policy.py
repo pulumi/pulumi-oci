@@ -207,10 +207,8 @@ class _PolicyState:
 
     @property
     @pulumi.getter(name="ETag")
+    @_utilities.deprecated("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def e_tag(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""e_tag is deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "e_tag")
 
     @e_tag.setter
@@ -279,10 +277,8 @@ class _PolicyState:
 
     @property
     @pulumi.getter(name="lastUpdateETag")
+    @_utilities.deprecated("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def last_update_e_tag(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""last_update_e_tag is deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "last_update_e_tag")
 
     @last_update_e_tag.setter
@@ -303,10 +299,8 @@ class _PolicyState:
 
     @property
     @pulumi.getter(name="policyHash")
+    @_utilities.deprecated("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def policy_hash(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""policy_hash is deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "policy_hash")
 
     @policy_hash.setter
@@ -605,10 +599,8 @@ class Policy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="ETag")
+    @_utilities.deprecated("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def e_tag(self) -> pulumi.Output[str]:
-        warnings.warn("""The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""e_tag is deprecated: The 'ETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "e_tag")
 
     @property
@@ -653,10 +645,8 @@ class Policy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="lastUpdateETag")
+    @_utilities.deprecated("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def last_update_e_tag(self) -> pulumi.Output[str]:
-        warnings.warn("""The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""last_update_e_tag is deprecated: The 'lastUpdateETag' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "last_update_e_tag")
 
     @property
@@ -669,10 +659,8 @@ class Policy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="policyHash")
+    @_utilities.deprecated("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def policy_hash(self) -> pulumi.Output[str]:
-        warnings.warn("""The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""policy_hash is deprecated: The 'policyHash' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "policy_hash")
 
     @property

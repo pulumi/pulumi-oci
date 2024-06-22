@@ -17368,10 +17368,8 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
 
     @property
     @pulumi.getter(name="isShrinkOnly")
+    @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
     def is_shrink_only(self) -> bool:
-        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
-        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-
         return pulumi.get(self, "is_shrink_only")
 
     @property
@@ -21738,13 +21736,11 @@ class GetAutonomousExadataInfrastructuresAutonomousExadataInfrastructureResult(d
 
     @property
     @pulumi.getter(name="availabilityDomain")
+    @_utilities.deprecated("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
     def availability_domain(self) -> str:
         """
         A filter to return only resources that match the given availability domain exactly.
         """
-        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
-        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
-
         return pulumi.get(self, "availability_domain")
 
     @property
@@ -24230,13 +24226,11 @@ class GetBackupDestinationsBackupDestinationResult(dict):
 
     @property
     @pulumi.getter(name="localMountPointPath")
+    @_utilities.deprecated("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
     def local_mount_point_path(self) -> str:
         """
         The local directory path on each VM cluster node where the NFS server location is mounted. The local directory path and the NFS server location must each be the same across all of the VM cluster nodes. Ensure that the NFS mount is maintained continuously on all of the VM cluster nodes.
         """
-        warnings.warn("""The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""local_mount_point_path is deprecated: The 'local_mount_point_path' field has been deprecated. Please use 'local_mount_point_path under mount_type_details' instead.""")
-
         return pulumi.get(self, "local_mount_point_path")
 
     @property
@@ -34484,13 +34478,11 @@ class GetDbSystemShapesDbSystemShapeResult(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'shape' field has been deprecated. Please use 'name' instead.""")
     def shape(self) -> str:
         """
         Deprecated. Use `name` instead of `shape`.
         """
-        warnings.warn("""The 'shape' field has been deprecated. Please use 'name' instead.""", DeprecationWarning)
-        pulumi.log.warn("""shape is deprecated: The 'shape' field has been deprecated. Please use 'name' instead.""")
-
         return pulumi.get(self, "shape")
 
     @property

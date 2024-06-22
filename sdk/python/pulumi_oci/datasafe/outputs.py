@@ -10209,24 +10209,20 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
 
     @property
     @pulumi.getter(name="discoveryJobId")
+    @_utilities.deprecated("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
     def discovery_job_id(self) -> str:
         """
         The OCID of the discovery job.
         """
-        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""discovery_job_id is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "discovery_job_id")
 
     @property
     @pulumi.getter(name="discoveryType")
+    @_utilities.deprecated("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
     def discovery_type(self) -> str:
         """
         A filter to return only the resources that match the specified discovery type.
         """
-        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""discovery_type is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "discovery_type")
 
     @property
@@ -10247,13 +10243,11 @@ class GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
     def key(self) -> str:
         """
         The unique key that identifies the discovery result.
         """
-        warnings.warn("""The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""key is deprecated: The 'oci_data_safe_discovery_jobs_result' resource has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "key")
 
     @property

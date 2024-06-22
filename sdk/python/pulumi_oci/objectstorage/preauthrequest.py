@@ -131,13 +131,11 @@ class PreauthrequestArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'object' field has been deprecated. Please use 'object_name' instead.""")
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         """
-        warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
-        pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
-
         return pulumi.get(self, "object")
 
     @object.setter
@@ -305,13 +303,11 @@ class _PreauthrequestState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'object' field has been deprecated. Please use 'object_name' instead.""")
     def object(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         """
-        warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
-        pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
-
         return pulumi.get(self, "object")
 
     @object.setter
@@ -638,13 +634,11 @@ class Preauthrequest(pulumi.CustomResource):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'object' field has been deprecated. Please use 'object_name' instead.""")
     def object(self) -> pulumi.Output[str]:
         """
         Deprecated. Instead use `object_name`. Requests that include both `object` and `object_name` will be rejected. (Optional) The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket if the access type allows that. The object name can be a prefix as well, in that case pre-authenticated request grants access to all the objects within the bucket starting with that prefix provided that we have the correct access type.
         """
-        warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
-        pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
-
         return pulumi.get(self, "object")
 
     @property

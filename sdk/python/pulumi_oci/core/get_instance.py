@@ -280,13 +280,11 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter(name="hostnameLabel")
+    @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
     def hostname_label(self) -> str:
         """
         The hostname for the instance VNIC's primary private IP.
         """
-        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-
         return pulumi.get(self, "hostname_label")
 
     @property
@@ -299,13 +297,11 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
     def image(self) -> str:
         """
         Deprecated. Use `sourceDetails` instead.
         """
-        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-
         return pulumi.get(self, "image")
 
     @property
@@ -470,10 +466,8 @@ class GetInstanceResult:
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
     def subnet_id(self) -> str:
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @property

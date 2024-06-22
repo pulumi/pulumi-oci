@@ -942,6 +942,7 @@ class AutonomousDatabaseArgs:
 
     @property
     @pulumi.getter(name="isShrinkOnly")
+    @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
     def is_shrink_only(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `is_dedicated` is false.
@@ -949,9 +950,6 @@ class AutonomousDatabaseArgs:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
-        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-
         return pulumi.get(self, "is_shrink_only")
 
     @is_shrink_only.setter
@@ -2745,6 +2743,7 @@ class _AutonomousDatabaseState:
 
     @property
     @pulumi.getter(name="isShrinkOnly")
+    @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
     def is_shrink_only(self) -> Optional[pulumi.Input[bool]]:
         """
         (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `is_dedicated` is false.
@@ -2752,9 +2751,6 @@ class _AutonomousDatabaseState:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
-        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-
         return pulumi.get(self, "is_shrink_only")
 
     @is_shrink_only.setter
@@ -5207,6 +5203,7 @@ class AutonomousDatabase(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="isShrinkOnly")
+    @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
     def is_shrink_only(self) -> pulumi.Output[Optional[bool]]:
         """
         (Updatable) An optional property when enabled triggers the Shrinking of Autonomous Database once. To trigger Shrinking of ADB once again, this flag needs to be disabled and re-enabled again. It should not be passed during create database operation. It is only applicable on Serverless databases i.e. where `is_dedicated` is false.
@@ -5214,9 +5211,6 @@ class AutonomousDatabase(pulumi.CustomResource):
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
-        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-
         return pulumi.get(self, "is_shrink_only")
 
     @property

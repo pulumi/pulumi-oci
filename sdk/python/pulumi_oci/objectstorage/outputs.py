@@ -1508,13 +1508,11 @@ class GetPreauthrequestsPreauthenticatedRequestResult(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'object' field has been deprecated. Please use 'object_name' instead.""")
     def object(self) -> str:
         """
         Deprecated. Instead use `object_name`.The name of the object that is being granted access to by the pre-authenticated request. Avoid entering confidential information. The object name can be null and if so, the pre-authenticated request grants access to the entire bucket. Example: test/object1.log
         """
-        warnings.warn("""The 'object' field has been deprecated. Please use 'object_name' instead.""", DeprecationWarning)
-        pulumi.log.warn("""object is deprecated: The 'object' field has been deprecated. Please use 'object_name' instead.""")
-
         return pulumi.get(self, "object")
 
     @property
@@ -1628,10 +1626,8 @@ class GetReplicationPoliciesReplicationPolicyResult(dict):
 
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
+    @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
     def delete_object_in_destination_bucket(self) -> str:
-        warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @property

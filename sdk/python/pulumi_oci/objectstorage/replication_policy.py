@@ -98,10 +98,8 @@ class ReplicationPolicyArgs:
 
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
+    @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
     def delete_object_in_destination_bucket(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @delete_object_in_destination_bucket.setter
@@ -188,10 +186,8 @@ class _ReplicationPolicyState:
 
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
+    @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
     def delete_object_in_destination_bucket(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @delete_object_in_destination_bucket.setter
@@ -498,10 +494,8 @@ class ReplicationPolicy(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
+    @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
     def delete_object_in_destination_bucket(self) -> pulumi.Output[Optional[str]]:
-        warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @property

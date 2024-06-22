@@ -100,13 +100,11 @@ class GetAutonomousExadataInfrastructureResult:
 
     @property
     @pulumi.getter(name="availabilityDomain")
+    @_utilities.deprecated("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
     def availability_domain(self) -> str:
         """
         The name of the availability domain that the Autonomous Exadata Infrastructure is located in.
         """
-        warnings.warn("""Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""", DeprecationWarning)
-        pulumi.log.warn("""availability_domain is deprecated: Autonomous Exadata Infrastructure resource is now end-of-life.Please provision cloud autonomous vm cluster instead.""")
-
         return pulumi.get(self, "availability_domain")
 
     @property

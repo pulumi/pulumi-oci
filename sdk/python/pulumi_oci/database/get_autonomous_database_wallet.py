@@ -43,10 +43,8 @@ class GetAutonomousDatabaseWalletResult:
 
     @property
     @pulumi.getter(name="autonomousDatabaseId")
+    @_utilities.deprecated("""The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""")
     def autonomous_database_id(self) -> str:
-        warnings.warn("""The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""", DeprecationWarning)
-        pulumi.log.warn("""autonomous_database_id is deprecated: The 'data.oci_database_autonomous_database_wallet' resource has been deprecated. Please use 'oci_database_autonomous_database_wallet' instead.""")
-
         return pulumi.get(self, "autonomous_database_id")
 
     @property

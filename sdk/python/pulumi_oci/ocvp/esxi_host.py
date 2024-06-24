@@ -105,13 +105,11 @@ class EsxiHostArgs:
 
     @property
     @pulumi.getter(name="billingDonorHostId")
+    @_utilities.deprecated("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
     def billing_donor_host_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
-        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "billing_donor_host_id")
 
     @billing_donor_host_id.setter
@@ -156,13 +154,11 @@ class EsxiHostArgs:
 
     @property
     @pulumi.getter(name="currentSku")
+    @_utilities.deprecated("""The 'current_sku' field has been deprecated. It is no longer supported.""")
     def current_sku(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         """
-        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "current_sku")
 
     @current_sku.setter
@@ -211,13 +207,11 @@ class EsxiHostArgs:
 
     @property
     @pulumi.getter(name="failedEsxiHostId")
+    @_utilities.deprecated("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
     def failed_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
-        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "failed_esxi_host_id")
 
     @failed_esxi_host_id.setter
@@ -262,10 +256,8 @@ class EsxiHostArgs:
 
     @property
     @pulumi.getter(name="nextSku")
+    @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
@@ -274,13 +266,11 @@ class EsxiHostArgs:
 
     @property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
+    @_utilities.deprecated("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
     def non_upgraded_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
-        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @non_upgraded_esxi_host_id.setter
@@ -289,6 +279,7 @@ class EsxiHostArgs:
 
     @property
     @pulumi.getter(name="sddcId")
+    @_utilities.deprecated("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
     def sddc_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
@@ -297,9 +288,6 @@ class EsxiHostArgs:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
-        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
-
         return pulumi.get(self, "sddc_id")
 
     @sddc_id.setter
@@ -473,13 +461,11 @@ class _EsxiHostState:
 
     @property
     @pulumi.getter(name="billingDonorHostId")
+    @_utilities.deprecated("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
     def billing_donor_host_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
-        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "billing_donor_host_id")
 
     @billing_donor_host_id.setter
@@ -560,13 +546,11 @@ class _EsxiHostState:
 
     @property
     @pulumi.getter(name="currentSku")
+    @_utilities.deprecated("""The 'current_sku' field has been deprecated. It is no longer supported.""")
     def current_sku(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         """
-        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "current_sku")
 
     @current_sku.setter
@@ -615,13 +599,11 @@ class _EsxiHostState:
 
     @property
     @pulumi.getter(name="failedEsxiHostId")
+    @_utilities.deprecated("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
     def failed_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
-        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "failed_esxi_host_id")
 
     @failed_esxi_host_id.setter
@@ -714,10 +696,8 @@ class _EsxiHostState:
 
     @property
     @pulumi.getter(name="nextSku")
+    @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
     def next_sku(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "next_sku")
 
     @next_sku.setter
@@ -726,13 +706,11 @@ class _EsxiHostState:
 
     @property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
+    @_utilities.deprecated("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
     def non_upgraded_esxi_host_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
-        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @non_upgraded_esxi_host_id.setter
@@ -753,6 +731,7 @@ class _EsxiHostState:
 
     @property
     @pulumi.getter(name="sddcId")
+    @_utilities.deprecated("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
     def sddc_id(self) -> Optional[pulumi.Input[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
@@ -761,9 +740,6 @@ class _EsxiHostState:
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
-        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
-
         return pulumi.get(self, "sddc_id")
 
     @sddc_id.setter
@@ -1113,13 +1089,11 @@ class EsxiHost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="billingDonorHostId")
+    @_utilities.deprecated("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
     def billing_donor_host_id(self) -> pulumi.Output[str]:
         """
         (Optional) (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the deleted ESXi Host with LeftOver billing cycle.
         """
-        warnings.warn("""This 'billing_donor_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""billing_donor_host_id is deprecated: This 'billing_donor_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "billing_donor_host_id")
 
     @property
@@ -1172,13 +1146,11 @@ class EsxiHost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="currentSku")
+    @_utilities.deprecated("""The 'current_sku' field has been deprecated. It is no longer supported.""")
     def current_sku(self) -> pulumi.Output[str]:
         """
         (Optional) The billing option currently used by the ESXi host. It is only effective during resource creation. Changes to its value after creation will be ignored. [ListSupportedSkus](https://docs.cloud.oracle.com/iaas/api/#/en/vmware/20200501/SupportedSkuSummary/ListSupportedSkus). **Deprecated**. Please use `current_commitment` instead.
         """
-        warnings.warn("""The 'current_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""current_sku is deprecated: The 'current_sku' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "current_sku")
 
     @property
@@ -1211,13 +1183,11 @@ class EsxiHost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="failedEsxiHostId")
+    @_utilities.deprecated("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
     def failed_esxi_host_id(self) -> pulumi.Output[str]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that is failed. This is an optional parameter. If this parameter is specified, a new ESXi host will be created to replace the failed one, and the `failedEsxiHostId` field will be updated in the newly created Esxi host.
         """
-        warnings.warn("""This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""failed_esxi_host_id is deprecated: This 'failed_esxi_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "failed_esxi_host_id")
 
     @property
@@ -1278,21 +1248,17 @@ class EsxiHost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="nextSku")
+    @_utilities.deprecated("""The 'next_sku' field has been deprecated. It is no longer supported.""")
     def next_sku(self) -> pulumi.Output[str]:
-        warnings.warn("""The 'next_sku' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""next_sku is deprecated: The 'next_sku' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "next_sku")
 
     @property
     @pulumi.getter(name="nonUpgradedEsxiHostId")
+    @_utilities.deprecated("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
     def non_upgraded_esxi_host_id(self) -> pulumi.Output[str]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the ESXi host that will be upgraded. This is an optional parameter. If this parameter is specified, an ESXi host with the new software version is created to replace the original one, and the `nonUpgradedEsxiHostId` field is updated in the newly created Esxi host. See [Upgrading VMware Software](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/upgrade.htm) for more information.
         """
-        warnings.warn("""This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""", DeprecationWarning)
-        pulumi.log.warn("""non_upgraded_esxi_host_id is deprecated: This 'non_upgraded_esxi_host_id' argument has been deprecated and will be computed only.""")
-
         return pulumi.get(self, "non_upgraded_esxi_host_id")
 
     @property
@@ -1305,6 +1271,7 @@ class EsxiHost(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sddcId")
+    @_utilities.deprecated("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
     def sddc_id(self) -> pulumi.Output[Optional[str]]:
         """
         (Optional) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the SDDC to add the ESXi host to. This field has been deprecated. Please use `cluster_id` instead. Either `sddc_id` or `cluster_id` must be configured for `Ocvp.EsxiHost` resource.  **Deprecated**. Please use `cluster_id` instead.
@@ -1313,9 +1280,6 @@ class EsxiHost(pulumi.CustomResource):
         ** IMPORTANT **
         Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
-        warnings.warn("""The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""", DeprecationWarning)
-        pulumi.log.warn("""sddc_id is deprecated: The 'sddc_id' field has been deprecated. Please use 'cluster_id' instead.""")
-
         return pulumi.get(self, "sddc_id")
 
     @property

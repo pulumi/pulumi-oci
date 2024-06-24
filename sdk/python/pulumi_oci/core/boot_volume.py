@@ -127,13 +127,11 @@ class BootVolumeArgs:
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         """
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -400,13 +398,11 @@ class _BootVolumeState:
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         """
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -976,13 +972,11 @@ class BootVolume(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> pulumi.Output[str]:
         """
         If provided, specifies the ID of the boot volume backup policy to assign to the newly created boot volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a boot volume.
         """
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property

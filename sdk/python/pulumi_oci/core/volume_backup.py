@@ -324,13 +324,11 @@ class _VolumeBackupState:
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -447,13 +445,11 @@ class _VolumeBackupState:
 
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
+    @_utilities.deprecated("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
     def unique_size_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         """
-        warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
-
         return pulumi.get(self, "unique_size_in_mbs")
 
     @unique_size_in_mbs.setter
@@ -768,13 +764,11 @@ class VolumeBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> pulumi.Output[str]:
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @property
@@ -851,13 +845,11 @@ class VolumeBackup(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
+    @_utilities.deprecated("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
     def unique_size_in_mbs(self) -> pulumi.Output[str]:
         """
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         """
-        warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
-
         return pulumi.get(self, "unique_size_in_mbs")
 
     @property

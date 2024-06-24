@@ -98,10 +98,8 @@ class GetSupportedHostShapesResult:
 
     @property
     @pulumi.getter(name="sddcType")
+    @_utilities.deprecated("""The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""")
     def sddc_type(self) -> Optional[str]:
-        warnings.warn("""The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""", DeprecationWarning)
-        pulumi.log.warn("""sddc_type is deprecated: The 'sddc_type' field has been deprecated. Please use 'is_single_host_sddc_supported' instead.""")
-
         return pulumi.get(self, "sddc_type")
 
 

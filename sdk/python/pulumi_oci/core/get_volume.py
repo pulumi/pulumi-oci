@@ -125,10 +125,8 @@ class GetVolumeResult:
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> str:
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -226,13 +224,11 @@ class GetVolumeResult:
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> str:
         """
         The size of the volume in MBs. This field is deprecated. Use sizeInGBs instead.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @property

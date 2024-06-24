@@ -189,24 +189,20 @@ class GetNodePoolResult:
 
     @property
     @pulumi.getter(name="nodeImageId")
+    @_utilities.deprecated("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
     def node_image_id(self) -> str:
         """
         Deprecated. see `nodeSource`. The OCID of the image running on the nodes in the node pool.
         """
-        warnings.warn("""The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""node_image_id is deprecated: The 'node_image_id' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
-
         return pulumi.get(self, "node_image_id")
 
     @property
     @pulumi.getter(name="nodeImageName")
+    @_utilities.deprecated("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
     def node_image_name(self) -> str:
         """
         Deprecated. see `nodeSource`. The name of the image running on the nodes in the node pool.
         """
-        warnings.warn("""The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""node_image_name is deprecated: The 'node_image_name' field has been deprecated. Please use 'node_source_details' instead. If both fields are specified, then 'node_source_details' will be used.""")
-
         return pulumi.get(self, "node_image_name")
 
     @property

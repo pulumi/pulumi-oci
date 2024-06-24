@@ -445,13 +445,11 @@ class _LoadBalancerState:
 
     @property
     @pulumi.getter(name="ipAddresses")
+    @_utilities.deprecated("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
     def ip_addresses(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
         An array of IP addresses. Deprecated: use ip_address_details instead
         """
-        warnings.warn("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""ip_addresses is deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
-
         return pulumi.get(self, "ip_addresses")
 
     @ip_addresses.setter
@@ -1044,13 +1042,11 @@ class LoadBalancer(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="ipAddresses")
+    @_utilities.deprecated("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
     def ip_addresses(self) -> pulumi.Output[Sequence[str]]:
         """
         An array of IP addresses. Deprecated: use ip_address_details instead
         """
-        warnings.warn("""The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""ip_addresses is deprecated: The 'ip_addresses' field has been deprecated. Please use 'ip_address_details' instead.""")
-
         return pulumi.get(self, "ip_addresses")
 
     @property

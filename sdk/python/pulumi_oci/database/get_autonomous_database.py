@@ -881,10 +881,8 @@ class GetAutonomousDatabaseResult:
 
     @property
     @pulumi.getter(name="isShrinkOnly")
+    @_utilities.deprecated("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
     def is_shrink_only(self) -> bool:
-        warnings.warn("""The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""", DeprecationWarning)
-        pulumi.log.warn("""is_shrink_only is deprecated: The 'is_shrink_only' field has been deprecated. Please use 'shrink_adb_trigger' instead.""")
-
         return pulumi.get(self, "is_shrink_only")
 
     @property

@@ -1339,13 +1339,11 @@ class GetRecordsRecordResult(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
     def domain(self) -> str:
         """
         Search by domain. Will match any record whose domain (case-insensitive) equals the provided value.
         """
-        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-        pulumi.log.warn("""domain is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-
         return pulumi.get(self, "domain")
 
     @property
@@ -1374,24 +1372,20 @@ class GetRecordsRecordResult(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
     def rtype(self) -> str:
         """
         Search by record type. Will match any record whose [type](https://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-4) (case-insensitive) equals the provided value.
         """
-        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-        pulumi.log.warn("""rtype is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-
         return pulumi.get(self, "rtype")
 
     @property
     @pulumi.getter(name="zoneNameOrId")
+    @_utilities.deprecated("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
     def zone_name_or_id(self) -> str:
         """
         The name or OCID of the target zone.
         """
-        warnings.warn("""The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""", DeprecationWarning)
-        pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_record' resource has been deprecated. Please use 'oci_dns_rrset' instead.""")
-
         return pulumi.get(self, "zone_name_or_id")
 
     @property

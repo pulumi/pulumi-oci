@@ -212,13 +212,11 @@ class BudgetArgs:
 
     @property
     @pulumi.getter(name="targetCompartmentId")
+    @_utilities.deprecated("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
     def target_compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
-
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
@@ -538,13 +536,11 @@ class _BudgetState:
 
     @property
     @pulumi.getter(name="targetCompartmentId")
+    @_utilities.deprecated("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
     def target_compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
-
         return pulumi.get(self, "target_compartment_id")
 
     @target_compartment_id.setter
@@ -1037,13 +1033,11 @@ class Budget(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="targetCompartmentId")
+    @_utilities.deprecated("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
     def target_compartment_id(self) -> pulumi.Output[str]:
         """
         This is DEPRECATED. Set the target compartment ID in targets instead.
         """
-        warnings.warn("""The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""target_compartment_id is deprecated: The 'target_compartment_id' field has been deprecated. Please use 'targets' instead.""")
-
         return pulumi.get(self, "target_compartment_id")
 
     @property

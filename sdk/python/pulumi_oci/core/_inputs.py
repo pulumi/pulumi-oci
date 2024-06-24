@@ -3014,10 +3014,8 @@ class DefaultRouteTableRouteRuleArgs:
 
     @property
     @pulumi.getter(name="cidrBlock")
+    @_utilities.deprecated("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
-        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
-
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter
@@ -11229,10 +11227,8 @@ class IpsecConnectionTunnelManagementBgpSessionInfoArgs:
 
     @property
     @pulumi.getter(name="bgpIpv6state")
+    @_utilities.deprecated("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
     def bgp_ipv6state(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""", DeprecationWarning)
-        pulumi.log.warn("""bgp_ipv6state is deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
-
         return pulumi.get(self, "bgp_ipv6state")
 
     @bgp_ipv6state.setter
@@ -11604,10 +11600,8 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @remaining_lifetime.setter
@@ -11821,10 +11815,8 @@ class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> Optional[pulumi.Input[str]]:
-        warnings.warn("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @remaining_lifetime.setter
@@ -12158,6 +12150,7 @@ class RouteTableRouteRuleArgs:
 
     @property
     @pulumi.getter(name="cidrBlock")
+    @_utilities.deprecated("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
     def cidr_block(self) -> Optional[pulumi.Input[str]]:
         """
         (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
@@ -12168,9 +12161,6 @@ class RouteTableRouteRuleArgs:
 
         Example: `0.0.0.0/0`
         """
-        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
-        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
-
         return pulumi.get(self, "cidr_block")
 
     @cidr_block.setter

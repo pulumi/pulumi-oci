@@ -114,13 +114,11 @@ class VolumeAttachmentArgs:
 
     @property
     @pulumi.getter(name="compartmentId")
+    @_utilities.deprecated("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the compartment.
         """
-        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -384,13 +382,11 @@ class _VolumeAttachmentState:
 
     @property
     @pulumi.getter(name="compartmentId")
+    @_utilities.deprecated("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def compartment_id(self) -> Optional[pulumi.Input[str]]:
         """
         The OCID of the compartment.
         """
-        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "compartment_id")
 
     @compartment_id.setter
@@ -939,13 +935,11 @@ class VolumeAttachment(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="compartmentId")
+    @_utilities.deprecated("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def compartment_id(self) -> pulumi.Output[str]:
         """
         The OCID of the compartment.
         """
-        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "compartment_id")
 
     @property

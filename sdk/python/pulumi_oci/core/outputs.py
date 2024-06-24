@@ -3594,10 +3594,8 @@ class DefaultRouteTableRouteRule(dict):
 
     @property
     @pulumi.getter(name="cidrBlock")
+    @_utilities.deprecated("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
     def cidr_block(self) -> Optional[str]:
-        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
-        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
-
         return pulumi.get(self, "cidr_block")
 
     @property
@@ -11955,10 +11953,8 @@ class IpsecConnectionTunnelManagementBgpSessionInfo(dict):
 
     @property
     @pulumi.getter(name="bgpIpv6state")
+    @_utilities.deprecated("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
     def bgp_ipv6state(self) -> Optional[str]:
-        warnings.warn("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""", DeprecationWarning)
-        pulumi.log.warn("""bgp_ipv6state is deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
-
         return pulumi.get(self, "bgp_ipv6state")
 
     @property
@@ -12318,10 +12314,8 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> Optional[str]:
-        warnings.warn("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @property
@@ -12519,10 +12513,8 @@ class IpsecConnectionTunnelManagementPhaseTwoDetail(dict):
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> Optional[str]:
-        warnings.warn("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @property
@@ -12842,6 +12834,7 @@ class RouteTableRouteRule(dict):
 
     @property
     @pulumi.getter(name="cidrBlock")
+    @_utilities.deprecated("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
     def cidr_block(self) -> Optional[str]:
         """
         (Updatable) Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
@@ -12852,9 +12845,6 @@ class RouteTableRouteRule(dict):
 
         Example: `0.0.0.0/0`
         """
-        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
-        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
-
         return pulumi.get(self, "cidr_block")
 
     @property
@@ -16310,10 +16300,8 @@ class GetBootVolumesBootVolumeResult(dict):
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> str:
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -35211,10 +35199,8 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter(name="hostnameLabel")
+    @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
     def hostname_label(self) -> str:
-        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-
         return pulumi.get(self, "hostname_label")
 
     @property
@@ -35227,13 +35213,11 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
     def image(self) -> str:
         """
         Deprecated. Use `sourceDetails` instead.
         """
-        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-
         return pulumi.get(self, "image")
 
     @property
@@ -35387,10 +35371,8 @@ class GetInstancesInstanceResult(dict):
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
     def subnet_id(self) -> str:
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @property
@@ -37065,10 +37047,8 @@ class GetIpsecConnectionTunnelBgpSessionInfoResult(dict):
 
     @property
     @pulumi.getter(name="bgpIpv6state")
+    @_utilities.deprecated("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
     def bgp_ipv6state(self) -> str:
-        warnings.warn("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""", DeprecationWarning)
-        pulumi.log.warn("""bgp_ipv6state is deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
-
         return pulumi.get(self, "bgp_ipv6state")
 
     @property
@@ -37301,10 +37281,8 @@ class GetIpsecConnectionTunnelPhaseOneDetailResult(dict):
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> str:
-        warnings.warn("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @property
@@ -37450,10 +37428,8 @@ class GetIpsecConnectionTunnelPhaseTwoDetailResult(dict):
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> str:
-        warnings.warn("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @property
@@ -37890,10 +37866,8 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelBgpSessionInfoResult(dict):
 
     @property
     @pulumi.getter(name="bgpIpv6state")
+    @_utilities.deprecated("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
     def bgp_ipv6state(self) -> str:
-        warnings.warn("""The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""", DeprecationWarning)
-        pulumi.log.warn("""bgp_ipv6state is deprecated: The 'bgp_session_info.0.bgp_ipv6state' field has been deprecated. Please use 'bgp_session_info.0.bgp_ipv6_state' instead.""")
-
         return pulumi.get(self, "bgp_ipv6state")
 
     @property
@@ -38126,10 +38100,8 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseOneDetailResult(dict):
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> str:
-        warnings.warn("""The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_one_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_one_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @property
@@ -38275,10 +38247,8 @@ class GetIpsecConnectionTunnelsIpSecConnectionTunnelPhaseTwoDetailResult(dict):
 
     @property
     @pulumi.getter(name="remainingLifetime")
+    @_utilities.deprecated("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
     def remaining_lifetime(self) -> str:
-        warnings.warn("""The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""", DeprecationWarning)
-        pulumi.log.warn("""remaining_lifetime is deprecated: The 'phase_two_details.0.remaining_lifetime' field has been deprecated. Please use 'phase_two_details.0.remaining_lifetime_int' instead.""")
-
         return pulumi.get(self, "remaining_lifetime")
 
     @property
@@ -40641,13 +40611,11 @@ class GetRouteTablesRouteTableRouteRuleResult(dict):
 
     @property
     @pulumi.getter(name="cidrBlock")
+    @_utilities.deprecated("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
     def cidr_block(self) -> str:
         """
         Deprecated. Instead use `destination` and `destinationType`. Requests that include both `cidrBlock` and `destination` will be rejected.
         """
-        warnings.warn("""The 'cidr_block' field has been deprecated. Please use 'destination' instead.""", DeprecationWarning)
-        pulumi.log.warn("""cidr_block is deprecated: The 'cidr_block' field has been deprecated. Please use 'destination' instead.""")
-
         return pulumi.get(self, "cidr_block")
 
     @property
@@ -44361,13 +44329,11 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
 
     @property
     @pulumi.getter(name="bgpManagement")
+    @_utilities.deprecated("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
     def bgp_management(self) -> str:
         """
         Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         """
-        warnings.warn("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""", DeprecationWarning)
-        pulumi.log.warn("""bgp_management is deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
-
         return pulumi.get(self, "bgp_management")
 
     @property
@@ -44404,13 +44370,11 @@ class GetVirtualCircuitsVirtualCircuitResult(dict):
 
     @property
     @pulumi.getter(name="customerBgpAsn")
+    @_utilities.deprecated("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
     def customer_bgp_asn(self) -> int:
         """
         Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         """
-        warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
-        pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
-
         return pulumi.get(self, "customer_bgp_asn")
 
     @property
@@ -45485,13 +45449,11 @@ class GetVolumeAttachmentsVolumeAttachmentResult(dict):
 
     @property
     @pulumi.getter(name="compartmentId")
+    @_utilities.deprecated("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
     def compartment_id(self) -> str:
         """
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
-        warnings.warn("""The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""", DeprecationWarning)
-        pulumi.log.warn("""compartment_id is deprecated: The 'compartment_id' field has been deprecated and may be removed in a future version. Do not use this field.""")
-
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -46193,13 +46155,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> str:
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Please use `size_in_gbs`.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @property
@@ -46273,13 +46233,11 @@ class GetVolumeBackupsVolumeBackupResult(dict):
 
     @property
     @pulumi.getter(name="uniqueSizeInMbs")
+    @_utilities.deprecated("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
     def unique_size_in_mbs(self) -> str:
         """
         The size used by the backup, in MBs. It is typically smaller than sizeInMBs, depending on the space consumed on the volume and whether the backup is full or incremental. This field is deprecated. Please use uniqueSizeInGBs.
         """
-        warnings.warn("""The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""unique_size_in_mbs is deprecated: The 'unique_size_in_mbs' field has been deprecated. Please use 'unique_size_in_gbs' instead.""")
-
         return pulumi.get(self, "unique_size_in_mbs")
 
     @property
@@ -46945,10 +46903,8 @@ class GetVolumeGroupsVolumeGroupResult(dict):
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> str:
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -47329,10 +47285,8 @@ class GetVolumesVolumeResult(dict):
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> str:
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -47430,13 +47384,11 @@ class GetVolumesVolumeResult(dict):
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> str:
         """
         The size of the volume in MBs. This field is deprecated. Use `size_in_gbs` instead.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @property

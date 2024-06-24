@@ -132,13 +132,11 @@ class RecoveryServiceSubnetArgs:
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. One of the subnets associated with the Recovery Service subnet.
         """
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -310,13 +308,11 @@ class _RecoveryServiceSubnetState:
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. One of the subnets associated with the Recovery Service subnet.
         """
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -667,13 +663,11 @@ class RecoveryServiceSubnet(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
     def subnet_id(self) -> pulumi.Output[str]:
         """
         Deprecated. One of the subnets associated with the Recovery Service subnet.
         """
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnets' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @property

@@ -117,13 +117,11 @@ class GetRecordsResult:
 
     @property
     @pulumi.getter(name="zoneNameOrId")
+    @_utilities.deprecated("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""")
     def zone_name_or_id(self) -> str:
         """
         The name or OCID of the target zone.
         """
-        warnings.warn("""The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""", DeprecationWarning)
-        pulumi.log.warn("""zone_name_or_id is deprecated: The 'oci_dns_records' resource has been deprecated. Please use 'oci_dns_rrsets' instead.""")
-
         return pulumi.get(self, "zone_name_or_id")
 
     @property

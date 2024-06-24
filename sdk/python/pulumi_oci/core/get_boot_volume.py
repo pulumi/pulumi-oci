@@ -125,10 +125,8 @@ class GetBootVolumeResult:
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> str:
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property

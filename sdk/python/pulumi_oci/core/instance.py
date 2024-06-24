@@ -412,13 +412,11 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="hostnameLabel")
+    @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         """
-        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -427,13 +425,11 @@ class InstanceArgs:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
     def image(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         """
-        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-
         return pulumi.get(self, "image")
 
     @image.setter
@@ -684,13 +680,11 @@ class InstanceArgs:
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -1160,13 +1154,11 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="hostnameLabel")
+    @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
     def hostname_label(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         """
-        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-
         return pulumi.get(self, "hostname_label")
 
     @hostname_label.setter
@@ -1175,13 +1167,11 @@ class _InstanceState:
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
     def image(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         """
-        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-
         return pulumi.get(self, "image")
 
     @image.setter
@@ -1496,13 +1486,11 @@ class _InstanceState:
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
     def subnet_id(self) -> Optional[pulumi.Input[str]]:
         """
         Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
@@ -2274,24 +2262,20 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="hostnameLabel")
+    @_utilities.deprecated("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
     def hostname_label(self) -> pulumi.Output[str]:
         """
         Deprecated. Instead use `hostnameLabel` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). If you provide both, the values must match.
         """
-        warnings.warn("""The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""hostname_label is deprecated: The 'hostname_label' field has been deprecated. Please use 'hostname_label under create_vnic_details' instead.""")
-
         return pulumi.get(self, "hostname_label")
 
     @property
     @pulumi.getter
+    @_utilities.deprecated("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
     def image(self) -> pulumi.Output[str]:
         """
         Deprecated. Use `sourceDetails` with [InstanceSourceViaImageDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/requests/InstanceSourceViaImageDetails) source type instead. If you specify values for both, the values must match.
         """
-        warnings.warn("""The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""", DeprecationWarning)
-        pulumi.log.warn("""image is deprecated: The 'image' field has been deprecated. Please use 'source_details' instead. If both fields are specified, then 'source_details' will be used.""")
-
         return pulumi.get(self, "image")
 
     @property
@@ -2522,13 +2506,11 @@ class Instance(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="subnetId")
+    @_utilities.deprecated("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
     def subnet_id(self) -> pulumi.Output[str]:
         """
         Deprecated. Instead use `subnetId` in [CreateVnicDetails](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/CreateVnicDetails/). At least one of them is required; if you provide both, the values must match.
         """
-        warnings.warn("""The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""", DeprecationWarning)
-        pulumi.log.warn("""subnet_id is deprecated: The 'subnet_id' field has been deprecated. Please use 'subnet_id under create_vnic_details' instead.""")
-
         return pulumi.get(self, "subnet_id")
 
     @property

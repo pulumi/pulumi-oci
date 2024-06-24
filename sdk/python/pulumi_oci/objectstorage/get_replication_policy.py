@@ -66,10 +66,8 @@ class GetReplicationPolicyResult:
 
     @property
     @pulumi.getter(name="deleteObjectInDestinationBucket")
+    @_utilities.deprecated("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
     def delete_object_in_destination_bucket(self) -> str:
-        warnings.warn("""The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""", DeprecationWarning)
-        pulumi.log.warn("""delete_object_in_destination_bucket is deprecated: The 'delete_object_in_destination_bucket' field has been deprecated. It is no longer supported.""")
-
         return pulumi.get(self, "delete_object_in_destination_bucket")
 
     @property

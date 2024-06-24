@@ -140,13 +140,11 @@ class GetVirtualCircuitResult:
 
     @property
     @pulumi.getter(name="bgpManagement")
+    @_utilities.deprecated("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
     def bgp_management(self) -> str:
         """
         Deprecated. Instead use the information in [FastConnectProviderService](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/latest/FastConnectProviderService/).
         """
-        warnings.warn("""The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""", DeprecationWarning)
-        pulumi.log.warn("""bgp_management is deprecated: The 'bgp_management' field has been deprecated. Please use the 'oci_core_fast_connect_provider_service' data source instead.""")
-
         return pulumi.get(self, "bgp_management")
 
     @property
@@ -183,13 +181,11 @@ class GetVirtualCircuitResult:
 
     @property
     @pulumi.getter(name="customerBgpAsn")
+    @_utilities.deprecated("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
     def customer_bgp_asn(self) -> int:
         """
         Deprecated. Instead use `customerAsn`. If you specify values for both, the request will be rejected.
         """
-        warnings.warn("""The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""", DeprecationWarning)
-        pulumi.log.warn("""customer_bgp_asn is deprecated: The 'customer_bgp_asn' field has been deprecated. Please use 'customer_asn' instead.""")
-
         return pulumi.get(self, "customer_bgp_asn")
 
     @property

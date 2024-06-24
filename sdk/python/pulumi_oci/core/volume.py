@@ -130,13 +130,11 @@ class VolumeArgs:
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         """
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -250,13 +248,11 @@ class VolumeArgs:
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -442,13 +438,11 @@ class _VolumeState:
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> Optional[pulumi.Input[str]]:
         """
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         """
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @backup_policy_id.setter
@@ -586,13 +580,11 @@ class _VolumeState:
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> Optional[pulumi.Input[str]]:
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @size_in_mbs.setter
@@ -1047,13 +1039,11 @@ class Volume(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="backupPolicyId")
+    @_utilities.deprecated("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
     def backup_policy_id(self) -> pulumi.Output[str]:
         """
         If provided, specifies the ID of the volume backup policy to assign to the newly created volume. If omitted, no policy will be assigned. This field is deprecated. Use the `core_get_volume_backup_policy_assignments` instead to assign a backup policy to a volume.
         """
-        warnings.warn("""The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""", DeprecationWarning)
-        pulumi.log.warn("""backup_policy_id is deprecated: The 'backup_policy_id' field has been deprecated. Please use the 'oci_core_volume_backup_policy_assignment' resource instead.""")
-
         return pulumi.get(self, "backup_policy_id")
 
     @property
@@ -1143,13 +1133,11 @@ class Volume(pulumi.CustomResource):
 
     @property
     @pulumi.getter(name="sizeInMbs")
+    @_utilities.deprecated("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
     def size_in_mbs(self) -> pulumi.Output[str]:
         """
         The size of the volume in MBs. The value must be a multiple of 1024. This field is deprecated. Use `size_in_gbs` instead.
         """
-        warnings.warn("""The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""", DeprecationWarning)
-        pulumi.log.warn("""size_in_mbs is deprecated: The 'size_in_mbs' field has been deprecated. Please use 'size_in_gbs' instead.""")
-
         return pulumi.get(self, "size_in_mbs")
 
     @property

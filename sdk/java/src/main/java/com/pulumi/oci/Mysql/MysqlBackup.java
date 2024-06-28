@@ -10,12 +10,15 @@ import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.Mysql.MysqlBackupArgs;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupState;
 import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshot;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupDbSystemSnapshotSummary;
+import com.pulumi.oci.Mysql.outputs.MysqlBackupSourceDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -159,6 +162,12 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
     public Output<String> dbSystemId() {
         return this.dbSystemId;
     }
+    @Export(name="dbSystemSnapshotSummaries", refs={List.class,MysqlBackupDbSystemSnapshotSummary.class}, tree="[0,1]")
+    private Output<List<MysqlBackupDbSystemSnapshotSummary>> dbSystemSnapshotSummaries;
+
+    public Output<List<MysqlBackupDbSystemSnapshotSummary>> dbSystemSnapshotSummaries() {
+        return this.dbSystemSnapshotSummaries;
+    }
     /**
      * Snapshot of the DbSystem details at the time of the backup
      * 
@@ -230,6 +239,20 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    @Export(name="immediateSourceBackupId", refs={String.class}, tree="[0]")
+    private Output<String> immediateSourceBackupId;
+
+    /**
+     * @return The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    public Output<String> immediateSourceBackupId() {
+        return this.immediateSourceBackupId;
+    }
+    /**
      * Additional information about the current lifecycleState.
      * 
      */
@@ -258,10 +281,21 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
         return this.mysqlVersion;
     }
     /**
-     * (Updatable) Number of days to retain this backup.
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Export(name="originalSourceBackupId", refs={String.class}, tree="[0]")
+    private Output<String> originalSourceBackupId;
+
+    /**
+     * @return The OCID of the original source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    public Output<String> originalSourceBackupId() {
+        return this.originalSourceBackupId;
+    }
+    /**
+     * (Updatable) Number of days to retain this backup.
      * 
      */
     @Export(name="retentionInDays", refs={Integer.class}, tree="[0]")
@@ -269,9 +303,6 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
 
     /**
      * @return (Updatable) Number of days to retain this backup.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> retentionInDays() {
@@ -292,6 +323,20 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
         return this.shapeName;
     }
     /**
+     * Details of backup source in the cloud.
+     * 
+     */
+    @Export(name="sourceDetails", refs={MysqlBackupSourceDetails.class}, tree="[0]")
+    private Output</* @Nullable */ MysqlBackupSourceDetails> sourceDetails;
+
+    /**
+     * @return Details of backup source in the cloud.
+     * 
+     */
+    public Output<Optional<MysqlBackupSourceDetails>> sourceDetails() {
+        return Codegen.optional(this.sourceDetails);
+    }
+    /**
      * The state of the backup.
      * 
      */
@@ -304,6 +349,20 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      */
     public Output<String> state() {
         return this.state;
+    }
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    @Export(name="timeCopyCreated", refs={String.class}, tree="[0]")
+    private Output<String> timeCopyCreated;
+
+    /**
+     * @return The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public Output<String> timeCopyCreated() {
+        return this.timeCopyCreated;
     }
     /**
      * The time the backup record was created.
@@ -346,7 +405,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * @param name The _unique_ name of the resulting resource.
      * @param args The arguments to use to populate this resource's properties.
      */
-    public MysqlBackup(String name, MysqlBackupArgs args) {
+    public MysqlBackup(String name, @Nullable MysqlBackupArgs args) {
         this(name, args, null);
     }
     /**
@@ -355,7 +414,7 @@ public class MysqlBackup extends com.pulumi.resources.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param options A bag of options that control this resource's behavior.
      */
-    public MysqlBackup(String name, MysqlBackupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
+    public MysqlBackup(String name, @Nullable MysqlBackupArgs args, @Nullable com.pulumi.resources.CustomResourceOptions options) {
         super("oci:Mysql/mysqlBackup:MysqlBackup", name, args == null ? MysqlBackupArgs.Empty : args, makeResourceOptions(options, Codegen.empty()));
     }
 

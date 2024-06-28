@@ -313,11 +313,11 @@ public class Pipeline extends com.pulumi.resources.CustomResource {
     public Output<String> state() {
         return this.state;
     }
-    @Export(name="stepArtifact", refs={PipelineStepArtifact.class}, tree="[0]")
-    private Output<PipelineStepArtifact> stepArtifact;
+    @Export(name="stepArtifacts", refs={List.class,PipelineStepArtifact.class}, tree="[0,1]")
+    private Output<List<PipelineStepArtifact>> stepArtifacts;
 
-    public Output<PipelineStepArtifact> stepArtifact() {
-        return this.stepArtifact;
+    public Output<List<PipelineStepArtifact>> stepArtifacts() {
+        return this.stepArtifacts;
     }
     /**
      * (Updatable) Array of step details for each step.

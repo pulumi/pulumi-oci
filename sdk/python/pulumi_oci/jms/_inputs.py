@@ -10,6 +10,19 @@ from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
 
 __all__ = [
+    'FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs',
+    'FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs',
+    'FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs',
+    'FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs',
+    'FleetAdvancedFeatureConfigurationJfrRecordingArgs',
+    'FleetAdvancedFeatureConfigurationLcmArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs',
+    'FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs',
+    'FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs',
     'FleetInventoryLogArgs',
     'FleetOperationLogArgs',
     'JavaDownloadsJavaDownloadReportCreatedByArgs',
@@ -34,6 +47,665 @@ __all__ = [
     'GetJavaFamiliesFilterArgs',
     'GetJavaReleasesFilterArgs',
 ]
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 summarized_events_log: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs']] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+        :param pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs'] summarized_events_log: (Updatable) Summarized events log for advanced feature.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if summarized_events_log is not None:
+            pulumi.set(__self__, "summarized_events_log", summarized_events_log)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="summarizedEventsLog")
+    def summarized_events_log(self) -> Optional[pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs']]:
+        """
+        (Updatable) Summarized events log for advanced feature.
+        """
+        return pulumi.get(self, "summarized_events_log")
+
+    @summarized_events_log.setter
+    def summarized_events_log(self, value: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs']]):
+        pulumi.set(self, "summarized_events_log", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs:
+    def __init__(__self__, *,
+                 log_group_id: pulumi.Input[str],
+                 log_id: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] log_group_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        :param pulumi.Input[str] log_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        pulumi.set(__self__, "log_group_id", log_group_id)
+        pulumi.set(__self__, "log_id", log_id)
+
+    @property
+    @pulumi.getter(name="logGroupId")
+    def log_group_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+        """
+        return pulumi.get(self, "log_group_id")
+
+    @log_group_id.setter
+    def log_group_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "log_group_id", value)
+
+    @property
+    @pulumi.getter(name="logId")
+    def log_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+        """
+        return pulumi.get(self, "log_id")
+
+    @log_id.setter
+    def log_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "log_id", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationJfrRecordingArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) JfrRecording flag to store enabled or disabled status.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) JfrRecording flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None,
+                 post_installation_actions: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs']] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) Lifecycle management flag to store enabled or disabled status.
+        :param pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs'] post_installation_actions: (Updatable) List of available post actions you can execute after the successful Java installation.
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+        if post_installation_actions is not None:
+            pulumi.set(__self__, "post_installation_actions", post_installation_actions)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Lifecycle management flag to store enabled or disabled status.
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
+    @property
+    @pulumi.getter(name="postInstallationActions")
+    def post_installation_actions(self) -> Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs']]:
+        """
+        (Updatable) List of available post actions you can execute after the successful Java installation.
+        """
+        return pulumi.get(self, "post_installation_actions")
+
+    @post_installation_actions.setter
+    def post_installation_actions(self, value: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs']]):
+        pulumi.set(self, "post_installation_actions", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs:
+    def __init__(__self__, *,
+                 add_logging_handler: Optional[pulumi.Input[bool]] = None,
+                 disabled_tls_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 global_logging_level: Optional[pulumi.Input[str]] = None,
+                 minimum_key_size_settings: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs']] = None,
+                 proxies: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs']] = None,
+                 should_replace_certificates_operating_system: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] add_logging_handler: (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] disabled_tls_versions: (Updatable) The following post JRE installation actions are supported by the field:
+               * Disable TLS 1.0 , TLS 1.1
+        :param pulumi.Input[str] global_logging_level: (Updatable) Sets the logging level in logging.properties file.
+        :param pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs'] minimum_key_size_settings: (Updatable) test
+        :param pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs'] proxies: (Updatable) List of proxy properties to be configured in net.properties file.
+        :param pulumi.Input[bool] should_replace_certificates_operating_system: (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+               * Replace JDK root certificates with a list provided by the operating system.
+        """
+        if add_logging_handler is not None:
+            pulumi.set(__self__, "add_logging_handler", add_logging_handler)
+        if disabled_tls_versions is not None:
+            pulumi.set(__self__, "disabled_tls_versions", disabled_tls_versions)
+        if global_logging_level is not None:
+            pulumi.set(__self__, "global_logging_level", global_logging_level)
+        if minimum_key_size_settings is not None:
+            pulumi.set(__self__, "minimum_key_size_settings", minimum_key_size_settings)
+        if proxies is not None:
+            pulumi.set(__self__, "proxies", proxies)
+        if should_replace_certificates_operating_system is not None:
+            pulumi.set(__self__, "should_replace_certificates_operating_system", should_replace_certificates_operating_system)
+
+    @property
+    @pulumi.getter(name="addLoggingHandler")
+    def add_logging_handler(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+        """
+        return pulumi.get(self, "add_logging_handler")
+
+    @add_logging_handler.setter
+    def add_logging_handler(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "add_logging_handler", value)
+
+    @property
+    @pulumi.getter(name="disabledTlsVersions")
+    def disabled_tls_versions(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) The following post JRE installation actions are supported by the field:
+        * Disable TLS 1.0 , TLS 1.1
+        """
+        return pulumi.get(self, "disabled_tls_versions")
+
+    @disabled_tls_versions.setter
+    def disabled_tls_versions(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "disabled_tls_versions", value)
+
+    @property
+    @pulumi.getter(name="globalLoggingLevel")
+    def global_logging_level(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Sets the logging level in logging.properties file.
+        """
+        return pulumi.get(self, "global_logging_level")
+
+    @global_logging_level.setter
+    def global_logging_level(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "global_logging_level", value)
+
+    @property
+    @pulumi.getter(name="minimumKeySizeSettings")
+    def minimum_key_size_settings(self) -> Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs']]:
+        """
+        (Updatable) test
+        """
+        return pulumi.get(self, "minimum_key_size_settings")
+
+    @minimum_key_size_settings.setter
+    def minimum_key_size_settings(self, value: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs']]):
+        pulumi.set(self, "minimum_key_size_settings", value)
+
+    @property
+    @pulumi.getter
+    def proxies(self) -> Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs']]:
+        """
+        (Updatable) List of proxy properties to be configured in net.properties file.
+        """
+        return pulumi.get(self, "proxies")
+
+    @proxies.setter
+    def proxies(self, value: Optional[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs']]):
+        pulumi.set(self, "proxies", value)
+
+    @property
+    @pulumi.getter(name="shouldReplaceCertificatesOperatingSystem")
+    def should_replace_certificates_operating_system(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+        * Replace JDK root certificates with a list provided by the operating system.
+        """
+        return pulumi.get(self, "should_replace_certificates_operating_system")
+
+    @should_replace_certificates_operating_system.setter
+    def should_replace_certificates_operating_system(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "should_replace_certificates_operating_system", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs:
+    def __init__(__self__, *,
+                 certpaths: Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs']]]] = None,
+                 jars: Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs']]]] = None,
+                 tls: Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs']]]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs']]] certpaths: (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+               * Changing minimum key length for RSA signed jars
+               * Changing minimum key length for EC
+               * Changing minimum key length for DSA
+        :param pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs']]] jars: (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+               * Changing minimum key length for RSA signed jars
+               * Changing minimum key length for EC
+               * Changing minimum key length for DSA
+        :param pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs']]] tls: (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+               * Changing minimum key length for Diffie-Hellman
+        """
+        if certpaths is not None:
+            pulumi.set(__self__, "certpaths", certpaths)
+        if jars is not None:
+            pulumi.set(__self__, "jars", jars)
+        if tls is not None:
+            pulumi.set(__self__, "tls", tls)
+
+    @property
+    @pulumi.getter
+    def certpaths(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs']]]]:
+        """
+        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for RSA signed jars
+        * Changing minimum key length for EC
+        * Changing minimum key length for DSA
+        """
+        return pulumi.get(self, "certpaths")
+
+    @certpaths.setter
+    def certpaths(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs']]]]):
+        pulumi.set(self, "certpaths", value)
+
+    @property
+    @pulumi.getter
+    def jars(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs']]]]:
+        """
+        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for RSA signed jars
+        * Changing minimum key length for EC
+        * Changing minimum key length for DSA
+        """
+        return pulumi.get(self, "jars")
+
+    @jars.setter
+    def jars(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs']]]]):
+        pulumi.set(self, "jars", value)
+
+    @property
+    @pulumi.getter
+    def tls(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs']]]]:
+        """
+        (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+        * Changing minimum key length for Diffie-Hellman
+        """
+        return pulumi.get(self, "tls")
+
+    @tls.setter
+    def tls(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs']]]]):
+        pulumi.set(self, "tls", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs:
+    def __init__(__self__, *,
+                 key_size: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] key_size: (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        :param pulumi.Input[str] name: (Updatable) The algorithm name.
+        """
+        if key_size is not None:
+            pulumi.set(__self__, "key_size", key_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        return pulumi.get(self, "key_size")
+
+    @key_size.setter
+    def key_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "key_size", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The algorithm name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs:
+    def __init__(__self__, *,
+                 key_size: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] key_size: (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        :param pulumi.Input[str] name: (Updatable) The algorithm name.
+        """
+        if key_size is not None:
+            pulumi.set(__self__, "key_size", key_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        return pulumi.get(self, "key_size")
+
+    @key_size.setter
+    def key_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "key_size", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The algorithm name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs:
+    def __init__(__self__, *,
+                 key_size: Optional[pulumi.Input[int]] = None,
+                 name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[int] key_size: (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        :param pulumi.Input[str] name: (Updatable) The algorithm name.
+        """
+        if key_size is not None:
+            pulumi.set(__self__, "key_size", key_size)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @property
+    @pulumi.getter(name="keySize")
+    def key_size(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+        """
+        return pulumi.get(self, "key_size")
+
+    @key_size.setter
+    def key_size(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "key_size", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The algorithm name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs:
+    def __init__(__self__, *,
+                 ftp_proxy_host: Optional[pulumi.Input[str]] = None,
+                 ftp_proxy_port: Optional[pulumi.Input[int]] = None,
+                 http_proxy_host: Optional[pulumi.Input[str]] = None,
+                 http_proxy_port: Optional[pulumi.Input[int]] = None,
+                 https_proxy_host: Optional[pulumi.Input[str]] = None,
+                 https_proxy_port: Optional[pulumi.Input[int]] = None,
+                 socks_proxy_host: Optional[pulumi.Input[str]] = None,
+                 socks_proxy_port: Optional[pulumi.Input[int]] = None,
+                 use_system_proxies: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[str] ftp_proxy_host: (Updatable) Ftp host to be set in net.properties file.
+        :param pulumi.Input[int] ftp_proxy_port: (Updatable) Ftp port number to be set in net.properties file.
+        :param pulumi.Input[str] http_proxy_host: (Updatable) Http host to be set in net.properties file.
+        :param pulumi.Input[int] http_proxy_port: (Updatable) Http port number to be set in net.properties file.
+        :param pulumi.Input[str] https_proxy_host: (Updatable) Https host to be set in net.properties file.
+        :param pulumi.Input[int] https_proxy_port: (Updatable) Https port number to be set in net.properties file.
+        :param pulumi.Input[str] socks_proxy_host: (Updatable) Socks host to be set in net.properties file.
+        :param pulumi.Input[int] socks_proxy_port: (Updatable) Socks port number to be set in net.properties file.
+        :param pulumi.Input[bool] use_system_proxies: (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+        """
+        if ftp_proxy_host is not None:
+            pulumi.set(__self__, "ftp_proxy_host", ftp_proxy_host)
+        if ftp_proxy_port is not None:
+            pulumi.set(__self__, "ftp_proxy_port", ftp_proxy_port)
+        if http_proxy_host is not None:
+            pulumi.set(__self__, "http_proxy_host", http_proxy_host)
+        if http_proxy_port is not None:
+            pulumi.set(__self__, "http_proxy_port", http_proxy_port)
+        if https_proxy_host is not None:
+            pulumi.set(__self__, "https_proxy_host", https_proxy_host)
+        if https_proxy_port is not None:
+            pulumi.set(__self__, "https_proxy_port", https_proxy_port)
+        if socks_proxy_host is not None:
+            pulumi.set(__self__, "socks_proxy_host", socks_proxy_host)
+        if socks_proxy_port is not None:
+            pulumi.set(__self__, "socks_proxy_port", socks_proxy_port)
+        if use_system_proxies is not None:
+            pulumi.set(__self__, "use_system_proxies", use_system_proxies)
+
+    @property
+    @pulumi.getter(name="ftpProxyHost")
+    def ftp_proxy_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Ftp host to be set in net.properties file.
+        """
+        return pulumi.get(self, "ftp_proxy_host")
+
+    @ftp_proxy_host.setter
+    def ftp_proxy_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ftp_proxy_host", value)
+
+    @property
+    @pulumi.getter(name="ftpProxyPort")
+    def ftp_proxy_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Ftp port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "ftp_proxy_port")
+
+    @ftp_proxy_port.setter
+    def ftp_proxy_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "ftp_proxy_port", value)
+
+    @property
+    @pulumi.getter(name="httpProxyHost")
+    def http_proxy_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Http host to be set in net.properties file.
+        """
+        return pulumi.get(self, "http_proxy_host")
+
+    @http_proxy_host.setter
+    def http_proxy_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "http_proxy_host", value)
+
+    @property
+    @pulumi.getter(name="httpProxyPort")
+    def http_proxy_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Http port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "http_proxy_port")
+
+    @http_proxy_port.setter
+    def http_proxy_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "http_proxy_port", value)
+
+    @property
+    @pulumi.getter(name="httpsProxyHost")
+    def https_proxy_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Https host to be set in net.properties file.
+        """
+        return pulumi.get(self, "https_proxy_host")
+
+    @https_proxy_host.setter
+    def https_proxy_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "https_proxy_host", value)
+
+    @property
+    @pulumi.getter(name="httpsProxyPort")
+    def https_proxy_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Https port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "https_proxy_port")
+
+    @https_proxy_port.setter
+    def https_proxy_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "https_proxy_port", value)
+
+    @property
+    @pulumi.getter(name="socksProxyHost")
+    def socks_proxy_host(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Socks host to be set in net.properties file.
+        """
+        return pulumi.get(self, "socks_proxy_host")
+
+    @socks_proxy_host.setter
+    def socks_proxy_host(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "socks_proxy_host", value)
+
+    @property
+    @pulumi.getter(name="socksProxyPort")
+    def socks_proxy_port(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Socks port number to be set in net.properties file.
+        """
+        return pulumi.get(self, "socks_proxy_port")
+
+    @socks_proxy_port.setter
+    def socks_proxy_port(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "socks_proxy_port", value)
+
+    @property
+    @pulumi.getter(name="useSystemProxies")
+    def use_system_proxies(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+        """
+        return pulumi.get(self, "use_system_proxies")
+
+    @use_system_proxies.setter
+    def use_system_proxies(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "use_system_proxies", value)
+
+
+@pulumi.input_type
+class FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs:
+    def __init__(__self__, *,
+                 is_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_enabled: (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        if is_enabled is not None:
+            pulumi.set(__self__, "is_enabled", is_enabled)
+
+    @property
+    @pulumi.getter(name="isEnabled")
+    def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "is_enabled")
+
+    @is_enabled.setter
+    def is_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_enabled", value)
+
 
 @pulumi.input_type
 class FleetInventoryLogArgs:

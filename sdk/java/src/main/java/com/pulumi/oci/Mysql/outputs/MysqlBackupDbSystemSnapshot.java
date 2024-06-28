@@ -137,6 +137,11 @@ public final class MysqlBackupDbSystemSnapshot {
      */
     private @Nullable Integer portX;
     /**
+     * @return The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    private @Nullable String region;
+    /**
      * @return Secure connection configuration details.
      * 
      */
@@ -315,6 +320,13 @@ public final class MysqlBackupDbSystemSnapshot {
         return Optional.ofNullable(this.portX);
     }
     /**
+     * @return The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public Optional<String> region() {
+        return Optional.ofNullable(this.region);
+    }
+    /**
      * @return Secure connection configuration details.
      * 
      */
@@ -368,6 +380,7 @@ public final class MysqlBackupDbSystemSnapshot {
         private @Nullable String mysqlVersion;
         private @Nullable Integer port;
         private @Nullable Integer portX;
+        private @Nullable String region;
         private @Nullable List<MysqlBackupDbSystemSnapshotSecureConnection> secureConnections;
         private @Nullable String shapeName;
         private @Nullable String subnetId;
@@ -397,6 +410,7 @@ public final class MysqlBackupDbSystemSnapshot {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.region = defaults.region;
     	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
@@ -553,6 +567,12 @@ public final class MysqlBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder region(@Nullable String region) {
+
+            this.region = region;
+            return this;
+        }
+        @CustomType.Setter
         public Builder secureConnections(@Nullable List<MysqlBackupDbSystemSnapshotSecureConnection> secureConnections) {
 
             this.secureConnections = secureConnections;
@@ -598,6 +618,7 @@ public final class MysqlBackupDbSystemSnapshot {
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.region = region;
             _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;

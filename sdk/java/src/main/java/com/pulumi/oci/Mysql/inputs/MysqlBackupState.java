@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSummaryArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupSourceDetailsArgs;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -110,6 +112,13 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.dbSystemId);
     }
 
+    @Import(name="dbSystemSnapshotSummaries")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotSummaryArgs>> dbSystemSnapshotSummaries;
+
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotSummaryArgs>>> dbSystemSnapshotSummaries() {
+        return Optional.ofNullable(this.dbSystemSnapshotSummaries);
+    }
+
     /**
      * Snapshot of the DbSystem details at the time of the backup
      * 
@@ -186,6 +195,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    @Import(name="immediateSourceBackupId")
+    private @Nullable Output<String> immediateSourceBackupId;
+
+    /**
+     * @return The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    public Optional<Output<String>> immediateSourceBackupId() {
+        return Optional.ofNullable(this.immediateSourceBackupId);
+    }
+
+    /**
      * Additional information about the current lifecycleState.
      * 
      */
@@ -216,10 +240,22 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Number of days to retain this backup.
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    @Import(name="originalSourceBackupId")
+    private @Nullable Output<String> originalSourceBackupId;
+
+    /**
+     * @return The OCID of the original source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    public Optional<Output<String>> originalSourceBackupId() {
+        return Optional.ofNullable(this.originalSourceBackupId);
+    }
+
+    /**
+     * (Updatable) Number of days to retain this backup.
      * 
      */
     @Import(name="retentionInDays")
@@ -227,9 +263,6 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * @return (Updatable) Number of days to retain this backup.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<Integer>> retentionInDays() {
@@ -252,6 +285,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Details of backup source in the cloud.
+     * 
+     */
+    @Import(name="sourceDetails")
+    private @Nullable Output<MysqlBackupSourceDetailsArgs> sourceDetails;
+
+    /**
+     * @return Details of backup source in the cloud.
+     * 
+     */
+    public Optional<Output<MysqlBackupSourceDetailsArgs>> sourceDetails() {
+        return Optional.ofNullable(this.sourceDetails);
+    }
+
+    /**
      * The state of the backup.
      * 
      */
@@ -264,6 +312,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
+    }
+
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    @Import(name="timeCopyCreated")
+    private @Nullable Output<String> timeCopyCreated;
+
+    /**
+     * @return The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public Optional<Output<String>> timeCopyCreated() {
+        return Optional.ofNullable(this.timeCopyCreated);
     }
 
     /**
@@ -305,16 +368,21 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         this.creationType = $.creationType;
         this.dataStorageSizeInGb = $.dataStorageSizeInGb;
         this.dbSystemId = $.dbSystemId;
+        this.dbSystemSnapshotSummaries = $.dbSystemSnapshotSummaries;
         this.dbSystemSnapshots = $.dbSystemSnapshots;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.immediateSourceBackupId = $.immediateSourceBackupId;
         this.lifecycleDetails = $.lifecycleDetails;
         this.mysqlVersion = $.mysqlVersion;
+        this.originalSourceBackupId = $.originalSourceBackupId;
         this.retentionInDays = $.retentionInDays;
         this.shapeName = $.shapeName;
+        this.sourceDetails = $.sourceDetails;
         this.state = $.state;
+        this.timeCopyCreated = $.timeCopyCreated;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
     }
@@ -463,6 +531,19 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
             return dbSystemId(Output.of(dbSystemId));
         }
 
+        public Builder dbSystemSnapshotSummaries(@Nullable Output<List<MysqlBackupDbSystemSnapshotSummaryArgs>> dbSystemSnapshotSummaries) {
+            $.dbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
+            return this;
+        }
+
+        public Builder dbSystemSnapshotSummaries(List<MysqlBackupDbSystemSnapshotSummaryArgs> dbSystemSnapshotSummaries) {
+            return dbSystemSnapshotSummaries(Output.of(dbSystemSnapshotSummaries));
+        }
+
+        public Builder dbSystemSnapshotSummaries(MysqlBackupDbSystemSnapshotSummaryArgs... dbSystemSnapshotSummaries) {
+            return dbSystemSnapshotSummaries(List.of(dbSystemSnapshotSummaries));
+        }
+
         /**
          * @param dbSystemSnapshots Snapshot of the DbSystem details at the time of the backup
          * 
@@ -579,6 +660,27 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param immediateSourceBackupId The OCID of the immediate source DB system backup from which this DB system backup was copied.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder immediateSourceBackupId(@Nullable Output<String> immediateSourceBackupId) {
+            $.immediateSourceBackupId = immediateSourceBackupId;
+            return this;
+        }
+
+        /**
+         * @param immediateSourceBackupId The OCID of the immediate source DB system backup from which this DB system backup was copied.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder immediateSourceBackupId(String immediateSourceBackupId) {
+            return immediateSourceBackupId(Output.of(immediateSourceBackupId));
+        }
+
+        /**
          * @param lifecycleDetails Additional information about the current lifecycleState.
          * 
          * @return builder
@@ -621,10 +723,28 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param retentionInDays (Updatable) Number of days to retain this backup.
+         * @param originalSourceBackupId The OCID of the original source DB system backup from which this DB system backup was copied.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * @return builder
+         * 
+         */
+        public Builder originalSourceBackupId(@Nullable Output<String> originalSourceBackupId) {
+            $.originalSourceBackupId = originalSourceBackupId;
+            return this;
+        }
+
+        /**
+         * @param originalSourceBackupId The OCID of the original source DB system backup from which this DB system backup was copied.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder originalSourceBackupId(String originalSourceBackupId) {
+            return originalSourceBackupId(Output.of(originalSourceBackupId));
+        }
+
+        /**
+         * @param retentionInDays (Updatable) Number of days to retain this backup.
          * 
          * @return builder
          * 
@@ -636,9 +756,6 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionInDays (Updatable) Number of days to retain this backup.
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
@@ -669,6 +786,27 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param sourceDetails Details of backup source in the cloud.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(@Nullable Output<MysqlBackupSourceDetailsArgs> sourceDetails) {
+            $.sourceDetails = sourceDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceDetails Details of backup source in the cloud.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(MysqlBackupSourceDetailsArgs sourceDetails) {
+            return sourceDetails(Output.of(sourceDetails));
+        }
+
+        /**
          * @param state The state of the backup.
          * 
          * @return builder
@@ -687,6 +825,27 @@ public final class MysqlBackupState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param timeCopyCreated The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCopyCreated(@Nullable Output<String> timeCopyCreated) {
+            $.timeCopyCreated = timeCopyCreated;
+            return this;
+        }
+
+        /**
+         * @param timeCopyCreated The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeCopyCreated(String timeCopyCreated) {
+            return timeCopyCreated(Output.of(timeCopyCreated));
         }
 
         /**

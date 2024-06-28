@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -37,7 +37,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -48,12 +48,10 @@ import (
 //				IpsecId:  pulumi.Any(testIpsec.Id),
 //				TunnelId: pulumi.Any(testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id),
 //				Routing:  pulumi.Any(ipSecConnectionTunnelManagementRouting),
-//				BgpSessionInfos: core.IpsecConnectionTunnelManagementBgpSessionInfoArray{
-//					&core.IpsecConnectionTunnelManagementBgpSessionInfoArgs{
-//						CustomerBgpAsn:      pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn),
-//						CustomerInterfaceIp: pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp),
-//						OracleInterfaceIp:   pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp),
-//					},
+//				BgpSessionInfo: &core.IpsecConnectionTunnelManagementBgpSessionInfoArgs{
+//					CustomerBgpAsn:      pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn),
+//					CustomerInterfaceIp: pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp),
+//					OracleInterfaceIp:   pulumi.Any(ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp),
 //				},
 //				DisplayName: pulumi.Any(ipSecConnectionTunnelManagementDisplayName),
 //				EncryptionDomainConfig: &core.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs{
@@ -79,7 +77,7 @@ type IpsecConnectionTunnelManagement struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput `pulumi:"bgpSessionInfos"`
+	BgpSessionInfo IpsecConnectionTunnelManagementBgpSessionInfoOutput `pulumi:"bgpSessionInfo"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
@@ -108,11 +106,11 @@ type IpsecConnectionTunnelManagement struct {
 	// Configuration details for IKE phase one (ISAKMP) configuration parameters.
 	//
 	// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-	PhaseOneDetails IpsecConnectionTunnelManagementPhaseOneDetailArrayOutput `pulumi:"phaseOneDetails"`
+	PhaseOneDetails IpsecConnectionTunnelManagementPhaseOneDetailsOutput `pulumi:"phaseOneDetails"`
 	// Configuration details for IPSec phase two configuration parameters.
 	//
 	// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-	PhaseTwoDetails IpsecConnectionTunnelManagementPhaseTwoDetailArrayOutput `pulumi:"phaseTwoDetails"`
+	PhaseTwoDetails IpsecConnectionTunnelManagementPhaseTwoDetailsOutput `pulumi:"phaseTwoDetails"`
 	// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
 	Routing pulumi.StringOutput `pulumi:"routing"`
 	// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
@@ -179,7 +177,7 @@ type ipsecConnectionTunnelManagementState struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-	BgpSessionInfos []IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfos"`
+	BgpSessionInfo *IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfo"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
@@ -208,11 +206,11 @@ type ipsecConnectionTunnelManagementState struct {
 	// Configuration details for IKE phase one (ISAKMP) configuration parameters.
 	//
 	// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-	PhaseOneDetails []IpsecConnectionTunnelManagementPhaseOneDetail `pulumi:"phaseOneDetails"`
+	PhaseOneDetails *IpsecConnectionTunnelManagementPhaseOneDetails `pulumi:"phaseOneDetails"`
 	// Configuration details for IPSec phase two configuration parameters.
 	//
 	// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-	PhaseTwoDetails []IpsecConnectionTunnelManagementPhaseTwoDetail `pulumi:"phaseTwoDetails"`
+	PhaseTwoDetails *IpsecConnectionTunnelManagementPhaseTwoDetails `pulumi:"phaseTwoDetails"`
 	// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
 	Routing *string `pulumi:"routing"`
 	// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
@@ -237,7 +235,7 @@ type IpsecConnectionTunnelManagementState struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayInput
+	BgpSessionInfo IpsecConnectionTunnelManagementBgpSessionInfoPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
 	CompartmentId pulumi.StringPtrInput
 	// The IP address of the CPE device's VPN headend.  Example: `203.0.113.22`
@@ -266,11 +264,11 @@ type IpsecConnectionTunnelManagementState struct {
 	// Configuration details for IKE phase one (ISAKMP) configuration parameters.
 	//
 	// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-	PhaseOneDetails IpsecConnectionTunnelManagementPhaseOneDetailArrayInput
+	PhaseOneDetails IpsecConnectionTunnelManagementPhaseOneDetailsPtrInput
 	// Configuration details for IPSec phase two configuration parameters.
 	//
 	// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-	PhaseTwoDetails IpsecConnectionTunnelManagementPhaseTwoDetailArrayInput
+	PhaseTwoDetails IpsecConnectionTunnelManagementPhaseTwoDetailsPtrInput
 	// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
 	Routing pulumi.StringPtrInput
 	// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
@@ -297,7 +295,7 @@ type ipsecConnectionTunnelManagementArgs struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-	BgpSessionInfos []IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfos"`
+	BgpSessionInfo *IpsecConnectionTunnelManagementBgpSessionInfo `pulumi:"bgpSessionInfo"`
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName *string                                    `pulumi:"displayName"`
 	DpdConfigs  []IpsecConnectionTunnelManagementDpdConfig `pulumi:"dpdConfigs"`
@@ -318,11 +316,11 @@ type ipsecConnectionTunnelManagementArgs struct {
 	// Configuration details for IKE phase one (ISAKMP) configuration parameters.
 	//
 	// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-	PhaseOneDetails []IpsecConnectionTunnelManagementPhaseOneDetail `pulumi:"phaseOneDetails"`
+	PhaseOneDetails *IpsecConnectionTunnelManagementPhaseOneDetails `pulumi:"phaseOneDetails"`
 	// Configuration details for IPSec phase two configuration parameters.
 	//
 	// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-	PhaseTwoDetails []IpsecConnectionTunnelManagementPhaseTwoDetail `pulumi:"phaseTwoDetails"`
+	PhaseTwoDetails *IpsecConnectionTunnelManagementPhaseTwoDetails `pulumi:"phaseTwoDetails"`
 	// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
 	Routing *string `pulumi:"routing"`
 	// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
@@ -336,7 +334,7 @@ type IpsecConnectionTunnelManagementArgs struct {
 	// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 	//
 	// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-	BgpSessionInfos IpsecConnectionTunnelManagementBgpSessionInfoArrayInput
+	BgpSessionInfo IpsecConnectionTunnelManagementBgpSessionInfoPtrInput
 	// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
 	DisplayName pulumi.StringPtrInput
 	DpdConfigs  IpsecConnectionTunnelManagementDpdConfigArrayInput
@@ -357,11 +355,11 @@ type IpsecConnectionTunnelManagementArgs struct {
 	// Configuration details for IKE phase one (ISAKMP) configuration parameters.
 	//
 	// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-	PhaseOneDetails IpsecConnectionTunnelManagementPhaseOneDetailArrayInput
+	PhaseOneDetails IpsecConnectionTunnelManagementPhaseOneDetailsPtrInput
 	// Configuration details for IPSec phase two configuration parameters.
 	//
 	// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-	PhaseTwoDetails IpsecConnectionTunnelManagementPhaseTwoDetailArrayInput
+	PhaseTwoDetails IpsecConnectionTunnelManagementPhaseTwoDetailsPtrInput
 	// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
 	Routing pulumi.StringPtrInput
 	// The shared secret (pre-shared key) to use for the IPSec tunnel. If you don't provide a value, Oracle generates a value for you. You can specify your own shared secret later if you like with [UpdateIPSecConnectionTunnelSharedSecret](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/20160918/IPSecConnectionTunnelSharedSecret/UpdateIPSecConnectionTunnelSharedSecret).  Example: `EXAMPLEToUis6j1c.p8G.dVQxcmdfMO0yXMLi.lZTbYCMDGu4V8o`
@@ -465,10 +463,10 @@ func (o IpsecConnectionTunnelManagementOutput) AssociatedVirtualCircuits() pulum
 // Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
 //
 // If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-func (o IpsecConnectionTunnelManagementOutput) BgpSessionInfos() IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput {
-		return v.BgpSessionInfos
-	}).(IpsecConnectionTunnelManagementBgpSessionInfoArrayOutput)
+func (o IpsecConnectionTunnelManagementOutput) BgpSessionInfo() IpsecConnectionTunnelManagementBgpSessionInfoOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementBgpSessionInfoOutput {
+		return v.BgpSessionInfo
+	}).(IpsecConnectionTunnelManagementBgpSessionInfoOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
@@ -536,19 +534,19 @@ func (o IpsecConnectionTunnelManagementOutput) OracleCanInitiate() pulumi.String
 // Configuration details for IKE phase one (ISAKMP) configuration parameters.
 //
 // See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-func (o IpsecConnectionTunnelManagementOutput) PhaseOneDetails() IpsecConnectionTunnelManagementPhaseOneDetailArrayOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementPhaseOneDetailArrayOutput {
+func (o IpsecConnectionTunnelManagementOutput) PhaseOneDetails() IpsecConnectionTunnelManagementPhaseOneDetailsOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementPhaseOneDetailsOutput {
 		return v.PhaseOneDetails
-	}).(IpsecConnectionTunnelManagementPhaseOneDetailArrayOutput)
+	}).(IpsecConnectionTunnelManagementPhaseOneDetailsOutput)
 }
 
 // Configuration details for IPSec phase two configuration parameters.
 //
 // See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-func (o IpsecConnectionTunnelManagementOutput) PhaseTwoDetails() IpsecConnectionTunnelManagementPhaseTwoDetailArrayOutput {
-	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementPhaseTwoDetailArrayOutput {
+func (o IpsecConnectionTunnelManagementOutput) PhaseTwoDetails() IpsecConnectionTunnelManagementPhaseTwoDetailsOutput {
+	return o.ApplyT(func(v *IpsecConnectionTunnelManagement) IpsecConnectionTunnelManagementPhaseTwoDetailsOutput {
 		return v.PhaseTwoDetails
-	}).(IpsecConnectionTunnelManagementPhaseTwoDetailArrayOutput)
+	}).(IpsecConnectionTunnelManagementPhaseTwoDetailsOutput)
 }
 
 // The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).

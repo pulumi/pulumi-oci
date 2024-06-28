@@ -149,8 +149,8 @@ __all__ = [
     'IpsecConnectionTunnelManagementBgpSessionInfoArgs',
     'IpsecConnectionTunnelManagementDpdConfigArgs',
     'IpsecConnectionTunnelManagementEncryptionDomainConfigArgs',
-    'IpsecConnectionTunnelManagementPhaseOneDetailArgs',
-    'IpsecConnectionTunnelManagementPhaseTwoDetailArgs',
+    'IpsecConnectionTunnelManagementPhaseOneDetailsArgs',
+    'IpsecConnectionTunnelManagementPhaseTwoDetailsArgs',
     'NetworkSecurityGroupSecurityRuleIcmpOptionsArgs',
     'NetworkSecurityGroupSecurityRuleTcpOptionsArgs',
     'NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRangeArgs',
@@ -11435,7 +11435,7 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfigArgs:
 
 
 @pulumi.input_type
-class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
+class IpsecConnectionTunnelManagementPhaseOneDetailsArgs:
     def __init__(__self__, *,
                  custom_authentication_algorithm: Optional[pulumi.Input[str]] = None,
                  custom_dh_group: Optional[pulumi.Input[str]] = None,
@@ -11634,7 +11634,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetailArgs:
 
 
 @pulumi.input_type
-class IpsecConnectionTunnelManagementPhaseTwoDetailArgs:
+class IpsecConnectionTunnelManagementPhaseTwoDetailsArgs:
     def __init__(__self__, *,
                  custom_authentication_algorithm: Optional[pulumi.Input[str]] = None,
                  custom_encryption_algorithm: Optional[pulumi.Input[str]] = None,

@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -70,7 +70,8 @@ type LookupMysqlBackupResult struct {
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb int `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the backup is associated with.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId                string                                  `pulumi:"dbSystemId"`
+	DbSystemSnapshotSummaries []GetMysqlBackupDbSystemSnapshotSummary `pulumi:"dbSystemSnapshotSummaries"`
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []GetMysqlBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -83,16 +84,23 @@ type LookupMysqlBackupResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// OCID of the backup itself
 	Id string `pulumi:"id"`
+	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+	ImmediateSourceBackupId string `pulumi:"immediateSourceBackupId"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion string `pulumi:"mysqlVersion"`
+	// The OCID of the original source DB system backup from which this DB system backup was copied.
+	OriginalSourceBackupId string `pulumi:"originalSourceBackupId"`
 	// Number of days to retain this backup.
 	RetentionInDays int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
-	ShapeName string `pulumi:"shapeName"`
+	ShapeName     string                       `pulumi:"shapeName"`
+	SourceDetails []GetMysqlBackupSourceDetail `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State string `pulumi:"state"`
+	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCopyCreated string `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
 	TimeCreated string `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
@@ -171,6 +179,12 @@ func (o LookupMysqlBackupResultOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+func (o LookupMysqlBackupResultOutput) DbSystemSnapshotSummaries() GetMysqlBackupDbSystemSnapshotSummaryArrayOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) []GetMysqlBackupDbSystemSnapshotSummary {
+		return v.DbSystemSnapshotSummaries
+	}).(GetMysqlBackupDbSystemSnapshotSummaryArrayOutput)
+}
+
 // Snapshot of the DbSystem details at the time of the backup
 func (o LookupMysqlBackupResultOutput) DbSystemSnapshots() GetMysqlBackupDbSystemSnapshotArrayOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) []GetMysqlBackupDbSystemSnapshot { return v.DbSystemSnapshots }).(GetMysqlBackupDbSystemSnapshotArrayOutput)
@@ -201,6 +215,11 @@ func (o LookupMysqlBackupResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+func (o LookupMysqlBackupResultOutput) ImmediateSourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.ImmediateSourceBackupId }).(pulumi.StringOutput)
+}
+
 // Additional information about the current lifecycleState.
 func (o LookupMysqlBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -209,6 +228,11 @@ func (o LookupMysqlBackupResultOutput) LifecycleDetails() pulumi.StringOutput {
 // The MySQL server version of the DB System used for backup.
 func (o LookupMysqlBackupResultOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.MysqlVersion }).(pulumi.StringOutput)
+}
+
+// The OCID of the original source DB system backup from which this DB system backup was copied.
+func (o LookupMysqlBackupResultOutput) OriginalSourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.OriginalSourceBackupId }).(pulumi.StringOutput)
 }
 
 // Number of days to retain this backup.
@@ -221,9 +245,18 @@ func (o LookupMysqlBackupResultOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.ShapeName }).(pulumi.StringOutput)
 }
 
+func (o LookupMysqlBackupResultOutput) SourceDetails() GetMysqlBackupSourceDetailArrayOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) []GetMysqlBackupSourceDetail { return v.SourceDetails }).(GetMysqlBackupSourceDetailArrayOutput)
+}
+
 // The state of the backup.
 func (o LookupMysqlBackupResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o LookupMysqlBackupResultOutput) TimeCopyCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupMysqlBackupResult) string { return v.TimeCopyCreated }).(pulumi.StringOutput)
 }
 
 // The time the backup record was created.

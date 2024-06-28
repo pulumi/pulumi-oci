@@ -8,7 +8,7 @@ import (
 	"reflect"
 
 	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +23,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/DataScience"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/DataScience"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -138,8 +138,8 @@ type Pipeline struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// The current state of the pipeline.
-	State        pulumi.StringOutput        `pulumi:"state"`
-	StepArtifact PipelineStepArtifactOutput `pulumi:"stepArtifact"`
+	State         pulumi.StringOutput             `pulumi:"state"`
+	StepArtifacts PipelineStepArtifactArrayOutput `pulumi:"stepArtifacts"`
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayOutput `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -213,8 +213,8 @@ type pipelineState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId *string `pulumi:"projectId"`
 	// The current state of the pipeline.
-	State        *string               `pulumi:"state"`
-	StepArtifact *PipelineStepArtifact `pulumi:"stepArtifact"`
+	State         *string                `pulumi:"state"`
+	StepArtifacts []PipelineStepArtifact `pulumi:"stepArtifacts"`
 	// (Updatable) Array of step details for each step.
 	StepDetails []PipelineStepDetail `pulumi:"stepDetails"`
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -250,8 +250,8 @@ type PipelineState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
 	ProjectId pulumi.StringPtrInput
 	// The current state of the pipeline.
-	State        pulumi.StringPtrInput
-	StepArtifact PipelineStepArtifactPtrInput
+	State         pulumi.StringPtrInput
+	StepArtifacts PipelineStepArtifactArrayInput
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayInput
 	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -285,8 +285,8 @@ type pipelineArgs struct {
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails *PipelineLogConfigurationDetails `pulumi:"logConfigurationDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-	ProjectId    string                `pulumi:"projectId"`
-	StepArtifact *PipelineStepArtifact `pulumi:"stepArtifact"`
+	ProjectId     string                 `pulumi:"projectId"`
+	StepArtifacts []PipelineStepArtifact `pulumi:"stepArtifacts"`
 	// (Updatable) Array of step details for each step.
 	StepDetails []PipelineStepDetail `pulumi:"stepDetails"`
 }
@@ -311,8 +311,8 @@ type PipelineArgs struct {
 	// (Updatable) The pipeline log configuration details.
 	LogConfigurationDetails PipelineLogConfigurationDetailsPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
-	ProjectId    pulumi.StringInput
-	StepArtifact PipelineStepArtifactPtrInput
+	ProjectId     pulumi.StringInput
+	StepArtifacts PipelineStepArtifactArrayInput
 	// (Updatable) Array of step details for each step.
 	StepDetails PipelineStepDetailArrayInput
 }
@@ -470,8 +470,8 @@ func (o PipelineOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *Pipeline) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
 }
 
-func (o PipelineOutput) StepArtifact() PipelineStepArtifactOutput {
-	return o.ApplyT(func(v *Pipeline) PipelineStepArtifactOutput { return v.StepArtifact }).(PipelineStepArtifactOutput)
+func (o PipelineOutput) StepArtifacts() PipelineStepArtifactArrayOutput {
+	return o.ApplyT(func(v *Pipeline) PipelineStepArtifactArrayOutput { return v.StepArtifacts }).(PipelineStepArtifactArrayOutput)
 }
 
 // (Updatable) Array of step details for each step.

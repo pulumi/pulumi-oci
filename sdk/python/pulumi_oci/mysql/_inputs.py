@@ -23,6 +23,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotEndpointArgs',
     'MysqlBackupDbSystemSnapshotMaintenanceArgs',
     'MysqlBackupDbSystemSnapshotSecureConnectionArgs',
+    'MysqlBackupDbSystemSnapshotSummaryArgs',
+    'MysqlBackupSourceDetailsArgs',
     'MysqlConfigurationInitVariablesArgs',
     'MysqlConfigurationVariablesArgs',
     'MysqlDbSystemBackupPolicyArgs',
@@ -558,6 +560,7 @@ class MysqlBackupDbSystemSnapshotArgs:
                  mysql_version: Optional[pulumi.Input[str]] = None,
                  port: Optional[pulumi.Input[int]] = None,
                  port_x: Optional[pulumi.Input[int]] = None,
+                 region: Optional[pulumi.Input[str]] = None,
                  secure_connections: Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]] = None,
                  shape_name: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None):
@@ -585,6 +588,7 @@ class MysqlBackupDbSystemSnapshotArgs:
         :param pulumi.Input[str] mysql_version: The MySQL server version of the DB System used for backup.
         :param pulumi.Input[int] port: The port for primary endpoint of the DB System to listen on.
         :param pulumi.Input[int] port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param pulumi.Input[str] region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]] secure_connections: Secure connection configuration details.
         :param pulumi.Input[str] shape_name: The shape of the DB System instance used for backup.
         :param pulumi.Input[str] subnet_id: The OCID of the subnet the DB System is associated with.
@@ -635,6 +639,8 @@ class MysqlBackupDbSystemSnapshotArgs:
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
@@ -919,6 +925,18 @@ class MysqlBackupDbSystemSnapshotArgs:
         pulumi.set(self, "port_x", value)
 
     @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+    @property
     @pulumi.getter(name="secureConnections")
     def secure_connections(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotSecureConnectionArgs']]]]:
         """
@@ -970,10 +988,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
         :param pulumi.Input[bool] is_enabled: Specifies if PITR is enabled or disabled.
         :param pulumi.Input[Sequence[pulumi.Input['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs']]] pitr_policies: The PITR policy for the DB System.
         :param pulumi.Input[int] retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] window_start_time: The start time of the maintenance window.
         """
         if defined_tags is not None:
@@ -1042,10 +1056,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicyArgs:
     def retention_in_days(self) -> Optional[pulumi.Input[int]]:
         """
         (Updatable) Number of days to retain this backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_in_days")
 
@@ -1355,6 +1365,113 @@ class MysqlBackupDbSystemSnapshotSecureConnectionArgs:
     @certificate_id.setter
     def certificate_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "certificate_id", value)
+
+
+@pulumi.input_type
+class MysqlBackupDbSystemSnapshotSummaryArgs:
+    def __init__(__self__, *,
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 id: Optional[pulumi.Input[str]] = None,
+                 region: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] display_name: (Updatable) A user-supplied display name for the backup.
+        :param pulumi.Input[str] id: OCID of the backup itself
+        :param pulumi.Input[str] region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) A user-supplied display name for the backup.
+        """
+        return pulumi.get(self, "display_name")
+
+    @display_name.setter
+    def display_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[pulumi.Input[str]]:
+        """
+        OCID of the backup itself
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "id", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[pulumi.Input[str]]:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "region", value)
+
+
+@pulumi.input_type
+class MysqlBackupSourceDetailsArgs:
+    def __init__(__self__, *,
+                 backup_id: pulumi.Input[str],
+                 compartment_id: pulumi.Input[str],
+                 region: pulumi.Input[str]):
+        """
+        :param pulumi.Input[str] backup_id: The OCID of the source backup.
+        :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment the backup exists in.
+        :param pulumi.Input[str] region: The region of the backup source.
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> pulumi.Input[str]:
+        """
+        The OCID of the source backup.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "backup_id", value)
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> pulumi.Input[str]:
+        """
+        (Updatable) The OCID of the compartment the backup exists in.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @compartment_id.setter
+    def compartment_id(self, value: pulumi.Input[str]):
+        pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter
+    def region(self) -> pulumi.Input[str]:
+        """
+        The region of the backup source.
+        """
+        return pulumi.get(self, "region")
+
+    @region.setter
+    def region(self, value: pulumi.Input[str]):
+        pulumi.set(self, "region", value)
 
 
 @pulumi.input_type

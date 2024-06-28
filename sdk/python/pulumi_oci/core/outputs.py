@@ -150,8 +150,8 @@ __all__ = [
     'IpsecConnectionTunnelManagementBgpSessionInfo',
     'IpsecConnectionTunnelManagementDpdConfig',
     'IpsecConnectionTunnelManagementEncryptionDomainConfig',
-    'IpsecConnectionTunnelManagementPhaseOneDetail',
-    'IpsecConnectionTunnelManagementPhaseTwoDetail',
+    'IpsecConnectionTunnelManagementPhaseOneDetails',
+    'IpsecConnectionTunnelManagementPhaseTwoDetails',
     'NetworkSecurityGroupSecurityRuleIcmpOptions',
     'NetworkSecurityGroupSecurityRuleTcpOptions',
     'NetworkSecurityGroupSecurityRuleTcpOptionsDestinationPortRange',
@@ -12151,7 +12151,7 @@ class IpsecConnectionTunnelManagementEncryptionDomainConfig(dict):
 
 
 @pulumi.output_type
-class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
+class IpsecConnectionTunnelManagementPhaseOneDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -12179,14 +12179,14 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
             suggest = "remaining_lifetime_last_retrieved"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in IpsecConnectionTunnelManagementPhaseOneDetail. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpsecConnectionTunnelManagementPhaseOneDetails. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        IpsecConnectionTunnelManagementPhaseOneDetail.__key_warning(key)
+        IpsecConnectionTunnelManagementPhaseOneDetails.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        IpsecConnectionTunnelManagementPhaseOneDetail.__key_warning(key)
+        IpsecConnectionTunnelManagementPhaseOneDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,
@@ -12336,7 +12336,7 @@ class IpsecConnectionTunnelManagementPhaseOneDetail(dict):
 
 
 @pulumi.output_type
-class IpsecConnectionTunnelManagementPhaseTwoDetail(dict):
+class IpsecConnectionTunnelManagementPhaseTwoDetails(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
@@ -12366,14 +12366,14 @@ class IpsecConnectionTunnelManagementPhaseTwoDetail(dict):
             suggest = "remaining_lifetime_last_retrieved"
 
         if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in IpsecConnectionTunnelManagementPhaseTwoDetail. Access the value via the '{suggest}' property getter instead.")
+            pulumi.log.warn(f"Key '{key}' not found in IpsecConnectionTunnelManagementPhaseTwoDetails. Access the value via the '{suggest}' property getter instead.")
 
     def __getitem__(self, key: str) -> Any:
-        IpsecConnectionTunnelManagementPhaseTwoDetail.__key_warning(key)
+        IpsecConnectionTunnelManagementPhaseTwoDetails.__key_warning(key)
         return super().__getitem__(key)
 
     def get(self, key: str, default = None) -> Any:
-        IpsecConnectionTunnelManagementPhaseTwoDetail.__key_warning(key)
+        IpsecConnectionTunnelManagementPhaseTwoDetails.__key_warning(key)
         return super().get(key, default)
 
     def __init__(__self__, *,

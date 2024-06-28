@@ -92,6 +92,7 @@ export class MysqlBackup extends pulumi.CustomResource {
      * The OCID of the DB System the Backup is associated with.
      */
     public readonly dbSystemId!: pulumi.Output<string>;
+    public readonly dbSystemSnapshotSummaries!: pulumi.Output<outputs.Mysql.MysqlBackupDbSystemSnapshotSummary[]>;
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
@@ -113,6 +114,10 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     */
+    public /*out*/ readonly immediateSourceBackupId!: pulumi.Output<string>;
+    /**
      * Additional information about the current lifecycleState.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -121,11 +126,11 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly mysqlVersion!: pulumi.Output<string>;
     /**
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
+     */
+    public /*out*/ readonly originalSourceBackupId!: pulumi.Output<string>;
+    /**
      * (Updatable) Number of days to retain this backup.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     public readonly retentionInDays!: pulumi.Output<number>;
     /**
@@ -133,9 +138,17 @@ export class MysqlBackup extends pulumi.CustomResource {
      */
     public /*out*/ readonly shapeName!: pulumi.Output<string>;
     /**
+     * Details of backup source in the cloud.
+     */
+    public readonly sourceDetails!: pulumi.Output<outputs.Mysql.MysqlBackupSourceDetails | undefined>;
+    /**
      * The state of the backup.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
+    public /*out*/ readonly timeCopyCreated!: pulumi.Output<string>;
     /**
      * The time the backup record was created.
      */
@@ -152,7 +165,7 @@ export class MysqlBackup extends pulumi.CustomResource {
      * @param args The arguments to use to populate this resource's properties.
      * @param opts A bag of options that control this resource's behavior.
      */
-    constructor(name: string, args: MysqlBackupArgs, opts?: pulumi.CustomResourceOptions)
+    constructor(name: string, args?: MysqlBackupArgs, opts?: pulumi.CustomResourceOptions)
     constructor(name: string, argsOrState?: MysqlBackupArgs | MysqlBackupState, opts?: pulumi.CustomResourceOptions) {
         let resourceInputs: pulumi.Inputs = {};
         opts = opts || {};
@@ -164,39 +177,46 @@ export class MysqlBackup extends pulumi.CustomResource {
             resourceInputs["creationType"] = state ? state.creationType : undefined;
             resourceInputs["dataStorageSizeInGb"] = state ? state.dataStorageSizeInGb : undefined;
             resourceInputs["dbSystemId"] = state ? state.dbSystemId : undefined;
+            resourceInputs["dbSystemSnapshotSummaries"] = state ? state.dbSystemSnapshotSummaries : undefined;
             resourceInputs["dbSystemSnapshots"] = state ? state.dbSystemSnapshots : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
             resourceInputs["description"] = state ? state.description : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["immediateSourceBackupId"] = state ? state.immediateSourceBackupId : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["mysqlVersion"] = state ? state.mysqlVersion : undefined;
+            resourceInputs["originalSourceBackupId"] = state ? state.originalSourceBackupId : undefined;
             resourceInputs["retentionInDays"] = state ? state.retentionInDays : undefined;
             resourceInputs["shapeName"] = state ? state.shapeName : undefined;
+            resourceInputs["sourceDetails"] = state ? state.sourceDetails : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
+            resourceInputs["timeCopyCreated"] = state ? state.timeCopyCreated : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeUpdated"] = state ? state.timeUpdated : undefined;
         } else {
             const args = argsOrState as MysqlBackupArgs | undefined;
-            if ((!args || args.dbSystemId === undefined) && !opts.urn) {
-                throw new Error("Missing required property 'dbSystemId'");
-            }
             resourceInputs["backupType"] = args ? args.backupType : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["dbSystemId"] = args ? args.dbSystemId : undefined;
+            resourceInputs["dbSystemSnapshotSummaries"] = args ? args.dbSystemSnapshotSummaries : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["retentionInDays"] = args ? args.retentionInDays : undefined;
+            resourceInputs["sourceDetails"] = args ? args.sourceDetails : undefined;
             resourceInputs["backupSizeInGbs"] = undefined /*out*/;
             resourceInputs["creationType"] = undefined /*out*/;
             resourceInputs["dataStorageSizeInGb"] = undefined /*out*/;
             resourceInputs["dbSystemSnapshots"] = undefined /*out*/;
+            resourceInputs["immediateSourceBackupId"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["mysqlVersion"] = undefined /*out*/;
+            resourceInputs["originalSourceBackupId"] = undefined /*out*/;
             resourceInputs["shapeName"] = undefined /*out*/;
             resourceInputs["state"] = undefined /*out*/;
+            resourceInputs["timeCopyCreated"] = undefined /*out*/;
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeUpdated"] = undefined /*out*/;
         }
@@ -233,6 +253,7 @@ export interface MysqlBackupState {
      * The OCID of the DB System the Backup is associated with.
      */
     dbSystemId?: pulumi.Input<string>;
+    dbSystemSnapshotSummaries?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSummary>[]>;
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
@@ -254,6 +275,10 @@ export interface MysqlBackupState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     */
+    immediateSourceBackupId?: pulumi.Input<string>;
+    /**
      * Additional information about the current lifecycleState.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -262,11 +287,11 @@ export interface MysqlBackupState {
      */
     mysqlVersion?: pulumi.Input<string>;
     /**
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
+     */
+    originalSourceBackupId?: pulumi.Input<string>;
+    /**
      * (Updatable) Number of days to retain this backup.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionInDays?: pulumi.Input<number>;
     /**
@@ -274,9 +299,17 @@ export interface MysqlBackupState {
      */
     shapeName?: pulumi.Input<string>;
     /**
+     * Details of backup source in the cloud.
+     */
+    sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails>;
+    /**
      * The state of the backup.
      */
     state?: pulumi.Input<string>;
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
+    timeCopyCreated?: pulumi.Input<string>;
     /**
      * The time the backup record was created.
      */
@@ -302,7 +335,8 @@ export interface MysqlBackupArgs {
     /**
      * The OCID of the DB System the Backup is associated with.
      */
-    dbSystemId: pulumi.Input<string>;
+    dbSystemId?: pulumi.Input<string>;
+    dbSystemSnapshotSummaries?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSummary>[]>;
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
@@ -321,10 +355,10 @@ export interface MysqlBackupArgs {
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
      * (Updatable) Number of days to retain this backup.
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
     retentionInDays?: pulumi.Input<number>;
+    /**
+     * Details of backup source in the cloud.
+     */
+    sourceDetails?: pulumi.Input<inputs.Mysql.MysqlBackupSourceDetails>;
 }

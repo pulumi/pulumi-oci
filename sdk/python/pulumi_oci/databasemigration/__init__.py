@@ -5,15 +5,9 @@
 from .. import _utilities
 import typing
 # Export this package's modules as members:
-from .connection import *
-from .get_connection import *
-from .get_connections import *
 from .get_job_advisor_report import *
 from .get_job_output import *
-from .get_migration import *
 from .get_migration_object_types import *
-from .get_migrations import *
 from .job import *
-from .migration import *
 from ._inputs import *
 from . import outputs

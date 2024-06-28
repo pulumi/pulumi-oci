@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -8272,45 +8272,29 @@ func (i PipelineStepArtifactArgs) ToPipelineStepArtifactOutputWithContext(ctx co
 	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepArtifactOutput)
 }
 
-func (i PipelineStepArtifactArgs) ToPipelineStepArtifactPtrOutput() PipelineStepArtifactPtrOutput {
-	return i.ToPipelineStepArtifactPtrOutputWithContext(context.Background())
-}
-
-func (i PipelineStepArtifactArgs) ToPipelineStepArtifactPtrOutputWithContext(ctx context.Context) PipelineStepArtifactPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepArtifactOutput).ToPipelineStepArtifactPtrOutputWithContext(ctx)
-}
-
-// PipelineStepArtifactPtrInput is an input type that accepts PipelineStepArtifactArgs, PipelineStepArtifactPtr and PipelineStepArtifactPtrOutput values.
-// You can construct a concrete instance of `PipelineStepArtifactPtrInput` via:
+// PipelineStepArtifactArrayInput is an input type that accepts PipelineStepArtifactArray and PipelineStepArtifactArrayOutput values.
+// You can construct a concrete instance of `PipelineStepArtifactArrayInput` via:
 //
-//	        PipelineStepArtifactArgs{...}
-//
-//	or:
-//
-//	        nil
-type PipelineStepArtifactPtrInput interface {
+//	PipelineStepArtifactArray{ PipelineStepArtifactArgs{...} }
+type PipelineStepArtifactArrayInput interface {
 	pulumi.Input
 
-	ToPipelineStepArtifactPtrOutput() PipelineStepArtifactPtrOutput
-	ToPipelineStepArtifactPtrOutputWithContext(context.Context) PipelineStepArtifactPtrOutput
+	ToPipelineStepArtifactArrayOutput() PipelineStepArtifactArrayOutput
+	ToPipelineStepArtifactArrayOutputWithContext(context.Context) PipelineStepArtifactArrayOutput
 }
 
-type pipelineStepArtifactPtrType PipelineStepArtifactArgs
+type PipelineStepArtifactArray []PipelineStepArtifactInput
 
-func PipelineStepArtifactPtr(v *PipelineStepArtifactArgs) PipelineStepArtifactPtrInput {
-	return (*pipelineStepArtifactPtrType)(v)
+func (PipelineStepArtifactArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineStepArtifact)(nil)).Elem()
 }
 
-func (*pipelineStepArtifactPtrType) ElementType() reflect.Type {
-	return reflect.TypeOf((**PipelineStepArtifact)(nil)).Elem()
+func (i PipelineStepArtifactArray) ToPipelineStepArtifactArrayOutput() PipelineStepArtifactArrayOutput {
+	return i.ToPipelineStepArtifactArrayOutputWithContext(context.Background())
 }
 
-func (i *pipelineStepArtifactPtrType) ToPipelineStepArtifactPtrOutput() PipelineStepArtifactPtrOutput {
-	return i.ToPipelineStepArtifactPtrOutputWithContext(context.Background())
-}
-
-func (i *pipelineStepArtifactPtrType) ToPipelineStepArtifactPtrOutputWithContext(ctx context.Context) PipelineStepArtifactPtrOutput {
-	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepArtifactPtrOutput)
+func (i PipelineStepArtifactArray) ToPipelineStepArtifactArrayOutputWithContext(ctx context.Context) PipelineStepArtifactArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(PipelineStepArtifactArrayOutput)
 }
 
 type PipelineStepArtifactOutput struct{ *pulumi.OutputState }
@@ -8325,16 +8309,6 @@ func (o PipelineStepArtifactOutput) ToPipelineStepArtifactOutput() PipelineStepA
 
 func (o PipelineStepArtifactOutput) ToPipelineStepArtifactOutputWithContext(ctx context.Context) PipelineStepArtifactOutput {
 	return o
-}
-
-func (o PipelineStepArtifactOutput) ToPipelineStepArtifactPtrOutput() PipelineStepArtifactPtrOutput {
-	return o.ToPipelineStepArtifactPtrOutputWithContext(context.Background())
-}
-
-func (o PipelineStepArtifactOutput) ToPipelineStepArtifactPtrOutputWithContext(ctx context.Context) PipelineStepArtifactPtrOutput {
-	return o.ApplyTWithContext(ctx, func(_ context.Context, v PipelineStepArtifact) *PipelineStepArtifact {
-		return &v
-	}).(PipelineStepArtifactPtrOutput)
 }
 
 func (o PipelineStepArtifactOutput) ArtifactContentDisposition() pulumi.StringPtrOutput {
@@ -8362,83 +8336,24 @@ func (o PipelineStepArtifactOutput) StepName() pulumi.StringOutput {
 	return o.ApplyT(func(v PipelineStepArtifact) string { return v.StepName }).(pulumi.StringOutput)
 }
 
-type PipelineStepArtifactPtrOutput struct{ *pulumi.OutputState }
+type PipelineStepArtifactArrayOutput struct{ *pulumi.OutputState }
 
-func (PipelineStepArtifactPtrOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((**PipelineStepArtifact)(nil)).Elem()
+func (PipelineStepArtifactArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]PipelineStepArtifact)(nil)).Elem()
 }
 
-func (o PipelineStepArtifactPtrOutput) ToPipelineStepArtifactPtrOutput() PipelineStepArtifactPtrOutput {
+func (o PipelineStepArtifactArrayOutput) ToPipelineStepArtifactArrayOutput() PipelineStepArtifactArrayOutput {
 	return o
 }
 
-func (o PipelineStepArtifactPtrOutput) ToPipelineStepArtifactPtrOutputWithContext(ctx context.Context) PipelineStepArtifactPtrOutput {
+func (o PipelineStepArtifactArrayOutput) ToPipelineStepArtifactArrayOutputWithContext(ctx context.Context) PipelineStepArtifactArrayOutput {
 	return o
 }
 
-func (o PipelineStepArtifactPtrOutput) Elem() PipelineStepArtifactOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) PipelineStepArtifact {
-		if v != nil {
-			return *v
-		}
-		var ret PipelineStepArtifact
-		return ret
+func (o PipelineStepArtifactArrayOutput) Index(i pulumi.IntInput) PipelineStepArtifactOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) PipelineStepArtifact {
+		return vs[0].([]PipelineStepArtifact)[vs[1].(int)]
 	}).(PipelineStepArtifactOutput)
-}
-
-func (o PipelineStepArtifactPtrOutput) ArtifactContentDisposition() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ArtifactContentDisposition
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o PipelineStepArtifactPtrOutput) ArtifactContentLength() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.ArtifactContentLength
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o PipelineStepArtifactPtrOutput) ArtifactContentMd5() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ArtifactContentMd5
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o PipelineStepArtifactPtrOutput) ArtifactLastModified() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) *string {
-		if v == nil {
-			return nil
-		}
-		return v.ArtifactLastModified
-	}).(pulumi.StringPtrOutput)
-}
-
-func (o PipelineStepArtifactPtrOutput) PipelineStepArtifact() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.PipelineStepArtifact
-	}).(pulumi.StringPtrOutput)
-}
-
-// The name of the step. It must be unique within the pipeline. This is used to create the pipeline DAG.
-func (o PipelineStepArtifactPtrOutput) StepName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v *PipelineStepArtifact) *string {
-		if v == nil {
-			return nil
-		}
-		return &v.StepName
-	}).(pulumi.StringPtrOutput)
 }
 
 type PipelineStepDetail struct {
@@ -28081,7 +27996,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepRunInput)(nil)).Elem(), PipelineRunStepRunArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineRunStepRunArrayInput)(nil)).Elem(), PipelineRunStepRunArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepArtifactInput)(nil)).Elem(), PipelineStepArtifactArgs{})
-	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepArtifactPtrInput)(nil)).Elem(), PipelineStepArtifactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepArtifactArrayInput)(nil)).Elem(), PipelineStepArtifactArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailInput)(nil)).Elem(), PipelineStepDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailArrayInput)(nil)).Elem(), PipelineStepDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*PipelineStepDetailStepConfigurationDetailsInput)(nil)).Elem(), PipelineStepDetailStepConfigurationDetailsArgs{})
@@ -28464,7 +28379,7 @@ func init() {
 	pulumi.RegisterOutputType(PipelineRunStepRunOutput{})
 	pulumi.RegisterOutputType(PipelineRunStepRunArrayOutput{})
 	pulumi.RegisterOutputType(PipelineStepArtifactOutput{})
-	pulumi.RegisterOutputType(PipelineStepArtifactPtrOutput{})
+	pulumi.RegisterOutputType(PipelineStepArtifactArrayOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailArrayOutput{})
 	pulumi.RegisterOutputType(PipelineStepDetailStepConfigurationDetailsOutput{})

@@ -10,6 +10,11 @@ export type Fleet = import("./fleet").Fleet;
 export const Fleet: typeof import("./fleet").Fleet = null as any;
 utilities.lazyLoad(exports, ["Fleet"], () => require("./fleet"));
 
+export { FleetAdvancedFeatureConfigurationArgs, FleetAdvancedFeatureConfigurationState } from "./fleetAdvancedFeatureConfiguration";
+export type FleetAdvancedFeatureConfiguration = import("./fleetAdvancedFeatureConfiguration").FleetAdvancedFeatureConfiguration;
+export const FleetAdvancedFeatureConfiguration: typeof import("./fleetAdvancedFeatureConfiguration").FleetAdvancedFeatureConfiguration = null as any;
+utilities.lazyLoad(exports, ["FleetAdvancedFeatureConfiguration"], () => require("./fleetAdvancedFeatureConfiguration"));
+
 export { GetAnnouncementsArgs, GetAnnouncementsResult, GetAnnouncementsOutputArgs } from "./getAnnouncements";
 export const getAnnouncements: typeof import("./getAnnouncements").getAnnouncements = null as any;
 export const getAnnouncementsOutput: typeof import("./getAnnouncements").getAnnouncementsOutput = null as any;
@@ -202,6 +207,8 @@ const _module = {
         switch (type) {
             case "oci:Jms/fleet:Fleet":
                 return new Fleet(name, <any>undefined, { urn })
+            case "oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration":
+                return new FleetAdvancedFeatureConfiguration(name, <any>undefined, { urn })
             case "oci:Jms/javaDownloadsJavaDownloadReport:JavaDownloadsJavaDownloadReport":
                 return new JavaDownloadsJavaDownloadReport(name, <any>undefined, { urn })
             case "oci:Jms/javaDownloadsJavaDownloadToken:JavaDownloadsJavaDownloadToken":
@@ -214,6 +221,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("oci", "Jms/fleet", _module)
+pulumi.runtime.registerResourceModule("oci", "Jms/fleetAdvancedFeatureConfiguration", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadReport", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaDownloadToken", _module)
 pulumi.runtime.registerResourceModule("oci", "Jms/javaDownloadsJavaLicenseAcceptanceRecord", _module)

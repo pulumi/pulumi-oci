@@ -12,8 +12,8 @@ import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementState;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementBgpSessionInfo;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementDpdConfig;
 import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementEncryptionDomainConfig;
-import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementPhaseOneDetail;
-import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementPhaseTwoDetail;
+import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementPhaseOneDetails;
+import com.pulumi.oci.Core.outputs.IpsecConnectionTunnelManagementPhaseTwoDetails;
 import com.pulumi.oci.Utilities;
 import java.lang.Integer;
 import java.lang.String;
@@ -71,7 +71,7 @@ import javax.annotation.Nullable;
  *             .ipsecId(testIpsec.id())
  *             .tunnelId(testIpSecConnectionTunnels.ipSecConnectionTunnels()[0].id())
  *             .routing(ipSecConnectionTunnelManagementRouting)
- *             .bgpSessionInfos(IpsecConnectionTunnelManagementBgpSessionInfoArgs.builder()
+ *             .bgpSessionInfo(IpsecConnectionTunnelManagementBgpSessionInfoArgs.builder()
  *                 .customerBgpAsn(ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn)
  *                 .customerInterfaceIp(ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp)
  *                 .oracleInterfaceIp(ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp)
@@ -114,8 +114,8 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
-    @Export(name="bgpSessionInfos", refs={List.class,IpsecConnectionTunnelManagementBgpSessionInfo.class}, tree="[0,1]")
-    private Output<List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos;
+    @Export(name="bgpSessionInfo", refs={IpsecConnectionTunnelManagementBgpSessionInfo.class}, tree="[0]")
+    private Output<IpsecConnectionTunnelManagementBgpSessionInfo> bgpSessionInfo;
 
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -123,8 +123,8 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
-    public Output<List<IpsecConnectionTunnelManagementBgpSessionInfo>> bgpSessionInfos() {
-        return this.bgpSessionInfos;
+    public Output<IpsecConnectionTunnelManagementBgpSessionInfo> bgpSessionInfo() {
+        return this.bgpSessionInfo;
     }
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
@@ -286,8 +286,8 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      * 
      */
-    @Export(name="phaseOneDetails", refs={List.class,IpsecConnectionTunnelManagementPhaseOneDetail.class}, tree="[0,1]")
-    private Output<List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails;
+    @Export(name="phaseOneDetails", refs={IpsecConnectionTunnelManagementPhaseOneDetails.class}, tree="[0]")
+    private Output<IpsecConnectionTunnelManagementPhaseOneDetails> phaseOneDetails;
 
     /**
      * @return Configuration details for IKE phase one (ISAKMP) configuration parameters.
@@ -295,7 +295,7 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      * 
      */
-    public Output<List<IpsecConnectionTunnelManagementPhaseOneDetail>> phaseOneDetails() {
+    public Output<IpsecConnectionTunnelManagementPhaseOneDetails> phaseOneDetails() {
         return this.phaseOneDetails;
     }
     /**
@@ -304,8 +304,8 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
      * 
      */
-    @Export(name="phaseTwoDetails", refs={List.class,IpsecConnectionTunnelManagementPhaseTwoDetail.class}, tree="[0,1]")
-    private Output<List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails;
+    @Export(name="phaseTwoDetails", refs={IpsecConnectionTunnelManagementPhaseTwoDetails.class}, tree="[0]")
+    private Output<IpsecConnectionTunnelManagementPhaseTwoDetails> phaseTwoDetails;
 
     /**
      * @return Configuration details for IPSec phase two configuration parameters.
@@ -313,7 +313,7 @@ public class IpsecConnectionTunnelManagement extends com.pulumi.resources.Custom
      * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
      * 
      */
-    public Output<List<IpsecConnectionTunnelManagementPhaseTwoDetail>> phaseTwoDetails() {
+    public Output<IpsecConnectionTunnelManagementPhaseTwoDetails> phaseTwoDetails() {
         return this.phaseTwoDetails;
     }
     /**

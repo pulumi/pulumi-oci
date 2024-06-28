@@ -211,11 +211,11 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.state);
     }
 
-    @Import(name="stepArtifact")
-    private @Nullable Output<PipelineStepArtifactArgs> stepArtifact;
+    @Import(name="stepArtifacts")
+    private @Nullable Output<List<PipelineStepArtifactArgs>> stepArtifacts;
 
-    public Optional<Output<PipelineStepArtifactArgs>> stepArtifact() {
-        return Optional.ofNullable(this.stepArtifact);
+    public Optional<Output<List<PipelineStepArtifactArgs>>> stepArtifacts() {
+        return Optional.ofNullable(this.stepArtifacts);
     }
 
     /**
@@ -294,7 +294,7 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
         this.logConfigurationDetails = $.logConfigurationDetails;
         this.projectId = $.projectId;
         this.state = $.state;
-        this.stepArtifact = $.stepArtifact;
+        this.stepArtifacts = $.stepArtifacts;
         this.stepDetails = $.stepDetails;
         this.systemTags = $.systemTags;
         this.timeCreated = $.timeCreated;
@@ -580,13 +580,17 @@ public final class PipelineState extends com.pulumi.resources.ResourceArgs {
             return state(Output.of(state));
         }
 
-        public Builder stepArtifact(@Nullable Output<PipelineStepArtifactArgs> stepArtifact) {
-            $.stepArtifact = stepArtifact;
+        public Builder stepArtifacts(@Nullable Output<List<PipelineStepArtifactArgs>> stepArtifacts) {
+            $.stepArtifacts = stepArtifacts;
             return this;
         }
 
-        public Builder stepArtifact(PipelineStepArtifactArgs stepArtifact) {
-            return stepArtifact(Output.of(stepArtifact));
+        public Builder stepArtifacts(List<PipelineStepArtifactArgs> stepArtifacts) {
+            return stepArtifacts(Output.of(stepArtifacts));
+        }
+
+        public Builder stepArtifacts(PipelineStepArtifactArgs... stepArtifacts) {
+            return stepArtifacts(List.of(stepArtifacts));
         }
 
         /**

@@ -38,10 +38,6 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
      */
     private List<GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis> cryptoEventAnalyses;
     private String fleetId;
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     private String id;
     /**
      * @return JavaMigrationAnalysis configuration
@@ -101,10 +97,6 @@ public final class GetFleetAdvancedFeatureConfigurationResult {
     public String fleetId() {
         return this.fleetId;
     }
-    /**
-     * @return The provider-assigned unique ID for this managed resource.
-     * 
-     */
     public String id() {
         return this.id;
     }

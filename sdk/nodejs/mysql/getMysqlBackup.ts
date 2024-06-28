@@ -69,6 +69,7 @@ export interface GetMysqlBackupResult {
      * The OCID of the DB System the backup is associated with.
      */
     readonly dbSystemId: string;
+    readonly dbSystemSnapshotSummaries: outputs.Mysql.GetMysqlBackupDbSystemSnapshotSummary[];
     /**
      * Snapshot of the DbSystem details at the time of the backup
      */
@@ -94,6 +95,10 @@ export interface GetMysqlBackupResult {
      */
     readonly id: string;
     /**
+     * The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     */
+    readonly immediateSourceBackupId: string;
+    /**
      * Additional information about the current lifecycleState.
      */
     readonly lifecycleDetails: string;
@@ -102,6 +107,10 @@ export interface GetMysqlBackupResult {
      */
     readonly mysqlVersion: string;
     /**
+     * The OCID of the original source DB system backup from which this DB system backup was copied.
+     */
+    readonly originalSourceBackupId: string;
+    /**
      * Number of days to retain this backup.
      */
     readonly retentionInDays: number;
@@ -109,10 +118,15 @@ export interface GetMysqlBackupResult {
      * The shape of the DB System instance used for backup.
      */
     readonly shapeName: string;
+    readonly sourceDetails: outputs.Mysql.GetMysqlBackupSourceDetail[];
     /**
      * The state of the backup.
      */
     readonly state: string;
+    /**
+     * The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     */
+    readonly timeCopyCreated: string;
     /**
      * The time the backup record was created.
      */

@@ -167,7 +167,7 @@ export class Pipeline extends pulumi.CustomResource {
      * The current state of the pipeline.
      */
     public /*out*/ readonly state!: pulumi.Output<string>;
-    public readonly stepArtifact!: pulumi.Output<outputs.DataScience.PipelineStepArtifact>;
+    public readonly stepArtifacts!: pulumi.Output<outputs.DataScience.PipelineStepArtifact[]>;
     /**
      * (Updatable) Array of step details for each step.
      */
@@ -211,7 +211,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["logConfigurationDetails"] = state ? state.logConfigurationDetails : undefined;
             resourceInputs["projectId"] = state ? state.projectId : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
-            resourceInputs["stepArtifact"] = state ? state.stepArtifact : undefined;
+            resourceInputs["stepArtifacts"] = state ? state.stepArtifacts : undefined;
             resourceInputs["stepDetails"] = state ? state.stepDetails : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
@@ -237,7 +237,7 @@ export class Pipeline extends pulumi.CustomResource {
             resourceInputs["infrastructureConfigurationDetails"] = args ? args.infrastructureConfigurationDetails : undefined;
             resourceInputs["logConfigurationDetails"] = args ? args.logConfigurationDetails : undefined;
             resourceInputs["projectId"] = args ? args.projectId : undefined;
-            resourceInputs["stepArtifact"] = args ? args.stepArtifact : undefined;
+            resourceInputs["stepArtifacts"] = args ? args.stepArtifacts : undefined;
             resourceInputs["stepDetails"] = args ? args.stepDetails : undefined;
             resourceInputs["createdBy"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
@@ -304,7 +304,7 @@ export interface PipelineState {
      * The current state of the pipeline.
      */
     state?: pulumi.Input<string>;
-    stepArtifact?: pulumi.Input<inputs.DataScience.PipelineStepArtifact>;
+    stepArtifacts?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepArtifact>[]>;
     /**
      * (Updatable) Array of step details for each step.
      */
@@ -364,7 +364,7 @@ export interface PipelineArgs {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the project to associate the pipeline with.
      */
     projectId: pulumi.Input<string>;
-    stepArtifact?: pulumi.Input<inputs.DataScience.PipelineStepArtifact>;
+    stepArtifacts?: pulumi.Input<pulumi.Input<inputs.DataScience.PipelineStepArtifact>[]>;
     /**
      * (Updatable) Array of step details for each step.
      */

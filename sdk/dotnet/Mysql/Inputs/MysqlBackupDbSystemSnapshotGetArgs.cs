@@ -186,6 +186,12 @@ namespace Pulumi.Oci.Mysql.Inputs
         [Input("portX")]
         public Input<int>? PortX { get; set; }
 
+        /// <summary>
+        /// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        [Input("region")]
+        public Input<string>? Region { get; set; }
+
         [Input("secureConnections")]
         private InputList<Inputs.MysqlBackupDbSystemSnapshotSecureConnectionGetArgs>? _secureConnections;
 

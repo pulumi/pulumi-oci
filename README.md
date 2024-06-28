@@ -33,7 +33,7 @@ python3 -m pip install pulumi_oci
 To use with Go, use `go get` to grab the latest version of the library:
 
 ```bash
-go get github.com/pulumi/pulumi-oci/sdk/...
+go get github.com/pulumi/pulumi-oci/sdk/v2/...
 ```
 
 ### .NET

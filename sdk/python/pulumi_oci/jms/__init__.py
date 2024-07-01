@@ -6,6 +6,7 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .fleet import *
+from .fleet_advanced_feature_configuration import *
 from .get_announcements import *
 from .get_fleet import *
 from .get_fleet_advanced_feature_configuration import *

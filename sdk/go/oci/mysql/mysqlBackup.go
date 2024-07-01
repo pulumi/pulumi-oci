@@ -7,8 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"errors"
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -23,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Mysql"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Mysql"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -73,7 +72,8 @@ type MysqlBackup struct {
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntOutput `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the Backup is associated with.
-	DbSystemId pulumi.StringOutput `pulumi:"dbSystemId"`
+	DbSystemId                pulumi.StringOutput                           `pulumi:"dbSystemId"`
+	DbSystemSnapshotSummaries MysqlBackupDbSystemSnapshotSummaryArrayOutput `pulumi:"dbSystemSnapshotSummaries"`
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots MysqlBackupDbSystemSnapshotArrayOutput `pulumi:"dbSystemSnapshots"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -84,19 +84,24 @@ type MysqlBackup struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+	ImmediateSourceBackupId pulumi.StringOutput `pulumi:"immediateSourceBackupId"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringOutput `pulumi:"mysqlVersion"`
+	// The OCID of the original source DB system backup from which this DB system backup was copied.
+	OriginalSourceBackupId pulumi.StringOutput `pulumi:"originalSourceBackupId"`
 	// (Updatable) Number of days to retain this backup.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays pulumi.IntOutput `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringOutput `pulumi:"shapeName"`
+	// Details of backup source in the cloud.
+	SourceDetails MysqlBackupSourceDetailsPtrOutput `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State pulumi.StringOutput `pulumi:"state"`
+	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCopyCreated pulumi.StringOutput `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
@@ -107,12 +112,9 @@ type MysqlBackup struct {
 func NewMysqlBackup(ctx *pulumi.Context,
 	name string, args *MysqlBackupArgs, opts ...pulumi.ResourceOption) (*MysqlBackup, error) {
 	if args == nil {
-		return nil, errors.New("missing one or more required arguments")
+		args = &MysqlBackupArgs{}
 	}
 
-	if args.DbSystemId == nil {
-		return nil, errors.New("invalid value for required argument 'DbSystemId'")
-	}
 	opts = internal.PkgResourceDefaultOpts(opts)
 	var resource MysqlBackup
 	err := ctx.RegisterResource("oci:Mysql/mysqlBackup:MysqlBackup", name, args, &resource, opts...)
@@ -147,7 +149,8 @@ type mysqlBackupState struct {
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb *int `pulumi:"dataStorageSizeInGb"`
 	// The OCID of the DB System the Backup is associated with.
-	DbSystemId *string `pulumi:"dbSystemId"`
+	DbSystemId                *string                              `pulumi:"dbSystemId"`
+	DbSystemSnapshotSummaries []MysqlBackupDbSystemSnapshotSummary `pulumi:"dbSystemSnapshotSummaries"`
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots []MysqlBackupDbSystemSnapshot `pulumi:"dbSystemSnapshots"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -158,19 +161,24 @@ type mysqlBackupState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+	ImmediateSourceBackupId *string `pulumi:"immediateSourceBackupId"`
 	// Additional information about the current lifecycleState.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion *string `pulumi:"mysqlVersion"`
+	// The OCID of the original source DB system backup from which this DB system backup was copied.
+	OriginalSourceBackupId *string `pulumi:"originalSourceBackupId"`
 	// (Updatable) Number of days to retain this backup.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays *int `pulumi:"retentionInDays"`
 	// The shape of the DB System instance used for backup.
 	ShapeName *string `pulumi:"shapeName"`
+	// Details of backup source in the cloud.
+	SourceDetails *MysqlBackupSourceDetails `pulumi:"sourceDetails"`
 	// The state of the backup.
 	State *string `pulumi:"state"`
+	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCopyCreated *string `pulumi:"timeCopyCreated"`
 	// The time the backup record was created.
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time at which the backup was updated.
@@ -189,7 +197,8 @@ type MysqlBackupState struct {
 	// Initial size of the data volume in GiBs that will be created and attached.
 	DataStorageSizeInGb pulumi.IntPtrInput
 	// The OCID of the DB System the Backup is associated with.
-	DbSystemId pulumi.StringPtrInput
+	DbSystemId                pulumi.StringPtrInput
+	DbSystemSnapshotSummaries MysqlBackupDbSystemSnapshotSummaryArrayInput
 	// Snapshot of the DbSystem details at the time of the backup
 	DbSystemSnapshots MysqlBackupDbSystemSnapshotArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -200,19 +209,24 @@ type MysqlBackupState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+	ImmediateSourceBackupId pulumi.StringPtrInput
 	// Additional information about the current lifecycleState.
 	LifecycleDetails pulumi.StringPtrInput
 	// The MySQL server version of the DB System used for backup.
 	MysqlVersion pulumi.StringPtrInput
+	// The OCID of the original source DB system backup from which this DB system backup was copied.
+	OriginalSourceBackupId pulumi.StringPtrInput
 	// (Updatable) Number of days to retain this backup.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays pulumi.IntPtrInput
 	// The shape of the DB System instance used for backup.
 	ShapeName pulumi.StringPtrInput
+	// Details of backup source in the cloud.
+	SourceDetails MysqlBackupSourceDetailsPtrInput
 	// The state of the backup.
 	State pulumi.StringPtrInput
+	// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+	TimeCopyCreated pulumi.StringPtrInput
 	// The time the backup record was created.
 	TimeCreated pulumi.StringPtrInput
 	// The time at which the backup was updated.
@@ -229,7 +243,8 @@ type mysqlBackupArgs struct {
 	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The OCID of the DB System the Backup is associated with.
-	DbSystemId string `pulumi:"dbSystemId"`
+	DbSystemId                *string                              `pulumi:"dbSystemId"`
+	DbSystemSnapshotSummaries []MysqlBackupDbSystemSnapshotSummary `pulumi:"dbSystemSnapshotSummaries"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) A user-supplied description for the backup.
@@ -239,10 +254,9 @@ type mysqlBackupArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) Number of days to retain this backup.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays *int `pulumi:"retentionInDays"`
+	// Details of backup source in the cloud.
+	SourceDetails *MysqlBackupSourceDetails `pulumi:"sourceDetails"`
 }
 
 // The set of arguments for constructing a MysqlBackup resource.
@@ -252,7 +266,8 @@ type MysqlBackupArgs struct {
 	// (Updatable) The OCID of the compartment the backup exists in.
 	CompartmentId pulumi.StringPtrInput
 	// The OCID of the DB System the Backup is associated with.
-	DbSystemId pulumi.StringInput
+	DbSystemId                pulumi.StringPtrInput
+	DbSystemSnapshotSummaries MysqlBackupDbSystemSnapshotSummaryArrayInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) A user-supplied description for the backup.
@@ -262,10 +277,9 @@ type MysqlBackupArgs struct {
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
 	// (Updatable) Number of days to retain this backup.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	RetentionInDays pulumi.IntPtrInput
+	// Details of backup source in the cloud.
+	SourceDetails MysqlBackupSourceDetailsPtrInput
 }
 
 func (MysqlBackupArgs) ElementType() reflect.Type {
@@ -385,6 +399,10 @@ func (o MysqlBackupOutput) DbSystemId() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.DbSystemId }).(pulumi.StringOutput)
 }
 
+func (o MysqlBackupOutput) DbSystemSnapshotSummaries() MysqlBackupDbSystemSnapshotSummaryArrayOutput {
+	return o.ApplyT(func(v *MysqlBackup) MysqlBackupDbSystemSnapshotSummaryArrayOutput { return v.DbSystemSnapshotSummaries }).(MysqlBackupDbSystemSnapshotSummaryArrayOutput)
+}
+
 // Snapshot of the DbSystem details at the time of the backup
 func (o MysqlBackupOutput) DbSystemSnapshots() MysqlBackupDbSystemSnapshotArrayOutput {
 	return o.ApplyT(func(v *MysqlBackup) MysqlBackupDbSystemSnapshotArrayOutput { return v.DbSystemSnapshots }).(MysqlBackupDbSystemSnapshotArrayOutput)
@@ -410,6 +428,11 @@ func (o MysqlBackupOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+func (o MysqlBackupOutput) ImmediateSourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.ImmediateSourceBackupId }).(pulumi.StringOutput)
+}
+
 // Additional information about the current lifecycleState.
 func (o MysqlBackupOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -420,10 +443,12 @@ func (o MysqlBackupOutput) MysqlVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.MysqlVersion }).(pulumi.StringOutput)
 }
 
+// The OCID of the original source DB system backup from which this DB system backup was copied.
+func (o MysqlBackupOutput) OriginalSourceBackupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.OriginalSourceBackupId }).(pulumi.StringOutput)
+}
+
 // (Updatable) Number of days to retain this backup.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o MysqlBackupOutput) RetentionInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.IntOutput { return v.RetentionInDays }).(pulumi.IntOutput)
 }
@@ -433,9 +458,19 @@ func (o MysqlBackupOutput) ShapeName() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.ShapeName }).(pulumi.StringOutput)
 }
 
+// Details of backup source in the cloud.
+func (o MysqlBackupOutput) SourceDetails() MysqlBackupSourceDetailsPtrOutput {
+	return o.ApplyT(func(v *MysqlBackup) MysqlBackupSourceDetailsPtrOutput { return v.SourceDetails }).(MysqlBackupSourceDetailsPtrOutput)
+}
+
 // The state of the backup.
 func (o MysqlBackupOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+func (o MysqlBackupOutput) TimeCopyCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v *MysqlBackup) pulumi.StringOutput { return v.TimeCopyCreated }).(pulumi.StringOutput)
 }
 
 // The time the backup record was created.

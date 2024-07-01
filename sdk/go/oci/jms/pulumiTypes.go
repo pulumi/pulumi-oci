@@ -7,11 +7,2139 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
 var _ = internal.GetEnvOrDefault
+
+type FleetAdvancedFeatureConfigurationAdvancedUsageTracking struct {
+	// (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+	IsEnabled *bool `pulumi:"isEnabled"`
+}
+
+// FleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput is an input type that accepts FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs and FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput` via:
+//
+//	FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{...}
+type FleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput
+	ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput
+}
+
+type FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs struct {
+	// (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+}
+
+func (FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return i.ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput).ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs, FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtr and FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput
+	ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrType FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs
+
+func FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtr(v *FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput {
+	return (*fleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrType) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrType) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationAdvancedUsageTracking) *FleetAdvancedFeatureConfigurationAdvancedUsageTracking {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput)
+}
+
+// (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationAdvancedUsageTracking) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationAdvancedUsageTracking)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput) ToFleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput) Elem() FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationAdvancedUsageTracking) FleetAdvancedFeatureConfigurationAdvancedUsageTracking {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationAdvancedUsageTracking
+		return ret
+	}).(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput)
+}
+
+// (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationAdvancedUsageTracking) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysis struct {
+	// (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) Summarized events log for advanced feature.
+	SummarizedEventsLog *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog `pulumi:"summarizedEventsLog"`
+}
+
+// FleetAdvancedFeatureConfigurationCryptoEventAnalysisInput is an input type that accepts FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs and FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationCryptoEventAnalysisInput` via:
+//
+//	FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{...}
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs struct {
+	// (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// (Updatable) Summarized events log for advanced feature.
+	SummarizedEventsLog FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrInput `pulumi:"summarizedEventsLog"`
+}
+
+func (FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return i.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput).ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs, FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtr and FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrType FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs
+
+func FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtr(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs) FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrInput {
+	return (*fleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrType) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrType) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationCryptoEventAnalysis) *FleetAdvancedFeatureConfigurationCryptoEventAnalysis {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput)
+}
+
+// (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationCryptoEventAnalysis) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Summarized events log for advanced feature.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput) SummarizedEventsLog() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationCryptoEventAnalysis) *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+		return v.SummarizedEventsLog
+	}).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationCryptoEventAnalysis)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput) Elem() FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysis) FleetAdvancedFeatureConfigurationCryptoEventAnalysis {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationCryptoEventAnalysis
+		return ret
+	}).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput)
+}
+
+// (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysis) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Summarized events log for advanced feature.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput) SummarizedEventsLog() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysis) *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+		if v == nil {
+			return nil
+		}
+		return v.SummarizedEventsLog
+	}).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId string `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId string `pulumi:"logId"`
+}
+
+// FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput is an input type that accepts FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs and FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput` via:
+//
+//	FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{...}
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs struct {
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+	LogGroupId pulumi.StringInput `pulumi:"logGroupId"`
+	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+	LogId pulumi.StringInput `pulumi:"logId"`
+}
+
+func (FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return i.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput).ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs, FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtr and FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput
+	ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrType FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs
+
+func FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtr(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrInput {
+	return (*fleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrType) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrType) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) string {
+		return v.LogGroupId
+	}).(pulumi.StringOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput) LogId() pulumi.StringOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) string { return v.LogId }).(pulumi.StringOutput)
+}
+
+type FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput) ToFleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput) Elem() FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog
+		return ret
+	}).(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput) LogGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+func (o FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput) LogId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.LogId
+	}).(pulumi.StringPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationJavaMigrationAnalysis struct {
+	// (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+	IsEnabled *bool `pulumi:"isEnabled"`
+}
+
+// FleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput is an input type that accepts FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs and FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput` via:
+//
+//	FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{...}
+type FleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput
+	ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput
+}
+
+type FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs struct {
+	// (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+}
+
+func (FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return i.ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput).ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs, FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtr and FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput
+	ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrType FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs
+
+func FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtr(v *FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrInput {
+	return (*fleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrType) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrType) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationJavaMigrationAnalysis) *FleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput)
+}
+
+// (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationJavaMigrationAnalysis) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationJavaMigrationAnalysis)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput) ToFleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput) Elem() FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationJavaMigrationAnalysis) FleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationJavaMigrationAnalysis
+		return ret
+	}).(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput)
+}
+
+// (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationJavaMigrationAnalysis) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationJfrRecording struct {
+	// (Updatable) JfrRecording flag to store enabled or disabled status.
+	IsEnabled *bool `pulumi:"isEnabled"`
+}
+
+// FleetAdvancedFeatureConfigurationJfrRecordingInput is an input type that accepts FleetAdvancedFeatureConfigurationJfrRecordingArgs and FleetAdvancedFeatureConfigurationJfrRecordingOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationJfrRecordingInput` via:
+//
+//	FleetAdvancedFeatureConfigurationJfrRecordingArgs{...}
+type FleetAdvancedFeatureConfigurationJfrRecordingInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationJfrRecordingOutput() FleetAdvancedFeatureConfigurationJfrRecordingOutput
+	ToFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationJfrRecordingOutput
+}
+
+type FleetAdvancedFeatureConfigurationJfrRecordingArgs struct {
+	// (Updatable) JfrRecording flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+}
+
+func (FleetAdvancedFeatureConfigurationJfrRecordingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationJfrRecordingArgs) ToFleetAdvancedFeatureConfigurationJfrRecordingOutput() FleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return i.ToFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationJfrRecordingArgs) ToFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationJfrRecordingOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationJfrRecordingArgs) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutput() FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationJfrRecordingArgs) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationJfrRecordingOutput).ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationJfrRecordingPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationJfrRecordingArgs, FleetAdvancedFeatureConfigurationJfrRecordingPtr and FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationJfrRecordingPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationJfrRecordingArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationJfrRecordingPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutput() FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput
+	ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationJfrRecordingPtrType FleetAdvancedFeatureConfigurationJfrRecordingArgs
+
+func FleetAdvancedFeatureConfigurationJfrRecordingPtr(v *FleetAdvancedFeatureConfigurationJfrRecordingArgs) FleetAdvancedFeatureConfigurationJfrRecordingPtrInput {
+	return (*fleetAdvancedFeatureConfigurationJfrRecordingPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationJfrRecordingPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationJfrRecordingPtrType) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutput() FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationJfrRecordingPtrType) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationJfrRecordingOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationJfrRecordingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingOutput) ToFleetAdvancedFeatureConfigurationJfrRecordingOutput() FleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingOutput) ToFleetAdvancedFeatureConfigurationJfrRecordingOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingOutput) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutput() FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingOutput) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationJfrRecording) *FleetAdvancedFeatureConfigurationJfrRecording {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput)
+}
+
+// (Updatable) JfrRecording flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationJfrRecordingOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationJfrRecording) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationJfrRecording)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutput() FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput) ToFleetAdvancedFeatureConfigurationJfrRecordingPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput) Elem() FleetAdvancedFeatureConfigurationJfrRecordingOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationJfrRecording) FleetAdvancedFeatureConfigurationJfrRecording {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationJfrRecording
+		return ret
+	}).(FleetAdvancedFeatureConfigurationJfrRecordingOutput)
+}
+
+// (Updatable) JfrRecording flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationJfrRecording) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcm struct {
+	// (Updatable) Lifecycle management flag to store enabled or disabled status.
+	IsEnabled *bool `pulumi:"isEnabled"`
+	// (Updatable) List of available post actions you can execute after the successful Java installation.
+	PostInstallationActions *FleetAdvancedFeatureConfigurationLcmPostInstallationActions `pulumi:"postInstallationActions"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmArgs and FleetAdvancedFeatureConfigurationLcmOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmArgs{...}
+type FleetAdvancedFeatureConfigurationLcmInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmOutput() FleetAdvancedFeatureConfigurationLcmOutput
+	ToFleetAdvancedFeatureConfigurationLcmOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmArgs struct {
+	// (Updatable) Lifecycle management flag to store enabled or disabled status.
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+	// (Updatable) List of available post actions you can execute after the successful Java installation.
+	PostInstallationActions FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrInput `pulumi:"postInstallationActions"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmArgs) ToFleetAdvancedFeatureConfigurationLcmOutput() FleetAdvancedFeatureConfigurationLcmOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmArgs) ToFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmArgs) ToFleetAdvancedFeatureConfigurationLcmPtrOutput() FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmArgs) ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmOutput).ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmArgs, FleetAdvancedFeatureConfigurationLcmPtr and FleetAdvancedFeatureConfigurationLcmPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationLcmArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationLcmPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPtrOutput() FleetAdvancedFeatureConfigurationLcmPtrOutput
+	ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationLcmPtrType FleetAdvancedFeatureConfigurationLcmArgs
+
+func FleetAdvancedFeatureConfigurationLcmPtr(v *FleetAdvancedFeatureConfigurationLcmArgs) FleetAdvancedFeatureConfigurationLcmPtrInput {
+	return (*fleetAdvancedFeatureConfigurationLcmPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationLcmPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPtrType) ToFleetAdvancedFeatureConfigurationLcmPtrOutput() FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPtrType) ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmOutput) ToFleetAdvancedFeatureConfigurationLcmOutput() FleetAdvancedFeatureConfigurationLcmOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmOutput) ToFleetAdvancedFeatureConfigurationLcmOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmOutput) ToFleetAdvancedFeatureConfigurationLcmPtrOutput() FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmOutput) ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationLcm) *FleetAdvancedFeatureConfigurationLcm {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationLcmPtrOutput)
+}
+
+// (Updatable) Lifecycle management flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationLcmOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcm) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of available post actions you can execute after the successful Java installation.
+func (o FleetAdvancedFeatureConfigurationLcmOutput) PostInstallationActions() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcm) *FleetAdvancedFeatureConfigurationLcmPostInstallationActions {
+		return v.PostInstallationActions
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcm)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPtrOutput() FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPtrOutput) Elem() FleetAdvancedFeatureConfigurationLcmOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcm) FleetAdvancedFeatureConfigurationLcm {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationLcm
+		return ret
+	}).(FleetAdvancedFeatureConfigurationLcmOutput)
+}
+
+// (Updatable) Lifecycle management flag to store enabled or disabled status.
+func (o FleetAdvancedFeatureConfigurationLcmPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcm) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) List of available post actions you can execute after the successful Java installation.
+func (o FleetAdvancedFeatureConfigurationLcmPtrOutput) PostInstallationActions() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcm) *FleetAdvancedFeatureConfigurationLcmPostInstallationActions {
+		if v == nil {
+			return nil
+		}
+		return v.PostInstallationActions
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActions struct {
+	// (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+	AddLoggingHandler *bool `pulumi:"addLoggingHandler"`
+	// (Updatable) The following post JRE installation actions are supported by the field:
+	// * Disable TLS 1.0 , TLS 1.1
+	DisabledTlsVersions []string `pulumi:"disabledTlsVersions"`
+	// (Updatable) Sets the logging level in logging.properties file.
+	GlobalLoggingLevel *string `pulumi:"globalLoggingLevel"`
+	// (Updatable) test
+	MinimumKeySizeSettings *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings `pulumi:"minimumKeySizeSettings"`
+	// (Updatable) List of proxy properties to be configured in net.properties file.
+	Proxies *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies `pulumi:"proxies"`
+	// (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+	// * Replace JDK root certificates with a list provided by the operating system.
+	ShouldReplaceCertificatesOperatingSystem *bool `pulumi:"shouldReplaceCertificatesOperatingSystem"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs{...}
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs struct {
+	// (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+	AddLoggingHandler pulumi.BoolPtrInput `pulumi:"addLoggingHandler"`
+	// (Updatable) The following post JRE installation actions are supported by the field:
+	// * Disable TLS 1.0 , TLS 1.1
+	DisabledTlsVersions pulumi.StringArrayInput `pulumi:"disabledTlsVersions"`
+	// (Updatable) Sets the logging level in logging.properties file.
+	GlobalLoggingLevel pulumi.StringPtrInput `pulumi:"globalLoggingLevel"`
+	// (Updatable) test
+	MinimumKeySizeSettings FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrInput `pulumi:"minimumKeySizeSettings"`
+	// (Updatable) List of proxy properties to be configured in net.properties file.
+	Proxies FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput `pulumi:"proxies"`
+	// (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+	// * Replace JDK root certificates with a list provided by the operating system.
+	ShouldReplaceCertificatesOperatingSystem pulumi.BoolPtrInput `pulumi:"shouldReplaceCertificatesOperatingSystem"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActions)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput).ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs, FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtr and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrType FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs
+
+func FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtr(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrInput {
+	return (*fleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcmPostInstallationActions)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrType) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrType) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActions)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *FleetAdvancedFeatureConfigurationLcmPostInstallationActions {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput)
+}
+
+// (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) AddLoggingHandler() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *bool { return v.AddLoggingHandler }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The following post JRE installation actions are supported by the field:
+// * Disable TLS 1.0 , TLS 1.1
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) DisabledTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) []string {
+		return v.DisabledTlsVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Sets the logging level in logging.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) GlobalLoggingLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *string {
+		return v.GlobalLoggingLevel
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) test
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) MinimumKeySizeSettings() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings {
+		return v.MinimumKeySizeSettings
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput)
+}
+
+// (Updatable) List of proxy properties to be configured in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) Proxies() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies {
+		return v.Proxies
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput)
+}
+
+// (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+// * Replace JDK root certificates with a list provided by the operating system.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput) ShouldReplaceCertificatesOperatingSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *bool {
+		return v.ShouldReplaceCertificatesOperatingSystem
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcmPostInstallationActions)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) Elem() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) FleetAdvancedFeatureConfigurationLcmPostInstallationActions {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationLcmPostInstallationActions
+		return ret
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput)
+}
+
+// (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) AddLoggingHandler() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AddLoggingHandler
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) The following post JRE installation actions are supported by the field:
+// * Disable TLS 1.0 , TLS 1.1
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) DisabledTlsVersions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.DisabledTlsVersions
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Sets the logging level in logging.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) GlobalLoggingLevel() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *string {
+		if v == nil {
+			return nil
+		}
+		return v.GlobalLoggingLevel
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) test
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) MinimumKeySizeSettings() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings {
+		if v == nil {
+			return nil
+		}
+		return v.MinimumKeySizeSettings
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput)
+}
+
+// (Updatable) List of proxy properties to be configured in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) Proxies() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies {
+		if v == nil {
+			return nil
+		}
+		return v.Proxies
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput)
+}
+
+// (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+// * Replace JDK root certificates with a list provided by the operating system.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput) ShouldReplaceCertificatesOperatingSystem() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActions) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ShouldReplaceCertificatesOperatingSystem
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings struct {
+	// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Certpaths []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath `pulumi:"certpaths"`
+	// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Jars []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar `pulumi:"jars"`
+	// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for Diffie-Hellman
+	Tls []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl `pulumi:"tls"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs{...}
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs struct {
+	// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Certpaths FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayInput `pulumi:"certpaths"`
+	// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for RSA signed jars
+	// * Changing minimum key length for EC
+	// * Changing minimum key length for DSA
+	Jars FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayInput `pulumi:"jars"`
+	// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+	// * Changing minimum key length for Diffie-Hellman
+	Tls FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayInput `pulumi:"tls"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput).ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs, FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtr and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrType FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs
+
+func FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtr(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrInput {
+	return (*fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrType) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrType) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput)
+}
+
+// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for RSA signed jars
+// * Changing minimum key length for EC
+// * Changing minimum key length for DSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) Certpaths() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath {
+		return v.Certpaths
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput)
+}
+
+// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for RSA signed jars
+// * Changing minimum key length for EC
+// * Changing minimum key length for DSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) Jars() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar {
+		return v.Jars
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput)
+}
+
+// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for Diffie-Hellman
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput) Tls() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl {
+		return v.Tls
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) Elem() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings
+		return ret
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput)
+}
+
+// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for RSA signed jars
+// * Changing minimum key length for EC
+// * Changing minimum key length for DSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) Certpaths() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath {
+		if v == nil {
+			return nil
+		}
+		return v.Certpaths
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput)
+}
+
+// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for RSA signed jars
+// * Changing minimum key length for EC
+// * Changing minimum key length for DSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) Jars() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar {
+		if v == nil {
+			return nil
+		}
+		return v.Jars
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput)
+}
+
+// (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+// * Changing minimum key length for Diffie-Hellman
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput) Tls() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings) []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl {
+		if v == nil {
+			return nil
+		}
+		return v.Tls
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath struct {
+	// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize *int `pulumi:"keySize"`
+	// (Updatable) The algorithm name.
+	Name *string `pulumi:"name"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs{...}
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs struct {
+	// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
+	// (Updatable) The algorithm name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray{ FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs{...} }
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathInput
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput {
+	return o
+}
+
+// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath) *int {
+		return v.KeySize
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The algorithm name.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput) Index(i pulumi.IntInput) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath {
+		return vs[0].([]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath)[vs[1].(int)]
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar struct {
+	// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize *int `pulumi:"keySize"`
+	// (Updatable) The algorithm name.
+	Name *string `pulumi:"name"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs{...}
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs struct {
+	// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
+	// (Updatable) The algorithm name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray{ FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs{...} }
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarInput
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput {
+	return o
+}
+
+// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar) *int {
+		return v.KeySize
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The algorithm name.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput) Index(i pulumi.IntInput) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar {
+		return vs[0].([]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar)[vs[1].(int)]
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl struct {
+	// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize *int `pulumi:"keySize"`
+	// (Updatable) The algorithm name.
+	Name *string `pulumi:"name"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs{...}
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs struct {
+	// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+	KeySize pulumi.IntPtrInput `pulumi:"keySize"`
+	// (Updatable) The algorithm name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray{ FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs{...} }
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray []FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlInput
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput {
+	return o
+}
+
+// (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput) KeySize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl) *int {
+		return v.KeySize
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The algorithm name.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl) *string {
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput) Index(i pulumi.IntInput) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl {
+		return vs[0].([]FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl)[vs[1].(int)]
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies struct {
+	// (Updatable) Ftp host to be set in net.properties file.
+	FtpProxyHost *string `pulumi:"ftpProxyHost"`
+	// (Updatable) Ftp port number to be set in net.properties file.
+	FtpProxyPort *int `pulumi:"ftpProxyPort"`
+	// (Updatable) Http host to be set in net.properties file.
+	HttpProxyHost *string `pulumi:"httpProxyHost"`
+	// (Updatable) Http port number to be set in net.properties file.
+	HttpProxyPort *int `pulumi:"httpProxyPort"`
+	// (Updatable) Https host to be set in net.properties file.
+	HttpsProxyHost *string `pulumi:"httpsProxyHost"`
+	// (Updatable) Https port number to be set in net.properties file.
+	HttpsProxyPort *int `pulumi:"httpsProxyPort"`
+	// (Updatable) Socks host to be set in net.properties file.
+	SocksProxyHost *string `pulumi:"socksProxyHost"`
+	// (Updatable) Socks port number to be set in net.properties file.
+	SocksProxyPort *int `pulumi:"socksProxyPort"`
+	// (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+	UseSystemProxies *bool `pulumi:"useSystemProxies"`
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesInput` via:
+//
+//	FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs{...}
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs struct {
+	// (Updatable) Ftp host to be set in net.properties file.
+	FtpProxyHost pulumi.StringPtrInput `pulumi:"ftpProxyHost"`
+	// (Updatable) Ftp port number to be set in net.properties file.
+	FtpProxyPort pulumi.IntPtrInput `pulumi:"ftpProxyPort"`
+	// (Updatable) Http host to be set in net.properties file.
+	HttpProxyHost pulumi.StringPtrInput `pulumi:"httpProxyHost"`
+	// (Updatable) Http port number to be set in net.properties file.
+	HttpProxyPort pulumi.IntPtrInput `pulumi:"httpProxyPort"`
+	// (Updatable) Https host to be set in net.properties file.
+	HttpsProxyHost pulumi.StringPtrInput `pulumi:"httpsProxyHost"`
+	// (Updatable) Https port number to be set in net.properties file.
+	HttpsProxyPort pulumi.IntPtrInput `pulumi:"httpsProxyPort"`
+	// (Updatable) Socks host to be set in net.properties file.
+	SocksProxyHost pulumi.StringPtrInput `pulumi:"socksProxyHost"`
+	// (Updatable) Socks port number to be set in net.properties file.
+	SocksProxyPort pulumi.IntPtrInput `pulumi:"socksProxyPort"`
+	// (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+	UseSystemProxies pulumi.BoolPtrInput `pulumi:"useSystemProxies"`
+}
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput).ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs, FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtr and FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput
+	ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrType FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs
+
+func FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtr(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput {
+	return (*fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrType) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrType) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput)
+}
+
+// (Updatable) Ftp host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) FtpProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		return v.FtpProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Ftp port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) FtpProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int { return v.FtpProxyPort }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Http host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) HttpProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		return v.HttpProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Http port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) HttpProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		return v.HttpProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Https host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) HttpsProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		return v.HttpsProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Https port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) HttpsProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		return v.HttpsProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Socks host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) SocksProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		return v.SocksProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Socks port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) SocksProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		return v.SocksProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput) UseSystemProxies() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *bool {
+		return v.UseSystemProxies
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) ToFleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) Elem() FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies
+		return ret
+	}).(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput)
+}
+
+// (Updatable) Ftp host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) FtpProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FtpProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Ftp port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) FtpProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		if v == nil {
+			return nil
+		}
+		return v.FtpProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Http host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) HttpProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Http port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) HttpProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HttpProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Https host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) HttpsProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HttpsProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Https port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) HttpsProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HttpsProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Socks host to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) SocksProxyHost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SocksProxyHost
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Socks port number to be set in net.properties file.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) SocksProxyPort() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SocksProxyPort
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+func (o FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput) UseSystemProxies() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.UseSystemProxies
+	}).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis struct {
+	// (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	IsEnabled *bool `pulumi:"isEnabled"`
+}
+
+// FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput is an input type that accepts FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs and FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput` via:
+//
+//	FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{...}
+type FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput
+	ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput
+}
+
+type FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs struct {
+	// (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	IsEnabled pulumi.BoolPtrInput `pulumi:"isEnabled"`
+}
+
+func (FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (i FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return i.ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
+}
+
+func (i FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (i FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput).ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(ctx)
+}
+
+// FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrInput is an input type that accepts FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs, FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtr and FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput values.
+// You can construct a concrete instance of `FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrInput` via:
+//
+//	        FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{...}
+//
+//	or:
+//
+//	        nil
+type FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrInput interface {
+	pulumi.Input
+
+	ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput
+	ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput
+}
+
+type fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrType FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs
+
+func FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtr(v *FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrInput {
+	return (*fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrType)(v)
+}
+
+func (*fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (i *fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrType) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return i.ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (i *fleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrType) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return o.ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(context.Background())
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) *FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
+		return &v
+	}).(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput)
+}
+
+// (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) *bool { return v.IsEnabled }).(pulumi.BoolPtrOutput)
+}
+
+type FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput struct{ *pulumi.OutputState }
+
+func (FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis)(nil)).Elem()
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput) ToFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutputWithContext(ctx context.Context) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput {
+	return o
+}
+
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput) Elem() FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
+		if v != nil {
+			return *v
+		}
+		var ret FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis
+		return ret
+	}).(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput)
+}
+
+// (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput) IsEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsEnabled
+	}).(pulumi.BoolPtrOutput)
+}
 
 type FleetInventoryLog struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -13957,6 +16085,32 @@ func (o GetListJreUsageItemOperatingSystemArrayOutput) Index(i pulumi.IntInput) 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTrackingInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationAdvancedUsageTrackingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysisInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationCryptoEventAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationJavaMigrationAnalysisInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationJavaMigrationAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationJfrRecordingInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationJfrRecordingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationJfrRecordingPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationJfrRecordingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrInput)(nil)).Elem(), FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetInventoryLogPtrInput)(nil)).Elem(), FleetInventoryLogArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*FleetOperationLogInput)(nil)).Elem(), FleetOperationLogArgs{})
@@ -14165,6 +16319,32 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemArrayInput)(nil)).Elem(), GetListJreUsageItemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetListJreUsageItemOperatingSystemArrayInput)(nil)).Elem(), GetListJreUsageItemOperatingSystemArray{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationAdvancedUsageTrackingPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationCryptoEventAnalysisOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationCryptoEventAnalysisPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLogPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationJavaMigrationAnalysisPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationJfrRecordingOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationJfrRecordingPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpathArrayOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJarArrayOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTlArrayOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxiesPtrOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisOutput{})
+	pulumi.RegisterOutputType(FleetAdvancedFeatureConfigurationPerformanceTuningAnalysisPtrOutput{})
 	pulumi.RegisterOutputType(FleetInventoryLogOutput{})
 	pulumi.RegisterOutputType(FleetInventoryLogPtrOutput{})
 	pulumi.RegisterOutputType(FleetOperationLogOutput{})

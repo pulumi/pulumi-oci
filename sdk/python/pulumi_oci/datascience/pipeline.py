@@ -27,7 +27,7 @@ class PipelineArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  infrastructure_configuration_details: Optional[pulumi.Input['PipelineInfrastructureConfigurationDetailsArgs']] = None,
                  log_configuration_details: Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']] = None,
-                 step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None):
+                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]] = None):
         """
         The set of arguments for constructing a Pipeline resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment where you want to create the pipeline.
@@ -60,8 +60,8 @@ class PipelineArgs:
             pulumi.set(__self__, "infrastructure_configuration_details", infrastructure_configuration_details)
         if log_configuration_details is not None:
             pulumi.set(__self__, "log_configuration_details", log_configuration_details)
-        if step_artifact is not None:
-            pulumi.set(__self__, "step_artifact", step_artifact)
+        if step_artifacts is not None:
+            pulumi.set(__self__, "step_artifacts", step_artifacts)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -193,13 +193,13 @@ class PipelineArgs:
         pulumi.set(self, "log_configuration_details", value)
 
     @property
-    @pulumi.getter(name="stepArtifact")
-    def step_artifact(self) -> Optional[pulumi.Input['PipelineStepArtifactArgs']]:
-        return pulumi.get(self, "step_artifact")
+    @pulumi.getter(name="stepArtifacts")
+    def step_artifacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]]:
+        return pulumi.get(self, "step_artifacts")
 
-    @step_artifact.setter
-    def step_artifact(self, value: Optional[pulumi.Input['PipelineStepArtifactArgs']]):
-        pulumi.set(self, "step_artifact", value)
+    @step_artifacts.setter
+    def step_artifacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]]):
+        pulumi.set(self, "step_artifacts", value)
 
 
 @pulumi.input_type
@@ -218,7 +218,7 @@ class _PipelineState:
                  log_configuration_details: Optional[pulumi.Input['PipelineLogConfigurationDetailsArgs']] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
                  state: Optional[pulumi.Input[str]] = None,
-                 step_artifact: Optional[pulumi.Input['PipelineStepArtifactArgs']] = None,
+                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]] = None,
                  step_details: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepDetailArgs']]]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -268,8 +268,8 @@ class _PipelineState:
             pulumi.set(__self__, "project_id", project_id)
         if state is not None:
             pulumi.set(__self__, "state", state)
-        if step_artifact is not None:
-            pulumi.set(__self__, "step_artifact", step_artifact)
+        if step_artifacts is not None:
+            pulumi.set(__self__, "step_artifacts", step_artifacts)
         if step_details is not None:
             pulumi.set(__self__, "step_details", step_details)
         if system_tags is not None:
@@ -433,13 +433,13 @@ class _PipelineState:
         pulumi.set(self, "state", value)
 
     @property
-    @pulumi.getter(name="stepArtifact")
-    def step_artifact(self) -> Optional[pulumi.Input['PipelineStepArtifactArgs']]:
-        return pulumi.get(self, "step_artifact")
+    @pulumi.getter(name="stepArtifacts")
+    def step_artifacts(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]]:
+        return pulumi.get(self, "step_artifacts")
 
-    @step_artifact.setter
-    def step_artifact(self, value: Optional[pulumi.Input['PipelineStepArtifactArgs']]):
-        pulumi.set(self, "step_artifact", value)
+    @step_artifacts.setter
+    def step_artifacts(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['PipelineStepArtifactArgs']]]]):
+        pulumi.set(self, "step_artifacts", value)
 
     @property
     @pulumi.getter(name="stepDetails")
@@ -505,7 +505,7 @@ class Pipeline(pulumi.CustomResource):
                  infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']]] = None,
                  log_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 step_artifact: Optional[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]] = None,
+                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]]]] = None,
                  step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
                  __props__=None):
         """
@@ -718,7 +718,7 @@ class Pipeline(pulumi.CustomResource):
                  infrastructure_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineInfrastructureConfigurationDetailsArgs']]] = None,
                  log_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']]] = None,
                  project_id: Optional[pulumi.Input[str]] = None,
-                 step_artifact: Optional[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]] = None,
+                 step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]]]] = None,
                  step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -743,7 +743,7 @@ class Pipeline(pulumi.CustomResource):
             if project_id is None and not opts.urn:
                 raise TypeError("Missing required property 'project_id'")
             __props__.__dict__["project_id"] = project_id
-            __props__.__dict__["step_artifact"] = step_artifact
+            __props__.__dict__["step_artifacts"] = step_artifacts
             if step_details is None and not opts.urn:
                 raise TypeError("Missing required property 'step_details'")
             __props__.__dict__["step_details"] = step_details
@@ -776,7 +776,7 @@ class Pipeline(pulumi.CustomResource):
             log_configuration_details: Optional[pulumi.Input[pulumi.InputType['PipelineLogConfigurationDetailsArgs']]] = None,
             project_id: Optional[pulumi.Input[str]] = None,
             state: Optional[pulumi.Input[str]] = None,
-            step_artifact: Optional[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]] = None,
+            step_artifacts: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepArtifactArgs']]]]] = None,
             step_details: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['PipelineStepDetailArgs']]]]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -822,7 +822,7 @@ class Pipeline(pulumi.CustomResource):
         __props__.__dict__["log_configuration_details"] = log_configuration_details
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["state"] = state
-        __props__.__dict__["step_artifact"] = step_artifact
+        __props__.__dict__["step_artifacts"] = step_artifacts
         __props__.__dict__["step_details"] = step_details
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["time_created"] = time_created
@@ -931,9 +931,9 @@ class Pipeline(pulumi.CustomResource):
         return pulumi.get(self, "state")
 
     @property
-    @pulumi.getter(name="stepArtifact")
-    def step_artifact(self) -> pulumi.Output['outputs.PipelineStepArtifact']:
-        return pulumi.get(self, "step_artifact")
+    @pulumi.getter(name="stepArtifacts")
+    def step_artifacts(self) -> pulumi.Output[Sequence['outputs.PipelineStepArtifact']]:
+        return pulumi.get(self, "step_artifacts")
 
     @property
     @pulumi.getter(name="stepDetails")

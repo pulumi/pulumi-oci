@@ -3081,26 +3081,10 @@ _utilities.register(
  },
  {
   "pkg": "oci",
-  "mod": "DatabaseMigration/connection",
-  "fqn": "pulumi_oci.databasemigration",
-  "classes": {
-   "oci:DatabaseMigration/connection:Connection": "Connection"
-  }
- },
- {
-  "pkg": "oci",
   "mod": "DatabaseMigration/job",
   "fqn": "pulumi_oci.databasemigration",
   "classes": {
    "oci:DatabaseMigration/job:Job": "Job"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "DatabaseMigration/migration",
-  "fqn": "pulumi_oci.databasemigration",
-  "classes": {
-   "oci:DatabaseMigration/migration:Migration": "Migration"
   }
  },
  {
@@ -4213,6 +4197,14 @@ _utilities.register(
   "fqn": "pulumi_oci.jms",
   "classes": {
    "oci:Jms/fleet:Fleet": "Fleet"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Jms/fleetAdvancedFeatureConfiguration",
+  "fqn": "pulumi_oci.jms",
+  "classes": {
+   "oci:Jms/fleetAdvancedFeatureConfiguration:FleetAdvancedFeatureConfiguration": "FleetAdvancedFeatureConfiguration"
   }
  },
  {

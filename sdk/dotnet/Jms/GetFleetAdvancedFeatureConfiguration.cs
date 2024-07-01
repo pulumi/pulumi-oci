@@ -116,9 +116,6 @@ namespace Pulumi.Oci.Jms
         /// </summary>
         public readonly ImmutableArray<Outputs.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisResult> CryptoEventAnalyses;
         public readonly string FleetId;
-        /// <summary>
-        /// The provider-assigned unique ID for this managed resource.
-        /// </summary>
         public readonly string Id;
         /// <summary>
         /// JavaMigrationAnalysis configuration

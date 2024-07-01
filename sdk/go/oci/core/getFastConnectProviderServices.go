@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -28,7 +28,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Core"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Core"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )

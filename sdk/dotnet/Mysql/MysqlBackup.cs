@@ -91,6 +91,9 @@ namespace Pulumi.Oci.Mysql
         [Output("dbSystemId")]
         public Output<string> DbSystemId { get; private set; } = null!;
 
+        [Output("dbSystemSnapshotSummaries")]
+        public Output<ImmutableArray<Outputs.MysqlBackupDbSystemSnapshotSummary>> DbSystemSnapshotSummaries { get; private set; } = null!;
+
         /// <summary>
         /// Snapshot of the DbSystem details at the time of the backup
         /// </summary>
@@ -122,6 +125,12 @@ namespace Pulumi.Oci.Mysql
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+        /// </summary>
+        [Output("immediateSourceBackupId")]
+        public Output<string> ImmediateSourceBackupId { get; private set; } = null!;
+
+        /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -134,11 +143,13 @@ namespace Pulumi.Oci.Mysql
         public Output<string> MysqlVersion { get; private set; } = null!;
 
         /// <summary>
+        /// The OCID of the original source DB system backup from which this DB system backup was copied.
+        /// </summary>
+        [Output("originalSourceBackupId")]
+        public Output<string> OriginalSourceBackupId { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Number of days to retain this backup.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("retentionInDays")]
         public Output<int> RetentionInDays { get; private set; } = null!;
@@ -150,10 +161,22 @@ namespace Pulumi.Oci.Mysql
         public Output<string> ShapeName { get; private set; } = null!;
 
         /// <summary>
+        /// Details of backup source in the cloud.
+        /// </summary>
+        [Output("sourceDetails")]
+        public Output<Outputs.MysqlBackupSourceDetails?> SourceDetails { get; private set; } = null!;
+
+        /// <summary>
         /// The state of the backup.
         /// </summary>
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
+
+        /// <summary>
+        /// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        [Output("timeCopyCreated")]
+        public Output<string> TimeCopyCreated { get; private set; } = null!;
 
         /// <summary>
         /// The time the backup record was created.
@@ -175,7 +198,7 @@ namespace Pulumi.Oci.Mysql
         /// <param name="name">The unique name of the resource</param>
         /// <param name="args">The arguments used to populate this resource's properties</param>
         /// <param name="options">A bag of options that control this resource's behavior</param>
-        public MysqlBackup(string name, MysqlBackupArgs args, CustomResourceOptions? options = null)
+        public MysqlBackup(string name, MysqlBackupArgs? args = null, CustomResourceOptions? options = null)
             : base("oci:Mysql/mysqlBackup:MysqlBackup", name, args ?? new MysqlBackupArgs(), MakeResourceOptions(options, ""))
         {
         }
@@ -228,8 +251,16 @@ namespace Pulumi.Oci.Mysql
         /// <summary>
         /// The OCID of the DB System the Backup is associated with.
         /// </summary>
-        [Input("dbSystemId", required: true)]
-        public Input<string> DbSystemId { get; set; } = null!;
+        [Input("dbSystemId")]
+        public Input<string>? DbSystemId { get; set; }
+
+        [Input("dbSystemSnapshotSummaries")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotSummaryArgs>? _dbSystemSnapshotSummaries;
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotSummaryArgs> DbSystemSnapshotSummaries
+        {
+            get => _dbSystemSnapshotSummaries ?? (_dbSystemSnapshotSummaries = new InputList<Inputs.MysqlBackupDbSystemSnapshotSummaryArgs>());
+            set => _dbSystemSnapshotSummaries = value;
+        }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
@@ -269,13 +300,15 @@ namespace Pulumi.Oci.Mysql
 
         /// <summary>
         /// (Updatable) Number of days to retain this backup.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("retentionInDays")]
         public Input<int>? RetentionInDays { get; set; }
+
+        /// <summary>
+        /// Details of backup source in the cloud.
+        /// </summary>
+        [Input("sourceDetails")]
+        public Input<Inputs.MysqlBackupSourceDetailsArgs>? SourceDetails { get; set; }
 
         public MysqlBackupArgs()
         {
@@ -320,6 +353,14 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         [Input("dbSystemId")]
         public Input<string>? DbSystemId { get; set; }
+
+        [Input("dbSystemSnapshotSummaries")]
+        private InputList<Inputs.MysqlBackupDbSystemSnapshotSummaryGetArgs>? _dbSystemSnapshotSummaries;
+        public InputList<Inputs.MysqlBackupDbSystemSnapshotSummaryGetArgs> DbSystemSnapshotSummaries
+        {
+            get => _dbSystemSnapshotSummaries ?? (_dbSystemSnapshotSummaries = new InputList<Inputs.MysqlBackupDbSystemSnapshotSummaryGetArgs>());
+            set => _dbSystemSnapshotSummaries = value;
+        }
 
         [Input("dbSystemSnapshots")]
         private InputList<Inputs.MysqlBackupDbSystemSnapshotGetArgs>? _dbSystemSnapshots;
@@ -370,6 +411,12 @@ namespace Pulumi.Oci.Mysql
         }
 
         /// <summary>
+        /// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+        /// </summary>
+        [Input("immediateSourceBackupId")]
+        public Input<string>? ImmediateSourceBackupId { get; set; }
+
+        /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -382,11 +429,13 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? MysqlVersion { get; set; }
 
         /// <summary>
+        /// The OCID of the original source DB system backup from which this DB system backup was copied.
+        /// </summary>
+        [Input("originalSourceBackupId")]
+        public Input<string>? OriginalSourceBackupId { get; set; }
+
+        /// <summary>
         /// (Updatable) Number of days to retain this backup.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("retentionInDays")]
         public Input<int>? RetentionInDays { get; set; }
@@ -398,10 +447,22 @@ namespace Pulumi.Oci.Mysql
         public Input<string>? ShapeName { get; set; }
 
         /// <summary>
+        /// Details of backup source in the cloud.
+        /// </summary>
+        [Input("sourceDetails")]
+        public Input<Inputs.MysqlBackupSourceDetailsGetArgs>? SourceDetails { get; set; }
+
+        /// <summary>
         /// The state of the backup.
         /// </summary>
         [Input("state")]
         public Input<string>? State { get; set; }
+
+        /// <summary>
+        /// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        [Input("timeCopyCreated")]
+        public Input<string>? TimeCopyCreated { get; set; }
 
         /// <summary>
         /// The time the backup record was created.

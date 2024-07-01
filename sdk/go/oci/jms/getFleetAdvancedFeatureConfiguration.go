@@ -7,7 +7,7 @@ import (
 	"context"
 	"reflect"
 
-	"github.com/pulumi/pulumi-oci/sdk/go/oci/internal"
+	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/internal"
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
@@ -22,7 +22,7 @@ import (
 //
 // import (
 //
-//	"github.com/pulumi/pulumi-oci/sdk/go/oci/Jms"
+//	"github.com/pulumi/pulumi-oci/sdk/v2/go/oci/Jms"
 //	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 //
 // )
@@ -40,9 +40,9 @@ import (
 //	}
 //
 // ```
-func GetFleetAdvancedFeatureConfiguration(ctx *pulumi.Context, args *GetFleetAdvancedFeatureConfigurationArgs, opts ...pulumi.InvokeOption) (*GetFleetAdvancedFeatureConfigurationResult, error) {
+func LookupFleetAdvancedFeatureConfiguration(ctx *pulumi.Context, args *LookupFleetAdvancedFeatureConfigurationArgs, opts ...pulumi.InvokeOption) (*LookupFleetAdvancedFeatureConfigurationResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
-	var rv GetFleetAdvancedFeatureConfigurationResult
+	var rv LookupFleetAdvancedFeatureConfigurationResult
 	err := ctx.Invoke("oci:Jms/getFleetAdvancedFeatureConfiguration:getFleetAdvancedFeatureConfiguration", args, &rv, opts...)
 	if err != nil {
 		return nil, err
@@ -51,13 +51,13 @@ func GetFleetAdvancedFeatureConfiguration(ctx *pulumi.Context, args *GetFleetAdv
 }
 
 // A collection of arguments for invoking getFleetAdvancedFeatureConfiguration.
-type GetFleetAdvancedFeatureConfigurationArgs struct {
+type LookupFleetAdvancedFeatureConfigurationArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId string `pulumi:"fleetId"`
 }
 
 // A collection of values returned by getFleetAdvancedFeatureConfiguration.
-type GetFleetAdvancedFeatureConfigurationResult struct {
+type LookupFleetAdvancedFeatureConfigurationResult struct {
 	// AdvancedUsageTracking configuration
 	AdvancedUsageTrackings []GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking `pulumi:"advancedUsageTrackings"`
 	// Bucket name required to store JFR and related data.
@@ -67,8 +67,7 @@ type GetFleetAdvancedFeatureConfigurationResult struct {
 	// CryptoEventAnalysis configuration
 	CryptoEventAnalyses []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis `pulumi:"cryptoEventAnalyses"`
 	FleetId             string                                                    `pulumi:"fleetId"`
-	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id                  string                                                    `pulumi:"id"`
 	// JavaMigrationAnalysis configuration
 	JavaMigrationAnalyses []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis `pulumi:"javaMigrationAnalyses"`
 	// JfrRecording configuration
@@ -81,110 +80,109 @@ type GetFleetAdvancedFeatureConfigurationResult struct {
 	TimeLastModified string `pulumi:"timeLastModified"`
 }
 
-func GetFleetAdvancedFeatureConfigurationOutput(ctx *pulumi.Context, args GetFleetAdvancedFeatureConfigurationOutputArgs, opts ...pulumi.InvokeOption) GetFleetAdvancedFeatureConfigurationResultOutput {
+func LookupFleetAdvancedFeatureConfigurationOutput(ctx *pulumi.Context, args LookupFleetAdvancedFeatureConfigurationOutputArgs, opts ...pulumi.InvokeOption) LookupFleetAdvancedFeatureConfigurationResultOutput {
 	return pulumi.ToOutputWithContext(context.Background(), args).
-		ApplyT(func(v interface{}) (GetFleetAdvancedFeatureConfigurationResult, error) {
-			args := v.(GetFleetAdvancedFeatureConfigurationArgs)
-			r, err := GetFleetAdvancedFeatureConfiguration(ctx, &args, opts...)
-			var s GetFleetAdvancedFeatureConfigurationResult
+		ApplyT(func(v interface{}) (LookupFleetAdvancedFeatureConfigurationResult, error) {
+			args := v.(LookupFleetAdvancedFeatureConfigurationArgs)
+			r, err := LookupFleetAdvancedFeatureConfiguration(ctx, &args, opts...)
+			var s LookupFleetAdvancedFeatureConfigurationResult
 			if r != nil {
 				s = *r
 			}
 			return s, err
-		}).(GetFleetAdvancedFeatureConfigurationResultOutput)
+		}).(LookupFleetAdvancedFeatureConfigurationResultOutput)
 }
 
 // A collection of arguments for invoking getFleetAdvancedFeatureConfiguration.
-type GetFleetAdvancedFeatureConfigurationOutputArgs struct {
+type LookupFleetAdvancedFeatureConfigurationOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Fleet.
 	FleetId pulumi.StringInput `pulumi:"fleetId"`
 }
 
-func (GetFleetAdvancedFeatureConfigurationOutputArgs) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationArgs)(nil)).Elem()
+func (LookupFleetAdvancedFeatureConfigurationOutputArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupFleetAdvancedFeatureConfigurationArgs)(nil)).Elem()
 }
 
 // A collection of values returned by getFleetAdvancedFeatureConfiguration.
-type GetFleetAdvancedFeatureConfigurationResultOutput struct{ *pulumi.OutputState }
+type LookupFleetAdvancedFeatureConfigurationResultOutput struct{ *pulumi.OutputState }
 
-func (GetFleetAdvancedFeatureConfigurationResultOutput) ElementType() reflect.Type {
-	return reflect.TypeOf((*GetFleetAdvancedFeatureConfigurationResult)(nil)).Elem()
+func (LookupFleetAdvancedFeatureConfigurationResultOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*LookupFleetAdvancedFeatureConfigurationResult)(nil)).Elem()
 }
 
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToGetFleetAdvancedFeatureConfigurationResultOutput() GetFleetAdvancedFeatureConfigurationResultOutput {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) ToLookupFleetAdvancedFeatureConfigurationResultOutput() LookupFleetAdvancedFeatureConfigurationResultOutput {
 	return o
 }
 
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) ToGetFleetAdvancedFeatureConfigurationResultOutputWithContext(ctx context.Context) GetFleetAdvancedFeatureConfigurationResultOutput {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) ToLookupFleetAdvancedFeatureConfigurationResultOutputWithContext(ctx context.Context) LookupFleetAdvancedFeatureConfigurationResultOutput {
 	return o
 }
 
 // AdvancedUsageTracking configuration
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) AdvancedUsageTrackings() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) AdvancedUsageTrackings() GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationAdvancedUsageTracking {
 		return v.AdvancedUsageTrackings
 	}).(GetFleetAdvancedFeatureConfigurationAdvancedUsageTrackingArrayOutput)
 }
 
 // Bucket name required to store JFR and related data.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticBucketName() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticBucketName }).(pulumi.StringOutput)
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) AnalyticBucketName() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticBucketName }).(pulumi.StringOutput)
 }
 
 // Namespace for the Fleet advanced feature.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) AnalyticNamespace() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticNamespace }).(pulumi.StringOutput)
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) AnalyticNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) string { return v.AnalyticNamespace }).(pulumi.StringOutput)
 }
 
 // CryptoEventAnalysis configuration
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) CryptoEventAnalyses() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) CryptoEventAnalyses() GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis {
 		return v.CryptoEventAnalyses
 	}).(GetFleetAdvancedFeatureConfigurationCryptoEventAnalysisArrayOutput)
 }
 
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) FleetId() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.FleetId }).(pulumi.StringOutput)
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) FleetId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) string { return v.FleetId }).(pulumi.StringOutput)
 }
 
-// The provider-assigned unique ID for this managed resource.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) Id() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
 // JavaMigrationAnalysis configuration
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) JavaMigrationAnalyses() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) JavaMigrationAnalyses() GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
 		return v.JavaMigrationAnalyses
 	}).(GetFleetAdvancedFeatureConfigurationJavaMigrationAnalysisArrayOutput)
 }
 
 // JfrRecording configuration
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) JfrRecordings() GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationJfrRecording {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) JfrRecordings() GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationJfrRecording {
 		return v.JfrRecordings
 	}).(GetFleetAdvancedFeatureConfigurationJfrRecordingArrayOutput)
 }
 
 // Enable lifecycle management and set post action configurations.
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) Lcms() GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationLcm {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) Lcms() GetFleetAdvancedFeatureConfigurationLcmArrayOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationLcm {
 		return v.Lcms
 	}).(GetFleetAdvancedFeatureConfigurationLcmArrayOutput)
 }
 
 // Performance tuning analysis configuration
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) PerformanceTuningAnalyses() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) PerformanceTuningAnalyses() GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) []GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
 		return v.PerformanceTuningAnalyses
 	}).(GetFleetAdvancedFeatureConfigurationPerformanceTuningAnalysisArrayOutput)
 }
 
 // The date and time of the last modification to the Fleet Agent Configuration (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-func (o GetFleetAdvancedFeatureConfigurationResultOutput) TimeLastModified() pulumi.StringOutput {
-	return o.ApplyT(func(v GetFleetAdvancedFeatureConfigurationResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
+func (o LookupFleetAdvancedFeatureConfigurationResultOutput) TimeLastModified() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupFleetAdvancedFeatureConfigurationResult) string { return v.TimeLastModified }).(pulumi.StringOutput)
 }
 
 func init() {
-	pulumi.RegisterOutputType(GetFleetAdvancedFeatureConfigurationResultOutput{})
+	pulumi.RegisterOutputType(LookupFleetAdvancedFeatureConfigurationResultOutput{})
 }

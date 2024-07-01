@@ -5,10 +5,12 @@ package com.pulumi.oci.Mysql;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
-import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupDbSystemSnapshotSummaryArgs;
+import com.pulumi.oci.Mysql.inputs.MysqlBackupSourceDetailsArgs;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.Optional;
@@ -53,15 +55,22 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
      * The OCID of the DB System the Backup is associated with.
      * 
      */
-    @Import(name="dbSystemId", required=true)
-    private Output<String> dbSystemId;
+    @Import(name="dbSystemId")
+    private @Nullable Output<String> dbSystemId;
 
     /**
      * @return The OCID of the DB System the Backup is associated with.
      * 
      */
-    public Output<String> dbSystemId() {
-        return this.dbSystemId;
+    public Optional<Output<String>> dbSystemId() {
+        return Optional.ofNullable(this.dbSystemId);
+    }
+
+    @Import(name="dbSystemSnapshotSummaries")
+    private @Nullable Output<List<MysqlBackupDbSystemSnapshotSummaryArgs>> dbSystemSnapshotSummaries;
+
+    public Optional<Output<List<MysqlBackupDbSystemSnapshotSummaryArgs>>> dbSystemSnapshotSummaries() {
+        return Optional.ofNullable(this.dbSystemSnapshotSummaries);
     }
 
     /**
@@ -127,9 +136,6 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * (Updatable) Number of days to retain this backup.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="retentionInDays")
     private @Nullable Output<Integer> retentionInDays;
@@ -137,12 +143,24 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return (Updatable) Number of days to retain this backup.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<Integer>> retentionInDays() {
         return Optional.ofNullable(this.retentionInDays);
+    }
+
+    /**
+     * Details of backup source in the cloud.
+     * 
+     */
+    @Import(name="sourceDetails")
+    private @Nullable Output<MysqlBackupSourceDetailsArgs> sourceDetails;
+
+    /**
+     * @return Details of backup source in the cloud.
+     * 
+     */
+    public Optional<Output<MysqlBackupSourceDetailsArgs>> sourceDetails() {
+        return Optional.ofNullable(this.sourceDetails);
     }
 
     private MysqlBackupArgs() {}
@@ -151,11 +169,13 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
         this.backupType = $.backupType;
         this.compartmentId = $.compartmentId;
         this.dbSystemId = $.dbSystemId;
+        this.dbSystemSnapshotSummaries = $.dbSystemSnapshotSummaries;
         this.definedTags = $.definedTags;
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
         this.retentionInDays = $.retentionInDays;
+        this.sourceDetails = $.sourceDetails;
     }
 
     public static Builder builder() {
@@ -224,7 +244,7 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
          * @return builder
          * 
          */
-        public Builder dbSystemId(Output<String> dbSystemId) {
+        public Builder dbSystemId(@Nullable Output<String> dbSystemId) {
             $.dbSystemId = dbSystemId;
             return this;
         }
@@ -237,6 +257,19 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder dbSystemId(String dbSystemId) {
             return dbSystemId(Output.of(dbSystemId));
+        }
+
+        public Builder dbSystemSnapshotSummaries(@Nullable Output<List<MysqlBackupDbSystemSnapshotSummaryArgs>> dbSystemSnapshotSummaries) {
+            $.dbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
+            return this;
+        }
+
+        public Builder dbSystemSnapshotSummaries(List<MysqlBackupDbSystemSnapshotSummaryArgs> dbSystemSnapshotSummaries) {
+            return dbSystemSnapshotSummaries(Output.of(dbSystemSnapshotSummaries));
+        }
+
+        public Builder dbSystemSnapshotSummaries(MysqlBackupDbSystemSnapshotSummaryArgs... dbSystemSnapshotSummaries) {
+            return dbSystemSnapshotSummaries(List.of(dbSystemSnapshotSummaries));
         }
 
         /**
@@ -326,9 +359,6 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param retentionInDays (Updatable) Number of days to retain this backup.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -340,9 +370,6 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param retentionInDays (Updatable) Number of days to retain this backup.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -350,10 +377,28 @@ public final class MysqlBackupArgs extends com.pulumi.resources.ResourceArgs {
             return retentionInDays(Output.of(retentionInDays));
         }
 
+        /**
+         * @param sourceDetails Details of backup source in the cloud.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(@Nullable Output<MysqlBackupSourceDetailsArgs> sourceDetails) {
+            $.sourceDetails = sourceDetails;
+            return this;
+        }
+
+        /**
+         * @param sourceDetails Details of backup source in the cloud.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder sourceDetails(MysqlBackupSourceDetailsArgs sourceDetails) {
+            return sourceDetails(Output.of(sourceDetails));
+        }
+
         public MysqlBackupArgs build() {
-            if ($.dbSystemId == null) {
-                throw new MissingRequiredPropertyException("MysqlBackupArgs", "dbSystemId");
-            }
             return $;
         }
     }

@@ -136,6 +136,11 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
      */
     private Integer portX;
     /**
+     * @return The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    private String region;
+    /**
      * @return Secure connection configuration details.
      * 
      */
@@ -314,6 +319,13 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         return this.portX;
     }
     /**
+     * @return The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     * 
+     */
+    public String region() {
+        return this.region;
+    }
+    /**
      * @return Secure connection configuration details.
      * 
      */
@@ -367,6 +379,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
         private String mysqlVersion;
         private Integer port;
         private Integer portX;
+        private String region;
         private List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections;
         private String shapeName;
         private String subnetId;
@@ -396,6 +409,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
     	      this.mysqlVersion = defaults.mysqlVersion;
     	      this.port = defaults.port;
     	      this.portX = defaults.portX;
+    	      this.region = defaults.region;
     	      this.secureConnections = defaults.secureConnections;
     	      this.shapeName = defaults.shapeName;
     	      this.subnetId = defaults.subnetId;
@@ -598,6 +612,14 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             return this;
         }
         @CustomType.Setter
+        public Builder region(String region) {
+            if (region == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "region");
+            }
+            this.region = region;
+            return this;
+        }
+        @CustomType.Setter
         public Builder secureConnections(List<GetMysqlBackupsBackupDbSystemSnapshotSecureConnection> secureConnections) {
             if (secureConnections == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackupDbSystemSnapshot", "secureConnections");
@@ -649,6 +671,7 @@ public final class GetMysqlBackupsBackupDbSystemSnapshot {
             _resultValue.mysqlVersion = mysqlVersion;
             _resultValue.port = port;
             _resultValue.portX = portX;
+            _resultValue.region = region;
             _resultValue.secureConnections = secureConnections;
             _resultValue.shapeName = shapeName;
             _resultValue.subnetId = subnetId;

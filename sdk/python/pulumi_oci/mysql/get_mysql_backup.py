@@ -22,7 +22,7 @@ class GetMysqlBackupResult:
     """
     A collection of values returned by getMysqlBackup.
     """
-    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, lifecycle_details=None, mysql_version=None, retention_in_days=None, shape_name=None, state=None, time_created=None, time_updated=None):
+    def __init__(__self__, backup_id=None, backup_size_in_gbs=None, backup_type=None, compartment_id=None, creation_type=None, data_storage_size_in_gb=None, db_system_id=None, db_system_snapshot_summaries=None, db_system_snapshots=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, immediate_source_backup_id=None, lifecycle_details=None, mysql_version=None, original_source_backup_id=None, retention_in_days=None, shape_name=None, source_details=None, state=None, time_copy_created=None, time_created=None, time_updated=None):
         if backup_id and not isinstance(backup_id, str):
             raise TypeError("Expected argument 'backup_id' to be a str")
         pulumi.set(__self__, "backup_id", backup_id)
@@ -44,6 +44,9 @@ class GetMysqlBackupResult:
         if db_system_id and not isinstance(db_system_id, str):
             raise TypeError("Expected argument 'db_system_id' to be a str")
         pulumi.set(__self__, "db_system_id", db_system_id)
+        if db_system_snapshot_summaries and not isinstance(db_system_snapshot_summaries, list):
+            raise TypeError("Expected argument 'db_system_snapshot_summaries' to be a list")
+        pulumi.set(__self__, "db_system_snapshot_summaries", db_system_snapshot_summaries)
         if db_system_snapshots and not isinstance(db_system_snapshots, list):
             raise TypeError("Expected argument 'db_system_snapshots' to be a list")
         pulumi.set(__self__, "db_system_snapshots", db_system_snapshots)
@@ -62,21 +65,33 @@ class GetMysqlBackupResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if immediate_source_backup_id and not isinstance(immediate_source_backup_id, str):
+            raise TypeError("Expected argument 'immediate_source_backup_id' to be a str")
+        pulumi.set(__self__, "immediate_source_backup_id", immediate_source_backup_id)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if mysql_version and not isinstance(mysql_version, str):
             raise TypeError("Expected argument 'mysql_version' to be a str")
         pulumi.set(__self__, "mysql_version", mysql_version)
+        if original_source_backup_id and not isinstance(original_source_backup_id, str):
+            raise TypeError("Expected argument 'original_source_backup_id' to be a str")
+        pulumi.set(__self__, "original_source_backup_id", original_source_backup_id)
         if retention_in_days and not isinstance(retention_in_days, int):
             raise TypeError("Expected argument 'retention_in_days' to be a int")
         pulumi.set(__self__, "retention_in_days", retention_in_days)
         if shape_name and not isinstance(shape_name, str):
             raise TypeError("Expected argument 'shape_name' to be a str")
         pulumi.set(__self__, "shape_name", shape_name)
+        if source_details and not isinstance(source_details, list):
+            raise TypeError("Expected argument 'source_details' to be a list")
+        pulumi.set(__self__, "source_details", source_details)
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if time_copy_created and not isinstance(time_copy_created, str):
+            raise TypeError("Expected argument 'time_copy_created' to be a str")
+        pulumi.set(__self__, "time_copy_created", time_copy_created)
         if time_created and not isinstance(time_created, str):
             raise TypeError("Expected argument 'time_created' to be a str")
         pulumi.set(__self__, "time_created", time_created)
@@ -138,6 +153,11 @@ class GetMysqlBackupResult:
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter(name="dbSystemSnapshotSummaries")
+    def db_system_snapshot_summaries(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotSummaryResult']:
+        return pulumi.get(self, "db_system_snapshot_summaries")
+
+    @property
     @pulumi.getter(name="dbSystemSnapshots")
     def db_system_snapshots(self) -> Sequence['outputs.GetMysqlBackupDbSystemSnapshotResult']:
         """
@@ -186,6 +206,14 @@ class GetMysqlBackupResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="immediateSourceBackupId")
+    def immediate_source_backup_id(self) -> str:
+        """
+        The OCID of the immediate source DB system backup from which this DB system backup was copied.
+        """
+        return pulumi.get(self, "immediate_source_backup_id")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -200,6 +228,14 @@ class GetMysqlBackupResult:
         The MySQL server version of the DB System used for backup.
         """
         return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="originalSourceBackupId")
+    def original_source_backup_id(self) -> str:
+        """
+        The OCID of the original source DB system backup from which this DB system backup was copied.
+        """
+        return pulumi.get(self, "original_source_backup_id")
 
     @property
     @pulumi.getter(name="retentionInDays")
@@ -218,12 +254,25 @@ class GetMysqlBackupResult:
         return pulumi.get(self, "shape_name")
 
     @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Sequence['outputs.GetMysqlBackupSourceDetailResult']:
+        return pulumi.get(self, "source_details")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
         The state of the backup.
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCopyCreated")
+    def time_copy_created(self) -> str:
+        """
+        The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_copy_created")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -255,17 +304,22 @@ class AwaitableGetMysqlBackupResult(GetMysqlBackupResult):
             creation_type=self.creation_type,
             data_storage_size_in_gb=self.data_storage_size_in_gb,
             db_system_id=self.db_system_id,
+            db_system_snapshot_summaries=self.db_system_snapshot_summaries,
             db_system_snapshots=self.db_system_snapshots,
             defined_tags=self.defined_tags,
             description=self.description,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            immediate_source_backup_id=self.immediate_source_backup_id,
             lifecycle_details=self.lifecycle_details,
             mysql_version=self.mysql_version,
+            original_source_backup_id=self.original_source_backup_id,
             retention_in_days=self.retention_in_days,
             shape_name=self.shape_name,
+            source_details=self.source_details,
             state=self.state,
+            time_copy_created=self.time_copy_created,
             time_created=self.time_created,
             time_updated=self.time_updated)
 
@@ -302,17 +356,22 @@ def get_mysql_backup(backup_id: Optional[str] = None,
         creation_type=pulumi.get(__ret__, 'creation_type'),
         data_storage_size_in_gb=pulumi.get(__ret__, 'data_storage_size_in_gb'),
         db_system_id=pulumi.get(__ret__, 'db_system_id'),
+        db_system_snapshot_summaries=pulumi.get(__ret__, 'db_system_snapshot_summaries'),
         db_system_snapshots=pulumi.get(__ret__, 'db_system_snapshots'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        immediate_source_backup_id=pulumi.get(__ret__, 'immediate_source_backup_id'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         mysql_version=pulumi.get(__ret__, 'mysql_version'),
+        original_source_backup_id=pulumi.get(__ret__, 'original_source_backup_id'),
         retention_in_days=pulumi.get(__ret__, 'retention_in_days'),
         shape_name=pulumi.get(__ret__, 'shape_name'),
+        source_details=pulumi.get(__ret__, 'source_details'),
         state=pulumi.get(__ret__, 'state'),
+        time_copy_created=pulumi.get(__ret__, 'time_copy_created'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))
 

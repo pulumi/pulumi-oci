@@ -24,6 +24,8 @@ __all__ = [
     'MysqlBackupDbSystemSnapshotEndpoint',
     'MysqlBackupDbSystemSnapshotMaintenance',
     'MysqlBackupDbSystemSnapshotSecureConnection',
+    'MysqlBackupDbSystemSnapshotSummary',
+    'MysqlBackupSourceDetails',
     'MysqlConfigurationInitVariables',
     'MysqlConfigurationVariables',
     'MysqlDbSystemBackupPolicy',
@@ -64,6 +66,8 @@ __all__ = [
     'GetMysqlBackupDbSystemSnapshotEndpointResult',
     'GetMysqlBackupDbSystemSnapshotMaintenanceResult',
     'GetMysqlBackupDbSystemSnapshotSecureConnectionResult',
+    'GetMysqlBackupDbSystemSnapshotSummaryResult',
+    'GetMysqlBackupSourceDetailResult',
     'GetMysqlBackupsBackupResult',
     'GetMysqlBackupsBackupDbSystemSnapshotResult',
     'GetMysqlBackupsBackupDbSystemSnapshotBackupPolicyResult',
@@ -72,6 +76,8 @@ __all__ = [
     'GetMysqlBackupsBackupDbSystemSnapshotEndpointResult',
     'GetMysqlBackupsBackupDbSystemSnapshotMaintenanceResult',
     'GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult',
+    'GetMysqlBackupsBackupDbSystemSnapshotSummaryResult',
+    'GetMysqlBackupsBackupSourceDetailResult',
     'GetMysqlBackupsFilterResult',
     'GetMysqlConfigurationInitVariableResult',
     'GetMysqlConfigurationVariableResult',
@@ -688,6 +694,7 @@ class MysqlBackupDbSystemSnapshot(dict):
                  mysql_version: Optional[str] = None,
                  port: Optional[int] = None,
                  port_x: Optional[int] = None,
+                 region: Optional[str] = None,
                  secure_connections: Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotSecureConnection']] = None,
                  shape_name: Optional[str] = None,
                  subnet_id: Optional[str] = None):
@@ -715,6 +722,7 @@ class MysqlBackupDbSystemSnapshot(dict):
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param Sequence['MysqlBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
@@ -765,6 +773,8 @@ class MysqlBackupDbSystemSnapshot(dict):
             pulumi.set(__self__, "port", port)
         if port_x is not None:
             pulumi.set(__self__, "port_x", port_x)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
         if secure_connections is not None:
             pulumi.set(__self__, "secure_connections", secure_connections)
         if shape_name is not None:
@@ -957,6 +967,14 @@ class MysqlBackupDbSystemSnapshot(dict):
         return pulumi.get(self, "port_x")
 
     @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+    @property
     @pulumi.getter(name="secureConnections")
     def secure_connections(self) -> Optional[Sequence['outputs.MysqlBackupDbSystemSnapshotSecureConnection']]:
         """
@@ -1023,10 +1041,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
         :param bool is_enabled: Specifies if PITR is enabled or disabled.
         :param Sequence['MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicyArgs'] pitr_policies: The PITR policy for the DB System.
         :param int retention_in_days: (Updatable) Number of days to retain this backup.
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param str window_start_time: The start time of the maintenance window.
         """
         if defined_tags is not None:
@@ -1079,10 +1093,6 @@ class MysqlBackupDbSystemSnapshotBackupPolicy(dict):
     def retention_in_days(self) -> Optional[int]:
         """
         (Updatable) Number of days to retain this backup.
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
         return pulumi.get(self, "retention_in_days")
 
@@ -1419,6 +1429,125 @@ class MysqlBackupDbSystemSnapshotSecureConnection(dict):
         The OCID of the certificate to use.
         """
         return pulumi.get(self, "certificate_id")
+
+
+@pulumi.output_type
+class MysqlBackupDbSystemSnapshotSummary(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "displayName":
+            suggest = "display_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupDbSystemSnapshotSummary. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupDbSystemSnapshotSummary.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupDbSystemSnapshotSummary.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 display_name: Optional[str] = None,
+                 id: Optional[str] = None,
+                 region: Optional[str] = None):
+        """
+        :param str display_name: (Updatable) A user-supplied display name for the backup.
+        :param str id: OCID of the backup itself
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        if display_name is not None:
+            pulumi.set(__self__, "display_name", display_name)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if region is not None:
+            pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> Optional[str]:
+        """
+        (Updatable) A user-supplied display name for the backup.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> Optional[str]:
+        """
+        OCID of the backup itself
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> Optional[str]:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class MysqlBackupSourceDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupId":
+            suggest = "backup_id"
+        elif key == "compartmentId":
+            suggest = "compartment_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MysqlBackupSourceDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MysqlBackupSourceDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MysqlBackupSourceDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_id: str,
+                 compartment_id: str,
+                 region: str):
+        """
+        :param str backup_id: The OCID of the source backup.
+        :param str compartment_id: (Updatable) The OCID of the compartment the backup exists in.
+        :param str region: The region of the backup source.
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> str:
+        """
+        The OCID of the source backup.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        (Updatable) The OCID of the compartment the backup exists in.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region of the backup source.
+        """
+        return pulumi.get(self, "region")
 
 
 @pulumi.output_type
@@ -5080,6 +5209,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
                  mysql_version: str,
                  port: int,
                  port_x: int,
+                 region: str,
                  secure_connections: Sequence['outputs.GetMysqlBackupDbSystemSnapshotSecureConnectionResult'],
                  shape_name: str,
                  subnet_id: str):
@@ -5107,6 +5237,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param Sequence['GetMysqlBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
@@ -5134,6 +5265,7 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "mysql_version", mysql_version)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "secure_connections", secure_connections)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -5321,6 +5453,14 @@ class GetMysqlBackupDbSystemSnapshotResult(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="secureConnections")
@@ -5632,6 +5772,86 @@ class GetMysqlBackupDbSystemSnapshotSecureConnectionResult(dict):
 
 
 @pulumi.output_type
+class GetMysqlBackupDbSystemSnapshotSummaryResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str,
+                 region: str):
+        """
+        :param str display_name: A user-supplied display name for the backup.
+        :param str id: OCID of the backup itself
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A user-supplied display name for the backup.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        OCID of the backup itself
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetMysqlBackupSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_id: str,
+                 compartment_id: str,
+                 region: str):
+        """
+        :param str backup_id: The OCID of the Backup
+        :param str compartment_id: The OCID of the compartment the DB System belongs in.
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> str:
+        """
+        The OCID of the Backup
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The OCID of the compartment the DB System belongs in.
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
 class GetMysqlBackupsBackupResult(dict):
     def __init__(__self__, *,
                  backup_size_in_gbs: int,
@@ -5640,17 +5860,22 @@ class GetMysqlBackupsBackupResult(dict):
                  creation_type: str,
                  data_storage_size_in_gb: int,
                  db_system_id: str,
+                 db_system_snapshot_summaries: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult'],
                  db_system_snapshots: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult'],
                  defined_tags: Mapping[str, Any],
                  description: str,
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 immediate_source_backup_id: str,
                  lifecycle_details: str,
                  mysql_version: str,
+                 original_source_backup_id: str,
                  retention_in_days: int,
                  shape_name: str,
+                 source_details: Sequence['outputs.GetMysqlBackupsBackupSourceDetailResult'],
                  state: str,
+                 time_copy_created: str,
                  time_created: str,
                  time_updated: str):
         """
@@ -5666,11 +5891,14 @@ class GetMysqlBackupsBackupResult(dict):
         :param str display_name: A filter to return only the resource matching the given display name exactly.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: OCID of the backup itself
+        :param str immediate_source_backup_id: The OCID of the immediate source DB system backup from which this DB system backup was copied.
         :param str lifecycle_details: Additional information about the current lifecycleState.
         :param str mysql_version: The MySQL server version of the DB System used for backup.
+        :param str original_source_backup_id: The OCID of the original source DB system backup from which this DB system backup was copied.
         :param int retention_in_days: Number of days to retain this backup.
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str state: Backup Lifecycle State
+        :param str time_copy_created: The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
         :param str time_created: The time the backup record was created.
         :param str time_updated: The time at which the backup was updated.
         """
@@ -5680,17 +5908,22 @@ class GetMysqlBackupsBackupResult(dict):
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "data_storage_size_in_gb", data_storage_size_in_gb)
         pulumi.set(__self__, "db_system_id", db_system_id)
+        pulumi.set(__self__, "db_system_snapshot_summaries", db_system_snapshot_summaries)
         pulumi.set(__self__, "db_system_snapshots", db_system_snapshots)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "description", description)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "immediate_source_backup_id", immediate_source_backup_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "mysql_version", mysql_version)
+        pulumi.set(__self__, "original_source_backup_id", original_source_backup_id)
         pulumi.set(__self__, "retention_in_days", retention_in_days)
         pulumi.set(__self__, "shape_name", shape_name)
+        pulumi.set(__self__, "source_details", source_details)
         pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_copy_created", time_copy_created)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
 
@@ -5743,6 +5976,11 @@ class GetMysqlBackupsBackupResult(dict):
         return pulumi.get(self, "db_system_id")
 
     @property
+    @pulumi.getter(name="dbSystemSnapshotSummaries")
+    def db_system_snapshot_summaries(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSummaryResult']:
+        return pulumi.get(self, "db_system_snapshot_summaries")
+
+    @property
     @pulumi.getter(name="dbSystemSnapshots")
     def db_system_snapshots(self) -> Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotResult']:
         """
@@ -5791,6 +6029,14 @@ class GetMysqlBackupsBackupResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="immediateSourceBackupId")
+    def immediate_source_backup_id(self) -> str:
+        """
+        The OCID of the immediate source DB system backup from which this DB system backup was copied.
+        """
+        return pulumi.get(self, "immediate_source_backup_id")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         """
@@ -5805,6 +6051,14 @@ class GetMysqlBackupsBackupResult(dict):
         The MySQL server version of the DB System used for backup.
         """
         return pulumi.get(self, "mysql_version")
+
+    @property
+    @pulumi.getter(name="originalSourceBackupId")
+    def original_source_backup_id(self) -> str:
+        """
+        The OCID of the original source DB system backup from which this DB system backup was copied.
+        """
+        return pulumi.get(self, "original_source_backup_id")
 
     @property
     @pulumi.getter(name="retentionInDays")
@@ -5823,12 +6077,25 @@ class GetMysqlBackupsBackupResult(dict):
         return pulumi.get(self, "shape_name")
 
     @property
+    @pulumi.getter(name="sourceDetails")
+    def source_details(self) -> Sequence['outputs.GetMysqlBackupsBackupSourceDetailResult']:
+        return pulumi.get(self, "source_details")
+
+    @property
     @pulumi.getter
     def state(self) -> str:
         """
         Backup Lifecycle State
         """
         return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCopyCreated")
+    def time_copy_created(self) -> str:
+        """
+        The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        """
+        return pulumi.get(self, "time_copy_created")
 
     @property
     @pulumi.getter(name="timeCreated")
@@ -5873,6 +6140,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
                  mysql_version: str,
                  port: int,
                  port_x: int,
+                 region: str,
                  secure_connections: Sequence['outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult'],
                  shape_name: str,
                  subnet_id: str):
@@ -5900,6 +6168,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         :param str mysql_version: The MySQL server version of the DB System used for backup.
         :param int port: The port for primary endpoint of the DB System to listen on.
         :param int port_x: The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
         :param Sequence['GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionArgs'] secure_connections: Secure connection configuration details.
         :param str shape_name: The shape of the DB System instance used for backup.
         :param str subnet_id: The OCID of the subnet the DB System is associated with.
@@ -5927,6 +6196,7 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         pulumi.set(__self__, "mysql_version", mysql_version)
         pulumi.set(__self__, "port", port)
         pulumi.set(__self__, "port_x", port_x)
+        pulumi.set(__self__, "region", region)
         pulumi.set(__self__, "secure_connections", secure_connections)
         pulumi.set(__self__, "shape_name", shape_name)
         pulumi.set(__self__, "subnet_id", subnet_id)
@@ -6114,6 +6384,14 @@ class GetMysqlBackupsBackupDbSystemSnapshotResult(dict):
         The network port on which X Plugin listens for TCP/IP connections. This is the X Plugin equivalent of port.
         """
         return pulumi.get(self, "port_x")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
 
     @property
     @pulumi.getter(name="secureConnections")
@@ -6422,6 +6700,86 @@ class GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult(dict):
         The OCID of the certificate to use.
         """
         return pulumi.get(self, "certificate_id")
+
+
+@pulumi.output_type
+class GetMysqlBackupsBackupDbSystemSnapshotSummaryResult(dict):
+    def __init__(__self__, *,
+                 display_name: str,
+                 id: str,
+                 region: str):
+        """
+        :param str display_name: A filter to return only the resource matching the given display name exactly.
+        :param str id: OCID of the backup itself
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only the resource matching the given display name exactly.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        OCID of the backup itself
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
+
+
+@pulumi.output_type
+class GetMysqlBackupsBackupSourceDetailResult(dict):
+    def __init__(__self__, *,
+                 backup_id: str,
+                 compartment_id: str,
+                 region: str):
+        """
+        :param str backup_id: Backup OCID
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str region: The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "region", region)
+
+    @property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> str:
+        """
+        Backup OCID
+        """
+        return pulumi.get(self, "backup_id")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter
+    def region(self) -> str:
+        """
+        The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        """
+        return pulumi.get(self, "region")
 
 
 @pulumi.output_type

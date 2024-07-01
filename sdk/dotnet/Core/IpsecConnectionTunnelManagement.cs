@@ -43,14 +43,11 @@ namespace Pulumi.Oci.Core
     ///         IpsecId = testIpsec.Id,
     ///         TunnelId = testIpSecConnectionTunnels.IpSecConnectionTunnels[0].Id,
     ///         Routing = ipSecConnectionTunnelManagementRouting,
-    ///         BgpSessionInfos = new[]
+    ///         BgpSessionInfo = new Oci.Core.Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs
     ///         {
-    ///             new Oci.Core.Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs
-    ///             {
-    ///                 CustomerBgpAsn = ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn,
-    ///                 CustomerInterfaceIp = ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp,
-    ///                 OracleInterfaceIp = ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp,
-    ///             },
+    ///             CustomerBgpAsn = ipSecConnectionTunnelManagementBgpSessionInfoCustomerBgpAsn,
+    ///             CustomerInterfaceIp = ipSecConnectionTunnelManagementBgpSessionInfoCustomerInterfaceIp,
+    ///             OracleInterfaceIp = ipSecConnectionTunnelManagementBgpSessionInfoOracleInterfaceIp,
     ///         },
     ///         DisplayName = ipSecConnectionTunnelManagementDisplayName,
     ///         EncryptionDomainConfig = new Oci.Core.Inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs
@@ -79,8 +76,8 @@ namespace Pulumi.Oci.Core
         /// 
         /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         /// </summary>
-        [Output("bgpSessionInfos")]
-        public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementBgpSessionInfo>> BgpSessionInfos { get; private set; } = null!;
+        [Output("bgpSessionInfo")]
+        public Output<Outputs.IpsecConnectionTunnelManagementBgpSessionInfo> BgpSessionInfo { get; private set; } = null!;
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
@@ -155,7 +152,7 @@ namespace Pulumi.Oci.Core
         /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         /// </summary>
         [Output("phaseOneDetails")]
-        public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementPhaseOneDetail>> PhaseOneDetails { get; private set; } = null!;
+        public Output<Outputs.IpsecConnectionTunnelManagementPhaseOneDetails> PhaseOneDetails { get; private set; } = null!;
 
         /// <summary>
         /// Configuration details for IPSec phase two configuration parameters.
@@ -163,7 +160,7 @@ namespace Pulumi.Oci.Core
         /// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         /// </summary>
         [Output("phaseTwoDetails")]
-        public Output<ImmutableArray<Outputs.IpsecConnectionTunnelManagementPhaseTwoDetail>> PhaseTwoDetails { get; private set; } = null!;
+        public Output<Outputs.IpsecConnectionTunnelManagementPhaseTwoDetails> PhaseTwoDetails { get; private set; } = null!;
 
         /// <summary>
         /// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
@@ -263,19 +260,13 @@ namespace Pulumi.Oci.Core
 
     public sealed class IpsecConnectionTunnelManagementArgs : global::Pulumi.ResourceArgs
     {
-        [Input("bgpSessionInfos")]
-        private InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs>? _bgpSessionInfos;
-
         /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
         /// 
         /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         /// </summary>
-        public InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs> BgpSessionInfos
-        {
-            get => _bgpSessionInfos ?? (_bgpSessionInfos = new InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs>());
-            set => _bgpSessionInfos = value;
-        }
+        [Input("bgpSessionInfo")]
+        public Input<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs>? BgpSessionInfo { get; set; }
 
         /// <summary>
         /// A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
@@ -325,33 +316,21 @@ namespace Pulumi.Oci.Core
         [Input("oracleCanInitiate")]
         public Input<string>? OracleCanInitiate { get; set; }
 
-        [Input("phaseOneDetails")]
-        private InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs>? _phaseOneDetails;
-
         /// <summary>
         /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
         /// 
         /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         /// </summary>
-        public InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs> PhaseOneDetails
-        {
-            get => _phaseOneDetails ?? (_phaseOneDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs>());
-            set => _phaseOneDetails = value;
-        }
-
-        [Input("phaseTwoDetails")]
-        private InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs>? _phaseTwoDetails;
+        [Input("phaseOneDetails")]
+        public Input<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailsArgs>? PhaseOneDetails { get; set; }
 
         /// <summary>
         /// Configuration details for IPSec phase two configuration parameters.
         /// 
         /// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         /// </summary>
-        public InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs> PhaseTwoDetails
-        {
-            get => _phaseTwoDetails ?? (_phaseTwoDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs>());
-            set => _phaseTwoDetails = value;
-        }
+        [Input("phaseTwoDetails")]
+        public Input<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailsArgs>? PhaseTwoDetails { get; set; }
 
         /// <summary>
         /// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).
@@ -401,19 +380,13 @@ namespace Pulumi.Oci.Core
             set => _associatedVirtualCircuits = value;
         }
 
-        [Input("bgpSessionInfos")]
-        private InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs>? _bgpSessionInfos;
-
         /// <summary>
         /// Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
         /// 
         /// If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
         /// </summary>
-        public InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs> BgpSessionInfos
-        {
-            get => _bgpSessionInfos ?? (_bgpSessionInfos = new InputList<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs>());
-            set => _bgpSessionInfos = value;
-        }
+        [Input("bgpSessionInfo")]
+        public Input<Inputs.IpsecConnectionTunnelManagementBgpSessionInfoGetArgs>? BgpSessionInfo { get; set; }
 
         /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the tunnel.
@@ -487,33 +460,21 @@ namespace Pulumi.Oci.Core
         [Input("oracleCanInitiate")]
         public Input<string>? OracleCanInitiate { get; set; }
 
-        [Input("phaseOneDetails")]
-        private InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailGetArgs>? _phaseOneDetails;
-
         /// <summary>
         /// Configuration details for IKE phase one (ISAKMP) configuration parameters. 
         /// 
         /// See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
         /// </summary>
-        public InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailGetArgs> PhaseOneDetails
-        {
-            get => _phaseOneDetails ?? (_phaseOneDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailGetArgs>());
-            set => _phaseOneDetails = value;
-        }
-
-        [Input("phaseTwoDetails")]
-        private InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailGetArgs>? _phaseTwoDetails;
+        [Input("phaseOneDetails")]
+        public Input<Inputs.IpsecConnectionTunnelManagementPhaseOneDetailsGetArgs>? PhaseOneDetails { get; set; }
 
         /// <summary>
         /// Configuration details for IPSec phase two configuration parameters.
         /// 
         /// See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
         /// </summary>
-        public InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailGetArgs> PhaseTwoDetails
-        {
-            get => _phaseTwoDetails ?? (_phaseTwoDetails = new InputList<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailGetArgs>());
-            set => _phaseTwoDetails = value;
-        }
+        [Input("phaseTwoDetails")]
+        public Input<Inputs.IpsecConnectionTunnelManagementPhaseTwoDetailsGetArgs>? PhaseTwoDetails { get; set; }
 
         /// <summary>
         /// The type of routing to use for this tunnel (either BGP dynamic routing, STATIC routing or POLICY routing).

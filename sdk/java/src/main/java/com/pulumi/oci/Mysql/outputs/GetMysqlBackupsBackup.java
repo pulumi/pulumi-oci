@@ -6,6 +6,8 @@ package com.pulumi.oci.Mysql.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshot;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupDbSystemSnapshotSummary;
+import com.pulumi.oci.Mysql.outputs.GetMysqlBackupsBackupSourceDetail;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -45,6 +47,7 @@ public final class GetMysqlBackupsBackup {
      * 
      */
     private String dbSystemId;
+    private List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries;
     /**
      * @return Snapshot of the DbSystem details at the time of the backup
      * 
@@ -76,6 +79,11 @@ public final class GetMysqlBackupsBackup {
      */
     private String id;
     /**
+     * @return The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    private String immediateSourceBackupId;
+    /**
      * @return Additional information about the current lifecycleState.
      * 
      */
@@ -86,6 +94,11 @@ public final class GetMysqlBackupsBackup {
      */
     private String mysqlVersion;
     /**
+     * @return The OCID of the original source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    private String originalSourceBackupId;
+    /**
      * @return Number of days to retain this backup.
      * 
      */
@@ -95,11 +108,17 @@ public final class GetMysqlBackupsBackup {
      * 
      */
     private String shapeName;
+    private List<GetMysqlBackupsBackupSourceDetail> sourceDetails;
     /**
      * @return Backup Lifecycle State
      * 
      */
     private String state;
+    /**
+     * @return The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    private String timeCopyCreated;
     /**
      * @return The time the backup record was created.
      * 
@@ -154,6 +173,9 @@ public final class GetMysqlBackupsBackup {
     public String dbSystemId() {
         return this.dbSystemId;
     }
+    public List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries() {
+        return this.dbSystemSnapshotSummaries;
+    }
     /**
      * @return Snapshot of the DbSystem details at the time of the backup
      * 
@@ -197,6 +219,13 @@ public final class GetMysqlBackupsBackup {
         return this.id;
     }
     /**
+     * @return The OCID of the immediate source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    public String immediateSourceBackupId() {
+        return this.immediateSourceBackupId;
+    }
+    /**
      * @return Additional information about the current lifecycleState.
      * 
      */
@@ -209,6 +238,13 @@ public final class GetMysqlBackupsBackup {
      */
     public String mysqlVersion() {
         return this.mysqlVersion;
+    }
+    /**
+     * @return The OCID of the original source DB system backup from which this DB system backup was copied.
+     * 
+     */
+    public String originalSourceBackupId() {
+        return this.originalSourceBackupId;
     }
     /**
      * @return Number of days to retain this backup.
@@ -224,12 +260,22 @@ public final class GetMysqlBackupsBackup {
     public String shapeName() {
         return this.shapeName;
     }
+    public List<GetMysqlBackupsBackupSourceDetail> sourceDetails() {
+        return this.sourceDetails;
+    }
     /**
      * @return Backup Lifecycle State
      * 
      */
     public String state() {
         return this.state;
+    }
+    /**
+     * @return The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+     * 
+     */
+    public String timeCopyCreated() {
+        return this.timeCopyCreated;
     }
     /**
      * @return The time the backup record was created.
@@ -261,17 +307,22 @@ public final class GetMysqlBackupsBackup {
         private String creationType;
         private Integer dataStorageSizeInGb;
         private String dbSystemId;
+        private List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries;
         private List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots;
         private Map<String,Object> definedTags;
         private String description;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private String immediateSourceBackupId;
         private String lifecycleDetails;
         private String mysqlVersion;
+        private String originalSourceBackupId;
         private Integer retentionInDays;
         private String shapeName;
+        private List<GetMysqlBackupsBackupSourceDetail> sourceDetails;
         private String state;
+        private String timeCopyCreated;
         private String timeCreated;
         private String timeUpdated;
         public Builder() {}
@@ -283,17 +334,22 @@ public final class GetMysqlBackupsBackup {
     	      this.creationType = defaults.creationType;
     	      this.dataStorageSizeInGb = defaults.dataStorageSizeInGb;
     	      this.dbSystemId = defaults.dbSystemId;
+    	      this.dbSystemSnapshotSummaries = defaults.dbSystemSnapshotSummaries;
     	      this.dbSystemSnapshots = defaults.dbSystemSnapshots;
     	      this.definedTags = defaults.definedTags;
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.immediateSourceBackupId = defaults.immediateSourceBackupId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.mysqlVersion = defaults.mysqlVersion;
+    	      this.originalSourceBackupId = defaults.originalSourceBackupId;
     	      this.retentionInDays = defaults.retentionInDays;
     	      this.shapeName = defaults.shapeName;
+    	      this.sourceDetails = defaults.sourceDetails;
     	      this.state = defaults.state;
+    	      this.timeCopyCreated = defaults.timeCopyCreated;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
         }
@@ -347,6 +403,17 @@ public final class GetMysqlBackupsBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder dbSystemSnapshotSummaries(List<GetMysqlBackupsBackupDbSystemSnapshotSummary> dbSystemSnapshotSummaries) {
+            if (dbSystemSnapshotSummaries == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "dbSystemSnapshotSummaries");
+            }
+            this.dbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
+            return this;
+        }
+        public Builder dbSystemSnapshotSummaries(GetMysqlBackupsBackupDbSystemSnapshotSummary... dbSystemSnapshotSummaries) {
+            return dbSystemSnapshotSummaries(List.of(dbSystemSnapshotSummaries));
+        }
+        @CustomType.Setter
         public Builder dbSystemSnapshots(List<GetMysqlBackupsBackupDbSystemSnapshot> dbSystemSnapshots) {
             if (dbSystemSnapshots == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "dbSystemSnapshots");
@@ -398,6 +465,14 @@ public final class GetMysqlBackupsBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder immediateSourceBackupId(String immediateSourceBackupId) {
+            if (immediateSourceBackupId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "immediateSourceBackupId");
+            }
+            this.immediateSourceBackupId = immediateSourceBackupId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "lifecycleDetails");
@@ -411,6 +486,14 @@ public final class GetMysqlBackupsBackup {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "mysqlVersion");
             }
             this.mysqlVersion = mysqlVersion;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder originalSourceBackupId(String originalSourceBackupId) {
+            if (originalSourceBackupId == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "originalSourceBackupId");
+            }
+            this.originalSourceBackupId = originalSourceBackupId;
             return this;
         }
         @CustomType.Setter
@@ -430,11 +513,30 @@ public final class GetMysqlBackupsBackup {
             return this;
         }
         @CustomType.Setter
+        public Builder sourceDetails(List<GetMysqlBackupsBackupSourceDetail> sourceDetails) {
+            if (sourceDetails == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "sourceDetails");
+            }
+            this.sourceDetails = sourceDetails;
+            return this;
+        }
+        public Builder sourceDetails(GetMysqlBackupsBackupSourceDetail... sourceDetails) {
+            return sourceDetails(List.of(sourceDetails));
+        }
+        @CustomType.Setter
         public Builder state(String state) {
             if (state == null) {
               throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "state");
             }
             this.state = state;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeCopyCreated(String timeCopyCreated) {
+            if (timeCopyCreated == null) {
+              throw new MissingRequiredPropertyException("GetMysqlBackupsBackup", "timeCopyCreated");
+            }
+            this.timeCopyCreated = timeCopyCreated;
             return this;
         }
         @CustomType.Setter
@@ -461,17 +563,22 @@ public final class GetMysqlBackupsBackup {
             _resultValue.creationType = creationType;
             _resultValue.dataStorageSizeInGb = dataStorageSizeInGb;
             _resultValue.dbSystemId = dbSystemId;
+            _resultValue.dbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
             _resultValue.dbSystemSnapshots = dbSystemSnapshots;
             _resultValue.definedTags = definedTags;
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.immediateSourceBackupId = immediateSourceBackupId;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.mysqlVersion = mysqlVersion;
+            _resultValue.originalSourceBackupId = originalSourceBackupId;
             _resultValue.retentionInDays = retentionInDays;
             _resultValue.shapeName = shapeName;
+            _resultValue.sourceDetails = sourceDetails;
             _resultValue.state = state;
+            _resultValue.timeCopyCreated = timeCopyCreated;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;
             return _resultValue;

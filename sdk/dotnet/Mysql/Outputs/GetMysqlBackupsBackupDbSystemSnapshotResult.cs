@@ -106,6 +106,10 @@ namespace Pulumi.Oci.Mysql.Outputs
         /// </summary>
         public readonly int PortX;
         /// <summary>
+        /// The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+        /// </summary>
+        public readonly string Region;
+        /// <summary>
         /// Secure connection configuration details.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult> SecureConnections;
@@ -166,6 +170,8 @@ namespace Pulumi.Oci.Mysql.Outputs
 
             int portX,
 
+            string region,
+
             ImmutableArray<Outputs.GetMysqlBackupsBackupDbSystemSnapshotSecureConnectionResult> secureConnections,
 
             string shapeName,
@@ -195,6 +201,7 @@ namespace Pulumi.Oci.Mysql.Outputs
             MysqlVersion = mysqlVersion;
             Port = port;
             PortX = portX;
+            Region = region;
             SecureConnections = secureConnections;
             ShapeName = shapeName;
             SubnetId = subnetId;

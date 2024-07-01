@@ -192,8 +192,8 @@ namespace Pulumi.Oci.DataScience
         [Output("state")]
         public Output<string> State { get; private set; } = null!;
 
-        [Output("stepArtifact")]
-        public Output<Outputs.PipelineStepArtifact> StepArtifact { get; private set; } = null!;
+        [Output("stepArtifacts")]
+        public Output<ImmutableArray<Outputs.PipelineStepArtifact>> StepArtifacts { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Array of step details for each step.
@@ -334,8 +334,13 @@ namespace Pulumi.Oci.DataScience
         [Input("projectId", required: true)]
         public Input<string> ProjectId { get; set; } = null!;
 
-        [Input("stepArtifact")]
-        public Input<Inputs.PipelineStepArtifactArgs>? StepArtifact { get; set; }
+        [Input("stepArtifacts")]
+        private InputList<Inputs.PipelineStepArtifactArgs>? _stepArtifacts;
+        public InputList<Inputs.PipelineStepArtifactArgs> StepArtifacts
+        {
+            get => _stepArtifacts ?? (_stepArtifacts = new InputList<Inputs.PipelineStepArtifactArgs>());
+            set => _stepArtifacts = value;
+        }
 
         [Input("stepDetails", required: true)]
         private InputList<Inputs.PipelineStepDetailArgs>? _stepDetails;
@@ -444,8 +449,13 @@ namespace Pulumi.Oci.DataScience
         [Input("state")]
         public Input<string>? State { get; set; }
 
-        [Input("stepArtifact")]
-        public Input<Inputs.PipelineStepArtifactGetArgs>? StepArtifact { get; set; }
+        [Input("stepArtifacts")]
+        private InputList<Inputs.PipelineStepArtifactGetArgs>? _stepArtifacts;
+        public InputList<Inputs.PipelineStepArtifactGetArgs> StepArtifacts
+        {
+            get => _stepArtifacts ?? (_stepArtifacts = new InputList<Inputs.PipelineStepArtifactGetArgs>());
+            set => _stepArtifacts = value;
+        }
 
         [Input("stepDetails")]
         private InputList<Inputs.PipelineStepDetailGetArgs>? _stepDetails;

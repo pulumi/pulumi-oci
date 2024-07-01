@@ -9,8 +9,8 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementBgpSessionInfoArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementDpdConfigArgs;
 import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementEncryptionDomainConfigArgs;
-import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseOneDetailArgs;
-import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseTwoDetailArgs;
+import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseOneDetailsArgs;
+import com.pulumi.oci.Core.inputs.IpsecConnectionTunnelManagementPhaseTwoDetailsArgs;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -28,8 +28,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
-    @Import(name="bgpSessionInfos")
-    private @Nullable Output<List<IpsecConnectionTunnelManagementBgpSessionInfoArgs>> bgpSessionInfos;
+    @Import(name="bgpSessionInfo")
+    private @Nullable Output<IpsecConnectionTunnelManagementBgpSessionInfoArgs> bgpSessionInfo;
 
     /**
      * @return Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
@@ -37,8 +37,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
      * 
      */
-    public Optional<Output<List<IpsecConnectionTunnelManagementBgpSessionInfoArgs>>> bgpSessionInfos() {
-        return Optional.ofNullable(this.bgpSessionInfos);
+    public Optional<Output<IpsecConnectionTunnelManagementBgpSessionInfoArgs>> bgpSessionInfo() {
+        return Optional.ofNullable(this.bgpSessionInfo);
     }
 
     /**
@@ -153,7 +153,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      * 
      */
     @Import(name="phaseOneDetails")
-    private @Nullable Output<List<IpsecConnectionTunnelManagementPhaseOneDetailArgs>> phaseOneDetails;
+    private @Nullable Output<IpsecConnectionTunnelManagementPhaseOneDetailsArgs> phaseOneDetails;
 
     /**
      * @return Configuration details for IKE phase one (ISAKMP) configuration parameters.
@@ -161,7 +161,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
      * 
      */
-    public Optional<Output<List<IpsecConnectionTunnelManagementPhaseOneDetailArgs>>> phaseOneDetails() {
+    public Optional<Output<IpsecConnectionTunnelManagementPhaseOneDetailsArgs>> phaseOneDetails() {
         return Optional.ofNullable(this.phaseOneDetails);
     }
 
@@ -172,7 +172,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      * 
      */
     @Import(name="phaseTwoDetails")
-    private @Nullable Output<List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs>> phaseTwoDetails;
+    private @Nullable Output<IpsecConnectionTunnelManagementPhaseTwoDetailsArgs> phaseTwoDetails;
 
     /**
      * @return Configuration details for IPSec phase two configuration parameters.
@@ -180,7 +180,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
      * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
      * 
      */
-    public Optional<Output<List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs>>> phaseTwoDetails() {
+    public Optional<Output<IpsecConnectionTunnelManagementPhaseTwoDetailsArgs>> phaseTwoDetails() {
         return Optional.ofNullable(this.phaseTwoDetails);
     }
 
@@ -232,7 +232,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
     private IpsecConnectionTunnelManagementArgs() {}
 
     private IpsecConnectionTunnelManagementArgs(IpsecConnectionTunnelManagementArgs $) {
-        this.bgpSessionInfos = $.bgpSessionInfos;
+        this.bgpSessionInfo = $.bgpSessionInfo;
         this.displayName = $.displayName;
         this.dpdConfigs = $.dpdConfigs;
         this.encryptionDomainConfig = $.encryptionDomainConfig;
@@ -266,40 +266,28 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
         }
 
         /**
-         * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+         * @param bgpSessionInfo Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
          * 
          * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
          * 
          * @return builder
          * 
          */
-        public Builder bgpSessionInfos(@Nullable Output<List<IpsecConnectionTunnelManagementBgpSessionInfoArgs>> bgpSessionInfos) {
-            $.bgpSessionInfos = bgpSessionInfos;
+        public Builder bgpSessionInfo(@Nullable Output<IpsecConnectionTunnelManagementBgpSessionInfoArgs> bgpSessionInfo) {
+            $.bgpSessionInfo = bgpSessionInfo;
             return this;
         }
 
         /**
-         * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
+         * @param bgpSessionInfo Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
          * 
          * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
          * 
          * @return builder
          * 
          */
-        public Builder bgpSessionInfos(List<IpsecConnectionTunnelManagementBgpSessionInfoArgs> bgpSessionInfos) {
-            return bgpSessionInfos(Output.of(bgpSessionInfos));
-        }
-
-        /**
-         * @param bgpSessionInfos Information for establishing a BGP session for the IPSec tunnel. Required if the tunnel uses BGP dynamic routing.
-         * 
-         * If the tunnel instead uses static routing, you may optionally provide this object and set an IP address for one or both ends of the IPSec tunnel for the purposes of troubleshooting or monitoring the tunnel.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder bgpSessionInfos(IpsecConnectionTunnelManagementBgpSessionInfoArgs... bgpSessionInfos) {
-            return bgpSessionInfos(List.of(bgpSessionInfos));
+        public Builder bgpSessionInfo(IpsecConnectionTunnelManagementBgpSessionInfoArgs bgpSessionInfo) {
+            return bgpSessionInfo(Output.of(bgpSessionInfo));
         }
 
         /**
@@ -457,7 +445,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder phaseOneDetails(@Nullable Output<List<IpsecConnectionTunnelManagementPhaseOneDetailArgs>> phaseOneDetails) {
+        public Builder phaseOneDetails(@Nullable Output<IpsecConnectionTunnelManagementPhaseOneDetailsArgs> phaseOneDetails) {
             $.phaseOneDetails = phaseOneDetails;
             return this;
         }
@@ -470,20 +458,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder phaseOneDetails(List<IpsecConnectionTunnelManagementPhaseOneDetailArgs> phaseOneDetails) {
+        public Builder phaseOneDetails(IpsecConnectionTunnelManagementPhaseOneDetailsArgs phaseOneDetails) {
             return phaseOneDetails(Output.of(phaseOneDetails));
-        }
-
-        /**
-         * @param phaseOneDetails Configuration details for IKE phase one (ISAKMP) configuration parameters.
-         * 
-         * See [PhaseOneConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseOneConfigDetails) for allowed values but note naming scheme follows [TunnelPhaseOneDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseOneDetails).
-         * 
-         * @return builder
-         * 
-         */
-        public Builder phaseOneDetails(IpsecConnectionTunnelManagementPhaseOneDetailArgs... phaseOneDetails) {
-            return phaseOneDetails(List.of(phaseOneDetails));
         }
 
         /**
@@ -494,7 +470,7 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder phaseTwoDetails(@Nullable Output<List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs>> phaseTwoDetails) {
+        public Builder phaseTwoDetails(@Nullable Output<IpsecConnectionTunnelManagementPhaseTwoDetailsArgs> phaseTwoDetails) {
             $.phaseTwoDetails = phaseTwoDetails;
             return this;
         }
@@ -507,20 +483,8 @@ public final class IpsecConnectionTunnelManagementArgs extends com.pulumi.resour
          * @return builder
          * 
          */
-        public Builder phaseTwoDetails(List<IpsecConnectionTunnelManagementPhaseTwoDetailArgs> phaseTwoDetails) {
+        public Builder phaseTwoDetails(IpsecConnectionTunnelManagementPhaseTwoDetailsArgs phaseTwoDetails) {
             return phaseTwoDetails(Output.of(phaseTwoDetails));
-        }
-
-        /**
-         * @param phaseTwoDetails Configuration details for IPSec phase two configuration parameters.
-         * 
-         * See [PhaseTwoConfigDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/PhaseTwoConfigDetails) for allowed values, but note naming scheme follows [TunnelPhaseTwoDetails](https://docs.oracle.com/en-us/iaas/api/#/en/iaas/20160918/datatypes/TunnelPhaseTwoDetails).
-         * 
-         * @return builder
-         * 
-         */
-        public Builder phaseTwoDetails(IpsecConnectionTunnelManagementPhaseTwoDetailArgs... phaseTwoDetails) {
-            return phaseTwoDetails(List.of(phaseTwoDetails));
         }
 
         /**

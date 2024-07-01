@@ -15605,7 +15605,7 @@ export namespace Core {
         oracleTrafficSelectors?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
-    export interface IpsecConnectionTunnelManagementPhaseOneDetail {
+    export interface IpsecConnectionTunnelManagementPhaseOneDetails {
         /**
          * The custom authentication algorithm proposed during phase one tunnel negotiation.
          */
@@ -15656,7 +15656,7 @@ export namespace Core {
         remainingLifetimeLastRetrieved?: pulumi.Input<string>;
     }
 
-    export interface IpsecConnectionTunnelManagementPhaseTwoDetail {
+    export interface IpsecConnectionTunnelManagementPhaseTwoDetails {
         /**
          * The authentication algorithm proposed during phase two tunnel negotiation.
          */
@@ -29640,116 +29640,6 @@ export namespace DatabaseManagement {
 }
 
 export namespace DatabaseMigration {
-    export interface ConnectionAdminCredentials {
-        /**
-         * (Updatable) Administrator password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Administrator username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface ConnectionConnectDescriptor {
-        /**
-         * (Updatable) Connect String. Required if no host, port nor databaseServiceName were specified. If a Private Endpoint was specified in the Connection, the host entry should be a valid IP address. Supported formats: Easy connect: <host>:<port>/<db_service_name> Long format: (description= (address=(port=<port>)(host=<host>))(connect_data=(service_name=<db_service_name>)))
-         */
-        connectString?: pulumi.Input<string>;
-        /**
-         * (Updatable) Database service name. Required if no connectString was specified.
-         */
-        databaseServiceName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Host or IP address of the connect descriptor. Required if no connectString was specified.
-         */
-        host?: pulumi.Input<string>;
-        /**
-         * (Updatable) Port of the connect descriptor. Required if no connectString was specified.
-         */
-        port?: pulumi.Input<number>;
-    }
-
-    export interface ConnectionPrivateEndpoint {
-        /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the private endpoint.
-         */
-        compartmentId: pulumi.Input<string>;
-        /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a previously created Private Endpoint.
-         */
-        id?: pulumi.Input<string>;
-        /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the customer's subnet where the private endpoint VNIC will reside.
-         */
-        subnetId: pulumi.Input<string>;
-        /**
-         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VCN where the Private Endpoint will be bound to.
-         */
-        vcnId: pulumi.Input<string>;
-    }
-
-    export interface ConnectionReplicationCredentials {
-        /**
-         * (Updatable) Administrator password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Administrator username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface ConnectionSshDetails {
-        /**
-         * (Updatable) Name of the host the SSH key is valid for.
-         */
-        host: pulumi.Input<string>;
-        /**
-         * (Updatable) Private SSH key string.
-         */
-        sshkey: pulumi.Input<string>;
-        /**
-         * (Updatable) Sudo location
-         */
-        sudoLocation?: pulumi.Input<string>;
-        /**
-         * (Updatable) SSH user
-         */
-        user: pulumi.Input<string>;
-    }
-
-    export interface ConnectionVaultDetails {
-        /**
-         * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-         */
-        compartmentId: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID of the vault encryption key
-         */
-        keyId: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID of the vault 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        vaultId: pulumi.Input<string>;
-    }
-
-    export interface GetConnectionsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetConnectionsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
     export interface GetMigrationObjectTypesFilter {
         /**
          * Object type name
@@ -29762,24 +29652,6 @@ export namespace DatabaseMigration {
     export interface GetMigrationObjectTypesFilterArgs {
         /**
          * Object type name
-         */
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetMigrationsFilter {
-        /**
-         * Name of directory object in database
-         */
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetMigrationsFilterArgs {
-        /**
-         * Name of directory object in database
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
@@ -29879,531 +29751,6 @@ export namespace DatabaseMigration {
          * Type of unsupported object
          */
         type?: pulumi.Input<string>;
-    }
-
-    export interface MigrationAdvisorSettings {
-        /**
-         * (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
-         */
-        isIgnoreErrors?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
-         */
-        isSkipAdvisor?: pulumi.Input<boolean>;
-    }
-
-    export interface MigrationDataTransferMediumDetails {
-        /**
-         * (Updatable) Optional details for creating a network database link from Oracle Cloud Infrastructure database to on-premise database.
-         */
-        databaseLinkDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsDatabaseLinkDetails>;
-        /**
-         * (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-         */
-        objectStorageDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsObjectStorageDetails>;
-    }
-
-    export interface MigrationDataTransferMediumDetailsDatabaseLinkDetails {
-        /**
-         * (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-         */
-        walletBucket?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket>;
-    }
-
-    export interface MigrationDataTransferMediumDetailsDatabaseLinkDetailsWalletBucket {
-        /**
-         * (Updatable) Bucket name.
-         */
-        bucket: pulumi.Input<string>;
-        /**
-         * (Updatable) Namespace name of the object store bucket.
-         */
-        namespace: pulumi.Input<string>;
-    }
-
-    export interface MigrationDataTransferMediumDetailsObjectStorageDetails {
-        /**
-         * (Updatable) Bucket name.
-         */
-        bucket: pulumi.Input<string>;
-        /**
-         * (Updatable) Namespace name of the object store bucket.
-         */
-        namespace: pulumi.Input<string>;
-    }
-
-    export interface MigrationDataTransferMediumDetailsV2 {
-        /**
-         * (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-         */
-        accessKeyId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link, if the link does not already exist.
-         */
-        name?: pulumi.Input<string>;
-        /**
-         * (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
-         */
-        objectStorageBucket?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsV2ObjectStorageBucket>;
-        /**
-         * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
-         */
-        region?: pulumi.Input<string>;
-        /**
-         * (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
-         */
-        secretAccessKey?: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of the data transfer medium to use for the datapump
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface MigrationDataTransferMediumDetailsV2ObjectStorageBucket {
-        /**
-         * (Updatable) Bucket name.
-         */
-        bucket?: pulumi.Input<string>;
-        /**
-         * (Updatable) Namespace name of the object store bucket.
-         */
-        namespace?: pulumi.Input<string>;
-    }
-
-    export interface MigrationDatapumpSettings {
-        /**
-         * (Updatable) Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
-         */
-        dataPumpParameters?: pulumi.Input<inputs.DatabaseMigration.MigrationDatapumpSettingsDataPumpParameters>;
-        /**
-         * (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
-         */
-        exportDirectoryObject?: pulumi.Input<inputs.DatabaseMigration.MigrationDatapumpSettingsExportDirectoryObject>;
-        /**
-         * (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
-         */
-        importDirectoryObject?: pulumi.Input<inputs.DatabaseMigration.MigrationDatapumpSettingsImportDirectoryObject>;
-        /**
-         * (Updatable) Data Pump job mode. Refer to [link text](https://docs.oracle.com/en/database/oracle/oracle-database/19/sutil/oracle-data-pump-export-utility.html#GUID-8E497131-6B9B-4CC8-AA50-35F480CAC2C4)
-         */
-        jobMode?: pulumi.Input<string>;
-        /**
-         * (Updatable) Defines remapping to be applied to objects as they are processed. Refer to [DATA_REMAP](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-E75AAE6F-4EA6-4737-A752-6B62F5E9D460)
-         */
-        metadataRemaps?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationDatapumpSettingsMetadataRemap>[]>;
-    }
-
-    export interface MigrationDatapumpSettingsDataPumpParameters {
-        /**
-         * (Updatable) Estimate size of dumps that will be generated.
-         */
-        estimate?: pulumi.Input<string>;
-        /**
-         * (Updatable) Exclude paratemers for Export and Import.
-         */
-        excludeParameters?: pulumi.Input<pulumi.Input<string>[]>;
-        /**
-         * (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
-         */
-        exportParallelismDegree?: pulumi.Input<number>;
-        /**
-         * (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
-         */
-        importParallelismDegree?: pulumi.Input<number>;
-        /**
-         * (Updatable) Set to false to force Data Pump worker process to run on one instance.
-         */
-        isCluster?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
-         */
-        tableExistsAction?: pulumi.Input<string>;
-    }
-
-    export interface MigrationDatapumpSettingsExportDirectoryObject {
-        /**
-         * (Updatable) Name of directory object in database
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) Absolute path of directory on database server
-         */
-        path?: pulumi.Input<string>;
-    }
-
-    export interface MigrationDatapumpSettingsImportDirectoryObject {
-        /**
-         * (Updatable) Name of directory object in database
-         */
-        name: pulumi.Input<string>;
-        /**
-         * (Updatable) Absolute path of directory on database server
-         */
-        path?: pulumi.Input<string>;
-    }
-
-    export interface MigrationDatapumpSettingsMetadataRemap {
-        /**
-         * (Updatable) Specifies the new value that oldValue should be translated into.
-         */
-        newValue: pulumi.Input<string>;
-        /**
-         * (Updatable) Specifies the value which needs to be reset.
-         */
-        oldValue: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
-         */
-        type: pulumi.Input<string>;
-    }
-
-    export interface MigrationDumpTransferDetails {
-        /**
-         * Optional OCID of the shared storage mount target.
-         */
-        sharedStorageMountTargetId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
-         */
-        source?: pulumi.Input<inputs.DatabaseMigration.MigrationDumpTransferDetailsSource>;
-        /**
-         * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL
-         */
-        target?: pulumi.Input<inputs.DatabaseMigration.MigrationDumpTransferDetailsTarget>;
-    }
-
-    export interface MigrationDumpTransferDetailsSource {
-        /**
-         * (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
-         */
-        kind: pulumi.Input<string>;
-        /**
-         * (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
-         */
-        ociHome?: pulumi.Input<string>;
-        /**
-         * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
-         */
-        walletLocation?: pulumi.Input<string>;
-    }
-
-    export interface MigrationDumpTransferDetailsTarget {
-        /**
-         * (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
-         */
-        kind: pulumi.Input<string>;
-        /**
-         * (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
-         */
-        ociHome?: pulumi.Input<string>;
-        /**
-         * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
-         */
-        walletLocation?: pulumi.Input<string>;
-    }
-
-    export interface MigrationExcludeObject {
-        /**
-         * (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-         */
-        isOmitExcludedTableFromReplication?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Name of the object (regular expression is allowed)
-         */
-        object: pulumi.Input<string>;
-        /**
-         * (Updatable) Owner of the object (regular expression is allowed)
-         */
-        owner: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetails {
-        /**
-         * (Updatable) Details about Oracle GoldenGate Microservices. Required for online logical migration.
-         */
-        hub: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHub>;
-        /**
-         * (Updatable) Optional settings for GoldenGate Microservices processes
-         */
-        settings?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsSettings>;
-    }
-
-    export interface MigrationGoldenGateDetailsHub {
-        /**
-         * (Updatable) OCID of GoldenGate Microservices compute instance.
-         */
-        computeId?: pulumi.Input<string>;
-        /**
-         * (Updatable) Database Administrator Credentials details.
-         */
-        restAdminCredentials: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubRestAdminCredentials>;
-        /**
-         * (Updatable) Database Administrator Credentials details.
-         */
-        sourceContainerDbAdminCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials>;
-        /**
-         * (Updatable) Database Administrator Credentials details.
-         */
-        sourceDbAdminCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubSourceDbAdminCredentials>;
-        /**
-         * (Updatable) Name of GoldenGate Microservices deployment to operate on source database
-         */
-        sourceMicroservicesDeploymentName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Database Administrator Credentials details.
-         */
-        targetDbAdminCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsHubTargetDbAdminCredentials>;
-        /**
-         * (Updatable) Name of GoldenGate Microservices deployment to operate on target database
-         */
-        targetMicroservicesDeploymentName?: pulumi.Input<string>;
-        /**
-         * (Updatable) Oracle GoldenGate Microservices hub's REST endpoint. Refer to https://docs.oracle.com/en/middleware/goldengate/core/19.1/securing/network.html#GUID-A709DA55-111D-455E-8942-C9BDD1E38CAA
-         */
-        url: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetailsHubRestAdminCredentials {
-        /**
-         * (Updatable) Administrator password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Administrator username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetailsHubSourceContainerDbAdminCredentials {
-        /**
-         * (Updatable) Administrator password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Administrator username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetailsHubSourceDbAdminCredentials {
-        /**
-         * (Updatable) Administrator password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Administrator username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetailsHubTargetDbAdminCredentials {
-        /**
-         * (Updatable) Administrator password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Administrator username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetailsSettings {
-        /**
-         * (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
-         */
-        acceptableLag?: pulumi.Input<number>;
-        /**
-         * (Updatable) Parameters for GoldenGate Extract processes.
-         */
-        extract?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsSettingsExtract>;
-        /**
-         * (Updatable) Parameters for GoldenGate Replicat processes.
-         */
-        replicat?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateDetailsSettingsReplicat>;
-    }
-
-    export interface MigrationGoldenGateDetailsSettingsExtract {
-        /**
-         * (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
-         */
-        longTransDuration?: pulumi.Input<number>;
-        /**
-         * (Updatable) Extract performance.
-         */
-        performanceProfile?: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateDetailsSettingsReplicat {
-        /**
-         * (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
-         */
-        mapParallelism?: pulumi.Input<number>;
-        /**
-         * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-         */
-        maxApplyParallelism?: pulumi.Input<number>;
-        /**
-         * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-         */
-        minApplyParallelism?: pulumi.Input<number>;
-        /**
-         * Extract performance.
-         */
-        performanceProfile?: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateServiceDetails {
-        /**
-         * Details about Oracle GoldenGate GGS Deployment.
-         */
-        ggsDeployments?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsGgsDeployment>[]>;
-        /**
-         * (Updatable) Optional settings for GoldenGate Microservices processes
-         */
-        settings?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSettings>;
-        /**
-         * (Updatable) Database Credentials details.
-         */
-        sourceContainerDbCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSourceContainerDbCredentials>;
-        /**
-         * (Updatable) Database Credentials details.
-         */
-        sourceDbCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSourceDbCredentials>;
-        /**
-         * (Updatable) Database Credentials details.
-         */
-        targetDbCredentials?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsTargetDbCredentials>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsGgsDeployment {
-        /**
-         * OCID of a GoldenGate Deployment
-         */
-        deploymentId?: pulumi.Input<string>;
-        /**
-         * OCID of a VaultSecret containing the Admin Credentials for the GGS Deployment
-         */
-        ggsAdminCredentialsSecretId?: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsSettings {
-        /**
-         * (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
-         */
-        acceptableLag?: pulumi.Input<number>;
-        /**
-         * (Updatable) Parameters for GoldenGate Extract processes.
-         */
-        extract?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSettingsExtract>;
-        /**
-         * (Updatable) Parameters for GoldenGate Replicat processes.
-         */
-        replicat?: pulumi.Input<inputs.DatabaseMigration.MigrationGoldenGateServiceDetailsSettingsReplicat>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsSettingsExtract {
-        /**
-         * (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
-         */
-        longTransDuration?: pulumi.Input<number>;
-        /**
-         * (Updatable) Extract performance.
-         */
-        performanceProfile?: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsSettingsReplicat {
-        /**
-         * (Updatable) Number of threads used to read trail files (valid for Parallel Replicat)
-         */
-        mapParallelism?: pulumi.Input<number>;
-        /**
-         * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-         */
-        maxApplyParallelism?: pulumi.Input<number>;
-        /**
-         * (Updatable) Defines the range in which the Replicat automatically adjusts its apply parallelism (valid for Parallel Replicat)
-         */
-        minApplyParallelism?: pulumi.Input<number>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsSourceContainerDbCredentials {
-        /**
-         * (Updatable) Database  password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Database username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsSourceDbCredentials {
-        /**
-         * (Updatable) Database  password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Database username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationGoldenGateServiceDetailsTargetDbCredentials {
-        /**
-         * (Updatable) Database  password
-         */
-        password: pulumi.Input<string>;
-        /**
-         * (Updatable) Database username
-         */
-        username: pulumi.Input<string>;
-    }
-
-    export interface MigrationIncludeObject {
-        /**
-         * (Updatable) Whether an excluded table should be omitted from replication. Only valid for database objects that have are of type TABLE and that are included in the exludeObjects.
-         */
-        isOmitExcludedTableFromReplication?: pulumi.Input<boolean>;
-        /**
-         * (Updatable) Name of the object (regular expression is allowed)
-         */
-        object: pulumi.Input<string>;
-        /**
-         * (Updatable) Owner of the object (regular expression is allowed)
-         */
-        owner: pulumi.Input<string>;
-        /**
-         * (Updatable) Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
-         */
-        type?: pulumi.Input<string>;
-    }
-
-    export interface MigrationVaultDetails {
-        /**
-         * (Updatable) OCID of the compartment where the secret containing the credentials will be created.
-         */
-        compartmentId: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID of the vault encryption key
-         */
-        keyId: pulumi.Input<string>;
-        /**
-         * (Updatable) OCID of the vault 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         */
-        vaultId: pulumi.Input<string>;
     }
 }
 
@@ -61967,6 +61314,194 @@ export namespace Integration {
 }
 
 export namespace Jms {
+    export interface FleetAdvancedFeatureConfigurationAdvancedUsageTracking {
+        /**
+         * (Updatable) AdvancedUsageTracking flag to store enabled or disabled status.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationCryptoEventAnalysis {
+        /**
+         * (Updatable) CryptoEventAnalysis flag to store enabled or disabled status.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Summarized events log for advanced feature.
+         */
+        summarizedEventsLog?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationCryptoEventAnalysisSummarizedEventsLog {
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
+         */
+        logGroupId: pulumi.Input<string>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log.
+         */
+        logId: pulumi.Input<string>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationJavaMigrationAnalysis {
+        /**
+         * (Updatable) JavaMigrationAnalysis flag to store enabled or disabled status.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationJfrRecording {
+        /**
+         * (Updatable) JfrRecording flag to store enabled or disabled status.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcm {
+        /**
+         * (Updatable) Lifecycle management flag to store enabled or disabled status.
+         */
+        isEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) List of available post actions you can execute after the successful Java installation.
+         */
+        postInstallationActions?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActions>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcmPostInstallationActions {
+        /**
+         * (Updatable) Sets FileHandler and ConsoleHandler as handlers in logging.properties file.
+         */
+        addLoggingHandler?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) The following post JRE installation actions are supported by the field:
+         * * Disable TLS 1.0 , TLS 1.1
+         */
+        disabledTlsVersions?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Sets the logging level in logging.properties file.
+         */
+        globalLoggingLevel?: pulumi.Input<string>;
+        /**
+         * (Updatable) test
+         */
+        minimumKeySizeSettings?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings>;
+        /**
+         * (Updatable) List of proxy properties to be configured in net.properties file.
+         */
+        proxies?: pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies>;
+        /**
+         * (Updatable) Restores JDK root certificates with the certificates that are available in the operating system. The following action is supported by the field:
+         * * Replace JDK root certificates with a list provided by the operating system.
+         */
+        shouldReplaceCertificatesOperatingSystem?: pulumi.Input<boolean>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettings {
+        /**
+         * (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.certpath.disabledAlgorithms will be updated with the following supported actions:
+         * * Changing minimum key length for RSA signed jars
+         * * Changing minimum key length for EC
+         * * Changing minimum key length for DSA
+         */
+        certpaths?: pulumi.Input<pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath>[]>;
+        /**
+         * (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.jar.disabledAlgorithms will be updated with the following supported actions:
+         * * Changing minimum key length for RSA signed jars
+         * * Changing minimum key length for EC
+         * * Changing minimum key length for DSA
+         */
+        jars?: pulumi.Input<pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar>[]>;
+        /**
+         * (Updatable) Updates the minimum key size for the specified encryption algorithm. The JDK property jdk.tls.disabledAlgorithms will be updated with the following supported actions:
+         * * Changing minimum key length for Diffie-Hellman
+         */
+        tls?: pulumi.Input<pulumi.Input<inputs.Jms.FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl>[]>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsCertpath {
+        /**
+         * (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+         */
+        keySize?: pulumi.Input<number>;
+        /**
+         * (Updatable) The algorithm name.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsJar {
+        /**
+         * (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+         */
+        keySize?: pulumi.Input<number>;
+        /**
+         * (Updatable) The algorithm name.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcmPostInstallationActionsMinimumKeySizeSettingsTl {
+        /**
+         * (Updatable) Key size for the encryption algorithm. Allowed values: 256 for EC, 2048 for DH/DSA/RSA
+         */
+        keySize?: pulumi.Input<number>;
+        /**
+         * (Updatable) The algorithm name.
+         */
+        name?: pulumi.Input<string>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationLcmPostInstallationActionsProxies {
+        /**
+         * (Updatable) Ftp host to be set in net.properties file.
+         */
+        ftpProxyHost?: pulumi.Input<string>;
+        /**
+         * (Updatable) Ftp port number to be set in net.properties file.
+         */
+        ftpProxyPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) Http host to be set in net.properties file.
+         */
+        httpProxyHost?: pulumi.Input<string>;
+        /**
+         * (Updatable) Http port number to be set in net.properties file.
+         */
+        httpProxyPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) Https host to be set in net.properties file.
+         */
+        httpsProxyHost?: pulumi.Input<string>;
+        /**
+         * (Updatable) Https port number to be set in net.properties file.
+         */
+        httpsProxyPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) Socks host to be set in net.properties file.
+         */
+        socksProxyHost?: pulumi.Input<string>;
+        /**
+         * (Updatable) Socks port number to be set in net.properties file.
+         */
+        socksProxyPort?: pulumi.Input<number>;
+        /**
+         * (Updatable) Sets "java.net.useSystemProxies=true" in net.properties when they exist.
+         */
+        useSystemProxies?: pulumi.Input<boolean>;
+    }
+
+    export interface FleetAdvancedFeatureConfigurationPerformanceTuningAnalysis {
+        /**
+         * (Updatable) PerformanceTuningAnalysis flag to store enabled or disabled status
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        isEnabled?: pulumi.Input<boolean>;
+    }
+
     export interface FleetInventoryLog {
         /**
          * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the log group.
@@ -67125,6 +66660,10 @@ export namespace Mysql {
          */
         portX?: pulumi.Input<number>;
         /**
+         * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         */
+        region?: pulumi.Input<string>;
+        /**
          * Secure connection configuration details.
          */
         secureConnections?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotSecureConnection>[]>;
@@ -67157,10 +66696,6 @@ export namespace Mysql {
         pitrPolicies?: pulumi.Input<pulumi.Input<inputs.Mysql.MysqlBackupDbSystemSnapshotBackupPolicyPitrPolicy>[]>;
         /**
          * (Updatable) Number of days to retain this backup.
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          */
         retentionInDays?: pulumi.Input<number>;
         /**
@@ -67246,6 +66781,36 @@ export namespace Mysql {
          * The OCID of the certificate to use.
          */
         certificateId?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupDbSystemSnapshotSummary {
+        /**
+         * (Updatable) A user-supplied display name for the backup.
+         */
+        displayName?: pulumi.Input<string>;
+        /**
+         * OCID of the backup itself
+         */
+        id?: pulumi.Input<string>;
+        /**
+         * The region identifier of the region where the DB system exists. For more information, please see [Regions and Availability Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         */
+        region?: pulumi.Input<string>;
+    }
+
+    export interface MysqlBackupSourceDetails {
+        /**
+         * The OCID of the source backup.
+         */
+        backupId: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the compartment the backup exists in.
+         */
+        compartmentId: pulumi.Input<string>;
+        /**
+         * The region of the backup source.
+         */
+        region: pulumi.Input<string>;
     }
 
     export interface MysqlConfigurationInitVariables {

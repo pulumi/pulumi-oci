@@ -122,6 +122,7 @@ namespace Pulumi.Oci.Mysql
         /// The OCID of the DB System the backup is associated with.
         /// </summary>
         public readonly string DbSystemId;
+        public readonly ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotSummaryResult> DbSystemSnapshotSummaries;
         /// <summary>
         /// Snapshot of the DbSystem details at the time of the backup
         /// </summary>
@@ -147,6 +148,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// The OCID of the immediate source DB system backup from which this DB system backup was copied.
+        /// </summary>
+        public readonly string ImmediateSourceBackupId;
+        /// <summary>
         /// Additional information about the current lifecycleState.
         /// </summary>
         public readonly string LifecycleDetails;
@@ -155,6 +160,10 @@ namespace Pulumi.Oci.Mysql
         /// </summary>
         public readonly string MysqlVersion;
         /// <summary>
+        /// The OCID of the original source DB system backup from which this DB system backup was copied.
+        /// </summary>
+        public readonly string OriginalSourceBackupId;
+        /// <summary>
         /// Number of days to retain this backup.
         /// </summary>
         public readonly int RetentionInDays;
@@ -162,10 +171,15 @@ namespace Pulumi.Oci.Mysql
         /// The shape of the DB System instance used for backup.
         /// </summary>
         public readonly string ShapeName;
+        public readonly ImmutableArray<Outputs.GetMysqlBackupSourceDetailResult> SourceDetails;
         /// <summary>
         /// The state of the backup.
         /// </summary>
         public readonly string State;
+        /// <summary>
+        /// The date and time the DB system backup copy was created, as described by [RFC 3339](https://tools.ietf.org/rfc/rfc3339).
+        /// </summary>
+        public readonly string TimeCopyCreated;
         /// <summary>
         /// The time the backup record was created.
         /// </summary>
@@ -191,6 +205,8 @@ namespace Pulumi.Oci.Mysql
 
             string dbSystemId,
 
+            ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotSummaryResult> dbSystemSnapshotSummaries,
+
             ImmutableArray<Outputs.GetMysqlBackupDbSystemSnapshotResult> dbSystemSnapshots,
 
             ImmutableDictionary<string, object> definedTags,
@@ -203,15 +219,23 @@ namespace Pulumi.Oci.Mysql
 
             string id,
 
+            string immediateSourceBackupId,
+
             string lifecycleDetails,
 
             string mysqlVersion,
+
+            string originalSourceBackupId,
 
             int retentionInDays,
 
             string shapeName,
 
+            ImmutableArray<Outputs.GetMysqlBackupSourceDetailResult> sourceDetails,
+
             string state,
+
+            string timeCopyCreated,
 
             string timeCreated,
 
@@ -224,17 +248,22 @@ namespace Pulumi.Oci.Mysql
             CreationType = creationType;
             DataStorageSizeInGb = dataStorageSizeInGb;
             DbSystemId = dbSystemId;
+            DbSystemSnapshotSummaries = dbSystemSnapshotSummaries;
             DbSystemSnapshots = dbSystemSnapshots;
             DefinedTags = definedTags;
             Description = description;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            ImmediateSourceBackupId = immediateSourceBackupId;
             LifecycleDetails = lifecycleDetails;
             MysqlVersion = mysqlVersion;
+            OriginalSourceBackupId = originalSourceBackupId;
             RetentionInDays = retentionInDays;
             ShapeName = shapeName;
+            SourceDetails = sourceDetails;
             State = state;
+            TimeCopyCreated = timeCopyCreated;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;
         }

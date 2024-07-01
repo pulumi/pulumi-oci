@@ -61,9 +61,6 @@ export interface GetFleetAdvancedFeatureConfigurationResult {
      */
     readonly cryptoEventAnalyses: outputs.Jms.GetFleetAdvancedFeatureConfigurationCryptoEventAnalysis[];
     readonly fleetId: string;
-    /**
-     * The provider-assigned unique ID for this managed resource.
-     */
     readonly id: string;
     /**
      * JavaMigrationAnalysis configuration

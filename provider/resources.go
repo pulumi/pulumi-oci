@@ -29,7 +29,7 @@ import (
 	shimv2 "github.com/pulumi/pulumi-terraform-bridge/v3/pkg/tfshim/sdk-v2"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/util/contract"
 
-	"github.com/pulumi/pulumi-oci/provider/pkg/version"
+	"github.com/pulumi/pulumi-oci/provider/v2/pkg/version"
 )
 
 // all of the token components used below.
@@ -957,13 +957,9 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_database_management_managed_database_optimizer_statistics_collection_operations":    {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseOptimizerStatisticsCollectionOperations")},
 			"oci_database_management_managed_database_table_statistics":                              {Tok: tfbridge.MakeDataSource(mainPkg, databaseManagementMod, "getManagedDatabaseTableStatistics")},
 
-			"oci_database_migration_connection":             {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getConnection")},
-			"oci_database_migration_connections":            {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getConnections")},
 			"oci_database_migration_job_advisor_report":     {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getJobAdvisorReport")},
 			"oci_database_migration_job_output":             {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getJobOutput")},
-			"oci_database_migration_migration":              {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getMigration")},
 			"oci_database_migration_migration_object_types": {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getMigrationObjectTypes")},
-			"oci_database_migration_migrations":             {Tok: tfbridge.MakeDataSource(mainPkg, databaseMigrationMod, "getMigrations")},
 
 			"oci_database_tools_database_tools_connection":        {Tok: tfbridge.MakeDataSource(mainPkg, databaseToolsMod, "getDatabaseToolsConnection")},
 			"oci_database_tools_database_tools_connections":       {Tok: tfbridge.MakeDataSource(mainPkg, databaseToolsMod, "getDatabaseToolsConnections")},

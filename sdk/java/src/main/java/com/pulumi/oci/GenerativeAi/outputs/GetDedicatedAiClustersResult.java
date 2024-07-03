@@ -15,38 +15,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetDedicatedAiClustersResult {
-    /**
-     * @return The compartment OCID to create the dedicated AI cluster in.
-     * 
-     */
     private String compartmentId;
     /**
      * @return The list of dedicated_ai_cluster_collection.
      * 
      */
     private List<GetDedicatedAiClustersDedicatedAiClusterCollection> dedicatedAiClusterCollections;
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     private @Nullable String displayName;
     private @Nullable List<GetDedicatedAiClustersFilter> filters;
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-     * 
-     */
     private @Nullable String id;
-    /**
-     * @return The current state of the dedicated AI cluster.
-     * 
-     */
     private @Nullable String state;
 
     private GetDedicatedAiClustersResult() {}
-    /**
-     * @return The compartment OCID to create the dedicated AI cluster in.
-     * 
-     */
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -57,27 +37,15 @@ public final class GetDedicatedAiClustersResult {
     public List<GetDedicatedAiClustersDedicatedAiClusterCollection> dedicatedAiClusterCollections() {
         return this.dedicatedAiClusterCollections;
     }
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
     public List<GetDedicatedAiClustersFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
-    /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-     * 
-     */
     public Optional<String> id() {
         return Optional.ofNullable(this.id);
     }
-    /**
-     * @return The current state of the dedicated AI cluster.
-     * 
-     */
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }

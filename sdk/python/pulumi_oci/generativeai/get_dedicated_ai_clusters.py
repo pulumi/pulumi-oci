@@ -46,9 +46,6 @@ class GetDedicatedAiClustersResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment OCID to create the dedicated AI cluster in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
@@ -62,9 +59,6 @@ class GetDedicatedAiClustersResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -75,17 +69,11 @@ class GetDedicatedAiClustersResult:
     @property
     @pulumi.getter
     def id(self) -> Optional[str]:
-        """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-        """
         return pulumi.get(self, "id")
 
     @property
     @pulumi.getter
     def state(self) -> Optional[str]:
-        """
-        The current state of the dedicated AI cluster.
-        """
         return pulumi.get(self, "state")
 
 
@@ -110,7 +98,7 @@ def get_dedicated_ai_clusters(compartment_id: Optional[str] = None,
                               state: Optional[str] = None,
                               opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetDedicatedAiClustersResult:
     """
-    This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+    This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
 
     Lists the dedicated AI clusters in a specific compartment.
 
@@ -158,7 +146,7 @@ def get_dedicated_ai_clusters_output(compartment_id: Optional[pulumi.Input[str]]
                                      state: Optional[pulumi.Input[Optional[str]]] = None,
                                      opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetDedicatedAiClustersResult]:
     """
-    This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+    This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
 
     Lists the dedicated AI clusters in a specific compartment.
 

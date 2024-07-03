@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+// This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
 //
 // Lists the dedicated AI clusters in a specific compartment.
 //
@@ -68,17 +68,13 @@ type GetDedicatedAiClustersArgs struct {
 
 // A collection of values returned by getDedicatedAiClusters.
 type GetDedicatedAiClustersResult struct {
-	// The compartment OCID to create the dedicated AI cluster in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// The list of dedicated_ai_cluster_collection.
 	DedicatedAiClusterCollections []GetDedicatedAiClustersDedicatedAiClusterCollection `pulumi:"dedicatedAiClusterCollections"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.
-	DisplayName *string                        `pulumi:"displayName"`
-	Filters     []GetDedicatedAiClustersFilter `pulumi:"filters"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-	Id *string `pulumi:"id"`
-	// The current state of the dedicated AI cluster.
-	State *string `pulumi:"state"`
+	DisplayName                   *string                                              `pulumi:"displayName"`
+	Filters                       []GetDedicatedAiClustersFilter                       `pulumi:"filters"`
+	Id                            *string                                              `pulumi:"id"`
+	State                         *string                                              `pulumi:"state"`
 }
 
 func GetDedicatedAiClustersOutput(ctx *pulumi.Context, args GetDedicatedAiClustersOutputArgs, opts ...pulumi.InvokeOption) GetDedicatedAiClustersResultOutput {
@@ -126,7 +122,6 @@ func (o GetDedicatedAiClustersResultOutput) ToGetDedicatedAiClustersResultOutput
 	return o
 }
 
-// The compartment OCID to create the dedicated AI cluster in.
 func (o GetDedicatedAiClustersResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
@@ -138,7 +133,6 @@ func (o GetDedicatedAiClustersResultOutput) DedicatedAiClusterCollections() GetD
 	}).(GetDedicatedAiClustersDedicatedAiClusterCollectionArrayOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable.
 func (o GetDedicatedAiClustersResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }
@@ -147,12 +141,10 @@ func (o GetDedicatedAiClustersResultOutput) Filters() GetDedicatedAiClustersFilt
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) []GetDedicatedAiClustersFilter { return v.Filters }).(GetDedicatedAiClustersFilterArrayOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
 func (o GetDedicatedAiClustersResultOutput) Id() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) *string { return v.Id }).(pulumi.StringPtrOutput)
 }
 
-// The current state of the dedicated AI cluster.
 func (o GetDedicatedAiClustersResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetDedicatedAiClustersResult) *string { return v.State }).(pulumi.StringPtrOutput)
 }

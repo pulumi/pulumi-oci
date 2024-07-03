@@ -7,10 +7,6 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
- *
- * Get the Pre-Migration Advisor report details
- *
  * ## Example Usage
  *
  * ```typescript
@@ -66,19 +62,15 @@ export interface GetJobAdvisorReportResult {
      */
     readonly numberOfWarnings: number;
     /**
-     * Details to access Pre-Migration Advisor report.
+     * Details to access Premigration Advisor report.
      */
     readonly reportLocationDetails: outputs.DatabaseMigration.GetJobAdvisorReportReportLocationDetail[];
     /**
-     * Pre-Migration advisor result.
+     * Premigration Advisor result.
      */
     readonly result: string;
 }
 /**
- * This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
- *
- * Get the Pre-Migration Advisor report details
- *
  * ## Example Usage
  *
  * ```typescript

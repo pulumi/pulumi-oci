@@ -26,6 +26,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? DblinkUsername;
         /// <summary>
+        /// True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+        /// </summary>
+        public readonly bool? IsThinClone;
+        /// <summary>
         /// Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         public readonly Outputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails? RefreshableCloneDetails;
@@ -46,6 +50,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? dblinkUsername,
 
+            bool? isThinClone,
+
             Outputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails? refreshableCloneDetails,
 
             string? sourceContainerDatabaseAdminPassword,
@@ -55,6 +61,7 @@ namespace Pulumi.Oci.Database.Outputs
             CreationType = creationType;
             DblinkUserPassword = dblinkUserPassword;
             DblinkUsername = dblinkUsername;
+            IsThinClone = isThinClone;
             RefreshableCloneDetails = refreshableCloneDetails;
             SourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             SourcePluggableDatabaseId = sourcePluggableDatabaseId;

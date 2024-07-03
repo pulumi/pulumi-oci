@@ -12,7 +12,7 @@ namespace Pulumi.Oci.GenerativeAi
     public static class GetEndpoint
     {
         /// <summary>
-        /// This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Gets information about an endpoint.
         /// 
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.GenerativeAi
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEndpointResult>("oci:GenerativeAi/getEndpoint:getEndpoint", args ?? new GetEndpointArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Gets information about an endpoint.
         /// 
@@ -97,42 +97,21 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetEndpointResult
     {
-        /// <summary>
-        /// The compartment OCID to create the endpoint in.
-        /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetEndpointContentModerationConfigResult> ContentModerationConfigs;
-        /// <summary>
-        /// The OCID of the dedicated AI cluster on which the model will be deployed to.
-        /// </summary>
         public readonly string DedicatedAiClusterId;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
-        /// <summary>
-        /// An optional description of the endpoint.
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.
-        /// </summary>
         public readonly string DisplayName;
         public readonly string EndpointId;
-        /// <summary>
-        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// An OCID that uniquely identifies this endpoint resource.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// A message describing the current state of the endpoint in more detail that can provide actionable information.
-        /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
         /// The OCID of the model that's used to create this endpoint.
@@ -142,9 +121,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// The current state of the endpoint.
         /// </summary>
         public readonly string State;
-        /// <summary>
-        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
         /// The date and time that the endpoint was created in the format of an RFC3339 datetime string.

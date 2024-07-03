@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
  *
  * Lists the dedicated AI clusters in a specific compartment.
  *
@@ -64,30 +64,18 @@ export interface GetDedicatedAiClustersArgs {
  * A collection of values returned by getDedicatedAiClusters.
  */
 export interface GetDedicatedAiClustersResult {
-    /**
-     * The compartment OCID to create the dedicated AI cluster in.
-     */
     readonly compartmentId: string;
     /**
      * The list of dedicated_ai_cluster_collection.
      */
     readonly dedicatedAiClusterCollections: outputs.GenerativeAi.GetDedicatedAiClustersDedicatedAiClusterCollection[];
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     */
     readonly displayName?: string;
     readonly filters?: outputs.GenerativeAi.GetDedicatedAiClustersFilter[];
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-     */
     readonly id?: string;
-    /**
-     * The current state of the dedicated AI cluster.
-     */
     readonly state?: string;
 }
 /**
- * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
  *
  * Lists the dedicated AI clusters in a specific compartment.
  *

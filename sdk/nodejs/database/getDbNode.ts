@@ -133,6 +133,10 @@ export interface GetDbNodeResult {
      */
     readonly timeMaintenanceWindowStart: string;
     /**
+     * The total number of CPU cores reserved on the Db node.
+     */
+    readonly totalCpuCoreCount: number;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      */
     readonly vnic2id: string;

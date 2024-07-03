@@ -137,9 +137,13 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
      * 
      * Allowed values are:
      * * LARGE_COHERE
+     * * LARGE_COHERE_V2
      * * SMALL_COHERE
+     * * SMALL_COHERE_V2
      * * EMBED_COHERE
      * * LLAMA2_70
+     * * LARGE_GENERIC
+     * * LARGE_COHERE_V2_2
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -153,9 +157,13 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
      * 
      * Allowed values are:
      * * LARGE_COHERE
+     * * LARGE_COHERE_V2
      * * SMALL_COHERE
+     * * SMALL_COHERE_V2
      * * EMBED_COHERE
      * * LLAMA2_70
+     * * LARGE_GENERIC
+     * * LARGE_COHERE_V2_2
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -356,9 +364,13 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
          * 
          * Allowed values are:
          * * LARGE_COHERE
+         * * LARGE_COHERE_V2
          * * SMALL_COHERE
+         * * SMALL_COHERE_V2
          * * EMBED_COHERE
          * * LLAMA2_70
+         * * LARGE_GENERIC
+         * * LARGE_COHERE_V2_2
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -376,9 +388,13 @@ public final class DedicatedAiClusterArgs extends com.pulumi.resources.ResourceA
          * 
          * Allowed values are:
          * * LARGE_COHERE
+         * * LARGE_COHERE_V2
          * * SMALL_COHERE
+         * * SMALL_COHERE_V2
          * * EMBED_COHERE
          * * LLAMA2_70
+         * * LARGE_GENERIC
+         * * LARGE_COHERE_V2_2
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

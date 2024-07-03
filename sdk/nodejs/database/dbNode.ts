@@ -138,6 +138,10 @@ export class DbNode extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeMaintenanceWindowStart!: pulumi.Output<string>;
     /**
+     * The total number of CPU cores reserved on the Db node.
+     */
+    public /*out*/ readonly totalCpuCoreCount!: pulumi.Output<number>;
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      */
     public /*out*/ readonly vnic2id!: pulumi.Output<string>;
@@ -181,6 +185,7 @@ export class DbNode extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = state ? state.timeCreated : undefined;
             resourceInputs["timeMaintenanceWindowEnd"] = state ? state.timeMaintenanceWindowEnd : undefined;
             resourceInputs["timeMaintenanceWindowStart"] = state ? state.timeMaintenanceWindowStart : undefined;
+            resourceInputs["totalCpuCoreCount"] = state ? state.totalCpuCoreCount : undefined;
             resourceInputs["vnic2id"] = state ? state.vnic2id : undefined;
             resourceInputs["vnicId"] = state ? state.vnicId : undefined;
         } else {
@@ -210,6 +215,7 @@ export class DbNode extends pulumi.CustomResource {
             resourceInputs["timeCreated"] = undefined /*out*/;
             resourceInputs["timeMaintenanceWindowEnd"] = undefined /*out*/;
             resourceInputs["timeMaintenanceWindowStart"] = undefined /*out*/;
+            resourceInputs["totalCpuCoreCount"] = undefined /*out*/;
             resourceInputs["vnic2id"] = undefined /*out*/;
             resourceInputs["vnicId"] = undefined /*out*/;
         }
@@ -314,6 +320,10 @@ export interface DbNodeState {
      * Start date and time of maintenance window.
      */
     timeMaintenanceWindowStart?: pulumi.Input<string>;
+    /**
+     * The total number of CPU cores reserved on the Db node.
+     */
+    totalCpuCoreCount?: pulumi.Input<number>;
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      */

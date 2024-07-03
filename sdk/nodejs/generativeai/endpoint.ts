@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Creates an endpoint.
  *

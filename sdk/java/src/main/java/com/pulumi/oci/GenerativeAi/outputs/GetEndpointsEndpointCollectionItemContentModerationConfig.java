@@ -10,17 +10,9 @@ import java.util.Objects;
 
 @CustomType
 public final class GetEndpointsEndpointCollectionItemContentModerationConfig {
-    /**
-     * @return Whether to enable the content moderation feature.
-     * 
-     */
     private Boolean isEnabled;
 
     private GetEndpointsEndpointCollectionItemContentModerationConfig() {}
-    /**
-     * @return Whether to enable the content moderation feature.
-     * 
-     */
     public Boolean isEnabled() {
         return this.isEnabled;
     }

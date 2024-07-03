@@ -183,6 +183,22 @@ import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresArgs;
 import com.pulumi.oci.Database.inputs.GetExadataInfrastructuresPlainArgs;
 import com.pulumi.oci.Database.inputs.GetExadataIormConfigArgs;
 import com.pulumi.oci.Database.inputs.GetExadataIormConfigPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatePlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
+import com.pulumi.oci.Database.inputs.GetExadbVmClustersPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
+import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultPlainArgs;
+import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
+import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetExternalContainerDatabaseArgs;
 import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasePlainArgs;
 import com.pulumi.oci.Database.inputs.GetExternalContainerDatabasesArgs;
@@ -201,6 +217,8 @@ import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesArgs;
 import com.pulumi.oci.Database.inputs.GetExternalPluggableDatabasesPlainArgs;
 import com.pulumi.oci.Database.inputs.GetFlexComponentsArgs;
 import com.pulumi.oci.Database.inputs.GetFlexComponentsPlainArgs;
+import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
+import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetGiVersionsArgs;
 import com.pulumi.oci.Database.inputs.GetGiVersionsPlainArgs;
 import com.pulumi.oci.Database.inputs.GetInfrastructureTargetVersionArgs;
@@ -344,6 +362,14 @@ import com.pulumi.oci.Database.outputs.GetExadataInfrastructureResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructureUnAllocatedResourceResult;
 import com.pulumi.oci.Database.outputs.GetExadataInfrastructuresResult;
 import com.pulumi.oci.Database.outputs.GetExadataIormConfigResult;
+import com.pulumi.oci.Database.outputs.GetExadbVmClusterResult;
+import com.pulumi.oci.Database.outputs.GetExadbVmClusterUpdateHistoryEntriesResult;
+import com.pulumi.oci.Database.outputs.GetExadbVmClusterUpdateHistoryEntryResult;
+import com.pulumi.oci.Database.outputs.GetExadbVmClusterUpdateResult;
+import com.pulumi.oci.Database.outputs.GetExadbVmClusterUpdatesResult;
+import com.pulumi.oci.Database.outputs.GetExadbVmClustersResult;
+import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultResult;
+import com.pulumi.oci.Database.outputs.GetExascaleDbStorageVaultsResult;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetExternalContainerDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetExternalDatabaseConnectorResult;
@@ -353,6 +379,7 @@ import com.pulumi.oci.Database.outputs.GetExternalNonContainerDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabaseResult;
 import com.pulumi.oci.Database.outputs.GetExternalPluggableDatabasesResult;
 import com.pulumi.oci.Database.outputs.GetFlexComponentsResult;
+import com.pulumi.oci.Database.outputs.GetGiVersionMinorVersionsResult;
 import com.pulumi.oci.Database.outputs.GetGiVersionsResult;
 import com.pulumi.oci.Database.outputs.GetInfrastructureTargetVersionResult;
 import com.pulumi.oci.Database.outputs.GetKeyStoreResult;
@@ -7820,6 +7847,7 @@ public final class DatabaseFunctions {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
      *             .build());
      * 
      *     }
@@ -7865,6 +7893,7 @@ public final class DatabaseFunctions {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
      *             .build());
      * 
      *     }
@@ -7910,6 +7939,7 @@ public final class DatabaseFunctions {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
      *             .build());
      * 
      *     }
@@ -7955,6 +7985,7 @@ public final class DatabaseFunctions {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
      *             .build());
      * 
      *     }
@@ -8000,6 +8031,7 @@ public final class DatabaseFunctions {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
      *             .build());
      * 
      *     }
@@ -8045,6 +8077,7 @@ public final class DatabaseFunctions {
      *         final var testBackups = DatabaseFunctions.getBackups(GetBackupsArgs.builder()
      *             .compartmentId(compartmentId)
      *             .databaseId(testDatabase.id())
+     *             .shapeFamily(backupShapeFamily)
      *             .build());
      * 
      *     }
@@ -13720,7 +13753,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
+     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -13768,7 +13801,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
+     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -13816,7 +13849,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
+     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -13864,7 +13897,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Db Nodes in Oracle Cloud Infrastructure Database service.
      * 
-     * Lists the database nodes in the specified DB system and compartment. A database node is a server running database software.
+     * Lists the database nodes in the specified compartment. A database node is a server running database software. In addition to the other required parameters, either &#39;--db-system-id&#39; or &#39;--vm-cluster-id&#39; also must be provided, depending on the service being accessed.
      * 
      * ## Example Usage
      * 
@@ -16966,6 +16999,1454 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getExadataIormConfig:getExadataIormConfig", TypeShape.of(GetExadataIormConfigResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmCluster = DatabaseFunctions.getExadbVmCluster(GetExadbVmClusterArgs.builder()
+     *             .exadbVmClusterId(testExadbVmClusterOciDatabaseExadbVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterResult> getExadbVmCluster(GetExadbVmClusterArgs args) {
+        return getExadbVmCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmCluster = DatabaseFunctions.getExadbVmCluster(GetExadbVmClusterArgs.builder()
+     *             .exadbVmClusterId(testExadbVmClusterOciDatabaseExadbVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterResult> getExadbVmClusterPlain(GetExadbVmClusterPlainArgs args) {
+        return getExadbVmClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmCluster = DatabaseFunctions.getExadbVmCluster(GetExadbVmClusterArgs.builder()
+     *             .exadbVmClusterId(testExadbVmClusterOciDatabaseExadbVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterResult> getExadbVmCluster(GetExadbVmClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmCluster:getExadbVmCluster", TypeShape.of(GetExadbVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmCluster = DatabaseFunctions.getExadbVmCluster(GetExadbVmClusterArgs.builder()
+     *             .exadbVmClusterId(testExadbVmClusterOciDatabaseExadbVmCluster.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterResult> getExadbVmClusterPlain(GetExadbVmClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmCluster:getExadbVmCluster", TypeShape.of(GetExadbVmClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdate = DatabaseFunctions.getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateId(testUpdate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateResult> getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs args) {
+        return getExadbVmClusterUpdate(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdate = DatabaseFunctions.getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateId(testUpdate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdateResult> getExadbVmClusterUpdatePlain(GetExadbVmClusterUpdatePlainArgs args) {
+        return getExadbVmClusterUpdatePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdate = DatabaseFunctions.getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateId(testUpdate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateResult> getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdate:getExadbVmClusterUpdate", TypeShape.of(GetExadbVmClusterUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdate = DatabaseFunctions.getExadbVmClusterUpdate(GetExadbVmClusterUpdateArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateId(testUpdate.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdateResult> getExadbVmClusterUpdatePlain(GetExadbVmClusterUpdatePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusterUpdate:getExadbVmClusterUpdate", TypeShape.of(GetExadbVmClusterUpdateResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntries = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateHistoryEntryUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateHistoryEntriesResult> getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs args) {
+        return getExadbVmClusterUpdateHistoryEntries(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntries = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateHistoryEntryUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdateHistoryEntriesResult> getExadbVmClusterUpdateHistoryEntriesPlain(GetExadbVmClusterUpdateHistoryEntriesPlainArgs args) {
+        return getExadbVmClusterUpdateHistoryEntriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntries = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateHistoryEntryUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateHistoryEntriesResult> getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", TypeShape.of(GetExadbVmClusterUpdateHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Update History Entries in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntriesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntries = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntries(GetExadbVmClusterUpdateHistoryEntriesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateHistoryEntryUpdateType)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdateHistoryEntriesResult> getExadbVmClusterUpdateHistoryEntriesPlain(GetExadbVmClusterUpdateHistoryEntriesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusterUpdateHistoryEntries:getExadbVmClusterUpdateHistoryEntries", TypeShape.of(GetExadbVmClusterUpdateHistoryEntriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the maintenance update history details for the specified update history entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntry = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateHistoryEntryResult> getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs args) {
+        return getExadbVmClusterUpdateHistoryEntry(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the maintenance update history details for the specified update history entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntry = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdateHistoryEntryResult> getExadbVmClusterUpdateHistoryEntryPlain(GetExadbVmClusterUpdateHistoryEntryPlainArgs args) {
+        return getExadbVmClusterUpdateHistoryEntryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the maintenance update history details for the specified update history entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntry = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdateHistoryEntryResult> getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdateHistoryEntry:getExadbVmClusterUpdateHistoryEntry", TypeShape.of(GetExadbVmClusterUpdateHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exadb Vm Cluster Update History Entry resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets the maintenance update history details for the specified update history entry.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdateHistoryEntryArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdateHistoryEntry = DatabaseFunctions.getExadbVmClusterUpdateHistoryEntry(GetExadbVmClusterUpdateHistoryEntryArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateHistoryEntryId(testUpdateHistoryEntry.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdateHistoryEntryResult> getExadbVmClusterUpdateHistoryEntryPlain(GetExadbVmClusterUpdateHistoryEntryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusterUpdateHistoryEntry:getExadbVmClusterUpdateHistoryEntry", TypeShape.of(GetExadbVmClusterUpdateHistoryEntryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdates = DatabaseFunctions.getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateUpdateType)
+     *             .version(exadbVmClusterUpdateVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdatesResult> getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs args) {
+        return getExadbVmClusterUpdates(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdates = DatabaseFunctions.getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateUpdateType)
+     *             .version(exadbVmClusterUpdateVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdatesResult> getExadbVmClusterUpdatesPlain(GetExadbVmClusterUpdatesPlainArgs args) {
+        return getExadbVmClusterUpdatesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdates = DatabaseFunctions.getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateUpdateType)
+     *             .version(exadbVmClusterUpdateVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClusterUpdatesResult> getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates", TypeShape.of(GetExadbVmClusterUpdatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Cluster Updates in Oracle Cloud Infrastructure Database service.
+     * 
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClusterUpdatesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusterUpdates = DatabaseFunctions.getExadbVmClusterUpdates(GetExadbVmClusterUpdatesArgs.builder()
+     *             .exadbVmClusterId(testExadbVmCluster.id())
+     *             .updateType(exadbVmClusterUpdateUpdateType)
+     *             .version(exadbVmClusterUpdateVersion)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClusterUpdatesResult> getExadbVmClusterUpdatesPlain(GetExadbVmClusterUpdatesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusterUpdates:getExadbVmClusterUpdates", TypeShape.of(GetExadbVmClusterUpdatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadbVmClusterDisplayName)
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
+     *             .state(exadbVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClustersResult> getExadbVmClusters(GetExadbVmClustersArgs args) {
+        return getExadbVmClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadbVmClusterDisplayName)
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
+     *             .state(exadbVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClustersResult> getExadbVmClustersPlain(GetExadbVmClustersPlainArgs args) {
+        return getExadbVmClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadbVmClusterDisplayName)
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
+     *             .state(exadbVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExadbVmClustersResult> getExadbVmClusters(GetExadbVmClustersArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExadbVmClusters:getExadbVmClusters", TypeShape.of(GetExadbVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exadb Vm Clusters in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExadbVmClustersArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExadbVmClusters = DatabaseFunctions.getExadbVmClusters(GetExadbVmClustersArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exadbVmClusterDisplayName)
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVault.id())
+     *             .state(exadbVmClusterState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExadbVmClustersResult> getExadbVmClustersPlain(GetExadbVmClustersPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExadbVmClusters:getExadbVmClusters", TypeShape.of(GetExadbVmClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVault = DatabaseFunctions.getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs.builder()
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExascaleDbStorageVaultResult> getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs args) {
+        return getExascaleDbStorageVault(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVault = DatabaseFunctions.getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs.builder()
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExascaleDbStorageVaultResult> getExascaleDbStorageVaultPlain(GetExascaleDbStorageVaultPlainArgs args) {
+        return getExascaleDbStorageVaultPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVault = DatabaseFunctions.getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs.builder()
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExascaleDbStorageVaultResult> getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault", TypeShape.of(GetExascaleDbStorageVaultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides details about a specific Exascale Db Storage Vault resource in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVault = DatabaseFunctions.getExascaleDbStorageVault(GetExascaleDbStorageVaultArgs.builder()
+     *             .exascaleDbStorageVaultId(testExascaleDbStorageVaultOciDatabaseExascaleDbStorageVault.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExascaleDbStorageVaultResult> getExascaleDbStorageVaultPlain(GetExascaleDbStorageVaultPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExascaleDbStorageVault:getExascaleDbStorageVault", TypeShape.of(GetExascaleDbStorageVaultResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .state(exascaleDbStorageVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExascaleDbStorageVaultsResult> getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs args) {
+        return getExascaleDbStorageVaults(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .state(exascaleDbStorageVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExascaleDbStorageVaultsResult> getExascaleDbStorageVaultsPlain(GetExascaleDbStorageVaultsPlainArgs args) {
+        return getExascaleDbStorageVaultsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .state(exascaleDbStorageVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetExascaleDbStorageVaultsResult> getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", TypeShape.of(GetExascaleDbStorageVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Exascale Db Storage Vaults in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetExascaleDbStorageVaultsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testExascaleDbStorageVaults = DatabaseFunctions.getExascaleDbStorageVaults(GetExascaleDbStorageVaultsArgs.builder()
+     *             .compartmentId(compartmentId)
+     *             .displayName(exascaleDbStorageVaultDisplayName)
+     *             .state(exascaleDbStorageVaultState)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetExascaleDbStorageVaultsResult> getExascaleDbStorageVaultsPlain(GetExascaleDbStorageVaultsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getExascaleDbStorageVaults:getExascaleDbStorageVaults", TypeShape.of(GetExascaleDbStorageVaultsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides details about a specific External Container Database resource in Oracle Cloud Infrastructure Database service.
      * 
      * Gets information about the specified external container database.
@@ -18602,9 +20083,205 @@ public final class DatabaseFunctions {
         return Deployment.getInstance().invokeAsync("oci:Database/getFlexComponents:getFlexComponents", TypeShape.of(GetFlexComponentsResult.class), args, Utilities.withVersion(options));
     }
     /**
+     * This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersionMinorVersions = DatabaseFunctions.getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs.builder()
+     *             .version(giVersionMinorVersionVersion)
+     *             .availabilityDomain(giVersionMinorVersionAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .isGiVersionForProvisioning(giVersionMinorVersionIsGiVersionForProvisioning)
+     *             .shape(giVersionMinorVersionShape)
+     *             .shapeFamily(giVersionMinorVersionShapeFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetGiVersionMinorVersionsResult> getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs args) {
+        return getGiVersionMinorVersions(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersionMinorVersions = DatabaseFunctions.getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs.builder()
+     *             .version(giVersionMinorVersionVersion)
+     *             .availabilityDomain(giVersionMinorVersionAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .isGiVersionForProvisioning(giVersionMinorVersionIsGiVersionForProvisioning)
+     *             .shape(giVersionMinorVersionShape)
+     *             .shapeFamily(giVersionMinorVersionShapeFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetGiVersionMinorVersionsResult> getGiVersionMinorVersionsPlain(GetGiVersionMinorVersionsPlainArgs args) {
+        return getGiVersionMinorVersionsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersionMinorVersions = DatabaseFunctions.getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs.builder()
+     *             .version(giVersionMinorVersionVersion)
+     *             .availabilityDomain(giVersionMinorVersionAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .isGiVersionForProvisioning(giVersionMinorVersionIsGiVersionForProvisioning)
+     *             .shape(giVersionMinorVersionShape)
+     *             .shapeFamily(giVersionMinorVersionShapeFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetGiVersionMinorVersionsResult> getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", TypeShape.of(GetGiVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Gi Version Minor Versions in Oracle Cloud Infrastructure Database service.
+     * 
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.Database.DatabaseFunctions;
+     * import com.pulumi.oci.Database.inputs.GetGiVersionMinorVersionsArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testGiVersionMinorVersions = DatabaseFunctions.getGiVersionMinorVersions(GetGiVersionMinorVersionsArgs.builder()
+     *             .version(giVersionMinorVersionVersion)
+     *             .availabilityDomain(giVersionMinorVersionAvailabilityDomain)
+     *             .compartmentId(compartmentId)
+     *             .isGiVersionForProvisioning(giVersionMinorVersionIsGiVersionForProvisioning)
+     *             .shape(giVersionMinorVersionShape)
+     *             .shapeFamily(giVersionMinorVersionShapeFamily)
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetGiVersionMinorVersionsResult> getGiVersionMinorVersionsPlain(GetGiVersionMinorVersionsPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:Database/getGiVersionMinorVersions:getGiVersionMinorVersions", TypeShape.of(GetGiVersionMinorVersionsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
      * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported GI versions for the Exadata Cloud{@literal @}Customer VM cluster.
+     * Gets a list of supported GI versions.
      * 
      * ## Example Usage
      * 
@@ -18633,6 +20310,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -18649,7 +20327,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported GI versions for the Exadata Cloud{@literal @}Customer VM cluster.
+     * Gets a list of supported GI versions.
      * 
      * ## Example Usage
      * 
@@ -18678,6 +20356,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -18694,7 +20373,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported GI versions for the Exadata Cloud{@literal @}Customer VM cluster.
+     * Gets a list of supported GI versions.
      * 
      * ## Example Usage
      * 
@@ -18723,6 +20402,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .shape(giVersionShape)
      *             .build());
      * 
@@ -18739,7 +20419,7 @@ public final class DatabaseFunctions {
     /**
      * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
      * 
-     * Gets a list of supported GI versions for the Exadata Cloud{@literal @}Customer VM cluster.
+     * Gets a list of supported GI versions.
      * 
      * ## Example Usage
      * 
@@ -18768,6 +20448,7 @@ public final class DatabaseFunctions {
      *     public static void stack(Context ctx) {
      *         final var testGiVersions = DatabaseFunctions.getGiVersions(GetGiVersionsArgs.builder()
      *             .compartmentId(compartmentId)
+     *             .availabilityDomain(giVersionAvailabilityDomain)
      *             .shape(giVersionShape)
      *             .build());
      * 

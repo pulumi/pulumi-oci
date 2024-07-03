@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     public sealed class GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult
     {
         /// <summary>
-        /// Name of the bucket containing the Pre-Migration Advisor report.
+        /// Name of the bucket containing the Premigration Advisor report.
         /// </summary>
         public readonly string Bucket;
         /// <summary>
@@ -22,7 +22,7 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
         /// </summary>
         public readonly string Namespace;
         /// <summary>
-        /// Pre-Migration Advisor report object name.
+        /// Premigration Advisor report object name.
         /// </summary>
         public readonly string Object;
 

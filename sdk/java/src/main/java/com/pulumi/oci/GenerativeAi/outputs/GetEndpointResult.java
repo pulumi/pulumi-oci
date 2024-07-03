@@ -14,51 +14,23 @@ import java.util.Objects;
 
 @CustomType
 public final class GetEndpointResult {
-    /**
-     * @return The compartment OCID to create the endpoint in.
-     * 
-     */
     private String compartmentId;
-    /**
-     * @return The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
-     * 
-     */
     private List<GetEndpointContentModerationConfig> contentModerationConfigs;
-    /**
-     * @return The OCID of the dedicated AI cluster on which the model will be deployed to.
-     * 
-     */
     private String dedicatedAiClusterId;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Operations.CostCenter&#34;: &#34;42&#34;}`
      * 
      */
     private Map<String,Object> definedTags;
-    /**
-     * @return An optional description of the endpoint.
-     * 
-     */
     private String description;
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     private String displayName;
     private String endpointId;
-    /**
-     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     */
     private Map<String,Object> freeformTags;
     /**
      * @return An OCID that uniquely identifies this endpoint resource.
      * 
      */
     private String id;
-    /**
-     * @return A message describing the current state of the endpoint in more detail that can provide actionable information.
-     * 
-     */
     private String lifecycleDetails;
     /**
      * @return The OCID of the model that&#39;s used to create this endpoint.
@@ -70,10 +42,6 @@ public final class GetEndpointResult {
      * 
      */
     private String state;
-    /**
-     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     */
     private Map<String,Object> systemTags;
     /**
      * @return The date and time that the endpoint was created in the format of an RFC3339 datetime string.
@@ -87,24 +55,12 @@ public final class GetEndpointResult {
     private String timeUpdated;
 
     private GetEndpointResult() {}
-    /**
-     * @return The compartment OCID to create the endpoint in.
-     * 
-     */
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It&#39;s recommended to use content moderation.
-     * 
-     */
     public List<GetEndpointContentModerationConfig> contentModerationConfigs() {
         return this.contentModerationConfigs;
     }
-    /**
-     * @return The OCID of the dedicated AI cluster on which the model will be deployed to.
-     * 
-     */
     public String dedicatedAiClusterId() {
         return this.dedicatedAiClusterId;
     }
@@ -115,27 +71,15 @@ public final class GetEndpointResult {
     public Map<String,Object> definedTags() {
         return this.definedTags;
     }
-    /**
-     * @return An optional description of the endpoint.
-     * 
-     */
     public String description() {
         return this.description;
     }
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     public String displayName() {
         return this.displayName;
     }
     public String endpointId() {
         return this.endpointId;
     }
-    /**
-     * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
-     * 
-     */
     public Map<String,Object> freeformTags() {
         return this.freeformTags;
     }
@@ -146,10 +90,6 @@ public final class GetEndpointResult {
     public String id() {
         return this.id;
     }
-    /**
-     * @return A message describing the current state of the endpoint in more detail that can provide actionable information.
-     * 
-     */
     public String lifecycleDetails() {
         return this.lifecycleDetails;
     }
@@ -167,10 +107,6 @@ public final class GetEndpointResult {
     public String state() {
         return this.state;
     }
-    /**
-     * @return System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{&#34;orcl-cloud.free-tier-retained&#34;: &#34;true&#34;}`
-     * 
-     */
     public Map<String,Object> systemTags() {
         return this.systemTags;
     }

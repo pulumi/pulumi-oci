@@ -12,11 +12,6 @@ namespace Pulumi.Oci.DatabaseMigration
     public static class GetJobAdvisorReport
     {
         /// <summary>
-        /// This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-        /// 
-        /// Get the Pre-Migration Advisor report details
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -39,11 +34,6 @@ namespace Pulumi.Oci.DatabaseMigration
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetJobAdvisorReportResult>("oci:DatabaseMigration/getJobAdvisorReport:getJobAdvisorReport", args ?? new GetJobAdvisorReportArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-        /// 
-        /// Get the Pre-Migration Advisor report details
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -121,11 +111,11 @@ namespace Pulumi.Oci.DatabaseMigration
         /// </summary>
         public readonly int NumberOfWarnings;
         /// <summary>
-        /// Details to access Pre-Migration Advisor report.
+        /// Details to access Premigration Advisor report.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobAdvisorReportReportLocationDetailResult> ReportLocationDetails;
         /// <summary>
-        /// Pre-Migration advisor result.
+        /// Premigration Advisor result.
         /// </summary>
         public readonly string Result;
 

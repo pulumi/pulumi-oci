@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -28,6 +29,11 @@ public final class PluggableDatabasePdbCreationTypeDetails {
      * 
      */
     private @Nullable String dblinkUsername;
+    /**
+     * @return True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+     * 
+     */
+    private @Nullable Boolean isThinClone;
     /**
      * @return Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
@@ -67,6 +73,13 @@ public final class PluggableDatabasePdbCreationTypeDetails {
         return Optional.ofNullable(this.dblinkUsername);
     }
     /**
+     * @return True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+     * 
+     */
+    public Optional<Boolean> isThinClone() {
+        return Optional.ofNullable(this.isThinClone);
+    }
+    /**
      * @return Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
@@ -100,6 +113,7 @@ public final class PluggableDatabasePdbCreationTypeDetails {
         private String creationType;
         private @Nullable String dblinkUserPassword;
         private @Nullable String dblinkUsername;
+        private @Nullable Boolean isThinClone;
         private @Nullable PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails refreshableCloneDetails;
         private @Nullable String sourceContainerDatabaseAdminPassword;
         private String sourcePluggableDatabaseId;
@@ -109,6 +123,7 @@ public final class PluggableDatabasePdbCreationTypeDetails {
     	      this.creationType = defaults.creationType;
     	      this.dblinkUserPassword = defaults.dblinkUserPassword;
     	      this.dblinkUsername = defaults.dblinkUsername;
+    	      this.isThinClone = defaults.isThinClone;
     	      this.refreshableCloneDetails = defaults.refreshableCloneDetails;
     	      this.sourceContainerDatabaseAdminPassword = defaults.sourceContainerDatabaseAdminPassword;
     	      this.sourcePluggableDatabaseId = defaults.sourcePluggableDatabaseId;
@@ -132,6 +147,12 @@ public final class PluggableDatabasePdbCreationTypeDetails {
         public Builder dblinkUsername(@Nullable String dblinkUsername) {
 
             this.dblinkUsername = dblinkUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isThinClone(@Nullable Boolean isThinClone) {
+
+            this.isThinClone = isThinClone;
             return this;
         }
         @CustomType.Setter
@@ -159,6 +180,7 @@ public final class PluggableDatabasePdbCreationTypeDetails {
             _resultValue.creationType = creationType;
             _resultValue.dblinkUserPassword = dblinkUserPassword;
             _resultValue.dblinkUsername = dblinkUsername;
+            _resultValue.isThinClone = isThinClone;
             _resultValue.refreshableCloneDetails = refreshableCloneDetails;
             _resultValue.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             _resultValue.sourcePluggableDatabaseId = sourcePluggableDatabaseId;

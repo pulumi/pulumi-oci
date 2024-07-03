@@ -37,9 +37,13 @@ class DedicatedAiClusterArgs:
                
                Allowed values are:
                * LARGE_COHERE
+               * LARGE_COHERE_V2
                * SMALL_COHERE
+               * SMALL_COHERE_V2
                * EMBED_COHERE
                * LLAMA2_70
+               * LARGE_GENERIC
+               * LARGE_COHERE_V2_2
                
                
                ** IMPORTANT **
@@ -110,9 +114,13 @@ class DedicatedAiClusterArgs:
 
         Allowed values are:
         * LARGE_COHERE
+        * LARGE_COHERE_V2
         * SMALL_COHERE
+        * SMALL_COHERE_V2
         * EMBED_COHERE
         * LLAMA2_70
+        * LARGE_GENERIC
+        * LARGE_COHERE_V2_2
 
 
         ** IMPORTANT **
@@ -213,9 +221,13 @@ class _DedicatedAiClusterState:
                
                Allowed values are:
                * LARGE_COHERE
+               * LARGE_COHERE_V2
                * SMALL_COHERE
+               * SMALL_COHERE_V2
                * EMBED_COHERE
                * LLAMA2_70
+               * LARGE_GENERIC
+               * LARGE_COHERE_V2_2
                
                
                ** IMPORTANT **
@@ -418,9 +430,13 @@ class _DedicatedAiClusterState:
 
         Allowed values are:
         * LARGE_COHERE
+        * LARGE_COHERE_V2
         * SMALL_COHERE
+        * SMALL_COHERE_V2
         * EMBED_COHERE
         * LLAMA2_70
+        * LARGE_GENERIC
+        * LARGE_COHERE_V2_2
 
 
         ** IMPORTANT **
@@ -448,7 +464,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
                  unit_shape: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
 
         Creates a dedicated AI cluster.
 
@@ -498,9 +514,13 @@ class DedicatedAiCluster(pulumi.CustomResource):
                
                Allowed values are:
                * LARGE_COHERE
+               * LARGE_COHERE_V2
                * SMALL_COHERE
+               * SMALL_COHERE_V2
                * EMBED_COHERE
                * LLAMA2_70
+               * LARGE_GENERIC
+               * LARGE_COHERE_V2_2
                
                
                ** IMPORTANT **
@@ -513,7 +533,7 @@ class DedicatedAiCluster(pulumi.CustomResource):
                  args: DedicatedAiClusterArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+        This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
 
         Creates a dedicated AI cluster.
 
@@ -652,9 +672,13 @@ class DedicatedAiCluster(pulumi.CustomResource):
                
                Allowed values are:
                * LARGE_COHERE
+               * LARGE_COHERE_V2
                * SMALL_COHERE
+               * SMALL_COHERE_V2
                * EMBED_COHERE
                * LLAMA2_70
+               * LARGE_GENERIC
+               * LARGE_COHERE_V2_2
                
                
                ** IMPORTANT **
@@ -796,9 +820,13 @@ class DedicatedAiCluster(pulumi.CustomResource):
 
         Allowed values are:
         * LARGE_COHERE
+        * LARGE_COHERE_V2
         * SMALL_COHERE
+        * SMALL_COHERE_V2
         * EMBED_COHERE
         * LLAMA2_70
+        * LARGE_GENERIC
+        * LARGE_COHERE_V2_2
 
 
         ** IMPORTANT **

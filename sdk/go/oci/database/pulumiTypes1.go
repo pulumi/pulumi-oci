@@ -13,6 +13,3456 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs and GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput` via:
+//
+//	GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray and GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{ GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray []GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput)
+}
+
+type GetExternalContainerDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalContainerDatabasesFilterInput is an input type that accepts GetExternalContainerDatabasesFilterArgs and GetExternalContainerDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesFilterInput` via:
+//
+//	GetExternalContainerDatabasesFilterArgs{...}
+type GetExternalContainerDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesFilterOutput() GetExternalContainerDatabasesFilterOutput
+	ToGetExternalContainerDatabasesFilterOutputWithContext(context.Context) GetExternalContainerDatabasesFilterOutput
+}
+
+type GetExternalContainerDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalContainerDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesFilterArgs) ToGetExternalContainerDatabasesFilterOutput() GetExternalContainerDatabasesFilterOutput {
+	return i.ToGetExternalContainerDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesFilterArgs) ToGetExternalContainerDatabasesFilterOutputWithContext(ctx context.Context) GetExternalContainerDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesFilterOutput)
+}
+
+// GetExternalContainerDatabasesFilterArrayInput is an input type that accepts GetExternalContainerDatabasesFilterArray and GetExternalContainerDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalContainerDatabasesFilterArrayInput` via:
+//
+//	GetExternalContainerDatabasesFilterArray{ GetExternalContainerDatabasesFilterArgs{...} }
+type GetExternalContainerDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalContainerDatabasesFilterArrayOutput() GetExternalContainerDatabasesFilterArrayOutput
+	ToGetExternalContainerDatabasesFilterArrayOutputWithContext(context.Context) GetExternalContainerDatabasesFilterArrayOutput
+}
+
+type GetExternalContainerDatabasesFilterArray []GetExternalContainerDatabasesFilterInput
+
+func (GetExternalContainerDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetExternalContainerDatabasesFilterArray) ToGetExternalContainerDatabasesFilterArrayOutput() GetExternalContainerDatabasesFilterArrayOutput {
+	return i.ToGetExternalContainerDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalContainerDatabasesFilterArray) ToGetExternalContainerDatabasesFilterArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalContainerDatabasesFilterArrayOutput)
+}
+
+type GetExternalContainerDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesFilterOutput) ToGetExternalContainerDatabasesFilterOutput() GetExternalContainerDatabasesFilterOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesFilterOutput) ToGetExternalContainerDatabasesFilterOutputWithContext(ctx context.Context) GetExternalContainerDatabasesFilterOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalContainerDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalContainerDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalContainerDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalContainerDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalContainerDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetExternalContainerDatabasesFilterArrayOutput) ToGetExternalContainerDatabasesFilterArrayOutput() GetExternalContainerDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesFilterArrayOutput) ToGetExternalContainerDatabasesFilterArrayOutputWithContext(ctx context.Context) GetExternalContainerDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalContainerDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetExternalContainerDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalContainerDatabasesFilter {
+		return vs[0].([]GetExternalContainerDatabasesFilter)[vs[1].(int)]
+	}).(GetExternalContainerDatabasesFilterOutput)
+}
+
+type GetExternalDatabaseConnectorConnectionCredential struct {
+	// The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+	CredentialName string `pulumi:"credentialName"`
+	// The type of credential used to connect to the database.
+	CredentialType string `pulumi:"credentialType"`
+	// The password that will be used to connect to the database.
+	Password string `pulumi:"password"`
+	// The role of the user that will be connecting to the database.
+	Role string `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId string `pulumi:"sslSecretId"`
+	// The username that will be used to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDatabaseConnectorConnectionCredentialInput is an input type that accepts GetExternalDatabaseConnectorConnectionCredentialArgs and GetExternalDatabaseConnectorConnectionCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionCredentialInput` via:
+//
+//	GetExternalDatabaseConnectorConnectionCredentialArgs{...}
+type GetExternalDatabaseConnectorConnectionCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorConnectionCredentialOutput() GetExternalDatabaseConnectorConnectionCredentialOutput
+	ToGetExternalDatabaseConnectorConnectionCredentialOutputWithContext(context.Context) GetExternalDatabaseConnectorConnectionCredentialOutput
+}
+
+type GetExternalDatabaseConnectorConnectionCredentialArgs struct {
+	// The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+	CredentialName pulumi.StringInput `pulumi:"credentialName"`
+	// The type of credential used to connect to the database.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The password that will be used to connect to the database.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The role of the user that will be connecting to the database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
+	// The username that will be used to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDatabaseConnectorConnectionCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorConnectionCredentialArgs) ToGetExternalDatabaseConnectorConnectionCredentialOutput() GetExternalDatabaseConnectorConnectionCredentialOutput {
+	return i.ToGetExternalDatabaseConnectorConnectionCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorConnectionCredentialArgs) ToGetExternalDatabaseConnectorConnectionCredentialOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorConnectionCredentialOutput)
+}
+
+// GetExternalDatabaseConnectorConnectionCredentialArrayInput is an input type that accepts GetExternalDatabaseConnectorConnectionCredentialArray and GetExternalDatabaseConnectorConnectionCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionCredentialArrayInput` via:
+//
+//	GetExternalDatabaseConnectorConnectionCredentialArray{ GetExternalDatabaseConnectorConnectionCredentialArgs{...} }
+type GetExternalDatabaseConnectorConnectionCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorConnectionCredentialArrayOutput() GetExternalDatabaseConnectorConnectionCredentialArrayOutput
+	ToGetExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(context.Context) GetExternalDatabaseConnectorConnectionCredentialArrayOutput
+}
+
+type GetExternalDatabaseConnectorConnectionCredentialArray []GetExternalDatabaseConnectorConnectionCredentialInput
+
+func (GetExternalDatabaseConnectorConnectionCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorConnectionCredentialArray) ToGetExternalDatabaseConnectorConnectionCredentialArrayOutput() GetExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return i.ToGetExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorConnectionCredentialArray) ToGetExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorConnectionCredentialArrayOutput)
+}
+
+type GetExternalDatabaseConnectorConnectionCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorConnectionCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) ToGetExternalDatabaseConnectorConnectionCredentialOutput() GetExternalDatabaseConnectorConnectionCredentialOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) ToGetExternalDatabaseConnectorConnectionCredentialOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionCredentialOutput {
+	return o
+}
+
+// The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) CredentialName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.CredentialName }).(pulumi.StringOutput)
+}
+
+// The type of credential used to connect to the database.
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.CredentialType }).(pulumi.StringOutput)
+}
+
+// The password that will be used to connect to the database.
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The role of the user that will be connecting to the database.
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.Role }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) SslSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.SslSecretId }).(pulumi.StringOutput)
+}
+
+// The username that will be used to connect to the database.
+func (o GetExternalDatabaseConnectorConnectionCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetExternalDatabaseConnectorConnectionCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorConnectionCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorConnectionCredentialArrayOutput) ToGetExternalDatabaseConnectorConnectionCredentialArrayOutput() GetExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorConnectionCredentialArrayOutput) ToGetExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorConnectionCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDatabaseConnectorConnectionCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabaseConnectorConnectionCredential {
+		return vs[0].([]GetExternalDatabaseConnectorConnectionCredential)[vs[1].(int)]
+	}).(GetExternalDatabaseConnectorConnectionCredentialOutput)
+}
+
+type GetExternalDatabaseConnectorConnectionString struct {
+	// The host name of the database.
+	Hostname string `pulumi:"hostname"`
+	// The port used to connect to the database.
+	Port int `pulumi:"port"`
+	// The protocol used to connect to the database.
+	Protocol string `pulumi:"protocol"`
+	// The name of the service alias used to connect to the database.
+	Service string `pulumi:"service"`
+}
+
+// GetExternalDatabaseConnectorConnectionStringInput is an input type that accepts GetExternalDatabaseConnectorConnectionStringArgs and GetExternalDatabaseConnectorConnectionStringOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionStringInput` via:
+//
+//	GetExternalDatabaseConnectorConnectionStringArgs{...}
+type GetExternalDatabaseConnectorConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorConnectionStringOutput() GetExternalDatabaseConnectorConnectionStringOutput
+	ToGetExternalDatabaseConnectorConnectionStringOutputWithContext(context.Context) GetExternalDatabaseConnectorConnectionStringOutput
+}
+
+type GetExternalDatabaseConnectorConnectionStringArgs struct {
+	// The host name of the database.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The port used to connect to the database.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The protocol used to connect to the database.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The name of the service alias used to connect to the database.
+	Service pulumi.StringInput `pulumi:"service"`
+}
+
+func (GetExternalDatabaseConnectorConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorConnectionStringArgs) ToGetExternalDatabaseConnectorConnectionStringOutput() GetExternalDatabaseConnectorConnectionStringOutput {
+	return i.ToGetExternalDatabaseConnectorConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorConnectionStringArgs) ToGetExternalDatabaseConnectorConnectionStringOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorConnectionStringOutput)
+}
+
+// GetExternalDatabaseConnectorConnectionStringArrayInput is an input type that accepts GetExternalDatabaseConnectorConnectionStringArray and GetExternalDatabaseConnectorConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorConnectionStringArrayInput` via:
+//
+//	GetExternalDatabaseConnectorConnectionStringArray{ GetExternalDatabaseConnectorConnectionStringArgs{...} }
+type GetExternalDatabaseConnectorConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorConnectionStringArrayOutput() GetExternalDatabaseConnectorConnectionStringArrayOutput
+	ToGetExternalDatabaseConnectorConnectionStringArrayOutputWithContext(context.Context) GetExternalDatabaseConnectorConnectionStringArrayOutput
+}
+
+type GetExternalDatabaseConnectorConnectionStringArray []GetExternalDatabaseConnectorConnectionStringInput
+
+func (GetExternalDatabaseConnectorConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorConnectionStringArray) ToGetExternalDatabaseConnectorConnectionStringArrayOutput() GetExternalDatabaseConnectorConnectionStringArrayOutput {
+	return i.ToGetExternalDatabaseConnectorConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorConnectionStringArray) ToGetExternalDatabaseConnectorConnectionStringArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorConnectionStringArrayOutput)
+}
+
+type GetExternalDatabaseConnectorConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorConnectionStringOutput) ToGetExternalDatabaseConnectorConnectionStringOutput() GetExternalDatabaseConnectorConnectionStringOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorConnectionStringOutput) ToGetExternalDatabaseConnectorConnectionStringOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionStringOutput {
+	return o
+}
+
+// The host name of the database.
+func (o GetExternalDatabaseConnectorConnectionStringOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionString) string { return v.Hostname }).(pulumi.StringOutput)
+}
+
+// The port used to connect to the database.
+func (o GetExternalDatabaseConnectorConnectionStringOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionString) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The protocol used to connect to the database.
+func (o GetExternalDatabaseConnectorConnectionStringOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionString) string { return v.Protocol }).(pulumi.StringOutput)
+}
+
+// The name of the service alias used to connect to the database.
+func (o GetExternalDatabaseConnectorConnectionStringOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorConnectionString) string { return v.Service }).(pulumi.StringOutput)
+}
+
+type GetExternalDatabaseConnectorConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorConnectionStringArrayOutput) ToGetExternalDatabaseConnectorConnectionStringArrayOutput() GetExternalDatabaseConnectorConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorConnectionStringArrayOutput) ToGetExternalDatabaseConnectorConnectionStringArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorConnectionStringArrayOutput) Index(i pulumi.IntInput) GetExternalDatabaseConnectorConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabaseConnectorConnectionString {
+		return vs[0].([]GetExternalDatabaseConnectorConnectionString)[vs[1].(int)]
+	}).(GetExternalDatabaseConnectorConnectionStringOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnector struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+	ConnectionCredentials []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential `pulumi:"connectionCredentials"`
+	// The status of connectivity to the external database.
+	ConnectionStatus string `pulumi:"connectionStatus"`
+	// The Oracle Database connection string.
+	ConnectionStrings []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString `pulumi:"connectionStrings"`
+	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	ConnectorAgentId string `pulumi:"connectorAgentId"`
+	// The type of connector used by the external database resource.
+	ConnectorType string `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
+	ExternalDatabaseId string `pulumi:"externalDatabaseId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the `connectionStatus` of this external connector was last updated.
+	TimeConnectionStatusLastUpdated string `pulumi:"timeConnectionStatusLastUpdated"`
+	// The date and time the external connector was created.
+	TimeCreated string `pulumi:"timeCreated"`
+}
+
+// GetExternalDatabaseConnectorsExternalDatabaseConnectorInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs and GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorInput` via:
+//
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{...}
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutputWithContext(context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs struct {
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+	ConnectionCredentials GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput `pulumi:"connectionCredentials"`
+	// The status of connectivity to the external database.
+	ConnectionStatus pulumi.StringInput `pulumi:"connectionStatus"`
+	// The Oracle Database connection string.
+	ConnectionStrings GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput `pulumi:"connectionStrings"`
+	// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	ConnectorAgentId pulumi.StringInput `pulumi:"connectorAgentId"`
+	// The type of connector used by the external database resource.
+	ConnectorType pulumi.StringInput `pulumi:"connectorType"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
+	ExternalDatabaseId pulumi.StringInput `pulumi:"externalDatabaseId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the `connectionStatus` of this external connector was last updated.
+	TimeConnectionStatusLastUpdated pulumi.StringInput `pulumi:"timeConnectionStatusLastUpdated"`
+	// The date and time the external connector was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+}
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnector)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput {
+	return i.ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput)
+}
+
+// GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorArray and GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput` via:
+//
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{...} }
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutputWithContext(context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorArray []GetExternalDatabaseConnectorsExternalDatabaseConnectorInput
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsExternalDatabaseConnector)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorArray) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput {
+	return i.ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorArray) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnector)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput {
+	return o
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Credentials used to connect to the database. Currently only the `DETAILS` type is supported for creating MACS connector crendentials.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectionCredentials() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential {
+		return v.ConnectionCredentials
+	}).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput)
+}
+
+// The status of connectivity to the external database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectionStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.ConnectionStatus }).(pulumi.StringOutput)
+}
+
+// The Oracle Database connection string.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectionStrings() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString {
+		return v.ConnectionStrings
+	}).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput)
+}
+
+// The ID of the agent used for the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectorAgentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.ConnectorAgentId }).(pulumi.StringOutput)
+}
+
+// The type of connector used by the external database resource.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ConnectorType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.ConnectorType }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the external database whose connectors will be listed.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) ExternalDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.ExternalDatabaseId }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the `connectionStatus` of this external connector was last updated.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) TimeConnectionStatusLastUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string {
+		return v.TimeConnectionStatusLastUpdated
+	}).(pulumi.StringOutput)
+}
+
+// The date and time the external connector was created.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnector) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsExternalDatabaseConnector)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput) Index(i pulumi.IntInput) GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabaseConnectorsExternalDatabaseConnector {
+		return vs[0].([]GetExternalDatabaseConnectorsExternalDatabaseConnector)[vs[1].(int)]
+	}).(GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential struct {
+	// The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+	CredentialName string `pulumi:"credentialName"`
+	// The type of credential used to connect to the database.
+	CredentialType string `pulumi:"credentialType"`
+	// The password that will be used to connect to the database.
+	Password string `pulumi:"password"`
+	// The role of the user that will be connecting to the database.
+	Role string `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId string `pulumi:"sslSecretId"`
+	// The username that will be used to connect to the database.
+	Username string `pulumi:"username"`
+}
+
+// GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput` via:
+//
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{...}
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutputWithContext(context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs struct {
+	// The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+	CredentialName pulumi.StringInput `pulumi:"credentialName"`
+	// The type of credential used to connect to the database.
+	CredentialType pulumi.StringInput `pulumi:"credentialType"`
+	// The password that will be used to connect to the database.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The role of the user that will be connecting to the database.
+	Role pulumi.StringInput `pulumi:"role"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+	SslSecretId pulumi.StringInput `pulumi:"sslSecretId"`
+	// The username that will be used to connect to the database.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput {
+	return i.ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput)
+}
+
+// GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput` via:
+//
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{...} }
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return i.ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput {
+	return o
+}
+
+// The name of the credential information that used to connect to the database. The name should be in "x.y" format, where the length of "x" has a maximum of 64 characters, and length of "y" has a maximum of 199 characters. The name strings can contain letters, numbers and the underscore character only. Other characters are not valid, except for the "." character that separates the "x" and "y" portions of the name. *IMPORTANT* - The name must be unique within the Oracle Cloud Infrastructure region the credential is being created in. If you specify a name that duplicates the name of another credential within the same Oracle Cloud Infrastructure region, you may overwrite or corrupt the credential that is already using the name.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) CredentialName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.CredentialName
+	}).(pulumi.StringOutput)
+}
+
+// The type of credential used to connect to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) CredentialType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.CredentialType
+	}).(pulumi.StringOutput)
+}
+
+// The password that will be used to connect to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// The role of the user that will be connecting to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) Role() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.Role
+	}).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [secret](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts).
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) SslSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.SslSecretId
+	}).(pulumi.StringOutput)
+}
+
+// The username that will be used to connect to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput) Index(i pulumi.IntInput) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential {
+		return vs[0].([]GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredential)[vs[1].(int)]
+	}).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString struct {
+	// The host name of the database.
+	Hostname string `pulumi:"hostname"`
+	// The port used to connect to the database.
+	Port int `pulumi:"port"`
+	// The protocol used to connect to the database.
+	Protocol string `pulumi:"protocol"`
+	// The name of the service alias used to connect to the database.
+	Service string `pulumi:"service"`
+}
+
+// GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput` via:
+//
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{...}
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutputWithContext(context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs struct {
+	// The host name of the database.
+	Hostname pulumi.StringInput `pulumi:"hostname"`
+	// The port used to connect to the database.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The protocol used to connect to the database.
+	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// The name of the service alias used to connect to the database.
+	Service pulumi.StringInput `pulumi:"service"`
+}
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput {
+	return i.ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput)
+}
+
+// GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput is an input type that accepts GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray and GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput` via:
+//
+//	GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray{ GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{...} }
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput
+	ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutputWithContext(context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray []GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput {
+	return i.ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput {
+	return o
+}
+
+// The host name of the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) Hostname() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString) string {
+		return v.Hostname
+	}).(pulumi.StringOutput)
+}
+
+// The port used to connect to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The protocol used to connect to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) Protocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString) string {
+		return v.Protocol
+	}).(pulumi.StringOutput)
+}
+
+// The name of the service alias used to connect to the database.
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput) Service() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString) string {
+		return v.Service
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput() GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput) ToGetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput) Index(i pulumi.IntInput) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString {
+		return vs[0].([]GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionString)[vs[1].(int)]
+	}).(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput)
+}
+
+type GetExternalDatabaseConnectorsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalDatabaseConnectorsFilterInput is an input type that accepts GetExternalDatabaseConnectorsFilterArgs and GetExternalDatabaseConnectorsFilterOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsFilterInput` via:
+//
+//	GetExternalDatabaseConnectorsFilterArgs{...}
+type GetExternalDatabaseConnectorsFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsFilterOutput() GetExternalDatabaseConnectorsFilterOutput
+	ToGetExternalDatabaseConnectorsFilterOutputWithContext(context.Context) GetExternalDatabaseConnectorsFilterOutput
+}
+
+type GetExternalDatabaseConnectorsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalDatabaseConnectorsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsFilterArgs) ToGetExternalDatabaseConnectorsFilterOutput() GetExternalDatabaseConnectorsFilterOutput {
+	return i.ToGetExternalDatabaseConnectorsFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsFilterArgs) ToGetExternalDatabaseConnectorsFilterOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsFilterOutput)
+}
+
+// GetExternalDatabaseConnectorsFilterArrayInput is an input type that accepts GetExternalDatabaseConnectorsFilterArray and GetExternalDatabaseConnectorsFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalDatabaseConnectorsFilterArrayInput` via:
+//
+//	GetExternalDatabaseConnectorsFilterArray{ GetExternalDatabaseConnectorsFilterArgs{...} }
+type GetExternalDatabaseConnectorsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalDatabaseConnectorsFilterArrayOutput() GetExternalDatabaseConnectorsFilterArrayOutput
+	ToGetExternalDatabaseConnectorsFilterArrayOutputWithContext(context.Context) GetExternalDatabaseConnectorsFilterArrayOutput
+}
+
+type GetExternalDatabaseConnectorsFilterArray []GetExternalDatabaseConnectorsFilterInput
+
+func (GetExternalDatabaseConnectorsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsFilter)(nil)).Elem()
+}
+
+func (i GetExternalDatabaseConnectorsFilterArray) ToGetExternalDatabaseConnectorsFilterArrayOutput() GetExternalDatabaseConnectorsFilterArrayOutput {
+	return i.ToGetExternalDatabaseConnectorsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalDatabaseConnectorsFilterArray) ToGetExternalDatabaseConnectorsFilterArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalDatabaseConnectorsFilterArrayOutput)
+}
+
+type GetExternalDatabaseConnectorsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalDatabaseConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsFilterOutput) ToGetExternalDatabaseConnectorsFilterOutput() GetExternalDatabaseConnectorsFilterOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsFilterOutput) ToGetExternalDatabaseConnectorsFilterOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsFilterOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalDatabaseConnectorsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalDatabaseConnectorsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalDatabaseConnectorsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalDatabaseConnectorsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalDatabaseConnectorsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalDatabaseConnectorsFilter)(nil)).Elem()
+}
+
+func (o GetExternalDatabaseConnectorsFilterArrayOutput) ToGetExternalDatabaseConnectorsFilterArrayOutput() GetExternalDatabaseConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsFilterArrayOutput) ToGetExternalDatabaseConnectorsFilterArrayOutputWithContext(ctx context.Context) GetExternalDatabaseConnectorsFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalDatabaseConnectorsFilterArrayOutput) Index(i pulumi.IntInput) GetExternalDatabaseConnectorsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalDatabaseConnectorsFilter {
+		return vs[0].([]GetExternalDatabaseConnectorsFilter)[vs[1].(int)]
+	}).(GetExternalDatabaseConnectorsFilterOutput)
+}
+
+type GetExternalNonContainerDatabaseDatabaseManagementConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId string `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel string `pulumi:"licenseModel"`
+}
+
+// GetExternalNonContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalNonContainerDatabaseDatabaseManagementConfigArgs and GetExternalNonContainerDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
+type GetExternalNonContainerDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutput() GetExternalNonContainerDatabaseDatabaseManagementConfigOutput
+	ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetExternalNonContainerDatabaseDatabaseManagementConfigOutput
+}
+
+type GetExternalNonContainerDatabaseDatabaseManagementConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId pulumi.StringInput `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus pulumi.StringInput `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+}
+
+func (GetExternalNonContainerDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutput() GetExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseDatabaseManagementConfigArray and GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetExternalNonContainerDatabaseDatabaseManagementConfigArray{ GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
+type GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput
+	ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabaseDatabaseManagementConfigArray []GetExternalNonContainerDatabaseDatabaseManagementConfigInput
+
+func (GetExternalNonContainerDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseDatabaseManagementConfigArray) ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseDatabaseManagementConfigArray) ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutput() GetExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Database Management service.
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementStatus
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the external database.
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseDatabaseManagementConfig) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetExternalNonContainerDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+type GetExternalNonContainerDatabaseOperationsInsightsConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId string `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
+}
+
+// GetExternalNonContainerDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalNonContainerDatabaseOperationsInsightsConfigArgs and GetExternalNonContainerDatabaseOperationsInsightsConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseOperationsInsightsConfigInput` via:
+//
+//	GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
+type GetExternalNonContainerDatabaseOperationsInsightsConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutput() GetExternalNonContainerDatabaseOperationsInsightsConfigOutput
+	ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(context.Context) GetExternalNonContainerDatabaseOperationsInsightsConfigOutput
+}
+
+type GetExternalNonContainerDatabaseOperationsInsightsConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId pulumi.StringInput `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus pulumi.StringInput `pulumi:"operationsInsightsStatus"`
+}
+
+func (GetExternalNonContainerDatabaseOperationsInsightsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseOperationsInsightsConfigArgs) ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutput() GetExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return i.ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseOperationsInsightsConfigArgs) ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseOperationsInsightsConfigOutput)
+}
+
+// GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseOperationsInsightsConfigArray and GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput` via:
+//
+//	GetExternalNonContainerDatabaseOperationsInsightsConfigArray{ GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
+type GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput() GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput
+	ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabaseOperationsInsightsConfigArray []GetExternalNonContainerDatabaseOperationsInsightsConfigInput
+
+func (GetExternalNonContainerDatabaseOperationsInsightsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseOperationsInsightsConfigArray) ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput() GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseOperationsInsightsConfigArray) ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabaseOperationsInsightsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseOperationsInsightsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigOutput) ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutput() GetExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigOutput) ToGetExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigOutput) OperationsInsightsConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Operations Insights
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigOutput) OperationsInsightsStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput() GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabaseOperationsInsightsConfig {
+		return vs[0].([]GetExternalNonContainerDatabaseOperationsInsightsConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabaseOperationsInsightsConfigOutput)
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalNonContainerDatabaseStackMonitoringConfigArgs and GetExternalNonContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseStackMonitoringConfigInput` via:
+//
+//	GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalNonContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalNonContainerDatabaseStackMonitoringConfigArray and GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigArray []GetExternalNonContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabaseStackMonitoringConfig) string { return v.StackMonitoringStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalNonContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabase struct {
+	// The character set of the external database.
+	CharacterSet string `pulumi:"characterSet"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The Oracle Database configuration
+	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
+	// The Oracle Database edition.
+	DatabaseEdition string `pulumi:"databaseEdition"`
+	// The configuration of the Database Management service.
+	DatabaseManagementConfigs []GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
+	// The Oracle Database version.
+	DatabaseVersion string `pulumi:"databaseVersion"`
+	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+	DbId string `pulumi:"dbId"`
+	// The database packs licensed for the external Oracle Database.
+	DbPacks string `pulumi:"dbPacks"`
+	// The `DB_UNIQUE_NAME` of the external database.
+	DbUniqueName string `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The national character of the external database.
+	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The configuration of Operations Insights for the external database
+	OperationsInsightsConfigs []GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the database was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{...}
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs struct {
+	// The character set of the external database.
+	CharacterSet pulumi.StringInput `pulumi:"characterSet"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The Oracle Database configuration
+	DatabaseConfiguration pulumi.StringInput `pulumi:"databaseConfiguration"`
+	// The Oracle Database edition.
+	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
+	// The configuration of the Database Management service.
+	DatabaseManagementConfigs GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
+	// The Oracle Database version.
+	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
+	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+	DbId pulumi.StringInput `pulumi:"dbId"`
+	// The database packs licensed for the external Oracle Database.
+	DbPacks pulumi.StringInput `pulumi:"dbPacks"`
+	// The `DB_UNIQUE_NAME` of the external database.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The national character of the external database.
+	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The configuration of Operations Insights for the external database
+	OperationsInsightsConfigs GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput `pulumi:"operationsInsightsConfigs"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabase)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput)
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{...} }
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray []GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabase)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabase)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput {
+	return o
+}
+
+// The character set of the external database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The Oracle Database configuration
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DatabaseConfiguration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string {
+		return v.DatabaseConfiguration
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle Database edition.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+}
+
+// The configuration of the Database Management service.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DatabaseManagementConfigs() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) []GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig {
+		return v.DatabaseManagementConfigs
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+// The Oracle Database version.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
+// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DbId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DbId }).(pulumi.StringOutput)
+}
+
+// The database packs licensed for the external Oracle Database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DbPacks() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DbPacks }).(pulumi.StringOutput)
+}
+
+// The `DB_UNIQUE_NAME` of the external database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The national character of the external database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The configuration of Operations Insights for the external database
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) OperationsInsightsConfigs() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) []GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig {
+		return v.OperationsInsightsConfigs
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) StackMonitoringConfigs() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) []GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was created.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabase) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabase)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesExternalNonContainerDatabase {
+		return vs[0].([]GetExternalNonContainerDatabasesExternalNonContainerDatabase)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId string `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel string `pulumi:"licenseModel"`
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{...}
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId pulumi.StringInput `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus pulumi.StringInput `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+}
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{...} }
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray []GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Database Management service.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput) DatabaseManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementStatus
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the external database.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId string `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{...}
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId pulumi.StringInput `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus pulumi.StringInput `pulumi:"operationsInsightsStatus"`
+}
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput)
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{...} }
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray []GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput) OperationsInsightsConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Operations Insights
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput) OperationsInsightsStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig {
+		return vs[0].([]GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs and GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...}
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray and GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray{ GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray []GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput() GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) ToGetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput)
+}
+
+type GetExternalNonContainerDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalNonContainerDatabasesFilterInput is an input type that accepts GetExternalNonContainerDatabasesFilterArgs and GetExternalNonContainerDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesFilterInput` via:
+//
+//	GetExternalNonContainerDatabasesFilterArgs{...}
+type GetExternalNonContainerDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesFilterOutput() GetExternalNonContainerDatabasesFilterOutput
+	ToGetExternalNonContainerDatabasesFilterOutputWithContext(context.Context) GetExternalNonContainerDatabasesFilterOutput
+}
+
+type GetExternalNonContainerDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalNonContainerDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesFilterArgs) ToGetExternalNonContainerDatabasesFilterOutput() GetExternalNonContainerDatabasesFilterOutput {
+	return i.ToGetExternalNonContainerDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesFilterArgs) ToGetExternalNonContainerDatabasesFilterOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesFilterOutput)
+}
+
+// GetExternalNonContainerDatabasesFilterArrayInput is an input type that accepts GetExternalNonContainerDatabasesFilterArray and GetExternalNonContainerDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalNonContainerDatabasesFilterArrayInput` via:
+//
+//	GetExternalNonContainerDatabasesFilterArray{ GetExternalNonContainerDatabasesFilterArgs{...} }
+type GetExternalNonContainerDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalNonContainerDatabasesFilterArrayOutput() GetExternalNonContainerDatabasesFilterArrayOutput
+	ToGetExternalNonContainerDatabasesFilterArrayOutputWithContext(context.Context) GetExternalNonContainerDatabasesFilterArrayOutput
+}
+
+type GetExternalNonContainerDatabasesFilterArray []GetExternalNonContainerDatabasesFilterInput
+
+func (GetExternalNonContainerDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetExternalNonContainerDatabasesFilterArray) ToGetExternalNonContainerDatabasesFilterArrayOutput() GetExternalNonContainerDatabasesFilterArrayOutput {
+	return i.ToGetExternalNonContainerDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalNonContainerDatabasesFilterArray) ToGetExternalNonContainerDatabasesFilterArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalNonContainerDatabasesFilterArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalNonContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesFilterOutput) ToGetExternalNonContainerDatabasesFilterOutput() GetExternalNonContainerDatabasesFilterOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesFilterOutput) ToGetExternalNonContainerDatabasesFilterOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesFilterOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalNonContainerDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalNonContainerDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalNonContainerDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalNonContainerDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalNonContainerDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalNonContainerDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetExternalNonContainerDatabasesFilterArrayOutput) ToGetExternalNonContainerDatabasesFilterArrayOutput() GetExternalNonContainerDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesFilterArrayOutput) ToGetExternalNonContainerDatabasesFilterArrayOutputWithContext(ctx context.Context) GetExternalNonContainerDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalNonContainerDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetExternalNonContainerDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalNonContainerDatabasesFilter {
+		return vs[0].([]GetExternalNonContainerDatabasesFilter)[vs[1].(int)]
+	}).(GetExternalNonContainerDatabasesFilterOutput)
+}
+
+type GetExternalPluggableDatabaseDatabaseManagementConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId string `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel string `pulumi:"licenseModel"`
+}
+
+// GetExternalPluggableDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalPluggableDatabaseDatabaseManagementConfigArgs and GetExternalPluggableDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
+type GetExternalPluggableDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseDatabaseManagementConfigOutput() GetExternalPluggableDatabaseDatabaseManagementConfigOutput
+	ToGetExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetExternalPluggableDatabaseDatabaseManagementConfigOutput
+}
+
+type GetExternalPluggableDatabaseDatabaseManagementConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId pulumi.StringInput `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus pulumi.StringInput `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+}
+
+func (GetExternalPluggableDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseDatabaseManagementConfigArgs) ToGetExternalPluggableDatabaseDatabaseManagementConfigOutput() GetExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseDatabaseManagementConfigArgs) ToGetExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseDatabaseManagementConfigArray and GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetExternalPluggableDatabaseDatabaseManagementConfigArray{ GetExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
+type GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput() GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput
+	ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetExternalPluggableDatabaseDatabaseManagementConfigArray []GetExternalPluggableDatabaseDatabaseManagementConfigInput
+
+func (GetExternalPluggableDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseDatabaseManagementConfigArray) ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput() GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseDatabaseManagementConfigArray) ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigOutput) ToGetExternalPluggableDatabaseDatabaseManagementConfigOutput() GetExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigOutput) ToGetExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigOutput) DatabaseManagementConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Database Management service.
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigOutput) DatabaseManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseDatabaseManagementConfig) string { return v.DatabaseManagementStatus }).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the external database.
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseDatabaseManagementConfig) string { return v.LicenseModel }).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput() GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetExternalPluggableDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabaseDatabaseManagementConfigOutput)
+}
+
+type GetExternalPluggableDatabaseOperationsInsightsConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId string `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
+}
+
+// GetExternalPluggableDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalPluggableDatabaseOperationsInsightsConfigArgs and GetExternalPluggableDatabaseOperationsInsightsConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseOperationsInsightsConfigInput` via:
+//
+//	GetExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
+type GetExternalPluggableDatabaseOperationsInsightsConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseOperationsInsightsConfigOutput() GetExternalPluggableDatabaseOperationsInsightsConfigOutput
+	ToGetExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(context.Context) GetExternalPluggableDatabaseOperationsInsightsConfigOutput
+}
+
+type GetExternalPluggableDatabaseOperationsInsightsConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId pulumi.StringInput `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus pulumi.StringInput `pulumi:"operationsInsightsStatus"`
+}
+
+func (GetExternalPluggableDatabaseOperationsInsightsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseOperationsInsightsConfigArgs) ToGetExternalPluggableDatabaseOperationsInsightsConfigOutput() GetExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return i.ToGetExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseOperationsInsightsConfigArgs) ToGetExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseOperationsInsightsConfigOutput)
+}
+
+// GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseOperationsInsightsConfigArray and GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput` via:
+//
+//	GetExternalPluggableDatabaseOperationsInsightsConfigArray{ GetExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
+type GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput() GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput
+	ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput
+}
+
+type GetExternalPluggableDatabaseOperationsInsightsConfigArray []GetExternalPluggableDatabaseOperationsInsightsConfigInput
+
+func (GetExternalPluggableDatabaseOperationsInsightsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseOperationsInsightsConfigArray) ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput() GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseOperationsInsightsConfigArray) ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabaseOperationsInsightsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseOperationsInsightsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigOutput) ToGetExternalPluggableDatabaseOperationsInsightsConfigOutput() GetExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigOutput) ToGetExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigOutput) OperationsInsightsConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Operations Insights
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigOutput) OperationsInsightsStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseOperationsInsightsConfig) string { return v.OperationsInsightsStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput() GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabaseOperationsInsightsConfig {
+		return vs[0].([]GetExternalPluggableDatabaseOperationsInsightsConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabaseOperationsInsightsConfigOutput)
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalPluggableDatabaseStackMonitoringConfigArgs and GetExternalPluggableDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseStackMonitoringConfigInput` via:
+//
+//	GetExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+type GetExternalPluggableDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabaseStackMonitoringConfigOutput
+	ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalPluggableDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalPluggableDatabaseStackMonitoringConfigArray and GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigArray []GetExternalPluggableDatabaseStackMonitoringConfigInput
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseStackMonitoringConfig) string { return v.StackMonitoringConnectorId }).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabaseStackMonitoringConfig) string { return v.StackMonitoringStatus }).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalPluggableDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabase struct {
+	// The character set of the external database.
+	CharacterSet string `pulumi:"characterSet"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId string `pulumi:"compartmentId"`
+	// The Oracle Database configuration
+	DatabaseConfiguration string `pulumi:"databaseConfiguration"`
+	// The Oracle Database edition.
+	DatabaseEdition string `pulumi:"databaseEdition"`
+	// The configuration of the Database Management service.
+	DatabaseManagementConfigs []GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig `pulumi:"databaseManagementConfigs"`
+	// The Oracle Database version.
+	DatabaseVersion string `pulumi:"databaseVersion"`
+	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+	DbId string `pulumi:"dbId"`
+	// The database packs licensed for the external Oracle Database.
+	DbPacks string `pulumi:"dbPacks"`
+	// The `DB_UNIQUE_NAME` of the external database.
+	DbUniqueName string `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName string `pulumi:"displayName"`
+	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ExternalContainerDatabaseId string `pulumi:"externalContainerDatabaseId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+	Id string `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// The national character of the external database.
+	NcharacterSet string `pulumi:"ncharacterSet"`
+	// The configuration of Operations Insights for the external database
+	OperationsInsightsConfigs []GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig `pulumi:"operationsInsightsConfigs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	SourceId string `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs []GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig `pulumi:"stackMonitoringConfigs"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State string `pulumi:"state"`
+	// The date and time the database was created.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+	TimeZone string `pulumi:"timeZone"`
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{...}
+type GetExternalPluggableDatabasesExternalPluggableDatabaseInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseArgs struct {
+	// The character set of the external database.
+	CharacterSet pulumi.StringInput `pulumi:"characterSet"`
+	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// The Oracle Database configuration
+	DatabaseConfiguration pulumi.StringInput `pulumi:"databaseConfiguration"`
+	// The Oracle Database edition.
+	DatabaseEdition pulumi.StringInput `pulumi:"databaseEdition"`
+	// The configuration of the Database Management service.
+	DatabaseManagementConfigs GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput `pulumi:"databaseManagementConfigs"`
+	// The Oracle Database version.
+	DatabaseVersion pulumi.StringInput `pulumi:"databaseVersion"`
+	// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+	DbId pulumi.StringInput `pulumi:"dbId"`
+	// The database packs licensed for the external Oracle Database.
+	DbPacks pulumi.StringInput `pulumi:"dbPacks"`
+	// The `DB_UNIQUE_NAME` of the external database.
+	DbUniqueName pulumi.StringInput `pulumi:"dbUniqueName"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+	ExternalContainerDatabaseId pulumi.StringInput `pulumi:"externalContainerDatabaseId"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Additional information about the current lifecycle state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// The national character of the external database.
+	NcharacterSet pulumi.StringInput `pulumi:"ncharacterSet"`
+	// The configuration of Operations Insights for the external database
+	OperationsInsightsConfigs GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput `pulumi:"operationsInsightsConfigs"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+	SourceId pulumi.StringInput `pulumi:"sourceId"`
+	// The configuration of Stack Monitoring for the external database.
+	StackMonitoringConfigs GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput `pulumi:"stackMonitoringConfigs"`
+	// A filter to return only resources that match the specified lifecycle state.
+	State pulumi.StringInput `pulumi:"state"`
+	// The date and time the database was created.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+	TimeZone pulumi.StringInput `pulumi:"timeZone"`
+}
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabase)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseOutput)
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseArray and GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{...} }
+type GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseArray []GetExternalPluggableDatabasesExternalPluggableDatabaseInput
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabase)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabase)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOutput {
+	return o
+}
+
+// The character set of the external database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) CharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.CharacterSet }).(pulumi.StringOutput)
+}
+
+// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// The Oracle Database configuration
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DatabaseConfiguration() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DatabaseConfiguration }).(pulumi.StringOutput)
+}
+
+// The Oracle Database edition.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DatabaseEdition() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DatabaseEdition }).(pulumi.StringOutput)
+}
+
+// The configuration of the Database Management service.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DatabaseManagementConfigs() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) []GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig {
+		return v.DatabaseManagementConfigs
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+// The Oracle Database version.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DatabaseVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DatabaseVersion }).(pulumi.StringOutput)
+}
+
+// The Oracle Database ID, which identifies an Oracle Database located outside of Oracle Cloud.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DbId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DbId }).(pulumi.StringOutput)
+}
+
+// The database packs licensed for the external Oracle Database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DbPacks() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DbPacks }).(pulumi.StringOutput)
+}
+
+// The `DB_UNIQUE_NAME` of the external database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DbUniqueName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DbUniqueName }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) map[string]interface{} {
+		return v.DefinedTags
+	}).(pulumi.MapOutput)
+}
+
+// A filter to return only resources that match the entire display name given. The match is not case sensitive.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// The ExternalContainerDatabase [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) ExternalContainerDatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string {
+		return v.ExternalContainerDatabaseId
+	}).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) map[string]interface{} {
+		return v.FreeformTags
+	}).(pulumi.MapOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure external database resource.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Additional information about the current lifecycle state.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// The national character of the external database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) NcharacterSet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.NcharacterSet }).(pulumi.StringOutput)
+}
+
+// The configuration of Operations Insights for the external database
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) OperationsInsightsConfigs() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) []GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig {
+		return v.OperationsInsightsConfigs
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the the non-container database that was converted to a pluggable database to create this resource.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) SourceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.SourceId }).(pulumi.StringOutput)
+}
+
+// The configuration of Stack Monitoring for the external database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) StackMonitoringConfigs() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) []GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig {
+		return v.StackMonitoringConfigs
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
+}
+
+// A filter to return only resources that match the specified lifecycle state.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.State }).(pulumi.StringOutput)
+}
+
+// The date and time the database was created.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time zone of the external database. It is a time zone offset (a character type in the format '[+|-]TZH:TZM') or a time zone region name, depending on how the time zone value was specified when the database was created / last altered.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOutput) TimeZone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabase) string { return v.TimeZone }).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabase)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabasesExternalPluggableDatabaseOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesExternalPluggableDatabase {
+		return vs[0].([]GetExternalPluggableDatabasesExternalPluggableDatabase)[vs[1].(int)]
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId string `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus string `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel string `pulumi:"licenseModel"`
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{...}
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	DatabaseManagementConnectionId pulumi.StringInput `pulumi:"databaseManagementConnectionId"`
+	// The status of the Database Management service.
+	DatabaseManagementStatus pulumi.StringInput `pulumi:"databaseManagementStatus"`
+	// The Oracle license model that applies to the external database.
+	LicenseModel pulumi.StringInput `pulumi:"licenseModel"`
+}
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput)
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{...} }
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray []GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput) DatabaseManagementConnectionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementConnectionId
+	}).(pulumi.StringOutput)
+}
+
+// The status of the Database Management service.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput) DatabaseManagementStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig) string {
+		return v.DatabaseManagementStatus
+	}).(pulumi.StringOutput)
+}
+
+// The Oracle license model that applies to the external database.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput) LicenseModel() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig) string {
+		return v.LicenseModel
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig {
+		return vs[0].([]GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId string `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus string `pulumi:"operationsInsightsStatus"`
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{...}
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	OperationsInsightsConnectorId pulumi.StringInput `pulumi:"operationsInsightsConnectorId"`
+	// The status of Operations Insights
+	OperationsInsightsStatus pulumi.StringInput `pulumi:"operationsInsightsStatus"`
+}
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput)
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{...} }
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray []GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput) OperationsInsightsConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Operations Insights
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput) OperationsInsightsStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig) string {
+		return v.OperationsInsightsStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig {
+		return vs[0].([]GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId string `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus string `pulumi:"stackMonitoringStatus"`
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs and GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...}
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs struct {
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+	StackMonitoringConnectorId pulumi.StringInput `pulumi:"stackMonitoringConnectorId"`
+	// The status of Stack Monitoring.
+	StackMonitoringStatus pulumi.StringInput `pulumi:"stackMonitoringStatus"`
+}
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+// GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput is an input type that accepts GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray and GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput` via:
+//
+//	GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray{ GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{...} }
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+	ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray []GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return i.ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return o
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringConnectorId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringConnectorId
+	}).(pulumi.StringOutput)
+}
+
+// The status of Stack Monitoring.
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput) StackMonitoringStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig) string {
+		return v.StackMonitoringStatus
+	}).(pulumi.StringOutput)
+}
+
+type GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput() GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) ToGetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig {
+		return vs[0].([]GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfig)[vs[1].(int)]
+	}).(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput)
+}
+
+type GetExternalPluggableDatabasesFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetExternalPluggableDatabasesFilterInput is an input type that accepts GetExternalPluggableDatabasesFilterArgs and GetExternalPluggableDatabasesFilterOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesFilterInput` via:
+//
+//	GetExternalPluggableDatabasesFilterArgs{...}
+type GetExternalPluggableDatabasesFilterInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesFilterOutput() GetExternalPluggableDatabasesFilterOutput
+	ToGetExternalPluggableDatabasesFilterOutputWithContext(context.Context) GetExternalPluggableDatabasesFilterOutput
+}
+
+type GetExternalPluggableDatabasesFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetExternalPluggableDatabasesFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesFilterArgs) ToGetExternalPluggableDatabasesFilterOutput() GetExternalPluggableDatabasesFilterOutput {
+	return i.ToGetExternalPluggableDatabasesFilterOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesFilterArgs) ToGetExternalPluggableDatabasesFilterOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesFilterOutput)
+}
+
+// GetExternalPluggableDatabasesFilterArrayInput is an input type that accepts GetExternalPluggableDatabasesFilterArray and GetExternalPluggableDatabasesFilterArrayOutput values.
+// You can construct a concrete instance of `GetExternalPluggableDatabasesFilterArrayInput` via:
+//
+//	GetExternalPluggableDatabasesFilterArray{ GetExternalPluggableDatabasesFilterArgs{...} }
+type GetExternalPluggableDatabasesFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetExternalPluggableDatabasesFilterArrayOutput() GetExternalPluggableDatabasesFilterArrayOutput
+	ToGetExternalPluggableDatabasesFilterArrayOutputWithContext(context.Context) GetExternalPluggableDatabasesFilterArrayOutput
+}
+
+type GetExternalPluggableDatabasesFilterArray []GetExternalPluggableDatabasesFilterInput
+
+func (GetExternalPluggableDatabasesFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (i GetExternalPluggableDatabasesFilterArray) ToGetExternalPluggableDatabasesFilterArrayOutput() GetExternalPluggableDatabasesFilterArrayOutput {
+	return i.ToGetExternalPluggableDatabasesFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetExternalPluggableDatabasesFilterArray) ToGetExternalPluggableDatabasesFilterArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetExternalPluggableDatabasesFilterArrayOutput)
+}
+
+type GetExternalPluggableDatabasesFilterOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetExternalPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesFilterOutput) ToGetExternalPluggableDatabasesFilterOutput() GetExternalPluggableDatabasesFilterOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesFilterOutput) ToGetExternalPluggableDatabasesFilterOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesFilterOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetExternalPluggableDatabasesFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetExternalPluggableDatabasesFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetExternalPluggableDatabasesFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetExternalPluggableDatabasesFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetExternalPluggableDatabasesFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetExternalPluggableDatabasesFilter)(nil)).Elem()
+}
+
+func (o GetExternalPluggableDatabasesFilterArrayOutput) ToGetExternalPluggableDatabasesFilterArrayOutput() GetExternalPluggableDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesFilterArrayOutput) ToGetExternalPluggableDatabasesFilterArrayOutputWithContext(ctx context.Context) GetExternalPluggableDatabasesFilterArrayOutput {
+	return o
+}
+
+func (o GetExternalPluggableDatabasesFilterArrayOutput) Index(i pulumi.IntInput) GetExternalPluggableDatabasesFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetExternalPluggableDatabasesFilter {
+		return vs[0].([]GetExternalPluggableDatabasesFilter)[vs[1].(int)]
+	}).(GetExternalPluggableDatabasesFilterOutput)
+}
+
+type GetFlexComponentsFilter struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetFlexComponentsFilterInput is an input type that accepts GetFlexComponentsFilterArgs and GetFlexComponentsFilterOutput values.
+// You can construct a concrete instance of `GetFlexComponentsFilterInput` via:
+//
+//	GetFlexComponentsFilterArgs{...}
+type GetFlexComponentsFilterInput interface {
+	pulumi.Input
+
+	ToGetFlexComponentsFilterOutput() GetFlexComponentsFilterOutput
+	ToGetFlexComponentsFilterOutputWithContext(context.Context) GetFlexComponentsFilterOutput
+}
+
+type GetFlexComponentsFilterArgs struct {
+	// A filter to return only resources that match the entire name given. The match is not case sensitive.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetFlexComponentsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlexComponentsFilter)(nil)).Elem()
+}
+
+func (i GetFlexComponentsFilterArgs) ToGetFlexComponentsFilterOutput() GetFlexComponentsFilterOutput {
+	return i.ToGetFlexComponentsFilterOutputWithContext(context.Background())
+}
+
+func (i GetFlexComponentsFilterArgs) ToGetFlexComponentsFilterOutputWithContext(ctx context.Context) GetFlexComponentsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlexComponentsFilterOutput)
+}
+
+// GetFlexComponentsFilterArrayInput is an input type that accepts GetFlexComponentsFilterArray and GetFlexComponentsFilterArrayOutput values.
+// You can construct a concrete instance of `GetFlexComponentsFilterArrayInput` via:
+//
+//	GetFlexComponentsFilterArray{ GetFlexComponentsFilterArgs{...} }
+type GetFlexComponentsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetFlexComponentsFilterArrayOutput() GetFlexComponentsFilterArrayOutput
+	ToGetFlexComponentsFilterArrayOutputWithContext(context.Context) GetFlexComponentsFilterArrayOutput
+}
+
+type GetFlexComponentsFilterArray []GetFlexComponentsFilterInput
+
+func (GetFlexComponentsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlexComponentsFilter)(nil)).Elem()
+}
+
+func (i GetFlexComponentsFilterArray) ToGetFlexComponentsFilterArrayOutput() GetFlexComponentsFilterArrayOutput {
+	return i.ToGetFlexComponentsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetFlexComponentsFilterArray) ToGetFlexComponentsFilterArrayOutputWithContext(ctx context.Context) GetFlexComponentsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlexComponentsFilterArrayOutput)
+}
+
+type GetFlexComponentsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetFlexComponentsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlexComponentsFilter)(nil)).Elem()
+}
+
+func (o GetFlexComponentsFilterOutput) ToGetFlexComponentsFilterOutput() GetFlexComponentsFilterOutput {
+	return o
+}
+
+func (o GetFlexComponentsFilterOutput) ToGetFlexComponentsFilterOutputWithContext(ctx context.Context) GetFlexComponentsFilterOutput {
+	return o
+}
+
+// A filter to return only resources that match the entire name given. The match is not case sensitive.
+func (o GetFlexComponentsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFlexComponentsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetFlexComponentsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetFlexComponentsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetFlexComponentsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetFlexComponentsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetFlexComponentsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFlexComponentsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlexComponentsFilter)(nil)).Elem()
+}
+
+func (o GetFlexComponentsFilterArrayOutput) ToGetFlexComponentsFilterArrayOutput() GetFlexComponentsFilterArrayOutput {
+	return o
+}
+
+func (o GetFlexComponentsFilterArrayOutput) ToGetFlexComponentsFilterArrayOutputWithContext(ctx context.Context) GetFlexComponentsFilterArrayOutput {
+	return o
+}
+
+func (o GetFlexComponentsFilterArrayOutput) Index(i pulumi.IntInput) GetFlexComponentsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFlexComponentsFilter {
+		return vs[0].([]GetFlexComponentsFilter)[vs[1].(int)]
+	}).(GetFlexComponentsFilterOutput)
+}
+
+type GetFlexComponentsFlexComponentCollection struct {
+	Items []GetFlexComponentsFlexComponentCollectionItem `pulumi:"items"`
+}
+
+// GetFlexComponentsFlexComponentCollectionInput is an input type that accepts GetFlexComponentsFlexComponentCollectionArgs and GetFlexComponentsFlexComponentCollectionOutput values.
+// You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionInput` via:
+//
+//	GetFlexComponentsFlexComponentCollectionArgs{...}
+type GetFlexComponentsFlexComponentCollectionInput interface {
+	pulumi.Input
+
+	ToGetFlexComponentsFlexComponentCollectionOutput() GetFlexComponentsFlexComponentCollectionOutput
+	ToGetFlexComponentsFlexComponentCollectionOutputWithContext(context.Context) GetFlexComponentsFlexComponentCollectionOutput
+}
+
+type GetFlexComponentsFlexComponentCollectionArgs struct {
+	Items GetFlexComponentsFlexComponentCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetFlexComponentsFlexComponentCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlexComponentsFlexComponentCollection)(nil)).Elem()
+}
+
+func (i GetFlexComponentsFlexComponentCollectionArgs) ToGetFlexComponentsFlexComponentCollectionOutput() GetFlexComponentsFlexComponentCollectionOutput {
+	return i.ToGetFlexComponentsFlexComponentCollectionOutputWithContext(context.Background())
+}
+
+func (i GetFlexComponentsFlexComponentCollectionArgs) ToGetFlexComponentsFlexComponentCollectionOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlexComponentsFlexComponentCollectionOutput)
+}
+
+// GetFlexComponentsFlexComponentCollectionArrayInput is an input type that accepts GetFlexComponentsFlexComponentCollectionArray and GetFlexComponentsFlexComponentCollectionArrayOutput values.
+// You can construct a concrete instance of `GetFlexComponentsFlexComponentCollectionArrayInput` via:
+//
+//	GetFlexComponentsFlexComponentCollectionArray{ GetFlexComponentsFlexComponentCollectionArgs{...} }
+type GetFlexComponentsFlexComponentCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetFlexComponentsFlexComponentCollectionArrayOutput() GetFlexComponentsFlexComponentCollectionArrayOutput
+	ToGetFlexComponentsFlexComponentCollectionArrayOutputWithContext(context.Context) GetFlexComponentsFlexComponentCollectionArrayOutput
+}
+
+type GetFlexComponentsFlexComponentCollectionArray []GetFlexComponentsFlexComponentCollectionInput
+
+func (GetFlexComponentsFlexComponentCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlexComponentsFlexComponentCollection)(nil)).Elem()
+}
+
+func (i GetFlexComponentsFlexComponentCollectionArray) ToGetFlexComponentsFlexComponentCollectionArrayOutput() GetFlexComponentsFlexComponentCollectionArrayOutput {
+	return i.ToGetFlexComponentsFlexComponentCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetFlexComponentsFlexComponentCollectionArray) ToGetFlexComponentsFlexComponentCollectionArrayOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetFlexComponentsFlexComponentCollectionArrayOutput)
+}
+
+type GetFlexComponentsFlexComponentCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetFlexComponentsFlexComponentCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetFlexComponentsFlexComponentCollection)(nil)).Elem()
+}
+
+func (o GetFlexComponentsFlexComponentCollectionOutput) ToGetFlexComponentsFlexComponentCollectionOutput() GetFlexComponentsFlexComponentCollectionOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionOutput) ToGetFlexComponentsFlexComponentCollectionOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionOutput) Items() GetFlexComponentsFlexComponentCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetFlexComponentsFlexComponentCollection) []GetFlexComponentsFlexComponentCollectionItem {
+		return v.Items
+	}).(GetFlexComponentsFlexComponentCollectionItemArrayOutput)
+}
+
+type GetFlexComponentsFlexComponentCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetFlexComponentsFlexComponentCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetFlexComponentsFlexComponentCollection)(nil)).Elem()
+}
+
+func (o GetFlexComponentsFlexComponentCollectionArrayOutput) ToGetFlexComponentsFlexComponentCollectionArrayOutput() GetFlexComponentsFlexComponentCollectionArrayOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionArrayOutput) ToGetFlexComponentsFlexComponentCollectionArrayOutputWithContext(ctx context.Context) GetFlexComponentsFlexComponentCollectionArrayOutput {
+	return o
+}
+
+func (o GetFlexComponentsFlexComponentCollectionArrayOutput) Index(i pulumi.IntInput) GetFlexComponentsFlexComponentCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFlexComponentsFlexComponentCollection {
+		return vs[0].([]GetFlexComponentsFlexComponentCollection)[vs[1].(int)]
+	}).(GetFlexComponentsFlexComponentCollectionOutput)
+}
+
 type GetFlexComponentsFlexComponentCollectionItem struct {
 	// The maximum number of CPU cores that can ben enabled on the DB Server for this Flex Component.
 	AvailableCoreCount int `pulumi:"availableCoreCount"`
@@ -135,6 +3585,218 @@ func (o GetFlexComponentsFlexComponentCollectionItemArrayOutput) Index(i pulumi.
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetFlexComponentsFlexComponentCollectionItem {
 		return vs[0].([]GetFlexComponentsFlexComponentCollectionItem)[vs[1].(int)]
 	}).(GetFlexComponentsFlexComponentCollectionItemOutput)
+}
+
+type GetGiVersionMinorVersionsFilter struct {
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetGiVersionMinorVersionsFilterInput is an input type that accepts GetGiVersionMinorVersionsFilterArgs and GetGiVersionMinorVersionsFilterOutput values.
+// You can construct a concrete instance of `GetGiVersionMinorVersionsFilterInput` via:
+//
+//	GetGiVersionMinorVersionsFilterArgs{...}
+type GetGiVersionMinorVersionsFilterInput interface {
+	pulumi.Input
+
+	ToGetGiVersionMinorVersionsFilterOutput() GetGiVersionMinorVersionsFilterOutput
+	ToGetGiVersionMinorVersionsFilterOutputWithContext(context.Context) GetGiVersionMinorVersionsFilterOutput
+}
+
+type GetGiVersionMinorVersionsFilterArgs struct {
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetGiVersionMinorVersionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (i GetGiVersionMinorVersionsFilterArgs) ToGetGiVersionMinorVersionsFilterOutput() GetGiVersionMinorVersionsFilterOutput {
+	return i.ToGetGiVersionMinorVersionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionMinorVersionsFilterArgs) ToGetGiVersionMinorVersionsFilterOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionMinorVersionsFilterOutput)
+}
+
+// GetGiVersionMinorVersionsFilterArrayInput is an input type that accepts GetGiVersionMinorVersionsFilterArray and GetGiVersionMinorVersionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetGiVersionMinorVersionsFilterArrayInput` via:
+//
+//	GetGiVersionMinorVersionsFilterArray{ GetGiVersionMinorVersionsFilterArgs{...} }
+type GetGiVersionMinorVersionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetGiVersionMinorVersionsFilterArrayOutput() GetGiVersionMinorVersionsFilterArrayOutput
+	ToGetGiVersionMinorVersionsFilterArrayOutputWithContext(context.Context) GetGiVersionMinorVersionsFilterArrayOutput
+}
+
+type GetGiVersionMinorVersionsFilterArray []GetGiVersionMinorVersionsFilterInput
+
+func (GetGiVersionMinorVersionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (i GetGiVersionMinorVersionsFilterArray) ToGetGiVersionMinorVersionsFilterArrayOutput() GetGiVersionMinorVersionsFilterArrayOutput {
+	return i.ToGetGiVersionMinorVersionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionMinorVersionsFilterArray) ToGetGiVersionMinorVersionsFilterArrayOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionMinorVersionsFilterArrayOutput)
+}
+
+type GetGiVersionMinorVersionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionMinorVersionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (o GetGiVersionMinorVersionsFilterOutput) ToGetGiVersionMinorVersionsFilterOutput() GetGiVersionMinorVersionsFilterOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsFilterOutput) ToGetGiVersionMinorVersionsFilterOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsFilterOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGiVersionMinorVersionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetGiVersionMinorVersionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetGiVersionMinorVersionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetGiVersionMinorVersionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGiVersionMinorVersionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetGiVersionMinorVersionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionMinorVersionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionMinorVersionsFilter)(nil)).Elem()
+}
+
+func (o GetGiVersionMinorVersionsFilterArrayOutput) ToGetGiVersionMinorVersionsFilterArrayOutput() GetGiVersionMinorVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsFilterArrayOutput) ToGetGiVersionMinorVersionsFilterArrayOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsFilterArrayOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsFilterArrayOutput) Index(i pulumi.IntInput) GetGiVersionMinorVersionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGiVersionMinorVersionsFilter {
+		return vs[0].([]GetGiVersionMinorVersionsFilter)[vs[1].(int)]
+	}).(GetGiVersionMinorVersionsFilterOutput)
+}
+
+type GetGiVersionMinorVersionsGiMinorVersion struct {
+	// Grid Infrastructure Image Id
+	GridImageId string `pulumi:"gridImageId"`
+	// The Oracle Grid Infrastructure major version.
+	Version string `pulumi:"version"`
+}
+
+// GetGiVersionMinorVersionsGiMinorVersionInput is an input type that accepts GetGiVersionMinorVersionsGiMinorVersionArgs and GetGiVersionMinorVersionsGiMinorVersionOutput values.
+// You can construct a concrete instance of `GetGiVersionMinorVersionsGiMinorVersionInput` via:
+//
+//	GetGiVersionMinorVersionsGiMinorVersionArgs{...}
+type GetGiVersionMinorVersionsGiMinorVersionInput interface {
+	pulumi.Input
+
+	ToGetGiVersionMinorVersionsGiMinorVersionOutput() GetGiVersionMinorVersionsGiMinorVersionOutput
+	ToGetGiVersionMinorVersionsGiMinorVersionOutputWithContext(context.Context) GetGiVersionMinorVersionsGiMinorVersionOutput
+}
+
+type GetGiVersionMinorVersionsGiMinorVersionArgs struct {
+	// Grid Infrastructure Image Id
+	GridImageId pulumi.StringInput `pulumi:"gridImageId"`
+	// The Oracle Grid Infrastructure major version.
+	Version pulumi.StringInput `pulumi:"version"`
+}
+
+func (GetGiVersionMinorVersionsGiMinorVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionMinorVersionsGiMinorVersion)(nil)).Elem()
+}
+
+func (i GetGiVersionMinorVersionsGiMinorVersionArgs) ToGetGiVersionMinorVersionsGiMinorVersionOutput() GetGiVersionMinorVersionsGiMinorVersionOutput {
+	return i.ToGetGiVersionMinorVersionsGiMinorVersionOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionMinorVersionsGiMinorVersionArgs) ToGetGiVersionMinorVersionsGiMinorVersionOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsGiMinorVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionMinorVersionsGiMinorVersionOutput)
+}
+
+// GetGiVersionMinorVersionsGiMinorVersionArrayInput is an input type that accepts GetGiVersionMinorVersionsGiMinorVersionArray and GetGiVersionMinorVersionsGiMinorVersionArrayOutput values.
+// You can construct a concrete instance of `GetGiVersionMinorVersionsGiMinorVersionArrayInput` via:
+//
+//	GetGiVersionMinorVersionsGiMinorVersionArray{ GetGiVersionMinorVersionsGiMinorVersionArgs{...} }
+type GetGiVersionMinorVersionsGiMinorVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetGiVersionMinorVersionsGiMinorVersionArrayOutput() GetGiVersionMinorVersionsGiMinorVersionArrayOutput
+	ToGetGiVersionMinorVersionsGiMinorVersionArrayOutputWithContext(context.Context) GetGiVersionMinorVersionsGiMinorVersionArrayOutput
+}
+
+type GetGiVersionMinorVersionsGiMinorVersionArray []GetGiVersionMinorVersionsGiMinorVersionInput
+
+func (GetGiVersionMinorVersionsGiMinorVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionMinorVersionsGiMinorVersion)(nil)).Elem()
+}
+
+func (i GetGiVersionMinorVersionsGiMinorVersionArray) ToGetGiVersionMinorVersionsGiMinorVersionArrayOutput() GetGiVersionMinorVersionsGiMinorVersionArrayOutput {
+	return i.ToGetGiVersionMinorVersionsGiMinorVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetGiVersionMinorVersionsGiMinorVersionArray) ToGetGiVersionMinorVersionsGiMinorVersionArrayOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsGiMinorVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGiVersionMinorVersionsGiMinorVersionArrayOutput)
+}
+
+type GetGiVersionMinorVersionsGiMinorVersionOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionMinorVersionsGiMinorVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGiVersionMinorVersionsGiMinorVersion)(nil)).Elem()
+}
+
+func (o GetGiVersionMinorVersionsGiMinorVersionOutput) ToGetGiVersionMinorVersionsGiMinorVersionOutput() GetGiVersionMinorVersionsGiMinorVersionOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsGiMinorVersionOutput) ToGetGiVersionMinorVersionsGiMinorVersionOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsGiMinorVersionOutput {
+	return o
+}
+
+// Grid Infrastructure Image Id
+func (o GetGiVersionMinorVersionsGiMinorVersionOutput) GridImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGiVersionMinorVersionsGiMinorVersion) string { return v.GridImageId }).(pulumi.StringOutput)
+}
+
+// The Oracle Grid Infrastructure major version.
+func (o GetGiVersionMinorVersionsGiMinorVersionOutput) Version() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGiVersionMinorVersionsGiMinorVersion) string { return v.Version }).(pulumi.StringOutput)
+}
+
+type GetGiVersionMinorVersionsGiMinorVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGiVersionMinorVersionsGiMinorVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGiVersionMinorVersionsGiMinorVersion)(nil)).Elem()
+}
+
+func (o GetGiVersionMinorVersionsGiMinorVersionArrayOutput) ToGetGiVersionMinorVersionsGiMinorVersionArrayOutput() GetGiVersionMinorVersionsGiMinorVersionArrayOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsGiMinorVersionArrayOutput) ToGetGiVersionMinorVersionsGiMinorVersionArrayOutputWithContext(ctx context.Context) GetGiVersionMinorVersionsGiMinorVersionArrayOutput {
+	return o
+}
+
+func (o GetGiVersionMinorVersionsGiMinorVersionArrayOutput) Index(i pulumi.IntInput) GetGiVersionMinorVersionsGiMinorVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGiVersionMinorVersionsGiMinorVersion {
+		return vs[0].([]GetGiVersionMinorVersionsGiMinorVersion)[vs[1].(int)]
+	}).(GetGiVersionMinorVersionsGiMinorVersionOutput)
 }
 
 type GetGiVersionsFilter struct {
@@ -2641,6 +6303,7 @@ type GetPluggableDatabasePdbCreationTypeDetail struct {
 	CreationType                         string                                                            `pulumi:"creationType"`
 	DblinkUserPassword                   string                                                            `pulumi:"dblinkUserPassword"`
 	DblinkUsername                       string                                                            `pulumi:"dblinkUsername"`
+	IsThinClone                          bool                                                              `pulumi:"isThinClone"`
 	RefreshableCloneDetails              []GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword string                                                            `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            string                                                            `pulumi:"sourcePluggableDatabaseId"`
@@ -2661,6 +6324,7 @@ type GetPluggableDatabasePdbCreationTypeDetailArgs struct {
 	CreationType                         pulumi.StringInput                                                        `pulumi:"creationType"`
 	DblinkUserPassword                   pulumi.StringInput                                                        `pulumi:"dblinkUserPassword"`
 	DblinkUsername                       pulumi.StringInput                                                        `pulumi:"dblinkUsername"`
+	IsThinClone                          pulumi.BoolInput                                                          `pulumi:"isThinClone"`
 	RefreshableCloneDetails              GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword pulumi.StringInput                                                        `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            pulumi.StringInput                                                        `pulumi:"sourcePluggableDatabaseId"`
@@ -2727,6 +6391,10 @@ func (o GetPluggableDatabasePdbCreationTypeDetailOutput) DblinkUserPassword() pu
 
 func (o GetPluggableDatabasePdbCreationTypeDetailOutput) DblinkUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) string { return v.DblinkUsername }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasePdbCreationTypeDetailOutput) IsThinClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasePdbCreationTypeDetail) bool { return v.IsThinClone }).(pulumi.BoolOutput)
 }
 
 func (o GetPluggableDatabasePdbCreationTypeDetailOutput) RefreshableCloneDetails() GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
@@ -3678,6 +7346,7 @@ type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail struct {
 	CreationType                         string                                                                              `pulumi:"creationType"`
 	DblinkUserPassword                   string                                                                              `pulumi:"dblinkUserPassword"`
 	DblinkUsername                       string                                                                              `pulumi:"dblinkUsername"`
+	IsThinClone                          bool                                                                                `pulumi:"isThinClone"`
 	RefreshableCloneDetails              []GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword string                                                                              `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            string                                                                              `pulumi:"sourcePluggableDatabaseId"`
@@ -3698,6 +7367,7 @@ type GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailArgs struct {
 	CreationType                         pulumi.StringInput                                                                          `pulumi:"creationType"`
 	DblinkUserPassword                   pulumi.StringInput                                                                          `pulumi:"dblinkUserPassword"`
 	DblinkUsername                       pulumi.StringInput                                                                          `pulumi:"dblinkUsername"`
+	IsThinClone                          pulumi.BoolInput                                                                            `pulumi:"isThinClone"`
 	RefreshableCloneDetails              GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayInput `pulumi:"refreshableCloneDetails"`
 	SourceContainerDatabaseAdminPassword pulumi.StringInput                                                                          `pulumi:"sourceContainerDatabaseAdminPassword"`
 	SourcePluggableDatabaseId            pulumi.StringInput                                                                          `pulumi:"sourcePluggableDatabaseId"`
@@ -3766,6 +7436,10 @@ func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) Dblin
 
 func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) DblinkUsername() pulumi.StringOutput {
 	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) string { return v.DblinkUsername }).(pulumi.StringOutput)
+}
+
+func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) IsThinClone() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail) bool { return v.IsThinClone }).(pulumi.BoolOutput)
 }
 
 func (o GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailOutput) RefreshableCloneDetails() GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailArrayOutput {
@@ -8600,8 +12274,64 @@ func (o GetVmClustersVmClusterFileSystemConfigurationDetailArrayOutput) Index(i 
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesFilterInput)(nil)).Elem(), GetExternalContainerDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalContainerDatabasesFilterArrayInput)(nil)).Elem(), GetExternalContainerDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorConnectionCredentialInput)(nil)).Elem(), GetExternalDatabaseConnectorConnectionCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDatabaseConnectorConnectionCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorConnectionStringInput)(nil)).Elem(), GetExternalDatabaseConnectorConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorConnectionStringArrayInput)(nil)).Elem(), GetExternalDatabaseConnectorConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorInput)(nil)).Elem(), GetExternalDatabaseConnectorsExternalDatabaseConnectorArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayInput)(nil)).Elem(), GetExternalDatabaseConnectorsExternalDatabaseConnectorArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialInput)(nil)).Elem(), GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayInput)(nil)).Elem(), GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringInput)(nil)).Elem(), GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayInput)(nil)).Elem(), GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsFilterInput)(nil)).Elem(), GetExternalDatabaseConnectorsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalDatabaseConnectorsFilterArrayInput)(nil)).Elem(), GetExternalDatabaseConnectorsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalNonContainerDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalNonContainerDatabaseOperationsInsightsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalNonContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabaseStackMonitoringConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesFilterInput)(nil)).Elem(), GetExternalNonContainerDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalNonContainerDatabasesFilterArrayInput)(nil)).Elem(), GetExternalNonContainerDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalPluggableDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalPluggableDatabaseOperationsInsightsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalPluggableDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabaseStackMonitoringConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesFilterInput)(nil)).Elem(), GetExternalPluggableDatabasesFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetExternalPluggableDatabasesFilterArrayInput)(nil)).Elem(), GetExternalPluggableDatabasesFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFilterInput)(nil)).Elem(), GetFlexComponentsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFilterArrayInput)(nil)).Elem(), GetFlexComponentsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionInput)(nil)).Elem(), GetFlexComponentsFlexComponentCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionArrayInput)(nil)).Elem(), GetFlexComponentsFlexComponentCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionItemInput)(nil)).Elem(), GetFlexComponentsFlexComponentCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFlexComponentsFlexComponentCollectionItemArrayInput)(nil)).Elem(), GetFlexComponentsFlexComponentCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionMinorVersionsFilterInput)(nil)).Elem(), GetGiVersionMinorVersionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionMinorVersionsFilterArrayInput)(nil)).Elem(), GetGiVersionMinorVersionsFilterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionMinorVersionsGiMinorVersionInput)(nil)).Elem(), GetGiVersionMinorVersionsGiMinorVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionMinorVersionsGiMinorVersionArrayInput)(nil)).Elem(), GetGiVersionMinorVersionsGiMinorVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsFilterInput)(nil)).Elem(), GetGiVersionsFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsFilterArrayInput)(nil)).Elem(), GetGiVersionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetGiVersionsGiVersionInput)(nil)).Elem(), GetGiVersionsGiVersionArgs{})
@@ -8728,8 +12458,64 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterDataCollectionOptionArrayInput)(nil)).Elem(), GetVmClustersVmClusterDataCollectionOptionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVmClustersVmClusterFileSystemConfigurationDetailArrayInput)(nil)).Elem(), GetVmClustersVmClusterFileSystemConfigurationDetailArray{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesExternalContainerDatabaseStackMonitoringConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalContainerDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorConnectionCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorConnectionCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsExternalDatabaseConnectorOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsExternalDatabaseConnectorArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsExternalDatabaseConnectorConnectionStringArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalDatabaseConnectorsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseOperationsInsightsConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabaseStackMonitoringConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesExternalNonContainerDatabaseStackMonitoringConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalNonContainerDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseOperationsInsightsConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabaseStackMonitoringConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseDatabaseManagementConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseOperationsInsightsConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesExternalPluggableDatabaseStackMonitoringConfigArrayOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesFilterOutput{})
+	pulumi.RegisterOutputType(GetExternalPluggableDatabasesFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFlexComponentsFilterOutput{})
+	pulumi.RegisterOutputType(GetFlexComponentsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetFlexComponentsFlexComponentCollectionOutput{})
+	pulumi.RegisterOutputType(GetFlexComponentsFlexComponentCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetFlexComponentsFlexComponentCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetFlexComponentsFlexComponentCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetGiVersionMinorVersionsFilterOutput{})
+	pulumi.RegisterOutputType(GetGiVersionMinorVersionsFilterArrayOutput{})
+	pulumi.RegisterOutputType(GetGiVersionMinorVersionsGiMinorVersionOutput{})
+	pulumi.RegisterOutputType(GetGiVersionMinorVersionsGiMinorVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetGiVersionsFilterOutput{})
 	pulumi.RegisterOutputType(GetGiVersionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetGiVersionsGiVersionOutput{})

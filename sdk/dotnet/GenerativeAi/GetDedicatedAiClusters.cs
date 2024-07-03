@@ -12,7 +12,7 @@ namespace Pulumi.Oci.GenerativeAi
     public static class GetDedicatedAiClusters
     {
         /// <summary>
-        /// This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists the dedicated AI clusters in a specific compartment.
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.GenerativeAi
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetDedicatedAiClustersResult>("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", args ?? new GetDedicatedAiClustersArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists the dedicated AI clusters in a specific compartment.
         /// 
@@ -155,26 +155,14 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetDedicatedAiClustersResult
     {
-        /// <summary>
-        /// The compartment OCID to create the dedicated AI cluster in.
-        /// </summary>
         public readonly string CompartmentId;
         /// <summary>
         /// The list of dedicated_ai_cluster_collection.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersDedicatedAiClusterCollectionResult> DedicatedAiClusterCollections;
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.
-        /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetDedicatedAiClustersFilterResult> Filters;
-        /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-        /// </summary>
         public readonly string? Id;
-        /// <summary>
-        /// The current state of the dedicated AI cluster.
-        /// </summary>
         public readonly string? State;
 
         [OutputConstructor]

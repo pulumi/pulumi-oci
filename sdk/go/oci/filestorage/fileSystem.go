@@ -61,6 +61,7 @@ import (
 //			_, err := FileStorage.NewFileSystem(ctx, "test_file_system", &FileStorage.FileSystemArgs{
 //				AvailabilityDomain: pulumi.Any(fileSystemAvailabilityDomain),
 //				CompartmentId:      pulumi.Any(compartmentId),
+//				CloneAttachStatus:  pulumi.Any(fileSystemCloneAttachStatus),
 //				DefinedTags: pulumi.Map{
 //					"Operations.CostCenter": pulumi.Any("42"),
 //				},
@@ -93,10 +94,19 @@ type FileSystem struct {
 
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringOutput `pulumi:"availabilityDomain"`
+	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+	CloneAttachStatus pulumi.StringOutput `pulumi:"cloneAttachStatus"`
+	// Specifies the total number of children of a file system.
+	CloneCount pulumi.IntOutput `pulumi:"cloneCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
+	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DetachCloneTrigger pulumi.IntPtrOutput `pulumi:"detachCloneTrigger"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -122,9 +132,6 @@ type FileSystem struct {
 	// Source information for the file system.
 	SourceDetails FileSystemSourceDetailArrayOutput `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringOutput `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
 	State pulumi.StringOutput `pulumi:"state"`
@@ -170,10 +177,19 @@ func GetFileSystem(ctx *pulumi.Context,
 type fileSystemState struct {
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain *string `pulumi:"availabilityDomain"`
+	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+	CloneAttachStatus *string `pulumi:"cloneAttachStatus"`
+	// Specifies the total number of children of a file system.
+	CloneCount *int `pulumi:"cloneCount"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DetachCloneTrigger *int `pulumi:"detachCloneTrigger"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -199,9 +215,6 @@ type fileSystemState struct {
 	// Source information for the file system.
 	SourceDetails []FileSystemSourceDetail `pulumi:"sourceDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 	// The current state of the file system.
 	State *string `pulumi:"state"`
@@ -212,10 +225,19 @@ type fileSystemState struct {
 type FileSystemState struct {
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringPtrInput
+	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+	CloneAttachStatus pulumi.StringPtrInput
+	// Specifies the total number of children of a file system.
+	CloneCount pulumi.IntPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
+	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DetachCloneTrigger pulumi.IntPtrInput
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -241,9 +263,6 @@ type FileSystemState struct {
 	// Source information for the file system.
 	SourceDetails FileSystemSourceDetailArrayInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringPtrInput
 	// The current state of the file system.
 	State pulumi.StringPtrInput
@@ -258,10 +277,17 @@ func (FileSystemState) ElementType() reflect.Type {
 type fileSystemArgs struct {
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+	CloneAttachStatus *string `pulumi:"cloneAttachStatus"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId string `pulumi:"compartmentId"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DetachCloneTrigger *int `pulumi:"detachCloneTrigger"`
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -273,9 +299,6 @@ type fileSystemArgs struct {
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId *string `pulumi:"kmsKeyId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
 
@@ -283,10 +306,17 @@ type fileSystemArgs struct {
 type FileSystemArgs struct {
 	// The availability domain to create the file system in.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput
+	// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+	CloneAttachStatus pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 	CompartmentId pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 	DefinedTags pulumi.MapInput
+	// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	DetachCloneTrigger pulumi.IntPtrInput
 	// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which controls the frequency of snapshot creation and retention period of the taken snapshots.
@@ -298,9 +328,6 @@ type FileSystemArgs struct {
 	// (Updatable) The OCID of KMS key used to encrypt the encryption keys associated with this file system. May be unset as a blank or deleted from the configuration to remove the KMS key.
 	KmsKeyId pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringPtrInput
 }
 
@@ -396,6 +423,16 @@ func (o FileSystemOutput) AvailabilityDomain() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+func (o FileSystemOutput) CloneAttachStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.CloneAttachStatus }).(pulumi.StringOutput)
+}
+
+// Specifies the total number of children of a file system.
+func (o FileSystemOutput) CloneCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.IntOutput { return v.CloneCount }).(pulumi.IntOutput)
+}
+
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
 func (o FileSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
@@ -404,6 +441,14 @@ func (o FileSystemOutput) CompartmentId() pulumi.StringOutput {
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o FileSystemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o FileSystemOutput) DetachCloneTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *FileSystem) pulumi.IntPtrOutput { return v.DetachCloneTrigger }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
@@ -464,9 +509,6 @@ func (o FileSystemOutput) SourceDetails() FileSystemSourceDetailArrayOutput {
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FileSystemOutput) SourceSnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v *FileSystem) pulumi.StringOutput { return v.SourceSnapshotId }).(pulumi.StringOutput)
 }

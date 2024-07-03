@@ -111,6 +111,7 @@ import * as queue from "./queue";
 import * as recoverymod from "./recoverymod";
 import * as redis from "./redis";
 import * as resourcemanager from "./resourcemanager";
+import * as resourcescheduler from "./resourcescheduler";
 import * as sch from "./sch";
 import * as secrets from "./secrets";
 import * as servicecatalog from "./servicecatalog";
@@ -229,6 +230,7 @@ export {
     recoverymod,
     redis,
     resourcemanager,
+    resourcescheduler,
     sch,
     secrets,
     servicecatalog,

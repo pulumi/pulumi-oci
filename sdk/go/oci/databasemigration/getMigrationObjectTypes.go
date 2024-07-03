@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-//
-// Display sample object types to exclude or include for a Migration.
-//
 // ## Example Usage
 //
 // ```go
@@ -29,7 +25,9 @@ import (
 //
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
-//			_, err := DatabaseMigration.GetMigrationObjectTypes(ctx, nil, nil)
+//			_, err := DatabaseMigration.GetMigrationObjectTypes(ctx, &databasemigration.GetMigrationObjectTypesArgs{
+//				ConnectionType: migrationObjectTypeConnectionType,
+//			}, nil)
 //			if err != nil {
 //				return err
 //			}
@@ -50,12 +48,15 @@ func GetMigrationObjectTypes(ctx *pulumi.Context, args *GetMigrationObjectTypesA
 
 // A collection of arguments for invoking getMigrationObjectTypes.
 type GetMigrationObjectTypesArgs struct {
-	Filters []GetMigrationObjectTypesFilter `pulumi:"filters"`
+	// The connection type for migration objects.
+	ConnectionType string                          `pulumi:"connectionType"`
+	Filters        []GetMigrationObjectTypesFilter `pulumi:"filters"`
 }
 
 // A collection of values returned by getMigrationObjectTypes.
 type GetMigrationObjectTypesResult struct {
-	Filters []GetMigrationObjectTypesFilter `pulumi:"filters"`
+	ConnectionType string                          `pulumi:"connectionType"`
+	Filters        []GetMigrationObjectTypesFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
 	// The list of migration_object_type_summary_collection.
@@ -77,7 +78,9 @@ func GetMigrationObjectTypesOutput(ctx *pulumi.Context, args GetMigrationObjectT
 
 // A collection of arguments for invoking getMigrationObjectTypes.
 type GetMigrationObjectTypesOutputArgs struct {
-	Filters GetMigrationObjectTypesFilterArrayInput `pulumi:"filters"`
+	// The connection type for migration objects.
+	ConnectionType pulumi.StringInput                      `pulumi:"connectionType"`
+	Filters        GetMigrationObjectTypesFilterArrayInput `pulumi:"filters"`
 }
 
 func (GetMigrationObjectTypesOutputArgs) ElementType() reflect.Type {
@@ -97,6 +100,10 @@ func (o GetMigrationObjectTypesResultOutput) ToGetMigrationObjectTypesResultOutp
 
 func (o GetMigrationObjectTypesResultOutput) ToGetMigrationObjectTypesResultOutputWithContext(ctx context.Context) GetMigrationObjectTypesResultOutput {
 	return o
+}
+
+func (o GetMigrationObjectTypesResultOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationObjectTypesResult) string { return v.ConnectionType }).(pulumi.StringOutput)
 }
 
 func (o GetMigrationObjectTypesResultOutput) Filters() GetMigrationObjectTypesFilterArrayOutput {

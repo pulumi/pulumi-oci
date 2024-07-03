@@ -99,6 +99,7 @@ class _DbNodeState:
                  time_created: Optional[pulumi.Input[str]] = None,
                  time_maintenance_window_end: Optional[pulumi.Input[str]] = None,
                  time_maintenance_window_start: Optional[pulumi.Input[str]] = None,
+                 total_cpu_core_count: Optional[pulumi.Input[int]] = None,
                  vnic2id: Optional[pulumi.Input[str]] = None,
                  vnic_id: Optional[pulumi.Input[str]] = None):
         """
@@ -129,6 +130,7 @@ class _DbNodeState:
         :param pulumi.Input[str] time_created: The date and time that the database node was created.
         :param pulumi.Input[str] time_maintenance_window_end: End date and time of maintenance window.
         :param pulumi.Input[str] time_maintenance_window_start: Start date and time of maintenance window.
+        :param pulumi.Input[int] total_cpu_core_count: The total number of CPU cores reserved on the Db node.
         :param pulumi.Input[str] vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         """
@@ -176,6 +178,8 @@ class _DbNodeState:
             pulumi.set(__self__, "time_maintenance_window_end", time_maintenance_window_end)
         if time_maintenance_window_start is not None:
             pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+        if total_cpu_core_count is not None:
+            pulumi.set(__self__, "total_cpu_core_count", total_cpu_core_count)
         if vnic2id is not None:
             pulumi.set(__self__, "vnic2id", vnic2id)
         if vnic_id is not None:
@@ -450,6 +454,18 @@ class _DbNodeState:
         pulumi.set(self, "time_maintenance_window_start", value)
 
     @property
+    @pulumi.getter(name="totalCpuCoreCount")
+    def total_cpu_core_count(self) -> Optional[pulumi.Input[int]]:
+        """
+        The total number of CPU cores reserved on the Db node.
+        """
+        return pulumi.get(self, "total_cpu_core_count")
+
+    @total_cpu_core_count.setter
+    def total_cpu_core_count(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_cpu_core_count", value)
+
+    @property
     @pulumi.getter
     def vnic2id(self) -> Optional[pulumi.Input[str]]:
         """
@@ -576,6 +592,7 @@ class DbNode(pulumi.CustomResource):
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_maintenance_window_end"] = None
             __props__.__dict__["time_maintenance_window_start"] = None
+            __props__.__dict__["total_cpu_core_count"] = None
             __props__.__dict__["vnic2id"] = None
             __props__.__dict__["vnic_id"] = None
         super(DbNode, __self__).__init__(
@@ -610,6 +627,7 @@ class DbNode(pulumi.CustomResource):
             time_created: Optional[pulumi.Input[str]] = None,
             time_maintenance_window_end: Optional[pulumi.Input[str]] = None,
             time_maintenance_window_start: Optional[pulumi.Input[str]] = None,
+            total_cpu_core_count: Optional[pulumi.Input[int]] = None,
             vnic2id: Optional[pulumi.Input[str]] = None,
             vnic_id: Optional[pulumi.Input[str]] = None) -> 'DbNode':
         """
@@ -645,6 +663,7 @@ class DbNode(pulumi.CustomResource):
         :param pulumi.Input[str] time_created: The date and time that the database node was created.
         :param pulumi.Input[str] time_maintenance_window_end: End date and time of maintenance window.
         :param pulumi.Input[str] time_maintenance_window_start: Start date and time of maintenance window.
+        :param pulumi.Input[int] total_cpu_core_count: The total number of CPU cores reserved on the Db node.
         :param pulumi.Input[str] vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         :param pulumi.Input[str] vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         """
@@ -674,6 +693,7 @@ class DbNode(pulumi.CustomResource):
         __props__.__dict__["time_created"] = time_created
         __props__.__dict__["time_maintenance_window_end"] = time_maintenance_window_end
         __props__.__dict__["time_maintenance_window_start"] = time_maintenance_window_start
+        __props__.__dict__["total_cpu_core_count"] = total_cpu_core_count
         __props__.__dict__["vnic2id"] = vnic2id
         __props__.__dict__["vnic_id"] = vnic_id
         return DbNode(resource_name, opts=opts, __props__=__props__)
@@ -857,6 +877,14 @@ class DbNode(pulumi.CustomResource):
         Start date and time of maintenance window.
         """
         return pulumi.get(self, "time_maintenance_window_start")
+
+    @property
+    @pulumi.getter(name="totalCpuCoreCount")
+    def total_cpu_core_count(self) -> pulumi.Output[int]:
+        """
+        The total number of CPU cores reserved on the Db node.
+        """
+        return pulumi.get(self, "total_cpu_core_count")
 
     @property
     @pulumi.getter

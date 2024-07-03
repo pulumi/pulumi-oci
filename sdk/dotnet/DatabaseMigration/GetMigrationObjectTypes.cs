@@ -12,11 +12,6 @@ namespace Pulumi.Oci.DatabaseMigration
     public static class GetMigrationObjectTypes
     {
         /// <summary>
-        /// This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-        /// 
-        /// Display sample object types to exclude or include for a Migration.
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -27,20 +22,18 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke();
+        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke(new()
+        ///     {
+        ///         ConnectionType = migrationObjectTypeConnectionType,
+        ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Task<GetMigrationObjectTypesResult> InvokeAsync(GetMigrationObjectTypesArgs? args = null, InvokeOptions? options = null)
+        public static Task<GetMigrationObjectTypesResult> InvokeAsync(GetMigrationObjectTypesArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-        /// 
-        /// Display sample object types to exclude or include for a Migration.
-        /// 
-        /// 
         /// ## Example Usage
         /// 
         /// ```csharp
@@ -51,18 +44,27 @@ namespace Pulumi.Oci.DatabaseMigration
         /// 
         /// return await Deployment.RunAsync(() =&gt; 
         /// {
-        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke();
+        ///     var testMigrationObjectTypes = Oci.DatabaseMigration.GetMigrationObjectTypes.Invoke(new()
+        ///     {
+        ///         ConnectionType = migrationObjectTypeConnectionType,
+        ///     });
         /// 
         /// });
         /// ```
         /// </summary>
-        public static Output<GetMigrationObjectTypesResult> Invoke(GetMigrationObjectTypesInvokeArgs? args = null, InvokeOptions? options = null)
+        public static Output<GetMigrationObjectTypesResult> Invoke(GetMigrationObjectTypesInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetMigrationObjectTypesResult>("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", args ?? new GetMigrationObjectTypesInvokeArgs(), options.WithDefaults());
     }
 
 
     public sealed class GetMigrationObjectTypesArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The connection type for migration objects.
+        /// </summary>
+        [Input("connectionType", required: true)]
+        public string ConnectionType { get; set; } = null!;
+
         [Input("filters")]
         private List<Inputs.GetMigrationObjectTypesFilterArgs>? _filters;
         public List<Inputs.GetMigrationObjectTypesFilterArgs> Filters
@@ -79,6 +81,12 @@ namespace Pulumi.Oci.DatabaseMigration
 
     public sealed class GetMigrationObjectTypesInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The connection type for migration objects.
+        /// </summary>
+        [Input("connectionType", required: true)]
+        public Input<string> ConnectionType { get; set; } = null!;
+
         [Input("filters")]
         private InputList<Inputs.GetMigrationObjectTypesFilterInputArgs>? _filters;
         public InputList<Inputs.GetMigrationObjectTypesFilterInputArgs> Filters
@@ -97,6 +105,7 @@ namespace Pulumi.Oci.DatabaseMigration
     [OutputType]
     public sealed class GetMigrationObjectTypesResult
     {
+        public readonly string ConnectionType;
         public readonly ImmutableArray<Outputs.GetMigrationObjectTypesFilterResult> Filters;
         /// <summary>
         /// The provider-assigned unique ID for this managed resource.
@@ -109,12 +118,15 @@ namespace Pulumi.Oci.DatabaseMigration
 
         [OutputConstructor]
         private GetMigrationObjectTypesResult(
+            string connectionType,
+
             ImmutableArray<Outputs.GetMigrationObjectTypesFilterResult> filters,
 
             string id,
 
             ImmutableArray<Outputs.GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult> migrationObjectTypeSummaryCollections)
         {
+            ConnectionType = connectionType;
             Filters = filters;
             Id = id;
             MigrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;

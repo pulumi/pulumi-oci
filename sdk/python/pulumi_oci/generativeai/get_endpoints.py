@@ -46,17 +46,11 @@ class GetEndpointsResult:
     @property
     @pulumi.getter(name="compartmentId")
     def compartment_id(self) -> str:
-        """
-        The compartment OCID to create the endpoint in.
-        """
         return pulumi.get(self, "compartment_id")
 
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name. Does not have to be unique, and it's changeable.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -110,7 +104,7 @@ def get_endpoints(compartment_id: Optional[str] = None,
                   state: Optional[str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetEndpointsResult:
     """
-    This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+    This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
 
     Lists the endpoints of a specific compartment.
 
@@ -158,7 +152,7 @@ def get_endpoints_output(compartment_id: Optional[pulumi.Input[str]] = None,
                          state: Optional[pulumi.Input[Optional[str]]] = None,
                          opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetEndpointsResult]:
     """
-    This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+    This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
 
     Lists the endpoints of a specific compartment.
 

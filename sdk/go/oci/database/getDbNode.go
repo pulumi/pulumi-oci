@@ -104,6 +104,8 @@ type LookupDbNodeResult struct {
 	TimeMaintenanceWindowEnd string `pulumi:"timeMaintenanceWindowEnd"`
 	// Start date and time of maintenance window.
 	TimeMaintenanceWindowStart string `pulumi:"timeMaintenanceWindowStart"`
+	// The total number of CPU cores reserved on the Db node.
+	TotalCpuCoreCount int `pulumi:"totalCpuCoreCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
 	Vnic2id string `pulumi:"vnic2id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -261,6 +263,11 @@ func (o LookupDbNodeResultOutput) TimeMaintenanceWindowEnd() pulumi.StringOutput
 // Start date and time of maintenance window.
 func (o LookupDbNodeResultOutput) TimeMaintenanceWindowStart() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDbNodeResult) string { return v.TimeMaintenanceWindowStart }).(pulumi.StringOutput)
+}
+
+// The total number of CPU cores reserved on the Db node.
+func (o LookupDbNodeResultOutput) TotalCpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupDbNodeResult) int { return v.TotalCpuCoreCount }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.

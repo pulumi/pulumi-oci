@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
 //
 // Creates an endpoint.
 //

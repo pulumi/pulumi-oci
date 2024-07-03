@@ -393,7 +393,7 @@ class Endpoint(pulumi.CustomResource):
                  model_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
 
         Creates an endpoint.
 
@@ -452,7 +452,7 @@ class Endpoint(pulumi.CustomResource):
                  args: EndpointArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+        This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
 
         Creates an endpoint.
 

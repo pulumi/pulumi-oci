@@ -183,9 +183,6 @@ type FileSystemSourceDetail struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId *string `pulumi:"parentFileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId *string `pulumi:"sourceSnapshotId"`
 }
 
@@ -204,9 +201,6 @@ type FileSystemSourceDetailArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
 	ParentFileSystemId pulumi.StringPtrInput `pulumi:"parentFileSystemId"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SourceSnapshotId pulumi.StringPtrInput `pulumi:"sourceSnapshotId"`
 }
 
@@ -267,9 +261,6 @@ func (o FileSystemSourceDetailOutput) ParentFileSystemId() pulumi.StringPtrOutpu
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o FileSystemSourceDetailOutput) SourceSnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FileSystemSourceDetail) *string { return v.SourceSnapshotId }).(pulumi.StringPtrOutput)
 }
@@ -295,13 +286,13 @@ func (o FileSystemSourceDetailArrayOutput) Index(i pulumi.IntInput) FileSystemSo
 }
 
 type FilesystemSnapshotPolicySchedule struct {
-	// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfMonth *int `pulumi:"dayOfMonth"`
-	// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfWeek *string `pulumi:"dayOfWeek"`
-	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay *int `pulumi:"hourOfDay"`
-	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month *string `pulumi:"month"`
 	// (Updatable) The frequency of scheduled snapshots.
 	Period string `pulumi:"period"`
@@ -327,13 +318,13 @@ type FilesystemSnapshotPolicyScheduleInput interface {
 }
 
 type FilesystemSnapshotPolicyScheduleArgs struct {
-	// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfMonth pulumi.IntPtrInput `pulumi:"dayOfMonth"`
-	// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfWeek pulumi.StringPtrInput `pulumi:"dayOfWeek"`
-	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay pulumi.IntPtrInput `pulumi:"hourOfDay"`
-	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month pulumi.StringPtrInput `pulumi:"month"`
 	// (Updatable) The frequency of scheduled snapshots.
 	Period pulumi.StringInput `pulumi:"period"`
@@ -398,22 +389,22 @@ func (o FilesystemSnapshotPolicyScheduleOutput) ToFilesystemSnapshotPolicySchedu
 	return o
 }
 
-// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+// (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o FilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *int { return v.DayOfMonth }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+// (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o FilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.DayOfWeek }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+// (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 func (o FilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *int { return v.HourOfDay }).(pulumi.IntPtrOutput)
 }
 
-// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+// (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o FilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v FilesystemSnapshotPolicySchedule) *string { return v.Month }).(pulumi.StringPtrOutput)
 }
@@ -1762,10 +1753,15 @@ func (o GetExportsFilterArrayOutput) Index(i pulumi.IntInput) GetExportsFilterOu
 type GetFileSystemsFileSystem struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
+	// Specifies whether the file system is attached to its parent file system.
+	CloneAttachStatus string `pulumi:"cloneAttachStatus"`
+	// Specifies the total number of children of a file system.
+	CloneCount int `pulumi:"cloneCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	DefinedTags        map[string]interface{} `pulumi:"definedTags"`
+	DetachCloneTrigger int                    `pulumi:"detachCloneTrigger"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
 	DisplayName string `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
@@ -1812,10 +1808,15 @@ type GetFileSystemsFileSystemInput interface {
 type GetFileSystemsFileSystemArgs struct {
 	// The name of the availability domain.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
+	// Specifies whether the file system is attached to its parent file system.
+	CloneAttachStatus pulumi.StringInput `pulumi:"cloneAttachStatus"`
+	// Specifies the total number of children of a file system.
+	CloneCount pulumi.IntInput `pulumi:"cloneCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	DefinedTags        pulumi.MapInput `pulumi:"definedTags"`
+	DetachCloneTrigger pulumi.IntInput `pulumi:"detachCloneTrigger"`
 	// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system snapshot policy that is associated with the file systems.
@@ -1904,6 +1905,16 @@ func (o GetFileSystemsFileSystemOutput) AvailabilityDomain() pulumi.StringOutput
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.AvailabilityDomain }).(pulumi.StringOutput)
 }
 
+// Specifies whether the file system is attached to its parent file system.
+func (o GetFileSystemsFileSystemOutput) CloneAttachStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.CloneAttachStatus }).(pulumi.StringOutput)
+}
+
+// Specifies the total number of children of a file system.
+func (o GetFileSystemsFileSystemOutput) CloneCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) int { return v.CloneCount }).(pulumi.IntOutput)
+}
+
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o GetFileSystemsFileSystemOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) string { return v.CompartmentId }).(pulumi.StringOutput)
@@ -1912,6 +1923,10 @@ func (o GetFileSystemsFileSystemOutput) CompartmentId() pulumi.StringOutput {
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
 func (o GetFileSystemsFileSystemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetFileSystemsFileSystem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+func (o GetFileSystemsFileSystemOutput) DetachCloneTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetFileSystemsFileSystem) int { return v.DetachCloneTrigger }).(pulumi.IntOutput)
 }
 
 // A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
@@ -2406,13 +2421,13 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyArrayOutput) Index(
 }
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule struct {
-	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfMonth int `pulumi:"dayOfMonth"`
-	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfWeek string `pulumi:"dayOfWeek"`
-	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay int `pulumi:"hourOfDay"`
-	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month string `pulumi:"month"`
 	// The frequency of scheduled snapshots.
 	Period string `pulumi:"period"`
@@ -2438,13 +2453,13 @@ type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleInput interfac
 }
 
 type GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleArgs struct {
-	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
-	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
-	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
-	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month pulumi.StringInput `pulumi:"month"`
 	// The frequency of scheduled snapshots.
 	Period pulumi.StringInput `pulumi:"period"`
@@ -2509,22 +2524,22 @@ func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) ToG
 	return o
 }
 
-// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
 }
 
-// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
 }
 
-// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
 }
 
-// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
 }
@@ -2685,13 +2700,13 @@ func (o GetFilesystemSnapshotPoliciesFilterArrayOutput) Index(i pulumi.IntInput)
 }
 
 type GetFilesystemSnapshotPolicySchedule struct {
-	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfMonth int `pulumi:"dayOfMonth"`
-	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfWeek string `pulumi:"dayOfWeek"`
-	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay int `pulumi:"hourOfDay"`
-	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month string `pulumi:"month"`
 	// The frequency of scheduled snapshots.
 	Period string `pulumi:"period"`
@@ -2717,13 +2732,13 @@ type GetFilesystemSnapshotPolicyScheduleInput interface {
 }
 
 type GetFilesystemSnapshotPolicyScheduleArgs struct {
-	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+	// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfMonth pulumi.IntInput `pulumi:"dayOfMonth"`
-	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+	// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 	DayOfWeek pulumi.StringInput `pulumi:"dayOfWeek"`
-	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+	// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 	HourOfDay pulumi.IntInput `pulumi:"hourOfDay"`
-	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+	// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 	Month pulumi.StringInput `pulumi:"month"`
 	// The frequency of scheduled snapshots.
 	Period pulumi.StringInput `pulumi:"period"`
@@ -2788,22 +2803,22 @@ func (o GetFilesystemSnapshotPolicyScheduleOutput) ToGetFilesystemSnapshotPolicy
 	return o
 }
 
-// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+// The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfMonth() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.DayOfMonth }).(pulumi.IntOutput)
 }
 
-// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+// The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPolicyScheduleOutput) DayOfWeek() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.DayOfWeek }).(pulumi.StringOutput)
 }
 
-// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+// The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPolicyScheduleOutput) HourOfDay() pulumi.IntOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) int { return v.HourOfDay }).(pulumi.IntOutput)
 }
 
-// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+// The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
 func (o GetFilesystemSnapshotPolicyScheduleOutput) Month() pulumi.StringOutput {
 	return o.ApplyT(func(v GetFilesystemSnapshotPolicySchedule) string { return v.Month }).(pulumi.StringOutput)
 }

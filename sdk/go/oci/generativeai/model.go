@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Model resource in Oracle Cloud Infrastructure Generative Ai service.
+// This resource provides the Model resource in Oracle Cloud Infrastructure Generative AI service.
 //
 // Creates a custom model by fine-tuning a base model with your own dataset. You can create a new custom models or create a new version of existing custom model..
 //

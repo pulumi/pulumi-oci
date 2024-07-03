@@ -13,6 +13,209 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type ConnectionAdditionalAttribute struct {
+	// (Updatable) The name of the property entry.
+	Name *string `pulumi:"name"`
+	// (Updatable) The value of the property entry.
+	Value *string `pulumi:"value"`
+}
+
+// ConnectionAdditionalAttributeInput is an input type that accepts ConnectionAdditionalAttributeArgs and ConnectionAdditionalAttributeOutput values.
+// You can construct a concrete instance of `ConnectionAdditionalAttributeInput` via:
+//
+//	ConnectionAdditionalAttributeArgs{...}
+type ConnectionAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToConnectionAdditionalAttributeOutput() ConnectionAdditionalAttributeOutput
+	ToConnectionAdditionalAttributeOutputWithContext(context.Context) ConnectionAdditionalAttributeOutput
+}
+
+type ConnectionAdditionalAttributeArgs struct {
+	// (Updatable) The name of the property entry.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) The value of the property entry.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ConnectionAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i ConnectionAdditionalAttributeArgs) ToConnectionAdditionalAttributeOutput() ConnectionAdditionalAttributeOutput {
+	return i.ToConnectionAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i ConnectionAdditionalAttributeArgs) ToConnectionAdditionalAttributeOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAdditionalAttributeOutput)
+}
+
+// ConnectionAdditionalAttributeArrayInput is an input type that accepts ConnectionAdditionalAttributeArray and ConnectionAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `ConnectionAdditionalAttributeArrayInput` via:
+//
+//	ConnectionAdditionalAttributeArray{ ConnectionAdditionalAttributeArgs{...} }
+type ConnectionAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToConnectionAdditionalAttributeArrayOutput() ConnectionAdditionalAttributeArrayOutput
+	ToConnectionAdditionalAttributeArrayOutputWithContext(context.Context) ConnectionAdditionalAttributeArrayOutput
+}
+
+type ConnectionAdditionalAttributeArray []ConnectionAdditionalAttributeInput
+
+func (ConnectionAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i ConnectionAdditionalAttributeArray) ToConnectionAdditionalAttributeArrayOutput() ConnectionAdditionalAttributeArrayOutput {
+	return i.ToConnectionAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionAdditionalAttributeArray) ToConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionAdditionalAttributeArrayOutput)
+}
+
+type ConnectionAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (ConnectionAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o ConnectionAdditionalAttributeOutput) ToConnectionAdditionalAttributeOutput() ConnectionAdditionalAttributeOutput {
+	return o
+}
+
+func (o ConnectionAdditionalAttributeOutput) ToConnectionAdditionalAttributeOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeOutput {
+	return o
+}
+
+// (Updatable) The name of the property entry.
+func (o ConnectionAdditionalAttributeOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAdditionalAttribute) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The value of the property entry.
+func (o ConnectionAdditionalAttributeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionAdditionalAttribute) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o ConnectionAdditionalAttributeArrayOutput) ToConnectionAdditionalAttributeArrayOutput() ConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o ConnectionAdditionalAttributeArrayOutput) ToConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) ConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o ConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) ConnectionAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionAdditionalAttribute {
+		return vs[0].([]ConnectionAdditionalAttribute)[vs[1].(int)]
+	}).(ConnectionAdditionalAttributeOutput)
+}
+
+type ConnectionIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp *string `pulumi:"ingressIp"`
+}
+
+// ConnectionIngressIpInput is an input type that accepts ConnectionIngressIpArgs and ConnectionIngressIpOutput values.
+// You can construct a concrete instance of `ConnectionIngressIpInput` via:
+//
+//	ConnectionIngressIpArgs{...}
+type ConnectionIngressIpInput interface {
+	pulumi.Input
+
+	ToConnectionIngressIpOutput() ConnectionIngressIpOutput
+	ToConnectionIngressIpOutputWithContext(context.Context) ConnectionIngressIpOutput
+}
+
+type ConnectionIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringPtrInput `pulumi:"ingressIp"`
+}
+
+func (ConnectionIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionIngressIp)(nil)).Elem()
+}
+
+func (i ConnectionIngressIpArgs) ToConnectionIngressIpOutput() ConnectionIngressIpOutput {
+	return i.ToConnectionIngressIpOutputWithContext(context.Background())
+}
+
+func (i ConnectionIngressIpArgs) ToConnectionIngressIpOutputWithContext(ctx context.Context) ConnectionIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionIngressIpOutput)
+}
+
+// ConnectionIngressIpArrayInput is an input type that accepts ConnectionIngressIpArray and ConnectionIngressIpArrayOutput values.
+// You can construct a concrete instance of `ConnectionIngressIpArrayInput` via:
+//
+//	ConnectionIngressIpArray{ ConnectionIngressIpArgs{...} }
+type ConnectionIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToConnectionIngressIpArrayOutput() ConnectionIngressIpArrayOutput
+	ToConnectionIngressIpArrayOutputWithContext(context.Context) ConnectionIngressIpArrayOutput
+}
+
+type ConnectionIngressIpArray []ConnectionIngressIpInput
+
+func (ConnectionIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionIngressIp)(nil)).Elem()
+}
+
+func (i ConnectionIngressIpArray) ToConnectionIngressIpArrayOutput() ConnectionIngressIpArrayOutput {
+	return i.ToConnectionIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i ConnectionIngressIpArray) ToConnectionIngressIpArrayOutputWithContext(ctx context.Context) ConnectionIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConnectionIngressIpArrayOutput)
+}
+
+type ConnectionIngressIpOutput struct{ *pulumi.OutputState }
+
+func (ConnectionIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConnectionIngressIp)(nil)).Elem()
+}
+
+func (o ConnectionIngressIpOutput) ToConnectionIngressIpOutput() ConnectionIngressIpOutput {
+	return o
+}
+
+func (o ConnectionIngressIpOutput) ToConnectionIngressIpOutputWithContext(ctx context.Context) ConnectionIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o ConnectionIngressIpOutput) IngressIp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConnectionIngressIp) *string { return v.IngressIp }).(pulumi.StringPtrOutput)
+}
+
+type ConnectionIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (ConnectionIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ConnectionIngressIp)(nil)).Elem()
+}
+
+func (o ConnectionIngressIpArrayOutput) ToConnectionIngressIpArrayOutput() ConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o ConnectionIngressIpArrayOutput) ToConnectionIngressIpArrayOutputWithContext(ctx context.Context) ConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o ConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) ConnectionIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ConnectionIngressIp {
+		return vs[0].([]ConnectionIngressIp)[vs[1].(int)]
+	}).(ConnectionIngressIpOutput)
+}
+
 type JobProgress struct {
 	// Current phase of the job.
 	CurrentPhase *string `pulumi:"currentPhase"`
@@ -633,10 +836,4852 @@ func (o JobUnsupportedObjectArrayOutput) Index(i pulumi.IntInput) JobUnsupported
 	}).(JobUnsupportedObjectOutput)
 }
 
+type MigrationAdvisorSettings struct {
+	// (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+	IsIgnoreErrors *bool `pulumi:"isIgnoreErrors"`
+	// (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
+	IsSkipAdvisor *bool `pulumi:"isSkipAdvisor"`
+}
+
+// MigrationAdvisorSettingsInput is an input type that accepts MigrationAdvisorSettingsArgs and MigrationAdvisorSettingsOutput values.
+// You can construct a concrete instance of `MigrationAdvisorSettingsInput` via:
+//
+//	MigrationAdvisorSettingsArgs{...}
+type MigrationAdvisorSettingsInput interface {
+	pulumi.Input
+
+	ToMigrationAdvisorSettingsOutput() MigrationAdvisorSettingsOutput
+	ToMigrationAdvisorSettingsOutputWithContext(context.Context) MigrationAdvisorSettingsOutput
+}
+
+type MigrationAdvisorSettingsArgs struct {
+	// (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+	IsIgnoreErrors pulumi.BoolPtrInput `pulumi:"isIgnoreErrors"`
+	// (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
+	IsSkipAdvisor pulumi.BoolPtrInput `pulumi:"isSkipAdvisor"`
+}
+
+func (MigrationAdvisorSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationAdvisorSettings)(nil)).Elem()
+}
+
+func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsOutput() MigrationAdvisorSettingsOutput {
+	return i.ToMigrationAdvisorSettingsOutputWithContext(context.Background())
+}
+
+func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsOutputWithContext(ctx context.Context) MigrationAdvisorSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvisorSettingsOutput)
+}
+
+func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsPtrOutput() MigrationAdvisorSettingsPtrOutput {
+	return i.ToMigrationAdvisorSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationAdvisorSettingsArgs) ToMigrationAdvisorSettingsPtrOutputWithContext(ctx context.Context) MigrationAdvisorSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvisorSettingsOutput).ToMigrationAdvisorSettingsPtrOutputWithContext(ctx)
+}
+
+// MigrationAdvisorSettingsPtrInput is an input type that accepts MigrationAdvisorSettingsArgs, MigrationAdvisorSettingsPtr and MigrationAdvisorSettingsPtrOutput values.
+// You can construct a concrete instance of `MigrationAdvisorSettingsPtrInput` via:
+//
+//	        MigrationAdvisorSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationAdvisorSettingsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationAdvisorSettingsPtrOutput() MigrationAdvisorSettingsPtrOutput
+	ToMigrationAdvisorSettingsPtrOutputWithContext(context.Context) MigrationAdvisorSettingsPtrOutput
+}
+
+type migrationAdvisorSettingsPtrType MigrationAdvisorSettingsArgs
+
+func MigrationAdvisorSettingsPtr(v *MigrationAdvisorSettingsArgs) MigrationAdvisorSettingsPtrInput {
+	return (*migrationAdvisorSettingsPtrType)(v)
+}
+
+func (*migrationAdvisorSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationAdvisorSettings)(nil)).Elem()
+}
+
+func (i *migrationAdvisorSettingsPtrType) ToMigrationAdvisorSettingsPtrOutput() MigrationAdvisorSettingsPtrOutput {
+	return i.ToMigrationAdvisorSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationAdvisorSettingsPtrType) ToMigrationAdvisorSettingsPtrOutputWithContext(ctx context.Context) MigrationAdvisorSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvisorSettingsPtrOutput)
+}
+
+type MigrationAdvisorSettingsOutput struct{ *pulumi.OutputState }
+
+func (MigrationAdvisorSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationAdvisorSettings)(nil)).Elem()
+}
+
+func (o MigrationAdvisorSettingsOutput) ToMigrationAdvisorSettingsOutput() MigrationAdvisorSettingsOutput {
+	return o
+}
+
+func (o MigrationAdvisorSettingsOutput) ToMigrationAdvisorSettingsOutputWithContext(ctx context.Context) MigrationAdvisorSettingsOutput {
+	return o
+}
+
+func (o MigrationAdvisorSettingsOutput) ToMigrationAdvisorSettingsPtrOutput() MigrationAdvisorSettingsPtrOutput {
+	return o.ToMigrationAdvisorSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationAdvisorSettingsOutput) ToMigrationAdvisorSettingsPtrOutputWithContext(ctx context.Context) MigrationAdvisorSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationAdvisorSettings) *MigrationAdvisorSettings {
+		return &v
+	}).(MigrationAdvisorSettingsPtrOutput)
+}
+
+// (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+func (o MigrationAdvisorSettingsOutput) IsIgnoreErrors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationAdvisorSettings) *bool { return v.IsIgnoreErrors }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
+func (o MigrationAdvisorSettingsOutput) IsSkipAdvisor() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationAdvisorSettings) *bool { return v.IsSkipAdvisor }).(pulumi.BoolPtrOutput)
+}
+
+type MigrationAdvisorSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationAdvisorSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationAdvisorSettings)(nil)).Elem()
+}
+
+func (o MigrationAdvisorSettingsPtrOutput) ToMigrationAdvisorSettingsPtrOutput() MigrationAdvisorSettingsPtrOutput {
+	return o
+}
+
+func (o MigrationAdvisorSettingsPtrOutput) ToMigrationAdvisorSettingsPtrOutputWithContext(ctx context.Context) MigrationAdvisorSettingsPtrOutput {
+	return o
+}
+
+func (o MigrationAdvisorSettingsPtrOutput) Elem() MigrationAdvisorSettingsOutput {
+	return o.ApplyT(func(v *MigrationAdvisorSettings) MigrationAdvisorSettings {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationAdvisorSettings
+		return ret
+	}).(MigrationAdvisorSettingsOutput)
+}
+
+// (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+func (o MigrationAdvisorSettingsPtrOutput) IsIgnoreErrors() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationAdvisorSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsIgnoreErrors
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
+func (o MigrationAdvisorSettingsPtrOutput) IsSkipAdvisor() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationAdvisorSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsSkipAdvisor
+	}).(pulumi.BoolPtrOutput)
+}
+
+type MigrationDataTransferMediumDetails struct {
+	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	AccessKeyId *string `pulumi:"accessKeyId"`
+	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
+	Name *string `pulumi:"name"`
+	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+	ObjectStorageBucket *MigrationDataTransferMediumDetailsObjectStorageBucket `pulumi:"objectStorageBucket"`
+	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region *string `pulumi:"region"`
+	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey *string `pulumi:"secretAccessKey"`
+	// (Updatable) OCID of the shared storage mount target
+	SharedStorageMountTargetId *string `pulumi:"sharedStorageMountTargetId"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Source *MigrationDataTransferMediumDetailsSource `pulumi:"source"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Target *MigrationDataTransferMediumDetailsTarget `pulumi:"target"`
+	// (Updatable) Type of the data transfer medium to use.
+	Type string `pulumi:"type"`
+}
+
+// MigrationDataTransferMediumDetailsInput is an input type that accepts MigrationDataTransferMediumDetailsArgs and MigrationDataTransferMediumDetailsOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsInput` via:
+//
+//	MigrationDataTransferMediumDetailsArgs{...}
+type MigrationDataTransferMediumDetailsInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsOutput() MigrationDataTransferMediumDetailsOutput
+	ToMigrationDataTransferMediumDetailsOutputWithContext(context.Context) MigrationDataTransferMediumDetailsOutput
+}
+
+type MigrationDataTransferMediumDetailsArgs struct {
+	// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	AccessKeyId pulumi.StringPtrInput `pulumi:"accessKeyId"`
+	// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+	ObjectStorageBucket MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput `pulumi:"objectStorageBucket"`
+	// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region pulumi.StringPtrInput `pulumi:"region"`
+	// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey pulumi.StringPtrInput `pulumi:"secretAccessKey"`
+	// (Updatable) OCID of the shared storage mount target
+	SharedStorageMountTargetId pulumi.StringPtrInput `pulumi:"sharedStorageMountTargetId"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Source MigrationDataTransferMediumDetailsSourcePtrInput `pulumi:"source"`
+	// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Target MigrationDataTransferMediumDetailsTargetPtrInput `pulumi:"target"`
+	// (Updatable) Type of the data transfer medium to use.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (MigrationDataTransferMediumDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetails)(nil)).Elem()
+}
+
+func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDetailsOutput() MigrationDataTransferMediumDetailsOutput {
+	return i.ToMigrationDataTransferMediumDetailsOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDetailsOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsOutput)
+}
+
+func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDetailsPtrOutput() MigrationDataTransferMediumDetailsPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsArgs) ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsOutput).ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx)
+}
+
+// MigrationDataTransferMediumDetailsPtrInput is an input type that accepts MigrationDataTransferMediumDetailsArgs, MigrationDataTransferMediumDetailsPtr and MigrationDataTransferMediumDetailsPtrOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsPtrInput` via:
+//
+//	        MigrationDataTransferMediumDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationDataTransferMediumDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsPtrOutput() MigrationDataTransferMediumDetailsPtrOutput
+	ToMigrationDataTransferMediumDetailsPtrOutputWithContext(context.Context) MigrationDataTransferMediumDetailsPtrOutput
+}
+
+type migrationDataTransferMediumDetailsPtrType MigrationDataTransferMediumDetailsArgs
+
+func MigrationDataTransferMediumDetailsPtr(v *MigrationDataTransferMediumDetailsArgs) MigrationDataTransferMediumDetailsPtrInput {
+	return (*migrationDataTransferMediumDetailsPtrType)(v)
+}
+
+func (*migrationDataTransferMediumDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetails)(nil)).Elem()
+}
+
+func (i *migrationDataTransferMediumDetailsPtrType) ToMigrationDataTransferMediumDetailsPtrOutput() MigrationDataTransferMediumDetailsPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationDataTransferMediumDetailsPtrType) ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetails)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsOutput) ToMigrationDataTransferMediumDetailsOutput() MigrationDataTransferMediumDetailsOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsOutput) ToMigrationDataTransferMediumDetailsOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsOutput) ToMigrationDataTransferMediumDetailsPtrOutput() MigrationDataTransferMediumDetailsPtrOutput {
+	return o.ToMigrationDataTransferMediumDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationDataTransferMediumDetailsOutput) ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetails {
+		return &v
+	}).(MigrationDataTransferMediumDetailsPtrOutput)
+}
+
+// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o MigrationDataTransferMediumDetailsOutput) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.AccessKeyId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
+func (o MigrationDataTransferMediumDetailsOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+func (o MigrationDataTransferMediumDetailsOutput) ObjectStorageBucket() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetailsObjectStorageBucket {
+		return v.ObjectStorageBucket
+	}).(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput)
+}
+
+// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+func (o MigrationDataTransferMediumDetailsOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.Region }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o MigrationDataTransferMediumDetailsOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.SecretAccessKey }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the shared storage mount target
+func (o MigrationDataTransferMediumDetailsOutput) SharedStorageMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *string { return v.SharedStorageMountTargetId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o MigrationDataTransferMediumDetailsOutput) Source() MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetailsSource { return v.Source }).(MigrationDataTransferMediumDetailsSourcePtrOutput)
+}
+
+// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o MigrationDataTransferMediumDetailsOutput) Target() MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetailsTarget { return v.Target }).(MigrationDataTransferMediumDetailsTargetPtrOutput)
+}
+
+// (Updatable) Type of the data transfer medium to use.
+func (o MigrationDataTransferMediumDetailsOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetails) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type MigrationDataTransferMediumDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetails)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsPtrOutput) ToMigrationDataTransferMediumDetailsPtrOutput() MigrationDataTransferMediumDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsPtrOutput) ToMigrationDataTransferMediumDetailsPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsPtrOutput) Elem() MigrationDataTransferMediumDetailsOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) MigrationDataTransferMediumDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationDataTransferMediumDetails
+		return ret
+	}).(MigrationDataTransferMediumDetailsOutput)
+}
+
+// (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o MigrationDataTransferMediumDetailsPtrOutput) AccessKeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AccessKeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
+func (o MigrationDataTransferMediumDetailsPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+func (o MigrationDataTransferMediumDetailsPtrOutput) ObjectStorageBucket() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetailsObjectStorageBucket {
+		if v == nil {
+			return nil
+		}
+		return v.ObjectStorageBucket
+	}).(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput)
+}
+
+// (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+func (o MigrationDataTransferMediumDetailsPtrOutput) Region() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Region
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o MigrationDataTransferMediumDetailsPtrOutput) SecretAccessKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretAccessKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) OCID of the shared storage mount target
+func (o MigrationDataTransferMediumDetailsPtrOutput) SharedStorageMountTargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SharedStorageMountTargetId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o MigrationDataTransferMediumDetailsPtrOutput) Source() MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetailsSource {
+		if v == nil {
+			return nil
+		}
+		return v.Source
+	}).(MigrationDataTransferMediumDetailsSourcePtrOutput)
+}
+
+// (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o MigrationDataTransferMediumDetailsPtrOutput) Target() MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *MigrationDataTransferMediumDetailsTarget {
+		if v == nil {
+			return nil
+		}
+		return v.Target
+	}).(MigrationDataTransferMediumDetailsTargetPtrOutput)
+}
+
+// (Updatable) Type of the data transfer medium to use.
+func (o MigrationDataTransferMediumDetailsPtrOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Type
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsObjectStorageBucket struct {
+	// (Updatable) Bucket name.
+	Bucket *string `pulumi:"bucket"`
+	// (Updatable) Namespace name of the object store bucket.
+	Namespace *string `pulumi:"namespace"`
+}
+
+// MigrationDataTransferMediumDetailsObjectStorageBucketInput is an input type that accepts MigrationDataTransferMediumDetailsObjectStorageBucketArgs and MigrationDataTransferMediumDetailsObjectStorageBucketOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsObjectStorageBucketInput` via:
+//
+//	MigrationDataTransferMediumDetailsObjectStorageBucketArgs{...}
+type MigrationDataTransferMediumDetailsObjectStorageBucketInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsObjectStorageBucketOutput() MigrationDataTransferMediumDetailsObjectStorageBucketOutput
+	ToMigrationDataTransferMediumDetailsObjectStorageBucketOutputWithContext(context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketOutput
+}
+
+type MigrationDataTransferMediumDetailsObjectStorageBucketArgs struct {
+	// (Updatable) Bucket name.
+	Bucket pulumi.StringPtrInput `pulumi:"bucket"`
+	// (Updatable) Namespace name of the object store bucket.
+	Namespace pulumi.StringPtrInput `pulumi:"namespace"`
+}
+
+func (MigrationDataTransferMediumDetailsObjectStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsObjectStorageBucket)(nil)).Elem()
+}
+
+func (i MigrationDataTransferMediumDetailsObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsObjectStorageBucketOutput() MigrationDataTransferMediumDetailsObjectStorageBucketOutput {
+	return i.ToMigrationDataTransferMediumDetailsObjectStorageBucketOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsObjectStorageBucketOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsObjectStorageBucketOutput)
+}
+
+func (i MigrationDataTransferMediumDetailsObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsObjectStorageBucketArgs) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsObjectStorageBucketOutput).ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(ctx)
+}
+
+// MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput is an input type that accepts MigrationDataTransferMediumDetailsObjectStorageBucketArgs, MigrationDataTransferMediumDetailsObjectStorageBucketPtr and MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput` via:
+//
+//	        MigrationDataTransferMediumDetailsObjectStorageBucketArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput
+	ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput
+}
+
+type migrationDataTransferMediumDetailsObjectStorageBucketPtrType MigrationDataTransferMediumDetailsObjectStorageBucketArgs
+
+func MigrationDataTransferMediumDetailsObjectStorageBucketPtr(v *MigrationDataTransferMediumDetailsObjectStorageBucketArgs) MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput {
+	return (*migrationDataTransferMediumDetailsObjectStorageBucketPtrType)(v)
+}
+
+func (*migrationDataTransferMediumDetailsObjectStorageBucketPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsObjectStorageBucket)(nil)).Elem()
+}
+
+func (i *migrationDataTransferMediumDetailsObjectStorageBucketPtrType) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationDataTransferMediumDetailsObjectStorageBucketPtrType) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsObjectStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsObjectStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsObjectStorageBucket)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsObjectStorageBucketOutput() MigrationDataTransferMediumDetailsObjectStorageBucketOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsObjectStorageBucketOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return o.ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketOutput) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetailsObjectStorageBucket) *MigrationDataTransferMediumDetailsObjectStorageBucket {
+		return &v
+	}).(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput)
+}
+
+// (Updatable) Bucket name.
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsObjectStorageBucket) *string { return v.Bucket }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace name of the object store bucket.
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsObjectStorageBucket) *string { return v.Namespace }).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsObjectStorageBucket)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput() MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput) ToMigrationDataTransferMediumDetailsObjectStorageBucketPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput) Elem() MigrationDataTransferMediumDetailsObjectStorageBucketOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsObjectStorageBucket) MigrationDataTransferMediumDetailsObjectStorageBucket {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationDataTransferMediumDetailsObjectStorageBucket
+		return ret
+	}).(MigrationDataTransferMediumDetailsObjectStorageBucketOutput)
+}
+
+// (Updatable) Bucket name.
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput) Bucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsObjectStorageBucket) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Bucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Namespace name of the object store bucket.
+func (o MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput) Namespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsObjectStorageBucket) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Namespace
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsSource struct {
+	// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind string `pulumi:"kind"`
+	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome *string `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation *string `pulumi:"walletLocation"`
+}
+
+// MigrationDataTransferMediumDetailsSourceInput is an input type that accepts MigrationDataTransferMediumDetailsSourceArgs and MigrationDataTransferMediumDetailsSourceOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsSourceInput` via:
+//
+//	MigrationDataTransferMediumDetailsSourceArgs{...}
+type MigrationDataTransferMediumDetailsSourceInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsSourceOutput() MigrationDataTransferMediumDetailsSourceOutput
+	ToMigrationDataTransferMediumDetailsSourceOutputWithContext(context.Context) MigrationDataTransferMediumDetailsSourceOutput
+}
+
+type MigrationDataTransferMediumDetailsSourceArgs struct {
+	// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome pulumi.StringPtrInput `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringPtrInput `pulumi:"walletLocation"`
+}
+
+func (MigrationDataTransferMediumDetailsSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsSource)(nil)).Elem()
+}
+
+func (i MigrationDataTransferMediumDetailsSourceArgs) ToMigrationDataTransferMediumDetailsSourceOutput() MigrationDataTransferMediumDetailsSourceOutput {
+	return i.ToMigrationDataTransferMediumDetailsSourceOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsSourceArgs) ToMigrationDataTransferMediumDetailsSourceOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsSourceOutput)
+}
+
+func (i MigrationDataTransferMediumDetailsSourceArgs) ToMigrationDataTransferMediumDetailsSourcePtrOutput() MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsSourceArgs) ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsSourceOutput).ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(ctx)
+}
+
+// MigrationDataTransferMediumDetailsSourcePtrInput is an input type that accepts MigrationDataTransferMediumDetailsSourceArgs, MigrationDataTransferMediumDetailsSourcePtr and MigrationDataTransferMediumDetailsSourcePtrOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsSourcePtrInput` via:
+//
+//	        MigrationDataTransferMediumDetailsSourceArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationDataTransferMediumDetailsSourcePtrInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsSourcePtrOutput() MigrationDataTransferMediumDetailsSourcePtrOutput
+	ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(context.Context) MigrationDataTransferMediumDetailsSourcePtrOutput
+}
+
+type migrationDataTransferMediumDetailsSourcePtrType MigrationDataTransferMediumDetailsSourceArgs
+
+func MigrationDataTransferMediumDetailsSourcePtr(v *MigrationDataTransferMediumDetailsSourceArgs) MigrationDataTransferMediumDetailsSourcePtrInput {
+	return (*migrationDataTransferMediumDetailsSourcePtrType)(v)
+}
+
+func (*migrationDataTransferMediumDetailsSourcePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsSource)(nil)).Elem()
+}
+
+func (i *migrationDataTransferMediumDetailsSourcePtrType) ToMigrationDataTransferMediumDetailsSourcePtrOutput() MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(context.Background())
+}
+
+func (i *migrationDataTransferMediumDetailsSourcePtrType) ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsSourcePtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsSourceOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsSource)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsSourceOutput) ToMigrationDataTransferMediumDetailsSourceOutput() MigrationDataTransferMediumDetailsSourceOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsSourceOutput) ToMigrationDataTransferMediumDetailsSourceOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsSourceOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsSourceOutput) ToMigrationDataTransferMediumDetailsSourcePtrOutput() MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return o.ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(context.Background())
+}
+
+func (o MigrationDataTransferMediumDetailsSourceOutput) ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetailsSource) *MigrationDataTransferMediumDetailsSource {
+		return &v
+	}).(MigrationDataTransferMediumDetailsSourcePtrOutput)
+}
+
+// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o MigrationDataTransferMediumDetailsSourceOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsSource) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o MigrationDataTransferMediumDetailsSourceOutput) OciHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsSource) *string { return v.OciHome }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDataTransferMediumDetailsSourceOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsSource) *string { return v.WalletLocation }).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsSourcePtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsSourcePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsSource)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsSourcePtrOutput) ToMigrationDataTransferMediumDetailsSourcePtrOutput() MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsSourcePtrOutput) ToMigrationDataTransferMediumDetailsSourcePtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsSourcePtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsSourcePtrOutput) Elem() MigrationDataTransferMediumDetailsSourceOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsSource) MigrationDataTransferMediumDetailsSource {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationDataTransferMediumDetailsSource
+		return ret
+	}).(MigrationDataTransferMediumDetailsSourceOutput)
+}
+
+// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o MigrationDataTransferMediumDetailsSourcePtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsSource) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o MigrationDataTransferMediumDetailsSourcePtrOutput) OciHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OciHome
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDataTransferMediumDetailsSourcePtrOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsSource) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WalletLocation
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsTarget struct {
+	// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind string `pulumi:"kind"`
+	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome *string `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation *string `pulumi:"walletLocation"`
+}
+
+// MigrationDataTransferMediumDetailsTargetInput is an input type that accepts MigrationDataTransferMediumDetailsTargetArgs and MigrationDataTransferMediumDetailsTargetOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsTargetInput` via:
+//
+//	MigrationDataTransferMediumDetailsTargetArgs{...}
+type MigrationDataTransferMediumDetailsTargetInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsTargetOutput() MigrationDataTransferMediumDetailsTargetOutput
+	ToMigrationDataTransferMediumDetailsTargetOutputWithContext(context.Context) MigrationDataTransferMediumDetailsTargetOutput
+}
+
+type MigrationDataTransferMediumDetailsTargetArgs struct {
+	// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome pulumi.StringPtrInput `pulumi:"ociHome"`
+	// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringPtrInput `pulumi:"walletLocation"`
+}
+
+func (MigrationDataTransferMediumDetailsTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsTarget)(nil)).Elem()
+}
+
+func (i MigrationDataTransferMediumDetailsTargetArgs) ToMigrationDataTransferMediumDetailsTargetOutput() MigrationDataTransferMediumDetailsTargetOutput {
+	return i.ToMigrationDataTransferMediumDetailsTargetOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsTargetArgs) ToMigrationDataTransferMediumDetailsTargetOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsTargetOutput)
+}
+
+func (i MigrationDataTransferMediumDetailsTargetArgs) ToMigrationDataTransferMediumDetailsTargetPtrOutput() MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationDataTransferMediumDetailsTargetArgs) ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsTargetOutput).ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(ctx)
+}
+
+// MigrationDataTransferMediumDetailsTargetPtrInput is an input type that accepts MigrationDataTransferMediumDetailsTargetArgs, MigrationDataTransferMediumDetailsTargetPtr and MigrationDataTransferMediumDetailsTargetPtrOutput values.
+// You can construct a concrete instance of `MigrationDataTransferMediumDetailsTargetPtrInput` via:
+//
+//	        MigrationDataTransferMediumDetailsTargetArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationDataTransferMediumDetailsTargetPtrInput interface {
+	pulumi.Input
+
+	ToMigrationDataTransferMediumDetailsTargetPtrOutput() MigrationDataTransferMediumDetailsTargetPtrOutput
+	ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(context.Context) MigrationDataTransferMediumDetailsTargetPtrOutput
+}
+
+type migrationDataTransferMediumDetailsTargetPtrType MigrationDataTransferMediumDetailsTargetArgs
+
+func MigrationDataTransferMediumDetailsTargetPtr(v *MigrationDataTransferMediumDetailsTargetArgs) MigrationDataTransferMediumDetailsTargetPtrInput {
+	return (*migrationDataTransferMediumDetailsTargetPtrType)(v)
+}
+
+func (*migrationDataTransferMediumDetailsTargetPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsTarget)(nil)).Elem()
+}
+
+func (i *migrationDataTransferMediumDetailsTargetPtrType) ToMigrationDataTransferMediumDetailsTargetPtrOutput() MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return i.ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationDataTransferMediumDetailsTargetPtrType) ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationDataTransferMediumDetailsTargetPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsTargetOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationDataTransferMediumDetailsTarget)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsTargetOutput) ToMigrationDataTransferMediumDetailsTargetOutput() MigrationDataTransferMediumDetailsTargetOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsTargetOutput) ToMigrationDataTransferMediumDetailsTargetOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsTargetOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsTargetOutput) ToMigrationDataTransferMediumDetailsTargetPtrOutput() MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return o.ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationDataTransferMediumDetailsTargetOutput) ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationDataTransferMediumDetailsTarget) *MigrationDataTransferMediumDetailsTarget {
+		return &v
+	}).(MigrationDataTransferMediumDetailsTargetPtrOutput)
+}
+
+// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o MigrationDataTransferMediumDetailsTargetOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsTarget) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o MigrationDataTransferMediumDetailsTargetOutput) OciHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsTarget) *string { return v.OciHome }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDataTransferMediumDetailsTargetOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationDataTransferMediumDetailsTarget) *string { return v.WalletLocation }).(pulumi.StringPtrOutput)
+}
+
+type MigrationDataTransferMediumDetailsTargetPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationDataTransferMediumDetailsTargetPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationDataTransferMediumDetailsTarget)(nil)).Elem()
+}
+
+func (o MigrationDataTransferMediumDetailsTargetPtrOutput) ToMigrationDataTransferMediumDetailsTargetPtrOutput() MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsTargetPtrOutput) ToMigrationDataTransferMediumDetailsTargetPtrOutputWithContext(ctx context.Context) MigrationDataTransferMediumDetailsTargetPtrOutput {
+	return o
+}
+
+func (o MigrationDataTransferMediumDetailsTargetPtrOutput) Elem() MigrationDataTransferMediumDetailsTargetOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsTarget) MigrationDataTransferMediumDetailsTarget {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationDataTransferMediumDetailsTarget
+		return ret
+	}).(MigrationDataTransferMediumDetailsTargetOutput)
+}
+
+// (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o MigrationDataTransferMediumDetailsTargetPtrOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Kind
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o MigrationDataTransferMediumDetailsTargetPtrOutput) OciHome() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.OciHome
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o MigrationDataTransferMediumDetailsTargetPtrOutput) WalletLocation() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationDataTransferMediumDetailsTarget) *string {
+		if v == nil {
+			return nil
+		}
+		return v.WalletLocation
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationExcludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication *bool `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object string `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner *string `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema *string `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type *string `pulumi:"type"`
+}
+
+// MigrationExcludeObjectInput is an input type that accepts MigrationExcludeObjectArgs and MigrationExcludeObjectOutput values.
+// You can construct a concrete instance of `MigrationExcludeObjectInput` via:
+//
+//	MigrationExcludeObjectArgs{...}
+type MigrationExcludeObjectInput interface {
+	pulumi.Input
+
+	ToMigrationExcludeObjectOutput() MigrationExcludeObjectOutput
+	ToMigrationExcludeObjectOutputWithContext(context.Context) MigrationExcludeObjectOutput
+}
+
+type MigrationExcludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication pulumi.BoolPtrInput `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object pulumi.StringInput `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema pulumi.StringPtrInput `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MigrationExcludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationExcludeObject)(nil)).Elem()
+}
+
+func (i MigrationExcludeObjectArgs) ToMigrationExcludeObjectOutput() MigrationExcludeObjectOutput {
+	return i.ToMigrationExcludeObjectOutputWithContext(context.Background())
+}
+
+func (i MigrationExcludeObjectArgs) ToMigrationExcludeObjectOutputWithContext(ctx context.Context) MigrationExcludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationExcludeObjectOutput)
+}
+
+// MigrationExcludeObjectArrayInput is an input type that accepts MigrationExcludeObjectArray and MigrationExcludeObjectArrayOutput values.
+// You can construct a concrete instance of `MigrationExcludeObjectArrayInput` via:
+//
+//	MigrationExcludeObjectArray{ MigrationExcludeObjectArgs{...} }
+type MigrationExcludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToMigrationExcludeObjectArrayOutput() MigrationExcludeObjectArrayOutput
+	ToMigrationExcludeObjectArrayOutputWithContext(context.Context) MigrationExcludeObjectArrayOutput
+}
+
+type MigrationExcludeObjectArray []MigrationExcludeObjectInput
+
+func (MigrationExcludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationExcludeObject)(nil)).Elem()
+}
+
+func (i MigrationExcludeObjectArray) ToMigrationExcludeObjectArrayOutput() MigrationExcludeObjectArrayOutput {
+	return i.ToMigrationExcludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationExcludeObjectArray) ToMigrationExcludeObjectArrayOutputWithContext(ctx context.Context) MigrationExcludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationExcludeObjectArrayOutput)
+}
+
+type MigrationExcludeObjectOutput struct{ *pulumi.OutputState }
+
+func (MigrationExcludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationExcludeObject)(nil)).Elem()
+}
+
+func (o MigrationExcludeObjectOutput) ToMigrationExcludeObjectOutput() MigrationExcludeObjectOutput {
+	return o
+}
+
+func (o MigrationExcludeObjectOutput) ToMigrationExcludeObjectOutputWithContext(ctx context.Context) MigrationExcludeObjectOutput {
+	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+func (o MigrationExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationExcludeObject) *bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolPtrOutput)
+}
+
+// Name of the object (regular expression is allowed)
+func (o MigrationExcludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationExcludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// Owner of the object (regular expression is allowed)
+func (o MigrationExcludeObjectOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationExcludeObject) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// Schema of the object (regular expression is allowed)
+func (o MigrationExcludeObjectOutput) Schema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationExcludeObject) *string { return v.Schema }).(pulumi.StringPtrOutput)
+}
+
+// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+func (o MigrationExcludeObjectOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationExcludeObject) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MigrationExcludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationExcludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationExcludeObject)(nil)).Elem()
+}
+
+func (o MigrationExcludeObjectArrayOutput) ToMigrationExcludeObjectArrayOutput() MigrationExcludeObjectArrayOutput {
+	return o
+}
+
+func (o MigrationExcludeObjectArrayOutput) ToMigrationExcludeObjectArrayOutputWithContext(ctx context.Context) MigrationExcludeObjectArrayOutput {
+	return o
+}
+
+func (o MigrationExcludeObjectArrayOutput) Index(i pulumi.IntInput) MigrationExcludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationExcludeObject {
+		return vs[0].([]MigrationExcludeObject)[vs[1].(int)]
+	}).(MigrationExcludeObjectOutput)
+}
+
+type MigrationGgsDetails struct {
+	// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag *int `pulumi:"acceptableLag"`
+	// (Updatable) Parameters for GoldenGate Extract processes.
+	Extract *MigrationGgsDetailsExtract `pulumi:"extract"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments []MigrationGgsDetailsGgsDeployment `pulumi:"ggsDeployments"`
+	// (Updatable) Parameters for GoldenGate Replicat processes.
+	Replicat *MigrationGgsDetailsReplicat `pulumi:"replicat"`
+}
+
+// MigrationGgsDetailsInput is an input type that accepts MigrationGgsDetailsArgs and MigrationGgsDetailsOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsInput` via:
+//
+//	MigrationGgsDetailsArgs{...}
+type MigrationGgsDetailsInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsOutput() MigrationGgsDetailsOutput
+	ToMigrationGgsDetailsOutputWithContext(context.Context) MigrationGgsDetailsOutput
+}
+
+type MigrationGgsDetailsArgs struct {
+	// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntPtrInput `pulumi:"acceptableLag"`
+	// (Updatable) Parameters for GoldenGate Extract processes.
+	Extract MigrationGgsDetailsExtractPtrInput `pulumi:"extract"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments MigrationGgsDetailsGgsDeploymentArrayInput `pulumi:"ggsDeployments"`
+	// (Updatable) Parameters for GoldenGate Replicat processes.
+	Replicat MigrationGgsDetailsReplicatPtrInput `pulumi:"replicat"`
+}
+
+func (MigrationGgsDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetails)(nil)).Elem()
+}
+
+func (i MigrationGgsDetailsArgs) ToMigrationGgsDetailsOutput() MigrationGgsDetailsOutput {
+	return i.ToMigrationGgsDetailsOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsArgs) ToMigrationGgsDetailsOutputWithContext(ctx context.Context) MigrationGgsDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsOutput)
+}
+
+func (i MigrationGgsDetailsArgs) ToMigrationGgsDetailsPtrOutput() MigrationGgsDetailsPtrOutput {
+	return i.ToMigrationGgsDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsArgs) ToMigrationGgsDetailsPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsOutput).ToMigrationGgsDetailsPtrOutputWithContext(ctx)
+}
+
+// MigrationGgsDetailsPtrInput is an input type that accepts MigrationGgsDetailsArgs, MigrationGgsDetailsPtr and MigrationGgsDetailsPtrOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsPtrInput` via:
+//
+//	        MigrationGgsDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGgsDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsPtrOutput() MigrationGgsDetailsPtrOutput
+	ToMigrationGgsDetailsPtrOutputWithContext(context.Context) MigrationGgsDetailsPtrOutput
+}
+
+type migrationGgsDetailsPtrType MigrationGgsDetailsArgs
+
+func MigrationGgsDetailsPtr(v *MigrationGgsDetailsArgs) MigrationGgsDetailsPtrInput {
+	return (*migrationGgsDetailsPtrType)(v)
+}
+
+func (*migrationGgsDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGgsDetails)(nil)).Elem()
+}
+
+func (i *migrationGgsDetailsPtrType) ToMigrationGgsDetailsPtrOutput() MigrationGgsDetailsPtrOutput {
+	return i.ToMigrationGgsDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGgsDetailsPtrType) ToMigrationGgsDetailsPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsPtrOutput)
+}
+
+type MigrationGgsDetailsOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetails)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsOutput) ToMigrationGgsDetailsOutput() MigrationGgsDetailsOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsOutput) ToMigrationGgsDetailsOutputWithContext(ctx context.Context) MigrationGgsDetailsOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsOutput) ToMigrationGgsDetailsPtrOutput() MigrationGgsDetailsPtrOutput {
+	return o.ToMigrationGgsDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGgsDetailsOutput) ToMigrationGgsDetailsPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGgsDetails) *MigrationGgsDetails {
+		return &v
+	}).(MigrationGgsDetailsPtrOutput)
+}
+
+// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o MigrationGgsDetailsOutput) AcceptableLag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetails) *int { return v.AcceptableLag }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Extract processes.
+func (o MigrationGgsDetailsOutput) Extract() MigrationGgsDetailsExtractPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetails) *MigrationGgsDetailsExtract { return v.Extract }).(MigrationGgsDetailsExtractPtrOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o MigrationGgsDetailsOutput) GgsDeployments() MigrationGgsDetailsGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v MigrationGgsDetails) []MigrationGgsDetailsGgsDeployment { return v.GgsDeployments }).(MigrationGgsDetailsGgsDeploymentArrayOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Replicat processes.
+func (o MigrationGgsDetailsOutput) Replicat() MigrationGgsDetailsReplicatPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetails) *MigrationGgsDetailsReplicat { return v.Replicat }).(MigrationGgsDetailsReplicatPtrOutput)
+}
+
+type MigrationGgsDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGgsDetails)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsPtrOutput) ToMigrationGgsDetailsPtrOutput() MigrationGgsDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsPtrOutput) ToMigrationGgsDetailsPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsPtrOutput) Elem() MigrationGgsDetailsOutput {
+	return o.ApplyT(func(v *MigrationGgsDetails) MigrationGgsDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGgsDetails
+		return ret
+	}).(MigrationGgsDetailsOutput)
+}
+
+// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o MigrationGgsDetailsPtrOutput) AcceptableLag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGgsDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AcceptableLag
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Extract processes.
+func (o MigrationGgsDetailsPtrOutput) Extract() MigrationGgsDetailsExtractPtrOutput {
+	return o.ApplyT(func(v *MigrationGgsDetails) *MigrationGgsDetailsExtract {
+		if v == nil {
+			return nil
+		}
+		return v.Extract
+	}).(MigrationGgsDetailsExtractPtrOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o MigrationGgsDetailsPtrOutput) GgsDeployments() MigrationGgsDetailsGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v *MigrationGgsDetails) []MigrationGgsDetailsGgsDeployment {
+		if v == nil {
+			return nil
+		}
+		return v.GgsDeployments
+	}).(MigrationGgsDetailsGgsDeploymentArrayOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Replicat processes.
+func (o MigrationGgsDetailsPtrOutput) Replicat() MigrationGgsDetailsReplicatPtrOutput {
+	return o.ApplyT(func(v *MigrationGgsDetails) *MigrationGgsDetailsReplicat {
+		if v == nil {
+			return nil
+		}
+		return v.Replicat
+	}).(MigrationGgsDetailsReplicatPtrOutput)
+}
+
+type MigrationGgsDetailsExtract struct {
+	// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration *int `pulumi:"longTransDuration"`
+	// (Updatable) Extract performance.
+	PerformanceProfile *string `pulumi:"performanceProfile"`
+}
+
+// MigrationGgsDetailsExtractInput is an input type that accepts MigrationGgsDetailsExtractArgs and MigrationGgsDetailsExtractOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsExtractInput` via:
+//
+//	MigrationGgsDetailsExtractArgs{...}
+type MigrationGgsDetailsExtractInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsExtractOutput() MigrationGgsDetailsExtractOutput
+	ToMigrationGgsDetailsExtractOutputWithContext(context.Context) MigrationGgsDetailsExtractOutput
+}
+
+type MigrationGgsDetailsExtractArgs struct {
+	// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntPtrInput `pulumi:"longTransDuration"`
+	// (Updatable) Extract performance.
+	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
+}
+
+func (MigrationGgsDetailsExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetailsExtract)(nil)).Elem()
+}
+
+func (i MigrationGgsDetailsExtractArgs) ToMigrationGgsDetailsExtractOutput() MigrationGgsDetailsExtractOutput {
+	return i.ToMigrationGgsDetailsExtractOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsExtractArgs) ToMigrationGgsDetailsExtractOutputWithContext(ctx context.Context) MigrationGgsDetailsExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsExtractOutput)
+}
+
+func (i MigrationGgsDetailsExtractArgs) ToMigrationGgsDetailsExtractPtrOutput() MigrationGgsDetailsExtractPtrOutput {
+	return i.ToMigrationGgsDetailsExtractPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsExtractArgs) ToMigrationGgsDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsExtractPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsExtractOutput).ToMigrationGgsDetailsExtractPtrOutputWithContext(ctx)
+}
+
+// MigrationGgsDetailsExtractPtrInput is an input type that accepts MigrationGgsDetailsExtractArgs, MigrationGgsDetailsExtractPtr and MigrationGgsDetailsExtractPtrOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsExtractPtrInput` via:
+//
+//	        MigrationGgsDetailsExtractArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGgsDetailsExtractPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsExtractPtrOutput() MigrationGgsDetailsExtractPtrOutput
+	ToMigrationGgsDetailsExtractPtrOutputWithContext(context.Context) MigrationGgsDetailsExtractPtrOutput
+}
+
+type migrationGgsDetailsExtractPtrType MigrationGgsDetailsExtractArgs
+
+func MigrationGgsDetailsExtractPtr(v *MigrationGgsDetailsExtractArgs) MigrationGgsDetailsExtractPtrInput {
+	return (*migrationGgsDetailsExtractPtrType)(v)
+}
+
+func (*migrationGgsDetailsExtractPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGgsDetailsExtract)(nil)).Elem()
+}
+
+func (i *migrationGgsDetailsExtractPtrType) ToMigrationGgsDetailsExtractPtrOutput() MigrationGgsDetailsExtractPtrOutput {
+	return i.ToMigrationGgsDetailsExtractPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGgsDetailsExtractPtrType) ToMigrationGgsDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsExtractPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsExtractPtrOutput)
+}
+
+type MigrationGgsDetailsExtractOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetailsExtract)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsExtractOutput) ToMigrationGgsDetailsExtractOutput() MigrationGgsDetailsExtractOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsExtractOutput) ToMigrationGgsDetailsExtractOutputWithContext(ctx context.Context) MigrationGgsDetailsExtractOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsExtractOutput) ToMigrationGgsDetailsExtractPtrOutput() MigrationGgsDetailsExtractPtrOutput {
+	return o.ToMigrationGgsDetailsExtractPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGgsDetailsExtractOutput) ToMigrationGgsDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsExtractPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGgsDetailsExtract) *MigrationGgsDetailsExtract {
+		return &v
+	}).(MigrationGgsDetailsExtractPtrOutput)
+}
+
+// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o MigrationGgsDetailsExtractOutput) LongTransDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetailsExtract) *int { return v.LongTransDuration }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationGgsDetailsExtractOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetailsExtract) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
+}
+
+type MigrationGgsDetailsExtractPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsExtractPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGgsDetailsExtract)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsExtractPtrOutput) ToMigrationGgsDetailsExtractPtrOutput() MigrationGgsDetailsExtractPtrOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsExtractPtrOutput) ToMigrationGgsDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsExtractPtrOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsExtractPtrOutput) Elem() MigrationGgsDetailsExtractOutput {
+	return o.ApplyT(func(v *MigrationGgsDetailsExtract) MigrationGgsDetailsExtract {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGgsDetailsExtract
+		return ret
+	}).(MigrationGgsDetailsExtractOutput)
+}
+
+// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o MigrationGgsDetailsExtractPtrOutput) LongTransDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationGgsDetailsExtract) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LongTransDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationGgsDetailsExtractPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGgsDetailsExtract) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationGgsDetailsGgsDeployment struct {
+	// The OCID of the resource being referenced.
+	DeploymentId *string `pulumi:"deploymentId"`
+	// The OCID of the resource being referenced.
+	GgsAdminCredentialsSecretId *string `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+// MigrationGgsDetailsGgsDeploymentInput is an input type that accepts MigrationGgsDetailsGgsDeploymentArgs and MigrationGgsDetailsGgsDeploymentOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsGgsDeploymentInput` via:
+//
+//	MigrationGgsDetailsGgsDeploymentArgs{...}
+type MigrationGgsDetailsGgsDeploymentInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsGgsDeploymentOutput() MigrationGgsDetailsGgsDeploymentOutput
+	ToMigrationGgsDetailsGgsDeploymentOutputWithContext(context.Context) MigrationGgsDetailsGgsDeploymentOutput
+}
+
+type MigrationGgsDetailsGgsDeploymentArgs struct {
+	// The OCID of the resource being referenced.
+	DeploymentId pulumi.StringPtrInput `pulumi:"deploymentId"`
+	// The OCID of the resource being referenced.
+	GgsAdminCredentialsSecretId pulumi.StringPtrInput `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+func (MigrationGgsDetailsGgsDeploymentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (i MigrationGgsDetailsGgsDeploymentArgs) ToMigrationGgsDetailsGgsDeploymentOutput() MigrationGgsDetailsGgsDeploymentOutput {
+	return i.ToMigrationGgsDetailsGgsDeploymentOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsGgsDeploymentArgs) ToMigrationGgsDetailsGgsDeploymentOutputWithContext(ctx context.Context) MigrationGgsDetailsGgsDeploymentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsGgsDeploymentOutput)
+}
+
+// MigrationGgsDetailsGgsDeploymentArrayInput is an input type that accepts MigrationGgsDetailsGgsDeploymentArray and MigrationGgsDetailsGgsDeploymentArrayOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsGgsDeploymentArrayInput` via:
+//
+//	MigrationGgsDetailsGgsDeploymentArray{ MigrationGgsDetailsGgsDeploymentArgs{...} }
+type MigrationGgsDetailsGgsDeploymentArrayInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsGgsDeploymentArrayOutput() MigrationGgsDetailsGgsDeploymentArrayOutput
+	ToMigrationGgsDetailsGgsDeploymentArrayOutputWithContext(context.Context) MigrationGgsDetailsGgsDeploymentArrayOutput
+}
+
+type MigrationGgsDetailsGgsDeploymentArray []MigrationGgsDetailsGgsDeploymentInput
+
+func (MigrationGgsDetailsGgsDeploymentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationGgsDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (i MigrationGgsDetailsGgsDeploymentArray) ToMigrationGgsDetailsGgsDeploymentArrayOutput() MigrationGgsDetailsGgsDeploymentArrayOutput {
+	return i.ToMigrationGgsDetailsGgsDeploymentArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsGgsDeploymentArray) ToMigrationGgsDetailsGgsDeploymentArrayOutputWithContext(ctx context.Context) MigrationGgsDetailsGgsDeploymentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsGgsDeploymentArrayOutput)
+}
+
+type MigrationGgsDetailsGgsDeploymentOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsGgsDeploymentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsGgsDeploymentOutput) ToMigrationGgsDetailsGgsDeploymentOutput() MigrationGgsDetailsGgsDeploymentOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsGgsDeploymentOutput) ToMigrationGgsDetailsGgsDeploymentOutputWithContext(ctx context.Context) MigrationGgsDetailsGgsDeploymentOutput {
+	return o
+}
+
+// The OCID of the resource being referenced.
+func (o MigrationGgsDetailsGgsDeploymentOutput) DeploymentId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetailsGgsDeployment) *string { return v.DeploymentId }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o MigrationGgsDetailsGgsDeploymentOutput) GgsAdminCredentialsSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetailsGgsDeployment) *string { return v.GgsAdminCredentialsSecretId }).(pulumi.StringPtrOutput)
+}
+
+type MigrationGgsDetailsGgsDeploymentArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsGgsDeploymentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationGgsDetailsGgsDeployment)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsGgsDeploymentArrayOutput) ToMigrationGgsDetailsGgsDeploymentArrayOutput() MigrationGgsDetailsGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsGgsDeploymentArrayOutput) ToMigrationGgsDetailsGgsDeploymentArrayOutputWithContext(ctx context.Context) MigrationGgsDetailsGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsGgsDeploymentArrayOutput) Index(i pulumi.IntInput) MigrationGgsDetailsGgsDeploymentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationGgsDetailsGgsDeployment {
+		return vs[0].([]MigrationGgsDetailsGgsDeployment)[vs[1].(int)]
+	}).(MigrationGgsDetailsGgsDeploymentOutput)
+}
+
+type MigrationGgsDetailsReplicat struct {
+	// (Updatable) Replicat performance.
+	PerformanceProfile *string `pulumi:"performanceProfile"`
+}
+
+// MigrationGgsDetailsReplicatInput is an input type that accepts MigrationGgsDetailsReplicatArgs and MigrationGgsDetailsReplicatOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsReplicatInput` via:
+//
+//	MigrationGgsDetailsReplicatArgs{...}
+type MigrationGgsDetailsReplicatInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsReplicatOutput() MigrationGgsDetailsReplicatOutput
+	ToMigrationGgsDetailsReplicatOutputWithContext(context.Context) MigrationGgsDetailsReplicatOutput
+}
+
+type MigrationGgsDetailsReplicatArgs struct {
+	// (Updatable) Replicat performance.
+	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
+}
+
+func (MigrationGgsDetailsReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetailsReplicat)(nil)).Elem()
+}
+
+func (i MigrationGgsDetailsReplicatArgs) ToMigrationGgsDetailsReplicatOutput() MigrationGgsDetailsReplicatOutput {
+	return i.ToMigrationGgsDetailsReplicatOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsReplicatArgs) ToMigrationGgsDetailsReplicatOutputWithContext(ctx context.Context) MigrationGgsDetailsReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsReplicatOutput)
+}
+
+func (i MigrationGgsDetailsReplicatArgs) ToMigrationGgsDetailsReplicatPtrOutput() MigrationGgsDetailsReplicatPtrOutput {
+	return i.ToMigrationGgsDetailsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationGgsDetailsReplicatArgs) ToMigrationGgsDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsReplicatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsReplicatOutput).ToMigrationGgsDetailsReplicatPtrOutputWithContext(ctx)
+}
+
+// MigrationGgsDetailsReplicatPtrInput is an input type that accepts MigrationGgsDetailsReplicatArgs, MigrationGgsDetailsReplicatPtr and MigrationGgsDetailsReplicatPtrOutput values.
+// You can construct a concrete instance of `MigrationGgsDetailsReplicatPtrInput` via:
+//
+//	        MigrationGgsDetailsReplicatArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationGgsDetailsReplicatPtrInput interface {
+	pulumi.Input
+
+	ToMigrationGgsDetailsReplicatPtrOutput() MigrationGgsDetailsReplicatPtrOutput
+	ToMigrationGgsDetailsReplicatPtrOutputWithContext(context.Context) MigrationGgsDetailsReplicatPtrOutput
+}
+
+type migrationGgsDetailsReplicatPtrType MigrationGgsDetailsReplicatArgs
+
+func MigrationGgsDetailsReplicatPtr(v *MigrationGgsDetailsReplicatArgs) MigrationGgsDetailsReplicatPtrInput {
+	return (*migrationGgsDetailsReplicatPtrType)(v)
+}
+
+func (*migrationGgsDetailsReplicatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGgsDetailsReplicat)(nil)).Elem()
+}
+
+func (i *migrationGgsDetailsReplicatPtrType) ToMigrationGgsDetailsReplicatPtrOutput() MigrationGgsDetailsReplicatPtrOutput {
+	return i.ToMigrationGgsDetailsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationGgsDetailsReplicatPtrType) ToMigrationGgsDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsReplicatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationGgsDetailsReplicatPtrOutput)
+}
+
+type MigrationGgsDetailsReplicatOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationGgsDetailsReplicat)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsReplicatOutput) ToMigrationGgsDetailsReplicatOutput() MigrationGgsDetailsReplicatOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsReplicatOutput) ToMigrationGgsDetailsReplicatOutputWithContext(ctx context.Context) MigrationGgsDetailsReplicatOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsReplicatOutput) ToMigrationGgsDetailsReplicatPtrOutput() MigrationGgsDetailsReplicatPtrOutput {
+	return o.ToMigrationGgsDetailsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationGgsDetailsReplicatOutput) ToMigrationGgsDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsReplicatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationGgsDetailsReplicat) *MigrationGgsDetailsReplicat {
+		return &v
+	}).(MigrationGgsDetailsReplicatPtrOutput)
+}
+
+// (Updatable) Replicat performance.
+func (o MigrationGgsDetailsReplicatOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationGgsDetailsReplicat) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
+}
+
+type MigrationGgsDetailsReplicatPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationGgsDetailsReplicatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationGgsDetailsReplicat)(nil)).Elem()
+}
+
+func (o MigrationGgsDetailsReplicatPtrOutput) ToMigrationGgsDetailsReplicatPtrOutput() MigrationGgsDetailsReplicatPtrOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsReplicatPtrOutput) ToMigrationGgsDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationGgsDetailsReplicatPtrOutput {
+	return o
+}
+
+func (o MigrationGgsDetailsReplicatPtrOutput) Elem() MigrationGgsDetailsReplicatOutput {
+	return o.ApplyT(func(v *MigrationGgsDetailsReplicat) MigrationGgsDetailsReplicat {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationGgsDetailsReplicat
+		return ret
+	}).(MigrationGgsDetailsReplicatOutput)
+}
+
+// (Updatable) Replicat performance.
+func (o MigrationGgsDetailsReplicatPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationGgsDetailsReplicat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationHubDetails struct {
+	// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag *int `pulumi:"acceptableLag"`
+	// (Updatable) The OCID of the resource being referenced.
+	ComputeId *string `pulumi:"computeId"`
+	// (Updatable) Parameters for GoldenGate Extract processes.
+	Extract *MigrationHubDetailsExtract `pulumi:"extract"`
+	// (Updatable) The OCID of the resource being referenced.
+	KeyId string `pulumi:"keyId"`
+	// (Updatable) Parameters for GoldenGate Replicat processes.
+	Replicat *MigrationHubDetailsReplicat `pulumi:"replicat"`
+	// (Updatable) Database Administrator Credentials details.
+	RestAdminCredentials MigrationHubDetailsRestAdminCredentials `pulumi:"restAdminCredentials"`
+	// (Updatable) Endpoint URL.
+	Url string `pulumi:"url"`
+	// (Updatable) The OCID of the resource being referenced.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// MigrationHubDetailsInput is an input type that accepts MigrationHubDetailsArgs and MigrationHubDetailsOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsInput` via:
+//
+//	MigrationHubDetailsArgs{...}
+type MigrationHubDetailsInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsOutput() MigrationHubDetailsOutput
+	ToMigrationHubDetailsOutputWithContext(context.Context) MigrationHubDetailsOutput
+}
+
+type MigrationHubDetailsArgs struct {
+	// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntPtrInput `pulumi:"acceptableLag"`
+	// (Updatable) The OCID of the resource being referenced.
+	ComputeId pulumi.StringPtrInput `pulumi:"computeId"`
+	// (Updatable) Parameters for GoldenGate Extract processes.
+	Extract MigrationHubDetailsExtractPtrInput `pulumi:"extract"`
+	// (Updatable) The OCID of the resource being referenced.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// (Updatable) Parameters for GoldenGate Replicat processes.
+	Replicat MigrationHubDetailsReplicatPtrInput `pulumi:"replicat"`
+	// (Updatable) Database Administrator Credentials details.
+	RestAdminCredentials MigrationHubDetailsRestAdminCredentialsInput `pulumi:"restAdminCredentials"`
+	// (Updatable) Endpoint URL.
+	Url pulumi.StringInput `pulumi:"url"`
+	// (Updatable) The OCID of the resource being referenced.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (MigrationHubDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetails)(nil)).Elem()
+}
+
+func (i MigrationHubDetailsArgs) ToMigrationHubDetailsOutput() MigrationHubDetailsOutput {
+	return i.ToMigrationHubDetailsOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsArgs) ToMigrationHubDetailsOutputWithContext(ctx context.Context) MigrationHubDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsOutput)
+}
+
+func (i MigrationHubDetailsArgs) ToMigrationHubDetailsPtrOutput() MigrationHubDetailsPtrOutput {
+	return i.ToMigrationHubDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsArgs) ToMigrationHubDetailsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsOutput).ToMigrationHubDetailsPtrOutputWithContext(ctx)
+}
+
+// MigrationHubDetailsPtrInput is an input type that accepts MigrationHubDetailsArgs, MigrationHubDetailsPtr and MigrationHubDetailsPtrOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsPtrInput` via:
+//
+//	        MigrationHubDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationHubDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsPtrOutput() MigrationHubDetailsPtrOutput
+	ToMigrationHubDetailsPtrOutputWithContext(context.Context) MigrationHubDetailsPtrOutput
+}
+
+type migrationHubDetailsPtrType MigrationHubDetailsArgs
+
+func MigrationHubDetailsPtr(v *MigrationHubDetailsArgs) MigrationHubDetailsPtrInput {
+	return (*migrationHubDetailsPtrType)(v)
+}
+
+func (*migrationHubDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetails)(nil)).Elem()
+}
+
+func (i *migrationHubDetailsPtrType) ToMigrationHubDetailsPtrOutput() MigrationHubDetailsPtrOutput {
+	return i.ToMigrationHubDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationHubDetailsPtrType) ToMigrationHubDetailsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsPtrOutput)
+}
+
+type MigrationHubDetailsOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetails)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsOutput) ToMigrationHubDetailsOutput() MigrationHubDetailsOutput {
+	return o
+}
+
+func (o MigrationHubDetailsOutput) ToMigrationHubDetailsOutputWithContext(ctx context.Context) MigrationHubDetailsOutput {
+	return o
+}
+
+func (o MigrationHubDetailsOutput) ToMigrationHubDetailsPtrOutput() MigrationHubDetailsPtrOutput {
+	return o.ToMigrationHubDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationHubDetailsOutput) ToMigrationHubDetailsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationHubDetails) *MigrationHubDetails {
+		return &v
+	}).(MigrationHubDetailsPtrOutput)
+}
+
+// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o MigrationHubDetailsOutput) AcceptableLag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetails) *int { return v.AcceptableLag }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationHubDetailsOutput) ComputeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetails) *string { return v.ComputeId }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Extract processes.
+func (o MigrationHubDetailsOutput) Extract() MigrationHubDetailsExtractPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetails) *MigrationHubDetailsExtract { return v.Extract }).(MigrationHubDetailsExtractPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationHubDetailsOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationHubDetails) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Replicat processes.
+func (o MigrationHubDetailsOutput) Replicat() MigrationHubDetailsReplicatPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetails) *MigrationHubDetailsReplicat { return v.Replicat }).(MigrationHubDetailsReplicatPtrOutput)
+}
+
+// (Updatable) Database Administrator Credentials details.
+func (o MigrationHubDetailsOutput) RestAdminCredentials() MigrationHubDetailsRestAdminCredentialsOutput {
+	return o.ApplyT(func(v MigrationHubDetails) MigrationHubDetailsRestAdminCredentials { return v.RestAdminCredentials }).(MigrationHubDetailsRestAdminCredentialsOutput)
+}
+
+// (Updatable) Endpoint URL.
+func (o MigrationHubDetailsOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationHubDetails) string { return v.Url }).(pulumi.StringOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationHubDetailsOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationHubDetails) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type MigrationHubDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetails)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsPtrOutput) ToMigrationHubDetailsPtrOutput() MigrationHubDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsPtrOutput) ToMigrationHubDetailsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsPtrOutput) Elem() MigrationHubDetailsOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) MigrationHubDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationHubDetails
+		return ret
+	}).(MigrationHubDetailsOutput)
+}
+
+// (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o MigrationHubDetailsPtrOutput) AcceptableLag() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AcceptableLag
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationHubDetailsPtrOutput) ComputeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ComputeId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Extract processes.
+func (o MigrationHubDetailsPtrOutput) Extract() MigrationHubDetailsExtractPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *MigrationHubDetailsExtract {
+		if v == nil {
+			return nil
+		}
+		return v.Extract
+	}).(MigrationHubDetailsExtractPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationHubDetailsPtrOutput) KeyId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.KeyId
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Parameters for GoldenGate Replicat processes.
+func (o MigrationHubDetailsPtrOutput) Replicat() MigrationHubDetailsReplicatPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *MigrationHubDetailsReplicat {
+		if v == nil {
+			return nil
+		}
+		return v.Replicat
+	}).(MigrationHubDetailsReplicatPtrOutput)
+}
+
+// (Updatable) Database Administrator Credentials details.
+func (o MigrationHubDetailsPtrOutput) RestAdminCredentials() MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *MigrationHubDetailsRestAdminCredentials {
+		if v == nil {
+			return nil
+		}
+		return &v.RestAdminCredentials
+	}).(MigrationHubDetailsRestAdminCredentialsPtrOutput)
+}
+
+// (Updatable) Endpoint URL.
+func (o MigrationHubDetailsPtrOutput) Url() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Url
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) The OCID of the resource being referenced.
+func (o MigrationHubDetailsPtrOutput) VaultId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.VaultId
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationHubDetailsExtract struct {
+	// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration *int `pulumi:"longTransDuration"`
+	// (Updatable) Extract performance.
+	PerformanceProfile *string `pulumi:"performanceProfile"`
+}
+
+// MigrationHubDetailsExtractInput is an input type that accepts MigrationHubDetailsExtractArgs and MigrationHubDetailsExtractOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsExtractInput` via:
+//
+//	MigrationHubDetailsExtractArgs{...}
+type MigrationHubDetailsExtractInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsExtractOutput() MigrationHubDetailsExtractOutput
+	ToMigrationHubDetailsExtractOutputWithContext(context.Context) MigrationHubDetailsExtractOutput
+}
+
+type MigrationHubDetailsExtractArgs struct {
+	// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntPtrInput `pulumi:"longTransDuration"`
+	// (Updatable) Extract performance.
+	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
+}
+
+func (MigrationHubDetailsExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetailsExtract)(nil)).Elem()
+}
+
+func (i MigrationHubDetailsExtractArgs) ToMigrationHubDetailsExtractOutput() MigrationHubDetailsExtractOutput {
+	return i.ToMigrationHubDetailsExtractOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsExtractArgs) ToMigrationHubDetailsExtractOutputWithContext(ctx context.Context) MigrationHubDetailsExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsExtractOutput)
+}
+
+func (i MigrationHubDetailsExtractArgs) ToMigrationHubDetailsExtractPtrOutput() MigrationHubDetailsExtractPtrOutput {
+	return i.ToMigrationHubDetailsExtractPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsExtractArgs) ToMigrationHubDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationHubDetailsExtractPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsExtractOutput).ToMigrationHubDetailsExtractPtrOutputWithContext(ctx)
+}
+
+// MigrationHubDetailsExtractPtrInput is an input type that accepts MigrationHubDetailsExtractArgs, MigrationHubDetailsExtractPtr and MigrationHubDetailsExtractPtrOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsExtractPtrInput` via:
+//
+//	        MigrationHubDetailsExtractArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationHubDetailsExtractPtrInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsExtractPtrOutput() MigrationHubDetailsExtractPtrOutput
+	ToMigrationHubDetailsExtractPtrOutputWithContext(context.Context) MigrationHubDetailsExtractPtrOutput
+}
+
+type migrationHubDetailsExtractPtrType MigrationHubDetailsExtractArgs
+
+func MigrationHubDetailsExtractPtr(v *MigrationHubDetailsExtractArgs) MigrationHubDetailsExtractPtrInput {
+	return (*migrationHubDetailsExtractPtrType)(v)
+}
+
+func (*migrationHubDetailsExtractPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetailsExtract)(nil)).Elem()
+}
+
+func (i *migrationHubDetailsExtractPtrType) ToMigrationHubDetailsExtractPtrOutput() MigrationHubDetailsExtractPtrOutput {
+	return i.ToMigrationHubDetailsExtractPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationHubDetailsExtractPtrType) ToMigrationHubDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationHubDetailsExtractPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsExtractPtrOutput)
+}
+
+type MigrationHubDetailsExtractOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetailsExtract)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsExtractOutput) ToMigrationHubDetailsExtractOutput() MigrationHubDetailsExtractOutput {
+	return o
+}
+
+func (o MigrationHubDetailsExtractOutput) ToMigrationHubDetailsExtractOutputWithContext(ctx context.Context) MigrationHubDetailsExtractOutput {
+	return o
+}
+
+func (o MigrationHubDetailsExtractOutput) ToMigrationHubDetailsExtractPtrOutput() MigrationHubDetailsExtractPtrOutput {
+	return o.ToMigrationHubDetailsExtractPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationHubDetailsExtractOutput) ToMigrationHubDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationHubDetailsExtractPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationHubDetailsExtract) *MigrationHubDetailsExtract {
+		return &v
+	}).(MigrationHubDetailsExtractPtrOutput)
+}
+
+// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o MigrationHubDetailsExtractOutput) LongTransDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetailsExtract) *int { return v.LongTransDuration }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationHubDetailsExtractOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetailsExtract) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
+}
+
+type MigrationHubDetailsExtractPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsExtractPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetailsExtract)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsExtractPtrOutput) ToMigrationHubDetailsExtractPtrOutput() MigrationHubDetailsExtractPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsExtractPtrOutput) ToMigrationHubDetailsExtractPtrOutputWithContext(ctx context.Context) MigrationHubDetailsExtractPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsExtractPtrOutput) Elem() MigrationHubDetailsExtractOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsExtract) MigrationHubDetailsExtract {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationHubDetailsExtract
+		return ret
+	}).(MigrationHubDetailsExtractOutput)
+}
+
+// (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o MigrationHubDetailsExtractPtrOutput) LongTransDuration() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsExtract) *int {
+		if v == nil {
+			return nil
+		}
+		return v.LongTransDuration
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Extract performance.
+func (o MigrationHubDetailsExtractPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsExtract) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationHubDetailsReplicat struct {
+	// (Updatable) Replicat performance.
+	PerformanceProfile *string `pulumi:"performanceProfile"`
+}
+
+// MigrationHubDetailsReplicatInput is an input type that accepts MigrationHubDetailsReplicatArgs and MigrationHubDetailsReplicatOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsReplicatInput` via:
+//
+//	MigrationHubDetailsReplicatArgs{...}
+type MigrationHubDetailsReplicatInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsReplicatOutput() MigrationHubDetailsReplicatOutput
+	ToMigrationHubDetailsReplicatOutputWithContext(context.Context) MigrationHubDetailsReplicatOutput
+}
+
+type MigrationHubDetailsReplicatArgs struct {
+	// (Updatable) Replicat performance.
+	PerformanceProfile pulumi.StringPtrInput `pulumi:"performanceProfile"`
+}
+
+func (MigrationHubDetailsReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetailsReplicat)(nil)).Elem()
+}
+
+func (i MigrationHubDetailsReplicatArgs) ToMigrationHubDetailsReplicatOutput() MigrationHubDetailsReplicatOutput {
+	return i.ToMigrationHubDetailsReplicatOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsReplicatArgs) ToMigrationHubDetailsReplicatOutputWithContext(ctx context.Context) MigrationHubDetailsReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsReplicatOutput)
+}
+
+func (i MigrationHubDetailsReplicatArgs) ToMigrationHubDetailsReplicatPtrOutput() MigrationHubDetailsReplicatPtrOutput {
+	return i.ToMigrationHubDetailsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsReplicatArgs) ToMigrationHubDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationHubDetailsReplicatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsReplicatOutput).ToMigrationHubDetailsReplicatPtrOutputWithContext(ctx)
+}
+
+// MigrationHubDetailsReplicatPtrInput is an input type that accepts MigrationHubDetailsReplicatArgs, MigrationHubDetailsReplicatPtr and MigrationHubDetailsReplicatPtrOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsReplicatPtrInput` via:
+//
+//	        MigrationHubDetailsReplicatArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationHubDetailsReplicatPtrInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsReplicatPtrOutput() MigrationHubDetailsReplicatPtrOutput
+	ToMigrationHubDetailsReplicatPtrOutputWithContext(context.Context) MigrationHubDetailsReplicatPtrOutput
+}
+
+type migrationHubDetailsReplicatPtrType MigrationHubDetailsReplicatArgs
+
+func MigrationHubDetailsReplicatPtr(v *MigrationHubDetailsReplicatArgs) MigrationHubDetailsReplicatPtrInput {
+	return (*migrationHubDetailsReplicatPtrType)(v)
+}
+
+func (*migrationHubDetailsReplicatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetailsReplicat)(nil)).Elem()
+}
+
+func (i *migrationHubDetailsReplicatPtrType) ToMigrationHubDetailsReplicatPtrOutput() MigrationHubDetailsReplicatPtrOutput {
+	return i.ToMigrationHubDetailsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationHubDetailsReplicatPtrType) ToMigrationHubDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationHubDetailsReplicatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsReplicatPtrOutput)
+}
+
+type MigrationHubDetailsReplicatOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetailsReplicat)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsReplicatOutput) ToMigrationHubDetailsReplicatOutput() MigrationHubDetailsReplicatOutput {
+	return o
+}
+
+func (o MigrationHubDetailsReplicatOutput) ToMigrationHubDetailsReplicatOutputWithContext(ctx context.Context) MigrationHubDetailsReplicatOutput {
+	return o
+}
+
+func (o MigrationHubDetailsReplicatOutput) ToMigrationHubDetailsReplicatPtrOutput() MigrationHubDetailsReplicatPtrOutput {
+	return o.ToMigrationHubDetailsReplicatPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationHubDetailsReplicatOutput) ToMigrationHubDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationHubDetailsReplicatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationHubDetailsReplicat) *MigrationHubDetailsReplicat {
+		return &v
+	}).(MigrationHubDetailsReplicatPtrOutput)
+}
+
+// (Updatable) Replicat performance.
+func (o MigrationHubDetailsReplicatOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationHubDetailsReplicat) *string { return v.PerformanceProfile }).(pulumi.StringPtrOutput)
+}
+
+type MigrationHubDetailsReplicatPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsReplicatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetailsReplicat)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsReplicatPtrOutput) ToMigrationHubDetailsReplicatPtrOutput() MigrationHubDetailsReplicatPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsReplicatPtrOutput) ToMigrationHubDetailsReplicatPtrOutputWithContext(ctx context.Context) MigrationHubDetailsReplicatPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsReplicatPtrOutput) Elem() MigrationHubDetailsReplicatOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsReplicat) MigrationHubDetailsReplicat {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationHubDetailsReplicat
+		return ret
+	}).(MigrationHubDetailsReplicatOutput)
+}
+
+// (Updatable) Replicat performance.
+func (o MigrationHubDetailsReplicatPtrOutput) PerformanceProfile() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsReplicat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PerformanceProfile
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationHubDetailsRestAdminCredentials struct {
+	// (Updatable) Administrator password
+	Password string `pulumi:"password"`
+	// (Updatable) Administrator username
+	Username string `pulumi:"username"`
+}
+
+// MigrationHubDetailsRestAdminCredentialsInput is an input type that accepts MigrationHubDetailsRestAdminCredentialsArgs and MigrationHubDetailsRestAdminCredentialsOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsRestAdminCredentialsInput` via:
+//
+//	MigrationHubDetailsRestAdminCredentialsArgs{...}
+type MigrationHubDetailsRestAdminCredentialsInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsRestAdminCredentialsOutput() MigrationHubDetailsRestAdminCredentialsOutput
+	ToMigrationHubDetailsRestAdminCredentialsOutputWithContext(context.Context) MigrationHubDetailsRestAdminCredentialsOutput
+}
+
+type MigrationHubDetailsRestAdminCredentialsArgs struct {
+	// (Updatable) Administrator password
+	Password pulumi.StringInput `pulumi:"password"`
+	// (Updatable) Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (MigrationHubDetailsRestAdminCredentialsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetailsRestAdminCredentials)(nil)).Elem()
+}
+
+func (i MigrationHubDetailsRestAdminCredentialsArgs) ToMigrationHubDetailsRestAdminCredentialsOutput() MigrationHubDetailsRestAdminCredentialsOutput {
+	return i.ToMigrationHubDetailsRestAdminCredentialsOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsRestAdminCredentialsArgs) ToMigrationHubDetailsRestAdminCredentialsOutputWithContext(ctx context.Context) MigrationHubDetailsRestAdminCredentialsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsRestAdminCredentialsOutput)
+}
+
+func (i MigrationHubDetailsRestAdminCredentialsArgs) ToMigrationHubDetailsRestAdminCredentialsPtrOutput() MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return i.ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationHubDetailsRestAdminCredentialsArgs) ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsRestAdminCredentialsOutput).ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(ctx)
+}
+
+// MigrationHubDetailsRestAdminCredentialsPtrInput is an input type that accepts MigrationHubDetailsRestAdminCredentialsArgs, MigrationHubDetailsRestAdminCredentialsPtr and MigrationHubDetailsRestAdminCredentialsPtrOutput values.
+// You can construct a concrete instance of `MigrationHubDetailsRestAdminCredentialsPtrInput` via:
+//
+//	        MigrationHubDetailsRestAdminCredentialsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationHubDetailsRestAdminCredentialsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationHubDetailsRestAdminCredentialsPtrOutput() MigrationHubDetailsRestAdminCredentialsPtrOutput
+	ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(context.Context) MigrationHubDetailsRestAdminCredentialsPtrOutput
+}
+
+type migrationHubDetailsRestAdminCredentialsPtrType MigrationHubDetailsRestAdminCredentialsArgs
+
+func MigrationHubDetailsRestAdminCredentialsPtr(v *MigrationHubDetailsRestAdminCredentialsArgs) MigrationHubDetailsRestAdminCredentialsPtrInput {
+	return (*migrationHubDetailsRestAdminCredentialsPtrType)(v)
+}
+
+func (*migrationHubDetailsRestAdminCredentialsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetailsRestAdminCredentials)(nil)).Elem()
+}
+
+func (i *migrationHubDetailsRestAdminCredentialsPtrType) ToMigrationHubDetailsRestAdminCredentialsPtrOutput() MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return i.ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationHubDetailsRestAdminCredentialsPtrType) ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationHubDetailsRestAdminCredentialsPtrOutput)
+}
+
+type MigrationHubDetailsRestAdminCredentialsOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsRestAdminCredentialsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationHubDetailsRestAdminCredentials)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsOutput) ToMigrationHubDetailsRestAdminCredentialsOutput() MigrationHubDetailsRestAdminCredentialsOutput {
+	return o
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsOutput) ToMigrationHubDetailsRestAdminCredentialsOutputWithContext(ctx context.Context) MigrationHubDetailsRestAdminCredentialsOutput {
+	return o
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsOutput) ToMigrationHubDetailsRestAdminCredentialsPtrOutput() MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return o.ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsOutput) ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationHubDetailsRestAdminCredentials) *MigrationHubDetailsRestAdminCredentials {
+		return &v
+	}).(MigrationHubDetailsRestAdminCredentialsPtrOutput)
+}
+
+// (Updatable) Administrator password
+func (o MigrationHubDetailsRestAdminCredentialsOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationHubDetailsRestAdminCredentials) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// (Updatable) Administrator username
+func (o MigrationHubDetailsRestAdminCredentialsOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationHubDetailsRestAdminCredentials) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type MigrationHubDetailsRestAdminCredentialsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationHubDetailsRestAdminCredentialsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationHubDetailsRestAdminCredentials)(nil)).Elem()
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsPtrOutput) ToMigrationHubDetailsRestAdminCredentialsPtrOutput() MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsPtrOutput) ToMigrationHubDetailsRestAdminCredentialsPtrOutputWithContext(ctx context.Context) MigrationHubDetailsRestAdminCredentialsPtrOutput {
+	return o
+}
+
+func (o MigrationHubDetailsRestAdminCredentialsPtrOutput) Elem() MigrationHubDetailsRestAdminCredentialsOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsRestAdminCredentials) MigrationHubDetailsRestAdminCredentials {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationHubDetailsRestAdminCredentials
+		return ret
+	}).(MigrationHubDetailsRestAdminCredentialsOutput)
+}
+
+// (Updatable) Administrator password
+func (o MigrationHubDetailsRestAdminCredentialsPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsRestAdminCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Administrator username
+func (o MigrationHubDetailsRestAdminCredentialsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationHubDetailsRestAdminCredentials) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationIncludeObject struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication *bool `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object string `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner *string `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema *string `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type *string `pulumi:"type"`
+}
+
+// MigrationIncludeObjectInput is an input type that accepts MigrationIncludeObjectArgs and MigrationIncludeObjectOutput values.
+// You can construct a concrete instance of `MigrationIncludeObjectInput` via:
+//
+//	MigrationIncludeObjectArgs{...}
+type MigrationIncludeObjectInput interface {
+	pulumi.Input
+
+	ToMigrationIncludeObjectOutput() MigrationIncludeObjectOutput
+	ToMigrationIncludeObjectOutputWithContext(context.Context) MigrationIncludeObjectOutput
+}
+
+type MigrationIncludeObjectArgs struct {
+	// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+	IsOmitExcludedTableFromReplication pulumi.BoolPtrInput `pulumi:"isOmitExcludedTableFromReplication"`
+	// Name of the object (regular expression is allowed)
+	Object pulumi.StringInput `pulumi:"object"`
+	// Owner of the object (regular expression is allowed)
+	Owner pulumi.StringPtrInput `pulumi:"owner"`
+	// Schema of the object (regular expression is allowed)
+	Schema pulumi.StringPtrInput `pulumi:"schema"`
+	// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MigrationIncludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationIncludeObject)(nil)).Elem()
+}
+
+func (i MigrationIncludeObjectArgs) ToMigrationIncludeObjectOutput() MigrationIncludeObjectOutput {
+	return i.ToMigrationIncludeObjectOutputWithContext(context.Background())
+}
+
+func (i MigrationIncludeObjectArgs) ToMigrationIncludeObjectOutputWithContext(ctx context.Context) MigrationIncludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationIncludeObjectOutput)
+}
+
+// MigrationIncludeObjectArrayInput is an input type that accepts MigrationIncludeObjectArray and MigrationIncludeObjectArrayOutput values.
+// You can construct a concrete instance of `MigrationIncludeObjectArrayInput` via:
+//
+//	MigrationIncludeObjectArray{ MigrationIncludeObjectArgs{...} }
+type MigrationIncludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToMigrationIncludeObjectArrayOutput() MigrationIncludeObjectArrayOutput
+	ToMigrationIncludeObjectArrayOutputWithContext(context.Context) MigrationIncludeObjectArrayOutput
+}
+
+type MigrationIncludeObjectArray []MigrationIncludeObjectInput
+
+func (MigrationIncludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationIncludeObject)(nil)).Elem()
+}
+
+func (i MigrationIncludeObjectArray) ToMigrationIncludeObjectArrayOutput() MigrationIncludeObjectArrayOutput {
+	return i.ToMigrationIncludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationIncludeObjectArray) ToMigrationIncludeObjectArrayOutputWithContext(ctx context.Context) MigrationIncludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationIncludeObjectArrayOutput)
+}
+
+type MigrationIncludeObjectOutput struct{ *pulumi.OutputState }
+
+func (MigrationIncludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationIncludeObject)(nil)).Elem()
+}
+
+func (o MigrationIncludeObjectOutput) ToMigrationIncludeObjectOutput() MigrationIncludeObjectOutput {
+	return o
+}
+
+func (o MigrationIncludeObjectOutput) ToMigrationIncludeObjectOutputWithContext(ctx context.Context) MigrationIncludeObjectOutput {
+	return o
+}
+
+// Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+func (o MigrationIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationIncludeObject) *bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolPtrOutput)
+}
+
+// Name of the object (regular expression is allowed)
+func (o MigrationIncludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationIncludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+// Owner of the object (regular expression is allowed)
+func (o MigrationIncludeObjectOutput) Owner() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationIncludeObject) *string { return v.Owner }).(pulumi.StringPtrOutput)
+}
+
+// Schema of the object (regular expression is allowed)
+func (o MigrationIncludeObjectOutput) Schema() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationIncludeObject) *string { return v.Schema }).(pulumi.StringPtrOutput)
+}
+
+// Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+func (o MigrationIncludeObjectOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationIncludeObject) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MigrationIncludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationIncludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationIncludeObject)(nil)).Elem()
+}
+
+func (o MigrationIncludeObjectArrayOutput) ToMigrationIncludeObjectArrayOutput() MigrationIncludeObjectArrayOutput {
+	return o
+}
+
+func (o MigrationIncludeObjectArrayOutput) ToMigrationIncludeObjectArrayOutputWithContext(ctx context.Context) MigrationIncludeObjectArrayOutput {
+	return o
+}
+
+func (o MigrationIncludeObjectArrayOutput) Index(i pulumi.IntInput) MigrationIncludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationIncludeObject {
+		return vs[0].([]MigrationIncludeObject)[vs[1].(int)]
+	}).(MigrationIncludeObjectOutput)
+}
+
+type MigrationInitialLoadSettings struct {
+	// (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+	Compatibilities []string `pulumi:"compatibilities"`
+	// (Updatable) Optional parameters for Data Pump Export and Import.
+	DataPumpParameters *MigrationInitialLoadSettingsDataPumpParameters `pulumi:"dataPumpParameters"`
+	// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+	ExportDirectoryObject *MigrationInitialLoadSettingsExportDirectoryObject `pulumi:"exportDirectoryObject"`
+	// (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
+	HandleGrantErrors *string `pulumi:"handleGrantErrors"`
+	// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+	ImportDirectoryObject *MigrationInitialLoadSettingsImportDirectoryObject `pulumi:"importDirectoryObject"`
+	// (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+	IsConsistent *bool `pulumi:"isConsistent"`
+	// (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+	IsIgnoreExistingObjects *bool `pulumi:"isIgnoreExistingObjects"`
+	// (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+	IsTzUtc *bool `pulumi:"isTzUtc"`
+	// (Updatable) Oracle Job Mode
+	JobMode string `pulumi:"jobMode"`
+	// (Updatable) Defines remapping to be applied to objects as they are processed.
+	MetadataRemaps []MigrationInitialLoadSettingsMetadataRemap `pulumi:"metadataRemaps"`
+	// (Updatable) Primary key compatibility option
+	PrimaryKeyCompatibility *string `pulumi:"primaryKeyCompatibility"`
+	// (Updatable) Migration tablespace settings.
+	TablespaceDetails *MigrationInitialLoadSettingsTablespaceDetails `pulumi:"tablespaceDetails"`
+}
+
+// MigrationInitialLoadSettingsInput is an input type that accepts MigrationInitialLoadSettingsArgs and MigrationInitialLoadSettingsOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsInput` via:
+//
+//	MigrationInitialLoadSettingsArgs{...}
+type MigrationInitialLoadSettingsInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsOutput() MigrationInitialLoadSettingsOutput
+	ToMigrationInitialLoadSettingsOutputWithContext(context.Context) MigrationInitialLoadSettingsOutput
+}
+
+type MigrationInitialLoadSettingsArgs struct {
+	// (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+	Compatibilities pulumi.StringArrayInput `pulumi:"compatibilities"`
+	// (Updatable) Optional parameters for Data Pump Export and Import.
+	DataPumpParameters MigrationInitialLoadSettingsDataPumpParametersPtrInput `pulumi:"dataPumpParameters"`
+	// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+	ExportDirectoryObject MigrationInitialLoadSettingsExportDirectoryObjectPtrInput `pulumi:"exportDirectoryObject"`
+	// (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
+	HandleGrantErrors pulumi.StringPtrInput `pulumi:"handleGrantErrors"`
+	// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+	ImportDirectoryObject MigrationInitialLoadSettingsImportDirectoryObjectPtrInput `pulumi:"importDirectoryObject"`
+	// (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+	IsConsistent pulumi.BoolPtrInput `pulumi:"isConsistent"`
+	// (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+	IsIgnoreExistingObjects pulumi.BoolPtrInput `pulumi:"isIgnoreExistingObjects"`
+	// (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+	IsTzUtc pulumi.BoolPtrInput `pulumi:"isTzUtc"`
+	// (Updatable) Oracle Job Mode
+	JobMode pulumi.StringInput `pulumi:"jobMode"`
+	// (Updatable) Defines remapping to be applied to objects as they are processed.
+	MetadataRemaps MigrationInitialLoadSettingsMetadataRemapArrayInput `pulumi:"metadataRemaps"`
+	// (Updatable) Primary key compatibility option
+	PrimaryKeyCompatibility pulumi.StringPtrInput `pulumi:"primaryKeyCompatibility"`
+	// (Updatable) Migration tablespace settings.
+	TablespaceDetails MigrationInitialLoadSettingsTablespaceDetailsPtrInput `pulumi:"tablespaceDetails"`
+}
+
+func (MigrationInitialLoadSettingsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettings)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsArgs) ToMigrationInitialLoadSettingsOutput() MigrationInitialLoadSettingsOutput {
+	return i.ToMigrationInitialLoadSettingsOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsArgs) ToMigrationInitialLoadSettingsOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsOutput)
+}
+
+func (i MigrationInitialLoadSettingsArgs) ToMigrationInitialLoadSettingsPtrOutput() MigrationInitialLoadSettingsPtrOutput {
+	return i.ToMigrationInitialLoadSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsArgs) ToMigrationInitialLoadSettingsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsOutput).ToMigrationInitialLoadSettingsPtrOutputWithContext(ctx)
+}
+
+// MigrationInitialLoadSettingsPtrInput is an input type that accepts MigrationInitialLoadSettingsArgs, MigrationInitialLoadSettingsPtr and MigrationInitialLoadSettingsPtrOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsPtrInput` via:
+//
+//	        MigrationInitialLoadSettingsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationInitialLoadSettingsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsPtrOutput() MigrationInitialLoadSettingsPtrOutput
+	ToMigrationInitialLoadSettingsPtrOutputWithContext(context.Context) MigrationInitialLoadSettingsPtrOutput
+}
+
+type migrationInitialLoadSettingsPtrType MigrationInitialLoadSettingsArgs
+
+func MigrationInitialLoadSettingsPtr(v *MigrationInitialLoadSettingsArgs) MigrationInitialLoadSettingsPtrInput {
+	return (*migrationInitialLoadSettingsPtrType)(v)
+}
+
+func (*migrationInitialLoadSettingsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettings)(nil)).Elem()
+}
+
+func (i *migrationInitialLoadSettingsPtrType) ToMigrationInitialLoadSettingsPtrOutput() MigrationInitialLoadSettingsPtrOutput {
+	return i.ToMigrationInitialLoadSettingsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationInitialLoadSettingsPtrType) ToMigrationInitialLoadSettingsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsPtrOutput)
+}
+
+type MigrationInitialLoadSettingsOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettings)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsOutput) ToMigrationInitialLoadSettingsOutput() MigrationInitialLoadSettingsOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsOutput) ToMigrationInitialLoadSettingsOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsOutput) ToMigrationInitialLoadSettingsPtrOutput() MigrationInitialLoadSettingsPtrOutput {
+	return o.ToMigrationInitialLoadSettingsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationInitialLoadSettingsOutput) ToMigrationInitialLoadSettingsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationInitialLoadSettings) *MigrationInitialLoadSettings {
+		return &v
+	}).(MigrationInitialLoadSettingsPtrOutput)
+}
+
+// (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+func (o MigrationInitialLoadSettingsOutput) Compatibilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) []string { return v.Compatibilities }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Optional parameters for Data Pump Export and Import.
+func (o MigrationInitialLoadSettingsOutput) DataPumpParameters() MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *MigrationInitialLoadSettingsDataPumpParameters {
+		return v.DataPumpParameters
+	}).(MigrationInitialLoadSettingsDataPumpParametersPtrOutput)
+}
+
+// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+func (o MigrationInitialLoadSettingsOutput) ExportDirectoryObject() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *MigrationInitialLoadSettingsExportDirectoryObject {
+		return v.ExportDirectoryObject
+	}).(MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput)
+}
+
+// (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
+func (o MigrationInitialLoadSettingsOutput) HandleGrantErrors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *string { return v.HandleGrantErrors }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+func (o MigrationInitialLoadSettingsOutput) ImportDirectoryObject() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *MigrationInitialLoadSettingsImportDirectoryObject {
+		return v.ImportDirectoryObject
+	}).(MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput)
+}
+
+// (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+func (o MigrationInitialLoadSettingsOutput) IsConsistent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *bool { return v.IsConsistent }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+func (o MigrationInitialLoadSettingsOutput) IsIgnoreExistingObjects() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *bool { return v.IsIgnoreExistingObjects }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+func (o MigrationInitialLoadSettingsOutput) IsTzUtc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *bool { return v.IsTzUtc }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Oracle Job Mode
+func (o MigrationInitialLoadSettingsOutput) JobMode() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) string { return v.JobMode }).(pulumi.StringOutput)
+}
+
+// (Updatable) Defines remapping to be applied to objects as they are processed.
+func (o MigrationInitialLoadSettingsOutput) MetadataRemaps() MigrationInitialLoadSettingsMetadataRemapArrayOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) []MigrationInitialLoadSettingsMetadataRemap {
+		return v.MetadataRemaps
+	}).(MigrationInitialLoadSettingsMetadataRemapArrayOutput)
+}
+
+// (Updatable) Primary key compatibility option
+func (o MigrationInitialLoadSettingsOutput) PrimaryKeyCompatibility() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *string { return v.PrimaryKeyCompatibility }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Migration tablespace settings.
+func (o MigrationInitialLoadSettingsOutput) TablespaceDetails() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettings) *MigrationInitialLoadSettingsTablespaceDetails {
+		return v.TablespaceDetails
+	}).(MigrationInitialLoadSettingsTablespaceDetailsPtrOutput)
+}
+
+type MigrationInitialLoadSettingsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettings)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsPtrOutput) ToMigrationInitialLoadSettingsPtrOutput() MigrationInitialLoadSettingsPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsPtrOutput) ToMigrationInitialLoadSettingsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsPtrOutput) Elem() MigrationInitialLoadSettingsOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) MigrationInitialLoadSettings {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationInitialLoadSettings
+		return ret
+	}).(MigrationInitialLoadSettingsOutput)
+}
+
+// (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+func (o MigrationInitialLoadSettingsPtrOutput) Compatibilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Compatibilities
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Optional parameters for Data Pump Export and Import.
+func (o MigrationInitialLoadSettingsPtrOutput) DataPumpParameters() MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *MigrationInitialLoadSettingsDataPumpParameters {
+		if v == nil {
+			return nil
+		}
+		return v.DataPumpParameters
+	}).(MigrationInitialLoadSettingsDataPumpParametersPtrOutput)
+}
+
+// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+func (o MigrationInitialLoadSettingsPtrOutput) ExportDirectoryObject() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *MigrationInitialLoadSettingsExportDirectoryObject {
+		if v == nil {
+			return nil
+		}
+		return v.ExportDirectoryObject
+	}).(MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput)
+}
+
+// (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
+func (o MigrationInitialLoadSettingsPtrOutput) HandleGrantErrors() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HandleGrantErrors
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+func (o MigrationInitialLoadSettingsPtrOutput) ImportDirectoryObject() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *MigrationInitialLoadSettingsImportDirectoryObject {
+		if v == nil {
+			return nil
+		}
+		return v.ImportDirectoryObject
+	}).(MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput)
+}
+
+// (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+func (o MigrationInitialLoadSettingsPtrOutput) IsConsistent() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsConsistent
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+func (o MigrationInitialLoadSettingsPtrOutput) IsIgnoreExistingObjects() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsIgnoreExistingObjects
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+func (o MigrationInitialLoadSettingsPtrOutput) IsTzUtc() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsTzUtc
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Oracle Job Mode
+func (o MigrationInitialLoadSettingsPtrOutput) JobMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.JobMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Defines remapping to be applied to objects as they are processed.
+func (o MigrationInitialLoadSettingsPtrOutput) MetadataRemaps() MigrationInitialLoadSettingsMetadataRemapArrayOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) []MigrationInitialLoadSettingsMetadataRemap {
+		if v == nil {
+			return nil
+		}
+		return v.MetadataRemaps
+	}).(MigrationInitialLoadSettingsMetadataRemapArrayOutput)
+}
+
+// (Updatable) Primary key compatibility option
+func (o MigrationInitialLoadSettingsPtrOutput) PrimaryKeyCompatibility() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrimaryKeyCompatibility
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Migration tablespace settings.
+func (o MigrationInitialLoadSettingsPtrOutput) TablespaceDetails() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettings) *MigrationInitialLoadSettingsTablespaceDetails {
+		if v == nil {
+			return nil
+		}
+		return v.TablespaceDetails
+	}).(MigrationInitialLoadSettingsTablespaceDetailsPtrOutput)
+}
+
+type MigrationInitialLoadSettingsDataPumpParameters struct {
+	// (Updatable) Estimate size of dumps that will be generated.
+	Estimate *string `pulumi:"estimate"`
+	// (Updatable) Exclude paratemers for Export and Import.
+	ExcludeParameters []string `pulumi:"excludeParameters"`
+	// (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
+	ExportParallelismDegree *int `pulumi:"exportParallelismDegree"`
+	// (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+	ImportParallelismDegree *int `pulumi:"importParallelismDegree"`
+	// (Updatable) Set to false to force Data Pump worker process to run on one instance.
+	IsCluster *bool `pulumi:"isCluster"`
+	// (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+	TableExistsAction *string `pulumi:"tableExistsAction"`
+}
+
+// MigrationInitialLoadSettingsDataPumpParametersInput is an input type that accepts MigrationInitialLoadSettingsDataPumpParametersArgs and MigrationInitialLoadSettingsDataPumpParametersOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsDataPumpParametersInput` via:
+//
+//	MigrationInitialLoadSettingsDataPumpParametersArgs{...}
+type MigrationInitialLoadSettingsDataPumpParametersInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsDataPumpParametersOutput() MigrationInitialLoadSettingsDataPumpParametersOutput
+	ToMigrationInitialLoadSettingsDataPumpParametersOutputWithContext(context.Context) MigrationInitialLoadSettingsDataPumpParametersOutput
+}
+
+type MigrationInitialLoadSettingsDataPumpParametersArgs struct {
+	// (Updatable) Estimate size of dumps that will be generated.
+	Estimate pulumi.StringPtrInput `pulumi:"estimate"`
+	// (Updatable) Exclude paratemers for Export and Import.
+	ExcludeParameters pulumi.StringArrayInput `pulumi:"excludeParameters"`
+	// (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
+	ExportParallelismDegree pulumi.IntPtrInput `pulumi:"exportParallelismDegree"`
+	// (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+	ImportParallelismDegree pulumi.IntPtrInput `pulumi:"importParallelismDegree"`
+	// (Updatable) Set to false to force Data Pump worker process to run on one instance.
+	IsCluster pulumi.BoolPtrInput `pulumi:"isCluster"`
+	// (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+	TableExistsAction pulumi.StringPtrInput `pulumi:"tableExistsAction"`
+}
+
+func (MigrationInitialLoadSettingsDataPumpParametersArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsDataPumpParameters)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsDataPumpParametersArgs) ToMigrationInitialLoadSettingsDataPumpParametersOutput() MigrationInitialLoadSettingsDataPumpParametersOutput {
+	return i.ToMigrationInitialLoadSettingsDataPumpParametersOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsDataPumpParametersArgs) ToMigrationInitialLoadSettingsDataPumpParametersOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsDataPumpParametersOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsDataPumpParametersOutput)
+}
+
+func (i MigrationInitialLoadSettingsDataPumpParametersArgs) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutput() MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return i.ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsDataPumpParametersArgs) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsDataPumpParametersOutput).ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(ctx)
+}
+
+// MigrationInitialLoadSettingsDataPumpParametersPtrInput is an input type that accepts MigrationInitialLoadSettingsDataPumpParametersArgs, MigrationInitialLoadSettingsDataPumpParametersPtr and MigrationInitialLoadSettingsDataPumpParametersPtrOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsDataPumpParametersPtrInput` via:
+//
+//	        MigrationInitialLoadSettingsDataPumpParametersArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationInitialLoadSettingsDataPumpParametersPtrInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsDataPumpParametersPtrOutput() MigrationInitialLoadSettingsDataPumpParametersPtrOutput
+	ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(context.Context) MigrationInitialLoadSettingsDataPumpParametersPtrOutput
+}
+
+type migrationInitialLoadSettingsDataPumpParametersPtrType MigrationInitialLoadSettingsDataPumpParametersArgs
+
+func MigrationInitialLoadSettingsDataPumpParametersPtr(v *MigrationInitialLoadSettingsDataPumpParametersArgs) MigrationInitialLoadSettingsDataPumpParametersPtrInput {
+	return (*migrationInitialLoadSettingsDataPumpParametersPtrType)(v)
+}
+
+func (*migrationInitialLoadSettingsDataPumpParametersPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsDataPumpParameters)(nil)).Elem()
+}
+
+func (i *migrationInitialLoadSettingsDataPumpParametersPtrType) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutput() MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return i.ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationInitialLoadSettingsDataPumpParametersPtrType) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsDataPumpParametersPtrOutput)
+}
+
+type MigrationInitialLoadSettingsDataPumpParametersOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsDataPumpParametersOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsDataPumpParameters)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ToMigrationInitialLoadSettingsDataPumpParametersOutput() MigrationInitialLoadSettingsDataPumpParametersOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ToMigrationInitialLoadSettingsDataPumpParametersOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsDataPumpParametersOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutput() MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return o.ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationInitialLoadSettingsDataPumpParameters) *MigrationInitialLoadSettingsDataPumpParameters {
+		return &v
+	}).(MigrationInitialLoadSettingsDataPumpParametersPtrOutput)
+}
+
+// (Updatable) Estimate size of dumps that will be generated.
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) Estimate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsDataPumpParameters) *string { return v.Estimate }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Exclude paratemers for Export and Import.
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ExcludeParameters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsDataPumpParameters) []string { return v.ExcludeParameters }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ExportParallelismDegree() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsDataPumpParameters) *int { return v.ExportParallelismDegree }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) ImportParallelismDegree() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsDataPumpParameters) *int { return v.ImportParallelismDegree }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Set to false to force Data Pump worker process to run on one instance.
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) IsCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsDataPumpParameters) *bool { return v.IsCluster }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+func (o MigrationInitialLoadSettingsDataPumpParametersOutput) TableExistsAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsDataPumpParameters) *string { return v.TableExistsAction }).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsDataPumpParametersPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsDataPumpParametersPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsDataPumpParameters)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutput() MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) ToMigrationInitialLoadSettingsDataPumpParametersPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsDataPumpParametersPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) Elem() MigrationInitialLoadSettingsDataPumpParametersOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) MigrationInitialLoadSettingsDataPumpParameters {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationInitialLoadSettingsDataPumpParameters
+		return ret
+	}).(MigrationInitialLoadSettingsDataPumpParametersOutput)
+}
+
+// (Updatable) Estimate size of dumps that will be generated.
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) Estimate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Estimate
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Exclude paratemers for Export and Import.
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) ExcludeParameters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) []string {
+		if v == nil {
+			return nil
+		}
+		return v.ExcludeParameters
+	}).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) ExportParallelismDegree() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExportParallelismDegree
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) ImportParallelismDegree() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ImportParallelismDegree
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Set to false to force Data Pump worker process to run on one instance.
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) IsCluster() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsCluster
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+func (o MigrationInitialLoadSettingsDataPumpParametersPtrOutput) TableExistsAction() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsDataPumpParameters) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TableExistsAction
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsExportDirectoryObject struct {
+	// (Updatable) Name of directory object in database
+	Name *string `pulumi:"name"`
+	// (Updatable) Absolute path of directory on database server
+	Path *string `pulumi:"path"`
+}
+
+// MigrationInitialLoadSettingsExportDirectoryObjectInput is an input type that accepts MigrationInitialLoadSettingsExportDirectoryObjectArgs and MigrationInitialLoadSettingsExportDirectoryObjectOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsExportDirectoryObjectInput` via:
+//
+//	MigrationInitialLoadSettingsExportDirectoryObjectArgs{...}
+type MigrationInitialLoadSettingsExportDirectoryObjectInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsExportDirectoryObjectOutput() MigrationInitialLoadSettingsExportDirectoryObjectOutput
+	ToMigrationInitialLoadSettingsExportDirectoryObjectOutputWithContext(context.Context) MigrationInitialLoadSettingsExportDirectoryObjectOutput
+}
+
+type MigrationInitialLoadSettingsExportDirectoryObjectArgs struct {
+	// (Updatable) Name of directory object in database
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Absolute path of directory on database server
+	Path pulumi.StringPtrInput `pulumi:"path"`
+}
+
+func (MigrationInitialLoadSettingsExportDirectoryObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsExportDirectoryObject)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsExportDirectoryObjectArgs) ToMigrationInitialLoadSettingsExportDirectoryObjectOutput() MigrationInitialLoadSettingsExportDirectoryObjectOutput {
+	return i.ToMigrationInitialLoadSettingsExportDirectoryObjectOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsExportDirectoryObjectArgs) ToMigrationInitialLoadSettingsExportDirectoryObjectOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsExportDirectoryObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsExportDirectoryObjectOutput)
+}
+
+func (i MigrationInitialLoadSettingsExportDirectoryObjectArgs) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return i.ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsExportDirectoryObjectArgs) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsExportDirectoryObjectOutput).ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(ctx)
+}
+
+// MigrationInitialLoadSettingsExportDirectoryObjectPtrInput is an input type that accepts MigrationInitialLoadSettingsExportDirectoryObjectArgs, MigrationInitialLoadSettingsExportDirectoryObjectPtr and MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsExportDirectoryObjectPtrInput` via:
+//
+//	        MigrationInitialLoadSettingsExportDirectoryObjectArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationInitialLoadSettingsExportDirectoryObjectPtrInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput
+	ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(context.Context) MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput
+}
+
+type migrationInitialLoadSettingsExportDirectoryObjectPtrType MigrationInitialLoadSettingsExportDirectoryObjectArgs
+
+func MigrationInitialLoadSettingsExportDirectoryObjectPtr(v *MigrationInitialLoadSettingsExportDirectoryObjectArgs) MigrationInitialLoadSettingsExportDirectoryObjectPtrInput {
+	return (*migrationInitialLoadSettingsExportDirectoryObjectPtrType)(v)
+}
+
+func (*migrationInitialLoadSettingsExportDirectoryObjectPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsExportDirectoryObject)(nil)).Elem()
+}
+
+func (i *migrationInitialLoadSettingsExportDirectoryObjectPtrType) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return i.ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationInitialLoadSettingsExportDirectoryObjectPtrType) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput)
+}
+
+type MigrationInitialLoadSettingsExportDirectoryObjectOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsExportDirectoryObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsExportDirectoryObject)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectOutput) ToMigrationInitialLoadSettingsExportDirectoryObjectOutput() MigrationInitialLoadSettingsExportDirectoryObjectOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectOutput) ToMigrationInitialLoadSettingsExportDirectoryObjectOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsExportDirectoryObjectOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectOutput) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return o.ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectOutput) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationInitialLoadSettingsExportDirectoryObject) *MigrationInitialLoadSettingsExportDirectoryObject {
+		return &v
+	}).(MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput)
+}
+
+// (Updatable) Name of directory object in database
+func (o MigrationInitialLoadSettingsExportDirectoryObjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsExportDirectoryObject) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Absolute path of directory on database server
+func (o MigrationInitialLoadSettingsExportDirectoryObjectOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsExportDirectoryObject) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsExportDirectoryObject)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput) ToMigrationInitialLoadSettingsExportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput) Elem() MigrationInitialLoadSettingsExportDirectoryObjectOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsExportDirectoryObject) MigrationInitialLoadSettingsExportDirectoryObject {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationInitialLoadSettingsExportDirectoryObject
+		return ret
+	}).(MigrationInitialLoadSettingsExportDirectoryObjectOutput)
+}
+
+// (Updatable) Name of directory object in database
+func (o MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsExportDirectoryObject) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Absolute path of directory on database server
+func (o MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsExportDirectoryObject) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsImportDirectoryObject struct {
+	// (Updatable) Name of directory object in database
+	Name *string `pulumi:"name"`
+	// (Updatable) Absolute path of directory on database server
+	Path *string `pulumi:"path"`
+}
+
+// MigrationInitialLoadSettingsImportDirectoryObjectInput is an input type that accepts MigrationInitialLoadSettingsImportDirectoryObjectArgs and MigrationInitialLoadSettingsImportDirectoryObjectOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsImportDirectoryObjectInput` via:
+//
+//	MigrationInitialLoadSettingsImportDirectoryObjectArgs{...}
+type MigrationInitialLoadSettingsImportDirectoryObjectInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsImportDirectoryObjectOutput() MigrationInitialLoadSettingsImportDirectoryObjectOutput
+	ToMigrationInitialLoadSettingsImportDirectoryObjectOutputWithContext(context.Context) MigrationInitialLoadSettingsImportDirectoryObjectOutput
+}
+
+type MigrationInitialLoadSettingsImportDirectoryObjectArgs struct {
+	// (Updatable) Name of directory object in database
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) Absolute path of directory on database server
+	Path pulumi.StringPtrInput `pulumi:"path"`
+}
+
+func (MigrationInitialLoadSettingsImportDirectoryObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsImportDirectoryObject)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsImportDirectoryObjectArgs) ToMigrationInitialLoadSettingsImportDirectoryObjectOutput() MigrationInitialLoadSettingsImportDirectoryObjectOutput {
+	return i.ToMigrationInitialLoadSettingsImportDirectoryObjectOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsImportDirectoryObjectArgs) ToMigrationInitialLoadSettingsImportDirectoryObjectOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsImportDirectoryObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsImportDirectoryObjectOutput)
+}
+
+func (i MigrationInitialLoadSettingsImportDirectoryObjectArgs) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return i.ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsImportDirectoryObjectArgs) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsImportDirectoryObjectOutput).ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(ctx)
+}
+
+// MigrationInitialLoadSettingsImportDirectoryObjectPtrInput is an input type that accepts MigrationInitialLoadSettingsImportDirectoryObjectArgs, MigrationInitialLoadSettingsImportDirectoryObjectPtr and MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsImportDirectoryObjectPtrInput` via:
+//
+//	        MigrationInitialLoadSettingsImportDirectoryObjectArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationInitialLoadSettingsImportDirectoryObjectPtrInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput
+	ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(context.Context) MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput
+}
+
+type migrationInitialLoadSettingsImportDirectoryObjectPtrType MigrationInitialLoadSettingsImportDirectoryObjectArgs
+
+func MigrationInitialLoadSettingsImportDirectoryObjectPtr(v *MigrationInitialLoadSettingsImportDirectoryObjectArgs) MigrationInitialLoadSettingsImportDirectoryObjectPtrInput {
+	return (*migrationInitialLoadSettingsImportDirectoryObjectPtrType)(v)
+}
+
+func (*migrationInitialLoadSettingsImportDirectoryObjectPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsImportDirectoryObject)(nil)).Elem()
+}
+
+func (i *migrationInitialLoadSettingsImportDirectoryObjectPtrType) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return i.ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationInitialLoadSettingsImportDirectoryObjectPtrType) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput)
+}
+
+type MigrationInitialLoadSettingsImportDirectoryObjectOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsImportDirectoryObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsImportDirectoryObject)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectOutput) ToMigrationInitialLoadSettingsImportDirectoryObjectOutput() MigrationInitialLoadSettingsImportDirectoryObjectOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectOutput) ToMigrationInitialLoadSettingsImportDirectoryObjectOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsImportDirectoryObjectOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectOutput) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return o.ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectOutput) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationInitialLoadSettingsImportDirectoryObject) *MigrationInitialLoadSettingsImportDirectoryObject {
+		return &v
+	}).(MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput)
+}
+
+// (Updatable) Name of directory object in database
+func (o MigrationInitialLoadSettingsImportDirectoryObjectOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsImportDirectoryObject) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Absolute path of directory on database server
+func (o MigrationInitialLoadSettingsImportDirectoryObjectOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsImportDirectoryObject) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsImportDirectoryObject)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutput() MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput) ToMigrationInitialLoadSettingsImportDirectoryObjectPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput) Elem() MigrationInitialLoadSettingsImportDirectoryObjectOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsImportDirectoryObject) MigrationInitialLoadSettingsImportDirectoryObject {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationInitialLoadSettingsImportDirectoryObject
+		return ret
+	}).(MigrationInitialLoadSettingsImportDirectoryObjectOutput)
+}
+
+// (Updatable) Name of directory object in database
+func (o MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsImportDirectoryObject) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Name
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Absolute path of directory on database server
+func (o MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsImportDirectoryObject) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Path
+	}).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsMetadataRemap struct {
+	// (Updatable) Specifies the new value that oldValue should be translated into.
+	NewValue *string `pulumi:"newValue"`
+	// (Updatable) Specifies the value which needs to be reset.
+	OldValue *string `pulumi:"oldValue"`
+	// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+	Type *string `pulumi:"type"`
+}
+
+// MigrationInitialLoadSettingsMetadataRemapInput is an input type that accepts MigrationInitialLoadSettingsMetadataRemapArgs and MigrationInitialLoadSettingsMetadataRemapOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsMetadataRemapInput` via:
+//
+//	MigrationInitialLoadSettingsMetadataRemapArgs{...}
+type MigrationInitialLoadSettingsMetadataRemapInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsMetadataRemapOutput() MigrationInitialLoadSettingsMetadataRemapOutput
+	ToMigrationInitialLoadSettingsMetadataRemapOutputWithContext(context.Context) MigrationInitialLoadSettingsMetadataRemapOutput
+}
+
+type MigrationInitialLoadSettingsMetadataRemapArgs struct {
+	// (Updatable) Specifies the new value that oldValue should be translated into.
+	NewValue pulumi.StringPtrInput `pulumi:"newValue"`
+	// (Updatable) Specifies the value which needs to be reset.
+	OldValue pulumi.StringPtrInput `pulumi:"oldValue"`
+	// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (MigrationInitialLoadSettingsMetadataRemapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsMetadataRemap)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsMetadataRemapArgs) ToMigrationInitialLoadSettingsMetadataRemapOutput() MigrationInitialLoadSettingsMetadataRemapOutput {
+	return i.ToMigrationInitialLoadSettingsMetadataRemapOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsMetadataRemapArgs) ToMigrationInitialLoadSettingsMetadataRemapOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsMetadataRemapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsMetadataRemapOutput)
+}
+
+// MigrationInitialLoadSettingsMetadataRemapArrayInput is an input type that accepts MigrationInitialLoadSettingsMetadataRemapArray and MigrationInitialLoadSettingsMetadataRemapArrayOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsMetadataRemapArrayInput` via:
+//
+//	MigrationInitialLoadSettingsMetadataRemapArray{ MigrationInitialLoadSettingsMetadataRemapArgs{...} }
+type MigrationInitialLoadSettingsMetadataRemapArrayInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsMetadataRemapArrayOutput() MigrationInitialLoadSettingsMetadataRemapArrayOutput
+	ToMigrationInitialLoadSettingsMetadataRemapArrayOutputWithContext(context.Context) MigrationInitialLoadSettingsMetadataRemapArrayOutput
+}
+
+type MigrationInitialLoadSettingsMetadataRemapArray []MigrationInitialLoadSettingsMetadataRemapInput
+
+func (MigrationInitialLoadSettingsMetadataRemapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationInitialLoadSettingsMetadataRemap)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsMetadataRemapArray) ToMigrationInitialLoadSettingsMetadataRemapArrayOutput() MigrationInitialLoadSettingsMetadataRemapArrayOutput {
+	return i.ToMigrationInitialLoadSettingsMetadataRemapArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsMetadataRemapArray) ToMigrationInitialLoadSettingsMetadataRemapArrayOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsMetadataRemapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsMetadataRemapArrayOutput)
+}
+
+type MigrationInitialLoadSettingsMetadataRemapOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsMetadataRemapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsMetadataRemap)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsMetadataRemapOutput) ToMigrationInitialLoadSettingsMetadataRemapOutput() MigrationInitialLoadSettingsMetadataRemapOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsMetadataRemapOutput) ToMigrationInitialLoadSettingsMetadataRemapOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsMetadataRemapOutput {
+	return o
+}
+
+// (Updatable) Specifies the new value that oldValue should be translated into.
+func (o MigrationInitialLoadSettingsMetadataRemapOutput) NewValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsMetadataRemap) *string { return v.NewValue }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Specifies the value which needs to be reset.
+func (o MigrationInitialLoadSettingsMetadataRemapOutput) OldValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsMetadataRemap) *string { return v.OldValue }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+func (o MigrationInitialLoadSettingsMetadataRemapOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsMetadataRemap) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type MigrationInitialLoadSettingsMetadataRemapArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsMetadataRemapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationInitialLoadSettingsMetadataRemap)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsMetadataRemapArrayOutput) ToMigrationInitialLoadSettingsMetadataRemapArrayOutput() MigrationInitialLoadSettingsMetadataRemapArrayOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsMetadataRemapArrayOutput) ToMigrationInitialLoadSettingsMetadataRemapArrayOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsMetadataRemapArrayOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsMetadataRemapArrayOutput) Index(i pulumi.IntInput) MigrationInitialLoadSettingsMetadataRemapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationInitialLoadSettingsMetadataRemap {
+		return vs[0].([]MigrationInitialLoadSettingsMetadataRemap)[vs[1].(int)]
+	}).(MigrationInitialLoadSettingsMetadataRemapOutput)
+}
+
+type MigrationInitialLoadSettingsTablespaceDetails struct {
+	// (Updatable) Size of Oracle database blocks in KB.
+	BlockSizeInKbs *string `pulumi:"blockSizeInKbs"`
+	// (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+	ExtendSizeInMbs *int `pulumi:"extendSizeInMbs"`
+	// (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+	IsAutoCreate *bool `pulumi:"isAutoCreate"`
+	// (Updatable) Set this property to true to enable tablespace of the type big file.
+	IsBigFile *bool `pulumi:"isBigFile"`
+	// (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+	RemapTarget *string `pulumi:"remapTarget"`
+	// (Updatable) Type of Database Base Migration Target.
+	TargetType string `pulumi:"targetType"`
+}
+
+// MigrationInitialLoadSettingsTablespaceDetailsInput is an input type that accepts MigrationInitialLoadSettingsTablespaceDetailsArgs and MigrationInitialLoadSettingsTablespaceDetailsOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsTablespaceDetailsInput` via:
+//
+//	MigrationInitialLoadSettingsTablespaceDetailsArgs{...}
+type MigrationInitialLoadSettingsTablespaceDetailsInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsTablespaceDetailsOutput() MigrationInitialLoadSettingsTablespaceDetailsOutput
+	ToMigrationInitialLoadSettingsTablespaceDetailsOutputWithContext(context.Context) MigrationInitialLoadSettingsTablespaceDetailsOutput
+}
+
+type MigrationInitialLoadSettingsTablespaceDetailsArgs struct {
+	// (Updatable) Size of Oracle database blocks in KB.
+	BlockSizeInKbs pulumi.StringPtrInput `pulumi:"blockSizeInKbs"`
+	// (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+	ExtendSizeInMbs pulumi.IntPtrInput `pulumi:"extendSizeInMbs"`
+	// (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+	IsAutoCreate pulumi.BoolPtrInput `pulumi:"isAutoCreate"`
+	// (Updatable) Set this property to true to enable tablespace of the type big file.
+	IsBigFile pulumi.BoolPtrInput `pulumi:"isBigFile"`
+	// (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+	RemapTarget pulumi.StringPtrInput `pulumi:"remapTarget"`
+	// (Updatable) Type of Database Base Migration Target.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+}
+
+func (MigrationInitialLoadSettingsTablespaceDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsTablespaceDetails)(nil)).Elem()
+}
+
+func (i MigrationInitialLoadSettingsTablespaceDetailsArgs) ToMigrationInitialLoadSettingsTablespaceDetailsOutput() MigrationInitialLoadSettingsTablespaceDetailsOutput {
+	return i.ToMigrationInitialLoadSettingsTablespaceDetailsOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsTablespaceDetailsArgs) ToMigrationInitialLoadSettingsTablespaceDetailsOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsTablespaceDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsTablespaceDetailsOutput)
+}
+
+func (i MigrationInitialLoadSettingsTablespaceDetailsArgs) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutput() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return i.ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i MigrationInitialLoadSettingsTablespaceDetailsArgs) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsTablespaceDetailsOutput).ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(ctx)
+}
+
+// MigrationInitialLoadSettingsTablespaceDetailsPtrInput is an input type that accepts MigrationInitialLoadSettingsTablespaceDetailsArgs, MigrationInitialLoadSettingsTablespaceDetailsPtr and MigrationInitialLoadSettingsTablespaceDetailsPtrOutput values.
+// You can construct a concrete instance of `MigrationInitialLoadSettingsTablespaceDetailsPtrInput` via:
+//
+//	        MigrationInitialLoadSettingsTablespaceDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type MigrationInitialLoadSettingsTablespaceDetailsPtrInput interface {
+	pulumi.Input
+
+	ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutput() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput
+	ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(context.Context) MigrationInitialLoadSettingsTablespaceDetailsPtrOutput
+}
+
+type migrationInitialLoadSettingsTablespaceDetailsPtrType MigrationInitialLoadSettingsTablespaceDetailsArgs
+
+func MigrationInitialLoadSettingsTablespaceDetailsPtr(v *MigrationInitialLoadSettingsTablespaceDetailsArgs) MigrationInitialLoadSettingsTablespaceDetailsPtrInput {
+	return (*migrationInitialLoadSettingsTablespaceDetailsPtrType)(v)
+}
+
+func (*migrationInitialLoadSettingsTablespaceDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsTablespaceDetails)(nil)).Elem()
+}
+
+func (i *migrationInitialLoadSettingsTablespaceDetailsPtrType) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutput() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return i.ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *migrationInitialLoadSettingsTablespaceDetailsPtrType) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationInitialLoadSettingsTablespaceDetailsPtrOutput)
+}
+
+type MigrationInitialLoadSettingsTablespaceDetailsOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsTablespaceDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationInitialLoadSettingsTablespaceDetails)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) ToMigrationInitialLoadSettingsTablespaceDetailsOutput() MigrationInitialLoadSettingsTablespaceDetailsOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) ToMigrationInitialLoadSettingsTablespaceDetailsOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsTablespaceDetailsOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutput() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return o.ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v MigrationInitialLoadSettingsTablespaceDetails) *MigrationInitialLoadSettingsTablespaceDetails {
+		return &v
+	}).(MigrationInitialLoadSettingsTablespaceDetailsPtrOutput)
+}
+
+// (Updatable) Size of Oracle database blocks in KB.
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) BlockSizeInKbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsTablespaceDetails) *string { return v.BlockSizeInKbs }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) ExtendSizeInMbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsTablespaceDetails) *int { return v.ExtendSizeInMbs }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) IsAutoCreate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsTablespaceDetails) *bool { return v.IsAutoCreate }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Set this property to true to enable tablespace of the type big file.
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) IsBigFile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsTablespaceDetails) *bool { return v.IsBigFile }).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) RemapTarget() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsTablespaceDetails) *string { return v.RemapTarget }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of Database Base Migration Target.
+func (o MigrationInitialLoadSettingsTablespaceDetailsOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v MigrationInitialLoadSettingsTablespaceDetails) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
+type MigrationInitialLoadSettingsTablespaceDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**MigrationInitialLoadSettingsTablespaceDetails)(nil)).Elem()
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutput() MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) ToMigrationInitialLoadSettingsTablespaceDetailsPtrOutputWithContext(ctx context.Context) MigrationInitialLoadSettingsTablespaceDetailsPtrOutput {
+	return o
+}
+
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) Elem() MigrationInitialLoadSettingsTablespaceDetailsOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) MigrationInitialLoadSettingsTablespaceDetails {
+		if v != nil {
+			return *v
+		}
+		var ret MigrationInitialLoadSettingsTablespaceDetails
+		return ret
+	}).(MigrationInitialLoadSettingsTablespaceDetailsOutput)
+}
+
+// (Updatable) Size of Oracle database blocks in KB.
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) BlockSizeInKbs() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BlockSizeInKbs
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) ExtendSizeInMbs() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) *int {
+		if v == nil {
+			return nil
+		}
+		return v.ExtendSizeInMbs
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) IsAutoCreate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsAutoCreate
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Set this property to true to enable tablespace of the type big file.
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) IsBigFile() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsBigFile
+	}).(pulumi.BoolPtrOutput)
+}
+
+// (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) RemapTarget() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RemapTarget
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of Database Base Migration Target.
+func (o MigrationInitialLoadSettingsTablespaceDetailsPtrOutput) TargetType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *MigrationInitialLoadSettingsTablespaceDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return &v.TargetType
+	}).(pulumi.StringPtrOutput)
+}
+
+type GetConnectionAdditionalAttribute struct {
+	// The name of the property entry.
+	Name string `pulumi:"name"`
+	// The value of the property entry.
+	Value string `pulumi:"value"`
+}
+
+// GetConnectionAdditionalAttributeInput is an input type that accepts GetConnectionAdditionalAttributeArgs and GetConnectionAdditionalAttributeOutput values.
+// You can construct a concrete instance of `GetConnectionAdditionalAttributeInput` via:
+//
+//	GetConnectionAdditionalAttributeArgs{...}
+type GetConnectionAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToGetConnectionAdditionalAttributeOutput() GetConnectionAdditionalAttributeOutput
+	ToGetConnectionAdditionalAttributeOutputWithContext(context.Context) GetConnectionAdditionalAttributeOutput
+}
+
+type GetConnectionAdditionalAttributeArgs struct {
+	// The name of the property entry.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The value of the property entry.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetConnectionAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionAdditionalAttributeArgs) ToGetConnectionAdditionalAttributeOutput() GetConnectionAdditionalAttributeOutput {
+	return i.ToGetConnectionAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAdditionalAttributeArgs) ToGetConnectionAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAdditionalAttributeOutput)
+}
+
+// GetConnectionAdditionalAttributeArrayInput is an input type that accepts GetConnectionAdditionalAttributeArray and GetConnectionAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `GetConnectionAdditionalAttributeArrayInput` via:
+//
+//	GetConnectionAdditionalAttributeArray{ GetConnectionAdditionalAttributeArgs{...} }
+type GetConnectionAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionAdditionalAttributeArrayOutput() GetConnectionAdditionalAttributeArrayOutput
+	ToGetConnectionAdditionalAttributeArrayOutputWithContext(context.Context) GetConnectionAdditionalAttributeArrayOutput
+}
+
+type GetConnectionAdditionalAttributeArray []GetConnectionAdditionalAttributeInput
+
+func (GetConnectionAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionAdditionalAttributeArray) ToGetConnectionAdditionalAttributeArrayOutput() GetConnectionAdditionalAttributeArrayOutput {
+	return i.ToGetConnectionAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionAdditionalAttributeArray) ToGetConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionAdditionalAttributeArrayOutput)
+}
+
+type GetConnectionAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionAdditionalAttributeOutput) ToGetConnectionAdditionalAttributeOutput() GetConnectionAdditionalAttributeOutput {
+	return o
+}
+
+func (o GetConnectionAdditionalAttributeOutput) ToGetConnectionAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeOutput {
+	return o
+}
+
+// The name of the property entry.
+func (o GetConnectionAdditionalAttributeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAdditionalAttribute) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The value of the property entry.
+func (o GetConnectionAdditionalAttributeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionAdditionalAttribute) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetConnectionAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionAdditionalAttributeArrayOutput) ToGetConnectionAdditionalAttributeArrayOutput() GetConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionAdditionalAttributeArrayOutput) ToGetConnectionAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) GetConnectionAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionAdditionalAttribute {
+		return vs[0].([]GetConnectionAdditionalAttribute)[vs[1].(int)]
+	}).(GetConnectionAdditionalAttributeOutput)
+}
+
+type GetConnectionIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetConnectionIngressIpInput is an input type that accepts GetConnectionIngressIpArgs and GetConnectionIngressIpOutput values.
+// You can construct a concrete instance of `GetConnectionIngressIpInput` via:
+//
+//	GetConnectionIngressIpArgs{...}
+type GetConnectionIngressIpInput interface {
+	pulumi.Input
+
+	ToGetConnectionIngressIpOutput() GetConnectionIngressIpOutput
+	ToGetConnectionIngressIpOutputWithContext(context.Context) GetConnectionIngressIpOutput
+}
+
+type GetConnectionIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetConnectionIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionIngressIpArgs) ToGetConnectionIngressIpOutput() GetConnectionIngressIpOutput {
+	return i.ToGetConnectionIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetConnectionIngressIpArgs) ToGetConnectionIngressIpOutputWithContext(ctx context.Context) GetConnectionIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionIngressIpOutput)
+}
+
+// GetConnectionIngressIpArrayInput is an input type that accepts GetConnectionIngressIpArray and GetConnectionIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetConnectionIngressIpArrayInput` via:
+//
+//	GetConnectionIngressIpArray{ GetConnectionIngressIpArgs{...} }
+type GetConnectionIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionIngressIpArrayOutput() GetConnectionIngressIpArrayOutput
+	ToGetConnectionIngressIpArrayOutputWithContext(context.Context) GetConnectionIngressIpArrayOutput
+}
+
+type GetConnectionIngressIpArray []GetConnectionIngressIpInput
+
+func (GetConnectionIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionIngressIpArray) ToGetConnectionIngressIpArrayOutput() GetConnectionIngressIpArrayOutput {
+	return i.ToGetConnectionIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionIngressIpArray) ToGetConnectionIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionIngressIpArrayOutput)
+}
+
+type GetConnectionIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionIngressIpOutput) ToGetConnectionIngressIpOutput() GetConnectionIngressIpOutput {
+	return o
+}
+
+func (o GetConnectionIngressIpOutput) ToGetConnectionIngressIpOutputWithContext(ctx context.Context) GetConnectionIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetConnectionIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetConnectionIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionIngressIpArrayOutput) ToGetConnectionIngressIpArrayOutput() GetConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionIngressIpArrayOutput) ToGetConnectionIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionIngressIpArrayOutput) Index(i pulumi.IntInput) GetConnectionIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionIngressIp {
+		return vs[0].([]GetConnectionIngressIp)[vs[1].(int)]
+	}).(GetConnectionIngressIpOutput)
+}
+
+type GetConnectionsConnectionCollection struct {
+	Items []GetConnectionsConnectionCollectionItem `pulumi:"items"`
+}
+
+// GetConnectionsConnectionCollectionInput is an input type that accepts GetConnectionsConnectionCollectionArgs and GetConnectionsConnectionCollectionOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionInput` via:
+//
+//	GetConnectionsConnectionCollectionArgs{...}
+type GetConnectionsConnectionCollectionInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionOutput() GetConnectionsConnectionCollectionOutput
+	ToGetConnectionsConnectionCollectionOutputWithContext(context.Context) GetConnectionsConnectionCollectionOutput
+}
+
+type GetConnectionsConnectionCollectionArgs struct {
+	Items GetConnectionsConnectionCollectionItemArrayInput `pulumi:"items"`
+}
+
+func (GetConnectionsConnectionCollectionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollectionOutput() GetConnectionsConnectionCollectionOutput {
+	return i.ToGetConnectionsConnectionCollectionOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionArgs) ToGetConnectionsConnectionCollectionOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionOutput)
+}
+
+// GetConnectionsConnectionCollectionArrayInput is an input type that accepts GetConnectionsConnectionCollectionArray and GetConnectionsConnectionCollectionArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionArray{ GetConnectionsConnectionCollectionArgs{...} }
+type GetConnectionsConnectionCollectionArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionArrayOutput() GetConnectionsConnectionCollectionArrayOutput
+	ToGetConnectionsConnectionCollectionArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionArrayOutput
+}
+
+type GetConnectionsConnectionCollectionArray []GetConnectionsConnectionCollectionInput
+
+func (GetConnectionsConnectionCollectionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionArray) ToGetConnectionsConnectionCollectionArrayOutput() GetConnectionsConnectionCollectionArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionArray) ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionCollectionOutput() GetConnectionsConnectionCollectionOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionOutput) ToGetConnectionsConnectionCollectionOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionOutput) Items() GetConnectionsConnectionCollectionItemArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollection) []GetConnectionsConnectionCollectionItem { return v.Items }).(GetConnectionsConnectionCollectionItemArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollection)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectionCollectionArrayOutput() GetConnectionsConnectionCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) ToGetConnectionsConnectionCollectionArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollection {
+		return vs[0].([]GetConnectionsConnectionCollection)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionOutput)
+}
+
+type GetConnectionsConnectionCollectionItem struct {
+	// An array of name-value pair attribute entries.
+	AdditionalAttributes []GetConnectionsConnectionCollectionItemAdditionalAttribute `pulumi:"additionalAttributes"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId string `pulumi:"compartmentId"`
+	// Connect descriptor or Easy Connect Naming method used to connect to a database.
+	ConnectionString string `pulumi:"connectionString"`
+	// The array of connection types.
+	ConnectionType string `pulumi:"connectionType"`
+	// The OCID of the database being referenced.
+	DatabaseId string `pulumi:"databaseId"`
+	// The name of the database being referenced.
+	DatabaseName string `pulumi:"databaseName"`
+	// The OCID of the database system being referenced.
+	DbSystemId string `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags map[string]interface{} `pulumi:"definedTags"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description string `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName string `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// The IP Address of the host.
+	Host string `pulumi:"host"`
+	// The OCID of the connection being referenced.
+	Id string `pulumi:"id"`
+	// List of ingress IP addresses from where to connect to this connection's privateIp.
+	IngressIps []GetConnectionsConnectionCollectionItemIngressIp `pulumi:"ingressIps"`
+	// The OCID of the key used in cryptographic operations.
+	KeyId string `pulumi:"keyId"`
+	// The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
+	LifecycleDetails string `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds []string `pulumi:"nsgIds"`
+	// The password (credential) used when creating or updating this resource.
+	Password string `pulumi:"password"`
+	// The port to be used for the connection.
+	Port int `pulumi:"port"`
+	// The OCID of the resource being referenced.
+	PrivateEndpointId string `pulumi:"privateEndpointId"`
+	// The password (credential) used when creating or updating this resource.
+	ReplicationPassword string `pulumi:"replicationPassword"`
+	// The username (credential) used when creating or updating this resource.
+	ReplicationUsername string `pulumi:"replicationUsername"`
+	// The OCID of the resource being referenced.
+	SecretId string `pulumi:"secretId"`
+	// Security Protocol to be used for the connection.
+	SecurityProtocol string `pulumi:"securityProtocol"`
+	// Name of the host the SSH key is valid for.
+	SshHost string `pulumi:"sshHost"`
+	// Private SSH key string.
+	SshKey string `pulumi:"sshKey"`
+	// Sudo location
+	SshSudoLocation string `pulumi:"sshSudoLocation"`
+	// The username (credential) used when creating or updating this resource.
+	SshUser string `pulumi:"sshUser"`
+	SslCa   string `pulumi:"sslCa"`
+	SslCert string `pulumi:"sslCert"`
+	SslCrl  string `pulumi:"sslCrl"`
+	SslKey  string `pulumi:"sslKey"`
+	// SSL mode to be used for the connection.
+	SslMode string `pulumi:"sslMode"`
+	// The current state of the Database Migration Deployment.
+	State string `pulumi:"state"`
+	// Oracle Cloud Infrastructure resource ID.
+	SubnetId string `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The array of technology types.
+	TechnologyType string `pulumi:"technologyType"`
+	// The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated string `pulumi:"timeCreated"`
+	// The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated string `pulumi:"timeUpdated"`
+	// The username (credential) used when creating or updating this resource.
+	Username string `pulumi:"username"`
+	// Oracle Cloud Infrastructure resource ID.
+	VaultId string `pulumi:"vaultId"`
+	Wallet  string `pulumi:"wallet"`
+}
+
+// GetConnectionsConnectionCollectionItemInput is an input type that accepts GetConnectionsConnectionCollectionItemArgs and GetConnectionsConnectionCollectionItemOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemInput` via:
+//
+//	GetConnectionsConnectionCollectionItemArgs{...}
+type GetConnectionsConnectionCollectionItemInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemOutput() GetConnectionsConnectionCollectionItemOutput
+	ToGetConnectionsConnectionCollectionItemOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemOutput
+}
+
+type GetConnectionsConnectionCollectionItemArgs struct {
+	// An array of name-value pair attribute entries.
+	AdditionalAttributes GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput `pulumi:"additionalAttributes"`
+	// The ID of the compartment in which to list resources.
+	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	// Connect descriptor or Easy Connect Naming method used to connect to a database.
+	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
+	// The array of connection types.
+	ConnectionType pulumi.StringInput `pulumi:"connectionType"`
+	// The OCID of the database being referenced.
+	DatabaseId pulumi.StringInput `pulumi:"databaseId"`
+	// The name of the database being referenced.
+	DatabaseName pulumi.StringInput `pulumi:"databaseName"`
+	// The OCID of the database system being referenced.
+	DbSystemId pulumi.StringInput `pulumi:"dbSystemId"`
+	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
+	// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+	Description pulumi.StringInput `pulumi:"description"`
+	// A filter to return only resources that match the entire display name given.
+	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
+	// The IP Address of the host.
+	Host pulumi.StringInput `pulumi:"host"`
+	// The OCID of the connection being referenced.
+	Id pulumi.StringInput `pulumi:"id"`
+	// List of ingress IP addresses from where to connect to this connection's privateIp.
+	IngressIps GetConnectionsConnectionCollectionItemIngressIpArrayInput `pulumi:"ingressIps"`
+	// The OCID of the key used in cryptographic operations.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
+	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
+	// An array of Network Security Group OCIDs used to define network access for Connections.
+	NsgIds pulumi.StringArrayInput `pulumi:"nsgIds"`
+	// The password (credential) used when creating or updating this resource.
+	Password pulumi.StringInput `pulumi:"password"`
+	// The port to be used for the connection.
+	Port pulumi.IntInput `pulumi:"port"`
+	// The OCID of the resource being referenced.
+	PrivateEndpointId pulumi.StringInput `pulumi:"privateEndpointId"`
+	// The password (credential) used when creating or updating this resource.
+	ReplicationPassword pulumi.StringInput `pulumi:"replicationPassword"`
+	// The username (credential) used when creating or updating this resource.
+	ReplicationUsername pulumi.StringInput `pulumi:"replicationUsername"`
+	// The OCID of the resource being referenced.
+	SecretId pulumi.StringInput `pulumi:"secretId"`
+	// Security Protocol to be used for the connection.
+	SecurityProtocol pulumi.StringInput `pulumi:"securityProtocol"`
+	// Name of the host the SSH key is valid for.
+	SshHost pulumi.StringInput `pulumi:"sshHost"`
+	// Private SSH key string.
+	SshKey pulumi.StringInput `pulumi:"sshKey"`
+	// Sudo location
+	SshSudoLocation pulumi.StringInput `pulumi:"sshSudoLocation"`
+	// The username (credential) used when creating or updating this resource.
+	SshUser pulumi.StringInput `pulumi:"sshUser"`
+	SslCa   pulumi.StringInput `pulumi:"sslCa"`
+	SslCert pulumi.StringInput `pulumi:"sslCert"`
+	SslCrl  pulumi.StringInput `pulumi:"sslCrl"`
+	SslKey  pulumi.StringInput `pulumi:"sslKey"`
+	// SSL mode to be used for the connection.
+	SslMode pulumi.StringInput `pulumi:"sslMode"`
+	// The current state of the Database Migration Deployment.
+	State pulumi.StringInput `pulumi:"state"`
+	// Oracle Cloud Infrastructure resource ID.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	SystemTags pulumi.MapInput `pulumi:"systemTags"`
+	// The array of technology types.
+	TechnologyType pulumi.StringInput `pulumi:"technologyType"`
+	// The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
+	// The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
+	// The username (credential) used when creating or updating this resource.
+	Username pulumi.StringInput `pulumi:"username"`
+	// Oracle Cloud Infrastructure resource ID.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+	Wallet  pulumi.StringInput `pulumi:"wallet"`
+}
+
+func (GetConnectionsConnectionCollectionItemArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCollectionItemOutput() GetConnectionsConnectionCollectionItemOutput {
+	return i.ToGetConnectionsConnectionCollectionItemOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemArgs) ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemOutput)
+}
+
+// GetConnectionsConnectionCollectionItemArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemArray and GetConnectionsConnectionCollectionItemArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemArray{ GetConnectionsConnectionCollectionItemArgs{...} }
+type GetConnectionsConnectionCollectionItemArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemArrayOutput() GetConnectionsConnectionCollectionItemArrayOutput
+	ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemArray []GetConnectionsConnectionCollectionItemInput
+
+func (GetConnectionsConnectionCollectionItemArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemArray) ToGetConnectionsConnectionCollectionItemArrayOutput() GetConnectionsConnectionCollectionItemArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemArray) ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnectionCollectionItemOutput() GetConnectionsConnectionCollectionItemOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) ToGetConnectionsConnectionCollectionItemOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemOutput {
+	return o
+}
+
+// An array of name-value pair attribute entries.
+func (o GetConnectionsConnectionCollectionItemOutput) AdditionalAttributes() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemAdditionalAttribute {
+		return v.AdditionalAttributes
+	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
+}
+
+// The ID of the compartment in which to list resources.
+func (o GetConnectionsConnectionCollectionItemOutput) CompartmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+// Connect descriptor or Easy Connect Naming method used to connect to a database.
+func (o GetConnectionsConnectionCollectionItemOutput) ConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionString }).(pulumi.StringOutput)
+}
+
+// The array of connection types.
+func (o GetConnectionsConnectionCollectionItemOutput) ConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ConnectionType }).(pulumi.StringOutput)
+}
+
+// The OCID of the database being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) DatabaseId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DatabaseId }).(pulumi.StringOutput)
+}
+
+// The name of the database being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) DatabaseName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DatabaseName }).(pulumi.StringOutput)
+}
+
+// The OCID of the database system being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) DbSystemId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DbSystemId }).(pulumi.StringOutput)
+}
+
+// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
+func (o GetConnectionsConnectionCollectionItemOutput) DefinedTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
+}
+
+// A user-friendly description. Does not have to be unique, and it's changeable.  Avoid entering confidential information.
+func (o GetConnectionsConnectionCollectionItemOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// A filter to return only resources that match the entire display name given.
+func (o GetConnectionsConnectionCollectionItemOutput) DisplayName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.DisplayName }).(pulumi.StringOutput)
+}
+
+// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+func (o GetConnectionsConnectionCollectionItemOutput) FreeformTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
+}
+
+// The IP Address of the host.
+func (o GetConnectionsConnectionCollectionItemOutput) Host() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Host }).(pulumi.StringOutput)
+}
+
+// The OCID of the connection being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// List of ingress IP addresses from where to connect to this connection's privateIp.
+func (o GetConnectionsConnectionCollectionItemOutput) IngressIps() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []GetConnectionsConnectionCollectionItemIngressIp {
+		return v.IngressIps
+	}).(GetConnectionsConnectionCollectionItemIngressIpArrayOutput)
+}
+
+// The OCID of the key used in cryptographic operations.
+func (o GetConnectionsConnectionCollectionItemOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// The message describing the current state of the connection's lifecycle in detail. For example, can be used to provide actionable information for a connection in a Failed state.
+func (o GetConnectionsConnectionCollectionItemOutput) LifecycleDetails() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.LifecycleDetails }).(pulumi.StringOutput)
+}
+
+// An array of Network Security Group OCIDs used to define network access for Connections.
+func (o GetConnectionsConnectionCollectionItemOutput) NsgIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) []string { return v.NsgIds }).(pulumi.StringArrayOutput)
+}
+
+// The password (credential) used when creating or updating this resource.
+func (o GetConnectionsConnectionCollectionItemOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// The port to be used for the connection.
+func (o GetConnectionsConnectionCollectionItemOutput) Port() pulumi.IntOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) int { return v.Port }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) PrivateEndpointId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.PrivateEndpointId }).(pulumi.StringOutput)
+}
+
+// The password (credential) used when creating or updating this resource.
+func (o GetConnectionsConnectionCollectionItemOutput) ReplicationPassword() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ReplicationPassword }).(pulumi.StringOutput)
+}
+
+// The username (credential) used when creating or updating this resource.
+func (o GetConnectionsConnectionCollectionItemOutput) ReplicationUsername() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.ReplicationUsername }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetConnectionsConnectionCollectionItemOutput) SecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecretId }).(pulumi.StringOutput)
+}
+
+// Security Protocol to be used for the connection.
+func (o GetConnectionsConnectionCollectionItemOutput) SecurityProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SecurityProtocol }).(pulumi.StringOutput)
+}
+
+// Name of the host the SSH key is valid for.
+func (o GetConnectionsConnectionCollectionItemOutput) SshHost() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SshHost }).(pulumi.StringOutput)
+}
+
+// Private SSH key string.
+func (o GetConnectionsConnectionCollectionItemOutput) SshKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SshKey }).(pulumi.StringOutput)
+}
+
+// Sudo location
+func (o GetConnectionsConnectionCollectionItemOutput) SshSudoLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SshSudoLocation }).(pulumi.StringOutput)
+}
+
+// The username (credential) used when creating or updating this resource.
+func (o GetConnectionsConnectionCollectionItemOutput) SshUser() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SshUser }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslCa() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCa }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslCert() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCert }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslCrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslCrl }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) SslKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslKey }).(pulumi.StringOutput)
+}
+
+// SSL mode to be used for the connection.
+func (o GetConnectionsConnectionCollectionItemOutput) SslMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SslMode }).(pulumi.StringOutput)
+}
+
+// The current state of the Database Migration Deployment.
+func (o GetConnectionsConnectionCollectionItemOutput) State() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.State }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure resource ID.
+func (o GetConnectionsConnectionCollectionItemOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Usage of system tag keys. These predefined keys are scoped to namespaces. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+func (o GetConnectionsConnectionCollectionItemOutput) SystemTags() pulumi.MapOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The array of technology types.
+func (o GetConnectionsConnectionCollectionItemOutput) TechnologyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TechnologyType }).(pulumi.StringOutput)
+}
+
+// The time when this resource was created. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionsConnectionCollectionItemOutput) TimeCreated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeCreated }).(pulumi.StringOutput)
+}
+
+// The time when this resource was updated. An RFC3339 formatted datetime string such as `2016-08-25T21:10:29.600Z`.
+func (o GetConnectionsConnectionCollectionItemOutput) TimeUpdated() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.TimeUpdated }).(pulumi.StringOutput)
+}
+
+// The username (credential) used when creating or updating this resource.
+func (o GetConnectionsConnectionCollectionItemOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Username }).(pulumi.StringOutput)
+}
+
+// Oracle Cloud Infrastructure resource ID.
+func (o GetConnectionsConnectionCollectionItemOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsConnectionCollectionItemOutput) Wallet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItem) string { return v.Wallet }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItem)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConnectionCollectionItemArrayOutput() GetConnectionsConnectionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemArrayOutput) ToGetConnectionsConnectionCollectionItemArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItem {
+		return vs[0].([]GetConnectionsConnectionCollectionItem)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttribute struct {
+	// The name of the property entry.
+	Name string `pulumi:"name"`
+	// The value of the property entry.
+	Value string `pulumi:"value"`
+}
+
+// GetConnectionsConnectionCollectionItemAdditionalAttributeInput is an input type that accepts GetConnectionsConnectionCollectionItemAdditionalAttributeArgs and GetConnectionsConnectionCollectionItemAdditionalAttributeOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdditionalAttributeInput` via:
+//
+//	GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{...}
+type GetConnectionsConnectionCollectionItemAdditionalAttributeInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeOutput
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArgs struct {
+	// The name of the property entry.
+	Name pulumi.StringInput `pulumi:"name"`
+	// The value of the property entry.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArgs) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return i.ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArgs) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput)
+}
+
+// GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemAdditionalAttributeArray and GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemAdditionalAttributeArray{ GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{...} }
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput
+	ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArray []GetConnectionsConnectionCollectionItemAdditionalAttributeInput
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArray) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemAdditionalAttributeArray) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return o
+}
+
+// The name of the property entry.
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAdditionalAttribute) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// The value of the property entry.
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemAdditionalAttribute) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemAdditionalAttribute)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput() GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) ToGetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemAdditionalAttributeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemAdditionalAttribute {
+		return vs[0].([]GetConnectionsConnectionCollectionItemAdditionalAttribute)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput)
+}
+
+type GetConnectionsConnectionCollectionItemIngressIp struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp string `pulumi:"ingressIp"`
+}
+
+// GetConnectionsConnectionCollectionItemIngressIpInput is an input type that accepts GetConnectionsConnectionCollectionItemIngressIpArgs and GetConnectionsConnectionCollectionItemIngressIpOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemIngressIpInput` via:
+//
+//	GetConnectionsConnectionCollectionItemIngressIpArgs{...}
+type GetConnectionsConnectionCollectionItemIngressIpInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemIngressIpOutput() GetConnectionsConnectionCollectionItemIngressIpOutput
+	ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemIngressIpOutput
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpArgs struct {
+	// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+	IngressIp pulumi.StringInput `pulumi:"ingressIp"`
+}
+
+func (GetConnectionsConnectionCollectionItemIngressIpArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArgs) ToGetConnectionsConnectionCollectionItemIngressIpOutput() GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return i.ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArgs) ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemIngressIpOutput)
+}
+
+// GetConnectionsConnectionCollectionItemIngressIpArrayInput is an input type that accepts GetConnectionsConnectionCollectionItemIngressIpArray and GetConnectionsConnectionCollectionItemIngressIpArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsConnectionCollectionItemIngressIpArrayInput` via:
+//
+//	GetConnectionsConnectionCollectionItemIngressIpArray{ GetConnectionsConnectionCollectionItemIngressIpArgs{...} }
+type GetConnectionsConnectionCollectionItemIngressIpArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsConnectionCollectionItemIngressIpArrayOutput() GetConnectionsConnectionCollectionItemIngressIpArrayOutput
+	ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(context.Context) GetConnectionsConnectionCollectionItemIngressIpArrayOutput
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpArray []GetConnectionsConnectionCollectionItemIngressIpInput
+
+func (GetConnectionsConnectionCollectionItemIngressIpArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArray) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutput() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return i.ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsConnectionCollectionItemIngressIpArray) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsConnectionCollectionItemIngressIpArrayOutput)
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemIngressIpOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpOutput) ToGetConnectionsConnectionCollectionItemIngressIpOutput() GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpOutput) ToGetConnectionsConnectionCollectionItemIngressIpOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return o
+}
+
+// A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+func (o GetConnectionsConnectionCollectionItemIngressIpOutput) IngressIp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsConnectionCollectionItemIngressIp) string { return v.IngressIp }).(pulumi.StringOutput)
+}
+
+type GetConnectionsConnectionCollectionItemIngressIpArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsConnectionCollectionItemIngressIpArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsConnectionCollectionItemIngressIp)(nil)).Elem()
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutput() GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) ToGetConnectionsConnectionCollectionItemIngressIpArrayOutputWithContext(ctx context.Context) GetConnectionsConnectionCollectionItemIngressIpArrayOutput {
+	return o
+}
+
+func (o GetConnectionsConnectionCollectionItemIngressIpArrayOutput) Index(i pulumi.IntInput) GetConnectionsConnectionCollectionItemIngressIpOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsConnectionCollectionItemIngressIp {
+		return vs[0].([]GetConnectionsConnectionCollectionItemIngressIp)[vs[1].(int)]
+	}).(GetConnectionsConnectionCollectionItemIngressIpOutput)
+}
+
+type GetConnectionsFilter struct {
+	// The name of the property entry.
+	Name   string   `pulumi:"name"`
+	Regex  *bool    `pulumi:"regex"`
+	Values []string `pulumi:"values"`
+}
+
+// GetConnectionsFilterInput is an input type that accepts GetConnectionsFilterArgs and GetConnectionsFilterOutput values.
+// You can construct a concrete instance of `GetConnectionsFilterInput` via:
+//
+//	GetConnectionsFilterArgs{...}
+type GetConnectionsFilterInput interface {
+	pulumi.Input
+
+	ToGetConnectionsFilterOutput() GetConnectionsFilterOutput
+	ToGetConnectionsFilterOutputWithContext(context.Context) GetConnectionsFilterOutput
+}
+
+type GetConnectionsFilterArgs struct {
+	// The name of the property entry.
+	Name   pulumi.StringInput      `pulumi:"name"`
+	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
+	Values pulumi.StringArrayInput `pulumi:"values"`
+}
+
+func (GetConnectionsFilterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutput() GetConnectionsFilterOutput {
+	return i.ToGetConnectionsFilterOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsFilterArgs) ToGetConnectionsFilterOutputWithContext(ctx context.Context) GetConnectionsFilterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterOutput)
+}
+
+// GetConnectionsFilterArrayInput is an input type that accepts GetConnectionsFilterArray and GetConnectionsFilterArrayOutput values.
+// You can construct a concrete instance of `GetConnectionsFilterArrayInput` via:
+//
+//	GetConnectionsFilterArray{ GetConnectionsFilterArgs{...} }
+type GetConnectionsFilterArrayInput interface {
+	pulumi.Input
+
+	ToGetConnectionsFilterArrayOutput() GetConnectionsFilterArrayOutput
+	ToGetConnectionsFilterArrayOutputWithContext(context.Context) GetConnectionsFilterArrayOutput
+}
+
+type GetConnectionsFilterArray []GetConnectionsFilterInput
+
+func (GetConnectionsFilterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsFilter)(nil)).Elem()
+}
+
+func (i GetConnectionsFilterArray) ToGetConnectionsFilterArrayOutput() GetConnectionsFilterArrayOutput {
+	return i.ToGetConnectionsFilterArrayOutputWithContext(context.Background())
+}
+
+func (i GetConnectionsFilterArray) ToGetConnectionsFilterArrayOutputWithContext(ctx context.Context) GetConnectionsFilterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetConnectionsFilterArrayOutput)
+}
+
+type GetConnectionsFilterOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsFilterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutput() GetConnectionsFilterOutput {
+	return o
+}
+
+func (o GetConnectionsFilterOutput) ToGetConnectionsFilterOutputWithContext(ctx context.Context) GetConnectionsFilterOutput {
+	return o
+}
+
+// The name of the property entry.
+func (o GetConnectionsFilterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetConnectionsFilter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+func (o GetConnectionsFilterOutput) Regex() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v GetConnectionsFilter) *bool { return v.Regex }).(pulumi.BoolPtrOutput)
+}
+
+func (o GetConnectionsFilterOutput) Values() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetConnectionsFilter) []string { return v.Values }).(pulumi.StringArrayOutput)
+}
+
+type GetConnectionsFilterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetConnectionsFilterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetConnectionsFilter)(nil)).Elem()
+}
+
+func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutput() GetConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionsFilterArrayOutput) ToGetConnectionsFilterArrayOutputWithContext(ctx context.Context) GetConnectionsFilterArrayOutput {
+	return o
+}
+
+func (o GetConnectionsFilterArrayOutput) Index(i pulumi.IntInput) GetConnectionsFilterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetConnectionsFilter {
+		return vs[0].([]GetConnectionsFilter)[vs[1].(int)]
+	}).(GetConnectionsFilterOutput)
+}
+
 type GetJobAdvisorReportReportLocationDetail struct {
-	// Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+	// File system path on the Source Database host where the Premigration Advisor report can be accessed.
 	LocationInSource string `pulumi:"locationInSource"`
-	// Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+	// Details to access Premigration Advisor report in the specified Object Storage bucket.
 	ObjectStorageDetails []GetJobAdvisorReportReportLocationDetailObjectStorageDetail `pulumi:"objectStorageDetails"`
 }
 
@@ -652,9 +5697,9 @@ type GetJobAdvisorReportReportLocationDetailInput interface {
 }
 
 type GetJobAdvisorReportReportLocationDetailArgs struct {
-	// Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+	// File system path on the Source Database host where the Premigration Advisor report can be accessed.
 	LocationInSource pulumi.StringInput `pulumi:"locationInSource"`
-	// Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+	// Details to access Premigration Advisor report in the specified Object Storage bucket.
 	ObjectStorageDetails GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput `pulumi:"objectStorageDetails"`
 }
 
@@ -709,12 +5754,12 @@ func (o GetJobAdvisorReportReportLocationDetailOutput) ToGetJobAdvisorReportRepo
 	return o
 }
 
-// Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+// File system path on the Source Database host where the Premigration Advisor report can be accessed.
 func (o GetJobAdvisorReportReportLocationDetailOutput) LocationInSource() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportReportLocationDetail) string { return v.LocationInSource }).(pulumi.StringOutput)
 }
 
-// Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+// Details to access Premigration Advisor report in the specified Object Storage bucket.
 func (o GetJobAdvisorReportReportLocationDetailOutput) ObjectStorageDetails() GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportReportLocationDetail) []GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
 		return v.ObjectStorageDetails
@@ -742,11 +5787,11 @@ func (o GetJobAdvisorReportReportLocationDetailArrayOutput) Index(i pulumi.IntIn
 }
 
 type GetJobAdvisorReportReportLocationDetailObjectStorageDetail struct {
-	// Name of the bucket containing the Pre-Migration Advisor report.
+	// Name of the bucket containing the Premigration Advisor report.
 	Bucket string `pulumi:"bucket"`
 	// Object Storage namespace.
 	Namespace string `pulumi:"namespace"`
-	// Pre-Migration Advisor report object name.
+	// Premigration Advisor report object name.
 	Object string `pulumi:"object"`
 }
 
@@ -762,11 +5807,11 @@ type GetJobAdvisorReportReportLocationDetailObjectStorageDetailInput interface {
 }
 
 type GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs struct {
-	// Name of the bucket containing the Pre-Migration Advisor report.
+	// Name of the bucket containing the Premigration Advisor report.
 	Bucket pulumi.StringInput `pulumi:"bucket"`
 	// Object Storage namespace.
 	Namespace pulumi.StringInput `pulumi:"namespace"`
-	// Pre-Migration Advisor report object name.
+	// Premigration Advisor report object name.
 	Object pulumi.StringInput `pulumi:"object"`
 }
 
@@ -821,7 +5866,7 @@ func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) ToGetJ
 	return o
 }
 
-// Name of the bucket containing the Pre-Migration Advisor report.
+// Name of the bucket containing the Premigration Advisor report.
 func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) Bucket() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportReportLocationDetailObjectStorageDetail) string { return v.Bucket }).(pulumi.StringOutput)
 }
@@ -831,7 +5876,7 @@ func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) Namesp
 	return o.ApplyT(func(v GetJobAdvisorReportReportLocationDetailObjectStorageDetail) string { return v.Namespace }).(pulumi.StringOutput)
 }
 
-// Pre-Migration Advisor report object name.
+// Premigration Advisor report object name.
 func (o GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput) Object() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportReportLocationDetailObjectStorageDetail) string { return v.Object }).(pulumi.StringOutput)
 }
@@ -951,6 +5996,2583 @@ func (o GetJobOutputItemArrayOutput) Index(i pulumi.IntInput) GetJobOutputItemOu
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetJobOutputItem {
 		return vs[0].([]GetJobOutputItem)[vs[1].(int)]
 	}).(GetJobOutputItemOutput)
+}
+
+type GetMigrationAdvisorSetting struct {
+	// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+	IsIgnoreErrors bool `pulumi:"isIgnoreErrors"`
+	// True to skip the Pre-Migration Advisor execution. Default is false.
+	IsSkipAdvisor bool `pulumi:"isSkipAdvisor"`
+}
+
+// GetMigrationAdvisorSettingInput is an input type that accepts GetMigrationAdvisorSettingArgs and GetMigrationAdvisorSettingOutput values.
+// You can construct a concrete instance of `GetMigrationAdvisorSettingInput` via:
+//
+//	GetMigrationAdvisorSettingArgs{...}
+type GetMigrationAdvisorSettingInput interface {
+	pulumi.Input
+
+	ToGetMigrationAdvisorSettingOutput() GetMigrationAdvisorSettingOutput
+	ToGetMigrationAdvisorSettingOutputWithContext(context.Context) GetMigrationAdvisorSettingOutput
+}
+
+type GetMigrationAdvisorSettingArgs struct {
+	// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+	IsIgnoreErrors pulumi.BoolInput `pulumi:"isIgnoreErrors"`
+	// True to skip the Pre-Migration Advisor execution. Default is false.
+	IsSkipAdvisor pulumi.BoolInput `pulumi:"isSkipAdvisor"`
+}
+
+func (GetMigrationAdvisorSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAdvisorSetting)(nil)).Elem()
+}
+
+func (i GetMigrationAdvisorSettingArgs) ToGetMigrationAdvisorSettingOutput() GetMigrationAdvisorSettingOutput {
+	return i.ToGetMigrationAdvisorSettingOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAdvisorSettingArgs) ToGetMigrationAdvisorSettingOutputWithContext(ctx context.Context) GetMigrationAdvisorSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAdvisorSettingOutput)
+}
+
+// GetMigrationAdvisorSettingArrayInput is an input type that accepts GetMigrationAdvisorSettingArray and GetMigrationAdvisorSettingArrayOutput values.
+// You can construct a concrete instance of `GetMigrationAdvisorSettingArrayInput` via:
+//
+//	GetMigrationAdvisorSettingArray{ GetMigrationAdvisorSettingArgs{...} }
+type GetMigrationAdvisorSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationAdvisorSettingArrayOutput() GetMigrationAdvisorSettingArrayOutput
+	ToGetMigrationAdvisorSettingArrayOutputWithContext(context.Context) GetMigrationAdvisorSettingArrayOutput
+}
+
+type GetMigrationAdvisorSettingArray []GetMigrationAdvisorSettingInput
+
+func (GetMigrationAdvisorSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAdvisorSetting)(nil)).Elem()
+}
+
+func (i GetMigrationAdvisorSettingArray) ToGetMigrationAdvisorSettingArrayOutput() GetMigrationAdvisorSettingArrayOutput {
+	return i.ToGetMigrationAdvisorSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAdvisorSettingArray) ToGetMigrationAdvisorSettingArrayOutputWithContext(ctx context.Context) GetMigrationAdvisorSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAdvisorSettingArrayOutput)
+}
+
+type GetMigrationAdvisorSettingOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAdvisorSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAdvisorSetting)(nil)).Elem()
+}
+
+func (o GetMigrationAdvisorSettingOutput) ToGetMigrationAdvisorSettingOutput() GetMigrationAdvisorSettingOutput {
+	return o
+}
+
+func (o GetMigrationAdvisorSettingOutput) ToGetMigrationAdvisorSettingOutputWithContext(ctx context.Context) GetMigrationAdvisorSettingOutput {
+	return o
+}
+
+// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+func (o GetMigrationAdvisorSettingOutput) IsIgnoreErrors() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationAdvisorSetting) bool { return v.IsIgnoreErrors }).(pulumi.BoolOutput)
+}
+
+// True to skip the Pre-Migration Advisor execution. Default is false.
+func (o GetMigrationAdvisorSettingOutput) IsSkipAdvisor() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationAdvisorSetting) bool { return v.IsSkipAdvisor }).(pulumi.BoolOutput)
+}
+
+type GetMigrationAdvisorSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAdvisorSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAdvisorSetting)(nil)).Elem()
+}
+
+func (o GetMigrationAdvisorSettingArrayOutput) ToGetMigrationAdvisorSettingArrayOutput() GetMigrationAdvisorSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationAdvisorSettingArrayOutput) ToGetMigrationAdvisorSettingArrayOutputWithContext(ctx context.Context) GetMigrationAdvisorSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationAdvisorSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationAdvisorSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationAdvisorSetting {
+		return vs[0].([]GetMigrationAdvisorSetting)[vs[1].(int)]
+	}).(GetMigrationAdvisorSettingOutput)
+}
+
+type GetMigrationDataTransferMediumDetail struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	AccessKeyId string `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+	ObjectStorageBuckets []GetMigrationDataTransferMediumDetailObjectStorageBucket `pulumi:"objectStorageBuckets"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region string `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey string `pulumi:"secretAccessKey"`
+	// OCID of the shared storage mount target
+	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Sources []GetMigrationDataTransferMediumDetailSource `pulumi:"sources"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Targets []GetMigrationDataTransferMediumDetailTarget `pulumi:"targets"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationDataTransferMediumDetailInput is an input type that accepts GetMigrationDataTransferMediumDetailArgs and GetMigrationDataTransferMediumDetailOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailInput` via:
+//
+//	GetMigrationDataTransferMediumDetailArgs{...}
+type GetMigrationDataTransferMediumDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailOutput() GetMigrationDataTransferMediumDetailOutput
+	ToGetMigrationDataTransferMediumDetailOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailOutput
+}
+
+type GetMigrationDataTransferMediumDetailArgs struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+	ObjectStorageBuckets GetMigrationDataTransferMediumDetailObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region pulumi.StringInput `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
+	// OCID of the shared storage mount target
+	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Sources GetMigrationDataTransferMediumDetailSourceArrayInput `pulumi:"sources"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Targets GetMigrationDataTransferMediumDetailTargetArrayInput `pulumi:"targets"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationDataTransferMediumDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailArgs) ToGetMigrationDataTransferMediumDetailOutput() GetMigrationDataTransferMediumDetailOutput {
+	return i.ToGetMigrationDataTransferMediumDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailArgs) ToGetMigrationDataTransferMediumDetailOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailOutput)
+}
+
+// GetMigrationDataTransferMediumDetailArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailArray and GetMigrationDataTransferMediumDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailArrayInput` via:
+//
+//	GetMigrationDataTransferMediumDetailArray{ GetMigrationDataTransferMediumDetailArgs{...} }
+type GetMigrationDataTransferMediumDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailArrayOutput() GetMigrationDataTransferMediumDetailArrayOutput
+	ToGetMigrationDataTransferMediumDetailArrayOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailArrayOutput
+}
+
+type GetMigrationDataTransferMediumDetailArray []GetMigrationDataTransferMediumDetailInput
+
+func (GetMigrationDataTransferMediumDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailArray) ToGetMigrationDataTransferMediumDetailArrayOutput() GetMigrationDataTransferMediumDetailArrayOutput {
+	return i.ToGetMigrationDataTransferMediumDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailArray) ToGetMigrationDataTransferMediumDetailArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailArrayOutput)
+}
+
+type GetMigrationDataTransferMediumDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailOutput) ToGetMigrationDataTransferMediumDetailOutput() GetMigrationDataTransferMediumDetailOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailOutput) ToGetMigrationDataTransferMediumDetailOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailOutput {
+	return o
+}
+
+// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o GetMigrationDataTransferMediumDetailOutput) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.AccessKeyId }).(pulumi.StringOutput)
+}
+
+// Name of directory object in database
+func (o GetMigrationDataTransferMediumDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+func (o GetMigrationDataTransferMediumDetailOutput) ObjectStorageBuckets() GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) []GetMigrationDataTransferMediumDetailObjectStorageBucket {
+		return v.ObjectStorageBuckets
+	}).(GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput)
+}
+
+// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+func (o GetMigrationDataTransferMediumDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o GetMigrationDataTransferMediumDetailOutput) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+// OCID of the shared storage mount target
+func (o GetMigrationDataTransferMediumDetailOutput) SharedStorageMountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.SharedStorageMountTargetId }).(pulumi.StringOutput)
+}
+
+// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o GetMigrationDataTransferMediumDetailOutput) Sources() GetMigrationDataTransferMediumDetailSourceArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) []GetMigrationDataTransferMediumDetailSource {
+		return v.Sources
+	}).(GetMigrationDataTransferMediumDetailSourceArrayOutput)
+}
+
+// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o GetMigrationDataTransferMediumDetailOutput) Targets() GetMigrationDataTransferMediumDetailTargetArrayOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) []GetMigrationDataTransferMediumDetailTarget {
+		return v.Targets
+	}).(GetMigrationDataTransferMediumDetailTargetArrayOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationDataTransferMediumDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationDataTransferMediumDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailArrayOutput) ToGetMigrationDataTransferMediumDetailArrayOutput() GetMigrationDataTransferMediumDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailArrayOutput) ToGetMigrationDataTransferMediumDetailArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataTransferMediumDetail {
+		return vs[0].([]GetMigrationDataTransferMediumDetail)[vs[1].(int)]
+	}).(GetMigrationDataTransferMediumDetailOutput)
+}
+
+type GetMigrationDataTransferMediumDetailObjectStorageBucket struct {
+	// Bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetMigrationDataTransferMediumDetailObjectStorageBucketInput is an input type that accepts GetMigrationDataTransferMediumDetailObjectStorageBucketArgs and GetMigrationDataTransferMediumDetailObjectStorageBucketOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailObjectStorageBucketInput` via:
+//
+//	GetMigrationDataTransferMediumDetailObjectStorageBucketArgs{...}
+type GetMigrationDataTransferMediumDetailObjectStorageBucketInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutput() GetMigrationDataTransferMediumDetailObjectStorageBucketOutput
+	ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailObjectStorageBucketOutput
+}
+
+type GetMigrationDataTransferMediumDetailObjectStorageBucketArgs struct {
+	// Bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetMigrationDataTransferMediumDetailObjectStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailObjectStorageBucketArgs) ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutput() GetMigrationDataTransferMediumDetailObjectStorageBucketOutput {
+	return i.ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailObjectStorageBucketArgs) ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailObjectStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailObjectStorageBucketOutput)
+}
+
+// GetMigrationDataTransferMediumDetailObjectStorageBucketArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailObjectStorageBucketArray and GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailObjectStorageBucketArrayInput` via:
+//
+//	GetMigrationDataTransferMediumDetailObjectStorageBucketArray{ GetMigrationDataTransferMediumDetailObjectStorageBucketArgs{...} }
+type GetMigrationDataTransferMediumDetailObjectStorageBucketArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput() GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput
+	ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput
+}
+
+type GetMigrationDataTransferMediumDetailObjectStorageBucketArray []GetMigrationDataTransferMediumDetailObjectStorageBucketInput
+
+func (GetMigrationDataTransferMediumDetailObjectStorageBucketArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailObjectStorageBucketArray) ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput() GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return i.ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailObjectStorageBucketArray) ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput)
+}
+
+type GetMigrationDataTransferMediumDetailObjectStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailObjectStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketOutput) ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutput() GetMigrationDataTransferMediumDetailObjectStorageBucketOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketOutput) ToGetMigrationDataTransferMediumDetailObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailObjectStorageBucketOutput {
+	return o
+}
+
+// Bucket name.
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailObjectStorageBucket) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Namespace name of the object store bucket.
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailObjectStorageBucket) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput) ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput() GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput) ToGetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailObjectStorageBucketOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataTransferMediumDetailObjectStorageBucket {
+		return vs[0].([]GetMigrationDataTransferMediumDetailObjectStorageBucket)[vs[1].(int)]
+	}).(GetMigrationDataTransferMediumDetailObjectStorageBucketOutput)
+}
+
+type GetMigrationDataTransferMediumDetailSource struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind string `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
+}
+
+// GetMigrationDataTransferMediumDetailSourceInput is an input type that accepts GetMigrationDataTransferMediumDetailSourceArgs and GetMigrationDataTransferMediumDetailSourceOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailSourceInput` via:
+//
+//	GetMigrationDataTransferMediumDetailSourceArgs{...}
+type GetMigrationDataTransferMediumDetailSourceInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailSourceOutput() GetMigrationDataTransferMediumDetailSourceOutput
+	ToGetMigrationDataTransferMediumDetailSourceOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailSourceOutput
+}
+
+type GetMigrationDataTransferMediumDetailSourceArgs struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
+}
+
+func (GetMigrationDataTransferMediumDetailSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailSourceArgs) ToGetMigrationDataTransferMediumDetailSourceOutput() GetMigrationDataTransferMediumDetailSourceOutput {
+	return i.ToGetMigrationDataTransferMediumDetailSourceOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailSourceArgs) ToGetMigrationDataTransferMediumDetailSourceOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailSourceOutput)
+}
+
+// GetMigrationDataTransferMediumDetailSourceArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailSourceArray and GetMigrationDataTransferMediumDetailSourceArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailSourceArrayInput` via:
+//
+//	GetMigrationDataTransferMediumDetailSourceArray{ GetMigrationDataTransferMediumDetailSourceArgs{...} }
+type GetMigrationDataTransferMediumDetailSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailSourceArrayOutput() GetMigrationDataTransferMediumDetailSourceArrayOutput
+	ToGetMigrationDataTransferMediumDetailSourceArrayOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailSourceArrayOutput
+}
+
+type GetMigrationDataTransferMediumDetailSourceArray []GetMigrationDataTransferMediumDetailSourceInput
+
+func (GetMigrationDataTransferMediumDetailSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailSourceArray) ToGetMigrationDataTransferMediumDetailSourceArrayOutput() GetMigrationDataTransferMediumDetailSourceArrayOutput {
+	return i.ToGetMigrationDataTransferMediumDetailSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailSourceArray) ToGetMigrationDataTransferMediumDetailSourceArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailSourceArrayOutput)
+}
+
+type GetMigrationDataTransferMediumDetailSourceOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailSourceOutput) ToGetMigrationDataTransferMediumDetailSourceOutput() GetMigrationDataTransferMediumDetailSourceOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailSourceOutput) ToGetMigrationDataTransferMediumDetailSourceOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailSourceOutput {
+	return o
+}
+
+// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o GetMigrationDataTransferMediumDetailSourceOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailSource) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o GetMigrationDataTransferMediumDetailSourceOutput) OciHome() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailSource) string { return v.OciHome }).(pulumi.StringOutput)
+}
+
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationDataTransferMediumDetailSourceOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailSource) string { return v.WalletLocation }).(pulumi.StringOutput)
+}
+
+type GetMigrationDataTransferMediumDetailSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailSourceArrayOutput) ToGetMigrationDataTransferMediumDetailSourceArrayOutput() GetMigrationDataTransferMediumDetailSourceArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailSourceArrayOutput) ToGetMigrationDataTransferMediumDetailSourceArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailSourceArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailSourceArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataTransferMediumDetailSource {
+		return vs[0].([]GetMigrationDataTransferMediumDetailSource)[vs[1].(int)]
+	}).(GetMigrationDataTransferMediumDetailSourceOutput)
+}
+
+type GetMigrationDataTransferMediumDetailTarget struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind string `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
+}
+
+// GetMigrationDataTransferMediumDetailTargetInput is an input type that accepts GetMigrationDataTransferMediumDetailTargetArgs and GetMigrationDataTransferMediumDetailTargetOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailTargetInput` via:
+//
+//	GetMigrationDataTransferMediumDetailTargetArgs{...}
+type GetMigrationDataTransferMediumDetailTargetInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailTargetOutput() GetMigrationDataTransferMediumDetailTargetOutput
+	ToGetMigrationDataTransferMediumDetailTargetOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailTargetOutput
+}
+
+type GetMigrationDataTransferMediumDetailTargetArgs struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
+}
+
+func (GetMigrationDataTransferMediumDetailTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailTargetArgs) ToGetMigrationDataTransferMediumDetailTargetOutput() GetMigrationDataTransferMediumDetailTargetOutput {
+	return i.ToGetMigrationDataTransferMediumDetailTargetOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailTargetArgs) ToGetMigrationDataTransferMediumDetailTargetOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailTargetOutput)
+}
+
+// GetMigrationDataTransferMediumDetailTargetArrayInput is an input type that accepts GetMigrationDataTransferMediumDetailTargetArray and GetMigrationDataTransferMediumDetailTargetArrayOutput values.
+// You can construct a concrete instance of `GetMigrationDataTransferMediumDetailTargetArrayInput` via:
+//
+//	GetMigrationDataTransferMediumDetailTargetArray{ GetMigrationDataTransferMediumDetailTargetArgs{...} }
+type GetMigrationDataTransferMediumDetailTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationDataTransferMediumDetailTargetArrayOutput() GetMigrationDataTransferMediumDetailTargetArrayOutput
+	ToGetMigrationDataTransferMediumDetailTargetArrayOutputWithContext(context.Context) GetMigrationDataTransferMediumDetailTargetArrayOutput
+}
+
+type GetMigrationDataTransferMediumDetailTargetArray []GetMigrationDataTransferMediumDetailTargetInput
+
+func (GetMigrationDataTransferMediumDetailTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (i GetMigrationDataTransferMediumDetailTargetArray) ToGetMigrationDataTransferMediumDetailTargetArrayOutput() GetMigrationDataTransferMediumDetailTargetArrayOutput {
+	return i.ToGetMigrationDataTransferMediumDetailTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationDataTransferMediumDetailTargetArray) ToGetMigrationDataTransferMediumDetailTargetArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationDataTransferMediumDetailTargetArrayOutput)
+}
+
+type GetMigrationDataTransferMediumDetailTargetOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailTargetOutput) ToGetMigrationDataTransferMediumDetailTargetOutput() GetMigrationDataTransferMediumDetailTargetOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailTargetOutput) ToGetMigrationDataTransferMediumDetailTargetOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailTargetOutput {
+	return o
+}
+
+// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o GetMigrationDataTransferMediumDetailTargetOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailTarget) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o GetMigrationDataTransferMediumDetailTargetOutput) OciHome() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailTarget) string { return v.OciHome }).(pulumi.StringOutput)
+}
+
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationDataTransferMediumDetailTargetOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationDataTransferMediumDetailTarget) string { return v.WalletLocation }).(pulumi.StringOutput)
+}
+
+type GetMigrationDataTransferMediumDetailTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationDataTransferMediumDetailTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (o GetMigrationDataTransferMediumDetailTargetArrayOutput) ToGetMigrationDataTransferMediumDetailTargetArrayOutput() GetMigrationDataTransferMediumDetailTargetArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailTargetArrayOutput) ToGetMigrationDataTransferMediumDetailTargetArrayOutputWithContext(ctx context.Context) GetMigrationDataTransferMediumDetailTargetArrayOutput {
+	return o
+}
+
+func (o GetMigrationDataTransferMediumDetailTargetArrayOutput) Index(i pulumi.IntInput) GetMigrationDataTransferMediumDetailTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationDataTransferMediumDetailTarget {
+		return vs[0].([]GetMigrationDataTransferMediumDetailTarget)[vs[1].(int)]
+	}).(GetMigrationDataTransferMediumDetailTargetOutput)
+}
+
+type GetMigrationExcludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationExcludeObjectInput is an input type that accepts GetMigrationExcludeObjectArgs and GetMigrationExcludeObjectOutput values.
+// You can construct a concrete instance of `GetMigrationExcludeObjectInput` via:
+//
+//	GetMigrationExcludeObjectArgs{...}
+type GetMigrationExcludeObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationExcludeObjectOutput() GetMigrationExcludeObjectOutput
+	ToGetMigrationExcludeObjectOutputWithContext(context.Context) GetMigrationExcludeObjectOutput
+}
+
+type GetMigrationExcludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationExcludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationExcludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationExcludeObjectArgs) ToGetMigrationExcludeObjectOutput() GetMigrationExcludeObjectOutput {
+	return i.ToGetMigrationExcludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationExcludeObjectArgs) ToGetMigrationExcludeObjectOutputWithContext(ctx context.Context) GetMigrationExcludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationExcludeObjectOutput)
+}
+
+// GetMigrationExcludeObjectArrayInput is an input type that accepts GetMigrationExcludeObjectArray and GetMigrationExcludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationExcludeObjectArrayInput` via:
+//
+//	GetMigrationExcludeObjectArray{ GetMigrationExcludeObjectArgs{...} }
+type GetMigrationExcludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationExcludeObjectArrayOutput() GetMigrationExcludeObjectArrayOutput
+	ToGetMigrationExcludeObjectArrayOutputWithContext(context.Context) GetMigrationExcludeObjectArrayOutput
+}
+
+type GetMigrationExcludeObjectArray []GetMigrationExcludeObjectInput
+
+func (GetMigrationExcludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationExcludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationExcludeObjectArray) ToGetMigrationExcludeObjectArrayOutput() GetMigrationExcludeObjectArrayOutput {
+	return i.ToGetMigrationExcludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationExcludeObjectArray) ToGetMigrationExcludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationExcludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationExcludeObjectArrayOutput)
+}
+
+type GetMigrationExcludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationExcludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationExcludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationExcludeObjectOutput) ToGetMigrationExcludeObjectOutput() GetMigrationExcludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationExcludeObjectOutput) ToGetMigrationExcludeObjectOutputWithContext(ctx context.Context) GetMigrationExcludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationExcludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
+}
+
+func (o GetMigrationExcludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationExcludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationExcludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationExcludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationExcludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationExcludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationExcludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationExcludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationExcludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationExcludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationExcludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationExcludeObjectArrayOutput) ToGetMigrationExcludeObjectArrayOutput() GetMigrationExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationExcludeObjectArrayOutput) ToGetMigrationExcludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationExcludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationExcludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationExcludeObject {
+		return vs[0].([]GetMigrationExcludeObject)[vs[1].(int)]
+	}).(GetMigrationExcludeObjectOutput)
+}
+
+type GetMigrationGgsDetail struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag int `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts []GetMigrationGgsDetailExtract `pulumi:"extracts"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments []GetMigrationGgsDetailGgsDeployment `pulumi:"ggsDeployments"`
+	// Parameters for Replicat processes.
+	Replicats []GetMigrationGgsDetailReplicat `pulumi:"replicats"`
+}
+
+// GetMigrationGgsDetailInput is an input type that accepts GetMigrationGgsDetailArgs and GetMigrationGgsDetailOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailInput` via:
+//
+//	GetMigrationGgsDetailArgs{...}
+type GetMigrationGgsDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailOutput() GetMigrationGgsDetailOutput
+	ToGetMigrationGgsDetailOutputWithContext(context.Context) GetMigrationGgsDetailOutput
+}
+
+type GetMigrationGgsDetailArgs struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntInput `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts GetMigrationGgsDetailExtractArrayInput `pulumi:"extracts"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments GetMigrationGgsDetailGgsDeploymentArrayInput `pulumi:"ggsDeployments"`
+	// Parameters for Replicat processes.
+	Replicats GetMigrationGgsDetailReplicatArrayInput `pulumi:"replicats"`
+}
+
+func (GetMigrationGgsDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetail)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailArgs) ToGetMigrationGgsDetailOutput() GetMigrationGgsDetailOutput {
+	return i.ToGetMigrationGgsDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailArgs) ToGetMigrationGgsDetailOutputWithContext(ctx context.Context) GetMigrationGgsDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailOutput)
+}
+
+// GetMigrationGgsDetailArrayInput is an input type that accepts GetMigrationGgsDetailArray and GetMigrationGgsDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailArrayInput` via:
+//
+//	GetMigrationGgsDetailArray{ GetMigrationGgsDetailArgs{...} }
+type GetMigrationGgsDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailArrayOutput() GetMigrationGgsDetailArrayOutput
+	ToGetMigrationGgsDetailArrayOutputWithContext(context.Context) GetMigrationGgsDetailArrayOutput
+}
+
+type GetMigrationGgsDetailArray []GetMigrationGgsDetailInput
+
+func (GetMigrationGgsDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetail)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailArray) ToGetMigrationGgsDetailArrayOutput() GetMigrationGgsDetailArrayOutput {
+	return i.ToGetMigrationGgsDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailArray) ToGetMigrationGgsDetailArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailArrayOutput)
+}
+
+type GetMigrationGgsDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetail)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailOutput) ToGetMigrationGgsDetailOutput() GetMigrationGgsDetailOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailOutput) ToGetMigrationGgsDetailOutputWithContext(ctx context.Context) GetMigrationGgsDetailOutput {
+	return o
+}
+
+// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o GetMigrationGgsDetailOutput) AcceptableLag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetail) int { return v.AcceptableLag }).(pulumi.IntOutput)
+}
+
+// Parameters for Extract processes.
+func (o GetMigrationGgsDetailOutput) Extracts() GetMigrationGgsDetailExtractArrayOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetail) []GetMigrationGgsDetailExtract { return v.Extracts }).(GetMigrationGgsDetailExtractArrayOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o GetMigrationGgsDetailOutput) GgsDeployments() GetMigrationGgsDetailGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetail) []GetMigrationGgsDetailGgsDeployment { return v.GgsDeployments }).(GetMigrationGgsDetailGgsDeploymentArrayOutput)
+}
+
+// Parameters for Replicat processes.
+func (o GetMigrationGgsDetailOutput) Replicats() GetMigrationGgsDetailReplicatArrayOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetail) []GetMigrationGgsDetailReplicat { return v.Replicats }).(GetMigrationGgsDetailReplicatArrayOutput)
+}
+
+type GetMigrationGgsDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetail)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailArrayOutput) ToGetMigrationGgsDetailArrayOutput() GetMigrationGgsDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailArrayOutput) ToGetMigrationGgsDetailArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationGgsDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGgsDetail {
+		return vs[0].([]GetMigrationGgsDetail)[vs[1].(int)]
+	}).(GetMigrationGgsDetailOutput)
+}
+
+type GetMigrationGgsDetailExtract struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration int `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationGgsDetailExtractInput is an input type that accepts GetMigrationGgsDetailExtractArgs and GetMigrationGgsDetailExtractOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailExtractInput` via:
+//
+//	GetMigrationGgsDetailExtractArgs{...}
+type GetMigrationGgsDetailExtractInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailExtractOutput() GetMigrationGgsDetailExtractOutput
+	ToGetMigrationGgsDetailExtractOutputWithContext(context.Context) GetMigrationGgsDetailExtractOutput
+}
+
+type GetMigrationGgsDetailExtractArgs struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntInput `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationGgsDetailExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailExtractArgs) ToGetMigrationGgsDetailExtractOutput() GetMigrationGgsDetailExtractOutput {
+	return i.ToGetMigrationGgsDetailExtractOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailExtractArgs) ToGetMigrationGgsDetailExtractOutputWithContext(ctx context.Context) GetMigrationGgsDetailExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailExtractOutput)
+}
+
+// GetMigrationGgsDetailExtractArrayInput is an input type that accepts GetMigrationGgsDetailExtractArray and GetMigrationGgsDetailExtractArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailExtractArrayInput` via:
+//
+//	GetMigrationGgsDetailExtractArray{ GetMigrationGgsDetailExtractArgs{...} }
+type GetMigrationGgsDetailExtractArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailExtractArrayOutput() GetMigrationGgsDetailExtractArrayOutput
+	ToGetMigrationGgsDetailExtractArrayOutputWithContext(context.Context) GetMigrationGgsDetailExtractArrayOutput
+}
+
+type GetMigrationGgsDetailExtractArray []GetMigrationGgsDetailExtractInput
+
+func (GetMigrationGgsDetailExtractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailExtractArray) ToGetMigrationGgsDetailExtractArrayOutput() GetMigrationGgsDetailExtractArrayOutput {
+	return i.ToGetMigrationGgsDetailExtractArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailExtractArray) ToGetMigrationGgsDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailExtractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailExtractArrayOutput)
+}
+
+type GetMigrationGgsDetailExtractOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailExtractOutput) ToGetMigrationGgsDetailExtractOutput() GetMigrationGgsDetailExtractOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailExtractOutput) ToGetMigrationGgsDetailExtractOutputWithContext(ctx context.Context) GetMigrationGgsDetailExtractOutput {
+	return o
+}
+
+// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o GetMigrationGgsDetailExtractOutput) LongTransDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetailExtract) int { return v.LongTransDuration }).(pulumi.IntOutput)
+}
+
+// Replicat performance.
+func (o GetMigrationGgsDetailExtractOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetailExtract) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationGgsDetailExtractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailExtractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailExtractArrayOutput) ToGetMigrationGgsDetailExtractArrayOutput() GetMigrationGgsDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailExtractArrayOutput) ToGetMigrationGgsDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationGgsDetailExtractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGgsDetailExtract {
+		return vs[0].([]GetMigrationGgsDetailExtract)[vs[1].(int)]
+	}).(GetMigrationGgsDetailExtractOutput)
+}
+
+type GetMigrationGgsDetailGgsDeployment struct {
+	// The OCID of the resource being referenced.
+	DeploymentId string `pulumi:"deploymentId"`
+	// The OCID of the resource being referenced.
+	GgsAdminCredentialsSecretId string `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+// GetMigrationGgsDetailGgsDeploymentInput is an input type that accepts GetMigrationGgsDetailGgsDeploymentArgs and GetMigrationGgsDetailGgsDeploymentOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailGgsDeploymentInput` via:
+//
+//	GetMigrationGgsDetailGgsDeploymentArgs{...}
+type GetMigrationGgsDetailGgsDeploymentInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailGgsDeploymentOutput() GetMigrationGgsDetailGgsDeploymentOutput
+	ToGetMigrationGgsDetailGgsDeploymentOutputWithContext(context.Context) GetMigrationGgsDetailGgsDeploymentOutput
+}
+
+type GetMigrationGgsDetailGgsDeploymentArgs struct {
+	// The OCID of the resource being referenced.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// The OCID of the resource being referenced.
+	GgsAdminCredentialsSecretId pulumi.StringInput `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+func (GetMigrationGgsDetailGgsDeploymentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailGgsDeploymentArgs) ToGetMigrationGgsDetailGgsDeploymentOutput() GetMigrationGgsDetailGgsDeploymentOutput {
+	return i.ToGetMigrationGgsDetailGgsDeploymentOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailGgsDeploymentArgs) ToGetMigrationGgsDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationGgsDetailGgsDeploymentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailGgsDeploymentOutput)
+}
+
+// GetMigrationGgsDetailGgsDeploymentArrayInput is an input type that accepts GetMigrationGgsDetailGgsDeploymentArray and GetMigrationGgsDetailGgsDeploymentArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailGgsDeploymentArrayInput` via:
+//
+//	GetMigrationGgsDetailGgsDeploymentArray{ GetMigrationGgsDetailGgsDeploymentArgs{...} }
+type GetMigrationGgsDetailGgsDeploymentArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailGgsDeploymentArrayOutput() GetMigrationGgsDetailGgsDeploymentArrayOutput
+	ToGetMigrationGgsDetailGgsDeploymentArrayOutputWithContext(context.Context) GetMigrationGgsDetailGgsDeploymentArrayOutput
+}
+
+type GetMigrationGgsDetailGgsDeploymentArray []GetMigrationGgsDetailGgsDeploymentInput
+
+func (GetMigrationGgsDetailGgsDeploymentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailGgsDeploymentArray) ToGetMigrationGgsDetailGgsDeploymentArrayOutput() GetMigrationGgsDetailGgsDeploymentArrayOutput {
+	return i.ToGetMigrationGgsDetailGgsDeploymentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailGgsDeploymentArray) ToGetMigrationGgsDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailGgsDeploymentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailGgsDeploymentArrayOutput)
+}
+
+type GetMigrationGgsDetailGgsDeploymentOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailGgsDeploymentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailGgsDeploymentOutput) ToGetMigrationGgsDetailGgsDeploymentOutput() GetMigrationGgsDetailGgsDeploymentOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailGgsDeploymentOutput) ToGetMigrationGgsDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationGgsDetailGgsDeploymentOutput {
+	return o
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationGgsDetailGgsDeploymentOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetailGgsDeployment) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationGgsDetailGgsDeploymentOutput) GgsAdminCredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetailGgsDeployment) string { return v.GgsAdminCredentialsSecretId }).(pulumi.StringOutput)
+}
+
+type GetMigrationGgsDetailGgsDeploymentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailGgsDeploymentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailGgsDeploymentArrayOutput) ToGetMigrationGgsDetailGgsDeploymentArrayOutput() GetMigrationGgsDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailGgsDeploymentArrayOutput) ToGetMigrationGgsDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailGgsDeploymentArrayOutput) Index(i pulumi.IntInput) GetMigrationGgsDetailGgsDeploymentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGgsDetailGgsDeployment {
+		return vs[0].([]GetMigrationGgsDetailGgsDeployment)[vs[1].(int)]
+	}).(GetMigrationGgsDetailGgsDeploymentOutput)
+}
+
+type GetMigrationGgsDetailReplicat struct {
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationGgsDetailReplicatInput is an input type that accepts GetMigrationGgsDetailReplicatArgs and GetMigrationGgsDetailReplicatOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailReplicatInput` via:
+//
+//	GetMigrationGgsDetailReplicatArgs{...}
+type GetMigrationGgsDetailReplicatInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailReplicatOutput() GetMigrationGgsDetailReplicatOutput
+	ToGetMigrationGgsDetailReplicatOutputWithContext(context.Context) GetMigrationGgsDetailReplicatOutput
+}
+
+type GetMigrationGgsDetailReplicatArgs struct {
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationGgsDetailReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailReplicatArgs) ToGetMigrationGgsDetailReplicatOutput() GetMigrationGgsDetailReplicatOutput {
+	return i.ToGetMigrationGgsDetailReplicatOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailReplicatArgs) ToGetMigrationGgsDetailReplicatOutputWithContext(ctx context.Context) GetMigrationGgsDetailReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailReplicatOutput)
+}
+
+// GetMigrationGgsDetailReplicatArrayInput is an input type that accepts GetMigrationGgsDetailReplicatArray and GetMigrationGgsDetailReplicatArrayOutput values.
+// You can construct a concrete instance of `GetMigrationGgsDetailReplicatArrayInput` via:
+//
+//	GetMigrationGgsDetailReplicatArray{ GetMigrationGgsDetailReplicatArgs{...} }
+type GetMigrationGgsDetailReplicatArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationGgsDetailReplicatArrayOutput() GetMigrationGgsDetailReplicatArrayOutput
+	ToGetMigrationGgsDetailReplicatArrayOutputWithContext(context.Context) GetMigrationGgsDetailReplicatArrayOutput
+}
+
+type GetMigrationGgsDetailReplicatArray []GetMigrationGgsDetailReplicatInput
+
+func (GetMigrationGgsDetailReplicatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationGgsDetailReplicatArray) ToGetMigrationGgsDetailReplicatArrayOutput() GetMigrationGgsDetailReplicatArrayOutput {
+	return i.ToGetMigrationGgsDetailReplicatArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationGgsDetailReplicatArray) ToGetMigrationGgsDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailReplicatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationGgsDetailReplicatArrayOutput)
+}
+
+type GetMigrationGgsDetailReplicatOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationGgsDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailReplicatOutput) ToGetMigrationGgsDetailReplicatOutput() GetMigrationGgsDetailReplicatOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailReplicatOutput) ToGetMigrationGgsDetailReplicatOutputWithContext(ctx context.Context) GetMigrationGgsDetailReplicatOutput {
+	return o
+}
+
+// Replicat performance.
+func (o GetMigrationGgsDetailReplicatOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationGgsDetailReplicat) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationGgsDetailReplicatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationGgsDetailReplicatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationGgsDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationGgsDetailReplicatArrayOutput) ToGetMigrationGgsDetailReplicatArrayOutput() GetMigrationGgsDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailReplicatArrayOutput) ToGetMigrationGgsDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationGgsDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationGgsDetailReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationGgsDetailReplicatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationGgsDetailReplicat {
+		return vs[0].([]GetMigrationGgsDetailReplicat)[vs[1].(int)]
+	}).(GetMigrationGgsDetailReplicatOutput)
+}
+
+type GetMigrationHubDetail struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag int `pulumi:"acceptableLag"`
+	// The OCID of the resource being referenced.
+	ComputeId string `pulumi:"computeId"`
+	// Parameters for Extract processes.
+	Extracts []GetMigrationHubDetailExtract `pulumi:"extracts"`
+	// The OCID of the resource being referenced.
+	KeyId string `pulumi:"keyId"`
+	// Parameters for Replicat processes.
+	Replicats []GetMigrationHubDetailReplicat `pulumi:"replicats"`
+	// Database Administrator Credentials details.
+	RestAdminCredentials []GetMigrationHubDetailRestAdminCredential `pulumi:"restAdminCredentials"`
+	// Endpoint URL.
+	Url string `pulumi:"url"`
+	// The OCID of the resource being referenced.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetMigrationHubDetailInput is an input type that accepts GetMigrationHubDetailArgs and GetMigrationHubDetailOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailInput` via:
+//
+//	GetMigrationHubDetailArgs{...}
+type GetMigrationHubDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailOutput() GetMigrationHubDetailOutput
+	ToGetMigrationHubDetailOutputWithContext(context.Context) GetMigrationHubDetailOutput
+}
+
+type GetMigrationHubDetailArgs struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntInput `pulumi:"acceptableLag"`
+	// The OCID of the resource being referenced.
+	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	// Parameters for Extract processes.
+	Extracts GetMigrationHubDetailExtractArrayInput `pulumi:"extracts"`
+	// The OCID of the resource being referenced.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// Parameters for Replicat processes.
+	Replicats GetMigrationHubDetailReplicatArrayInput `pulumi:"replicats"`
+	// Database Administrator Credentials details.
+	RestAdminCredentials GetMigrationHubDetailRestAdminCredentialArrayInput `pulumi:"restAdminCredentials"`
+	// Endpoint URL.
+	Url pulumi.StringInput `pulumi:"url"`
+	// The OCID of the resource being referenced.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetMigrationHubDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetail)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailArgs) ToGetMigrationHubDetailOutput() GetMigrationHubDetailOutput {
+	return i.ToGetMigrationHubDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailArgs) ToGetMigrationHubDetailOutputWithContext(ctx context.Context) GetMigrationHubDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailOutput)
+}
+
+// GetMigrationHubDetailArrayInput is an input type that accepts GetMigrationHubDetailArray and GetMigrationHubDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailArrayInput` via:
+//
+//	GetMigrationHubDetailArray{ GetMigrationHubDetailArgs{...} }
+type GetMigrationHubDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailArrayOutput() GetMigrationHubDetailArrayOutput
+	ToGetMigrationHubDetailArrayOutputWithContext(context.Context) GetMigrationHubDetailArrayOutput
+}
+
+type GetMigrationHubDetailArray []GetMigrationHubDetailInput
+
+func (GetMigrationHubDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetail)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailArray) ToGetMigrationHubDetailArrayOutput() GetMigrationHubDetailArrayOutput {
+	return i.ToGetMigrationHubDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailArray) ToGetMigrationHubDetailArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailArrayOutput)
+}
+
+type GetMigrationHubDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetail)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailOutput) ToGetMigrationHubDetailOutput() GetMigrationHubDetailOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailOutput) ToGetMigrationHubDetailOutputWithContext(ctx context.Context) GetMigrationHubDetailOutput {
+	return o
+}
+
+// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o GetMigrationHubDetailOutput) AcceptableLag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) int { return v.AcceptableLag }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationHubDetailOutput) ComputeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) string { return v.ComputeId }).(pulumi.StringOutput)
+}
+
+// Parameters for Extract processes.
+func (o GetMigrationHubDetailOutput) Extracts() GetMigrationHubDetailExtractArrayOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) []GetMigrationHubDetailExtract { return v.Extracts }).(GetMigrationHubDetailExtractArrayOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationHubDetailOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// Parameters for Replicat processes.
+func (o GetMigrationHubDetailOutput) Replicats() GetMigrationHubDetailReplicatArrayOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) []GetMigrationHubDetailReplicat { return v.Replicats }).(GetMigrationHubDetailReplicatArrayOutput)
+}
+
+// Database Administrator Credentials details.
+func (o GetMigrationHubDetailOutput) RestAdminCredentials() GetMigrationHubDetailRestAdminCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) []GetMigrationHubDetailRestAdminCredential {
+		return v.RestAdminCredentials
+	}).(GetMigrationHubDetailRestAdminCredentialArrayOutput)
+}
+
+// Endpoint URL.
+func (o GetMigrationHubDetailOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) string { return v.Url }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationHubDetailOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetail) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetMigrationHubDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetail)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailArrayOutput) ToGetMigrationHubDetailArrayOutput() GetMigrationHubDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailArrayOutput) ToGetMigrationHubDetailArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationHubDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationHubDetail {
+		return vs[0].([]GetMigrationHubDetail)[vs[1].(int)]
+	}).(GetMigrationHubDetailOutput)
+}
+
+type GetMigrationHubDetailExtract struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration int `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationHubDetailExtractInput is an input type that accepts GetMigrationHubDetailExtractArgs and GetMigrationHubDetailExtractOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailExtractInput` via:
+//
+//	GetMigrationHubDetailExtractArgs{...}
+type GetMigrationHubDetailExtractInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailExtractOutput() GetMigrationHubDetailExtractOutput
+	ToGetMigrationHubDetailExtractOutputWithContext(context.Context) GetMigrationHubDetailExtractOutput
+}
+
+type GetMigrationHubDetailExtractArgs struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntInput `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationHubDetailExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailExtractArgs) ToGetMigrationHubDetailExtractOutput() GetMigrationHubDetailExtractOutput {
+	return i.ToGetMigrationHubDetailExtractOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailExtractArgs) ToGetMigrationHubDetailExtractOutputWithContext(ctx context.Context) GetMigrationHubDetailExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailExtractOutput)
+}
+
+// GetMigrationHubDetailExtractArrayInput is an input type that accepts GetMigrationHubDetailExtractArray and GetMigrationHubDetailExtractArrayOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailExtractArrayInput` via:
+//
+//	GetMigrationHubDetailExtractArray{ GetMigrationHubDetailExtractArgs{...} }
+type GetMigrationHubDetailExtractArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailExtractArrayOutput() GetMigrationHubDetailExtractArrayOutput
+	ToGetMigrationHubDetailExtractArrayOutputWithContext(context.Context) GetMigrationHubDetailExtractArrayOutput
+}
+
+type GetMigrationHubDetailExtractArray []GetMigrationHubDetailExtractInput
+
+func (GetMigrationHubDetailExtractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailExtractArray) ToGetMigrationHubDetailExtractArrayOutput() GetMigrationHubDetailExtractArrayOutput {
+	return i.ToGetMigrationHubDetailExtractArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailExtractArray) ToGetMigrationHubDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailExtractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailExtractArrayOutput)
+}
+
+type GetMigrationHubDetailExtractOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailExtractOutput) ToGetMigrationHubDetailExtractOutput() GetMigrationHubDetailExtractOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailExtractOutput) ToGetMigrationHubDetailExtractOutputWithContext(ctx context.Context) GetMigrationHubDetailExtractOutput {
+	return o
+}
+
+// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o GetMigrationHubDetailExtractOutput) LongTransDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationHubDetailExtract) int { return v.LongTransDuration }).(pulumi.IntOutput)
+}
+
+// Replicat performance.
+func (o GetMigrationHubDetailExtractOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetailExtract) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationHubDetailExtractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailExtractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailExtractArrayOutput) ToGetMigrationHubDetailExtractArrayOutput() GetMigrationHubDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailExtractArrayOutput) ToGetMigrationHubDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationHubDetailExtractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationHubDetailExtract {
+		return vs[0].([]GetMigrationHubDetailExtract)[vs[1].(int)]
+	}).(GetMigrationHubDetailExtractOutput)
+}
+
+type GetMigrationHubDetailReplicat struct {
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationHubDetailReplicatInput is an input type that accepts GetMigrationHubDetailReplicatArgs and GetMigrationHubDetailReplicatOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailReplicatInput` via:
+//
+//	GetMigrationHubDetailReplicatArgs{...}
+type GetMigrationHubDetailReplicatInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailReplicatOutput() GetMigrationHubDetailReplicatOutput
+	ToGetMigrationHubDetailReplicatOutputWithContext(context.Context) GetMigrationHubDetailReplicatOutput
+}
+
+type GetMigrationHubDetailReplicatArgs struct {
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationHubDetailReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailReplicatArgs) ToGetMigrationHubDetailReplicatOutput() GetMigrationHubDetailReplicatOutput {
+	return i.ToGetMigrationHubDetailReplicatOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailReplicatArgs) ToGetMigrationHubDetailReplicatOutputWithContext(ctx context.Context) GetMigrationHubDetailReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailReplicatOutput)
+}
+
+// GetMigrationHubDetailReplicatArrayInput is an input type that accepts GetMigrationHubDetailReplicatArray and GetMigrationHubDetailReplicatArrayOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailReplicatArrayInput` via:
+//
+//	GetMigrationHubDetailReplicatArray{ GetMigrationHubDetailReplicatArgs{...} }
+type GetMigrationHubDetailReplicatArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailReplicatArrayOutput() GetMigrationHubDetailReplicatArrayOutput
+	ToGetMigrationHubDetailReplicatArrayOutputWithContext(context.Context) GetMigrationHubDetailReplicatArrayOutput
+}
+
+type GetMigrationHubDetailReplicatArray []GetMigrationHubDetailReplicatInput
+
+func (GetMigrationHubDetailReplicatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailReplicatArray) ToGetMigrationHubDetailReplicatArrayOutput() GetMigrationHubDetailReplicatArrayOutput {
+	return i.ToGetMigrationHubDetailReplicatArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailReplicatArray) ToGetMigrationHubDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailReplicatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailReplicatArrayOutput)
+}
+
+type GetMigrationHubDetailReplicatOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailReplicatOutput) ToGetMigrationHubDetailReplicatOutput() GetMigrationHubDetailReplicatOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailReplicatOutput) ToGetMigrationHubDetailReplicatOutputWithContext(ctx context.Context) GetMigrationHubDetailReplicatOutput {
+	return o
+}
+
+// Replicat performance.
+func (o GetMigrationHubDetailReplicatOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetailReplicat) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationHubDetailReplicatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailReplicatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailReplicatArrayOutput) ToGetMigrationHubDetailReplicatArrayOutput() GetMigrationHubDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailReplicatArrayOutput) ToGetMigrationHubDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationHubDetailReplicatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationHubDetailReplicat {
+		return vs[0].([]GetMigrationHubDetailReplicat)[vs[1].(int)]
+	}).(GetMigrationHubDetailReplicatOutput)
+}
+
+type GetMigrationHubDetailRestAdminCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationHubDetailRestAdminCredentialInput is an input type that accepts GetMigrationHubDetailRestAdminCredentialArgs and GetMigrationHubDetailRestAdminCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailRestAdminCredentialInput` via:
+//
+//	GetMigrationHubDetailRestAdminCredentialArgs{...}
+type GetMigrationHubDetailRestAdminCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailRestAdminCredentialOutput() GetMigrationHubDetailRestAdminCredentialOutput
+	ToGetMigrationHubDetailRestAdminCredentialOutputWithContext(context.Context) GetMigrationHubDetailRestAdminCredentialOutput
+}
+
+type GetMigrationHubDetailRestAdminCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationHubDetailRestAdminCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailRestAdminCredentialArgs) ToGetMigrationHubDetailRestAdminCredentialOutput() GetMigrationHubDetailRestAdminCredentialOutput {
+	return i.ToGetMigrationHubDetailRestAdminCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailRestAdminCredentialArgs) ToGetMigrationHubDetailRestAdminCredentialOutputWithContext(ctx context.Context) GetMigrationHubDetailRestAdminCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailRestAdminCredentialOutput)
+}
+
+// GetMigrationHubDetailRestAdminCredentialArrayInput is an input type that accepts GetMigrationHubDetailRestAdminCredentialArray and GetMigrationHubDetailRestAdminCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationHubDetailRestAdminCredentialArrayInput` via:
+//
+//	GetMigrationHubDetailRestAdminCredentialArray{ GetMigrationHubDetailRestAdminCredentialArgs{...} }
+type GetMigrationHubDetailRestAdminCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationHubDetailRestAdminCredentialArrayOutput() GetMigrationHubDetailRestAdminCredentialArrayOutput
+	ToGetMigrationHubDetailRestAdminCredentialArrayOutputWithContext(context.Context) GetMigrationHubDetailRestAdminCredentialArrayOutput
+}
+
+type GetMigrationHubDetailRestAdminCredentialArray []GetMigrationHubDetailRestAdminCredentialInput
+
+func (GetMigrationHubDetailRestAdminCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (i GetMigrationHubDetailRestAdminCredentialArray) ToGetMigrationHubDetailRestAdminCredentialArrayOutput() GetMigrationHubDetailRestAdminCredentialArrayOutput {
+	return i.ToGetMigrationHubDetailRestAdminCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationHubDetailRestAdminCredentialArray) ToGetMigrationHubDetailRestAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailRestAdminCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationHubDetailRestAdminCredentialArrayOutput)
+}
+
+type GetMigrationHubDetailRestAdminCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailRestAdminCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailRestAdminCredentialOutput) ToGetMigrationHubDetailRestAdminCredentialOutput() GetMigrationHubDetailRestAdminCredentialOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailRestAdminCredentialOutput) ToGetMigrationHubDetailRestAdminCredentialOutputWithContext(ctx context.Context) GetMigrationHubDetailRestAdminCredentialOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailRestAdminCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetailRestAdminCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationHubDetailRestAdminCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationHubDetailRestAdminCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMigrationHubDetailRestAdminCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationHubDetailRestAdminCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (o GetMigrationHubDetailRestAdminCredentialArrayOutput) ToGetMigrationHubDetailRestAdminCredentialArrayOutput() GetMigrationHubDetailRestAdminCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailRestAdminCredentialArrayOutput) ToGetMigrationHubDetailRestAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationHubDetailRestAdminCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationHubDetailRestAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationHubDetailRestAdminCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationHubDetailRestAdminCredential {
+		return vs[0].([]GetMigrationHubDetailRestAdminCredential)[vs[1].(int)]
+	}).(GetMigrationHubDetailRestAdminCredentialOutput)
+}
+
+type GetMigrationIncludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationIncludeObjectInput is an input type that accepts GetMigrationIncludeObjectArgs and GetMigrationIncludeObjectOutput values.
+// You can construct a concrete instance of `GetMigrationIncludeObjectInput` via:
+//
+//	GetMigrationIncludeObjectArgs{...}
+type GetMigrationIncludeObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationIncludeObjectOutput() GetMigrationIncludeObjectOutput
+	ToGetMigrationIncludeObjectOutputWithContext(context.Context) GetMigrationIncludeObjectOutput
+}
+
+type GetMigrationIncludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationIncludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationIncludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationIncludeObjectArgs) ToGetMigrationIncludeObjectOutput() GetMigrationIncludeObjectOutput {
+	return i.ToGetMigrationIncludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationIncludeObjectArgs) ToGetMigrationIncludeObjectOutputWithContext(ctx context.Context) GetMigrationIncludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationIncludeObjectOutput)
+}
+
+// GetMigrationIncludeObjectArrayInput is an input type that accepts GetMigrationIncludeObjectArray and GetMigrationIncludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationIncludeObjectArrayInput` via:
+//
+//	GetMigrationIncludeObjectArray{ GetMigrationIncludeObjectArgs{...} }
+type GetMigrationIncludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationIncludeObjectArrayOutput() GetMigrationIncludeObjectArrayOutput
+	ToGetMigrationIncludeObjectArrayOutputWithContext(context.Context) GetMigrationIncludeObjectArrayOutput
+}
+
+type GetMigrationIncludeObjectArray []GetMigrationIncludeObjectInput
+
+func (GetMigrationIncludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationIncludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationIncludeObjectArray) ToGetMigrationIncludeObjectArrayOutput() GetMigrationIncludeObjectArrayOutput {
+	return i.ToGetMigrationIncludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationIncludeObjectArray) ToGetMigrationIncludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationIncludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationIncludeObjectArrayOutput)
+}
+
+type GetMigrationIncludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationIncludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationIncludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationIncludeObjectOutput) ToGetMigrationIncludeObjectOutput() GetMigrationIncludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationIncludeObjectOutput) ToGetMigrationIncludeObjectOutputWithContext(ctx context.Context) GetMigrationIncludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationIncludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
+}
+
+func (o GetMigrationIncludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationIncludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationIncludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationIncludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationIncludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationIncludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationIncludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationIncludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationIncludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationIncludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationIncludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationIncludeObjectArrayOutput) ToGetMigrationIncludeObjectArrayOutput() GetMigrationIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationIncludeObjectArrayOutput) ToGetMigrationIncludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationIncludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationIncludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationIncludeObject {
+		return vs[0].([]GetMigrationIncludeObject)[vs[1].(int)]
+	}).(GetMigrationIncludeObjectOutput)
+}
+
+type GetMigrationInitialLoadSetting struct {
+	// Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+	Compatibilities []string `pulumi:"compatibilities"`
+	// Optional parameters for Data Pump Export and Import.
+	DataPumpParameters []GetMigrationInitialLoadSettingDataPumpParameter `pulumi:"dataPumpParameters"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ExportDirectoryObjects []GetMigrationInitialLoadSettingExportDirectoryObject `pulumi:"exportDirectoryObjects"`
+	// The action taken in the event of errors related to GRANT or REVOKE errors.
+	HandleGrantErrors string `pulumi:"handleGrantErrors"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ImportDirectoryObjects []GetMigrationInitialLoadSettingImportDirectoryObject `pulumi:"importDirectoryObjects"`
+	// Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+	IsConsistent bool `pulumi:"isConsistent"`
+	// Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+	IsIgnoreExistingObjects bool `pulumi:"isIgnoreExistingObjects"`
+	// Include a statement at the start of the dump to set the time zone to UTC.
+	IsTzUtc bool `pulumi:"isTzUtc"`
+	// Oracle Job Mode
+	JobMode string `pulumi:"jobMode"`
+	// Defines remapping to be applied to objects as they are processed.
+	MetadataRemaps []GetMigrationInitialLoadSettingMetadataRemap `pulumi:"metadataRemaps"`
+	// Primary key compatibility option
+	PrimaryKeyCompatibility string `pulumi:"primaryKeyCompatibility"`
+	// Migration tablespace settings.
+	TablespaceDetails []GetMigrationInitialLoadSettingTablespaceDetail `pulumi:"tablespaceDetails"`
+}
+
+// GetMigrationInitialLoadSettingInput is an input type that accepts GetMigrationInitialLoadSettingArgs and GetMigrationInitialLoadSettingOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingInput` via:
+//
+//	GetMigrationInitialLoadSettingArgs{...}
+type GetMigrationInitialLoadSettingInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingOutput() GetMigrationInitialLoadSettingOutput
+	ToGetMigrationInitialLoadSettingOutputWithContext(context.Context) GetMigrationInitialLoadSettingOutput
+}
+
+type GetMigrationInitialLoadSettingArgs struct {
+	// Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+	Compatibilities pulumi.StringArrayInput `pulumi:"compatibilities"`
+	// Optional parameters for Data Pump Export and Import.
+	DataPumpParameters GetMigrationInitialLoadSettingDataPumpParameterArrayInput `pulumi:"dataPumpParameters"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ExportDirectoryObjects GetMigrationInitialLoadSettingExportDirectoryObjectArrayInput `pulumi:"exportDirectoryObjects"`
+	// The action taken in the event of errors related to GRANT or REVOKE errors.
+	HandleGrantErrors pulumi.StringInput `pulumi:"handleGrantErrors"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ImportDirectoryObjects GetMigrationInitialLoadSettingImportDirectoryObjectArrayInput `pulumi:"importDirectoryObjects"`
+	// Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+	IsConsistent pulumi.BoolInput `pulumi:"isConsistent"`
+	// Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+	IsIgnoreExistingObjects pulumi.BoolInput `pulumi:"isIgnoreExistingObjects"`
+	// Include a statement at the start of the dump to set the time zone to UTC.
+	IsTzUtc pulumi.BoolInput `pulumi:"isTzUtc"`
+	// Oracle Job Mode
+	JobMode pulumi.StringInput `pulumi:"jobMode"`
+	// Defines remapping to be applied to objects as they are processed.
+	MetadataRemaps GetMigrationInitialLoadSettingMetadataRemapArrayInput `pulumi:"metadataRemaps"`
+	// Primary key compatibility option
+	PrimaryKeyCompatibility pulumi.StringInput `pulumi:"primaryKeyCompatibility"`
+	// Migration tablespace settings.
+	TablespaceDetails GetMigrationInitialLoadSettingTablespaceDetailArrayInput `pulumi:"tablespaceDetails"`
+}
+
+func (GetMigrationInitialLoadSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSetting)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingArgs) ToGetMigrationInitialLoadSettingOutput() GetMigrationInitialLoadSettingOutput {
+	return i.ToGetMigrationInitialLoadSettingOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingArgs) ToGetMigrationInitialLoadSettingOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingOutput)
+}
+
+// GetMigrationInitialLoadSettingArrayInput is an input type that accepts GetMigrationInitialLoadSettingArray and GetMigrationInitialLoadSettingArrayOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingArrayInput` via:
+//
+//	GetMigrationInitialLoadSettingArray{ GetMigrationInitialLoadSettingArgs{...} }
+type GetMigrationInitialLoadSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingArrayOutput() GetMigrationInitialLoadSettingArrayOutput
+	ToGetMigrationInitialLoadSettingArrayOutputWithContext(context.Context) GetMigrationInitialLoadSettingArrayOutput
+}
+
+type GetMigrationInitialLoadSettingArray []GetMigrationInitialLoadSettingInput
+
+func (GetMigrationInitialLoadSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSetting)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingArray) ToGetMigrationInitialLoadSettingArrayOutput() GetMigrationInitialLoadSettingArrayOutput {
+	return i.ToGetMigrationInitialLoadSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingArray) ToGetMigrationInitialLoadSettingArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSetting)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingOutput) ToGetMigrationInitialLoadSettingOutput() GetMigrationInitialLoadSettingOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingOutput) ToGetMigrationInitialLoadSettingOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingOutput {
+	return o
+}
+
+// Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+func (o GetMigrationInitialLoadSettingOutput) Compatibilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) []string { return v.Compatibilities }).(pulumi.StringArrayOutput)
+}
+
+// Optional parameters for Data Pump Export and Import.
+func (o GetMigrationInitialLoadSettingOutput) DataPumpParameters() GetMigrationInitialLoadSettingDataPumpParameterArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) []GetMigrationInitialLoadSettingDataPumpParameter {
+		return v.DataPumpParameters
+	}).(GetMigrationInitialLoadSettingDataPumpParameterArrayOutput)
+}
+
+// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+func (o GetMigrationInitialLoadSettingOutput) ExportDirectoryObjects() GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) []GetMigrationInitialLoadSettingExportDirectoryObject {
+		return v.ExportDirectoryObjects
+	}).(GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput)
+}
+
+// The action taken in the event of errors related to GRANT or REVOKE errors.
+func (o GetMigrationInitialLoadSettingOutput) HandleGrantErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) string { return v.HandleGrantErrors }).(pulumi.StringOutput)
+}
+
+// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+func (o GetMigrationInitialLoadSettingOutput) ImportDirectoryObjects() GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) []GetMigrationInitialLoadSettingImportDirectoryObject {
+		return v.ImportDirectoryObjects
+	}).(GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput)
+}
+
+// Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+func (o GetMigrationInitialLoadSettingOutput) IsConsistent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) bool { return v.IsConsistent }).(pulumi.BoolOutput)
+}
+
+// Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+func (o GetMigrationInitialLoadSettingOutput) IsIgnoreExistingObjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) bool { return v.IsIgnoreExistingObjects }).(pulumi.BoolOutput)
+}
+
+// Include a statement at the start of the dump to set the time zone to UTC.
+func (o GetMigrationInitialLoadSettingOutput) IsTzUtc() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) bool { return v.IsTzUtc }).(pulumi.BoolOutput)
+}
+
+// Oracle Job Mode
+func (o GetMigrationInitialLoadSettingOutput) JobMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) string { return v.JobMode }).(pulumi.StringOutput)
+}
+
+// Defines remapping to be applied to objects as they are processed.
+func (o GetMigrationInitialLoadSettingOutput) MetadataRemaps() GetMigrationInitialLoadSettingMetadataRemapArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) []GetMigrationInitialLoadSettingMetadataRemap {
+		return v.MetadataRemaps
+	}).(GetMigrationInitialLoadSettingMetadataRemapArrayOutput)
+}
+
+// Primary key compatibility option
+func (o GetMigrationInitialLoadSettingOutput) PrimaryKeyCompatibility() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) string { return v.PrimaryKeyCompatibility }).(pulumi.StringOutput)
+}
+
+// Migration tablespace settings.
+func (o GetMigrationInitialLoadSettingOutput) TablespaceDetails() GetMigrationInitialLoadSettingTablespaceDetailArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSetting) []GetMigrationInitialLoadSettingTablespaceDetail {
+		return v.TablespaceDetails
+	}).(GetMigrationInitialLoadSettingTablespaceDetailArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSetting)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingArrayOutput) ToGetMigrationInitialLoadSettingArrayOutput() GetMigrationInitialLoadSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingArrayOutput) ToGetMigrationInitialLoadSettingArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationInitialLoadSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationInitialLoadSetting {
+		return vs[0].([]GetMigrationInitialLoadSetting)[vs[1].(int)]
+	}).(GetMigrationInitialLoadSettingOutput)
+}
+
+type GetMigrationInitialLoadSettingDataPumpParameter struct {
+	// Estimate size of dumps that will be generated.
+	Estimate string `pulumi:"estimate"`
+	// Exclude paratemers for Export and Import.
+	ExcludeParameters []string `pulumi:"excludeParameters"`
+	// Maximum number of worker processes that can be used for a Data Pump Export job.
+	ExportParallelismDegree int `pulumi:"exportParallelismDegree"`
+	// Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+	ImportParallelismDegree int `pulumi:"importParallelismDegree"`
+	// Set to false to force Data Pump worker process to run on one instance.
+	IsCluster bool `pulumi:"isCluster"`
+	// IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+	TableExistsAction string `pulumi:"tableExistsAction"`
+}
+
+// GetMigrationInitialLoadSettingDataPumpParameterInput is an input type that accepts GetMigrationInitialLoadSettingDataPumpParameterArgs and GetMigrationInitialLoadSettingDataPumpParameterOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingDataPumpParameterInput` via:
+//
+//	GetMigrationInitialLoadSettingDataPumpParameterArgs{...}
+type GetMigrationInitialLoadSettingDataPumpParameterInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingDataPumpParameterOutput() GetMigrationInitialLoadSettingDataPumpParameterOutput
+	ToGetMigrationInitialLoadSettingDataPumpParameterOutputWithContext(context.Context) GetMigrationInitialLoadSettingDataPumpParameterOutput
+}
+
+type GetMigrationInitialLoadSettingDataPumpParameterArgs struct {
+	// Estimate size of dumps that will be generated.
+	Estimate pulumi.StringInput `pulumi:"estimate"`
+	// Exclude paratemers for Export and Import.
+	ExcludeParameters pulumi.StringArrayInput `pulumi:"excludeParameters"`
+	// Maximum number of worker processes that can be used for a Data Pump Export job.
+	ExportParallelismDegree pulumi.IntInput `pulumi:"exportParallelismDegree"`
+	// Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+	ImportParallelismDegree pulumi.IntInput `pulumi:"importParallelismDegree"`
+	// Set to false to force Data Pump worker process to run on one instance.
+	IsCluster pulumi.BoolInput `pulumi:"isCluster"`
+	// IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+	TableExistsAction pulumi.StringInput `pulumi:"tableExistsAction"`
+}
+
+func (GetMigrationInitialLoadSettingDataPumpParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingDataPumpParameterArgs) ToGetMigrationInitialLoadSettingDataPumpParameterOutput() GetMigrationInitialLoadSettingDataPumpParameterOutput {
+	return i.ToGetMigrationInitialLoadSettingDataPumpParameterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingDataPumpParameterArgs) ToGetMigrationInitialLoadSettingDataPumpParameterOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingDataPumpParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingDataPumpParameterOutput)
+}
+
+// GetMigrationInitialLoadSettingDataPumpParameterArrayInput is an input type that accepts GetMigrationInitialLoadSettingDataPumpParameterArray and GetMigrationInitialLoadSettingDataPumpParameterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingDataPumpParameterArrayInput` via:
+//
+//	GetMigrationInitialLoadSettingDataPumpParameterArray{ GetMigrationInitialLoadSettingDataPumpParameterArgs{...} }
+type GetMigrationInitialLoadSettingDataPumpParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutput() GetMigrationInitialLoadSettingDataPumpParameterArrayOutput
+	ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutputWithContext(context.Context) GetMigrationInitialLoadSettingDataPumpParameterArrayOutput
+}
+
+type GetMigrationInitialLoadSettingDataPumpParameterArray []GetMigrationInitialLoadSettingDataPumpParameterInput
+
+func (GetMigrationInitialLoadSettingDataPumpParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingDataPumpParameterArray) ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutput() GetMigrationInitialLoadSettingDataPumpParameterArrayOutput {
+	return i.ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingDataPumpParameterArray) ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingDataPumpParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingDataPumpParameterArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingDataPumpParameterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingDataPumpParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) ToGetMigrationInitialLoadSettingDataPumpParameterOutput() GetMigrationInitialLoadSettingDataPumpParameterOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) ToGetMigrationInitialLoadSettingDataPumpParameterOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingDataPumpParameterOutput {
+	return o
+}
+
+// Estimate size of dumps that will be generated.
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) Estimate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingDataPumpParameter) string { return v.Estimate }).(pulumi.StringOutput)
+}
+
+// Exclude paratemers for Export and Import.
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) ExcludeParameters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingDataPumpParameter) []string { return v.ExcludeParameters }).(pulumi.StringArrayOutput)
+}
+
+// Maximum number of worker processes that can be used for a Data Pump Export job.
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) ExportParallelismDegree() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingDataPumpParameter) int { return v.ExportParallelismDegree }).(pulumi.IntOutput)
+}
+
+// Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) ImportParallelismDegree() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingDataPumpParameter) int { return v.ImportParallelismDegree }).(pulumi.IntOutput)
+}
+
+// Set to false to force Data Pump worker process to run on one instance.
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) IsCluster() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingDataPumpParameter) bool { return v.IsCluster }).(pulumi.BoolOutput)
+}
+
+// IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+func (o GetMigrationInitialLoadSettingDataPumpParameterOutput) TableExistsAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingDataPumpParameter) string { return v.TableExistsAction }).(pulumi.StringOutput)
+}
+
+type GetMigrationInitialLoadSettingDataPumpParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingDataPumpParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingDataPumpParameterArrayOutput) ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutput() GetMigrationInitialLoadSettingDataPumpParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingDataPumpParameterArrayOutput) ToGetMigrationInitialLoadSettingDataPumpParameterArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingDataPumpParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingDataPumpParameterArrayOutput) Index(i pulumi.IntInput) GetMigrationInitialLoadSettingDataPumpParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationInitialLoadSettingDataPumpParameter {
+		return vs[0].([]GetMigrationInitialLoadSettingDataPumpParameter)[vs[1].(int)]
+	}).(GetMigrationInitialLoadSettingDataPumpParameterOutput)
+}
+
+type GetMigrationInitialLoadSettingExportDirectoryObject struct {
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path string `pulumi:"path"`
+}
+
+// GetMigrationInitialLoadSettingExportDirectoryObjectInput is an input type that accepts GetMigrationInitialLoadSettingExportDirectoryObjectArgs and GetMigrationInitialLoadSettingExportDirectoryObjectOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingExportDirectoryObjectInput` via:
+//
+//	GetMigrationInitialLoadSettingExportDirectoryObjectArgs{...}
+type GetMigrationInitialLoadSettingExportDirectoryObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingExportDirectoryObjectOutput() GetMigrationInitialLoadSettingExportDirectoryObjectOutput
+	ToGetMigrationInitialLoadSettingExportDirectoryObjectOutputWithContext(context.Context) GetMigrationInitialLoadSettingExportDirectoryObjectOutput
+}
+
+type GetMigrationInitialLoadSettingExportDirectoryObjectArgs struct {
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetMigrationInitialLoadSettingExportDirectoryObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingExportDirectoryObjectArgs) ToGetMigrationInitialLoadSettingExportDirectoryObjectOutput() GetMigrationInitialLoadSettingExportDirectoryObjectOutput {
+	return i.ToGetMigrationInitialLoadSettingExportDirectoryObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingExportDirectoryObjectArgs) ToGetMigrationInitialLoadSettingExportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingExportDirectoryObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingExportDirectoryObjectOutput)
+}
+
+// GetMigrationInitialLoadSettingExportDirectoryObjectArrayInput is an input type that accepts GetMigrationInitialLoadSettingExportDirectoryObjectArray and GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingExportDirectoryObjectArrayInput` via:
+//
+//	GetMigrationInitialLoadSettingExportDirectoryObjectArray{ GetMigrationInitialLoadSettingExportDirectoryObjectArgs{...} }
+type GetMigrationInitialLoadSettingExportDirectoryObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput() GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput
+	ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(context.Context) GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput
+}
+
+type GetMigrationInitialLoadSettingExportDirectoryObjectArray []GetMigrationInitialLoadSettingExportDirectoryObjectInput
+
+func (GetMigrationInitialLoadSettingExportDirectoryObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingExportDirectoryObjectArray) ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput() GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return i.ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingExportDirectoryObjectArray) ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingExportDirectoryObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingExportDirectoryObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectOutput) ToGetMigrationInitialLoadSettingExportDirectoryObjectOutput() GetMigrationInitialLoadSettingExportDirectoryObjectOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectOutput) ToGetMigrationInitialLoadSettingExportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingExportDirectoryObjectOutput {
+	return o
+}
+
+// Name of directory object in database
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingExportDirectoryObject) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Absolute path of directory on database server
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingExportDirectoryObject) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput) ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput() GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput) ToGetMigrationInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationInitialLoadSettingExportDirectoryObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationInitialLoadSettingExportDirectoryObject {
+		return vs[0].([]GetMigrationInitialLoadSettingExportDirectoryObject)[vs[1].(int)]
+	}).(GetMigrationInitialLoadSettingExportDirectoryObjectOutput)
+}
+
+type GetMigrationInitialLoadSettingImportDirectoryObject struct {
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path string `pulumi:"path"`
+}
+
+// GetMigrationInitialLoadSettingImportDirectoryObjectInput is an input type that accepts GetMigrationInitialLoadSettingImportDirectoryObjectArgs and GetMigrationInitialLoadSettingImportDirectoryObjectOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingImportDirectoryObjectInput` via:
+//
+//	GetMigrationInitialLoadSettingImportDirectoryObjectArgs{...}
+type GetMigrationInitialLoadSettingImportDirectoryObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingImportDirectoryObjectOutput() GetMigrationInitialLoadSettingImportDirectoryObjectOutput
+	ToGetMigrationInitialLoadSettingImportDirectoryObjectOutputWithContext(context.Context) GetMigrationInitialLoadSettingImportDirectoryObjectOutput
+}
+
+type GetMigrationInitialLoadSettingImportDirectoryObjectArgs struct {
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetMigrationInitialLoadSettingImportDirectoryObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingImportDirectoryObjectArgs) ToGetMigrationInitialLoadSettingImportDirectoryObjectOutput() GetMigrationInitialLoadSettingImportDirectoryObjectOutput {
+	return i.ToGetMigrationInitialLoadSettingImportDirectoryObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingImportDirectoryObjectArgs) ToGetMigrationInitialLoadSettingImportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingImportDirectoryObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingImportDirectoryObjectOutput)
+}
+
+// GetMigrationInitialLoadSettingImportDirectoryObjectArrayInput is an input type that accepts GetMigrationInitialLoadSettingImportDirectoryObjectArray and GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingImportDirectoryObjectArrayInput` via:
+//
+//	GetMigrationInitialLoadSettingImportDirectoryObjectArray{ GetMigrationInitialLoadSettingImportDirectoryObjectArgs{...} }
+type GetMigrationInitialLoadSettingImportDirectoryObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput() GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput
+	ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(context.Context) GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput
+}
+
+type GetMigrationInitialLoadSettingImportDirectoryObjectArray []GetMigrationInitialLoadSettingImportDirectoryObjectInput
+
+func (GetMigrationInitialLoadSettingImportDirectoryObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingImportDirectoryObjectArray) ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput() GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return i.ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingImportDirectoryObjectArray) ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingImportDirectoryObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingImportDirectoryObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectOutput) ToGetMigrationInitialLoadSettingImportDirectoryObjectOutput() GetMigrationInitialLoadSettingImportDirectoryObjectOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectOutput) ToGetMigrationInitialLoadSettingImportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingImportDirectoryObjectOutput {
+	return o
+}
+
+// Name of directory object in database
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingImportDirectoryObject) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Absolute path of directory on database server
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingImportDirectoryObject) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput) ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput() GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput) ToGetMigrationInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationInitialLoadSettingImportDirectoryObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationInitialLoadSettingImportDirectoryObject {
+		return vs[0].([]GetMigrationInitialLoadSettingImportDirectoryObject)[vs[1].(int)]
+	}).(GetMigrationInitialLoadSettingImportDirectoryObjectOutput)
+}
+
+type GetMigrationInitialLoadSettingMetadataRemap struct {
+	// Specifies the new value that oldValue should be translated into.
+	NewValue string `pulumi:"newValue"`
+	// Specifies the value which needs to be reset.
+	OldValue string `pulumi:"oldValue"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationInitialLoadSettingMetadataRemapInput is an input type that accepts GetMigrationInitialLoadSettingMetadataRemapArgs and GetMigrationInitialLoadSettingMetadataRemapOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingMetadataRemapInput` via:
+//
+//	GetMigrationInitialLoadSettingMetadataRemapArgs{...}
+type GetMigrationInitialLoadSettingMetadataRemapInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingMetadataRemapOutput() GetMigrationInitialLoadSettingMetadataRemapOutput
+	ToGetMigrationInitialLoadSettingMetadataRemapOutputWithContext(context.Context) GetMigrationInitialLoadSettingMetadataRemapOutput
+}
+
+type GetMigrationInitialLoadSettingMetadataRemapArgs struct {
+	// Specifies the new value that oldValue should be translated into.
+	NewValue pulumi.StringInput `pulumi:"newValue"`
+	// Specifies the value which needs to be reset.
+	OldValue pulumi.StringInput `pulumi:"oldValue"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationInitialLoadSettingMetadataRemapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingMetadataRemapArgs) ToGetMigrationInitialLoadSettingMetadataRemapOutput() GetMigrationInitialLoadSettingMetadataRemapOutput {
+	return i.ToGetMigrationInitialLoadSettingMetadataRemapOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingMetadataRemapArgs) ToGetMigrationInitialLoadSettingMetadataRemapOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingMetadataRemapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingMetadataRemapOutput)
+}
+
+// GetMigrationInitialLoadSettingMetadataRemapArrayInput is an input type that accepts GetMigrationInitialLoadSettingMetadataRemapArray and GetMigrationInitialLoadSettingMetadataRemapArrayOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingMetadataRemapArrayInput` via:
+//
+//	GetMigrationInitialLoadSettingMetadataRemapArray{ GetMigrationInitialLoadSettingMetadataRemapArgs{...} }
+type GetMigrationInitialLoadSettingMetadataRemapArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingMetadataRemapArrayOutput() GetMigrationInitialLoadSettingMetadataRemapArrayOutput
+	ToGetMigrationInitialLoadSettingMetadataRemapArrayOutputWithContext(context.Context) GetMigrationInitialLoadSettingMetadataRemapArrayOutput
+}
+
+type GetMigrationInitialLoadSettingMetadataRemapArray []GetMigrationInitialLoadSettingMetadataRemapInput
+
+func (GetMigrationInitialLoadSettingMetadataRemapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingMetadataRemapArray) ToGetMigrationInitialLoadSettingMetadataRemapArrayOutput() GetMigrationInitialLoadSettingMetadataRemapArrayOutput {
+	return i.ToGetMigrationInitialLoadSettingMetadataRemapArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingMetadataRemapArray) ToGetMigrationInitialLoadSettingMetadataRemapArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingMetadataRemapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingMetadataRemapArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingMetadataRemapOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingMetadataRemapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingMetadataRemapOutput) ToGetMigrationInitialLoadSettingMetadataRemapOutput() GetMigrationInitialLoadSettingMetadataRemapOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingMetadataRemapOutput) ToGetMigrationInitialLoadSettingMetadataRemapOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingMetadataRemapOutput {
+	return o
+}
+
+// Specifies the new value that oldValue should be translated into.
+func (o GetMigrationInitialLoadSettingMetadataRemapOutput) NewValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingMetadataRemap) string { return v.NewValue }).(pulumi.StringOutput)
+}
+
+// Specifies the value which needs to be reset.
+func (o GetMigrationInitialLoadSettingMetadataRemapOutput) OldValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingMetadataRemap) string { return v.OldValue }).(pulumi.StringOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationInitialLoadSettingMetadataRemapOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingMetadataRemap) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationInitialLoadSettingMetadataRemapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingMetadataRemapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingMetadataRemapArrayOutput) ToGetMigrationInitialLoadSettingMetadataRemapArrayOutput() GetMigrationInitialLoadSettingMetadataRemapArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingMetadataRemapArrayOutput) ToGetMigrationInitialLoadSettingMetadataRemapArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingMetadataRemapArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingMetadataRemapArrayOutput) Index(i pulumi.IntInput) GetMigrationInitialLoadSettingMetadataRemapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationInitialLoadSettingMetadataRemap {
+		return vs[0].([]GetMigrationInitialLoadSettingMetadataRemap)[vs[1].(int)]
+	}).(GetMigrationInitialLoadSettingMetadataRemapOutput)
+}
+
+type GetMigrationInitialLoadSettingTablespaceDetail struct {
+	// Size of Oracle database blocks in KB.
+	BlockSizeInKbs string `pulumi:"blockSizeInKbs"`
+	// Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+	ExtendSizeInMbs int `pulumi:"extendSizeInMbs"`
+	// Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+	IsAutoCreate bool `pulumi:"isAutoCreate"`
+	// Set this property to true to enable tablespace of the type big file.
+	IsBigFile bool `pulumi:"isBigFile"`
+	// Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+	RemapTarget string `pulumi:"remapTarget"`
+	// Type of Database Base Migration Target.
+	TargetType string `pulumi:"targetType"`
+}
+
+// GetMigrationInitialLoadSettingTablespaceDetailInput is an input type that accepts GetMigrationInitialLoadSettingTablespaceDetailArgs and GetMigrationInitialLoadSettingTablespaceDetailOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingTablespaceDetailInput` via:
+//
+//	GetMigrationInitialLoadSettingTablespaceDetailArgs{...}
+type GetMigrationInitialLoadSettingTablespaceDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingTablespaceDetailOutput() GetMigrationInitialLoadSettingTablespaceDetailOutput
+	ToGetMigrationInitialLoadSettingTablespaceDetailOutputWithContext(context.Context) GetMigrationInitialLoadSettingTablespaceDetailOutput
+}
+
+type GetMigrationInitialLoadSettingTablespaceDetailArgs struct {
+	// Size of Oracle database blocks in KB.
+	BlockSizeInKbs pulumi.StringInput `pulumi:"blockSizeInKbs"`
+	// Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+	ExtendSizeInMbs pulumi.IntInput `pulumi:"extendSizeInMbs"`
+	// Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+	IsAutoCreate pulumi.BoolInput `pulumi:"isAutoCreate"`
+	// Set this property to true to enable tablespace of the type big file.
+	IsBigFile pulumi.BoolInput `pulumi:"isBigFile"`
+	// Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+	RemapTarget pulumi.StringInput `pulumi:"remapTarget"`
+	// Type of Database Base Migration Target.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+}
+
+func (GetMigrationInitialLoadSettingTablespaceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingTablespaceDetailArgs) ToGetMigrationInitialLoadSettingTablespaceDetailOutput() GetMigrationInitialLoadSettingTablespaceDetailOutput {
+	return i.ToGetMigrationInitialLoadSettingTablespaceDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingTablespaceDetailArgs) ToGetMigrationInitialLoadSettingTablespaceDetailOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingTablespaceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingTablespaceDetailOutput)
+}
+
+// GetMigrationInitialLoadSettingTablespaceDetailArrayInput is an input type that accepts GetMigrationInitialLoadSettingTablespaceDetailArray and GetMigrationInitialLoadSettingTablespaceDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationInitialLoadSettingTablespaceDetailArrayInput` via:
+//
+//	GetMigrationInitialLoadSettingTablespaceDetailArray{ GetMigrationInitialLoadSettingTablespaceDetailArgs{...} }
+type GetMigrationInitialLoadSettingTablespaceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutput() GetMigrationInitialLoadSettingTablespaceDetailArrayOutput
+	ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutputWithContext(context.Context) GetMigrationInitialLoadSettingTablespaceDetailArrayOutput
+}
+
+type GetMigrationInitialLoadSettingTablespaceDetailArray []GetMigrationInitialLoadSettingTablespaceDetailInput
+
+func (GetMigrationInitialLoadSettingTablespaceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationInitialLoadSettingTablespaceDetailArray) ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutput() GetMigrationInitialLoadSettingTablespaceDetailArrayOutput {
+	return i.ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationInitialLoadSettingTablespaceDetailArray) ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingTablespaceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationInitialLoadSettingTablespaceDetailArrayOutput)
+}
+
+type GetMigrationInitialLoadSettingTablespaceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingTablespaceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) ToGetMigrationInitialLoadSettingTablespaceDetailOutput() GetMigrationInitialLoadSettingTablespaceDetailOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) ToGetMigrationInitialLoadSettingTablespaceDetailOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingTablespaceDetailOutput {
+	return o
+}
+
+// Size of Oracle database blocks in KB.
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) BlockSizeInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingTablespaceDetail) string { return v.BlockSizeInKbs }).(pulumi.StringOutput)
+}
+
+// Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) ExtendSizeInMbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingTablespaceDetail) int { return v.ExtendSizeInMbs }).(pulumi.IntOutput)
+}
+
+// Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) IsAutoCreate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingTablespaceDetail) bool { return v.IsAutoCreate }).(pulumi.BoolOutput)
+}
+
+// Set this property to true to enable tablespace of the type big file.
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) IsBigFile() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingTablespaceDetail) bool { return v.IsBigFile }).(pulumi.BoolOutput)
+}
+
+// Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) RemapTarget() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingTablespaceDetail) string { return v.RemapTarget }).(pulumi.StringOutput)
+}
+
+// Type of Database Base Migration Target.
+func (o GetMigrationInitialLoadSettingTablespaceDetailOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationInitialLoadSettingTablespaceDetail) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
+type GetMigrationInitialLoadSettingTablespaceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationInitialLoadSettingTablespaceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationInitialLoadSettingTablespaceDetailArrayOutput) ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutput() GetMigrationInitialLoadSettingTablespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingTablespaceDetailArrayOutput) ToGetMigrationInitialLoadSettingTablespaceDetailArrayOutputWithContext(ctx context.Context) GetMigrationInitialLoadSettingTablespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationInitialLoadSettingTablespaceDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationInitialLoadSettingTablespaceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationInitialLoadSettingTablespaceDetail {
+		return vs[0].([]GetMigrationInitialLoadSettingTablespaceDetail)[vs[1].(int)]
+	}).(GetMigrationInitialLoadSettingTablespaceDetailOutput)
 }
 
 type GetMigrationObjectTypesFilter struct {
@@ -1258,7 +8880,2588 @@ func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutp
 	}).(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput)
 }
 
+type GetMigrationsAdvisorSetting struct {
+	// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+	IsIgnoreErrors bool `pulumi:"isIgnoreErrors"`
+	// True to skip the Pre-Migration Advisor execution. Default is false.
+	IsSkipAdvisor bool `pulumi:"isSkipAdvisor"`
+}
+
+// GetMigrationsAdvisorSettingInput is an input type that accepts GetMigrationsAdvisorSettingArgs and GetMigrationsAdvisorSettingOutput values.
+// You can construct a concrete instance of `GetMigrationsAdvisorSettingInput` via:
+//
+//	GetMigrationsAdvisorSettingArgs{...}
+type GetMigrationsAdvisorSettingInput interface {
+	pulumi.Input
+
+	ToGetMigrationsAdvisorSettingOutput() GetMigrationsAdvisorSettingOutput
+	ToGetMigrationsAdvisorSettingOutputWithContext(context.Context) GetMigrationsAdvisorSettingOutput
+}
+
+type GetMigrationsAdvisorSettingArgs struct {
+	// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+	IsIgnoreErrors pulumi.BoolInput `pulumi:"isIgnoreErrors"`
+	// True to skip the Pre-Migration Advisor execution. Default is false.
+	IsSkipAdvisor pulumi.BoolInput `pulumi:"isSkipAdvisor"`
+}
+
+func (GetMigrationsAdvisorSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsAdvisorSetting)(nil)).Elem()
+}
+
+func (i GetMigrationsAdvisorSettingArgs) ToGetMigrationsAdvisorSettingOutput() GetMigrationsAdvisorSettingOutput {
+	return i.ToGetMigrationsAdvisorSettingOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsAdvisorSettingArgs) ToGetMigrationsAdvisorSettingOutputWithContext(ctx context.Context) GetMigrationsAdvisorSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsAdvisorSettingOutput)
+}
+
+// GetMigrationsAdvisorSettingArrayInput is an input type that accepts GetMigrationsAdvisorSettingArray and GetMigrationsAdvisorSettingArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsAdvisorSettingArrayInput` via:
+//
+//	GetMigrationsAdvisorSettingArray{ GetMigrationsAdvisorSettingArgs{...} }
+type GetMigrationsAdvisorSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsAdvisorSettingArrayOutput() GetMigrationsAdvisorSettingArrayOutput
+	ToGetMigrationsAdvisorSettingArrayOutputWithContext(context.Context) GetMigrationsAdvisorSettingArrayOutput
+}
+
+type GetMigrationsAdvisorSettingArray []GetMigrationsAdvisorSettingInput
+
+func (GetMigrationsAdvisorSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsAdvisorSetting)(nil)).Elem()
+}
+
+func (i GetMigrationsAdvisorSettingArray) ToGetMigrationsAdvisorSettingArrayOutput() GetMigrationsAdvisorSettingArrayOutput {
+	return i.ToGetMigrationsAdvisorSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsAdvisorSettingArray) ToGetMigrationsAdvisorSettingArrayOutputWithContext(ctx context.Context) GetMigrationsAdvisorSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsAdvisorSettingArrayOutput)
+}
+
+type GetMigrationsAdvisorSettingOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsAdvisorSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsAdvisorSetting)(nil)).Elem()
+}
+
+func (o GetMigrationsAdvisorSettingOutput) ToGetMigrationsAdvisorSettingOutput() GetMigrationsAdvisorSettingOutput {
+	return o
+}
+
+func (o GetMigrationsAdvisorSettingOutput) ToGetMigrationsAdvisorSettingOutputWithContext(ctx context.Context) GetMigrationsAdvisorSettingOutput {
+	return o
+}
+
+// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+func (o GetMigrationsAdvisorSettingOutput) IsIgnoreErrors() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsAdvisorSetting) bool { return v.IsIgnoreErrors }).(pulumi.BoolOutput)
+}
+
+// True to skip the Pre-Migration Advisor execution. Default is false.
+func (o GetMigrationsAdvisorSettingOutput) IsSkipAdvisor() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsAdvisorSetting) bool { return v.IsSkipAdvisor }).(pulumi.BoolOutput)
+}
+
+type GetMigrationsAdvisorSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsAdvisorSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsAdvisorSetting)(nil)).Elem()
+}
+
+func (o GetMigrationsAdvisorSettingArrayOutput) ToGetMigrationsAdvisorSettingArrayOutput() GetMigrationsAdvisorSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationsAdvisorSettingArrayOutput) ToGetMigrationsAdvisorSettingArrayOutputWithContext(ctx context.Context) GetMigrationsAdvisorSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationsAdvisorSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsAdvisorSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsAdvisorSetting {
+		return vs[0].([]GetMigrationsAdvisorSetting)[vs[1].(int)]
+	}).(GetMigrationsAdvisorSettingOutput)
+}
+
+type GetMigrationsDataTransferMediumDetail struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	AccessKeyId string `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+	ObjectStorageBuckets []GetMigrationsDataTransferMediumDetailObjectStorageBucket `pulumi:"objectStorageBuckets"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region string `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey string `pulumi:"secretAccessKey"`
+	// OCID of the shared storage mount target
+	SharedStorageMountTargetId string `pulumi:"sharedStorageMountTargetId"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Sources []GetMigrationsDataTransferMediumDetailSource `pulumi:"sources"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Targets []GetMigrationsDataTransferMediumDetailTarget `pulumi:"targets"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationsDataTransferMediumDetailInput is an input type that accepts GetMigrationsDataTransferMediumDetailArgs and GetMigrationsDataTransferMediumDetailOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailArgs{...}
+type GetMigrationsDataTransferMediumDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailOutput() GetMigrationsDataTransferMediumDetailOutput
+	ToGetMigrationsDataTransferMediumDetailOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailOutput
+}
+
+type GetMigrationsDataTransferMediumDetailArgs struct {
+	// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	AccessKeyId pulumi.StringInput `pulumi:"accessKeyId"`
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+	ObjectStorageBuckets GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayInput `pulumi:"objectStorageBuckets"`
+	// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+	Region pulumi.StringInput `pulumi:"region"`
+	// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+	SecretAccessKey pulumi.StringInput `pulumi:"secretAccessKey"`
+	// OCID of the shared storage mount target
+	SharedStorageMountTargetId pulumi.StringInput `pulumi:"sharedStorageMountTargetId"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Sources GetMigrationsDataTransferMediumDetailSourceArrayInput `pulumi:"sources"`
+	// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+	Targets GetMigrationsDataTransferMediumDetailTargetArrayInput `pulumi:"targets"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationsDataTransferMediumDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailArgs) ToGetMigrationsDataTransferMediumDetailOutput() GetMigrationsDataTransferMediumDetailOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailArgs) ToGetMigrationsDataTransferMediumDetailOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailOutput)
+}
+
+// GetMigrationsDataTransferMediumDetailArrayInput is an input type that accepts GetMigrationsDataTransferMediumDetailArray and GetMigrationsDataTransferMediumDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailArrayInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailArray{ GetMigrationsDataTransferMediumDetailArgs{...} }
+type GetMigrationsDataTransferMediumDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailArrayOutput() GetMigrationsDataTransferMediumDetailArrayOutput
+	ToGetMigrationsDataTransferMediumDetailArrayOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailArrayOutput
+}
+
+type GetMigrationsDataTransferMediumDetailArray []GetMigrationsDataTransferMediumDetailInput
+
+func (GetMigrationsDataTransferMediumDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailArray) ToGetMigrationsDataTransferMediumDetailArrayOutput() GetMigrationsDataTransferMediumDetailArrayOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailArray) ToGetMigrationsDataTransferMediumDetailArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailArrayOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailOutput) ToGetMigrationsDataTransferMediumDetailOutput() GetMigrationsDataTransferMediumDetailOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailOutput) ToGetMigrationsDataTransferMediumDetailOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailOutput {
+	return o
+}
+
+// AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o GetMigrationsDataTransferMediumDetailOutput) AccessKeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.AccessKeyId }).(pulumi.StringOutput)
+}
+
+// Name of directory object in database
+func (o GetMigrationsDataTransferMediumDetailOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+func (o GetMigrationsDataTransferMediumDetailOutput) ObjectStorageBuckets() GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) []GetMigrationsDataTransferMediumDetailObjectStorageBucket {
+		return v.ObjectStorageBuckets
+	}).(GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput)
+}
+
+// AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+func (o GetMigrationsDataTransferMediumDetailOutput) Region() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.Region }).(pulumi.StringOutput)
+}
+
+// AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+func (o GetMigrationsDataTransferMediumDetailOutput) SecretAccessKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.SecretAccessKey }).(pulumi.StringOutput)
+}
+
+// OCID of the shared storage mount target
+func (o GetMigrationsDataTransferMediumDetailOutput) SharedStorageMountTargetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.SharedStorageMountTargetId }).(pulumi.StringOutput)
+}
+
+// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o GetMigrationsDataTransferMediumDetailOutput) Sources() GetMigrationsDataTransferMediumDetailSourceArrayOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) []GetMigrationsDataTransferMediumDetailSource {
+		return v.Sources
+	}).(GetMigrationsDataTransferMediumDetailSourceArrayOutput)
+}
+
+// Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+func (o GetMigrationsDataTransferMediumDetailOutput) Targets() GetMigrationsDataTransferMediumDetailTargetArrayOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) []GetMigrationsDataTransferMediumDetailTarget {
+		return v.Targets
+	}).(GetMigrationsDataTransferMediumDetailTargetArrayOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationsDataTransferMediumDetailOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetail) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailArrayOutput) ToGetMigrationsDataTransferMediumDetailArrayOutput() GetMigrationsDataTransferMediumDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailArrayOutput) ToGetMigrationsDataTransferMediumDetailArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsDataTransferMediumDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsDataTransferMediumDetail {
+		return vs[0].([]GetMigrationsDataTransferMediumDetail)[vs[1].(int)]
+	}).(GetMigrationsDataTransferMediumDetailOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailObjectStorageBucket struct {
+	// Bucket name.
+	Bucket string `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace string `pulumi:"namespace"`
+}
+
+// GetMigrationsDataTransferMediumDetailObjectStorageBucketInput is an input type that accepts GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs and GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailObjectStorageBucketInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs{...}
+type GetMigrationsDataTransferMediumDetailObjectStorageBucketInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutput() GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput
+	ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput
+}
+
+type GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs struct {
+	// Bucket name.
+	Bucket pulumi.StringInput `pulumi:"bucket"`
+	// Namespace name of the object store bucket.
+	Namespace pulumi.StringInput `pulumi:"namespace"`
+}
+
+func (GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutput() GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput)
+}
+
+// GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayInput is an input type that accepts GetMigrationsDataTransferMediumDetailObjectStorageBucketArray and GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailObjectStorageBucketArray{ GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs{...} }
+type GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput() GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput
+	ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput
+}
+
+type GetMigrationsDataTransferMediumDetailObjectStorageBucketArray []GetMigrationsDataTransferMediumDetailObjectStorageBucketInput
+
+func (GetMigrationsDataTransferMediumDetailObjectStorageBucketArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailObjectStorageBucketArray) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput() GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailObjectStorageBucketArray) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutput() GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput {
+	return o
+}
+
+// Bucket name.
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput) Bucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailObjectStorageBucket) string { return v.Bucket }).(pulumi.StringOutput)
+}
+
+// Namespace name of the object store bucket.
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput) Namespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailObjectStorageBucket) string { return v.Namespace }).(pulumi.StringOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetailObjectStorageBucket)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput() GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput) ToGetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput) Index(i pulumi.IntInput) GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsDataTransferMediumDetailObjectStorageBucket {
+		return vs[0].([]GetMigrationsDataTransferMediumDetailObjectStorageBucket)[vs[1].(int)]
+	}).(GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailSource struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind string `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
+}
+
+// GetMigrationsDataTransferMediumDetailSourceInput is an input type that accepts GetMigrationsDataTransferMediumDetailSourceArgs and GetMigrationsDataTransferMediumDetailSourceOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailSourceInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailSourceArgs{...}
+type GetMigrationsDataTransferMediumDetailSourceInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailSourceOutput() GetMigrationsDataTransferMediumDetailSourceOutput
+	ToGetMigrationsDataTransferMediumDetailSourceOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailSourceOutput
+}
+
+type GetMigrationsDataTransferMediumDetailSourceArgs struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
+}
+
+func (GetMigrationsDataTransferMediumDetailSourceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailSourceArgs) ToGetMigrationsDataTransferMediumDetailSourceOutput() GetMigrationsDataTransferMediumDetailSourceOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailSourceOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailSourceArgs) ToGetMigrationsDataTransferMediumDetailSourceOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailSourceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailSourceOutput)
+}
+
+// GetMigrationsDataTransferMediumDetailSourceArrayInput is an input type that accepts GetMigrationsDataTransferMediumDetailSourceArray and GetMigrationsDataTransferMediumDetailSourceArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailSourceArrayInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailSourceArray{ GetMigrationsDataTransferMediumDetailSourceArgs{...} }
+type GetMigrationsDataTransferMediumDetailSourceArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailSourceArrayOutput() GetMigrationsDataTransferMediumDetailSourceArrayOutput
+	ToGetMigrationsDataTransferMediumDetailSourceArrayOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailSourceArrayOutput
+}
+
+type GetMigrationsDataTransferMediumDetailSourceArray []GetMigrationsDataTransferMediumDetailSourceInput
+
+func (GetMigrationsDataTransferMediumDetailSourceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailSourceArray) ToGetMigrationsDataTransferMediumDetailSourceArrayOutput() GetMigrationsDataTransferMediumDetailSourceArrayOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailSourceArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailSourceArray) ToGetMigrationsDataTransferMediumDetailSourceArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailSourceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailSourceArrayOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailSourceOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailSourceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailSourceOutput) ToGetMigrationsDataTransferMediumDetailSourceOutput() GetMigrationsDataTransferMediumDetailSourceOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailSourceOutput) ToGetMigrationsDataTransferMediumDetailSourceOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailSourceOutput {
+	return o
+}
+
+// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o GetMigrationsDataTransferMediumDetailSourceOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailSource) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o GetMigrationsDataTransferMediumDetailSourceOutput) OciHome() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailSource) string { return v.OciHome }).(pulumi.StringOutput)
+}
+
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationsDataTransferMediumDetailSourceOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailSource) string { return v.WalletLocation }).(pulumi.StringOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailSourceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailSourceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetailSource)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailSourceArrayOutput) ToGetMigrationsDataTransferMediumDetailSourceArrayOutput() GetMigrationsDataTransferMediumDetailSourceArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailSourceArrayOutput) ToGetMigrationsDataTransferMediumDetailSourceArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailSourceArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailSourceArrayOutput) Index(i pulumi.IntInput) GetMigrationsDataTransferMediumDetailSourceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsDataTransferMediumDetailSource {
+		return vs[0].([]GetMigrationsDataTransferMediumDetailSource)[vs[1].(int)]
+	}).(GetMigrationsDataTransferMediumDetailSourceOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailTarget struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind string `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome string `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation string `pulumi:"walletLocation"`
+}
+
+// GetMigrationsDataTransferMediumDetailTargetInput is an input type that accepts GetMigrationsDataTransferMediumDetailTargetArgs and GetMigrationsDataTransferMediumDetailTargetOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailTargetInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailTargetArgs{...}
+type GetMigrationsDataTransferMediumDetailTargetInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailTargetOutput() GetMigrationsDataTransferMediumDetailTargetOutput
+	ToGetMigrationsDataTransferMediumDetailTargetOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailTargetOutput
+}
+
+type GetMigrationsDataTransferMediumDetailTargetArgs struct {
+	// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+	OciHome pulumi.StringInput `pulumi:"ociHome"`
+	// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+	WalletLocation pulumi.StringInput `pulumi:"walletLocation"`
+}
+
+func (GetMigrationsDataTransferMediumDetailTargetArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailTargetArgs) ToGetMigrationsDataTransferMediumDetailTargetOutput() GetMigrationsDataTransferMediumDetailTargetOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailTargetOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailTargetArgs) ToGetMigrationsDataTransferMediumDetailTargetOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailTargetOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailTargetOutput)
+}
+
+// GetMigrationsDataTransferMediumDetailTargetArrayInput is an input type that accepts GetMigrationsDataTransferMediumDetailTargetArray and GetMigrationsDataTransferMediumDetailTargetArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsDataTransferMediumDetailTargetArrayInput` via:
+//
+//	GetMigrationsDataTransferMediumDetailTargetArray{ GetMigrationsDataTransferMediumDetailTargetArgs{...} }
+type GetMigrationsDataTransferMediumDetailTargetArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsDataTransferMediumDetailTargetArrayOutput() GetMigrationsDataTransferMediumDetailTargetArrayOutput
+	ToGetMigrationsDataTransferMediumDetailTargetArrayOutputWithContext(context.Context) GetMigrationsDataTransferMediumDetailTargetArrayOutput
+}
+
+type GetMigrationsDataTransferMediumDetailTargetArray []GetMigrationsDataTransferMediumDetailTargetInput
+
+func (GetMigrationsDataTransferMediumDetailTargetArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (i GetMigrationsDataTransferMediumDetailTargetArray) ToGetMigrationsDataTransferMediumDetailTargetArrayOutput() GetMigrationsDataTransferMediumDetailTargetArrayOutput {
+	return i.ToGetMigrationsDataTransferMediumDetailTargetArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsDataTransferMediumDetailTargetArray) ToGetMigrationsDataTransferMediumDetailTargetArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailTargetArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsDataTransferMediumDetailTargetArrayOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailTargetOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailTargetOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailTargetOutput) ToGetMigrationsDataTransferMediumDetailTargetOutput() GetMigrationsDataTransferMediumDetailTargetOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailTargetOutput) ToGetMigrationsDataTransferMediumDetailTargetOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailTargetOutput {
+	return o
+}
+
+// Type of dump transfer to use during migration in source or target host. Default kind is CURL
+func (o GetMigrationsDataTransferMediumDetailTargetOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailTarget) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// Path to the Oracle Cloud Infrastructure CLI installation in the node.
+func (o GetMigrationsDataTransferMediumDetailTargetOutput) OciHome() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailTarget) string { return v.OciHome }).(pulumi.StringOutput)
+}
+
+// Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+func (o GetMigrationsDataTransferMediumDetailTargetOutput) WalletLocation() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsDataTransferMediumDetailTarget) string { return v.WalletLocation }).(pulumi.StringOutput)
+}
+
+type GetMigrationsDataTransferMediumDetailTargetArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsDataTransferMediumDetailTargetArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsDataTransferMediumDetailTarget)(nil)).Elem()
+}
+
+func (o GetMigrationsDataTransferMediumDetailTargetArrayOutput) ToGetMigrationsDataTransferMediumDetailTargetArrayOutput() GetMigrationsDataTransferMediumDetailTargetArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailTargetArrayOutput) ToGetMigrationsDataTransferMediumDetailTargetArrayOutputWithContext(ctx context.Context) GetMigrationsDataTransferMediumDetailTargetArrayOutput {
+	return o
+}
+
+func (o GetMigrationsDataTransferMediumDetailTargetArrayOutput) Index(i pulumi.IntInput) GetMigrationsDataTransferMediumDetailTargetOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsDataTransferMediumDetailTarget {
+		return vs[0].([]GetMigrationsDataTransferMediumDetailTarget)[vs[1].(int)]
+	}).(GetMigrationsDataTransferMediumDetailTargetOutput)
+}
+
+type GetMigrationsExcludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationsExcludeObjectInput is an input type that accepts GetMigrationsExcludeObjectArgs and GetMigrationsExcludeObjectOutput values.
+// You can construct a concrete instance of `GetMigrationsExcludeObjectInput` via:
+//
+//	GetMigrationsExcludeObjectArgs{...}
+type GetMigrationsExcludeObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationsExcludeObjectOutput() GetMigrationsExcludeObjectOutput
+	ToGetMigrationsExcludeObjectOutputWithContext(context.Context) GetMigrationsExcludeObjectOutput
+}
+
+type GetMigrationsExcludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationsExcludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsExcludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationsExcludeObjectArgs) ToGetMigrationsExcludeObjectOutput() GetMigrationsExcludeObjectOutput {
+	return i.ToGetMigrationsExcludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsExcludeObjectArgs) ToGetMigrationsExcludeObjectOutputWithContext(ctx context.Context) GetMigrationsExcludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsExcludeObjectOutput)
+}
+
+// GetMigrationsExcludeObjectArrayInput is an input type that accepts GetMigrationsExcludeObjectArray and GetMigrationsExcludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsExcludeObjectArrayInput` via:
+//
+//	GetMigrationsExcludeObjectArray{ GetMigrationsExcludeObjectArgs{...} }
+type GetMigrationsExcludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsExcludeObjectArrayOutput() GetMigrationsExcludeObjectArrayOutput
+	ToGetMigrationsExcludeObjectArrayOutputWithContext(context.Context) GetMigrationsExcludeObjectArrayOutput
+}
+
+type GetMigrationsExcludeObjectArray []GetMigrationsExcludeObjectInput
+
+func (GetMigrationsExcludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsExcludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationsExcludeObjectArray) ToGetMigrationsExcludeObjectArrayOutput() GetMigrationsExcludeObjectArrayOutput {
+	return i.ToGetMigrationsExcludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsExcludeObjectArray) ToGetMigrationsExcludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationsExcludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsExcludeObjectArrayOutput)
+}
+
+type GetMigrationsExcludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsExcludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsExcludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationsExcludeObjectOutput) ToGetMigrationsExcludeObjectOutput() GetMigrationsExcludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationsExcludeObjectOutput) ToGetMigrationsExcludeObjectOutputWithContext(ctx context.Context) GetMigrationsExcludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationsExcludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsExcludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
+}
+
+func (o GetMigrationsExcludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsExcludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsExcludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsExcludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsExcludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsExcludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationsExcludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsExcludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationsExcludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsExcludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsExcludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationsExcludeObjectArrayOutput) ToGetMigrationsExcludeObjectArrayOutput() GetMigrationsExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsExcludeObjectArrayOutput) ToGetMigrationsExcludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationsExcludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsExcludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsExcludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsExcludeObject {
+		return vs[0].([]GetMigrationsExcludeObject)[vs[1].(int)]
+	}).(GetMigrationsExcludeObjectOutput)
+}
+
+type GetMigrationsGgsDetail struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag int `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts []GetMigrationsGgsDetailExtract `pulumi:"extracts"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments []GetMigrationsGgsDetailGgsDeployment `pulumi:"ggsDeployments"`
+	// Parameters for Replicat processes.
+	Replicats []GetMigrationsGgsDetailReplicat `pulumi:"replicats"`
+}
+
+// GetMigrationsGgsDetailInput is an input type that accepts GetMigrationsGgsDetailArgs and GetMigrationsGgsDetailOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailInput` via:
+//
+//	GetMigrationsGgsDetailArgs{...}
+type GetMigrationsGgsDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailOutput() GetMigrationsGgsDetailOutput
+	ToGetMigrationsGgsDetailOutputWithContext(context.Context) GetMigrationsGgsDetailOutput
+}
+
+type GetMigrationsGgsDetailArgs struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntInput `pulumi:"acceptableLag"`
+	// Parameters for Extract processes.
+	Extracts GetMigrationsGgsDetailExtractArrayInput `pulumi:"extracts"`
+	// Details about Oracle GoldenGate GGS Deployment.
+	GgsDeployments GetMigrationsGgsDetailGgsDeploymentArrayInput `pulumi:"ggsDeployments"`
+	// Parameters for Replicat processes.
+	Replicats GetMigrationsGgsDetailReplicatArrayInput `pulumi:"replicats"`
+}
+
+func (GetMigrationsGgsDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailArgs) ToGetMigrationsGgsDetailOutput() GetMigrationsGgsDetailOutput {
+	return i.ToGetMigrationsGgsDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailArgs) ToGetMigrationsGgsDetailOutputWithContext(ctx context.Context) GetMigrationsGgsDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailOutput)
+}
+
+// GetMigrationsGgsDetailArrayInput is an input type that accepts GetMigrationsGgsDetailArray and GetMigrationsGgsDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailArrayInput` via:
+//
+//	GetMigrationsGgsDetailArray{ GetMigrationsGgsDetailArgs{...} }
+type GetMigrationsGgsDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailArrayOutput() GetMigrationsGgsDetailArrayOutput
+	ToGetMigrationsGgsDetailArrayOutputWithContext(context.Context) GetMigrationsGgsDetailArrayOutput
+}
+
+type GetMigrationsGgsDetailArray []GetMigrationsGgsDetailInput
+
+func (GetMigrationsGgsDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailArray) ToGetMigrationsGgsDetailArrayOutput() GetMigrationsGgsDetailArrayOutput {
+	return i.ToGetMigrationsGgsDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailArray) ToGetMigrationsGgsDetailArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailArrayOutput)
+}
+
+type GetMigrationsGgsDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailOutput) ToGetMigrationsGgsDetailOutput() GetMigrationsGgsDetailOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailOutput) ToGetMigrationsGgsDetailOutputWithContext(ctx context.Context) GetMigrationsGgsDetailOutput {
+	return o
+}
+
+// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o GetMigrationsGgsDetailOutput) AcceptableLag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetail) int { return v.AcceptableLag }).(pulumi.IntOutput)
+}
+
+// Parameters for Extract processes.
+func (o GetMigrationsGgsDetailOutput) Extracts() GetMigrationsGgsDetailExtractArrayOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetail) []GetMigrationsGgsDetailExtract { return v.Extracts }).(GetMigrationsGgsDetailExtractArrayOutput)
+}
+
+// Details about Oracle GoldenGate GGS Deployment.
+func (o GetMigrationsGgsDetailOutput) GgsDeployments() GetMigrationsGgsDetailGgsDeploymentArrayOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetail) []GetMigrationsGgsDetailGgsDeployment { return v.GgsDeployments }).(GetMigrationsGgsDetailGgsDeploymentArrayOutput)
+}
+
+// Parameters for Replicat processes.
+func (o GetMigrationsGgsDetailOutput) Replicats() GetMigrationsGgsDetailReplicatArrayOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetail) []GetMigrationsGgsDetailReplicat { return v.Replicats }).(GetMigrationsGgsDetailReplicatArrayOutput)
+}
+
+type GetMigrationsGgsDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailArrayOutput) ToGetMigrationsGgsDetailArrayOutput() GetMigrationsGgsDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailArrayOutput) ToGetMigrationsGgsDetailArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsGgsDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsGgsDetail {
+		return vs[0].([]GetMigrationsGgsDetail)[vs[1].(int)]
+	}).(GetMigrationsGgsDetailOutput)
+}
+
+type GetMigrationsGgsDetailExtract struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration int `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationsGgsDetailExtractInput is an input type that accepts GetMigrationsGgsDetailExtractArgs and GetMigrationsGgsDetailExtractOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailExtractInput` via:
+//
+//	GetMigrationsGgsDetailExtractArgs{...}
+type GetMigrationsGgsDetailExtractInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailExtractOutput() GetMigrationsGgsDetailExtractOutput
+	ToGetMigrationsGgsDetailExtractOutputWithContext(context.Context) GetMigrationsGgsDetailExtractOutput
+}
+
+type GetMigrationsGgsDetailExtractArgs struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntInput `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationsGgsDetailExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailExtractArgs) ToGetMigrationsGgsDetailExtractOutput() GetMigrationsGgsDetailExtractOutput {
+	return i.ToGetMigrationsGgsDetailExtractOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailExtractArgs) ToGetMigrationsGgsDetailExtractOutputWithContext(ctx context.Context) GetMigrationsGgsDetailExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailExtractOutput)
+}
+
+// GetMigrationsGgsDetailExtractArrayInput is an input type that accepts GetMigrationsGgsDetailExtractArray and GetMigrationsGgsDetailExtractArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailExtractArrayInput` via:
+//
+//	GetMigrationsGgsDetailExtractArray{ GetMigrationsGgsDetailExtractArgs{...} }
+type GetMigrationsGgsDetailExtractArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailExtractArrayOutput() GetMigrationsGgsDetailExtractArrayOutput
+	ToGetMigrationsGgsDetailExtractArrayOutputWithContext(context.Context) GetMigrationsGgsDetailExtractArrayOutput
+}
+
+type GetMigrationsGgsDetailExtractArray []GetMigrationsGgsDetailExtractInput
+
+func (GetMigrationsGgsDetailExtractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailExtractArray) ToGetMigrationsGgsDetailExtractArrayOutput() GetMigrationsGgsDetailExtractArrayOutput {
+	return i.ToGetMigrationsGgsDetailExtractArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailExtractArray) ToGetMigrationsGgsDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailExtractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailExtractArrayOutput)
+}
+
+type GetMigrationsGgsDetailExtractOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailExtractOutput) ToGetMigrationsGgsDetailExtractOutput() GetMigrationsGgsDetailExtractOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailExtractOutput) ToGetMigrationsGgsDetailExtractOutputWithContext(ctx context.Context) GetMigrationsGgsDetailExtractOutput {
+	return o
+}
+
+// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o GetMigrationsGgsDetailExtractOutput) LongTransDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetailExtract) int { return v.LongTransDuration }).(pulumi.IntOutput)
+}
+
+// Replicat performance.
+func (o GetMigrationsGgsDetailExtractOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetailExtract) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationsGgsDetailExtractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailExtractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailExtractArrayOutput) ToGetMigrationsGgsDetailExtractArrayOutput() GetMigrationsGgsDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailExtractArrayOutput) ToGetMigrationsGgsDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationsGgsDetailExtractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsGgsDetailExtract {
+		return vs[0].([]GetMigrationsGgsDetailExtract)[vs[1].(int)]
+	}).(GetMigrationsGgsDetailExtractOutput)
+}
+
+type GetMigrationsGgsDetailGgsDeployment struct {
+	// The OCID of the resource being referenced.
+	DeploymentId string `pulumi:"deploymentId"`
+	// The OCID of the resource being referenced.
+	GgsAdminCredentialsSecretId string `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+// GetMigrationsGgsDetailGgsDeploymentInput is an input type that accepts GetMigrationsGgsDetailGgsDeploymentArgs and GetMigrationsGgsDetailGgsDeploymentOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailGgsDeploymentInput` via:
+//
+//	GetMigrationsGgsDetailGgsDeploymentArgs{...}
+type GetMigrationsGgsDetailGgsDeploymentInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailGgsDeploymentOutput() GetMigrationsGgsDetailGgsDeploymentOutput
+	ToGetMigrationsGgsDetailGgsDeploymentOutputWithContext(context.Context) GetMigrationsGgsDetailGgsDeploymentOutput
+}
+
+type GetMigrationsGgsDetailGgsDeploymentArgs struct {
+	// The OCID of the resource being referenced.
+	DeploymentId pulumi.StringInput `pulumi:"deploymentId"`
+	// The OCID of the resource being referenced.
+	GgsAdminCredentialsSecretId pulumi.StringInput `pulumi:"ggsAdminCredentialsSecretId"`
+}
+
+func (GetMigrationsGgsDetailGgsDeploymentArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailGgsDeploymentArgs) ToGetMigrationsGgsDetailGgsDeploymentOutput() GetMigrationsGgsDetailGgsDeploymentOutput {
+	return i.ToGetMigrationsGgsDetailGgsDeploymentOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailGgsDeploymentArgs) ToGetMigrationsGgsDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationsGgsDetailGgsDeploymentOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailGgsDeploymentOutput)
+}
+
+// GetMigrationsGgsDetailGgsDeploymentArrayInput is an input type that accepts GetMigrationsGgsDetailGgsDeploymentArray and GetMigrationsGgsDetailGgsDeploymentArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailGgsDeploymentArrayInput` via:
+//
+//	GetMigrationsGgsDetailGgsDeploymentArray{ GetMigrationsGgsDetailGgsDeploymentArgs{...} }
+type GetMigrationsGgsDetailGgsDeploymentArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailGgsDeploymentArrayOutput() GetMigrationsGgsDetailGgsDeploymentArrayOutput
+	ToGetMigrationsGgsDetailGgsDeploymentArrayOutputWithContext(context.Context) GetMigrationsGgsDetailGgsDeploymentArrayOutput
+}
+
+type GetMigrationsGgsDetailGgsDeploymentArray []GetMigrationsGgsDetailGgsDeploymentInput
+
+func (GetMigrationsGgsDetailGgsDeploymentArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailGgsDeploymentArray) ToGetMigrationsGgsDetailGgsDeploymentArrayOutput() GetMigrationsGgsDetailGgsDeploymentArrayOutput {
+	return i.ToGetMigrationsGgsDetailGgsDeploymentArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailGgsDeploymentArray) ToGetMigrationsGgsDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailGgsDeploymentArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailGgsDeploymentArrayOutput)
+}
+
+type GetMigrationsGgsDetailGgsDeploymentOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailGgsDeploymentOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailGgsDeploymentOutput) ToGetMigrationsGgsDetailGgsDeploymentOutput() GetMigrationsGgsDetailGgsDeploymentOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailGgsDeploymentOutput) ToGetMigrationsGgsDetailGgsDeploymentOutputWithContext(ctx context.Context) GetMigrationsGgsDetailGgsDeploymentOutput {
+	return o
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationsGgsDetailGgsDeploymentOutput) DeploymentId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetailGgsDeployment) string { return v.DeploymentId }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationsGgsDetailGgsDeploymentOutput) GgsAdminCredentialsSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetailGgsDeployment) string { return v.GgsAdminCredentialsSecretId }).(pulumi.StringOutput)
+}
+
+type GetMigrationsGgsDetailGgsDeploymentArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailGgsDeploymentArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetailGgsDeployment)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailGgsDeploymentArrayOutput) ToGetMigrationsGgsDetailGgsDeploymentArrayOutput() GetMigrationsGgsDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailGgsDeploymentArrayOutput) ToGetMigrationsGgsDetailGgsDeploymentArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailGgsDeploymentArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailGgsDeploymentArrayOutput) Index(i pulumi.IntInput) GetMigrationsGgsDetailGgsDeploymentOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsGgsDetailGgsDeployment {
+		return vs[0].([]GetMigrationsGgsDetailGgsDeployment)[vs[1].(int)]
+	}).(GetMigrationsGgsDetailGgsDeploymentOutput)
+}
+
+type GetMigrationsGgsDetailReplicat struct {
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationsGgsDetailReplicatInput is an input type that accepts GetMigrationsGgsDetailReplicatArgs and GetMigrationsGgsDetailReplicatOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailReplicatInput` via:
+//
+//	GetMigrationsGgsDetailReplicatArgs{...}
+type GetMigrationsGgsDetailReplicatInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailReplicatOutput() GetMigrationsGgsDetailReplicatOutput
+	ToGetMigrationsGgsDetailReplicatOutputWithContext(context.Context) GetMigrationsGgsDetailReplicatOutput
+}
+
+type GetMigrationsGgsDetailReplicatArgs struct {
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationsGgsDetailReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailReplicatArgs) ToGetMigrationsGgsDetailReplicatOutput() GetMigrationsGgsDetailReplicatOutput {
+	return i.ToGetMigrationsGgsDetailReplicatOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailReplicatArgs) ToGetMigrationsGgsDetailReplicatOutputWithContext(ctx context.Context) GetMigrationsGgsDetailReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailReplicatOutput)
+}
+
+// GetMigrationsGgsDetailReplicatArrayInput is an input type that accepts GetMigrationsGgsDetailReplicatArray and GetMigrationsGgsDetailReplicatArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsGgsDetailReplicatArrayInput` via:
+//
+//	GetMigrationsGgsDetailReplicatArray{ GetMigrationsGgsDetailReplicatArgs{...} }
+type GetMigrationsGgsDetailReplicatArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsGgsDetailReplicatArrayOutput() GetMigrationsGgsDetailReplicatArrayOutput
+	ToGetMigrationsGgsDetailReplicatArrayOutputWithContext(context.Context) GetMigrationsGgsDetailReplicatArrayOutput
+}
+
+type GetMigrationsGgsDetailReplicatArray []GetMigrationsGgsDetailReplicatInput
+
+func (GetMigrationsGgsDetailReplicatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationsGgsDetailReplicatArray) ToGetMigrationsGgsDetailReplicatArrayOutput() GetMigrationsGgsDetailReplicatArrayOutput {
+	return i.ToGetMigrationsGgsDetailReplicatArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsGgsDetailReplicatArray) ToGetMigrationsGgsDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailReplicatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsGgsDetailReplicatArrayOutput)
+}
+
+type GetMigrationsGgsDetailReplicatOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsGgsDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailReplicatOutput) ToGetMigrationsGgsDetailReplicatOutput() GetMigrationsGgsDetailReplicatOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailReplicatOutput) ToGetMigrationsGgsDetailReplicatOutputWithContext(ctx context.Context) GetMigrationsGgsDetailReplicatOutput {
+	return o
+}
+
+// Replicat performance.
+func (o GetMigrationsGgsDetailReplicatOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsGgsDetailReplicat) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationsGgsDetailReplicatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsGgsDetailReplicatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsGgsDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationsGgsDetailReplicatArrayOutput) ToGetMigrationsGgsDetailReplicatArrayOutput() GetMigrationsGgsDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailReplicatArrayOutput) ToGetMigrationsGgsDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsGgsDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationsGgsDetailReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationsGgsDetailReplicatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsGgsDetailReplicat {
+		return vs[0].([]GetMigrationsGgsDetailReplicat)[vs[1].(int)]
+	}).(GetMigrationsGgsDetailReplicatOutput)
+}
+
+type GetMigrationsHubDetail struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag int `pulumi:"acceptableLag"`
+	// The OCID of the resource being referenced.
+	ComputeId string `pulumi:"computeId"`
+	// Parameters for Extract processes.
+	Extracts []GetMigrationsHubDetailExtract `pulumi:"extracts"`
+	// The OCID of the resource being referenced.
+	KeyId string `pulumi:"keyId"`
+	// Parameters for Replicat processes.
+	Replicats []GetMigrationsHubDetailReplicat `pulumi:"replicats"`
+	// Database Administrator Credentials details.
+	RestAdminCredentials []GetMigrationsHubDetailRestAdminCredential `pulumi:"restAdminCredentials"`
+	// Endpoint URL.
+	Url string `pulumi:"url"`
+	// The OCID of the resource being referenced.
+	VaultId string `pulumi:"vaultId"`
+}
+
+// GetMigrationsHubDetailInput is an input type that accepts GetMigrationsHubDetailArgs and GetMigrationsHubDetailOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailInput` via:
+//
+//	GetMigrationsHubDetailArgs{...}
+type GetMigrationsHubDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailOutput() GetMigrationsHubDetailOutput
+	ToGetMigrationsHubDetailOutputWithContext(context.Context) GetMigrationsHubDetailOutput
+}
+
+type GetMigrationsHubDetailArgs struct {
+	// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+	AcceptableLag pulumi.IntInput `pulumi:"acceptableLag"`
+	// The OCID of the resource being referenced.
+	ComputeId pulumi.StringInput `pulumi:"computeId"`
+	// Parameters for Extract processes.
+	Extracts GetMigrationsHubDetailExtractArrayInput `pulumi:"extracts"`
+	// The OCID of the resource being referenced.
+	KeyId pulumi.StringInput `pulumi:"keyId"`
+	// Parameters for Replicat processes.
+	Replicats GetMigrationsHubDetailReplicatArrayInput `pulumi:"replicats"`
+	// Database Administrator Credentials details.
+	RestAdminCredentials GetMigrationsHubDetailRestAdminCredentialArrayInput `pulumi:"restAdminCredentials"`
+	// Endpoint URL.
+	Url pulumi.StringInput `pulumi:"url"`
+	// The OCID of the resource being referenced.
+	VaultId pulumi.StringInput `pulumi:"vaultId"`
+}
+
+func (GetMigrationsHubDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailArgs) ToGetMigrationsHubDetailOutput() GetMigrationsHubDetailOutput {
+	return i.ToGetMigrationsHubDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailArgs) ToGetMigrationsHubDetailOutputWithContext(ctx context.Context) GetMigrationsHubDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailOutput)
+}
+
+// GetMigrationsHubDetailArrayInput is an input type that accepts GetMigrationsHubDetailArray and GetMigrationsHubDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailArrayInput` via:
+//
+//	GetMigrationsHubDetailArray{ GetMigrationsHubDetailArgs{...} }
+type GetMigrationsHubDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailArrayOutput() GetMigrationsHubDetailArrayOutput
+	ToGetMigrationsHubDetailArrayOutputWithContext(context.Context) GetMigrationsHubDetailArrayOutput
+}
+
+type GetMigrationsHubDetailArray []GetMigrationsHubDetailInput
+
+func (GetMigrationsHubDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailArray) ToGetMigrationsHubDetailArrayOutput() GetMigrationsHubDetailArrayOutput {
+	return i.ToGetMigrationsHubDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailArray) ToGetMigrationsHubDetailArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailArrayOutput)
+}
+
+type GetMigrationsHubDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailOutput) ToGetMigrationsHubDetailOutput() GetMigrationsHubDetailOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailOutput) ToGetMigrationsHubDetailOutputWithContext(ctx context.Context) GetMigrationsHubDetailOutput {
+	return o
+}
+
+// ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+func (o GetMigrationsHubDetailOutput) AcceptableLag() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) int { return v.AcceptableLag }).(pulumi.IntOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationsHubDetailOutput) ComputeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) string { return v.ComputeId }).(pulumi.StringOutput)
+}
+
+// Parameters for Extract processes.
+func (o GetMigrationsHubDetailOutput) Extracts() GetMigrationsHubDetailExtractArrayOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) []GetMigrationsHubDetailExtract { return v.Extracts }).(GetMigrationsHubDetailExtractArrayOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationsHubDetailOutput) KeyId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) string { return v.KeyId }).(pulumi.StringOutput)
+}
+
+// Parameters for Replicat processes.
+func (o GetMigrationsHubDetailOutput) Replicats() GetMigrationsHubDetailReplicatArrayOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) []GetMigrationsHubDetailReplicat { return v.Replicats }).(GetMigrationsHubDetailReplicatArrayOutput)
+}
+
+// Database Administrator Credentials details.
+func (o GetMigrationsHubDetailOutput) RestAdminCredentials() GetMigrationsHubDetailRestAdminCredentialArrayOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) []GetMigrationsHubDetailRestAdminCredential {
+		return v.RestAdminCredentials
+	}).(GetMigrationsHubDetailRestAdminCredentialArrayOutput)
+}
+
+// Endpoint URL.
+func (o GetMigrationsHubDetailOutput) Url() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) string { return v.Url }).(pulumi.StringOutput)
+}
+
+// The OCID of the resource being referenced.
+func (o GetMigrationsHubDetailOutput) VaultId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetail) string { return v.VaultId }).(pulumi.StringOutput)
+}
+
+type GetMigrationsHubDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailArrayOutput) ToGetMigrationsHubDetailArrayOutput() GetMigrationsHubDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailArrayOutput) ToGetMigrationsHubDetailArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsHubDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsHubDetail {
+		return vs[0].([]GetMigrationsHubDetail)[vs[1].(int)]
+	}).(GetMigrationsHubDetailOutput)
+}
+
+type GetMigrationsHubDetailExtract struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration int `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationsHubDetailExtractInput is an input type that accepts GetMigrationsHubDetailExtractArgs and GetMigrationsHubDetailExtractOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailExtractInput` via:
+//
+//	GetMigrationsHubDetailExtractArgs{...}
+type GetMigrationsHubDetailExtractInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailExtractOutput() GetMigrationsHubDetailExtractOutput
+	ToGetMigrationsHubDetailExtractOutputWithContext(context.Context) GetMigrationsHubDetailExtractOutput
+}
+
+type GetMigrationsHubDetailExtractArgs struct {
+	// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+	LongTransDuration pulumi.IntInput `pulumi:"longTransDuration"`
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationsHubDetailExtractArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailExtractArgs) ToGetMigrationsHubDetailExtractOutput() GetMigrationsHubDetailExtractOutput {
+	return i.ToGetMigrationsHubDetailExtractOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailExtractArgs) ToGetMigrationsHubDetailExtractOutputWithContext(ctx context.Context) GetMigrationsHubDetailExtractOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailExtractOutput)
+}
+
+// GetMigrationsHubDetailExtractArrayInput is an input type that accepts GetMigrationsHubDetailExtractArray and GetMigrationsHubDetailExtractArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailExtractArrayInput` via:
+//
+//	GetMigrationsHubDetailExtractArray{ GetMigrationsHubDetailExtractArgs{...} }
+type GetMigrationsHubDetailExtractArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailExtractArrayOutput() GetMigrationsHubDetailExtractArrayOutput
+	ToGetMigrationsHubDetailExtractArrayOutputWithContext(context.Context) GetMigrationsHubDetailExtractArrayOutput
+}
+
+type GetMigrationsHubDetailExtractArray []GetMigrationsHubDetailExtractInput
+
+func (GetMigrationsHubDetailExtractArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetailExtract)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailExtractArray) ToGetMigrationsHubDetailExtractArrayOutput() GetMigrationsHubDetailExtractArrayOutput {
+	return i.ToGetMigrationsHubDetailExtractArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailExtractArray) ToGetMigrationsHubDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailExtractArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailExtractArrayOutput)
+}
+
+type GetMigrationsHubDetailExtractOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailExtractOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailExtractOutput) ToGetMigrationsHubDetailExtractOutput() GetMigrationsHubDetailExtractOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailExtractOutput) ToGetMigrationsHubDetailExtractOutputWithContext(ctx context.Context) GetMigrationsHubDetailExtractOutput {
+	return o
+}
+
+// Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+func (o GetMigrationsHubDetailExtractOutput) LongTransDuration() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetailExtract) int { return v.LongTransDuration }).(pulumi.IntOutput)
+}
+
+// Replicat performance.
+func (o GetMigrationsHubDetailExtractOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetailExtract) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationsHubDetailExtractArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailExtractArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetailExtract)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailExtractArrayOutput) ToGetMigrationsHubDetailExtractArrayOutput() GetMigrationsHubDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailExtractArrayOutput) ToGetMigrationsHubDetailExtractArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailExtractArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailExtractArrayOutput) Index(i pulumi.IntInput) GetMigrationsHubDetailExtractOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsHubDetailExtract {
+		return vs[0].([]GetMigrationsHubDetailExtract)[vs[1].(int)]
+	}).(GetMigrationsHubDetailExtractOutput)
+}
+
+type GetMigrationsHubDetailReplicat struct {
+	// Replicat performance.
+	PerformanceProfile string `pulumi:"performanceProfile"`
+}
+
+// GetMigrationsHubDetailReplicatInput is an input type that accepts GetMigrationsHubDetailReplicatArgs and GetMigrationsHubDetailReplicatOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailReplicatInput` via:
+//
+//	GetMigrationsHubDetailReplicatArgs{...}
+type GetMigrationsHubDetailReplicatInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailReplicatOutput() GetMigrationsHubDetailReplicatOutput
+	ToGetMigrationsHubDetailReplicatOutputWithContext(context.Context) GetMigrationsHubDetailReplicatOutput
+}
+
+type GetMigrationsHubDetailReplicatArgs struct {
+	// Replicat performance.
+	PerformanceProfile pulumi.StringInput `pulumi:"performanceProfile"`
+}
+
+func (GetMigrationsHubDetailReplicatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailReplicatArgs) ToGetMigrationsHubDetailReplicatOutput() GetMigrationsHubDetailReplicatOutput {
+	return i.ToGetMigrationsHubDetailReplicatOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailReplicatArgs) ToGetMigrationsHubDetailReplicatOutputWithContext(ctx context.Context) GetMigrationsHubDetailReplicatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailReplicatOutput)
+}
+
+// GetMigrationsHubDetailReplicatArrayInput is an input type that accepts GetMigrationsHubDetailReplicatArray and GetMigrationsHubDetailReplicatArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailReplicatArrayInput` via:
+//
+//	GetMigrationsHubDetailReplicatArray{ GetMigrationsHubDetailReplicatArgs{...} }
+type GetMigrationsHubDetailReplicatArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailReplicatArrayOutput() GetMigrationsHubDetailReplicatArrayOutput
+	ToGetMigrationsHubDetailReplicatArrayOutputWithContext(context.Context) GetMigrationsHubDetailReplicatArrayOutput
+}
+
+type GetMigrationsHubDetailReplicatArray []GetMigrationsHubDetailReplicatInput
+
+func (GetMigrationsHubDetailReplicatArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetailReplicat)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailReplicatArray) ToGetMigrationsHubDetailReplicatArrayOutput() GetMigrationsHubDetailReplicatArrayOutput {
+	return i.ToGetMigrationsHubDetailReplicatArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailReplicatArray) ToGetMigrationsHubDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailReplicatArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailReplicatArrayOutput)
+}
+
+type GetMigrationsHubDetailReplicatOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailReplicatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailReplicatOutput) ToGetMigrationsHubDetailReplicatOutput() GetMigrationsHubDetailReplicatOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailReplicatOutput) ToGetMigrationsHubDetailReplicatOutputWithContext(ctx context.Context) GetMigrationsHubDetailReplicatOutput {
+	return o
+}
+
+// Replicat performance.
+func (o GetMigrationsHubDetailReplicatOutput) PerformanceProfile() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetailReplicat) string { return v.PerformanceProfile }).(pulumi.StringOutput)
+}
+
+type GetMigrationsHubDetailReplicatArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailReplicatArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetailReplicat)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailReplicatArrayOutput) ToGetMigrationsHubDetailReplicatArrayOutput() GetMigrationsHubDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailReplicatArrayOutput) ToGetMigrationsHubDetailReplicatArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailReplicatArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailReplicatArrayOutput) Index(i pulumi.IntInput) GetMigrationsHubDetailReplicatOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsHubDetailReplicat {
+		return vs[0].([]GetMigrationsHubDetailReplicat)[vs[1].(int)]
+	}).(GetMigrationsHubDetailReplicatOutput)
+}
+
+type GetMigrationsHubDetailRestAdminCredential struct {
+	Password string `pulumi:"password"`
+	// Administrator username
+	Username string `pulumi:"username"`
+}
+
+// GetMigrationsHubDetailRestAdminCredentialInput is an input type that accepts GetMigrationsHubDetailRestAdminCredentialArgs and GetMigrationsHubDetailRestAdminCredentialOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailRestAdminCredentialInput` via:
+//
+//	GetMigrationsHubDetailRestAdminCredentialArgs{...}
+type GetMigrationsHubDetailRestAdminCredentialInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailRestAdminCredentialOutput() GetMigrationsHubDetailRestAdminCredentialOutput
+	ToGetMigrationsHubDetailRestAdminCredentialOutputWithContext(context.Context) GetMigrationsHubDetailRestAdminCredentialOutput
+}
+
+type GetMigrationsHubDetailRestAdminCredentialArgs struct {
+	Password pulumi.StringInput `pulumi:"password"`
+	// Administrator username
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMigrationsHubDetailRestAdminCredentialArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailRestAdminCredentialArgs) ToGetMigrationsHubDetailRestAdminCredentialOutput() GetMigrationsHubDetailRestAdminCredentialOutput {
+	return i.ToGetMigrationsHubDetailRestAdminCredentialOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailRestAdminCredentialArgs) ToGetMigrationsHubDetailRestAdminCredentialOutputWithContext(ctx context.Context) GetMigrationsHubDetailRestAdminCredentialOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailRestAdminCredentialOutput)
+}
+
+// GetMigrationsHubDetailRestAdminCredentialArrayInput is an input type that accepts GetMigrationsHubDetailRestAdminCredentialArray and GetMigrationsHubDetailRestAdminCredentialArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsHubDetailRestAdminCredentialArrayInput` via:
+//
+//	GetMigrationsHubDetailRestAdminCredentialArray{ GetMigrationsHubDetailRestAdminCredentialArgs{...} }
+type GetMigrationsHubDetailRestAdminCredentialArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsHubDetailRestAdminCredentialArrayOutput() GetMigrationsHubDetailRestAdminCredentialArrayOutput
+	ToGetMigrationsHubDetailRestAdminCredentialArrayOutputWithContext(context.Context) GetMigrationsHubDetailRestAdminCredentialArrayOutput
+}
+
+type GetMigrationsHubDetailRestAdminCredentialArray []GetMigrationsHubDetailRestAdminCredentialInput
+
+func (GetMigrationsHubDetailRestAdminCredentialArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (i GetMigrationsHubDetailRestAdminCredentialArray) ToGetMigrationsHubDetailRestAdminCredentialArrayOutput() GetMigrationsHubDetailRestAdminCredentialArrayOutput {
+	return i.ToGetMigrationsHubDetailRestAdminCredentialArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsHubDetailRestAdminCredentialArray) ToGetMigrationsHubDetailRestAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailRestAdminCredentialArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsHubDetailRestAdminCredentialArrayOutput)
+}
+
+type GetMigrationsHubDetailRestAdminCredentialOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailRestAdminCredentialOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailRestAdminCredentialOutput) ToGetMigrationsHubDetailRestAdminCredentialOutput() GetMigrationsHubDetailRestAdminCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailRestAdminCredentialOutput) ToGetMigrationsHubDetailRestAdminCredentialOutputWithContext(ctx context.Context) GetMigrationsHubDetailRestAdminCredentialOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailRestAdminCredentialOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetailRestAdminCredential) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Administrator username
+func (o GetMigrationsHubDetailRestAdminCredentialOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsHubDetailRestAdminCredential) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMigrationsHubDetailRestAdminCredentialArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsHubDetailRestAdminCredentialArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsHubDetailRestAdminCredential)(nil)).Elem()
+}
+
+func (o GetMigrationsHubDetailRestAdminCredentialArrayOutput) ToGetMigrationsHubDetailRestAdminCredentialArrayOutput() GetMigrationsHubDetailRestAdminCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailRestAdminCredentialArrayOutput) ToGetMigrationsHubDetailRestAdminCredentialArrayOutputWithContext(ctx context.Context) GetMigrationsHubDetailRestAdminCredentialArrayOutput {
+	return o
+}
+
+func (o GetMigrationsHubDetailRestAdminCredentialArrayOutput) Index(i pulumi.IntInput) GetMigrationsHubDetailRestAdminCredentialOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsHubDetailRestAdminCredential {
+		return vs[0].([]GetMigrationsHubDetailRestAdminCredential)[vs[1].(int)]
+	}).(GetMigrationsHubDetailRestAdminCredentialOutput)
+}
+
+type GetMigrationsIncludeObject struct {
+	IsOmitExcludedTableFromReplication bool   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             string `pulumi:"object"`
+	Owner                              string `pulumi:"owner"`
+	Schema                             string `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationsIncludeObjectInput is an input type that accepts GetMigrationsIncludeObjectArgs and GetMigrationsIncludeObjectOutput values.
+// You can construct a concrete instance of `GetMigrationsIncludeObjectInput` via:
+//
+//	GetMigrationsIncludeObjectArgs{...}
+type GetMigrationsIncludeObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationsIncludeObjectOutput() GetMigrationsIncludeObjectOutput
+	ToGetMigrationsIncludeObjectOutputWithContext(context.Context) GetMigrationsIncludeObjectOutput
+}
+
+type GetMigrationsIncludeObjectArgs struct {
+	IsOmitExcludedTableFromReplication pulumi.BoolInput   `pulumi:"isOmitExcludedTableFromReplication"`
+	Object                             pulumi.StringInput `pulumi:"object"`
+	Owner                              pulumi.StringInput `pulumi:"owner"`
+	Schema                             pulumi.StringInput `pulumi:"schema"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationsIncludeObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsIncludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationsIncludeObjectArgs) ToGetMigrationsIncludeObjectOutput() GetMigrationsIncludeObjectOutput {
+	return i.ToGetMigrationsIncludeObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsIncludeObjectArgs) ToGetMigrationsIncludeObjectOutputWithContext(ctx context.Context) GetMigrationsIncludeObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsIncludeObjectOutput)
+}
+
+// GetMigrationsIncludeObjectArrayInput is an input type that accepts GetMigrationsIncludeObjectArray and GetMigrationsIncludeObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsIncludeObjectArrayInput` via:
+//
+//	GetMigrationsIncludeObjectArray{ GetMigrationsIncludeObjectArgs{...} }
+type GetMigrationsIncludeObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsIncludeObjectArrayOutput() GetMigrationsIncludeObjectArrayOutput
+	ToGetMigrationsIncludeObjectArrayOutputWithContext(context.Context) GetMigrationsIncludeObjectArrayOutput
+}
+
+type GetMigrationsIncludeObjectArray []GetMigrationsIncludeObjectInput
+
+func (GetMigrationsIncludeObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsIncludeObject)(nil)).Elem()
+}
+
+func (i GetMigrationsIncludeObjectArray) ToGetMigrationsIncludeObjectArrayOutput() GetMigrationsIncludeObjectArrayOutput {
+	return i.ToGetMigrationsIncludeObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsIncludeObjectArray) ToGetMigrationsIncludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationsIncludeObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsIncludeObjectArrayOutput)
+}
+
+type GetMigrationsIncludeObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsIncludeObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsIncludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationsIncludeObjectOutput) ToGetMigrationsIncludeObjectOutput() GetMigrationsIncludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationsIncludeObjectOutput) ToGetMigrationsIncludeObjectOutputWithContext(ctx context.Context) GetMigrationsIncludeObjectOutput {
+	return o
+}
+
+func (o GetMigrationsIncludeObjectOutput) IsOmitExcludedTableFromReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsIncludeObject) bool { return v.IsOmitExcludedTableFromReplication }).(pulumi.BoolOutput)
+}
+
+func (o GetMigrationsIncludeObjectOutput) Object() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsIncludeObject) string { return v.Object }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsIncludeObjectOutput) Owner() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsIncludeObject) string { return v.Owner }).(pulumi.StringOutput)
+}
+
+func (o GetMigrationsIncludeObjectOutput) Schema() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsIncludeObject) string { return v.Schema }).(pulumi.StringOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationsIncludeObjectOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsIncludeObject) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationsIncludeObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsIncludeObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsIncludeObject)(nil)).Elem()
+}
+
+func (o GetMigrationsIncludeObjectArrayOutput) ToGetMigrationsIncludeObjectArrayOutput() GetMigrationsIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsIncludeObjectArrayOutput) ToGetMigrationsIncludeObjectArrayOutputWithContext(ctx context.Context) GetMigrationsIncludeObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsIncludeObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsIncludeObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsIncludeObject {
+		return vs[0].([]GetMigrationsIncludeObject)[vs[1].(int)]
+	}).(GetMigrationsIncludeObjectOutput)
+}
+
+type GetMigrationsInitialLoadSetting struct {
+	// Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+	Compatibilities []string `pulumi:"compatibilities"`
+	// Optional parameters for Data Pump Export and Import.
+	DataPumpParameters []GetMigrationsInitialLoadSettingDataPumpParameter `pulumi:"dataPumpParameters"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ExportDirectoryObjects []GetMigrationsInitialLoadSettingExportDirectoryObject `pulumi:"exportDirectoryObjects"`
+	// The action taken in the event of errors related to GRANT or REVOKE errors.
+	HandleGrantErrors string `pulumi:"handleGrantErrors"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ImportDirectoryObjects []GetMigrationsInitialLoadSettingImportDirectoryObject `pulumi:"importDirectoryObjects"`
+	// Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+	IsConsistent bool `pulumi:"isConsistent"`
+	// Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+	IsIgnoreExistingObjects bool `pulumi:"isIgnoreExistingObjects"`
+	// Include a statement at the start of the dump to set the time zone to UTC.
+	IsTzUtc bool `pulumi:"isTzUtc"`
+	// Oracle Job Mode
+	JobMode string `pulumi:"jobMode"`
+	// Defines remapping to be applied to objects as they are processed.
+	MetadataRemaps []GetMigrationsInitialLoadSettingMetadataRemap `pulumi:"metadataRemaps"`
+	// Primary key compatibility option
+	PrimaryKeyCompatibility string `pulumi:"primaryKeyCompatibility"`
+	// Migration tablespace settings.
+	TablespaceDetails []GetMigrationsInitialLoadSettingTablespaceDetail `pulumi:"tablespaceDetails"`
+}
+
+// GetMigrationsInitialLoadSettingInput is an input type that accepts GetMigrationsInitialLoadSettingArgs and GetMigrationsInitialLoadSettingOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingInput` via:
+//
+//	GetMigrationsInitialLoadSettingArgs{...}
+type GetMigrationsInitialLoadSettingInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingOutput() GetMigrationsInitialLoadSettingOutput
+	ToGetMigrationsInitialLoadSettingOutputWithContext(context.Context) GetMigrationsInitialLoadSettingOutput
+}
+
+type GetMigrationsInitialLoadSettingArgs struct {
+	// Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+	Compatibilities pulumi.StringArrayInput `pulumi:"compatibilities"`
+	// Optional parameters for Data Pump Export and Import.
+	DataPumpParameters GetMigrationsInitialLoadSettingDataPumpParameterArrayInput `pulumi:"dataPumpParameters"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ExportDirectoryObjects GetMigrationsInitialLoadSettingExportDirectoryObjectArrayInput `pulumi:"exportDirectoryObjects"`
+	// The action taken in the event of errors related to GRANT or REVOKE errors.
+	HandleGrantErrors pulumi.StringInput `pulumi:"handleGrantErrors"`
+	// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+	ImportDirectoryObjects GetMigrationsInitialLoadSettingImportDirectoryObjectArrayInput `pulumi:"importDirectoryObjects"`
+	// Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+	IsConsistent pulumi.BoolInput `pulumi:"isConsistent"`
+	// Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+	IsIgnoreExistingObjects pulumi.BoolInput `pulumi:"isIgnoreExistingObjects"`
+	// Include a statement at the start of the dump to set the time zone to UTC.
+	IsTzUtc pulumi.BoolInput `pulumi:"isTzUtc"`
+	// Oracle Job Mode
+	JobMode pulumi.StringInput `pulumi:"jobMode"`
+	// Defines remapping to be applied to objects as they are processed.
+	MetadataRemaps GetMigrationsInitialLoadSettingMetadataRemapArrayInput `pulumi:"metadataRemaps"`
+	// Primary key compatibility option
+	PrimaryKeyCompatibility pulumi.StringInput `pulumi:"primaryKeyCompatibility"`
+	// Migration tablespace settings.
+	TablespaceDetails GetMigrationsInitialLoadSettingTablespaceDetailArrayInput `pulumi:"tablespaceDetails"`
+}
+
+func (GetMigrationsInitialLoadSettingArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSetting)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingArgs) ToGetMigrationsInitialLoadSettingOutput() GetMigrationsInitialLoadSettingOutput {
+	return i.ToGetMigrationsInitialLoadSettingOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingArgs) ToGetMigrationsInitialLoadSettingOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingOutput)
+}
+
+// GetMigrationsInitialLoadSettingArrayInput is an input type that accepts GetMigrationsInitialLoadSettingArray and GetMigrationsInitialLoadSettingArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingArrayInput` via:
+//
+//	GetMigrationsInitialLoadSettingArray{ GetMigrationsInitialLoadSettingArgs{...} }
+type GetMigrationsInitialLoadSettingArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingArrayOutput() GetMigrationsInitialLoadSettingArrayOutput
+	ToGetMigrationsInitialLoadSettingArrayOutputWithContext(context.Context) GetMigrationsInitialLoadSettingArrayOutput
+}
+
+type GetMigrationsInitialLoadSettingArray []GetMigrationsInitialLoadSettingInput
+
+func (GetMigrationsInitialLoadSettingArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSetting)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingArray) ToGetMigrationsInitialLoadSettingArrayOutput() GetMigrationsInitialLoadSettingArrayOutput {
+	return i.ToGetMigrationsInitialLoadSettingArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingArray) ToGetMigrationsInitialLoadSettingArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSetting)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingOutput) ToGetMigrationsInitialLoadSettingOutput() GetMigrationsInitialLoadSettingOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingOutput) ToGetMigrationsInitialLoadSettingOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingOutput {
+	return o
+}
+
+// Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+func (o GetMigrationsInitialLoadSettingOutput) Compatibilities() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) []string { return v.Compatibilities }).(pulumi.StringArrayOutput)
+}
+
+// Optional parameters for Data Pump Export and Import.
+func (o GetMigrationsInitialLoadSettingOutput) DataPumpParameters() GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) []GetMigrationsInitialLoadSettingDataPumpParameter {
+		return v.DataPumpParameters
+	}).(GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput)
+}
+
+// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+func (o GetMigrationsInitialLoadSettingOutput) ExportDirectoryObjects() GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) []GetMigrationsInitialLoadSettingExportDirectoryObject {
+		return v.ExportDirectoryObjects
+	}).(GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput)
+}
+
+// The action taken in the event of errors related to GRANT or REVOKE errors.
+func (o GetMigrationsInitialLoadSettingOutput) HandleGrantErrors() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) string { return v.HandleGrantErrors }).(pulumi.StringOutput)
+}
+
+// Directory object details, used to define either import or export directory objects in Data Pump Settings.
+func (o GetMigrationsInitialLoadSettingOutput) ImportDirectoryObjects() GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) []GetMigrationsInitialLoadSettingImportDirectoryObject {
+		return v.ImportDirectoryObjects
+	}).(GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput)
+}
+
+// Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+func (o GetMigrationsInitialLoadSettingOutput) IsConsistent() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) bool { return v.IsConsistent }).(pulumi.BoolOutput)
+}
+
+// Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+func (o GetMigrationsInitialLoadSettingOutput) IsIgnoreExistingObjects() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) bool { return v.IsIgnoreExistingObjects }).(pulumi.BoolOutput)
+}
+
+// Include a statement at the start of the dump to set the time zone to UTC.
+func (o GetMigrationsInitialLoadSettingOutput) IsTzUtc() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) bool { return v.IsTzUtc }).(pulumi.BoolOutput)
+}
+
+// Oracle Job Mode
+func (o GetMigrationsInitialLoadSettingOutput) JobMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) string { return v.JobMode }).(pulumi.StringOutput)
+}
+
+// Defines remapping to be applied to objects as they are processed.
+func (o GetMigrationsInitialLoadSettingOutput) MetadataRemaps() GetMigrationsInitialLoadSettingMetadataRemapArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) []GetMigrationsInitialLoadSettingMetadataRemap {
+		return v.MetadataRemaps
+	}).(GetMigrationsInitialLoadSettingMetadataRemapArrayOutput)
+}
+
+// Primary key compatibility option
+func (o GetMigrationsInitialLoadSettingOutput) PrimaryKeyCompatibility() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) string { return v.PrimaryKeyCompatibility }).(pulumi.StringOutput)
+}
+
+// Migration tablespace settings.
+func (o GetMigrationsInitialLoadSettingOutput) TablespaceDetails() GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSetting) []GetMigrationsInitialLoadSettingTablespaceDetail {
+		return v.TablespaceDetails
+	}).(GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSetting)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingArrayOutput) ToGetMigrationsInitialLoadSettingArrayOutput() GetMigrationsInitialLoadSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingArrayOutput) ToGetMigrationsInitialLoadSettingArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingArrayOutput) Index(i pulumi.IntInput) GetMigrationsInitialLoadSettingOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsInitialLoadSetting {
+		return vs[0].([]GetMigrationsInitialLoadSetting)[vs[1].(int)]
+	}).(GetMigrationsInitialLoadSettingOutput)
+}
+
+type GetMigrationsInitialLoadSettingDataPumpParameter struct {
+	// Estimate size of dumps that will be generated.
+	Estimate string `pulumi:"estimate"`
+	// Exclude paratemers for Export and Import.
+	ExcludeParameters []string `pulumi:"excludeParameters"`
+	// Maximum number of worker processes that can be used for a Data Pump Export job.
+	ExportParallelismDegree int `pulumi:"exportParallelismDegree"`
+	// Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+	ImportParallelismDegree int `pulumi:"importParallelismDegree"`
+	// Set to false to force Data Pump worker process to run on one instance.
+	IsCluster bool `pulumi:"isCluster"`
+	// IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+	TableExistsAction string `pulumi:"tableExistsAction"`
+}
+
+// GetMigrationsInitialLoadSettingDataPumpParameterInput is an input type that accepts GetMigrationsInitialLoadSettingDataPumpParameterArgs and GetMigrationsInitialLoadSettingDataPumpParameterOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingDataPumpParameterInput` via:
+//
+//	GetMigrationsInitialLoadSettingDataPumpParameterArgs{...}
+type GetMigrationsInitialLoadSettingDataPumpParameterInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingDataPumpParameterOutput() GetMigrationsInitialLoadSettingDataPumpParameterOutput
+	ToGetMigrationsInitialLoadSettingDataPumpParameterOutputWithContext(context.Context) GetMigrationsInitialLoadSettingDataPumpParameterOutput
+}
+
+type GetMigrationsInitialLoadSettingDataPumpParameterArgs struct {
+	// Estimate size of dumps that will be generated.
+	Estimate pulumi.StringInput `pulumi:"estimate"`
+	// Exclude paratemers for Export and Import.
+	ExcludeParameters pulumi.StringArrayInput `pulumi:"excludeParameters"`
+	// Maximum number of worker processes that can be used for a Data Pump Export job.
+	ExportParallelismDegree pulumi.IntInput `pulumi:"exportParallelismDegree"`
+	// Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+	ImportParallelismDegree pulumi.IntInput `pulumi:"importParallelismDegree"`
+	// Set to false to force Data Pump worker process to run on one instance.
+	IsCluster pulumi.BoolInput `pulumi:"isCluster"`
+	// IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+	TableExistsAction pulumi.StringInput `pulumi:"tableExistsAction"`
+}
+
+func (GetMigrationsInitialLoadSettingDataPumpParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingDataPumpParameterArgs) ToGetMigrationsInitialLoadSettingDataPumpParameterOutput() GetMigrationsInitialLoadSettingDataPumpParameterOutput {
+	return i.ToGetMigrationsInitialLoadSettingDataPumpParameterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingDataPumpParameterArgs) ToGetMigrationsInitialLoadSettingDataPumpParameterOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingDataPumpParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingDataPumpParameterOutput)
+}
+
+// GetMigrationsInitialLoadSettingDataPumpParameterArrayInput is an input type that accepts GetMigrationsInitialLoadSettingDataPumpParameterArray and GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingDataPumpParameterArrayInput` via:
+//
+//	GetMigrationsInitialLoadSettingDataPumpParameterArray{ GetMigrationsInitialLoadSettingDataPumpParameterArgs{...} }
+type GetMigrationsInitialLoadSettingDataPumpParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutput() GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput
+	ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutputWithContext(context.Context) GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput
+}
+
+type GetMigrationsInitialLoadSettingDataPumpParameterArray []GetMigrationsInitialLoadSettingDataPumpParameterInput
+
+func (GetMigrationsInitialLoadSettingDataPumpParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingDataPumpParameterArray) ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutput() GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput {
+	return i.ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingDataPumpParameterArray) ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingDataPumpParameterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingDataPumpParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) ToGetMigrationsInitialLoadSettingDataPumpParameterOutput() GetMigrationsInitialLoadSettingDataPumpParameterOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) ToGetMigrationsInitialLoadSettingDataPumpParameterOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingDataPumpParameterOutput {
+	return o
+}
+
+// Estimate size of dumps that will be generated.
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) Estimate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingDataPumpParameter) string { return v.Estimate }).(pulumi.StringOutput)
+}
+
+// Exclude paratemers for Export and Import.
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) ExcludeParameters() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingDataPumpParameter) []string { return v.ExcludeParameters }).(pulumi.StringArrayOutput)
+}
+
+// Maximum number of worker processes that can be used for a Data Pump Export job.
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) ExportParallelismDegree() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingDataPumpParameter) int { return v.ExportParallelismDegree }).(pulumi.IntOutput)
+}
+
+// Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) ImportParallelismDegree() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingDataPumpParameter) int { return v.ImportParallelismDegree }).(pulumi.IntOutput)
+}
+
+// Set to false to force Data Pump worker process to run on one instance.
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) IsCluster() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingDataPumpParameter) bool { return v.IsCluster }).(pulumi.BoolOutput)
+}
+
+// IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+func (o GetMigrationsInitialLoadSettingDataPumpParameterOutput) TableExistsAction() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingDataPumpParameter) string { return v.TableExistsAction }).(pulumi.StringOutput)
+}
+
+type GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingDataPumpParameter)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput) ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutput() GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput) ToGetMigrationsInitialLoadSettingDataPumpParameterArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput) Index(i pulumi.IntInput) GetMigrationsInitialLoadSettingDataPumpParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsInitialLoadSettingDataPumpParameter {
+		return vs[0].([]GetMigrationsInitialLoadSettingDataPumpParameter)[vs[1].(int)]
+	}).(GetMigrationsInitialLoadSettingDataPumpParameterOutput)
+}
+
+type GetMigrationsInitialLoadSettingExportDirectoryObject struct {
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path string `pulumi:"path"`
+}
+
+// GetMigrationsInitialLoadSettingExportDirectoryObjectInput is an input type that accepts GetMigrationsInitialLoadSettingExportDirectoryObjectArgs and GetMigrationsInitialLoadSettingExportDirectoryObjectOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingExportDirectoryObjectInput` via:
+//
+//	GetMigrationsInitialLoadSettingExportDirectoryObjectArgs{...}
+type GetMigrationsInitialLoadSettingExportDirectoryObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutput() GetMigrationsInitialLoadSettingExportDirectoryObjectOutput
+	ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutputWithContext(context.Context) GetMigrationsInitialLoadSettingExportDirectoryObjectOutput
+}
+
+type GetMigrationsInitialLoadSettingExportDirectoryObjectArgs struct {
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetMigrationsInitialLoadSettingExportDirectoryObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingExportDirectoryObjectArgs) ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutput() GetMigrationsInitialLoadSettingExportDirectoryObjectOutput {
+	return i.ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingExportDirectoryObjectArgs) ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingExportDirectoryObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingExportDirectoryObjectOutput)
+}
+
+// GetMigrationsInitialLoadSettingExportDirectoryObjectArrayInput is an input type that accepts GetMigrationsInitialLoadSettingExportDirectoryObjectArray and GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingExportDirectoryObjectArrayInput` via:
+//
+//	GetMigrationsInitialLoadSettingExportDirectoryObjectArray{ GetMigrationsInitialLoadSettingExportDirectoryObjectArgs{...} }
+type GetMigrationsInitialLoadSettingExportDirectoryObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput() GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput
+	ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(context.Context) GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput
+}
+
+type GetMigrationsInitialLoadSettingExportDirectoryObjectArray []GetMigrationsInitialLoadSettingExportDirectoryObjectInput
+
+func (GetMigrationsInitialLoadSettingExportDirectoryObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingExportDirectoryObjectArray) ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput() GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return i.ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingExportDirectoryObjectArray) ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingExportDirectoryObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingExportDirectoryObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectOutput) ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutput() GetMigrationsInitialLoadSettingExportDirectoryObjectOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectOutput) ToGetMigrationsInitialLoadSettingExportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingExportDirectoryObjectOutput {
+	return o
+}
+
+// Name of directory object in database
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingExportDirectoryObject) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Absolute path of directory on database server
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingExportDirectoryObject) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingExportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput) ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput() GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput) ToGetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsInitialLoadSettingExportDirectoryObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsInitialLoadSettingExportDirectoryObject {
+		return vs[0].([]GetMigrationsInitialLoadSettingExportDirectoryObject)[vs[1].(int)]
+	}).(GetMigrationsInitialLoadSettingExportDirectoryObjectOutput)
+}
+
+type GetMigrationsInitialLoadSettingImportDirectoryObject struct {
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path string `pulumi:"path"`
+}
+
+// GetMigrationsInitialLoadSettingImportDirectoryObjectInput is an input type that accepts GetMigrationsInitialLoadSettingImportDirectoryObjectArgs and GetMigrationsInitialLoadSettingImportDirectoryObjectOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingImportDirectoryObjectInput` via:
+//
+//	GetMigrationsInitialLoadSettingImportDirectoryObjectArgs{...}
+type GetMigrationsInitialLoadSettingImportDirectoryObjectInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutput() GetMigrationsInitialLoadSettingImportDirectoryObjectOutput
+	ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutputWithContext(context.Context) GetMigrationsInitialLoadSettingImportDirectoryObjectOutput
+}
+
+type GetMigrationsInitialLoadSettingImportDirectoryObjectArgs struct {
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// Absolute path of directory on database server
+	Path pulumi.StringInput `pulumi:"path"`
+}
+
+func (GetMigrationsInitialLoadSettingImportDirectoryObjectArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingImportDirectoryObjectArgs) ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutput() GetMigrationsInitialLoadSettingImportDirectoryObjectOutput {
+	return i.ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingImportDirectoryObjectArgs) ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingImportDirectoryObjectOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingImportDirectoryObjectOutput)
+}
+
+// GetMigrationsInitialLoadSettingImportDirectoryObjectArrayInput is an input type that accepts GetMigrationsInitialLoadSettingImportDirectoryObjectArray and GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingImportDirectoryObjectArrayInput` via:
+//
+//	GetMigrationsInitialLoadSettingImportDirectoryObjectArray{ GetMigrationsInitialLoadSettingImportDirectoryObjectArgs{...} }
+type GetMigrationsInitialLoadSettingImportDirectoryObjectArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput() GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput
+	ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(context.Context) GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput
+}
+
+type GetMigrationsInitialLoadSettingImportDirectoryObjectArray []GetMigrationsInitialLoadSettingImportDirectoryObjectInput
+
+func (GetMigrationsInitialLoadSettingImportDirectoryObjectArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingImportDirectoryObjectArray) ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput() GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return i.ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingImportDirectoryObjectArray) ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingImportDirectoryObjectOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingImportDirectoryObjectOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectOutput) ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutput() GetMigrationsInitialLoadSettingImportDirectoryObjectOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectOutput) ToGetMigrationsInitialLoadSettingImportDirectoryObjectOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingImportDirectoryObjectOutput {
+	return o
+}
+
+// Name of directory object in database
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingImportDirectoryObject) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Absolute path of directory on database server
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingImportDirectoryObject) string { return v.Path }).(pulumi.StringOutput)
+}
+
+type GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingImportDirectoryObject)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput) ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput() GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput) ToGetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput) Index(i pulumi.IntInput) GetMigrationsInitialLoadSettingImportDirectoryObjectOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsInitialLoadSettingImportDirectoryObject {
+		return vs[0].([]GetMigrationsInitialLoadSettingImportDirectoryObject)[vs[1].(int)]
+	}).(GetMigrationsInitialLoadSettingImportDirectoryObjectOutput)
+}
+
+type GetMigrationsInitialLoadSettingMetadataRemap struct {
+	// Specifies the new value that oldValue should be translated into.
+	NewValue string `pulumi:"newValue"`
+	// Specifies the value which needs to be reset.
+	OldValue string `pulumi:"oldValue"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type string `pulumi:"type"`
+}
+
+// GetMigrationsInitialLoadSettingMetadataRemapInput is an input type that accepts GetMigrationsInitialLoadSettingMetadataRemapArgs and GetMigrationsInitialLoadSettingMetadataRemapOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingMetadataRemapInput` via:
+//
+//	GetMigrationsInitialLoadSettingMetadataRemapArgs{...}
+type GetMigrationsInitialLoadSettingMetadataRemapInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingMetadataRemapOutput() GetMigrationsInitialLoadSettingMetadataRemapOutput
+	ToGetMigrationsInitialLoadSettingMetadataRemapOutputWithContext(context.Context) GetMigrationsInitialLoadSettingMetadataRemapOutput
+}
+
+type GetMigrationsInitialLoadSettingMetadataRemapArgs struct {
+	// Specifies the new value that oldValue should be translated into.
+	NewValue pulumi.StringInput `pulumi:"newValue"`
+	// Specifies the value which needs to be reset.
+	OldValue pulumi.StringInput `pulumi:"oldValue"`
+	// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetMigrationsInitialLoadSettingMetadataRemapArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingMetadataRemapArgs) ToGetMigrationsInitialLoadSettingMetadataRemapOutput() GetMigrationsInitialLoadSettingMetadataRemapOutput {
+	return i.ToGetMigrationsInitialLoadSettingMetadataRemapOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingMetadataRemapArgs) ToGetMigrationsInitialLoadSettingMetadataRemapOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingMetadataRemapOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingMetadataRemapOutput)
+}
+
+// GetMigrationsInitialLoadSettingMetadataRemapArrayInput is an input type that accepts GetMigrationsInitialLoadSettingMetadataRemapArray and GetMigrationsInitialLoadSettingMetadataRemapArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingMetadataRemapArrayInput` via:
+//
+//	GetMigrationsInitialLoadSettingMetadataRemapArray{ GetMigrationsInitialLoadSettingMetadataRemapArgs{...} }
+type GetMigrationsInitialLoadSettingMetadataRemapArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutput() GetMigrationsInitialLoadSettingMetadataRemapArrayOutput
+	ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutputWithContext(context.Context) GetMigrationsInitialLoadSettingMetadataRemapArrayOutput
+}
+
+type GetMigrationsInitialLoadSettingMetadataRemapArray []GetMigrationsInitialLoadSettingMetadataRemapInput
+
+func (GetMigrationsInitialLoadSettingMetadataRemapArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingMetadataRemapArray) ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutput() GetMigrationsInitialLoadSettingMetadataRemapArrayOutput {
+	return i.ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingMetadataRemapArray) ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingMetadataRemapArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingMetadataRemapArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingMetadataRemapOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingMetadataRemapOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingMetadataRemapOutput) ToGetMigrationsInitialLoadSettingMetadataRemapOutput() GetMigrationsInitialLoadSettingMetadataRemapOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingMetadataRemapOutput) ToGetMigrationsInitialLoadSettingMetadataRemapOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingMetadataRemapOutput {
+	return o
+}
+
+// Specifies the new value that oldValue should be translated into.
+func (o GetMigrationsInitialLoadSettingMetadataRemapOutput) NewValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingMetadataRemap) string { return v.NewValue }).(pulumi.StringOutput)
+}
+
+// Specifies the value which needs to be reset.
+func (o GetMigrationsInitialLoadSettingMetadataRemapOutput) OldValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingMetadataRemap) string { return v.OldValue }).(pulumi.StringOutput)
+}
+
+// The type of the migration to be performed. Example: ONLINE if no downtime is preferred for a migration. This method uses Oracle GoldenGate for replication.
+func (o GetMigrationsInitialLoadSettingMetadataRemapOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingMetadataRemap) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetMigrationsInitialLoadSettingMetadataRemapArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingMetadataRemapArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingMetadataRemap)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingMetadataRemapArrayOutput) ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutput() GetMigrationsInitialLoadSettingMetadataRemapArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingMetadataRemapArrayOutput) ToGetMigrationsInitialLoadSettingMetadataRemapArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingMetadataRemapArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingMetadataRemapArrayOutput) Index(i pulumi.IntInput) GetMigrationsInitialLoadSettingMetadataRemapOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsInitialLoadSettingMetadataRemap {
+		return vs[0].([]GetMigrationsInitialLoadSettingMetadataRemap)[vs[1].(int)]
+	}).(GetMigrationsInitialLoadSettingMetadataRemapOutput)
+}
+
+type GetMigrationsInitialLoadSettingTablespaceDetail struct {
+	// Size of Oracle database blocks in KB.
+	BlockSizeInKbs string `pulumi:"blockSizeInKbs"`
+	// Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+	ExtendSizeInMbs int `pulumi:"extendSizeInMbs"`
+	// Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+	IsAutoCreate bool `pulumi:"isAutoCreate"`
+	// Set this property to true to enable tablespace of the type big file.
+	IsBigFile bool `pulumi:"isBigFile"`
+	// Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+	RemapTarget string `pulumi:"remapTarget"`
+	// Type of Database Base Migration Target.
+	TargetType string `pulumi:"targetType"`
+}
+
+// GetMigrationsInitialLoadSettingTablespaceDetailInput is an input type that accepts GetMigrationsInitialLoadSettingTablespaceDetailArgs and GetMigrationsInitialLoadSettingTablespaceDetailOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingTablespaceDetailInput` via:
+//
+//	GetMigrationsInitialLoadSettingTablespaceDetailArgs{...}
+type GetMigrationsInitialLoadSettingTablespaceDetailInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingTablespaceDetailOutput() GetMigrationsInitialLoadSettingTablespaceDetailOutput
+	ToGetMigrationsInitialLoadSettingTablespaceDetailOutputWithContext(context.Context) GetMigrationsInitialLoadSettingTablespaceDetailOutput
+}
+
+type GetMigrationsInitialLoadSettingTablespaceDetailArgs struct {
+	// Size of Oracle database blocks in KB.
+	BlockSizeInKbs pulumi.StringInput `pulumi:"blockSizeInKbs"`
+	// Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+	ExtendSizeInMbs pulumi.IntInput `pulumi:"extendSizeInMbs"`
+	// Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+	IsAutoCreate pulumi.BoolInput `pulumi:"isAutoCreate"`
+	// Set this property to true to enable tablespace of the type big file.
+	IsBigFile pulumi.BoolInput `pulumi:"isBigFile"`
+	// Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+	RemapTarget pulumi.StringInput `pulumi:"remapTarget"`
+	// Type of Database Base Migration Target.
+	TargetType pulumi.StringInput `pulumi:"targetType"`
+}
+
+func (GetMigrationsInitialLoadSettingTablespaceDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingTablespaceDetailArgs) ToGetMigrationsInitialLoadSettingTablespaceDetailOutput() GetMigrationsInitialLoadSettingTablespaceDetailOutput {
+	return i.ToGetMigrationsInitialLoadSettingTablespaceDetailOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingTablespaceDetailArgs) ToGetMigrationsInitialLoadSettingTablespaceDetailOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingTablespaceDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingTablespaceDetailOutput)
+}
+
+// GetMigrationsInitialLoadSettingTablespaceDetailArrayInput is an input type that accepts GetMigrationsInitialLoadSettingTablespaceDetailArray and GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsInitialLoadSettingTablespaceDetailArrayInput` via:
+//
+//	GetMigrationsInitialLoadSettingTablespaceDetailArray{ GetMigrationsInitialLoadSettingTablespaceDetailArgs{...} }
+type GetMigrationsInitialLoadSettingTablespaceDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutput() GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput
+	ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutputWithContext(context.Context) GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput
+}
+
+type GetMigrationsInitialLoadSettingTablespaceDetailArray []GetMigrationsInitialLoadSettingTablespaceDetailInput
+
+func (GetMigrationsInitialLoadSettingTablespaceDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (i GetMigrationsInitialLoadSettingTablespaceDetailArray) ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutput() GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput {
+	return i.ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsInitialLoadSettingTablespaceDetailArray) ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput)
+}
+
+type GetMigrationsInitialLoadSettingTablespaceDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingTablespaceDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) ToGetMigrationsInitialLoadSettingTablespaceDetailOutput() GetMigrationsInitialLoadSettingTablespaceDetailOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) ToGetMigrationsInitialLoadSettingTablespaceDetailOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingTablespaceDetailOutput {
+	return o
+}
+
+// Size of Oracle database blocks in KB.
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) BlockSizeInKbs() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingTablespaceDetail) string { return v.BlockSizeInKbs }).(pulumi.StringOutput)
+}
+
+// Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) ExtendSizeInMbs() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingTablespaceDetail) int { return v.ExtendSizeInMbs }).(pulumi.IntOutput)
+}
+
+// Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) IsAutoCreate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingTablespaceDetail) bool { return v.IsAutoCreate }).(pulumi.BoolOutput)
+}
+
+// Set this property to true to enable tablespace of the type big file.
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) IsBigFile() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingTablespaceDetail) bool { return v.IsBigFile }).(pulumi.BoolOutput)
+}
+
+// Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) RemapTarget() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingTablespaceDetail) string { return v.RemapTarget }).(pulumi.StringOutput)
+}
+
+// Type of Database Base Migration Target.
+func (o GetMigrationsInitialLoadSettingTablespaceDetailOutput) TargetType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsInitialLoadSettingTablespaceDetail) string { return v.TargetType }).(pulumi.StringOutput)
+}
+
+type GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsInitialLoadSettingTablespaceDetail)(nil)).Elem()
+}
+
+func (o GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput) ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutput() GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput) ToGetMigrationsInitialLoadSettingTablespaceDetailArrayOutputWithContext(ctx context.Context) GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput {
+	return o
+}
+
+func (o GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput) Index(i pulumi.IntInput) GetMigrationsInitialLoadSettingTablespaceDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsInitialLoadSettingTablespaceDetail {
+		return vs[0].([]GetMigrationsInitialLoadSettingTablespaceDetail)[vs[1].(int)]
+	}).(GetMigrationsInitialLoadSettingTablespaceDetailOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeInput)(nil)).Elem(), ConnectionAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionAdditionalAttributeArrayInput)(nil)).Elem(), ConnectionAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpInput)(nil)).Elem(), ConnectionIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConnectionIngressIpArrayInput)(nil)).Elem(), ConnectionIngressIpArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressInput)(nil)).Elem(), JobProgressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressArrayInput)(nil)).Elem(), JobProgressArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressPhaseInput)(nil)).Elem(), JobProgressPhaseArgs{})
@@ -1269,18 +11472,162 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressPhaseLogLocationArrayInput)(nil)).Elem(), JobProgressPhaseLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobUnsupportedObjectInput)(nil)).Elem(), JobUnsupportedObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobUnsupportedObjectArrayInput)(nil)).Elem(), JobUnsupportedObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAdvisorSettingsInput)(nil)).Elem(), MigrationAdvisorSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAdvisorSettingsPtrInput)(nil)).Elem(), MigrationAdvisorSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsInput)(nil)).Elem(), MigrationDataTransferMediumDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsPtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsObjectStorageBucketInput)(nil)).Elem(), MigrationDataTransferMediumDetailsObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsObjectStorageBucketPtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsSourceInput)(nil)).Elem(), MigrationDataTransferMediumDetailsSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsSourcePtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsTargetInput)(nil)).Elem(), MigrationDataTransferMediumDetailsTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsTargetPtrInput)(nil)).Elem(), MigrationDataTransferMediumDetailsTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationExcludeObjectInput)(nil)).Elem(), MigrationExcludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationExcludeObjectArrayInput)(nil)).Elem(), MigrationExcludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsInput)(nil)).Elem(), MigrationGgsDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsPtrInput)(nil)).Elem(), MigrationGgsDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsExtractInput)(nil)).Elem(), MigrationGgsDetailsExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsExtractPtrInput)(nil)).Elem(), MigrationGgsDetailsExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsGgsDeploymentInput)(nil)).Elem(), MigrationGgsDetailsGgsDeploymentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsGgsDeploymentArrayInput)(nil)).Elem(), MigrationGgsDetailsGgsDeploymentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsReplicatInput)(nil)).Elem(), MigrationGgsDetailsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationGgsDetailsReplicatPtrInput)(nil)).Elem(), MigrationGgsDetailsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsInput)(nil)).Elem(), MigrationHubDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsPtrInput)(nil)).Elem(), MigrationHubDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsExtractInput)(nil)).Elem(), MigrationHubDetailsExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsExtractPtrInput)(nil)).Elem(), MigrationHubDetailsExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsReplicatInput)(nil)).Elem(), MigrationHubDetailsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsReplicatPtrInput)(nil)).Elem(), MigrationHubDetailsReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsRestAdminCredentialsInput)(nil)).Elem(), MigrationHubDetailsRestAdminCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationHubDetailsRestAdminCredentialsPtrInput)(nil)).Elem(), MigrationHubDetailsRestAdminCredentialsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationIncludeObjectInput)(nil)).Elem(), MigrationIncludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationIncludeObjectArrayInput)(nil)).Elem(), MigrationIncludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsInput)(nil)).Elem(), MigrationInitialLoadSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsPtrInput)(nil)).Elem(), MigrationInitialLoadSettingsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsDataPumpParametersInput)(nil)).Elem(), MigrationInitialLoadSettingsDataPumpParametersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsDataPumpParametersPtrInput)(nil)).Elem(), MigrationInitialLoadSettingsDataPumpParametersArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsExportDirectoryObjectInput)(nil)).Elem(), MigrationInitialLoadSettingsExportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsExportDirectoryObjectPtrInput)(nil)).Elem(), MigrationInitialLoadSettingsExportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsImportDirectoryObjectInput)(nil)).Elem(), MigrationInitialLoadSettingsImportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsImportDirectoryObjectPtrInput)(nil)).Elem(), MigrationInitialLoadSettingsImportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsMetadataRemapInput)(nil)).Elem(), MigrationInitialLoadSettingsMetadataRemapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsMetadataRemapArrayInput)(nil)).Elem(), MigrationInitialLoadSettingsMetadataRemapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsTablespaceDetailsInput)(nil)).Elem(), MigrationInitialLoadSettingsTablespaceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationInitialLoadSettingsTablespaceDetailsPtrInput)(nil)).Elem(), MigrationInitialLoadSettingsTablespaceDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeInput)(nil)).Elem(), GetConnectionAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpInput)(nil)).Elem(), GetConnectionIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionIngressIpArrayInput)(nil)).Elem(), GetConnectionIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionInput)(nil)).Elem(), GetConnectionsConnectionCollectionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttributeInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAdditionalAttributeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemAdditionalAttributeArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemAdditionalAttributeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsConnectionCollectionItemIngressIpArrayInput)(nil)).Elem(), GetConnectionsConnectionCollectionItemIngressIpArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterInput)(nil)).Elem(), GetConnectionsFilterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetConnectionsFilterArrayInput)(nil)).Elem(), GetConnectionsFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailArrayInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailObjectStorageDetailInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailObjectStorageDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobOutputItemInput)(nil)).Elem(), GetJobOutputItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobOutputItemArrayInput)(nil)).Elem(), GetJobOutputItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAdvisorSettingInput)(nil)).Elem(), GetMigrationAdvisorSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAdvisorSettingArrayInput)(nil)).Elem(), GetMigrationAdvisorSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailObjectStorageBucketInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailObjectStorageBucketArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailObjectStorageBucketArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailSourceInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailSourceArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailTargetInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailTargetArrayInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationExcludeObjectInput)(nil)).Elem(), GetMigrationExcludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationExcludeObjectArrayInput)(nil)).Elem(), GetMigrationExcludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailInput)(nil)).Elem(), GetMigrationGgsDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailArrayInput)(nil)).Elem(), GetMigrationGgsDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailExtractInput)(nil)).Elem(), GetMigrationGgsDetailExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailExtractArrayInput)(nil)).Elem(), GetMigrationGgsDetailExtractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailGgsDeploymentInput)(nil)).Elem(), GetMigrationGgsDetailGgsDeploymentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailGgsDeploymentArrayInput)(nil)).Elem(), GetMigrationGgsDetailGgsDeploymentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailReplicatInput)(nil)).Elem(), GetMigrationGgsDetailReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationGgsDetailReplicatArrayInput)(nil)).Elem(), GetMigrationGgsDetailReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailInput)(nil)).Elem(), GetMigrationHubDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailArrayInput)(nil)).Elem(), GetMigrationHubDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailExtractInput)(nil)).Elem(), GetMigrationHubDetailExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailExtractArrayInput)(nil)).Elem(), GetMigrationHubDetailExtractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailReplicatInput)(nil)).Elem(), GetMigrationHubDetailReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailReplicatArrayInput)(nil)).Elem(), GetMigrationHubDetailReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailRestAdminCredentialInput)(nil)).Elem(), GetMigrationHubDetailRestAdminCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationHubDetailRestAdminCredentialArrayInput)(nil)).Elem(), GetMigrationHubDetailRestAdminCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationIncludeObjectInput)(nil)).Elem(), GetMigrationIncludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationIncludeObjectArrayInput)(nil)).Elem(), GetMigrationIncludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingInput)(nil)).Elem(), GetMigrationInitialLoadSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingArrayInput)(nil)).Elem(), GetMigrationInitialLoadSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingDataPumpParameterInput)(nil)).Elem(), GetMigrationInitialLoadSettingDataPumpParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingDataPumpParameterArrayInput)(nil)).Elem(), GetMigrationInitialLoadSettingDataPumpParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingExportDirectoryObjectInput)(nil)).Elem(), GetMigrationInitialLoadSettingExportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingExportDirectoryObjectArrayInput)(nil)).Elem(), GetMigrationInitialLoadSettingExportDirectoryObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingImportDirectoryObjectInput)(nil)).Elem(), GetMigrationInitialLoadSettingImportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingImportDirectoryObjectArrayInput)(nil)).Elem(), GetMigrationInitialLoadSettingImportDirectoryObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingMetadataRemapInput)(nil)).Elem(), GetMigrationInitialLoadSettingMetadataRemapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingMetadataRemapArrayInput)(nil)).Elem(), GetMigrationInitialLoadSettingMetadataRemapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingTablespaceDetailInput)(nil)).Elem(), GetMigrationInitialLoadSettingTablespaceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationInitialLoadSettingTablespaceDetailArrayInput)(nil)).Elem(), GetMigrationInitialLoadSettingTablespaceDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesFilterInput)(nil)).Elem(), GetMigrationObjectTypesFilterArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesFilterArrayInput)(nil)).Elem(), GetMigrationObjectTypesFilterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsAdvisorSettingInput)(nil)).Elem(), GetMigrationsAdvisorSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsAdvisorSettingArrayInput)(nil)).Elem(), GetMigrationsAdvisorSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailArrayInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailObjectStorageBucketInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailObjectStorageBucketArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailObjectStorageBucketArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailSourceInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailSourceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailSourceArrayInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailSourceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailTargetInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailTargetArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailTargetArrayInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailTargetArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsExcludeObjectInput)(nil)).Elem(), GetMigrationsExcludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsExcludeObjectArrayInput)(nil)).Elem(), GetMigrationsExcludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailInput)(nil)).Elem(), GetMigrationsGgsDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailArrayInput)(nil)).Elem(), GetMigrationsGgsDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailExtractInput)(nil)).Elem(), GetMigrationsGgsDetailExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailExtractArrayInput)(nil)).Elem(), GetMigrationsGgsDetailExtractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailGgsDeploymentInput)(nil)).Elem(), GetMigrationsGgsDetailGgsDeploymentArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailGgsDeploymentArrayInput)(nil)).Elem(), GetMigrationsGgsDetailGgsDeploymentArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailReplicatInput)(nil)).Elem(), GetMigrationsGgsDetailReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsGgsDetailReplicatArrayInput)(nil)).Elem(), GetMigrationsGgsDetailReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailInput)(nil)).Elem(), GetMigrationsHubDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailArrayInput)(nil)).Elem(), GetMigrationsHubDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailExtractInput)(nil)).Elem(), GetMigrationsHubDetailExtractArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailExtractArrayInput)(nil)).Elem(), GetMigrationsHubDetailExtractArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailReplicatInput)(nil)).Elem(), GetMigrationsHubDetailReplicatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailReplicatArrayInput)(nil)).Elem(), GetMigrationsHubDetailReplicatArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailRestAdminCredentialInput)(nil)).Elem(), GetMigrationsHubDetailRestAdminCredentialArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsHubDetailRestAdminCredentialArrayInput)(nil)).Elem(), GetMigrationsHubDetailRestAdminCredentialArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsIncludeObjectInput)(nil)).Elem(), GetMigrationsIncludeObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsIncludeObjectArrayInput)(nil)).Elem(), GetMigrationsIncludeObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingInput)(nil)).Elem(), GetMigrationsInitialLoadSettingArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingDataPumpParameterInput)(nil)).Elem(), GetMigrationsInitialLoadSettingDataPumpParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingDataPumpParameterArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingDataPumpParameterArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingExportDirectoryObjectInput)(nil)).Elem(), GetMigrationsInitialLoadSettingExportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingExportDirectoryObjectArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingExportDirectoryObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingImportDirectoryObjectInput)(nil)).Elem(), GetMigrationsInitialLoadSettingImportDirectoryObjectArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingImportDirectoryObjectArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingImportDirectoryObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingMetadataRemapInput)(nil)).Elem(), GetMigrationsInitialLoadSettingMetadataRemapArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingMetadataRemapArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingMetadataRemapArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingTablespaceDetailInput)(nil)).Elem(), GetMigrationsInitialLoadSettingTablespaceDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsInitialLoadSettingTablespaceDetailArrayInput)(nil)).Elem(), GetMigrationsInitialLoadSettingTablespaceDetailArray{})
+	pulumi.RegisterOutputType(ConnectionAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(ConnectionAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(ConnectionIngressIpOutput{})
+	pulumi.RegisterOutputType(ConnectionIngressIpArrayOutput{})
 	pulumi.RegisterOutputType(JobProgressOutput{})
 	pulumi.RegisterOutputType(JobProgressArrayOutput{})
 	pulumi.RegisterOutputType(JobProgressPhaseOutput{})
@@ -1291,16 +11638,156 @@ func init() {
 	pulumi.RegisterOutputType(JobProgressPhaseLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(JobUnsupportedObjectOutput{})
 	pulumi.RegisterOutputType(JobUnsupportedObjectArrayOutput{})
+	pulumi.RegisterOutputType(MigrationAdvisorSettingsOutput{})
+	pulumi.RegisterOutputType(MigrationAdvisorSettingsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsObjectStorageBucketOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsObjectStorageBucketPtrOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsSourceOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsSourcePtrOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsTargetOutput{})
+	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsTargetPtrOutput{})
+	pulumi.RegisterOutputType(MigrationExcludeObjectOutput{})
+	pulumi.RegisterOutputType(MigrationExcludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsExtractOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsExtractPtrOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsGgsDeploymentOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsGgsDeploymentArrayOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsReplicatOutput{})
+	pulumi.RegisterOutputType(MigrationGgsDetailsReplicatPtrOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsExtractOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsExtractPtrOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsReplicatOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsReplicatPtrOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsRestAdminCredentialsOutput{})
+	pulumi.RegisterOutputType(MigrationHubDetailsRestAdminCredentialsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationIncludeObjectOutput{})
+	pulumi.RegisterOutputType(MigrationIncludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsPtrOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsDataPumpParametersOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsDataPumpParametersPtrOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsExportDirectoryObjectOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsExportDirectoryObjectPtrOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsImportDirectoryObjectOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsImportDirectoryObjectPtrOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsMetadataRemapOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsMetadataRemapArrayOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsTablespaceDetailsOutput{})
+	pulumi.RegisterOutputType(MigrationInitialLoadSettingsTablespaceDetailsPtrOutput{})
+	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(GetConnectionAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionIngressIpOutput{})
+	pulumi.RegisterOutputType(GetConnectionIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAdditionalAttributeOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemAdditionalAttributeArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpOutput{})
+	pulumi.RegisterOutputType(GetConnectionsConnectionCollectionItemIngressIpArrayOutput{})
+	pulumi.RegisterOutputType(GetConnectionsFilterOutput{})
+	pulumi.RegisterOutputType(GetConnectionsFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailObjectStorageDetailOutput{})
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobOutputItemOutput{})
 	pulumi.RegisterOutputType(GetJobOutputItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationAdvisorSettingOutput{})
+	pulumi.RegisterOutputType(GetMigrationAdvisorSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailObjectStorageBucketOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailObjectStorageBucketArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailSourceOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailTargetOutput{})
+	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationExcludeObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationExcludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailExtractOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailExtractArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailGgsDeploymentOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailGgsDeploymentArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailReplicatOutput{})
+	pulumi.RegisterOutputType(GetMigrationGgsDetailReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailExtractOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailExtractArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailReplicatOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailRestAdminCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationHubDetailRestAdminCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationIncludeObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationIncludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingDataPumpParameterOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingDataPumpParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingExportDirectoryObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingExportDirectoryObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingImportDirectoryObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingImportDirectoryObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingMetadataRemapOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingMetadataRemapArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingTablespaceDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationInitialLoadSettingTablespaceDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesFilterOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesFilterArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsAdvisorSettingOutput{})
+	pulumi.RegisterOutputType(GetMigrationsAdvisorSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailObjectStorageBucketOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailObjectStorageBucketArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailSourceOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailSourceArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailTargetOutput{})
+	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailTargetArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsExcludeObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationsExcludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailExtractOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailExtractArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailGgsDeploymentOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailGgsDeploymentArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailReplicatOutput{})
+	pulumi.RegisterOutputType(GetMigrationsGgsDetailReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailExtractOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailExtractArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailReplicatOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailReplicatArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailRestAdminCredentialOutput{})
+	pulumi.RegisterOutputType(GetMigrationsHubDetailRestAdminCredentialArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsIncludeObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationsIncludeObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingDataPumpParameterOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingDataPumpParameterArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingExportDirectoryObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingExportDirectoryObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingImportDirectoryObjectOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingImportDirectoryObjectArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingMetadataRemapOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingMetadataRemapArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingTablespaceDetailOutput{})
+	pulumi.RegisterOutputType(GetMigrationsInitialLoadSettingTablespaceDetailArrayOutput{})
 }

@@ -13,41 +13,17 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelFineTuneDetail {
-    /**
-     * @return The OCID of the dedicated AI cluster this fine-tuning runs on.
-     * 
-     */
     private String dedicatedAiClusterId;
-    /**
-     * @return The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-     * 
-     */
     private List<GetModelFineTuneDetailTrainingConfig> trainingConfigs;
-    /**
-     * @return The dataset used to fine-tune the model.
-     * 
-     */
     private List<GetModelFineTuneDetailTrainingDataset> trainingDatasets;
 
     private GetModelFineTuneDetail() {}
-    /**
-     * @return The OCID of the dedicated AI cluster this fine-tuning runs on.
-     * 
-     */
     public String dedicatedAiClusterId() {
         return this.dedicatedAiClusterId;
     }
-    /**
-     * @return The fine-tuning method and hyperparameters used for fine-tuning a custom model.
-     * 
-     */
     public List<GetModelFineTuneDetailTrainingConfig> trainingConfigs() {
         return this.trainingConfigs;
     }
-    /**
-     * @return The dataset used to fine-tune the model.
-     * 
-     */
     public List<GetModelFineTuneDetailTrainingDataset> trainingDatasets() {
         return this.trainingDatasets;
     }

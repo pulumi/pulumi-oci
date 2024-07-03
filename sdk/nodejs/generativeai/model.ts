@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Model resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This resource provides the Model resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Creates a custom model by fine-tuning a base model with your own dataset. You can create a new custom models or create a new version of existing custom model..
  *

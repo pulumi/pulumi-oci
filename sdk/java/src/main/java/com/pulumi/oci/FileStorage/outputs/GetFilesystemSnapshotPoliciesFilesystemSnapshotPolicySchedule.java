@@ -12,22 +12,22 @@ import java.util.Objects;
 @CustomType
 public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule {
     /**
-     * @return The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+     * @return The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     private Integer dayOfMonth;
     /**
-     * @return The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+     * @return The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     private String dayOfWeek;
     /**
-     * @return The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+     * @return The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
      * 
      */
     private Integer hourOfDay;
     /**
-     * @return The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+     * @return The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     private String month;
@@ -59,28 +59,28 @@ public final class GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule
 
     private GetFilesystemSnapshotPoliciesFilesystemSnapshotPolicySchedule() {}
     /**
-     * @return The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+     * @return The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Integer dayOfMonth() {
         return this.dayOfMonth;
     }
     /**
-     * @return The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+     * @return The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public String dayOfWeek() {
         return this.dayOfWeek;
     }
     /**
-     * @return The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+     * @return The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
      * 
      */
     public Integer hourOfDay() {
         return this.hourOfDay;
     }
     /**
-     * @return The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+     * @return The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public String month() {

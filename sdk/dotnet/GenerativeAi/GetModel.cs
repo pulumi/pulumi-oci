@@ -12,7 +12,7 @@ namespace Pulumi.Oci.GenerativeAi
     public static class GetModel
     {
         /// <summary>
-        /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Gets information about a custom model.
         /// 
@@ -38,7 +38,7 @@ namespace Pulumi.Oci.GenerativeAi
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelResult>("oci:GenerativeAi/getModel:getModel", args ?? new GetModelArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Gets information about a custom model.
         /// 
@@ -97,9 +97,6 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetModelResult
     {
-        /// <summary>
-        /// The OCID of the base model that's used for fine-tuning. For pretrained models, the value is null.
-        /// </summary>
         public readonly string BaseModelId;
         /// <summary>
         /// Describes what this model can be used for.
@@ -113,66 +110,33 @@ namespace Pulumi.Oci.GenerativeAi
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
-        /// <summary>
-        /// An optional description of the model.
-        /// </summary>
         public readonly string Description;
-        /// <summary>
-        /// A user-friendly name.
-        /// </summary>
         public readonly string DisplayName;
-        /// <summary>
-        /// Details about fine-tuning a custom model.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelFineTuneDetailResult> FineTuneDetails;
-        /// <summary>
-        /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-        /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
         /// An ID that uniquely identifies a pretrained or fine-tuned model.
         /// </summary>
         public readonly string Id;
-        /// <summary>
-        /// Whether a model is supported long-term. Only applicable to base models.
-        /// </summary>
         public readonly bool IsLongTermSupported;
-        /// <summary>
-        /// A message describing the current state of the model in more detail that can provide actionable information.
-        /// </summary>
         public readonly string LifecycleDetails;
         public readonly string ModelId;
-        /// <summary>
-        /// Model metrics during the creation of a new model.
-        /// </summary>
         public readonly ImmutableArray<Outputs.GetModelModelMetricResult> ModelMetrics;
         /// <summary>
         /// The lifecycle state of the model.
         /// </summary>
         public readonly string State;
-        /// <summary>
-        /// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
-        /// <summary>
-        /// The date and time that the model was created in the format of an RFC3339 datetime string.
-        /// </summary>
         public readonly string TimeCreated;
         /// <summary>
         /// Corresponds to the time when the custom model and its associated foundation model will be deprecated.
         /// </summary>
         public readonly string TimeDeprecated;
-        /// <summary>
-        /// The date and time that the model was updated in the format of an RFC3339 datetime string.
-        /// </summary>
         public readonly string TimeUpdated;
         /// <summary>
         /// The model type indicating whether this is a pretrained/base model or a custom/fine-tuned model.
         /// </summary>
         public readonly string Type;
-        /// <summary>
-        /// The provider of the base model.
-        /// </summary>
         public readonly string Vendor;
         /// <summary>
         /// The version of the model.

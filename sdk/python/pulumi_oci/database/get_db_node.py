@@ -21,7 +21,7 @@ class GetDbNodeResult:
     """
     A collection of values returned by getDbNode.
     """
-    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, vnic2id=None, vnic_id=None):
+    def __init__(__self__, additional_details=None, backup_ip_id=None, backup_vnic2id=None, backup_vnic_id=None, cpu_core_count=None, db_node_id=None, db_node_storage_size_in_gbs=None, db_server_id=None, db_system_id=None, defined_tags=None, fault_domain=None, freeform_tags=None, host_ip_id=None, hostname=None, id=None, lifecycle_details=None, maintenance_type=None, memory_size_in_gbs=None, software_storage_size_in_gb=None, state=None, time_created=None, time_maintenance_window_end=None, time_maintenance_window_start=None, total_cpu_core_count=None, vnic2id=None, vnic_id=None):
         if additional_details and not isinstance(additional_details, str):
             raise TypeError("Expected argument 'additional_details' to be a str")
         pulumi.set(__self__, "additional_details", additional_details)
@@ -91,6 +91,9 @@ class GetDbNodeResult:
         if time_maintenance_window_start and not isinstance(time_maintenance_window_start, str):
             raise TypeError("Expected argument 'time_maintenance_window_start' to be a str")
         pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+        if total_cpu_core_count and not isinstance(total_cpu_core_count, int):
+            raise TypeError("Expected argument 'total_cpu_core_count' to be a int")
+        pulumi.set(__self__, "total_cpu_core_count", total_cpu_core_count)
         if vnic2id and not isinstance(vnic2id, str):
             raise TypeError("Expected argument 'vnic2id' to be a str")
         pulumi.set(__self__, "vnic2id", vnic2id)
@@ -281,6 +284,14 @@ class GetDbNodeResult:
         return pulumi.get(self, "time_maintenance_window_start")
 
     @property
+    @pulumi.getter(name="totalCpuCoreCount")
+    def total_cpu_core_count(self) -> int:
+        """
+        The total number of CPU cores reserved on the Db node.
+        """
+        return pulumi.get(self, "total_cpu_core_count")
+
+    @property
     @pulumi.getter
     def vnic2id(self) -> str:
         """
@@ -326,6 +337,7 @@ class AwaitableGetDbNodeResult(GetDbNodeResult):
             time_created=self.time_created,
             time_maintenance_window_end=self.time_maintenance_window_end,
             time_maintenance_window_start=self.time_maintenance_window_start,
+            total_cpu_core_count=self.total_cpu_core_count,
             vnic2id=self.vnic2id,
             vnic_id=self.vnic_id)
 
@@ -378,6 +390,7 @@ def get_db_node(db_node_id: Optional[str] = None,
         time_created=pulumi.get(__ret__, 'time_created'),
         time_maintenance_window_end=pulumi.get(__ret__, 'time_maintenance_window_end'),
         time_maintenance_window_start=pulumi.get(__ret__, 'time_maintenance_window_start'),
+        total_cpu_core_count=pulumi.get(__ret__, 'total_cpu_core_count'),
         vnic2id=pulumi.get(__ret__, 'vnic2id'),
         vnic_id=pulumi.get(__ret__, 'vnic_id'))
 

@@ -65,9 +65,6 @@ class GetModelsResult:
     @property
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
-        """
-        A user-friendly name.
-        """
         return pulumi.get(self, "display_name")
 
     @property
@@ -102,9 +99,6 @@ class GetModelsResult:
     @property
     @pulumi.getter
     def vendor(self) -> Optional[str]:
-        """
-        The provider of the base model.
-        """
         return pulumi.get(self, "vendor")
 
 
@@ -133,7 +127,7 @@ def get_models(capabilities: Optional[Sequence[str]] = None,
                vendor: Optional[str] = None,
                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetModelsResult:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+    This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
 
     Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
 
@@ -191,7 +185,7 @@ def get_models_output(capabilities: Optional[pulumi.Input[Optional[Sequence[str]
                       vendor: Optional[pulumi.Input[Optional[str]]] = None,
                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetModelsResult]:
     """
-    This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+    This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
 
     Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
 

@@ -6,6 +6,7 @@ package com.pulumi.oci.FileStorage;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -31,6 +32,21 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> availabilityDomain() {
         return this.availabilityDomain;
+    }
+
+    /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value is set to &#39;DETACH&#39;, then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     * 
+     */
+    @Import(name="cloneAttachStatus")
+    private @Nullable Output<String> cloneAttachStatus;
+
+    /**
+     * @return Specifies whether the clone file system is attached to its parent file system. If the value is set to &#39;DETACH&#39;, then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     * 
+     */
+    public Optional<Output<String>> cloneAttachStatus() {
+        return Optional.ofNullable(this.cloneAttachStatus);
     }
 
     /**
@@ -61,6 +77,27 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Map<String,Object>>> definedTags() {
         return Optional.ofNullable(this.definedTags);
+    }
+
+    /**
+     * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Import(name="detachCloneTrigger")
+    private @Nullable Output<Integer> detachCloneTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<Integer>> detachCloneTrigger() {
+        return Optional.ofNullable(this.detachCloneTrigger);
     }
 
     /**
@@ -130,18 +167,12 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="sourceSnapshotId")
     private @Nullable Output<String> sourceSnapshotId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Optional<Output<String>> sourceSnapshotId() {
@@ -152,8 +183,10 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
 
     private FileSystemArgs(FileSystemArgs $) {
         this.availabilityDomain = $.availabilityDomain;
+        this.cloneAttachStatus = $.cloneAttachStatus;
         this.compartmentId = $.compartmentId;
         this.definedTags = $.definedTags;
+        this.detachCloneTrigger = $.detachCloneTrigger;
         this.displayName = $.displayName;
         this.filesystemSnapshotPolicyId = $.filesystemSnapshotPolicyId;
         this.freeformTags = $.freeformTags;
@@ -201,6 +234,27 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param cloneAttachStatus Specifies whether the clone file system is attached to its parent file system. If the value is set to &#39;DETACH&#39;, then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloneAttachStatus(@Nullable Output<String> cloneAttachStatus) {
+            $.cloneAttachStatus = cloneAttachStatus;
+            return this;
+        }
+
+        /**
+         * @param cloneAttachStatus Specifies whether the clone file system is attached to its parent file system. If the value is set to &#39;DETACH&#39;, then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cloneAttachStatus(String cloneAttachStatus) {
+            return cloneAttachStatus(Output.of(cloneAttachStatus));
+        }
+
+        /**
          * @param compartmentId (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
          * 
          * @return builder
@@ -240,6 +294,33 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder definedTags(Map<String,Object> definedTags) {
             return definedTags(Output.of(definedTags));
+        }
+
+        /**
+         * @param detachCloneTrigger (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detachCloneTrigger(@Nullable Output<Integer> detachCloneTrigger) {
+            $.detachCloneTrigger = detachCloneTrigger;
+            return this;
+        }
+
+        /**
+         * @param detachCloneTrigger (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder detachCloneTrigger(Integer detachCloneTrigger) {
+            return detachCloneTrigger(Output.of(detachCloneTrigger));
         }
 
         /**
@@ -333,9 +414,6 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sourceSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -346,9 +424,6 @@ public final class FileSystemArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceSnapshotId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-         * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 

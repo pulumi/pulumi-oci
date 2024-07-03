@@ -19,8 +19,11 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
     public static final ExportState Empty = new ExportState();
 
     /**
-     * (Updatable) Export options for the new export. If left unspecified, defaults to:
+     * (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+     * 
      * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
+     * 
+     * For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
      * 
      * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
      * 
@@ -33,8 +36,11 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<ExportExportOptionArgs>> exportOptions;
 
     /**
-     * @return (Updatable) Export options for the new export. If left unspecified, defaults to:
+     * @return (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+     * 
      * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
+     * 
+     * For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
      * 
      * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
      * 
@@ -182,8 +188,11 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exportOptions (Updatable) Export options for the new export. If left unspecified, defaults to:
+         * @param exportOptions (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+         * 
          * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
+         * 
+         * For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
          * 
          * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
          * 
@@ -200,8 +209,11 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exportOptions (Updatable) Export options for the new export. If left unspecified, defaults to:
+         * @param exportOptions (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+         * 
          * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
+         * 
+         * For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
          * 
          * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
          * 
@@ -217,8 +229,11 @@ public final class ExportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param exportOptions (Updatable) Export options for the new export. If left unspecified, defaults to:
+         * @param exportOptions (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+         * 
          * [ { &#34;source&#34; : &#34;0.0.0.0/0&#34;, &#34;requirePrivilegedSourcePort&#34; : false, &#34;access&#34;: &#34;READ_WRITE&#34;, &#34;identitySquash&#34;: &#34;NONE&#34;, &#34;anonymousUid&#34;: 65534, &#34;anonymousGid&#34;: 65534, &#34;isAnonymousAccessAllowed&#34;: false, &#34;allowedAuth&#34;: [&#34;SYS&#34;] } ]
+         * 
+         * For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
          * 
          * **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
          * 

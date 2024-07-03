@@ -195,6 +195,16 @@ export type ExadataIormConfig = import("./exadataIormConfig").ExadataIormConfig;
 export const ExadataIormConfig: typeof import("./exadataIormConfig").ExadataIormConfig = null as any;
 utilities.lazyLoad(exports, ["ExadataIormConfig"], () => require("./exadataIormConfig"));
 
+export { ExadbVmClusterArgs, ExadbVmClusterState } from "./exadbVmCluster";
+export type ExadbVmCluster = import("./exadbVmCluster").ExadbVmCluster;
+export const ExadbVmCluster: typeof import("./exadbVmCluster").ExadbVmCluster = null as any;
+utilities.lazyLoad(exports, ["ExadbVmCluster"], () => require("./exadbVmCluster"));
+
+export { ExascaleDbStorageVaultArgs, ExascaleDbStorageVaultState } from "./exascaleDbStorageVault";
+export type ExascaleDbStorageVault = import("./exascaleDbStorageVault").ExascaleDbStorageVault;
+export const ExascaleDbStorageVault: typeof import("./exascaleDbStorageVault").ExascaleDbStorageVault = null as any;
+utilities.lazyLoad(exports, ["ExascaleDbStorageVault"], () => require("./exascaleDbStorageVault"));
+
 export { ExternalContainerDatabaseArgs, ExternalContainerDatabaseState } from "./externalContainerDatabase";
 export type ExternalContainerDatabase = import("./externalContainerDatabase").ExternalContainerDatabase;
 export const ExternalContainerDatabase: typeof import("./externalContainerDatabase").ExternalContainerDatabase = null as any;
@@ -700,6 +710,46 @@ export const getExadataIormConfig: typeof import("./getExadataIormConfig").getEx
 export const getExadataIormConfigOutput: typeof import("./getExadataIormConfig").getExadataIormConfigOutput = null as any;
 utilities.lazyLoad(exports, ["getExadataIormConfig","getExadataIormConfigOutput"], () => require("./getExadataIormConfig"));
 
+export { GetExadbVmClusterArgs, GetExadbVmClusterResult, GetExadbVmClusterOutputArgs } from "./getExadbVmCluster";
+export const getExadbVmCluster: typeof import("./getExadbVmCluster").getExadbVmCluster = null as any;
+export const getExadbVmClusterOutput: typeof import("./getExadbVmCluster").getExadbVmClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getExadbVmCluster","getExadbVmClusterOutput"], () => require("./getExadbVmCluster"));
+
+export { GetExadbVmClusterUpdateArgs, GetExadbVmClusterUpdateResult, GetExadbVmClusterUpdateOutputArgs } from "./getExadbVmClusterUpdate";
+export const getExadbVmClusterUpdate: typeof import("./getExadbVmClusterUpdate").getExadbVmClusterUpdate = null as any;
+export const getExadbVmClusterUpdateOutput: typeof import("./getExadbVmClusterUpdate").getExadbVmClusterUpdateOutput = null as any;
+utilities.lazyLoad(exports, ["getExadbVmClusterUpdate","getExadbVmClusterUpdateOutput"], () => require("./getExadbVmClusterUpdate"));
+
+export { GetExadbVmClusterUpdateHistoryEntriesArgs, GetExadbVmClusterUpdateHistoryEntriesResult, GetExadbVmClusterUpdateHistoryEntriesOutputArgs } from "./getExadbVmClusterUpdateHistoryEntries";
+export const getExadbVmClusterUpdateHistoryEntries: typeof import("./getExadbVmClusterUpdateHistoryEntries").getExadbVmClusterUpdateHistoryEntries = null as any;
+export const getExadbVmClusterUpdateHistoryEntriesOutput: typeof import("./getExadbVmClusterUpdateHistoryEntries").getExadbVmClusterUpdateHistoryEntriesOutput = null as any;
+utilities.lazyLoad(exports, ["getExadbVmClusterUpdateHistoryEntries","getExadbVmClusterUpdateHistoryEntriesOutput"], () => require("./getExadbVmClusterUpdateHistoryEntries"));
+
+export { GetExadbVmClusterUpdateHistoryEntryArgs, GetExadbVmClusterUpdateHistoryEntryResult, GetExadbVmClusterUpdateHistoryEntryOutputArgs } from "./getExadbVmClusterUpdateHistoryEntry";
+export const getExadbVmClusterUpdateHistoryEntry: typeof import("./getExadbVmClusterUpdateHistoryEntry").getExadbVmClusterUpdateHistoryEntry = null as any;
+export const getExadbVmClusterUpdateHistoryEntryOutput: typeof import("./getExadbVmClusterUpdateHistoryEntry").getExadbVmClusterUpdateHistoryEntryOutput = null as any;
+utilities.lazyLoad(exports, ["getExadbVmClusterUpdateHistoryEntry","getExadbVmClusterUpdateHistoryEntryOutput"], () => require("./getExadbVmClusterUpdateHistoryEntry"));
+
+export { GetExadbVmClusterUpdatesArgs, GetExadbVmClusterUpdatesResult, GetExadbVmClusterUpdatesOutputArgs } from "./getExadbVmClusterUpdates";
+export const getExadbVmClusterUpdates: typeof import("./getExadbVmClusterUpdates").getExadbVmClusterUpdates = null as any;
+export const getExadbVmClusterUpdatesOutput: typeof import("./getExadbVmClusterUpdates").getExadbVmClusterUpdatesOutput = null as any;
+utilities.lazyLoad(exports, ["getExadbVmClusterUpdates","getExadbVmClusterUpdatesOutput"], () => require("./getExadbVmClusterUpdates"));
+
+export { GetExadbVmClustersArgs, GetExadbVmClustersResult, GetExadbVmClustersOutputArgs } from "./getExadbVmClusters";
+export const getExadbVmClusters: typeof import("./getExadbVmClusters").getExadbVmClusters = null as any;
+export const getExadbVmClustersOutput: typeof import("./getExadbVmClusters").getExadbVmClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getExadbVmClusters","getExadbVmClustersOutput"], () => require("./getExadbVmClusters"));
+
+export { GetExascaleDbStorageVaultArgs, GetExascaleDbStorageVaultResult, GetExascaleDbStorageVaultOutputArgs } from "./getExascaleDbStorageVault";
+export const getExascaleDbStorageVault: typeof import("./getExascaleDbStorageVault").getExascaleDbStorageVault = null as any;
+export const getExascaleDbStorageVaultOutput: typeof import("./getExascaleDbStorageVault").getExascaleDbStorageVaultOutput = null as any;
+utilities.lazyLoad(exports, ["getExascaleDbStorageVault","getExascaleDbStorageVaultOutput"], () => require("./getExascaleDbStorageVault"));
+
+export { GetExascaleDbStorageVaultsArgs, GetExascaleDbStorageVaultsResult, GetExascaleDbStorageVaultsOutputArgs } from "./getExascaleDbStorageVaults";
+export const getExascaleDbStorageVaults: typeof import("./getExascaleDbStorageVaults").getExascaleDbStorageVaults = null as any;
+export const getExascaleDbStorageVaultsOutput: typeof import("./getExascaleDbStorageVaults").getExascaleDbStorageVaultsOutput = null as any;
+utilities.lazyLoad(exports, ["getExascaleDbStorageVaults","getExascaleDbStorageVaultsOutput"], () => require("./getExascaleDbStorageVaults"));
+
 export { GetExternalContainerDatabaseArgs, GetExternalContainerDatabaseResult, GetExternalContainerDatabaseOutputArgs } from "./getExternalContainerDatabase";
 export const getExternalContainerDatabase: typeof import("./getExternalContainerDatabase").getExternalContainerDatabase = null as any;
 export const getExternalContainerDatabaseOutput: typeof import("./getExternalContainerDatabase").getExternalContainerDatabaseOutput = null as any;
@@ -744,6 +794,11 @@ export { GetFlexComponentsArgs, GetFlexComponentsResult, GetFlexComponentsOutput
 export const getFlexComponents: typeof import("./getFlexComponents").getFlexComponents = null as any;
 export const getFlexComponentsOutput: typeof import("./getFlexComponents").getFlexComponentsOutput = null as any;
 utilities.lazyLoad(exports, ["getFlexComponents","getFlexComponentsOutput"], () => require("./getFlexComponents"));
+
+export { GetGiVersionMinorVersionsArgs, GetGiVersionMinorVersionsResult, GetGiVersionMinorVersionsOutputArgs } from "./getGiVersionMinorVersions";
+export const getGiVersionMinorVersions: typeof import("./getGiVersionMinorVersions").getGiVersionMinorVersions = null as any;
+export const getGiVersionMinorVersionsOutput: typeof import("./getGiVersionMinorVersions").getGiVersionMinorVersionsOutput = null as any;
+utilities.lazyLoad(exports, ["getGiVersionMinorVersions","getGiVersionMinorVersionsOutput"], () => require("./getGiVersionMinorVersions"));
 
 export { GetGiVersionsArgs, GetGiVersionsResult, GetGiVersionsOutputArgs } from "./getGiVersions";
 export const getGiVersions: typeof import("./getGiVersions").getGiVersions = null as any;
@@ -1016,6 +1071,10 @@ const _module = {
                 return new ExadataInfrastructureStorage(name, <any>undefined, { urn })
             case "oci:Database/exadataIormConfig:ExadataIormConfig":
                 return new ExadataIormConfig(name, <any>undefined, { urn })
+            case "oci:Database/exadbVmCluster:ExadbVmCluster":
+                return new ExadbVmCluster(name, <any>undefined, { urn })
+            case "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault":
+                return new ExascaleDbStorageVault(name, <any>undefined, { urn })
             case "oci:Database/externalContainerDatabase:ExternalContainerDatabase":
                 return new ExternalContainerDatabase(name, <any>undefined, { urn })
             case "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement":
@@ -1105,6 +1164,8 @@ pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructure", _
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureCompute", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataInfrastructureStorage", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/exadataIormConfig", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/exadbVmCluster", _module)
+pulumi.runtime.registerResourceModule("oci", "Database/exascaleDbStorageVault", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabase", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabaseManagement", _module)
 pulumi.runtime.registerResourceModule("oci", "Database/externalContainerDatabasesStackMonitoring", _module)

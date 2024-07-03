@@ -53,12 +53,28 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
         return Optional.ofNullable(this.filters);
     }
 
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
+     * 
+     */
+    @Import(name="shapeFamily")
+    private @Nullable String shapeFamily;
+
+    /**
+     * @return If provided, filters the results to the set of database versions which are supported for the given shape family.
+     * 
+     */
+    public Optional<String> shapeFamily() {
+        return Optional.ofNullable(this.shapeFamily);
+    }
+
     private GetBackupsPlainArgs() {}
 
     private GetBackupsPlainArgs(GetBackupsPlainArgs $) {
         this.compartmentId = $.compartmentId;
         this.databaseId = $.databaseId;
         this.filters = $.filters;
+        this.shapeFamily = $.shapeFamily;
     }
 
     public static Builder builder() {
@@ -108,6 +124,17 @@ public final class GetBackupsPlainArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder filters(GetBackupsFilter... filters) {
             return filters(List.of(filters));
+        }
+
+        /**
+         * @param shapeFamily If provided, filters the results to the set of database versions which are supported for the given shape family.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shapeFamily(@Nullable String shapeFamily) {
+            $.shapeFamily = shapeFamily;
+            return this;
         }
 
         public GetBackupsPlainArgs build() {

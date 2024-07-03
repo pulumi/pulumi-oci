@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
-    /// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+    /// This resource provides the Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
     /// 
     /// Creates an endpoint.
     /// 

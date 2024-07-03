@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
  *
  * Lists the endpoints of a specific compartment.
  *
@@ -64,13 +64,7 @@ export interface GetEndpointsArgs {
  * A collection of values returned by getEndpoints.
  */
 export interface GetEndpointsResult {
-    /**
-     * The compartment OCID to create the endpoint in.
-     */
     readonly compartmentId: string;
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     */
     readonly displayName?: string;
     /**
      * The list of endpoint_collection.
@@ -87,7 +81,7 @@ export interface GetEndpointsResult {
     readonly state?: string;
 }
 /**
- * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
  *
  * Lists the endpoints of a specific compartment.
  *

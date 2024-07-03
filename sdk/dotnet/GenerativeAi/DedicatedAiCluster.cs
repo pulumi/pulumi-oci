@@ -10,7 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.GenerativeAi
 {
     /// <summary>
-    /// This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+    /// This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
     /// 
     /// Creates a dedicated AI cluster.
     /// 
@@ -143,9 +143,13 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Allowed values are:
         /// * LARGE_COHERE
+        /// * LARGE_COHERE_V2
         /// * SMALL_COHERE
+        /// * SMALL_COHERE_V2
         /// * EMBED_COHERE
         /// * LLAMA2_70
+        /// * LARGE_GENERIC
+        /// * LARGE_COHERE_V2_2
         /// 
         /// 
         /// ** IMPORTANT **
@@ -263,9 +267,13 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Allowed values are:
         /// * LARGE_COHERE
+        /// * LARGE_COHERE_V2
         /// * SMALL_COHERE
+        /// * SMALL_COHERE_V2
         /// * EMBED_COHERE
         /// * LLAMA2_70
+        /// * LARGE_GENERIC
+        /// * LARGE_COHERE_V2_2
         /// 
         /// 
         /// ** IMPORTANT **
@@ -393,9 +401,13 @@ namespace Pulumi.Oci.GenerativeAi
         /// 
         /// Allowed values are:
         /// * LARGE_COHERE
+        /// * LARGE_COHERE_V2
         /// * SMALL_COHERE
+        /// * SMALL_COHERE_V2
         /// * EMBED_COHERE
         /// * LLAMA2_70
+        /// * LARGE_GENERIC
+        /// * LARGE_COHERE_V2_2
         /// 
         /// 
         /// ** IMPORTANT **

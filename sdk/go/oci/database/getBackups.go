@@ -32,6 +32,7 @@ import (
 //			_, err := Database.GetBackups(ctx, &database.GetBackupsArgs{
 //				CompartmentId: pulumi.StringRef(compartmentId),
 //				DatabaseId:    pulumi.StringRef(testDatabase.Id),
+//				ShapeFamily:   pulumi.StringRef(backupShapeFamily),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -58,6 +59,8 @@ type GetBackupsArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId *string            `pulumi:"databaseId"`
 	Filters    []GetBackupsFilter `pulumi:"filters"`
+	// If provided, filters the results to the set of database versions which are supported for the given shape family.
+	ShapeFamily *string `pulumi:"shapeFamily"`
 }
 
 // A collection of values returned by getBackups.
@@ -70,7 +73,8 @@ type GetBackupsResult struct {
 	DatabaseId *string            `pulumi:"databaseId"`
 	Filters    []GetBackupsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
-	Id string `pulumi:"id"`
+	Id          string  `pulumi:"id"`
+	ShapeFamily *string `pulumi:"shapeFamily"`
 }
 
 func GetBackupsOutput(ctx *pulumi.Context, args GetBackupsOutputArgs, opts ...pulumi.InvokeOption) GetBackupsResultOutput {
@@ -93,6 +97,8 @@ type GetBackupsOutputArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringPtrInput      `pulumi:"databaseId"`
 	Filters    GetBackupsFilterArrayInput `pulumi:"filters"`
+	// If provided, filters the results to the set of database versions which are supported for the given shape family.
+	ShapeFamily pulumi.StringPtrInput `pulumi:"shapeFamily"`
 }
 
 func (GetBackupsOutputArgs) ElementType() reflect.Type {
@@ -136,6 +142,10 @@ func (o GetBackupsResultOutput) Filters() GetBackupsFilterArrayOutput {
 // The provider-assigned unique ID for this managed resource.
 func (o GetBackupsResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetBackupsResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+func (o GetBackupsResultOutput) ShapeFamily() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetBackupsResult) *string { return v.ShapeFamily }).(pulumi.StringPtrOutput)
 }
 
 func init() {

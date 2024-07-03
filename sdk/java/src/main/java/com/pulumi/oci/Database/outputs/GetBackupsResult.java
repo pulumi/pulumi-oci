@@ -36,6 +36,7 @@ public final class GetBackupsResult {
      * 
      */
     private String id;
+    private @Nullable String shapeFamily;
 
     private GetBackupsResult() {}
     /**
@@ -69,6 +70,9 @@ public final class GetBackupsResult {
     public String id() {
         return this.id;
     }
+    public Optional<String> shapeFamily() {
+        return Optional.ofNullable(this.shapeFamily);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -84,6 +88,7 @@ public final class GetBackupsResult {
         private @Nullable String databaseId;
         private @Nullable List<GetBackupsFilter> filters;
         private String id;
+        private @Nullable String shapeFamily;
         public Builder() {}
         public Builder(GetBackupsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -92,6 +97,7 @@ public final class GetBackupsResult {
     	      this.databaseId = defaults.databaseId;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
+    	      this.shapeFamily = defaults.shapeFamily;
         }
 
         @CustomType.Setter
@@ -134,6 +140,12 @@ public final class GetBackupsResult {
             this.id = id;
             return this;
         }
+        @CustomType.Setter
+        public Builder shapeFamily(@Nullable String shapeFamily) {
+
+            this.shapeFamily = shapeFamily;
+            return this;
+        }
         public GetBackupsResult build() {
             final var _resultValue = new GetBackupsResult();
             _resultValue.backups = backups;
@@ -141,6 +153,7 @@ public final class GetBackupsResult {
             _resultValue.databaseId = databaseId;
             _resultValue.filters = filters;
             _resultValue.id = id;
+            _resultValue.shapeFamily = shapeFamily;
             return _resultValue;
         }
     }

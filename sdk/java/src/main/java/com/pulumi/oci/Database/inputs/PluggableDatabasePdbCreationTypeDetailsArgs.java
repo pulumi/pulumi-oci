@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.inputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -63,6 +64,21 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
     }
 
     /**
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+     * 
+     */
+    @Import(name="isThinClone")
+    private @Nullable Output<Boolean> isThinClone;
+
+    /**
+     * @return True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+     * 
+     */
+    public Optional<Output<Boolean>> isThinClone() {
+        return Optional.ofNullable(this.isThinClone);
+    }
+
+    /**
      * Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
      * 
      */
@@ -113,6 +129,7 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
         this.creationType = $.creationType;
         this.dblinkUserPassword = $.dblinkUserPassword;
         this.dblinkUsername = $.dblinkUsername;
+        this.isThinClone = $.isThinClone;
         this.refreshableCloneDetails = $.refreshableCloneDetails;
         this.sourceContainerDatabaseAdminPassword = $.sourceContainerDatabaseAdminPassword;
         this.sourcePluggableDatabaseId = $.sourcePluggableDatabaseId;
@@ -197,6 +214,27 @@ public final class PluggableDatabasePdbCreationTypeDetailsArgs extends com.pulum
          */
         public Builder dblinkUsername(String dblinkUsername) {
             return dblinkUsername(Output.of(dblinkUsername));
+        }
+
+        /**
+         * @param isThinClone True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isThinClone(@Nullable Output<Boolean> isThinClone) {
+            $.isThinClone = isThinClone;
+            return this;
+        }
+
+        /**
+         * @param isThinClone True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isThinClone(Boolean isThinClone) {
+            return isThinClone(Output.of(isThinClone));
         }
 
         /**

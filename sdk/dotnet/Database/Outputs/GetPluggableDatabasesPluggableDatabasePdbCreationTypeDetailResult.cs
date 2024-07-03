@@ -16,6 +16,7 @@ namespace Pulumi.Oci.Database.Outputs
         public readonly string CreationType;
         public readonly string DblinkUserPassword;
         public readonly string DblinkUsername;
+        public readonly bool IsThinClone;
         public readonly ImmutableArray<Outputs.GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult> RefreshableCloneDetails;
         public readonly string SourceContainerDatabaseAdminPassword;
         public readonly string SourcePluggableDatabaseId;
@@ -28,6 +29,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string dblinkUsername,
 
+            bool isThinClone,
+
             ImmutableArray<Outputs.GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult> refreshableCloneDetails,
 
             string sourceContainerDatabaseAdminPassword,
@@ -37,6 +40,7 @@ namespace Pulumi.Oci.Database.Outputs
             CreationType = creationType;
             DblinkUserPassword = dblinkUserPassword;
             DblinkUsername = dblinkUsername;
+            IsThinClone = isThinClone;
             RefreshableCloneDetails = refreshableCloneDetails;
             SourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             SourcePluggableDatabaseId = sourcePluggableDatabaseId;

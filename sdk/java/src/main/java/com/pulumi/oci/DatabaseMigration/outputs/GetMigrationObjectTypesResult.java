@@ -14,6 +14,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetMigrationObjectTypesResult {
+    private String connectionType;
     private @Nullable List<GetMigrationObjectTypesFilter> filters;
     /**
      * @return The provider-assigned unique ID for this managed resource.
@@ -27,6 +28,9 @@ public final class GetMigrationObjectTypesResult {
     private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
 
     private GetMigrationObjectTypesResult() {}
+    public String connectionType() {
+        return this.connectionType;
+    }
     public List<GetMigrationObjectTypesFilter> filters() {
         return this.filters == null ? List.of() : this.filters;
     }
@@ -54,17 +58,27 @@ public final class GetMigrationObjectTypesResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private String connectionType;
         private @Nullable List<GetMigrationObjectTypesFilter> filters;
         private String id;
         private List<GetMigrationObjectTypesMigrationObjectTypeSummaryCollection> migrationObjectTypeSummaryCollections;
         public Builder() {}
         public Builder(GetMigrationObjectTypesResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.connectionType = defaults.connectionType;
     	      this.filters = defaults.filters;
     	      this.id = defaults.id;
     	      this.migrationObjectTypeSummaryCollections = defaults.migrationObjectTypeSummaryCollections;
         }
 
+        @CustomType.Setter
+        public Builder connectionType(String connectionType) {
+            if (connectionType == null) {
+              throw new MissingRequiredPropertyException("GetMigrationObjectTypesResult", "connectionType");
+            }
+            this.connectionType = connectionType;
+            return this;
+        }
         @CustomType.Setter
         public Builder filters(@Nullable List<GetMigrationObjectTypesFilter> filters) {
 
@@ -95,6 +109,7 @@ public final class GetMigrationObjectTypesResult {
         }
         public GetMigrationObjectTypesResult build() {
             final var _resultValue = new GetMigrationObjectTypesResult();
+            _resultValue.connectionType = connectionType;
             _resultValue.filters = filters;
             _resultValue.id = id;
             _resultValue.migrationObjectTypeSummaryCollections = migrationObjectTypeSummaryCollections;

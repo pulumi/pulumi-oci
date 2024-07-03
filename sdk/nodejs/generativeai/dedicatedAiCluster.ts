@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Creates a dedicated AI cluster.
  *
@@ -130,9 +130,13 @@ export class DedicatedAiCluster extends pulumi.CustomResource {
      *
      * Allowed values are:
      * * LARGE_COHERE
+     * * LARGE_COHERE_V2
      * * SMALL_COHERE
+     * * SMALL_COHERE_V2
      * * EMBED_COHERE
      * * LLAMA2_70
+     * * LARGE_GENERIC
+     * * LARGE_COHERE_V2_2
      *
      *
      * ** IMPORTANT **
@@ -266,9 +270,13 @@ export interface DedicatedAiClusterState {
      *
      * Allowed values are:
      * * LARGE_COHERE
+     * * LARGE_COHERE_V2
      * * SMALL_COHERE
+     * * SMALL_COHERE_V2
      * * EMBED_COHERE
      * * LLAMA2_70
+     * * LARGE_GENERIC
+     * * LARGE_COHERE_V2_2
      *
      *
      * ** IMPORTANT **
@@ -318,9 +326,13 @@ export interface DedicatedAiClusterArgs {
      *
      * Allowed values are:
      * * LARGE_COHERE
+     * * LARGE_COHERE_V2
      * * SMALL_COHERE
+     * * SMALL_COHERE_V2
      * * EMBED_COHERE
      * * LLAMA2_70
+     * * LARGE_GENERIC
+     * * LARGE_COHERE_V2_2
      *
      *
      * ** IMPORTANT **

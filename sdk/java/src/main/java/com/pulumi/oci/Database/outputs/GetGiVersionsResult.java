@@ -15,6 +15,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetGiVersionsResult {
+    private @Nullable String availabilityDomain;
     private String compartmentId;
     private @Nullable List<GetGiVersionsFilter> filters;
     /**
@@ -30,6 +31,9 @@ public final class GetGiVersionsResult {
     private @Nullable String shape;
 
     private GetGiVersionsResult() {}
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
     public String compartmentId() {
         return this.compartmentId;
     }
@@ -63,6 +67,7 @@ public final class GetGiVersionsResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable String availabilityDomain;
         private String compartmentId;
         private @Nullable List<GetGiVersionsFilter> filters;
         private List<GetGiVersionsGiVersion> giVersions;
@@ -71,6 +76,7 @@ public final class GetGiVersionsResult {
         public Builder() {}
         public Builder(GetGiVersionsResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.availabilityDomain = defaults.availabilityDomain;
     	      this.compartmentId = defaults.compartmentId;
     	      this.filters = defaults.filters;
     	      this.giVersions = defaults.giVersions;
@@ -78,6 +84,12 @@ public final class GetGiVersionsResult {
     	      this.shape = defaults.shape;
         }
 
+        @CustomType.Setter
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
         @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
@@ -122,6 +134,7 @@ public final class GetGiVersionsResult {
         }
         public GetGiVersionsResult build() {
             final var _resultValue = new GetGiVersionsResult();
+            _resultValue.availabilityDomain = availabilityDomain;
             _resultValue.compartmentId = compartmentId;
             _resultValue.filters = filters;
             _resultValue.giVersions = giVersions;

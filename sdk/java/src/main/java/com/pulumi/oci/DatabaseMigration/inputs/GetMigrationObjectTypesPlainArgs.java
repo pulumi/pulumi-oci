@@ -4,7 +4,9 @@
 package com.pulumi.oci.DatabaseMigration.inputs;
 
 import com.pulumi.core.annotations.Import;
+import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.DatabaseMigration.inputs.GetMigrationObjectTypesFilter;
+import java.lang.String;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -14,6 +16,21 @@ import javax.annotation.Nullable;
 public final class GetMigrationObjectTypesPlainArgs extends com.pulumi.resources.InvokeArgs {
 
     public static final GetMigrationObjectTypesPlainArgs Empty = new GetMigrationObjectTypesPlainArgs();
+
+    /**
+     * The connection type for migration objects.
+     * 
+     */
+    @Import(name="connectionType", required=true)
+    private String connectionType;
+
+    /**
+     * @return The connection type for migration objects.
+     * 
+     */
+    public String connectionType() {
+        return this.connectionType;
+    }
 
     @Import(name="filters")
     private @Nullable List<GetMigrationObjectTypesFilter> filters;
@@ -25,6 +42,7 @@ public final class GetMigrationObjectTypesPlainArgs extends com.pulumi.resources
     private GetMigrationObjectTypesPlainArgs() {}
 
     private GetMigrationObjectTypesPlainArgs(GetMigrationObjectTypesPlainArgs $) {
+        this.connectionType = $.connectionType;
         this.filters = $.filters;
     }
 
@@ -46,6 +64,17 @@ public final class GetMigrationObjectTypesPlainArgs extends com.pulumi.resources
             $ = new GetMigrationObjectTypesPlainArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param connectionType The connection type for migration objects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionType(String connectionType) {
+            $.connectionType = connectionType;
+            return this;
+        }
+
         public Builder filters(@Nullable List<GetMigrationObjectTypesFilter> filters) {
             $.filters = filters;
             return this;
@@ -56,6 +85,9 @@ public final class GetMigrationObjectTypesPlainArgs extends com.pulumi.resources
         }
 
         public GetMigrationObjectTypesPlainArgs build() {
+            if ($.connectionType == null) {
+                throw new MissingRequiredPropertyException("GetMigrationObjectTypesPlainArgs", "connectionType");
+            }
             return $;
         }
     }

@@ -188,6 +188,10 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string TimeMaintenanceWindowStart;
         /// <summary>
+        /// The total number of CPU cores reserved on the Db node.
+        /// </summary>
+        public readonly int TotalCpuCoreCount;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         /// </summary>
         public readonly string Vnic2id;
@@ -244,6 +248,8 @@ namespace Pulumi.Oci.Database
 
             string timeMaintenanceWindowStart,
 
+            int totalCpuCoreCount,
+
             string vnic2id,
 
             string vnicId)
@@ -271,6 +277,7 @@ namespace Pulumi.Oci.Database
             TimeCreated = timeCreated;
             TimeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
             TimeMaintenanceWindowStart = timeMaintenanceWindowStart;
+            TotalCpuCoreCount = totalCpuCoreCount;
             Vnic2id = vnic2id;
             VnicId = vnicId;
         }

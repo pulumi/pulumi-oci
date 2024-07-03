@@ -37,6 +37,21 @@ public final class ModelFineTuneDetailsTrainingConfig {
      */
     private @Nullable Integer logModelMetricsIntervalInSteps;
     /**
+     * @return This parameter represents the scaling factor for the weight matrices in LoRA.
+     * 
+     */
+    private @Nullable Integer loraAlpha;
+    /**
+     * @return This parameter indicates the dropout probability for LoRA layers.
+     * 
+     */
+    private @Nullable Double loraDropout;
+    /**
+     * @return This parameter represents the LoRA rank of the update matrices.
+     * 
+     */
+    private @Nullable Integer loraR;
+    /**
      * @return The number of last layers to be fine-tuned.
      * 
      */
@@ -89,6 +104,27 @@ public final class ModelFineTuneDetailsTrainingConfig {
         return Optional.ofNullable(this.logModelMetricsIntervalInSteps);
     }
     /**
+     * @return This parameter represents the scaling factor for the weight matrices in LoRA.
+     * 
+     */
+    public Optional<Integer> loraAlpha() {
+        return Optional.ofNullable(this.loraAlpha);
+    }
+    /**
+     * @return This parameter indicates the dropout probability for LoRA layers.
+     * 
+     */
+    public Optional<Double> loraDropout() {
+        return Optional.ofNullable(this.loraDropout);
+    }
+    /**
+     * @return This parameter represents the LoRA rank of the update matrices.
+     * 
+     */
+    public Optional<Integer> loraR() {
+        return Optional.ofNullable(this.loraR);
+    }
+    /**
      * @return The number of last layers to be fine-tuned.
      * 
      */
@@ -130,6 +166,9 @@ public final class ModelFineTuneDetailsTrainingConfig {
         private @Nullable Double earlyStoppingThreshold;
         private @Nullable Double learningRate;
         private @Nullable Integer logModelMetricsIntervalInSteps;
+        private @Nullable Integer loraAlpha;
+        private @Nullable Double loraDropout;
+        private @Nullable Integer loraR;
         private @Nullable Integer numOfLastLayers;
         private @Nullable Integer totalTrainingEpochs;
         private @Nullable Integer trainingBatchSize;
@@ -141,6 +180,9 @@ public final class ModelFineTuneDetailsTrainingConfig {
     	      this.earlyStoppingThreshold = defaults.earlyStoppingThreshold;
     	      this.learningRate = defaults.learningRate;
     	      this.logModelMetricsIntervalInSteps = defaults.logModelMetricsIntervalInSteps;
+    	      this.loraAlpha = defaults.loraAlpha;
+    	      this.loraDropout = defaults.loraDropout;
+    	      this.loraR = defaults.loraR;
     	      this.numOfLastLayers = defaults.numOfLastLayers;
     	      this.totalTrainingEpochs = defaults.totalTrainingEpochs;
     	      this.trainingBatchSize = defaults.trainingBatchSize;
@@ -169,6 +211,24 @@ public final class ModelFineTuneDetailsTrainingConfig {
         public Builder logModelMetricsIntervalInSteps(@Nullable Integer logModelMetricsIntervalInSteps) {
 
             this.logModelMetricsIntervalInSteps = logModelMetricsIntervalInSteps;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loraAlpha(@Nullable Integer loraAlpha) {
+
+            this.loraAlpha = loraAlpha;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loraDropout(@Nullable Double loraDropout) {
+
+            this.loraDropout = loraDropout;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loraR(@Nullable Integer loraR) {
+
+            this.loraR = loraR;
             return this;
         }
         @CustomType.Setter
@@ -203,6 +263,9 @@ public final class ModelFineTuneDetailsTrainingConfig {
             _resultValue.earlyStoppingThreshold = earlyStoppingThreshold;
             _resultValue.learningRate = learningRate;
             _resultValue.logModelMetricsIntervalInSteps = logModelMetricsIntervalInSteps;
+            _resultValue.loraAlpha = loraAlpha;
+            _resultValue.loraDropout = loraDropout;
+            _resultValue.loraR = loraR;
             _resultValue.numOfLastLayers = numOfLastLayers;
             _resultValue.totalTrainingEpochs = totalTrainingEpochs;
             _resultValue.trainingBatchSize = trainingBatchSize;

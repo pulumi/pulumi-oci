@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Gets information about a dedicated AI cluster.
  *
@@ -44,70 +44,25 @@ export interface GetDedicatedAiClusterArgs {
  * A collection of values returned by getDedicatedAiCluster.
  */
 export interface GetDedicatedAiClusterResult {
-    /**
-     * The total capacity for a dedicated AI cluster.
-     */
     readonly capacities: outputs.GenerativeAi.GetDedicatedAiClusterCapacity[];
-    /**
-     * The compartment OCID to create the dedicated AI cluster in.
-     */
     readonly compartmentId: string;
     readonly dedicatedAiClusterId: string;
-    /**
-     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-     */
     readonly definedTags: {[key: string]: any};
-    /**
-     * An optional description of the dedicated AI cluster.
-     */
     readonly description: string;
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     */
     readonly displayName: string;
-    /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     */
     readonly freeformTags: {[key: string]: any};
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated AI cluster.
-     */
     readonly id: string;
-    /**
-     * A message describing the current state with detail that can provide actionable information.
-     */
     readonly lifecycleDetails: string;
-    /**
-     * The current state of the dedicated AI cluster.
-     */
     readonly state: string;
-    /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-     */
     readonly systemTags: {[key: string]: any};
-    /**
-     * The date and time the dedicated AI cluster was created, in the format defined by RFC 3339
-     */
     readonly timeCreated: string;
-    /**
-     * The date and time the dedicated AI cluster was updated, in the format defined by RFC 3339
-     */
     readonly timeUpdated: string;
-    /**
-     * The dedicated AI cluster type indicating whether this is a fine-tuning/training processor or hosting/inference processor.
-     */
     readonly type: string;
-    /**
-     * The number of dedicated units in this AI cluster.
-     */
     readonly unitCount: number;
-    /**
-     * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is hidden from customers.
-     */
     readonly unitShape: string;
 }
 /**
- * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Gets information about a dedicated AI cluster.
  *

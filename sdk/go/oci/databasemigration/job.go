@@ -12,9 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
-//
-// Update Migration Job resource details.
+// ## Example Usage
 //
 // ## Import
 //
@@ -30,7 +28,7 @@ type Job struct {
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Name of the job.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// The OCID of the job
 	//
@@ -94,7 +92,7 @@ type jobState struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Name of the job.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the job
 	//
@@ -126,7 +124,7 @@ type JobState struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Name of the job.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags pulumi.MapInput
 	// The OCID of the job
 	//
@@ -162,7 +160,7 @@ type jobArgs struct {
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Name of the job.
 	DisplayName *string `pulumi:"displayName"`
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the job
 	//
@@ -177,7 +175,7 @@ type JobArgs struct {
 	DefinedTags pulumi.MapInput
 	// (Updatable) Name of the job.
 	DisplayName pulumi.StringPtrInput
-	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 	FreeformTags pulumi.MapInput
 	// The OCID of the job
 	//
@@ -283,7 +281,7 @@ func (o JobOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Job) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
 
-// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
 func (o JobOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Job) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }

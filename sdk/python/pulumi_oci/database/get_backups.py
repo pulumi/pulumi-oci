@@ -23,7 +23,7 @@ class GetBackupsResult:
     """
     A collection of values returned by getBackups.
     """
-    def __init__(__self__, backups=None, compartment_id=None, database_id=None, filters=None, id=None):
+    def __init__(__self__, backups=None, compartment_id=None, database_id=None, filters=None, id=None, shape_family=None):
         if backups and not isinstance(backups, list):
             raise TypeError("Expected argument 'backups' to be a list")
         pulumi.set(__self__, "backups", backups)
@@ -39,6 +39,9 @@ class GetBackupsResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if shape_family and not isinstance(shape_family, str):
+            raise TypeError("Expected argument 'shape_family' to be a str")
+        pulumi.set(__self__, "shape_family", shape_family)
 
     @property
     @pulumi.getter
@@ -77,6 +80,11 @@ class GetBackupsResult:
         """
         return pulumi.get(self, "id")
 
+    @property
+    @pulumi.getter(name="shapeFamily")
+    def shape_family(self) -> Optional[str]:
+        return pulumi.get(self, "shape_family")
+
 
 class AwaitableGetBackupsResult(GetBackupsResult):
     # pylint: disable=using-constant-test
@@ -88,12 +96,14 @@ class AwaitableGetBackupsResult(GetBackupsResult):
             compartment_id=self.compartment_id,
             database_id=self.database_id,
             filters=self.filters,
-            id=self.id)
+            id=self.id,
+            shape_family=self.shape_family)
 
 
 def get_backups(compartment_id: Optional[str] = None,
                 database_id: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetBackupsFilterArgs']]] = None,
+                shape_family: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetBackupsResult:
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -107,17 +117,20 @@ def get_backups(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_backups = oci.Database.get_backups(compartment_id=compartment_id,
-        database_id=test_database["id"])
+        database_id=test_database["id"],
+        shape_family=backup_shape_family)
     ```
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    :param str shape_family: If provided, filters the results to the set of database versions which are supported for the given shape family.
     """
     __args__ = dict()
     __args__['compartmentId'] = compartment_id
     __args__['databaseId'] = database_id
     __args__['filters'] = filters
+    __args__['shapeFamily'] = shape_family
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:Database/getBackups:getBackups', __args__, opts=opts, typ=GetBackupsResult).value
 
@@ -126,13 +139,15 @@ def get_backups(compartment_id: Optional[str] = None,
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         database_id=pulumi.get(__ret__, 'database_id'),
         filters=pulumi.get(__ret__, 'filters'),
-        id=pulumi.get(__ret__, 'id'))
+        id=pulumi.get(__ret__, 'id'),
+        shape_family=pulumi.get(__ret__, 'shape_family'))
 
 
 @_utilities.lift_output_func(get_backups)
 def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = None,
                        database_id: Optional[pulumi.Input[Optional[str]]] = None,
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetBackupsFilterArgs']]]]] = None,
+                       shape_family: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetBackupsResult]:
     """
     This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -146,11 +161,13 @@ def get_backups_output(compartment_id: Optional[pulumi.Input[Optional[str]]] = N
     import pulumi_oci as oci
 
     test_backups = oci.Database.get_backups(compartment_id=compartment_id,
-        database_id=test_database["id"])
+        database_id=test_database["id"],
+        shape_family=backup_shape_family)
     ```
 
 
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
+    :param str shape_family: If provided, filters the results to the set of database versions which are supported for the given shape family.
     """
     ...

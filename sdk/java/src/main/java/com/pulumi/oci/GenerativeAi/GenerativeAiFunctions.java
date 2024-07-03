@@ -30,7 +30,7 @@ import java.util.concurrent.CompletableFuture;
 
 public final class GenerativeAiFunctions {
     /**
-     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a dedicated AI cluster.
      * 
@@ -74,7 +74,7 @@ public final class GenerativeAiFunctions {
         return getDedicatedAiCluster(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a dedicated AI cluster.
      * 
@@ -118,7 +118,7 @@ public final class GenerativeAiFunctions {
         return getDedicatedAiClusterPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a dedicated AI cluster.
      * 
@@ -162,7 +162,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invoke("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", TypeShape.of(GetDedicatedAiClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a dedicated AI cluster.
      * 
@@ -206,7 +206,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getDedicatedAiCluster:getDedicatedAiCluster", TypeShape.of(GetDedicatedAiClusterResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the dedicated AI clusters in a specific compartment.
      * 
@@ -253,7 +253,7 @@ public final class GenerativeAiFunctions {
         return getDedicatedAiClusters(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the dedicated AI clusters in a specific compartment.
      * 
@@ -300,7 +300,7 @@ public final class GenerativeAiFunctions {
         return getDedicatedAiClustersPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the dedicated AI clusters in a specific compartment.
      * 
@@ -347,7 +347,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invoke("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", TypeShape.of(GetDedicatedAiClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Dedicated Ai Clusters in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the dedicated AI clusters in a specific compartment.
      * 
@@ -394,7 +394,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getDedicatedAiClusters:getDedicatedAiClusters", TypeShape.of(GetDedicatedAiClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about an endpoint.
      * 
@@ -438,7 +438,7 @@ public final class GenerativeAiFunctions {
         return getEndpoint(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about an endpoint.
      * 
@@ -482,7 +482,7 @@ public final class GenerativeAiFunctions {
         return getEndpointPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about an endpoint.
      * 
@@ -526,7 +526,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invoke("oci:GenerativeAi/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about an endpoint.
      * 
@@ -570,7 +570,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getEndpoint:getEndpoint", TypeShape.of(GetEndpointResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the endpoints of a specific compartment.
      * 
@@ -617,7 +617,7 @@ public final class GenerativeAiFunctions {
         return getEndpoints(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the endpoints of a specific compartment.
      * 
@@ -664,7 +664,7 @@ public final class GenerativeAiFunctions {
         return getEndpointsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the endpoints of a specific compartment.
      * 
@@ -711,7 +711,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invoke("oci:GenerativeAi/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the endpoints of a specific compartment.
      * 
@@ -758,7 +758,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getEndpoints:getEndpoints", TypeShape.of(GetEndpointsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a custom model.
      * 
@@ -802,7 +802,7 @@ public final class GenerativeAiFunctions {
         return getModel(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a custom model.
      * 
@@ -846,7 +846,7 @@ public final class GenerativeAiFunctions {
         return getModelPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a custom model.
      * 
@@ -890,7 +890,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invoke("oci:GenerativeAi/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides details about a specific Model resource in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Gets information about a custom model.
      * 
@@ -934,7 +934,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invokeAsync("oci:GenerativeAi/getModel:getModel", TypeShape.of(GetModelResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
@@ -983,7 +983,7 @@ public final class GenerativeAiFunctions {
         return getModels(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
@@ -1032,7 +1032,7 @@ public final class GenerativeAiFunctions {
         return getModelsPlain(args, InvokeOptions.Empty);
     }
     /**
-     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 
@@ -1081,7 +1081,7 @@ public final class GenerativeAiFunctions {
         return Deployment.getInstance().invoke("oci:GenerativeAi/getModels:getModels", TypeShape.of(GetModelsResult.class), args, Utilities.withVersion(options));
     }
     /**
-     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+     * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
      * 
      * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
      * 

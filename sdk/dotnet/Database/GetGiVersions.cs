@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+        /// Gets a list of supported GI versions.
         /// 
         /// ## Example Usage
         /// 
@@ -29,6 +29,7 @@ namespace Pulumi.Oci.Database
         ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = giVersionAvailabilityDomain,
         ///         Shape = giVersionShape,
         ///     });
         /// 
@@ -41,7 +42,7 @@ namespace Pulumi.Oci.Database
         /// <summary>
         /// This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
         /// 
-        /// Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+        /// Gets a list of supported GI versions.
         /// 
         /// ## Example Usage
         /// 
@@ -56,6 +57,7 @@ namespace Pulumi.Oci.Database
         ///     var testGiVersions = Oci.Database.GetGiVersions.Invoke(new()
         ///     {
         ///         CompartmentId = compartmentId,
+        ///         AvailabilityDomain = giVersionAvailabilityDomain,
         ///         Shape = giVersionShape,
         ///     });
         /// 
@@ -69,6 +71,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetGiVersionsArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The target availability domain. Only passed if the limit is AD-specific.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public string? AvailabilityDomain { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -97,6 +105,12 @@ namespace Pulumi.Oci.Database
 
     public sealed class GetGiVersionsInvokeArgs : global::Pulumi.InvokeArgs
     {
+        /// <summary>
+        /// The target availability domain. Only passed if the limit is AD-specific.
+        /// </summary>
+        [Input("availabilityDomain")]
+        public Input<string>? AvailabilityDomain { get; set; }
+
         /// <summary>
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
@@ -127,6 +141,7 @@ namespace Pulumi.Oci.Database
     [OutputType]
     public sealed class GetGiVersionsResult
     {
+        public readonly string? AvailabilityDomain;
         public readonly string CompartmentId;
         public readonly ImmutableArray<Outputs.GetGiVersionsFilterResult> Filters;
         /// <summary>
@@ -141,6 +156,8 @@ namespace Pulumi.Oci.Database
 
         [OutputConstructor]
         private GetGiVersionsResult(
+            string? availabilityDomain,
+
             string compartmentId,
 
             ImmutableArray<Outputs.GetGiVersionsFilterResult> filters,
@@ -151,6 +168,7 @@ namespace Pulumi.Oci.Database
 
             string? shape)
         {
+            AvailabilityDomain = availabilityDomain;
             CompartmentId = compartmentId;
             Filters = filters;
             GiVersions = giVersions;

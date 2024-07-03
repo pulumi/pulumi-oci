@@ -15,15 +15,7 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class GetEndpointsResult {
-    /**
-     * @return The compartment OCID to create the endpoint in.
-     * 
-     */
     private String compartmentId;
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     private @Nullable String displayName;
     /**
      * @return The list of endpoint_collection.
@@ -43,17 +35,9 @@ public final class GetEndpointsResult {
     private @Nullable String state;
 
     private GetEndpointsResult() {}
-    /**
-     * @return The compartment OCID to create the endpoint in.
-     * 
-     */
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return A user-friendly name. Does not have to be unique, and it&#39;s changeable.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }

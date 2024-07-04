@@ -40,12 +40,12 @@ public final class GetJobAdvisorReportResult {
      */
     private Integer numberOfWarnings;
     /**
-     * @return Details to access Pre-Migration Advisor report.
+     * @return Details to access Premigration Advisor report.
      * 
      */
     private List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails;
     /**
-     * @return Pre-Migration advisor result.
+     * @return Premigration Advisor result.
      * 
      */
     private String result;
@@ -90,14 +90,14 @@ public final class GetJobAdvisorReportResult {
         return this.numberOfWarnings;
     }
     /**
-     * @return Details to access Pre-Migration Advisor report.
+     * @return Details to access Premigration Advisor report.
      * 
      */
     public List<GetJobAdvisorReportReportLocationDetail> reportLocationDetails() {
         return this.reportLocationDetails;
     }
     /**
-     * @return Pre-Migration advisor result.
+     * @return Premigration Advisor result.
      * 
      */
     public String result() {

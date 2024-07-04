@@ -56,6 +56,7 @@ namespace Pulumi.Oci.FileStorage
     ///     {
     ///         AvailabilityDomain = fileSystemAvailabilityDomain,
     ///         CompartmentId = compartmentId,
+    ///         CloneAttachStatus = fileSystemCloneAttachStatus,
     ///         DefinedTags = 
     ///         {
     ///             { "Operations.CostCenter", "42" },
@@ -91,6 +92,18 @@ namespace Pulumi.Oci.FileStorage
         public Output<string> AvailabilityDomain { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+        /// </summary>
+        [Output("cloneAttachStatus")]
+        public Output<string> CloneAttachStatus { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies the total number of children of a file system.
+        /// </summary>
+        [Output("cloneCount")]
+        public Output<int> CloneCount { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         /// </summary>
         [Output("compartmentId")]
@@ -101,6 +114,16 @@ namespace Pulumi.Oci.FileStorage
         /// </summary>
         [Output("definedTags")]
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("detachCloneTrigger")]
+        public Output<int?> DetachCloneTrigger { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
@@ -171,11 +194,7 @@ namespace Pulumi.Oci.FileStorage
         public Output<ImmutableArray<Outputs.FileSystemSourceDetail>> SourceDetails { get; private set; } = null!;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Output("sourceSnapshotId")]
         public Output<string> SourceSnapshotId { get; private set; } = null!;
@@ -245,6 +264,12 @@ namespace Pulumi.Oci.FileStorage
         public Input<string> AvailabilityDomain { get; set; } = null!;
 
         /// <summary>
+        /// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+        /// </summary>
+        [Input("cloneAttachStatus")]
+        public Input<string>? CloneAttachStatus { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         /// </summary>
         [Input("compartmentId", required: true)]
@@ -261,6 +286,16 @@ namespace Pulumi.Oci.FileStorage
             get => _definedTags ?? (_definedTags = new InputMap<object>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("detachCloneTrigger")]
+        public Input<int>? DetachCloneTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
@@ -295,11 +330,7 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? KmsKeyId { get; set; }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Input("sourceSnapshotId")]
         public Input<string>? SourceSnapshotId { get; set; }
@@ -319,6 +350,18 @@ namespace Pulumi.Oci.FileStorage
         public Input<string>? AvailabilityDomain { get; set; }
 
         /// <summary>
+        /// Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+        /// </summary>
+        [Input("cloneAttachStatus")]
+        public Input<string>? CloneAttachStatus { get; set; }
+
+        /// <summary>
+        /// Specifies the total number of children of a file system.
+        /// </summary>
+        [Input("cloneCount")]
+        public Input<int>? CloneCount { get; set; }
+
+        /// <summary>
         /// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
         /// </summary>
         [Input("compartmentId")]
@@ -335,6 +378,16 @@ namespace Pulumi.Oci.FileStorage
             get => _definedTags ?? (_definedTags = new InputMap<object>());
             set => _definedTags = value;
         }
+
+        /// <summary>
+        /// (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("detachCloneTrigger")]
+        public Input<int>? DetachCloneTrigger { get; set; }
 
         /// <summary>
         /// (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
@@ -417,11 +470,7 @@ namespace Pulumi.Oci.FileStorage
         }
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         /// </summary>
         [Input("sourceSnapshotId")]
         public Input<string>? SourceSnapshotId { get; set; }

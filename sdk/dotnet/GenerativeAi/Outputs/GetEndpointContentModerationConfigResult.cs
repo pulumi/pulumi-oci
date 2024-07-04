@@ -13,9 +13,6 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
     [OutputType]
     public sealed class GetEndpointContentModerationConfigResult
     {
-        /// <summary>
-        /// Whether to enable the content moderation feature.
-        /// </summary>
         public readonly bool IsEnabled;
 
         [OutputConstructor]

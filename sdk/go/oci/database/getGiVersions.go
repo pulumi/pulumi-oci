@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
 //
-// Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+// Gets a list of supported GI versions.
 //
 // ## Example Usage
 //
@@ -30,8 +30,9 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := Database.GetGiVersions(ctx, &database.GetGiVersionsArgs{
-//				CompartmentId: compartmentId,
-//				Shape:         pulumi.StringRef(giVersionShape),
+//				CompartmentId:      compartmentId,
+//				AvailabilityDomain: pulumi.StringRef(giVersionAvailabilityDomain),
+//				Shape:              pulumi.StringRef(giVersionShape),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -53,6 +54,8 @@ func GetGiVersions(ctx *pulumi.Context, args *GetGiVersionsArgs, opts ...pulumi.
 
 // A collection of arguments for invoking getGiVersions.
 type GetGiVersionsArgs struct {
+	// The target availability domain. Only passed if the limit is AD-specific.
+	AvailabilityDomain *string `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId string                `pulumi:"compartmentId"`
 	Filters       []GetGiVersionsFilter `pulumi:"filters"`
@@ -62,8 +65,9 @@ type GetGiVersionsArgs struct {
 
 // A collection of values returned by getGiVersions.
 type GetGiVersionsResult struct {
-	CompartmentId string                `pulumi:"compartmentId"`
-	Filters       []GetGiVersionsFilter `pulumi:"filters"`
+	AvailabilityDomain *string               `pulumi:"availabilityDomain"`
+	CompartmentId      string                `pulumi:"compartmentId"`
+	Filters            []GetGiVersionsFilter `pulumi:"filters"`
 	// The list of gi_versions.
 	GiVersions []GetGiVersionsGiVersion `pulumi:"giVersions"`
 	// The provider-assigned unique ID for this managed resource.
@@ -86,6 +90,8 @@ func GetGiVersionsOutput(ctx *pulumi.Context, args GetGiVersionsOutputArgs, opts
 
 // A collection of arguments for invoking getGiVersions.
 type GetGiVersionsOutputArgs struct {
+	// The target availability domain. Only passed if the limit is AD-specific.
+	AvailabilityDomain pulumi.StringPtrInput `pulumi:"availabilityDomain"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	CompartmentId pulumi.StringInput            `pulumi:"compartmentId"`
 	Filters       GetGiVersionsFilterArrayInput `pulumi:"filters"`
@@ -110,6 +116,10 @@ func (o GetGiVersionsResultOutput) ToGetGiVersionsResultOutput() GetGiVersionsRe
 
 func (o GetGiVersionsResultOutput) ToGetGiVersionsResultOutputWithContext(ctx context.Context) GetGiVersionsResultOutput {
 	return o
+}
+
+func (o GetGiVersionsResultOutput) AvailabilityDomain() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetGiVersionsResult) *string { return v.AvailabilityDomain }).(pulumi.StringPtrOutput)
 }
 
 func (o GetGiVersionsResultOutput) CompartmentId() pulumi.StringOutput {

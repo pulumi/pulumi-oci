@@ -172,11 +172,7 @@ class FileSystemSourceDetailArgs:
                  source_snapshot_id: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input[str] parent_file_system_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the file system that contains the source snapshot of a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[str] source_snapshot_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         if parent_file_system_id is not None:
             pulumi.set(__self__, "parent_file_system_id", parent_file_system_id)
@@ -199,11 +195,7 @@ class FileSystemSourceDetailArgs:
     @pulumi.getter(name="sourceSnapshotId")
     def source_snapshot_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
         """
         return pulumi.get(self, "source_snapshot_id")
 
@@ -227,10 +219,10 @@ class FilesystemSnapshotPolicyScheduleArgs:
         """
         :param pulumi.Input[str] period: (Updatable) The frequency of scheduled snapshots.
         :param pulumi.Input[str] time_zone: (Updatable) Time zone used for scheduling the snapshot.
-        :param pulumi.Input[int] day_of_month: (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
-        :param pulumi.Input[str] day_of_week: (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
-        :param pulumi.Input[int] hour_of_day: (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
-        :param pulumi.Input[str] month: (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        :param pulumi.Input[int] day_of_month: (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
+        :param pulumi.Input[str] day_of_week: (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
+        :param pulumi.Input[int] hour_of_day: (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
+        :param pulumi.Input[str] month: (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         :param pulumi.Input[str] retention_duration_in_seconds: (Updatable) The number of seconds to retain snapshots created with this schedule. Snapshot expiration time will not be set if this value is empty.
         :param pulumi.Input[str] schedule_prefix: (Updatable) A name prefix to be applied to snapshots created by this schedule.  Example: `compliance1`
         :param pulumi.Input[str] time_schedule_start: (Updatable) The starting point used to begin the scheduling of the snapshots based upon recurrence string in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. If no `timeScheduleStart` is provided, the value will be set to the time when the schedule was created.
@@ -280,7 +272,7 @@ class FilesystemSnapshotPolicyScheduleArgs:
     @pulumi.getter(name="dayOfMonth")
     def day_of_month(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+        (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "day_of_month")
 
@@ -292,7 +284,7 @@ class FilesystemSnapshotPolicyScheduleArgs:
     @pulumi.getter(name="dayOfWeek")
     def day_of_week(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+        (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "day_of_week")
 
@@ -304,7 +296,7 @@ class FilesystemSnapshotPolicyScheduleArgs:
     @pulumi.getter(name="hourOfDay")
     def hour_of_day(self) -> Optional[pulumi.Input[int]]:
         """
-        (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+        (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "hour_of_day")
 
@@ -316,7 +308,7 @@ class FilesystemSnapshotPolicyScheduleArgs:
     @pulumi.getter
     def month(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+        (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
         """
         return pulumi.get(self, "month")
 

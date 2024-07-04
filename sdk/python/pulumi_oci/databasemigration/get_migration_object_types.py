@@ -23,7 +23,10 @@ class GetMigrationObjectTypesResult:
     """
     A collection of values returned by getMigrationObjectTypes.
     """
-    def __init__(__self__, filters=None, id=None, migration_object_type_summary_collections=None):
+    def __init__(__self__, connection_type=None, filters=None, id=None, migration_object_type_summary_collections=None):
+        if connection_type and not isinstance(connection_type, str):
+            raise TypeError("Expected argument 'connection_type' to be a str")
+        pulumi.set(__self__, "connection_type", connection_type)
         if filters and not isinstance(filters, list):
             raise TypeError("Expected argument 'filters' to be a list")
         pulumi.set(__self__, "filters", filters)
@@ -33,6 +36,11 @@ class GetMigrationObjectTypesResult:
         if migration_object_type_summary_collections and not isinstance(migration_object_type_summary_collections, list):
             raise TypeError("Expected argument 'migration_object_type_summary_collections' to be a list")
         pulumi.set(__self__, "migration_object_type_summary_collections", migration_object_type_summary_collections)
+
+    @property
+    @pulumi.getter(name="connectionType")
+    def connection_type(self) -> str:
+        return pulumi.get(self, "connection_type")
 
     @property
     @pulumi.getter
@@ -62,53 +70,56 @@ class AwaitableGetMigrationObjectTypesResult(GetMigrationObjectTypesResult):
         if False:
             yield self
         return GetMigrationObjectTypesResult(
+            connection_type=self.connection_type,
             filters=self.filters,
             id=self.id,
             migration_object_type_summary_collections=self.migration_object_type_summary_collections)
 
 
-def get_migration_object_types(filters: Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]] = None,
+def get_migration_object_types(connection_type: Optional[str] = None,
+                               filters: Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]] = None,
                                opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetMigrationObjectTypesResult:
     """
-    This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-
-    Display sample object types to exclude or include for a Migration.
-
     ## Example Usage
 
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types()
+    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types(connection_type=migration_object_type_connection_type)
     ```
+
+
+    :param str connection_type: The connection type for migration objects.
     """
     __args__ = dict()
+    __args__['connectionType'] = connection_type
     __args__['filters'] = filters
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes', __args__, opts=opts, typ=GetMigrationObjectTypesResult).value
 
     return AwaitableGetMigrationObjectTypesResult(
+        connection_type=pulumi.get(__ret__, 'connection_type'),
         filters=pulumi.get(__ret__, 'filters'),
         id=pulumi.get(__ret__, 'id'),
         migration_object_type_summary_collections=pulumi.get(__ret__, 'migration_object_type_summary_collections'))
 
 
 @_utilities.lift_output_func(get_migration_object_types)
-def get_migration_object_types_output(filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]]]] = None,
+def get_migration_object_types_output(connection_type: Optional[pulumi.Input[str]] = None,
+                                      filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetMigrationObjectTypesFilterArgs']]]]] = None,
                                       opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetMigrationObjectTypesResult]:
     """
-    This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
-
-    Display sample object types to exclude or include for a Migration.
-
     ## Example Usage
 
     ```python
     import pulumi
     import pulumi_oci as oci
 
-    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types()
+    test_migration_object_types = oci.DatabaseMigration.get_migration_object_types(connection_type=migration_object_type_connection_type)
     ```
+
+
+    :param str connection_type: The connection type for migration objects.
     """
     ...

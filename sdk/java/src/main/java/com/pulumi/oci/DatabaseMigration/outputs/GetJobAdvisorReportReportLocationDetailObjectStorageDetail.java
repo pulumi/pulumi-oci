@@ -11,7 +11,7 @@ import java.util.Objects;
 @CustomType
 public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
     /**
-     * @return Name of the bucket containing the Pre-Migration Advisor report.
+     * @return Name of the bucket containing the Premigration Advisor report.
      * 
      */
     private String bucket;
@@ -21,14 +21,14 @@ public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
      */
     private String namespace;
     /**
-     * @return Pre-Migration Advisor report object name.
+     * @return Premigration Advisor report object name.
      * 
      */
     private String object;
 
     private GetJobAdvisorReportReportLocationDetailObjectStorageDetail() {}
     /**
-     * @return Name of the bucket containing the Pre-Migration Advisor report.
+     * @return Name of the bucket containing the Premigration Advisor report.
      * 
      */
     public String bucket() {
@@ -42,7 +42,7 @@ public final class GetJobAdvisorReportReportLocationDetailObjectStorageDetail {
         return this.namespace;
     }
     /**
-     * @return Pre-Migration Advisor report object name.
+     * @return Premigration Advisor report object name.
      * 
      */
     public String object() {

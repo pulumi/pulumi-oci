@@ -21,10 +21,6 @@ public final class GetModelsResult {
      * 
      */
     private String compartmentId;
-    /**
-     * @return A user-friendly name.
-     * 
-     */
     private @Nullable String displayName;
     private @Nullable List<GetModelsFilter> filters;
     /**
@@ -42,10 +38,6 @@ public final class GetModelsResult {
      * 
      */
     private @Nullable String state;
-    /**
-     * @return The provider of the base model.
-     * 
-     */
     private @Nullable String vendor;
 
     private GetModelsResult() {}
@@ -59,10 +51,6 @@ public final class GetModelsResult {
     public String compartmentId() {
         return this.compartmentId;
     }
-    /**
-     * @return A user-friendly name.
-     * 
-     */
     public Optional<String> displayName() {
         return Optional.ofNullable(this.displayName);
     }
@@ -90,10 +78,6 @@ public final class GetModelsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
-    /**
-     * @return The provider of the base model.
-     * 
-     */
     public Optional<String> vendor() {
         return Optional.ofNullable(this.vendor);
     }

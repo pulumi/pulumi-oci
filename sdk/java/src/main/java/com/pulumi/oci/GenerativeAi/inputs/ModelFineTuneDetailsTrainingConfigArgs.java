@@ -83,6 +83,51 @@ public final class ModelFineTuneDetailsTrainingConfigArgs extends com.pulumi.res
     }
 
     /**
+     * This parameter represents the scaling factor for the weight matrices in LoRA.
+     * 
+     */
+    @Import(name="loraAlpha")
+    private @Nullable Output<Integer> loraAlpha;
+
+    /**
+     * @return This parameter represents the scaling factor for the weight matrices in LoRA.
+     * 
+     */
+    public Optional<Output<Integer>> loraAlpha() {
+        return Optional.ofNullable(this.loraAlpha);
+    }
+
+    /**
+     * This parameter indicates the dropout probability for LoRA layers.
+     * 
+     */
+    @Import(name="loraDropout")
+    private @Nullable Output<Double> loraDropout;
+
+    /**
+     * @return This parameter indicates the dropout probability for LoRA layers.
+     * 
+     */
+    public Optional<Output<Double>> loraDropout() {
+        return Optional.ofNullable(this.loraDropout);
+    }
+
+    /**
+     * This parameter represents the LoRA rank of the update matrices.
+     * 
+     */
+    @Import(name="loraR")
+    private @Nullable Output<Integer> loraR;
+
+    /**
+     * @return This parameter represents the LoRA rank of the update matrices.
+     * 
+     */
+    public Optional<Output<Integer>> loraR() {
+        return Optional.ofNullable(this.loraR);
+    }
+
+    /**
      * The number of last layers to be fine-tuned.
      * 
      */
@@ -149,6 +194,9 @@ public final class ModelFineTuneDetailsTrainingConfigArgs extends com.pulumi.res
         this.earlyStoppingThreshold = $.earlyStoppingThreshold;
         this.learningRate = $.learningRate;
         this.logModelMetricsIntervalInSteps = $.logModelMetricsIntervalInSteps;
+        this.loraAlpha = $.loraAlpha;
+        this.loraDropout = $.loraDropout;
+        this.loraR = $.loraR;
         this.numOfLastLayers = $.numOfLastLayers;
         this.totalTrainingEpochs = $.totalTrainingEpochs;
         this.trainingBatchSize = $.trainingBatchSize;
@@ -259,6 +307,69 @@ public final class ModelFineTuneDetailsTrainingConfigArgs extends com.pulumi.res
          */
         public Builder logModelMetricsIntervalInSteps(Integer logModelMetricsIntervalInSteps) {
             return logModelMetricsIntervalInSteps(Output.of(logModelMetricsIntervalInSteps));
+        }
+
+        /**
+         * @param loraAlpha This parameter represents the scaling factor for the weight matrices in LoRA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loraAlpha(@Nullable Output<Integer> loraAlpha) {
+            $.loraAlpha = loraAlpha;
+            return this;
+        }
+
+        /**
+         * @param loraAlpha This parameter represents the scaling factor for the weight matrices in LoRA.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loraAlpha(Integer loraAlpha) {
+            return loraAlpha(Output.of(loraAlpha));
+        }
+
+        /**
+         * @param loraDropout This parameter indicates the dropout probability for LoRA layers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loraDropout(@Nullable Output<Double> loraDropout) {
+            $.loraDropout = loraDropout;
+            return this;
+        }
+
+        /**
+         * @param loraDropout This parameter indicates the dropout probability for LoRA layers.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loraDropout(Double loraDropout) {
+            return loraDropout(Output.of(loraDropout));
+        }
+
+        /**
+         * @param loraR This parameter represents the LoRA rank of the update matrices.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loraR(@Nullable Output<Integer> loraR) {
+            $.loraR = loraR;
+            return this;
+        }
+
+        /**
+         * @param loraR This parameter represents the LoRA rank of the update matrices.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder loraR(Integer loraR) {
+            return loraR(Output.of(loraR));
         }
 
         /**

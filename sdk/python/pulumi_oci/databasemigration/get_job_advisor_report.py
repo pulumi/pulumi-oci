@@ -97,7 +97,7 @@ class GetJobAdvisorReportResult:
     @pulumi.getter(name="reportLocationDetails")
     def report_location_details(self) -> Sequence['outputs.GetJobAdvisorReportReportLocationDetailResult']:
         """
-        Details to access Pre-Migration Advisor report.
+        Details to access Premigration Advisor report.
         """
         return pulumi.get(self, "report_location_details")
 
@@ -105,7 +105,7 @@ class GetJobAdvisorReportResult:
     @pulumi.getter
     def result(self) -> str:
         """
-        Pre-Migration advisor result.
+        Premigration Advisor result.
         """
         return pulumi.get(self, "result")
 
@@ -129,10 +129,6 @@ class AwaitableGetJobAdvisorReportResult(GetJobAdvisorReportResult):
 def get_job_advisor_report(job_id: Optional[str] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetJobAdvisorReportResult:
     """
-    This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Get the Pre-Migration Advisor report details
-
     ## Example Usage
 
     ```python
@@ -165,10 +161,6 @@ def get_job_advisor_report(job_id: Optional[str] = None,
 def get_job_advisor_report_output(job_id: Optional[pulumi.Input[str]] = None,
                                   opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetJobAdvisorReportResult]:
     """
-    This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-
-    Get the Pre-Migration Advisor report details
-
     ## Example Usage
 
     ```python

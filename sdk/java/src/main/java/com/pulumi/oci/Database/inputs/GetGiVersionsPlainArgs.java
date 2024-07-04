@@ -18,6 +18,21 @@ public final class GetGiVersionsPlainArgs extends com.pulumi.resources.InvokeArg
     public static final GetGiVersionsPlainArgs Empty = new GetGiVersionsPlainArgs();
 
     /**
+     * The target availability domain. Only passed if the limit is AD-specific.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable String availabilityDomain;
+
+    /**
+     * @return The target availability domain. Only passed if the limit is AD-specific.
+     * 
+     */
+    public Optional<String> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -57,6 +72,7 @@ public final class GetGiVersionsPlainArgs extends com.pulumi.resources.InvokeArg
     private GetGiVersionsPlainArgs() {}
 
     private GetGiVersionsPlainArgs(GetGiVersionsPlainArgs $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.shape = $.shape;
@@ -78,6 +94,17 @@ public final class GetGiVersionsPlainArgs extends com.pulumi.resources.InvokeArg
 
         public Builder(GetGiVersionsPlainArgs defaults) {
             $ = new GetGiVersionsPlainArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The target availability domain. Only passed if the limit is AD-specific.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable String availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
         }
 
         /**

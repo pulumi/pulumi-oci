@@ -43,6 +43,8 @@ from .exadata_infrastructure import *
 from .exadata_infrastructure_compute import *
 from .exadata_infrastructure_storage import *
 from .exadata_iorm_config import *
+from .exadb_vm_cluster import *
+from .exascale_db_storage_vault import *
 from .external_container_database import *
 from .external_container_database_management import *
 from .external_container_databases_stack_monitoring import *
@@ -144,6 +146,14 @@ from .get_exadata_infrastructure_download_config_file import *
 from .get_exadata_infrastructure_un_allocated_resource import *
 from .get_exadata_infrastructures import *
 from .get_exadata_iorm_config import *
+from .get_exadb_vm_cluster import *
+from .get_exadb_vm_cluster_update import *
+from .get_exadb_vm_cluster_update_history_entries import *
+from .get_exadb_vm_cluster_update_history_entry import *
+from .get_exadb_vm_cluster_updates import *
+from .get_exadb_vm_clusters import *
+from .get_exascale_db_storage_vault import *
+from .get_exascale_db_storage_vaults import *
 from .get_external_container_database import *
 from .get_external_container_databases import *
 from .get_external_database_connector import *
@@ -153,6 +163,7 @@ from .get_external_non_container_databases import *
 from .get_external_pluggable_database import *
 from .get_external_pluggable_databases import *
 from .get_flex_components import *
+from .get_gi_version_minor_versions import *
 from .get_gi_versions import *
 from .get_infrastructure_target_version import *
 from .get_key_store import *

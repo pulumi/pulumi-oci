@@ -31,6 +31,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DatabaseId = testDatabase.Id,
+        ///         ShapeFamily = backupShapeFamily,
         ///     });
         /// 
         /// });
@@ -59,6 +60,7 @@ namespace Pulumi.Oci.Database
         ///     {
         ///         CompartmentId = compartmentId,
         ///         DatabaseId = testDatabase.Id,
+        ///         ShapeFamily = backupShapeFamily,
         ///     });
         /// 
         /// });
@@ -91,6 +93,12 @@ namespace Pulumi.Oci.Database
             set => _filters = value;
         }
 
+        /// <summary>
+        /// If provided, filters the results to the set of database versions which are supported for the given shape family.
+        /// </summary>
+        [Input("shapeFamily")]
+        public string? ShapeFamily { get; set; }
+
         public GetBackupsArgs()
         {
         }
@@ -119,6 +127,12 @@ namespace Pulumi.Oci.Database
             set => _filters = value;
         }
 
+        /// <summary>
+        /// If provided, filters the results to the set of database versions which are supported for the given shape family.
+        /// </summary>
+        [Input("shapeFamily")]
+        public Input<string>? ShapeFamily { get; set; }
+
         public GetBackupsInvokeArgs()
         {
         }
@@ -146,6 +160,7 @@ namespace Pulumi.Oci.Database
         /// The provider-assigned unique ID for this managed resource.
         /// </summary>
         public readonly string Id;
+        public readonly string? ShapeFamily;
 
         [OutputConstructor]
         private GetBackupsResult(
@@ -157,13 +172,16 @@ namespace Pulumi.Oci.Database
 
             ImmutableArray<Outputs.GetBackupsFilterResult> filters,
 
-            string id)
+            string id,
+
+            string? shapeFamily)
         {
             Backups = backups;
             CompartmentId = compartmentId;
             DatabaseId = databaseId;
             Filters = filters;
             Id = id;
+            ShapeFamily = shapeFamily;
         }
     }
 }

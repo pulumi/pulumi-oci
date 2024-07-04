@@ -23,7 +23,10 @@ class GetGiVersionsResult:
     """
     A collection of values returned by getGiVersions.
     """
-    def __init__(__self__, compartment_id=None, filters=None, gi_versions=None, id=None, shape=None):
+    def __init__(__self__, availability_domain=None, compartment_id=None, filters=None, gi_versions=None, id=None, shape=None):
+        if availability_domain and not isinstance(availability_domain, str):
+            raise TypeError("Expected argument 'availability_domain' to be a str")
+        pulumi.set(__self__, "availability_domain", availability_domain)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -39,6 +42,11 @@ class GetGiVersionsResult:
         if shape and not isinstance(shape, str):
             raise TypeError("Expected argument 'shape' to be a str")
         pulumi.set(__self__, "shape", shape)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> Optional[str]:
+        return pulumi.get(self, "availability_domain")
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -78,6 +86,7 @@ class AwaitableGetGiVersionsResult(GetGiVersionsResult):
         if False:
             yield self
         return GetGiVersionsResult(
+            availability_domain=self.availability_domain,
             compartment_id=self.compartment_id,
             filters=self.filters,
             gi_versions=self.gi_versions,
@@ -85,14 +94,15 @@ class AwaitableGetGiVersionsResult(GetGiVersionsResult):
             shape=self.shape)
 
 
-def get_gi_versions(compartment_id: Optional[str] = None,
+def get_gi_versions(availability_domain: Optional[str] = None,
+                    compartment_id: Optional[str] = None,
                     filters: Optional[Sequence[pulumi.InputType['GetGiVersionsFilterArgs']]] = None,
                     shape: Optional[str] = None,
                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetGiVersionsResult:
     """
     This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+    Gets a list of supported GI versions.
 
     ## Example Usage
 
@@ -101,14 +111,17 @@ def get_gi_versions(compartment_id: Optional[str] = None,
     import pulumi_oci as oci
 
     test_gi_versions = oci.Database.get_gi_versions(compartment_id=compartment_id,
+        availability_domain=gi_version_availability_domain,
         shape=gi_version_shape)
     ```
 
 
+    :param str availability_domain: The target availability domain. Only passed if the limit is AD-specific.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str shape: If provided, filters the results for the given shape.
     """
     __args__ = dict()
+    __args__['availabilityDomain'] = availability_domain
     __args__['compartmentId'] = compartment_id
     __args__['filters'] = filters
     __args__['shape'] = shape
@@ -116,6 +129,7 @@ def get_gi_versions(compartment_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:Database/getGiVersions:getGiVersions', __args__, opts=opts, typ=GetGiVersionsResult).value
 
     return AwaitableGetGiVersionsResult(
+        availability_domain=pulumi.get(__ret__, 'availability_domain'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
         filters=pulumi.get(__ret__, 'filters'),
         gi_versions=pulumi.get(__ret__, 'gi_versions'),
@@ -124,14 +138,15 @@ def get_gi_versions(compartment_id: Optional[str] = None,
 
 
 @_utilities.lift_output_func(get_gi_versions)
-def get_gi_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
+def get_gi_versions_output(availability_domain: Optional[pulumi.Input[Optional[str]]] = None,
+                           compartment_id: Optional[pulumi.Input[str]] = None,
                            filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetGiVersionsFilterArgs']]]]] = None,
                            shape: Optional[pulumi.Input[Optional[str]]] = None,
                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetGiVersionsResult]:
     """
     This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
 
-    Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+    Gets a list of supported GI versions.
 
     ## Example Usage
 
@@ -140,10 +155,12 @@ def get_gi_versions_output(compartment_id: Optional[pulumi.Input[str]] = None,
     import pulumi_oci as oci
 
     test_gi_versions = oci.Database.get_gi_versions(compartment_id=compartment_id,
+        availability_domain=gi_version_availability_domain,
         shape=gi_version_shape)
     ```
 
 
+    :param str availability_domain: The target availability domain. Only passed if the limit is AD-specific.
     :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
     :param str shape: If provided, filters the results for the given shape.
     """

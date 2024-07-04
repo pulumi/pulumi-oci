@@ -25441,6 +25441,109 @@ export namespace Database {
         share: pulumi.Input<number>;
     }
 
+    export interface ExadbVmClusterDataCollectionOptions {
+        /**
+         * (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+         */
+        isDiagnosticsEventsEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isHealthMonitoringEnabled?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+         */
+        isIncidentLogsEnabled?: pulumi.Input<boolean>;
+    }
+
+    export interface ExadbVmClusterIormConfigCach {
+        /**
+         * An array of IORM settings for all the database in the Exadata DB system.
+         */
+        dbPlans?: pulumi.Input<pulumi.Input<inputs.Database.ExadbVmClusterIormConfigCachDbPlan>[]>;
+        /**
+         * Additional information about the current lifecycle state.
+         */
+        lifecycleDetails?: pulumi.Input<string>;
+        /**
+         * The current value for the IORM objective. The default is `AUTO`.
+         */
+        objective?: pulumi.Input<string>;
+        /**
+         * The current state of the Exadata VM cluster on Exascale Infrastructure.
+         */
+        state?: pulumi.Input<string>;
+    }
+
+    export interface ExadbVmClusterIormConfigCachDbPlan {
+        /**
+         * The database name. For the default `DbPlan`, the `dbName` is `default`.
+         */
+        dbName?: pulumi.Input<string>;
+        /**
+         * The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+         */
+        flashCacheLimit?: pulumi.Input<string>;
+        /**
+         * The relative priority of this database.
+         */
+        share?: pulumi.Input<number>;
+    }
+
+    export interface ExadbVmClusterNodeConfig {
+        /**
+         * (Updatable) The number of ECPUs to enable for each node.
+         */
+        enabledEcpuCountPerNode: pulumi.Input<number>;
+        /**
+         * The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+         */
+        memorySizeInGbsPerNode?: pulumi.Input<number>;
+        /**
+         * The file system storage in GBs for snapshot for each node.
+         */
+        snapshotFileSystemStorageSizeGbsPerNode?: pulumi.Input<number>;
+        /**
+         * (Updatable) The number of Total ECPUs for each node.
+         */
+        totalEcpuCountPerNode: pulumi.Input<number>;
+        /**
+         * Total file system storage in GBs for each node.
+         */
+        totalFileSystemStorageSizeGbsPerNode?: pulumi.Input<number>;
+        /**
+         * (Updatable) The file system storage in GBs for each node.
+         */
+        vmFileSystemStorageSizeGbsPerNode: pulumi.Input<number>;
+    }
+
+    export interface ExadbVmClusterNodeResource {
+        /**
+         * The host name for the node.
+         */
+        nodeHostname?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+         */
+        nodeId?: pulumi.Input<string>;
+        nodeName: pulumi.Input<string>;
+        /**
+         * The current state of the Exadata VM cluster on Exascale Infrastructure.
+         */
+        state?: pulumi.Input<string>;
+    }
+
+    export interface ExascaleDbStorageVaultHighCapacityDatabaseStorage {
+        /**
+         * Available Capacity
+         */
+        availableSizeInGbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) Total Capacity
+         */
+        totalSizeInGbs: pulumi.Input<number>;
+    }
+
     export interface ExternalContainerDatabaseDatabaseManagementConfig {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the [external database connector](https://docs.cloud.oracle.com/iaas/api/#/en/database/latest/datatypes/CreateExternalDatabaseConnectorDetails).
@@ -26237,6 +26340,54 @@ export namespace Database {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+    export interface GetExadbVmClusterUpdateHistoryEntriesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExadbVmClusterUpdateHistoryEntriesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExadbVmClusterUpdatesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExadbVmClusterUpdatesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExadbVmClustersFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExadbVmClustersFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetExascaleDbStorageVaultsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetExascaleDbStorageVaultsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetExternalContainerDatabasesFilter {
         name: string;
         regex?: boolean;
@@ -26298,6 +26449,18 @@ export namespace Database {
         /**
          * A filter to return only resources that match the entire name given. The match is not case sensitive.
          */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetGiVersionMinorVersionsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetGiVersionMinorVersionsFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -26655,6 +26818,10 @@ export namespace Database {
          * The name of the DB link user.
          */
         dblinkUsername?: pulumi.Input<string>;
+        /**
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+         */
+        isThinClone?: pulumi.Input<boolean>;
         /**
          * Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
          */
@@ -29640,6 +29807,42 @@ export namespace DatabaseManagement {
 }
 
 export namespace DatabaseMigration {
+    export interface ConnectionAdditionalAttribute {
+        /**
+         * (Updatable) The name of the property entry.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) The value of the property entry.
+         */
+        value?: pulumi.Input<string>;
+    }
+
+    export interface ConnectionIngressIp {
+        /**
+         * A Private Endpoint IPv4 or IPv6 Address created in the customer's subnet.
+         */
+        ingressIp?: pulumi.Input<string>;
+    }
+
+    export interface GetConnectionsFilter {
+        /**
+         * The name of the property entry.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetConnectionsFilterArgs {
+        /**
+         * The name of the property entry.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
     export interface GetMigrationObjectTypesFilter {
         /**
          * Object type name
@@ -29751,6 +29954,397 @@ export namespace DatabaseMigration {
          * Type of unsupported object
          */
         type?: pulumi.Input<string>;
+    }
+
+    export interface MigrationAdvisorSettings {
+        /**
+         * (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
+         */
+        isIgnoreErrors?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) True to skip the Pre-Migration Advisor execution. Default is false.
+         */
+        isSkipAdvisor?: pulumi.Input<boolean>;
+    }
+
+    export interface MigrationDataTransferMediumDetails {
+        /**
+         * (Updatable) AWS access key credentials identifier Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         */
+        accessKeyId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Name of database link from Oracle Cloud Infrastructure database to on-premise database. ODMS will create link,  if the link does not already exist.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) In lieu of a network database link, Oracle Cloud Infrastructure Object Storage bucket will be used to store Data Pump dump files for the migration. Additionally, it can be specified alongside a database link data transfer medium.
+         */
+        objectStorageBucket?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsObjectStorageBucket>;
+        /**
+         * (Updatable) AWS region code where the S3 bucket is located. Region code should match the documented available regions: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-available-regions
+         */
+        region?: pulumi.Input<string>;
+        /**
+         * (Updatable) AWS secret access key credentials Details: https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys
+         */
+        secretAccessKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) OCID of the shared storage mount target
+         */
+        sharedStorageMountTargetId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+         */
+        source?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsSource>;
+        /**
+         * (Updatable) Optional additional properties for dump transfer in source or target host. Default kind is CURL.
+         */
+        target?: pulumi.Input<inputs.DatabaseMigration.MigrationDataTransferMediumDetailsTarget>;
+        /**
+         * (Updatable) Type of the data transfer medium to use.
+         */
+        type: pulumi.Input<string>;
+    }
+
+    export interface MigrationDataTransferMediumDetailsObjectStorageBucket {
+        /**
+         * (Updatable) Bucket name.
+         */
+        bucket?: pulumi.Input<string>;
+        /**
+         * (Updatable) Namespace name of the object store bucket.
+         */
+        namespace?: pulumi.Input<string>;
+    }
+
+    export interface MigrationDataTransferMediumDetailsSource {
+        /**
+         * (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+         */
+        kind: pulumi.Input<string>;
+        /**
+         * (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+         */
+        ociHome?: pulumi.Input<string>;
+        /**
+         * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+         */
+        walletLocation?: pulumi.Input<string>;
+    }
+
+    export interface MigrationDataTransferMediumDetailsTarget {
+        /**
+         * (Updatable) Type of dump transfer to use during migration in source or target host. Default kind is CURL
+         */
+        kind: pulumi.Input<string>;
+        /**
+         * (Updatable) Path to the Oracle Cloud Infrastructure CLI installation in the node.
+         */
+        ociHome?: pulumi.Input<string>;
+        /**
+         * (Updatable) Directory path to Oracle Cloud Infrastructure SSL wallet location on Db server node.
+         */
+        walletLocation?: pulumi.Input<string>;
+    }
+
+    export interface MigrationExcludeObject {
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+         */
+        isOmitExcludedTableFromReplication?: pulumi.Input<boolean>;
+        /**
+         * Name of the object (regular expression is allowed)
+         */
+        object: pulumi.Input<string>;
+        /**
+         * Owner of the object (regular expression is allowed)
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * Schema of the object (regular expression is allowed)
+         */
+        schema?: pulumi.Input<string>;
+        /**
+         * Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface MigrationGgsDetails {
+        /**
+         * (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+         */
+        acceptableLag?: pulumi.Input<number>;
+        /**
+         * (Updatable) Parameters for GoldenGate Extract processes.
+         */
+        extract?: pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetailsExtract>;
+        /**
+         * Details about Oracle GoldenGate GGS Deployment.
+         */
+        ggsDeployments?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetailsGgsDeployment>[]>;
+        /**
+         * (Updatable) Parameters for GoldenGate Replicat processes.
+         */
+        replicat?: pulumi.Input<inputs.DatabaseMigration.MigrationGgsDetailsReplicat>;
+    }
+
+    export interface MigrationGgsDetailsExtract {
+        /**
+         * (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+         */
+        longTransDuration?: pulumi.Input<number>;
+        /**
+         * (Updatable) Extract performance.
+         */
+        performanceProfile?: pulumi.Input<string>;
+    }
+
+    export interface MigrationGgsDetailsGgsDeployment {
+        /**
+         * The OCID of the resource being referenced.
+         */
+        deploymentId?: pulumi.Input<string>;
+        /**
+         * The OCID of the resource being referenced.
+         */
+        ggsAdminCredentialsSecretId?: pulumi.Input<string>;
+    }
+
+    export interface MigrationGgsDetailsReplicat {
+        /**
+         * (Updatable) Replicat performance.
+         */
+        performanceProfile?: pulumi.Input<string>;
+    }
+
+    export interface MigrationHubDetails {
+        /**
+         * (Updatable) ODMS will monitor GoldenGate end-to-end latency until the lag time is lower than the specified value in seconds.
+         */
+        acceptableLag?: pulumi.Input<number>;
+        /**
+         * (Updatable) The OCID of the resource being referenced.
+         */
+        computeId?: pulumi.Input<string>;
+        /**
+         * (Updatable) Parameters for GoldenGate Extract processes.
+         */
+        extract?: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetailsExtract>;
+        /**
+         * (Updatable) The OCID of the resource being referenced.
+         */
+        keyId: pulumi.Input<string>;
+        /**
+         * (Updatable) Parameters for GoldenGate Replicat processes.
+         */
+        replicat?: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetailsReplicat>;
+        /**
+         * (Updatable) Database Administrator Credentials details.
+         */
+        restAdminCredentials: pulumi.Input<inputs.DatabaseMigration.MigrationHubDetailsRestAdminCredentials>;
+        /**
+         * (Updatable) Endpoint URL.
+         */
+        url: pulumi.Input<string>;
+        /**
+         * (Updatable) The OCID of the resource being referenced.
+         */
+        vaultId: pulumi.Input<string>;
+    }
+
+    export interface MigrationHubDetailsExtract {
+        /**
+         * (Updatable) Length of time (in seconds) that a transaction can be open before Extract generates a warning message that the transaction is long-running. If not specified, Extract will not generate a warning on long-running transactions.
+         */
+        longTransDuration?: pulumi.Input<number>;
+        /**
+         * (Updatable) Extract performance.
+         */
+        performanceProfile?: pulumi.Input<string>;
+    }
+
+    export interface MigrationHubDetailsReplicat {
+        /**
+         * (Updatable) Replicat performance.
+         */
+        performanceProfile?: pulumi.Input<string>;
+    }
+
+    export interface MigrationHubDetailsRestAdminCredentials {
+        /**
+         * (Updatable) Administrator password
+         */
+        password: pulumi.Input<string>;
+        /**
+         * (Updatable) Administrator username
+         */
+        username: pulumi.Input<string>;
+    }
+
+    export interface MigrationIncludeObject {
+        /**
+         * Whether an excluded table should be omitted from replication. Only valid for database objects  that have are of type TABLE and object status EXCLUDE.
+         */
+        isOmitExcludedTableFromReplication?: pulumi.Input<boolean>;
+        /**
+         * Name of the object (regular expression is allowed)
+         */
+        object: pulumi.Input<string>;
+        /**
+         * Owner of the object (regular expression is allowed)
+         */
+        owner?: pulumi.Input<string>;
+        /**
+         * Schema of the object (regular expression is allowed)
+         */
+        schema?: pulumi.Input<string>;
+        /**
+         * Type of object to exclude. If not specified, matching owners and object names of type TABLE would be excluded.
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface MigrationInitialLoadSettings {
+        /**
+         * (Updatable) Apply the specified requirements for compatibility with MySQL Database Service for all tables in the dump  output, altering the dump files as necessary.
+         */
+        compatibilities?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Optional parameters for Data Pump Export and Import.
+         */
+        dataPumpParameters?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettingsDataPumpParameters>;
+        /**
+         * (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+         */
+        exportDirectoryObject?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettingsExportDirectoryObject>;
+        /**
+         * (Updatable) The action taken in the event of errors related to GRANT or REVOKE errors.
+         */
+        handleGrantErrors?: pulumi.Input<string>;
+        /**
+         * (Updatable) Directory object details, used to define either import or export directory objects in Data Pump Settings. Import directory is required for Non-Autonomous target connections. If specified for an autonomous target, it will show an error. Export directory will error if there are database link details specified.
+         */
+        importDirectoryObject?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettingsImportDirectoryObject>;
+        /**
+         * (Updatable) Enable (true) or disable (false) consistent data dumps by locking the instance for backup during the dump.
+         */
+        isConsistent?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Import the dump even if it contains objects that already exist in the target schema in the MySQL instance.
+         */
+        isIgnoreExistingObjects?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Include a statement at the start of the dump to set the time zone to UTC.
+         */
+        isTzUtc?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Oracle Job Mode
+         */
+        jobMode: pulumi.Input<string>;
+        /**
+         * (Updatable) Defines remapping to be applied to objects as they are processed.
+         */
+        metadataRemaps?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettingsMetadataRemap>[]>;
+        /**
+         * (Updatable) Primary key compatibility option
+         */
+        primaryKeyCompatibility?: pulumi.Input<string>;
+        /**
+         * (Updatable) Migration tablespace settings.
+         */
+        tablespaceDetails?: pulumi.Input<inputs.DatabaseMigration.MigrationInitialLoadSettingsTablespaceDetails>;
+    }
+
+    export interface MigrationInitialLoadSettingsDataPumpParameters {
+        /**
+         * (Updatable) Estimate size of dumps that will be generated.
+         */
+        estimate?: pulumi.Input<string>;
+        /**
+         * (Updatable) Exclude paratemers for Export and Import.
+         */
+        excludeParameters?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) Maximum number of worker processes that can be used for a Data Pump Export job.
+         */
+        exportParallelismDegree?: pulumi.Input<number>;
+        /**
+         * (Updatable) Maximum number of worker processes that can be used for a Data Pump Import job. For an Autonomous Database, ODMS will automatically query its CPU core count and set this property.
+         */
+        importParallelismDegree?: pulumi.Input<number>;
+        /**
+         * (Updatable) Set to false to force Data Pump worker process to run on one instance.
+         */
+        isCluster?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) IMPORT: Specifies the action to be performed when data is loaded into a preexisting table.
+         */
+        tableExistsAction?: pulumi.Input<string>;
+    }
+
+    export interface MigrationInitialLoadSettingsExportDirectoryObject {
+        /**
+         * (Updatable) Name of directory object in database
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Absolute path of directory on database server
+         */
+        path?: pulumi.Input<string>;
+    }
+
+    export interface MigrationInitialLoadSettingsImportDirectoryObject {
+        /**
+         * (Updatable) Name of directory object in database
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) Absolute path of directory on database server
+         */
+        path?: pulumi.Input<string>;
+    }
+
+    export interface MigrationInitialLoadSettingsMetadataRemap {
+        /**
+         * (Updatable) Specifies the new value that oldValue should be translated into.
+         */
+        newValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Specifies the value which needs to be reset.
+         */
+        oldValue?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of remap. Refer to [METADATA_REMAP Procedure ](https://docs.oracle.com/en/database/oracle/oracle-database/19/arpls/DBMS_DATAPUMP.html#GUID-0FC32790-91E6-4781-87A3-229DE024CB3D)
+         */
+        type?: pulumi.Input<string>;
+    }
+
+    export interface MigrationInitialLoadSettingsTablespaceDetails {
+        /**
+         * (Updatable) Size of Oracle database blocks in KB.
+         */
+        blockSizeInKbs?: pulumi.Input<string>;
+        /**
+         * (Updatable) Size to extend the tablespace in MB.  Note: Only applicable if 'isBigFile' property is set to true.
+         */
+        extendSizeInMbs?: pulumi.Input<number>;
+        /**
+         * (Updatable) Set this property to true to auto-create tablespaces in the target Database. Note: This is not applicable for Autonomous Database Serverless databases.
+         */
+        isAutoCreate?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Set this property to true to enable tablespace of the type big file.
+         */
+        isBigFile?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) Name of the tablespace on the target database to which the source database tablespace is to be remapped.
+         */
+        remapTarget?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of Database Base Migration Target.
+         */
+        targetType: pulumi.Input<string>;
     }
 }
 
@@ -32647,30 +33241,26 @@ export namespace FileStorage {
          */
         parentFileSystemId?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-         *
-         *
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
          */
         sourceSnapshotId?: pulumi.Input<string>;
     }
 
     export interface FilesystemSnapshotPolicySchedule {
         /**
-         * (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+         * (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          */
         dayOfMonth?: pulumi.Input<number>;
         /**
-         * (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+         * (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
          */
         dayOfWeek?: pulumi.Input<string>;
         /**
-         * (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+         * (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
          */
         hourOfDay?: pulumi.Input<number>;
         /**
-         * (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+         * (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          */
         month?: pulumi.Input<string>;
         /**
@@ -33344,7 +33934,7 @@ export namespace GenerativeAi {
         /**
          * The dataset used to fine-tune the model. 
          *
-         * Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
+         * Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
          */
         trainingDataset: pulumi.Input<inputs.GenerativeAi.ModelFineTuneDetailsTrainingDataset>;
     }
@@ -33368,6 +33958,18 @@ export namespace GenerativeAi {
          * Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
          */
         logModelMetricsIntervalInSteps?: pulumi.Input<number>;
+        /**
+         * This parameter represents the scaling factor for the weight matrices in LoRA.
+         */
+        loraAlpha?: pulumi.Input<number>;
+        /**
+         * This parameter indicates the dropout probability for LoRA layers.
+         */
+        loraDropout?: pulumi.Input<number>;
+        /**
+         * This parameter represents the LoRA rank of the update matrices.
+         */
+        loraR?: pulumi.Input<number>;
         /**
          * The number of last layers to be fine-tuned.
          */
@@ -73225,6 +73827,67 @@ export namespace ResourceManager {
         values: pulumi.Input<pulumi.Input<string>[]>;
     }
 
+}
+
+export namespace ResourceScheduler {
+    export interface GetSchedulesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSchedulesFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ScheduleResource {
+        /**
+         * (Updatable) This is the resource OCID.
+         */
+        id: pulumi.Input<string>;
+        /**
+         * (Updatable) This is additional information that helps to identity the resource for the schedule.
+         *
+         * { "id": "<OCID_of_bucket>" "metadata": { "namespaceName": "sampleNamespace", "bucketName": "sampleBucket" } }
+         */
+        metadata?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface ScheduleResourceFilter {
+        /**
+         * (Updatable) This is the resource attribute on which the threshold is defined.
+         */
+        attribute: pulumi.Input<string>;
+        /**
+         * (Updatable) This is the condition for the filter in comparison to its creation time.
+         */
+        condition?: pulumi.Input<string>;
+        /**
+         * (Updatable) This sets whether to include child compartments.
+         */
+        shouldIncludeChildCompartments?: pulumi.Input<boolean>;
+        /**
+         * (Updatable) This is a collection of resource lifecycle state values.
+         */
+        values?: pulumi.Input<pulumi.Input<inputs.ResourceScheduler.ScheduleResourceFilterValue>[]>;
+    }
+
+    export interface ScheduleResourceFilterValue {
+        /**
+         * (Updatable) This is the namespace of the defined tag.
+         */
+        namespace?: pulumi.Input<string>;
+        /**
+         * (Updatable) This is the key of the defined tag.
+         */
+        tagKey?: pulumi.Input<string>;
+        /**
+         * (Updatable) This is the value of the defined tag.
+         */
+        value?: pulumi.Input<string>;
+    }
 }
 
 export namespace Sch {

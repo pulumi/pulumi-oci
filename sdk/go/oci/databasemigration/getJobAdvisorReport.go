@@ -11,10 +11,6 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides details about a specific Job Advisor Report resource in Oracle Cloud Infrastructure Database Migration service.
-//
-// # Get the Pre-Migration Advisor report details
-//
 // ## Example Usage
 //
 // ```go
@@ -69,9 +65,9 @@ type GetJobAdvisorReportResult struct {
 	NumberOfInformationalResults int `pulumi:"numberOfInformationalResults"`
 	// Number of Warning results in the advisor report.
 	NumberOfWarnings int `pulumi:"numberOfWarnings"`
-	// Details to access Pre-Migration Advisor report.
+	// Details to access Premigration Advisor report.
 	ReportLocationDetails []GetJobAdvisorReportReportLocationDetail `pulumi:"reportLocationDetails"`
-	// Pre-Migration advisor result.
+	// Premigration Advisor result.
 	Result string `pulumi:"result"`
 }
 
@@ -142,14 +138,14 @@ func (o GetJobAdvisorReportResultOutput) NumberOfWarnings() pulumi.IntOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportResult) int { return v.NumberOfWarnings }).(pulumi.IntOutput)
 }
 
-// Details to access Pre-Migration Advisor report.
+// Details to access Premigration Advisor report.
 func (o GetJobAdvisorReportResultOutput) ReportLocationDetails() GetJobAdvisorReportReportLocationDetailArrayOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportResult) []GetJobAdvisorReportReportLocationDetail {
 		return v.ReportLocationDetails
 	}).(GetJobAdvisorReportReportLocationDetailArrayOutput)
 }
 
-// Pre-Migration advisor result.
+// Premigration Advisor result.
 func (o GetJobAdvisorReportResultOutput) Result() pulumi.StringOutput {
 	return o.ApplyT(func(v GetJobAdvisorReportResult) string { return v.Result }).(pulumi.StringOutput)
 }

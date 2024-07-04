@@ -12,7 +12,7 @@ namespace Pulumi.Oci.GenerativeAi
     public static class GetModels
     {
         /// <summary>
-        /// This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
         /// 
@@ -43,7 +43,7 @@ namespace Pulumi.Oci.GenerativeAi
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetModelsResult>("oci:GenerativeAi/getModels:getModels", args ?? new GetModelsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
         /// 
@@ -200,9 +200,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// The compartment OCID for fine-tuned models. For pretrained models, this value is null.
         /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// A user-friendly name.
-        /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetModelsFilterResult> Filters;
         /// <summary>
@@ -217,9 +214,6 @@ namespace Pulumi.Oci.GenerativeAi
         /// The lifecycle state of the model.
         /// </summary>
         public readonly string? State;
-        /// <summary>
-        /// The provider of the base model.
-        /// </summary>
         public readonly string? Vendor;
 
         [OutputConstructor]

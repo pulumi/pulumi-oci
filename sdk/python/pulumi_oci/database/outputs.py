@@ -124,6 +124,12 @@ __all__ = [
     'ExadataInfrastructureStorageMaintenanceWindowDaysOfWeek',
     'ExadataInfrastructureStorageMaintenanceWindowMonth',
     'ExadataIormConfigDbPlan',
+    'ExadbVmClusterDataCollectionOptions',
+    'ExadbVmClusterIormConfigCach',
+    'ExadbVmClusterIormConfigCachDbPlan',
+    'ExadbVmClusterNodeConfig',
+    'ExadbVmClusterNodeResource',
+    'ExascaleDbStorageVaultHighCapacityDatabaseStorage',
     'ExternalContainerDatabaseDatabaseManagementConfig',
     'ExternalContainerDatabaseStackMonitoringConfig',
     'ExternalDatabaseConnectorConnectionCredentials',
@@ -481,6 +487,26 @@ __all__ = [
     'GetExadataInfrastructuresExadataInfrastructureNetworkBondingModeDetailResult',
     'GetExadataInfrastructuresFilterResult',
     'GetExadataIormConfigDbPlanResult',
+    'GetExadbVmClusterDataCollectionOptionResult',
+    'GetExadbVmClusterIormConfigCachResult',
+    'GetExadbVmClusterIormConfigCachDbPlanResult',
+    'GetExadbVmClusterNodeConfigResult',
+    'GetExadbVmClusterNodeResourceResult',
+    'GetExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntryResult',
+    'GetExadbVmClusterUpdateHistoryEntriesFilterResult',
+    'GetExadbVmClusterUpdatesExadbVmClusterUpdateResult',
+    'GetExadbVmClusterUpdatesFilterResult',
+    'GetExadbVmClustersExadbVmClusterResult',
+    'GetExadbVmClustersExadbVmClusterDataCollectionOptionResult',
+    'GetExadbVmClustersExadbVmClusterIormConfigCachResult',
+    'GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult',
+    'GetExadbVmClustersExadbVmClusterNodeConfigResult',
+    'GetExadbVmClustersExadbVmClusterNodeResourceResult',
+    'GetExadbVmClustersFilterResult',
+    'GetExascaleDbStorageVaultHighCapacityDatabaseStorageResult',
+    'GetExascaleDbStorageVaultsExascaleDbStorageVaultResult',
+    'GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult',
+    'GetExascaleDbStorageVaultsFilterResult',
     'GetExternalContainerDatabaseDatabaseManagementConfigResult',
     'GetExternalContainerDatabaseStackMonitoringConfigResult',
     'GetExternalContainerDatabasesExternalContainerDatabaseResult',
@@ -512,6 +538,8 @@ __all__ = [
     'GetFlexComponentsFilterResult',
     'GetFlexComponentsFlexComponentCollectionResult',
     'GetFlexComponentsFlexComponentCollectionItemResult',
+    'GetGiVersionMinorVersionsFilterResult',
+    'GetGiVersionMinorVersionsGiMinorVersionResult',
     'GetGiVersionsFilterResult',
     'GetGiVersionsGiVersionResult',
     'GetKeyStoreAssociatedDatabaseResult',
@@ -9495,6 +9523,429 @@ class ExadataIormConfigDbPlan(dict):
 
 
 @pulumi.output_type
+class ExadbVmClusterDataCollectionOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "isDiagnosticsEventsEnabled":
+            suggest = "is_diagnostics_events_enabled"
+        elif key == "isHealthMonitoringEnabled":
+            suggest = "is_health_monitoring_enabled"
+        elif key == "isIncidentLogsEnabled":
+            suggest = "is_incident_logs_enabled"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterDataCollectionOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterDataCollectionOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterDataCollectionOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[bool] = None,
+                 is_health_monitoring_enabled: Optional[bool] = None,
+                 is_incident_logs_enabled: Optional[bool] = None):
+        """
+        :param bool is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param bool is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param bool is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+
+@pulumi.output_type
+class ExadbVmClusterIormConfigCach(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbPlans":
+            suggest = "db_plans"
+        elif key == "lifecycleDetails":
+            suggest = "lifecycle_details"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterIormConfigCach. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterIormConfigCach.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterIormConfigCach.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_plans: Optional[Sequence['outputs.ExadbVmClusterIormConfigCachDbPlan']] = None,
+                 lifecycle_details: Optional[str] = None,
+                 objective: Optional[str] = None,
+                 state: Optional[str] = None):
+        """
+        :param Sequence['ExadbVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str objective: The current value for the IORM objective. The default is `AUTO`.
+        :param str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        if db_plans is not None:
+            pulumi.set(__self__, "db_plans", db_plans)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if objective is not None:
+            pulumi.set(__self__, "objective", objective)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="dbPlans")
+    def db_plans(self) -> Optional[Sequence['outputs.ExadbVmClusterIormConfigCachDbPlan']]:
+        """
+        An array of IORM settings for all the database in the Exadata DB system.
+        """
+        return pulumi.get(self, "db_plans")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[str]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def objective(self) -> Optional[str]:
+        """
+        The current value for the IORM objective. The default is `AUTO`.
+        """
+        return pulumi.get(self, "objective")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class ExadbVmClusterIormConfigCachDbPlan(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dbName":
+            suggest = "db_name"
+        elif key == "flashCacheLimit":
+            suggest = "flash_cache_limit"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterIormConfigCachDbPlan. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterIormConfigCachDbPlan.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterIormConfigCachDbPlan.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 db_name: Optional[str] = None,
+                 flash_cache_limit: Optional[str] = None,
+                 share: Optional[int] = None):
+        """
+        :param str db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
+        :param str flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        :param int share: The relative priority of this database.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if flash_cache_limit is not None:
+            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        if share is not None:
+            pulumi.set(__self__, "share", share)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[str]:
+        """
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> Optional[str]:
+        """
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @property
+    @pulumi.getter
+    def share(self) -> Optional[int]:
+        """
+        The relative priority of this database.
+        """
+        return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class ExadbVmClusterNodeConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "enabledEcpuCountPerNode":
+            suggest = "enabled_ecpu_count_per_node"
+        elif key == "totalEcpuCountPerNode":
+            suggest = "total_ecpu_count_per_node"
+        elif key == "vmFileSystemStorageSizeGbsPerNode":
+            suggest = "vm_file_system_storage_size_gbs_per_node"
+        elif key == "memorySizeInGbsPerNode":
+            suggest = "memory_size_in_gbs_per_node"
+        elif key == "snapshotFileSystemStorageSizeGbsPerNode":
+            suggest = "snapshot_file_system_storage_size_gbs_per_node"
+        elif key == "totalFileSystemStorageSizeGbsPerNode":
+            suggest = "total_file_system_storage_size_gbs_per_node"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterNodeConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterNodeConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterNodeConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 enabled_ecpu_count_per_node: int,
+                 total_ecpu_count_per_node: int,
+                 vm_file_system_storage_size_gbs_per_node: int,
+                 memory_size_in_gbs_per_node: Optional[int] = None,
+                 snapshot_file_system_storage_size_gbs_per_node: Optional[int] = None,
+                 total_file_system_storage_size_gbs_per_node: Optional[int] = None):
+        """
+        :param int enabled_ecpu_count_per_node: (Updatable) The number of ECPUs to enable for each node.
+        :param int total_ecpu_count_per_node: (Updatable) The number of Total ECPUs for each node.
+        :param int vm_file_system_storage_size_gbs_per_node: (Updatable) The file system storage in GBs for each node.
+        :param int memory_size_in_gbs_per_node: The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        :param int snapshot_file_system_storage_size_gbs_per_node: The file system storage in GBs for snapshot for each node.
+        :param int total_file_system_storage_size_gbs_per_node: Total file system storage in GBs for each node.
+        """
+        pulumi.set(__self__, "enabled_ecpu_count_per_node", enabled_ecpu_count_per_node)
+        pulumi.set(__self__, "total_ecpu_count_per_node", total_ecpu_count_per_node)
+        pulumi.set(__self__, "vm_file_system_storage_size_gbs_per_node", vm_file_system_storage_size_gbs_per_node)
+        if memory_size_in_gbs_per_node is not None:
+            pulumi.set(__self__, "memory_size_in_gbs_per_node", memory_size_in_gbs_per_node)
+        if snapshot_file_system_storage_size_gbs_per_node is not None:
+            pulumi.set(__self__, "snapshot_file_system_storage_size_gbs_per_node", snapshot_file_system_storage_size_gbs_per_node)
+        if total_file_system_storage_size_gbs_per_node is not None:
+            pulumi.set(__self__, "total_file_system_storage_size_gbs_per_node", total_file_system_storage_size_gbs_per_node)
+
+    @property
+    @pulumi.getter(name="enabledEcpuCountPerNode")
+    def enabled_ecpu_count_per_node(self) -> int:
+        """
+        (Updatable) The number of ECPUs to enable for each node.
+        """
+        return pulumi.get(self, "enabled_ecpu_count_per_node")
+
+    @property
+    @pulumi.getter(name="totalEcpuCountPerNode")
+    def total_ecpu_count_per_node(self) -> int:
+        """
+        (Updatable) The number of Total ECPUs for each node.
+        """
+        return pulumi.get(self, "total_ecpu_count_per_node")
+
+    @property
+    @pulumi.getter(name="vmFileSystemStorageSizeGbsPerNode")
+    def vm_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        (Updatable) The file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbsPerNode")
+    def memory_size_in_gbs_per_node(self) -> Optional[int]:
+        """
+        The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        """
+        return pulumi.get(self, "memory_size_in_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="snapshotFileSystemStorageSizeGbsPerNode")
+    def snapshot_file_system_storage_size_gbs_per_node(self) -> Optional[int]:
+        """
+        The file system storage in GBs for snapshot for each node.
+        """
+        return pulumi.get(self, "snapshot_file_system_storage_size_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="totalFileSystemStorageSizeGbsPerNode")
+    def total_file_system_storage_size_gbs_per_node(self) -> Optional[int]:
+        """
+        Total file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "total_file_system_storage_size_gbs_per_node")
+
+
+@pulumi.output_type
+class ExadbVmClusterNodeResource(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "nodeName":
+            suggest = "node_name"
+        elif key == "nodeHostname":
+            suggest = "node_hostname"
+        elif key == "nodeId":
+            suggest = "node_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExadbVmClusterNodeResource. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExadbVmClusterNodeResource.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExadbVmClusterNodeResource.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 node_name: str,
+                 node_hostname: Optional[str] = None,
+                 node_id: Optional[str] = None,
+                 state: Optional[str] = None):
+        """
+        :param str node_hostname: The host name for the node.
+        :param str node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        :param str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        pulumi.set(__self__, "node_name", node_name)
+        if node_hostname is not None:
+            pulumi.set(__self__, "node_hostname", node_hostname)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> str:
+        return pulumi.get(self, "node_name")
+
+    @property
+    @pulumi.getter(name="nodeHostname")
+    def node_hostname(self) -> Optional[str]:
+        """
+        The host name for the node.
+        """
+        return pulumi.get(self, "node_hostname")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[str]:
+        """
+        The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class ExascaleDbStorageVaultHighCapacityDatabaseStorage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "totalSizeInGbs":
+            suggest = "total_size_in_gbs"
+        elif key == "availableSizeInGbs":
+            suggest = "available_size_in_gbs"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ExascaleDbStorageVaultHighCapacityDatabaseStorage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ExascaleDbStorageVaultHighCapacityDatabaseStorage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ExascaleDbStorageVaultHighCapacityDatabaseStorage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 total_size_in_gbs: int,
+                 available_size_in_gbs: Optional[int] = None):
+        """
+        :param int total_size_in_gbs: (Updatable) Total Capacity
+        :param int available_size_in_gbs: Available Capacity
+        """
+        pulumi.set(__self__, "total_size_in_gbs", total_size_in_gbs)
+        if available_size_in_gbs is not None:
+            pulumi.set(__self__, "available_size_in_gbs", available_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="totalSizeInGbs")
+    def total_size_in_gbs(self) -> int:
+        """
+        (Updatable) Total Capacity
+        """
+        return pulumi.get(self, "total_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="availableSizeInGbs")
+    def available_size_in_gbs(self) -> Optional[int]:
+        """
+        Available Capacity
+        """
+        return pulumi.get(self, "available_size_in_gbs")
+
+
+@pulumi.output_type
 class ExternalContainerDatabaseDatabaseManagementConfig(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -10577,6 +11028,8 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
             suggest = "dblink_user_password"
         elif key == "dblinkUsername":
             suggest = "dblink_username"
+        elif key == "isThinClone":
+            suggest = "is_thin_clone"
         elif key == "refreshableCloneDetails":
             suggest = "refreshable_clone_details"
         elif key == "sourceContainerDatabaseAdminPassword":
@@ -10598,6 +11051,7 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
                  source_pluggable_database_id: str,
                  dblink_user_password: Optional[str] = None,
                  dblink_username: Optional[str] = None,
+                 is_thin_clone: Optional[bool] = None,
                  refreshable_clone_details: Optional['outputs.PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetails'] = None,
                  source_container_database_admin_password: Optional[str] = None):
         """
@@ -10605,6 +11059,7 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
         :param str source_pluggable_database_id: The OCID of the Source Pluggable Database.
         :param str dblink_user_password: The DB link user password.
         :param str dblink_username: The name of the DB link user.
+        :param bool is_thin_clone: True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
         :param 'PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs' refreshable_clone_details: Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param str source_container_database_admin_password: The DB system administrator password of the source Container Database.
         """
@@ -10614,6 +11069,8 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
             pulumi.set(__self__, "dblink_user_password", dblink_user_password)
         if dblink_username is not None:
             pulumi.set(__self__, "dblink_username", dblink_username)
+        if is_thin_clone is not None:
+            pulumi.set(__self__, "is_thin_clone", is_thin_clone)
         if refreshable_clone_details is not None:
             pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         if source_container_database_admin_password is not None:
@@ -10650,6 +11107,14 @@ class PluggableDatabasePdbCreationTypeDetails(dict):
         The name of the DB link user.
         """
         return pulumi.get(self, "dblink_username")
+
+    @property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> Optional[bool]:
+        """
+        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+        """
+        return pulumi.get(self, "is_thin_clone")
 
     @property
     @pulumi.getter(name="refreshableCloneDetails")
@@ -33242,6 +33707,7 @@ class GetDbNodesDbNodeResult(dict):
                  time_created: str,
                  time_maintenance_window_end: str,
                  time_maintenance_window_start: str,
+                 total_cpu_core_count: int,
                  vnic2id: str,
                  vnic_id: str):
         """
@@ -33268,6 +33734,7 @@ class GetDbNodesDbNodeResult(dict):
         :param str time_created: The date and time that the database node was created.
         :param str time_maintenance_window_end: End date and time of maintenance window.
         :param str time_maintenance_window_start: Start date and time of maintenance window.
+        :param int total_cpu_core_count: The total number of CPU cores reserved on the Db node.
         :param str vnic2id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
         :param str vnic_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
         """
@@ -33294,6 +33761,7 @@ class GetDbNodesDbNodeResult(dict):
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_maintenance_window_end", time_maintenance_window_end)
         pulumi.set(__self__, "time_maintenance_window_start", time_maintenance_window_start)
+        pulumi.set(__self__, "total_cpu_core_count", total_cpu_core_count)
         pulumi.set(__self__, "vnic2id", vnic2id)
         pulumi.set(__self__, "vnic_id", vnic_id)
 
@@ -33478,6 +33946,14 @@ class GetDbNodesDbNodeResult(dict):
         Start date and time of maintenance window.
         """
         return pulumi.get(self, "time_maintenance_window_start")
+
+    @property
+    @pulumi.getter(name="totalCpuCoreCount")
+    def total_cpu_core_count(self) -> int:
+        """
+        The total number of CPU cores reserved on the Db node.
+        """
+        return pulumi.get(self, "total_cpu_core_count")
 
     @property
     @pulumi.getter
@@ -37857,6 +38333,1510 @@ class GetExadataIormConfigDbPlanResult(dict):
 
 
 @pulumi.output_type
+class GetExadbVmClusterDataCollectionOptionResult(dict):
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: bool,
+                 is_health_monitoring_enabled: bool,
+                 is_incident_logs_enabled: bool):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param bool is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param bool is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> bool:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> bool:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> bool:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+
+@pulumi.output_type
+class GetExadbVmClusterIormConfigCachResult(dict):
+    def __init__(__self__, *,
+                 db_plans: Sequence['outputs.GetExadbVmClusterIormConfigCachDbPlanResult'],
+                 lifecycle_details: str,
+                 objective: str,
+                 state: str):
+        """
+        :param Sequence['GetExadbVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str objective: The current value for the IORM objective. The default is `AUTO`.
+        :param str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        pulumi.set(__self__, "db_plans", db_plans)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "objective", objective)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="dbPlans")
+    def db_plans(self) -> Sequence['outputs.GetExadbVmClusterIormConfigCachDbPlanResult']:
+        """
+        An array of IORM settings for all the database in the Exadata DB system.
+        """
+        return pulumi.get(self, "db_plans")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def objective(self) -> str:
+        """
+        The current value for the IORM objective. The default is `AUTO`.
+        """
+        return pulumi.get(self, "objective")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetExadbVmClusterIormConfigCachDbPlanResult(dict):
+    def __init__(__self__, *,
+                 db_name: str,
+                 flash_cache_limit: str,
+                 share: int):
+        """
+        :param str db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
+        :param str flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        :param int share: The relative priority of this database.
+        """
+        pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        pulumi.set(__self__, "share", share)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> str:
+        """
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> str:
+        """
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @property
+    @pulumi.getter
+    def share(self) -> int:
+        """
+        The relative priority of this database.
+        """
+        return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class GetExadbVmClusterNodeConfigResult(dict):
+    def __init__(__self__, *,
+                 enabled_ecpu_count_per_node: int,
+                 memory_size_in_gbs_per_node: int,
+                 snapshot_file_system_storage_size_gbs_per_node: int,
+                 total_ecpu_count_per_node: int,
+                 total_file_system_storage_size_gbs_per_node: int,
+                 vm_file_system_storage_size_gbs_per_node: int):
+        """
+        :param int enabled_ecpu_count_per_node: The number of ECPUs to enable for each node.
+        :param int memory_size_in_gbs_per_node: The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        :param int snapshot_file_system_storage_size_gbs_per_node: The file system storage in GBs for snapshot for each node.
+        :param int total_ecpu_count_per_node: The number of Total ECPUs for each node.
+        :param int total_file_system_storage_size_gbs_per_node: Total file system storage in GBs for each node.
+        :param int vm_file_system_storage_size_gbs_per_node: The file system storage in GBs for each node.
+        """
+        pulumi.set(__self__, "enabled_ecpu_count_per_node", enabled_ecpu_count_per_node)
+        pulumi.set(__self__, "memory_size_in_gbs_per_node", memory_size_in_gbs_per_node)
+        pulumi.set(__self__, "snapshot_file_system_storage_size_gbs_per_node", snapshot_file_system_storage_size_gbs_per_node)
+        pulumi.set(__self__, "total_ecpu_count_per_node", total_ecpu_count_per_node)
+        pulumi.set(__self__, "total_file_system_storage_size_gbs_per_node", total_file_system_storage_size_gbs_per_node)
+        pulumi.set(__self__, "vm_file_system_storage_size_gbs_per_node", vm_file_system_storage_size_gbs_per_node)
+
+    @property
+    @pulumi.getter(name="enabledEcpuCountPerNode")
+    def enabled_ecpu_count_per_node(self) -> int:
+        """
+        The number of ECPUs to enable for each node.
+        """
+        return pulumi.get(self, "enabled_ecpu_count_per_node")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbsPerNode")
+    def memory_size_in_gbs_per_node(self) -> int:
+        """
+        The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        """
+        return pulumi.get(self, "memory_size_in_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="snapshotFileSystemStorageSizeGbsPerNode")
+    def snapshot_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        The file system storage in GBs for snapshot for each node.
+        """
+        return pulumi.get(self, "snapshot_file_system_storage_size_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="totalEcpuCountPerNode")
+    def total_ecpu_count_per_node(self) -> int:
+        """
+        The number of Total ECPUs for each node.
+        """
+        return pulumi.get(self, "total_ecpu_count_per_node")
+
+    @property
+    @pulumi.getter(name="totalFileSystemStorageSizeGbsPerNode")
+    def total_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        Total file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "total_file_system_storage_size_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="vmFileSystemStorageSizeGbsPerNode")
+    def vm_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        The file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size_gbs_per_node")
+
+
+@pulumi.output_type
+class GetExadbVmClusterNodeResourceResult(dict):
+    def __init__(__self__, *,
+                 node_hostname: str,
+                 node_id: str,
+                 node_name: str,
+                 state: str):
+        """
+        :param str node_hostname: The host name for the node.
+        :param str node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        :param str state: The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        pulumi.set(__self__, "node_hostname", node_hostname)
+        pulumi.set(__self__, "node_id", node_id)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="nodeHostname")
+    def node_hostname(self) -> str:
+        """
+        The host name for the node.
+        """
+        return pulumi.get(self, "node_hostname")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> str:
+        return pulumi.get(self, "node_name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetExadbVmClusterUpdateHistoryEntriesExadbVmClusterUpdateHistoryEntryResult(dict):
+    def __init__(__self__, *,
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 time_completed: str,
+                 time_started: str,
+                 update_action: str,
+                 update_id: str,
+                 update_type: str,
+                 version: str):
+        """
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+        :param str lifecycle_details: Descriptive text providing additional details about the lifecycle state.
+        :param str state: The current lifecycle state of the maintenance update operation.
+        :param str time_completed: The date and time when the maintenance update action completed.
+        :param str time_started: The date and time when the maintenance update action started.
+        :param str update_action: The update action.
+        :param str update_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        :param str update_type: A filter to return only resources that match the given update type exactly.
+        :param str version: The version of the maintenance update package.
+        """
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_completed", time_completed)
+        pulumi.set(__self__, "time_started", time_started)
+        pulumi.set(__self__, "update_action", update_action)
+        pulumi.set(__self__, "update_id", update_id)
+        pulumi.set(__self__, "update_type", update_type)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update history entry.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Descriptive text providing additional details about the lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current lifecycle state of the maintenance update operation.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeCompleted")
+    def time_completed(self) -> str:
+        """
+        The date and time when the maintenance update action completed.
+        """
+        return pulumi.get(self, "time_completed")
+
+    @property
+    @pulumi.getter(name="timeStarted")
+    def time_started(self) -> str:
+        """
+        The date and time when the maintenance update action started.
+        """
+        return pulumi.get(self, "time_started")
+
+    @property
+    @pulumi.getter(name="updateAction")
+    def update_action(self) -> str:
+        """
+        The update action.
+        """
+        return pulumi.get(self, "update_action")
+
+    @property
+    @pulumi.getter(name="updateId")
+    def update_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        """
+        return pulumi.get(self, "update_id")
+
+    @property
+    @pulumi.getter(name="updateType")
+    def update_type(self) -> str:
+        """
+        A filter to return only resources that match the given update type exactly.
+        """
+        return pulumi.get(self, "update_type")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The version of the maintenance update package.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExadbVmClusterUpdateHistoryEntriesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExadbVmClusterUpdatesExadbVmClusterUpdateResult(dict):
+    def __init__(__self__, *,
+                 available_actions: Sequence[str],
+                 description: str,
+                 id: str,
+                 last_action: str,
+                 lifecycle_details: str,
+                 state: str,
+                 time_released: str,
+                 update_type: str,
+                 version: str):
+        """
+        :param Sequence[str] available_actions: The possible actions performed by the update operation on the infrastructure components.
+        :param str description: Details of the maintenance update package.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        :param str last_action: The previous update action performed.
+        :param str lifecycle_details: Descriptive text providing additional details about the lifecycle state.
+        :param str state: The current state of the maintenance update. Dependent on value of `lastAction`.
+        :param str time_released: The date and time the maintenance update was released.
+        :param str update_type: A filter to return only resources that match the given update type exactly.
+        :param str version: A filter to return only resources that match the given update version exactly.
+        """
+        pulumi.set(__self__, "available_actions", available_actions)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "last_action", last_action)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "time_released", time_released)
+        pulumi.set(__self__, "update_type", update_type)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="availableActions")
+    def available_actions(self) -> Sequence[str]:
+        """
+        The possible actions performed by the update operation on the infrastructure components.
+        """
+        return pulumi.get(self, "available_actions")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Details of the maintenance update package.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the maintenance update.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lastAction")
+    def last_action(self) -> str:
+        """
+        The previous update action performed.
+        """
+        return pulumi.get(self, "last_action")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Descriptive text providing additional details about the lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        The current state of the maintenance update. Dependent on value of `lastAction`.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="timeReleased")
+    def time_released(self) -> str:
+        """
+        The date and time the maintenance update was released.
+        """
+        return pulumi.get(self, "time_released")
+
+    @property
+    @pulumi.getter(name="updateType")
+    def update_type(self) -> str:
+        """
+        A filter to return only resources that match the given update type exactly.
+        """
+        return pulumi.get(self, "update_type")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        A filter to return only resources that match the given update version exactly.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
+class GetExadbVmClusterUpdatesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterResult(dict):
+    def __init__(__self__, *,
+                 availability_domain: str,
+                 backup_network_nsg_ids: Sequence[str],
+                 backup_subnet_id: str,
+                 cluster_name: str,
+                 compartment_id: str,
+                 data_collection_options: Sequence['outputs.GetExadbVmClustersExadbVmClusterDataCollectionOptionResult'],
+                 defined_tags: Mapping[str, Any],
+                 display_name: str,
+                 domain: str,
+                 exascale_db_storage_vault_id: str,
+                 freeform_tags: Mapping[str, Any],
+                 gi_version: str,
+                 grid_image_id: str,
+                 grid_image_type: str,
+                 hostname: str,
+                 id: str,
+                 iorm_config_caches: Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachResult'],
+                 last_update_history_entry_id: str,
+                 license_model: str,
+                 lifecycle_details: str,
+                 listener_port: str,
+                 node_configs: Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult'],
+                 node_resources: Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeResourceResult'],
+                 nsg_ids: Sequence[str],
+                 private_zone_id: str,
+                 scan_dns_name: str,
+                 scan_dns_record_id: str,
+                 scan_ip_ids: Sequence[str],
+                 scan_listener_port_tcp: int,
+                 scan_listener_port_tcp_ssl: int,
+                 shape: str,
+                 ssh_public_keys: Sequence[str],
+                 state: str,
+                 subnet_id: str,
+                 system_tags: Mapping[str, Any],
+                 system_version: str,
+                 time_created: str,
+                 time_zone: str,
+                 vip_ids: Sequence[str],
+                 zone_id: str):
+        """
+        :param str availability_domain: The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+        :param Sequence[str] backup_network_nsg_ids: A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        :param str backup_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param str cluster_name: The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Sequence['GetExadbVmClustersExadbVmClusterDataCollectionOptionArgs'] data_collection_options: Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param str domain: A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
+        :param str exascale_db_storage_vault_id: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param str gi_version: A valid Oracle Grid Infrastructure (GI) software version.
+        :param str grid_image_id: Grid Setup will be done using this grid image id
+        :param str grid_image_type: The type of Grid Image
+        :param str hostname: The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCachArgs'] iorm_config_caches: The IORM settings of the Exadata DB system.
+        :param str last_update_history_entry_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+        :param str license_model: The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str listener_port: The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence['GetExadbVmClustersExadbVmClusterNodeConfigArgs'] node_configs: The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence['GetExadbVmClustersExadbVmClusterNodeResourceArgs'] node_resources: The list of node in the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence[str] nsg_ids: The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+               * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        :param str private_zone_id: The private zone ID in which you want DNS records to be created.
+        :param str scan_dns_name: The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param str scan_dns_record_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param Sequence[str] scan_ip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        :param int scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+        :param int scan_listener_port_tcp_ssl: The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        :param str shape: The shape of the Exadata VM cluster on Exascale Infrastructure resource
+        :param Sequence[str] ssh_public_keys: The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+        :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str system_version: Operating system version of the image.
+        :param str time_created: The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+        :param str time_zone: The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param Sequence[str] vip_ids: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+        :param str zone_id: The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+        """
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "backup_network_nsg_ids", backup_network_nsg_ids)
+        pulumi.set(__self__, "backup_subnet_id", backup_subnet_id)
+        pulumi.set(__self__, "cluster_name", cluster_name)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "data_collection_options", data_collection_options)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "domain", domain)
+        pulumi.set(__self__, "exascale_db_storage_vault_id", exascale_db_storage_vault_id)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "gi_version", gi_version)
+        pulumi.set(__self__, "grid_image_id", grid_image_id)
+        pulumi.set(__self__, "grid_image_type", grid_image_type)
+        pulumi.set(__self__, "hostname", hostname)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "iorm_config_caches", iorm_config_caches)
+        pulumi.set(__self__, "last_update_history_entry_id", last_update_history_entry_id)
+        pulumi.set(__self__, "license_model", license_model)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "listener_port", listener_port)
+        pulumi.set(__self__, "node_configs", node_configs)
+        pulumi.set(__self__, "node_resources", node_resources)
+        pulumi.set(__self__, "nsg_ids", nsg_ids)
+        pulumi.set(__self__, "private_zone_id", private_zone_id)
+        pulumi.set(__self__, "scan_dns_name", scan_dns_name)
+        pulumi.set(__self__, "scan_dns_record_id", scan_dns_record_id)
+        pulumi.set(__self__, "scan_ip_ids", scan_ip_ids)
+        pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
+        pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        pulumi.set(__self__, "shape", shape)
+        pulumi.set(__self__, "ssh_public_keys", ssh_public_keys)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "system_version", system_version)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "vip_ids", vip_ids)
+        pulumi.set(__self__, "zone_id", zone_id)
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain in which the Exadata VM cluster on Exascale Infrastructure is located.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="backupNetworkNsgIds")
+    def backup_network_nsg_ids(self) -> Sequence[str]:
+        """
+        A list of the [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups (NSGs) that the backup network of this DB system belongs to. Setting this to an empty array after the list is created removes the resource from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). Applicable only to Exadata systems.
+        """
+        return pulumi.get(self, "backup_network_nsg_ids")
+
+    @property
+    @pulumi.getter(name="backupSubnetId")
+    def backup_subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the backup network subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "backup_subnet_id")
+
+    @property
+    @pulumi.getter(name="clusterName")
+    def cluster_name(self) -> str:
+        """
+        The cluster name for Exadata VM cluster on Exascale Infrastructure. The cluster name must begin with an alphabetic character, and may contain hyphens (-). Underscores (_) are not permitted. The cluster name can be no longer than 11 characters and is not case sensitive.
+        """
+        return pulumi.get(self, "cluster_name")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="dataCollectionOptions")
+    def data_collection_options(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterDataCollectionOptionResult']:
+        """
+        Indicates user preferences for the various diagnostic collection options for the VM cluster/Cloud VM cluster/VMBM DBCS.
+        """
+        return pulumi.get(self, "data_collection_options")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter
+    def domain(self) -> str:
+        """
+        A domain name used for the Exadata VM cluster on Exascale Infrastructure. If the Oracle-provided internet and VCN resolver is enabled for the specified subnet, then the domain name for the subnet is used (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.  Applies to Exadata Database Service on Exascale Infrastructure only.
+        """
+        return pulumi.get(self, "domain")
+
+    @property
+    @pulumi.getter(name="exascaleDbStorageVaultId")
+    def exascale_db_storage_vault_id(self) -> str:
+        """
+        A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given Exascale Database Storage Vault ID.
+        """
+        return pulumi.get(self, "exascale_db_storage_vault_id")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="giVersion")
+    def gi_version(self) -> str:
+        """
+        A valid Oracle Grid Infrastructure (GI) software version.
+        """
+        return pulumi.get(self, "gi_version")
+
+    @property
+    @pulumi.getter(name="gridImageId")
+    def grid_image_id(self) -> str:
+        """
+        Grid Setup will be done using this grid image id
+        """
+        return pulumi.get(self, "grid_image_id")
+
+    @property
+    @pulumi.getter(name="gridImageType")
+    def grid_image_type(self) -> str:
+        """
+        The type of Grid Image
+        """
+        return pulumi.get(self, "grid_image_type")
+
+    @property
+    @pulumi.getter
+    def hostname(self) -> str:
+        """
+        The hostname for the Exadata VM cluster on Exascale Infrastructure. The hostname must begin with an alphabetic character, and  can contain alphanumeric characters and hyphens (-). For Exadata systems, the maximum length of the hostname is 12 characters.
+        """
+        return pulumi.get(self, "hostname")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="iormConfigCaches")
+    def iorm_config_caches(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachResult']:
+        """
+        The IORM settings of the Exadata DB system.
+        """
+        return pulumi.get(self, "iorm_config_caches")
+
+    @property
+    @pulumi.getter(name="lastUpdateHistoryEntryId")
+    def last_update_history_entry_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the last maintenance update history entry. This value is updated when a maintenance update starts.
+        """
+        return pulumi.get(self, "last_update_history_entry_id")
+
+    @property
+    @pulumi.getter(name="licenseModel")
+    def license_model(self) -> str:
+        """
+        The Oracle license model that applies to the Exadata VM cluster on Exascale Infrastructure. The default is BRING_YOUR_OWN_LICENSE.
+        """
+        return pulumi.get(self, "license_model")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter(name="listenerPort")
+    def listener_port(self) -> str:
+        """
+        The port number configured for the listener on the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "listener_port")
+
+    @property
+    @pulumi.getter(name="nodeConfigs")
+    def node_configs(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeConfigResult']:
+        """
+        The configuration of each node in the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "node_configs")
+
+    @property
+    @pulumi.getter(name="nodeResources")
+    def node_resources(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterNodeResourceResult']:
+        """
+        The list of node in the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "node_resources")
+
+    @property
+    @pulumi.getter(name="nsgIds")
+    def nsg_ids(self) -> Sequence[str]:
+        """
+        The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/securityrules.htm). **NsgIds restrictions:**
+        * A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
+        """
+        return pulumi.get(self, "nsg_ids")
+
+    @property
+    @pulumi.getter(name="privateZoneId")
+    def private_zone_id(self) -> str:
+        """
+        The private zone ID in which you want DNS records to be created.
+        """
+        return pulumi.get(self, "private_zone_id")
+
+    @property
+    @pulumi.getter(name="scanDnsName")
+    def scan_dns_name(self) -> str:
+        """
+        The FQDN of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "scan_dns_name")
+
+    @property
+    @pulumi.getter(name="scanDnsRecordId")
+    def scan_dns_record_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DNS record for the SCAN IP addresses that are associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "scan_dns_record_id")
+
+    @property
+    @pulumi.getter(name="scanIpIds")
+    def scan_ip_ids(self) -> Sequence[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Single Client Access Name (SCAN) IP addresses associated with the Exadata VM cluster on Exascale Infrastructure. SCAN IP addresses are typically used for load balancing and are not assigned to any interface. Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+        """
+        return pulumi.get(self, "scan_ip_ids")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcp")
+    def scan_listener_port_tcp(self) -> int:
+        """
+        The TCP Single Client Access Name (SCAN) port. The default port is 1521.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp")
+
+    @property
+    @pulumi.getter(name="scanListenerPortTcpSsl")
+    def scan_listener_port_tcp_ssl(self) -> int:
+        """
+        The Secured Communication (TCPS) protocol Single Client Access Name (SCAN) port. The default port is 2484.
+        """
+        return pulumi.get(self, "scan_listener_port_tcp_ssl")
+
+    @property
+    @pulumi.getter
+    def shape(self) -> str:
+        """
+        The shape of the Exadata VM cluster on Exascale Infrastructure resource
+        """
+        return pulumi.get(self, "shape")
+
+    @property
+    @pulumi.getter(name="sshPublicKeys")
+    def ssh_public_keys(self) -> Sequence[str]:
+        """
+        The public key portion of one or more key pairs used for SSH access to the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "ssh_public_keys")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="systemVersion")
+    def system_version(self) -> str:
+        """
+        Operating system version of the image.
+        """
+        return pulumi.get(self, "system_version")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the Exadata VM cluster on Exascale Infrastructure was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        The time zone to use for the Exadata VM cluster on Exascale Infrastructure. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="vipIds")
+    def vip_ids(self) -> Sequence[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the virtual IP (VIP) addresses associated with the Exadata VM cluster on Exascale Infrastructure.  The Cluster Ready Services (CRS) creates and maintains one VIP address for each node in the Exadata Cloud Service instance to  enable failover. If one node fails, then the VIP is reassigned to another active node in the cluster.
+        """
+        return pulumi.get(self, "vip_ids")
+
+    @property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> str:
+        """
+        The OCID of the zone with which the Exadata VM cluster on Exascale Infrastructure is associated.
+        """
+        return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterDataCollectionOptionResult(dict):
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: bool,
+                 is_health_monitoring_enabled: bool,
+                 is_incident_logs_enabled: bool):
+        """
+        :param bool is_diagnostics_events_enabled: Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param bool is_health_monitoring_enabled: Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param bool is_incident_logs_enabled: Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> bool:
+        """
+        Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> bool:
+        """
+        Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> bool:
+        """
+        Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterIormConfigCachResult(dict):
+    def __init__(__self__, *,
+                 db_plans: Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult'],
+                 lifecycle_details: str,
+                 objective: str,
+                 state: str):
+        """
+        :param Sequence['GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanArgs'] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str objective: The current value for the IORM objective. The default is `AUTO`.
+        :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+        """
+        pulumi.set(__self__, "db_plans", db_plans)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "objective", objective)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="dbPlans")
+    def db_plans(self) -> Sequence['outputs.GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult']:
+        """
+        An array of IORM settings for all the database in the Exadata DB system.
+        """
+        return pulumi.get(self, "db_plans")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def objective(self) -> str:
+        """
+        The current value for the IORM objective. The default is `AUTO`.
+        """
+        return pulumi.get(self, "objective")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterIormConfigCachDbPlanResult(dict):
+    def __init__(__self__, *,
+                 db_name: str,
+                 flash_cache_limit: str,
+                 share: int):
+        """
+        :param str db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
+        :param str flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        :param int share: The relative priority of this database.
+        """
+        pulumi.set(__self__, "db_name", db_name)
+        pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        pulumi.set(__self__, "share", share)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> str:
+        """
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
+        """
+        return pulumi.get(self, "db_name")
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> str:
+        """
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @property
+    @pulumi.getter
+    def share(self) -> int:
+        """
+        The relative priority of this database.
+        """
+        return pulumi.get(self, "share")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterNodeConfigResult(dict):
+    def __init__(__self__, *,
+                 enabled_ecpu_count_per_node: int,
+                 memory_size_in_gbs_per_node: int,
+                 snapshot_file_system_storage_size_gbs_per_node: int,
+                 total_ecpu_count_per_node: int,
+                 total_file_system_storage_size_gbs_per_node: int,
+                 vm_file_system_storage_size_gbs_per_node: int):
+        """
+        :param int memory_size_in_gbs_per_node: The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        :param int snapshot_file_system_storage_size_gbs_per_node: The file system storage in GBs for snapshot for each node.
+        :param int total_file_system_storage_size_gbs_per_node: Total file system storage in GBs for each node.
+        :param int vm_file_system_storage_size_gbs_per_node: The file system storage in GBs for each node.
+        """
+        pulumi.set(__self__, "enabled_ecpu_count_per_node", enabled_ecpu_count_per_node)
+        pulumi.set(__self__, "memory_size_in_gbs_per_node", memory_size_in_gbs_per_node)
+        pulumi.set(__self__, "snapshot_file_system_storage_size_gbs_per_node", snapshot_file_system_storage_size_gbs_per_node)
+        pulumi.set(__self__, "total_ecpu_count_per_node", total_ecpu_count_per_node)
+        pulumi.set(__self__, "total_file_system_storage_size_gbs_per_node", total_file_system_storage_size_gbs_per_node)
+        pulumi.set(__self__, "vm_file_system_storage_size_gbs_per_node", vm_file_system_storage_size_gbs_per_node)
+
+    @property
+    @pulumi.getter(name="enabledEcpuCountPerNode")
+    def enabled_ecpu_count_per_node(self) -> int:
+        return pulumi.get(self, "enabled_ecpu_count_per_node")
+
+    @property
+    @pulumi.getter(name="memorySizeInGbsPerNode")
+    def memory_size_in_gbs_per_node(self) -> int:
+        """
+        The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        """
+        return pulumi.get(self, "memory_size_in_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="snapshotFileSystemStorageSizeGbsPerNode")
+    def snapshot_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        The file system storage in GBs for snapshot for each node.
+        """
+        return pulumi.get(self, "snapshot_file_system_storage_size_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="totalEcpuCountPerNode")
+    def total_ecpu_count_per_node(self) -> int:
+        return pulumi.get(self, "total_ecpu_count_per_node")
+
+    @property
+    @pulumi.getter(name="totalFileSystemStorageSizeGbsPerNode")
+    def total_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        Total file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "total_file_system_storage_size_gbs_per_node")
+
+    @property
+    @pulumi.getter(name="vmFileSystemStorageSizeGbsPerNode")
+    def vm_file_system_storage_size_gbs_per_node(self) -> int:
+        """
+        The file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size_gbs_per_node")
+
+
+@pulumi.output_type
+class GetExadbVmClustersExadbVmClusterNodeResourceResult(dict):
+    def __init__(__self__, *,
+                 node_hostname: str,
+                 node_id: str,
+                 node_name: str,
+                 state: str):
+        """
+        :param str node_hostname: The host name for the node.
+        :param str node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        :param str state: A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+        """
+        pulumi.set(__self__, "node_hostname", node_hostname)
+        pulumi.set(__self__, "node_id", node_id)
+        pulumi.set(__self__, "node_name", node_name)
+        pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="nodeHostname")
+    def node_hostname(self) -> str:
+        """
+        The host name for the node.
+        """
+        return pulumi.get(self, "node_hostname")
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        """
+        return pulumi.get(self, "node_id")
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> str:
+        return pulumi.get(self, "node_name")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Exadata VM clusters on Exascale Infrastructure that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+
+@pulumi.output_type
+class GetExadbVmClustersFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetExascaleDbStorageVaultHighCapacityDatabaseStorageResult(dict):
+    def __init__(__self__, *,
+                 available_size_in_gbs: int,
+                 total_size_in_gbs: int):
+        """
+        :param int available_size_in_gbs: Available Capacity
+        :param int total_size_in_gbs: Total Capacity
+        """
+        pulumi.set(__self__, "available_size_in_gbs", available_size_in_gbs)
+        pulumi.set(__self__, "total_size_in_gbs", total_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableSizeInGbs")
+    def available_size_in_gbs(self) -> int:
+        """
+        Available Capacity
+        """
+        return pulumi.get(self, "available_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalSizeInGbs")
+    def total_size_in_gbs(self) -> int:
+        """
+        Total Capacity
+        """
+        return pulumi.get(self, "total_size_in_gbs")
+
+
+@pulumi.output_type
+class GetExascaleDbStorageVaultsExascaleDbStorageVaultResult(dict):
+    def __init__(__self__, *,
+                 additional_flash_cache_in_percent: int,
+                 availability_domain: str,
+                 compartment_id: str,
+                 defined_tags: Mapping[str, Any],
+                 description: str,
+                 display_name: str,
+                 freeform_tags: Mapping[str, Any],
+                 high_capacity_database_storages: Sequence['outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult'],
+                 id: str,
+                 lifecycle_details: str,
+                 state: str,
+                 system_tags: Mapping[str, Any],
+                 time_created: str,
+                 time_zone: str,
+                 vm_cluster_count: int,
+                 vm_cluster_ids: Sequence[str]):
+        """
+        :param int additional_flash_cache_in_percent: The size of additional Flash Cache in percentage of High Capacity database storage.
+        :param str availability_domain: The name of the availability domain in which the Exadata Database Storage Vault is located.
+        :param str compartment_id: The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str description: Exadata Database Storage Vault description.
+        :param str display_name: A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        :param Sequence['GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageArgs'] high_capacity_database_storages: Exadata Database Storage Details
+        :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        :param str lifecycle_details: Additional information about the current lifecycle state.
+        :param str state: A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
+        :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        :param str time_created: The date and time that the Exadata Database Storage Vault was created.
+        :param str time_zone: The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        :param int vm_cluster_count: The number of Exadata VM clusters used the Exadata Database Storage Vault.
+        :param Sequence[str] vm_cluster_ids: The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+        """
+        pulumi.set(__self__, "additional_flash_cache_in_percent", additional_flash_cache_in_percent)
+        pulumi.set(__self__, "availability_domain", availability_domain)
+        pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "defined_tags", defined_tags)
+        pulumi.set(__self__, "description", description)
+        pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "freeform_tags", freeform_tags)
+        pulumi.set(__self__, "high_capacity_database_storages", high_capacity_database_storages)
+        pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "state", state)
+        pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "time_created", time_created)
+        pulumi.set(__self__, "time_zone", time_zone)
+        pulumi.set(__self__, "vm_cluster_count", vm_cluster_count)
+        pulumi.set(__self__, "vm_cluster_ids", vm_cluster_ids)
+
+    @property
+    @pulumi.getter(name="additionalFlashCacheInPercent")
+    def additional_flash_cache_in_percent(self) -> int:
+        """
+        The size of additional Flash Cache in percentage of High Capacity database storage.
+        """
+        return pulumi.get(self, "additional_flash_cache_in_percent")
+
+    @property
+    @pulumi.getter(name="availabilityDomain")
+    def availability_domain(self) -> str:
+        """
+        The name of the availability domain in which the Exadata Database Storage Vault is located.
+        """
+        return pulumi.get(self, "availability_domain")
+
+    @property
+    @pulumi.getter(name="compartmentId")
+    def compartment_id(self) -> str:
+        """
+        The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
+        return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="definedTags")
+    def defined_tags(self) -> Mapping[str, Any]:
+        """
+        Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "defined_tags")
+
+    @property
+    @pulumi.getter
+    def description(self) -> str:
+        """
+        Exadata Database Storage Vault description.
+        """
+        return pulumi.get(self, "description")
+
+    @property
+    @pulumi.getter(name="displayName")
+    def display_name(self) -> str:
+        """
+        A filter to return only resources that match the entire display name given. The match is not case sensitive.
+        """
+        return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="freeformTags")
+    def freeform_tags(self) -> Mapping[str, Any]:
+        """
+        Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+        """
+        return pulumi.get(self, "freeform_tags")
+
+    @property
+    @pulumi.getter(name="highCapacityDatabaseStorages")
+    def high_capacity_database_storages(self) -> Sequence['outputs.GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult']:
+        """
+        Exadata Database Storage Details
+        """
+        return pulumi.get(self, "high_capacity_database_storages")
+
+    @property
+    @pulumi.getter
+    def id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> str:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def state(self) -> str:
+        """
+        A filter to return only Exadata Database Storage Vaults that match the given lifecycle state exactly.
+        """
+        return pulumi.get(self, "state")
+
+    @property
+    @pulumi.getter(name="systemTags")
+    def system_tags(self) -> Mapping[str, Any]:
+        """
+        System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+        """
+        return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="timeCreated")
+    def time_created(self) -> str:
+        """
+        The date and time that the Exadata Database Storage Vault was created.
+        """
+        return pulumi.get(self, "time_created")
+
+    @property
+    @pulumi.getter(name="timeZone")
+    def time_zone(self) -> str:
+        """
+        The time zone that you want to use for the Exadata Database Storage Vault. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm).
+        """
+        return pulumi.get(self, "time_zone")
+
+    @property
+    @pulumi.getter(name="vmClusterCount")
+    def vm_cluster_count(self) -> int:
+        """
+        The number of Exadata VM clusters used the Exadata Database Storage Vault.
+        """
+        return pulumi.get(self, "vm_cluster_count")
+
+    @property
+    @pulumi.getter(name="vmClusterIds")
+    def vm_cluster_ids(self) -> Sequence[str]:
+        """
+        The List of Exadata VM cluster on Exascale Infrastructure [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) **Note:** If Exadata Database Storage Vault is not used for any Exadata VM cluster on Exascale Infrastructure, this list is empty.
+        """
+        return pulumi.get(self, "vm_cluster_ids")
+
+
+@pulumi.output_type
+class GetExascaleDbStorageVaultsExascaleDbStorageVaultHighCapacityDatabaseStorageResult(dict):
+    def __init__(__self__, *,
+                 available_size_in_gbs: int,
+                 total_size_in_gbs: int):
+        """
+        :param int available_size_in_gbs: Available Capacity
+        :param int total_size_in_gbs: Total Capacity
+        """
+        pulumi.set(__self__, "available_size_in_gbs", available_size_in_gbs)
+        pulumi.set(__self__, "total_size_in_gbs", total_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="availableSizeInGbs")
+    def available_size_in_gbs(self) -> int:
+        """
+        Available Capacity
+        """
+        return pulumi.get(self, "available_size_in_gbs")
+
+    @property
+    @pulumi.getter(name="totalSizeInGbs")
+    def total_size_in_gbs(self) -> int:
+        """
+        Total Capacity
+        """
+        return pulumi.get(self, "total_size_in_gbs")
+
+
+@pulumi.output_type
+class GetExascaleDbStorageVaultsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
 class GetExternalContainerDatabaseDatabaseManagementConfigResult(dict):
     def __init__(__self__, *,
                  database_management_connection_id: str,
@@ -39703,6 +41683,62 @@ class GetFlexComponentsFlexComponentCollectionItemResult(dict):
 
 
 @pulumi.output_type
+class GetGiVersionMinorVersionsFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetGiVersionMinorVersionsGiMinorVersionResult(dict):
+    def __init__(__self__, *,
+                 grid_image_id: str,
+                 version: str):
+        """
+        :param str grid_image_id: Grid Infrastructure Image Id
+        :param str version: The Oracle Grid Infrastructure major version.
+        """
+        pulumi.set(__self__, "grid_image_id", grid_image_id)
+        pulumi.set(__self__, "version", version)
+
+    @property
+    @pulumi.getter(name="gridImageId")
+    def grid_image_id(self) -> str:
+        """
+        Grid Infrastructure Image Id
+        """
+        return pulumi.get(self, "grid_image_id")
+
+    @property
+    @pulumi.getter
+    def version(self) -> str:
+        """
+        The Oracle Grid Infrastructure major version.
+        """
+        return pulumi.get(self, "version")
+
+
+@pulumi.output_type
 class GetGiVersionsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -40921,12 +42957,14 @@ class GetPluggableDatabasePdbCreationTypeDetailResult(dict):
                  creation_type: str,
                  dblink_user_password: str,
                  dblink_username: str,
+                 is_thin_clone: bool,
                  refreshable_clone_details: Sequence['outputs.GetPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult'],
                  source_container_database_admin_password: str,
                  source_pluggable_database_id: str):
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "dblink_user_password", dblink_user_password)
         pulumi.set(__self__, "dblink_username", dblink_username)
+        pulumi.set(__self__, "is_thin_clone", is_thin_clone)
         pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
@@ -40945,6 +42983,11 @@ class GetPluggableDatabasePdbCreationTypeDetailResult(dict):
     @pulumi.getter(name="dblinkUsername")
     def dblink_username(self) -> str:
         return pulumi.get(self, "dblink_username")
+
+    @property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> bool:
+        return pulumi.get(self, "is_thin_clone")
 
     @property
     @pulumi.getter(name="refreshableCloneDetails")
@@ -41353,12 +43396,14 @@ class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailResult(dict):
                  creation_type: str,
                  dblink_user_password: str,
                  dblink_username: str,
+                 is_thin_clone: bool,
                  refreshable_clone_details: Sequence['outputs.GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetailResult'],
                  source_container_database_admin_password: str,
                  source_pluggable_database_id: str):
         pulumi.set(__self__, "creation_type", creation_type)
         pulumi.set(__self__, "dblink_user_password", dblink_user_password)
         pulumi.set(__self__, "dblink_username", dblink_username)
+        pulumi.set(__self__, "is_thin_clone", is_thin_clone)
         pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         pulumi.set(__self__, "source_container_database_admin_password", source_container_database_admin_password)
         pulumi.set(__self__, "source_pluggable_database_id", source_pluggable_database_id)
@@ -41377,6 +43422,11 @@ class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailResult(dict):
     @pulumi.getter(name="dblinkUsername")
     def dblink_username(self) -> str:
         return pulumi.get(self, "dblink_username")
+
+    @property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> bool:
+        return pulumi.get(self, "is_thin_clone")
 
     @property
     @pulumi.getter(name="refreshableCloneDetails")

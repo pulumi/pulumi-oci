@@ -12,7 +12,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative Ai service.
+// This resource provides the Dedicated Ai Cluster resource in Oracle Cloud Infrastructure Generative AI service.
 //
 // Creates a dedicated AI cluster.
 //
@@ -97,9 +97,13 @@ type DedicatedAiCluster struct {
 	//
 	// Allowed values are:
 	// * LARGE_COHERE
+	// * LARGE_COHERE_V2
 	// * SMALL_COHERE
+	// * SMALL_COHERE_V2
 	// * EMBED_COHERE
 	// * LLAMA2_70
+	// * LARGE_GENERIC
+	// * LARGE_COHERE_V2_2
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -182,9 +186,13 @@ type dedicatedAiClusterState struct {
 	//
 	// Allowed values are:
 	// * LARGE_COHERE
+	// * LARGE_COHERE_V2
 	// * SMALL_COHERE
+	// * SMALL_COHERE_V2
 	// * EMBED_COHERE
 	// * LLAMA2_70
+	// * LARGE_GENERIC
+	// * LARGE_COHERE_V2_2
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -226,9 +234,13 @@ type DedicatedAiClusterState struct {
 	//
 	// Allowed values are:
 	// * LARGE_COHERE
+	// * LARGE_COHERE_V2
 	// * SMALL_COHERE
+	// * SMALL_COHERE_V2
 	// * EMBED_COHERE
 	// * LLAMA2_70
+	// * LARGE_GENERIC
+	// * LARGE_COHERE_V2_2
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -262,9 +274,13 @@ type dedicatedAiClusterArgs struct {
 	//
 	// Allowed values are:
 	// * LARGE_COHERE
+	// * LARGE_COHERE_V2
 	// * SMALL_COHERE
+	// * SMALL_COHERE_V2
 	// * EMBED_COHERE
 	// * LLAMA2_70
+	// * LARGE_GENERIC
+	// * LARGE_COHERE_V2_2
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -295,9 +311,13 @@ type DedicatedAiClusterArgs struct {
 	//
 	// Allowed values are:
 	// * LARGE_COHERE
+	// * LARGE_COHERE_V2
 	// * SMALL_COHERE
+	// * SMALL_COHERE_V2
 	// * EMBED_COHERE
 	// * LLAMA2_70
+	// * LARGE_GENERIC
+	// * LARGE_COHERE_V2_2
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -464,9 +484,13 @@ func (o DedicatedAiClusterOutput) UnitCount() pulumi.IntOutput {
 //
 // Allowed values are:
 // * LARGE_COHERE
+// * LARGE_COHERE_V2
 // * SMALL_COHERE
+// * SMALL_COHERE_V2
 // * EMBED_COHERE
 // * LLAMA2_70
+// * LARGE_GENERIC
+// * LARGE_COHERE_V2_2
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

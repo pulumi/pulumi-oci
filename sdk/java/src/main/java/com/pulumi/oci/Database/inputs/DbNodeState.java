@@ -355,6 +355,21 @@ public final class DbNodeState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The total number of CPU cores reserved on the Db node.
+     * 
+     */
+    @Import(name="totalCpuCoreCount")
+    private @Nullable Output<Integer> totalCpuCoreCount;
+
+    /**
+     * @return The total number of CPU cores reserved on the Db node.
+     * 
+     */
+    public Optional<Output<Integer>> totalCpuCoreCount() {
+        return Optional.ofNullable(this.totalCpuCoreCount);
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
@@ -409,6 +424,7 @@ public final class DbNodeState extends com.pulumi.resources.ResourceArgs {
         this.timeCreated = $.timeCreated;
         this.timeMaintenanceWindowEnd = $.timeMaintenanceWindowEnd;
         this.timeMaintenanceWindowStart = $.timeMaintenanceWindowStart;
+        this.totalCpuCoreCount = $.totalCpuCoreCount;
         this.vnic2id = $.vnic2id;
         this.vnicId = $.vnicId;
     }
@@ -897,6 +913,27 @@ public final class DbNodeState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder timeMaintenanceWindowStart(String timeMaintenanceWindowStart) {
             return timeMaintenanceWindowStart(Output.of(timeMaintenanceWindowStart));
+        }
+
+        /**
+         * @param totalCpuCoreCount The total number of CPU cores reserved on the Db node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalCpuCoreCount(@Nullable Output<Integer> totalCpuCoreCount) {
+            $.totalCpuCoreCount = totalCpuCoreCount;
+            return this;
+        }
+
+        /**
+         * @param totalCpuCoreCount The total number of CPU cores reserved on the Db node.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder totalCpuCoreCount(Integer totalCpuCoreCount) {
+            return totalCpuCoreCount(Output.of(totalCpuCoreCount));
         }
 
         /**

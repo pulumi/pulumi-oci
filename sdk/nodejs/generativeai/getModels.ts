@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
  *
  * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
  *
@@ -81,9 +81,6 @@ export interface GetModelsResult {
      * The compartment OCID for fine-tuned models. For pretrained models, this value is null.
      */
     readonly compartmentId: string;
-    /**
-     * A user-friendly name.
-     */
     readonly displayName?: string;
     readonly filters?: outputs.GenerativeAi.GetModelsFilter[];
     /**
@@ -98,13 +95,10 @@ export interface GetModelsResult {
      * The lifecycle state of the model.
      */
     readonly state?: string;
-    /**
-     * The provider of the base model.
-     */
     readonly vendor?: string;
 }
 /**
- * This data source provides the list of Models in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides the list of Models in Oracle Cloud Infrastructure Generative AI service.
  *
  * Lists the models in a specific compartment. Includes pretrained base models and fine-tuned custom models.
  *

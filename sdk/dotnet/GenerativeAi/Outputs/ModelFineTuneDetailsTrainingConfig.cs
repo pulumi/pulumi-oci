@@ -32,6 +32,18 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
         /// </summary>
         public readonly int? LogModelMetricsIntervalInSteps;
         /// <summary>
+        /// This parameter represents the scaling factor for the weight matrices in LoRA.
+        /// </summary>
+        public readonly int? LoraAlpha;
+        /// <summary>
+        /// This parameter indicates the dropout probability for LoRA layers.
+        /// </summary>
+        public readonly double? LoraDropout;
+        /// <summary>
+        /// This parameter represents the LoRA rank of the update matrices.
+        /// </summary>
+        public readonly int? LoraR;
+        /// <summary>
         /// The number of last layers to be fine-tuned.
         /// </summary>
         public readonly int? NumOfLastLayers;
@@ -58,6 +70,12 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
 
             int? logModelMetricsIntervalInSteps,
 
+            int? loraAlpha,
+
+            double? loraDropout,
+
+            int? loraR,
+
             int? numOfLastLayers,
 
             int? totalTrainingEpochs,
@@ -70,6 +88,9 @@ namespace Pulumi.Oci.GenerativeAi.Outputs
             EarlyStoppingThreshold = earlyStoppingThreshold;
             LearningRate = learningRate;
             LogModelMetricsIntervalInSteps = logModelMetricsIntervalInSteps;
+            LoraAlpha = loraAlpha;
+            LoraDropout = loraDropout;
+            LoraR = loraR;
             NumOfLastLayers = numOfLastLayers;
             TotalTrainingEpochs = totalTrainingEpochs;
             TrainingBatchSize = trainingBatchSize;

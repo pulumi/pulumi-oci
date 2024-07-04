@@ -39,6 +39,24 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         public Input<int>? LogModelMetricsIntervalInSteps { get; set; }
 
         /// <summary>
+        /// This parameter represents the scaling factor for the weight matrices in LoRA.
+        /// </summary>
+        [Input("loraAlpha")]
+        public Input<int>? LoraAlpha { get; set; }
+
+        /// <summary>
+        /// This parameter indicates the dropout probability for LoRA layers.
+        /// </summary>
+        [Input("loraDropout")]
+        public Input<double>? LoraDropout { get; set; }
+
+        /// <summary>
+        /// This parameter represents the LoRA rank of the update matrices.
+        /// </summary>
+        [Input("loraR")]
+        public Input<int>? LoraR { get; set; }
+
+        /// <summary>
         /// The number of last layers to be fine-tuned.
         /// </summary>
         [Input("numOfLastLayers")]

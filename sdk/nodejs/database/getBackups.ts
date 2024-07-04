@@ -20,6 +20,7 @@ import * as utilities from "../utilities";
  * const testBackups = oci.Database.getBackups({
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
+ *     shapeFamily: backupShapeFamily,
  * });
  * ```
  */
@@ -31,6 +32,7 @@ export function getBackups(args?: GetBackupsArgs, opts?: pulumi.InvokeOptions): 
         "compartmentId": args.compartmentId,
         "databaseId": args.databaseId,
         "filters": args.filters,
+        "shapeFamily": args.shapeFamily,
     }, opts);
 }
 
@@ -47,6 +49,10 @@ export interface GetBackupsArgs {
      */
     databaseId?: string;
     filters?: inputs.Database.GetBackupsFilter[];
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
+     */
+    shapeFamily?: string;
 }
 
 /**
@@ -70,6 +76,7 @@ export interface GetBackupsResult {
      * The provider-assigned unique ID for this managed resource.
      */
     readonly id: string;
+    readonly shapeFamily?: string;
 }
 /**
  * This data source provides the list of Backups in Oracle Cloud Infrastructure Database service.
@@ -85,6 +92,7 @@ export interface GetBackupsResult {
  * const testBackups = oci.Database.getBackups({
  *     compartmentId: compartmentId,
  *     databaseId: testDatabase.id,
+ *     shapeFamily: backupShapeFamily,
  * });
  * ```
  */
@@ -105,4 +113,8 @@ export interface GetBackupsOutputArgs {
      */
     databaseId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Database.GetBackupsFilterArgs>[]>;
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the given shape family.
+     */
+    shapeFamily?: pulumi.Input<string>;
 }

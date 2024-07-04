@@ -123,6 +123,12 @@ __all__ = [
     'ExadataInfrastructureStorageMaintenanceWindowDaysOfWeekArgs',
     'ExadataInfrastructureStorageMaintenanceWindowMonthArgs',
     'ExadataIormConfigDbPlanArgs',
+    'ExadbVmClusterDataCollectionOptionsArgs',
+    'ExadbVmClusterIormConfigCachArgs',
+    'ExadbVmClusterIormConfigCachDbPlanArgs',
+    'ExadbVmClusterNodeConfigArgs',
+    'ExadbVmClusterNodeResourceArgs',
+    'ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs',
     'ExternalContainerDatabaseDatabaseManagementConfigArgs',
     'ExternalContainerDatabaseStackMonitoringConfigArgs',
     'ExternalDatabaseConnectorConnectionCredentialsArgs',
@@ -213,11 +219,16 @@ __all__ = [
     'GetDbSystemsUpgradeHistoryEntriesFilterArgs',
     'GetDbVersionsFilterArgs',
     'GetExadataInfrastructuresFilterArgs',
+    'GetExadbVmClusterUpdateHistoryEntriesFilterArgs',
+    'GetExadbVmClusterUpdatesFilterArgs',
+    'GetExadbVmClustersFilterArgs',
+    'GetExascaleDbStorageVaultsFilterArgs',
     'GetExternalContainerDatabasesFilterArgs',
     'GetExternalDatabaseConnectorsFilterArgs',
     'GetExternalNonContainerDatabasesFilterArgs',
     'GetExternalPluggableDatabasesFilterArgs',
     'GetFlexComponentsFilterArgs',
+    'GetGiVersionMinorVersionsFilterArgs',
     'GetGiVersionsFilterArgs',
     'GetKeyStoresFilterArgs',
     'GetMaintenanceRunsFilterArgs',
@@ -9236,6 +9247,391 @@ class ExadataIormConfigDbPlanArgs:
 
 
 @pulumi.input_type
+class ExadbVmClusterDataCollectionOptionsArgs:
+    def __init__(__self__, *,
+                 is_diagnostics_events_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_health_monitoring_enabled: Optional[pulumi.Input[bool]] = None,
+                 is_incident_logs_enabled: Optional[pulumi.Input[bool]] = None):
+        """
+        :param pulumi.Input[bool] is_diagnostics_events_enabled: (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        :param pulumi.Input[bool] is_health_monitoring_enabled: (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        :param pulumi.Input[bool] is_incident_logs_enabled: (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        if is_diagnostics_events_enabled is not None:
+            pulumi.set(__self__, "is_diagnostics_events_enabled", is_diagnostics_events_enabled)
+        if is_health_monitoring_enabled is not None:
+            pulumi.set(__self__, "is_health_monitoring_enabled", is_health_monitoring_enabled)
+        if is_incident_logs_enabled is not None:
+            pulumi.set(__self__, "is_incident_logs_enabled", is_incident_logs_enabled)
+
+    @property
+    @pulumi.getter(name="isDiagnosticsEventsEnabled")
+    def is_diagnostics_events_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether diagnostic collection is enabled for the VM cluster/Cloud VM cluster/VMBM DBCS. Enabling diagnostic collection allows you to receive Events service notifications for guest VM issues. Diagnostic collection also allows Oracle to provide enhanced service and proactive support for your Exadata system. You can enable diagnostic collection during VM cluster/Cloud VM cluster provisioning. You can also disable or enable it at any time using the `UpdateVmCluster` or `updateCloudVmCluster` API.
+        """
+        return pulumi.get(self, "is_diagnostics_events_enabled")
+
+    @is_diagnostics_events_enabled.setter
+    def is_diagnostics_events_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_diagnostics_events_enabled", value)
+
+    @property
+    @pulumi.getter(name="isHealthMonitoringEnabled")
+    def is_health_monitoring_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether health monitoring is enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling health monitoring allows Oracle to collect diagnostic data and share it with its operations and support personnel. You may also receive notifications for some events. Collecting health diagnostics enables Oracle to provide proactive support and enhanced service for your system. Optionally enable health monitoring while provisioning a system. You can also disable or enable health monitoring anytime using the `UpdateVmCluster`, `UpdateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_health_monitoring_enabled")
+
+    @is_health_monitoring_enabled.setter
+    def is_health_monitoring_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_health_monitoring_enabled", value)
+
+    @property
+    @pulumi.getter(name="isIncidentLogsEnabled")
+    def is_incident_logs_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether incident logs and trace collection are enabled for the VM cluster / Cloud VM cluster / VMBM DBCS. Enabling incident logs collection allows Oracle to receive Events service notifications for guest VM issues, collect incident logs and traces, and use them to diagnose issues and resolve them. Optionally enable incident logs collection while provisioning a system. You can also disable or enable incident logs collection anytime using the `UpdateVmCluster`, `updateCloudVmCluster` or `updateDbsystem` API.
+        """
+        return pulumi.get(self, "is_incident_logs_enabled")
+
+    @is_incident_logs_enabled.setter
+    def is_incident_logs_enabled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_incident_logs_enabled", value)
+
+
+@pulumi.input_type
+class ExadbVmClusterIormConfigCachArgs:
+    def __init__(__self__, *,
+                 db_plans: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]]] = None,
+                 lifecycle_details: Optional[pulumi.Input[str]] = None,
+                 objective: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]] db_plans: An array of IORM settings for all the database in the Exadata DB system.
+        :param pulumi.Input[str] lifecycle_details: Additional information about the current lifecycle state.
+        :param pulumi.Input[str] objective: The current value for the IORM objective. The default is `AUTO`.
+        :param pulumi.Input[str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        if db_plans is not None:
+            pulumi.set(__self__, "db_plans", db_plans)
+        if lifecycle_details is not None:
+            pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        if objective is not None:
+            pulumi.set(__self__, "objective", objective)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="dbPlans")
+    def db_plans(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]]]:
+        """
+        An array of IORM settings for all the database in the Exadata DB system.
+        """
+        return pulumi.get(self, "db_plans")
+
+    @db_plans.setter
+    def db_plans(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ExadbVmClusterIormConfigCachDbPlanArgs']]]]):
+        pulumi.set(self, "db_plans", value)
+
+    @property
+    @pulumi.getter(name="lifecycleDetails")
+    def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
+        """
+        Additional information about the current lifecycle state.
+        """
+        return pulumi.get(self, "lifecycle_details")
+
+    @lifecycle_details.setter
+    def lifecycle_details(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "lifecycle_details", value)
+
+    @property
+    @pulumi.getter
+    def objective(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current value for the IORM objective. The default is `AUTO`.
+        """
+        return pulumi.get(self, "objective")
+
+    @objective.setter
+    def objective(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "objective", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+
+@pulumi.input_type
+class ExadbVmClusterIormConfigCachDbPlanArgs:
+    def __init__(__self__, *,
+                 db_name: Optional[pulumi.Input[str]] = None,
+                 flash_cache_limit: Optional[pulumi.Input[str]] = None,
+                 share: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[str] db_name: The database name. For the default `DbPlan`, the `dbName` is `default`.
+        :param pulumi.Input[str] flash_cache_limit: The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        :param pulumi.Input[int] share: The relative priority of this database.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if flash_cache_limit is not None:
+            pulumi.set(__self__, "flash_cache_limit", flash_cache_limit)
+        if share is not None:
+            pulumi.set(__self__, "share", share)
+
+    @property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        The database name. For the default `DbPlan`, the `dbName` is `default`.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "db_name", value)
+
+    @property
+    @pulumi.getter(name="flashCacheLimit")
+    def flash_cache_limit(self) -> Optional[pulumi.Input[str]]:
+        """
+        The flash cache limit for this database. This value is internally configured based on the share value assigned to the database.
+        """
+        return pulumi.get(self, "flash_cache_limit")
+
+    @flash_cache_limit.setter
+    def flash_cache_limit(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "flash_cache_limit", value)
+
+    @property
+    @pulumi.getter
+    def share(self) -> Optional[pulumi.Input[int]]:
+        """
+        The relative priority of this database.
+        """
+        return pulumi.get(self, "share")
+
+    @share.setter
+    def share(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "share", value)
+
+
+@pulumi.input_type
+class ExadbVmClusterNodeConfigArgs:
+    def __init__(__self__, *,
+                 enabled_ecpu_count_per_node: pulumi.Input[int],
+                 total_ecpu_count_per_node: pulumi.Input[int],
+                 vm_file_system_storage_size_gbs_per_node: pulumi.Input[int],
+                 memory_size_in_gbs_per_node: Optional[pulumi.Input[int]] = None,
+                 snapshot_file_system_storage_size_gbs_per_node: Optional[pulumi.Input[int]] = None,
+                 total_file_system_storage_size_gbs_per_node: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] enabled_ecpu_count_per_node: (Updatable) The number of ECPUs to enable for each node.
+        :param pulumi.Input[int] total_ecpu_count_per_node: (Updatable) The number of Total ECPUs for each node.
+        :param pulumi.Input[int] vm_file_system_storage_size_gbs_per_node: (Updatable) The file system storage in GBs for each node.
+        :param pulumi.Input[int] memory_size_in_gbs_per_node: The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        :param pulumi.Input[int] snapshot_file_system_storage_size_gbs_per_node: The file system storage in GBs for snapshot for each node.
+        :param pulumi.Input[int] total_file_system_storage_size_gbs_per_node: Total file system storage in GBs for each node.
+        """
+        pulumi.set(__self__, "enabled_ecpu_count_per_node", enabled_ecpu_count_per_node)
+        pulumi.set(__self__, "total_ecpu_count_per_node", total_ecpu_count_per_node)
+        pulumi.set(__self__, "vm_file_system_storage_size_gbs_per_node", vm_file_system_storage_size_gbs_per_node)
+        if memory_size_in_gbs_per_node is not None:
+            pulumi.set(__self__, "memory_size_in_gbs_per_node", memory_size_in_gbs_per_node)
+        if snapshot_file_system_storage_size_gbs_per_node is not None:
+            pulumi.set(__self__, "snapshot_file_system_storage_size_gbs_per_node", snapshot_file_system_storage_size_gbs_per_node)
+        if total_file_system_storage_size_gbs_per_node is not None:
+            pulumi.set(__self__, "total_file_system_storage_size_gbs_per_node", total_file_system_storage_size_gbs_per_node)
+
+    @property
+    @pulumi.getter(name="enabledEcpuCountPerNode")
+    def enabled_ecpu_count_per_node(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The number of ECPUs to enable for each node.
+        """
+        return pulumi.get(self, "enabled_ecpu_count_per_node")
+
+    @enabled_ecpu_count_per_node.setter
+    def enabled_ecpu_count_per_node(self, value: pulumi.Input[int]):
+        pulumi.set(self, "enabled_ecpu_count_per_node", value)
+
+    @property
+    @pulumi.getter(name="totalEcpuCountPerNode")
+    def total_ecpu_count_per_node(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The number of Total ECPUs for each node.
+        """
+        return pulumi.get(self, "total_ecpu_count_per_node")
+
+    @total_ecpu_count_per_node.setter
+    def total_ecpu_count_per_node(self, value: pulumi.Input[int]):
+        pulumi.set(self, "total_ecpu_count_per_node", value)
+
+    @property
+    @pulumi.getter(name="vmFileSystemStorageSizeGbsPerNode")
+    def vm_file_system_storage_size_gbs_per_node(self) -> pulumi.Input[int]:
+        """
+        (Updatable) The file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "vm_file_system_storage_size_gbs_per_node")
+
+    @vm_file_system_storage_size_gbs_per_node.setter
+    def vm_file_system_storage_size_gbs_per_node(self, value: pulumi.Input[int]):
+        pulumi.set(self, "vm_file_system_storage_size_gbs_per_node", value)
+
+    @property
+    @pulumi.getter(name="memorySizeInGbsPerNode")
+    def memory_size_in_gbs_per_node(self) -> Optional[pulumi.Input[int]]:
+        """
+        The memory that you want to be allocated in GBs to each node. Memory is calculated based on 11 GB per VM core reserved.
+        """
+        return pulumi.get(self, "memory_size_in_gbs_per_node")
+
+    @memory_size_in_gbs_per_node.setter
+    def memory_size_in_gbs_per_node(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "memory_size_in_gbs_per_node", value)
+
+    @property
+    @pulumi.getter(name="snapshotFileSystemStorageSizeGbsPerNode")
+    def snapshot_file_system_storage_size_gbs_per_node(self) -> Optional[pulumi.Input[int]]:
+        """
+        The file system storage in GBs for snapshot for each node.
+        """
+        return pulumi.get(self, "snapshot_file_system_storage_size_gbs_per_node")
+
+    @snapshot_file_system_storage_size_gbs_per_node.setter
+    def snapshot_file_system_storage_size_gbs_per_node(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "snapshot_file_system_storage_size_gbs_per_node", value)
+
+    @property
+    @pulumi.getter(name="totalFileSystemStorageSizeGbsPerNode")
+    def total_file_system_storage_size_gbs_per_node(self) -> Optional[pulumi.Input[int]]:
+        """
+        Total file system storage in GBs for each node.
+        """
+        return pulumi.get(self, "total_file_system_storage_size_gbs_per_node")
+
+    @total_file_system_storage_size_gbs_per_node.setter
+    def total_file_system_storage_size_gbs_per_node(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "total_file_system_storage_size_gbs_per_node", value)
+
+
+@pulumi.input_type
+class ExadbVmClusterNodeResourceArgs:
+    def __init__(__self__, *,
+                 node_name: pulumi.Input[str],
+                 node_hostname: Optional[pulumi.Input[str]] = None,
+                 node_id: Optional[pulumi.Input[str]] = None,
+                 state: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] node_hostname: The host name for the node.
+        :param pulumi.Input[str] node_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        :param pulumi.Input[str] state: The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        pulumi.set(__self__, "node_name", node_name)
+        if node_hostname is not None:
+            pulumi.set(__self__, "node_hostname", node_hostname)
+        if node_id is not None:
+            pulumi.set(__self__, "node_id", node_id)
+        if state is not None:
+            pulumi.set(__self__, "state", state)
+
+    @property
+    @pulumi.getter(name="nodeName")
+    def node_name(self) -> pulumi.Input[str]:
+        return pulumi.get(self, "node_name")
+
+    @node_name.setter
+    def node_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "node_name", value)
+
+    @property
+    @pulumi.getter(name="nodeHostname")
+    def node_hostname(self) -> Optional[pulumi.Input[str]]:
+        """
+        The host name for the node.
+        """
+        return pulumi.get(self, "node_hostname")
+
+    @node_hostname.setter
+    def node_hostname(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_hostname", value)
+
+    @property
+    @pulumi.getter(name="nodeId")
+    def node_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the node.
+        """
+        return pulumi.get(self, "node_id")
+
+    @node_id.setter
+    def node_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "node_id", value)
+
+    @property
+    @pulumi.getter
+    def state(self) -> Optional[pulumi.Input[str]]:
+        """
+        The current state of the Exadata VM cluster on Exascale Infrastructure.
+        """
+        return pulumi.get(self, "state")
+
+    @state.setter
+    def state(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "state", value)
+
+
+@pulumi.input_type
+class ExascaleDbStorageVaultHighCapacityDatabaseStorageArgs:
+    def __init__(__self__, *,
+                 total_size_in_gbs: pulumi.Input[int],
+                 available_size_in_gbs: Optional[pulumi.Input[int]] = None):
+        """
+        :param pulumi.Input[int] total_size_in_gbs: (Updatable) Total Capacity
+        :param pulumi.Input[int] available_size_in_gbs: Available Capacity
+        """
+        pulumi.set(__self__, "total_size_in_gbs", total_size_in_gbs)
+        if available_size_in_gbs is not None:
+            pulumi.set(__self__, "available_size_in_gbs", available_size_in_gbs)
+
+    @property
+    @pulumi.getter(name="totalSizeInGbs")
+    def total_size_in_gbs(self) -> pulumi.Input[int]:
+        """
+        (Updatable) Total Capacity
+        """
+        return pulumi.get(self, "total_size_in_gbs")
+
+    @total_size_in_gbs.setter
+    def total_size_in_gbs(self, value: pulumi.Input[int]):
+        pulumi.set(self, "total_size_in_gbs", value)
+
+    @property
+    @pulumi.getter(name="availableSizeInGbs")
+    def available_size_in_gbs(self) -> Optional[pulumi.Input[int]]:
+        """
+        Available Capacity
+        """
+        return pulumi.get(self, "available_size_in_gbs")
+
+    @available_size_in_gbs.setter
+    def available_size_in_gbs(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "available_size_in_gbs", value)
+
+
+@pulumi.input_type
 class ExternalContainerDatabaseDatabaseManagementConfigArgs:
     def __init__(__self__, *,
                  database_management_connection_id: Optional[pulumi.Input[str]] = None,
@@ -10192,6 +10588,7 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
                  source_pluggable_database_id: pulumi.Input[str],
                  dblink_user_password: Optional[pulumi.Input[str]] = None,
                  dblink_username: Optional[pulumi.Input[str]] = None,
+                 is_thin_clone: Optional[pulumi.Input[bool]] = None,
                  refreshable_clone_details: Optional[pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs']] = None,
                  source_container_database_admin_password: Optional[pulumi.Input[str]] = None):
         """
@@ -10199,6 +10596,7 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
         :param pulumi.Input[str] source_pluggable_database_id: The OCID of the Source Pluggable Database.
         :param pulumi.Input[str] dblink_user_password: The DB link user password.
         :param pulumi.Input[str] dblink_username: The name of the DB link user.
+        :param pulumi.Input[bool] is_thin_clone: True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
         :param pulumi.Input['PluggableDatabasePdbCreationTypeDetailsRefreshableCloneDetailsArgs'] refreshable_clone_details: Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         :param pulumi.Input[str] source_container_database_admin_password: The DB system administrator password of the source Container Database.
         """
@@ -10208,6 +10606,8 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
             pulumi.set(__self__, "dblink_user_password", dblink_user_password)
         if dblink_username is not None:
             pulumi.set(__self__, "dblink_username", dblink_username)
+        if is_thin_clone is not None:
+            pulumi.set(__self__, "is_thin_clone", is_thin_clone)
         if refreshable_clone_details is not None:
             pulumi.set(__self__, "refreshable_clone_details", refreshable_clone_details)
         if source_container_database_admin_password is not None:
@@ -10260,6 +10660,18 @@ class PluggableDatabasePdbCreationTypeDetailsArgs:
     @dblink_username.setter
     def dblink_username(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "dblink_username", value)
+
+    @property
+    @pulumi.getter(name="isThinClone")
+    def is_thin_clone(self) -> Optional[pulumi.Input[bool]]:
+        """
+        True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+        """
+        return pulumi.get(self, "is_thin_clone")
+
+    @is_thin_clone.setter
+    def is_thin_clone(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_thin_clone", value)
 
     @property
     @pulumi.getter(name="refreshableCloneDetails")
@@ -13284,6 +13696,162 @@ class GetExadataInfrastructuresFilterArgs:
 
 
 @pulumi.input_type
+class GetExadbVmClusterUpdateHistoryEntriesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExadbVmClusterUpdatesFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExadbVmClustersFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetExascaleDbStorageVaultsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
 class GetExternalContainerDatabasesFilterArgs:
     def __init__(__self__, *,
                  name: str,
@@ -13459,6 +14027,45 @@ class GetFlexComponentsFilterArgs:
         """
         A filter to return only resources that match the entire name given. The match is not case sensitive.
         """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetGiVersionMinorVersionsFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
         return pulumi.get(self, "name")
 
     @name.setter

@@ -73,6 +73,8 @@ type DbNode struct {
 	TimeMaintenanceWindowEnd pulumi.StringOutput `pulumi:"timeMaintenanceWindowEnd"`
 	// Start date and time of maintenance window.
 	TimeMaintenanceWindowStart pulumi.StringOutput `pulumi:"timeMaintenanceWindowStart"`
+	// The total number of CPU cores reserved on the Db node.
+	TotalCpuCoreCount pulumi.IntOutput `pulumi:"totalCpuCoreCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
 	Vnic2id pulumi.StringOutput `pulumi:"vnic2id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -159,6 +161,8 @@ type dbNodeState struct {
 	TimeMaintenanceWindowEnd *string `pulumi:"timeMaintenanceWindowEnd"`
 	// Start date and time of maintenance window.
 	TimeMaintenanceWindowStart *string `pulumi:"timeMaintenanceWindowStart"`
+	// The total number of CPU cores reserved on the Db node.
+	TotalCpuCoreCount *int `pulumi:"totalCpuCoreCount"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
 	Vnic2id *string `pulumi:"vnic2id"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -213,6 +217,8 @@ type DbNodeState struct {
 	TimeMaintenanceWindowEnd pulumi.StringPtrInput
 	// Start date and time of maintenance window.
 	TimeMaintenanceWindowStart pulumi.StringPtrInput
+	// The total number of CPU cores reserved on the Db node.
+	TotalCpuCoreCount pulumi.IntPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
 	Vnic2id pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC.
@@ -446,6 +452,11 @@ func (o DbNodeOutput) TimeMaintenanceWindowEnd() pulumi.StringOutput {
 // Start date and time of maintenance window.
 func (o DbNodeOutput) TimeMaintenanceWindowStart() pulumi.StringOutput {
 	return o.ApplyT(func(v *DbNode) pulumi.StringOutput { return v.TimeMaintenanceWindowStart }).(pulumi.StringOutput)
+}
+
+// The total number of CPU cores reserved on the Db node.
+func (o DbNodeOutput) TotalCpuCoreCount() pulumi.IntOutput {
+	return o.ApplyT(func(v *DbNode) pulumi.IntOutput { return v.TotalCpuCoreCount }).(pulumi.IntOutput)
 }
 
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.

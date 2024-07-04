@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+ * Gets a list of supported GI versions.
  *
  * ## Example Usage
  *
@@ -19,6 +19,7 @@ import * as utilities from "../utilities";
  *
  * const testGiVersions = oci.Database.getGiVersions({
  *     compartmentId: compartmentId,
+ *     availabilityDomain: giVersionAvailabilityDomain,
  *     shape: giVersionShape,
  * });
  * ```
@@ -27,6 +28,7 @@ export function getGiVersions(args: GetGiVersionsArgs, opts?: pulumi.InvokeOptio
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:Database/getGiVersions:getGiVersions", {
+        "availabilityDomain": args.availabilityDomain,
         "compartmentId": args.compartmentId,
         "filters": args.filters,
         "shape": args.shape,
@@ -37,6 +39,10 @@ export function getGiVersions(args: GetGiVersionsArgs, opts?: pulumi.InvokeOptio
  * A collection of arguments for invoking getGiVersions.
  */
 export interface GetGiVersionsArgs {
+    /**
+     * The target availability domain. Only passed if the limit is AD-specific.
+     */
+    availabilityDomain?: string;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
@@ -52,6 +58,7 @@ export interface GetGiVersionsArgs {
  * A collection of values returned by getGiVersions.
  */
 export interface GetGiVersionsResult {
+    readonly availabilityDomain?: string;
     readonly compartmentId: string;
     readonly filters?: outputs.Database.GetGiVersionsFilter[];
     /**
@@ -67,7 +74,7 @@ export interface GetGiVersionsResult {
 /**
  * This data source provides the list of Gi Versions in Oracle Cloud Infrastructure Database service.
  *
- * Gets a list of supported GI versions for the Exadata Cloud@Customer VM cluster.
+ * Gets a list of supported GI versions.
  *
  * ## Example Usage
  *
@@ -77,6 +84,7 @@ export interface GetGiVersionsResult {
  *
  * const testGiVersions = oci.Database.getGiVersions({
  *     compartmentId: compartmentId,
+ *     availabilityDomain: giVersionAvailabilityDomain,
  *     shape: giVersionShape,
  * });
  * ```
@@ -89,6 +97,10 @@ export function getGiVersionsOutput(args: GetGiVersionsOutputArgs, opts?: pulumi
  * A collection of arguments for invoking getGiVersions.
  */
 export interface GetGiVersionsOutputArgs {
+    /**
+     * The target availability domain. Only passed if the limit is AD-specific.
+     */
+    availabilityDomain?: pulumi.Input<string>;
     /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */

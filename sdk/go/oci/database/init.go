@@ -97,6 +97,10 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &ExadataInfrastructureStorage{}
 	case "oci:Database/exadataIormConfig:ExadataIormConfig":
 		r = &ExadataIormConfig{}
+	case "oci:Database/exadbVmCluster:ExadbVmCluster":
+		r = &ExadbVmCluster{}
+	case "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault":
+		r = &ExascaleDbStorageVault{}
 	case "oci:Database/externalContainerDatabase:ExternalContainerDatabase":
 		r = &ExternalContainerDatabase{}
 	case "oci:Database/externalContainerDatabaseManagement:ExternalContainerDatabaseManagement":
@@ -344,6 +348,16 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"oci",
 		"Database/exadataIormConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/exadbVmCluster",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"Database/exascaleDbStorageVault",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

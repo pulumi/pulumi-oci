@@ -18,6 +18,14 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// </summary>
         public readonly string AvailabilityDomain;
         /// <summary>
+        /// Specifies whether the file system is attached to its parent file system.
+        /// </summary>
+        public readonly string CloneAttachStatus;
+        /// <summary>
+        /// Specifies the total number of children of a file system.
+        /// </summary>
+        public readonly int CloneCount;
+        /// <summary>
         /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         /// </summary>
         public readonly string CompartmentId;
@@ -25,6 +33,7 @@ namespace Pulumi.Oci.FileStorage.Outputs
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
+        public readonly int DetachCloneTrigger;
         /// <summary>
         /// A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
         /// </summary>
@@ -90,9 +99,15 @@ namespace Pulumi.Oci.FileStorage.Outputs
         private GetFileSystemsFileSystemResult(
             string availabilityDomain,
 
+            string cloneAttachStatus,
+
+            int cloneCount,
+
             string compartmentId,
 
             ImmutableDictionary<string, object> definedTags,
+
+            int detachCloneTrigger,
 
             string displayName,
 
@@ -125,8 +140,11 @@ namespace Pulumi.Oci.FileStorage.Outputs
             string timeCreated)
         {
             AvailabilityDomain = availabilityDomain;
+            CloneAttachStatus = cloneAttachStatus;
+            CloneCount = cloneCount;
             CompartmentId = compartmentId;
             DefinedTags = definedTags;
+            DetachCloneTrigger = detachCloneTrigger;
             DisplayName = displayName;
             FilesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             FreeformTags = freeformTags;

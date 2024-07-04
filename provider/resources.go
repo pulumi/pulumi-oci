@@ -255,6 +255,7 @@ var mappedMods = map[string]string{
 	"recovery":                       recoveryMod,
 	"redis":                          redisMod,
 	"resourcemanager":                resourceManagerMod,
+	"resource_scheduler":             "ResourceScheduler",
 	"sch":                            schMod,
 	"secrets":                        secretsMod,
 	"service_catalog":                serviceCatalogMod,

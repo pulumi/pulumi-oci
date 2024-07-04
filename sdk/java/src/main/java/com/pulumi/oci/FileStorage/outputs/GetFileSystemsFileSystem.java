@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.FileStorage.outputs.GetFileSystemsFileSystemSourceDetail;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -21,6 +22,16 @@ public final class GetFileSystemsFileSystem {
      */
     private String availabilityDomain;
     /**
+     * @return Specifies whether the file system is attached to its parent file system.
+     * 
+     */
+    private String cloneAttachStatus;
+    /**
+     * @return Specifies the total number of children of a file system.
+     * 
+     */
+    private Integer cloneCount;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -30,6 +41,7 @@ public final class GetFileSystemsFileSystem {
      * 
      */
     private Map<String,Object> definedTags;
+    private Integer detachCloneTrigger;
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
      * 
@@ -115,6 +127,20 @@ public final class GetFileSystemsFileSystem {
         return this.availabilityDomain;
     }
     /**
+     * @return Specifies whether the file system is attached to its parent file system.
+     * 
+     */
+    public String cloneAttachStatus() {
+        return this.cloneAttachStatus;
+    }
+    /**
+     * @return Specifies the total number of children of a file system.
+     * 
+     */
+    public Integer cloneCount() {
+        return this.cloneCount;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      * 
      */
@@ -127,6 +153,9 @@ public final class GetFileSystemsFileSystem {
      */
     public Map<String,Object> definedTags() {
         return this.definedTags;
+    }
+    public Integer detachCloneTrigger() {
+        return this.detachCloneTrigger;
     }
     /**
      * @return A user-friendly name. It does not have to be unique, and it is changeable.  Example: `My resource`
@@ -244,8 +273,11 @@ public final class GetFileSystemsFileSystem {
     @CustomType.Builder
     public static final class Builder {
         private String availabilityDomain;
+        private String cloneAttachStatus;
+        private Integer cloneCount;
         private String compartmentId;
         private Map<String,Object> definedTags;
+        private Integer detachCloneTrigger;
         private String displayName;
         private String filesystemSnapshotPolicyId;
         private Map<String,Object> freeformTags;
@@ -265,8 +297,11 @@ public final class GetFileSystemsFileSystem {
         public Builder(GetFileSystemsFileSystem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.availabilityDomain = defaults.availabilityDomain;
+    	      this.cloneAttachStatus = defaults.cloneAttachStatus;
+    	      this.cloneCount = defaults.cloneCount;
     	      this.compartmentId = defaults.compartmentId;
     	      this.definedTags = defaults.definedTags;
+    	      this.detachCloneTrigger = defaults.detachCloneTrigger;
     	      this.displayName = defaults.displayName;
     	      this.filesystemSnapshotPolicyId = defaults.filesystemSnapshotPolicyId;
     	      this.freeformTags = defaults.freeformTags;
@@ -293,6 +328,22 @@ public final class GetFileSystemsFileSystem {
             return this;
         }
         @CustomType.Setter
+        public Builder cloneAttachStatus(String cloneAttachStatus) {
+            if (cloneAttachStatus == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "cloneAttachStatus");
+            }
+            this.cloneAttachStatus = cloneAttachStatus;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cloneCount(Integer cloneCount) {
+            if (cloneCount == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "cloneCount");
+            }
+            this.cloneCount = cloneCount;
+            return this;
+        }
+        @CustomType.Setter
         public Builder compartmentId(String compartmentId) {
             if (compartmentId == null) {
               throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "compartmentId");
@@ -306,6 +357,14 @@ public final class GetFileSystemsFileSystem {
               throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "definedTags");
             }
             this.definedTags = definedTags;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder detachCloneTrigger(Integer detachCloneTrigger) {
+            if (detachCloneTrigger == null) {
+              throw new MissingRequiredPropertyException("GetFileSystemsFileSystem", "detachCloneTrigger");
+            }
+            this.detachCloneTrigger = detachCloneTrigger;
             return this;
         }
         @CustomType.Setter
@@ -434,8 +493,11 @@ public final class GetFileSystemsFileSystem {
         public GetFileSystemsFileSystem build() {
             final var _resultValue = new GetFileSystemsFileSystem();
             _resultValue.availabilityDomain = availabilityDomain;
+            _resultValue.cloneAttachStatus = cloneAttachStatus;
+            _resultValue.cloneCount = cloneCount;
             _resultValue.compartmentId = compartmentId;
             _resultValue.definedTags = definedTags;
+            _resultValue.detachCloneTrigger = detachCloneTrigger;
             _resultValue.displayName = displayName;
             _resultValue.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
             _resultValue.freeformTags = freeformTags;

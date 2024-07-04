@@ -27,7 +27,7 @@ public final class ModelFineTuneDetails {
     /**
      * @return The dataset used to fine-tune the model.
      * 
-     * Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{&#34;prompt&#34;: &#34;&lt;first prompt&gt;&#34;, &#34;completion&#34;: &#34;&lt;expected completion given first prompt&gt;&#34;}`
+     * Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{&#34;prompt&#34;: &#34;&lt;first prompt&gt;&#34;, &#34;completion&#34;: &#34;&lt;expected completion given first prompt&gt;&#34;}`
      * 
      */
     private ModelFineTuneDetailsTrainingDataset trainingDataset;
@@ -50,7 +50,7 @@ public final class ModelFineTuneDetails {
     /**
      * @return The dataset used to fine-tune the model.
      * 
-     * Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{&#34;prompt&#34;: &#34;&lt;first prompt&gt;&#34;, &#34;completion&#34;: &#34;&lt;expected completion given first prompt&gt;&#34;}`
+     * Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{&#34;prompt&#34;: &#34;&lt;first prompt&gt;&#34;, &#34;completion&#34;: &#34;&lt;expected completion given first prompt&gt;&#34;}`
      * 
      */
     public ModelFineTuneDetailsTrainingDataset trainingDataset() {

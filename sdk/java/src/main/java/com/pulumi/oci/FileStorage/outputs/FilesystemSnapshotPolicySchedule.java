@@ -14,22 +14,22 @@ import javax.annotation.Nullable;
 @CustomType
 public final class FilesystemSnapshotPolicySchedule {
     /**
-     * @return (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+     * @return (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     private @Nullable Integer dayOfMonth;
     /**
-     * @return (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+     * @return (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     private @Nullable String dayOfWeek;
     /**
-     * @return (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+     * @return (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
      * 
      */
     private @Nullable Integer hourOfDay;
     /**
-     * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+     * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     private @Nullable String month;
@@ -61,28 +61,28 @@ public final class FilesystemSnapshotPolicySchedule {
 
     private FilesystemSnapshotPolicySchedule() {}
     /**
-     * @return (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+     * @return (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<Integer> dayOfMonth() {
         return Optional.ofNullable(this.dayOfMonth);
     }
     /**
-     * @return (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+     * @return (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<String> dayOfWeek() {
         return Optional.ofNullable(this.dayOfWeek);
     }
     /**
-     * @return (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+     * @return (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<Integer> hourOfDay() {
         return Optional.ofNullable(this.hourOfDay);
     }
     /**
-     * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+     * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<String> month() {

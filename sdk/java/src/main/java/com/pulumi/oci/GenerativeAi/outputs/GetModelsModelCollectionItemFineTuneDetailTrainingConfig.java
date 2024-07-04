@@ -12,101 +12,49 @@ import java.util.Objects;
 
 @CustomType
 public final class GetModelsModelCollectionItemFineTuneDetailTrainingConfig {
-    /**
-     * @return Stop training if the loss metric does not improve beyond &#39;early_stopping_threshold&#39; for this many times of evaluation.
-     * 
-     */
     private Integer earlyStoppingPatience;
-    /**
-     * @return How much the loss must improve to prevent early stopping.
-     * 
-     */
     private Double earlyStoppingThreshold;
-    /**
-     * @return The initial learning rate to be used during training
-     * 
-     */
     private Double learningRate;
-    /**
-     * @return Determines how frequently to log model metrics.
-     * 
-     */
     private Integer logModelMetricsIntervalInSteps;
-    /**
-     * @return The number of last layers to be fine-tuned.
-     * 
-     */
+    private Integer loraAlpha;
+    private Double loraDropout;
+    private Integer loraR;
     private Integer numOfLastLayers;
-    /**
-     * @return The maximum number of training epochs to run for.
-     * 
-     */
     private Integer totalTrainingEpochs;
-    /**
-     * @return The batch size used during training.
-     * 
-     */
     private Integer trainingBatchSize;
-    /**
-     * @return The fine-tuning method for training a custom model.
-     * 
-     */
     private String trainingConfigType;
 
     private GetModelsModelCollectionItemFineTuneDetailTrainingConfig() {}
-    /**
-     * @return Stop training if the loss metric does not improve beyond &#39;early_stopping_threshold&#39; for this many times of evaluation.
-     * 
-     */
     public Integer earlyStoppingPatience() {
         return this.earlyStoppingPatience;
     }
-    /**
-     * @return How much the loss must improve to prevent early stopping.
-     * 
-     */
     public Double earlyStoppingThreshold() {
         return this.earlyStoppingThreshold;
     }
-    /**
-     * @return The initial learning rate to be used during training
-     * 
-     */
     public Double learningRate() {
         return this.learningRate;
     }
-    /**
-     * @return Determines how frequently to log model metrics.
-     * 
-     */
     public Integer logModelMetricsIntervalInSteps() {
         return this.logModelMetricsIntervalInSteps;
     }
-    /**
-     * @return The number of last layers to be fine-tuned.
-     * 
-     */
+    public Integer loraAlpha() {
+        return this.loraAlpha;
+    }
+    public Double loraDropout() {
+        return this.loraDropout;
+    }
+    public Integer loraR() {
+        return this.loraR;
+    }
     public Integer numOfLastLayers() {
         return this.numOfLastLayers;
     }
-    /**
-     * @return The maximum number of training epochs to run for.
-     * 
-     */
     public Integer totalTrainingEpochs() {
         return this.totalTrainingEpochs;
     }
-    /**
-     * @return The batch size used during training.
-     * 
-     */
     public Integer trainingBatchSize() {
         return this.trainingBatchSize;
     }
-    /**
-     * @return The fine-tuning method for training a custom model.
-     * 
-     */
     public String trainingConfigType() {
         return this.trainingConfigType;
     }
@@ -124,6 +72,9 @@ public final class GetModelsModelCollectionItemFineTuneDetailTrainingConfig {
         private Double earlyStoppingThreshold;
         private Double learningRate;
         private Integer logModelMetricsIntervalInSteps;
+        private Integer loraAlpha;
+        private Double loraDropout;
+        private Integer loraR;
         private Integer numOfLastLayers;
         private Integer totalTrainingEpochs;
         private Integer trainingBatchSize;
@@ -135,6 +86,9 @@ public final class GetModelsModelCollectionItemFineTuneDetailTrainingConfig {
     	      this.earlyStoppingThreshold = defaults.earlyStoppingThreshold;
     	      this.learningRate = defaults.learningRate;
     	      this.logModelMetricsIntervalInSteps = defaults.logModelMetricsIntervalInSteps;
+    	      this.loraAlpha = defaults.loraAlpha;
+    	      this.loraDropout = defaults.loraDropout;
+    	      this.loraR = defaults.loraR;
     	      this.numOfLastLayers = defaults.numOfLastLayers;
     	      this.totalTrainingEpochs = defaults.totalTrainingEpochs;
     	      this.trainingBatchSize = defaults.trainingBatchSize;
@@ -171,6 +125,30 @@ public final class GetModelsModelCollectionItemFineTuneDetailTrainingConfig {
               throw new MissingRequiredPropertyException("GetModelsModelCollectionItemFineTuneDetailTrainingConfig", "logModelMetricsIntervalInSteps");
             }
             this.logModelMetricsIntervalInSteps = logModelMetricsIntervalInSteps;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loraAlpha(Integer loraAlpha) {
+            if (loraAlpha == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemFineTuneDetailTrainingConfig", "loraAlpha");
+            }
+            this.loraAlpha = loraAlpha;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loraDropout(Double loraDropout) {
+            if (loraDropout == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemFineTuneDetailTrainingConfig", "loraDropout");
+            }
+            this.loraDropout = loraDropout;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder loraR(Integer loraR) {
+            if (loraR == null) {
+              throw new MissingRequiredPropertyException("GetModelsModelCollectionItemFineTuneDetailTrainingConfig", "loraR");
+            }
+            this.loraR = loraR;
             return this;
         }
         @CustomType.Setter
@@ -211,6 +189,9 @@ public final class GetModelsModelCollectionItemFineTuneDetailTrainingConfig {
             _resultValue.earlyStoppingThreshold = earlyStoppingThreshold;
             _resultValue.learningRate = learningRate;
             _resultValue.logModelMetricsIntervalInSteps = logModelMetricsIntervalInSteps;
+            _resultValue.loraAlpha = loraAlpha;
+            _resultValue.loraDropout = loraDropout;
+            _resultValue.loraR = loraR;
             _resultValue.numOfLastLayers = numOfLastLayers;
             _resultValue.totalTrainingEpochs = totalTrainingEpochs;
             _resultValue.trainingBatchSize = trainingBatchSize;

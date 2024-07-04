@@ -19,6 +19,21 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
     public static final GetGiVersionsArgs Empty = new GetGiVersionsArgs();
 
     /**
+     * The target availability domain. Only passed if the limit is AD-specific.
+     * 
+     */
+    @Import(name="availabilityDomain")
+    private @Nullable Output<String> availabilityDomain;
+
+    /**
+     * @return The target availability domain. Only passed if the limit is AD-specific.
+     * 
+     */
+    public Optional<Output<String>> availabilityDomain() {
+        return Optional.ofNullable(this.availabilityDomain);
+    }
+
+    /**
      * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * 
      */
@@ -58,6 +73,7 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
     private GetGiVersionsArgs() {}
 
     private GetGiVersionsArgs(GetGiVersionsArgs $) {
+        this.availabilityDomain = $.availabilityDomain;
         this.compartmentId = $.compartmentId;
         this.filters = $.filters;
         this.shape = $.shape;
@@ -79,6 +95,27 @@ public final class GetGiVersionsArgs extends com.pulumi.resources.InvokeArgs {
 
         public Builder(GetGiVersionsArgs defaults) {
             $ = new GetGiVersionsArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param availabilityDomain The target availability domain. Only passed if the limit is AD-specific.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(@Nullable Output<String> availabilityDomain) {
+            $.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
+        /**
+         * @param availabilityDomain The target availability domain. Only passed if the limit is AD-specific.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            return availabilityDomain(Output.of(availabilityDomain));
         }
 
         /**

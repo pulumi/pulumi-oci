@@ -14,11 +14,11 @@ namespace Pulumi.Oci.DatabaseMigration.Outputs
     public sealed class GetJobAdvisorReportReportLocationDetailResult
     {
         /// <summary>
-        /// Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+        /// File system path on the Source Database host where the Premigration Advisor report can be accessed.
         /// </summary>
         public readonly string LocationInSource;
         /// <summary>
-        /// Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+        /// Details to access Premigration Advisor report in the specified Object Storage bucket.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult> ObjectStorageDetails;
 

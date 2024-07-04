@@ -126,6 +126,11 @@ public final class GetDbNodeResult {
      */
     private String timeMaintenanceWindowStart;
     /**
+     * @return The total number of CPU cores reserved on the Db node.
+     * 
+     */
+    private Integer totalCpuCoreCount;
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
@@ -296,6 +301,13 @@ public final class GetDbNodeResult {
         return this.timeMaintenanceWindowStart;
     }
     /**
+     * @return The total number of CPU cores reserved on the Db node.
+     * 
+     */
+    public Integer totalCpuCoreCount() {
+        return this.totalCpuCoreCount;
+    }
+    /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */
@@ -342,6 +354,7 @@ public final class GetDbNodeResult {
         private String timeCreated;
         private String timeMaintenanceWindowEnd;
         private String timeMaintenanceWindowStart;
+        private Integer totalCpuCoreCount;
         private String vnic2id;
         private String vnicId;
         public Builder() {}
@@ -370,6 +383,7 @@ public final class GetDbNodeResult {
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeMaintenanceWindowEnd = defaults.timeMaintenanceWindowEnd;
     	      this.timeMaintenanceWindowStart = defaults.timeMaintenanceWindowStart;
+    	      this.totalCpuCoreCount = defaults.totalCpuCoreCount;
     	      this.vnic2id = defaults.vnic2id;
     	      this.vnicId = defaults.vnicId;
         }
@@ -559,6 +573,14 @@ public final class GetDbNodeResult {
             return this;
         }
         @CustomType.Setter
+        public Builder totalCpuCoreCount(Integer totalCpuCoreCount) {
+            if (totalCpuCoreCount == null) {
+              throw new MissingRequiredPropertyException("GetDbNodeResult", "totalCpuCoreCount");
+            }
+            this.totalCpuCoreCount = totalCpuCoreCount;
+            return this;
+        }
+        @CustomType.Setter
         public Builder vnic2id(String vnic2id) {
             if (vnic2id == null) {
               throw new MissingRequiredPropertyException("GetDbNodeResult", "vnic2id");
@@ -599,6 +621,7 @@ public final class GetDbNodeResult {
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeMaintenanceWindowEnd = timeMaintenanceWindowEnd;
             _resultValue.timeMaintenanceWindowStart = timeMaintenanceWindowStart;
+            _resultValue.totalCpuCoreCount = totalCpuCoreCount;
             _resultValue.vnic2id = vnic2id;
             _resultValue.vnicId = vnicId;
             return _resultValue;

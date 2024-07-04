@@ -18,14 +18,14 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
     public static final FilesystemSnapshotPolicyScheduleArgs Empty = new FilesystemSnapshotPolicyScheduleArgs();
 
     /**
-     * (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+     * (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     @Import(name="dayOfMonth")
     private @Nullable Output<Integer> dayOfMonth;
 
     /**
-     * @return (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+     * @return (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<Output<Integer>> dayOfMonth() {
@@ -33,14 +33,14 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+     * (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     @Import(name="dayOfWeek")
     private @Nullable Output<String> dayOfWeek;
 
     /**
-     * @return (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+     * @return (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<Output<String>> dayOfWeek() {
@@ -48,14 +48,14 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+     * (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
      * 
      */
     @Import(name="hourOfDay")
     private @Nullable Output<Integer> hourOfDay;
 
     /**
-     * @return (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+     * @return (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<Output<Integer>> hourOfDay() {
@@ -63,14 +63,14 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+     * (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     @Import(name="month")
     private @Nullable Output<String> month;
 
     /**
-     * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+     * @return (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
      * 
      */
     public Optional<Output<String>> month() {
@@ -185,7 +185,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dayOfMonth (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+         * @param dayOfMonth (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -196,7 +196,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dayOfMonth (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules.
+         * @param dayOfMonth (Updatable) The day of the month to create a scheduled snapshot. If the day does not exist for the month, snapshot creation will be skipped. Used for MONTHLY and YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -206,7 +206,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dayOfWeek (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+         * @param dayOfWeek (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -217,7 +217,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param dayOfWeek (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules.
+         * @param dayOfWeek (Updatable) The day of the week to create a scheduled snapshot. Used for WEEKLY snapshot schedules. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -227,7 +227,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param hourOfDay (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+         * @param hourOfDay (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -238,7 +238,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param hourOfDay (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, a value will be chosen at creation time.
+         * @param hourOfDay (Updatable) The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -248,7 +248,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param month (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+         * @param month (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 
@@ -259,7 +259,7 @@ public final class FilesystemSnapshotPolicyScheduleArgs extends com.pulumi.resou
         }
 
         /**
-         * @param month (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules.
+         * @param month (Updatable) The month to create a scheduled snapshot. Used only for YEARLY snapshot schedules. If not set, the system chooses a value at creation time.
          * 
          * @return builder
          * 

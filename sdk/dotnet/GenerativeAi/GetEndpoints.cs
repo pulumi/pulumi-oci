@@ -12,7 +12,7 @@ namespace Pulumi.Oci.GenerativeAi
     public static class GetEndpoints
     {
         /// <summary>
-        /// This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists the endpoints of a specific compartment.
         /// 
@@ -41,7 +41,7 @@ namespace Pulumi.Oci.GenerativeAi
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetEndpointsResult>("oci:GenerativeAi/getEndpoints:getEndpoints", args ?? new GetEndpointsArgs(), options.WithDefaults());
 
         /// <summary>
-        /// This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative Ai service.
+        /// This data source provides the list of Endpoints in Oracle Cloud Infrastructure Generative AI service.
         /// 
         /// Lists the endpoints of a specific compartment.
         /// 
@@ -155,13 +155,7 @@ namespace Pulumi.Oci.GenerativeAi
     [OutputType]
     public sealed class GetEndpointsResult
     {
-        /// <summary>
-        /// The compartment OCID to create the endpoint in.
-        /// </summary>
         public readonly string CompartmentId;
-        /// <summary>
-        /// A user-friendly name. Does not have to be unique, and it's changeable.
-        /// </summary>
         public readonly string? DisplayName;
         /// <summary>
         /// The list of endpoint_collection.

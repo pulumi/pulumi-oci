@@ -22,14 +22,14 @@ class JobArgs:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
         The set of arguments for constructing a Job resource.
-        :param pulumi.Input[str] job_id: The OCID of the job 
+        :param pulumi.Input[str] job_id: The OCID of the job
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         pulumi.set(__self__, "job_id", job_id)
         if defined_tags is not None:
@@ -43,7 +43,7 @@ class JobArgs:
     @pulumi.getter(name="jobId")
     def job_id(self) -> pulumi.Input[str]:
         """
-        The OCID of the job 
+        The OCID of the job
 
 
         ** IMPORTANT **
@@ -83,7 +83,7 @@ class JobArgs:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -112,8 +112,8 @@ class _JobState:
         Input properties used for looking up and filtering Job resources.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] job_id: The OCID of the job 
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[str] job_id: The OCID of the job
                
                
                ** IMPORTANT **
@@ -183,7 +183,7 @@ class _JobState:
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -195,7 +195,7 @@ class _JobState:
     @pulumi.getter(name="jobId")
     def job_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The OCID of the job 
+        The OCID of the job
 
 
         ** IMPORTANT **
@@ -327,9 +327,7 @@ class Job(pulumi.CustomResource):
                  job_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
-        This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
-
-        Update Migration Job resource details.
+        ## Example Usage
 
         ## Import
 
@@ -343,8 +341,8 @@ class Job(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] job_id: The OCID of the job 
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[str] job_id: The OCID of the job
                
                
                ** IMPORTANT **
@@ -357,9 +355,7 @@ class Job(pulumi.CustomResource):
                  args: JobArgs,
                  opts: Optional[pulumi.ResourceOptions] = None):
         """
-        This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
-
-        Update Migration Job resource details.
+        ## Example Usage
 
         ## Import
 
@@ -444,8 +440,8 @@ class Job(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Name of the job.
-        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[str] job_id: The OCID of the job 
+        :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
+        :param pulumi.Input[str] job_id: The OCID of the job
                
                
                ** IMPORTANT **
@@ -499,7 +495,7 @@ class Job(pulumi.CustomResource):
     @pulumi.getter(name="freeformTags")
     def freeform_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
-        (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         """
         return pulumi.get(self, "freeform_tags")
 
@@ -507,7 +503,7 @@ class Job(pulumi.CustomResource):
     @pulumi.getter(name="jobId")
     def job_id(self) -> pulumi.Output[str]:
         """
-        The OCID of the job 
+        The OCID of the job
 
 
         ** IMPORTANT **

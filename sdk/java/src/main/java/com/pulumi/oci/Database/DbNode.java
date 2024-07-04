@@ -347,6 +347,20 @@ public class DbNode extends com.pulumi.resources.CustomResource {
         return this.timeMaintenanceWindowStart;
     }
     /**
+     * The total number of CPU cores reserved on the Db node.
+     * 
+     */
+    @Export(name="totalCpuCoreCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> totalCpuCoreCount;
+
+    /**
+     * @return The total number of CPU cores reserved on the Db node.
+     * 
+     */
+    public Output<Integer> totalCpuCoreCount() {
+        return this.totalCpuCoreCount;
+    }
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the second VNIC.
      * 
      */

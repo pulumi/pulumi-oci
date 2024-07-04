@@ -41,6 +41,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? DblinkUsername { get; set; }
 
         /// <summary>
+        /// True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to be thick cloned.
+        /// </summary>
+        [Input("isThinClone")]
+        public Input<bool>? IsThinClone { get; set; }
+
+        /// <summary>
         /// Parameters for creating Pluggable Database Refreshable Clone. **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
         /// </summary>
         [Input("refreshableCloneDetails")]

@@ -6,6 +6,7 @@ package com.pulumi.oci.Database.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail;
+import java.lang.Boolean;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -15,6 +16,7 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
     private String creationType;
     private String dblinkUserPassword;
     private String dblinkUsername;
+    private Boolean isThinClone;
     private List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
     private String sourceContainerDatabaseAdminPassword;
     private String sourcePluggableDatabaseId;
@@ -28,6 +30,9 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
     }
     public String dblinkUsername() {
         return this.dblinkUsername;
+    }
+    public Boolean isThinClone() {
+        return this.isThinClone;
     }
     public List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails() {
         return this.refreshableCloneDetails;
@@ -51,6 +56,7 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
         private String creationType;
         private String dblinkUserPassword;
         private String dblinkUsername;
+        private Boolean isThinClone;
         private List<GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetailRefreshableCloneDetail> refreshableCloneDetails;
         private String sourceContainerDatabaseAdminPassword;
         private String sourcePluggableDatabaseId;
@@ -60,6 +66,7 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
     	      this.creationType = defaults.creationType;
     	      this.dblinkUserPassword = defaults.dblinkUserPassword;
     	      this.dblinkUsername = defaults.dblinkUsername;
+    	      this.isThinClone = defaults.isThinClone;
     	      this.refreshableCloneDetails = defaults.refreshableCloneDetails;
     	      this.sourceContainerDatabaseAdminPassword = defaults.sourceContainerDatabaseAdminPassword;
     	      this.sourcePluggableDatabaseId = defaults.sourcePluggableDatabaseId;
@@ -87,6 +94,14 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
               throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail", "dblinkUsername");
             }
             this.dblinkUsername = dblinkUsername;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isThinClone(Boolean isThinClone) {
+            if (isThinClone == null) {
+              throw new MissingRequiredPropertyException("GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail", "isThinClone");
+            }
+            this.isThinClone = isThinClone;
             return this;
         }
         @CustomType.Setter
@@ -121,6 +136,7 @@ public final class GetPluggableDatabasesPluggableDatabasePdbCreationTypeDetail {
             _resultValue.creationType = creationType;
             _resultValue.dblinkUserPassword = dblinkUserPassword;
             _resultValue.dblinkUsername = dblinkUsername;
+            _resultValue.isThinClone = isThinClone;
             _resultValue.refreshableCloneDetails = refreshableCloneDetails;
             _resultValue.sourceContainerDatabaseAdminPassword = sourceContainerDatabaseAdminPassword;
             _resultValue.sourcePluggableDatabaseId = sourcePluggableDatabaseId;

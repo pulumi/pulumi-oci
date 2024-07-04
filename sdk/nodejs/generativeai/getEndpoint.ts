@@ -7,7 +7,7 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Gets information about an endpoint.
  *
@@ -44,42 +44,21 @@ export interface GetEndpointArgs {
  * A collection of values returned by getEndpoint.
  */
 export interface GetEndpointResult {
-    /**
-     * The compartment OCID to create the endpoint in.
-     */
     readonly compartmentId: string;
-    /**
-     * The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
-     */
     readonly contentModerationConfigs: outputs.GenerativeAi.GetEndpointContentModerationConfig[];
-    /**
-     * The OCID of the dedicated AI cluster on which the model will be deployed to.
-     */
     readonly dedicatedAiClusterId: string;
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
      */
     readonly definedTags: {[key: string]: any};
-    /**
-     * An optional description of the endpoint.
-     */
     readonly description: string;
-    /**
-     * A user-friendly name. Does not have to be unique, and it's changeable.
-     */
     readonly displayName: string;
     readonly endpointId: string;
-    /**
-     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
-     */
     readonly freeformTags: {[key: string]: any};
     /**
      * An OCID that uniquely identifies this endpoint resource.
      */
     readonly id: string;
-    /**
-     * A message describing the current state of the endpoint in more detail that can provide actionable information.
-     */
     readonly lifecycleDetails: string;
     /**
      * The OCID of the model that's used to create this endpoint.
@@ -89,9 +68,6 @@ export interface GetEndpointResult {
      * The current state of the endpoint.
      */
     readonly state: string;
-    /**
-     * System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
-     */
     readonly systemTags: {[key: string]: any};
     /**
      * The date and time that the endpoint was created in the format of an RFC3339 datetime string.
@@ -103,7 +79,7 @@ export interface GetEndpointResult {
     readonly timeUpdated: string;
 }
 /**
- * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+ * This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
  *
  * Gets information about an endpoint.
  *

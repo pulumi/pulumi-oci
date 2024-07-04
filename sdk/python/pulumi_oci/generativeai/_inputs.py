@@ -108,7 +108,7 @@ class ModelFineTuneDetailsArgs:
         :param pulumi.Input[str] dedicated_ai_cluster_id: The OCID of the dedicated AI cluster this fine-tuning runs on.
         :param pulumi.Input['ModelFineTuneDetailsTrainingDatasetArgs'] training_dataset: The dataset used to fine-tune the model. 
                
-               Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
+               Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         :param pulumi.Input['ModelFineTuneDetailsTrainingConfigArgs'] training_config: The fine-tuning method and hyperparameters used for fine-tuning a custom model.
         """
         pulumi.set(__self__, "dedicated_ai_cluster_id", dedicated_ai_cluster_id)
@@ -134,7 +134,7 @@ class ModelFineTuneDetailsArgs:
         """
         The dataset used to fine-tune the model. 
 
-        Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
+        Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "<first prompt>", "completion": "<expected completion given first prompt>"}`
         """
         return pulumi.get(self, "training_dataset")
 
@@ -163,6 +163,9 @@ class ModelFineTuneDetailsTrainingConfigArgs:
                  early_stopping_threshold: Optional[pulumi.Input[float]] = None,
                  learning_rate: Optional[pulumi.Input[float]] = None,
                  log_model_metrics_interval_in_steps: Optional[pulumi.Input[int]] = None,
+                 lora_alpha: Optional[pulumi.Input[int]] = None,
+                 lora_dropout: Optional[pulumi.Input[float]] = None,
+                 lora_r: Optional[pulumi.Input[int]] = None,
                  num_of_last_layers: Optional[pulumi.Input[int]] = None,
                  total_training_epochs: Optional[pulumi.Input[int]] = None,
                  training_batch_size: Optional[pulumi.Input[int]] = None):
@@ -174,6 +177,9 @@ class ModelFineTuneDetailsTrainingConfigArgs:
         :param pulumi.Input[int] log_model_metrics_interval_in_steps: Determines how frequently to log model metrics. 
                
                Every step is logged for the first 20 steps and then follows this parameter for log frequency. Set to 0 to disable logging the model metrics.
+        :param pulumi.Input[int] lora_alpha: This parameter represents the scaling factor for the weight matrices in LoRA.
+        :param pulumi.Input[float] lora_dropout: This parameter indicates the dropout probability for LoRA layers.
+        :param pulumi.Input[int] lora_r: This parameter represents the LoRA rank of the update matrices.
         :param pulumi.Input[int] num_of_last_layers: The number of last layers to be fine-tuned.
         :param pulumi.Input[int] total_training_epochs: The maximum number of training epochs to run for.
         :param pulumi.Input[int] training_batch_size: The batch size used during training.
@@ -187,6 +193,12 @@ class ModelFineTuneDetailsTrainingConfigArgs:
             pulumi.set(__self__, "learning_rate", learning_rate)
         if log_model_metrics_interval_in_steps is not None:
             pulumi.set(__self__, "log_model_metrics_interval_in_steps", log_model_metrics_interval_in_steps)
+        if lora_alpha is not None:
+            pulumi.set(__self__, "lora_alpha", lora_alpha)
+        if lora_dropout is not None:
+            pulumi.set(__self__, "lora_dropout", lora_dropout)
+        if lora_r is not None:
+            pulumi.set(__self__, "lora_r", lora_r)
         if num_of_last_layers is not None:
             pulumi.set(__self__, "num_of_last_layers", num_of_last_layers)
         if total_training_epochs is not None:
@@ -255,6 +267,42 @@ class ModelFineTuneDetailsTrainingConfigArgs:
     @log_model_metrics_interval_in_steps.setter
     def log_model_metrics_interval_in_steps(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "log_model_metrics_interval_in_steps", value)
+
+    @property
+    @pulumi.getter(name="loraAlpha")
+    def lora_alpha(self) -> Optional[pulumi.Input[int]]:
+        """
+        This parameter represents the scaling factor for the weight matrices in LoRA.
+        """
+        return pulumi.get(self, "lora_alpha")
+
+    @lora_alpha.setter
+    def lora_alpha(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lora_alpha", value)
+
+    @property
+    @pulumi.getter(name="loraDropout")
+    def lora_dropout(self) -> Optional[pulumi.Input[float]]:
+        """
+        This parameter indicates the dropout probability for LoRA layers.
+        """
+        return pulumi.get(self, "lora_dropout")
+
+    @lora_dropout.setter
+    def lora_dropout(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "lora_dropout", value)
+
+    @property
+    @pulumi.getter(name="loraR")
+    def lora_r(self) -> Optional[pulumi.Input[int]]:
+        """
+        This parameter represents the LoRA rank of the update matrices.
+        """
+        return pulumi.get(self, "lora_r")
+
+    @lora_r.setter
+    def lora_r(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "lora_r", value)
 
     @property
     @pulumi.getter(name="numOfLastLayers")

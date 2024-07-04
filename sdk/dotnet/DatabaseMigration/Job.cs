@@ -10,9 +10,7 @@ using Pulumi.Serialization;
 namespace Pulumi.Oci.DatabaseMigration
 {
     /// <summary>
-    /// This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
-    /// 
-    /// Update Migration Job resource details.
+    /// ## Example Usage
     /// 
     /// ## Import
     /// 
@@ -38,13 +36,13 @@ namespace Pulumi.Oci.DatabaseMigration
         public Output<string> DisplayName { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         /// </summary>
         [Output("freeformTags")]
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The OCID of the job 
+        /// The OCID of the job
         /// 
         /// 
         /// ** IMPORTANT **
@@ -175,7 +173,7 @@ namespace Pulumi.Oci.DatabaseMigration
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -184,7 +182,7 @@ namespace Pulumi.Oci.DatabaseMigration
         }
 
         /// <summary>
-        /// The OCID of the job 
+        /// The OCID of the job
         /// 
         /// 
         /// ** IMPORTANT **
@@ -223,7 +221,7 @@ namespace Pulumi.Oci.DatabaseMigration
         private InputMap<object>? _freeformTags;
 
         /// <summary>
-        /// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        /// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {"Department": "Finance"}
         /// </summary>
         public InputMap<object> FreeformTags
         {
@@ -232,7 +230,7 @@ namespace Pulumi.Oci.DatabaseMigration
         }
 
         /// <summary>
-        /// The OCID of the job 
+        /// The OCID of the job
         /// 
         /// 
         /// ** IMPORTANT **

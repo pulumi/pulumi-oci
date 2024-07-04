@@ -21,8 +21,12 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "oci:DatabaseMigration/connection:Connection":
+		r = &Connection{}
 	case "oci:DatabaseMigration/job:Job":
 		r = &Job{}
+	case "oci:DatabaseMigration/migration:Migration":
+		r = &Migration{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -38,7 +42,17 @@ func init() {
 	}
 	pulumi.RegisterResourceModule(
 		"oci",
+		"DatabaseMigration/connection",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
 		"DatabaseMigration/job",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"oci",
+		"DatabaseMigration/migration",
 		&module{version},
 	)
 }

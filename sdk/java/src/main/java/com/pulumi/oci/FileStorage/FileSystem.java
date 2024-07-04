@@ -12,6 +12,7 @@ import com.pulumi.oci.FileStorage.inputs.FileSystemState;
 import com.pulumi.oci.FileStorage.outputs.FileSystemSourceDetail;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -80,6 +81,7 @@ import javax.annotation.Nullable;
  *         var testFileSystem = new FileSystem("testFileSystem", FileSystemArgs.builder()
  *             .availabilityDomain(fileSystemAvailabilityDomain)
  *             .compartmentId(compartmentId)
+ *             .cloneAttachStatus(fileSystemCloneAttachStatus)
  *             .definedTags(Map.of("Operations.CostCenter", "42"))
  *             .displayName(fileSystemDisplayName)
  *             .filesystemSnapshotPolicyId(testFilesystemSnapshotPolicy.id())
@@ -120,6 +122,34 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
         return this.availabilityDomain;
     }
     /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value is set to &#39;DETACH&#39;, then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     * 
+     */
+    @Export(name="cloneAttachStatus", refs={String.class}, tree="[0]")
+    private Output<String> cloneAttachStatus;
+
+    /**
+     * @return Specifies whether the clone file system is attached to its parent file system. If the value is set to &#39;DETACH&#39;, then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     * 
+     */
+    public Output<String> cloneAttachStatus() {
+        return this.cloneAttachStatus;
+    }
+    /**
+     * Specifies the total number of children of a file system.
+     * 
+     */
+    @Export(name="cloneCount", refs={Integer.class}, tree="[0]")
+    private Output<Integer> cloneCount;
+
+    /**
+     * @return Specifies the total number of children of a file system.
+     * 
+     */
+    public Output<Integer> cloneCount() {
+        return this.cloneCount;
+    }
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      * 
      */
@@ -146,6 +176,26 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> definedTags() {
         return this.definedTags;
+    }
+    /**
+     * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="detachCloneTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> detachCloneTrigger;
+
+    /**
+     * @return (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<Optional<Integer>> detachCloneTrigger() {
+        return Codegen.optional(this.detachCloneTrigger);
     }
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
@@ -308,18 +358,12 @@ public class FileSystem extends com.pulumi.resources.CustomResource {
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="sourceSnapshotId", refs={String.class}, tree="[0]")
     private Output<String> sourceSnapshotId;
 
     /**
      * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<String> sourceSnapshotId() {

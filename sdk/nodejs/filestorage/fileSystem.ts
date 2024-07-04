@@ -48,6 +48,7 @@ import * as utilities from "../utilities";
  * const testFileSystem = new oci.filestorage.FileSystem("test_file_system", {
  *     availabilityDomain: fileSystemAvailabilityDomain,
  *     compartmentId: compartmentId,
+ *     cloneAttachStatus: fileSystemCloneAttachStatus,
  *     definedTags: {
  *         "Operations.CostCenter": "42",
  *     },
@@ -102,6 +103,14 @@ export class FileSystem extends pulumi.CustomResource {
      */
     public readonly availabilityDomain!: pulumi.Output<string>;
     /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    public readonly cloneAttachStatus!: pulumi.Output<string>;
+    /**
+     * Specifies the total number of children of a file system.
+     */
+    public /*out*/ readonly cloneCount!: pulumi.Output<number>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
     public readonly compartmentId!: pulumi.Output<string>;
@@ -109,6 +118,14 @@ export class FileSystem extends pulumi.CustomResource {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    public readonly detachCloneTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
@@ -156,11 +173,7 @@ export class FileSystem extends pulumi.CustomResource {
      */
     public /*out*/ readonly sourceDetails!: pulumi.Output<outputs.FileStorage.FileSystemSourceDetail[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     public readonly sourceSnapshotId!: pulumi.Output<string>;
     /**
@@ -186,8 +199,11 @@ export class FileSystem extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as FileSystemState | undefined;
             resourceInputs["availabilityDomain"] = state ? state.availabilityDomain : undefined;
+            resourceInputs["cloneAttachStatus"] = state ? state.cloneAttachStatus : undefined;
+            resourceInputs["cloneCount"] = state ? state.cloneCount : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
             resourceInputs["definedTags"] = state ? state.definedTags : undefined;
+            resourceInputs["detachCloneTrigger"] = state ? state.detachCloneTrigger : undefined;
             resourceInputs["displayName"] = state ? state.displayName : undefined;
             resourceInputs["filesystemSnapshotPolicyId"] = state ? state.filesystemSnapshotPolicyId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
@@ -211,13 +227,16 @@ export class FileSystem extends pulumi.CustomResource {
                 throw new Error("Missing required property 'compartmentId'");
             }
             resourceInputs["availabilityDomain"] = args ? args.availabilityDomain : undefined;
+            resourceInputs["cloneAttachStatus"] = args ? args.cloneAttachStatus : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
             resourceInputs["definedTags"] = args ? args.definedTags : undefined;
+            resourceInputs["detachCloneTrigger"] = args ? args.detachCloneTrigger : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["filesystemSnapshotPolicyId"] = args ? args.filesystemSnapshotPolicyId : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
             resourceInputs["kmsKeyId"] = args ? args.kmsKeyId : undefined;
             resourceInputs["sourceSnapshotId"] = args ? args.sourceSnapshotId : undefined;
+            resourceInputs["cloneCount"] = undefined /*out*/;
             resourceInputs["isCloneParent"] = undefined /*out*/;
             resourceInputs["isHydrated"] = undefined /*out*/;
             resourceInputs["isTargetable"] = undefined /*out*/;
@@ -242,6 +261,14 @@ export interface FileSystemState {
      */
     availabilityDomain?: pulumi.Input<string>;
     /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    cloneAttachStatus?: pulumi.Input<string>;
+    /**
+     * Specifies the total number of children of a file system.
+     */
+    cloneCount?: pulumi.Input<number>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
     compartmentId?: pulumi.Input<string>;
@@ -249,6 +276,14 @@ export interface FileSystemState {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    detachCloneTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
@@ -296,11 +331,7 @@ export interface FileSystemState {
      */
     sourceDetails?: pulumi.Input<pulumi.Input<inputs.FileStorage.FileSystemSourceDetail>[]>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     sourceSnapshotId?: pulumi.Input<string>;
     /**
@@ -322,6 +353,10 @@ export interface FileSystemArgs {
      */
     availabilityDomain: pulumi.Input<string>;
     /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    cloneAttachStatus?: pulumi.Input<string>;
+    /**
      * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to create the file system in.
      */
     compartmentId: pulumi.Input<string>;
@@ -329,6 +364,14 @@ export interface FileSystemArgs {
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example: `{"Operations.CostCenter": "42"}`
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) An optional property when incremented triggers Detach Clone. Could be set to any integer value.
+     *
+     *
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     */
+    detachCloneTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) A user-friendly name. It does not have to be unique, and it is changeable. Avoid entering confidential information.  Example: `My file system`
      */
@@ -348,11 +391,7 @@ export interface FileSystemArgs {
      */
     kmsKeyId?: pulumi.Input<string>;
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm). 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the snapshot used to create a cloned file system. See [Cloning a File System](https://docs.cloud.oracle.com/iaas/Content/File/Tasks/cloningFS.htm).
      */
     sourceSnapshotId?: pulumi.Input<string>;
 }

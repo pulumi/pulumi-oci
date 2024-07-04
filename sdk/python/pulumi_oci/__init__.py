@@ -207,6 +207,8 @@ if typing.TYPE_CHECKING:
     redis = __redis
     import pulumi_oci.resourcemanager as __resourcemanager
     resourcemanager = __resourcemanager
+    import pulumi_oci.resourcescheduler as __resourcescheduler
+    resourcescheduler = __resourcescheduler
     import pulumi_oci.sch as __sch
     sch = __sch
     import pulumi_oci.secrets as __secrets
@@ -339,6 +341,7 @@ else:
     recoverymod = _utilities.lazy_import('pulumi_oci.recoverymod')
     redis = _utilities.lazy_import('pulumi_oci.redis')
     resourcemanager = _utilities.lazy_import('pulumi_oci.resourcemanager')
+    resourcescheduler = _utilities.lazy_import('pulumi_oci.resourcescheduler')
     sch = _utilities.lazy_import('pulumi_oci.sch')
     secrets = _utilities.lazy_import('pulumi_oci.secrets')
     servicecatalog = _utilities.lazy_import('pulumi_oci.servicecatalog')
@@ -2673,6 +2676,22 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "Database/exadbVmCluster",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/exadbVmCluster:ExadbVmCluster": "ExadbVmCluster"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "Database/exascaleDbStorageVault",
+  "fqn": "pulumi_oci.database",
+  "classes": {
+   "oci:Database/exascaleDbStorageVault:ExascaleDbStorageVault": "ExascaleDbStorageVault"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "Database/externalContainerDatabase",
   "fqn": "pulumi_oci.database",
   "classes": {
@@ -3081,10 +3100,26 @@ _utilities.register(
  },
  {
   "pkg": "oci",
+  "mod": "DatabaseMigration/connection",
+  "fqn": "pulumi_oci.databasemigration",
+  "classes": {
+   "oci:DatabaseMigration/connection:Connection": "Connection"
+  }
+ },
+ {
+  "pkg": "oci",
   "mod": "DatabaseMigration/job",
   "fqn": "pulumi_oci.databasemigration",
   "classes": {
    "oci:DatabaseMigration/job:Job": "Job"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "DatabaseMigration/migration",
+  "fqn": "pulumi_oci.databasemigration",
+  "classes": {
+   "oci:DatabaseMigration/migration:Migration": "Migration"
   }
  },
  {
@@ -5581,6 +5616,14 @@ _utilities.register(
   "fqn": "pulumi_oci.resourcemanager",
   "classes": {
    "oci:ResourceManager/privateEndpoint:PrivateEndpoint": "PrivateEndpoint"
+  }
+ },
+ {
+  "pkg": "oci",
+  "mod": "ResourceScheduler/schedule",
+  "fqn": "pulumi_oci.resourcescheduler",
+  "classes": {
+   "oci:ResourceScheduler/schedule:Schedule": "Schedule"
   }
  },
  {

@@ -27,7 +27,7 @@ namespace Pulumi.Oci.GenerativeAi.Inputs
         /// <summary>
         /// The dataset used to fine-tune the model. 
         /// 
-        /// Only one dataset is allowed per custom model, which is split 90-10 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "&lt;first prompt&gt;", "completion": "&lt;expected completion given first prompt&gt;"}`
+        /// Only one dataset is allowed per custom model, which is split 80-20 for training and validating. You must provide the dataset in a JSON Lines (JSONL) file. Each line in the JSONL file must have the format: `{"prompt": "&lt;first prompt&gt;", "completion": "&lt;expected completion given first prompt&gt;"}`
         /// </summary>
         [Input("trainingDataset", required: true)]
         public Input<Inputs.ModelFineTuneDetailsTrainingDatasetGetArgs> TrainingDataset { get; set; } = null!;

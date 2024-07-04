@@ -7,24 +7,22 @@ import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
- * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
- *
- * Display sample object types to exclude or include for a Migration.
- *
  * ## Example Usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationObjectTypes = oci.DatabaseMigration.getMigrationObjectTypes({});
+ * const testMigrationObjectTypes = oci.DatabaseMigration.getMigrationObjectTypes({
+ *     connectionType: migrationObjectTypeConnectionType,
+ * });
  * ```
  */
-export function getMigrationObjectTypes(args?: GetMigrationObjectTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationObjectTypesResult> {
-    args = args || {};
+export function getMigrationObjectTypes(args: GetMigrationObjectTypesArgs, opts?: pulumi.InvokeOptions): Promise<GetMigrationObjectTypesResult> {
 
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
     return pulumi.runtime.invoke("oci:DatabaseMigration/getMigrationObjectTypes:getMigrationObjectTypes", {
+        "connectionType": args.connectionType,
         "filters": args.filters,
     }, opts);
 }
@@ -33,6 +31,10 @@ export function getMigrationObjectTypes(args?: GetMigrationObjectTypesArgs, opts
  * A collection of arguments for invoking getMigrationObjectTypes.
  */
 export interface GetMigrationObjectTypesArgs {
+    /**
+     * The connection type for migration objects.
+     */
+    connectionType: string;
     filters?: inputs.DatabaseMigration.GetMigrationObjectTypesFilter[];
 }
 
@@ -40,6 +42,7 @@ export interface GetMigrationObjectTypesArgs {
  * A collection of values returned by getMigrationObjectTypes.
  */
 export interface GetMigrationObjectTypesResult {
+    readonly connectionType: string;
     readonly filters?: outputs.DatabaseMigration.GetMigrationObjectTypesFilter[];
     /**
      * The provider-assigned unique ID for this managed resource.
@@ -51,20 +54,18 @@ export interface GetMigrationObjectTypesResult {
     readonly migrationObjectTypeSummaryCollections: outputs.DatabaseMigration.GetMigrationObjectTypesMigrationObjectTypeSummaryCollection[];
 }
 /**
- * This data source provides the list of Migration Object Types in Oracle Cloud Infrastructure Database Migration service.
- *
- * Display sample object types to exclude or include for a Migration.
- *
  * ## Example Usage
  *
  * ```typescript
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testMigrationObjectTypes = oci.DatabaseMigration.getMigrationObjectTypes({});
+ * const testMigrationObjectTypes = oci.DatabaseMigration.getMigrationObjectTypes({
+ *     connectionType: migrationObjectTypeConnectionType,
+ * });
  * ```
  */
-export function getMigrationObjectTypesOutput(args?: GetMigrationObjectTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationObjectTypesResult> {
+export function getMigrationObjectTypesOutput(args: GetMigrationObjectTypesOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetMigrationObjectTypesResult> {
     return pulumi.output(args).apply((a: any) => getMigrationObjectTypes(a, opts))
 }
 
@@ -72,5 +73,9 @@ export function getMigrationObjectTypesOutput(args?: GetMigrationObjectTypesOutp
  * A collection of arguments for invoking getMigrationObjectTypes.
  */
 export interface GetMigrationObjectTypesOutputArgs {
+    /**
+     * The connection type for migration objects.
+     */
+    connectionType: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.GetMigrationObjectTypesFilterArgs>[]>;
 }

@@ -19,9 +19,7 @@ import java.util.Map;
 import javax.annotation.Nullable;
 
 /**
- * This resource provides the Job resource in Oracle Cloud Infrastructure Database Migration service.
- * 
- * Update Migration Job resource details.
+ * ## Example Usage
  * 
  * ## Import
  * 
@@ -63,14 +61,14 @@ public class Job extends com.pulumi.resources.CustomResource {
         return this.displayName;
     }
     /**
-     * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {&#34;Department&#34;: &#34;Finance&#34;}
      * 
      */
     @Export(name="freeformTags", refs={Map.class,String.class,Object.class}, tree="[0,1,2]")
     private Output<Map<String,Object>> freeformTags;
 
     /**
-     * @return (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{&#34;bar-key&#34;: &#34;value&#34;}`
+     * @return (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.  For more information, see Resource Tags. Example: {&#34;Department&#34;: &#34;Finance&#34;}
      * 
      */
     public Output<Map<String,Object>> freeformTags() {

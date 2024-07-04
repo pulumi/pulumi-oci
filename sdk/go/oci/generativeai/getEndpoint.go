@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative Ai service.
+// This data source provides details about a specific Endpoint resource in Oracle Cloud Infrastructure Generative AI service.
 //
 // Gets information about an endpoint.
 //
@@ -58,30 +58,22 @@ type LookupEndpointArgs struct {
 
 // A collection of values returned by getEndpoint.
 type LookupEndpointResult struct {
-	// The compartment OCID to create the endpoint in.
-	CompartmentId string `pulumi:"compartmentId"`
-	// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
+	CompartmentId            string                               `pulumi:"compartmentId"`
 	ContentModerationConfigs []GetEndpointContentModerationConfig `pulumi:"contentModerationConfigs"`
-	// The OCID of the dedicated AI cluster on which the model will be deployed to.
-	DedicatedAiClusterId string `pulumi:"dedicatedAiClusterId"`
+	DedicatedAiClusterId     string                               `pulumi:"dedicatedAiClusterId"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Operations.CostCenter": "42"}`
-	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// An optional description of the endpoint.
-	Description string `pulumi:"description"`
-	// A user-friendly name. Does not have to be unique, and it's changeable.
-	DisplayName string `pulumi:"displayName"`
-	EndpointId  string `pulumi:"endpointId"`
-	// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
+	DefinedTags  map[string]interface{} `pulumi:"definedTags"`
+	Description  string                 `pulumi:"description"`
+	DisplayName  string                 `pulumi:"displayName"`
+	EndpointId   string                 `pulumi:"endpointId"`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// An OCID that uniquely identifies this endpoint resource.
-	Id string `pulumi:"id"`
-	// A message describing the current state of the endpoint in more detail that can provide actionable information.
+	Id               string `pulumi:"id"`
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The OCID of the model that's used to create this endpoint.
 	ModelId string `pulumi:"modelId"`
 	// The current state of the endpoint.
-	State string `pulumi:"state"`
-	// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
+	State      string                 `pulumi:"state"`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time that the endpoint was created in the format of an RFC3339 datetime string.
 	TimeCreated string `pulumi:"timeCreated"`
@@ -127,17 +119,14 @@ func (o LookupEndpointResultOutput) ToLookupEndpointResultOutputWithContext(ctx 
 	return o
 }
 
-// The compartment OCID to create the endpoint in.
 func (o LookupEndpointResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// The configuration details, whether to add the content moderation feature to the model. Content moderation removes toxic and biased content from responses. It's recommended to use content moderation.
 func (o LookupEndpointResultOutput) ContentModerationConfigs() GetEndpointContentModerationConfigArrayOutput {
 	return o.ApplyT(func(v LookupEndpointResult) []GetEndpointContentModerationConfig { return v.ContentModerationConfigs }).(GetEndpointContentModerationConfigArrayOutput)
 }
 
-// The OCID of the dedicated AI cluster on which the model will be deployed to.
 func (o LookupEndpointResultOutput) DedicatedAiClusterId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.DedicatedAiClusterId }).(pulumi.StringOutput)
 }
@@ -147,12 +136,10 @@ func (o LookupEndpointResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// An optional description of the endpoint.
 func (o LookupEndpointResultOutput) Description() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.Description }).(pulumi.StringOutput)
 }
 
-// A user-friendly name. Does not have to be unique, and it's changeable.
 func (o LookupEndpointResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -161,7 +148,6 @@ func (o LookupEndpointResultOutput) EndpointId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.EndpointId }).(pulumi.StringOutput)
 }
 
-// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
 func (o LookupEndpointResultOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.FreeformTags }).(pulumi.MapOutput)
 }
@@ -171,7 +157,6 @@ func (o LookupEndpointResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// A message describing the current state of the endpoint in more detail that can provide actionable information.
 func (o LookupEndpointResultOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
@@ -186,7 +171,6 @@ func (o LookupEndpointResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupEndpointResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// System tags for this resource. Each key is predefined and scoped to a namespace.  Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupEndpointResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupEndpointResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
 }

@@ -68,8 +68,11 @@ import (
 type Export struct {
 	pulumi.CustomResourceState
 
-	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+	//
 	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+	//
+	// For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -137,8 +140,11 @@ func GetExport(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Export resources.
 type exportState struct {
-	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+	//
 	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+	//
+	// For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -168,8 +174,11 @@ type exportState struct {
 }
 
 type ExportState struct {
-	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+	//
 	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+	//
+	// For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -203,8 +212,11 @@ func (ExportState) ElementType() reflect.Type {
 }
 
 type exportArgs struct {
-	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+	//
 	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+	//
+	// For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -231,8 +243,11 @@ type exportArgs struct {
 
 // The set of arguments for constructing a Export resource.
 type ExportArgs struct {
-	// (Updatable) Export options for the new export. If left unspecified, defaults to:
+	// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+	//
 	// [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+	//
+	// For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
 	//
 	// **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 	//
@@ -344,8 +359,11 @@ func (o ExportOutput) ToExportOutputWithContext(ctx context.Context) ExportOutpu
 	return o
 }
 
-// (Updatable) Export options for the new export. If left unspecified, defaults to:
+// (Updatable) Export options for the new export. For exports of mount targets with IPv4 address, if client options are left unspecified, client options would default to:
+//
 // [ { "source" : "0.0.0.0/0", "requirePrivilegedSourcePort" : false, "access": "READ_WRITE", "identitySquash": "NONE", "anonymousUid": 65534, "anonymousGid": 65534, "isAnonymousAccessAllowed": false, "allowedAuth": ["SYS"] } ]
+//
+// For exports of mount targets with IPv6 address, if client options are left unspecified, client options would be an empty array, i.e. export would not be visible to any clients.
 //
 // **Note:** Mount targets do not have Internet-routable IP addresses.  Therefore they will not be reachable from the Internet, even if an associated `ClientOptions` item has a source of `0.0.0.0/0`.
 //

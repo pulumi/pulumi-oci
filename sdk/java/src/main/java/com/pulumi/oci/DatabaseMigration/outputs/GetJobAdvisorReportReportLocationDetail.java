@@ -13,26 +13,26 @@ import java.util.Objects;
 @CustomType
 public final class GetJobAdvisorReportReportLocationDetail {
     /**
-     * @return Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+     * @return File system path on the Source Database host where the Premigration Advisor report can be accessed.
      * 
      */
     private String locationInSource;
     /**
-     * @return Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+     * @return Details to access Premigration Advisor report in the specified Object Storage bucket.
      * 
      */
     private List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails;
 
     private GetJobAdvisorReportReportLocationDetail() {}
     /**
-     * @return Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+     * @return File system path on the Source Database host where the Premigration Advisor report can be accessed.
      * 
      */
     public String locationInSource() {
         return this.locationInSource;
     }
     /**
-     * @return Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+     * @return Details to access Premigration Advisor report in the specified Object Storage bucket.
      * 
      */
     public List<GetJobAdvisorReportReportLocationDetailObjectStorageDetail> objectStorageDetails() {

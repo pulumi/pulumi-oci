@@ -1792,6 +1792,8 @@ class UsageGroupByTagArgs:
 class UsageItemArgs:
     def __init__(__self__, *,
                  ad: Optional[pulumi.Input[str]] = None,
+                 attributed_cost: Optional[pulumi.Input[str]] = None,
+                 attributed_usage: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
                  compartment_name: Optional[pulumi.Input[str]] = None,
                  compartment_path: Optional[pulumi.Input[str]] = None,
@@ -1822,6 +1824,8 @@ class UsageItemArgs:
                  weight: Optional[pulumi.Input[float]] = None):
         """
         :param pulumi.Input[str] ad: The availability domain of the usage.
+        :param pulumi.Input[str] attributed_cost: The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        :param pulumi.Input[str] attributed_usage: The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
         :param pulumi.Input[str] compartment_id: The compartment OCID.
         :param pulumi.Input[str] compartment_name: The compartment name.
         :param pulumi.Input[str] compartment_path: The compartment path, starting from root.
@@ -1857,6 +1861,10 @@ class UsageItemArgs:
         """
         if ad is not None:
             pulumi.set(__self__, "ad", ad)
+        if attributed_cost is not None:
+            pulumi.set(__self__, "attributed_cost", attributed_cost)
+        if attributed_usage is not None:
+            pulumi.set(__self__, "attributed_usage", attributed_usage)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compartment_name is not None:
@@ -1925,6 +1933,30 @@ class UsageItemArgs:
     @ad.setter
     def ad(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "ad", value)
+
+    @property
+    @pulumi.getter(name="attributedCost")
+    def attributed_cost(self) -> Optional[pulumi.Input[str]]:
+        """
+        The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        """
+        return pulumi.get(self, "attributed_cost")
+
+    @attributed_cost.setter
+    def attributed_cost(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attributed_cost", value)
+
+    @property
+    @pulumi.getter(name="attributedUsage")
+    def attributed_usage(self) -> Optional[pulumi.Input[str]]:
+        """
+        The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+        """
+        return pulumi.get(self, "attributed_usage")
+
+    @attributed_usage.setter
+    def attributed_usage(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "attributed_usage", value)
 
     @property
     @pulumi.getter(name="compartmentId")

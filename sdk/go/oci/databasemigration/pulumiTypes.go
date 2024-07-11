@@ -836,6 +836,121 @@ func (o JobUnsupportedObjectArrayOutput) Index(i pulumi.IntInput) JobUnsupported
 	}).(JobUnsupportedObjectOutput)
 }
 
+type MigrationAdvancedParameter struct {
+	// (Updatable) Parameter data type.
+	DataType *string `pulumi:"dataType"`
+	// (Updatable) Parameter name.
+	Name *string `pulumi:"name"`
+	// (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+	Value *string `pulumi:"value"`
+}
+
+// MigrationAdvancedParameterInput is an input type that accepts MigrationAdvancedParameterArgs and MigrationAdvancedParameterOutput values.
+// You can construct a concrete instance of `MigrationAdvancedParameterInput` via:
+//
+//	MigrationAdvancedParameterArgs{...}
+type MigrationAdvancedParameterInput interface {
+	pulumi.Input
+
+	ToMigrationAdvancedParameterOutput() MigrationAdvancedParameterOutput
+	ToMigrationAdvancedParameterOutputWithContext(context.Context) MigrationAdvancedParameterOutput
+}
+
+type MigrationAdvancedParameterArgs struct {
+	// (Updatable) Parameter data type.
+	DataType pulumi.StringPtrInput `pulumi:"dataType"`
+	// (Updatable) Parameter name.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (MigrationAdvancedParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (i MigrationAdvancedParameterArgs) ToMigrationAdvancedParameterOutput() MigrationAdvancedParameterOutput {
+	return i.ToMigrationAdvancedParameterOutputWithContext(context.Background())
+}
+
+func (i MigrationAdvancedParameterArgs) ToMigrationAdvancedParameterOutputWithContext(ctx context.Context) MigrationAdvancedParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvancedParameterOutput)
+}
+
+// MigrationAdvancedParameterArrayInput is an input type that accepts MigrationAdvancedParameterArray and MigrationAdvancedParameterArrayOutput values.
+// You can construct a concrete instance of `MigrationAdvancedParameterArrayInput` via:
+//
+//	MigrationAdvancedParameterArray{ MigrationAdvancedParameterArgs{...} }
+type MigrationAdvancedParameterArrayInput interface {
+	pulumi.Input
+
+	ToMigrationAdvancedParameterArrayOutput() MigrationAdvancedParameterArrayOutput
+	ToMigrationAdvancedParameterArrayOutputWithContext(context.Context) MigrationAdvancedParameterArrayOutput
+}
+
+type MigrationAdvancedParameterArray []MigrationAdvancedParameterInput
+
+func (MigrationAdvancedParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (i MigrationAdvancedParameterArray) ToMigrationAdvancedParameterArrayOutput() MigrationAdvancedParameterArrayOutput {
+	return i.ToMigrationAdvancedParameterArrayOutputWithContext(context.Background())
+}
+
+func (i MigrationAdvancedParameterArray) ToMigrationAdvancedParameterArrayOutputWithContext(ctx context.Context) MigrationAdvancedParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(MigrationAdvancedParameterArrayOutput)
+}
+
+type MigrationAdvancedParameterOutput struct{ *pulumi.OutputState }
+
+func (MigrationAdvancedParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*MigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (o MigrationAdvancedParameterOutput) ToMigrationAdvancedParameterOutput() MigrationAdvancedParameterOutput {
+	return o
+}
+
+func (o MigrationAdvancedParameterOutput) ToMigrationAdvancedParameterOutputWithContext(ctx context.Context) MigrationAdvancedParameterOutput {
+	return o
+}
+
+// (Updatable) Parameter data type.
+func (o MigrationAdvancedParameterOutput) DataType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationAdvancedParameter) *string { return v.DataType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Parameter name.
+func (o MigrationAdvancedParameterOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationAdvancedParameter) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+func (o MigrationAdvancedParameterOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v MigrationAdvancedParameter) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type MigrationAdvancedParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (MigrationAdvancedParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]MigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (o MigrationAdvancedParameterArrayOutput) ToMigrationAdvancedParameterArrayOutput() MigrationAdvancedParameterArrayOutput {
+	return o
+}
+
+func (o MigrationAdvancedParameterArrayOutput) ToMigrationAdvancedParameterArrayOutputWithContext(ctx context.Context) MigrationAdvancedParameterArrayOutput {
+	return o
+}
+
+func (o MigrationAdvancedParameterArrayOutput) Index(i pulumi.IntInput) MigrationAdvancedParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) MigrationAdvancedParameter {
+		return vs[0].([]MigrationAdvancedParameter)[vs[1].(int)]
+	}).(MigrationAdvancedParameterOutput)
+}
+
 type MigrationAdvisorSettings struct {
 	// (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
 	IsIgnoreErrors *bool `pulumi:"isIgnoreErrors"`
@@ -5998,6 +6113,121 @@ func (o GetJobOutputItemArrayOutput) Index(i pulumi.IntInput) GetJobOutputItemOu
 	}).(GetJobOutputItemOutput)
 }
 
+type GetMigrationAdvancedParameter struct {
+	// Parameter data type.
+	DataType string `pulumi:"dataType"`
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+	Value string `pulumi:"value"`
+}
+
+// GetMigrationAdvancedParameterInput is an input type that accepts GetMigrationAdvancedParameterArgs and GetMigrationAdvancedParameterOutput values.
+// You can construct a concrete instance of `GetMigrationAdvancedParameterInput` via:
+//
+//	GetMigrationAdvancedParameterArgs{...}
+type GetMigrationAdvancedParameterInput interface {
+	pulumi.Input
+
+	ToGetMigrationAdvancedParameterOutput() GetMigrationAdvancedParameterOutput
+	ToGetMigrationAdvancedParameterOutputWithContext(context.Context) GetMigrationAdvancedParameterOutput
+}
+
+type GetMigrationAdvancedParameterArgs struct {
+	// Parameter data type.
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMigrationAdvancedParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (i GetMigrationAdvancedParameterArgs) ToGetMigrationAdvancedParameterOutput() GetMigrationAdvancedParameterOutput {
+	return i.ToGetMigrationAdvancedParameterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAdvancedParameterArgs) ToGetMigrationAdvancedParameterOutputWithContext(ctx context.Context) GetMigrationAdvancedParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAdvancedParameterOutput)
+}
+
+// GetMigrationAdvancedParameterArrayInput is an input type that accepts GetMigrationAdvancedParameterArray and GetMigrationAdvancedParameterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationAdvancedParameterArrayInput` via:
+//
+//	GetMigrationAdvancedParameterArray{ GetMigrationAdvancedParameterArgs{...} }
+type GetMigrationAdvancedParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationAdvancedParameterArrayOutput() GetMigrationAdvancedParameterArrayOutput
+	ToGetMigrationAdvancedParameterArrayOutputWithContext(context.Context) GetMigrationAdvancedParameterArrayOutput
+}
+
+type GetMigrationAdvancedParameterArray []GetMigrationAdvancedParameterInput
+
+func (GetMigrationAdvancedParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (i GetMigrationAdvancedParameterArray) ToGetMigrationAdvancedParameterArrayOutput() GetMigrationAdvancedParameterArrayOutput {
+	return i.ToGetMigrationAdvancedParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationAdvancedParameterArray) ToGetMigrationAdvancedParameterArrayOutputWithContext(ctx context.Context) GetMigrationAdvancedParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationAdvancedParameterArrayOutput)
+}
+
+type GetMigrationAdvancedParameterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAdvancedParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (o GetMigrationAdvancedParameterOutput) ToGetMigrationAdvancedParameterOutput() GetMigrationAdvancedParameterOutput {
+	return o
+}
+
+func (o GetMigrationAdvancedParameterOutput) ToGetMigrationAdvancedParameterOutputWithContext(ctx context.Context) GetMigrationAdvancedParameterOutput {
+	return o
+}
+
+// Parameter data type.
+func (o GetMigrationAdvancedParameterOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationAdvancedParameter) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Name of directory object in database
+func (o GetMigrationAdvancedParameterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationAdvancedParameter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+func (o GetMigrationAdvancedParameterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationAdvancedParameter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMigrationAdvancedParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationAdvancedParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationAdvancedParameter)(nil)).Elem()
+}
+
+func (o GetMigrationAdvancedParameterArrayOutput) ToGetMigrationAdvancedParameterArrayOutput() GetMigrationAdvancedParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationAdvancedParameterArrayOutput) ToGetMigrationAdvancedParameterArrayOutputWithContext(ctx context.Context) GetMigrationAdvancedParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationAdvancedParameterArrayOutput) Index(i pulumi.IntInput) GetMigrationAdvancedParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationAdvancedParameter {
+		return vs[0].([]GetMigrationAdvancedParameter)[vs[1].(int)]
+	}).(GetMigrationAdvancedParameterOutput)
+}
+
 type GetMigrationAdvisorSetting struct {
 	// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
 	IsIgnoreErrors bool `pulumi:"isIgnoreErrors"`
@@ -8880,6 +9110,121 @@ func (o GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutp
 	}).(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput)
 }
 
+type GetMigrationsAdvancedParameter struct {
+	// Parameter data type.
+	DataType string `pulumi:"dataType"`
+	// Name of directory object in database
+	Name string `pulumi:"name"`
+	// If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+	Value string `pulumi:"value"`
+}
+
+// GetMigrationsAdvancedParameterInput is an input type that accepts GetMigrationsAdvancedParameterArgs and GetMigrationsAdvancedParameterOutput values.
+// You can construct a concrete instance of `GetMigrationsAdvancedParameterInput` via:
+//
+//	GetMigrationsAdvancedParameterArgs{...}
+type GetMigrationsAdvancedParameterInput interface {
+	pulumi.Input
+
+	ToGetMigrationsAdvancedParameterOutput() GetMigrationsAdvancedParameterOutput
+	ToGetMigrationsAdvancedParameterOutputWithContext(context.Context) GetMigrationsAdvancedParameterOutput
+}
+
+type GetMigrationsAdvancedParameterArgs struct {
+	// Parameter data type.
+	DataType pulumi.StringInput `pulumi:"dataType"`
+	// Name of directory object in database
+	Name pulumi.StringInput `pulumi:"name"`
+	// If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetMigrationsAdvancedParameterArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsAdvancedParameter)(nil)).Elem()
+}
+
+func (i GetMigrationsAdvancedParameterArgs) ToGetMigrationsAdvancedParameterOutput() GetMigrationsAdvancedParameterOutput {
+	return i.ToGetMigrationsAdvancedParameterOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsAdvancedParameterArgs) ToGetMigrationsAdvancedParameterOutputWithContext(ctx context.Context) GetMigrationsAdvancedParameterOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsAdvancedParameterOutput)
+}
+
+// GetMigrationsAdvancedParameterArrayInput is an input type that accepts GetMigrationsAdvancedParameterArray and GetMigrationsAdvancedParameterArrayOutput values.
+// You can construct a concrete instance of `GetMigrationsAdvancedParameterArrayInput` via:
+//
+//	GetMigrationsAdvancedParameterArray{ GetMigrationsAdvancedParameterArgs{...} }
+type GetMigrationsAdvancedParameterArrayInput interface {
+	pulumi.Input
+
+	ToGetMigrationsAdvancedParameterArrayOutput() GetMigrationsAdvancedParameterArrayOutput
+	ToGetMigrationsAdvancedParameterArrayOutputWithContext(context.Context) GetMigrationsAdvancedParameterArrayOutput
+}
+
+type GetMigrationsAdvancedParameterArray []GetMigrationsAdvancedParameterInput
+
+func (GetMigrationsAdvancedParameterArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsAdvancedParameter)(nil)).Elem()
+}
+
+func (i GetMigrationsAdvancedParameterArray) ToGetMigrationsAdvancedParameterArrayOutput() GetMigrationsAdvancedParameterArrayOutput {
+	return i.ToGetMigrationsAdvancedParameterArrayOutputWithContext(context.Background())
+}
+
+func (i GetMigrationsAdvancedParameterArray) ToGetMigrationsAdvancedParameterArrayOutputWithContext(ctx context.Context) GetMigrationsAdvancedParameterArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMigrationsAdvancedParameterArrayOutput)
+}
+
+type GetMigrationsAdvancedParameterOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsAdvancedParameterOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMigrationsAdvancedParameter)(nil)).Elem()
+}
+
+func (o GetMigrationsAdvancedParameterOutput) ToGetMigrationsAdvancedParameterOutput() GetMigrationsAdvancedParameterOutput {
+	return o
+}
+
+func (o GetMigrationsAdvancedParameterOutput) ToGetMigrationsAdvancedParameterOutputWithContext(ctx context.Context) GetMigrationsAdvancedParameterOutput {
+	return o
+}
+
+// Parameter data type.
+func (o GetMigrationsAdvancedParameterOutput) DataType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsAdvancedParameter) string { return v.DataType }).(pulumi.StringOutput)
+}
+
+// Name of directory object in database
+func (o GetMigrationsAdvancedParameterOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsAdvancedParameter) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+func (o GetMigrationsAdvancedParameterOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMigrationsAdvancedParameter) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetMigrationsAdvancedParameterArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMigrationsAdvancedParameterArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMigrationsAdvancedParameter)(nil)).Elem()
+}
+
+func (o GetMigrationsAdvancedParameterArrayOutput) ToGetMigrationsAdvancedParameterArrayOutput() GetMigrationsAdvancedParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationsAdvancedParameterArrayOutput) ToGetMigrationsAdvancedParameterArrayOutputWithContext(ctx context.Context) GetMigrationsAdvancedParameterArrayOutput {
+	return o
+}
+
+func (o GetMigrationsAdvancedParameterArrayOutput) Index(i pulumi.IntInput) GetMigrationsAdvancedParameterOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMigrationsAdvancedParameter {
+		return vs[0].([]GetMigrationsAdvancedParameter)[vs[1].(int)]
+	}).(GetMigrationsAdvancedParameterOutput)
+}
+
 type GetMigrationsAdvisorSetting struct {
 	// True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
 	IsIgnoreErrors bool `pulumi:"isIgnoreErrors"`
@@ -11472,6 +11817,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*JobProgressPhaseLogLocationArrayInput)(nil)).Elem(), JobProgressPhaseLogLocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobUnsupportedObjectInput)(nil)).Elem(), JobUnsupportedObjectArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*JobUnsupportedObjectArrayInput)(nil)).Elem(), JobUnsupportedObjectArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAdvancedParameterInput)(nil)).Elem(), MigrationAdvancedParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAdvancedParameterArrayInput)(nil)).Elem(), MigrationAdvancedParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAdvisorSettingsInput)(nil)).Elem(), MigrationAdvisorSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationAdvisorSettingsPtrInput)(nil)).Elem(), MigrationAdvisorSettingsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MigrationDataTransferMediumDetailsInput)(nil)).Elem(), MigrationDataTransferMediumDetailsArgs{})
@@ -11534,6 +11881,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayInput)(nil)).Elem(), GetJobAdvisorReportReportLocationDetailObjectStorageDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobOutputItemInput)(nil)).Elem(), GetJobOutputItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetJobOutputItemArrayInput)(nil)).Elem(), GetJobOutputItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAdvancedParameterInput)(nil)).Elem(), GetMigrationAdvancedParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAdvancedParameterArrayInput)(nil)).Elem(), GetMigrationAdvancedParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAdvisorSettingInput)(nil)).Elem(), GetMigrationAdvisorSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationAdvisorSettingArrayInput)(nil)).Elem(), GetMigrationAdvisorSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationDataTransferMediumDetailInput)(nil)).Elem(), GetMigrationDataTransferMediumDetailArgs{})
@@ -11582,6 +11931,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayInput)(nil)).Elem(), GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsAdvancedParameterInput)(nil)).Elem(), GetMigrationsAdvancedParameterArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsAdvancedParameterArrayInput)(nil)).Elem(), GetMigrationsAdvancedParameterArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsAdvisorSettingInput)(nil)).Elem(), GetMigrationsAdvisorSettingArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsAdvisorSettingArrayInput)(nil)).Elem(), GetMigrationsAdvisorSettingArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMigrationsDataTransferMediumDetailInput)(nil)).Elem(), GetMigrationsDataTransferMediumDetailArgs{})
@@ -11638,6 +11989,8 @@ func init() {
 	pulumi.RegisterOutputType(JobProgressPhaseLogLocationArrayOutput{})
 	pulumi.RegisterOutputType(JobUnsupportedObjectOutput{})
 	pulumi.RegisterOutputType(JobUnsupportedObjectArrayOutput{})
+	pulumi.RegisterOutputType(MigrationAdvancedParameterOutput{})
+	pulumi.RegisterOutputType(MigrationAdvancedParameterArrayOutput{})
 	pulumi.RegisterOutputType(MigrationAdvisorSettingsOutput{})
 	pulumi.RegisterOutputType(MigrationAdvisorSettingsPtrOutput{})
 	pulumi.RegisterOutputType(MigrationDataTransferMediumDetailsOutput{})
@@ -11700,6 +12053,8 @@ func init() {
 	pulumi.RegisterOutputType(GetJobAdvisorReportReportLocationDetailObjectStorageDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetJobOutputItemOutput{})
 	pulumi.RegisterOutputType(GetJobOutputItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationAdvancedParameterOutput{})
+	pulumi.RegisterOutputType(GetMigrationAdvancedParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationAdvisorSettingOutput{})
 	pulumi.RegisterOutputType(GetMigrationAdvisorSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationDataTransferMediumDetailOutput{})
@@ -11748,6 +12103,8 @@ func init() {
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemOutput{})
 	pulumi.RegisterOutputType(GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemArrayOutput{})
+	pulumi.RegisterOutputType(GetMigrationsAdvancedParameterOutput{})
+	pulumi.RegisterOutputType(GetMigrationsAdvancedParameterArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsAdvisorSettingOutput{})
 	pulumi.RegisterOutputType(GetMigrationsAdvisorSettingArrayOutput{})
 	pulumi.RegisterOutputType(GetMigrationsDataTransferMediumDetailOutput{})

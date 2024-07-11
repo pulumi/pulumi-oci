@@ -41,6 +41,10 @@ export interface GetMigrationArgs {
  */
 export interface GetMigrationResult {
     /**
+     * List of Migration Parameter objects.
+     */
+    readonly advancedParameters: outputs.DatabaseMigration.GetMigrationAdvancedParameter[];
+    /**
      * Details about Oracle Advisor Settings.
      */
     readonly advisorSettings: outputs.DatabaseMigration.GetMigrationAdvisorSetting[];

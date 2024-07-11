@@ -18,6 +18,7 @@ __all__ = [
     'JobProgressPhaseExtract',
     'JobProgressPhaseLogLocation',
     'JobUnsupportedObject',
+    'MigrationAdvancedParameter',
     'MigrationAdvisorSettings',
     'MigrationDataTransferMediumDetails',
     'MigrationDataTransferMediumDetailsObjectStorageBucket',
@@ -49,6 +50,7 @@ __all__ = [
     'GetJobAdvisorReportReportLocationDetailResult',
     'GetJobAdvisorReportReportLocationDetailObjectStorageDetailResult',
     'GetJobOutputItemResult',
+    'GetMigrationAdvancedParameterResult',
     'GetMigrationAdvisorSettingResult',
     'GetMigrationDataTransferMediumDetailResult',
     'GetMigrationDataTransferMediumDetailObjectStorageBucketResult',
@@ -73,6 +75,7 @@ __all__ = [
     'GetMigrationObjectTypesFilterResult',
     'GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionResult',
     'GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult',
+    'GetMigrationsAdvancedParameterResult',
     'GetMigrationsAdvisorSettingResult',
     'GetMigrationsDataTransferMediumDetailResult',
     'GetMigrationsDataTransferMediumDetailObjectStorageBucketResult',
@@ -476,6 +479,66 @@ class JobUnsupportedObject(dict):
         Type of unsupported object
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class MigrationAdvancedParameter(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "dataType":
+            suggest = "data_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in MigrationAdvancedParameter. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        MigrationAdvancedParameter.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        MigrationAdvancedParameter.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 data_type: Optional[str] = None,
+                 name: Optional[str] = None,
+                 value: Optional[str] = None):
+        """
+        :param str data_type: (Updatable) Parameter data type.
+        :param str name: (Updatable) Parameter name.
+        :param str value: (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> Optional[str]:
+        """
+        (Updatable) Parameter data type.
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[str]:
+        """
+        (Updatable) Parameter name.
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[str]:
+        """
+        (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type
@@ -2629,6 +2692,46 @@ class GetJobOutputItemResult(dict):
 
 
 @pulumi.output_type
+class GetMigrationAdvancedParameterResult(dict):
+    def __init__(__self__, *,
+                 data_type: str,
+                 name: str,
+                 value: str):
+        """
+        :param str data_type: Parameter data type.
+        :param str name: Name of directory object in database
+        :param str value: If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> str:
+        """
+        Parameter data type.
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of directory object in database
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
 class GetMigrationAdvisorSettingResult(dict):
     def __init__(__self__, *,
                  is_ignore_errors: bool,
@@ -3708,6 +3811,46 @@ class GetMigrationObjectTypesMigrationObjectTypeSummaryCollectionItemResult(dict
         Object type name
         """
         return pulumi.get(self, "name")
+
+
+@pulumi.output_type
+class GetMigrationsAdvancedParameterResult(dict):
+    def __init__(__self__, *,
+                 data_type: str,
+                 name: str,
+                 value: str):
+        """
+        :param str data_type: Parameter data type.
+        :param str name: Name of directory object in database
+        :param str value: If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        pulumi.set(__self__, "data_type", data_type)
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> str:
+        """
+        Parameter data type.
+        """
+        return pulumi.get(self, "data_type")
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        """
+        Name of directory object in database
+        """
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def value(self) -> str:
+        """
+        If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        return pulumi.get(self, "value")
 
 
 @pulumi.output_type

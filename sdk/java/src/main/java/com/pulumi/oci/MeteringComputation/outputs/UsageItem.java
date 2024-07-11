@@ -21,6 +21,16 @@ public final class UsageItem {
      */
     private @Nullable String ad;
     /**
+     * @return The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    private @Nullable String attributedCost;
+    /**
+     * @return The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    private @Nullable String attributedUsage;
+    /**
      * @return The compartment OCID.
      * 
      */
@@ -171,6 +181,20 @@ public final class UsageItem {
      */
     public Optional<String> ad() {
         return Optional.ofNullable(this.ad);
+    }
+    /**
+     * @return The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    public Optional<String> attributedCost() {
+        return Optional.ofNullable(this.attributedCost);
+    }
+    /**
+     * @return The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    public Optional<String> attributedUsage() {
+        return Optional.ofNullable(this.attributedUsage);
     }
     /**
      * @return The compartment OCID.
@@ -382,6 +406,8 @@ public final class UsageItem {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String ad;
+        private @Nullable String attributedCost;
+        private @Nullable String attributedUsage;
         private @Nullable String compartmentId;
         private @Nullable String compartmentName;
         private @Nullable String compartmentPath;
@@ -414,6 +440,8 @@ public final class UsageItem {
         public Builder(UsageItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.ad = defaults.ad;
+    	      this.attributedCost = defaults.attributedCost;
+    	      this.attributedUsage = defaults.attributedUsage;
     	      this.compartmentId = defaults.compartmentId;
     	      this.compartmentName = defaults.compartmentName;
     	      this.compartmentPath = defaults.compartmentPath;
@@ -448,6 +476,18 @@ public final class UsageItem {
         public Builder ad(@Nullable String ad) {
 
             this.ad = ad;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder attributedCost(@Nullable String attributedCost) {
+
+            this.attributedCost = attributedCost;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder attributedUsage(@Nullable String attributedUsage) {
+
+            this.attributedUsage = attributedUsage;
             return this;
         }
         @CustomType.Setter
@@ -624,6 +664,8 @@ public final class UsageItem {
         public UsageItem build() {
             final var _resultValue = new UsageItem();
             _resultValue.ad = ad;
+            _resultValue.attributedCost = attributedCost;
+            _resultValue.attributedUsage = attributedUsage;
             _resultValue.compartmentId = compartmentId;
             _resultValue.compartmentName = compartmentName;
             _resultValue.compartmentPath = compartmentPath;

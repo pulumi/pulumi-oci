@@ -29956,6 +29956,21 @@ export namespace DatabaseMigration {
         type?: pulumi.Input<string>;
     }
 
+    export interface MigrationAdvancedParameter {
+        /**
+         * (Updatable) Parameter data type.
+         */
+        dataType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Parameter name.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+         */
+        value?: pulumi.Input<string>;
+    }
+
     export interface MigrationAdvisorSettings {
         /**
          * (Updatable) True to not interrupt migration execution due to Pre-Migration Advisor errors. Default is false.
@@ -66631,6 +66646,14 @@ export namespace MeteringComputation {
          * The availability domain of the usage.
          */
         ad?: pulumi.Input<string>;
+        /**
+         * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+         */
+        attributedCost?: pulumi.Input<string>;
+        /**
+         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+         */
+        attributedUsage?: pulumi.Input<string>;
         /**
          * The compartment OCID.
          */

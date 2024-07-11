@@ -6,6 +6,7 @@ package com.pulumi.oci.DatabaseMigration;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvancedParameterArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvisorSettingsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationExcludeObjectArgs;
@@ -25,6 +26,21 @@ import javax.annotation.Nullable;
 public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MigrationArgs Empty = new MigrationArgs();
+
+    /**
+     * (Updatable) List of Migration Parameter objects.
+     * 
+     */
+    @Import(name="advancedParameters")
+    private @Nullable Output<List<MigrationAdvancedParameterArgs>> advancedParameters;
+
+    /**
+     * @return (Updatable) List of Migration Parameter objects.
+     * 
+     */
+    public Optional<Output<List<MigrationAdvancedParameterArgs>>> advancedParameters() {
+        return Optional.ofNullable(this.advancedParameters);
+    }
 
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
@@ -305,6 +321,7 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
     private MigrationArgs() {}
 
     private MigrationArgs(MigrationArgs $) {
+        this.advancedParameters = $.advancedParameters;
         this.advisorSettings = $.advisorSettings;
         this.bulkIncludeExcludeData = $.bulkIncludeExcludeData;
         this.compartmentId = $.compartmentId;
@@ -341,6 +358,37 @@ public final class MigrationArgs extends com.pulumi.resources.ResourceArgs {
 
         public Builder(MigrationArgs defaults) {
             $ = new MigrationArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param advancedParameters (Updatable) List of Migration Parameter objects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedParameters(@Nullable Output<List<MigrationAdvancedParameterArgs>> advancedParameters) {
+            $.advancedParameters = advancedParameters;
+            return this;
+        }
+
+        /**
+         * @param advancedParameters (Updatable) List of Migration Parameter objects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedParameters(List<MigrationAdvancedParameterArgs> advancedParameters) {
+            return advancedParameters(Output.of(advancedParameters));
+        }
+
+        /**
+         * @param advancedParameters (Updatable) List of Migration Parameter objects.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder advancedParameters(MigrationAdvancedParameterArgs... advancedParameters) {
+            return advancedParameters(List.of(advancedParameters));
         }
 
         /**

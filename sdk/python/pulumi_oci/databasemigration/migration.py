@@ -21,6 +21,7 @@ class MigrationArgs:
                  source_database_connection_id: pulumi.Input[str],
                  target_database_connection_id: pulumi.Input[str],
                  type: pulumi.Input[str],
+                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
                  advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  data_transfer_medium_details: Optional[pulumi.Input['MigrationDataTransferMediumDetailsArgs']] = None,
@@ -45,6 +46,7 @@ class MigrationArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input['MigrationDataTransferMediumDetailsArgs'] data_transfer_medium_details: (Updatable) Optional additional properties for data transfer.
@@ -64,6 +66,8 @@ class MigrationArgs:
         pulumi.set(__self__, "source_database_connection_id", source_database_connection_id)
         pulumi.set(__self__, "target_database_connection_id", target_database_connection_id)
         pulumi.set(__self__, "type", type)
+        if advanced_parameters is not None:
+            pulumi.set(__self__, "advanced_parameters", advanced_parameters)
         if advisor_settings is not None:
             pulumi.set(__self__, "advisor_settings", advisor_settings)
         if bulk_include_exclude_data is not None:
@@ -154,6 +158,18 @@ class MigrationArgs:
     @type.setter
     def type(self, value: pulumi.Input[str]):
         pulumi.set(self, "type", value)
+
+    @property
+    @pulumi.getter(name="advancedParameters")
+    def advanced_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]:
+        """
+        (Updatable) List of Migration Parameter objects.
+        """
+        return pulumi.get(self, "advanced_parameters")
+
+    @advanced_parameters.setter
+    def advanced_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]):
+        pulumi.set(self, "advanced_parameters", value)
 
     @property
     @pulumi.getter(name="advisorSettings")
@@ -315,6 +331,7 @@ class MigrationArgs:
 @pulumi.input_type
 class _MigrationState:
     def __init__(__self__, *,
+                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]] = None,
                  advisor_settings: Optional[pulumi.Input['MigrationAdvisorSettingsArgs']] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -343,6 +360,7 @@ class _MigrationState:
                  wait_after: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering Migration resources.
+        :param pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input['MigrationAdvisorSettingsArgs'] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
@@ -374,6 +392,8 @@ class _MigrationState:
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         :param pulumi.Input[str] wait_after: You can optionally pause a migration after a job phase. This property allows you to optionally specify the phase after which you can pause the migration.
         """
+        if advanced_parameters is not None:
+            pulumi.set(__self__, "advanced_parameters", advanced_parameters)
         if advisor_settings is not None:
             pulumi.set(__self__, "advisor_settings", advisor_settings)
         if bulk_include_exclude_data is not None:
@@ -426,6 +446,18 @@ class _MigrationState:
             pulumi.set(__self__, "type", type)
         if wait_after is not None:
             pulumi.set(__self__, "wait_after", wait_after)
+
+    @property
+    @pulumi.getter(name="advancedParameters")
+    def advanced_parameters(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]:
+        """
+        (Updatable) List of Migration Parameter objects.
+        """
+        return pulumi.get(self, "advanced_parameters")
+
+    @advanced_parameters.setter
+    def advanced_parameters(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['MigrationAdvancedParameterArgs']]]]):
+        pulumi.set(self, "advanced_parameters", value)
 
     @property
     @pulumi.getter(name="advisorSettings")
@@ -749,6 +781,7 @@ class Migration(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]]] = None,
                  advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -781,6 +814,11 @@ class Migration(pulumi.CustomResource):
             source_database_connection_id=test_connection["id"],
             target_database_connection_id=test_connection["id"],
             type=migration_type,
+            advanced_parameters=[oci.database_migration.MigrationAdvancedParameterArgs(
+                data_type=migration_advanced_parameters_data_type,
+                name=migration_advanced_parameters_name,
+                value=migration_advanced_parameters_value,
+            )],
             advisor_settings=oci.database_migration.MigrationAdvisorSettingsArgs(
                 is_ignore_errors=migration_advisor_settings_is_ignore_errors,
                 is_skip_advisor=migration_advisor_settings_is_skip_advisor,
@@ -907,6 +945,7 @@ class Migration(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
@@ -949,6 +988,11 @@ class Migration(pulumi.CustomResource):
             source_database_connection_id=test_connection["id"],
             target_database_connection_id=test_connection["id"],
             type=migration_type,
+            advanced_parameters=[oci.database_migration.MigrationAdvancedParameterArgs(
+                data_type=migration_advanced_parameters_data_type,
+                name=migration_advanced_parameters_name,
+                value=migration_advanced_parameters_value,
+            )],
             advisor_settings=oci.database_migration.MigrationAdvisorSettingsArgs(
                 is_ignore_errors=migration_advisor_settings_is_ignore_errors,
                 is_skip_advisor=migration_advisor_settings_is_skip_advisor,
@@ -1088,6 +1132,7 @@ class Migration(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]]] = None,
                  advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
                  bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1115,6 +1160,7 @@ class Migration(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = MigrationArgs.__new__(MigrationArgs)
 
+            __props__.__dict__["advanced_parameters"] = advanced_parameters
             __props__.__dict__["advisor_settings"] = advisor_settings
             __props__.__dict__["bulk_include_exclude_data"] = bulk_include_exclude_data
             if compartment_id is None and not opts.urn:
@@ -1161,6 +1207,7 @@ class Migration(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            advanced_parameters: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]]] = None,
             advisor_settings: Optional[pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']]] = None,
             bulk_include_exclude_data: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1194,6 +1241,7 @@ class Migration(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['MigrationAdvancedParameterArgs']]]] advanced_parameters: (Updatable) List of Migration Parameter objects.
         :param pulumi.Input[pulumi.InputType['MigrationAdvisorSettingsArgs']] advisor_settings: (Updatable) Optional Pre-Migration advisor settings.
         :param pulumi.Input[str] bulk_include_exclude_data: Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the resource being referenced.
@@ -1229,6 +1277,7 @@ class Migration(pulumi.CustomResource):
 
         __props__ = _MigrationState.__new__(_MigrationState)
 
+        __props__.__dict__["advanced_parameters"] = advanced_parameters
         __props__.__dict__["advisor_settings"] = advisor_settings
         __props__.__dict__["bulk_include_exclude_data"] = bulk_include_exclude_data
         __props__.__dict__["compartment_id"] = compartment_id
@@ -1256,6 +1305,14 @@ class Migration(pulumi.CustomResource):
         __props__.__dict__["type"] = type
         __props__.__dict__["wait_after"] = wait_after
         return Migration(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="advancedParameters")
+    def advanced_parameters(self) -> pulumi.Output[Sequence['outputs.MigrationAdvancedParameter']]:
+        """
+        (Updatable) List of Migration Parameter objects.
+        """
+        return pulumi.get(self, "advanced_parameters")
 
     @property
     @pulumi.getter(name="advisorSettings")

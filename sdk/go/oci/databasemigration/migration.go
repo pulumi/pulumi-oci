@@ -32,6 +32,13 @@ import (
 //				SourceDatabaseConnectionId: pulumi.Any(testConnection.Id),
 //				TargetDatabaseConnectionId: pulumi.Any(testConnection.Id),
 //				Type:                       pulumi.Any(migrationType),
+//				AdvancedParameters: databasemigration.MigrationAdvancedParameterArray{
+//					&databasemigration.MigrationAdvancedParameterArgs{
+//						DataType: pulumi.Any(migrationAdvancedParametersDataType),
+//						Name:     pulumi.Any(migrationAdvancedParametersName),
+//						Value:    pulumi.Any(migrationAdvancedParametersValue),
+//					},
+//				},
 //				AdvisorSettings: &databasemigration.MigrationAdvisorSettingsArgs{
 //					IsIgnoreErrors: pulumi.Any(migrationAdvisorSettingsIsIgnoreErrors),
 //					IsSkipAdvisor:  pulumi.Any(migrationAdvisorSettingsIsSkipAdvisor),
@@ -172,6 +179,8 @@ import (
 type Migration struct {
 	pulumi.CustomResourceState
 
+	// (Updatable) List of Migration Parameter objects.
+	AdvancedParameters MigrationAdvancedParameterArrayOutput `pulumi:"advancedParameters"`
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings MigrationAdvisorSettingsOutput `pulumi:"advisorSettings"`
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -274,6 +283,8 @@ func GetMigration(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering Migration resources.
 type migrationState struct {
+	// (Updatable) List of Migration Parameter objects.
+	AdvancedParameters []MigrationAdvancedParameter `pulumi:"advancedParameters"`
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings *MigrationAdvisorSettings `pulumi:"advisorSettings"`
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -332,6 +343,8 @@ type migrationState struct {
 }
 
 type MigrationState struct {
+	// (Updatable) List of Migration Parameter objects.
+	AdvancedParameters MigrationAdvancedParameterArrayInput
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings MigrationAdvisorSettingsPtrInput
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -394,6 +407,8 @@ func (MigrationState) ElementType() reflect.Type {
 }
 
 type migrationArgs struct {
+	// (Updatable) List of Migration Parameter objects.
+	AdvancedParameters []MigrationAdvancedParameter `pulumi:"advancedParameters"`
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings *MigrationAdvisorSettings `pulumi:"advisorSettings"`
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -437,6 +452,8 @@ type migrationArgs struct {
 
 // The set of arguments for constructing a Migration resource.
 type MigrationArgs struct {
+	// (Updatable) List of Migration Parameter objects.
+	AdvancedParameters MigrationAdvancedParameterArrayInput
 	// (Updatable) Optional Pre-Migration advisor settings.
 	AdvisorSettings MigrationAdvisorSettingsPtrInput
 	// Specifies the database objects to be excluded from the migration in bulk. The definition accepts input in a CSV format, newline separated for each entry. More details can be found in the documentation.
@@ -563,6 +580,11 @@ func (o MigrationOutput) ToMigrationOutput() MigrationOutput {
 
 func (o MigrationOutput) ToMigrationOutputWithContext(ctx context.Context) MigrationOutput {
 	return o
+}
+
+// (Updatable) List of Migration Parameter objects.
+func (o MigrationOutput) AdvancedParameters() MigrationAdvancedParameterArrayOutput {
+	return o.ApplyT(func(v *Migration) MigrationAdvancedParameterArrayOutput { return v.AdvancedParameters }).(MigrationAdvancedParameterArrayOutput)
 }
 
 // (Updatable) Optional Pre-Migration advisor settings.

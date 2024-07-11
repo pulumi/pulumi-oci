@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DatabaseMigration.MigrationArgs;
 import com.pulumi.oci.DatabaseMigration.inputs.MigrationState;
+import com.pulumi.oci.DatabaseMigration.outputs.MigrationAdvancedParameter;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationAdvisorSettings;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationDataTransferMediumDetails;
 import com.pulumi.oci.DatabaseMigration.outputs.MigrationExcludeObject;
@@ -36,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.DatabaseMigration.Migration;
  * import com.pulumi.oci.DatabaseMigration.MigrationArgs;
+ * import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvancedParameterArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationAdvisorSettingsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsArgs;
  * import com.pulumi.oci.DatabaseMigration.inputs.MigrationDataTransferMediumDetailsObjectStorageBucketArgs;
@@ -74,6 +76,11 @@ import javax.annotation.Nullable;
  *             .sourceDatabaseConnectionId(testConnection.id())
  *             .targetDatabaseConnectionId(testConnection.id())
  *             .type(migrationType)
+ *             .advancedParameters(MigrationAdvancedParameterArgs.builder()
+ *                 .dataType(migrationAdvancedParametersDataType)
+ *                 .name(migrationAdvancedParametersName)
+ *                 .value(migrationAdvancedParametersValue)
+ *                 .build())
  *             .advisorSettings(MigrationAdvisorSettingsArgs.builder()
  *                 .isIgnoreErrors(migrationAdvisorSettingsIsIgnoreErrors)
  *                 .isSkipAdvisor(migrationAdvisorSettingsIsSkipAdvisor)
@@ -205,6 +212,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DatabaseMigration/migration:Migration")
 public class Migration extends com.pulumi.resources.CustomResource {
+    /**
+     * (Updatable) List of Migration Parameter objects.
+     * 
+     */
+    @Export(name="advancedParameters", refs={List.class,MigrationAdvancedParameter.class}, tree="[0,1]")
+    private Output<List<MigrationAdvancedParameter>> advancedParameters;
+
+    /**
+     * @return (Updatable) List of Migration Parameter objects.
+     * 
+     */
+    public Output<List<MigrationAdvancedParameter>> advancedParameters() {
+        return this.advancedParameters;
+    }
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      * 

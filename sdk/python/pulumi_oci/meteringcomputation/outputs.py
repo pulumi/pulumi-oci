@@ -1755,7 +1755,11 @@ class UsageItem(dict):
     @staticmethod
     def __key_warning(key: str):
         suggest = None
-        if key == "compartmentId":
+        if key == "attributedCost":
+            suggest = "attributed_cost"
+        elif key == "attributedUsage":
+            suggest = "attributed_usage"
+        elif key == "compartmentId":
             suggest = "compartment_id"
         elif key == "compartmentName":
             suggest = "compartment_name"
@@ -1805,6 +1809,8 @@ class UsageItem(dict):
 
     def __init__(__self__, *,
                  ad: Optional[str] = None,
+                 attributed_cost: Optional[str] = None,
+                 attributed_usage: Optional[str] = None,
                  compartment_id: Optional[str] = None,
                  compartment_name: Optional[str] = None,
                  compartment_path: Optional[str] = None,
@@ -1835,6 +1841,8 @@ class UsageItem(dict):
                  weight: Optional[float] = None):
         """
         :param str ad: The availability domain of the usage.
+        :param str attributed_cost: The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        :param str attributed_usage: The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
         :param str compartment_id: The compartment OCID.
         :param str compartment_name: The compartment name.
         :param str compartment_path: The compartment path, starting from root.
@@ -1870,6 +1878,10 @@ class UsageItem(dict):
         """
         if ad is not None:
             pulumi.set(__self__, "ad", ad)
+        if attributed_cost is not None:
+            pulumi.set(__self__, "attributed_cost", attributed_cost)
+        if attributed_usage is not None:
+            pulumi.set(__self__, "attributed_usage", attributed_usage)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
         if compartment_name is not None:
@@ -1934,6 +1946,22 @@ class UsageItem(dict):
         The availability domain of the usage.
         """
         return pulumi.get(self, "ad")
+
+    @property
+    @pulumi.getter(name="attributedCost")
+    def attributed_cost(self) -> Optional[str]:
+        """
+        The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        """
+        return pulumi.get(self, "attributed_cost")
+
+    @property
+    @pulumi.getter(name="attributedUsage")
+    def attributed_usage(self) -> Optional[str]:
+        """
+        The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+        """
+        return pulumi.get(self, "attributed_usage")
 
     @property
     @pulumi.getter(name="compartmentId")

@@ -27,6 +27,15 @@ namespace Pulumi.Oci.DatabaseMigration
     ///         SourceDatabaseConnectionId = testConnection.Id,
     ///         TargetDatabaseConnectionId = testConnection.Id,
     ///         Type = migrationType,
+    ///         AdvancedParameters = new[]
+    ///         {
+    ///             new Oci.DatabaseMigration.Inputs.MigrationAdvancedParameterArgs
+    ///             {
+    ///                 DataType = migrationAdvancedParametersDataType,
+    ///                 Name = migrationAdvancedParametersName,
+    ///                 Value = migrationAdvancedParametersValue,
+    ///             },
+    ///         },
     ///         AdvisorSettings = new Oci.DatabaseMigration.Inputs.MigrationAdvisorSettingsArgs
     ///         {
     ///             IsIgnoreErrors = migrationAdvisorSettingsIsIgnoreErrors,
@@ -187,6 +196,12 @@ namespace Pulumi.Oci.DatabaseMigration
     [OciResourceType("oci:DatabaseMigration/migration:Migration")]
     public partial class Migration : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// (Updatable) List of Migration Parameter objects.
+        /// </summary>
+        [Output("advancedParameters")]
+        public Output<ImmutableArray<Outputs.MigrationAdvancedParameter>> AdvancedParameters { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Optional Pre-Migration advisor settings.
         /// </summary>
@@ -393,6 +408,18 @@ namespace Pulumi.Oci.DatabaseMigration
 
     public sealed class MigrationArgs : global::Pulumi.ResourceArgs
     {
+        [Input("advancedParameters")]
+        private InputList<Inputs.MigrationAdvancedParameterArgs>? _advancedParameters;
+
+        /// <summary>
+        /// (Updatable) List of Migration Parameter objects.
+        /// </summary>
+        public InputList<Inputs.MigrationAdvancedParameterArgs> AdvancedParameters
+        {
+            get => _advancedParameters ?? (_advancedParameters = new InputList<Inputs.MigrationAdvancedParameterArgs>());
+            set => _advancedParameters = value;
+        }
+
         /// <summary>
         /// (Updatable) Optional Pre-Migration advisor settings.
         /// </summary>
@@ -537,6 +564,18 @@ namespace Pulumi.Oci.DatabaseMigration
 
     public sealed class MigrationState : global::Pulumi.ResourceArgs
     {
+        [Input("advancedParameters")]
+        private InputList<Inputs.MigrationAdvancedParameterGetArgs>? _advancedParameters;
+
+        /// <summary>
+        /// (Updatable) List of Migration Parameter objects.
+        /// </summary>
+        public InputList<Inputs.MigrationAdvancedParameterGetArgs> AdvancedParameters
+        {
+            get => _advancedParameters ?? (_advancedParameters = new InputList<Inputs.MigrationAdvancedParameterGetArgs>());
+            set => _advancedParameters = value;
+        }
+
         /// <summary>
         /// (Updatable) Optional Pre-Migration advisor settings.
         /// </summary>

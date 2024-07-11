@@ -90,6 +90,10 @@ namespace Pulumi.Oci.DatabaseMigration
     public sealed class GetMigrationResult
     {
         /// <summary>
+        /// List of Migration Parameter objects.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetMigrationAdvancedParameterResult> AdvancedParameters;
+        /// <summary>
         /// Details about Oracle Advisor Settings.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMigrationAdvisorSettingResult> AdvisorSettings;
@@ -192,6 +196,8 @@ namespace Pulumi.Oci.DatabaseMigration
 
         [OutputConstructor]
         private GetMigrationResult(
+            ImmutableArray<Outputs.GetMigrationAdvancedParameterResult> advancedParameters,
+
             ImmutableArray<Outputs.GetMigrationAdvisorSettingResult> advisorSettings,
 
             string bulkIncludeExcludeData,
@@ -248,6 +254,7 @@ namespace Pulumi.Oci.DatabaseMigration
 
             string waitAfter)
         {
+            AdvancedParameters = advancedParameters;
             AdvisorSettings = advisorSettings;
             BulkIncludeExcludeData = bulkIncludeExcludeData;
             CompartmentId = compartmentId;

@@ -19,6 +19,11 @@ import * as utilities from "../utilities";
  *     sourceDatabaseConnectionId: testConnection.id,
  *     targetDatabaseConnectionId: testConnection.id,
  *     type: migrationType,
+ *     advancedParameters: [{
+ *         dataType: migrationAdvancedParametersDataType,
+ *         name: migrationAdvancedParametersName,
+ *         value: migrationAdvancedParametersValue,
+ *     }],
  *     advisorSettings: {
  *         isIgnoreErrors: migrationAdvisorSettingsIsIgnoreErrors,
  *         isSkipAdvisor: migrationAdvisorSettingsIsSkipAdvisor,
@@ -173,6 +178,10 @@ export class Migration extends pulumi.CustomResource {
     }
 
     /**
+     * (Updatable) List of Migration Parameter objects.
+     */
+    public readonly advancedParameters!: pulumi.Output<outputs.DatabaseMigration.MigrationAdvancedParameter[]>;
+    /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */
     public readonly advisorSettings!: pulumi.Output<outputs.DatabaseMigration.MigrationAdvisorSettings>;
@@ -294,6 +303,7 @@ export class Migration extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as MigrationState | undefined;
+            resourceInputs["advancedParameters"] = state ? state.advancedParameters : undefined;
             resourceInputs["advisorSettings"] = state ? state.advisorSettings : undefined;
             resourceInputs["bulkIncludeExcludeData"] = state ? state.bulkIncludeExcludeData : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -337,6 +347,7 @@ export class Migration extends pulumi.CustomResource {
             if ((!args || args.type === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'type'");
             }
+            resourceInputs["advancedParameters"] = args ? args.advancedParameters : undefined;
             resourceInputs["advisorSettings"] = args ? args.advisorSettings : undefined;
             resourceInputs["bulkIncludeExcludeData"] = args ? args.bulkIncludeExcludeData : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -373,6 +384,10 @@ export class Migration extends pulumi.CustomResource {
  * Input properties used for looking up and filtering Migration resources.
  */
 export interface MigrationState {
+    /**
+     * (Updatable) List of Migration Parameter objects.
+     */
+    advancedParameters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationAdvancedParameter>[]>;
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */
@@ -487,6 +502,10 @@ export interface MigrationState {
  * The set of arguments for constructing a Migration resource.
  */
 export interface MigrationArgs {
+    /**
+     * (Updatable) List of Migration Parameter objects.
+     */
+    advancedParameters?: pulumi.Input<pulumi.Input<inputs.DatabaseMigration.MigrationAdvancedParameter>[]>;
     /**
      * (Updatable) Optional Pre-Migration advisor settings.
      */

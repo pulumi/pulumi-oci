@@ -29,6 +29,8 @@ type GetMigrationsArgs struct {
 
 // A collection of values returned by getMigrations.
 type GetMigrationsResult struct {
+	// List of Migration Parameter objects.
+	AdvancedParameters []GetMigrationsAdvancedParameter `pulumi:"advancedParameters"`
 	// Details about Oracle Advisor Settings.
 	AdvisorSettings        []GetMigrationsAdvisorSetting `pulumi:"advisorSettings"`
 	BulkIncludeExcludeData string                        `pulumi:"bulkIncludeExcludeData"`
@@ -118,6 +120,11 @@ func (o GetMigrationsResultOutput) ToGetMigrationsResultOutput() GetMigrationsRe
 
 func (o GetMigrationsResultOutput) ToGetMigrationsResultOutputWithContext(ctx context.Context) GetMigrationsResultOutput {
 	return o
+}
+
+// List of Migration Parameter objects.
+func (o GetMigrationsResultOutput) AdvancedParameters() GetMigrationsAdvancedParameterArrayOutput {
+	return o.ApplyT(func(v GetMigrationsResult) []GetMigrationsAdvancedParameter { return v.AdvancedParameters }).(GetMigrationsAdvancedParameterArrayOutput)
 }
 
 // Details about Oracle Advisor Settings.

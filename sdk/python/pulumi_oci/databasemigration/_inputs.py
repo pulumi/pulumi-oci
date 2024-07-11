@@ -17,6 +17,7 @@ __all__ = [
     'JobProgressPhaseExtractArgs',
     'JobProgressPhaseLogLocationArgs',
     'JobUnsupportedObjectArgs',
+    'MigrationAdvancedParameterArgs',
     'MigrationAdvisorSettingsArgs',
     'MigrationDataTransferMediumDetailsArgs',
     'MigrationDataTransferMediumDetailsObjectStorageBucketArgs',
@@ -457,6 +458,61 @@ class JobUnsupportedObjectArgs:
     @type.setter
     def type(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "type", value)
+
+
+@pulumi.input_type
+class MigrationAdvancedParameterArgs:
+    def __init__(__self__, *,
+                 data_type: Optional[pulumi.Input[str]] = None,
+                 name: Optional[pulumi.Input[str]] = None,
+                 value: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] data_type: (Updatable) Parameter data type.
+        :param pulumi.Input[str] name: (Updatable) Parameter name.
+        :param pulumi.Input[str] value: (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        if data_type is not None:
+            pulumi.set(__self__, "data_type", data_type)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @property
+    @pulumi.getter(name="dataType")
+    def data_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Parameter data type.
+        """
+        return pulumi.get(self, "data_type")
+
+    @data_type.setter
+    def data_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "data_type", value)
+
+    @property
+    @pulumi.getter
+    def name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Parameter name.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def value(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) If a STRING data type then the value should be an array of characters,  if a INTEGER data type then the value should be an integer value,  if a FLOAT data type then the value should be an float value, if a BOOLEAN data type then the value should be TRUE or FALSE.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "value", value)
 
 
 @pulumi.input_type

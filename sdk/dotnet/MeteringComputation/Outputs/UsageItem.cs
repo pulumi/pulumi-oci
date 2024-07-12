@@ -18,6 +18,14 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         /// </summary>
         public readonly string? Ad;
         /// <summary>
+        /// The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        /// </summary>
+        public readonly string? AttributedCost;
+        /// <summary>
+        /// The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+        /// </summary>
+        public readonly string? AttributedUsage;
+        /// <summary>
         /// The compartment OCID.
         /// </summary>
         public readonly string? CompartmentId;
@@ -138,6 +146,10 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
         private UsageItem(
             string? ad,
 
+            string? attributedCost,
+
+            string? attributedUsage,
+
             string? compartmentId,
 
             string? compartmentName,
@@ -195,6 +207,8 @@ namespace Pulumi.Oci.MeteringComputation.Outputs
             double? weight)
         {
             Ad = ad;
+            AttributedCost = attributedCost;
+            AttributedUsage = attributedUsage;
             CompartmentId = compartmentId;
             CompartmentName = compartmentName;
             CompartmentPath = compartmentPath;

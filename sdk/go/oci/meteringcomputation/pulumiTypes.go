@@ -3685,6 +3685,10 @@ func (o UsageGroupByTagArrayOutput) Index(i pulumi.IntInput) UsageGroupByTagOutp
 type UsageItem struct {
 	// The availability domain of the usage.
 	Ad *string `pulumi:"ad"`
+	// The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+	AttributedCost *string `pulumi:"attributedCost"`
+	// The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+	AttributedUsage *string `pulumi:"attributedUsage"`
 	// The compartment OCID.
 	CompartmentId *string `pulumi:"compartmentId"`
 	// The compartment name.
@@ -3760,6 +3764,10 @@ type UsageItemInput interface {
 type UsageItemArgs struct {
 	// The availability domain of the usage.
 	Ad pulumi.StringPtrInput `pulumi:"ad"`
+	// The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+	AttributedCost pulumi.StringPtrInput `pulumi:"attributedCost"`
+	// The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+	AttributedUsage pulumi.StringPtrInput `pulumi:"attributedUsage"`
 	// The compartment OCID.
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// The compartment name.
@@ -3875,6 +3883,16 @@ func (o UsageItemOutput) ToUsageItemOutputWithContext(ctx context.Context) Usage
 // The availability domain of the usage.
 func (o UsageItemOutput) Ad() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UsageItem) *string { return v.Ad }).(pulumi.StringPtrOutput)
+}
+
+// The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+func (o UsageItemOutput) AttributedCost() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageItem) *string { return v.AttributedCost }).(pulumi.StringPtrOutput)
+}
+
+// The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+func (o UsageItemOutput) AttributedUsage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v UsageItem) *string { return v.AttributedUsage }).(pulumi.StringPtrOutput)
 }
 
 // The compartment OCID.

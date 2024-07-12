@@ -54,6 +54,8 @@ type LookupMigrationArgs struct {
 
 // A collection of values returned by getMigration.
 type LookupMigrationResult struct {
+	// List of Migration Parameter objects.
+	AdvancedParameters []GetMigrationAdvancedParameter `pulumi:"advancedParameters"`
 	// Details about Oracle Advisor Settings.
 	AdvisorSettings        []GetMigrationAdvisorSetting `pulumi:"advisorSettings"`
 	BulkIncludeExcludeData string                       `pulumi:"bulkIncludeExcludeData"`
@@ -144,6 +146,11 @@ func (o LookupMigrationResultOutput) ToLookupMigrationResultOutput() LookupMigra
 
 func (o LookupMigrationResultOutput) ToLookupMigrationResultOutputWithContext(ctx context.Context) LookupMigrationResultOutput {
 	return o
+}
+
+// List of Migration Parameter objects.
+func (o LookupMigrationResultOutput) AdvancedParameters() GetMigrationAdvancedParameterArrayOutput {
+	return o.ApplyT(func(v LookupMigrationResult) []GetMigrationAdvancedParameter { return v.AdvancedParameters }).(GetMigrationAdvancedParameterArrayOutput)
 }
 
 // Details about Oracle Advisor Settings.

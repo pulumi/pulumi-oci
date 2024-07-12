@@ -19,6 +19,18 @@ namespace Pulumi.Oci.MeteringComputation.Inputs
         public Input<string>? Ad { get; set; }
 
         /// <summary>
+        /// The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+        /// </summary>
+        [Input("attributedCost")]
+        public Input<string>? AttributedCost { get; set; }
+
+        /// <summary>
+        /// The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+        /// </summary>
+        [Input("attributedUsage")]
+        public Input<string>? AttributedUsage { get; set; }
+
+        /// <summary>
         /// The compartment OCID.
         /// </summary>
         [Input("compartmentId")]

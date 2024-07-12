@@ -22,7 +22,10 @@ class GetMigrationsResult:
     """
     A collection of values returned by getMigrations.
     """
-    def __init__(__self__, advisor_settings=None, bulk_include_exclude_data=None, compartment_id=None, data_transfer_medium_details=None, database_combination=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, ggs_details=None, hub_details=None, id=None, include_objects=None, initial_load_settings=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, wait_after=None):
+    def __init__(__self__, advanced_parameters=None, advisor_settings=None, bulk_include_exclude_data=None, compartment_id=None, data_transfer_medium_details=None, database_combination=None, defined_tags=None, description=None, display_name=None, exclude_objects=None, executing_job_id=None, freeform_tags=None, ggs_details=None, hub_details=None, id=None, include_objects=None, initial_load_settings=None, lifecycle_details=None, migration_id=None, source_container_database_connection_id=None, source_database_connection_id=None, state=None, system_tags=None, target_database_connection_id=None, time_created=None, time_last_migration=None, time_updated=None, type=None, wait_after=None):
+        if advanced_parameters and not isinstance(advanced_parameters, list):
+            raise TypeError("Expected argument 'advanced_parameters' to be a list")
+        pulumi.set(__self__, "advanced_parameters", advanced_parameters)
         if advisor_settings and not isinstance(advisor_settings, list):
             raise TypeError("Expected argument 'advisor_settings' to be a list")
         pulumi.set(__self__, "advisor_settings", advisor_settings)
@@ -107,6 +110,14 @@ class GetMigrationsResult:
         if wait_after and not isinstance(wait_after, str):
             raise TypeError("Expected argument 'wait_after' to be a str")
         pulumi.set(__self__, "wait_after", wait_after)
+
+    @property
+    @pulumi.getter(name="advancedParameters")
+    def advanced_parameters(self) -> Sequence['outputs.GetMigrationsAdvancedParameterResult']:
+        """
+        List of Migration Parameter objects.
+        """
+        return pulumi.get(self, "advanced_parameters")
 
     @property
     @pulumi.getter(name="advisorSettings")
@@ -327,6 +338,7 @@ class AwaitableGetMigrationsResult(GetMigrationsResult):
         if False:
             yield self
         return GetMigrationsResult(
+            advanced_parameters=self.advanced_parameters,
             advisor_settings=self.advisor_settings,
             bulk_include_exclude_data=self.bulk_include_exclude_data,
             compartment_id=self.compartment_id,
@@ -368,6 +380,7 @@ def get_migrations(migration_id: Optional[str] = None,
     __ret__ = pulumi.runtime.invoke('oci:DatabaseMigration/getMigrations:getMigrations', __args__, opts=opts, typ=GetMigrationsResult).value
 
     return AwaitableGetMigrationsResult(
+        advanced_parameters=pulumi.get(__ret__, 'advanced_parameters'),
         advisor_settings=pulumi.get(__ret__, 'advisor_settings'),
         bulk_include_exclude_data=pulumi.get(__ret__, 'bulk_include_exclude_data'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),

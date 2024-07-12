@@ -5,6 +5,7 @@ package com.pulumi.oci.DatabaseMigration.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationAdvancedParameter;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationAdvisorSetting;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationDataTransferMediumDetail;
 import com.pulumi.oci.DatabaseMigration.outputs.GetMigrationExcludeObject;
@@ -20,6 +21,11 @@ import java.util.Objects;
 
 @CustomType
 public final class GetMigrationResult {
+    /**
+     * @return List of Migration Parameter objects.
+     * 
+     */
+    private List<GetMigrationAdvancedParameter> advancedParameters;
     /**
      * @return Details about Oracle Advisor Settings.
      * 
@@ -146,6 +152,13 @@ public final class GetMigrationResult {
     private String waitAfter;
 
     private GetMigrationResult() {}
+    /**
+     * @return List of Migration Parameter objects.
+     * 
+     */
+    public List<GetMigrationAdvancedParameter> advancedParameters() {
+        return this.advancedParameters;
+    }
     /**
      * @return Details about Oracle Advisor Settings.
      * 
@@ -336,6 +349,7 @@ public final class GetMigrationResult {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetMigrationAdvancedParameter> advancedParameters;
         private List<GetMigrationAdvisorSetting> advisorSettings;
         private String bulkIncludeExcludeData;
         private String compartmentId;
@@ -367,6 +381,7 @@ public final class GetMigrationResult {
         public Builder() {}
         public Builder(GetMigrationResult defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.advancedParameters = defaults.advancedParameters;
     	      this.advisorSettings = defaults.advisorSettings;
     	      this.bulkIncludeExcludeData = defaults.bulkIncludeExcludeData;
     	      this.compartmentId = defaults.compartmentId;
@@ -397,6 +412,17 @@ public final class GetMigrationResult {
     	      this.waitAfter = defaults.waitAfter;
         }
 
+        @CustomType.Setter
+        public Builder advancedParameters(List<GetMigrationAdvancedParameter> advancedParameters) {
+            if (advancedParameters == null) {
+              throw new MissingRequiredPropertyException("GetMigrationResult", "advancedParameters");
+            }
+            this.advancedParameters = advancedParameters;
+            return this;
+        }
+        public Builder advancedParameters(GetMigrationAdvancedParameter... advancedParameters) {
+            return advancedParameters(List.of(advancedParameters));
+        }
         @CustomType.Setter
         public Builder advisorSettings(List<GetMigrationAdvisorSetting> advisorSettings) {
             if (advisorSettings == null) {
@@ -644,6 +670,7 @@ public final class GetMigrationResult {
         }
         public GetMigrationResult build() {
             final var _resultValue = new GetMigrationResult();
+            _resultValue.advancedParameters = advancedParameters;
             _resultValue.advisorSettings = advisorSettings;
             _resultValue.bulkIncludeExcludeData = bulkIncludeExcludeData;
             _resultValue.compartmentId = compartmentId;

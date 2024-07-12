@@ -35,6 +35,36 @@ public final class UsageItemArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    @Import(name="attributedCost")
+    private @Nullable Output<String> attributedCost;
+
+    /**
+     * @return The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    public Optional<Output<String>> attributedCost() {
+        return Optional.ofNullable(this.attributedCost);
+    }
+
+    /**
+     * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    @Import(name="attributedUsage")
+    private @Nullable Output<String> attributedUsage;
+
+    /**
+     * @return The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+     * 
+     */
+    public Optional<Output<String>> attributedUsage() {
+        return Optional.ofNullable(this.attributedUsage);
+    }
+
+    /**
      * The compartment OCID.
      * 
      */
@@ -464,6 +494,8 @@ public final class UsageItemArgs extends com.pulumi.resources.ResourceArgs {
 
     private UsageItemArgs(UsageItemArgs $) {
         this.ad = $.ad;
+        this.attributedCost = $.attributedCost;
+        this.attributedUsage = $.attributedUsage;
         this.compartmentId = $.compartmentId;
         this.compartmentName = $.compartmentName;
         this.compartmentPath = $.compartmentPath;
@@ -531,6 +563,48 @@ public final class UsageItemArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder ad(String ad) {
             return ad(Output.of(ad));
+        }
+
+        /**
+         * @param attributedCost The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attributedCost(@Nullable Output<String> attributedCost) {
+            $.attributedCost = attributedCost;
+            return this;
+        }
+
+        /**
+         * @param attributedCost The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attributedCost(String attributedCost) {
+            return attributedCost(Output.of(attributedCost));
+        }
+
+        /**
+         * @param attributedUsage The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attributedUsage(@Nullable Output<String> attributedUsage) {
+            $.attributedUsage = attributedUsage;
+            return this;
+        }
+
+        /**
+         * @param attributedUsage The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder attributedUsage(String attributedUsage) {
+            return attributedUsage(Output.of(attributedUsage));
         }
 
         /**

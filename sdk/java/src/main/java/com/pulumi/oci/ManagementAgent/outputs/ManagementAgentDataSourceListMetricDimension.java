@@ -11,10 +11,18 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ManagementAgentDataSourceListMetricDimension {
+    /**
+     * @return Name of the property
+     * 
+     */
     private @Nullable String name;
     private @Nullable String value;
 
     private ManagementAgentDataSourceListMetricDimension() {}
+    /**
+     * @return Name of the property
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }

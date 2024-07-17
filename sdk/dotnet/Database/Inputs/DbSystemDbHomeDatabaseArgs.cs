@@ -96,6 +96,9 @@ namespace Pulumi.Oci.Database.Inputs
         [Input("dbName")]
         public Input<string>? DbName { get; set; }
 
+        /// <summary>
+        /// The `DB_UNIQUE_NAME` of the Oracle Database.
+        /// </summary>
         [Input("dbUniqueName")]
         public Input<string>? DbUniqueName { get; set; }
 

@@ -52,6 +52,9 @@ namespace Pulumi.Oci.Database.Outputs
         /// The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
         /// </summary>
         public readonly string? DbName;
+        /// <summary>
+        /// The `DB_UNIQUE_NAME` of the Oracle Database.
+        /// </summary>
         public readonly string? DbUniqueName;
         /// <summary>
         /// **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.

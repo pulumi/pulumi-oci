@@ -280,9 +280,17 @@ public final class TargetAssetRecommendedSpecArgs extends com.pulumi.resources.R
         return Optional.ofNullable(this.shapeConfigs);
     }
 
+    /**
+     * (Updatable)
+     * 
+     */
     @Import(name="sourceDetails")
     private @Nullable Output<List<TargetAssetRecommendedSpecSourceDetailArgs>> sourceDetails;
 
+    /**
+     * @return (Updatable)
+     * 
+     */
     public Optional<Output<List<TargetAssetRecommendedSpecSourceDetailArgs>>> sourceDetails() {
         return Optional.ofNullable(this.sourceDetails);
     }
@@ -735,15 +743,33 @@ public final class TargetAssetRecommendedSpecArgs extends com.pulumi.resources.R
             return shapeConfigs(List.of(shapeConfigs));
         }
 
+        /**
+         * @param sourceDetails (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(@Nullable Output<List<TargetAssetRecommendedSpecSourceDetailArgs>> sourceDetails) {
             $.sourceDetails = sourceDetails;
             return this;
         }
 
+        /**
+         * @param sourceDetails (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(List<TargetAssetRecommendedSpecSourceDetailArgs> sourceDetails) {
             return sourceDetails(Output.of(sourceDetails));
         }
 
+        /**
+         * @param sourceDetails (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(TargetAssetRecommendedSpecSourceDetailArgs... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }

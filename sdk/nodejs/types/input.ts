@@ -9349,6 +9349,9 @@ export namespace CloudMigrations {
          * The shape configuration requested for the instance.
          */
         shapeConfigs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpecShapeConfig>[]>;
+        /**
+         * (Updatable)
+         */
         sourceDetails?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetRecommendedSpecSourceDetail>[]>;
     }
 
@@ -9565,6 +9568,9 @@ export namespace CloudMigrations {
          * The shape configuration requested for the instance.
          */
         shapeConfigs?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpecShapeConfig>[]>;
+        /**
+         * (Updatable)
+         */
         sourceDetails?: pulumi.Input<pulumi.Input<inputs.CloudMigrations.TargetAssetTestSpecSourceDetail>[]>;
     }
 
@@ -15474,6 +15480,9 @@ export namespace Core {
          * These are the criteria for selecting an image. This is required if imageId is not specified.
          */
         instanceSourceImageFilterDetails?: pulumi.Input<inputs.Core.InstanceSourceDetailsInstanceSourceImageFilterDetails>;
+        /**
+         * (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+         */
         isPreserveBootVolumeEnabled?: pulumi.Input<boolean>;
         /**
          * (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
@@ -18625,6 +18634,9 @@ export namespace DataIntegration {
          * The root object value, used in custom parameters.
          */
         rootObjectValue?: pulumi.Input<inputs.DataIntegration.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue>;
+        /**
+         * A simple value for the parameter.
+         */
         simpleValue?: pulumi.Input<string>;
     }
 
@@ -23235,6 +23247,9 @@ export namespace Database {
          * The maintenance window scheduling preference.
          */
         preference?: pulumi.Input<string>;
+        /**
+         * (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+         */
         skipRus?: pulumi.Input<pulumi.Input<boolean>[]>;
         /**
          * Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
@@ -23838,6 +23853,11 @@ export namespace Database {
          * Months during the year when maintenance should be performed.
          */
         months?: pulumi.Input<pulumi.Input<inputs.Database.AutonomousVmClusterMaintenanceWindowMonth>[]>;
+        /**
+         * (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+         *
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         */
         patchingMode?: pulumi.Input<string>;
         /**
          * The maintenance window scheduling preference.
@@ -24067,7 +24087,13 @@ export namespace Database {
     }
 
     export interface CloudDatabaseManagementCredentialdetails {
+        /**
+         * Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
         passwordSecretId: pulumi.Input<string>;
+        /**
+         * Database username
+         */
         userName: pulumi.Input<string>;
     }
 
@@ -24836,6 +24862,9 @@ export namespace Database {
          * The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
          */
         dbName?: pulumi.Input<string>;
+        /**
+         * The `DB_UNIQUE_NAME` of the Oracle Database.
+         */
         dbUniqueName?: pulumi.Input<string>;
         /**
          * **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
@@ -65286,12 +65315,27 @@ export namespace ManagementAgent {
         isDaemonSet?: pulumi.Input<boolean>;
         key?: pulumi.Input<string>;
         metricDimensions?: pulumi.Input<pulumi.Input<inputs.ManagementAgent.ManagementAgentDataSourceListMetricDimension>[]>;
+        /**
+         * Name of the property
+         */
         name?: pulumi.Input<string>;
         namespace?: pulumi.Input<string>;
         proxyUrl?: pulumi.Input<string>;
+        /**
+         * Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+         */
         readDataLimit?: pulumi.Input<number>;
+        /**
+         * Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+         */
         readTimeout?: pulumi.Input<number>;
+        /**
+         * Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+         */
         resourceGroup?: pulumi.Input<string>;
+        /**
+         * Number in minutes. The scraping occurs at the specified interval.
+         */
         scheduleMins?: pulumi.Input<number>;
         /**
          * The current state of managementAgent
@@ -65305,11 +65349,20 @@ export namespace ManagementAgent {
          * The time the Management Agent was last updated. An RFC3339 formatted datetime string
          */
         timeUpdated?: pulumi.Input<string>;
+        /**
+         * The type of the DataSource.
+         */
         type?: pulumi.Input<string>;
+        /**
+         * The url through which the Prometheus Exporter publishes its metrics. (http only)
+         */
         url?: pulumi.Input<string>;
     }
 
     export interface ManagementAgentDataSourceListMetricDimension {
+        /**
+         * Name of the property
+         */
         name?: pulumi.Input<string>;
         value?: pulumi.Input<string>;
     }
@@ -65328,7 +65381,13 @@ export namespace ManagementAgent {
     export interface ManagementAgentDataSourceSummaryList {
         isDaemonSet?: pulumi.Input<boolean>;
         key?: pulumi.Input<string>;
+        /**
+         * Name of the property
+         */
         name?: pulumi.Input<string>;
+        /**
+         * The type of the DataSource.
+         */
         type?: pulumi.Input<string>;
     }
 

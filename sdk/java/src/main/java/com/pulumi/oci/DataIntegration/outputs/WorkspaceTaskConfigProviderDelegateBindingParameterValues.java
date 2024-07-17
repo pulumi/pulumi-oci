@@ -17,6 +17,10 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValues {
      * 
      */
     private @Nullable WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue rootObjectValue;
+    /**
+     * @return A simple value for the parameter.
+     * 
+     */
     private @Nullable String simpleValue;
 
     private WorkspaceTaskConfigProviderDelegateBindingParameterValues() {}
@@ -27,6 +31,10 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValues {
     public Optional<WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue> rootObjectValue() {
         return Optional.ofNullable(this.rootObjectValue);
     }
+    /**
+     * @return A simple value for the parameter.
+     * 
+     */
     public Optional<String> simpleValue() {
         return Optional.ofNullable(this.simpleValue);
     }

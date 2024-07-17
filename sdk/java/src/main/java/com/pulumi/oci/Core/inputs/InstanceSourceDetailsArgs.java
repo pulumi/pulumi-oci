@@ -67,9 +67,17 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.instanceSourceImageFilterDetails);
     }
 
+    /**
+     * (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+     * 
+     */
     @Import(name="isPreserveBootVolumeEnabled")
     private @Nullable Output<Boolean> isPreserveBootVolumeEnabled;
 
+    /**
+     * @return (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+     * 
+     */
     public Optional<Output<Boolean>> isPreserveBootVolumeEnabled() {
         return Optional.ofNullable(this.isPreserveBootVolumeEnabled);
     }
@@ -216,11 +224,23 @@ public final class InstanceSourceDetailsArgs extends com.pulumi.resources.Resour
             return instanceSourceImageFilterDetails(Output.of(instanceSourceImageFilterDetails));
         }
 
+        /**
+         * @param isPreserveBootVolumeEnabled (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isPreserveBootVolumeEnabled(@Nullable Output<Boolean> isPreserveBootVolumeEnabled) {
             $.isPreserveBootVolumeEnabled = isPreserveBootVolumeEnabled;
             return this;
         }
 
+        /**
+         * @param isPreserveBootVolumeEnabled (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+         * 
+         * @return builder
+         * 
+         */
         public Builder isPreserveBootVolumeEnabled(Boolean isPreserveBootVolumeEnabled) {
             return isPreserveBootVolumeEnabled(Output.of(isPreserveBootVolumeEnabled));
         }

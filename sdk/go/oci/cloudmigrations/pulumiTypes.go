@@ -2268,7 +2268,8 @@ type TargetAssetRecommendedSpec struct {
 	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	Shape *string `pulumi:"shape"`
 	// The shape configuration requested for the instance.
-	ShapeConfigs  []TargetAssetRecommendedSpecShapeConfig  `pulumi:"shapeConfigs"`
+	ShapeConfigs []TargetAssetRecommendedSpecShapeConfig `pulumi:"shapeConfigs"`
+	// (Updatable)
 	SourceDetails []TargetAssetRecommendedSpecSourceDetail `pulumi:"sourceDetails"`
 }
 
@@ -2317,7 +2318,8 @@ type TargetAssetRecommendedSpecArgs struct {
 	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The shape configuration requested for the instance.
-	ShapeConfigs  TargetAssetRecommendedSpecShapeConfigArrayInput  `pulumi:"shapeConfigs"`
+	ShapeConfigs TargetAssetRecommendedSpecShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// (Updatable)
 	SourceDetails TargetAssetRecommendedSpecSourceDetailArrayInput `pulumi:"sourceDetails"`
 }
 
@@ -2463,6 +2465,7 @@ func (o TargetAssetRecommendedSpecOutput) ShapeConfigs() TargetAssetRecommendedS
 	return o.ApplyT(func(v TargetAssetRecommendedSpec) []TargetAssetRecommendedSpecShapeConfig { return v.ShapeConfigs }).(TargetAssetRecommendedSpecShapeConfigArrayOutput)
 }
 
+// (Updatable)
 func (o TargetAssetRecommendedSpecOutput) SourceDetails() TargetAssetRecommendedSpecSourceDetailArrayOutput {
 	return o.ApplyT(func(v TargetAssetRecommendedSpec) []TargetAssetRecommendedSpecSourceDetail { return v.SourceDetails }).(TargetAssetRecommendedSpecSourceDetailArrayOutput)
 }
@@ -3501,7 +3504,8 @@ type TargetAssetTestSpec struct {
 	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	Shape *string `pulumi:"shape"`
 	// The shape configuration requested for the instance.
-	ShapeConfigs  []TargetAssetTestSpecShapeConfig  `pulumi:"shapeConfigs"`
+	ShapeConfigs []TargetAssetTestSpecShapeConfig `pulumi:"shapeConfigs"`
+	// (Updatable)
 	SourceDetails []TargetAssetTestSpecSourceDetail `pulumi:"sourceDetails"`
 }
 
@@ -3550,7 +3554,8 @@ type TargetAssetTestSpecArgs struct {
 	// The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
 	Shape pulumi.StringPtrInput `pulumi:"shape"`
 	// The shape configuration requested for the instance.
-	ShapeConfigs  TargetAssetTestSpecShapeConfigArrayInput  `pulumi:"shapeConfigs"`
+	ShapeConfigs TargetAssetTestSpecShapeConfigArrayInput `pulumi:"shapeConfigs"`
+	// (Updatable)
 	SourceDetails TargetAssetTestSpecSourceDetailArrayInput `pulumi:"sourceDetails"`
 }
 
@@ -3692,6 +3697,7 @@ func (o TargetAssetTestSpecOutput) ShapeConfigs() TargetAssetTestSpecShapeConfig
 	return o.ApplyT(func(v TargetAssetTestSpec) []TargetAssetTestSpecShapeConfig { return v.ShapeConfigs }).(TargetAssetTestSpecShapeConfigArrayOutput)
 }
 
+// (Updatable)
 func (o TargetAssetTestSpecOutput) SourceDetails() TargetAssetTestSpecSourceDetailArrayOutput {
 	return o.ApplyT(func(v TargetAssetTestSpec) []TargetAssetTestSpecSourceDetail { return v.SourceDetails }).(TargetAssetTestSpecSourceDetailArrayOutput)
 }

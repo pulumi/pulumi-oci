@@ -10,13 +10,29 @@ import java.util.Objects;
 
 @CustomType
 public final class CloudDatabaseManagementCredentialdetails {
+    /**
+     * @return Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
     private String passwordSecretId;
+    /**
+     * @return Database username
+     * 
+     */
     private String userName;
 
     private CloudDatabaseManagementCredentialdetails() {}
+    /**
+     * @return Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
     public String passwordSecretId() {
         return this.passwordSecretId;
     }
+    /**
+     * @return Database username
+     * 
+     */
     public String userName() {
         return this.userName;
     }

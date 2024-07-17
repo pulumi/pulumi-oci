@@ -1870,6 +1870,7 @@ class TargetAssetRecommendedSpec(dict):
         :param Sequence['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['TargetAssetRecommendedSpecShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
+        :param Sequence['TargetAssetRecommendedSpecSourceDetailArgs'] source_details: (Updatable)
         """
         if agent_configs is not None:
             pulumi.set(__self__, "agent_configs", agent_configs)
@@ -2047,6 +2048,9 @@ class TargetAssetRecommendedSpec(dict):
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[Sequence['outputs.TargetAssetRecommendedSpecSourceDetail']]:
+        """
+        (Updatable)
+        """
         return pulumi.get(self, "source_details")
 
 
@@ -2728,6 +2732,7 @@ class TargetAssetTestSpec(dict):
         :param Sequence['TargetAssetTestSpecPreemptibleInstanceConfigArgs'] preemptible_instance_configs: Configuration options for preemptible instances.
         :param str shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param Sequence['TargetAssetTestSpecShapeConfigArgs'] shape_configs: The shape configuration requested for the instance.
+        :param Sequence['TargetAssetTestSpecSourceDetailArgs'] source_details: (Updatable)
         """
         if agent_configs is not None:
             pulumi.set(__self__, "agent_configs", agent_configs)
@@ -2905,6 +2910,9 @@ class TargetAssetTestSpec(dict):
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[Sequence['outputs.TargetAssetTestSpecSourceDetail']]:
+        """
+        (Updatable)
+        """
         return pulumi.get(self, "source_details")
 
 

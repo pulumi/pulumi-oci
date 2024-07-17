@@ -11396,7 +11396,8 @@ func (o WorkspaceTaskConfigProviderDelegateBindingArrayOutput) Index(i pulumi.In
 type WorkspaceTaskConfigProviderDelegateBindingParameterValues struct {
 	// The root object value, used in custom parameters.
 	RootObjectValue *WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValue `pulumi:"rootObjectValue"`
-	SimpleValue     *string                                                                   `pulumi:"simpleValue"`
+	// A simple value for the parameter.
+	SimpleValue *string `pulumi:"simpleValue"`
 }
 
 // WorkspaceTaskConfigProviderDelegateBindingParameterValuesInput is an input type that accepts WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs and WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput values.
@@ -11413,7 +11414,8 @@ type WorkspaceTaskConfigProviderDelegateBindingParameterValuesInput interface {
 type WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs struct {
 	// The root object value, used in custom parameters.
 	RootObjectValue WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrInput `pulumi:"rootObjectValue"`
-	SimpleValue     pulumi.StringPtrInput                                                            `pulumi:"simpleValue"`
+	// A simple value for the parameter.
+	SimpleValue pulumi.StringPtrInput `pulumi:"simpleValue"`
 }
 
 func (WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs) ElementType() reflect.Type {
@@ -11500,6 +11502,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput) RootObj
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput)
 }
 
+// A simple value for the parameter.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesOutput) SimpleValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v WorkspaceTaskConfigProviderDelegateBindingParameterValues) *string { return v.SimpleValue }).(pulumi.StringPtrOutput)
 }
@@ -11538,6 +11541,7 @@ func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) Root
 	}).(WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValuePtrOutput)
 }
 
+// A simple value for the parameter.
 func (o WorkspaceTaskConfigProviderDelegateBindingParameterValuesPtrOutput) SimpleValue() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *WorkspaceTaskConfigProviderDelegateBindingParameterValues) *string {
 		if v == nil {

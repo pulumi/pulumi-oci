@@ -5894,6 +5894,7 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
                  simple_value: Optional[pulumi.Input[str]] = None):
         """
         :param pulumi.Input['WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs'] root_object_value: The root object value, used in custom parameters.
+        :param pulumi.Input[str] simple_value: A simple value for the parameter.
         """
         if root_object_value is not None:
             pulumi.set(__self__, "root_object_value", root_object_value)
@@ -5915,6 +5916,9 @@ class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs:
     @property
     @pulumi.getter(name="simpleValue")
     def simple_value(self) -> Optional[pulumi.Input[str]]:
+        """
+        A simple value for the parameter.
+        """
         return pulumi.get(self, "simple_value")
 
     @simple_value.setter

@@ -59,7 +59,6 @@ import * as devops from "./devops";
 import * as disasterrecovery from "./disasterrecovery";
 import * as dns from "./dns";
 import * as email from "./email";
-import * as emwarehouse from "./emwarehouse";
 import * as events from "./events";
 import * as filestorage from "./filestorage";
 import * as functions from "./functions";
@@ -178,7 +177,6 @@ export {
     disasterrecovery,
     dns,
     email,
-    emwarehouse,
     events,
     filestorage,
     functions,

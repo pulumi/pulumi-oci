@@ -103,8 +103,6 @@ if typing.TYPE_CHECKING:
     dns = __dns
     import pulumi_oci.email as __email
     email = __email
-    import pulumi_oci.emwarehouse as __emwarehouse
-    emwarehouse = __emwarehouse
     import pulumi_oci.events as __events
     events = __events
     import pulumi_oci.filestorage as __filestorage
@@ -289,7 +287,6 @@ else:
     disasterrecovery = _utilities.lazy_import('pulumi_oci.disasterrecovery')
     dns = _utilities.lazy_import('pulumi_oci.dns')
     email = _utilities.lazy_import('pulumi_oci.email')
-    emwarehouse = _utilities.lazy_import('pulumi_oci.emwarehouse')
     events = _utilities.lazy_import('pulumi_oci.events')
     filestorage = _utilities.lazy_import('pulumi_oci.filestorage')
     functions = _utilities.lazy_import('pulumi_oci.functions')
@@ -3360,14 +3357,6 @@ _utilities.register(
   "fqn": "pulumi_oci.dns",
   "classes": {
    "oci:Dns/zone:Zone": "Zone"
-  }
- },
- {
-  "pkg": "oci",
-  "mod": "EmWarehouse/emWarehouse",
-  "fqn": "pulumi_oci.emwarehouse",
-  "classes": {
-   "oci:EmWarehouse/emWarehouse:EmWarehouse": "EmWarehouse"
   }
  },
  {

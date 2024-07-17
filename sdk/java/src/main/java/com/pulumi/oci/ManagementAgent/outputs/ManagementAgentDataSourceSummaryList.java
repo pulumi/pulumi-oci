@@ -14,7 +14,15 @@ import javax.annotation.Nullable;
 public final class ManagementAgentDataSourceSummaryList {
     private @Nullable Boolean isDaemonSet;
     private @Nullable String key;
+    /**
+     * @return Name of the property
+     * 
+     */
     private @Nullable String name;
+    /**
+     * @return The type of the DataSource.
+     * 
+     */
     private @Nullable String type;
 
     private ManagementAgentDataSourceSummaryList() {}
@@ -24,9 +32,17 @@ public final class ManagementAgentDataSourceSummaryList {
     public Optional<String> key() {
         return Optional.ofNullable(this.key);
     }
+    /**
+     * @return Name of the property
+     * 
+     */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return The type of the DataSource.
+     * 
+     */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);
     }

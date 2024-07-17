@@ -106,6 +106,10 @@ public final class TargetAssetTestSpec {
      * 
      */
     private @Nullable List<TargetAssetTestSpecShapeConfig> shapeConfigs;
+    /**
+     * @return (Updatable)
+     * 
+     */
     private @Nullable List<TargetAssetTestSpecSourceDetail> sourceDetails;
 
     private TargetAssetTestSpec() {}
@@ -228,6 +232,10 @@ public final class TargetAssetTestSpec {
     public List<TargetAssetTestSpecShapeConfig> shapeConfigs() {
         return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
+    /**
+     * @return (Updatable)
+     * 
+     */
     public List<TargetAssetTestSpecSourceDetail> sourceDetails() {
         return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }

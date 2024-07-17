@@ -13,7 +13,13 @@ namespace Pulumi.Oci.Database.Outputs
     [OutputType]
     public sealed class CloudDatabaseManagementCredentialdetails
     {
+        /// <summary>
+        /// Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
         public readonly string PasswordSecretId;
+        /// <summary>
+        /// Database username
+        /// </summary>
         public readonly string UserName;
 
         [OutputConstructor]

@@ -27,6 +27,9 @@ namespace Pulumi.Oci.Core.Outputs
         /// These are the criteria for selecting an image. This is required if imageId is not specified.
         /// </summary>
         public readonly Outputs.InstanceSourceDetailsInstanceSourceImageFilterDetails? InstanceSourceImageFilterDetails;
+        /// <summary>
+        /// (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+        /// </summary>
         public readonly bool? IsPreserveBootVolumeEnabled;
         /// <summary>
         /// (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.

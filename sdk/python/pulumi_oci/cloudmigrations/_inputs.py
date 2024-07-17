@@ -1743,6 +1743,7 @@ class TargetAssetRecommendedSpecArgs:
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecPreemptibleInstanceConfigArgs']]] preemptible_instance_configs: Configuration options for preemptible instances.
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecShapeConfigArgs']]] shape_configs: The shape configuration requested for the instance.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgs']]] source_details: (Updatable)
         """
         if agent_configs is not None:
             pulumi.set(__self__, "agent_configs", agent_configs)
@@ -1988,6 +1989,9 @@ class TargetAssetRecommendedSpecArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetRecommendedSpecSourceDetailArgs']]]]:
+        """
+        (Updatable)
+        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter
@@ -2570,6 +2574,7 @@ class TargetAssetTestSpecArgs:
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecPreemptibleInstanceConfigArgs']]] preemptible_instance_configs: Configuration options for preemptible instances.
         :param pulumi.Input[str] shape: The shape of an instance. The shape determines the number of CPUs, amount of memory, and other resources allocated to the instance.
         :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecShapeConfigArgs']]] shape_configs: The shape configuration requested for the instance.
+        :param pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgs']]] source_details: (Updatable)
         """
         if agent_configs is not None:
             pulumi.set(__self__, "agent_configs", agent_configs)
@@ -2815,6 +2820,9 @@ class TargetAssetTestSpecArgs:
     @property
     @pulumi.getter(name="sourceDetails")
     def source_details(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['TargetAssetTestSpecSourceDetailArgs']]]]:
+        """
+        (Updatable)
+        """
         return pulumi.get(self, "source_details")
 
     @source_details.setter

@@ -40,6 +40,12 @@ public final class AutonomousVmClusterMaintenanceWindow {
      * 
      */
     private @Nullable List<AutonomousVmClusterMaintenanceWindowMonth> months;
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * 
+     */
     private @Nullable String patchingMode;
     /**
      * @return The maintenance window scheduling preference.
@@ -92,6 +98,12 @@ public final class AutonomousVmClusterMaintenanceWindow {
     public List<AutonomousVmClusterMaintenanceWindowMonth> months() {
         return this.months == null ? List.of() : this.months;
     }
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * 
+     */
     public Optional<String> patchingMode() {
         return Optional.ofNullable(this.patchingMode);
     }

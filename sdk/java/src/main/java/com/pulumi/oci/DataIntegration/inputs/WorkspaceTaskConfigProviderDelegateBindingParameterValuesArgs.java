@@ -31,9 +31,17 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs
         return Optional.ofNullable(this.rootObjectValue);
     }
 
+    /**
+     * A simple value for the parameter.
+     * 
+     */
     @Import(name="simpleValue")
     private @Nullable Output<String> simpleValue;
 
+    /**
+     * @return A simple value for the parameter.
+     * 
+     */
     public Optional<Output<String>> simpleValue() {
         return Optional.ofNullable(this.simpleValue);
     }
@@ -84,11 +92,23 @@ public final class WorkspaceTaskConfigProviderDelegateBindingParameterValuesArgs
             return rootObjectValue(Output.of(rootObjectValue));
         }
 
+        /**
+         * @param simpleValue A simple value for the parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder simpleValue(@Nullable Output<String> simpleValue) {
             $.simpleValue = simpleValue;
             return this;
         }
 
+        /**
+         * @param simpleValue A simple value for the parameter.
+         * 
+         * @return builder
+         * 
+         */
         public Builder simpleValue(String simpleValue) {
             return simpleValue(Output.of(simpleValue));
         }

@@ -1027,6 +1027,7 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
         :param Sequence['AutonomousContainerDatabaseMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
         :param str patching_mode: Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
         :param str preference: The maintenance window scheduling preference.
+        :param Sequence[bool] skip_rus: (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
         if custom_action_timeout_in_mins is not None:
@@ -1128,6 +1129,9 @@ class AutonomousContainerDatabaseMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="skipRus")
     def skip_rus(self) -> Optional[Sequence[bool]]:
+        """
+        (Updatable) If true, skips the release update (RU) for the quarter. You cannot skip two consecutive quarters. An RU skip request will only be honoured if the current version of the Autonomous Container Database is supported for current quarter.
+        """
         return pulumi.get(self, "skip_rus")
 
     @property
@@ -3331,6 +3335,9 @@ class AutonomousVmClusterMaintenanceWindow(dict):
                * 0 - represents time slot 0:00 - 3:59 UTC - 4 - represents time slot 4:00 - 7:59 UTC - 8 - represents time slot 8:00 - 11:59 UTC - 12 - represents time slot 12:00 - 15:59 UTC - 16 - represents time slot 16:00 - 19:59 UTC - 20 - represents time slot 20:00 - 23:59 UTC
         :param int lead_time_in_weeks: Lead time window allows user to set a lead time to prepare for a down time. The lead time is in weeks and valid value is between 1 to 4.
         :param Sequence['AutonomousVmClusterMaintenanceWindowMonthArgs'] months: Months during the year when maintenance should be performed.
+        :param str patching_mode: (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+               
+               *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
         :param str preference: The maintenance window scheduling preference.
         :param Sequence[int] weeks_of_months: Weeks during the month when maintenance should be performed. Weeks start on the 1st, 8th, 15th, and 22nd days of the month, and have a duration of 7 days. Weeks start and end based on calendar dates, not days of the week. For example, to allow maintenance during the 2nd week of the month (from the 8th day to the 14th day of the month), use the value 2. Maintenance cannot be scheduled for the fifth week of months that contain more than 28 days. Note that this parameter works in conjunction with the  daysOfWeek and hoursOfDay parameters to allow you to specify specific days of the week and hours that maintenance will be performed.
         """
@@ -3408,6 +3415,11 @@ class AutonomousVmClusterMaintenanceWindow(dict):
     @property
     @pulumi.getter(name="patchingMode")
     def patching_mode(self) -> Optional[str]:
+        """
+        (Updatable) Cloud Exadata infrastructure node patching method, either "ROLLING" or "NONROLLING". Default value is ROLLING.
+
+        *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+        """
         return pulumi.get(self, "patching_mode")
 
     @property
@@ -4235,17 +4247,27 @@ class CloudDatabaseManagementCredentialdetails(dict):
     def __init__(__self__, *,
                  password_secret_id: str,
                  user_name: str):
+        """
+        :param str password_secret_id: Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param str user_name: Database username
+        """
         pulumi.set(__self__, "password_secret_id", password_secret_id)
         pulumi.set(__self__, "user_name", user_name)
 
     @property
     @pulumi.getter(name="passwordSecretId")
     def password_secret_id(self) -> str:
+        """
+        Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        """
         return pulumi.get(self, "password_secret_id")
 
     @property
     @pulumi.getter(name="userName")
     def user_name(self) -> str:
+        """
+        Database username
+        """
         return pulumi.get(self, "user_name")
 
 
@@ -7140,6 +7162,7 @@ class DbSystemDbHomeDatabase(dict):
         :param 'DbSystemDbHomeDatabaseDbBackupConfigArgs' db_backup_config: (Updatable) Backup Options To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator. If you're an administrator who needs to write policies to give users access, see [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
         :param str db_domain: The database domain. In a distributed database system, DB_DOMAIN specifies the logical location of the database within the network structure.
         :param str db_name: The display name of the database to be created from the backup. It must begin with an alphabetic character and can contain a maximum of eight alphanumeric characters. Special characters are not permitted.
+        :param str db_unique_name: The `DB_UNIQUE_NAME` of the Oracle Database.
         :param str db_workload: **Deprecated.** The dbWorkload field has been deprecated for Exadata Database Service on Dedicated Infrastructure, Exadata Database Service on Cloud@Customer, and Base Database Service. Support for this attribute will end in November 2023. You may choose to update your custom scripts to exclude the dbWorkload attribute. After November 2023 if you pass a value to the dbWorkload attribute, it will be ignored.
                
                The database workload type.
@@ -7292,6 +7315,9 @@ class DbSystemDbHomeDatabase(dict):
     @property
     @pulumi.getter(name="dbUniqueName")
     def db_unique_name(self) -> Optional[str]:
+        """
+        The `DB_UNIQUE_NAME` of the Oracle Database.
+        """
         return pulumi.get(self, "db_unique_name")
 
     @property

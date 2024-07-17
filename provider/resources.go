@@ -1095,12 +1095,6 @@ func Provider() tfbridge.ProviderInfo {
 			"oci_email_suppression":   {Tok: tfbridge.MakeDataSource(mainPkg, emailMod, "getSuppression")},
 			"oci_email_suppressions":  {Tok: tfbridge.MakeDataSource(mainPkg, emailMod, "getSuppressions")},
 
-			"oci_em_warehouse_em_warehouse":                {Tok: tfbridge.MakeDataSource(mainPkg, emWarehouseMod, "getEmWarehouse")},
-			"oci_em_warehouse_em_warehouse_etl_run":        {Tok: tfbridge.MakeDataSource(mainPkg, emWarehouseMod, "getEtlRun")},
-			"oci_em_warehouse_em_warehouse_etl_runs":       {Tok: tfbridge.MakeDataSource(mainPkg, emWarehouseMod, "getEtlRuns")},
-			"oci_em_warehouse_em_warehouse_resource_usage": {Tok: tfbridge.MakeDataSource(mainPkg, emWarehouseMod, "getResourceUsage")},
-			"oci_em_warehouse_em_warehouses":               {Tok: tfbridge.MakeDataSource(mainPkg, emWarehouseMod, "getEmWarehouses")},
-
 			"oci_events_rule":  {Tok: tfbridge.MakeDataSource(mainPkg, eventsMod, "getRule")},
 			"oci_events_rules": {Tok: tfbridge.MakeDataSource(mainPkg, eventsMod, "getRules")},
 

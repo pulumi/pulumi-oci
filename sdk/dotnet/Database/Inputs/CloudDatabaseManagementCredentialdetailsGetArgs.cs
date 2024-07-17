@@ -12,9 +12,15 @@ namespace Pulumi.Oci.Database.Inputs
 
     public sealed class CloudDatabaseManagementCredentialdetailsGetArgs : global::Pulumi.ResourceArgs
     {
+        /// <summary>
+        /// Specific database username's password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        /// </summary>
         [Input("passwordSecretId", required: true)]
         public Input<string> PasswordSecretId { get; set; } = null!;
 
+        /// <summary>
+        /// Database username
+        /// </summary>
         [Input("userName", required: true)]
         public Input<string> UserName { get; set; } = null!;
 

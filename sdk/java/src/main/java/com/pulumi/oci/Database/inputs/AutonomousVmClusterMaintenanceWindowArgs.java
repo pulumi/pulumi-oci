@@ -103,9 +103,21 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
         return Optional.ofNullable(this.months);
     }
 
+    /**
+     * (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * 
+     */
     @Import(name="patchingMode")
     private @Nullable Output<String> patchingMode;
 
+    /**
+     * @return (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+     * 
+     * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+     * 
+     */
     public Optional<Output<String>> patchingMode() {
         return Optional.ofNullable(this.patchingMode);
     }
@@ -325,11 +337,27 @@ public final class AutonomousVmClusterMaintenanceWindowArgs extends com.pulumi.r
             return months(List.of(months));
         }
 
+        /**
+         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+         * 
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingMode(@Nullable Output<String> patchingMode) {
             $.patchingMode = patchingMode;
             return this;
         }
 
+        /**
+         * @param patchingMode (Updatable) Cloud Exadata infrastructure node patching method, either &#34;ROLLING&#34; or &#34;NONROLLING&#34;. Default value is ROLLING.
+         * 
+         * *IMPORTANT*: Non-rolling infrastructure patching involves system down time. See [Oracle-Managed Infrastructure Maintenance Updates](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/examaintenance.htm#Oracle) for more information.
+         * 
+         * @return builder
+         * 
+         */
         public Builder patchingMode(String patchingMode) {
             return patchingMode(Output.of(patchingMode));
         }

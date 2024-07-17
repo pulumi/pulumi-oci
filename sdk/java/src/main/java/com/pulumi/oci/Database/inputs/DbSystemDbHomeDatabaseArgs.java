@@ -167,9 +167,17 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
         return Optional.ofNullable(this.dbName);
     }
 
+    /**
+     * The `DB_UNIQUE_NAME` of the Oracle Database.
+     * 
+     */
     @Import(name="dbUniqueName")
     private @Nullable Output<String> dbUniqueName;
 
+    /**
+     * @return The `DB_UNIQUE_NAME` of the Oracle Database.
+     * 
+     */
     public Optional<Output<String>> dbUniqueName() {
         return Optional.ofNullable(this.dbUniqueName);
     }
@@ -658,11 +666,23 @@ public final class DbSystemDbHomeDatabaseArgs extends com.pulumi.resources.Resou
             return dbName(Output.of(dbName));
         }
 
+        /**
+         * @param dbUniqueName The `DB_UNIQUE_NAME` of the Oracle Database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbUniqueName(@Nullable Output<String> dbUniqueName) {
             $.dbUniqueName = dbUniqueName;
             return this;
         }
 
+        /**
+         * @param dbUniqueName The `DB_UNIQUE_NAME` of the Oracle Database.
+         * 
+         * @return builder
+         * 
+         */
         public Builder dbUniqueName(String dbUniqueName) {
             return dbUniqueName(Output.of(dbUniqueName));
         }

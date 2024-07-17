@@ -31,6 +31,10 @@ public final class InstanceSourceDetails {
      * 
      */
     private @Nullable InstanceSourceDetailsInstanceSourceImageFilterDetails instanceSourceImageFilterDetails;
+    /**
+     * @return (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+     * 
+     */
     private @Nullable Boolean isPreserveBootVolumeEnabled;
     /**
      * @return (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
@@ -72,6 +76,10 @@ public final class InstanceSourceDetails {
     public Optional<InstanceSourceDetailsInstanceSourceImageFilterDetails> instanceSourceImageFilterDetails() {
         return Optional.ofNullable(this.instanceSourceImageFilterDetails);
     }
+    /**
+     * @return (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+     * 
+     */
     public Optional<Boolean> isPreserveBootVolumeEnabled() {
         return Optional.ofNullable(this.isPreserveBootVolumeEnabled);
     }

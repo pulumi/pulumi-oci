@@ -106,6 +106,10 @@ public final class TargetAssetRecommendedSpec {
      * 
      */
     private @Nullable List<TargetAssetRecommendedSpecShapeConfig> shapeConfigs;
+    /**
+     * @return (Updatable)
+     * 
+     */
     private @Nullable List<TargetAssetRecommendedSpecSourceDetail> sourceDetails;
 
     private TargetAssetRecommendedSpec() {}
@@ -228,6 +232,10 @@ public final class TargetAssetRecommendedSpec {
     public List<TargetAssetRecommendedSpecShapeConfig> shapeConfigs() {
         return this.shapeConfigs == null ? List.of() : this.shapeConfigs;
     }
+    /**
+     * @return (Updatable)
+     * 
+     */
     public List<TargetAssetRecommendedSpecSourceDetail> sourceDetails() {
         return this.sourceDetails == null ? List.of() : this.sourceDetails;
     }

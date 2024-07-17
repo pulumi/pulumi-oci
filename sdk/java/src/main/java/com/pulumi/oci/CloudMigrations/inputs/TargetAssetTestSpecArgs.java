@@ -280,9 +280,17 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
         return Optional.ofNullable(this.shapeConfigs);
     }
 
+    /**
+     * (Updatable)
+     * 
+     */
     @Import(name="sourceDetails")
     private @Nullable Output<List<TargetAssetTestSpecSourceDetailArgs>> sourceDetails;
 
+    /**
+     * @return (Updatable)
+     * 
+     */
     public Optional<Output<List<TargetAssetTestSpecSourceDetailArgs>>> sourceDetails() {
         return Optional.ofNullable(this.sourceDetails);
     }
@@ -735,15 +743,33 @@ public final class TargetAssetTestSpecArgs extends com.pulumi.resources.Resource
             return shapeConfigs(List.of(shapeConfigs));
         }
 
+        /**
+         * @param sourceDetails (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(@Nullable Output<List<TargetAssetTestSpecSourceDetailArgs>> sourceDetails) {
             $.sourceDetails = sourceDetails;
             return this;
         }
 
+        /**
+         * @param sourceDetails (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(List<TargetAssetTestSpecSourceDetailArgs> sourceDetails) {
             return sourceDetails(Output.of(sourceDetails));
         }
 
+        /**
+         * @param sourceDetails (Updatable)
+         * 
+         * @return builder
+         * 
+         */
         public Builder sourceDetails(TargetAssetTestSpecSourceDetailArgs... sourceDetails) {
             return sourceDetails(List.of(sourceDetails));
         }

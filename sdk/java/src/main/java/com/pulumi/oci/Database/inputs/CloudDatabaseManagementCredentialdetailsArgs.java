@@ -14,16 +14,32 @@ public final class CloudDatabaseManagementCredentialdetailsArgs extends com.pulu
 
     public static final CloudDatabaseManagementCredentialdetailsArgs Empty = new CloudDatabaseManagementCredentialdetailsArgs();
 
+    /**
+     * Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
     @Import(name="passwordSecretId", required=true)
     private Output<String> passwordSecretId;
 
+    /**
+     * @return Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * 
+     */
     public Output<String> passwordSecretId() {
         return this.passwordSecretId;
     }
 
+    /**
+     * Database username
+     * 
+     */
     @Import(name="userName", required=true)
     private Output<String> userName;
 
+    /**
+     * @return Database username
+     * 
+     */
     public Output<String> userName() {
         return this.userName;
     }
@@ -53,20 +69,44 @@ public final class CloudDatabaseManagementCredentialdetailsArgs extends com.pulu
             $ = new CloudDatabaseManagementCredentialdetailsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param passwordSecretId Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
         public Builder passwordSecretId(Output<String> passwordSecretId) {
             $.passwordSecretId = passwordSecretId;
             return this;
         }
 
+        /**
+         * @param passwordSecretId Specific database username&#39;s password [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * 
+         * @return builder
+         * 
+         */
         public Builder passwordSecretId(String passwordSecretId) {
             return passwordSecretId(Output.of(passwordSecretId));
         }
 
+        /**
+         * @param userName Database username
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(Output<String> userName) {
             $.userName = userName;
             return this;
         }
 
+        /**
+         * @param userName Database username
+         * 
+         * @return builder
+         * 
+         */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
         }

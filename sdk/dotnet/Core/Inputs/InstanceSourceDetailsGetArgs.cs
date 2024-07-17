@@ -32,6 +32,9 @@ namespace Pulumi.Oci.Core.Inputs
         [Input("instanceSourceImageFilterDetails")]
         public Input<Inputs.InstanceSourceDetailsInstanceSourceImageFilterDetailsGetArgs>? InstanceSourceImageFilterDetails { get; set; }
 
+        /// <summary>
+        /// (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+        /// </summary>
         [Input("isPreserveBootVolumeEnabled")]
         public Input<bool>? IsPreserveBootVolumeEnabled { get; set; }
 

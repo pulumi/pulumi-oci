@@ -81,6 +81,9 @@ namespace Pulumi.Oci.CloudMigrations.Outputs
         /// The shape configuration requested for the instance.
         /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetTestSpecShapeConfig> ShapeConfigs;
+        /// <summary>
+        /// (Updatable)
+        /// </summary>
         public readonly ImmutableArray<Outputs.TargetAssetTestSpecSourceDetail> SourceDetails;
 
         [OutputConstructor]

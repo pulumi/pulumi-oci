@@ -19,12 +19,27 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         public readonly bool? IsDaemonSet;
         public readonly string? Key;
         public readonly ImmutableArray<Outputs.ManagementAgentDataSourceListMetricDimension> MetricDimensions;
+        /// <summary>
+        /// Name of the property
+        /// </summary>
         public readonly string? Name;
         public readonly string? Namespace;
         public readonly string? ProxyUrl;
+        /// <summary>
+        /// Number in kilobytes. The limit on the data being sent, not to exceed the agent's fixed limit of 400 (KB).
+        /// </summary>
         public readonly int? ReadDataLimit;
+        /// <summary>
+        /// Number in milliseconds. The timeout for reading the response from the Prometheus Exporter's endpoint.
+        /// </summary>
         public readonly int? ReadTimeout;
+        /// <summary>
+        /// Oracle Cloud Infrastructure monitoring resource group to assign the metric to.
+        /// </summary>
         public readonly string? ResourceGroup;
+        /// <summary>
+        /// Number in minutes. The scraping occurs at the specified interval.
+        /// </summary>
         public readonly int? ScheduleMins;
         /// <summary>
         /// The current state of managementAgent
@@ -38,7 +53,13 @@ namespace Pulumi.Oci.ManagementAgent.Outputs
         /// The time the Management Agent was last updated. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string? TimeUpdated;
+        /// <summary>
+        /// The type of the DataSource.
+        /// </summary>
         public readonly string? Type;
+        /// <summary>
+        /// The url through which the Prometheus Exporter publishes its metrics. (http only)
+        /// </summary>
         public readonly string? Url;
 
         [OutputConstructor]

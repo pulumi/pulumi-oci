@@ -18,6 +18,9 @@ namespace Pulumi.Oci.DataIntegration.Inputs
         [Input("rootObjectValue")]
         public Input<Inputs.WorkspaceTaskConfigProviderDelegateBindingParameterValuesRootObjectValueArgs>? RootObjectValue { get; set; }
 
+        /// <summary>
+        /// A simple value for the parameter.
+        /// </summary>
         [Input("simpleValue")]
         public Input<string>? SimpleValue { get; set; }
 

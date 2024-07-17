@@ -11683,6 +11683,7 @@ class InstanceSourceDetails(dict):
                
                Allowed values:
         :param 'InstanceSourceDetailsInstanceSourceImageFilterDetailsArgs' instance_source_image_filter_details: These are the criteria for selecting an image. This is required if imageId is not specified.
+        :param bool is_preserve_boot_volume_enabled: (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
         :param str kms_key_id: (Updatable) The OCID of the Vault service key to assign as the master encryption key for the boot volume.
         :param str source_id: (Updatable) The OCID of the boot volume used to boot the instance.
         """
@@ -11737,6 +11738,9 @@ class InstanceSourceDetails(dict):
     @property
     @pulumi.getter(name="isPreserveBootVolumeEnabled")
     def is_preserve_boot_volume_enabled(self) -> Optional[bool]:
+        """
+        (Updatable) Whether to preserve the boot volume that was previously attached to the instance after a successful replacement of that boot volume.
+        """
         return pulumi.get(self, "is_preserve_boot_volume_enabled")
 
     @property

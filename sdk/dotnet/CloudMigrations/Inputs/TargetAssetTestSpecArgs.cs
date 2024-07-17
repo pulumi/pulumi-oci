@@ -158,6 +158,10 @@ namespace Pulumi.Oci.CloudMigrations.Inputs
 
         [Input("sourceDetails")]
         private InputList<Inputs.TargetAssetTestSpecSourceDetailArgs>? _sourceDetails;
+
+        /// <summary>
+        /// (Updatable)
+        /// </summary>
         public InputList<Inputs.TargetAssetTestSpecSourceDetailArgs> SourceDetails
         {
             get => _sourceDetails ?? (_sourceDetails = new InputList<Inputs.TargetAssetTestSpecSourceDetailArgs>());

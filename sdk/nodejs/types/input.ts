@@ -33070,33 +33070,6 @@ export namespace Dns {
     }
 }
 
-export namespace EmWarehouse {
-    export interface GetEmWarehousesFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetEmWarehousesFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-    export interface GetEtlRunsFilter {
-        name: string;
-        regex?: boolean;
-        values: string[];
-    }
-
-    export interface GetEtlRunsFilterArgs {
-        name: pulumi.Input<string>;
-        regex?: pulumi.Input<boolean>;
-        values: pulumi.Input<pulumi.Input<string>[]>;
-    }
-
-}
-
 export namespace Email {
     export interface GetDkimsFilter {
         /**

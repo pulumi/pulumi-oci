@@ -18,14 +18,14 @@ public final class GetOperationsInsightsWarehouseUsersFilter extends com.pulumi.
     public static final GetOperationsInsightsWarehouseUsersFilter Empty = new GetOperationsInsightsWarehouseUsersFilter();
 
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     @Import(name="name", required=true)
     private String name;
 
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public String name() {
@@ -73,7 +73,7 @@ public final class GetOperationsInsightsWarehouseUsersFilter extends com.pulumi.
         }
 
         /**
-         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 

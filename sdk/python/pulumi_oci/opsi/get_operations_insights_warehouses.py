@@ -55,7 +55,7 @@ class GetOperationsInsightsWarehousesResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[str]:
         """
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        User-friedly name of Ops Insights Warehouse that does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -112,7 +112,7 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
 
-    Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+    Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
     There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
     ## Example Usage
@@ -130,7 +130,7 @@ def get_operations_insights_warehouses(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Operations Insights Warehouse identifier
+    :param str id: Unique Ops Insights Warehouse identifier
     :param Sequence[str] states: Lifecycle states
     """
     __args__ = dict()
@@ -161,7 +161,7 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
     """
     This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
 
-    Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+    Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
     There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
     ## Example Usage
@@ -179,7 +179,7 @@ def get_operations_insights_warehouses_output(compartment_id: Optional[pulumi.In
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param str display_name: A filter to return only resources that match the entire display name.
-    :param str id: Unique Operations Insights Warehouse identifier
+    :param str id: Unique Ops Insights Warehouse identifier
     :param Sequence[str] states: Lifecycle states
     """
     ...

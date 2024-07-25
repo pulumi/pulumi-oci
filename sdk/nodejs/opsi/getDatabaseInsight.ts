@@ -49,7 +49,7 @@ export interface GetDatabaseInsightResult {
      */
     readonly compartmentId: string;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     readonly connectionCredentialDetails: outputs.Opsi.GetDatabaseInsightConnectionCredentialDetail[];
     /**
@@ -82,7 +82,7 @@ export interface GetDatabaseInsightResult {
      */
     readonly databaseResourceType: string;
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      */
     readonly databaseType: string;
     /**
@@ -135,6 +135,14 @@ export interface GetDatabaseInsightResult {
      * Database insight identifier
      */
     readonly id: string;
+    /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     */
+    readonly isHeatWaveClusterAttached: boolean;
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     */
+    readonly isHighlyAvailable: boolean;
     /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */

@@ -280,14 +280,14 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
     }
 
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      * 
      */
     @Import(name="scheduledReportMimeType")
     private @Nullable Output<String> scheduledReportMimeType;
 
     /**
-     * @return Specifies the format of the report ( either .xls or .pdf )
+     * @return Specifies the format of the report ( either .xls or .pdf or .json)
      * 
      */
     public Optional<Output<String>> scheduledReportMimeType() {
@@ -861,7 +861,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportMimeType Specifies the format of the report ( either .xls or .pdf )
+         * @param scheduledReportMimeType Specifies the format of the report ( either .xls or .pdf or .json)
          * 
          * @return builder
          * 
@@ -872,7 +872,7 @@ public final class ReportDefinitionState extends com.pulumi.resources.ResourceAr
         }
 
         /**
-         * @param scheduledReportMimeType Specifies the format of the report ( either .xls or .pdf )
+         * @param scheduledReportMimeType Specifies the format of the report ( either .xls or .pdf or .json)
          * 
          * @return builder
          * 

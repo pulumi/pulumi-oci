@@ -114,7 +114,7 @@ class GetReportResult:
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> str:
         """
-        Specifies the format of report to be .xls or .pdf
+        Specifies the format of report to be .xls or .pdf or .json
         """
         return pulumi.get(self, "mime_type")
 

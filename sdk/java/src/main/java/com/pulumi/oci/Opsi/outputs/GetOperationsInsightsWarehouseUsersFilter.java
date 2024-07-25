@@ -15,7 +15,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class GetOperationsInsightsWarehouseUsersFilter {
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     private String name;
@@ -24,7 +24,7 @@ public final class GetOperationsInsightsWarehouseUsersFilter {
 
     private GetOperationsInsightsWarehouseUsersFilter() {}
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public String name() {

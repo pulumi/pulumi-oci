@@ -26,6 +26,7 @@ class ConfigArgs:
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
                  maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
@@ -52,6 +53,7 @@ class ConfigArgs:
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
         :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
@@ -60,7 +62,7 @@ class ConfigArgs:
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -78,6 +80,8 @@ class ConfigArgs:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_ipv6 is not None:
+            pulumi.set(__self__, "is_ipv6", is_ipv6)
         if is_run_now is not None:
             pulumi.set(__self__, "is_run_now", is_run_now)
         if is_run_once is not None:
@@ -224,6 +228,18 @@ class ConfigArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isIpv6")
+    def is_ipv6(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, domain name will resolve to an IPv6 address.
+        """
+        return pulumi.get(self, "is_ipv6")
+
+    @is_ipv6.setter
+    def is_ipv6(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_ipv6", value)
+
+    @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -323,7 +339,7 @@ class ConfigArgs:
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 
@@ -351,11 +367,14 @@ class _ConfigState:
                  availability_configuration: Optional[pulumi.Input['ConfigAvailabilityConfigurationArgs']] = None,
                  batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
                  configuration: Optional[pulumi.Input['ConfigConfigurationArgs']] = None,
+                 created_by: Optional[pulumi.Input[str]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
+                 last_updated_by: Optional[pulumi.Input[str]] = None,
                  maintenance_window_schedule: Optional[pulumi.Input['ConfigMaintenanceWindowScheduleArgs']] = None,
                  monitor_type: Optional[pulumi.Input[str]] = None,
                  repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -376,11 +395,14 @@ class _ConfigState:
         :param pulumi.Input['ConfigAvailabilityConfigurationArgs'] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input['ConfigConfigurationArgs'] configuration: (Updatable) Details of monitor configuration.
+        :param pulumi.Input[str] created_by: Name of the user that created the monitor.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
+        :param pulumi.Input[str] last_updated_by: Name of the user that recently updated the monitor.
         :param pulumi.Input['ConfigMaintenanceWindowScheduleArgs'] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -389,7 +411,7 @@ class _ConfigState:
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigScriptParameterArgs']]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
@@ -408,16 +430,22 @@ class _ConfigState:
             pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         if configuration is not None:
             pulumi.set(__self__, "configuration", configuration)
+        if created_by is not None:
+            pulumi.set(__self__, "created_by", created_by)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_ipv6 is not None:
+            pulumi.set(__self__, "is_ipv6", is_ipv6)
         if is_run_now is not None:
             pulumi.set(__self__, "is_run_now", is_run_now)
         if is_run_once is not None:
             pulumi.set(__self__, "is_run_once", is_run_once)
+        if last_updated_by is not None:
+            pulumi.set(__self__, "last_updated_by", last_updated_by)
         if maintenance_window_schedule is not None:
             pulumi.set(__self__, "maintenance_window_schedule", maintenance_window_schedule)
         if monitor_type is not None:
@@ -496,6 +524,18 @@ class _ConfigState:
         pulumi.set(self, "configuration", value)
 
     @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the user that created the monitor.
+        """
+        return pulumi.get(self, "created_by")
+
+    @created_by.setter
+    def created_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "created_by", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -532,6 +572,18 @@ class _ConfigState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isIpv6")
+    def is_ipv6(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, domain name will resolve to an IPv6 address.
+        """
+        return pulumi.get(self, "is_ipv6")
+
+    @is_ipv6.setter
+    def is_ipv6(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_ipv6", value)
+
+    @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> Optional[pulumi.Input[bool]]:
         """
@@ -554,6 +606,18 @@ class _ConfigState:
     @is_run_once.setter
     def is_run_once(self, value: Optional[pulumi.Input[bool]]):
         pulumi.set(self, "is_run_once", value)
+
+    @property
+    @pulumi.getter(name="lastUpdatedBy")
+    def last_updated_by(self) -> Optional[pulumi.Input[str]]:
+        """
+        Name of the user that recently updated the monitor.
+        """
+        return pulumi.get(self, "last_updated_by")
+
+    @last_updated_by.setter
+    def last_updated_by(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "last_updated_by", value)
 
     @property
     @pulumi.getter(name="maintenanceWindowSchedule")
@@ -655,7 +719,7 @@ class _ConfigState:
     @pulumi.getter
     def target(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 
@@ -740,6 +804,7 @@ class Config(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
                  maintenance_window_schedule: Optional[pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']]] = None,
@@ -791,10 +856,38 @@ class Config(pulumi.CustomResource):
                     ),
                 ),
                 config_type=monitor_configuration_config_type,
+                connection_string=monitor_configuration_connection_string,
+                database_authentication_details=oci.apm_synthetics.ConfigConfigurationDatabaseAuthenticationDetailsArgs(
+                    password=oci.apm_synthetics.ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs(
+                        password=monitor_configuration_database_authentication_details_password_password,
+                        password_type=monitor_configuration_database_authentication_details_password_password_type,
+                        vault_secret_id=test_secret["id"],
+                    ),
+                    username=monitor_configuration_database_authentication_details_username,
+                ),
+                database_connection_type=monitor_configuration_database_connection_type,
+                database_role=monitor_configuration_database_role,
+                database_type=monitor_configuration_database_type,
+                database_wallet_details=oci.apm_synthetics.ConfigConfigurationDatabaseWalletDetailsArgs(
+                    database_wallet=monitor_configuration_database_wallet_details_database_wallet,
+                    service_name=test_service["name"],
+                ),
                 dns_configuration=oci.apm_synthetics.ConfigConfigurationDnsConfigurationArgs(
                     is_override_dns=monitor_configuration_dns_configuration_is_override_dns,
                     override_dns_ip=monitor_configuration_dns_configuration_override_dns_ip,
                 ),
+                download_size_limit_in_bytes=monitor_configuration_download_size_limit_in_bytes,
+                ftp_basic_authentication_details=oci.apm_synthetics.ConfigConfigurationFtpBasicAuthenticationDetailsArgs(
+                    password=oci.apm_synthetics.ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs(
+                        password=monitor_configuration_ftp_basic_authentication_details_password_password,
+                        password_type=monitor_configuration_ftp_basic_authentication_details_password_password_type,
+                        vault_secret_id=test_secret["id"],
+                    ),
+                    username=monitor_configuration_ftp_basic_authentication_details_username,
+                ),
+                ftp_protocol=monitor_configuration_ftp_protocol,
+                ftp_request_type=monitor_configuration_ftp_request_type,
+                is_active_mode=monitor_configuration_is_active_mode,
                 is_certificate_validation_enabled=monitor_configuration_is_certificate_validation_enabled,
                 is_default_snapshot_enabled=monitor_configuration_is_default_snapshot_enabled,
                 is_failure_retried=monitor_configuration_is_failure_retried,
@@ -809,6 +902,7 @@ class Config(pulumi.CustomResource):
                     transmission_rate=monitor_configuration_network_configuration_transmission_rate,
                 ),
                 protocol=monitor_configuration_protocol,
+                query=monitor_configuration_query,
                 record_type=monitor_configuration_record_type,
                 req_authentication_details=oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsArgs(
                     auth_headers=[oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs(
@@ -834,6 +928,7 @@ class Config(pulumi.CustomResource):
                     param_name=monitor_configuration_request_query_params_param_name,
                     param_value=monitor_configuration_request_query_params_param_value,
                 )],
+                upload_file_size_in_bytes=monitor_configuration_upload_file_size_in_bytes,
                 verify_response_codes=monitor_configuration_verify_response_codes,
                 verify_response_content=monitor_configuration_verify_response_content,
                 verify_texts=[oci.apm_synthetics.ConfigConfigurationVerifyTextArgs(
@@ -846,6 +941,7 @@ class Config(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_ipv6=monitor_is_ipv6,
             is_run_now=monitor_is_run_now,
             is_run_once=monitor_is_run_once,
             maintenance_window_schedule=oci.apm_synthetics.ConfigMaintenanceWindowScheduleArgs(
@@ -880,6 +976,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
         :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
@@ -890,7 +987,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigVantagePointArgs']]]] vantage_points: (Updatable) A list of public and dedicated vantage points from which to execute the monitor. Use /publicVantagePoints to fetch public vantage points, and /dedicatedVantagePoints to fetch dedicated vantage points. 
                
@@ -941,10 +1038,38 @@ class Config(pulumi.CustomResource):
                     ),
                 ),
                 config_type=monitor_configuration_config_type,
+                connection_string=monitor_configuration_connection_string,
+                database_authentication_details=oci.apm_synthetics.ConfigConfigurationDatabaseAuthenticationDetailsArgs(
+                    password=oci.apm_synthetics.ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs(
+                        password=monitor_configuration_database_authentication_details_password_password,
+                        password_type=monitor_configuration_database_authentication_details_password_password_type,
+                        vault_secret_id=test_secret["id"],
+                    ),
+                    username=monitor_configuration_database_authentication_details_username,
+                ),
+                database_connection_type=monitor_configuration_database_connection_type,
+                database_role=monitor_configuration_database_role,
+                database_type=monitor_configuration_database_type,
+                database_wallet_details=oci.apm_synthetics.ConfigConfigurationDatabaseWalletDetailsArgs(
+                    database_wallet=monitor_configuration_database_wallet_details_database_wallet,
+                    service_name=test_service["name"],
+                ),
                 dns_configuration=oci.apm_synthetics.ConfigConfigurationDnsConfigurationArgs(
                     is_override_dns=monitor_configuration_dns_configuration_is_override_dns,
                     override_dns_ip=monitor_configuration_dns_configuration_override_dns_ip,
                 ),
+                download_size_limit_in_bytes=monitor_configuration_download_size_limit_in_bytes,
+                ftp_basic_authentication_details=oci.apm_synthetics.ConfigConfigurationFtpBasicAuthenticationDetailsArgs(
+                    password=oci.apm_synthetics.ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs(
+                        password=monitor_configuration_ftp_basic_authentication_details_password_password,
+                        password_type=monitor_configuration_ftp_basic_authentication_details_password_password_type,
+                        vault_secret_id=test_secret["id"],
+                    ),
+                    username=monitor_configuration_ftp_basic_authentication_details_username,
+                ),
+                ftp_protocol=monitor_configuration_ftp_protocol,
+                ftp_request_type=monitor_configuration_ftp_request_type,
+                is_active_mode=monitor_configuration_is_active_mode,
                 is_certificate_validation_enabled=monitor_configuration_is_certificate_validation_enabled,
                 is_default_snapshot_enabled=monitor_configuration_is_default_snapshot_enabled,
                 is_failure_retried=monitor_configuration_is_failure_retried,
@@ -959,6 +1084,7 @@ class Config(pulumi.CustomResource):
                     transmission_rate=monitor_configuration_network_configuration_transmission_rate,
                 ),
                 protocol=monitor_configuration_protocol,
+                query=monitor_configuration_query,
                 record_type=monitor_configuration_record_type,
                 req_authentication_details=oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsArgs(
                     auth_headers=[oci.apm_synthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs(
@@ -984,6 +1110,7 @@ class Config(pulumi.CustomResource):
                     param_name=monitor_configuration_request_query_params_param_name,
                     param_value=monitor_configuration_request_query_params_param_value,
                 )],
+                upload_file_size_in_bytes=monitor_configuration_upload_file_size_in_bytes,
                 verify_response_codes=monitor_configuration_verify_response_codes,
                 verify_response_content=monitor_configuration_verify_response_content,
                 verify_texts=[oci.apm_synthetics.ConfigConfigurationVerifyTextArgs(
@@ -996,6 +1123,7 @@ class Config(pulumi.CustomResource):
             freeform_tags={
                 "bar-key": "value",
             },
+            is_ipv6=monitor_is_ipv6,
             is_run_now=monitor_is_run_now,
             is_run_once=monitor_is_run_once,
             maintenance_window_schedule=oci.apm_synthetics.ConfigMaintenanceWindowScheduleArgs(
@@ -1043,6 +1171,7 @@ class Config(pulumi.CustomResource):
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_ipv6: Optional[pulumi.Input[bool]] = None,
                  is_run_now: Optional[pulumi.Input[bool]] = None,
                  is_run_once: Optional[pulumi.Input[bool]] = None,
                  maintenance_window_schedule: Optional[pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']]] = None,
@@ -1076,6 +1205,7 @@ class Config(pulumi.CustomResource):
                 raise TypeError("Missing required property 'display_name'")
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_ipv6"] = is_ipv6
             __props__.__dict__["is_run_now"] = is_run_now
             __props__.__dict__["is_run_once"] = is_run_once
             __props__.__dict__["maintenance_window_schedule"] = maintenance_window_schedule
@@ -1095,6 +1225,8 @@ class Config(pulumi.CustomResource):
             if vantage_points is None and not opts.urn:
                 raise TypeError("Missing required property 'vantage_points'")
             __props__.__dict__["vantage_points"] = vantage_points
+            __props__.__dict__["created_by"] = None
+            __props__.__dict__["last_updated_by"] = None
             __props__.__dict__["time_created"] = None
             __props__.__dict__["time_updated"] = None
             __props__.__dict__["vantage_point_count"] = None
@@ -1112,11 +1244,14 @@ class Config(pulumi.CustomResource):
             availability_configuration: Optional[pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']]] = None,
             batch_interval_in_seconds: Optional[pulumi.Input[int]] = None,
             configuration: Optional[pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']]] = None,
+            created_by: Optional[pulumi.Input[str]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_ipv6: Optional[pulumi.Input[bool]] = None,
             is_run_now: Optional[pulumi.Input[bool]] = None,
             is_run_once: Optional[pulumi.Input[bool]] = None,
+            last_updated_by: Optional[pulumi.Input[str]] = None,
             maintenance_window_schedule: Optional[pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']]] = None,
             monitor_type: Optional[pulumi.Input[str]] = None,
             repeat_interval_in_seconds: Optional[pulumi.Input[int]] = None,
@@ -1142,11 +1277,14 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['ConfigAvailabilityConfigurationArgs']] availability_configuration: (Updatable) Monitor availability configuration details.
         :param pulumi.Input[int] batch_interval_in_seconds: (Updatable) Time interval between 2 runs in round robin batch mode (*SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param pulumi.Input[pulumi.InputType['ConfigConfigurationArgs']] configuration: (Updatable) Details of monitor configuration.
+        :param pulumi.Input[str] created_by: Name of the user that created the monitor.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Unique name that can be edited. The name should not contain any confidential information.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_ipv6: (Updatable) If enabled, domain name will resolve to an IPv6 address.
         :param pulumi.Input[bool] is_run_now: (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         :param pulumi.Input[bool] is_run_once: (Updatable) If runOnce is enabled, then the monitor will run once.
+        :param pulumi.Input[str] last_updated_by: Name of the user that recently updated the monitor.
         :param pulumi.Input[pulumi.InputType['ConfigMaintenanceWindowScheduleArgs']] maintenance_window_schedule: (Updatable) Details required to schedule maintenance window.
         :param pulumi.Input[str] monitor_type: Type of monitor.
         :param pulumi.Input[int] repeat_interval_in_seconds: (Updatable) Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
@@ -1155,7 +1293,7 @@ class Config(pulumi.CustomResource):
         :param pulumi.Input[str] script_name: Name of the script.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['ConfigScriptParameterArgs']]]] script_parameters: (Updatable) List of script parameters in the monitor. This is valid only for SCRIPTED_BROWSER and SCRIPTED_REST monitor types. For other monitor types, it should be set to null. Example: `[{"paramName": "userid", "paramValue":"testuser"}]`
         :param pulumi.Input[str] status: (Updatable) Enables or disables the monitor.
-        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param pulumi.Input[str] target: (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param pulumi.Input[str] time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param pulumi.Input[str] time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param pulumi.Input[int] timeout_in_seconds: (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
@@ -1174,11 +1312,14 @@ class Config(pulumi.CustomResource):
         __props__.__dict__["availability_configuration"] = availability_configuration
         __props__.__dict__["batch_interval_in_seconds"] = batch_interval_in_seconds
         __props__.__dict__["configuration"] = configuration
+        __props__.__dict__["created_by"] = created_by
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_ipv6"] = is_ipv6
         __props__.__dict__["is_run_now"] = is_run_now
         __props__.__dict__["is_run_once"] = is_run_once
+        __props__.__dict__["last_updated_by"] = last_updated_by
         __props__.__dict__["maintenance_window_schedule"] = maintenance_window_schedule
         __props__.__dict__["monitor_type"] = monitor_type
         __props__.__dict__["repeat_interval_in_seconds"] = repeat_interval_in_seconds
@@ -1228,6 +1369,14 @@ class Config(pulumi.CustomResource):
         return pulumi.get(self, "configuration")
 
     @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> pulumi.Output[str]:
+        """
+        Name of the user that created the monitor.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> pulumi.Output[Mapping[str, Any]]:
         """
@@ -1252,6 +1401,14 @@ class Config(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isIpv6")
+    def is_ipv6(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) If enabled, domain name will resolve to an IPv6 address.
+        """
+        return pulumi.get(self, "is_ipv6")
+
+    @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> pulumi.Output[bool]:
         """
@@ -1266,6 +1423,14 @@ class Config(pulumi.CustomResource):
         (Updatable) If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
+
+    @property
+    @pulumi.getter(name="lastUpdatedBy")
+    def last_updated_by(self) -> pulumi.Output[str]:
+        """
+        Name of the user that recently updated the monitor.
+        """
+        return pulumi.get(self, "last_updated_by")
 
     @property
     @pulumi.getter(name="maintenanceWindowSchedule")
@@ -1335,7 +1500,7 @@ class Config(pulumi.CustomResource):
     @pulumi.getter
     def target(self) -> pulumi.Output[str]:
         """
-        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 

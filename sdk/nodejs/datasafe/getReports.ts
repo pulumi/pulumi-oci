@@ -24,6 +24,8 @@ import * as utilities from "../utilities";
  *     displayName: reportDisplayName,
  *     reportDefinitionId: testReportDefinition.id,
  *     state: reportState,
+ *     timeGeneratedGreaterThanOrEqualTo: reportTimeGeneratedGreaterThanOrEqualTo,
+ *     timeGeneratedLessThan: reportTimeGeneratedLessThan,
  *     type: reportType,
  * });
  * ```
@@ -39,6 +41,8 @@ export function getReports(args: GetReportsArgs, opts?: pulumi.InvokeOptions): P
         "filters": args.filters,
         "reportDefinitionId": args.reportDefinitionId,
         "state": args.state,
+        "timeGeneratedGreaterThanOrEqualTo": args.timeGeneratedGreaterThanOrEqualTo,
+        "timeGeneratedLessThan": args.timeGeneratedLessThan,
         "type": args.type,
     }, opts);
 }
@@ -72,6 +76,18 @@ export interface GetReportsArgs {
      * An optional filter to return only resources that match the specified lifecycle state.
      */
     state?: string;
+    /**
+     * A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timeGeneratedGreaterThanOrEqualTo?: string;
+    /**
+     * Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timeGeneratedLessThan?: string;
     /**
      * An optional filter to return only resources that match the specified type.
      */
@@ -109,6 +125,8 @@ export interface GetReportsResult {
      * The current state of the audit report.
      */
     readonly state?: string;
+    readonly timeGeneratedGreaterThanOrEqualTo?: string;
+    readonly timeGeneratedLessThan?: string;
     /**
      * The type of the audit report.
      */
@@ -132,6 +150,8 @@ export interface GetReportsResult {
  *     displayName: reportDisplayName,
  *     reportDefinitionId: testReportDefinition.id,
  *     state: reportState,
+ *     timeGeneratedGreaterThanOrEqualTo: reportTimeGeneratedGreaterThanOrEqualTo,
+ *     timeGeneratedLessThan: reportTimeGeneratedLessThan,
  *     type: reportType,
  * });
  * ```
@@ -169,6 +189,18 @@ export interface GetReportsOutputArgs {
      * An optional filter to return only resources that match the specified lifecycle state.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timeGeneratedGreaterThanOrEqualTo?: pulumi.Input<string>;
+    /**
+     * Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+     *
+     * **Example:** 2016-12-19T16:39:57.600Z
+     */
+    timeGeneratedLessThan?: pulumi.Input<string>;
     /**
      * An optional filter to return only resources that match the specified type.
      */

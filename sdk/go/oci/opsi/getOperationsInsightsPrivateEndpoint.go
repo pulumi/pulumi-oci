@@ -70,7 +70,7 @@ type LookupOperationsInsightsPrivateEndpointResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the Private service accessed database.
 	Id string `pulumi:"id"`
-	// The flag is to identify if private endpoint is used for rac database or not
+	// The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
 	IsUsedForRacDbs bool `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
@@ -161,7 +161,7 @@ func (o LookupOperationsInsightsPrivateEndpointResultOutput) Id() pulumi.StringO
 	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The flag is to identify if private endpoint is used for rac database or not
+// The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
 func (o LookupOperationsInsightsPrivateEndpointResultOutput) IsUsedForRacDbs() pulumi.BoolOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsPrivateEndpointResult) bool { return v.IsUsedForRacDbs }).(pulumi.BoolOutput)
 }

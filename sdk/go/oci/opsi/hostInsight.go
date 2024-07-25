@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
 //
-// Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+// Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
 //
 // ## Example Usage
 //
@@ -94,7 +94,7 @@ type HostInsight struct {
 	HostDisplayName pulumi.StringOutput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringOutput `pulumi:"hostName"`
-	// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+	// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 	HostType pulumi.StringOutput `pulumi:"hostType"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -109,8 +109,7 @@ type HostInsight struct {
 	PlatformType pulumi.StringOutput `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion pulumi.StringOutput `pulumi:"platformVersion"`
-	// Processor count.
-	ProcessorCount pulumi.IntOutput `pulumi:"processorCount"`
+	ProcessorCount  pulumi.IntOutput    `pulumi:"processorCount"`
 	// The current state of the host.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -187,7 +186,7 @@ type hostInsightState struct {
 	HostDisplayName *string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName *string `pulumi:"hostName"`
-	// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+	// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 	HostType *string `pulumi:"hostType"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -202,8 +201,7 @@ type hostInsightState struct {
 	PlatformType *string `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion *string `pulumi:"platformVersion"`
-	// Processor count.
-	ProcessorCount *int `pulumi:"processorCount"`
+	ProcessorCount  *int    `pulumi:"processorCount"`
 	// The current state of the host.
 	State *string `pulumi:"state"`
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -245,7 +243,7 @@ type HostInsightState struct {
 	HostDisplayName pulumi.StringPtrInput
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringPtrInput
-	// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+	// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 	HostType pulumi.StringPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -260,8 +258,7 @@ type HostInsightState struct {
 	PlatformType pulumi.StringPtrInput
 	// Platform version.
 	PlatformVersion pulumi.StringPtrInput
-	// Processor count.
-	ProcessorCount pulumi.IntPtrInput
+	ProcessorCount  pulumi.IntPtrInput
 	// The current state of the host.
 	State pulumi.StringPtrInput
 	// (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
@@ -492,7 +489,7 @@ func (o HostInsightOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 func (o HostInsightOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.HostType }).(pulumi.StringOutput)
 }
@@ -525,7 +522,6 @@ func (o HostInsightOutput) PlatformVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.StringOutput { return v.PlatformVersion }).(pulumi.StringOutput)
 }
 
-// Processor count.
 func (o HostInsightOutput) ProcessorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *HostInsight) pulumi.IntOutput { return v.ProcessorCount }).(pulumi.IntOutput)
 }

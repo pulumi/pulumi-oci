@@ -123,6 +123,8 @@ type LookupCloudExadataInfrastructureResult struct {
 	StorageCount int `pulumi:"storageCount"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion string `pulumi:"storageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the cloud Exadata infrastructure resource was created.
@@ -337,6 +339,11 @@ func (o LookupCloudExadataInfrastructureResultOutput) StorageCount() pulumi.IntO
 // The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 func (o LookupCloudExadataInfrastructureResultOutput) StorageServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.StorageServerVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+func (o LookupCloudExadataInfrastructureResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupCloudExadataInfrastructureResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

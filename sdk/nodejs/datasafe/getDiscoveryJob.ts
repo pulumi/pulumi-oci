@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -103,6 +105,10 @@ export interface GetDiscoveryJobResult {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     readonly systemTags: {[key: string]: any};
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables.
+     */
+    readonly tablesForDiscoveries: outputs.DataSafe.GetDiscoveryJobTablesForDiscovery[];
     /**
      * The OCID of the target database associated with the discovery job.
      */

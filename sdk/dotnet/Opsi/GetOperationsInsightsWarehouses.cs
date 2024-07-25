@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified. 
+        /// Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
         /// 
@@ -45,7 +45,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified. 
+        /// Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
         /// 
@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Input("id")]
         public string? Id { get; set; }
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Input("id")]
         public Input<string>? Id { get; set; }
@@ -176,7 +176,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string? CompartmentId;
         /// <summary>
-        /// User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        /// User-friedly name of Ops Insights Warehouse that does not have to be unique.
         /// </summary>
         public readonly string? DisplayName;
         public readonly ImmutableArray<Outputs.GetOperationsInsightsWarehousesFilterResult> Filters;

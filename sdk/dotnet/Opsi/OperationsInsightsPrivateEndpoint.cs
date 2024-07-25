@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Opsi
     /// <summary>
     /// This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
     /// 
-    /// Create a private endpoint resource for the tenant in Operations Insights.
+    /// Create a private endpoint resource for the tenant in Ops Insights.
     /// This resource will be created in customer compartment.
     /// 
     /// ## Example Usage
@@ -89,7 +89,7 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// The flag to identify if private endpoint is used for rac database or not
+        /// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         /// </summary>
         [Output("isUsedForRacDbs")]
         public Output<bool> IsUsedForRacDbs { get; private set; } = null!;
@@ -241,7 +241,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// The flag to identify if private endpoint is used for rac database or not
+        /// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         /// </summary>
         [Input("isUsedForRacDbs", required: true)]
         public Input<bool> IsUsedForRacDbs { get; set; } = null!;
@@ -331,7 +331,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// The flag to identify if private endpoint is used for rac database or not
+        /// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         /// </summary>
         [Input("isUsedForRacDbs")]
         public Input<bool>? IsUsedForRacDbs { get; set; }

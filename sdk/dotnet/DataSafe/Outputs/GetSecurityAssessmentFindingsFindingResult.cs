@@ -46,6 +46,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
+        /// Provides a recommended approach to take to remediate the finding reported.
+        /// </summary>
+        public readonly string Oneline;
+        /// <summary>
         /// The severity of the finding as determined by security assessment. This cannot be modified by user.
         /// </summary>
         public readonly string OracleDefinedSeverity;
@@ -70,7 +74,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Summary;
         /// <summary>
-        /// The OCID of the target database.
+        /// A filter to return only items related to a specific target OCID.
         /// </summary>
         public readonly string TargetId;
         /// <summary>
@@ -104,6 +108,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string lifecycleDetails,
 
+            string oneline,
+
             string oracleDefinedSeverity,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingsFindingReferenceResult> references,
@@ -132,6 +138,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             Justification = justification;
             Key = key;
             LifecycleDetails = lifecycleDetails;
+            Oneline = oneline;
             OracleDefinedSeverity = oracleDefinedSeverity;
             References = references;
             Remarks = remarks;

@@ -87,6 +87,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("state")]
         public string? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only items related to a specific target OCID.
+        /// </summary>
+        [Input("targetId")]
+        public string? TargetId { get; set; }
+
         public GetSecurityAssessmentFindingsArgs()
         {
         }
@@ -151,6 +157,12 @@ namespace Pulumi.Oci.DataSafe
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        /// <summary>
+        /// A filter to return only items related to a specific target OCID.
+        /// </summary>
+        [Input("targetId")]
+        public Input<string>? TargetId { get; set; }
+
         public GetSecurityAssessmentFindingsInvokeArgs()
         {
         }
@@ -190,6 +202,10 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the finding.
         /// </summary>
         public readonly string? State;
+        /// <summary>
+        /// The OCID of the target database.
+        /// </summary>
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingsResult(
@@ -213,7 +229,9 @@ namespace Pulumi.Oci.DataSafe
 
             string? severity,
 
-            string? state)
+            string? state,
+
+            string? targetId)
         {
             AccessLevel = accessLevel;
             CompartmentIdInSubtree = compartmentIdInSubtree;
@@ -226,6 +244,7 @@ namespace Pulumi.Oci.DataSafe
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
             State = state;
+            TargetId = targetId;
         }
     }
 }

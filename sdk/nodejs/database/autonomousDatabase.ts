@@ -105,6 +105,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * (Updatable) Retention period, in days, for backups.
      */
     public readonly backupRetentionPeriodInDays!: pulumi.Output<number>;
+    public readonly byolComputeCountLimit!: pulumi.Output<number>;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on Serverless infrastructure as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      *
@@ -541,10 +542,13 @@ export class AutonomousDatabase extends pulumi.CustomResource {
      * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
      * * For Autonomous Database, setting this will disable public secure access to the database.
-     *
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     public readonly subnetId!: pulumi.Output<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     */
+    public readonly subscriptionId!: pulumi.Output<string>;
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      */
@@ -684,6 +688,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["availableUpgradeVersions"] = state ? state.availableUpgradeVersions : undefined;
             resourceInputs["backupConfigs"] = state ? state.backupConfigs : undefined;
             resourceInputs["backupRetentionPeriodInDays"] = state ? state.backupRetentionPeriodInDays : undefined;
+            resourceInputs["byolComputeCountLimit"] = state ? state.byolComputeCountLimit : undefined;
             resourceInputs["characterSet"] = state ? state.characterSet : undefined;
             resourceInputs["cloneType"] = state ? state.cloneType : undefined;
             resourceInputs["compartmentId"] = state ? state.compartmentId : undefined;
@@ -776,6 +781,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["standbyWhitelistedIps"] = state ? state.standbyWhitelistedIps : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["subnetId"] = state ? state.subnetId : undefined;
+            resourceInputs["subscriptionId"] = state ? state.subscriptionId : undefined;
             resourceInputs["supportedRegionsToCloneTos"] = state ? state.supportedRegionsToCloneTos : undefined;
             resourceInputs["switchoverTo"] = state ? state.switchoverTo : undefined;
             resourceInputs["switchoverToRemotePeerId"] = state ? state.switchoverToRemotePeerId : undefined;
@@ -820,6 +826,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["autonomousDatabaseId"] = args ? args.autonomousDatabaseId : undefined;
             resourceInputs["autonomousMaintenanceScheduleType"] = args ? args.autonomousMaintenanceScheduleType : undefined;
             resourceInputs["backupRetentionPeriodInDays"] = args ? args.backupRetentionPeriodInDays : undefined;
+            resourceInputs["byolComputeCountLimit"] = args ? args.byolComputeCountLimit : undefined;
             resourceInputs["characterSet"] = args ? args.characterSet : undefined;
             resourceInputs["cloneType"] = args ? args.cloneType : undefined;
             resourceInputs["compartmentId"] = args ? args.compartmentId : undefined;
@@ -881,6 +888,7 @@ export class AutonomousDatabase extends pulumi.CustomResource {
             resourceInputs["standbyWhitelistedIps"] = args ? args.standbyWhitelistedIps : undefined;
             resourceInputs["state"] = args ? args.state : undefined;
             resourceInputs["subnetId"] = args ? args.subnetId : undefined;
+            resourceInputs["subscriptionId"] = args ? args.subscriptionId : undefined;
             resourceInputs["switchoverTo"] = args ? args.switchoverTo : undefined;
             resourceInputs["switchoverToRemotePeerId"] = args ? args.switchoverToRemotePeerId : undefined;
             resourceInputs["timeOfAutoRefreshStart"] = args ? args.timeOfAutoRefreshStart : undefined;
@@ -1012,6 +1020,7 @@ export interface AutonomousDatabaseState {
      * (Updatable) Retention period, in days, for backups.
      */
     backupRetentionPeriodInDays?: pulumi.Input<number>;
+    byolComputeCountLimit?: pulumi.Input<number>;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on Serverless infrastructure as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      *
@@ -1448,10 +1457,13 @@ export interface AutonomousDatabaseState {
      * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
      * * For Autonomous Database, setting this will disable public secure access to the database.
-     *
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      */
@@ -1605,6 +1617,7 @@ export interface AutonomousDatabaseArgs {
      * (Updatable) Retention period, in days, for backups.
      */
     backupRetentionPeriodInDays?: pulumi.Input<number>;
+    byolComputeCountLimit?: pulumi.Input<number>;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on Serverless infrastructure as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      *
@@ -1917,10 +1930,13 @@ export interface AutonomousDatabaseArgs {
      * * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
      * * For Autonomous Database, setting this will disable public secure access to the database.
-     *
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
      */
     subnetId?: pulumi.Input<string>;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     */
+    subscriptionId?: pulumi.Input<string>;
     /**
      * It is applicable only when `isLocalDataGuardEnabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
      */

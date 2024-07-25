@@ -20,7 +20,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
  * 
- * Create a private endpoint resource for the tenant in Operations Insights.
+ * Create a private endpoint resource for the tenant in Ops Insights.
  * This resource will be created in customer compartment.
  * 
  * ## Example Usage
@@ -148,14 +148,14 @@ public class OperationsInsightsPrivateEndpoint extends com.pulumi.resources.Cust
         return this.freeformTags;
     }
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      * 
      */
     @Export(name="isUsedForRacDbs", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isUsedForRacDbs;
 
     /**
-     * @return The flag to identify if private endpoint is used for rac database or not
+     * @return This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      * 
      */
     public Output<Boolean> isUsedForRacDbs() {

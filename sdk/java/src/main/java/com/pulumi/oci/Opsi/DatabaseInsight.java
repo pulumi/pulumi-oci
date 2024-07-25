@@ -13,6 +13,7 @@ import com.pulumi.oci.Opsi.outputs.DatabaseInsightConnectionCredentialDetails;
 import com.pulumi.oci.Opsi.outputs.DatabaseInsightConnectionDetails;
 import com.pulumi.oci.Opsi.outputs.DatabaseInsightCredentialDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -80,14 +81,14 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.connectionDetails;
     }
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      * 
      */
     @Export(name="credentialDetails", refs={DatabaseInsightCredentialDetails.class}, tree="[0]")
     private Output</* @Nullable */ DatabaseInsightCredentialDetails> credentialDetails;
 
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Output<Optional<DatabaseInsightCredentialDetails>> credentialDetails() {
@@ -164,14 +165,14 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.databaseResourceType;
     }
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      * 
      */
     @Export(name="databaseType", refs={String.class}, tree="[0]")
     private Output<String> databaseType;
 
     /**
-     * @return Operations Insights internal representation of the database type.
+     * @return Ops Insights internal representation of the database type.
      * 
      */
     public Output<String> databaseType() {
@@ -360,6 +361,34 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     * 
+     */
+    @Export(name="isHeatWaveClusterAttached", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isHeatWaveClusterAttached;
+
+    /**
+     * @return Specifies if MYSQL DB System has heatwave cluster attached.
+     * 
+     */
+    public Output<Boolean> isHeatWaveClusterAttached() {
+        return this.isHeatWaveClusterAttached;
+    }
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     * 
+     */
+    @Export(name="isHighlyAvailable", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isHighlyAvailable;
+
+    /**
+     * @return Specifies if MYSQL DB System is highly available.
+     * 
+     */
+    public Output<Boolean> isHighlyAvailable() {
+        return this.isHighlyAvailable;
+    }
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -492,14 +521,14 @@ public class DatabaseInsight extends com.pulumi.resources.CustomResource {
         return this.systemTags;
     }
     /**
-     * The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     * The time the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeCreated", refs={String.class}, tree="[0]")
     private Output<String> timeCreated;
 
     /**
-     * @return The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     * @return The time the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeCreated() {

@@ -43,6 +43,8 @@ type GetSecurityAssessmentFindingsArgs struct {
 	Severity *string `pulumi:"severity"`
 	// A filter to return only the findings that match the specified lifecycle states.
 	State *string `pulumi:"state"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId *string `pulumi:"targetId"`
 }
 
 // A collection of values returned by getSecurityAssessmentFindings.
@@ -64,6 +66,8 @@ type GetSecurityAssessmentFindingsResult struct {
 	Severity *string `pulumi:"severity"`
 	// The current state of the finding.
 	State *string `pulumi:"state"`
+	// The OCID of the target database.
+	TargetId *string `pulumi:"targetId"`
 }
 
 func GetSecurityAssessmentFindingsOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingsOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingsResultOutput {
@@ -98,6 +102,8 @@ type GetSecurityAssessmentFindingsOutputArgs struct {
 	Severity pulumi.StringPtrInput `pulumi:"severity"`
 	// A filter to return only the findings that match the specified lifecycle states.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only items related to a specific target OCID.
+	TargetId pulumi.StringPtrInput `pulumi:"targetId"`
 }
 
 func (GetSecurityAssessmentFindingsOutputArgs) ElementType() reflect.Type {
@@ -167,6 +173,11 @@ func (o GetSecurityAssessmentFindingsResultOutput) Severity() pulumi.StringPtrOu
 // The current state of the finding.
 func (o GetSecurityAssessmentFindingsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+// The OCID of the target database.
+func (o GetSecurityAssessmentFindingsResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingsResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

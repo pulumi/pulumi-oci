@@ -130,7 +130,7 @@ type ReportDefinition struct {
 	Schedule pulumi.StringOutput `pulumi:"schedule"`
 	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId pulumi.StringOutput `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either .xls or .pdf )
+	// Specifies the format of the report ( either .xls or .pdf or .json)
 	ScheduledReportMimeType pulumi.StringOutput `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName pulumi.StringOutput `pulumi:"scheduledReportName"`
@@ -235,7 +235,7 @@ type reportDefinitionState struct {
 	Schedule *string `pulumi:"schedule"`
 	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId *string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either .xls or .pdf )
+	// Specifies the format of the report ( either .xls or .pdf or .json)
 	ScheduledReportMimeType *string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName *string `pulumi:"scheduledReportName"`
@@ -290,7 +290,7 @@ type ReportDefinitionState struct {
 	Schedule pulumi.StringPtrInput
 	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId pulumi.StringPtrInput
-	// Specifies the format of the report ( either .xls or .pdf )
+	// Specifies the format of the report ( either .xls or .pdf or .json)
 	ScheduledReportMimeType pulumi.StringPtrInput
 	// The name of the report to be scheduled.
 	ScheduledReportName pulumi.StringPtrInput
@@ -533,7 +533,7 @@ func (o ReportDefinitionOutput) ScheduledReportCompartmentId() pulumi.StringOutp
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies the format of the report ( either .xls or .pdf )
+// Specifies the format of the report ( either .xls or .pdf or .json)
 func (o ReportDefinitionOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *ReportDefinition) pulumi.StringOutput { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }

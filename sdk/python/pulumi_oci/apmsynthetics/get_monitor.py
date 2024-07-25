@@ -22,7 +22,7 @@ class GetMonitorResult:
     """
     A collection of values returned by getMonitor.
     """
-    def __init__(__self__, apm_domain_id=None, availability_configurations=None, batch_interval_in_seconds=None, configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_run_now=None, is_run_once=None, maintenance_window_schedules=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
+    def __init__(__self__, apm_domain_id=None, availability_configurations=None, batch_interval_in_seconds=None, configurations=None, created_by=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, is_ipv6=None, is_run_now=None, is_run_once=None, last_updated_by=None, maintenance_window_schedules=None, monitor_id=None, monitor_type=None, repeat_interval_in_seconds=None, scheduling_policy=None, script_id=None, script_name=None, script_parameters=None, status=None, target=None, time_created=None, time_updated=None, timeout_in_seconds=None, vantage_point_count=None, vantage_points=None):
         if apm_domain_id and not isinstance(apm_domain_id, str):
             raise TypeError("Expected argument 'apm_domain_id' to be a str")
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
@@ -35,6 +35,9 @@ class GetMonitorResult:
         if configurations and not isinstance(configurations, list):
             raise TypeError("Expected argument 'configurations' to be a list")
         pulumi.set(__self__, "configurations", configurations)
+        if created_by and not isinstance(created_by, str):
+            raise TypeError("Expected argument 'created_by' to be a str")
+        pulumi.set(__self__, "created_by", created_by)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -47,12 +50,18 @@ class GetMonitorResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_ipv6 and not isinstance(is_ipv6, bool):
+            raise TypeError("Expected argument 'is_ipv6' to be a bool")
+        pulumi.set(__self__, "is_ipv6", is_ipv6)
         if is_run_now and not isinstance(is_run_now, bool):
             raise TypeError("Expected argument 'is_run_now' to be a bool")
         pulumi.set(__self__, "is_run_now", is_run_now)
         if is_run_once and not isinstance(is_run_once, bool):
             raise TypeError("Expected argument 'is_run_once' to be a bool")
         pulumi.set(__self__, "is_run_once", is_run_once)
+        if last_updated_by and not isinstance(last_updated_by, str):
+            raise TypeError("Expected argument 'last_updated_by' to be a str")
+        pulumi.set(__self__, "last_updated_by", last_updated_by)
         if maintenance_window_schedules and not isinstance(maintenance_window_schedules, list):
             raise TypeError("Expected argument 'maintenance_window_schedules' to be a list")
         pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
@@ -129,6 +138,14 @@ class GetMonitorResult:
         return pulumi.get(self, "configurations")
 
     @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        Name of the user that created the monitor.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
@@ -161,6 +178,14 @@ class GetMonitorResult:
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isIpv6")
+    def is_ipv6(self) -> bool:
+        """
+        If enabled, domain name will resolve to an IPv6 address.
+        """
+        return pulumi.get(self, "is_ipv6")
+
+    @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> bool:
         """
@@ -175,6 +200,14 @@ class GetMonitorResult:
         If runOnce is enabled, then the monitor will run once.
         """
         return pulumi.get(self, "is_run_once")
+
+    @property
+    @pulumi.getter(name="lastUpdatedBy")
+    def last_updated_by(self) -> str:
+        """
+        Name of the user that recently updated the monitor.
+        """
+        return pulumi.get(self, "last_updated_by")
 
     @property
     @pulumi.getter(name="maintenanceWindowSchedules")
@@ -249,7 +282,7 @@ class GetMonitorResult:
     @pulumi.getter
     def target(self) -> str:
         """
-        Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 
@@ -289,7 +322,7 @@ class GetMonitorResult:
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> Sequence['outputs.GetMonitorVantagePointResult']:
         """
-        List of public and dedicated vantage points where the monitor is running.
+        List of public, dedicated and onPremise vantage points where the monitor is running.
         """
         return pulumi.get(self, "vantage_points")
 
@@ -304,12 +337,15 @@ class AwaitableGetMonitorResult(GetMonitorResult):
             availability_configurations=self.availability_configurations,
             batch_interval_in_seconds=self.batch_interval_in_seconds,
             configurations=self.configurations,
+            created_by=self.created_by,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_ipv6=self.is_ipv6,
             is_run_now=self.is_run_now,
             is_run_once=self.is_run_once,
+            last_updated_by=self.last_updated_by,
             maintenance_window_schedules=self.maintenance_window_schedules,
             monitor_id=self.monitor_id,
             monitor_type=self.monitor_type,
@@ -360,12 +396,15 @@ def get_monitor(apm_domain_id: Optional[str] = None,
         availability_configurations=pulumi.get(__ret__, 'availability_configurations'),
         batch_interval_in_seconds=pulumi.get(__ret__, 'batch_interval_in_seconds'),
         configurations=pulumi.get(__ret__, 'configurations'),
+        created_by=pulumi.get(__ret__, 'created_by'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_ipv6=pulumi.get(__ret__, 'is_ipv6'),
         is_run_now=pulumi.get(__ret__, 'is_run_now'),
         is_run_once=pulumi.get(__ret__, 'is_run_once'),
+        last_updated_by=pulumi.get(__ret__, 'last_updated_by'),
         maintenance_window_schedules=pulumi.get(__ret__, 'maintenance_window_schedules'),
         monitor_id=pulumi.get(__ret__, 'monitor_id'),
         monitor_type=pulumi.get(__ret__, 'monitor_type'),

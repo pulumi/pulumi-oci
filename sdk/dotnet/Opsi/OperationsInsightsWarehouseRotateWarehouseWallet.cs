@@ -44,7 +44,7 @@ namespace Pulumi.Oci.Opsi
     public partial class OperationsInsightsWarehouseRotateWarehouseWallet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// 
         /// 
         /// ** IMPORTANT **
@@ -100,7 +100,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class OperationsInsightsWarehouseRotateWarehouseWalletArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// 
         /// 
         /// ** IMPORTANT **
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class OperationsInsightsWarehouseRotateWarehouseWalletState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// 
         /// 
         /// ** IMPORTANT **

@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetDiscoveryJobResult',
@@ -21,7 +22,7 @@ class GetDiscoveryJobResult:
     """
     A collection of values returned by getDiscoveryJob.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, discovery_job_id=None, discovery_type=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, target_id=None, time_finished=None, time_started=None, total_columns_scanned=None, total_deleted_sensitive_columns=None, total_modified_sensitive_columns=None, total_new_sensitive_columns=None, total_objects_scanned=None, total_schemas_scanned=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, discovery_job_id=None, discovery_type=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, tables_for_discoveries=None, target_id=None, time_finished=None, time_started=None, total_columns_scanned=None, total_deleted_sensitive_columns=None, total_modified_sensitive_columns=None, total_new_sensitive_columns=None, total_objects_scanned=None, total_schemas_scanned=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -70,6 +71,9 @@ class GetDiscoveryJobResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tables_for_discoveries and not isinstance(tables_for_discoveries, list):
+            raise TypeError("Expected argument 'tables_for_discoveries' to be a list")
+        pulumi.set(__self__, "tables_for_discoveries", tables_for_discoveries)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -224,6 +228,14 @@ class GetDiscoveryJobResult:
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="tablesForDiscoveries")
+    def tables_for_discoveries(self) -> Sequence['outputs.GetDiscoveryJobTablesForDiscoveryResult']:
+        """
+        The data discovery jobs will scan the tables specified here, including both schemas and tables.
+        """
+        return pulumi.get(self, "tables_for_discoveries")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
@@ -318,6 +330,7 @@ class AwaitableGetDiscoveryJobResult(GetDiscoveryJobResult):
             sensitive_type_ids_for_discoveries=self.sensitive_type_ids_for_discoveries,
             state=self.state,
             system_tags=self.system_tags,
+            tables_for_discoveries=self.tables_for_discoveries,
             target_id=self.target_id,
             time_finished=self.time_finished,
             time_started=self.time_started,
@@ -370,6 +383,7 @@ def get_discovery_job(discovery_job_id: Optional[str] = None,
         sensitive_type_ids_for_discoveries=pulumi.get(__ret__, 'sensitive_type_ids_for_discoveries'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tables_for_discoveries=pulumi.get(__ret__, 'tables_for_discoveries'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_finished=pulumi.get(__ret__, 'time_finished'),
         time_started=pulumi.get(__ret__, 'time_started'),

@@ -5,13 +5,17 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationClientCertificateDetails;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationDatabaseAuthenticationDetails;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationDatabaseWalletDetails;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationDnsConfiguration;
+import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationFtpBasicAuthenticationDetails;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationReqAuthenticationDetails;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationRequestHeader;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationRequestQueryParam;
 import com.pulumi.oci.ApmSynthetics.outputs.ConfigConfigurationVerifyText;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -31,10 +35,65 @@ public final class ConfigConfiguration {
      */
     private @Nullable String configType;
     /**
+     * @return (Updatable) Database connection string.
+     * 
+     */
+    private @Nullable String connectionString;
+    /**
+     * @return (Updatable) Details for basic authentication.
+     * 
+     */
+    private @Nullable ConfigConfigurationDatabaseAuthenticationDetails databaseAuthenticationDetails;
+    /**
+     * @return (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     * 
+     */
+    private @Nullable String databaseConnectionType;
+    /**
+     * @return (Updatable) Database role.
+     * 
+     */
+    private @Nullable String databaseRole;
+    /**
+     * @return (Updatable) Database type.
+     * 
+     */
+    private @Nullable String databaseType;
+    /**
+     * @return (Updatable) Details for database wallet.
+     * 
+     */
+    private @Nullable ConfigConfigurationDatabaseWalletDetails databaseWalletDetails;
+    /**
      * @return (Updatable) Information about the DNS settings.
      * 
      */
     private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
+    /**
+     * @return (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+     * 
+     */
+    private @Nullable Integer downloadSizeLimitInBytes;
+    /**
+     * @return (Updatable) Details for basic authentication.
+     * 
+     */
+    private @Nullable ConfigConfigurationFtpBasicAuthenticationDetails ftpBasicAuthenticationDetails;
+    /**
+     * @return (Updatable) FTP protocol type.
+     * 
+     */
+    private @Nullable String ftpProtocol;
+    /**
+     * @return (Updatable) FTP monitor request type.
+     * 
+     */
+    private @Nullable String ftpRequestType;
+    /**
+     * @return (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * 
+     */
+    private @Nullable Boolean isActiveMode;
     /**
      * @return (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
@@ -76,6 +135,11 @@ public final class ConfigConfiguration {
      */
     private @Nullable String protocol;
     /**
+     * @return (Updatable) SQL query to be executed.
+     * 
+     */
+    private @Nullable String query;
+    /**
      * @return (Updatable) DNS record type.
      * 
      */
@@ -111,6 +175,11 @@ public final class ConfigConfiguration {
      */
     private @Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams;
     /**
+     * @return (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+     * 
+     */
+    private @Nullable Integer uploadFileSizeInBytes;
+    /**
      * @return (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
@@ -142,11 +211,88 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.configType);
     }
     /**
+     * @return (Updatable) Database connection string.
+     * 
+     */
+    public Optional<String> connectionString() {
+        return Optional.ofNullable(this.connectionString);
+    }
+    /**
+     * @return (Updatable) Details for basic authentication.
+     * 
+     */
+    public Optional<ConfigConfigurationDatabaseAuthenticationDetails> databaseAuthenticationDetails() {
+        return Optional.ofNullable(this.databaseAuthenticationDetails);
+    }
+    /**
+     * @return (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     * 
+     */
+    public Optional<String> databaseConnectionType() {
+        return Optional.ofNullable(this.databaseConnectionType);
+    }
+    /**
+     * @return (Updatable) Database role.
+     * 
+     */
+    public Optional<String> databaseRole() {
+        return Optional.ofNullable(this.databaseRole);
+    }
+    /**
+     * @return (Updatable) Database type.
+     * 
+     */
+    public Optional<String> databaseType() {
+        return Optional.ofNullable(this.databaseType);
+    }
+    /**
+     * @return (Updatable) Details for database wallet.
+     * 
+     */
+    public Optional<ConfigConfigurationDatabaseWalletDetails> databaseWalletDetails() {
+        return Optional.ofNullable(this.databaseWalletDetails);
+    }
+    /**
      * @return (Updatable) Information about the DNS settings.
      * 
      */
     public Optional<ConfigConfigurationDnsConfiguration> dnsConfiguration() {
         return Optional.ofNullable(this.dnsConfiguration);
+    }
+    /**
+     * @return (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+     * 
+     */
+    public Optional<Integer> downloadSizeLimitInBytes() {
+        return Optional.ofNullable(this.downloadSizeLimitInBytes);
+    }
+    /**
+     * @return (Updatable) Details for basic authentication.
+     * 
+     */
+    public Optional<ConfigConfigurationFtpBasicAuthenticationDetails> ftpBasicAuthenticationDetails() {
+        return Optional.ofNullable(this.ftpBasicAuthenticationDetails);
+    }
+    /**
+     * @return (Updatable) FTP protocol type.
+     * 
+     */
+    public Optional<String> ftpProtocol() {
+        return Optional.ofNullable(this.ftpProtocol);
+    }
+    /**
+     * @return (Updatable) FTP monitor request type.
+     * 
+     */
+    public Optional<String> ftpRequestType() {
+        return Optional.ofNullable(this.ftpRequestType);
+    }
+    /**
+     * @return (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * 
+     */
+    public Optional<Boolean> isActiveMode() {
+        return Optional.ofNullable(this.isActiveMode);
     }
     /**
      * @return (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -205,6 +351,13 @@ public final class ConfigConfiguration {
         return Optional.ofNullable(this.protocol);
     }
     /**
+     * @return (Updatable) SQL query to be executed.
+     * 
+     */
+    public Optional<String> query() {
+        return Optional.ofNullable(this.query);
+    }
+    /**
      * @return (Updatable) DNS record type.
      * 
      */
@@ -254,6 +407,13 @@ public final class ConfigConfiguration {
         return this.requestQueryParams == null ? List.of() : this.requestQueryParams;
     }
     /**
+     * @return (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+     * 
+     */
+    public Optional<Integer> uploadFileSizeInBytes() {
+        return Optional.ofNullable(this.uploadFileSizeInBytes);
+    }
+    /**
      * @return (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
@@ -286,7 +446,18 @@ public final class ConfigConfiguration {
     public static final class Builder {
         private @Nullable ConfigConfigurationClientCertificateDetails clientCertificateDetails;
         private @Nullable String configType;
+        private @Nullable String connectionString;
+        private @Nullable ConfigConfigurationDatabaseAuthenticationDetails databaseAuthenticationDetails;
+        private @Nullable String databaseConnectionType;
+        private @Nullable String databaseRole;
+        private @Nullable String databaseType;
+        private @Nullable ConfigConfigurationDatabaseWalletDetails databaseWalletDetails;
         private @Nullable ConfigConfigurationDnsConfiguration dnsConfiguration;
+        private @Nullable Integer downloadSizeLimitInBytes;
+        private @Nullable ConfigConfigurationFtpBasicAuthenticationDetails ftpBasicAuthenticationDetails;
+        private @Nullable String ftpProtocol;
+        private @Nullable String ftpRequestType;
+        private @Nullable Boolean isActiveMode;
         private @Nullable Boolean isCertificateValidationEnabled;
         private @Nullable Boolean isDefaultSnapshotEnabled;
         private @Nullable Boolean isFailureRetried;
@@ -295,6 +466,7 @@ public final class ConfigConfiguration {
         private @Nullable String nameServer;
         private @Nullable ConfigConfigurationNetworkConfiguration networkConfiguration;
         private @Nullable String protocol;
+        private @Nullable String query;
         private @Nullable String recordType;
         private @Nullable ConfigConfigurationReqAuthenticationDetails reqAuthenticationDetails;
         private @Nullable String reqAuthenticationScheme;
@@ -302,6 +474,7 @@ public final class ConfigConfiguration {
         private @Nullable String requestMethod;
         private @Nullable String requestPostBody;
         private @Nullable List<ConfigConfigurationRequestQueryParam> requestQueryParams;
+        private @Nullable Integer uploadFileSizeInBytes;
         private @Nullable List<String> verifyResponseCodes;
         private @Nullable String verifyResponseContent;
         private @Nullable List<ConfigConfigurationVerifyText> verifyTexts;
@@ -310,7 +483,18 @@ public final class ConfigConfiguration {
     	      Objects.requireNonNull(defaults);
     	      this.clientCertificateDetails = defaults.clientCertificateDetails;
     	      this.configType = defaults.configType;
+    	      this.connectionString = defaults.connectionString;
+    	      this.databaseAuthenticationDetails = defaults.databaseAuthenticationDetails;
+    	      this.databaseConnectionType = defaults.databaseConnectionType;
+    	      this.databaseRole = defaults.databaseRole;
+    	      this.databaseType = defaults.databaseType;
+    	      this.databaseWalletDetails = defaults.databaseWalletDetails;
     	      this.dnsConfiguration = defaults.dnsConfiguration;
+    	      this.downloadSizeLimitInBytes = defaults.downloadSizeLimitInBytes;
+    	      this.ftpBasicAuthenticationDetails = defaults.ftpBasicAuthenticationDetails;
+    	      this.ftpProtocol = defaults.ftpProtocol;
+    	      this.ftpRequestType = defaults.ftpRequestType;
+    	      this.isActiveMode = defaults.isActiveMode;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
@@ -319,6 +503,7 @@ public final class ConfigConfiguration {
     	      this.nameServer = defaults.nameServer;
     	      this.networkConfiguration = defaults.networkConfiguration;
     	      this.protocol = defaults.protocol;
+    	      this.query = defaults.query;
     	      this.recordType = defaults.recordType;
     	      this.reqAuthenticationDetails = defaults.reqAuthenticationDetails;
     	      this.reqAuthenticationScheme = defaults.reqAuthenticationScheme;
@@ -326,6 +511,7 @@ public final class ConfigConfiguration {
     	      this.requestMethod = defaults.requestMethod;
     	      this.requestPostBody = defaults.requestPostBody;
     	      this.requestQueryParams = defaults.requestQueryParams;
+    	      this.uploadFileSizeInBytes = defaults.uploadFileSizeInBytes;
     	      this.verifyResponseCodes = defaults.verifyResponseCodes;
     	      this.verifyResponseContent = defaults.verifyResponseContent;
     	      this.verifyTexts = defaults.verifyTexts;
@@ -344,9 +530,75 @@ public final class ConfigConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder connectionString(@Nullable String connectionString) {
+
+            this.connectionString = connectionString;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseAuthenticationDetails(@Nullable ConfigConfigurationDatabaseAuthenticationDetails databaseAuthenticationDetails) {
+
+            this.databaseAuthenticationDetails = databaseAuthenticationDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseConnectionType(@Nullable String databaseConnectionType) {
+
+            this.databaseConnectionType = databaseConnectionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseRole(@Nullable String databaseRole) {
+
+            this.databaseRole = databaseRole;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseType(@Nullable String databaseType) {
+
+            this.databaseType = databaseType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseWalletDetails(@Nullable ConfigConfigurationDatabaseWalletDetails databaseWalletDetails) {
+
+            this.databaseWalletDetails = databaseWalletDetails;
+            return this;
+        }
+        @CustomType.Setter
         public Builder dnsConfiguration(@Nullable ConfigConfigurationDnsConfiguration dnsConfiguration) {
 
             this.dnsConfiguration = dnsConfiguration;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder downloadSizeLimitInBytes(@Nullable Integer downloadSizeLimitInBytes) {
+
+            this.downloadSizeLimitInBytes = downloadSizeLimitInBytes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ftpBasicAuthenticationDetails(@Nullable ConfigConfigurationFtpBasicAuthenticationDetails ftpBasicAuthenticationDetails) {
+
+            this.ftpBasicAuthenticationDetails = ftpBasicAuthenticationDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ftpProtocol(@Nullable String ftpProtocol) {
+
+            this.ftpProtocol = ftpProtocol;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ftpRequestType(@Nullable String ftpRequestType) {
+
+            this.ftpRequestType = ftpRequestType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isActiveMode(@Nullable Boolean isActiveMode) {
+
+            this.isActiveMode = isActiveMode;
             return this;
         }
         @CustomType.Setter
@@ -398,6 +650,12 @@ public final class ConfigConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder query(@Nullable String query) {
+
+            this.query = query;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recordType(@Nullable String recordType) {
 
             this.recordType = recordType;
@@ -446,6 +704,12 @@ public final class ConfigConfiguration {
             return requestQueryParams(List.of(requestQueryParams));
         }
         @CustomType.Setter
+        public Builder uploadFileSizeInBytes(@Nullable Integer uploadFileSizeInBytes) {
+
+            this.uploadFileSizeInBytes = uploadFileSizeInBytes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder verifyResponseCodes(@Nullable List<String> verifyResponseCodes) {
 
             this.verifyResponseCodes = verifyResponseCodes;
@@ -473,7 +737,18 @@ public final class ConfigConfiguration {
             final var _resultValue = new ConfigConfiguration();
             _resultValue.clientCertificateDetails = clientCertificateDetails;
             _resultValue.configType = configType;
+            _resultValue.connectionString = connectionString;
+            _resultValue.databaseAuthenticationDetails = databaseAuthenticationDetails;
+            _resultValue.databaseConnectionType = databaseConnectionType;
+            _resultValue.databaseRole = databaseRole;
+            _resultValue.databaseType = databaseType;
+            _resultValue.databaseWalletDetails = databaseWalletDetails;
             _resultValue.dnsConfiguration = dnsConfiguration;
+            _resultValue.downloadSizeLimitInBytes = downloadSizeLimitInBytes;
+            _resultValue.ftpBasicAuthenticationDetails = ftpBasicAuthenticationDetails;
+            _resultValue.ftpProtocol = ftpProtocol;
+            _resultValue.ftpRequestType = ftpRequestType;
+            _resultValue.isActiveMode = isActiveMode;
             _resultValue.isCertificateValidationEnabled = isCertificateValidationEnabled;
             _resultValue.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             _resultValue.isFailureRetried = isFailureRetried;
@@ -482,6 +757,7 @@ public final class ConfigConfiguration {
             _resultValue.nameServer = nameServer;
             _resultValue.networkConfiguration = networkConfiguration;
             _resultValue.protocol = protocol;
+            _resultValue.query = query;
             _resultValue.recordType = recordType;
             _resultValue.reqAuthenticationDetails = reqAuthenticationDetails;
             _resultValue.reqAuthenticationScheme = reqAuthenticationScheme;
@@ -489,6 +765,7 @@ public final class ConfigConfiguration {
             _resultValue.requestMethod = requestMethod;
             _resultValue.requestPostBody = requestPostBody;
             _resultValue.requestQueryParams = requestQueryParams;
+            _resultValue.uploadFileSizeInBytes = uploadFileSizeInBytes;
             _resultValue.verifyResponseCodes = verifyResponseCodes;
             _resultValue.verifyResponseContent = verifyResponseContent;
             _resultValue.verifyTexts = verifyTexts;

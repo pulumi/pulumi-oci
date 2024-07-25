@@ -12,10 +12,12 @@ import com.pulumi.oci.Database.inputs.KeyStoreState;
 import com.pulumi.oci.Database.outputs.KeyStoreAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.KeyStoreTypeDetails;
 import com.pulumi.oci.Utilities;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import javax.annotation.Nullable;
 
 /**
@@ -107,6 +109,12 @@ public class KeyStore extends com.pulumi.resources.CustomResource {
      */
     public Output<String> compartmentId() {
         return this.compartmentId;
+    }
+    @Export(name="confirmDetailsTrigger", refs={Integer.class}, tree="[0]")
+    private Output</* @Nullable */ Integer> confirmDetailsTrigger;
+
+    public Output<Optional<Integer>> confirmDetailsTrigger() {
+        return Codegen.optional(this.confirmDetailsTrigger);
     }
     /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

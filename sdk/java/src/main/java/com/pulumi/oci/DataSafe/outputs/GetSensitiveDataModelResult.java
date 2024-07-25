@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelTablesForDiscovery;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -90,6 +91,11 @@ public final class GetSensitiveDataModelResult {
      * 
      */
     private Map<String,Object> systemTags;
+    /**
+     * @return The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+     * 
+     */
+    private List<GetSensitiveDataModelTablesForDiscovery> tablesForDiscoveries;
     /**
      * @return The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      * 
@@ -216,6 +222,13 @@ public final class GetSensitiveDataModelResult {
         return this.systemTags;
     }
     /**
+     * @return The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+     * 
+     */
+    public List<GetSensitiveDataModelTablesForDiscovery> tablesForDiscoveries() {
+        return this.tablesForDiscoveries;
+    }
+    /**
      * @return The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      * 
      */
@@ -262,6 +275,7 @@ public final class GetSensitiveDataModelResult {
         private List<String> sensitiveTypeIdsForDiscoveries;
         private String state;
         private Map<String,Object> systemTags;
+        private List<GetSensitiveDataModelTablesForDiscovery> tablesForDiscoveries;
         private String targetId;
         private String timeCreated;
         private String timeUpdated;
@@ -284,6 +298,7 @@ public final class GetSensitiveDataModelResult {
     	      this.sensitiveTypeIdsForDiscoveries = defaults.sensitiveTypeIdsForDiscoveries;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.tablesForDiscoveries = defaults.tablesForDiscoveries;
     	      this.targetId = defaults.targetId;
     	      this.timeCreated = defaults.timeCreated;
     	      this.timeUpdated = defaults.timeUpdated;
@@ -424,6 +439,17 @@ public final class GetSensitiveDataModelResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tablesForDiscoveries(List<GetSensitiveDataModelTablesForDiscovery> tablesForDiscoveries) {
+            if (tablesForDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetSensitiveDataModelResult", "tablesForDiscoveries");
+            }
+            this.tablesForDiscoveries = tablesForDiscoveries;
+            return this;
+        }
+        public Builder tablesForDiscoveries(GetSensitiveDataModelTablesForDiscovery... tablesForDiscoveries) {
+            return tablesForDiscoveries(List.of(tablesForDiscoveries));
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetSensitiveDataModelResult", "targetId");
@@ -465,6 +491,7 @@ public final class GetSensitiveDataModelResult {
             _resultValue.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.tablesForDiscoveries = tablesForDiscoveries;
             _resultValue.targetId = targetId;
             _resultValue.timeCreated = timeCreated;
             _resultValue.timeUpdated = timeUpdated;

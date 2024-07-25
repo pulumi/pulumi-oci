@@ -102,7 +102,7 @@ export interface GetNewsReportResult {
      */
     readonly state: string;
     /**
-     * Indicates the status of a news report in Operations Insights.
+     * Indicates the status of a news report in Ops Insights.
      */
     readonly status: string;
     /**

@@ -22,7 +22,7 @@ class GetDatabaseInsightResult:
     """
     A collection of values returned by getDatabaseInsight.
     """
-    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, lifecycle_details=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
+    def __init__(__self__, compartment_id=None, connection_credential_details=None, connection_details=None, credential_details=None, database_connection_status_details=None, database_display_name=None, database_id=None, database_insight_id=None, database_name=None, database_resource_type=None, database_type=None, database_version=None, dbm_private_endpoint_id=None, defined_tags=None, deployment_type=None, enterprise_manager_bridge_id=None, enterprise_manager_entity_display_name=None, enterprise_manager_entity_identifier=None, enterprise_manager_entity_name=None, enterprise_manager_entity_type=None, enterprise_manager_identifier=None, entity_source=None, exadata_insight_id=None, freeform_tags=None, id=None, is_heat_wave_cluster_attached=None, is_highly_available=None, lifecycle_details=None, opsi_private_endpoint_id=None, parent_id=None, processor_count=None, root_id=None, service_name=None, state=None, status=None, system_tags=None, time_created=None, time_updated=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -98,6 +98,12 @@ class GetDatabaseInsightResult:
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
+        if is_heat_wave_cluster_attached and not isinstance(is_heat_wave_cluster_attached, bool):
+            raise TypeError("Expected argument 'is_heat_wave_cluster_attached' to be a bool")
+        pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
+        if is_highly_available and not isinstance(is_highly_available, bool):
+            raise TypeError("Expected argument 'is_highly_available' to be a bool")
+        pulumi.set(__self__, "is_highly_available", is_highly_available)
         if lifecycle_details and not isinstance(lifecycle_details, str):
             raise TypeError("Expected argument 'lifecycle_details' to be a str")
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -144,7 +150,7 @@ class GetDatabaseInsightResult:
     @pulumi.getter(name="connectionCredentialDetails")
     def connection_credential_details(self) -> Sequence['outputs.GetDatabaseInsightConnectionCredentialDetailResult']:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "connection_credential_details")
 
@@ -213,7 +219,7 @@ class GetDatabaseInsightResult:
     @pulumi.getter(name="databaseType")
     def database_type(self) -> str:
         """
-        Operations Insights internal representation of the database type.
+        Ops Insights internal representation of the database type.
         """
         return pulumi.get(self, "database_type")
 
@@ -322,6 +328,22 @@ class GetDatabaseInsightResult:
         Database insight identifier
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isHeatWaveClusterAttached")
+    def is_heat_wave_cluster_attached(self) -> bool:
+        """
+        Specifies if MYSQL DB System has heatwave cluster attached.
+        """
+        return pulumi.get(self, "is_heat_wave_cluster_attached")
+
+    @property
+    @pulumi.getter(name="isHighlyAvailable")
+    def is_highly_available(self) -> bool:
+        """
+        Specifies if MYSQL DB System is highly available.
+        """
+        return pulumi.get(self, "is_highly_available")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -443,6 +465,8 @@ class AwaitableGetDatabaseInsightResult(GetDatabaseInsightResult):
             exadata_insight_id=self.exadata_insight_id,
             freeform_tags=self.freeform_tags,
             id=self.id,
+            is_heat_wave_cluster_attached=self.is_heat_wave_cluster_attached,
+            is_highly_available=self.is_highly_available,
             lifecycle_details=self.lifecycle_details,
             opsi_private_endpoint_id=self.opsi_private_endpoint_id,
             parent_id=self.parent_id,
@@ -506,6 +530,8 @@ def get_database_insight(database_insight_id: Optional[str] = None,
         exadata_insight_id=pulumi.get(__ret__, 'exadata_insight_id'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),
         id=pulumi.get(__ret__, 'id'),
+        is_heat_wave_cluster_attached=pulumi.get(__ret__, 'is_heat_wave_cluster_attached'),
+        is_highly_available=pulumi.get(__ret__, 'is_highly_available'),
         lifecycle_details=pulumi.get(__ret__, 'lifecycle_details'),
         opsi_private_endpoint_id=pulumi.get(__ret__, 'opsi_private_endpoint_id'),
         parent_id=pulumi.get(__ret__, 'parent_id'),

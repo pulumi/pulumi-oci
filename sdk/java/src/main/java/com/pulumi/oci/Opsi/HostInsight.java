@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
  * 
- * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+ * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
  * 
  * ## Example Usage
  * 
@@ -274,14 +274,14 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
         return this.hostName;
     }
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     @Export(name="hostType", refs={String.class}, tree="[0]")
     private Output<String> hostType;
 
     /**
-     * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * @return Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     public Output<String> hostType() {
@@ -363,17 +363,9 @@ public class HostInsight extends com.pulumi.resources.CustomResource {
     public Output<String> platformVersion() {
         return this.platformVersion;
     }
-    /**
-     * Processor count.
-     * 
-     */
     @Export(name="processorCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> processorCount;
 
-    /**
-     * @return Processor count.
-     * 
-     */
     public Output<Integer> processorCount() {
         return this.processorCount;
     }

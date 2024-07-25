@@ -7,7 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+ * Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+ * If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
  * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
  *
  * ## Example Usage
@@ -16,7 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnsetSecurityAssessmentBaseline = new oci.datasafe.UnsetSecurityAssessmentBaseline("test_unset_security_assessment_baseline", {securityAssessmentId: testSecurityAssessment.id});
+ * const testUnsetSecurityAssessmentBaseline = new oci.datasafe.UnsetSecurityAssessmentBaseline("test_unset_security_assessment_baseline", {
+ *     securityAssessmentId: testSecurityAssessment.id,
+ *     targetIds: unsetSecurityAssessmentBaselineTargetIds,
+ * });
  * ```
  *
  * ## Import
@@ -57,12 +61,16 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
 
     /**
      * The OCID of the security assessment.
+     */
+    public readonly securityAssessmentId!: pulumi.Output<string>;
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    public readonly securityAssessmentId!: pulumi.Output<string>;
+    public readonly targetIds!: pulumi.Output<string[]>;
 
     /**
      * Create a UnsetSecurityAssessmentBaseline resource with the given unique name, arguments, and options.
@@ -78,12 +86,14 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as UnsetSecurityAssessmentBaselineState | undefined;
             resourceInputs["securityAssessmentId"] = state ? state.securityAssessmentId : undefined;
+            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
         } else {
             const args = argsOrState as UnsetSecurityAssessmentBaselineArgs | undefined;
             if ((!args || args.securityAssessmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'securityAssessmentId'");
             }
             resourceInputs["securityAssessmentId"] = args ? args.securityAssessmentId : undefined;
+            resourceInputs["targetIds"] = args ? args.targetIds : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(UnsetSecurityAssessmentBaseline.__pulumiType, name, resourceInputs, opts);
@@ -96,12 +106,16 @@ export class UnsetSecurityAssessmentBaseline extends pulumi.CustomResource {
 export interface UnsetSecurityAssessmentBaselineState {
     /**
      * The OCID of the security assessment.
+     */
+    securityAssessmentId?: pulumi.Input<string>;
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAssessmentId?: pulumi.Input<string>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
 }
 
 /**
@@ -110,10 +124,14 @@ export interface UnsetSecurityAssessmentBaselineState {
 export interface UnsetSecurityAssessmentBaselineArgs {
     /**
      * The OCID of the security assessment.
+     */
+    securityAssessmentId: pulumi.Input<string>;
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
      *
      *
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      */
-    securityAssessmentId: pulumi.Input<string>;
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
 }

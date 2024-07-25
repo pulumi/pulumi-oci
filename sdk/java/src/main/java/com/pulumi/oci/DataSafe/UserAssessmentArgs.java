@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
 import java.util.Map;
@@ -94,6 +95,21 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    @Import(name="isAssessmentScheduled")
+    private @Nullable Output<Boolean> isAssessmentScheduled;
+
+    /**
+     * @return (Updatable) Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    public Optional<Output<Boolean>> isAssessmentScheduled() {
+        return Optional.ofNullable(this.isAssessmentScheduled);
+    }
+
+    /**
      * (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
      * 
      * Allowed version strings - &#34;v1&#34; v1&#39;s version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either &#39;*&#39; (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is &#39;*&#39;. When not, day of week must equal the given value &lt;day-of-month&gt; can be either &#39;*&#39; (without quotes or a number between 1 and 28) 5. No constraint introduced when it is &#39;*&#39;. When not, day of month must equal the given value
@@ -141,6 +157,7 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
         this.description = $.description;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isAssessmentScheduled = $.isAssessmentScheduled;
         this.schedule = $.schedule;
         this.targetId = $.targetId;
     }
@@ -266,6 +283,27 @@ public final class UserAssessmentArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder freeformTags(Map<String,Object> freeformTags) {
             return freeformTags(Output.of(freeformTags));
+        }
+
+        /**
+         * @param isAssessmentScheduled (Updatable) Indicates whether the assessment is scheduled to run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAssessmentScheduled(@Nullable Output<Boolean> isAssessmentScheduled) {
+            $.isAssessmentScheduled = isAssessmentScheduled;
+            return this;
+        }
+
+        /**
+         * @param isAssessmentScheduled (Updatable) Indicates whether the assessment is scheduled to run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            return isAssessmentScheduled(Output.of(isAssessmentScheduled));
         }
 
         /**

@@ -2918,8 +2918,8 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
         :param str reserved_count: (Updatable) The total number of instances that can be launched from the capacity configuration.
         :param 'ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs' cluster_config: (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
                
-               <<<<<<< HEAD
                If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
+        :param str cluster_placement_group_id: (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
         :param str fault_domain: (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
                
                To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
@@ -2969,7 +2969,6 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
         """
         (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
 
-        <<<<<<< HEAD
         If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
         """
         return pulumi.get(self, "cluster_config")
@@ -2977,6 +2976,9 @@ class ComputeCapacityReservationInstanceReservationConfig(dict):
     @property
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[str]:
+        """
+        (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+        """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @property
@@ -11071,8 +11073,8 @@ class InstancePoolPlacementConfiguration(dict):
                
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
-               <<<<<<< HEAD
                Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+        :param str primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param 'InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs' primary_vnic_subnets: (Updatable) Details about the IPv6 primary subnet.
         :param Sequence['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
@@ -11106,7 +11108,6 @@ class InstancePoolPlacementConfiguration(dict):
 
         To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
 
-        <<<<<<< HEAD
         Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         """
         return pulumi.get(self, "fault_domains")
@@ -11114,6 +11115,9 @@ class InstancePoolPlacementConfiguration(dict):
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[str]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        """
         return pulumi.get(self, "primary_subnet_id")
 
     @property
@@ -11162,8 +11166,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnets(dict):
                  is_assign_ipv6ip: Optional[bool] = None):
         """
         :param str subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               =======
-               Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         :param Sequence['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs'] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param bool is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
@@ -11178,8 +11180,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnets(dict):
     def subnet_id(self) -> str:
         """
         (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        =======
-        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         """
         return pulumi.get(self, "subnet_id")
 
@@ -19999,6 +19999,7 @@ class GetComputeCapacityReservationInstanceReservationConfigResult(dict):
                  used_count: str):
         """
         :param Sequence['GetComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_configs: The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        :param str cluster_placement_group_id: The OCID of the cluster placement group for this instance reservation capacity configuration.
         :param str fault_domain: The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         :param str instance_shape: The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param Sequence['GetComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs'] instance_shape_configs: The shape configuration requested when launching instances in a compute capacity reservation.
@@ -20024,6 +20025,9 @@ class GetComputeCapacityReservationInstanceReservationConfigResult(dict):
     @property
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> str:
+        """
+        The OCID of the cluster placement group for this instance reservation capacity configuration.
+        """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @property
@@ -20483,6 +20487,7 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
                  used_count: str):
         """
         :param Sequence['GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_configs: The HPC cluster configuration requested when launching instances in a compute capacity reservation.
+        :param str cluster_placement_group_id: The OCID of the cluster placement group for this instance reservation capacity configuration.
         :param str fault_domain: The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
         :param str instance_shape: The shape to use when launching instances using compute capacity reservations. The shape determines the number of CPUs, the amount of memory, and other resources allocated to the instance. You can list all available shapes by calling [ListComputeCapacityReservationInstanceShapes](https://docs.cloud.oracle.com/iaas/api/#/en/iaas/computeCapacityReservationInstanceShapes/ListComputeCapacityReservationInstanceShapes).
         :param Sequence['GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigInstanceShapeConfigArgs'] instance_shape_configs: The shape configuration requested when launching instances in a compute capacity reservation.
@@ -20508,6 +20513,9 @@ class GetComputeCapacityReservationsComputeCapacityReservationInstanceReservatio
     @property
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> str:
+        """
+        The OCID of the cluster placement group for this instance reservation capacity configuration.
+        """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @property
@@ -33963,6 +33971,7 @@ class GetInstancePoolPlacementConfigurationResult(dict):
         """
         :param str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         :param Sequence[str] fault_domains: The fault domains to place instances.
+        :param str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['GetInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param Sequence['GetInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
@@ -33991,6 +34000,9 @@ class GetInstancePoolPlacementConfigurationResult(dict):
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        """
         return pulumi.get(self, "primary_subnet_id")
 
     @property
@@ -34416,6 +34428,7 @@ class GetInstancePoolsInstancePoolPlacementConfigurationResult(dict):
         """
         :param str availability_domain: The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
         :param Sequence[str] fault_domains: The fault domains to place instances.
+        :param str primary_subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArgs'] primary_vnic_subnets: Details about the IPv6 primary subnet.
         :param Sequence['GetInstancePoolsInstancePoolPlacementConfigurationSecondaryVnicSubnetArgs'] secondary_vnic_subnets: The set of secondary VNIC data for instances in the pool.
         """
@@ -34444,6 +34457,9 @@ class GetInstancePoolsInstancePoolPlacementConfigurationResult(dict):
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        """
         return pulumi.get(self, "primary_subnet_id")
 
     @property

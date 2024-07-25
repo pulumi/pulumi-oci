@@ -24,7 +24,7 @@ type DatabaseInsightConnectionCredentialDetails struct {
 	Role *string `pulumi:"role"`
 	// database user name.
 	UserName *string `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
@@ -50,7 +50,7 @@ type DatabaseInsightConnectionCredentialDetailsArgs struct {
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
@@ -156,7 +156,7 @@ func (o DatabaseInsightConnectionCredentialDetailsOutput) UserName() pulumi.Stri
 	return o.ApplyT(func(v DatabaseInsightConnectionCredentialDetails) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 func (o DatabaseInsightConnectionCredentialDetailsOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseInsightConnectionCredentialDetails) *string { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }
@@ -235,7 +235,7 @@ func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) UserName() pulumi.S
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 func (o DatabaseInsightConnectionCredentialDetailsPtrOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseInsightConnectionCredentialDetails) *string {
 		if v == nil {
@@ -575,7 +575,7 @@ type DatabaseInsightCredentialDetails struct {
 	Role *string `pulumi:"role"`
 	// database user name.
 	UserName *string `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 	WalletSecretId *string `pulumi:"walletSecretId"`
 }
 
@@ -601,7 +601,7 @@ type DatabaseInsightCredentialDetailsArgs struct {
 	Role pulumi.StringPtrInput `pulumi:"role"`
 	// database user name.
 	UserName pulumi.StringPtrInput `pulumi:"userName"`
-	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 	WalletSecretId pulumi.StringPtrInput `pulumi:"walletSecretId"`
 }
 
@@ -707,7 +707,7 @@ func (o DatabaseInsightCredentialDetailsOutput) UserName() pulumi.StringPtrOutpu
 	return o.ApplyT(func(v DatabaseInsightCredentialDetails) *string { return v.UserName }).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 func (o DatabaseInsightCredentialDetailsOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v DatabaseInsightCredentialDetails) *string { return v.WalletSecretId }).(pulumi.StringPtrOutput)
 }
@@ -786,7 +786,7 @@ func (o DatabaseInsightCredentialDetailsPtrOutput) UserName() pulumi.StringPtrOu
 	}).(pulumi.StringPtrOutput)
 }
 
-// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
 func (o DatabaseInsightCredentialDetailsPtrOutput) WalletSecretId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *DatabaseInsightCredentialDetails) *string {
 		if v == nil {
@@ -936,7 +936,7 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetail struct {
 	CompartmentId *string `pulumi:"compartmentId"`
 	// Connection details of the private endpoints.
 	ConnectionDetails *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails `pulumi:"credentialDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId *string `pulumi:"databaseId"`
@@ -976,7 +976,7 @@ type ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs struct {
 	CompartmentId pulumi.StringPtrInput `pulumi:"compartmentId"`
 	// Connection details of the private endpoints.
 	ConnectionDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrInput `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrInput `pulumi:"credentialDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
 	DatabaseId pulumi.StringPtrInput `pulumi:"databaseId"`
@@ -1063,7 +1063,7 @@ func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) Connectio
 	}).(ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsPtrOutput)
 }
 
-// User credential details to connect to the database. This is supplied via the External Database Service.
+// User credential details to connect to the database.
 func (o ExadataInsightMemberVmClusterDetailMemberDatabaseDetailOutput) CredentialDetails() ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsPtrOutput {
 	return o.ApplyT(func(v ExadataInsightMemberVmClusterDetailMemberDatabaseDetail) *ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails {
 		return v.CredentialDetails
@@ -4765,11 +4765,11 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput) Index(i pulumi
 type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails []GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails string `pulumi:"databaseConnectionStatusDetails"`
@@ -4809,6 +4809,10 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
+	// Specifies if MYSQL DB System has heatwave cluster attached.
+	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
+	// Specifies if MYSQL DB System is highly available.
+	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// Unique Operations Insights PrivateEndpoint identifier
@@ -4847,11 +4851,11 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemInput interface {
 type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayInput `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayInput `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayInput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringInput `pulumi:"databaseConnectionStatusDetails"`
@@ -4891,6 +4895,10 @@ type GetDatabaseInsightsDatabaseInsightsCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
+	// Specifies if MYSQL DB System has heatwave cluster attached.
+	IsHeatWaveClusterAttached pulumi.BoolInput `pulumi:"isHeatWaveClusterAttached"`
+	// Specifies if MYSQL DB System is highly available.
+	IsHighlyAvailable pulumi.BoolInput `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
 	// Unique Operations Insights PrivateEndpoint identifier
@@ -4971,7 +4979,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) CompartmentId()
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// User credential details to connect to the database. This is supplied via the External Database Service.
+// User credential details to connect to the database.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ConnectionCredentialDetails() GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArrayOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) []GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail {
 		return v.ConnectionCredentialDetails
@@ -4985,7 +4993,7 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) ConnectionDetai
 	}).(GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArrayOutput)
 }
 
-// User credential details to connect to the database. This is supplied via the External Database Service.
+// User credential details to connect to the database.
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) CredentialDetails() GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArrayOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) []GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail {
 		return v.CredentialDetails
@@ -5096,6 +5104,16 @@ func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) FreeformTags() 
 // Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies if MYSQL DB System has heatwave cluster attached.
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
+}
+
+// Specifies if MYSQL DB System is highly available.
+func (o GetDatabaseInsightsDatabaseInsightsCollectionItemOutput) IsHighlyAvailable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDatabaseInsightsDatabaseInsightsCollectionItem) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
@@ -8398,7 +8416,7 @@ type GetHostInsightsHostInsightSummaryCollectionItem struct {
 	HostDisplayName string `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
 	HostType string `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id string `pulumi:"id"`
@@ -8466,7 +8484,7 @@ type GetHostInsightsHostInsightSummaryCollectionItemArgs struct {
 	HostDisplayName pulumi.StringInput `pulumi:"hostDisplayName"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName pulumi.StringInput `pulumi:"hostName"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
 	HostType pulumi.StringInput `pulumi:"hostType"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringInput `pulumi:"id"`
@@ -8619,7 +8637,7 @@ func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostName() pulumi
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
 func (o GetHostInsightsHostInsightSummaryCollectionItemOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetHostInsightsHostInsightSummaryCollectionItem) string { return v.HostType }).(pulumi.StringOutput)
 }
@@ -10490,7 +10508,7 @@ func (o GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCo
 }
 
 type GetOperationsInsightsWarehouseUsersFilter struct {
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name   string   `pulumi:"name"`
 	Regex  *bool    `pulumi:"regex"`
 	Values []string `pulumi:"values"`
@@ -10508,7 +10526,7 @@ type GetOperationsInsightsWarehouseUsersFilterInput interface {
 }
 
 type GetOperationsInsightsWarehouseUsersFilterArgs struct {
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name   pulumi.StringInput      `pulumi:"name"`
 	Regex  pulumi.BoolPtrInput     `pulumi:"regex"`
 	Values pulumi.StringArrayInput `pulumi:"values"`
@@ -10565,7 +10583,7 @@ func (o GetOperationsInsightsWarehouseUsersFilterOutput) ToGetOperationsInsights
 	return o
 }
 
-// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o GetOperationsInsightsWarehouseUsersFilterOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersFilter) string { return v.Name }).(pulumi.StringOutput)
 }
@@ -10697,7 +10715,7 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword string `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -10713,7 +10731,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 	IsOpsiDataAccess bool `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name string `pulumi:"name"`
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
@@ -10741,7 +10759,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
-	// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringInput `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
@@ -10757,7 +10775,7 @@ type GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCo
 	IsOpsiDataAccess pulumi.BoolInput `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name pulumi.StringInput `pulumi:"name"`
 	// Unique Operations Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringInput `pulumi:"operationsInsightsWarehouseId"`
@@ -10829,7 +10847,7 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	}).(pulumi.StringOutput)
 }
 
-// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) ConnectionPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
 		return v.ConnectionPassword
@@ -10885,7 +10903,7 @@ func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummar
 	}).(pulumi.StringOutput)
 }
 
-// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItemOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryCollectionItem) string {
 		return v.Name
@@ -11164,11 +11182,11 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	DynamicGroupId string `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Tenancy Identifier of Operations Insights service
+	// Tenancy Identifier of Ops Insights service
 	OperationsInsightsTenancyId string `pulumi:"operationsInsightsTenancyId"`
 	// Lifecycle states
 	State string `pulumi:"state"`
@@ -11180,7 +11198,7 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 	TimeLastWalletRotated string `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -11212,11 +11230,11 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	DynamicGroupId pulumi.StringInput `pulumi:"dynamicGroupId"`
 	// Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	Id pulumi.StringInput `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringInput `pulumi:"lifecycleDetails"`
-	// Tenancy Identifier of Operations Insights service
+	// Tenancy Identifier of Ops Insights service
 	OperationsInsightsTenancyId pulumi.StringInput `pulumi:"operationsInsightsTenancyId"`
 	// Lifecycle states
 	State pulumi.StringInput `pulumi:"state"`
@@ -11228,7 +11246,7 @@ type GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollection
 	SystemTags pulumi.MapInput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
-	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 	TimeLastWalletRotated pulumi.StringInput `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringInput `pulumi:"timeUpdated"`
@@ -11334,7 +11352,7 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	}).(pulumi.MapOutput)
 }
 
-// Unique Operations Insights Warehouse identifier
+// Unique Ops Insights Warehouse identifier
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
 		return v.Id
@@ -11348,7 +11366,7 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	}).(pulumi.StringOutput)
 }
 
-// Tenancy Identifier of Operations Insights service
+// Tenancy Identifier of Ops Insights service
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) OperationsInsightsTenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
 		return v.OperationsInsightsTenancyId
@@ -11390,7 +11408,7 @@ func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollect
 	}).(pulumi.StringOutput)
 }
 
-// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 func (o GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItemOutput) TimeLastWalletRotated() pulumi.StringOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectionItem) string {
 		return v.TimeLastWalletRotated

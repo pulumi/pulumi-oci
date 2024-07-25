@@ -122,7 +122,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// Specifies the format of report to be .xls or .pdf
+        /// Specifies the format of report to be .xls or .pdf or .json
         /// </summary>
         public readonly string MimeType;
         /// <summary>

@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +15,21 @@ import javax.annotation.Nullable;
 public final class UnsetUserAssessmentBaselineState extends com.pulumi.resources.ResourceArgs {
 
     public static final UnsetUserAssessmentBaselineState Empty = new UnsetUserAssessmentBaselineState();
+
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
+     */
+    @Import(name="targetIds")
+    private @Nullable Output<List<String>> targetIds;
+
+    /**
+     * @return The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
+     */
+    public Optional<Output<List<String>>> targetIds() {
+        return Optional.ofNullable(this.targetIds);
+    }
 
     /**
      * The OCID of the user assessment.
@@ -39,6 +55,7 @@ public final class UnsetUserAssessmentBaselineState extends com.pulumi.resources
     private UnsetUserAssessmentBaselineState() {}
 
     private UnsetUserAssessmentBaselineState(UnsetUserAssessmentBaselineState $) {
+        this.targetIds = $.targetIds;
         this.userAssessmentId = $.userAssessmentId;
     }
 
@@ -58,6 +75,37 @@ public final class UnsetUserAssessmentBaselineState extends com.pulumi.resources
 
         public Builder(UnsetUserAssessmentBaselineState defaults) {
             $ = new UnsetUserAssessmentBaselineState(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param targetIds The list of database target OCIDs for which the user intends to unset the baseline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(@Nullable Output<List<String>> targetIds) {
+            $.targetIds = targetIds;
+            return this;
+        }
+
+        /**
+         * @param targetIds The list of database target OCIDs for which the user intends to unset the baseline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(List<String> targetIds) {
+            return targetIds(Output.of(targetIds));
+        }
+
+        /**
+         * @param targetIds The list of database target OCIDs for which the user intends to unset the baseline.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
         }
 
         /**

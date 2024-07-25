@@ -202,7 +202,7 @@ class GetNewsReportResult:
     @pulumi.getter
     def status(self) -> str:
         """
-        Indicates the status of a news report in Operations Insights.
+        Indicates the status of a news report in Ops Insights.
         """
         return pulumi.get(self, "status")
 

@@ -19,14 +19,14 @@ public final class GetOperationsInsightsWarehouseUsersFilterArgs extends com.pul
     public static final GetOperationsInsightsWarehouseUsersFilterArgs Empty = new GetOperationsInsightsWarehouseUsersFilterArgs();
 
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public Output<String> name() {
@@ -74,7 +74,7 @@ public final class GetOperationsInsightsWarehouseUsersFilterArgs extends com.pul
         }
 
         /**
-         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 
@@ -85,7 +85,7 @@ public final class GetOperationsInsightsWarehouseUsersFilterArgs extends com.pul
         }
 
         /**
-         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 

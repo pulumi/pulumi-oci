@@ -77,6 +77,10 @@ export interface GetSecurityAssessmentResult {
      */
     readonly ignoredTargets: string[];
     /**
+     * Indicates whether the assessment is scheduled to run.
+     */
+    readonly isAssessmentScheduled: boolean;
+    /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      */
     readonly isBaseline: boolean;

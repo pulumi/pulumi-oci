@@ -18,6 +18,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ActionTaken;
         /// <summary>
+        /// Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=&lt;value&gt;) format.
+        /// </summary>
+        public readonly string ApplicationContexts;
+        /// <summary>
         /// The time that the audit event occurs in the target database.
         /// </summary>
         public readonly string AuditEventTime;
@@ -101,6 +105,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string ExtendedEventAttributes;
         /// <summary>
+        /// Fine-grained auditing (FGA) policy name that generated this audit record.
+        /// </summary>
+        public readonly string FgaPolicyName;
+        /// <summary>
         /// Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
@@ -169,6 +177,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
         private GetAuditEventsAuditEventCollectionItemResult(
             string actionTaken,
 
+            string applicationContexts,
+
             string auditEventTime,
 
             string auditLocation,
@@ -209,6 +219,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string extendedEventAttributes,
 
+            string fgaPolicyName,
+
             ImmutableDictionary<string, object> freeformTags,
 
             string id,
@@ -242,6 +254,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             string trailSource)
         {
             ActionTaken = actionTaken;
+            ApplicationContexts = applicationContexts;
             AuditEventTime = auditEventTime;
             AuditLocation = auditLocation;
             AuditPolicies = auditPolicies;
@@ -262,6 +275,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             ErrorMessage = errorMessage;
             EventName = eventName;
             ExtendedEventAttributes = extendedEventAttributes;
+            FgaPolicyName = fgaPolicyName;
             FreeformTags = freeformTags;
             Id = id;
             IsAlerted = isAlerted;

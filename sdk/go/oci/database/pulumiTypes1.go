@@ -4351,7 +4351,8 @@ type GetKeyStoresKeyStore struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoresKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId         string `pulumi:"compartmentId"`
+	ConfirmDetailsTrigger int    `pulumi:"confirmDetailsTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -4385,7 +4386,8 @@ type GetKeyStoresKeyStoreArgs struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases GetKeyStoresKeyStoreAssociatedDatabaseArrayInput `pulumi:"associatedDatabases"`
 	// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
-	CompartmentId pulumi.StringInput `pulumi:"compartmentId"`
+	CompartmentId         pulumi.StringInput `pulumi:"compartmentId"`
+	ConfirmDetailsTrigger pulumi.IntInput    `pulumi:"confirmDetailsTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -4463,6 +4465,10 @@ func (o GetKeyStoresKeyStoreOutput) AssociatedDatabases() GetKeyStoresKeyStoreAs
 // The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 func (o GetKeyStoresKeyStoreOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetKeyStoresKeyStore) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o GetKeyStoresKeyStoreOutput) ConfirmDetailsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v GetKeyStoresKeyStore) int { return v.ConfirmDetailsTrigger }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

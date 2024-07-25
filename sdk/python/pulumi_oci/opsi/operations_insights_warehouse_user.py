@@ -26,7 +26,7 @@ class OperationsInsightsWarehouseUserArgs:
         """
         The set of arguments for constructing a OperationsInsightsWarehouseUser resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
@@ -37,7 +37,7 @@ class OperationsInsightsWarehouseUserArgs:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
         :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "connection_password", connection_password)
@@ -70,7 +70,7 @@ class OperationsInsightsWarehouseUserArgs:
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> pulumi.Input[str]:
         """
-        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "connection_password")
 
@@ -158,7 +158,7 @@ class OperationsInsightsWarehouseUserArgs:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 
@@ -187,14 +187,14 @@ class _OperationsInsightsWarehouseUserState:
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseUser resources.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
         :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
         :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
                
@@ -250,7 +250,7 @@ class _OperationsInsightsWarehouseUserState:
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "connection_password")
 
@@ -334,7 +334,7 @@ class _OperationsInsightsWarehouseUserState:
     @pulumi.getter
     def name(self) -> Optional[pulumi.Input[str]]:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 
@@ -461,13 +461,13 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
         :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
         :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
                
@@ -605,14 +605,14 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[str] compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] connection_password: (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[bool] is_awr_data_access: (Updatable) Indicate whether user has access to AWR data.
         :param pulumi.Input[bool] is_em_data_access: (Updatable) Indicate whether user has access to EM data.
         :param pulumi.Input[bool] is_opsi_data_access: (Updatable) Indicate whether user has access to OPSI data.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param pulumi.Input[str] name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param pulumi.Input[str] operations_insights_warehouse_id: OPSI Warehouse OCID
                
                
@@ -655,7 +655,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> pulumi.Output[str]:
         """
-        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "connection_password")
 
@@ -711,7 +711,7 @@ class OperationsInsightsWarehouseUser(pulumi.CustomResource):
     @pulumi.getter
     def name(self) -> pulumi.Output[str]:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 

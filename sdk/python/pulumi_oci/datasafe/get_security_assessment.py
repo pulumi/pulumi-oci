@@ -22,7 +22,7 @@ class GetSecurityAssessmentResult:
     """
     A collection of values returned by getSecurityAssessment.
     """
-    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, link=None, schedule=None, schedule_security_assessment_id=None, security_assessment_id=None, state=None, statistics=None, system_tags=None, target_id=None, target_ids=None, target_version=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None):
+    def __init__(__self__, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, ignored_assessment_ids=None, ignored_targets=None, is_assessment_scheduled=None, is_baseline=None, is_deviated_from_baseline=None, last_compared_baseline_id=None, lifecycle_details=None, link=None, schedule=None, schedule_security_assessment_id=None, security_assessment_id=None, state=None, statistics=None, system_tags=None, target_id=None, target_ids=None, target_version=None, time_created=None, time_last_assessed=None, time_updated=None, triggered_by=None, type=None):
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -47,6 +47,9 @@ class GetSecurityAssessmentResult:
         if ignored_targets and not isinstance(ignored_targets, list):
             raise TypeError("Expected argument 'ignored_targets' to be a list")
         pulumi.set(__self__, "ignored_targets", ignored_targets)
+        if is_assessment_scheduled and not isinstance(is_assessment_scheduled, bool):
+            raise TypeError("Expected argument 'is_assessment_scheduled' to be a bool")
+        pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         if is_baseline and not isinstance(is_baseline, bool):
             raise TypeError("Expected argument 'is_baseline' to be a bool")
         pulumi.set(__self__, "is_baseline", is_baseline)
@@ -168,6 +171,14 @@ class GetSecurityAssessmentResult:
         List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         return pulumi.get(self, "ignored_targets")
+
+    @property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> bool:
+        """
+        Indicates whether the assessment is scheduled to run.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
 
     @property
     @pulumi.getter(name="isBaseline")
@@ -330,6 +341,7 @@ class AwaitableGetSecurityAssessmentResult(GetSecurityAssessmentResult):
             id=self.id,
             ignored_assessment_ids=self.ignored_assessment_ids,
             ignored_targets=self.ignored_targets,
+            is_assessment_scheduled=self.is_assessment_scheduled,
             is_baseline=self.is_baseline,
             is_deviated_from_baseline=self.is_deviated_from_baseline,
             last_compared_baseline_id=self.last_compared_baseline_id,
@@ -384,6 +396,7 @@ def get_security_assessment(security_assessment_id: Optional[str] = None,
         id=pulumi.get(__ret__, 'id'),
         ignored_assessment_ids=pulumi.get(__ret__, 'ignored_assessment_ids'),
         ignored_targets=pulumi.get(__ret__, 'ignored_targets'),
+        is_assessment_scheduled=pulumi.get(__ret__, 'is_assessment_scheduled'),
         is_baseline=pulumi.get(__ret__, 'is_baseline'),
         is_deviated_from_baseline=pulumi.get(__ret__, 'is_deviated_from_baseline'),
         last_compared_baseline_id=pulumi.get(__ret__, 'last_compared_baseline_id'),

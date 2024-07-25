@@ -22,6 +22,10 @@ namespace Pulumi.Oci.DataSafe.Outputs
         /// </summary>
         public readonly string Gdpr;
         /// <summary>
+        /// Relevant section from OBP.
+        /// </summary>
+        public readonly string Obp;
+        /// <summary>
         /// Relevant section from STIG.
         /// </summary>
         public readonly string Stig;
@@ -32,10 +36,13 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string gdpr,
 
+            string obp,
+
             string stig)
         {
             Cis = cis;
             Gdpr = gdpr;
+            Obp = obp;
             Stig = stig;
         }
     }

@@ -49,7 +49,7 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
      */
     private Map<String,Object> freeformTags;
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      */
     private String id;
@@ -59,7 +59,7 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
      */
     private String lifecycleDetails;
     /**
-     * @return Tenancy Identifier of Operations Insights service
+     * @return Tenancy Identifier of Ops Insights service
      * 
      */
     private String operationsInsightsTenancyId;
@@ -89,7 +89,7 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
      */
     private String timeCreated;
     /**
-     * @return The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * @return The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
     private String timeLastWalletRotated;
@@ -150,7 +150,7 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
         return this.freeformTags;
     }
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      */
     public String id() {
@@ -164,7 +164,7 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
         return this.lifecycleDetails;
     }
     /**
-     * @return Tenancy Identifier of Operations Insights service
+     * @return Tenancy Identifier of Ops Insights service
      * 
      */
     public String operationsInsightsTenancyId() {
@@ -206,7 +206,7 @@ public final class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSum
         return this.timeCreated;
     }
     /**
-     * @return The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * @return The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
     public String timeLastWalletRotated() {

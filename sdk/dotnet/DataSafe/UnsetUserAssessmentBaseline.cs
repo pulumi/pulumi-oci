@@ -12,7 +12,8 @@ namespace Pulumi.Oci.DataSafe
     /// <summary>
     /// This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
-    /// Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+    /// Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+    /// If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
     /// Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
     /// 
     /// ## Example Usage
@@ -28,6 +29,7 @@ namespace Pulumi.Oci.DataSafe
     ///     var testUnsetUserAssessmentBaseline = new Oci.DataSafe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", new()
     ///     {
     ///         UserAssessmentId = testUserAssessment.Id,
+    ///         TargetIds = unsetUserAssessmentBaselineTargetIds,
     ///     });
     /// 
     /// });
@@ -44,6 +46,12 @@ namespace Pulumi.Oci.DataSafe
     [OciResourceType("oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline")]
     public partial class UnsetUserAssessmentBaseline : global::Pulumi.CustomResource
     {
+        /// <summary>
+        /// The list of database target OCIDs for which the user intends to unset the baseline.
+        /// </summary>
+        [Output("targetIds")]
+        public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
+
         /// <summary>
         /// The OCID of the user assessment.
         /// 
@@ -100,6 +108,18 @@ namespace Pulumi.Oci.DataSafe
 
     public sealed class UnsetUserAssessmentBaselineArgs : global::Pulumi.ResourceArgs
     {
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+
+        /// <summary>
+        /// The list of database target OCIDs for which the user intends to unset the baseline.
+        /// </summary>
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
+        }
+
         /// <summary>
         /// The OCID of the user assessment.
         /// 
@@ -118,6 +138,18 @@ namespace Pulumi.Oci.DataSafe
 
     public sealed class UnsetUserAssessmentBaselineState : global::Pulumi.ResourceArgs
     {
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+
+        /// <summary>
+        /// The list of database target OCIDs for which the user intends to unset the baseline.
+        /// </summary>
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
+        }
+
         /// <summary>
         /// The OCID of the user assessment.
         /// 

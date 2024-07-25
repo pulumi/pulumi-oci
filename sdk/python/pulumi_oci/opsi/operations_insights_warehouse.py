@@ -24,7 +24,7 @@ class OperationsInsightsWarehouseArgs:
         The set of arguments for constructing a OperationsInsightsWarehouse resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
@@ -71,7 +71,7 @@ class OperationsInsightsWarehouseArgs:
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Input[str]:
         """
-        (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -145,11 +145,11 @@ class _OperationsInsightsWarehouseState:
         :param pulumi.Input[float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[float] cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[str] dynamic_group_id: OCID of the dynamic group created for the warehouse
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] operations_insights_tenancy_id: Tenancy Identifier of Operations Insights service
+        :param pulumi.Input[str] operations_insights_tenancy_id: Tenancy Identifier of Ops Insights service
         :param pulumi.Input[str] state: Possible lifecycle states
         :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
                
@@ -159,7 +159,7 @@ class _OperationsInsightsWarehouseState:
         :param pulumi.Input[float] storage_used_in_gbs: Storage by OPSI Warehouse ADW in GB.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
@@ -247,7 +247,7 @@ class _OperationsInsightsWarehouseState:
     @pulumi.getter(name="displayName")
     def display_name(self) -> Optional[pulumi.Input[str]]:
         """
-        (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -295,7 +295,7 @@ class _OperationsInsightsWarehouseState:
     @pulumi.getter(name="operationsInsightsTenancyId")
     def operations_insights_tenancy_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Tenancy Identifier of Operations Insights service
+        Tenancy Identifier of Ops Insights service
         """
         return pulumi.get(self, "operations_insights_tenancy_id")
 
@@ -371,7 +371,7 @@ class _OperationsInsightsWarehouseState:
     @pulumi.getter(name="timeLastWalletRotated")
     def time_last_wallet_rotated(self) -> Optional[pulumi.Input[str]]:
         """
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_last_wallet_rotated")
 
@@ -407,7 +407,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         """
         This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 
-        Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+        Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
         There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
         header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
 
@@ -443,7 +443,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         :param pulumi.Input[float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
                
@@ -460,7 +460,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         """
         This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 
-        Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+        Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
         There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
         header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
 
@@ -580,11 +580,11 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param pulumi.Input[float] cpu_allocated: (Updatable) Number of OCPUs allocated to OPSI Warehouse ADW.
         :param pulumi.Input[float] cpu_used: Number of OCPUs used by OPSI Warehouse ADW. Can be fractional.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
-        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        :param pulumi.Input[str] display_name: (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         :param pulumi.Input[str] dynamic_group_id: OCID of the dynamic group created for the warehouse
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param pulumi.Input[str] operations_insights_tenancy_id: Tenancy Identifier of Operations Insights service
+        :param pulumi.Input[str] operations_insights_tenancy_id: Tenancy Identifier of Ops Insights service
         :param pulumi.Input[str] state: Possible lifecycle states
         :param pulumi.Input[float] storage_allocated_in_gbs: (Updatable) Storage allocated to OPSI Warehouse ADW. 
                
@@ -594,7 +594,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
         :param pulumi.Input[float] storage_used_in_gbs: Storage by OPSI Warehouse ADW in GB.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param pulumi.Input[str] time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param pulumi.Input[str] time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -655,7 +655,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
     @pulumi.getter(name="displayName")
     def display_name(self) -> pulumi.Output[str]:
         """
-        (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -687,7 +687,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
     @pulumi.getter(name="operationsInsightsTenancyId")
     def operations_insights_tenancy_id(self) -> pulumi.Output[str]:
         """
-        Tenancy Identifier of Operations Insights service
+        Tenancy Identifier of Ops Insights service
         """
         return pulumi.get(self, "operations_insights_tenancy_id")
 
@@ -739,7 +739,7 @@ class OperationsInsightsWarehouse(pulumi.CustomResource):
     @pulumi.getter(name="timeLastWalletRotated")
     def time_last_wallet_rotated(self) -> pulumi.Output[str]:
         """
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_last_wallet_rotated")
 

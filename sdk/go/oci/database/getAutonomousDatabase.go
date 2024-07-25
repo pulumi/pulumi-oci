@@ -82,7 +82,8 @@ type LookupAutonomousDatabaseResult struct {
 	// Autonomous Database configuration details for storing [manual backups](https://docs.oracle.com/en/cloud/paas/autonomous-database/adbsa/backup-restore.html#GUID-9035DFB8-4702-4CEB-8281-C2A303820809) in the [Object Storage](https://docs.cloud.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) service.
 	BackupConfigs []GetAutonomousDatabaseBackupConfig `pulumi:"backupConfigs"`
 	// Retention period, in days, for backups.
-	BackupRetentionPeriodInDays int `pulumi:"backupRetentionPeriodInDays"`
+	BackupRetentionPeriodInDays int     `pulumi:"backupRetentionPeriodInDays"`
+	ByolComputeCountLimit       float64 `pulumi:"byolComputeCountLimit"`
 	// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
 	CharacterSet string `pulumi:"characterSet"`
 	CloneType    string `pulumi:"cloneType"`
@@ -266,6 +267,9 @@ type LookupAutonomousDatabaseResult struct {
 	State string `pulumi:"state"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 	SubnetId string `pulumi:"subnetId"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+	SubscriptionId string `pulumi:"subscriptionId"`
 	// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
 	SupportedRegionsToCloneTos []string `pulumi:"supportedRegionsToCloneTos"`
 	SwitchoverTo               string   `pulumi:"switchoverTo"`
@@ -421,6 +425,10 @@ func (o LookupAutonomousDatabaseResultOutput) BackupConfigs() GetAutonomousDatab
 // Retention period, in days, for backups.
 func (o LookupAutonomousDatabaseResultOutput) BackupRetentionPeriodInDays() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) int { return v.BackupRetentionPeriodInDays }).(pulumi.IntOutput)
+}
+
+func (o LookupAutonomousDatabaseResultOutput) ByolComputeCountLimit() pulumi.Float64Output {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) float64 { return v.ByolComputeCountLimit }).(pulumi.Float64Output)
 }
 
 // The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -899,6 +907,12 @@ func (o LookupAutonomousDatabaseResultOutput) State() pulumi.StringOutput {
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
 func (o LookupAutonomousDatabaseResultOutput) SubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+func (o LookupAutonomousDatabaseResultOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupAutonomousDatabaseResult) string { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.

@@ -85,14 +85,14 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
     }
 
     /**
-     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      * 
      */
     @Import(name="hostTypes")
     private @Nullable List<String> hostTypes;
 
     /**
-     * @return Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * @return Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      * 
      */
     public Optional<List<String>> hostTypes() {
@@ -230,7 +230,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          * 
          * @return builder
          * 
@@ -241,7 +241,7 @@ public final class GetHostInsightsPlainArgs extends com.pulumi.resources.InvokeA
         }
 
         /**
-         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          * 
          * @return builder
          * 

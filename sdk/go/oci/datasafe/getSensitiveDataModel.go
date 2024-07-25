@@ -89,6 +89,8 @@ type LookupSensitiveDataModelResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+	TablesForDiscoveries []GetSensitiveDataModelTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -212,6 +214,13 @@ func (o LookupSensitiveDataModelResultOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o LookupSensitiveDataModelResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v LookupSensitiveDataModelResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+func (o LookupSensitiveDataModelResultOutput) TablesForDiscoveries() GetSensitiveDataModelTablesForDiscoveryArrayOutput {
+	return o.ApplyT(func(v LookupSensitiveDataModelResult) []GetSensitiveDataModelTablesForDiscovery {
+		return v.TablesForDiscoveries
+	}).(GetSensitiveDataModelTablesForDiscoveryArrayOutput)
 }
 
 // The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.

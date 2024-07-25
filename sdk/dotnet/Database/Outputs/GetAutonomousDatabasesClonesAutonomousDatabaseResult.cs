@@ -57,6 +57,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// Retention period, in days, for backups.
         /// </summary>
         public readonly int BackupRetentionPeriodInDays;
+        public readonly double ByolComputeCountLimit;
         /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         /// </summary>
@@ -383,6 +384,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
         /// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         /// </summary>
         public readonly ImmutableArray<string> SupportedRegionsToCloneTos;
@@ -495,6 +500,8 @@ namespace Pulumi.Oci.Database.Outputs
             ImmutableArray<Outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult> backupConfigs,
 
             int backupRetentionPeriodInDays,
+
+            double byolComputeCountLimit,
 
             string characterSet,
 
@@ -656,6 +663,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string subnetId,
 
+            string subscriptionId,
+
             ImmutableArray<string> supportedRegionsToCloneTos,
 
             ImmutableDictionary<string, object> systemTags,
@@ -713,6 +722,7 @@ namespace Pulumi.Oci.Database.Outputs
             AvailableUpgradeVersions = availableUpgradeVersions;
             BackupConfigs = backupConfigs;
             BackupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            ByolComputeCountLimit = byolComputeCountLimit;
             CharacterSet = characterSet;
             CompartmentId = compartmentId;
             ComputeCount = computeCount;
@@ -793,6 +803,7 @@ namespace Pulumi.Oci.Database.Outputs
             StandbyWhitelistedIps = standbyWhitelistedIps;
             State = state;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             SupportedRegionsToCloneTos = supportedRegionsToCloneTos;
             SystemTags = systemTags;
             TimeCreated = timeCreated;

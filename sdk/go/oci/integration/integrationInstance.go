@@ -105,10 +105,8 @@ type IntegrationInstance struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId pulumi.StringPtrOutput `pulumi:"domainId"`
-	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-	// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-	EnableProcessAutomationTrigger pulumi.IntPtrOutput `pulumi:"enableProcessAutomationTrigger"`
+	DomainId                       pulumi.StringPtrOutput `pulumi:"domainId"`
+	EnableProcessAutomationTrigger pulumi.IntPtrOutput    `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -132,7 +130,6 @@ type IntegrationInstance struct {
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections IntegrationInstancePrivateEndpointOutboundConnectionArrayOutput `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape pulumi.StringOutput `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	//
@@ -214,10 +211,8 @@ type integrationInstanceState struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName *string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId *string `pulumi:"domainId"`
-	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-	// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
+	DomainId                       *string `pulumi:"domainId"`
+	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -241,7 +236,6 @@ type integrationInstanceState struct {
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []IntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape *string `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	//
@@ -272,9 +266,7 @@ type IntegrationInstanceState struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringPtrInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId pulumi.StringPtrInput
-	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-	// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
+	DomainId                       pulumi.StringPtrInput
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -299,7 +291,6 @@ type IntegrationInstanceState struct {
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections IntegrationInstancePrivateEndpointOutboundConnectionArrayInput
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape pulumi.StringPtrInput
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	//
@@ -332,10 +323,8 @@ type integrationInstanceArgs struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName string `pulumi:"displayName"`
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId *string `pulumi:"domainId"`
-	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-	// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-	EnableProcessAutomationTrigger *int `pulumi:"enableProcessAutomationTrigger"`
+	DomainId                       *string `pulumi:"domainId"`
+	EnableProcessAutomationTrigger *int    `pulumi:"enableProcessAutomationTrigger"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
@@ -353,7 +342,6 @@ type integrationInstanceArgs struct {
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails *IntegrationInstanceNetworkEndpointDetails `pulumi:"networkEndpointDetails"`
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape *string `pulumi:"shape"`
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	//
@@ -377,9 +365,7 @@ type IntegrationInstanceArgs struct {
 	// (Updatable) Integration Instance Identifier.
 	DisplayName pulumi.StringInput
 	// The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-	DomainId pulumi.StringPtrInput
-	// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-	// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
+	DomainId                       pulumi.StringPtrInput
 	EnableProcessAutomationTrigger pulumi.IntPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -398,7 +384,6 @@ type IntegrationInstanceArgs struct {
 	// Base representation of a network endpoint.
 	NetworkEndpointDetails IntegrationInstanceNetworkEndpointDetailsPtrInput
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape pulumi.StringPtrInput
 	// (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
 	//
@@ -536,8 +521,6 @@ func (o IntegrationInstanceOutput) DomainId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringPtrOutput { return v.DomainId }).(pulumi.StringPtrOutput)
 }
 
-// (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-// ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 func (o IntegrationInstanceOutput) EnableProcessAutomationTrigger() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.IntPtrOutput { return v.EnableProcessAutomationTrigger }).(pulumi.IntPtrOutput)
 }
@@ -602,7 +585,6 @@ func (o IntegrationInstanceOutput) PrivateEndpointOutboundConnections() Integrat
 }
 
 // Shape
-// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 func (o IntegrationInstanceOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v *IntegrationInstance) pulumi.StringOutput { return v.Shape }).(pulumi.StringOutput)
 }

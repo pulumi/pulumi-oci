@@ -65,7 +65,7 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Opsi/operationsInsightsWarehouseRotateWarehouseWallet:OperationsInsightsWarehouseRotateWarehouseWallet")
 public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi.resources.CustomResource {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -75,7 +75,7 @@ public class OperationsInsightsWarehouseRotateWarehouseWallet extends com.pulumi
     private Output<String> operationsInsightsWarehouseId;
 
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

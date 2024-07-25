@@ -122,7 +122,7 @@ def get_enterprise_manager_bridges(compartment_id: Optional[str] = None,
     """
     This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
 
-    Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+    Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
     When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
 
     ## Example Usage
@@ -176,7 +176,7 @@ def get_enterprise_manager_bridges_output(compartment_id: Optional[pulumi.Input[
     """
     This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
 
-    Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+    Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
     When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
 
     ## Example Usage

@@ -85,7 +85,7 @@ type GetOperationsInsightsPrivateEndpointsResult struct {
 	Filters     []GetOperationsInsightsPrivateEndpointsFilter `pulumi:"filters"`
 	// The provider-assigned unique ID for this managed resource.
 	Id string `pulumi:"id"`
-	// The flag is to identify if private endpoint is used for rac database or not
+	// The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
 	IsUsedForRacDbs *bool `pulumi:"isUsedForRacDbs"`
 	// The list of operations_insights_private_endpoint_collection.
 	OperationsInsightsPrivateEndpointCollections []GetOperationsInsightsPrivateEndpointsOperationsInsightsPrivateEndpointCollection `pulumi:"operationsInsightsPrivateEndpointCollections"`
@@ -172,7 +172,7 @@ func (o GetOperationsInsightsPrivateEndpointsResultOutput) Id() pulumi.StringOut
 	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// The flag is to identify if private endpoint is used for rac database or not
+// The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
 func (o GetOperationsInsightsPrivateEndpointsResultOutput) IsUsedForRacDbs() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v GetOperationsInsightsPrivateEndpointsResult) *bool { return v.IsUsedForRacDbs }).(pulumi.BoolPtrOutput)
 }

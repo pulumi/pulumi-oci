@@ -57,11 +57,39 @@ import (
 //							FileName: pulumi.Any(monitorConfigurationClientCertificateDetailsPrivateKeyFileName),
 //						},
 //					},
-//					ConfigType: pulumi.Any(monitorConfigurationConfigType),
+//					ConfigType:       pulumi.Any(monitorConfigurationConfigType),
+//					ConnectionString: pulumi.Any(monitorConfigurationConnectionString),
+//					DatabaseAuthenticationDetails: &apmsynthetics.ConfigConfigurationDatabaseAuthenticationDetailsArgs{
+//						Password: &apmsynthetics.ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs{
+//							Password:      pulumi.Any(monitorConfigurationDatabaseAuthenticationDetailsPasswordPassword),
+//							PasswordType:  pulumi.Any(monitorConfigurationDatabaseAuthenticationDetailsPasswordPasswordType),
+//							VaultSecretId: pulumi.Any(testSecret.Id),
+//						},
+//						Username: pulumi.Any(monitorConfigurationDatabaseAuthenticationDetailsUsername),
+//					},
+//					DatabaseConnectionType: pulumi.Any(monitorConfigurationDatabaseConnectionType),
+//					DatabaseRole:           pulumi.Any(monitorConfigurationDatabaseRole),
+//					DatabaseType:           pulumi.Any(monitorConfigurationDatabaseType),
+//					DatabaseWalletDetails: &apmsynthetics.ConfigConfigurationDatabaseWalletDetailsArgs{
+//						DatabaseWallet: pulumi.Any(monitorConfigurationDatabaseWalletDetailsDatabaseWallet),
+//						ServiceName:    pulumi.Any(testService.Name),
+//					},
 //					DnsConfiguration: &apmsynthetics.ConfigConfigurationDnsConfigurationArgs{
 //						IsOverrideDns: pulumi.Any(monitorConfigurationDnsConfigurationIsOverrideDns),
 //						OverrideDnsIp: pulumi.Any(monitorConfigurationDnsConfigurationOverrideDnsIp),
 //					},
+//					DownloadSizeLimitInBytes: pulumi.Any(monitorConfigurationDownloadSizeLimitInBytes),
+//					FtpBasicAuthenticationDetails: &apmsynthetics.ConfigConfigurationFtpBasicAuthenticationDetailsArgs{
+//						Password: &apmsynthetics.ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs{
+//							Password:      pulumi.Any(monitorConfigurationFtpBasicAuthenticationDetailsPasswordPassword),
+//							PasswordType:  pulumi.Any(monitorConfigurationFtpBasicAuthenticationDetailsPasswordPasswordType),
+//							VaultSecretId: pulumi.Any(testSecret.Id),
+//						},
+//						Username: pulumi.Any(monitorConfigurationFtpBasicAuthenticationDetailsUsername),
+//					},
+//					FtpProtocol:                    pulumi.Any(monitorConfigurationFtpProtocol),
+//					FtpRequestType:                 pulumi.Any(monitorConfigurationFtpRequestType),
+//					IsActiveMode:                   pulumi.Any(monitorConfigurationIsActiveMode),
 //					IsCertificateValidationEnabled: pulumi.Any(monitorConfigurationIsCertificateValidationEnabled),
 //					IsDefaultSnapshotEnabled:       pulumi.Any(monitorConfigurationIsDefaultSnapshotEnabled),
 //					IsFailureRetried:               pulumi.Any(monitorConfigurationIsFailureRetried),
@@ -76,6 +104,7 @@ import (
 //						TransmissionRate: pulumi.Any(monitorConfigurationNetworkConfigurationTransmissionRate),
 //					},
 //					Protocol:   pulumi.Any(monitorConfigurationProtocol),
+//					Query:      pulumi.Any(monitorConfigurationQuery),
 //					RecordType: pulumi.Any(monitorConfigurationRecordType),
 //					ReqAuthenticationDetails: &apmsynthetics.ConfigConfigurationReqAuthenticationDetailsArgs{
 //						AuthHeaders: apmsynthetics.ConfigConfigurationReqAuthenticationDetailsAuthHeaderArray{
@@ -107,6 +136,7 @@ import (
 //							ParamValue: pulumi.Any(monitorConfigurationRequestQueryParamsParamValue),
 //						},
 //					},
+//					UploadFileSizeInBytes: pulumi.Any(monitorConfigurationUploadFileSizeInBytes),
 //					VerifyResponseCodes:   pulumi.Any(monitorConfigurationVerifyResponseCodes),
 //					VerifyResponseContent: pulumi.Any(monitorConfigurationVerifyResponseContent),
 //					VerifyTexts: apmsynthetics.ConfigConfigurationVerifyTextArray{
@@ -121,6 +151,7 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"bar-key": pulumi.Any("value"),
 //				},
+//				IsIpv6:    pulumi.Any(monitorIsIpv6),
 //				IsRunNow:  pulumi.Any(monitorIsRunNow),
 //				IsRunOnce: pulumi.Any(monitorIsRunOnce),
 //				MaintenanceWindowSchedule: &apmsynthetics.ConfigMaintenanceWindowScheduleArgs{
@@ -166,16 +197,22 @@ type Config struct {
 	BatchIntervalInSeconds pulumi.IntOutput `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationOutput `pulumi:"configuration"`
+	// Name of the user that created the monitor.
+	CreatedBy pulumi.StringOutput `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 pulumi.BoolOutput `pulumi:"isIpv6"`
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolOutput `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolOutput `pulumi:"isRunOnce"`
+	// Name of the user that recently updated the monitor.
+	LastUpdatedBy pulumi.StringOutput `pulumi:"lastUpdatedBy"`
 	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule ConfigMaintenanceWindowScheduleOutput `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
@@ -192,7 +229,7 @@ type Config struct {
 	ScriptParameters ConfigScriptParameterArrayOutput `pulumi:"scriptParameters"`
 	// (Updatable) Enables or disables the monitor.
 	Status pulumi.StringOutput `pulumi:"status"`
-	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target pulumi.StringOutput `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
@@ -262,16 +299,22 @@ type configState struct {
 	BatchIntervalInSeconds *int `pulumi:"batchIntervalInSeconds"`
 	// (Updatable) Details of monitor configuration.
 	Configuration *ConfigConfiguration `pulumi:"configuration"`
+	// Name of the user that created the monitor.
+	CreatedBy *string `pulumi:"createdBy"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 *bool `pulumi:"isIpv6"`
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce *bool `pulumi:"isRunOnce"`
+	// Name of the user that recently updated the monitor.
+	LastUpdatedBy *string `pulumi:"lastUpdatedBy"`
 	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule *ConfigMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedule"`
 	// Type of monitor.
@@ -288,7 +331,7 @@ type configState struct {
 	ScriptParameters []ConfigScriptParameter `pulumi:"scriptParameters"`
 	// (Updatable) Enables or disables the monitor.
 	Status *string `pulumi:"status"`
-	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target *string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated *string `pulumi:"timeCreated"`
@@ -314,16 +357,22 @@ type ConfigState struct {
 	BatchIntervalInSeconds pulumi.IntPtrInput
 	// (Updatable) Details of monitor configuration.
 	Configuration ConfigConfigurationPtrInput
+	// Name of the user that created the monitor.
+	CreatedBy pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
 	// (Updatable) Unique name that can be edited. The name should not contain any confidential information.
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 pulumi.BoolPtrInput
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolPtrInput
+	// Name of the user that recently updated the monitor.
+	LastUpdatedBy pulumi.StringPtrInput
 	// (Updatable) Details required to schedule maintenance window.
 	MaintenanceWindowSchedule ConfigMaintenanceWindowSchedulePtrInput
 	// Type of monitor.
@@ -340,7 +389,7 @@ type ConfigState struct {
 	ScriptParameters ConfigScriptParameterArrayInput
 	// (Updatable) Enables or disables the monitor.
 	Status pulumi.StringPtrInput
-	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target pulumi.StringPtrInput
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringPtrInput
@@ -376,6 +425,8 @@ type configArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 *bool `pulumi:"isIpv6"`
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow *bool `pulumi:"isRunNow"`
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -396,7 +447,7 @@ type configArgs struct {
 	ScriptParameters []ConfigScriptParameter `pulumi:"scriptParameters"`
 	// (Updatable) Enables or disables the monitor.
 	Status *string `pulumi:"status"`
-	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target *string `pulumi:"target"`
 	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds *int `pulumi:"timeoutInSeconds"`
@@ -423,6 +474,8 @@ type ConfigArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 pulumi.BoolPtrInput
 	// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolPtrInput
 	// (Updatable) If runOnce is enabled, then the monitor will run once.
@@ -443,7 +496,7 @@ type ConfigArgs struct {
 	ScriptParameters ConfigScriptParameterArrayInput
 	// (Updatable) Enables or disables the monitor.
 	Status pulumi.StringPtrInput
-	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target pulumi.StringPtrInput
 	// (Updatable) Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
 	TimeoutInSeconds pulumi.IntPtrInput
@@ -561,6 +614,11 @@ func (o ConfigOutput) Configuration() ConfigConfigurationOutput {
 	return o.ApplyT(func(v *Config) ConfigConfigurationOutput { return v.Configuration }).(ConfigConfigurationOutput)
 }
 
+// Name of the user that created the monitor.
+func (o ConfigOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o ConfigOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
@@ -576,6 +634,11 @@ func (o ConfigOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Config) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+func (o ConfigOutput) IsIpv6() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsIpv6 }).(pulumi.BoolOutput)
+}
+
 // (Updatable) If isRunNow is enabled, then the monitor will run immediately.
 func (o ConfigOutput) IsRunNow() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsRunNow }).(pulumi.BoolOutput)
@@ -584,6 +647,11 @@ func (o ConfigOutput) IsRunNow() pulumi.BoolOutput {
 // (Updatable) If runOnce is enabled, then the monitor will run once.
 func (o ConfigOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Config) pulumi.BoolOutput { return v.IsRunOnce }).(pulumi.BoolOutput)
+}
+
+// Name of the user that recently updated the monitor.
+func (o ConfigOutput) LastUpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.LastUpdatedBy }).(pulumi.StringOutput)
 }
 
 // (Updatable) Details required to schedule maintenance window.
@@ -626,7 +694,7 @@ func (o ConfigOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Status }).(pulumi.StringOutput)
 }
 
-// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 func (o ConfigOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v *Config) pulumi.StringOutput { return v.Target }).(pulumi.StringOutput)
 }

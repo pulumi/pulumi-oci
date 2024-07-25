@@ -175,9 +175,6 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="storageCount")
     private @Nullable Output<Integer> storageCount;
@@ -185,12 +182,30 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
     /**
      * @return (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      * 
+     */
+    public Optional<Output<Integer>> storageCount() {
+        return Optional.ofNullable(this.storageCount);
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<Integer>> storageCount() {
-        return Optional.ofNullable(this.storageCount);
+    @Import(name="subscriptionId")
+    private @Nullable Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<String>> subscriptionId() {
+        return Optional.ofNullable(this.subscriptionId);
     }
 
     private CloudExadataInfrastructureArgs() {}
@@ -207,6 +222,7 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
         this.maintenanceWindow = $.maintenanceWindow;
         this.shape = $.shape;
         this.storageCount = $.storageCount;
+        this.subscriptionId = $.subscriptionId;
     }
 
     public static Builder builder() {
@@ -450,9 +466,6 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
         /**
          * @param storageCount (Updatable) The number of storage servers for the cloud Exadata infrastructure.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -464,14 +477,38 @@ public final class CloudExadataInfrastructureArgs extends com.pulumi.resources.R
         /**
          * @param storageCount (Updatable) The number of storage servers for the cloud Exadata infrastructure.
          * 
+         * @return builder
+         * 
+         */
+        public Builder storageCount(Integer storageCount) {
+            return storageCount(Output.of(storageCount));
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder storageCount(Integer storageCount) {
-            return storageCount(Output.of(storageCount));
+        public Builder subscriptionId(@Nullable Output<String> subscriptionId) {
+            $.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
+         * @param subscriptionId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            return subscriptionId(Output.of(subscriptionId));
         }
 
         public CloudExadataInfrastructureArgs build() {

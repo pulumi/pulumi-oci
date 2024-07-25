@@ -22,7 +22,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails? ConnectionDetails;
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         public readonly Outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails? CredentialDetails;
         /// <summary>

@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult> ConnectionCredentialDetails;
         /// <summary>
@@ -26,7 +26,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailResult> ConnectionDetails;
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult> CredentialDetails;
         /// <summary>
@@ -103,6 +103,14 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Specifies if MYSQL DB System has heatwave cluster attached.
+        /// </summary>
+        public readonly bool IsHeatWaveClusterAttached;
+        /// <summary>
+        /// Specifies if MYSQL DB System is highly available.
+        /// </summary>
+        public readonly bool IsHighlyAvailable;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -198,6 +206,10 @@ namespace Pulumi.Oci.Opsi.Outputs
 
             string id,
 
+            bool isHeatWaveClusterAttached,
+
+            bool isHighlyAvailable,
+
             string lifecycleDetails,
 
             string opsiPrivateEndpointId,
@@ -244,6 +256,8 @@ namespace Pulumi.Oci.Opsi.Outputs
             ExadataInsightId = exadataInsightId;
             FreeformTags = freeformTags;
             Id = id;
+            IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            IsHighlyAvailable = isHighlyAvailable;
             LifecycleDetails = lifecycleDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             ParentId = parentId;

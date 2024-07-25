@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string State;
         /// <summary>
-        /// Indicates the status of a news report in Operations Insights.
+        /// Indicates the status of a news report in Ops Insights.
         /// </summary>
         public readonly string Status;
         /// <summary>

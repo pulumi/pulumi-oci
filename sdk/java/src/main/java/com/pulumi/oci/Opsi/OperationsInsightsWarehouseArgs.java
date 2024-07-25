@@ -65,14 +65,14 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
     }
 
     /**
-     * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     @Import(name="displayName", required=true)
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * @return (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     public Output<String> displayName() {
@@ -208,7 +208,7 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * @param displayName (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
          * 
          * @return builder
          * 
@@ -219,7 +219,7 @@ public final class OperationsInsightsWarehouseArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * @param displayName (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
          * 
          * @return builder
          * 

@@ -6,6 +6,7 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -20,6 +21,11 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
      * 
      */
     private String name;
+    /**
+     * @return List of workers running the assigned monitor.
+     * 
+     */
+    private List<String> workerLists;
 
     private GetMonitorsMonitorCollectionItemVantagePoint() {}
     /**
@@ -36,6 +42,13 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
     public String name() {
         return this.name;
     }
+    /**
+     * @return List of workers running the assigned monitor.
+     * 
+     */
+    public List<String> workerLists() {
+        return this.workerLists;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -48,11 +61,13 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
     public static final class Builder {
         private String displayName;
         private String name;
+        private List<String> workerLists;
         public Builder() {}
         public Builder(GetMonitorsMonitorCollectionItemVantagePoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.name = defaults.name;
+    	      this.workerLists = defaults.workerLists;
         }
 
         @CustomType.Setter
@@ -71,10 +86,22 @@ public final class GetMonitorsMonitorCollectionItemVantagePoint {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
+        public Builder workerLists(List<String> workerLists) {
+            if (workerLists == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemVantagePoint", "workerLists");
+            }
+            this.workerLists = workerLists;
+            return this;
+        }
+        public Builder workerLists(String... workerLists) {
+            return workerLists(List.of(workerLists));
+        }
         public GetMonitorsMonitorCollectionItemVantagePoint build() {
             final var _resultValue = new GetMonitorsMonitorCollectionItemVantagePoint();
             _resultValue.displayName = displayName;
             _resultValue.name = name;
+            _resultValue.workerLists = workerLists;
             return _resultValue;
         }
     }

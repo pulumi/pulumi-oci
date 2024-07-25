@@ -23,7 +23,6 @@ namespace Pulumi.Oci.Integration.Outputs
         public readonly ImmutableArray<Outputs.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> AllowlistedHttpVcns;
         /// <summary>
         /// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// </summary>
         public readonly bool? IsIntegrationVcnAllowlisted;
         /// <summary>

@@ -348,14 +348,14 @@ public class ReportDefinition extends com.pulumi.resources.CustomResource {
         return this.scheduledReportCompartmentId;
     }
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      * 
      */
     @Export(name="scheduledReportMimeType", refs={String.class}, tree="[0]")
     private Output<String> scheduledReportMimeType;
 
     /**
-     * @return Specifies the format of the report ( either .xls or .pdf )
+     * @return Specifies the format of the report ( either .xls or .pdf or .json)
      * 
      */
     public Output<String> scheduledReportMimeType() {

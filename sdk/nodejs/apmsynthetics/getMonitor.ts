@@ -64,6 +64,10 @@ export interface GetMonitorResult {
      */
     readonly configurations: outputs.ApmSynthetics.GetMonitorConfiguration[];
     /**
+     * Name of the user that created the monitor.
+     */
+    readonly createdBy: string;
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
      */
     readonly definedTags: {[key: string]: any};
@@ -80,6 +84,10 @@ export interface GetMonitorResult {
      */
     readonly id: string;
     /**
+     * If enabled, domain name will resolve to an IPv6 address.
+     */
+    readonly isIpv6: boolean;
+    /**
      * If isRunNow is enabled, then the monitor will run immediately.
      */
     readonly isRunNow: boolean;
@@ -87,6 +95,10 @@ export interface GetMonitorResult {
      * If runOnce is enabled, then the monitor will run once.
      */
     readonly isRunOnce: boolean;
+    /**
+     * Name of the user that recently updated the monitor.
+     */
+    readonly lastUpdatedBy: string;
     /**
      * Details required to schedule maintenance window.
      */
@@ -121,7 +133,7 @@ export interface GetMonitorResult {
      */
     readonly status: string;
     /**
-     * Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      */
     readonly target: string;
     /**
@@ -141,7 +153,7 @@ export interface GetMonitorResult {
      */
     readonly vantagePointCount: number;
     /**
-     * List of public and dedicated vantage points where the monitor is running.
+     * List of public, dedicated and onPremise vantage points where the monitor is running.
      */
     readonly vantagePoints: outputs.ApmSynthetics.GetMonitorVantagePoint[];
 }

@@ -39,7 +39,7 @@ public final class GetHostInsightsResult {
      */
     private List<GetHostInsightsHostInsightSummaryCollection> hostInsightSummaryCollections;
     /**
-     * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * @return Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     private @Nullable List<String> hostTypes;
@@ -95,7 +95,7 @@ public final class GetHostInsightsResult {
         return this.hostInsightSummaryCollections;
     }
     /**
-     * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * @return Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     public List<String> hostTypes() {

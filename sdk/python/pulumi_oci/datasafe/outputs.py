@@ -22,6 +22,7 @@ __all__ = [
     'DatabaseSecurityConfigManagementSqlFirewallConfig',
     'DatabaseSecurityConfigSqlFirewallConfig',
     'DiscoveryJobsResultModifiedAttribute',
+    'DiscoveryModTablesForDiscovery',
     'LibraryMasingFormatFormatEntry',
     'MaskingPoliciesMaskingColumnMaskingFormat',
     'MaskingPoliciesMaskingColumnMaskingFormatFormatEntry',
@@ -38,6 +39,7 @@ __all__ = [
     'SecurityAssessmentStatisticLowRisk',
     'SecurityAssessmentStatisticMediumRisk',
     'SecurityAssessmentStatisticPass',
+    'SensitiveDataModelTablesForDiscovery',
     'TargetDatabaseConnectionOption',
     'TargetDatabaseCredentials',
     'TargetDatabaseDatabaseDetails',
@@ -115,6 +117,7 @@ __all__ = [
     'GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemResult',
     'GetDiscoveryAnalyticsDiscoveryAnalyticsCollectionItemDimensionResult',
     'GetDiscoveryAnalyticsFilterResult',
+    'GetDiscoveryJobTablesForDiscoveryResult',
     'GetDiscoveryJobsResultModifiedAttributeResult',
     'GetDiscoveryJobsResultsDiscoveryJobResultCollectionResult',
     'GetDiscoveryJobsResultsDiscoveryJobResultCollectionItemResult',
@@ -289,12 +292,17 @@ __all__ = [
     'GetSensitiveDataModelSensitiveSchemasFilterResult',
     'GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionResult',
     'GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult',
+    'GetSensitiveDataModelSensitiveTypesFilterResult',
+    'GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionResult',
+    'GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionItemResult',
+    'GetSensitiveDataModelTablesForDiscoveryResult',
     'GetSensitiveDataModelsFilterResult',
     'GetSensitiveDataModelsSensitiveColumnsFilterResult',
     'GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionResult',
     'GetSensitiveDataModelsSensitiveColumnsSensitiveColumnCollectionItemResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionResult',
     'GetSensitiveDataModelsSensitiveDataModelCollectionItemResult',
+    'GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult',
     'GetSensitiveTypesFilterResult',
     'GetSensitiveTypesSensitiveTypeCollectionResult',
     'GetSensitiveTypesSensitiveTypeCollectionItemResult',
@@ -729,6 +737,7 @@ class AuditPolicyManagementAuditCondition(dict):
         :param str audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         :param Sequence['AuditPolicyManagementAuditConditionEnableConditionArgs'] enable_conditions: Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
         :param bool is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+        :param bool is_enabled: Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         :param bool is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
                
                
@@ -773,6 +782,9 @@ class AuditPolicyManagementAuditCondition(dict):
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[bool]:
+        """
+        Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+        """
         return pulumi.get(self, "is_enabled")
 
     @property
@@ -1638,6 +1650,63 @@ class DiscoveryJobsResultModifiedAttribute(dict):
         Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
         """
         return pulumi.get(self, "db_defined_child_column_keys")
+
+
+@pulumi.output_type
+class DiscoveryModTablesForDiscovery(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "schemaName":
+            suggest = "schema_name"
+        elif key == "tableNames":
+            suggest = "table_names"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DiscoveryModTablesForDiscovery. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DiscoveryModTablesForDiscovery.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DiscoveryModTablesForDiscovery.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 schema_name: str,
+                 table_names: Optional[Sequence[str]] = None):
+        """
+        :param str schema_name: This contains the name of the schema.
+        :param Sequence[str] table_names: This contains an optional list of the table names.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        if table_names is not None:
+            pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Optional[Sequence[str]]:
+        """
+        This contains an optional list of the table names.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "table_names")
 
 
 @pulumi.output_type
@@ -3880,6 +3949,55 @@ class SecurityAssessmentStatisticPass(dict):
         The number of findings in the User Accounts category.
         """
         return pulumi.get(self, "user_accounts_findings_count")
+
+
+@pulumi.output_type
+class SensitiveDataModelTablesForDiscovery(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "schemaName":
+            suggest = "schema_name"
+        elif key == "tableNames":
+            suggest = "table_names"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in SensitiveDataModelTablesForDiscovery. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        SensitiveDataModelTablesForDiscovery.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        SensitiveDataModelTablesForDiscovery.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 schema_name: str,
+                 table_names: Optional[Sequence[str]] = None):
+        """
+        :param str schema_name: (Updatable) This contains the name of the schema.
+        :param Sequence[str] table_names: (Updatable) This contains an optional list of the table names.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        if table_names is not None:
+            pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        (Updatable) This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Optional[Sequence[str]]:
+        """
+        (Updatable) This contains an optional list of the table names.
+        """
+        return pulumi.get(self, "table_names")
 
 
 @pulumi.output_type
@@ -6717,6 +6835,7 @@ class GetAuditEventsAuditEventCollectionResult(dict):
 class GetAuditEventsAuditEventCollectionItemResult(dict):
     def __init__(__self__, *,
                  action_taken: str,
+                 application_contexts: str,
                  audit_event_time: str,
                  audit_location: str,
                  audit_policies: str,
@@ -6737,6 +6856,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                  error_message: str,
                  event_name: str,
                  extended_event_attributes: str,
+                 fga_policy_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
                  is_alerted: bool,
@@ -6755,6 +6875,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
                  trail_source: str):
         """
         :param str action_taken: The action taken for this audit event.
+        :param str application_contexts: Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
         :param str audit_event_time: The time that the audit event occurs in the target database.
         :param str audit_location: The location of the audit. Currently the value is audit table.
         :param str audit_policies: Comma-seperated list of audit policies that caused the current audit event.
@@ -6778,6 +6899,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str error_message: The detailed message on why the error occurred.
         :param str event_name: The name of the detail action executed by the user on the target database. For example ALTER SEQUENCE, CREATE TRIGGER or CREATE INDEX.
         :param str extended_event_attributes: List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
+        :param str fga_policy_name: Fine-grained auditing (FGA) policy name that generated this audit record.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the audit event.
         :param bool is_alerted: Indicates whether an alert was raised for this audit event.
@@ -6796,6 +6918,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         :param str trail_source: The underlying source of unified audit trail.
         """
         pulumi.set(__self__, "action_taken", action_taken)
+        pulumi.set(__self__, "application_contexts", application_contexts)
         pulumi.set(__self__, "audit_event_time", audit_event_time)
         pulumi.set(__self__, "audit_location", audit_location)
         pulumi.set(__self__, "audit_policies", audit_policies)
@@ -6816,6 +6939,7 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         pulumi.set(__self__, "error_message", error_message)
         pulumi.set(__self__, "event_name", event_name)
         pulumi.set(__self__, "extended_event_attributes", extended_event_attributes)
+        pulumi.set(__self__, "fga_policy_name", fga_policy_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "is_alerted", is_alerted)
@@ -6840,6 +6964,14 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         The action taken for this audit event.
         """
         return pulumi.get(self, "action_taken")
+
+    @property
+    @pulumi.getter(name="applicationContexts")
+    def application_contexts(self) -> str:
+        """
+        Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+        """
+        return pulumi.get(self, "application_contexts")
 
     @property
     @pulumi.getter(name="auditEventTime")
@@ -7003,6 +7135,14 @@ class GetAuditEventsAuditEventCollectionItemResult(dict):
         List of all other attributes of the audit event seperated by a colon other than the one returned in audit record.
         """
         return pulumi.get(self, "extended_event_attributes")
+
+    @property
+    @pulumi.getter(name="fgaPolicyName")
+    def fga_policy_name(self) -> str:
+        """
+        Fine-grained auditing (FGA) policy name that generated this audit record.
+        """
+        return pulumi.get(self, "fga_policy_name")
 
     @property
     @pulumi.getter(name="freeformTags")
@@ -10058,6 +10198,35 @@ class GetDiscoveryAnalyticsFilterResult(dict):
     @pulumi.getter
     def regex(self) -> Optional[bool]:
         return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetDiscoveryJobTablesForDiscoveryResult(dict):
+    def __init__(__self__, *,
+                 schema_name: str,
+                 table_names: Sequence[str]):
+        """
+        :param str schema_name: This contains the name of the schema.
+        :param Sequence[str] table_names: This contains an optional list of the table names.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Sequence[str]:
+        """
+        This contains an optional list of the table names.
+        """
+        return pulumi.get(self, "table_names")
 
 
 @pulumi.output_type
@@ -14003,7 +14172,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
         :param str record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param str schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
         :param str scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource will be created.
-        :param str scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf )
+        :param str scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf or .json)
         :param str scheduled_report_name: The name of the report to be scheduled.
         :param int scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param str scim_filter: Additional scim filters used to get the specific summary.
@@ -14189,7 +14358,7 @@ class GetReportDefinitionsReportDefinitionCollectionItemResult(dict):
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> str:
         """
-        Specifies the format of the report ( either .xls or .pdf )
+        Specifies the format of the report ( either .xls or .pdf or .json)
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -14557,7 +14726,7 @@ class GetReportsReportCollectionItemResult(dict):
         :param str display_name: The name of the report definition to query.
         :param Mapping[str, Any] freeform_tags: Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param str id: The OCID of the report.
-        :param str mime_type: Specifies the format of report to be .xls or .pdf
+        :param str mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param str report_definition_id: The ID of the report definition to filter the list of reports
         :param str state: An optional filter to return only resources that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -14630,7 +14799,7 @@ class GetReportsReportCollectionItemResult(dict):
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> str:
         """
-        Specifies the format of report to be .xls or .pdf
+        Specifies the format of report to be .xls or .pdf or .json
         """
         return pulumi.get(self, "mime_type")
 
@@ -15403,14 +15572,17 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -15428,6 +15600,14 @@ class GetSecurityAssessmentComparisonTargetAuditingBaselineReferenceResult(dict)
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -15637,14 +15817,17 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -15662,6 +15845,14 @@ class GetSecurityAssessmentComparisonTargetAuditingCurrentReferenceResult(dict):
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -15944,14 +16135,17 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -15969,6 +16163,14 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlBaselineReference
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -16178,14 +16380,17 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -16203,6 +16408,14 @@ class GetSecurityAssessmentComparisonTargetAuthorizationControlCurrentReferenceR
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -16485,14 +16698,17 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -16510,6 +16726,14 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionBaselineReferenceResult
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -16719,14 +16943,17 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -16744,6 +16971,14 @@ class GetSecurityAssessmentComparisonTargetDataEncryptionCurrentReferenceResult(
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -17026,14 +17261,17 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -17051,6 +17289,14 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReferenceResul
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -17260,14 +17506,17 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -17285,6 +17534,14 @@ class GetSecurityAssessmentComparisonTargetDbConfigurationCurrentReferenceResult
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -17567,14 +17824,17 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -17592,6 +17852,14 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlBaselineRefer
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -17801,14 +18069,17 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -17826,6 +18097,14 @@ class GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentRefere
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -18108,14 +18387,17 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -18133,6 +18415,14 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleBaselineReferenceRes
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -18342,14 +18632,17 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -18367,6 +18660,14 @@ class GetSecurityAssessmentComparisonTargetPrivilegesAndRoleCurrentReferenceResu
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -18649,14 +18950,17 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -18674,6 +18978,14 @@ class GetSecurityAssessmentComparisonTargetUserAccountBaselineReferenceResult(di
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -18883,14 +19195,17 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -18908,6 +19223,14 @@ class GetSecurityAssessmentComparisonTargetUserAccountCurrentReferenceResult(dic
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -19114,6 +19437,7 @@ class GetSecurityAssessmentFindingFindingResult(dict):
                  justification: str,
                  key: str,
                  lifecycle_details: str,
+                 oneline: str,
                  oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentFindingFindingReferenceResult'],
                  remarks: str,
@@ -19132,6 +19456,7 @@ class GetSecurityAssessmentFindingFindingResult(dict):
         pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oneline", oneline)
         pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
@@ -19182,6 +19507,11 @@ class GetSecurityAssessmentFindingFindingResult(dict):
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> str:
         return pulumi.get(self, "lifecycle_details")
+
+    @property
+    @pulumi.getter
+    def oneline(self) -> str:
+        return pulumi.get(self, "oneline")
 
     @property
     @pulumi.getter(name="oracleDefinedSeverity")
@@ -19239,9 +19569,11 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -19253,6 +19585,11 @@ class GetSecurityAssessmentFindingFindingReferenceResult(dict):
     @pulumi.getter
     def gdpr(self) -> str:
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -19493,6 +19830,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
                  justification: str,
                  key: str,
                  lifecycle_details: str,
+                 oneline: str,
                  oracle_defined_severity: str,
                  references: Sequence['outputs.GetSecurityAssessmentFindingsFindingReferenceResult'],
                  remarks: str,
@@ -19512,13 +19850,14 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         :param str justification: User provided reason for accepting or modifying this finding if they choose to do so.
         :param str key: The unique finding key. This is a system-generated identifier. To get the finding key for a finding, use ListFindings.
         :param str lifecycle_details: Details about the current state of the finding.
+        :param str oneline: Provides a recommended approach to take to remediate the finding reported.
         :param str oracle_defined_severity: The severity of the finding as determined by security assessment. This cannot be modified by user.
         :param Sequence['GetSecurityAssessmentFindingsFindingReferenceArgs'] references: An optional filter to return only findings containing the specified reference.
         :param str remarks: The explanation of the issue in this finding. It explains the reason for the rule and, if a risk is reported, it may also explain the recommended actions for remediation.
         :param str severity: A filter to return only findings of a particular risk level.
         :param str state: A filter to return only the findings that match the specified lifecycle states.
         :param str summary: The brief summary of the finding. When the finding is informational, the summary typically reports only the number of data elements that were examined.
-        :param str target_id: The OCID of the target database.
+        :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_updated: The date and time the risk level of finding was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_valid_until: The time until which the change in severity(deferred / modified) of this finding is valid.
         :param str title: The short title for the finding.
@@ -19531,6 +19870,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         pulumi.set(__self__, "justification", justification)
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
+        pulumi.set(__self__, "oneline", oneline)
         pulumi.set(__self__, "oracle_defined_severity", oracle_defined_severity)
         pulumi.set(__self__, "references", references)
         pulumi.set(__self__, "remarks", remarks)
@@ -19607,6 +19947,14 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
         return pulumi.get(self, "lifecycle_details")
 
     @property
+    @pulumi.getter
+    def oneline(self) -> str:
+        """
+        Provides a recommended approach to take to remediate the finding reported.
+        """
+        return pulumi.get(self, "oneline")
+
+    @property
     @pulumi.getter(name="oracleDefinedSeverity")
     def oracle_defined_severity(self) -> str:
         """
@@ -19658,7 +20006,7 @@ class GetSecurityAssessmentFindingsFindingResult(dict):
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
-        The OCID of the target database.
+        A filter to return only items related to a specific target OCID.
         """
         return pulumi.get(self, "target_id")
 
@@ -19692,14 +20040,17 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
     def __init__(__self__, *,
                  cis: str,
                  gdpr: str,
+                 obp: str,
                  stig: str):
         """
         :param str cis: Relevant section from CIS.
         :param str gdpr: Relevant section from GDPR.
+        :param str obp: Relevant section from OBP.
         :param str stig: Relevant section from STIG.
         """
         pulumi.set(__self__, "cis", cis)
         pulumi.set(__self__, "gdpr", gdpr)
+        pulumi.set(__self__, "obp", obp)
         pulumi.set(__self__, "stig", stig)
 
     @property
@@ -19717,6 +20068,14 @@ class GetSecurityAssessmentFindingsFindingReferenceResult(dict):
         Relevant section from GDPR.
         """
         return pulumi.get(self, "gdpr")
+
+    @property
+    @pulumi.getter
+    def obp(self) -> str:
+        """
+        Relevant section from OBP.
+        """
+        return pulumi.get(self, "obp")
 
     @property
     @pulumi.getter
@@ -20856,6 +21215,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
                  id: str,
                  ignored_assessment_ids: Sequence[str],
                  ignored_targets: Sequence[str],
+                 is_assessment_scheduled: bool,
                  is_baseline: bool,
                  is_deviated_from_baseline: bool,
                  last_compared_baseline_id: str,
@@ -20883,6 +21243,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         :param str id: The OCID of the security assessment.
         :param Sequence[str] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param Sequence[str] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param bool is_assessment_scheduled: Indicates whether the assessment is scheduled to run.
         :param bool is_baseline: A filter to return only the security assessments that are set as a baseline.
         :param bool is_deviated_from_baseline: Indicates whether or not the security assessment deviates from the baseline.
         :param str last_compared_baseline_id: The OCID of the baseline against which the latest security assessment was compared.
@@ -20910,6 +21271,7 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
         pulumi.set(__self__, "ignored_targets", ignored_targets)
+        pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         pulumi.set(__self__, "is_baseline", is_baseline)
         pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
         pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
@@ -20992,6 +21354,14 @@ class GetSecurityAssessmentsSecurityAssessmentResult(dict):
         List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         return pulumi.get(self, "ignored_targets")
+
+    @property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> bool:
+        """
+        Indicates whether the assessment is scheduled to run.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
 
     @property
     @pulumi.getter(name="isBaseline")
@@ -23438,6 +23808,109 @@ class GetSensitiveDataModelSensitiveSchemasSensitiveSchemaCollectionItemResult(d
 
 
 @pulumi.output_type
+class GetSensitiveDataModelSensitiveTypesFilterResult(dict):
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionResult(dict):
+    def __init__(__self__, *,
+                 items: Sequence['outputs.GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionItemResult']):
+        """
+        :param Sequence['GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionItemArgs'] items: An array of sensitive types summary objects present in a sensitive data model.
+        """
+        pulumi.set(__self__, "items", items)
+
+    @property
+    @pulumi.getter
+    def items(self) -> Sequence['outputs.GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionItemResult']:
+        """
+        An array of sensitive types summary objects present in a sensitive data model.
+        """
+        return pulumi.get(self, "items")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelSensitiveTypesSensitiveDataModelSensitiveTypeCollectionItemResult(dict):
+    def __init__(__self__, *,
+                 sensitive_data_model_sensitive_type_count: str,
+                 sensitive_type_id: str):
+        """
+        :param str sensitive_data_model_sensitive_type_count: The total number of sensitive columns linked to this specific sensitive type .
+        :param str sensitive_type_id: A filter to return only items related to a specific sensitive type OCID.
+        """
+        pulumi.set(__self__, "sensitive_data_model_sensitive_type_count", sensitive_data_model_sensitive_type_count)
+        pulumi.set(__self__, "sensitive_type_id", sensitive_type_id)
+
+    @property
+    @pulumi.getter(name="sensitiveDataModelSensitiveTypeCount")
+    def sensitive_data_model_sensitive_type_count(self) -> str:
+        """
+        The total number of sensitive columns linked to this specific sensitive type .
+        """
+        return pulumi.get(self, "sensitive_data_model_sensitive_type_count")
+
+    @property
+    @pulumi.getter(name="sensitiveTypeId")
+    def sensitive_type_id(self) -> str:
+        """
+        A filter to return only items related to a specific sensitive type OCID.
+        """
+        return pulumi.get(self, "sensitive_type_id")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelTablesForDiscoveryResult(dict):
+    def __init__(__self__, *,
+                 schema_name: str,
+                 table_names: Sequence[str]):
+        """
+        :param str schema_name: This contains the name of the schema.
+        :param Sequence[str] table_names: This contains an optional list of the table names.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Sequence[str]:
+        """
+        This contains an optional list of the table names.
+        """
+        return pulumi.get(self, "table_names")
+
+
+@pulumi.output_type
 class GetSensitiveDataModelsFilterResult(dict):
     def __init__(__self__, *,
                  name: str,
@@ -23782,6 +24255,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
                  sensitive_type_ids_for_discoveries: Sequence[str],
                  state: str,
                  system_tags: Mapping[str, Any],
+                 tables_for_discoveries: Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult'],
                  target_id: str,
                  time_created: str,
                  time_updated: str):
@@ -23801,6 +24275,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         :param Sequence[str] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by data discovery jobs.
         :param str state: A filter to return only the resources that match the specified lifecycle state.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param Sequence['GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryArgs'] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
         :param str target_id: A filter to return only items related to a specific target OCID.
         :param str time_created: The date and time the sensitive data model was created, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         :param str time_updated: The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -23820,6 +24295,7 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "system_tags", system_tags)
+        pulumi.set(__self__, "tables_for_discoveries", tables_for_discoveries)
         pulumi.set(__self__, "target_id", target_id)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "time_updated", time_updated)
@@ -23945,6 +24421,14 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="tablesForDiscoveries")
+    def tables_for_discoveries(self) -> Sequence['outputs.GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult']:
+        """
+        The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        """
+        return pulumi.get(self, "tables_for_discoveries")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
@@ -23967,6 +24451,35 @@ class GetSensitiveDataModelsSensitiveDataModelCollectionItemResult(dict):
         The date and time the sensitive data model was last updated, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
         """
         return pulumi.get(self, "time_updated")
+
+
+@pulumi.output_type
+class GetSensitiveDataModelsSensitiveDataModelCollectionItemTablesForDiscoveryResult(dict):
+    def __init__(__self__, *,
+                 schema_name: str,
+                 table_names: Sequence[str]):
+        """
+        :param str schema_name: This contains the name of the schema.
+        :param Sequence[str] table_names: This contains an optional list of the table names.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> str:
+        """
+        This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Sequence[str]:
+        """
+        This contains an optional list of the table names.
+        """
+        return pulumi.get(self, "table_names")
 
 
 @pulumi.output_type
@@ -27854,6 +28367,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
                  id: str,
                  ignored_assessment_ids: Sequence[str],
                  ignored_targets: Sequence['outputs.GetUserAssessmentsUserAssessmentIgnoredTargetResult'],
+                 is_assessment_scheduled: bool,
                  is_baseline: bool,
                  is_deviated_from_baseline: bool,
                  last_compared_baseline_id: str,
@@ -27879,6 +28393,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         :param str id: The OCID of the user assessment.
         :param Sequence[str] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param Sequence['GetUserAssessmentsUserAssessmentIgnoredTargetArgs'] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param bool is_assessment_scheduled: Indicates whether the assessment is scheduled to run.
         :param bool is_baseline: A filter to return only user assessments that are set as baseline.
         :param bool is_deviated_from_baseline: Indicates if the user assessment deviates from the baseline.
         :param str last_compared_baseline_id: The OCID of the last user assessment baseline against which the latest assessment was compared.
@@ -27904,6 +28419,7 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         pulumi.set(__self__, "id", id)
         pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
         pulumi.set(__self__, "ignored_targets", ignored_targets)
+        pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         pulumi.set(__self__, "is_baseline", is_baseline)
         pulumi.set(__self__, "is_deviated_from_baseline", is_deviated_from_baseline)
         pulumi.set(__self__, "last_compared_baseline_id", last_compared_baseline_id)
@@ -27984,6 +28500,14 @@ class GetUserAssessmentsUserAssessmentResult(dict):
         List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         return pulumi.get(self, "ignored_targets")
+
+    @property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> bool:
+        """
+        Indicates whether the assessment is scheduled to run.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
 
     @property
     @pulumi.getter(name="isBaseline")

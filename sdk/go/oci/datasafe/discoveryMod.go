@@ -51,6 +51,12 @@ import (
 //				IsSampleDataCollectionEnabled:        pulumi.Any(discoveryJobIsSampleDataCollectionEnabled),
 //				SchemasForDiscoveries:                pulumi.Any(discoveryJobSchemasForDiscovery),
 //				SensitiveTypeIdsForDiscoveries:       pulumi.Any(discoveryJobSensitiveTypeIdsForDiscovery),
+//				TablesForDiscoveries: datasafe.DiscoveryModTablesForDiscoveryArray{
+//					&datasafe.DiscoveryModTablesForDiscoveryArgs{
+//						SchemaName: pulumi.Any(discoveryJobTablesForDiscoverySchemaName),
+//						TableNames: pulumi.Any(discoveryJobTablesForDiscoveryTableNames),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -94,14 +100,13 @@ type DiscoveryMod struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringOutput `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayOutput `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+	TablesForDiscoveries DiscoveryModTablesForDiscoveryArrayOutput `pulumi:"tablesForDiscoveries"`
 	// The OCID of the target database associated with the discovery job.
 	TargetId pulumi.StringOutput `pulumi:"targetId"`
 	// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
@@ -181,14 +186,13 @@ type discoveryModState struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId *string `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
 	// The current state of the discovery job.
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+	TablesForDiscoveries []DiscoveryModTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// The OCID of the target database associated with the discovery job.
 	TargetId *string `pulumi:"targetId"`
 	// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
@@ -233,14 +237,13 @@ type DiscoveryModState struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringPtrInput
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
 	// The current state of the discovery job.
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+	TablesForDiscoveries DiscoveryModTablesForDiscoveryArrayInput
 	// The OCID of the target database associated with the discovery job.
 	TargetId pulumi.StringPtrInput
 	// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
@@ -289,10 +292,9 @@ type discoveryModArgs struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId string `pulumi:"sensitiveDataModelId"`
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+	TablesForDiscoveries []DiscoveryModTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 }
 
 // The set of arguments for constructing a DiscoveryMod resource.
@@ -320,10 +322,9 @@ type DiscoveryModArgs struct {
 	// The OCID of the sensitive data model.
 	SensitiveDataModelId pulumi.StringInput
 	// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+	TablesForDiscoveries DiscoveryModTablesForDiscoveryArrayInput
 }
 
 func (DiscoveryModArgs) ElementType() reflect.Type {
@@ -469,9 +470,6 @@ func (o DiscoveryModOutput) SensitiveDataModelId() pulumi.StringOutput {
 }
 
 // The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o DiscoveryModOutput) SensitiveTypeIdsForDiscoveries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.StringArrayOutput { return v.SensitiveTypeIdsForDiscoveries }).(pulumi.StringArrayOutput)
 }
@@ -484,6 +482,11 @@ func (o DiscoveryModOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o DiscoveryModOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DiscoveryMod) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+func (o DiscoveryModOutput) TablesForDiscoveries() DiscoveryModTablesForDiscoveryArrayOutput {
+	return o.ApplyT(func(v *DiscoveryMod) DiscoveryModTablesForDiscoveryArrayOutput { return v.TablesForDiscoveries }).(DiscoveryModTablesForDiscoveryArrayOutput)
 }
 
 // The OCID of the target database associated with the discovery job.

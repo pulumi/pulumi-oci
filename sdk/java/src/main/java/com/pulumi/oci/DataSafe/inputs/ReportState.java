@@ -93,14 +93,14 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf or .json
      * 
      */
     @Import(name="mimeType")
     private @Nullable Output<String> mimeType;
 
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of report to be .xls or .pdf or .json
      * 
      */
     public Optional<Output<String>> mimeType() {
@@ -344,7 +344,7 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mimeType Specifies the format of report to be excel or pdf
+         * @param mimeType Specifies the format of report to be .xls or .pdf or .json
          * 
          * @return builder
          * 
@@ -355,7 +355,7 @@ public final class ReportState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param mimeType Specifies the format of report to be excel or pdf
+         * @param mimeType Specifies the format of report to be .xls or .pdf or .json
          * 
          * @return builder
          * 

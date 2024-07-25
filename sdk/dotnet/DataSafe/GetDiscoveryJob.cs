@@ -159,6 +159,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
+        /// The data discovery jobs will scan the tables specified here, including both schemas and tables.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDiscoveryJobTablesForDiscoveryResult> TablesForDiscoveries;
+        /// <summary>
         /// The OCID of the target database associated with the discovery job.
         /// </summary>
         public readonly string TargetId;
@@ -229,6 +233,8 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableDictionary<string, object> systemTags,
 
+            ImmutableArray<Outputs.GetDiscoveryJobTablesForDiscoveryResult> tablesForDiscoveries,
+
             string targetId,
 
             string timeFinished,
@@ -263,6 +269,7 @@ namespace Pulumi.Oci.DataSafe
             SensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             State = state;
             SystemTags = systemTags;
+            TablesForDiscoveries = tablesForDiscoveries;
             TargetId = targetId;
             TimeFinished = timeFinished;
             TimeStarted = timeStarted;

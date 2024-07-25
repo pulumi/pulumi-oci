@@ -47,6 +47,14 @@ namespace Pulumi.Oci.DataSafe
     ///         IsSampleDataCollectionEnabled = sensitiveDataModelIsSampleDataCollectionEnabled,
     ///         SchemasForDiscoveries = sensitiveDataModelSchemasForDiscovery,
     ///         SensitiveTypeIdsForDiscoveries = sensitiveDataModelSensitiveTypeIdsForDiscovery,
+    ///         TablesForDiscoveries = new[]
+    ///         {
+    ///             new Oci.DataSafe.Inputs.SensitiveDataModelTablesForDiscoveryArgs
+    ///             {
+    ///                 SchemaName = sensitiveDataModelTablesForDiscoverySchemaName,
+    ///                 TableNames = sensitiveDataModelTablesForDiscoveryTableNames,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -146,6 +154,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        /// </summary>
+        [Output("tablesForDiscoveries")]
+        public Output<ImmutableArray<Outputs.SensitiveDataModelTablesForDiscovery>> TablesForDiscoveries { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
@@ -311,6 +325,18 @@ namespace Pulumi.Oci.DataSafe
             set => _sensitiveTypeIdsForDiscoveries = value;
         }
 
+        [Input("tablesForDiscoveries")]
+        private InputList<Inputs.SensitiveDataModelTablesForDiscoveryArgs>? _tablesForDiscoveries;
+
+        /// <summary>
+        /// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        /// </summary>
+        public InputList<Inputs.SensitiveDataModelTablesForDiscoveryArgs> TablesForDiscoveries
+        {
+            get => _tablesForDiscoveries ?? (_tablesForDiscoveries = new InputList<Inputs.SensitiveDataModelTablesForDiscoveryArgs>());
+            set => _tablesForDiscoveries = value;
+        }
+
         /// <summary>
         /// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database. 
         /// 
@@ -441,6 +467,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _systemTags ?? (_systemTags = new InputMap<object>());
             set => _systemTags = value;
+        }
+
+        [Input("tablesForDiscoveries")]
+        private InputList<Inputs.SensitiveDataModelTablesForDiscoveryGetArgs>? _tablesForDiscoveries;
+
+        /// <summary>
+        /// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        /// </summary>
+        public InputList<Inputs.SensitiveDataModelTablesForDiscoveryGetArgs> TablesForDiscoveries
+        {
+            get => _tablesForDiscoveries ?? (_tablesForDiscoveries = new InputList<Inputs.SensitiveDataModelTablesForDiscoveryGetArgs>());
+            set => _tablesForDiscoveries = value;
         }
 
         /// <summary>

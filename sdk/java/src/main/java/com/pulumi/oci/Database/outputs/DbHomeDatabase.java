@@ -84,6 +84,11 @@ public final class DbHomeDatabase {
      */
     private @Nullable String id;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    private @Nullable String keyStoreId;
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -245,6 +250,13 @@ public final class DbHomeDatabase {
         return Optional.ofNullable(this.id);
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+     * 
+     */
+    public Optional<String> keyStoreId() {
+        return Optional.ofNullable(this.keyStoreId);
+    }
+    /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
      */
@@ -359,6 +371,7 @@ public final class DbHomeDatabase {
         private @Nullable Map<String,Object> definedTags;
         private @Nullable Map<String,Object> freeformTags;
         private @Nullable String id;
+        private @Nullable String keyStoreId;
         private @Nullable String kmsKeyId;
         private @Nullable String kmsKeyVersionId;
         private @Nullable String lifecycleDetails;
@@ -389,6 +402,7 @@ public final class DbHomeDatabase {
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -494,6 +508,12 @@ public final class DbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder keyStoreId(@Nullable String keyStoreId) {
+
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(@Nullable String kmsKeyId) {
 
             this.kmsKeyId = kmsKeyId;
@@ -593,6 +613,7 @@ public final class DbHomeDatabase {
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;

@@ -87,7 +87,7 @@ type LookupHostInsightResult struct {
 	HostInsightId   string `pulumi:"hostInsightId"`
 	// The host name. The host name is unique amongst the hosts managed by the same management agent.
 	HostName string `pulumi:"hostName"`
-	// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+	// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 	HostType string `pulumi:"hostType"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
 	Id string `pulumi:"id"`
@@ -101,8 +101,7 @@ type LookupHostInsightResult struct {
 	PlatformType string `pulumi:"platformType"`
 	// Platform version.
 	PlatformVersion string `pulumi:"platformVersion"`
-	// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-	ProcessorCount int `pulumi:"processorCount"`
+	ProcessorCount  int    `pulumi:"processorCount"`
 	// The current state of the host.
 	State string `pulumi:"state"`
 	// Indicates the status of a host insight in Operations Insights
@@ -227,7 +226,7 @@ func (o LookupHostInsightResultOutput) HostName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.HostName }).(pulumi.StringOutput)
 }
 
-// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 func (o LookupHostInsightResultOutput) HostType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.HostType }).(pulumi.StringOutput)
 }
@@ -262,7 +261,6 @@ func (o LookupHostInsightResultOutput) PlatformVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) string { return v.PlatformVersion }).(pulumi.StringOutput)
 }
 
-// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
 func (o LookupHostInsightResultOutput) ProcessorCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupHostInsightResult) int { return v.ProcessorCount }).(pulumi.IntOutput)
 }

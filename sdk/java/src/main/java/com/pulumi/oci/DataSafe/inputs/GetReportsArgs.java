@@ -117,6 +117,44 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
+     * A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    @Import(name="timeGeneratedGreaterThanOrEqualTo")
+    private @Nullable Output<String> timeGeneratedGreaterThanOrEqualTo;
+
+    /**
+     * @return A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    public Optional<Output<String>> timeGeneratedGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeGeneratedGreaterThanOrEqualTo);
+    }
+
+    /**
+     * Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    @Import(name="timeGeneratedLessThan")
+    private @Nullable Output<String> timeGeneratedLessThan;
+
+    /**
+     * @return Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+     * 
+     * **Example:** 2016-12-19T16:39:57.600Z
+     * 
+     */
+    public Optional<Output<String>> timeGeneratedLessThan() {
+        return Optional.ofNullable(this.timeGeneratedLessThan);
+    }
+
+    /**
      * An optional filter to return only resources that match the specified type.
      * 
      */
@@ -141,6 +179,8 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
         this.filters = $.filters;
         this.reportDefinitionId = $.reportDefinitionId;
         this.state = $.state;
+        this.timeGeneratedGreaterThanOrEqualTo = $.timeGeneratedGreaterThanOrEqualTo;
+        this.timeGeneratedLessThan = $.timeGeneratedLessThan;
         this.type = $.type;
     }
 
@@ -299,6 +339,56 @@ public final class GetReportsArgs extends com.pulumi.resources.InvokeArgs {
          */
         public Builder state(String state) {
             return state(Output.of(state));
+        }
+
+        /**
+         * @param timeGeneratedGreaterThanOrEqualTo A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeGeneratedGreaterThanOrEqualTo(@Nullable Output<String> timeGeneratedGreaterThanOrEqualTo) {
+            $.timeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * @param timeGeneratedGreaterThanOrEqualTo A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeGeneratedGreaterThanOrEqualTo(String timeGeneratedGreaterThanOrEqualTo) {
+            return timeGeneratedGreaterThanOrEqualTo(Output.of(timeGeneratedGreaterThanOrEqualTo));
+        }
+
+        /**
+         * @param timeGeneratedLessThan Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeGeneratedLessThan(@Nullable Output<String> timeGeneratedLessThan) {
+            $.timeGeneratedLessThan = timeGeneratedLessThan;
+            return this;
+        }
+
+        /**
+         * @param timeGeneratedLessThan Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in &#34;YYYY-MM-ddThh:mmZ&#34; format with a Z offset, as defined by RFC 3339.
+         * 
+         * **Example:** 2016-12-19T16:39:57.600Z
+         * 
+         * @return builder
+         * 
+         */
+        public Builder timeGeneratedLessThan(String timeGeneratedLessThan) {
+            return timeGeneratedLessThan(Output.of(timeGeneratedLessThan));
         }
 
         /**

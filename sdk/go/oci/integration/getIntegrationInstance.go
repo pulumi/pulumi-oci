@@ -99,7 +99,6 @@ type LookupIntegrationInstanceResult struct {
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []GetIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape string `pulumi:"shape"`
 	// The current state of the integration instance.
 	State string `pulumi:"state"`
@@ -264,7 +263,6 @@ func (o LookupIntegrationInstanceResultOutput) PrivateEndpointOutboundConnection
 }
 
 // Shape
-// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 func (o LookupIntegrationInstanceResultOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupIntegrationInstanceResult) string { return v.Shape }).(pulumi.StringOutput)
 }

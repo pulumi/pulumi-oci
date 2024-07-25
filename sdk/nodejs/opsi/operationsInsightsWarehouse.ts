@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
  *
- * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+ * Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
  * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
  * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
  *
@@ -84,7 +84,7 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      */
     public readonly definedTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      */
     public readonly displayName!: pulumi.Output<string>;
     /**
@@ -100,7 +100,7 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      */
     public /*out*/ readonly operationsInsightsTenancyId!: pulumi.Output<string>;
     /**
@@ -128,7 +128,7 @@ export class OperationsInsightsWarehouse extends pulumi.CustomResource {
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      */
     public /*out*/ readonly timeLastWalletRotated!: pulumi.Output<string>;
     /**
@@ -219,7 +219,7 @@ export interface OperationsInsightsWarehouseState {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      */
     displayName?: pulumi.Input<string>;
     /**
@@ -235,7 +235,7 @@ export interface OperationsInsightsWarehouseState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      */
     operationsInsightsTenancyId?: pulumi.Input<string>;
     /**
@@ -263,7 +263,7 @@ export interface OperationsInsightsWarehouseState {
      */
     timeCreated?: pulumi.Input<string>;
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      */
     timeLastWalletRotated?: pulumi.Input<string>;
     /**
@@ -289,7 +289,7 @@ export interface OperationsInsightsWarehouseArgs {
      */
     definedTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      */
     displayName: pulumi.Input<string>;
     /**

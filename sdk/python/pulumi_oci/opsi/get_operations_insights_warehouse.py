@@ -113,7 +113,7 @@ class GetOperationsInsightsWarehouseResult:
     @pulumi.getter(name="displayName")
     def display_name(self) -> str:
         """
-        User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        User-friedly name of Ops Insights Warehouse that does not have to be unique.
         """
         return pulumi.get(self, "display_name")
 
@@ -153,7 +153,7 @@ class GetOperationsInsightsWarehouseResult:
     @pulumi.getter(name="operationsInsightsTenancyId")
     def operations_insights_tenancy_id(self) -> str:
         """
-        Tenancy Identifier of Operations Insights service
+        Tenancy Identifier of Ops Insights service
         """
         return pulumi.get(self, "operations_insights_tenancy_id")
 
@@ -206,7 +206,7 @@ class GetOperationsInsightsWarehouseResult:
     @pulumi.getter(name="timeLastWalletRotated")
     def time_last_wallet_rotated(self) -> str:
         """
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_last_wallet_rotated")
 
@@ -250,7 +250,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
     """
     This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 
-    Gets details of an Operations Insights Warehouse.
+    Gets details of an Ops Insights Warehouse.
     There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
     ## Example Usage
@@ -263,7 +263,7 @@ def get_operations_insights_warehouse(operations_insights_warehouse_id: Optional
     ```
 
 
-    :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+    :param str operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
     """
     __args__ = dict()
     __args__['operationsInsightsWarehouseId'] = operations_insights_warehouse_id
@@ -297,7 +297,7 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     """
     This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 
-    Gets details of an Operations Insights Warehouse.
+    Gets details of an Ops Insights Warehouse.
     There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 
     ## Example Usage
@@ -310,6 +310,6 @@ def get_operations_insights_warehouse_output(operations_insights_warehouse_id: O
     ```
 
 
-    :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+    :param str operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
     """
     ...

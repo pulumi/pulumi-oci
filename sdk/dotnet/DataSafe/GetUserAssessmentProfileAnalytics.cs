@@ -14,7 +14,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets a list of aggregated user profile details in the specified compartment. This provides information about the 
+        /// Gets a list of aggregated user profile details in the specified compartment. This provides information about the
         /// overall profiles available. For example, the user profile details include how many users have the profile assigned
         /// and do how many use password verification function. This data is especially useful content for dashboards or to support analytics.
         /// 
@@ -60,7 +60,7 @@ namespace Pulumi.Oci.DataSafe
         /// <summary>
         /// This data source provides the list of User Assessment Profile Analytics in Oracle Cloud Infrastructure Data Safe service.
         /// 
-        /// Gets a list of aggregated user profile details in the specified compartment. This provides information about the 
+        /// Gets a list of aggregated user profile details in the specified compartment. This provides information about the
         /// overall profiles available. For example, the user profile details include how many users have the profile assigned
         /// and do how many use password verification function. This data is especially useful content for dashboards or to support analytics.
         /// 

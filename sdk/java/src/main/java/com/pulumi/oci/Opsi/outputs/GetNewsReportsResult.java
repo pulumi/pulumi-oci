@@ -40,7 +40,7 @@ public final class GetNewsReportsResult {
      */
     private @Nullable List<String> states;
     /**
-     * @return Indicates the status of a news report in Operations Insights.
+     * @return Indicates the status of a news report in Ops Insights.
      * 
      */
     private @Nullable List<String> statuses;
@@ -84,7 +84,7 @@ public final class GetNewsReportsResult {
         return this.states == null ? List.of() : this.states;
     }
     /**
-     * @return Indicates the status of a news report in Operations Insights.
+     * @return Indicates the status of a news report in Ops Insights.
      * 
      */
     public List<String> statuses() {

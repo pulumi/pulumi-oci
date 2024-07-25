@@ -58,7 +58,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly connectionDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightConnectionDetails>;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     public readonly credentialDetails!: pulumi.Output<outputs.Opsi.DatabaseInsightCredentialDetails | undefined>;
     /**
@@ -82,7 +82,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly databaseResourceType!: pulumi.Output<string>;
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      */
     public /*out*/ readonly databaseType!: pulumi.Output<string>;
     /**
@@ -138,6 +138,14 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     */
+    public /*out*/ readonly isHeatWaveClusterAttached!: pulumi.Output<boolean>;
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     */
+    public /*out*/ readonly isHighlyAvailable!: pulumi.Output<boolean>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
@@ -177,7 +185,7 @@ export class DatabaseInsight extends pulumi.CustomResource {
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     * The time the database insight was first enabled. An RFC3339 formatted datetime string
      */
     public /*out*/ readonly timeCreated!: pulumi.Output<string>;
     /**
@@ -221,6 +229,8 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["entitySource"] = state ? state.entitySource : undefined;
             resourceInputs["exadataInsightId"] = state ? state.exadataInsightId : undefined;
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
+            resourceInputs["isHeatWaveClusterAttached"] = state ? state.isHeatWaveClusterAttached : undefined;
+            resourceInputs["isHighlyAvailable"] = state ? state.isHighlyAvailable : undefined;
             resourceInputs["lifecycleDetails"] = state ? state.lifecycleDetails : undefined;
             resourceInputs["opsiPrivateEndpointId"] = state ? state.opsiPrivateEndpointId : undefined;
             resourceInputs["parentId"] = state ? state.parentId : undefined;
@@ -266,6 +276,8 @@ export class DatabaseInsight extends pulumi.CustomResource {
             resourceInputs["enterpriseManagerEntityDisplayName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityName"] = undefined /*out*/;
             resourceInputs["enterpriseManagerEntityType"] = undefined /*out*/;
+            resourceInputs["isHeatWaveClusterAttached"] = undefined /*out*/;
+            resourceInputs["isHighlyAvailable"] = undefined /*out*/;
             resourceInputs["lifecycleDetails"] = undefined /*out*/;
             resourceInputs["parentId"] = undefined /*out*/;
             resourceInputs["processorCount"] = undefined /*out*/;
@@ -297,7 +309,7 @@ export interface DatabaseInsightState {
      */
     connectionDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetails>;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     credentialDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightCredentialDetails>;
     /**
@@ -321,7 +333,7 @@ export interface DatabaseInsightState {
      */
     databaseResourceType?: pulumi.Input<string>;
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      */
     databaseType?: pulumi.Input<string>;
     /**
@@ -377,6 +389,14 @@ export interface DatabaseInsightState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     */
+    isHeatWaveClusterAttached?: pulumi.Input<boolean>;
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     */
+    isHighlyAvailable?: pulumi.Input<boolean>;
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      */
     lifecycleDetails?: pulumi.Input<string>;
@@ -416,7 +436,7 @@ export interface DatabaseInsightState {
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     * The time the database insight was first enabled. An RFC3339 formatted datetime string
      */
     timeCreated?: pulumi.Input<string>;
     /**
@@ -442,7 +462,7 @@ export interface DatabaseInsightArgs {
      */
     connectionDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightConnectionDetails>;
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      */
     credentialDetails?: pulumi.Input<inputs.Opsi.DatabaseInsightCredentialDetails>;
     /**

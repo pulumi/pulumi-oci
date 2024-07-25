@@ -21,6 +21,11 @@ public final class GetSecurityAssessmentComparisonTargetFineGrainedAccessControl
      */
     private String gdpr;
     /**
+     * @return Relevant section from OBP.
+     * 
+     */
+    private String obp;
+    /**
      * @return Relevant section from STIG.
      * 
      */
@@ -42,6 +47,13 @@ public final class GetSecurityAssessmentComparisonTargetFineGrainedAccessControl
         return this.gdpr;
     }
     /**
+     * @return Relevant section from OBP.
+     * 
+     */
+    public String obp() {
+        return this.obp;
+    }
+    /**
      * @return Relevant section from STIG.
      * 
      */
@@ -60,12 +72,14 @@ public final class GetSecurityAssessmentComparisonTargetFineGrainedAccessControl
     public static final class Builder {
         private String cis;
         private String gdpr;
+        private String obp;
         private String stig;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cis = defaults.cis;
     	      this.gdpr = defaults.gdpr;
+    	      this.obp = defaults.obp;
     	      this.stig = defaults.stig;
         }
 
@@ -86,6 +100,14 @@ public final class GetSecurityAssessmentComparisonTargetFineGrainedAccessControl
             return this;
         }
         @CustomType.Setter
+        public Builder obp(String obp) {
+            if (obp == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference", "obp");
+            }
+            this.obp = obp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stig(String stig) {
             if (stig == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference", "stig");
@@ -97,6 +119,7 @@ public final class GetSecurityAssessmentComparisonTargetFineGrainedAccessControl
             final var _resultValue = new GetSecurityAssessmentComparisonTargetFineGrainedAccessControlCurrentReference();
             _resultValue.cis = cis;
             _resultValue.gdpr = gdpr;
+            _resultValue.obp = obp;
             _resultValue.stig = stig;
             return _resultValue;
         }

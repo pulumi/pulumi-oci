@@ -14,7 +14,8 @@ __all__ = ['UnsetUserAssessmentBaselineArgs', 'UnsetUserAssessmentBaseline']
 @pulumi.input_type
 class UnsetUserAssessmentBaselineArgs:
     def __init__(__self__, *,
-                 user_assessment_id: pulumi.Input[str]):
+                 user_assessment_id: pulumi.Input[str],
+                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
@@ -22,8 +23,11 @@ class UnsetUserAssessmentBaselineArgs:
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
         """
         pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+        if target_ids is not None:
+            pulumi.set(__self__, "target_ids", target_ids)
 
     @property
     @pulumi.getter(name="userAssessmentId")
@@ -41,21 +45,49 @@ class UnsetUserAssessmentBaselineArgs:
     def user_assessment_id(self, value: pulumi.Input[str]):
         pulumi.set(self, "user_assessment_id", value)
 
+    @property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of database target OCIDs for which the user intends to unset the baseline.
+        """
+        return pulumi.get(self, "target_ids")
+
+    @target_ids.setter
+    def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "target_ids", value)
+
 
 @pulumi.input_type
 class _UnsetUserAssessmentBaselineState:
     def __init__(__self__, *,
+                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  user_assessment_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
                
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         """
+        if target_ids is not None:
+            pulumi.set(__self__, "target_ids", target_ids)
         if user_assessment_id is not None:
             pulumi.set(__self__, "user_assessment_id", user_assessment_id)
+
+    @property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        The list of database target OCIDs for which the user intends to unset the baseline.
+        """
+        return pulumi.get(self, "target_ids")
+
+    @target_ids.setter
+    def target_ids(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "target_ids", value)
 
     @property
     @pulumi.getter(name="userAssessmentId")
@@ -79,12 +111,14 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def __init__(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  user_assessment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         """
         This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
 
-        Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+        Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+        If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
         Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
 
         ## Example Usage
@@ -93,7 +127,9 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", user_assessment_id=test_user_assessment["id"])
+        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline",
+            user_assessment_id=test_user_assessment["id"],
+            target_ids=unset_user_assessment_baseline_target_ids)
         ```
 
         ## Import
@@ -106,6 +142,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -121,7 +158,8 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         """
         This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
 
-        Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+        Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+        If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
         Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
 
         ## Example Usage
@@ -130,7 +168,9 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         import pulumi
         import pulumi_oci as oci
 
-        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", user_assessment_id=test_user_assessment["id"])
+        test_unset_user_assessment_baseline = oci.data_safe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline",
+            user_assessment_id=test_user_assessment["id"],
+            target_ids=unset_user_assessment_baseline_target_ids)
         ```
 
         ## Import
@@ -156,6 +196,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def _internal_init(__self__,
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
+                 target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  user_assessment_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -166,6 +207,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
                 raise TypeError('__props__ is only valid when passed in combination with a valid opts.id to get an existing resource')
             __props__ = UnsetUserAssessmentBaselineArgs.__new__(UnsetUserAssessmentBaselineArgs)
 
+            __props__.__dict__["target_ids"] = target_ids
             if user_assessment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'user_assessment_id'")
             __props__.__dict__["user_assessment_id"] = user_assessment_id
@@ -179,6 +221,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
     def get(resource_name: str,
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
+            target_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             user_assessment_id: Optional[pulumi.Input[str]] = None) -> 'UnsetUserAssessmentBaseline':
         """
         Get an existing UnsetUserAssessmentBaseline resource's state with the given name, id, and optional extra
@@ -187,6 +230,7 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] target_ids: The list of database target OCIDs for which the user intends to unset the baseline.
         :param pulumi.Input[str] user_assessment_id: The OCID of the user assessment.
                
                
@@ -197,8 +241,17 @@ class UnsetUserAssessmentBaseline(pulumi.CustomResource):
 
         __props__ = _UnsetUserAssessmentBaselineState.__new__(_UnsetUserAssessmentBaselineState)
 
+        __props__.__dict__["target_ids"] = target_ids
         __props__.__dict__["user_assessment_id"] = user_assessment_id
         return UnsetUserAssessmentBaseline(resource_name, opts=opts, __props__=__props__)
+
+    @property
+    @pulumi.getter(name="targetIds")
+    def target_ids(self) -> pulumi.Output[Sequence[str]]:
+        """
+        The list of database target OCIDs for which the user intends to unset the baseline.
+        """
+        return pulumi.get(self, "target_ids")
 
     @property
     @pulumi.getter(name="userAssessmentId")

@@ -34,7 +34,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
      */
     private String id;
     /**
-     * @return The flag is to identify if private endpoint is used for rac database or not
+     * @return The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
      * 
      */
     private @Nullable Boolean isUsedForRacDbs;
@@ -84,7 +84,7 @@ public final class GetOperationsInsightsPrivateEndpointsResult {
         return this.id;
     }
     /**
-     * @return The flag is to identify if private endpoint is used for rac database or not
+     * @return The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
      * 
      */
     public Optional<Boolean> isUsedForRacDbs() {

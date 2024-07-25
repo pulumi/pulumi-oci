@@ -15,12 +15,14 @@ namespace Pulumi.Oci.Core.Inputs
         /// <summary>
         /// (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
         /// 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
         /// If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
         /// </summary>
         [Input("clusterConfig")]
         public Input<Inputs.ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs>? ClusterConfig { get; set; }
 
+        /// <summary>
+        /// (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+        /// </summary>
         [Input("clusterPlacementGroupId")]
         public Input<string>? ClusterPlacementGroupId { get; set; }
 

@@ -86,14 +86,14 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      * 
      */
     @Import(name="hostTypes")
     private @Nullable Output<List<String>> hostTypes;
 
     /**
-     * @return Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * @return Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      * 
      */
     public Optional<Output<List<String>>> hostTypes() {
@@ -275,7 +275,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          * 
          * @return builder
          * 
@@ -286,7 +286,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          * 
          * @return builder
          * 
@@ -296,7 +296,7 @@ public final class GetHostInsightsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+         * @param hostTypes Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
          * 
          * @return builder
          * 

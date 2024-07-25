@@ -142,7 +142,7 @@ class DatabaseInsightConnectionCredentialDetails(dict):
         :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param str role: database user role.
         :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -201,7 +201,7 @@ class DatabaseInsightConnectionCredentialDetails(dict):
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
@@ -380,7 +380,7 @@ class DatabaseInsightCredentialDetails(dict):
         :param str password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param str role: database user role.
         :param str user_name: database user name.
-        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        :param str wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
@@ -438,7 +438,7 @@ class DatabaseInsightCredentialDetails(dict):
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[str]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
@@ -595,7 +595,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
         """
         :param str compartment_id: (Updatable) Compartment Identifier of database
         :param 'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs' connection_details: Connection details of the private endpoints.
-        :param 'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs' credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param 'ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs' credential_details: User credential details to connect to the database.
         :param str database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param str database_resource_type: Oracle Cloud Infrastructure database resource type
         :param str dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
@@ -654,7 +654,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail(dict):
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional['outputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails']:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
@@ -2517,6 +2517,8 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  exadata_insight_id: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_heat_wave_cluster_attached: bool,
+                 is_highly_available: bool,
                  lifecycle_details: str,
                  opsi_private_endpoint_id: str,
                  parent_id: str,
@@ -2530,9 +2532,9 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs'] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailArgs'] connection_credential_details: User credential details to connect to the database.
         :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetailArgs'] connection_details: Connection details to connect to the database. HostName, protocol, and port should be specified.
-        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param Sequence['GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailArgs'] credential_details: User credential details to connect to the database.
         :param str database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param str database_display_name: Display name of database
         :param str database_id: Optional list of database [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the associated DBaaS entity.
@@ -2551,6 +2553,8 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         :param str exadata_insight_id: [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+        :param bool is_heat_wave_cluster_attached: Specifies if MYSQL DB System has heatwave cluster attached.
+        :param bool is_highly_available: Specifies if MYSQL DB System is highly available.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str opsi_private_endpoint_id: Unique Operations Insights PrivateEndpoint identifier
         :param str parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -2587,6 +2591,8 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
+        pulumi.set(__self__, "is_highly_available", is_highly_available)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         pulumi.set(__self__, "opsi_private_endpoint_id", opsi_private_endpoint_id)
         pulumi.set(__self__, "parent_id", parent_id)
@@ -2611,7 +2617,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
     @pulumi.getter(name="connectionCredentialDetails")
     def connection_credential_details(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetailResult']:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "connection_credential_details")
 
@@ -2627,7 +2633,7 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Sequence['outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetailResult']:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
@@ -2784,6 +2790,22 @@ class GetDatabaseInsightsDatabaseInsightsCollectionItemResult(dict):
         Optional list of database insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="isHeatWaveClusterAttached")
+    def is_heat_wave_cluster_attached(self) -> bool:
+        """
+        Specifies if MYSQL DB System has heatwave cluster attached.
+        """
+        return pulumi.get(self, "is_heat_wave_cluster_attached")
+
+    @property
+    @pulumi.getter(name="isHighlyAvailable")
+    def is_highly_available(self) -> bool:
+        """
+        Specifies if MYSQL DB System is highly available.
+        """
+        return pulumi.get(self, "is_highly_available")
 
     @property
     @pulumi.getter(name="lifecycleDetails")
@@ -4269,7 +4291,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str host_display_name: The user-friendly name for the host. The name does not have to be unique.
         :param str host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param str host_type: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+        :param str host_type: Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
         :param str id: Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
@@ -4427,7 +4449,7 @@ class GetHostInsightsHostInsightSummaryCollectionItemResult(dict):
     @pulumi.getter(name="hostType")
     def host_type(self) -> str:
         """
-        Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+        Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
         """
         return pulumi.get(self, "host_type")
 
@@ -5445,7 +5467,7 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -5456,7 +5478,7 @@ class GetOperationsInsightsWarehouseUsersFilterResult(dict):
     @pulumi.getter
     def name(self) -> str:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 
@@ -5503,7 +5525,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
                  time_updated: str):
         """
         :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-        :param str connection_password: User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param str connection_password: User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: Unique Operations Insights Warehouse User identifier
@@ -5511,7 +5533,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
         :param bool is_em_data_access: Indicate whether user has access to EM data.
         :param bool is_opsi_data_access: Indicate whether user has access to OPSI data.
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         :param str operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
         :param str state: Lifecycle states
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -5546,7 +5568,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> str:
         """
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "connection_password")
 
@@ -5610,7 +5632,7 @@ class GetOperationsInsightsWarehouseUsersOperationsInsightsWarehouseUserSummaryC
     @pulumi.getter
     def name(self) -> str:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 
@@ -5722,15 +5744,15 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
         :param str display_name: A filter to return only resources that match the entire display name.
         :param str dynamic_group_id: OCID of the dynamic group created for the warehouse
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param str id: Unique Operations Insights Warehouse identifier
+        :param str id: Unique Ops Insights Warehouse identifier
         :param str lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
-        :param str operations_insights_tenancy_id: Tenancy Identifier of Operations Insights service
+        :param str operations_insights_tenancy_id: Tenancy Identifier of Ops Insights service
         :param str state: Lifecycle states
         :param float storage_allocated_in_gbs: Storage allocated to OPSI Warehouse ADW.
         :param float storage_used_in_gbs: Storage by OPSI Warehouse ADW in GB.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         :param str time_created: The time at which the resource was first created. An RFC3339 formatted datetime string
-        :param str time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        :param str time_last_wallet_rotated: The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         :param str time_updated: The time at which the resource was last updated. An RFC3339 formatted datetime string
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -5811,7 +5833,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
     @pulumi.getter
     def id(self) -> str:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
         """
         return pulumi.get(self, "id")
 
@@ -5827,7 +5849,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
     @pulumi.getter(name="operationsInsightsTenancyId")
     def operations_insights_tenancy_id(self) -> str:
         """
-        Tenancy Identifier of Operations Insights service
+        Tenancy Identifier of Ops Insights service
         """
         return pulumi.get(self, "operations_insights_tenancy_id")
 
@@ -5875,7 +5897,7 @@ class GetOperationsInsightsWarehousesOperationsInsightsWarehouseSummaryCollectio
     @pulumi.getter(name="timeLastWalletRotated")
     def time_last_wallet_rotated(self) -> str:
         """
-        The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_last_wallet_rotated")
 

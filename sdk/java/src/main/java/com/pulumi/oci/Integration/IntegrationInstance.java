@@ -221,19 +221,9 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
     public Output<Optional<String>> domainId() {
         return Codegen.optional(this.domainId);
     }
-    /**
-     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-     * 
-     */
     @Export(name="enableProcessAutomationTrigger", refs={Integer.class}, tree="[0]")
     private Output</* @Nullable */ Integer> enableProcessAutomationTrigger;
 
-    /**
-     * @return (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-     * 
-     */
     public Output<Optional<Integer>> enableProcessAutomationTrigger() {
         return Codegen.optional(this.enableProcessAutomationTrigger);
     }
@@ -393,7 +383,6 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
     }
     /**
      * Shape
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     @Export(name="shape", refs={String.class}, tree="[0]")
@@ -401,7 +390,6 @@ public class IntegrationInstance extends com.pulumi.resources.CustomResource {
 
     /**
      * @return Shape
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public Output<String> shape() {

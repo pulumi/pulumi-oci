@@ -25,7 +25,7 @@ namespace Pulumi.Oci.Opsi.Inputs
         public Input<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsGetArgs>? ConnectionDetails { get; set; }
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Input("credentialDetails")]
         public Input<Inputs.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsGetArgs>? CredentialDetails { get; set; }

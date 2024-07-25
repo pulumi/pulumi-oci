@@ -65,7 +65,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> CompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         [Output("connectionPassword")]
         public Output<string> ConnectionPassword { get; private set; } = null!;
@@ -107,7 +107,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         [Output("name")]
         public Output<string> Name { get; private set; } = null!;
@@ -206,7 +206,7 @@ namespace Pulumi.Oci.Opsi
         private Input<string>? _connectionPassword;
 
         /// <summary>
-        /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         public Input<string>? ConnectionPassword
         {
@@ -261,7 +261,7 @@ namespace Pulumi.Oci.Opsi
         public Input<bool>? IsOpsiDataAccess { get; set; }
 
         /// <summary>
-        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }
@@ -294,7 +294,7 @@ namespace Pulumi.Oci.Opsi
         private Input<string>? _connectionPassword;
 
         /// <summary>
-        /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         public Input<string>? ConnectionPassword
         {
@@ -355,7 +355,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         [Input("name")]
         public Input<string>? Name { get; set; }

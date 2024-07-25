@@ -31,6 +31,7 @@ public final class GetSecurityAssessmentFindingResult {
     private String securityAssessmentId;
     private @Nullable String severity;
     private @Nullable String state;
+    private @Nullable String targetId;
 
     private GetSecurityAssessmentFindingResult() {}
     public Optional<String> accessLevel() {
@@ -70,6 +71,9 @@ public final class GetSecurityAssessmentFindingResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -91,6 +95,7 @@ public final class GetSecurityAssessmentFindingResult {
         private String securityAssessmentId;
         private @Nullable String severity;
         private @Nullable String state;
+        private @Nullable String targetId;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -105,6 +110,7 @@ public final class GetSecurityAssessmentFindingResult {
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
+    	      this.targetId = defaults.targetId;
         }
 
         @CustomType.Setter
@@ -185,6 +191,12 @@ public final class GetSecurityAssessmentFindingResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder targetId(@Nullable String targetId) {
+
+            this.targetId = targetId;
+            return this;
+        }
         public GetSecurityAssessmentFindingResult build() {
             final var _resultValue = new GetSecurityAssessmentFindingResult();
             _resultValue.accessLevel = accessLevel;
@@ -198,6 +210,7 @@ public final class GetSecurityAssessmentFindingResult {
             _resultValue.securityAssessmentId = securityAssessmentId;
             _resultValue.severity = severity;
             _resultValue.state = state;
+            _resultValue.targetId = targetId;
             return _resultValue;
         }
     }

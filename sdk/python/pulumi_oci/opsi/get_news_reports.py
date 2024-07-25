@@ -100,7 +100,7 @@ class GetNewsReportsResult:
     @pulumi.getter
     def statuses(self) -> Optional[Sequence[str]]:
         """
-        Indicates the status of a news report in Operations Insights.
+        Indicates the status of a news report in Ops Insights.
         """
         return pulumi.get(self, "statuses")
 
@@ -149,7 +149,7 @@ def get_news_reports(compartment_id: Optional[str] = None,
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str news_report_id: Unique Operations Insights news report identifier
+    :param str news_report_id: Unique Ops Insights news report identifier
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status
     """
@@ -203,7 +203,7 @@ def get_news_reports_output(compartment_id: Optional[pulumi.Input[Optional[str]]
 
     :param str compartment_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
     :param bool compartment_id_in_subtree: A flag to search all resources within a given compartment and all sub-compartments.
-    :param str news_report_id: Unique Operations Insights news report identifier
+    :param str news_report_id: Unique Ops Insights news report identifier
     :param Sequence[str] states: Lifecycle states
     :param Sequence[str] statuses: Resource Status
     """

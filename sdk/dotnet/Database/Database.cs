@@ -16,68 +16,6 @@ namespace Pulumi.Oci.Database
     /// 
     /// **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
     /// 
-    /// ## Example Usage
-    /// 
-    /// ```csharp
-    /// using System.Collections.Generic;
-    /// using System.Linq;
-    /// using Pulumi;
-    /// using Oci = Pulumi.Oci;
-    /// 
-    /// return await Deployment.RunAsync(() =&gt; 
-    /// {
-    ///     var testDatabase = new Oci.Database.Database("test_database", new()
-    ///     {
-    ///         DatabaseName = new Oci.Database.Inputs.DatabaseDatabaseArgs
-    ///         {
-    ///             AdminPassword = databaseDatabaseAdminPassword,
-    ///             DbName = databaseDatabaseDbName,
-    ///             BackupId = testBackup.Id,
-    ///             BackupTdePassword = databaseDatabaseBackupTdePassword,
-    ///             CharacterSet = databaseDatabaseCharacterSet,
-    ///             DatabaseSoftwareImageId = testDatabaseSoftwareImage.Id,
-    ///             DbBackupConfig = new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigArgs
-    ///             {
-    ///                 AutoBackupEnabled = databaseDatabaseDbBackupConfigAutoBackupEnabled,
-    ///                 AutoBackupWindow = databaseDatabaseDbBackupConfigAutoBackupWindow,
-    ///                 AutoFullBackupDay = databaseDatabaseDbBackupConfigAutoFullBackupDay,
-    ///                 AutoFullBackupWindow = databaseDatabaseDbBackupConfigAutoFullBackupWindow,
-    ///                 BackupDeletionPolicy = databaseDatabaseDbBackupConfigBackupDeletionPolicy,
-    ///                 BackupDestinationDetails = new[]
-    ///                 {
-    ///                     new Oci.Database.Inputs.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs
-    ///                     {
-    ///                         DbrsPolicyId = testPolicy.Id,
-    ///                         Id = databaseDatabaseDbBackupConfigBackupDestinationDetailsId,
-    ///                         Type = databaseDatabaseDbBackupConfigBackupDestinationDetailsType,
-    ///                     },
-    ///                 },
-    ///                 RecoveryWindowInDays = databaseDatabaseDbBackupConfigRecoveryWindowInDays,
-    ///                 RunImmediateFullBackup = databaseDatabaseDbBackupConfigRunImmediateFullBackup,
-    ///             },
-    ///             DbUniqueName = databaseDatabaseDbUniqueName,
-    ///             DbWorkload = databaseDatabaseDbWorkload,
-    ///             DefinedTags = databaseDatabaseDefinedTags,
-    ///             FreeformTags = databaseDatabaseFreeformTags,
-    ///             KmsKeyId = testKey.Id,
-    ///             KmsKeyVersionId = testKeyVersion.Id,
-    ///             NcharacterSet = databaseDatabaseNcharacterSet,
-    ///             PdbName = databaseDatabasePdbName,
-    ///             PluggableDatabases = databaseDatabasePluggableDatabases,
-    ///             SidPrefix = databaseDatabaseSidPrefix,
-    ///             TdeWalletPassword = databaseDatabaseTdeWalletPassword,
-    ///             VaultId = testVault.Id,
-    ///         },
-    ///         DbHomeId = testDbHome.Id,
-    ///         Source = databaseSource,
-    ///         DbVersion = databaseDbVersion,
-    ///         KmsKeyId = testKey.Id,
-    ///         KmsKeyVersionId = testKeyVersion.Id,
-    ///     });
-    /// 
-    /// });
-    /// ```
-    /// 
     /// ## Import
     /// 
     /// Databases can be imported using the `id`, e.g.

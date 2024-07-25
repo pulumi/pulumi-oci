@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 //
-// Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+// Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
 // There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
 // header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
 //
@@ -71,7 +71,7 @@ type OperationsInsightsWarehouse struct {
 	CpuUsed pulumi.Float64Output `pulumi:"cpuUsed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
-	// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId pulumi.StringOutput `pulumi:"dynamicGroupId"`
@@ -79,7 +79,7 @@ type OperationsInsightsWarehouse struct {
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// Tenancy Identifier of Operations Insights service
+	// Tenancy Identifier of Ops Insights service
 	OperationsInsightsTenancyId pulumi.StringOutput `pulumi:"operationsInsightsTenancyId"`
 	// Possible lifecycle states
 	State pulumi.StringOutput `pulumi:"state"`
@@ -94,7 +94,7 @@ type OperationsInsightsWarehouse struct {
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
-	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 	TimeLastWalletRotated pulumi.StringOutput `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -147,7 +147,7 @@ type operationsInsightsWarehouseState struct {
 	CpuUsed *float64 `pulumi:"cpuUsed"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName *string `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId *string `pulumi:"dynamicGroupId"`
@@ -155,7 +155,7 @@ type operationsInsightsWarehouseState struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// Tenancy Identifier of Operations Insights service
+	// Tenancy Identifier of Ops Insights service
 	OperationsInsightsTenancyId *string `pulumi:"operationsInsightsTenancyId"`
 	// Possible lifecycle states
 	State *string `pulumi:"state"`
@@ -170,7 +170,7 @@ type operationsInsightsWarehouseState struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
-	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 	TimeLastWalletRotated *string `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -185,7 +185,7 @@ type OperationsInsightsWarehouseState struct {
 	CpuUsed pulumi.Float64PtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringPtrInput
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId pulumi.StringPtrInput
@@ -193,7 +193,7 @@ type OperationsInsightsWarehouseState struct {
 	FreeformTags pulumi.MapInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// Tenancy Identifier of Operations Insights service
+	// Tenancy Identifier of Ops Insights service
 	OperationsInsightsTenancyId pulumi.StringPtrInput
 	// Possible lifecycle states
 	State pulumi.StringPtrInput
@@ -208,7 +208,7 @@ type OperationsInsightsWarehouseState struct {
 	SystemTags pulumi.MapInput
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
-	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 	TimeLastWalletRotated pulumi.StringPtrInput
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
@@ -225,7 +225,7 @@ type operationsInsightsWarehouseArgs struct {
 	CpuAllocated float64 `pulumi:"cpuAllocated"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
@@ -244,7 +244,7 @@ type OperationsInsightsWarehouseArgs struct {
 	CpuAllocated pulumi.Float64Input
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
-	// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
@@ -362,7 +362,7 @@ func (o OperationsInsightsWarehouseOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.MapOutput { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
 func (o OperationsInsightsWarehouseOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -382,7 +382,7 @@ func (o OperationsInsightsWarehouseOutput) LifecycleDetails() pulumi.StringOutpu
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Tenancy Identifier of Operations Insights service
+// Tenancy Identifier of Ops Insights service
 func (o OperationsInsightsWarehouseOutput) OperationsInsightsTenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.OperationsInsightsTenancyId }).(pulumi.StringOutput)
 }
@@ -415,7 +415,7 @@ func (o OperationsInsightsWarehouseOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 func (o OperationsInsightsWarehouseOutput) TimeLastWalletRotated() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouse) pulumi.StringOutput { return v.TimeLastWalletRotated }).(pulumi.StringOutput)
 }

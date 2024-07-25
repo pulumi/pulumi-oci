@@ -6,6 +6,7 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -22,6 +23,11 @@ public final class ConfigVantagePoint {
      * 
      */
     private String name;
+    /**
+     * @return List of workers running the assigned monitor.
+     * 
+     */
+    private @Nullable List<String> workerLists;
 
     private ConfigVantagePoint() {}
     /**
@@ -38,6 +44,13 @@ public final class ConfigVantagePoint {
     public String name() {
         return this.name;
     }
+    /**
+     * @return List of workers running the assigned monitor.
+     * 
+     */
+    public List<String> workerLists() {
+        return this.workerLists == null ? List.of() : this.workerLists;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -50,11 +63,13 @@ public final class ConfigVantagePoint {
     public static final class Builder {
         private @Nullable String displayName;
         private String name;
+        private @Nullable List<String> workerLists;
         public Builder() {}
         public Builder(ConfigVantagePoint defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.displayName = defaults.displayName;
     	      this.name = defaults.name;
+    	      this.workerLists = defaults.workerLists;
         }
 
         @CustomType.Setter
@@ -71,10 +86,20 @@ public final class ConfigVantagePoint {
             this.name = name;
             return this;
         }
+        @CustomType.Setter
+        public Builder workerLists(@Nullable List<String> workerLists) {
+
+            this.workerLists = workerLists;
+            return this;
+        }
+        public Builder workerLists(String... workerLists) {
+            return workerLists(List.of(workerLists));
+        }
         public ConfigVantagePoint build() {
             final var _resultValue = new ConfigVantagePoint();
             _resultValue.displayName = displayName;
             _resultValue.name = name;
+            _resultValue.workerLists = workerLists;
             return _resultValue;
         }
     }

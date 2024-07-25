@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isAssessmentScheduled: securityAssessmentIsAssessmentScheduled,
  *     schedule: securityAssessmentSchedule,
  * });
  * ```
@@ -98,6 +99,10 @@ export class SecurityAssessment extends pulumi.CustomResource {
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
     public /*out*/ readonly ignoredTargets!: pulumi.Output<string[]>;
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     */
+    public readonly isAssessmentScheduled!: pulumi.Output<boolean>;
     /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      */
@@ -197,6 +202,7 @@ export class SecurityAssessment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ignoredAssessmentIds"] = state ? state.ignoredAssessmentIds : undefined;
             resourceInputs["ignoredTargets"] = state ? state.ignoredTargets : undefined;
+            resourceInputs["isAssessmentScheduled"] = state ? state.isAssessmentScheduled : undefined;
             resourceInputs["isBaseline"] = state ? state.isBaseline : undefined;
             resourceInputs["isDeviatedFromBaseline"] = state ? state.isDeviatedFromBaseline : undefined;
             resourceInputs["lastComparedBaselineId"] = state ? state.lastComparedBaselineId : undefined;
@@ -228,6 +234,7 @@ export class SecurityAssessment extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isAssessmentScheduled"] = args ? args.isAssessmentScheduled : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
             resourceInputs["ignoredAssessmentIds"] = undefined /*out*/;
@@ -286,6 +293,10 @@ export interface SecurityAssessmentState {
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
     ignoredTargets?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     */
+    isAssessmentScheduled?: pulumi.Input<boolean>;
     /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      */
@@ -390,6 +401,10 @@ export interface SecurityAssessmentArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     */
+    isAssessmentScheduled?: pulumi.Input<boolean>;
     /**
      * (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *

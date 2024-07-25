@@ -588,8 +588,9 @@ type GetInstancePoolsInstancePoolPlacementConfiguration struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain string `pulumi:"availabilityDomain"`
 	// The fault domains to place instances.
-	FaultDomains    []string `pulumi:"faultDomains"`
-	PrimarySubnetId string   `pulumi:"primarySubnetId"`
+	FaultDomains []string `pulumi:"faultDomains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+	PrimarySubnetId string `pulumi:"primarySubnetId"`
 	// Details about the IPv6 primary subnet.
 	PrimaryVnicSubnets []GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnet `pulumi:"primaryVnicSubnets"`
 	// The set of secondary VNIC data for instances in the pool.
@@ -611,8 +612,9 @@ type GetInstancePoolsInstancePoolPlacementConfigurationArgs struct {
 	// The availability domain to place instances.  Example: `Uocm:PHX-AD-1`
 	AvailabilityDomain pulumi.StringInput `pulumi:"availabilityDomain"`
 	// The fault domains to place instances.
-	FaultDomains    pulumi.StringArrayInput `pulumi:"faultDomains"`
-	PrimarySubnetId pulumi.StringInput      `pulumi:"primarySubnetId"`
+	FaultDomains pulumi.StringArrayInput `pulumi:"faultDomains"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+	PrimarySubnetId pulumi.StringInput `pulumi:"primarySubnetId"`
 	// Details about the IPv6 primary subnet.
 	PrimaryVnicSubnets GetInstancePoolsInstancePoolPlacementConfigurationPrimaryVnicSubnetArrayInput `pulumi:"primaryVnicSubnets"`
 	// The set of secondary VNIC data for instances in the pool.
@@ -680,6 +682,7 @@ func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) FaultDomains()
 	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) []string { return v.FaultDomains }).(pulumi.StringArrayOutput)
 }
 
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
 func (o GetInstancePoolsInstancePoolPlacementConfigurationOutput) PrimarySubnetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstancePoolsInstancePoolPlacementConfiguration) string { return v.PrimarySubnetId }).(pulumi.StringOutput)
 }

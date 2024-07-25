@@ -274,7 +274,6 @@ class GetIntegrationInstanceResult:
     def shape(self) -> str:
         """
         Shape
-        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 

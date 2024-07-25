@@ -2386,8 +2386,8 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
         :param pulumi.Input[str] reserved_count: (Updatable) The total number of instances that can be launched from the capacity configuration.
         :param pulumi.Input['ComputeCapacityReservationInstanceReservationConfigClusterConfigArgs'] cluster_config: (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
                
-               <<<<<<< HEAD
                If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
+        :param pulumi.Input[str] cluster_placement_group_id: (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
         :param pulumi.Input[str] fault_domain: (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
                
                To retrieve a list of fault domains, use the `ListFaultDomains` operation in the [Identity and Access Management Service API](https://www.terraform.io/iaas/api/#/en/identity/20160918/).
@@ -2445,7 +2445,6 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
         """
         (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
 
-        <<<<<<< HEAD
         If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
         """
         return pulumi.get(self, "cluster_config")
@@ -2457,6 +2456,9 @@ class ComputeCapacityReservationInstanceReservationConfigArgs:
     @property
     @pulumi.getter(name="clusterPlacementGroupId")
     def cluster_placement_group_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+        """
         return pulumi.get(self, "cluster_placement_group_id")
 
     @cluster_placement_group_id.setter
@@ -10404,8 +10406,8 @@ class InstancePoolPlacementConfigurationArgs:
                
                To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
                
-               <<<<<<< HEAD
                Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
+        :param pulumi.Input[str] primary_subnet_id: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
         :param pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs'] primary_vnic_subnets: (Updatable) Details about the IPv6 primary subnet.
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationSecondaryVnicSubnetArgs']]] secondary_vnic_subnets: (Updatable) The set of secondary VNIC data for instances in the pool.
         """
@@ -10443,7 +10445,6 @@ class InstancePoolPlacementConfigurationArgs:
 
         To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
 
-        <<<<<<< HEAD
         Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         """
         return pulumi.get(self, "fault_domains")
@@ -10455,6 +10456,9 @@ class InstancePoolPlacementConfigurationArgs:
     @property
     @pulumi.getter(name="primarySubnetId")
     def primary_subnet_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+        """
         return pulumi.get(self, "primary_subnet_id")
 
     @primary_subnet_id.setter
@@ -10494,8 +10498,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
                  is_assign_ipv6ip: Optional[pulumi.Input[bool]] = None):
         """
         :param pulumi.Input[str] subnet_id: (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-               =======
-               Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         :param pulumi.Input[Sequence[pulumi.Input['InstancePoolPlacementConfigurationPrimaryVnicSubnetsIpv6addressIpv6subnetCidrPairDetailArgs']]] ipv6address_ipv6subnet_cidr_pair_details: (Updatable) A list of IPv6 prefix ranges from which the VNIC should be assigned an IPv6 address. You can provide only the prefix ranges and Oracle Cloud Infrastructure will select an available address from the range. You can optionally choose to leave the prefix range empty and instead provide the specific IPv6 address that should be used from within that range.
         :param pulumi.Input[bool] is_assign_ipv6ip: (Updatable) Whether to allocate an IPv6 address at instance and VNIC creation from an IPv6 enabled subnet. Default: False. When provided you may optionally provide an IPv6 prefix (`ipv6SubnetCidr`) of your choice to assign the IPv6 address from. If `ipv6SubnetCidr` is not provided then an IPv6 prefix is chosen for you.
         """
@@ -10510,8 +10512,6 @@ class InstancePoolPlacementConfigurationPrimaryVnicSubnetsArgs:
     def subnet_id(self) -> pulumi.Input[str]:
         """
         (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-        =======
-        Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
         """
         return pulumi.get(self, "subnet_id")
 

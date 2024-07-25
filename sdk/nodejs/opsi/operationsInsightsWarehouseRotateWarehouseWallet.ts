@@ -55,7 +55,7 @@ export class OperationsInsightsWarehouseRotateWarehouseWallet extends pulumi.Cus
     }
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      *
      *
      * ** IMPORTANT **
@@ -94,7 +94,7 @@ export class OperationsInsightsWarehouseRotateWarehouseWallet extends pulumi.Cus
  */
 export interface OperationsInsightsWarehouseRotateWarehouseWalletState {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      *
      *
      * ** IMPORTANT **
@@ -108,7 +108,7 @@ export interface OperationsInsightsWarehouseRotateWarehouseWalletState {
  */
 export interface OperationsInsightsWarehouseRotateWarehouseWalletArgs {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      *
      *
      * ** IMPORTANT **

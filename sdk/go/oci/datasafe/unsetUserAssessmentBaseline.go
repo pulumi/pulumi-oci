@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+// Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+// If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
 // Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
 //
 // ## Example Usage
@@ -33,6 +34,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.NewUnsetUserAssessmentBaseline(ctx, "test_unset_user_assessment_baseline", &DataSafe.UnsetUserAssessmentBaselineArgs{
 //				UserAssessmentId: pulumi.Any(testUserAssessment.Id),
+//				TargetIds:        pulumi.Any(unsetUserAssessmentBaselineTargetIds),
 //			})
 //			if err != nil {
 //				return err
@@ -53,6 +55,8 @@ import (
 type UnsetUserAssessmentBaseline struct {
 	pulumi.CustomResourceState
 
+	// The list of database target OCIDs for which the user intends to unset the baseline.
+	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
 	// The OCID of the user assessment.
 	//
 	// ** IMPORTANT **
@@ -93,6 +97,8 @@ func GetUnsetUserAssessmentBaseline(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
 type unsetUserAssessmentBaselineState struct {
+	// The list of database target OCIDs for which the user intends to unset the baseline.
+	TargetIds []string `pulumi:"targetIds"`
 	// The OCID of the user assessment.
 	//
 	// ** IMPORTANT **
@@ -101,6 +107,8 @@ type unsetUserAssessmentBaselineState struct {
 }
 
 type UnsetUserAssessmentBaselineState struct {
+	// The list of database target OCIDs for which the user intends to unset the baseline.
+	TargetIds pulumi.StringArrayInput
 	// The OCID of the user assessment.
 	//
 	// ** IMPORTANT **
@@ -113,6 +121,8 @@ func (UnsetUserAssessmentBaselineState) ElementType() reflect.Type {
 }
 
 type unsetUserAssessmentBaselineArgs struct {
+	// The list of database target OCIDs for which the user intends to unset the baseline.
+	TargetIds []string `pulumi:"targetIds"`
 	// The OCID of the user assessment.
 	//
 	// ** IMPORTANT **
@@ -122,6 +132,8 @@ type unsetUserAssessmentBaselineArgs struct {
 
 // The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
 type UnsetUserAssessmentBaselineArgs struct {
+	// The list of database target OCIDs for which the user intends to unset the baseline.
+	TargetIds pulumi.StringArrayInput
 	// The OCID of the user assessment.
 	//
 	// ** IMPORTANT **
@@ -214,6 +226,11 @@ func (o UnsetUserAssessmentBaselineOutput) ToUnsetUserAssessmentBaselineOutput()
 
 func (o UnsetUserAssessmentBaselineOutput) ToUnsetUserAssessmentBaselineOutputWithContext(ctx context.Context) UnsetUserAssessmentBaselineOutput {
 	return o
+}
+
+// The list of database target OCIDs for which the user intends to unset the baseline.
+func (o UnsetUserAssessmentBaselineOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnsetUserAssessmentBaseline) pulumi.StringArrayOutput { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
 // The OCID of the user assessment.

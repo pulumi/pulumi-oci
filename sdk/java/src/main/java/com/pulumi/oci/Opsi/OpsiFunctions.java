@@ -2101,7 +2101,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
@@ -2150,7 +2150,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
@@ -2199,7 +2199,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
@@ -2248,7 +2248,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
@@ -2297,7 +2297,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
@@ -2346,7 +2346,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      * 
      * ## Example Usage
@@ -5089,7 +5089,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets details of an Operations Insights Warehouse.
+     * Gets details of an Ops Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5134,7 +5134,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets details of an Operations Insights Warehouse.
+     * Gets details of an Ops Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5179,7 +5179,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets details of an Operations Insights Warehouse.
+     * Gets details of an Ops Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5224,7 +5224,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets details of an Operations Insights Warehouse.
+     * Gets details of an Ops Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5817,7 +5817,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5865,7 +5865,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5913,7 +5913,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -5961,7 +5961,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -6009,7 +6009,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage
@@ -6057,7 +6057,7 @@ public final class OpsiFunctions {
     /**
      * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
      * 
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      * 
      * ## Example Usage

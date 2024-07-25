@@ -181,6 +181,8 @@ import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveObjectsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveSchemasPlainArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
+import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsPlainArgs;
 import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelsSensitiveColumnArgs;
@@ -317,6 +319,7 @@ import com.pulumi.oci.DataSafe.outputs.GetSecurityPolicyResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveObjectsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveSchemasResult;
+import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelSensitiveTypesResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnResult;
 import com.pulumi.oci.DataSafe.outputs.GetSensitiveDataModelsSensitiveColumnsResult;
@@ -11937,6 +11940,8 @@ public final class DataSafeFunctions {
      *             .displayName(reportDisplayName)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
+     *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
+     *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
      *             .type(reportType)
      *             .build());
      * 
@@ -11987,6 +11992,8 @@ public final class DataSafeFunctions {
      *             .displayName(reportDisplayName)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
+     *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
+     *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
      *             .type(reportType)
      *             .build());
      * 
@@ -12037,6 +12044,8 @@ public final class DataSafeFunctions {
      *             .displayName(reportDisplayName)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
+     *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
+     *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
      *             .type(reportType)
      *             .build());
      * 
@@ -12087,6 +12096,8 @@ public final class DataSafeFunctions {
      *             .displayName(reportDisplayName)
      *             .reportDefinitionId(testReportDefinition.id())
      *             .state(reportState)
+     *             .timeGeneratedGreaterThanOrEqualTo(reportTimeGeneratedGreaterThanOrEqualTo)
+     *             .timeGeneratedLessThan(reportTimeGeneratedLessThan)
      *             .type(reportType)
      *             .build());
      * 
@@ -17571,6 +17582,186 @@ public final class DataSafeFunctions {
      */
     public static CompletableFuture<GetSensitiveDataModelSensitiveSchemasResult> getSensitiveDataModelSensitiveSchemasPlain(GetSensitiveDataModelSensitiveSchemasPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveDataModelSensitiveSchemas:getSensitiveDataModelSensitiveSchemas", TypeShape.of(GetSensitiveDataModelSensitiveSchemasResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelSensitiveTypesResult> getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs args) {
+        return getSensitiveDataModelSensitiveTypes(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveDataModelSensitiveTypesResult> getSensitiveDataModelSensitiveTypesPlain(GetSensitiveDataModelSensitiveTypesPlainArgs args) {
+        return getSensitiveDataModelSensitiveTypesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static Output<GetSensitiveDataModelSensitiveTypesResult> getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("oci:DataSafe/getSensitiveDataModelSensitiveTypes:getSensitiveDataModelSensitiveTypes", TypeShape.of(GetSensitiveDataModelSensitiveTypesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * This data source provides the list of Sensitive Data Model Sensitive Types in Oracle Cloud Infrastructure Data Safe service.
+     * 
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     * 
+     * ## Example Usage
+     * 
+     * &lt;!--Start PulumiCodeChooser --&gt;
+     * <pre>
+     * {@code
+     * package generated_program;
+     * 
+     * import com.pulumi.Context;
+     * import com.pulumi.Pulumi;
+     * import com.pulumi.core.Output;
+     * import com.pulumi.oci.DataSafe.DataSafeFunctions;
+     * import com.pulumi.oci.DataSafe.inputs.GetSensitiveDataModelSensitiveTypesArgs;
+     * import java.util.List;
+     * import java.util.ArrayList;
+     * import java.util.Map;
+     * import java.io.File;
+     * import java.nio.file.Files;
+     * import java.nio.file.Paths;
+     * 
+     * public class App {
+     *     public static void main(String[] args) {
+     *         Pulumi.run(App::stack);
+     *     }
+     * 
+     *     public static void stack(Context ctx) {
+     *         final var testSensitiveDataModelSensitiveTypes = DataSafeFunctions.getSensitiveDataModelSensitiveTypes(GetSensitiveDataModelSensitiveTypesArgs.builder()
+     *             .sensitiveDataModelId(testSensitiveDataModel.id())
+     *             .sensitiveTypeId(testSensitiveType.id())
+     *             .build());
+     * 
+     *     }
+     * }
+     * }
+     * </pre>
+     * &lt;!--End PulumiCodeChooser --&gt;
+     * 
+     */
+    public static CompletableFuture<GetSensitiveDataModelSensitiveTypesResult> getSensitiveDataModelSensitiveTypesPlain(GetSensitiveDataModelSensitiveTypesPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("oci:DataSafe/getSensitiveDataModelSensitiveTypes:getSensitiveDataModelSensitiveTypes", TypeShape.of(GetSensitiveDataModelSensitiveTypesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * This data source provides the list of Sensitive Data Models in Oracle Cloud Infrastructure Data Safe service.

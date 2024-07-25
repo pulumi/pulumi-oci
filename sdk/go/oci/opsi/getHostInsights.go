@@ -69,7 +69,7 @@ type GetHostInsightsArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId *string                 `pulumi:"exadataInsightId"`
 	Filters          []GetHostInsightsFilter `pulumi:"filters"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
 	HostTypes []string `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id *string `pulumi:"id"`
@@ -91,7 +91,7 @@ type GetHostInsightsResult struct {
 	Filters          []GetHostInsightsFilter `pulumi:"filters"`
 	// The list of host_insight_summary_collection.
 	HostInsightSummaryCollections []GetHostInsightsHostInsightSummaryCollection `pulumi:"hostInsightSummaryCollections"`
-	// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+	// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 	HostTypes []string `pulumi:"hostTypes"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the host insight resource.
 	Id *string `pulumi:"id"`
@@ -125,7 +125,7 @@ type GetHostInsightsOutputArgs struct {
 	// [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of exadata insight resource.
 	ExadataInsightId pulumi.StringPtrInput           `pulumi:"exadataInsightId"`
 	Filters          GetHostInsightsFilterArrayInput `pulumi:"filters"`
-	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+	// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
 	HostTypes pulumi.StringArrayInput `pulumi:"hostTypes"`
 	// Optional list of host insight resource [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
 	Id pulumi.StringPtrInput `pulumi:"id"`
@@ -184,7 +184,7 @@ func (o GetHostInsightsResultOutput) HostInsightSummaryCollections() GetHostInsi
 	}).(GetHostInsightsHostInsightSummaryCollectionArrayOutput)
 }
 
-// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
 func (o GetHostInsightsResultOutput) HostTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetHostInsightsResult) []string { return v.HostTypes }).(pulumi.StringArrayOutput)
 }

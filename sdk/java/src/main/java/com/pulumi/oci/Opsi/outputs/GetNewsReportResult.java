@@ -87,7 +87,7 @@ public final class GetNewsReportResult {
      */
     private String state;
     /**
-     * @return Indicates the status of a news report in Operations Insights.
+     * @return Indicates the status of a news report in Ops Insights.
      * 
      */
     private String status;
@@ -210,7 +210,7 @@ public final class GetNewsReportResult {
         return this.state;
     }
     /**
-     * @return Indicates the status of a news report in Operations Insights.
+     * @return Indicates the status of a news report in Ops Insights.
      * 
      */
     public String status() {

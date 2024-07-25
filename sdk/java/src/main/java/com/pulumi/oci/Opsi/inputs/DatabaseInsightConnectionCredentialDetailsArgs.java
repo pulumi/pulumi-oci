@@ -91,14 +91,14 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
      * 
      */
     @Import(name="walletSecretId")
     private @Nullable Output<String> walletSecretId;
 
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
      * 
      */
     public Optional<Output<String>> walletSecretId() {
@@ -240,7 +240,7 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
         }
 
         /**
-         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
          * 
          * @return builder
          * 
@@ -251,7 +251,7 @@ public final class DatabaseInsightConnectionCredentialDetailsArgs extends com.pu
         }
 
         /**
-         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         * @param walletSecretId The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
          * 
          * @return builder
          * 

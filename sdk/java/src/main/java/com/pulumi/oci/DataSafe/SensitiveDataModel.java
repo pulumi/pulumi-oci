@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.SensitiveDataModelArgs;
 import com.pulumi.oci.DataSafe.inputs.SensitiveDataModelState;
+import com.pulumi.oci.DataSafe.outputs.SensitiveDataModelTablesForDiscovery;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -36,6 +37,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.DataSafe.SensitiveDataModel;
  * import com.pulumi.oci.DataSafe.SensitiveDataModelArgs;
+ * import com.pulumi.oci.DataSafe.inputs.SensitiveDataModelTablesForDiscoveryArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -63,6 +65,10 @@ import javax.annotation.Nullable;
  *             .isSampleDataCollectionEnabled(sensitiveDataModelIsSampleDataCollectionEnabled)
  *             .schemasForDiscoveries(sensitiveDataModelSchemasForDiscovery)
  *             .sensitiveTypeIdsForDiscoveries(sensitiveDataModelSensitiveTypeIdsForDiscovery)
+ *             .tablesForDiscoveries(SensitiveDataModelTablesForDiscoveryArgs.builder()
+ *                 .schemaName(sensitiveDataModelTablesForDiscoverySchemaName)
+ *                 .tableNames(sensitiveDataModelTablesForDiscoveryTableNames)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -277,6 +283,20 @@ public class SensitiveDataModel extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+     * 
+     */
+    @Export(name="tablesForDiscoveries", refs={List.class,SensitiveDataModelTablesForDiscovery.class}, tree="[0,1]")
+    private Output<List<SensitiveDataModelTablesForDiscovery>> tablesForDiscoveries;
+
+    /**
+     * @return (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+     * 
+     */
+    public Output<List<SensitiveDataModelTablesForDiscovery>> tablesForDiscoveries() {
+        return this.tablesForDiscoveries;
     }
     /**
      * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.

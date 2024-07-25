@@ -98,7 +98,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// Unique Operations Insights news report identifier
+        /// Unique Ops Insights news report identifier
         /// </summary>
         [Input("newsReportId")]
         public string? NewsReportId { get; set; }
@@ -156,7 +156,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// Unique Operations Insights news report identifier
+        /// Unique Ops Insights news report identifier
         /// </summary>
         [Input("newsReportId")]
         public Input<string>? NewsReportId { get; set; }
@@ -215,7 +215,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly ImmutableArray<string> States;
         /// <summary>
-        /// Indicates the status of a news report in Operations Insights.
+        /// Indicates the status of a news report in Ops Insights.
         /// </summary>
         public readonly ImmutableArray<string> Statuses;
 

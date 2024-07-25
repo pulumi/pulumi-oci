@@ -229,14 +229,14 @@ public final class HostInsightState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     @Import(name="hostType")
     private @Nullable Output<String> hostType;
 
     /**
-     * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * @return Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     public Optional<Output<String>> hostType() {
@@ -324,17 +324,9 @@ public final class HostInsightState extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.platformVersion);
     }
 
-    /**
-     * Processor count.
-     * 
-     */
     @Import(name="processorCount")
     private @Nullable Output<Integer> processorCount;
 
-    /**
-     * @return Processor count.
-     * 
-     */
     public Optional<Output<Integer>> processorCount() {
         return Optional.ofNullable(this.processorCount);
     }
@@ -758,7 +750,7 @@ public final class HostInsightState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hostType Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+         * @param hostType Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
          * 
          * @return builder
          * 
@@ -769,7 +761,7 @@ public final class HostInsightState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hostType Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+         * @param hostType Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
          * 
          * @return builder
          * 
@@ -889,23 +881,11 @@ public final class HostInsightState extends com.pulumi.resources.ResourceArgs {
             return platformVersion(Output.of(platformVersion));
         }
 
-        /**
-         * @param processorCount Processor count.
-         * 
-         * @return builder
-         * 
-         */
         public Builder processorCount(@Nullable Output<Integer> processorCount) {
             $.processorCount = processorCount;
             return this;
         }
 
-        /**
-         * @param processorCount Processor count.
-         * 
-         * @return builder
-         * 
-         */
         public Builder processorCount(Integer processorCount) {
             return processorCount(Output.of(processorCount));
         }

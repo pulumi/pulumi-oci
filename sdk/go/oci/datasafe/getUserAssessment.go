@@ -74,6 +74,8 @@ type LookupUserAssessmentResult struct {
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []GetUserAssessmentIgnoredTarget `pulumi:"ignoredTargets"`
+	// Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled bool `pulumi:"isAssessmentScheduled"`
 	// Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
 	IsBaseline bool `pulumi:"isBaseline"`
 	// Indicates if the user assessment deviates from the baseline.
@@ -184,6 +186,11 @@ func (o LookupUserAssessmentResultOutput) IgnoredAssessmentIds() pulumi.StringAr
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 func (o LookupUserAssessmentResultOutput) IgnoredTargets() GetUserAssessmentIgnoredTargetArrayOutput {
 	return o.ApplyT(func(v LookupUserAssessmentResult) []GetUserAssessmentIgnoredTarget { return v.IgnoredTargets }).(GetUserAssessmentIgnoredTargetArrayOutput)
+}
+
+// Indicates whether the assessment is scheduled to run.
+func (o LookupUserAssessmentResultOutput) IsAssessmentScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupUserAssessmentResult) bool { return v.IsAssessmentScheduled }).(pulumi.BoolOutput)
 }
 
 // Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.

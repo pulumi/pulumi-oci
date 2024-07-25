@@ -28,7 +28,7 @@ class OperationsInsightsPrivateEndpointArgs:
         The set of arguments for constructing a OperationsInsightsPrivateEndpoint resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
         :param pulumi.Input[str] display_name: (Updatable) The display name for the private endpoint. It is changeable.
-        :param pulumi.Input[bool] is_used_for_rac_dbs: The flag to identify if private endpoint is used for rac database or not
+        :param pulumi.Input[bool] is_used_for_rac_dbs: This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         :param pulumi.Input[str] subnet_id: The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
         :param pulumi.Input[str] vcn_id: The VCN [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
                
@@ -85,7 +85,7 @@ class OperationsInsightsPrivateEndpointArgs:
     @pulumi.getter(name="isUsedForRacDbs")
     def is_used_for_rac_dbs(self) -> pulumi.Input[bool]:
         """
-        The flag to identify if private endpoint is used for rac database or not
+        This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         """
         return pulumi.get(self, "is_used_for_rac_dbs")
 
@@ -207,7 +207,7 @@ class _OperationsInsightsPrivateEndpointState:
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) The display name for the private endpoint. It is changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_used_for_rac_dbs: The flag to identify if private endpoint is used for rac database or not
+        :param pulumi.Input[bool] is_used_for_rac_dbs: This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[str] private_endpoint_status_details: A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
@@ -317,7 +317,7 @@ class _OperationsInsightsPrivateEndpointState:
     @pulumi.getter(name="isUsedForRacDbs")
     def is_used_for_rac_dbs(self) -> Optional[pulumi.Input[bool]]:
         """
-        The flag to identify if private endpoint is used for rac database or not
+        This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         """
         return pulumi.get(self, "is_used_for_rac_dbs")
 
@@ -457,7 +457,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         """
         This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
 
-        Create a private endpoint resource for the tenant in Operations Insights.
+        Create a private endpoint resource for the tenant in Ops Insights.
         This resource will be created in customer compartment.
 
         ## Example Usage
@@ -497,7 +497,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) The display name for the private endpoint. It is changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_used_for_rac_dbs: The flag to identify if private endpoint is used for rac database or not
+        :param pulumi.Input[bool] is_used_for_rac_dbs: This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[str] private_endpoint_status_details: A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
         :param pulumi.Input[str] subnet_id: The Subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Private service accessed database.
@@ -516,7 +516,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         """
         This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
 
-        Create a private endpoint resource for the tenant in Operations Insights.
+        Create a private endpoint resource for the tenant in Ops Insights.
         This resource will be created in customer compartment.
 
         ## Example Usage
@@ -645,7 +645,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the private endpoint.
         :param pulumi.Input[str] display_name: (Updatable) The display name for the private endpoint. It is changeable.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
-        :param pulumi.Input[bool] is_used_for_rac_dbs: The flag to identify if private endpoint is used for rac database or not
+        :param pulumi.Input[bool] is_used_for_rac_dbs: This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] nsg_ids: (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
         :param pulumi.Input[str] private_endpoint_status_details: A message describing the status of the private endpoint connection of this resource. For example, it can be used to provide actionable information about the validity of the private endpoint connection.
@@ -725,7 +725,7 @@ class OperationsInsightsPrivateEndpoint(pulumi.CustomResource):
     @pulumi.getter(name="isUsedForRacDbs")
     def is_used_for_rac_dbs(self) -> pulumi.Output[bool]:
         """
-        The flag to identify if private endpoint is used for rac database or not
+        This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
         """
         return pulumi.get(self, "is_used_for_rac_dbs")
 

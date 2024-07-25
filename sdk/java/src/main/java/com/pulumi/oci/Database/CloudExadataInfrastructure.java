@@ -83,6 +83,7 @@ import javax.annotation.Nullable;
  *                 .weeksOfMonths(cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth)
  *                 .build())
  *             .storageCount(cloudExadataInfrastructureStorageCount)
+ *             .subscriptionId(tenantSubscriptionId)
  *             .build());
  * 
  *     }
@@ -511,18 +512,12 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
     /**
      * (Updatable) The number of storage servers for the cloud Exadata infrastructure.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="storageCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageCount;
 
     /**
      * @return (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<Integer> storageCount() {
@@ -541,6 +536,26 @@ public class CloudExadataInfrastructure extends com.pulumi.resources.CustomResou
      */
     public Output<String> storageServerVersion() {
         return this.storageServerVersion;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

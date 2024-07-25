@@ -102,7 +102,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightConnectionCredentialDetailResult> ConnectionCredentialDetails;
         /// <summary>
@@ -135,7 +135,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string DatabaseResourceType;
         /// <summary>
-        /// Operations Insights internal representation of the database type.
+        /// Ops Insights internal representation of the database type.
         /// </summary>
         public readonly string DatabaseType;
         /// <summary>
@@ -188,6 +188,14 @@ namespace Pulumi.Oci.Opsi
         /// Database insight identifier
         /// </summary>
         public readonly string Id;
+        /// <summary>
+        /// Specifies if MYSQL DB System has heatwave cluster attached.
+        /// </summary>
+        public readonly bool IsHeatWaveClusterAttached;
+        /// <summary>
+        /// Specifies if MYSQL DB System is highly available.
+        /// </summary>
+        public readonly bool IsHighlyAvailable;
         /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
@@ -285,6 +293,10 @@ namespace Pulumi.Oci.Opsi
 
             string id,
 
+            bool isHeatWaveClusterAttached,
+
+            bool isHighlyAvailable,
+
             string lifecycleDetails,
 
             string opsiPrivateEndpointId,
@@ -332,6 +344,8 @@ namespace Pulumi.Oci.Opsi
             ExadataInsightId = exadataInsightId;
             FreeformTags = freeformTags;
             Id = id;
+            IsHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            IsHighlyAvailable = isHighlyAvailable;
             LifecycleDetails = lifecycleDetails;
             OpsiPrivateEndpointId = opsiPrivateEndpointId;
             ParentId = parentId;

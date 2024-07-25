@@ -23,7 +23,7 @@ class GetReportsResult:
     """
     A collection of values returned by getReports.
     """
-    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, report_collections=None, report_definition_id=None, state=None, type=None):
+    def __init__(__self__, access_level=None, compartment_id=None, compartment_id_in_subtree=None, display_name=None, filters=None, id=None, report_collections=None, report_definition_id=None, state=None, time_generated_greater_than_or_equal_to=None, time_generated_less_than=None, type=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -51,6 +51,12 @@ class GetReportsResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if time_generated_greater_than_or_equal_to and not isinstance(time_generated_greater_than_or_equal_to, str):
+            raise TypeError("Expected argument 'time_generated_greater_than_or_equal_to' to be a str")
+        pulumi.set(__self__, "time_generated_greater_than_or_equal_to", time_generated_greater_than_or_equal_to)
+        if time_generated_less_than and not isinstance(time_generated_less_than, str):
+            raise TypeError("Expected argument 'time_generated_less_than' to be a str")
+        pulumi.set(__self__, "time_generated_less_than", time_generated_less_than)
         if type and not isinstance(type, str):
             raise TypeError("Expected argument 'type' to be a str")
         pulumi.set(__self__, "type", type)
@@ -119,6 +125,16 @@ class GetReportsResult:
         return pulumi.get(self, "state")
 
     @property
+    @pulumi.getter(name="timeGeneratedGreaterThanOrEqualTo")
+    def time_generated_greater_than_or_equal_to(self) -> Optional[str]:
+        return pulumi.get(self, "time_generated_greater_than_or_equal_to")
+
+    @property
+    @pulumi.getter(name="timeGeneratedLessThan")
+    def time_generated_less_than(self) -> Optional[str]:
+        return pulumi.get(self, "time_generated_less_than")
+
+    @property
     @pulumi.getter
     def type(self) -> Optional[str]:
         """
@@ -142,6 +158,8 @@ class AwaitableGetReportsResult(GetReportsResult):
             report_collections=self.report_collections,
             report_definition_id=self.report_definition_id,
             state=self.state,
+            time_generated_greater_than_or_equal_to=self.time_generated_greater_than_or_equal_to,
+            time_generated_less_than=self.time_generated_less_than,
             type=self.type)
 
 
@@ -152,6 +170,8 @@ def get_reports(access_level: Optional[str] = None,
                 filters: Optional[Sequence[pulumi.InputType['GetReportsFilterArgs']]] = None,
                 report_definition_id: Optional[str] = None,
                 state: Optional[str] = None,
+                time_generated_greater_than_or_equal_to: Optional[str] = None,
+                time_generated_less_than: Optional[str] = None,
                 type: Optional[str] = None,
                 opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetReportsResult:
     """
@@ -171,6 +191,8 @@ def get_reports(access_level: Optional[str] = None,
         display_name=report_display_name,
         report_definition_id=test_report_definition["id"],
         state=report_state,
+        time_generated_greater_than_or_equal_to=report_time_generated_greater_than_or_equal_to,
+        time_generated_less_than=report_time_generated_less_than,
         type=report_type)
     ```
 
@@ -181,6 +203,12 @@ def get_reports(access_level: Optional[str] = None,
     :param str display_name: The name of the report definition to query.
     :param str report_definition_id: The ID of the report definition to filter the list of reports
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
+    :param str time_generated_greater_than_or_equal_to: A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
+    :param str time_generated_less_than: Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str type: An optional filter to return only resources that match the specified type.
     """
     __args__ = dict()
@@ -191,6 +219,8 @@ def get_reports(access_level: Optional[str] = None,
     __args__['filters'] = filters
     __args__['reportDefinitionId'] = report_definition_id
     __args__['state'] = state
+    __args__['timeGeneratedGreaterThanOrEqualTo'] = time_generated_greater_than_or_equal_to
+    __args__['timeGeneratedLessThan'] = time_generated_less_than
     __args__['type'] = type
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getReports:getReports', __args__, opts=opts, typ=GetReportsResult).value
@@ -205,6 +235,8 @@ def get_reports(access_level: Optional[str] = None,
         report_collections=pulumi.get(__ret__, 'report_collections'),
         report_definition_id=pulumi.get(__ret__, 'report_definition_id'),
         state=pulumi.get(__ret__, 'state'),
+        time_generated_greater_than_or_equal_to=pulumi.get(__ret__, 'time_generated_greater_than_or_equal_to'),
+        time_generated_less_than=pulumi.get(__ret__, 'time_generated_less_than'),
         type=pulumi.get(__ret__, 'type'))
 
 
@@ -216,6 +248,8 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
                        filters: Optional[pulumi.Input[Optional[Sequence[pulumi.InputType['GetReportsFilterArgs']]]]] = None,
                        report_definition_id: Optional[pulumi.Input[Optional[str]]] = None,
                        state: Optional[pulumi.Input[Optional[str]]] = None,
+                       time_generated_greater_than_or_equal_to: Optional[pulumi.Input[Optional[str]]] = None,
+                       time_generated_less_than: Optional[pulumi.Input[Optional[str]]] = None,
                        type: Optional[pulumi.Input[Optional[str]]] = None,
                        opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetReportsResult]:
     """
@@ -235,6 +269,8 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
         display_name=report_display_name,
         report_definition_id=test_report_definition["id"],
         state=report_state,
+        time_generated_greater_than_or_equal_to=report_time_generated_greater_than_or_equal_to,
+        time_generated_less_than=report_time_generated_less_than,
         type=report_type)
     ```
 
@@ -245,6 +281,12 @@ def get_reports_output(access_level: Optional[pulumi.Input[Optional[str]]] = Non
     :param str display_name: The name of the report definition to query.
     :param str report_definition_id: The ID of the report definition to filter the list of reports
     :param str state: An optional filter to return only resources that match the specified lifecycle state.
+    :param str time_generated_greater_than_or_equal_to: A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
+    :param str time_generated_less_than: Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+           
+           **Example:** 2016-12-19T16:39:57.600Z
     :param str type: An optional filter to return only resources that match the specified type.
     """
     ...

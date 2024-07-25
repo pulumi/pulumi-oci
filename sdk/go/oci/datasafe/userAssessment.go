@@ -43,7 +43,8 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Schedule: pulumi.Any(userAssessmentSchedule),
+//				IsAssessmentScheduled: pulumi.Any(userAssessmentIsAssessmentScheduled),
+//				Schedule:              pulumi.Any(userAssessmentSchedule),
 //			})
 //			if err != nil {
 //				return err
@@ -78,6 +79,8 @@ type UserAssessment struct {
 	IgnoredAssessmentIds pulumi.StringArrayOutput `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets UserAssessmentIgnoredTargetArrayOutput `pulumi:"ignoredTargets"`
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled pulumi.BoolOutput `pulumi:"isAssessmentScheduled"`
 	// Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
 	IsBaseline pulumi.BoolOutput `pulumi:"isBaseline"`
 	// Indicates if the user assessment deviates from the baseline.
@@ -167,6 +170,8 @@ type userAssessmentState struct {
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []UserAssessmentIgnoredTarget `pulumi:"ignoredTargets"`
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled *bool `pulumi:"isAssessmentScheduled"`
 	// Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
 	IsBaseline *bool `pulumi:"isBaseline"`
 	// Indicates if the user assessment deviates from the baseline.
@@ -221,6 +226,8 @@ type UserAssessmentState struct {
 	IgnoredAssessmentIds pulumi.StringArrayInput
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets UserAssessmentIgnoredTargetArrayInput
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled pulumi.BoolPtrInput
 	// Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
 	IsBaseline pulumi.BoolPtrInput
 	// Indicates if the user assessment deviates from the baseline.
@@ -275,6 +282,8 @@ type userAssessmentArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled *bool `pulumi:"isAssessmentScheduled"`
 	// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -298,6 +307,8 @@ type UserAssessmentArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled pulumi.BoolPtrInput
 	// (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -429,6 +440,11 @@ func (o UserAssessmentOutput) IgnoredAssessmentIds() pulumi.StringArrayOutput {
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 func (o UserAssessmentOutput) IgnoredTargets() UserAssessmentIgnoredTargetArrayOutput {
 	return o.ApplyT(func(v *UserAssessment) UserAssessmentIgnoredTargetArrayOutput { return v.IgnoredTargets }).(UserAssessmentIgnoredTargetArrayOutput)
+}
+
+// (Updatable) Indicates whether the assessment is scheduled to run.
+func (o UserAssessmentOutput) IsAssessmentScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *UserAssessment) pulumi.BoolOutput { return v.IsAssessmentScheduled }).(pulumi.BoolOutput)
 }
 
 // Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.

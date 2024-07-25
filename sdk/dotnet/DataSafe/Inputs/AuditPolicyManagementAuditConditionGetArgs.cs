@@ -36,6 +36,9 @@ namespace Pulumi.Oci.DataSafe.Inputs
         [Input("isDataSafeServiceAccountAudited")]
         public Input<bool>? IsDataSafeServiceAccountAudited { get; set; }
 
+        /// <summary>
+        /// Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+        /// </summary>
         [Input("isEnabled")]
         public Input<bool>? IsEnabled { get; set; }
 

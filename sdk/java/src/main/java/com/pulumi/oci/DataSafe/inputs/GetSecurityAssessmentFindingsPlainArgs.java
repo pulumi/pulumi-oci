@@ -145,6 +145,21 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * A filter to return only items related to a specific target OCID.
+     * 
+     */
+    @Import(name="targetId")
+    private @Nullable String targetId;
+
+    /**
+     * @return A filter to return only items related to a specific target OCID.
+     * 
+     */
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
+
     private GetSecurityAssessmentFindingsPlainArgs() {}
 
     private GetSecurityAssessmentFindingsPlainArgs(GetSecurityAssessmentFindingsPlainArgs $) {
@@ -157,6 +172,7 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
         this.state = $.state;
+        this.targetId = $.targetId;
     }
 
     public static Builder builder() {
@@ -271,6 +287,17 @@ public final class GetSecurityAssessmentFindingsPlainArgs extends com.pulumi.res
          */
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        /**
+         * @param targetId A filter to return only items related to a specific target OCID.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetId(@Nullable String targetId) {
+            $.targetId = targetId;
             return this;
         }
 

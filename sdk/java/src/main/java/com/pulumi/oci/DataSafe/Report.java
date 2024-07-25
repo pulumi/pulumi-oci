@@ -102,14 +102,14 @@ public class Report extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf or .json
      * 
      */
     @Export(name="mimeType", refs={String.class}, tree="[0]")
     private Output<String> mimeType;
 
     /**
-     * @return Specifies the format of report to be excel or pdf
+     * @return Specifies the format of report to be .xls or .pdf or .json
      * 
      */
     public Output<String> mimeType() {

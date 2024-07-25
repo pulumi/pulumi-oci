@@ -14,7 +14,7 @@ import (
 
 // This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
 //
-// Create a private endpoint resource for the tenant in Operations Insights.
+// Create a private endpoint resource for the tenant in Ops Insights.
 // This resource will be created in customer compartment.
 //
 // ## Example Usage
@@ -75,7 +75,7 @@ type OperationsInsightsPrivateEndpoint struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// The flag to identify if private endpoint is used for rac database or not
+	// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
 	IsUsedForRacDbs pulumi.BoolOutput `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
@@ -155,7 +155,7 @@ type operationsInsightsPrivateEndpointState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The flag to identify if private endpoint is used for rac database or not
+	// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
 	IsUsedForRacDbs *bool `pulumi:"isUsedForRacDbs"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
@@ -191,7 +191,7 @@ type OperationsInsightsPrivateEndpointState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// The flag to identify if private endpoint is used for rac database or not
+	// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
 	IsUsedForRacDbs pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
@@ -231,7 +231,7 @@ type operationsInsightsPrivateEndpointArgs struct {
 	DisplayName string `pulumi:"displayName"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// The flag to identify if private endpoint is used for rac database or not
+	// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
 	IsUsedForRacDbs bool `pulumi:"isUsedForRacDbs"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
 	NsgIds []string `pulumi:"nsgIds"`
@@ -258,7 +258,7 @@ type OperationsInsightsPrivateEndpointArgs struct {
 	DisplayName pulumi.StringInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
-	// The flag to identify if private endpoint is used for rac database or not
+	// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
 	IsUsedForRacDbs pulumi.BoolInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the network security groups that the private endpoint belongs to.
 	NsgIds pulumi.StringArrayInput
@@ -385,7 +385,7 @@ func (o OperationsInsightsPrivateEndpointOutput) FreeformTags() pulumi.MapOutput
 	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// The flag to identify if private endpoint is used for rac database or not
+// This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
 func (o OperationsInsightsPrivateEndpointOutput) IsUsedForRacDbs() pulumi.BoolOutput {
 	return o.ApplyT(func(v *OperationsInsightsPrivateEndpoint) pulumi.BoolOutput { return v.IsUsedForRacDbs }).(pulumi.BoolOutput)
 }

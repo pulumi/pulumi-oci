@@ -26,7 +26,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
      */
     private @Nullable ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails connectionDetails;
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     private @Nullable ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails credentialDetails;
@@ -97,7 +97,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetail {
         return Optional.ofNullable(this.connectionDetails);
     }
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Optional<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails> credentialDetails() {

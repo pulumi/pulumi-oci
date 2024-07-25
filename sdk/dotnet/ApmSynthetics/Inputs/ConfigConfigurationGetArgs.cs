@@ -25,10 +25,76 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         public Input<string>? ConfigType { get; set; }
 
         /// <summary>
+        /// (Updatable) Database connection string.
+        /// </summary>
+        [Input("connectionString")]
+        public Input<string>? ConnectionString { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details for basic authentication.
+        /// </summary>
+        [Input("databaseAuthenticationDetails")]
+        public Input<Inputs.ConfigConfigurationDatabaseAuthenticationDetailsGetArgs>? DatabaseAuthenticationDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        /// </summary>
+        [Input("databaseConnectionType")]
+        public Input<string>? DatabaseConnectionType { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database role.
+        /// </summary>
+        [Input("databaseRole")]
+        public Input<string>? DatabaseRole { get; set; }
+
+        /// <summary>
+        /// (Updatable) Database type.
+        /// </summary>
+        [Input("databaseType")]
+        public Input<string>? DatabaseType { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details for database wallet.
+        /// </summary>
+        [Input("databaseWalletDetails")]
+        public Input<Inputs.ConfigConfigurationDatabaseWalletDetailsGetArgs>? DatabaseWalletDetails { get; set; }
+
+        /// <summary>
         /// (Updatable) Information about the DNS settings.
         /// </summary>
         [Input("dnsConfiguration")]
         public Input<Inputs.ConfigConfigurationDnsConfigurationGetArgs>? DnsConfiguration { get; set; }
+
+        /// <summary>
+        /// (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        /// </summary>
+        [Input("downloadSizeLimitInBytes")]
+        public Input<int>? DownloadSizeLimitInBytes { get; set; }
+
+        /// <summary>
+        /// (Updatable) Details for basic authentication.
+        /// </summary>
+        [Input("ftpBasicAuthenticationDetails")]
+        public Input<Inputs.ConfigConfigurationFtpBasicAuthenticationDetailsGetArgs>? FtpBasicAuthenticationDetails { get; set; }
+
+        /// <summary>
+        /// (Updatable) FTP protocol type.
+        /// </summary>
+        [Input("ftpProtocol")]
+        public Input<string>? FtpProtocol { get; set; }
+
+        /// <summary>
+        /// (Updatable) FTP monitor request type.
+        /// </summary>
+        [Input("ftpRequestType")]
+        public Input<string>? FtpRequestType { get; set; }
+
+        /// <summary>
+        /// (Updatable) If enabled, Active mode will be used for the FTP connection.
+        /// </summary>
+        [Input("isActiveMode")]
+        public Input<bool>? IsActiveMode { get; set; }
 
         /// <summary>
         /// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -77,6 +143,12 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         /// </summary>
         [Input("protocol")]
         public Input<string>? Protocol { get; set; }
+
+        /// <summary>
+        /// (Updatable) SQL query to be executed.
+        /// </summary>
+        [Input("query")]
+        public Input<string>? Query { get; set; }
 
         /// <summary>
         /// (Updatable) DNS record type.
@@ -131,6 +203,12 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
             get => _requestQueryParams ?? (_requestQueryParams = new InputList<Inputs.ConfigConfigurationRequestQueryParamGetArgs>());
             set => _requestQueryParams = value;
         }
+
+        /// <summary>
+        /// (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+        /// </summary>
+        [Input("uploadFileSizeInBytes")]
+        public Input<int>? UploadFileSizeInBytes { get; set; }
 
         [Input("verifyResponseCodes")]
         private InputList<string>? _verifyResponseCodes;

@@ -49,6 +49,8 @@ public final class GetReportsResult {
      * 
      */
     private @Nullable String state;
+    private @Nullable String timeGeneratedGreaterThanOrEqualTo;
+    private @Nullable String timeGeneratedLessThan;
     /**
      * @return The type of the audit report.
      * 
@@ -107,6 +109,12 @@ public final class GetReportsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    public Optional<String> timeGeneratedGreaterThanOrEqualTo() {
+        return Optional.ofNullable(this.timeGeneratedGreaterThanOrEqualTo);
+    }
+    public Optional<String> timeGeneratedLessThan() {
+        return Optional.ofNullable(this.timeGeneratedLessThan);
+    }
     /**
      * @return The type of the audit report.
      * 
@@ -133,6 +141,8 @@ public final class GetReportsResult {
         private List<GetReportsReportCollection> reportCollections;
         private @Nullable String reportDefinitionId;
         private @Nullable String state;
+        private @Nullable String timeGeneratedGreaterThanOrEqualTo;
+        private @Nullable String timeGeneratedLessThan;
         private @Nullable String type;
         public Builder() {}
         public Builder(GetReportsResult defaults) {
@@ -146,6 +156,8 @@ public final class GetReportsResult {
     	      this.reportCollections = defaults.reportCollections;
     	      this.reportDefinitionId = defaults.reportDefinitionId;
     	      this.state = defaults.state;
+    	      this.timeGeneratedGreaterThanOrEqualTo = defaults.timeGeneratedGreaterThanOrEqualTo;
+    	      this.timeGeneratedLessThan = defaults.timeGeneratedLessThan;
     	      this.type = defaults.type;
         }
 
@@ -216,6 +228,18 @@ public final class GetReportsResult {
             return this;
         }
         @CustomType.Setter
+        public Builder timeGeneratedGreaterThanOrEqualTo(@Nullable String timeGeneratedGreaterThanOrEqualTo) {
+
+            this.timeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder timeGeneratedLessThan(@Nullable String timeGeneratedLessThan) {
+
+            this.timeGeneratedLessThan = timeGeneratedLessThan;
+            return this;
+        }
+        @CustomType.Setter
         public Builder type(@Nullable String type) {
 
             this.type = type;
@@ -232,6 +256,8 @@ public final class GetReportsResult {
             _resultValue.reportCollections = reportCollections;
             _resultValue.reportDefinitionId = reportDefinitionId;
             _resultValue.state = state;
+            _resultValue.timeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
+            _resultValue.timeGeneratedLessThan = timeGeneratedLessThan;
             _resultValue.type = type;
             return _resultValue;
         }

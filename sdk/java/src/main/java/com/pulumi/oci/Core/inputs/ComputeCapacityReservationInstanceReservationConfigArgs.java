@@ -21,7 +21,6 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
     /**
      * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
      * 
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
      * 
      */
@@ -31,7 +30,6 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
     /**
      * @return (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
      * 
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
      * 
      */
@@ -39,9 +37,17 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
         return Optional.ofNullable(this.clusterConfig);
     }
 
+    /**
+     * (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+     * 
+     */
     @Import(name="clusterPlacementGroupId")
     private @Nullable Output<String> clusterPlacementGroupId;
 
+    /**
+     * @return (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+     * 
+     */
     public Optional<Output<String>> clusterPlacementGroupId() {
         return Optional.ofNullable(this.clusterPlacementGroupId);
     }
@@ -174,7 +180,6 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
         /**
          * @param clusterConfig (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
          * 
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
          * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
          * 
          * @return builder
@@ -188,7 +193,6 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
         /**
          * @param clusterConfig (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
          * 
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
          * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
          * 
          * @return builder
@@ -198,11 +202,23 @@ public final class ComputeCapacityReservationInstanceReservationConfigArgs exten
             return clusterConfig(Output.of(clusterConfig));
         }
 
+        /**
+         * @param clusterPlacementGroupId (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clusterPlacementGroupId(@Nullable Output<String> clusterPlacementGroupId) {
             $.clusterPlacementGroupId = clusterPlacementGroupId;
             return this;
         }
 
+        /**
+         * @param clusterPlacementGroupId (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+         * 
+         * @return builder
+         * 
+         */
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             return clusterPlacementGroupId(Output.of(clusterPlacementGroupId));
         }

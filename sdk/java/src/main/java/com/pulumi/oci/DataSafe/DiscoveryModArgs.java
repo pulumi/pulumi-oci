@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.inputs.DiscoveryModTablesForDiscoveryArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -188,9 +189,6 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="sensitiveTypeIdsForDiscoveries")
     private @Nullable Output<List<String>> sensitiveTypeIdsForDiscoveries;
@@ -198,12 +196,24 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
     /**
      * @return The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     public Optional<Output<List<String>>> sensitiveTypeIdsForDiscoveries() {
         return Optional.ofNullable(this.sensitiveTypeIdsForDiscoveries);
+    }
+
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     * 
+     */
+    @Import(name="tablesForDiscoveries")
+    private @Nullable Output<List<DiscoveryModTablesForDiscoveryArgs>> tablesForDiscoveries;
+
+    /**
+     * @return The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     * 
+     */
+    public Optional<Output<List<DiscoveryModTablesForDiscoveryArgs>>> tablesForDiscoveries() {
+        return Optional.ofNullable(this.tablesForDiscoveries);
     }
 
     private DiscoveryModArgs() {}
@@ -221,6 +231,7 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         this.schemasForDiscoveries = $.schemasForDiscoveries;
         this.sensitiveDataModelId = $.sensitiveDataModelId;
         this.sensitiveTypeIdsForDiscoveries = $.sensitiveTypeIdsForDiscoveries;
+        this.tablesForDiscoveries = $.tablesForDiscoveries;
     }
 
     public static Builder builder() {
@@ -485,9 +496,6 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sensitiveTypeIdsForDiscoveries The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -499,9 +507,6 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sensitiveTypeIdsForDiscoveries The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -512,14 +517,42 @@ public final class DiscoveryModArgs extends com.pulumi.resources.ResourceArgs {
         /**
          * @param sensitiveTypeIdsForDiscoveries The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
         public Builder sensitiveTypeIdsForDiscoveries(String... sensitiveTypeIdsForDiscoveries) {
             return sensitiveTypeIdsForDiscoveries(List.of(sensitiveTypeIdsForDiscoveries));
+        }
+
+        /**
+         * @param tablesForDiscoveries The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesForDiscoveries(@Nullable Output<List<DiscoveryModTablesForDiscoveryArgs>> tablesForDiscoveries) {
+            $.tablesForDiscoveries = tablesForDiscoveries;
+            return this;
+        }
+
+        /**
+         * @param tablesForDiscoveries The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesForDiscoveries(List<DiscoveryModTablesForDiscoveryArgs> tablesForDiscoveries) {
+            return tablesForDiscoveries(Output.of(tablesForDiscoveries));
+        }
+
+        /**
+         * @param tablesForDiscoveries The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesForDiscoveries(DiscoveryModTablesForDiscoveryArgs... tablesForDiscoveries) {
+            return tablesForDiscoveries(List.of(tablesForDiscoveries));
         }
 
         public DiscoveryModArgs build() {

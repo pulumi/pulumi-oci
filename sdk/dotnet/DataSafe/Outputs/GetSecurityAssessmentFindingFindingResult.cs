@@ -21,6 +21,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
         public readonly string Justification;
         public readonly string Key;
         public readonly string LifecycleDetails;
+        public readonly string Oneline;
         public readonly string OracleDefinedSeverity;
         public readonly ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingReferenceResult> References;
         public readonly string Remarks;
@@ -50,6 +51,8 @@ namespace Pulumi.Oci.DataSafe.Outputs
 
             string lifecycleDetails,
 
+            string oneline,
+
             string oracleDefinedSeverity,
 
             ImmutableArray<Outputs.GetSecurityAssessmentFindingFindingReferenceResult> references,
@@ -78,6 +81,7 @@ namespace Pulumi.Oci.DataSafe.Outputs
             Justification = justification;
             Key = key;
             LifecycleDetails = lifecycleDetails;
+            Oneline = oneline;
             OracleDefinedSeverity = oracleDefinedSeverity;
             References = references;
             Remarks = remarks;

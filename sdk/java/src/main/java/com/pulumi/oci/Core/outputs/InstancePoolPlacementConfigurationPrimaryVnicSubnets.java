@@ -27,8 +27,6 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnets {
     private @Nullable Boolean isAssignIpv6ip;
     /**
      * @return (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-     * ===
-     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     private String subnetId;
@@ -50,8 +48,6 @@ public final class InstancePoolPlacementConfigurationPrimaryVnicSubnets {
     }
     /**
      * @return (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-     * ===
-     * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
      * 
      */
     public String subnetId() {

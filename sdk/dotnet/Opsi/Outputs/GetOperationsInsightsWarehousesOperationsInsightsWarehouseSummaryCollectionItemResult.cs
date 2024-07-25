@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly ImmutableDictionary<string, object> FreeformTags;
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         public readonly string Id;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Tenancy Identifier of Operations Insights service
+        /// Tenancy Identifier of Ops Insights service
         /// </summary>
         public readonly string OperationsInsightsTenancyId;
         /// <summary>
@@ -74,7 +74,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        /// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeLastWalletRotated;
         /// <summary>

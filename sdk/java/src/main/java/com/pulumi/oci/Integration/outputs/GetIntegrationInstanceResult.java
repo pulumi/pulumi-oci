@@ -117,7 +117,6 @@ public final class GetIntegrationInstanceResult {
     private List<GetIntegrationInstancePrivateEndpointOutboundConnection> privateEndpointOutboundConnections;
     /**
      * @return Shape
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     private String shape;
@@ -283,7 +282,6 @@ public final class GetIntegrationInstanceResult {
     }
     /**
      * @return Shape
-     * &gt; &gt; &gt; &gt; &gt; &gt; &gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      * 
      */
     public String shape() {

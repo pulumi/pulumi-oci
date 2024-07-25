@@ -13,55 +13,6 @@ import * as utilities from "../utilities";
  *
  * **Important:** When `autoBackupEnabled` is not present in the configuration or set to true, the `autoBackupWindow` and `autoFullBackupWindow` will be ignored
  *
- * ## Example Usage
- *
- * ```typescript
- * import * as pulumi from "@pulumi/pulumi";
- * import * as oci from "@pulumi/oci";
- *
- * const testDatabase = new oci.database.Database("test_database", {
- *     database: {
- *         adminPassword: databaseDatabaseAdminPassword,
- *         dbName: databaseDatabaseDbName,
- *         backupId: testBackup.id,
- *         backupTdePassword: databaseDatabaseBackupTdePassword,
- *         characterSet: databaseDatabaseCharacterSet,
- *         databaseSoftwareImageId: testDatabaseSoftwareImage.id,
- *         dbBackupConfig: {
- *             autoBackupEnabled: databaseDatabaseDbBackupConfigAutoBackupEnabled,
- *             autoBackupWindow: databaseDatabaseDbBackupConfigAutoBackupWindow,
- *             autoFullBackupDay: databaseDatabaseDbBackupConfigAutoFullBackupDay,
- *             autoFullBackupWindow: databaseDatabaseDbBackupConfigAutoFullBackupWindow,
- *             backupDeletionPolicy: databaseDatabaseDbBackupConfigBackupDeletionPolicy,
- *             backupDestinationDetails: [{
- *                 dbrsPolicyId: testPolicy.id,
- *                 id: databaseDatabaseDbBackupConfigBackupDestinationDetailsId,
- *                 type: databaseDatabaseDbBackupConfigBackupDestinationDetailsType,
- *             }],
- *             recoveryWindowInDays: databaseDatabaseDbBackupConfigRecoveryWindowInDays,
- *             runImmediateFullBackup: databaseDatabaseDbBackupConfigRunImmediateFullBackup,
- *         },
- *         dbUniqueName: databaseDatabaseDbUniqueName,
- *         dbWorkload: databaseDatabaseDbWorkload,
- *         definedTags: databaseDatabaseDefinedTags,
- *         freeformTags: databaseDatabaseFreeformTags,
- *         kmsKeyId: testKey.id,
- *         kmsKeyVersionId: testKeyVersion.id,
- *         ncharacterSet: databaseDatabaseNcharacterSet,
- *         pdbName: databaseDatabasePdbName,
- *         pluggableDatabases: databaseDatabasePluggableDatabases,
- *         sidPrefix: databaseDatabaseSidPrefix,
- *         tdeWalletPassword: databaseDatabaseTdeWalletPassword,
- *         vaultId: testVault.id,
- *     },
- *     dbHomeId: testDbHome.id,
- *     source: databaseSource,
- *     dbVersion: databaseDbVersion,
- *     kmsKeyId: testKey.id,
- *     kmsKeyVersionId: testKeyVersion.id,
- * });
- * ```
- *
  * ## Import
  *
  * Databases can be imported using the `id`, e.g.

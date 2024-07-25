@@ -801,54 +801,6 @@ class Database(pulumi.CustomResource):
 
         **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
 
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database = oci.database.Database("test_database",
-            database=oci.database.DatabaseDatabaseArgs(
-                admin_password=database_database_admin_password,
-                db_name=database_database_db_name,
-                backup_id=test_backup["id"],
-                backup_tde_password=database_database_backup_tde_password,
-                character_set=database_database_character_set,
-                database_software_image_id=test_database_software_image["id"],
-                db_backup_config=oci.database.DatabaseDatabaseDbBackupConfigArgs(
-                    auto_backup_enabled=database_database_db_backup_config_auto_backup_enabled,
-                    auto_backup_window=database_database_db_backup_config_auto_backup_window,
-                    auto_full_backup_day=database_database_db_backup_config_auto_full_backup_day,
-                    auto_full_backup_window=database_database_db_backup_config_auto_full_backup_window,
-                    backup_deletion_policy=database_database_db_backup_config_backup_deletion_policy,
-                    backup_destination_details=[oci.database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(
-                        dbrs_policy_id=test_policy["id"],
-                        id=database_database_db_backup_config_backup_destination_details_id,
-                        type=database_database_db_backup_config_backup_destination_details_type,
-                    )],
-                    recovery_window_in_days=database_database_db_backup_config_recovery_window_in_days,
-                    run_immediate_full_backup=database_database_db_backup_config_run_immediate_full_backup,
-                ),
-                db_unique_name=database_database_db_unique_name,
-                db_workload=database_database_db_workload,
-                defined_tags=database_database_defined_tags,
-                freeform_tags=database_database_freeform_tags,
-                kms_key_id=test_key["id"],
-                kms_key_version_id=test_key_version["id"],
-                ncharacter_set=database_database_ncharacter_set,
-                pdb_name=database_database_pdb_name,
-                pluggable_databases=database_database_pluggable_databases,
-                sid_prefix=database_database_sid_prefix,
-                tde_wallet_password=database_database_tde_wallet_password,
-                vault_id=test_vault["id"],
-            ),
-            db_home_id=test_db_home["id"],
-            source=database_source,
-            db_version=database_db_version,
-            kms_key_id=test_key["id"],
-            kms_key_version_id=test_key_version["id"])
-        ```
-
         ## Import
 
         Databases can be imported using the `id`, e.g.
@@ -890,54 +842,6 @@ class Database(pulumi.CustomResource):
         Creates a new database in the specified Database Home. If the database version is provided, it must match the version of the Database Home. Applies only to Exadata systems.
 
         **Important:** When `auto_backup_enabled` is not present in the configuration or set to true, the `auto_backup_window` and `auto_full_backup_window` will be ignored
-
-        ## Example Usage
-
-        ```python
-        import pulumi
-        import pulumi_oci as oci
-
-        test_database = oci.database.Database("test_database",
-            database=oci.database.DatabaseDatabaseArgs(
-                admin_password=database_database_admin_password,
-                db_name=database_database_db_name,
-                backup_id=test_backup["id"],
-                backup_tde_password=database_database_backup_tde_password,
-                character_set=database_database_character_set,
-                database_software_image_id=test_database_software_image["id"],
-                db_backup_config=oci.database.DatabaseDatabaseDbBackupConfigArgs(
-                    auto_backup_enabled=database_database_db_backup_config_auto_backup_enabled,
-                    auto_backup_window=database_database_db_backup_config_auto_backup_window,
-                    auto_full_backup_day=database_database_db_backup_config_auto_full_backup_day,
-                    auto_full_backup_window=database_database_db_backup_config_auto_full_backup_window,
-                    backup_deletion_policy=database_database_db_backup_config_backup_deletion_policy,
-                    backup_destination_details=[oci.database.DatabaseDatabaseDbBackupConfigBackupDestinationDetailArgs(
-                        dbrs_policy_id=test_policy["id"],
-                        id=database_database_db_backup_config_backup_destination_details_id,
-                        type=database_database_db_backup_config_backup_destination_details_type,
-                    )],
-                    recovery_window_in_days=database_database_db_backup_config_recovery_window_in_days,
-                    run_immediate_full_backup=database_database_db_backup_config_run_immediate_full_backup,
-                ),
-                db_unique_name=database_database_db_unique_name,
-                db_workload=database_database_db_workload,
-                defined_tags=database_database_defined_tags,
-                freeform_tags=database_database_freeform_tags,
-                kms_key_id=test_key["id"],
-                kms_key_version_id=test_key_version["id"],
-                ncharacter_set=database_database_ncharacter_set,
-                pdb_name=database_database_pdb_name,
-                pluggable_databases=database_database_pluggable_databases,
-                sid_prefix=database_database_sid_prefix,
-                tde_wallet_password=database_database_tde_wallet_password,
-                vault_id=test_vault["id"],
-            ),
-            db_home_id=test_db_home["id"],
-            source=database_source,
-            db_version=database_db_version,
-            kms_key_id=test_key["id"],
-            kms_key_version_id=test_key_version["id"])
-        ```
 
         ## Import
 

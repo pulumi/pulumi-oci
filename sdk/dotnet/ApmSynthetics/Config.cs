@@ -60,11 +60,44 @@ namespace Pulumi.Oci.ApmSynthetics
     ///                 },
     ///             },
     ///             ConfigType = monitorConfigurationConfigType,
+    ///             ConnectionString = monitorConfigurationConnectionString,
+    ///             DatabaseAuthenticationDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDatabaseAuthenticationDetailsArgs
+    ///             {
+    ///                 Password = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs
+    ///                 {
+    ///                     Password = monitorConfigurationDatabaseAuthenticationDetailsPasswordPassword,
+    ///                     PasswordType = monitorConfigurationDatabaseAuthenticationDetailsPasswordPasswordType,
+    ///                     VaultSecretId = testSecret.Id,
+    ///                 },
+    ///                 Username = monitorConfigurationDatabaseAuthenticationDetailsUsername,
+    ///             },
+    ///             DatabaseConnectionType = monitorConfigurationDatabaseConnectionType,
+    ///             DatabaseRole = monitorConfigurationDatabaseRole,
+    ///             DatabaseType = monitorConfigurationDatabaseType,
+    ///             DatabaseWalletDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDatabaseWalletDetailsArgs
+    ///             {
+    ///                 DatabaseWallet = monitorConfigurationDatabaseWalletDetailsDatabaseWallet,
+    ///                 ServiceName = testService.Name,
+    ///             },
     ///             DnsConfiguration = new Oci.ApmSynthetics.Inputs.ConfigConfigurationDnsConfigurationArgs
     ///             {
     ///                 IsOverrideDns = monitorConfigurationDnsConfigurationIsOverrideDns,
     ///                 OverrideDnsIp = monitorConfigurationDnsConfigurationOverrideDnsIp,
     ///             },
+    ///             DownloadSizeLimitInBytes = monitorConfigurationDownloadSizeLimitInBytes,
+    ///             FtpBasicAuthenticationDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationFtpBasicAuthenticationDetailsArgs
+    ///             {
+    ///                 Password = new Oci.ApmSynthetics.Inputs.ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs
+    ///                 {
+    ///                     Password = monitorConfigurationFtpBasicAuthenticationDetailsPasswordPassword,
+    ///                     PasswordType = monitorConfigurationFtpBasicAuthenticationDetailsPasswordPasswordType,
+    ///                     VaultSecretId = testSecret.Id,
+    ///                 },
+    ///                 Username = monitorConfigurationFtpBasicAuthenticationDetailsUsername,
+    ///             },
+    ///             FtpProtocol = monitorConfigurationFtpProtocol,
+    ///             FtpRequestType = monitorConfigurationFtpRequestType,
+    ///             IsActiveMode = monitorConfigurationIsActiveMode,
     ///             IsCertificateValidationEnabled = monitorConfigurationIsCertificateValidationEnabled,
     ///             IsDefaultSnapshotEnabled = monitorConfigurationIsDefaultSnapshotEnabled,
     ///             IsFailureRetried = monitorConfigurationIsFailureRetried,
@@ -80,6 +113,7 @@ namespace Pulumi.Oci.ApmSynthetics
     ///                 TransmissionRate = monitorConfigurationNetworkConfigurationTransmissionRate,
     ///             },
     ///             Protocol = monitorConfigurationProtocol,
+    ///             Query = monitorConfigurationQuery,
     ///             RecordType = monitorConfigurationRecordType,
     ///             ReqAuthenticationDetails = new Oci.ApmSynthetics.Inputs.ConfigConfigurationReqAuthenticationDetailsArgs
     ///             {
@@ -118,6 +152,7 @@ namespace Pulumi.Oci.ApmSynthetics
     ///                     ParamValue = monitorConfigurationRequestQueryParamsParamValue,
     ///                 },
     ///             },
+    ///             UploadFileSizeInBytes = monitorConfigurationUploadFileSizeInBytes,
     ///             VerifyResponseCodes = monitorConfigurationVerifyResponseCodes,
     ///             VerifyResponseContent = monitorConfigurationVerifyResponseContent,
     ///             VerifyTexts = new[]
@@ -136,6 +171,7 @@ namespace Pulumi.Oci.ApmSynthetics
     ///         {
     ///             { "bar-key", "value" },
     ///         },
+    ///         IsIpv6 = monitorIsIpv6,
     ///         IsRunNow = monitorIsRunNow,
     ///         IsRunOnce = monitorIsRunOnce,
     ///         MaintenanceWindowSchedule = new Oci.ApmSynthetics.Inputs.ConfigMaintenanceWindowScheduleArgs
@@ -197,6 +233,12 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<Outputs.ConfigConfiguration> Configuration { get; private set; } = null!;
 
         /// <summary>
+        /// Name of the user that created the monitor.
+        /// </summary>
+        [Output("createdBy")]
+        public Output<string> CreatedBy { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         [Output("definedTags")]
@@ -215,6 +257,12 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+        /// </summary>
+        [Output("isIpv6")]
+        public Output<bool> IsIpv6 { get; private set; } = null!;
+
+        /// <summary>
         /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Output("isRunNow")]
@@ -225,6 +273,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Output("isRunOnce")]
         public Output<bool> IsRunOnce { get; private set; } = null!;
+
+        /// <summary>
+        /// Name of the user that recently updated the monitor.
+        /// </summary>
+        [Output("lastUpdatedBy")]
+        public Output<string> LastUpdatedBy { get; private set; } = null!;
 
         /// <summary>
         /// (Updatable) Details required to schedule maintenance window.
@@ -275,7 +329,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Output<string> Status { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         /// </summary>
         [Output("target")]
         public Output<string> Target { get; private set; } = null!;
@@ -415,6 +469,12 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
+        /// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+        /// </summary>
+        [Input("isIpv6")]
+        public Input<bool>? IsIpv6 { get; set; }
+
+        /// <summary>
         /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Input("isRunNow")]
@@ -481,7 +541,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }
@@ -540,6 +600,12 @@ namespace Pulumi.Oci.ApmSynthetics
         [Input("configuration")]
         public Input<Inputs.ConfigConfigurationGetArgs>? Configuration { get; set; }
 
+        /// <summary>
+        /// Name of the user that created the monitor.
+        /// </summary>
+        [Input("createdBy")]
+        public Input<string>? CreatedBy { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -571,6 +637,12 @@ namespace Pulumi.Oci.ApmSynthetics
         }
 
         /// <summary>
+        /// (Updatable) If enabled, domain name will resolve to an IPv6 address.
+        /// </summary>
+        [Input("isIpv6")]
+        public Input<bool>? IsIpv6 { get; set; }
+
+        /// <summary>
         /// (Updatable) If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         [Input("isRunNow")]
@@ -581,6 +653,12 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         [Input("isRunOnce")]
         public Input<bool>? IsRunOnce { get; set; }
+
+        /// <summary>
+        /// Name of the user that recently updated the monitor.
+        /// </summary>
+        [Input("lastUpdatedBy")]
+        public Input<string>? LastUpdatedBy { get; set; }
 
         /// <summary>
         /// (Updatable) Details required to schedule maintenance window.
@@ -637,7 +715,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<string>? Status { get; set; }
 
         /// <summary>
-        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         /// </summary>
         [Input("target")]
         public Input<string>? Target { get; set; }

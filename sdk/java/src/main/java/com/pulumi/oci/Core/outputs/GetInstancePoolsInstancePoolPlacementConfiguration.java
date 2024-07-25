@@ -23,6 +23,10 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
      * 
      */
     private List<String> faultDomains;
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+     * 
+     */
     private String primarySubnetId;
     /**
      * @return Details about the IPv6 primary subnet.
@@ -50,6 +54,10 @@ public final class GetInstancePoolsInstancePoolPlacementConfiguration {
     public List<String> faultDomains() {
         return this.faultDomains;
     }
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+     * 
+     */
     public String primarySubnetId() {
         return this.primarySubnetId;
     }

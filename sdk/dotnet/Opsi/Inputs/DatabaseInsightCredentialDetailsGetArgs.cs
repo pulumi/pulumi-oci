@@ -56,7 +56,7 @@ namespace Pulumi.Oci.Opsi.Inputs
         private Input<string>? _walletSecretId;
 
         /// <summary>
-        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         /// </summary>
         public Input<string>? WalletSecretId
         {

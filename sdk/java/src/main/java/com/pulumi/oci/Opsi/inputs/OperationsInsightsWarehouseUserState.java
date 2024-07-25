@@ -34,14 +34,14 @@ public final class OperationsInsightsWarehouseUserState extends com.pulumi.resou
     }
 
     /**
-     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     @Import(name="connectionPassword")
     private @Nullable Output<String> connectionPassword;
 
     /**
-     * @return (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public Optional<Output<String>> connectionPassword() {
@@ -139,14 +139,14 @@ public final class OperationsInsightsWarehouseUserState extends com.pulumi.resou
     }
 
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public Optional<Output<String>> name() {
@@ -293,7 +293,7 @@ public final class OperationsInsightsWarehouseUserState extends com.pulumi.resou
         }
 
         /**
-         * @param connectionPassword (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param connectionPassword (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class OperationsInsightsWarehouseUserState extends com.pulumi.resou
         }
 
         /**
-         * @param connectionPassword (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param connectionPassword (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 
@@ -440,7 +440,7 @@ public final class OperationsInsightsWarehouseUserState extends com.pulumi.resou
         }
 
         /**
-         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 
@@ -451,7 +451,7 @@ public final class OperationsInsightsWarehouseUserState extends com.pulumi.resou
         }
 
         /**
-         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * @param name Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * 
          * @return builder
          * 

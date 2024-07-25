@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Opsi
     /// <summary>
     /// This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
     /// 
-    /// Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+    /// Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
     /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
     /// header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
     /// 
@@ -81,7 +81,7 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, object>> DefinedTags { get; private set; } = null!;
 
         /// <summary>
-        /// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        /// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         /// </summary>
         [Output("displayName")]
         public Output<string> DisplayName { get; private set; } = null!;
@@ -105,7 +105,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> LifecycleDetails { get; private set; } = null!;
 
         /// <summary>
-        /// Tenancy Identifier of Operations Insights service
+        /// Tenancy Identifier of Ops Insights service
         /// </summary>
         [Output("operationsInsightsTenancyId")]
         public Output<string> OperationsInsightsTenancyId { get; private set; } = null!;
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> TimeCreated { get; private set; } = null!;
 
         /// <summary>
-        /// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        /// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeLastWalletRotated")]
         public Output<string> TimeLastWalletRotated { get; private set; } = null!;
@@ -227,7 +227,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        /// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         /// </summary>
         [Input("displayName", required: true)]
         public Input<string> DisplayName { get; set; } = null!;
@@ -293,7 +293,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        /// (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
         /// </summary>
         [Input("displayName")]
         public Input<string>? DisplayName { get; set; }
@@ -323,7 +323,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? LifecycleDetails { get; set; }
 
         /// <summary>
-        /// Tenancy Identifier of Operations Insights service
+        /// Tenancy Identifier of Ops Insights service
         /// </summary>
         [Input("operationsInsightsTenancyId")]
         public Input<string>? OperationsInsightsTenancyId { get; set; }
@@ -369,7 +369,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? TimeCreated { get; set; }
 
         /// <summary>
-        /// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        /// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeLastWalletRotated")]
         public Input<string>? TimeLastWalletRotated { get; set; }

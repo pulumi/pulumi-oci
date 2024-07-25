@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Opsi.Outputs
     public sealed class GetOperationsInsightsWarehouseUsersFilterResult
     {
         /// <summary>
-        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         public readonly string Name;
         public readonly bool? Regex;

@@ -19,7 +19,7 @@ public final class GetOperationsInsightsWarehouseUserResult {
      */
     private String compartmentId;
     /**
-     * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     private String connectionPassword;
@@ -59,7 +59,7 @@ public final class GetOperationsInsightsWarehouseUserResult {
      */
     private String lifecycleDetails;
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     private String name;
@@ -99,7 +99,7 @@ public final class GetOperationsInsightsWarehouseUserResult {
         return this.compartmentId;
     }
     /**
-     * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public String connectionPassword() {
@@ -155,7 +155,7 @@ public final class GetOperationsInsightsWarehouseUserResult {
         return this.lifecycleDetails;
     }
     /**
-     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * @return Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * 
      */
     public String name() {

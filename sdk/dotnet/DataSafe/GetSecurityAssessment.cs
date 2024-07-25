@@ -130,6 +130,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableArray<string> IgnoredTargets;
         /// <summary>
+        /// Indicates whether the assessment is scheduled to run.
+        /// </summary>
+        public readonly bool IsAssessmentScheduled;
+        /// <summary>
         /// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
         /// </summary>
         public readonly bool IsBaseline;
@@ -218,6 +222,8 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableArray<string> ignoredTargets,
 
+            bool isAssessmentScheduled,
+
             bool isBaseline,
 
             bool isDeviatedFromBaseline,
@@ -264,6 +270,7 @@ namespace Pulumi.Oci.DataSafe
             Id = id;
             IgnoredAssessmentIds = ignoredAssessmentIds;
             IgnoredTargets = ignoredTargets;
+            IsAssessmentScheduled = isAssessmentScheduled;
             IsBaseline = isBaseline;
             IsDeviatedFromBaseline = isDeviatedFromBaseline;
             LastComparedBaselineId = lastComparedBaselineId;

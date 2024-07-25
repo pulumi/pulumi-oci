@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import com.pulumi.oci.DataSafe.inputs.SensitiveDataModelTablesForDiscoveryArgs;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -230,6 +231,21 @@ public final class SensitiveDataModelState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+     * 
+     */
+    @Import(name="tablesForDiscoveries")
+    private @Nullable Output<List<SensitiveDataModelTablesForDiscoveryArgs>> tablesForDiscoveries;
+
+    /**
+     * @return (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+     * 
+     */
+    public Optional<Output<List<SensitiveDataModelTablesForDiscoveryArgs>>> tablesForDiscoveries() {
+        return Optional.ofNullable(this.tablesForDiscoveries);
+    }
+
+    /**
      * (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
      * 
      * ** IMPORTANT **
@@ -297,6 +313,7 @@ public final class SensitiveDataModelState extends com.pulumi.resources.Resource
         this.sensitiveTypeIdsForDiscoveries = $.sensitiveTypeIdsForDiscoveries;
         this.state = $.state;
         this.systemTags = $.systemTags;
+        this.tablesForDiscoveries = $.tablesForDiscoveries;
         this.targetId = $.targetId;
         this.timeCreated = $.timeCreated;
         this.timeUpdated = $.timeUpdated;
@@ -632,6 +649,37 @@ public final class SensitiveDataModelState extends com.pulumi.resources.Resource
          */
         public Builder systemTags(Map<String,Object> systemTags) {
             return systemTags(Output.of(systemTags));
+        }
+
+        /**
+         * @param tablesForDiscoveries (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesForDiscoveries(@Nullable Output<List<SensitiveDataModelTablesForDiscoveryArgs>> tablesForDiscoveries) {
+            $.tablesForDiscoveries = tablesForDiscoveries;
+            return this;
+        }
+
+        /**
+         * @param tablesForDiscoveries (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesForDiscoveries(List<SensitiveDataModelTablesForDiscoveryArgs> tablesForDiscoveries) {
+            return tablesForDiscoveries(Output.of(tablesForDiscoveries));
+        }
+
+        /**
+         * @param tablesForDiscoveries (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: &#34;HR&#34;, tableName: [&#34;T1&#34;, &#34;T2&#34;]}, {schemaName:  &#34;OE&#34;, tableName : [&#34;T3&#34;, &#34;T4&#34;]}].
+         * 
+         * @return builder
+         * 
+         */
+        public Builder tablesForDiscoveries(SensitiveDataModelTablesForDiscoveryArgs... tablesForDiscoveries) {
+            return tablesForDiscoveries(List.of(tablesForDiscoveries));
         }
 
         /**

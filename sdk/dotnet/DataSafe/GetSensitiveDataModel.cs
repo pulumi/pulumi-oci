@@ -159,6 +159,10 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly ImmutableDictionary<string, object> SystemTags;
         /// <summary>
+        /// The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSensitiveDataModelTablesForDiscoveryResult> TablesForDiscoveries;
+        /// <summary>
         /// The OCID of the reference target database associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
         /// </summary>
         public readonly string TargetId;
@@ -205,6 +209,8 @@ namespace Pulumi.Oci.DataSafe
 
             ImmutableDictionary<string, object> systemTags,
 
+            ImmutableArray<Outputs.GetSensitiveDataModelTablesForDiscoveryResult> tablesForDiscoveries,
+
             string targetId,
 
             string timeCreated,
@@ -227,6 +233,7 @@ namespace Pulumi.Oci.DataSafe
             SensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             State = state;
             SystemTags = systemTags;
+            TablesForDiscoveries = tablesForDiscoveries;
             TargetId = targetId;
             TimeCreated = timeCreated;
             TimeUpdated = timeUpdated;

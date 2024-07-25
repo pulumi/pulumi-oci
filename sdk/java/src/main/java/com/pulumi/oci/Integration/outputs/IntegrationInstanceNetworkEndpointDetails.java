@@ -27,7 +27,6 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     private @Nullable List<IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn> allowlistedHttpVcns;
     /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     private @Nullable Boolean isIntegrationVcnAllowlisted;
@@ -54,7 +53,6 @@ public final class IntegrationInstanceNetworkEndpointDetails {
     }
     /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     public Optional<Boolean> isIntegrationVcnAllowlisted() {

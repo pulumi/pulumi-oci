@@ -83,7 +83,7 @@ class GetOperationsInsightsWarehouseUserResult:
     @pulumi.getter(name="connectionPassword")
     def connection_password(self) -> str:
         """
-        User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "connection_password")
 
@@ -147,7 +147,7 @@ class GetOperationsInsightsWarehouseUserResult:
     @pulumi.getter
     def name(self) -> str:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 

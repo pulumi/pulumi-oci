@@ -110,6 +110,7 @@ from .get_security_policy_reports import *
 from .get_sensitive_data_model import *
 from .get_sensitive_data_model_sensitive_objects import *
 from .get_sensitive_data_model_sensitive_schemas import *
+from .get_sensitive_data_model_sensitive_types import *
 from .get_sensitive_data_models import *
 from .get_sensitive_data_models_sensitive_column import *
 from .get_sensitive_data_models_sensitive_columns import *

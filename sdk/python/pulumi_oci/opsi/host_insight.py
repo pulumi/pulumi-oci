@@ -246,7 +246,7 @@ class _HostInsightState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_display_name: The user-friendly name for the host. The name does not have to be unique.
         :param pulumi.Input[str] host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param pulumi.Input[str] host_type: Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        :param pulumi.Input[str] host_type: Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
                
@@ -256,7 +256,6 @@ class _HostInsightState:
         :param pulumi.Input[str] platform_name: Platform name.
         :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
         :param pulumi.Input[str] platform_version: Platform version.
-        :param pulumi.Input[int] processor_count: Processor count.
         :param pulumi.Input[str] state: The current state of the host.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -488,7 +487,7 @@ class _HostInsightState:
     @pulumi.getter(name="hostType")
     def host_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         """
         return pulumi.get(self, "host_type")
 
@@ -563,9 +562,6 @@ class _HostInsightState:
     @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> Optional[pulumi.Input[int]]:
-        """
-        Processor count.
-        """
         return pulumi.get(self, "processor_count")
 
     @processor_count.setter
@@ -653,7 +649,7 @@ class HostInsight(pulumi.CustomResource):
         """
         This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
 
-        Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+        Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
 
         ## Example Usage
 
@@ -714,7 +710,7 @@ class HostInsight(pulumi.CustomResource):
         """
         This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
 
-        Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+        Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
 
         ## Example Usage
 
@@ -870,7 +866,7 @@ class HostInsight(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] host_display_name: The user-friendly name for the host. The name does not have to be unique.
         :param pulumi.Input[str] host_name: The host name. The host name is unique amongst the hosts managed by the same management agent.
-        :param pulumi.Input[str] host_type: Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        :param pulumi.Input[str] host_type: Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] management_agent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Management Agent
                
@@ -880,7 +876,6 @@ class HostInsight(pulumi.CustomResource):
         :param pulumi.Input[str] platform_name: Platform name.
         :param pulumi.Input[str] platform_type: Platform type. Supported platformType(s) for MACS-managed external host insight: [LINUX, SOLARIS, WINDOWS]. Supported platformType(s) for MACS-managed cloud host insight: [LINUX]. Supported platformType(s) for EM-managed external host insight: [LINUX, SOLARIS, SUNOS, ZLINUX, WINDOWS, AIX].
         :param pulumi.Input[str] platform_version: Platform version.
-        :param pulumi.Input[int] processor_count: Processor count.
         :param pulumi.Input[str] state: The current state of the host.
         :param pulumi.Input[str] status: (Updatable) Status of the resource. Example: "ENABLED", "DISABLED". Resource can be either enabled or disabled by updating the value of status field to either "ENABLED" or "DISABLED"
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
@@ -1035,7 +1030,7 @@ class HostInsight(pulumi.CustomResource):
     @pulumi.getter(name="hostType")
     def host_type(self) -> pulumi.Output[str]:
         """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         """
         return pulumi.get(self, "host_type")
 
@@ -1086,9 +1081,6 @@ class HostInsight(pulumi.CustomResource):
     @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> pulumi.Output[int]:
-        """
-        Processor count.
-        """
         return pulumi.get(self, "processor_count")
 
     @property

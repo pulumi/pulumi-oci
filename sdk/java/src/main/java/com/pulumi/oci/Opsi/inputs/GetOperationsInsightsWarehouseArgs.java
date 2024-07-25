@@ -15,14 +15,14 @@ public final class GetOperationsInsightsWarehouseArgs extends com.pulumi.resourc
     public static final GetOperationsInsightsWarehouseArgs Empty = new GetOperationsInsightsWarehouseArgs();
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      * 
      */
     @Import(name="operationsInsightsWarehouseId", required=true)
     private Output<String> operationsInsightsWarehouseId;
 
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      */
     public Output<String> operationsInsightsWarehouseId() {
@@ -54,7 +54,7 @@ public final class GetOperationsInsightsWarehouseArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * @param operationsInsightsWarehouseId Unique Ops Insights Warehouse identifier
          * 
          * @return builder
          * 
@@ -65,7 +65,7 @@ public final class GetOperationsInsightsWarehouseArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * @param operationsInsightsWarehouseId Unique Ops Insights Warehouse identifier
          * 
          * @return builder
          * 

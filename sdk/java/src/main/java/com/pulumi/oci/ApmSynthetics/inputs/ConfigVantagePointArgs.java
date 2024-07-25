@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -46,11 +47,27 @@ public final class ConfigVantagePointArgs extends com.pulumi.resources.ResourceA
         return this.name;
     }
 
+    /**
+     * List of workers running the assigned monitor.
+     * 
+     */
+    @Import(name="workerLists")
+    private @Nullable Output<List<String>> workerLists;
+
+    /**
+     * @return List of workers running the assigned monitor.
+     * 
+     */
+    public Optional<Output<List<String>>> workerLists() {
+        return Optional.ofNullable(this.workerLists);
+    }
+
     private ConfigVantagePointArgs() {}
 
     private ConfigVantagePointArgs(ConfigVantagePointArgs $) {
         this.displayName = $.displayName;
         this.name = $.name;
+        this.workerLists = $.workerLists;
     }
 
     public static Builder builder() {
@@ -111,6 +128,37 @@ public final class ConfigVantagePointArgs extends com.pulumi.resources.ResourceA
          */
         public Builder name(String name) {
             return name(Output.of(name));
+        }
+
+        /**
+         * @param workerLists List of workers running the assigned monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder workerLists(@Nullable Output<List<String>> workerLists) {
+            $.workerLists = workerLists;
+            return this;
+        }
+
+        /**
+         * @param workerLists List of workers running the assigned monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder workerLists(List<String> workerLists) {
+            return workerLists(Output.of(workerLists));
+        }
+
+        /**
+         * @param workerLists List of workers running the assigned monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder workerLists(String... workerLists) {
+            return workerLists(List.of(workerLists));
         }
 
         public ConfigVantagePointArgs build() {

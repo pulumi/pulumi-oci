@@ -175,7 +175,6 @@ namespace Pulumi.Oci.Integration
         public readonly ImmutableArray<Outputs.GetIntegrationInstancePrivateEndpointOutboundConnectionResult> PrivateEndpointOutboundConnections;
         /// <summary>
         /// Shape
-        /// &gt;&gt;&gt;&gt;&gt;&gt;&gt; c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         /// </summary>
         public readonly string Shape;
         /// <summary>

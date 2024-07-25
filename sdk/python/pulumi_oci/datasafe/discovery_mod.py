@@ -8,6 +8,8 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['DiscoveryModArgs', 'DiscoveryMod']
 
@@ -25,7 +27,8 @@ class DiscoveryModArgs:
                  is_include_all_sensitive_types: Optional[pulumi.Input[bool]] = None,
                  is_sample_data_collection_enabled: Optional[pulumi.Input[bool]] = None,
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
-                 sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+                 sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]] = None):
         """
         The set of arguments for constructing a DiscoveryMod resource.
         :param pulumi.Input[str] compartment_id: (Updatable) The OCID of the compartment where the discovery job resource should be created.
@@ -39,11 +42,8 @@ class DiscoveryModArgs:
         :param pulumi.Input[bool] is_include_all_sensitive_types: Indicates if all the existing sensitive types should be used by the discovery job. If it's set to true, the sensitiveTypeIdsForDiscovery attribute is ignored and all sensitive types are used for data discovery. If both attributes are not provided, the configuration from the sensitive data model is used.
         :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+        :param pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
         """
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "sensitive_data_model_id", sensitive_data_model_id)
@@ -67,6 +67,8 @@ class DiscoveryModArgs:
             pulumi.set(__self__, "schemas_for_discoveries", schemas_for_discoveries)
         if sensitive_type_ids_for_discoveries is not None:
             pulumi.set(__self__, "sensitive_type_ids_for_discoveries", sensitive_type_ids_for_discoveries)
+        if tables_for_discoveries is not None:
+            pulumi.set(__self__, "tables_for_discoveries", tables_for_discoveries)
 
     @property
     @pulumi.getter(name="compartmentId")
@@ -204,17 +206,25 @@ class DiscoveryModArgs:
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
     @sensitive_type_ids_for_discoveries.setter
     def sensitive_type_ids_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "sensitive_type_ids_for_discoveries", value)
+
+    @property
+    @pulumi.getter(name="tablesForDiscoveries")
+    def tables_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]]:
+        """
+        The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        """
+        return pulumi.get(self, "tables_for_discoveries")
+
+    @tables_for_discoveries.setter
+    def tables_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]]):
+        pulumi.set(self, "tables_for_discoveries", value)
 
 
 @pulumi.input_type
@@ -234,6 +244,7 @@ class _DiscoveryModState:
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  time_finished: Optional[pulumi.Input[str]] = None,
                  time_started: Optional[pulumi.Input[str]] = None,
@@ -256,13 +267,10 @@ class _DiscoveryModState:
         :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
         :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         :param pulumi.Input[str] state: The current state of the discovery job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
         :param pulumi.Input[str] target_id: The OCID of the target database associated with the discovery job.
         :param pulumi.Input[str] time_finished: The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
         :param pulumi.Input[str] time_started: The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -301,6 +309,8 @@ class _DiscoveryModState:
             pulumi.set(__self__, "state", state)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
+        if tables_for_discoveries is not None:
+            pulumi.set(__self__, "tables_for_discoveries", tables_for_discoveries)
         if target_id is not None:
             pulumi.set(__self__, "target_id", target_id)
         if time_finished is not None:
@@ -456,11 +466,7 @@ class _DiscoveryModState:
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
         """
-        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
@@ -491,6 +497,18 @@ class _DiscoveryModState:
     @system_tags.setter
     def system_tags(self, value: Optional[pulumi.Input[Mapping[str, Any]]]):
         pulumi.set(self, "system_tags", value)
+
+    @property
+    @pulumi.getter(name="tablesForDiscoveries")
+    def tables_for_discoveries(self) -> Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]]:
+        """
+        The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        """
+        return pulumi.get(self, "tables_for_discoveries")
+
+    @tables_for_discoveries.setter
+    def tables_for_discoveries(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['DiscoveryModTablesForDiscoveryArgs']]]]):
+        pulumi.set(self, "tables_for_discoveries", value)
 
     @property
     @pulumi.getter(name="targetId")
@@ -618,6 +636,7 @@ class DiscoveryMod(pulumi.CustomResource):
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]]] = None,
                  __props__=None):
         """
         This resource provides the Discovery Job resource in Oracle Cloud Infrastructure Data Safe service.
@@ -650,7 +669,11 @@ class DiscoveryMod(pulumi.CustomResource):
             is_include_all_sensitive_types=discovery_job_is_include_all_sensitive_types,
             is_sample_data_collection_enabled=discovery_job_is_sample_data_collection_enabled,
             schemas_for_discoveries=discovery_job_schemas_for_discovery,
-            sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery)
+            sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery,
+            tables_for_discoveries=[oci.data_safe.DiscoveryModTablesForDiscoveryArgs(
+                schema_name=discovery_job_tables_for_discovery_schema_name,
+                table_names=discovery_job_tables_for_discovery_table_names,
+            )])
         ```
 
         ## Import
@@ -674,11 +697,8 @@ class DiscoveryMod(pulumi.CustomResource):
         :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
         :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
         """
         ...
     @overload
@@ -717,7 +737,11 @@ class DiscoveryMod(pulumi.CustomResource):
             is_include_all_sensitive_types=discovery_job_is_include_all_sensitive_types,
             is_sample_data_collection_enabled=discovery_job_is_sample_data_collection_enabled,
             schemas_for_discoveries=discovery_job_schemas_for_discovery,
-            sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery)
+            sensitive_type_ids_for_discoveries=discovery_job_sensitive_type_ids_for_discovery,
+            tables_for_discoveries=[oci.data_safe.DiscoveryModTablesForDiscoveryArgs(
+                schema_name=discovery_job_tables_for_discovery_schema_name,
+                table_names=discovery_job_tables_for_discovery_table_names,
+            )])
         ```
 
         ## Import
@@ -755,6 +779,7 @@ class DiscoveryMod(pulumi.CustomResource):
                  schemas_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  sensitive_data_model_id: Optional[pulumi.Input[str]] = None,
                  sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
+                 tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -780,6 +805,7 @@ class DiscoveryMod(pulumi.CustomResource):
                 raise TypeError("Missing required property 'sensitive_data_model_id'")
             __props__.__dict__["sensitive_data_model_id"] = sensitive_data_model_id
             __props__.__dict__["sensitive_type_ids_for_discoveries"] = sensitive_type_ids_for_discoveries
+            __props__.__dict__["tables_for_discoveries"] = tables_for_discoveries
             __props__.__dict__["state"] = None
             __props__.__dict__["system_tags"] = None
             __props__.__dict__["target_id"] = None
@@ -815,6 +841,7 @@ class DiscoveryMod(pulumi.CustomResource):
             sensitive_type_ids_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            tables_for_discoveries: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]]] = None,
             target_id: Optional[pulumi.Input[str]] = None,
             time_finished: Optional[pulumi.Input[str]] = None,
             time_started: Optional[pulumi.Input[str]] = None,
@@ -842,13 +869,10 @@ class DiscoveryMod(pulumi.CustomResource):
         :param pulumi.Input[bool] is_sample_data_collection_enabled: Indicates if the discovery job should collect and store sample data values for the discovered columns. Sample data helps review the discovered columns and ensure that they actually contain sensitive data. As it collects original data from the target database, it's disabled by default and should be used only if it's acceptable to store sample data in Data Safe's repository in Oracle Cloud. Note that sample data values are not collected for columns with the following data types: LONG, LOB, RAW, XMLTYPE and BFILE.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] schemas_for_discoveries: The schemas to be scanned by the discovery job. If not provided, the schemasForDiscovery attribute of the sensitive data model is used to get the list of schemas.
         :param pulumi.Input[str] sensitive_data_model_id: The OCID of the sensitive data model.
-        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-               
-               
-               ** IMPORTANT **
-               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] sensitive_type_ids_for_discoveries: The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         :param pulumi.Input[str] state: The current state of the discovery job.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
+        :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['DiscoveryModTablesForDiscoveryArgs']]]] tables_for_discoveries: The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
         :param pulumi.Input[str] target_id: The OCID of the target database associated with the discovery job.
         :param pulumi.Input[str] time_finished: The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
         :param pulumi.Input[str] time_started: The date and time the discovery job started, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
@@ -877,6 +901,7 @@ class DiscoveryMod(pulumi.CustomResource):
         __props__.__dict__["sensitive_type_ids_for_discoveries"] = sensitive_type_ids_for_discoveries
         __props__.__dict__["state"] = state
         __props__.__dict__["system_tags"] = system_tags
+        __props__.__dict__["tables_for_discoveries"] = tables_for_discoveries
         __props__.__dict__["target_id"] = target_id
         __props__.__dict__["time_finished"] = time_finished
         __props__.__dict__["time_started"] = time_started
@@ -980,11 +1005,7 @@ class DiscoveryMod(pulumi.CustomResource):
     @pulumi.getter(name="sensitiveTypeIdsForDiscoveries")
     def sensitive_type_ids_for_discoveries(self) -> pulumi.Output[Sequence[str]]:
         """
-        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-
-
-        ** IMPORTANT **
-        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         """
         return pulumi.get(self, "sensitive_type_ids_for_discoveries")
 
@@ -1003,6 +1024,14 @@ class DiscoveryMod(pulumi.CustomResource):
         System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
         """
         return pulumi.get(self, "system_tags")
+
+    @property
+    @pulumi.getter(name="tablesForDiscoveries")
+    def tables_for_discoveries(self) -> pulumi.Output[Sequence['outputs.DiscoveryModTablesForDiscovery']]:
+        """
+        The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        """
+        return pulumi.get(self, "tables_for_discoveries")
 
     @property
     @pulumi.getter(name="targetId")

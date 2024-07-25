@@ -55,14 +55,14 @@ public final class GetOperationsInsightsWarehousesArgs extends com.pulumi.resour
     }
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      * 
      */
     @Import(name="id")
     private @Nullable Output<String> id;
 
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      */
     public Optional<Output<String>> id() {
@@ -168,7 +168,7 @@ public final class GetOperationsInsightsWarehousesArgs extends com.pulumi.resour
         }
 
         /**
-         * @param id Unique Operations Insights Warehouse identifier
+         * @param id Unique Ops Insights Warehouse identifier
          * 
          * @return builder
          * 
@@ -179,7 +179,7 @@ public final class GetOperationsInsightsWarehousesArgs extends com.pulumi.resour
         }
 
         /**
-         * @param id Unique Operations Insights Warehouse identifier
+         * @param id Unique Ops Insights Warehouse identifier
          * 
          * @return builder
          * 

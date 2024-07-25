@@ -126,6 +126,21 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    @Import(name="isAssessmentScheduled")
+    private @Nullable Output<Boolean> isAssessmentScheduled;
+
+    /**
+     * @return (Updatable) Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    public Optional<Output<Boolean>> isAssessmentScheduled() {
+        return Optional.ofNullable(this.isAssessmentScheduled);
+    }
+
+    /**
      * Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      * 
      */
@@ -415,6 +430,7 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
         this.freeformTags = $.freeformTags;
         this.ignoredAssessmentIds = $.ignoredAssessmentIds;
         this.ignoredTargets = $.ignoredTargets;
+        this.isAssessmentScheduled = $.isAssessmentScheduled;
         this.isBaseline = $.isBaseline;
         this.isDeviatedFromBaseline = $.isDeviatedFromBaseline;
         this.lastComparedBaselineId = $.lastComparedBaselineId;
@@ -618,6 +634,27 @@ public final class SecurityAssessmentState extends com.pulumi.resources.Resource
          */
         public Builder ignoredTargets(String... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
+        }
+
+        /**
+         * @param isAssessmentScheduled (Updatable) Indicates whether the assessment is scheduled to run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAssessmentScheduled(@Nullable Output<Boolean> isAssessmentScheduled) {
+            $.isAssessmentScheduled = isAssessmentScheduled;
+            return this;
+        }
+
+        /**
+         * @param isAssessmentScheduled (Updatable) Indicates whether the assessment is scheduled to run.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            return isAssessmentScheduled(Output.of(isAssessmentScheduled));
         }
 
         /**

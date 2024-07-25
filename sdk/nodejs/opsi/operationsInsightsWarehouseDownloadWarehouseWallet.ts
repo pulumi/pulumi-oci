@@ -58,11 +58,11 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
     }
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     public readonly operationsInsightsWarehouseId!: pulumi.Output<string>;
     /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * User provided ADW wallet password for the Ops Insights Warehouse.
      *
      *
      * ** IMPORTANT **
@@ -108,11 +108,11 @@ export class OperationsInsightsWarehouseDownloadWarehouseWallet extends pulumi.C
  */
 export interface OperationsInsightsWarehouseDownloadWarehouseWalletState {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     operationsInsightsWarehouseId?: pulumi.Input<string>;
     /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * User provided ADW wallet password for the Ops Insights Warehouse.
      *
      *
      * ** IMPORTANT **
@@ -126,11 +126,11 @@ export interface OperationsInsightsWarehouseDownloadWarehouseWalletState {
  */
 export interface OperationsInsightsWarehouseDownloadWarehouseWalletArgs {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     operationsInsightsWarehouseId: pulumi.Input<string>;
     /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * User provided ADW wallet password for the Ops Insights Warehouse.
      *
      *
      * ** IMPORTANT **

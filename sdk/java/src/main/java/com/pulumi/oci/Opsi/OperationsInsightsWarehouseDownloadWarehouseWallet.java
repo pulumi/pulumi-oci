@@ -67,21 +67,21 @@ import javax.annotation.Nullable;
 @ResourceType(type="oci:Opsi/operationsInsightsWarehouseDownloadWarehouseWallet:OperationsInsightsWarehouseDownloadWarehouseWallet")
 public class OperationsInsightsWarehouseDownloadWarehouseWallet extends com.pulumi.resources.CustomResource {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      * 
      */
     @Export(name="operationsInsightsWarehouseId", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsWarehouseId;
 
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      */
     public Output<String> operationsInsightsWarehouseId() {
         return this.operationsInsightsWarehouseId;
     }
     /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * User provided ADW wallet password for the Ops Insights Warehouse.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -91,7 +91,7 @@ public class OperationsInsightsWarehouseDownloadWarehouseWallet extends com.pulu
     private Output<String> operationsInsightsWarehouseWalletPassword;
 
     /**
-     * @return User provided ADW wallet password for the Operations Insights Warehouse.
+     * @return User provided ADW wallet password for the Ops Insights Warehouse.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

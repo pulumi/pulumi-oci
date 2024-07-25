@@ -95,7 +95,7 @@ type LookupReportDefinitionResult struct {
 	Schedule string `pulumi:"schedule"`
 	// The OCID of the compartment in which the scheduled resource will be created.
 	ScheduledReportCompartmentId string `pulumi:"scheduledReportCompartmentId"`
-	// Specifies the format of the report ( either .xls or .pdf )
+	// Specifies the format of the report ( either .xls or .pdf or .json)
 	ScheduledReportMimeType string `pulumi:"scheduledReportMimeType"`
 	// The name of the report to be scheduled.
 	ScheduledReportName string `pulumi:"scheduledReportName"`
@@ -247,7 +247,7 @@ func (o LookupReportDefinitionResultOutput) ScheduledReportCompartmentId() pulum
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportCompartmentId }).(pulumi.StringOutput)
 }
 
-// Specifies the format of the report ( either .xls or .pdf )
+// Specifies the format of the report ( either .xls or .pdf or .json)
 func (o LookupReportDefinitionResultOutput) ScheduledReportMimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportDefinitionResult) string { return v.ScheduledReportMimeType }).(pulumi.StringOutput)
 }

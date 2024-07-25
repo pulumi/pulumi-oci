@@ -67,7 +67,8 @@ type KeyStore struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases KeyStoreAssociatedDatabaseArrayOutput `pulumi:"associatedDatabases"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
+	CompartmentId         pulumi.StringOutput `pulumi:"compartmentId"`
+	ConfirmDetailsTrigger pulumi.IntPtrOutput `pulumi:"confirmDetailsTrigger"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -126,7 +127,8 @@ type keyStoreState struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []KeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId *string `pulumi:"compartmentId"`
+	CompartmentId         *string `pulumi:"compartmentId"`
+	ConfirmDetailsTrigger *int    `pulumi:"confirmDetailsTrigger"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -147,7 +149,8 @@ type KeyStoreState struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases KeyStoreAssociatedDatabaseArrayInput
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringPtrInput
+	CompartmentId         pulumi.StringPtrInput
+	ConfirmDetailsTrigger pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -170,7 +173,8 @@ func (KeyStoreState) ElementType() reflect.Type {
 
 type keyStoreArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId         string `pulumi:"compartmentId"`
+	ConfirmDetailsTrigger *int   `pulumi:"confirmDetailsTrigger"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -184,7 +188,8 @@ type keyStoreArgs struct {
 // The set of arguments for constructing a KeyStore resource.
 type KeyStoreArgs struct {
 	// (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId pulumi.StringInput
+	CompartmentId         pulumi.StringInput
+	ConfirmDetailsTrigger pulumi.IntPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags pulumi.MapInput
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -290,6 +295,10 @@ func (o KeyStoreOutput) AssociatedDatabases() KeyStoreAssociatedDatabaseArrayOut
 // (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o KeyStoreOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v *KeyStore) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o KeyStoreOutput) ConfirmDetailsTrigger() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *KeyStore) pulumi.IntPtrOutput { return v.ConfirmDetailsTrigger }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

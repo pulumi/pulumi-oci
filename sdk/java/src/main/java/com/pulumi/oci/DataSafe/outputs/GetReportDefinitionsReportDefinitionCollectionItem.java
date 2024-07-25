@@ -110,7 +110,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
      */
     private String scheduledReportCompartmentId;
     /**
-     * @return Specifies the format of the report ( either .xls or .pdf )
+     * @return Specifies the format of the report ( either .xls or .pdf or .json)
      * 
      */
     private String scheduledReportMimeType;
@@ -283,7 +283,7 @@ public final class GetReportDefinitionsReportDefinitionCollectionItem {
         return this.scheduledReportCompartmentId;
     }
     /**
-     * @return Specifies the format of the report ( either .xls or .pdf )
+     * @return Specifies the format of the report ( either .xls or .pdf or .json)
      * 
      */
     public String scheduledReportMimeType() {

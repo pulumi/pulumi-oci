@@ -19,6 +19,7 @@ export function getSecurityAssessmentFinding(args: GetSecurityAssessmentFindingA
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
         "state": args.state,
+        "targetId": args.targetId,
     }, opts);
 }
 
@@ -35,6 +36,7 @@ export interface GetSecurityAssessmentFindingArgs {
     securityAssessmentId: string;
     severity?: string;
     state?: string;
+    targetId?: string;
 }
 
 /**
@@ -55,6 +57,7 @@ export interface GetSecurityAssessmentFindingResult {
     readonly securityAssessmentId: string;
     readonly severity?: string;
     readonly state?: string;
+    readonly targetId?: string;
 }
 export function getSecurityAssessmentFindingOutput(args: GetSecurityAssessmentFindingOutputArgs, opts?: pulumi.InvokeOptions): pulumi.Output<GetSecurityAssessmentFindingResult> {
     return pulumi.output(args).apply((a: any) => getSecurityAssessmentFinding(a, opts))
@@ -73,4 +76,5 @@ export interface GetSecurityAssessmentFindingOutputArgs {
     securityAssessmentId: pulumi.Input<string>;
     severity?: pulumi.Input<string>;
     state?: pulumi.Input<string>;
+    targetId?: pulumi.Input<string>;
 }

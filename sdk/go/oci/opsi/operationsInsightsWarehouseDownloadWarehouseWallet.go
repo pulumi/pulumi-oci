@@ -53,9 +53,9 @@ import (
 type OperationsInsightsWarehouseDownloadWarehouseWallet struct {
 	pulumi.CustomResourceState
 
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringOutput `pulumi:"operationsInsightsWarehouseId"`
-	// User provided ADW wallet password for the Operations Insights Warehouse.
+	// User provided ADW wallet password for the Ops Insights Warehouse.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -105,9 +105,9 @@ func GetOperationsInsightsWarehouseDownloadWarehouseWallet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OperationsInsightsWarehouseDownloadWarehouseWallet resources.
 type operationsInsightsWarehouseDownloadWarehouseWalletState struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId *string `pulumi:"operationsInsightsWarehouseId"`
-	// User provided ADW wallet password for the Operations Insights Warehouse.
+	// User provided ADW wallet password for the Ops Insights Warehouse.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -115,9 +115,9 @@ type operationsInsightsWarehouseDownloadWarehouseWalletState struct {
 }
 
 type OperationsInsightsWarehouseDownloadWarehouseWalletState struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringPtrInput
-	// User provided ADW wallet password for the Operations Insights Warehouse.
+	// User provided ADW wallet password for the Ops Insights Warehouse.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -129,9 +129,9 @@ func (OperationsInsightsWarehouseDownloadWarehouseWalletState) ElementType() ref
 }
 
 type operationsInsightsWarehouseDownloadWarehouseWalletArgs struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
-	// User provided ADW wallet password for the Operations Insights Warehouse.
+	// User provided ADW wallet password for the Ops Insights Warehouse.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -140,9 +140,9 @@ type operationsInsightsWarehouseDownloadWarehouseWalletArgs struct {
 
 // The set of arguments for constructing a OperationsInsightsWarehouseDownloadWarehouseWallet resource.
 type OperationsInsightsWarehouseDownloadWarehouseWalletArgs struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringInput
-	// User provided ADW wallet password for the Operations Insights Warehouse.
+	// User provided ADW wallet password for the Ops Insights Warehouse.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -236,14 +236,14 @@ func (o OperationsInsightsWarehouseDownloadWarehouseWalletOutput) ToOperationsIn
 	return o
 }
 
-// Unique Operations Insights Warehouse identifier
+// Unique Ops Insights Warehouse identifier
 func (o OperationsInsightsWarehouseDownloadWarehouseWalletOutput) OperationsInsightsWarehouseId() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouseDownloadWarehouseWallet) pulumi.StringOutput {
 		return v.OperationsInsightsWarehouseId
 	}).(pulumi.StringOutput)
 }
 
-// User provided ADW wallet password for the Operations Insights Warehouse.
+// User provided ADW wallet password for the Ops Insights Warehouse.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

@@ -228,7 +228,7 @@ class GetHostInsightResult:
     @pulumi.getter(name="hostType")
     def host_type(self) -> str:
         """
-        Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         """
         return pulumi.get(self, "host_type")
 
@@ -283,9 +283,6 @@ class GetHostInsightResult:
     @property
     @pulumi.getter(name="processorCount")
     def processor_count(self) -> int:
-        """
-        Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        """
         return pulumi.get(self, "processor_count")
 
     @property

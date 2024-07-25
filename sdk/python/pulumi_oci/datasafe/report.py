@@ -112,7 +112,7 @@ class _ReportState:
         :param pulumi.Input[str] description: Specifies a description of the report.
         :param pulumi.Input[str] display_name: Name of the report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] mime_type: Specifies the format of report to be excel or pdf
+        :param pulumi.Input[str] mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param pulumi.Input[str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[str] report_id: Unique report identifier
                
@@ -213,7 +213,7 @@ class _ReportState:
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf or .json
         """
         return pulumi.get(self, "mime_type")
 
@@ -427,7 +427,7 @@ class Report(pulumi.CustomResource):
         :param pulumi.Input[str] description: Specifies a description of the report.
         :param pulumi.Input[str] display_name: Name of the report.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
-        :param pulumi.Input[str] mime_type: Specifies the format of report to be excel or pdf
+        :param pulumi.Input[str] mime_type: Specifies the format of report to be .xls or .pdf or .json
         :param pulumi.Input[str] report_definition_id: The OCID of the report definition.
         :param pulumi.Input[str] report_id: Unique report identifier
                
@@ -501,7 +501,7 @@ class Report(pulumi.CustomResource):
     @pulumi.getter(name="mimeType")
     def mime_type(self) -> pulumi.Output[str]:
         """
-        Specifies the format of report to be excel or pdf
+        Specifies the format of report to be .xls or .pdf or .json
         """
         return pulumi.get(self, "mime_type")
 

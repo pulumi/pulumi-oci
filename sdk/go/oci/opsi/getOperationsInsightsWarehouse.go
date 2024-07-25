@@ -13,7 +13,7 @@ import (
 
 // This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
 //
-// Gets details of an Operations Insights Warehouse.
+// Gets details of an Ops Insights Warehouse.
 // There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 //
 // ## Example Usage
@@ -53,7 +53,7 @@ func LookupOperationsInsightsWarehouse(ctx *pulumi.Context, args *LookupOperatio
 
 // A collection of arguments for invoking getOperationsInsightsWarehouse.
 type LookupOperationsInsightsWarehouseArgs struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 }
 
@@ -67,7 +67,7 @@ type LookupOperationsInsightsWarehouseResult struct {
 	CpuUsed float64 `pulumi:"cpuUsed"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
-	// User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName string `pulumi:"displayName"`
 	// OCID of the dynamic group created for the warehouse
 	DynamicGroupId string `pulumi:"dynamicGroupId"`
@@ -77,7 +77,7 @@ type LookupOperationsInsightsWarehouseResult struct {
 	Id string `pulumi:"id"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Tenancy Identifier of Operations Insights service
+	// Tenancy Identifier of Ops Insights service
 	OperationsInsightsTenancyId   string `pulumi:"operationsInsightsTenancyId"`
 	OperationsInsightsWarehouseId string `pulumi:"operationsInsightsWarehouseId"`
 	// Possible lifecycle states
@@ -90,7 +90,7 @@ type LookupOperationsInsightsWarehouseResult struct {
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The time at which the resource was first created. An RFC3339 formatted datetime string
 	TimeCreated string `pulumi:"timeCreated"`
-	// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+	// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 	TimeLastWalletRotated string `pulumi:"timeLastWalletRotated"`
 	// The time at which the resource was last updated. An RFC3339 formatted datetime string
 	TimeUpdated string `pulumi:"timeUpdated"`
@@ -111,7 +111,7 @@ func LookupOperationsInsightsWarehouseOutput(ctx *pulumi.Context, args LookupOpe
 
 // A collection of arguments for invoking getOperationsInsightsWarehouse.
 type LookupOperationsInsightsWarehouseOutputArgs struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	OperationsInsightsWarehouseId pulumi.StringInput `pulumi:"operationsInsightsWarehouseId"`
 }
 
@@ -154,7 +154,7 @@ func (o LookupOperationsInsightsWarehouseResultOutput) DefinedTags() pulumi.MapO
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
 }
 
-// User-friedly name of Operations Insights Warehouse that does not have to be unique.
+// User-friedly name of Ops Insights Warehouse that does not have to be unique.
 func (o LookupOperationsInsightsWarehouseResultOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.DisplayName }).(pulumi.StringOutput)
 }
@@ -179,7 +179,7 @@ func (o LookupOperationsInsightsWarehouseResultOutput) LifecycleDetails() pulumi
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Tenancy Identifier of Operations Insights service
+// Tenancy Identifier of Ops Insights service
 func (o LookupOperationsInsightsWarehouseResultOutput) OperationsInsightsTenancyId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.OperationsInsightsTenancyId }).(pulumi.StringOutput)
 }
@@ -213,7 +213,7 @@ func (o LookupOperationsInsightsWarehouseResultOutput) TimeCreated() pulumi.Stri
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.TimeCreated }).(pulumi.StringOutput)
 }
 
-// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
 func (o LookupOperationsInsightsWarehouseResultOutput) TimeLastWalletRotated() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseResult) string { return v.TimeLastWalletRotated }).(pulumi.StringOutput)
 }

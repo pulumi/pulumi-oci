@@ -66,7 +66,8 @@ import (
 //					Preference:    pulumi.Any(cloudExadataInfrastructureMaintenanceWindowPreference),
 //					WeeksOfMonths: pulumi.Any(cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth),
 //				},
-//				StorageCount: pulumi.Any(cloudExadataInfrastructureStorageCount),
+//				StorageCount:   pulumi.Any(cloudExadataInfrastructureStorageCount),
+//				SubscriptionId: pulumi.Any(tenantSubscriptionId),
 //			})
 //			if err != nil {
 //				return err
@@ -146,12 +147,14 @@ type CloudExadataInfrastructure struct {
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State pulumi.StringOutput `pulumi:"state"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount pulumi.IntOutput `pulumi:"storageCount"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion pulumi.StringOutput `pulumi:"storageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId pulumi.StringOutput `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
 	// The date and time the cloud Exadata infrastructure resource was created.
@@ -261,12 +264,14 @@ type cloudExadataInfrastructureState struct {
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State *string `pulumi:"state"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount *int `pulumi:"storageCount"`
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion *string `pulumi:"storageServerVersion"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId *string `pulumi:"subscriptionId"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
 	// The date and time the cloud Exadata infrastructure resource was created.
@@ -335,12 +340,14 @@ type CloudExadataInfrastructureState struct {
 	// The current lifecycle state of the cloud Exadata infrastructure resource.
 	State pulumi.StringPtrInput
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-	//
-	// ** IMPORTANT **
-	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 	StorageCount pulumi.IntPtrInput
 	// The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 	StorageServerVersion pulumi.StringPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+	//
+	// ** IMPORTANT **
+	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+	SubscriptionId pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	SystemTags pulumi.MapInput
 	// The date and time the cloud Exadata infrastructure resource was created.
@@ -375,10 +382,12 @@ type cloudExadataInfrastructureArgs struct {
 	// The shape of the cloud Exadata infrastructure resource.
 	Shape string `pulumi:"shape"`
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	StorageCount *int `pulumi:"storageCount"`
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StorageCount *int `pulumi:"storageCount"`
+	SubscriptionId *string `pulumi:"subscriptionId"`
 }
 
 // The set of arguments for constructing a CloudExadataInfrastructure resource.
@@ -404,10 +413,12 @@ type CloudExadataInfrastructureArgs struct {
 	// The shape of the cloud Exadata infrastructure resource.
 	Shape pulumi.StringInput
 	// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+	StorageCount pulumi.IntPtrInput
+	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	StorageCount pulumi.IntPtrInput
+	SubscriptionId pulumi.StringPtrInput
 }
 
 func (CloudExadataInfrastructureArgs) ElementType() reflect.Type {
@@ -649,9 +660,6 @@ func (o CloudExadataInfrastructureOutput) State() pulumi.StringOutput {
 }
 
 // (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-//
-// ** IMPORTANT **
-// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
 func (o CloudExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.IntOutput { return v.StorageCount }).(pulumi.IntOutput)
 }
@@ -659,6 +667,14 @@ func (o CloudExadataInfrastructureOutput) StorageCount() pulumi.IntOutput {
 // The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
 func (o CloudExadataInfrastructureOutput) StorageServerVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.StorageServerVersion }).(pulumi.StringOutput)
+}
+
+// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+//
+// ** IMPORTANT **
+// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+func (o CloudExadataInfrastructureOutput) SubscriptionId() pulumi.StringOutput {
+	return o.ApplyT(func(v *CloudExadataInfrastructure) pulumi.StringOutput { return v.SubscriptionId }).(pulumi.StringOutput)
 }
 
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

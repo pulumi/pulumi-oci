@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Enterprise Manager Bridges in Oracle Cloud Infrastructure Opsi service.
 //
-// Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+// Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
 // When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
 //
 // ## Example Usage

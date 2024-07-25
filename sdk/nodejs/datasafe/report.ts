@@ -66,7 +66,7 @@ export class Report extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf or .json
      */
     public /*out*/ readonly mimeType!: pulumi.Output<string>;
     /**
@@ -171,7 +171,7 @@ export interface ReportState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * Specifies the format of report to be excel or pdf
+     * Specifies the format of report to be .xls or .pdf or .json
      */
     mimeType?: pulumi.Input<string>;
     /**

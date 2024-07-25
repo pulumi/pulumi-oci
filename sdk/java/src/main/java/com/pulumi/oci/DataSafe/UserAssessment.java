@@ -57,6 +57,7 @@ import javax.annotation.Nullable;
  *             .description(userAssessmentDescription)
  *             .displayName(userAssessmentDisplayName)
  *             .freeformTags(Map.of("Department", "Finance"))
+ *             .isAssessmentScheduled(userAssessmentIsAssessmentScheduled)
  *             .schedule(userAssessmentSchedule)
  *             .build());
  * 
@@ -174,6 +175,20 @@ public class UserAssessment extends com.pulumi.resources.CustomResource {
      */
     public Output<List<UserAssessmentIgnoredTarget>> ignoredTargets() {
         return this.ignoredTargets;
+    }
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    @Export(name="isAssessmentScheduled", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isAssessmentScheduled;
+
+    /**
+     * @return (Updatable) Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    public Output<Boolean> isAssessmentScheduled() {
+        return this.isAssessmentScheduled;
     }
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.

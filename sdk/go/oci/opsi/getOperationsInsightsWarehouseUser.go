@@ -60,7 +60,7 @@ type LookupOperationsInsightsWarehouseUserArgs struct {
 type LookupOperationsInsightsWarehouseUserResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword string `pulumi:"connectionPassword"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -76,7 +76,7 @@ type LookupOperationsInsightsWarehouseUserResult struct {
 	IsOpsiDataAccess bool `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name string `pulumi:"name"`
 	// OPSI Warehouse OCID
 	OperationsInsightsWarehouseId     string `pulumi:"operationsInsightsWarehouseId"`
@@ -134,7 +134,7 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) CompartmentId() pulum
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o LookupOperationsInsightsWarehouseUserResultOutput) ConnectionPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.ConnectionPassword }).(pulumi.StringOutput)
 }
@@ -174,7 +174,7 @@ func (o LookupOperationsInsightsWarehouseUserResultOutput) LifecycleDetails() pu
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o LookupOperationsInsightsWarehouseUserResultOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupOperationsInsightsWarehouseUserResult) string { return v.Name }).(pulumi.StringOutput)
 }

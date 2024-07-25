@@ -69,6 +69,9 @@ namespace Pulumi.Oci.Database
         [Output("compartmentId")]
         public Output<string> CompartmentId { get; private set; } = null!;
 
+        [Output("confirmDetailsTrigger")]
+        public Output<int?> ConfirmDetailsTrigger { get; private set; } = null!;
+
         /// <summary>
         /// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -163,6 +166,9 @@ namespace Pulumi.Oci.Database
         [Input("compartmentId", required: true)]
         public Input<string> CompartmentId { get; set; } = null!;
 
+        [Input("confirmDetailsTrigger")]
+        public Input<int>? ConfirmDetailsTrigger { get; set; }
+
         [Input("definedTags")]
         private InputMap<object>? _definedTags;
 
@@ -224,6 +230,9 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("compartmentId")]
         public Input<string>? CompartmentId { get; set; }
+
+        [Input("confirmDetailsTrigger")]
+        public Input<int>? ConfirmDetailsTrigger { get; set; }
 
         [Input("definedTags")]
         private InputMap<object>? _definedTags;

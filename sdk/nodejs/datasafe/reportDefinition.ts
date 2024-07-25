@@ -163,7 +163,7 @@ export class ReportDefinition extends pulumi.CustomResource {
      */
     public /*out*/ readonly scheduledReportCompartmentId!: pulumi.Output<string>;
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      */
     public /*out*/ readonly scheduledReportMimeType!: pulumi.Output<string>;
     /**
@@ -366,7 +366,7 @@ export interface ReportDefinitionState {
      */
     scheduledReportCompartmentId?: pulumi.Input<string>;
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      */
     scheduledReportMimeType?: pulumi.Input<string>;
     /**

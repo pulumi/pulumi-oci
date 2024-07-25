@@ -16,7 +16,12 @@ __all__ = [
     'ConfigConfigurationClientCertificateDetails',
     'ConfigConfigurationClientCertificateDetailsClientCertificate',
     'ConfigConfigurationClientCertificateDetailsPrivateKey',
+    'ConfigConfigurationDatabaseAuthenticationDetails',
+    'ConfigConfigurationDatabaseAuthenticationDetailsPassword',
+    'ConfigConfigurationDatabaseWalletDetails',
     'ConfigConfigurationDnsConfiguration',
+    'ConfigConfigurationFtpBasicAuthenticationDetails',
+    'ConfigConfigurationFtpBasicAuthenticationDetailsPassword',
     'ConfigConfigurationNetworkConfiguration',
     'ConfigConfigurationReqAuthenticationDetails',
     'ConfigConfigurationReqAuthenticationDetailsAuthHeader',
@@ -49,7 +54,12 @@ __all__ = [
     'GetMonitorConfigurationClientCertificateDetailResult',
     'GetMonitorConfigurationClientCertificateDetailClientCertificateResult',
     'GetMonitorConfigurationClientCertificateDetailPrivateKeyResult',
+    'GetMonitorConfigurationDatabaseAuthenticationDetailResult',
+    'GetMonitorConfigurationDatabaseAuthenticationDetailPasswordResult',
+    'GetMonitorConfigurationDatabaseWalletDetailResult',
     'GetMonitorConfigurationDnsConfigurationResult',
+    'GetMonitorConfigurationFtpBasicAuthenticationDetailResult',
+    'GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordResult',
     'GetMonitorConfigurationNetworkConfigurationResult',
     'GetMonitorConfigurationReqAuthenticationDetailResult',
     'GetMonitorConfigurationReqAuthenticationDetailAuthHeaderResult',
@@ -68,7 +78,12 @@ __all__ = [
     'GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult',
     'GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateResult',
     'GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyResult',
+    'GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailResult',
+    'GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordResult',
+    'GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailResult',
     'GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult',
+    'GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailResult',
+    'GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordResult',
     'GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult',
     'GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult',
     'GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailAuthHeaderResult',
@@ -172,8 +187,30 @@ class ConfigConfiguration(dict):
             suggest = "client_certificate_details"
         elif key == "configType":
             suggest = "config_type"
+        elif key == "connectionString":
+            suggest = "connection_string"
+        elif key == "databaseAuthenticationDetails":
+            suggest = "database_authentication_details"
+        elif key == "databaseConnectionType":
+            suggest = "database_connection_type"
+        elif key == "databaseRole":
+            suggest = "database_role"
+        elif key == "databaseType":
+            suggest = "database_type"
+        elif key == "databaseWalletDetails":
+            suggest = "database_wallet_details"
         elif key == "dnsConfiguration":
             suggest = "dns_configuration"
+        elif key == "downloadSizeLimitInBytes":
+            suggest = "download_size_limit_in_bytes"
+        elif key == "ftpBasicAuthenticationDetails":
+            suggest = "ftp_basic_authentication_details"
+        elif key == "ftpProtocol":
+            suggest = "ftp_protocol"
+        elif key == "ftpRequestType":
+            suggest = "ftp_request_type"
+        elif key == "isActiveMode":
+            suggest = "is_active_mode"
         elif key == "isCertificateValidationEnabled":
             suggest = "is_certificate_validation_enabled"
         elif key == "isDefaultSnapshotEnabled":
@@ -202,6 +239,8 @@ class ConfigConfiguration(dict):
             suggest = "request_post_body"
         elif key == "requestQueryParams":
             suggest = "request_query_params"
+        elif key == "uploadFileSizeInBytes":
+            suggest = "upload_file_size_in_bytes"
         elif key == "verifyResponseCodes":
             suggest = "verify_response_codes"
         elif key == "verifyResponseContent":
@@ -223,7 +262,18 @@ class ConfigConfiguration(dict):
     def __init__(__self__, *,
                  client_certificate_details: Optional['outputs.ConfigConfigurationClientCertificateDetails'] = None,
                  config_type: Optional[str] = None,
+                 connection_string: Optional[str] = None,
+                 database_authentication_details: Optional['outputs.ConfigConfigurationDatabaseAuthenticationDetails'] = None,
+                 database_connection_type: Optional[str] = None,
+                 database_role: Optional[str] = None,
+                 database_type: Optional[str] = None,
+                 database_wallet_details: Optional['outputs.ConfigConfigurationDatabaseWalletDetails'] = None,
                  dns_configuration: Optional['outputs.ConfigConfigurationDnsConfiguration'] = None,
+                 download_size_limit_in_bytes: Optional[int] = None,
+                 ftp_basic_authentication_details: Optional['outputs.ConfigConfigurationFtpBasicAuthenticationDetails'] = None,
+                 ftp_protocol: Optional[str] = None,
+                 ftp_request_type: Optional[str] = None,
+                 is_active_mode: Optional[bool] = None,
                  is_certificate_validation_enabled: Optional[bool] = None,
                  is_default_snapshot_enabled: Optional[bool] = None,
                  is_failure_retried: Optional[bool] = None,
@@ -232,6 +282,7 @@ class ConfigConfiguration(dict):
                  name_server: Optional[str] = None,
                  network_configuration: Optional['outputs.ConfigConfigurationNetworkConfiguration'] = None,
                  protocol: Optional[str] = None,
+                 query: Optional[str] = None,
                  record_type: Optional[str] = None,
                  req_authentication_details: Optional['outputs.ConfigConfigurationReqAuthenticationDetails'] = None,
                  req_authentication_scheme: Optional[str] = None,
@@ -239,13 +290,25 @@ class ConfigConfiguration(dict):
                  request_method: Optional[str] = None,
                  request_post_body: Optional[str] = None,
                  request_query_params: Optional[Sequence['outputs.ConfigConfigurationRequestQueryParam']] = None,
+                 upload_file_size_in_bytes: Optional[int] = None,
                  verify_response_codes: Optional[Sequence[str]] = None,
                  verify_response_content: Optional[str] = None,
                  verify_texts: Optional[Sequence['outputs.ConfigConfigurationVerifyText']] = None):
         """
         :param 'ConfigConfigurationClientCertificateDetailsArgs' client_certificate_details: (Updatable) Details for client certificate.
         :param str config_type: (Updatable) Type of configuration.
+        :param str connection_string: (Updatable) Database connection string.
+        :param 'ConfigConfigurationDatabaseAuthenticationDetailsArgs' database_authentication_details: (Updatable) Details for basic authentication.
+        :param str database_connection_type: (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        :param str database_role: (Updatable) Database role.
+        :param str database_type: (Updatable) Database type.
+        :param 'ConfigConfigurationDatabaseWalletDetailsArgs' database_wallet_details: (Updatable) Details for database wallet.
         :param 'ConfigConfigurationDnsConfigurationArgs' dns_configuration: (Updatable) Information about the DNS settings.
+        :param int download_size_limit_in_bytes: (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        :param 'ConfigConfigurationFtpBasicAuthenticationDetailsArgs' ftp_basic_authentication_details: (Updatable) Details for basic authentication.
+        :param str ftp_protocol: (Updatable) FTP protocol type.
+        :param str ftp_request_type: (Updatable) FTP monitor request type.
+        :param bool is_active_mode: (Updatable) If enabled, Active mode will be used for the FTP connection.
         :param bool is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
@@ -254,6 +317,7 @@ class ConfigConfiguration(dict):
         :param str name_server: (Updatable) Name of the server that will be used to perform DNS lookup.
         :param 'ConfigConfigurationNetworkConfigurationArgs' network_configuration: (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         :param str protocol: (Updatable) Type of protocol.
+        :param str query: (Updatable) SQL query to be executed.
         :param str record_type: (Updatable) DNS record type.
         :param 'ConfigConfigurationReqAuthenticationDetailsArgs' req_authentication_details: (Updatable) Details for request HTTP authentication.
         :param str req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
@@ -261,6 +325,7 @@ class ConfigConfiguration(dict):
         :param str request_method: (Updatable) Request HTTP method.
         :param str request_post_body: (Updatable) Request post body content.
         :param Sequence['ConfigConfigurationRequestQueryParamArgs'] request_query_params: (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
+        :param int upload_file_size_in_bytes: (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
         :param Sequence[str] verify_response_codes: (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param str verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['ConfigConfigurationVerifyTextArgs'] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
@@ -269,8 +334,30 @@ class ConfigConfiguration(dict):
             pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+        if database_authentication_details is not None:
+            pulumi.set(__self__, "database_authentication_details", database_authentication_details)
+        if database_connection_type is not None:
+            pulumi.set(__self__, "database_connection_type", database_connection_type)
+        if database_role is not None:
+            pulumi.set(__self__, "database_role", database_role)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if database_wallet_details is not None:
+            pulumi.set(__self__, "database_wallet_details", database_wallet_details)
         if dns_configuration is not None:
             pulumi.set(__self__, "dns_configuration", dns_configuration)
+        if download_size_limit_in_bytes is not None:
+            pulumi.set(__self__, "download_size_limit_in_bytes", download_size_limit_in_bytes)
+        if ftp_basic_authentication_details is not None:
+            pulumi.set(__self__, "ftp_basic_authentication_details", ftp_basic_authentication_details)
+        if ftp_protocol is not None:
+            pulumi.set(__self__, "ftp_protocol", ftp_protocol)
+        if ftp_request_type is not None:
+            pulumi.set(__self__, "ftp_request_type", ftp_request_type)
+        if is_active_mode is not None:
+            pulumi.set(__self__, "is_active_mode", is_active_mode)
         if is_certificate_validation_enabled is not None:
             pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         if is_default_snapshot_enabled is not None:
@@ -287,6 +374,8 @@ class ConfigConfiguration(dict):
             pulumi.set(__self__, "network_configuration", network_configuration)
         if protocol is not None:
             pulumi.set(__self__, "protocol", protocol)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
         if record_type is not None:
             pulumi.set(__self__, "record_type", record_type)
         if req_authentication_details is not None:
@@ -301,6 +390,8 @@ class ConfigConfiguration(dict):
             pulumi.set(__self__, "request_post_body", request_post_body)
         if request_query_params is not None:
             pulumi.set(__self__, "request_query_params", request_query_params)
+        if upload_file_size_in_bytes is not None:
+            pulumi.set(__self__, "upload_file_size_in_bytes", upload_file_size_in_bytes)
         if verify_response_codes is not None:
             pulumi.set(__self__, "verify_response_codes", verify_response_codes)
         if verify_response_content is not None:
@@ -325,12 +416,100 @@ class ConfigConfiguration(dict):
         return pulumi.get(self, "config_type")
 
     @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional[str]:
+        """
+        (Updatable) Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @property
+    @pulumi.getter(name="databaseAuthenticationDetails")
+    def database_authentication_details(self) -> Optional['outputs.ConfigConfigurationDatabaseAuthenticationDetails']:
+        """
+        (Updatable) Details for basic authentication.
+        """
+        return pulumi.get(self, "database_authentication_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectionType")
+    def database_connection_type(self) -> Optional[str]:
+        """
+        (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        """
+        return pulumi.get(self, "database_connection_type")
+
+    @property
+    @pulumi.getter(name="databaseRole")
+    def database_role(self) -> Optional[str]:
+        """
+        (Updatable) Database role.
+        """
+        return pulumi.get(self, "database_role")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[str]:
+        """
+        (Updatable) Database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="databaseWalletDetails")
+    def database_wallet_details(self) -> Optional['outputs.ConfigConfigurationDatabaseWalletDetails']:
+        """
+        (Updatable) Details for database wallet.
+        """
+        return pulumi.get(self, "database_wallet_details")
+
+    @property
     @pulumi.getter(name="dnsConfiguration")
     def dns_configuration(self) -> Optional['outputs.ConfigConfigurationDnsConfiguration']:
         """
         (Updatable) Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configuration")
+
+    @property
+    @pulumi.getter(name="downloadSizeLimitInBytes")
+    def download_size_limit_in_bytes(self) -> Optional[int]:
+        """
+        (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        """
+        return pulumi.get(self, "download_size_limit_in_bytes")
+
+    @property
+    @pulumi.getter(name="ftpBasicAuthenticationDetails")
+    def ftp_basic_authentication_details(self) -> Optional['outputs.ConfigConfigurationFtpBasicAuthenticationDetails']:
+        """
+        (Updatable) Details for basic authentication.
+        """
+        return pulumi.get(self, "ftp_basic_authentication_details")
+
+    @property
+    @pulumi.getter(name="ftpProtocol")
+    def ftp_protocol(self) -> Optional[str]:
+        """
+        (Updatable) FTP protocol type.
+        """
+        return pulumi.get(self, "ftp_protocol")
+
+    @property
+    @pulumi.getter(name="ftpRequestType")
+    def ftp_request_type(self) -> Optional[str]:
+        """
+        (Updatable) FTP monitor request type.
+        """
+        return pulumi.get(self, "ftp_request_type")
+
+    @property
+    @pulumi.getter(name="isActiveMode")
+    def is_active_mode(self) -> Optional[bool]:
+        """
+        (Updatable) If enabled, Active mode will be used for the FTP connection.
+        """
+        return pulumi.get(self, "is_active_mode")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -397,6 +576,14 @@ class ConfigConfiguration(dict):
         return pulumi.get(self, "protocol")
 
     @property
+    @pulumi.getter
+    def query(self) -> Optional[str]:
+        """
+        (Updatable) SQL query to be executed.
+        """
+        return pulumi.get(self, "query")
+
+    @property
     @pulumi.getter(name="recordType")
     def record_type(self) -> Optional[str]:
         """
@@ -451,6 +638,14 @@ class ConfigConfiguration(dict):
         (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         """
         return pulumi.get(self, "request_query_params")
+
+    @property
+    @pulumi.getter(name="uploadFileSizeInBytes")
+    def upload_file_size_in_bytes(self) -> Optional[int]:
+        """
+        (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+        """
+        return pulumi.get(self, "upload_file_size_in_bytes")
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
@@ -624,6 +819,149 @@ class ConfigConfigurationClientCertificateDetailsPrivateKey(dict):
 
 
 @pulumi.output_type
+class ConfigConfigurationDatabaseAuthenticationDetails(dict):
+    def __init__(__self__, *,
+                 password: Optional['outputs.ConfigConfigurationDatabaseAuthenticationDetailsPassword'] = None,
+                 username: Optional[str] = None):
+        """
+        :param 'ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs' password: (Updatable) Password.
+        :param str username: (Updatable) Username for authentication.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional['outputs.ConfigConfigurationDatabaseAuthenticationDetailsPassword']:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[str]:
+        """
+        (Updatable) Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class ConfigConfigurationDatabaseAuthenticationDetailsPassword(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordType":
+            suggest = "password_type"
+        elif key == "vaultSecretId":
+            suggest = "vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationDatabaseAuthenticationDetailsPassword. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationDatabaseAuthenticationDetailsPassword.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationDatabaseAuthenticationDetailsPassword.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: Optional[str] = None,
+                 password_type: Optional[str] = None,
+                 vault_secret_id: Optional[str] = None):
+        """
+        :param str password: (Updatable) Password.
+        :param str password_type: (Updatable) Type of method to pass password.
+        :param str vault_secret_id: (Updatable) Vault secret OCID.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_type is not None:
+            pulumi.set(__self__, "password_type", password_type)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[str]:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> Optional[str]:
+        """
+        (Updatable) Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+
+@pulumi.output_type
+class ConfigConfigurationDatabaseWalletDetails(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "databaseWallet":
+            suggest = "database_wallet"
+        elif key == "serviceName":
+            suggest = "service_name"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationDatabaseWalletDetails. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationDatabaseWalletDetails.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationDatabaseWalletDetails.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 database_wallet: Optional[str] = None,
+                 service_name: Optional[str] = None):
+        """
+        :param str database_wallet: (Updatable) The database wallet configuration zip file.
+        :param str service_name: (Updatable) Service name of the database.
+        """
+        if database_wallet is not None:
+            pulumi.set(__self__, "database_wallet", database_wallet)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+
+    @property
+    @pulumi.getter(name="databaseWallet")
+    def database_wallet(self) -> Optional[str]:
+        """
+        (Updatable) The database wallet configuration zip file.
+        """
+        return pulumi.get(self, "database_wallet")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[str]:
+        """
+        (Updatable) Service name of the database.
+        """
+        return pulumi.get(self, "service_name")
+
+
+@pulumi.output_type
 class ConfigConfigurationDnsConfiguration(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -671,6 +1009,99 @@ class ConfigConfigurationDnsConfiguration(dict):
         (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
+
+
+@pulumi.output_type
+class ConfigConfigurationFtpBasicAuthenticationDetails(dict):
+    def __init__(__self__, *,
+                 password: Optional['outputs.ConfigConfigurationFtpBasicAuthenticationDetailsPassword'] = None,
+                 username: Optional[str] = None):
+        """
+        :param 'ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs' password: (Updatable) Password.
+        :param str username: (Updatable) Username for authentication.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional['outputs.ConfigConfigurationFtpBasicAuthenticationDetailsPassword']:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[str]:
+        """
+        (Updatable) Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class ConfigConfigurationFtpBasicAuthenticationDetailsPassword(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "passwordType":
+            suggest = "password_type"
+        elif key == "vaultSecretId":
+            suggest = "vault_secret_id"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in ConfigConfigurationFtpBasicAuthenticationDetailsPassword. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        ConfigConfigurationFtpBasicAuthenticationDetailsPassword.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        ConfigConfigurationFtpBasicAuthenticationDetailsPassword.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 password: Optional[str] = None,
+                 password_type: Optional[str] = None,
+                 vault_secret_id: Optional[str] = None):
+        """
+        :param str password: (Updatable) Password.
+        :param str password_type: (Updatable) Type of method to pass password.
+        :param str vault_secret_id: (Updatable) Vault secret OCID.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_type is not None:
+            pulumi.set(__self__, "password_type", password_type)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[str]:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> Optional[str]:
+        """
+        (Updatable) Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[str]:
+        """
+        (Updatable) Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -1263,6 +1694,8 @@ class ConfigVantagePoint(dict):
         suggest = None
         if key == "displayName":
             suggest = "display_name"
+        elif key == "workerLists":
+            suggest = "worker_lists"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in ConfigVantagePoint. Access the value via the '{suggest}' property getter instead.")
@@ -1277,14 +1710,18 @@ class ConfigVantagePoint(dict):
 
     def __init__(__self__, *,
                  name: str,
-                 display_name: Optional[str] = None):
+                 display_name: Optional[str] = None,
+                 worker_lists: Optional[Sequence[str]] = None):
         """
         :param str name: Name of the vantage point.
         :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param Sequence[str] worker_lists: List of workers running the assigned monitor.
         """
         pulumi.set(__self__, "name", name)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if worker_lists is not None:
+            pulumi.set(__self__, "worker_lists", worker_lists)
 
     @property
     @pulumi.getter
@@ -1301,6 +1738,14 @@ class ConfigVantagePoint(dict):
         Unique name that can be edited. The name should not contain any confidential information.
         """
         return pulumi.get(self, "display_name")
+
+    @property
+    @pulumi.getter(name="workerLists")
+    def worker_lists(self) -> Optional[Sequence[str]]:
+        """
+        List of workers running the assigned monitor.
+        """
+        return pulumi.get(self, "worker_lists")
 
 
 @pulumi.output_type
@@ -2434,7 +2879,18 @@ class GetMonitorConfigurationResult(dict):
     def __init__(__self__, *,
                  client_certificate_details: Sequence['outputs.GetMonitorConfigurationClientCertificateDetailResult'],
                  config_type: str,
+                 connection_string: str,
+                 database_authentication_details: Sequence['outputs.GetMonitorConfigurationDatabaseAuthenticationDetailResult'],
+                 database_connection_type: str,
+                 database_role: str,
+                 database_type: str,
+                 database_wallet_details: Sequence['outputs.GetMonitorConfigurationDatabaseWalletDetailResult'],
                  dns_configurations: Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult'],
+                 download_size_limit_in_bytes: int,
+                 ftp_basic_authentication_details: Sequence['outputs.GetMonitorConfigurationFtpBasicAuthenticationDetailResult'],
+                 ftp_protocol: str,
+                 ftp_request_type: str,
+                 is_active_mode: bool,
                  is_certificate_validation_enabled: bool,
                  is_default_snapshot_enabled: bool,
                  is_failure_retried: bool,
@@ -2443,6 +2899,7 @@ class GetMonitorConfigurationResult(dict):
                  name_server: str,
                  network_configurations: Sequence['outputs.GetMonitorConfigurationNetworkConfigurationResult'],
                  protocol: str,
+                 query: str,
                  record_type: str,
                  req_authentication_details: Sequence['outputs.GetMonitorConfigurationReqAuthenticationDetailResult'],
                  req_authentication_scheme: str,
@@ -2450,13 +2907,25 @@ class GetMonitorConfigurationResult(dict):
                  request_method: str,
                  request_post_body: str,
                  request_query_params: Sequence['outputs.GetMonitorConfigurationRequestQueryParamResult'],
+                 upload_file_size_in_bytes: int,
                  verify_response_codes: Sequence[str],
                  verify_response_content: str,
                  verify_texts: Sequence['outputs.GetMonitorConfigurationVerifyTextResult']):
         """
         :param Sequence['GetMonitorConfigurationClientCertificateDetailArgs'] client_certificate_details: Details for client certificate.
         :param str config_type: Type of configuration.
+        :param str connection_string: Database connection string.
+        :param Sequence['GetMonitorConfigurationDatabaseAuthenticationDetailArgs'] database_authentication_details: Details for basic authentication.
+        :param str database_connection_type: Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        :param str database_role: Database role.
+        :param str database_type: Database type.
+        :param Sequence['GetMonitorConfigurationDatabaseWalletDetailArgs'] database_wallet_details: Details for database wallet.
         :param Sequence['GetMonitorConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
+        :param int download_size_limit_in_bytes: Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        :param Sequence['GetMonitorConfigurationFtpBasicAuthenticationDetailArgs'] ftp_basic_authentication_details: Details for basic authentication.
+        :param str ftp_protocol: FTP protocol type.
+        :param str ftp_request_type: FTP monitor request type.
+        :param bool is_active_mode: If enabled, Active mode will be used for the FTP connection.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
@@ -2465,6 +2934,7 @@ class GetMonitorConfigurationResult(dict):
         :param str name_server: Name of the server that will be used to perform DNS lookup.
         :param Sequence['GetMonitorConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         :param str protocol: Type of protocol.
+        :param str query: SQL query to be executed.
         :param str record_type: DNS record type.
         :param Sequence['GetMonitorConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
         :param str req_authentication_scheme: Request HTTP authentication scheme.
@@ -2472,13 +2942,25 @@ class GetMonitorConfigurationResult(dict):
         :param str request_method: Request HTTP method.
         :param str request_post_body: Request post body content.
         :param Sequence['GetMonitorConfigurationRequestQueryParamArgs'] request_query_params: List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
+        :param int upload_file_size_in_bytes: File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
         :param Sequence[str] verify_response_codes: Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['GetMonitorConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "connection_string", connection_string)
+        pulumi.set(__self__, "database_authentication_details", database_authentication_details)
+        pulumi.set(__self__, "database_connection_type", database_connection_type)
+        pulumi.set(__self__, "database_role", database_role)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "database_wallet_details", database_wallet_details)
         pulumi.set(__self__, "dns_configurations", dns_configurations)
+        pulumi.set(__self__, "download_size_limit_in_bytes", download_size_limit_in_bytes)
+        pulumi.set(__self__, "ftp_basic_authentication_details", ftp_basic_authentication_details)
+        pulumi.set(__self__, "ftp_protocol", ftp_protocol)
+        pulumi.set(__self__, "ftp_request_type", ftp_request_type)
+        pulumi.set(__self__, "is_active_mode", is_active_mode)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
@@ -2487,6 +2969,7 @@ class GetMonitorConfigurationResult(dict):
         pulumi.set(__self__, "name_server", name_server)
         pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "query", query)
         pulumi.set(__self__, "record_type", record_type)
         pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
@@ -2494,6 +2977,7 @@ class GetMonitorConfigurationResult(dict):
         pulumi.set(__self__, "request_method", request_method)
         pulumi.set(__self__, "request_post_body", request_post_body)
         pulumi.set(__self__, "request_query_params", request_query_params)
+        pulumi.set(__self__, "upload_file_size_in_bytes", upload_file_size_in_bytes)
         pulumi.set(__self__, "verify_response_codes", verify_response_codes)
         pulumi.set(__self__, "verify_response_content", verify_response_content)
         pulumi.set(__self__, "verify_texts", verify_texts)
@@ -2515,12 +2999,100 @@ class GetMonitorConfigurationResult(dict):
         return pulumi.get(self, "config_type")
 
     @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> str:
+        """
+        Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @property
+    @pulumi.getter(name="databaseAuthenticationDetails")
+    def database_authentication_details(self) -> Sequence['outputs.GetMonitorConfigurationDatabaseAuthenticationDetailResult']:
+        """
+        Details for basic authentication.
+        """
+        return pulumi.get(self, "database_authentication_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectionType")
+    def database_connection_type(self) -> str:
+        """
+        Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        """
+        return pulumi.get(self, "database_connection_type")
+
+    @property
+    @pulumi.getter(name="databaseRole")
+    def database_role(self) -> str:
+        """
+        Database role.
+        """
+        return pulumi.get(self, "database_role")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        Database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="databaseWalletDetails")
+    def database_wallet_details(self) -> Sequence['outputs.GetMonitorConfigurationDatabaseWalletDetailResult']:
+        """
+        Details for database wallet.
+        """
+        return pulumi.get(self, "database_wallet_details")
+
+    @property
     @pulumi.getter(name="dnsConfigurations")
     def dns_configurations(self) -> Sequence['outputs.GetMonitorConfigurationDnsConfigurationResult']:
         """
         Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configurations")
+
+    @property
+    @pulumi.getter(name="downloadSizeLimitInBytes")
+    def download_size_limit_in_bytes(self) -> int:
+        """
+        Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        """
+        return pulumi.get(self, "download_size_limit_in_bytes")
+
+    @property
+    @pulumi.getter(name="ftpBasicAuthenticationDetails")
+    def ftp_basic_authentication_details(self) -> Sequence['outputs.GetMonitorConfigurationFtpBasicAuthenticationDetailResult']:
+        """
+        Details for basic authentication.
+        """
+        return pulumi.get(self, "ftp_basic_authentication_details")
+
+    @property
+    @pulumi.getter(name="ftpProtocol")
+    def ftp_protocol(self) -> str:
+        """
+        FTP protocol type.
+        """
+        return pulumi.get(self, "ftp_protocol")
+
+    @property
+    @pulumi.getter(name="ftpRequestType")
+    def ftp_request_type(self) -> str:
+        """
+        FTP monitor request type.
+        """
+        return pulumi.get(self, "ftp_request_type")
+
+    @property
+    @pulumi.getter(name="isActiveMode")
+    def is_active_mode(self) -> bool:
+        """
+        If enabled, Active mode will be used for the FTP connection.
+        """
+        return pulumi.get(self, "is_active_mode")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -2587,6 +3159,14 @@ class GetMonitorConfigurationResult(dict):
         return pulumi.get(self, "protocol")
 
     @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        SQL query to be executed.
+        """
+        return pulumi.get(self, "query")
+
+    @property
     @pulumi.getter(name="recordType")
     def record_type(self) -> str:
         """
@@ -2641,6 +3221,14 @@ class GetMonitorConfigurationResult(dict):
         List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         """
         return pulumi.get(self, "request_query_params")
+
+    @property
+    @pulumi.getter(name="uploadFileSizeInBytes")
+    def upload_file_size_in_bytes(self) -> int:
+        """
+        File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+        """
+        return pulumi.get(self, "upload_file_size_in_bytes")
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
@@ -2755,6 +3343,104 @@ class GetMonitorConfigurationClientCertificateDetailPrivateKeyResult(dict):
 
 
 @pulumi.output_type
+class GetMonitorConfigurationDatabaseAuthenticationDetailResult(dict):
+    def __init__(__self__, *,
+                 passwords: Sequence['outputs.GetMonitorConfigurationDatabaseAuthenticationDetailPasswordResult'],
+                 username: str):
+        """
+        :param Sequence['GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs'] passwords: Password.
+        :param str username: Username for authentication.
+        """
+        pulumi.set(__self__, "passwords", passwords)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def passwords(self) -> Sequence['outputs.GetMonitorConfigurationDatabaseAuthenticationDetailPasswordResult']:
+        """
+        Password.
+        """
+        return pulumi.get(self, "passwords")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationDatabaseAuthenticationDetailPasswordResult(dict):
+    def __init__(__self__, *,
+                 password: str,
+                 password_type: str,
+                 vault_secret_id: str):
+        """
+        :param str password: Password.
+        :param str password_type: Type of method to pass password.
+        :param str vault_secret_id: Vault secret OCID.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_type", password_type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> str:
+        """
+        Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationDatabaseWalletDetailResult(dict):
+    def __init__(__self__, *,
+                 database_wallet: str,
+                 service_name: str):
+        """
+        :param str database_wallet: The database wallet configuration zip file.
+        :param str service_name: Service name of the database.
+        """
+        pulumi.set(__self__, "database_wallet", database_wallet)
+        pulumi.set(__self__, "service_name", service_name)
+
+    @property
+    @pulumi.getter(name="databaseWallet")
+    def database_wallet(self) -> str:
+        """
+        The database wallet configuration zip file.
+        """
+        return pulumi.get(self, "database_wallet")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        Service name of the database.
+        """
+        return pulumi.get(self, "service_name")
+
+
+@pulumi.output_type
 class GetMonitorConfigurationDnsConfigurationResult(dict):
     def __init__(__self__, *,
                  is_override_dns: bool,
@@ -2781,6 +3467,75 @@ class GetMonitorConfigurationDnsConfigurationResult(dict):
         Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationFtpBasicAuthenticationDetailResult(dict):
+    def __init__(__self__, *,
+                 passwords: Sequence['outputs.GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordResult'],
+                 username: str):
+        """
+        :param Sequence['GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs'] passwords: Password.
+        :param str username: Username for authentication.
+        """
+        pulumi.set(__self__, "passwords", passwords)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def passwords(self) -> Sequence['outputs.GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordResult']:
+        """
+        Password.
+        """
+        return pulumi.get(self, "passwords")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordResult(dict):
+    def __init__(__self__, *,
+                 password: str,
+                 password_type: str,
+                 vault_secret_id: str):
+        """
+        :param str password: Password.
+        :param str password_type: Type of method to pass password.
+        :param str vault_secret_id: Vault secret OCID.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_type", password_type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> str:
+        """
+        Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -3169,13 +3924,16 @@ class GetMonitorScriptParameterMonitorScriptParameterResult(dict):
 class GetMonitorVantagePointResult(dict):
     def __init__(__self__, *,
                  display_name: str,
-                 name: str):
+                 name: str,
+                 worker_lists: Sequence[str]):
         """
         :param str display_name: Unique name that can be edited. The name should not contain any confidential information.
         :param str name: Name of the vantage point.
+        :param Sequence[str] worker_lists: List of workers running the assigned monitor.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "worker_lists", worker_lists)
 
     @property
     @pulumi.getter(name="displayName")
@@ -3192,6 +3950,14 @@ class GetMonitorVantagePointResult(dict):
         Name of the vantage point.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="workerLists")
+    def worker_lists(self) -> Sequence[str]:
+        """
+        List of workers running the assigned monitor.
+        """
+        return pulumi.get(self, "worker_lists")
 
 
 @pulumi.output_type
@@ -3246,12 +4012,15 @@ class GetMonitorsMonitorCollectionItemResult(dict):
                  availability_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemAvailabilityConfigurationResult'],
                  batch_interval_in_seconds: int,
                  configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationResult'],
+                 created_by: str,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 is_ipv6: bool,
                  is_run_now: bool,
                  is_run_once: bool,
+                 last_updated_by: str,
                  maintenance_window_schedules: Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult'],
                  monitor_type: str,
                  repeat_interval_in_seconds: int,
@@ -3271,37 +4040,43 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         :param Sequence['GetMonitorsMonitorCollectionItemAvailabilityConfigurationArgs'] availability_configurations: Monitor availability configuration details.
         :param int batch_interval_in_seconds: Time interval between two runs in round robin batch mode (SchedulingPolicy - BATCHED_ROUND_ROBIN).
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationArgs'] configurations: Details of monitor configuration.
+        :param str created_by: Name of the user that created the monitor.
         :param Mapping[str, Any] defined_tags: Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         :param str display_name: A filter to return only the resources that match the entire display name.
         :param Mapping[str, Any] freeform_tags: Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
+        :param bool is_ipv6: If enabled, domain name will resolve to an IPv6 address.
         :param bool is_run_now: If isRunNow is enabled, then the monitor will run immediately.
         :param bool is_run_once: If runOnce is enabled, then the monitor will run once.
+        :param str last_updated_by: Name of the user that recently updated the monitor.
         :param Sequence['GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArgs'] maintenance_window_schedules: Details required to schedule maintenance window.
-        :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+        :param str monitor_type: A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
         :param int repeat_interval_in_seconds: Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
         :param str scheduling_policy: Scheduling policy to decide the distribution of monitor executions on vantage points.
         :param str script_id: A filter to return only monitors using scriptId.
         :param str script_name: Name of the script.
         :param Sequence['GetMonitorsMonitorCollectionItemScriptParameterArgs'] script_parameters: List of script parameters. Example: `[{"monitorScriptParameter": {"paramName": "userid", "paramValue":"testuser"}, "isSecret": false, "isOverwritten": false}]`
         :param str status: A filter to return only monitors that match the status given.
-        :param str target: Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        :param str target: Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         :param str time_created: The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
         :param str time_updated: The time the resource was updated, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-13T22:47:12.613Z`
         :param int timeout_in_seconds: Timeout in seconds. If isFailureRetried is true, then timeout cannot be more than 30% of repeatIntervalInSeconds time for monitors. If isFailureRetried is false, then timeout cannot be more than 50% of repeatIntervalInSeconds time for monitors. Also, timeoutInSeconds should be a multiple of 60 for Scripted REST, Scripted Browser and Browser monitors. Monitor will be allowed to run only for timeoutInSeconds time. It would be terminated after that.
         :param int vantage_point_count: Number of vantage points where monitor is running.
-        :param Sequence['GetMonitorsMonitorCollectionItemVantagePointArgs'] vantage_points: List of public and dedicated vantage points where the monitor is running.
+        :param Sequence['GetMonitorsMonitorCollectionItemVantagePointArgs'] vantage_points: List of public, dedicated and onPremise vantage points where the monitor is running.
         """
         pulumi.set(__self__, "apm_domain_id", apm_domain_id)
         pulumi.set(__self__, "availability_configurations", availability_configurations)
         pulumi.set(__self__, "batch_interval_in_seconds", batch_interval_in_seconds)
         pulumi.set(__self__, "configurations", configurations)
+        pulumi.set(__self__, "created_by", created_by)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "is_ipv6", is_ipv6)
         pulumi.set(__self__, "is_run_now", is_run_now)
         pulumi.set(__self__, "is_run_once", is_run_once)
+        pulumi.set(__self__, "last_updated_by", last_updated_by)
         pulumi.set(__self__, "maintenance_window_schedules", maintenance_window_schedules)
         pulumi.set(__self__, "monitor_type", monitor_type)
         pulumi.set(__self__, "repeat_interval_in_seconds", repeat_interval_in_seconds)
@@ -3350,6 +4125,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         return pulumi.get(self, "configurations")
 
     @property
+    @pulumi.getter(name="createdBy")
+    def created_by(self) -> str:
+        """
+        Name of the user that created the monitor.
+        """
+        return pulumi.get(self, "created_by")
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Mapping[str, Any]:
         """
@@ -3382,6 +4165,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         return pulumi.get(self, "id")
 
     @property
+    @pulumi.getter(name="isIpv6")
+    def is_ipv6(self) -> bool:
+        """
+        If enabled, domain name will resolve to an IPv6 address.
+        """
+        return pulumi.get(self, "is_ipv6")
+
+    @property
     @pulumi.getter(name="isRunNow")
     def is_run_now(self) -> bool:
         """
@@ -3398,6 +4189,14 @@ class GetMonitorsMonitorCollectionItemResult(dict):
         return pulumi.get(self, "is_run_once")
 
     @property
+    @pulumi.getter(name="lastUpdatedBy")
+    def last_updated_by(self) -> str:
+        """
+        Name of the user that recently updated the monitor.
+        """
+        return pulumi.get(self, "last_updated_by")
+
+    @property
     @pulumi.getter(name="maintenanceWindowSchedules")
     def maintenance_window_schedules(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleResult']:
         """
@@ -3409,7 +4208,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="monitorType")
     def monitor_type(self) -> str:
         """
-        A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+        A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
         """
         return pulumi.get(self, "monitor_type")
 
@@ -3465,7 +4264,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter
     def target(self) -> str:
         """
-        Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         """
         return pulumi.get(self, "target")
 
@@ -3505,7 +4304,7 @@ class GetMonitorsMonitorCollectionItemResult(dict):
     @pulumi.getter(name="vantagePoints")
     def vantage_points(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemVantagePointResult']:
         """
-        List of public and dedicated vantage points where the monitor is running.
+        List of public, dedicated and onPremise vantage points where the monitor is running.
         """
         return pulumi.get(self, "vantage_points")
 
@@ -3544,7 +4343,18 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
     def __init__(__self__, *,
                  client_certificate_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailResult'],
                  config_type: str,
+                 connection_string: str,
+                 database_authentication_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailResult'],
+                 database_connection_type: str,
+                 database_role: str,
+                 database_type: str,
+                 database_wallet_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailResult'],
                  dns_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult'],
+                 download_size_limit_in_bytes: int,
+                 ftp_basic_authentication_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailResult'],
+                 ftp_protocol: str,
+                 ftp_request_type: str,
+                 is_active_mode: bool,
                  is_certificate_validation_enabled: bool,
                  is_default_snapshot_enabled: bool,
                  is_failure_retried: bool,
@@ -3553,6 +4363,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
                  name_server: str,
                  network_configurations: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationResult'],
                  protocol: str,
+                 query: str,
                  record_type: str,
                  req_authentication_details: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailResult'],
                  req_authentication_scheme: str,
@@ -3560,13 +4371,25 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
                  request_method: str,
                  request_post_body: str,
                  request_query_params: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamResult'],
+                 upload_file_size_in_bytes: int,
                  verify_response_codes: Sequence[str],
                  verify_response_content: str,
                  verify_texts: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyTextResult']):
         """
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArgs'] client_certificate_details: Details for client certificate.
         :param str config_type: Type of configuration.
+        :param str connection_string: Database connection string.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs'] database_authentication_details: Details for basic authentication.
+        :param str database_connection_type: Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        :param str database_role: Database role.
+        :param str database_type: Database type.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs'] database_wallet_details: Details for database wallet.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs'] dns_configurations: Information about the DNS settings.
+        :param int download_size_limit_in_bytes: Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs'] ftp_basic_authentication_details: Details for basic authentication.
+        :param str ftp_protocol: FTP protocol type.
+        :param str ftp_request_type: FTP monitor request type.
+        :param bool is_active_mode: If enabled, Active mode will be used for the FTP connection.
         :param bool is_certificate_validation_enabled: If certificate validation is enabled, then the call will fail in case of certification errors.
         :param bool is_default_snapshot_enabled: If disabled, auto snapshots are not collected.
         :param bool is_failure_retried: If isFailureRetried is enabled, then a failed call will be retried.
@@ -3575,6 +4398,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param str name_server: Name of the server that will be used to perform DNS lookup.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs'] network_configurations: Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         :param str protocol: Type of protocol.
+        :param str query: SQL query to be executed.
         :param str record_type: DNS record type.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs'] req_authentication_details: Details for request HTTP authentication.
         :param str req_authentication_scheme: Request HTTP authentication scheme.
@@ -3582,13 +4406,25 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         :param str request_method: Request HTTP method.
         :param str request_post_body: Request post body content.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArgs'] request_query_params: List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
+        :param int upload_file_size_in_bytes: File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
         :param Sequence[str] verify_response_codes: Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param str verify_response_content: Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param Sequence['GetMonitorsMonitorCollectionItemConfigurationVerifyTextArgs'] verify_texts: Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
         """
         pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         pulumi.set(__self__, "config_type", config_type)
+        pulumi.set(__self__, "connection_string", connection_string)
+        pulumi.set(__self__, "database_authentication_details", database_authentication_details)
+        pulumi.set(__self__, "database_connection_type", database_connection_type)
+        pulumi.set(__self__, "database_role", database_role)
+        pulumi.set(__self__, "database_type", database_type)
+        pulumi.set(__self__, "database_wallet_details", database_wallet_details)
         pulumi.set(__self__, "dns_configurations", dns_configurations)
+        pulumi.set(__self__, "download_size_limit_in_bytes", download_size_limit_in_bytes)
+        pulumi.set(__self__, "ftp_basic_authentication_details", ftp_basic_authentication_details)
+        pulumi.set(__self__, "ftp_protocol", ftp_protocol)
+        pulumi.set(__self__, "ftp_request_type", ftp_request_type)
+        pulumi.set(__self__, "is_active_mode", is_active_mode)
         pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         pulumi.set(__self__, "is_default_snapshot_enabled", is_default_snapshot_enabled)
         pulumi.set(__self__, "is_failure_retried", is_failure_retried)
@@ -3597,6 +4433,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         pulumi.set(__self__, "name_server", name_server)
         pulumi.set(__self__, "network_configurations", network_configurations)
         pulumi.set(__self__, "protocol", protocol)
+        pulumi.set(__self__, "query", query)
         pulumi.set(__self__, "record_type", record_type)
         pulumi.set(__self__, "req_authentication_details", req_authentication_details)
         pulumi.set(__self__, "req_authentication_scheme", req_authentication_scheme)
@@ -3604,6 +4441,7 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         pulumi.set(__self__, "request_method", request_method)
         pulumi.set(__self__, "request_post_body", request_post_body)
         pulumi.set(__self__, "request_query_params", request_query_params)
+        pulumi.set(__self__, "upload_file_size_in_bytes", upload_file_size_in_bytes)
         pulumi.set(__self__, "verify_response_codes", verify_response_codes)
         pulumi.set(__self__, "verify_response_content", verify_response_content)
         pulumi.set(__self__, "verify_texts", verify_texts)
@@ -3625,12 +4463,100 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         return pulumi.get(self, "config_type")
 
     @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> str:
+        """
+        Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @property
+    @pulumi.getter(name="databaseAuthenticationDetails")
+    def database_authentication_details(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailResult']:
+        """
+        Details for basic authentication.
+        """
+        return pulumi.get(self, "database_authentication_details")
+
+    @property
+    @pulumi.getter(name="databaseConnectionType")
+    def database_connection_type(self) -> str:
+        """
+        Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        """
+        return pulumi.get(self, "database_connection_type")
+
+    @property
+    @pulumi.getter(name="databaseRole")
+    def database_role(self) -> str:
+        """
+        Database role.
+        """
+        return pulumi.get(self, "database_role")
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> str:
+        """
+        Database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @property
+    @pulumi.getter(name="databaseWalletDetails")
+    def database_wallet_details(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailResult']:
+        """
+        Details for database wallet.
+        """
+        return pulumi.get(self, "database_wallet_details")
+
+    @property
     @pulumi.getter(name="dnsConfigurations")
     def dns_configurations(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult']:
         """
         Information about the DNS settings.
         """
         return pulumi.get(self, "dns_configurations")
+
+    @property
+    @pulumi.getter(name="downloadSizeLimitInBytes")
+    def download_size_limit_in_bytes(self) -> int:
+        """
+        Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        """
+        return pulumi.get(self, "download_size_limit_in_bytes")
+
+    @property
+    @pulumi.getter(name="ftpBasicAuthenticationDetails")
+    def ftp_basic_authentication_details(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailResult']:
+        """
+        Details for basic authentication.
+        """
+        return pulumi.get(self, "ftp_basic_authentication_details")
+
+    @property
+    @pulumi.getter(name="ftpProtocol")
+    def ftp_protocol(self) -> str:
+        """
+        FTP protocol type.
+        """
+        return pulumi.get(self, "ftp_protocol")
+
+    @property
+    @pulumi.getter(name="ftpRequestType")
+    def ftp_request_type(self) -> str:
+        """
+        FTP monitor request type.
+        """
+        return pulumi.get(self, "ftp_request_type")
+
+    @property
+    @pulumi.getter(name="isActiveMode")
+    def is_active_mode(self) -> bool:
+        """
+        If enabled, Active mode will be used for the FTP connection.
+        """
+        return pulumi.get(self, "is_active_mode")
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -3697,6 +4623,14 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         return pulumi.get(self, "protocol")
 
     @property
+    @pulumi.getter
+    def query(self) -> str:
+        """
+        SQL query to be executed.
+        """
+        return pulumi.get(self, "query")
+
+    @property
     @pulumi.getter(name="recordType")
     def record_type(self) -> str:
         """
@@ -3751,6 +4685,14 @@ class GetMonitorsMonitorCollectionItemConfigurationResult(dict):
         List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
         """
         return pulumi.get(self, "request_query_params")
+
+    @property
+    @pulumi.getter(name="uploadFileSizeInBytes")
+    def upload_file_size_in_bytes(self) -> int:
+        """
+        File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+        """
+        return pulumi.get(self, "upload_file_size_in_bytes")
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
@@ -3865,6 +4807,104 @@ class GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivat
 
 
 @pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailResult(dict):
+    def __init__(__self__, *,
+                 passwords: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordResult'],
+                 username: str):
+        """
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs'] passwords: Password.
+        :param str username: Username for authentication.
+        """
+        pulumi.set(__self__, "passwords", passwords)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def passwords(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordResult']:
+        """
+        Password.
+        """
+        return pulumi.get(self, "passwords")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordResult(dict):
+    def __init__(__self__, *,
+                 password: str,
+                 password_type: str,
+                 vault_secret_id: str):
+        """
+        :param str password: Password.
+        :param str password_type: Type of method to pass password.
+        :param str vault_secret_id: Vault secret OCID.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_type", password_type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> str:
+        """
+        Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailResult(dict):
+    def __init__(__self__, *,
+                 database_wallet: str,
+                 service_name: str):
+        """
+        :param str database_wallet: The database wallet configuration zip file.
+        :param str service_name: Service name of the database.
+        """
+        pulumi.set(__self__, "database_wallet", database_wallet)
+        pulumi.set(__self__, "service_name", service_name)
+
+    @property
+    @pulumi.getter(name="databaseWallet")
+    def database_wallet(self) -> str:
+        """
+        The database wallet configuration zip file.
+        """
+        return pulumi.get(self, "database_wallet")
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> str:
+        """
+        Service name of the database.
+        """
+        return pulumi.get(self, "service_name")
+
+
+@pulumi.output_type
 class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
     def __init__(__self__, *,
                  is_override_dns: bool,
@@ -3891,6 +4931,75 @@ class GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationResult(dict):
         Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
         """
         return pulumi.get(self, "override_dns_ip")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailResult(dict):
+    def __init__(__self__, *,
+                 passwords: Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordResult'],
+                 username: str):
+        """
+        :param Sequence['GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs'] passwords: Password.
+        :param str username: Username for authentication.
+        """
+        pulumi.set(__self__, "passwords", passwords)
+        pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def passwords(self) -> Sequence['outputs.GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordResult']:
+        """
+        Password.
+        """
+        return pulumi.get(self, "passwords")
+
+    @property
+    @pulumi.getter
+    def username(self) -> str:
+        """
+        Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+
+@pulumi.output_type
+class GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordResult(dict):
+    def __init__(__self__, *,
+                 password: str,
+                 password_type: str,
+                 vault_secret_id: str):
+        """
+        :param str password: Password.
+        :param str password_type: Type of method to pass password.
+        :param str vault_secret_id: Vault secret OCID.
+        """
+        pulumi.set(__self__, "password", password)
+        pulumi.set(__self__, "password_type", password_type)
+        pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> str:
+        """
+        Password.
+        """
+        return pulumi.get(self, "password")
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> str:
+        """
+        Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> str:
+        """
+        Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
 
 
 @pulumi.output_type
@@ -4279,13 +5388,16 @@ class GetMonitorsMonitorCollectionItemScriptParameterMonitorScriptParameterResul
 class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
     def __init__(__self__, *,
                  display_name: str,
-                 name: str):
+                 name: str,
+                 worker_lists: Sequence[str]):
         """
         :param str display_name: A filter to return only the resources that match the entire display name.
         :param str name: Name of the vantage point.
+        :param Sequence[str] worker_lists: List of workers running the assigned monitor.
         """
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "worker_lists", worker_lists)
 
     @property
     @pulumi.getter(name="displayName")
@@ -4302,6 +5414,14 @@ class GetMonitorsMonitorCollectionItemVantagePointResult(dict):
         Name of the vantage point.
         """
         return pulumi.get(self, "name")
+
+    @property
+    @pulumi.getter(name="workerLists")
+    def worker_lists(self) -> Sequence[str]:
+        """
+        List of workers running the assigned monitor.
+        """
+        return pulumi.get(self, "worker_lists")
 
 
 @pulumi.output_type

@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Opsi
         public Output<Outputs.DatabaseInsightConnectionDetails> ConnectionDetails { get; private set; } = null!;
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Output("credentialDetails")]
         public Output<Outputs.DatabaseInsightCredentialDetails?> CredentialDetails { get; private set; } = null!;
@@ -78,7 +78,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> DatabaseResourceType { get; private set; } = null!;
 
         /// <summary>
-        /// Operations Insights internal representation of the database type.
+        /// Ops Insights internal representation of the database type.
         /// </summary>
         [Output("databaseType")]
         public Output<string> DatabaseType { get; private set; } = null!;
@@ -162,6 +162,18 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies if MYSQL DB System has heatwave cluster attached.
+        /// </summary>
+        [Output("isHeatWaveClusterAttached")]
+        public Output<bool> IsHeatWaveClusterAttached { get; private set; } = null!;
+
+        /// <summary>
+        /// Specifies if MYSQL DB System is highly available.
+        /// </summary>
+        [Output("isHighlyAvailable")]
+        public Output<bool> IsHighlyAvailable { get; private set; } = null!;
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Output("lifecycleDetails")]
@@ -219,7 +231,7 @@ namespace Pulumi.Oci.Opsi
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
 
         /// <summary>
-        /// The time the the database insight was first enabled. An RFC3339 formatted datetime string
+        /// The time the database insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
         [Output("timeCreated")]
         public Output<string> TimeCreated { get; private set; } = null!;
@@ -295,7 +307,7 @@ namespace Pulumi.Oci.Opsi
         public Input<Inputs.DatabaseInsightConnectionDetailsArgs>? ConnectionDetails { get; set; }
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Input("credentialDetails")]
         public Input<Inputs.DatabaseInsightCredentialDetailsArgs>? CredentialDetails { get; set; }
@@ -432,7 +444,7 @@ namespace Pulumi.Oci.Opsi
         public Input<Inputs.DatabaseInsightConnectionDetailsGetArgs>? ConnectionDetails { get; set; }
 
         /// <summary>
-        /// User credential details to connect to the database. This is supplied via the External Database Service.
+        /// User credential details to connect to the database.
         /// </summary>
         [Input("credentialDetails")]
         public Input<Inputs.DatabaseInsightCredentialDetailsGetArgs>? CredentialDetails { get; set; }
@@ -468,7 +480,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? DatabaseResourceType { get; set; }
 
         /// <summary>
-        /// Operations Insights internal representation of the database type.
+        /// Ops Insights internal representation of the database type.
         /// </summary>
         [Input("databaseType")]
         public Input<string>? DatabaseType { get; set; }
@@ -564,6 +576,18 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
+        /// Specifies if MYSQL DB System has heatwave cluster attached.
+        /// </summary>
+        [Input("isHeatWaveClusterAttached")]
+        public Input<bool>? IsHeatWaveClusterAttached { get; set; }
+
+        /// <summary>
+        /// Specifies if MYSQL DB System is highly available.
+        /// </summary>
+        [Input("isHighlyAvailable")]
+        public Input<bool>? IsHighlyAvailable { get; set; }
+
+        /// <summary>
         /// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         /// </summary>
         [Input("lifecycleDetails")]
@@ -627,7 +651,7 @@ namespace Pulumi.Oci.Opsi
         }
 
         /// <summary>
-        /// The time the the database insight was first enabled. An RFC3339 formatted datetime string
+        /// The time the database insight was first enabled. An RFC3339 formatted datetime string
         /// </summary>
         [Input("timeCreated")]
         public Input<string>? TimeCreated { get; set; }

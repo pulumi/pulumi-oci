@@ -200,7 +200,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> ScheduledReportCompartmentId { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the format of the report ( either .xls or .pdf )
+        /// Specifies the format of the report ( either .xls or .pdf or .json)
         /// </summary>
         [Output("scheduledReportMimeType")]
         public Output<string> ScheduledReportMimeType { get; private set; } = null!;
@@ -542,7 +542,7 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? ScheduledReportCompartmentId { get; set; }
 
         /// <summary>
-        /// Specifies the format of the report ( either .xls or .pdf )
+        /// Specifies the format of the report ( either .xls or .pdf or .json)
         /// </summary>
         [Input("scheduledReportMimeType")]
         public Input<string>? ScheduledReportMimeType { get; set; }

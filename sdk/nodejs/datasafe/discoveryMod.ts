@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -36,6 +38,10 @@ import * as utilities from "../utilities";
  *     isSampleDataCollectionEnabled: discoveryJobIsSampleDataCollectionEnabled,
  *     schemasForDiscoveries: discoveryJobSchemasForDiscovery,
  *     sensitiveTypeIdsForDiscoveries: discoveryJobSensitiveTypeIdsForDiscovery,
+ *     tablesForDiscoveries: [{
+ *         schemaName: discoveryJobTablesForDiscoverySchemaName,
+ *         tableNames: discoveryJobTablesForDiscoveryTableNames,
+ *     }],
  * });
  * ```
  *
@@ -120,11 +126,7 @@ export class DiscoveryMod extends pulumi.CustomResource {
      */
     public readonly sensitiveDataModelId!: pulumi.Output<string>;
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
     public readonly sensitiveTypeIdsForDiscoveries!: pulumi.Output<string[]>;
     /**
@@ -135,6 +137,10 @@ export class DiscoveryMod extends pulumi.CustomResource {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     public /*out*/ readonly systemTags!: pulumi.Output<{[key: string]: any}>;
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     */
+    public readonly tablesForDiscoveries!: pulumi.Output<outputs.DataSafe.DiscoveryModTablesForDiscovery[]>;
     /**
      * The OCID of the target database associated with the discovery job.
      */
@@ -199,6 +205,7 @@ export class DiscoveryMod extends pulumi.CustomResource {
             resourceInputs["sensitiveTypeIdsForDiscoveries"] = state ? state.sensitiveTypeIdsForDiscoveries : undefined;
             resourceInputs["state"] = state ? state.state : undefined;
             resourceInputs["systemTags"] = state ? state.systemTags : undefined;
+            resourceInputs["tablesForDiscoveries"] = state ? state.tablesForDiscoveries : undefined;
             resourceInputs["targetId"] = state ? state.targetId : undefined;
             resourceInputs["timeFinished"] = state ? state.timeFinished : undefined;
             resourceInputs["timeStarted"] = state ? state.timeStarted : undefined;
@@ -228,6 +235,7 @@ export class DiscoveryMod extends pulumi.CustomResource {
             resourceInputs["schemasForDiscoveries"] = args ? args.schemasForDiscoveries : undefined;
             resourceInputs["sensitiveDataModelId"] = args ? args.sensitiveDataModelId : undefined;
             resourceInputs["sensitiveTypeIdsForDiscoveries"] = args ? args.sensitiveTypeIdsForDiscoveries : undefined;
+            resourceInputs["tablesForDiscoveries"] = args ? args.tablesForDiscoveries : undefined;
             resourceInputs["state"] = undefined /*out*/;
             resourceInputs["systemTags"] = undefined /*out*/;
             resourceInputs["targetId"] = undefined /*out*/;
@@ -294,11 +302,7 @@ export interface DiscoveryModState {
      */
     sensitiveDataModelId?: pulumi.Input<string>;
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
     sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
     /**
@@ -309,6 +313,10 @@ export interface DiscoveryModState {
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
      */
     systemTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     */
+    tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryModTablesForDiscovery>[]>;
     /**
      * The OCID of the target database associated with the discovery job.
      */
@@ -396,11 +404,11 @@ export interface DiscoveryModArgs {
      */
     sensitiveDataModelId: pulumi.Input<string>;
     /**
-     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-     *
-     *
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      */
     sensitiveTypeIdsForDiscoveries?: pulumi.Input<pulumi.Input<string>[]>;
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     */
+    tablesForDiscoveries?: pulumi.Input<pulumi.Input<inputs.DataSafe.DiscoveryModTablesForDiscovery>[]>;
 }

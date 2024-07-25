@@ -222,7 +222,7 @@ class _ReportDefinitionState:
         :param pulumi.Input[str] record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param pulumi.Input[str] schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
         :param pulumi.Input[str] scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource will be created.
-        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf )
+        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf or .json)
         :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: Additional scim filters used to get the specific summary.
@@ -493,7 +493,7 @@ class _ReportDefinitionState:
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Specifies the format of the report ( either .xls or .pdf )
+        Specifies the format of the report ( either .xls or .pdf or .json)
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 
@@ -885,7 +885,7 @@ class ReportDefinition(pulumi.CustomResource):
         :param pulumi.Input[str] record_time_span: The time span for the records in the report to be scheduled. <period-value><period> Allowed period strings - "H","D","M","Y" Each of the above fields potentially introduce constraints. A workRequest is created only when period-value satisfies all the constraints. Constraints introduced: 1. period = H (The allowed range for period-value is [1, 23]) 2. period = D (The allowed range for period-value is [1, 30]) 3. period = M (The allowed range for period-value is [1, 11]) 4. period = Y (The minimum period-value is 1)
         :param pulumi.Input[str] schedule: The schedule to generate the report periodically in the specified format: <version-string>;<version-specific-schedule>
         :param pulumi.Input[str] scheduled_report_compartment_id: The OCID of the compartment in which the scheduled resource will be created.
-        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf )
+        :param pulumi.Input[str] scheduled_report_mime_type: Specifies the format of the report ( either .xls or .pdf or .json)
         :param pulumi.Input[str] scheduled_report_name: The name of the report to be scheduled.
         :param pulumi.Input[int] scheduled_report_row_limit: Specifies the limit on the number of rows in the report.
         :param pulumi.Input[str] scim_filter: Additional scim filters used to get the specific summary.
@@ -1067,7 +1067,7 @@ class ReportDefinition(pulumi.CustomResource):
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> pulumi.Output[str]:
         """
-        Specifies the format of the report ( either .xls or .pdf )
+        Specifies the format of the report ( either .xls or .pdf or .json)
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 

@@ -155,7 +155,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string HostName;
         /// <summary>
-        /// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        /// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         /// </summary>
         public readonly string HostType;
         /// <summary>
@@ -182,9 +182,6 @@ namespace Pulumi.Oci.Opsi
         /// Platform version.
         /// </summary>
         public readonly string PlatformVersion;
-        /// <summary>
-        /// Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-        /// </summary>
         public readonly int ProcessorCount;
         /// <summary>
         /// The current state of the host.

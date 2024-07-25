@@ -27,6 +27,7 @@ class AutonomousDatabaseArgs:
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compute_count: Optional[pulumi.Input[float]] = None,
@@ -86,6 +87,7 @@ class AutonomousDatabaseArgs:
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[str]] = None,
@@ -235,7 +237,7 @@ class AutonomousDatabaseArgs:
                * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
                * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
                * For Autonomous Database, setting this will disable public secure access to the database.
-               
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         :param pulumi.Input[str] switchover_to: It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         :param pulumi.Input[str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
@@ -271,6 +273,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "autonomous_maintenance_schedule_type", autonomous_maintenance_schedule_type)
         if backup_retention_period_in_days is not None:
             pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+        if byol_compute_count_limit is not None:
+            pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
         if clone_type is not None:
@@ -392,6 +396,8 @@ class AutonomousDatabaseArgs:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if switchover_to is not None:
             pulumi.set(__self__, "switchover_to", switchover_to)
         if switchover_to_remote_peer_id is not None:
@@ -538,6 +544,15 @@ class AutonomousDatabaseArgs:
     @backup_retention_period_in_days.setter
     def backup_retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "backup_retention_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="byolComputeCountLimit")
+    def byol_compute_count_limit(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "byol_compute_count_limit")
+
+    @byol_compute_count_limit.setter
+    def byol_compute_count_limit(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "byol_compute_count_limit", value)
 
     @property
     @pulumi.getter(name="characterSet")
@@ -1309,14 +1324,25 @@ class AutonomousDatabaseArgs:
         * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
         * For Autonomous Database, setting this will disable public secure access to the database.
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @property
     @pulumi.getter(name="switchoverTo")
@@ -1426,6 +1452,7 @@ class _AutonomousDatabaseState:
                  available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input['AutonomousDatabaseBackupConfigArgs']]]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -1518,6 +1545,7 @@ class _AutonomousDatabaseState:
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  supported_regions_to_clone_tos: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
@@ -1723,7 +1751,7 @@ class _AutonomousDatabaseState:
                * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
                * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
                * For Autonomous Database, setting this will disable public secure access to the database.
-               
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         :param pulumi.Input[str] switchover_to: It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
@@ -1786,6 +1814,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "backup_configs", backup_configs)
         if backup_retention_period_in_days is not None:
             pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+        if byol_compute_count_limit is not None:
+            pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         if character_set is not None:
             pulumi.set(__self__, "character_set", character_set)
         if clone_type is not None:
@@ -1973,6 +2003,8 @@ class _AutonomousDatabaseState:
             pulumi.set(__self__, "state", state)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if supported_regions_to_clone_tos is not None:
             pulumi.set(__self__, "supported_regions_to_clone_tos", supported_regions_to_clone_tos)
         if switchover_to is not None:
@@ -2195,6 +2227,15 @@ class _AutonomousDatabaseState:
     @backup_retention_period_in_days.setter
     def backup_retention_period_in_days(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "backup_retention_period_in_days", value)
+
+    @property
+    @pulumi.getter(name="byolComputeCountLimit")
+    def byol_compute_count_limit(self) -> Optional[pulumi.Input[float]]:
+        return pulumi.get(self, "byol_compute_count_limit")
+
+    @byol_compute_count_limit.setter
+    def byol_compute_count_limit(self, value: Optional[pulumi.Input[float]]):
+        pulumi.set(self, "byol_compute_count_limit", value)
 
     @property
     @pulumi.getter(name="characterSet")
@@ -3362,14 +3403,25 @@ class _AutonomousDatabaseState:
         * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
         * For Autonomous Database, setting this will disable public secure access to the database.
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         """
         return pulumi.get(self, "subnet_id")
 
     @subnet_id.setter
     def subnet_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "subnet_id", value)
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
 
     @property
     @pulumi.getter(name="supportedRegionsToCloneTos")
@@ -3713,6 +3765,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -3774,6 +3827,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[str]] = None,
@@ -3939,7 +3993,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
                * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
                * For Autonomous Database, setting this will disable public secure access to the database.
-               
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         :param pulumi.Input[str] switchover_to: It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
         :param pulumi.Input[str] switchover_to_remote_peer_id: (Updatable) It is applicable only when `dataguard_region_type` and `role` are set, and `is_dedicated` is false. For Autonomous Database Serverless instances, Data Guard associations have designated primary and standby regions, and these region types do not change when the database changes roles. It takes the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the remote peer to switchover to and the API is called from the remote region.
@@ -4000,6 +4054,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  autonomous_database_id: Optional[pulumi.Input[str]] = None,
                  autonomous_maintenance_schedule_type: Optional[pulumi.Input[str]] = None,
                  backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+                 byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
                  character_set: Optional[pulumi.Input[str]] = None,
                  clone_type: Optional[pulumi.Input[str]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
@@ -4061,6 +4116,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                  standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  state: Optional[pulumi.Input[str]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  switchover_to: Optional[pulumi.Input[str]] = None,
                  switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
                  time_of_auto_refresh_start: Optional[pulumi.Input[str]] = None,
@@ -4086,6 +4142,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["autonomous_database_id"] = autonomous_database_id
             __props__.__dict__["autonomous_maintenance_schedule_type"] = autonomous_maintenance_schedule_type
             __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
+            __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
             __props__.__dict__["character_set"] = character_set
             __props__.__dict__["clone_type"] = clone_type
             if compartment_id is None and not opts.urn:
@@ -4151,6 +4208,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             __props__.__dict__["standby_whitelisted_ips"] = standby_whitelisted_ips
             __props__.__dict__["state"] = state
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["switchover_to"] = switchover_to
             __props__.__dict__["switchover_to_remote_peer_id"] = switchover_to_remote_peer_id
             __props__.__dict__["time_of_auto_refresh_start"] = time_of_auto_refresh_start
@@ -4240,6 +4298,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             available_upgrade_versions: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             backup_configs: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['AutonomousDatabaseBackupConfigArgs']]]]] = None,
             backup_retention_period_in_days: Optional[pulumi.Input[int]] = None,
+            byol_compute_count_limit: Optional[pulumi.Input[float]] = None,
             character_set: Optional[pulumi.Input[str]] = None,
             clone_type: Optional[pulumi.Input[str]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
@@ -4332,6 +4391,7 @@ class AutonomousDatabase(pulumi.CustomResource):
             standby_whitelisted_ips: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             state: Optional[pulumi.Input[str]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            subscription_id: Optional[pulumi.Input[str]] = None,
             supported_regions_to_clone_tos: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             switchover_to: Optional[pulumi.Input[str]] = None,
             switchover_to_remote_peer_id: Optional[pulumi.Input[str]] = None,
@@ -4542,7 +4602,7 @@ class AutonomousDatabase(pulumi.CustomResource):
                * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
                * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
                * For Autonomous Database, setting this will disable public secure access to the database.
-               
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
                These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         :param pulumi.Input[str] switchover_to: It is applicable only when `is_local_data_guard_enabled` is true. Could be set to `PRIMARY` or `STANDBY`. Default value is `PRIMARY`.
@@ -4595,6 +4655,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["available_upgrade_versions"] = available_upgrade_versions
         __props__.__dict__["backup_configs"] = backup_configs
         __props__.__dict__["backup_retention_period_in_days"] = backup_retention_period_in_days
+        __props__.__dict__["byol_compute_count_limit"] = byol_compute_count_limit
         __props__.__dict__["character_set"] = character_set
         __props__.__dict__["clone_type"] = clone_type
         __props__.__dict__["compartment_id"] = compartment_id
@@ -4687,6 +4748,7 @@ class AutonomousDatabase(pulumi.CustomResource):
         __props__.__dict__["standby_whitelisted_ips"] = standby_whitelisted_ips
         __props__.__dict__["state"] = state
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["supported_regions_to_clone_tos"] = supported_regions_to_clone_tos
         __props__.__dict__["switchover_to"] = switchover_to
         __props__.__dict__["switchover_to_remote_peer_id"] = switchover_to_remote_peer_id
@@ -4827,6 +4889,11 @@ class AutonomousDatabase(pulumi.CustomResource):
         (Updatable) Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="byolComputeCountLimit")
+    def byol_compute_count_limit(self) -> pulumi.Output[float]:
+        return pulumi.get(self, "byol_compute_count_limit")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -5630,10 +5697,17 @@ class AutonomousDatabase(pulumi.CustomResource):
         * For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
         * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
         * For Autonomous Database, setting this will disable public secure access to the database.
-
-        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="supportedRegionsToCloneTos")

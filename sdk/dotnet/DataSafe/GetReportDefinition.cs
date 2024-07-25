@@ -171,7 +171,7 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         public readonly string ScheduledReportCompartmentId;
         /// <summary>
-        /// Specifies the format of the report ( either .xls or .pdf )
+        /// Specifies the format of the report ( either .xls or .pdf or .json)
         /// </summary>
         public readonly string ScheduledReportMimeType;
         /// <summary>

@@ -24,6 +24,7 @@ export function getSecurityAssessmentFindings(args: GetSecurityAssessmentFinding
         "securityAssessmentId": args.securityAssessmentId,
         "severity": args.severity,
         "state": args.state,
+        "targetId": args.targetId,
     }, opts);
 }
 
@@ -64,6 +65,10 @@ export interface GetSecurityAssessmentFindingsArgs {
      * A filter to return only the findings that match the specified lifecycle states.
      */
     state?: string;
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
+    targetId?: string;
 }
 
 /**
@@ -99,6 +104,10 @@ export interface GetSecurityAssessmentFindingsResult {
      * The current state of the finding.
      */
     readonly state?: string;
+    /**
+     * The OCID of the target database.
+     */
+    readonly targetId?: string;
 }
 /**
  * This data source provides the list of Security Assessment Findings in Oracle Cloud Infrastructure Data Safe service.
@@ -146,4 +155,8 @@ export interface GetSecurityAssessmentFindingsOutputArgs {
      * A filter to return only the findings that match the specified lifecycle states.
      */
     state?: pulumi.Input<string>;
+    /**
+     * A filter to return only items related to a specific target OCID.
+     */
+    targetId?: pulumi.Input<string>;
 }

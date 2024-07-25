@@ -122,7 +122,7 @@ export interface GetDatabaseInsightsResult {
      */
     readonly databaseInsightsCollections: outputs.Opsi.GetDatabaseInsightsDatabaseInsightsCollection[];
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      */
     readonly databaseTypes?: string[];
     /**

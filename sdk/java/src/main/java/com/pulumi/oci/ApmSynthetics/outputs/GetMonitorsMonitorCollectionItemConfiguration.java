@@ -6,13 +6,17 @@ package com.pulumi.oci.ApmSynthetics.outputs;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration;
+import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationRequestHeader;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam;
 import com.pulumi.oci.ApmSynthetics.outputs.GetMonitorsMonitorCollectionItemConfigurationVerifyText;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -30,10 +34,65 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private String configType;
     /**
+     * @return Database connection string.
+     * 
+     */
+    private String connectionString;
+    /**
+     * @return Details for basic authentication.
+     * 
+     */
+    private List<GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail> databaseAuthenticationDetails;
+    /**
+     * @return Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     * 
+     */
+    private String databaseConnectionType;
+    /**
+     * @return Database role.
+     * 
+     */
+    private String databaseRole;
+    /**
+     * @return Database type.
+     * 
+     */
+    private String databaseType;
+    /**
+     * @return Details for database wallet.
+     * 
+     */
+    private List<GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail> databaseWalletDetails;
+    /**
      * @return Information about the DNS settings.
      * 
      */
     private List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations;
+    /**
+     * @return Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+     * 
+     */
+    private Integer downloadSizeLimitInBytes;
+    /**
+     * @return Details for basic authentication.
+     * 
+     */
+    private List<GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail> ftpBasicAuthenticationDetails;
+    /**
+     * @return FTP protocol type.
+     * 
+     */
+    private String ftpProtocol;
+    /**
+     * @return FTP monitor request type.
+     * 
+     */
+    private String ftpRequestType;
+    /**
+     * @return If enabled, Active mode will be used for the FTP connection.
+     * 
+     */
+    private Boolean isActiveMode;
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
      * 
@@ -75,6 +134,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private String protocol;
     /**
+     * @return SQL query to be executed.
+     * 
+     */
+    private String query;
+    /**
      * @return DNS record type.
      * 
      */
@@ -110,6 +174,11 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
      */
     private List<GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam> requestQueryParams;
     /**
+     * @return File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+     * 
+     */
+    private Integer uploadFileSizeInBytes;
+    /**
      * @return Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
@@ -141,11 +210,88 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.configType;
     }
     /**
+     * @return Database connection string.
+     * 
+     */
+    public String connectionString() {
+        return this.connectionString;
+    }
+    /**
+     * @return Details for basic authentication.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail> databaseAuthenticationDetails() {
+        return this.databaseAuthenticationDetails;
+    }
+    /**
+     * @return Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     * 
+     */
+    public String databaseConnectionType() {
+        return this.databaseConnectionType;
+    }
+    /**
+     * @return Database role.
+     * 
+     */
+    public String databaseRole() {
+        return this.databaseRole;
+    }
+    /**
+     * @return Database type.
+     * 
+     */
+    public String databaseType() {
+        return this.databaseType;
+    }
+    /**
+     * @return Details for database wallet.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail> databaseWalletDetails() {
+        return this.databaseWalletDetails;
+    }
+    /**
      * @return Information about the DNS settings.
      * 
      */
     public List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations() {
         return this.dnsConfigurations;
+    }
+    /**
+     * @return Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+     * 
+     */
+    public Integer downloadSizeLimitInBytes() {
+        return this.downloadSizeLimitInBytes;
+    }
+    /**
+     * @return Details for basic authentication.
+     * 
+     */
+    public List<GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail> ftpBasicAuthenticationDetails() {
+        return this.ftpBasicAuthenticationDetails;
+    }
+    /**
+     * @return FTP protocol type.
+     * 
+     */
+    public String ftpProtocol() {
+        return this.ftpProtocol;
+    }
+    /**
+     * @return FTP monitor request type.
+     * 
+     */
+    public String ftpRequestType() {
+        return this.ftpRequestType;
+    }
+    /**
+     * @return If enabled, Active mode will be used for the FTP connection.
+     * 
+     */
+    public Boolean isActiveMode() {
+        return this.isActiveMode;
     }
     /**
      * @return If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -204,6 +350,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.protocol;
     }
     /**
+     * @return SQL query to be executed.
+     * 
+     */
+    public String query() {
+        return this.query;
+    }
+    /**
      * @return DNS record type.
      * 
      */
@@ -253,6 +406,13 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         return this.requestQueryParams;
     }
     /**
+     * @return File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+     * 
+     */
+    public Integer uploadFileSizeInBytes() {
+        return this.uploadFileSizeInBytes;
+    }
+    /**
      * @return Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
@@ -285,7 +445,18 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     public static final class Builder {
         private List<GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail> clientCertificateDetails;
         private String configType;
+        private String connectionString;
+        private List<GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail> databaseAuthenticationDetails;
+        private String databaseConnectionType;
+        private String databaseRole;
+        private String databaseType;
+        private List<GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail> databaseWalletDetails;
         private List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations;
+        private Integer downloadSizeLimitInBytes;
+        private List<GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail> ftpBasicAuthenticationDetails;
+        private String ftpProtocol;
+        private String ftpRequestType;
+        private Boolean isActiveMode;
         private Boolean isCertificateValidationEnabled;
         private Boolean isDefaultSnapshotEnabled;
         private Boolean isFailureRetried;
@@ -294,6 +465,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         private String nameServer;
         private List<GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration> networkConfigurations;
         private String protocol;
+        private String query;
         private String recordType;
         private List<GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetail> reqAuthenticationDetails;
         private String reqAuthenticationScheme;
@@ -301,6 +473,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         private String requestMethod;
         private String requestPostBody;
         private List<GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam> requestQueryParams;
+        private Integer uploadFileSizeInBytes;
         private List<String> verifyResponseCodes;
         private String verifyResponseContent;
         private List<GetMonitorsMonitorCollectionItemConfigurationVerifyText> verifyTexts;
@@ -309,7 +482,18 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     	      Objects.requireNonNull(defaults);
     	      this.clientCertificateDetails = defaults.clientCertificateDetails;
     	      this.configType = defaults.configType;
+    	      this.connectionString = defaults.connectionString;
+    	      this.databaseAuthenticationDetails = defaults.databaseAuthenticationDetails;
+    	      this.databaseConnectionType = defaults.databaseConnectionType;
+    	      this.databaseRole = defaults.databaseRole;
+    	      this.databaseType = defaults.databaseType;
+    	      this.databaseWalletDetails = defaults.databaseWalletDetails;
     	      this.dnsConfigurations = defaults.dnsConfigurations;
+    	      this.downloadSizeLimitInBytes = defaults.downloadSizeLimitInBytes;
+    	      this.ftpBasicAuthenticationDetails = defaults.ftpBasicAuthenticationDetails;
+    	      this.ftpProtocol = defaults.ftpProtocol;
+    	      this.ftpRequestType = defaults.ftpRequestType;
+    	      this.isActiveMode = defaults.isActiveMode;
     	      this.isCertificateValidationEnabled = defaults.isCertificateValidationEnabled;
     	      this.isDefaultSnapshotEnabled = defaults.isDefaultSnapshotEnabled;
     	      this.isFailureRetried = defaults.isFailureRetried;
@@ -318,6 +502,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     	      this.nameServer = defaults.nameServer;
     	      this.networkConfigurations = defaults.networkConfigurations;
     	      this.protocol = defaults.protocol;
+    	      this.query = defaults.query;
     	      this.recordType = defaults.recordType;
     	      this.reqAuthenticationDetails = defaults.reqAuthenticationDetails;
     	      this.reqAuthenticationScheme = defaults.reqAuthenticationScheme;
@@ -325,6 +510,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
     	      this.requestMethod = defaults.requestMethod;
     	      this.requestPostBody = defaults.requestPostBody;
     	      this.requestQueryParams = defaults.requestQueryParams;
+    	      this.uploadFileSizeInBytes = defaults.uploadFileSizeInBytes;
     	      this.verifyResponseCodes = defaults.verifyResponseCodes;
     	      this.verifyResponseContent = defaults.verifyResponseContent;
     	      this.verifyTexts = defaults.verifyTexts;
@@ -350,6 +536,60 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder connectionString(String connectionString) {
+            if (connectionString == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "connectionString");
+            }
+            this.connectionString = connectionString;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseAuthenticationDetails(List<GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail> databaseAuthenticationDetails) {
+            if (databaseAuthenticationDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "databaseAuthenticationDetails");
+            }
+            this.databaseAuthenticationDetails = databaseAuthenticationDetails;
+            return this;
+        }
+        public Builder databaseAuthenticationDetails(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail... databaseAuthenticationDetails) {
+            return databaseAuthenticationDetails(List.of(databaseAuthenticationDetails));
+        }
+        @CustomType.Setter
+        public Builder databaseConnectionType(String databaseConnectionType) {
+            if (databaseConnectionType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "databaseConnectionType");
+            }
+            this.databaseConnectionType = databaseConnectionType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseRole(String databaseRole) {
+            if (databaseRole == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "databaseRole");
+            }
+            this.databaseRole = databaseRole;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseType(String databaseType) {
+            if (databaseType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "databaseType");
+            }
+            this.databaseType = databaseType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder databaseWalletDetails(List<GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail> databaseWalletDetails) {
+            if (databaseWalletDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "databaseWalletDetails");
+            }
+            this.databaseWalletDetails = databaseWalletDetails;
+            return this;
+        }
+        public Builder databaseWalletDetails(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail... databaseWalletDetails) {
+            return databaseWalletDetails(List.of(databaseWalletDetails));
+        }
+        @CustomType.Setter
         public Builder dnsConfigurations(List<GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration> dnsConfigurations) {
             if (dnsConfigurations == null) {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "dnsConfigurations");
@@ -359,6 +599,49 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
         }
         public Builder dnsConfigurations(GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration... dnsConfigurations) {
             return dnsConfigurations(List.of(dnsConfigurations));
+        }
+        @CustomType.Setter
+        public Builder downloadSizeLimitInBytes(Integer downloadSizeLimitInBytes) {
+            if (downloadSizeLimitInBytes == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "downloadSizeLimitInBytes");
+            }
+            this.downloadSizeLimitInBytes = downloadSizeLimitInBytes;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ftpBasicAuthenticationDetails(List<GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail> ftpBasicAuthenticationDetails) {
+            if (ftpBasicAuthenticationDetails == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "ftpBasicAuthenticationDetails");
+            }
+            this.ftpBasicAuthenticationDetails = ftpBasicAuthenticationDetails;
+            return this;
+        }
+        public Builder ftpBasicAuthenticationDetails(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail... ftpBasicAuthenticationDetails) {
+            return ftpBasicAuthenticationDetails(List.of(ftpBasicAuthenticationDetails));
+        }
+        @CustomType.Setter
+        public Builder ftpProtocol(String ftpProtocol) {
+            if (ftpProtocol == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "ftpProtocol");
+            }
+            this.ftpProtocol = ftpProtocol;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder ftpRequestType(String ftpRequestType) {
+            if (ftpRequestType == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "ftpRequestType");
+            }
+            this.ftpRequestType = ftpRequestType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isActiveMode(Boolean isActiveMode) {
+            if (isActiveMode == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "isActiveMode");
+            }
+            this.isActiveMode = isActiveMode;
+            return this;
         }
         @CustomType.Setter
         public Builder isCertificateValidationEnabled(Boolean isCertificateValidationEnabled) {
@@ -428,6 +711,14 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             return this;
         }
         @CustomType.Setter
+        public Builder query(String query) {
+            if (query == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "query");
+            }
+            this.query = query;
+            return this;
+        }
+        @CustomType.Setter
         public Builder recordType(String recordType) {
             if (recordType == null) {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "recordType");
@@ -493,6 +784,14 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             return requestQueryParams(List.of(requestQueryParams));
         }
         @CustomType.Setter
+        public Builder uploadFileSizeInBytes(Integer uploadFileSizeInBytes) {
+            if (uploadFileSizeInBytes == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "uploadFileSizeInBytes");
+            }
+            this.uploadFileSizeInBytes = uploadFileSizeInBytes;
+            return this;
+        }
+        @CustomType.Setter
         public Builder verifyResponseCodes(List<String> verifyResponseCodes) {
             if (verifyResponseCodes == null) {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItemConfiguration", "verifyResponseCodes");
@@ -526,7 +825,18 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             final var _resultValue = new GetMonitorsMonitorCollectionItemConfiguration();
             _resultValue.clientCertificateDetails = clientCertificateDetails;
             _resultValue.configType = configType;
+            _resultValue.connectionString = connectionString;
+            _resultValue.databaseAuthenticationDetails = databaseAuthenticationDetails;
+            _resultValue.databaseConnectionType = databaseConnectionType;
+            _resultValue.databaseRole = databaseRole;
+            _resultValue.databaseType = databaseType;
+            _resultValue.databaseWalletDetails = databaseWalletDetails;
             _resultValue.dnsConfigurations = dnsConfigurations;
+            _resultValue.downloadSizeLimitInBytes = downloadSizeLimitInBytes;
+            _resultValue.ftpBasicAuthenticationDetails = ftpBasicAuthenticationDetails;
+            _resultValue.ftpProtocol = ftpProtocol;
+            _resultValue.ftpRequestType = ftpRequestType;
+            _resultValue.isActiveMode = isActiveMode;
             _resultValue.isCertificateValidationEnabled = isCertificateValidationEnabled;
             _resultValue.isDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             _resultValue.isFailureRetried = isFailureRetried;
@@ -535,6 +845,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             _resultValue.nameServer = nameServer;
             _resultValue.networkConfigurations = networkConfigurations;
             _resultValue.protocol = protocol;
+            _resultValue.query = query;
             _resultValue.recordType = recordType;
             _resultValue.reqAuthenticationDetails = reqAuthenticationDetails;
             _resultValue.reqAuthenticationScheme = reqAuthenticationScheme;
@@ -542,6 +853,7 @@ public final class GetMonitorsMonitorCollectionItemConfiguration {
             _resultValue.requestMethod = requestMethod;
             _resultValue.requestPostBody = requestPostBody;
             _resultValue.requestQueryParams = requestQueryParams;
+            _resultValue.uploadFileSizeInBytes = uploadFileSizeInBytes;
             _resultValue.verifyResponseCodes = verifyResponseCodes;
             _resultValue.verifyResponseContent = verifyResponseContent;
             _resultValue.verifyTexts = verifyTexts;

@@ -45,13 +45,13 @@ namespace Pulumi.Oci.Opsi
     public partial class OperationsInsightsWarehouseDownloadWarehouseWallet : global::Pulumi.CustomResource
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Output("operationsInsightsWarehouseId")]
         public Output<string> OperationsInsightsWarehouseId { get; private set; } = null!;
 
         /// <summary>
-        /// User provided ADW wallet password for the Operations Insights Warehouse.
+        /// User provided ADW wallet password for the Ops Insights Warehouse.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -111,7 +111,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class OperationsInsightsWarehouseDownloadWarehouseWalletArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Input("operationsInsightsWarehouseId", required: true)]
         public Input<string> OperationsInsightsWarehouseId { get; set; } = null!;
@@ -120,7 +120,7 @@ namespace Pulumi.Oci.Opsi
         private Input<string>? _operationsInsightsWarehouseWalletPassword;
 
         /// <summary>
-        /// User provided ADW wallet password for the Operations Insights Warehouse.
+        /// User provided ADW wallet password for the Ops Insights Warehouse.
         /// 
         /// 
         /// ** IMPORTANT **
@@ -145,7 +145,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class OperationsInsightsWarehouseDownloadWarehouseWalletState : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Input("operationsInsightsWarehouseId")]
         public Input<string>? OperationsInsightsWarehouseId { get; set; }
@@ -154,7 +154,7 @@ namespace Pulumi.Oci.Opsi
         private Input<string>? _operationsInsightsWarehouseWalletPassword;
 
         /// <summary>
-        /// User provided ADW wallet password for the Operations Insights Warehouse.
+        /// User provided ADW wallet password for the Ops Insights Warehouse.
         /// 
         /// 
         /// ** IMPORTANT **

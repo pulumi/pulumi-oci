@@ -81,6 +81,13 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         return Optional.ofNullable(this.state);
     }
 
+    @Import(name="targetId")
+    private @Nullable String targetId;
+
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
+
     private GetSecurityAssessmentFindingPlainArgs() {}
 
     private GetSecurityAssessmentFindingPlainArgs(GetSecurityAssessmentFindingPlainArgs $) {
@@ -93,6 +100,7 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
         this.securityAssessmentId = $.securityAssessmentId;
         this.severity = $.severity;
         this.state = $.state;
+        this.targetId = $.targetId;
     }
 
     public static Builder builder() {
@@ -159,6 +167,11 @@ public final class GetSecurityAssessmentFindingPlainArgs extends com.pulumi.reso
 
         public Builder state(@Nullable String state) {
             $.state = state;
+            return this;
+        }
+
+        public Builder targetId(@Nullable String targetId) {
+            $.targetId = targetId;
             return this;
         }
 

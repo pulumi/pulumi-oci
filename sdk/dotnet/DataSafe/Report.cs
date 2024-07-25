@@ -56,7 +56,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<ImmutableDictionary<string, object>> FreeformTags { get; private set; } = null!;
 
         /// <summary>
-        /// Specifies the format of report to be excel or pdf
+        /// Specifies the format of report to be .xls or .pdf or .json
         /// </summary>
         [Output("mimeType")]
         public Output<string> MimeType { get; private set; } = null!;
@@ -238,7 +238,7 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
-        /// Specifies the format of report to be excel or pdf
+        /// Specifies the format of report to be .xls or .pdf or .json
         /// </summary>
         [Input("mimeType")]
         public Input<string>? MimeType { get; set; }

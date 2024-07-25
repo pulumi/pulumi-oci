@@ -55,14 +55,14 @@ public final class GetNewsReportsPlainArgs extends com.pulumi.resources.InvokeAr
     }
 
     /**
-     * Unique Operations Insights news report identifier
+     * Unique Ops Insights news report identifier
      * 
      */
     @Import(name="newsReportId")
     private @Nullable String newsReportId;
 
     /**
-     * @return Unique Operations Insights news report identifier
+     * @return Unique Ops Insights news report identifier
      * 
      */
     public Optional<String> newsReportId() {
@@ -160,7 +160,7 @@ public final class GetNewsReportsPlainArgs extends com.pulumi.resources.InvokeAr
         }
 
         /**
-         * @param newsReportId Unique Operations Insights news report identifier
+         * @param newsReportId Unique Ops Insights news report identifier
          * 
          * @return builder
          * 

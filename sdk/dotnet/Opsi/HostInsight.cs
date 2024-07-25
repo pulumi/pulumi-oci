@@ -12,7 +12,7 @@ namespace Pulumi.Oci.Opsi
     /// <summary>
     /// This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
     /// 
-    /// Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+    /// Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
     /// 
     /// ## Example Usage
     /// 
@@ -144,7 +144,7 @@ namespace Pulumi.Oci.Opsi
         public Output<string> HostName { get; private set; } = null!;
 
         /// <summary>
-        /// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        /// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         /// </summary>
         [Output("hostType")]
         public Output<string> HostType { get; private set; } = null!;
@@ -183,9 +183,6 @@ namespace Pulumi.Oci.Opsi
         [Output("platformVersion")]
         public Output<string> PlatformVersion { get; private set; } = null!;
 
-        /// <summary>
-        /// Processor count.
-        /// </summary>
         [Output("processorCount")]
         public Output<int> ProcessorCount { get; private set; } = null!;
 
@@ -452,7 +449,7 @@ namespace Pulumi.Oci.Opsi
         public Input<string>? HostName { get; set; }
 
         /// <summary>
-        /// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        /// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         /// </summary>
         [Input("hostType")]
         public Input<string>? HostType { get; set; }
@@ -491,9 +488,6 @@ namespace Pulumi.Oci.Opsi
         [Input("platformVersion")]
         public Input<string>? PlatformVersion { get; set; }
 
-        /// <summary>
-        /// Processor count.
-        /// </summary>
         [Input("processorCount")]
         public Input<int>? ProcessorCount { get; set; }
 

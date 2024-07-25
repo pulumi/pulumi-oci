@@ -21,6 +21,7 @@ namespace Pulumi.Oci.Database.Outputs
         /// The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         /// </summary>
         public readonly string CompartmentId;
+        public readonly int ConfirmDetailsTrigger;
         /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         /// </summary>
@@ -60,6 +61,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string compartmentId,
 
+            int confirmDetailsTrigger,
+
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
@@ -78,6 +81,7 @@ namespace Pulumi.Oci.Database.Outputs
         {
             AssociatedDatabases = associatedDatabases;
             CompartmentId = compartmentId;
+            ConfirmDetailsTrigger = confirmDetailsTrigger;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;

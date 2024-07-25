@@ -30,13 +30,15 @@ import (
 //	func main() {
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.GetReports(ctx, &datasafe.GetReportsArgs{
-//				CompartmentId:          compartmentId,
-//				AccessLevel:            pulumi.StringRef(reportAccessLevel),
-//				CompartmentIdInSubtree: pulumi.BoolRef(reportCompartmentIdInSubtree),
-//				DisplayName:            pulumi.StringRef(reportDisplayName),
-//				ReportDefinitionId:     pulumi.StringRef(testReportDefinition.Id),
-//				State:                  pulumi.StringRef(reportState),
-//				Type:                   pulumi.StringRef(reportType),
+//				CompartmentId:                     compartmentId,
+//				AccessLevel:                       pulumi.StringRef(reportAccessLevel),
+//				CompartmentIdInSubtree:            pulumi.BoolRef(reportCompartmentIdInSubtree),
+//				DisplayName:                       pulumi.StringRef(reportDisplayName),
+//				ReportDefinitionId:                pulumi.StringRef(testReportDefinition.Id),
+//				State:                             pulumi.StringRef(reportState),
+//				TimeGeneratedGreaterThanOrEqualTo: pulumi.StringRef(reportTimeGeneratedGreaterThanOrEqualTo),
+//				TimeGeneratedLessThan:             pulumi.StringRef(reportTimeGeneratedLessThan),
+//				Type:                              pulumi.StringRef(reportType),
 //			}, nil)
 //			if err != nil {
 //				return err
@@ -71,6 +73,14 @@ type GetReportsArgs struct {
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State *string `pulumi:"state"`
+	// A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
+	TimeGeneratedGreaterThanOrEqualTo *string `pulumi:"timeGeneratedGreaterThanOrEqualTo"`
+	// Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
+	TimeGeneratedLessThan *string `pulumi:"timeGeneratedLessThan"`
 	// An optional filter to return only resources that match the specified type.
 	Type *string `pulumi:"type"`
 }
@@ -91,7 +101,9 @@ type GetReportsResult struct {
 	// The OCID of the report definition.
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
 	// The current state of the audit report.
-	State *string `pulumi:"state"`
+	State                             *string `pulumi:"state"`
+	TimeGeneratedGreaterThanOrEqualTo *string `pulumi:"timeGeneratedGreaterThanOrEqualTo"`
+	TimeGeneratedLessThan             *string `pulumi:"timeGeneratedLessThan"`
 	// The type of the audit report.
 	Type *string `pulumi:"type"`
 }
@@ -124,6 +136,14 @@ type GetReportsOutputArgs struct {
 	ReportDefinitionId pulumi.StringPtrInput `pulumi:"reportDefinitionId"`
 	// An optional filter to return only resources that match the specified lifecycle state.
 	State pulumi.StringPtrInput `pulumi:"state"`
+	// A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
+	TimeGeneratedGreaterThanOrEqualTo pulumi.StringPtrInput `pulumi:"timeGeneratedGreaterThanOrEqualTo"`
+	// Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+	//
+	// **Example:** 2016-12-19T16:39:57.600Z
+	TimeGeneratedLessThan pulumi.StringPtrInput `pulumi:"timeGeneratedLessThan"`
 	// An optional filter to return only resources that match the specified type.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
@@ -187,6 +207,14 @@ func (o GetReportsResultOutput) ReportDefinitionId() pulumi.StringPtrOutput {
 // The current state of the audit report.
 func (o GetReportsResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetReportsResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetReportsResultOutput) TimeGeneratedGreaterThanOrEqualTo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportsResult) *string { return v.TimeGeneratedGreaterThanOrEqualTo }).(pulumi.StringPtrOutput)
+}
+
+func (o GetReportsResultOutput) TimeGeneratedLessThan() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetReportsResult) *string { return v.TimeGeneratedLessThan }).(pulumi.StringPtrOutput)
 }
 
 // The type of the audit report.

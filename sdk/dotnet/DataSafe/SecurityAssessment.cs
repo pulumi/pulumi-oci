@@ -40,6 +40,7 @@ namespace Pulumi.Oci.DataSafe
     ///         {
     ///             { "Department", "Finance" },
     ///         },
+    ///         IsAssessmentScheduled = securityAssessmentIsAssessmentScheduled,
     ///         Schedule = securityAssessmentSchedule,
     ///     });
     /// 
@@ -98,6 +99,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("ignoredTargets")]
         public Output<ImmutableArray<string>> IgnoredTargets { get; private set; } = null!;
+
+        /// <summary>
+        /// (Updatable) Indicates whether the assessment is scheduled to run.
+        /// </summary>
+        [Output("isAssessmentScheduled")]
+        public Output<bool> IsAssessmentScheduled { get; private set; } = null!;
 
         /// <summary>
         /// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
@@ -302,6 +309,12 @@ namespace Pulumi.Oci.DataSafe
         }
 
         /// <summary>
+        /// (Updatable) Indicates whether the assessment is scheduled to run.
+        /// </summary>
+        [Input("isAssessmentScheduled")]
+        public Input<bool>? IsAssessmentScheduled { get; set; }
+
+        /// <summary>
         /// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - &lt;version-string&gt;;&lt;version-specific-schedule&gt;
         /// 
         /// Allowed version strings - "v1" v1's version specific schedule -&lt;ss&gt; &lt;mm&gt; &lt;hh&gt; &lt;day-of-week&gt; &lt;day-of-month&gt; Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = &lt;ss&gt; (So, the allowed range for &lt;ss&gt; is [0, 59]) 2. minutes = &lt;mm&gt; (So, the allowed range for &lt;mm&gt; is [0, 59]) 3. hours = &lt;hh&gt; (So, the allowed range for &lt;hh&gt; is [0, 23]) &lt;day-of-week&gt; can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value &lt;day-of-month&gt; can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -392,6 +405,12 @@ namespace Pulumi.Oci.DataSafe
             get => _ignoredTargets ?? (_ignoredTargets = new InputList<string>());
             set => _ignoredTargets = value;
         }
+
+        /// <summary>
+        /// (Updatable) Indicates whether the assessment is scheduled to run.
+        /// </summary>
+        [Input("isAssessmentScheduled")]
+        public Input<bool>? IsAssessmentScheduled { get; set; }
 
         /// <summary>
         /// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.

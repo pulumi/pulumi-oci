@@ -116,7 +116,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public bool? IsMaintenanceWindowSet { get; set; }
 
         /// <summary>
-        /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+        /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
         /// </summary>
         [Input("monitorType")]
         public string? MonitorType { get; set; }
@@ -180,7 +180,7 @@ namespace Pulumi.Oci.ApmSynthetics
         public Input<bool>? IsMaintenanceWindowSet { get; set; }
 
         /// <summary>
-        /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+        /// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
         /// </summary>
         [Input("monitorType")]
         public Input<string>? MonitorType { get; set; }

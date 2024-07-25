@@ -146,6 +146,7 @@ namespace Pulumi.Oci.Database
         /// Retention period, in days, for backups.
         /// </summary>
         public readonly int BackupRetentionPeriodInDays;
+        public readonly double ByolComputeCountLimit;
         /// <summary>
         /// The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
         /// </summary>
@@ -497,6 +498,11 @@ namespace Pulumi.Oci.Database
         /// </summary>
         public readonly string SubnetId;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+        /// </summary>
+        public readonly string SubscriptionId;
+        /// <summary>
         /// The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         /// </summary>
         public readonly ImmutableArray<string> SupportedRegionsToCloneTos;
@@ -622,6 +628,8 @@ namespace Pulumi.Oci.Database
             ImmutableArray<Outputs.GetAutonomousDatabaseBackupConfigResult> backupConfigs,
 
             int backupRetentionPeriodInDays,
+
+            double byolComputeCountLimit,
 
             string characterSet,
 
@@ -809,6 +817,8 @@ namespace Pulumi.Oci.Database
 
             string subnetId,
 
+            string subscriptionId,
+
             ImmutableArray<string> supportedRegionsToCloneTos,
 
             string switchoverTo,
@@ -877,6 +887,7 @@ namespace Pulumi.Oci.Database
             AvailableUpgradeVersions = availableUpgradeVersions;
             BackupConfigs = backupConfigs;
             BackupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            ByolComputeCountLimit = byolComputeCountLimit;
             CharacterSet = characterSet;
             CloneType = cloneType;
             CompartmentId = compartmentId;
@@ -970,6 +981,7 @@ namespace Pulumi.Oci.Database
             StandbyWhitelistedIps = standbyWhitelistedIps;
             State = state;
             SubnetId = subnetId;
+            SubscriptionId = subscriptionId;
             SupportedRegionsToCloneTos = supportedRegionsToCloneTos;
             SwitchoverTo = switchoverTo;
             SwitchoverToRemotePeerId = switchoverToRemotePeerId;

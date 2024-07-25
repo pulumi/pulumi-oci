@@ -41,7 +41,7 @@ class DatabaseInsightArgs:
         :param pulumi.Input[str] entity_source: (Updatable) Source of the database entity.
         :param pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
-        :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
@@ -149,7 +149,7 @@ class DatabaseInsightArgs:
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']]:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
@@ -355,6 +355,8 @@ class _DatabaseInsightState:
                  entity_source: Optional[pulumi.Input[str]] = None,
                  exadata_insight_id: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_heat_wave_cluster_attached: Optional[pulumi.Input[bool]] = None,
+                 is_highly_available: Optional[pulumi.Input[bool]] = None,
                  lifecycle_details: Optional[pulumi.Input[str]] = None,
                  opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
                  parent_id: Optional[pulumi.Input[str]] = None,
@@ -371,13 +373,13 @@ class _DatabaseInsightState:
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input['DatabaseInsightConnectionCredentialDetailsArgs'] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input['DatabaseInsightConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
-        :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param pulumi.Input['DatabaseInsightCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_display_name: Display name of database
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_name: Name of database
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
-        :param pulumi.Input[str] database_type: Operations Insights internal representation of the database type.
+        :param pulumi.Input[str] database_type: Ops Insights internal representation of the database type.
         :param pulumi.Input[str] database_version: The version of the database.
         :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -391,6 +393,8 @@ class _DatabaseInsightState:
         :param pulumi.Input[str] entity_source: (Updatable) Source of the database entity.
         :param pulumi.Input[str] exadata_insight_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_heat_wave_cluster_attached: Specifies if MYSQL DB System has heatwave cluster attached.
+        :param pulumi.Input[bool] is_highly_available: Specifies if MYSQL DB System is highly available.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param pulumi.Input[str] parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -403,7 +407,7 @@ class _DatabaseInsightState:
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The time the database insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
         """
         if compartment_id is not None:
@@ -452,6 +456,10 @@ class _DatabaseInsightState:
             pulumi.set(__self__, "exadata_insight_id", exadata_insight_id)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_heat_wave_cluster_attached is not None:
+            pulumi.set(__self__, "is_heat_wave_cluster_attached", is_heat_wave_cluster_attached)
+        if is_highly_available is not None:
+            pulumi.set(__self__, "is_highly_available", is_highly_available)
         if lifecycle_details is not None:
             pulumi.set(__self__, "lifecycle_details", lifecycle_details)
         if opsi_private_endpoint_id is not None:
@@ -515,7 +523,7 @@ class _DatabaseInsightState:
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional[pulumi.Input['DatabaseInsightCredentialDetailsArgs']]:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
@@ -587,7 +595,7 @@ class _DatabaseInsightState:
     @pulumi.getter(name="databaseType")
     def database_type(self) -> Optional[pulumi.Input[str]]:
         """
-        Operations Insights internal representation of the database type.
+        Ops Insights internal representation of the database type.
         """
         return pulumi.get(self, "database_type")
 
@@ -752,6 +760,30 @@ class _DatabaseInsightState:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isHeatWaveClusterAttached")
+    def is_heat_wave_cluster_attached(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies if MYSQL DB System has heatwave cluster attached.
+        """
+        return pulumi.get(self, "is_heat_wave_cluster_attached")
+
+    @is_heat_wave_cluster_attached.setter
+    def is_heat_wave_cluster_attached(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_heat_wave_cluster_attached", value)
+
+    @property
+    @pulumi.getter(name="isHighlyAvailable")
+    def is_highly_available(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Specifies if MYSQL DB System is highly available.
+        """
+        return pulumi.get(self, "is_highly_available")
+
+    @is_highly_available.setter
+    def is_highly_available(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_highly_available", value)
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> Optional[pulumi.Input[str]]:
         """
@@ -866,7 +898,7 @@ class _DatabaseInsightState:
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> Optional[pulumi.Input[str]]:
         """
-        The time the the database insight was first enabled. An RFC3339 formatted datetime string
+        The time the database insight was first enabled. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 
@@ -928,7 +960,7 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionCredentialDetailsArgs']] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionDetailsArgs']] connection_details: Connection details of the private endpoints.
-        :param pulumi.Input[pulumi.InputType['DatabaseInsightCredentialDetailsArgs']] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param pulumi.Input[pulumi.InputType['DatabaseInsightCredentialDetailsArgs']] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
@@ -1038,6 +1070,8 @@ class DatabaseInsight(pulumi.CustomResource):
             __props__.__dict__["enterprise_manager_entity_display_name"] = None
             __props__.__dict__["enterprise_manager_entity_name"] = None
             __props__.__dict__["enterprise_manager_entity_type"] = None
+            __props__.__dict__["is_heat_wave_cluster_attached"] = None
+            __props__.__dict__["is_highly_available"] = None
             __props__.__dict__["lifecycle_details"] = None
             __props__.__dict__["parent_id"] = None
             __props__.__dict__["processor_count"] = None
@@ -1079,6 +1113,8 @@ class DatabaseInsight(pulumi.CustomResource):
             entity_source: Optional[pulumi.Input[str]] = None,
             exadata_insight_id: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+            is_heat_wave_cluster_attached: Optional[pulumi.Input[bool]] = None,
+            is_highly_available: Optional[pulumi.Input[bool]] = None,
             lifecycle_details: Optional[pulumi.Input[str]] = None,
             opsi_private_endpoint_id: Optional[pulumi.Input[str]] = None,
             parent_id: Optional[pulumi.Input[str]] = None,
@@ -1100,13 +1136,13 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionCredentialDetailsArgs']] connection_credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
         :param pulumi.Input[pulumi.InputType['DatabaseInsightConnectionDetailsArgs']] connection_details: Connection details of the private endpoints.
-        :param pulumi.Input[pulumi.InputType['DatabaseInsightCredentialDetailsArgs']] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param pulumi.Input[pulumi.InputType['DatabaseInsightCredentialDetailsArgs']] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_connection_status_details: A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
         :param pulumi.Input[str] database_display_name: Display name of database
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_name: Name of database
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
-        :param pulumi.Input[str] database_type: Operations Insights internal representation of the database type.
+        :param pulumi.Input[str] database_type: Ops Insights internal representation of the database type.
         :param pulumi.Input[str] database_version: The version of the database.
         :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint. This field and opsi_private_endpoint_id are mutually exclusive. If DBM private endpoint ID is provided, a new OPSI private endpoint ID will be created.
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
@@ -1120,6 +1156,8 @@ class DatabaseInsight(pulumi.CustomResource):
         :param pulumi.Input[str] entity_source: (Updatable) Source of the database entity.
         :param pulumi.Input[str] exadata_insight_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Exadata insight.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
+        :param pulumi.Input[bool] is_heat_wave_cluster_attached: Specifies if MYSQL DB System has heatwave cluster attached.
+        :param pulumi.Input[bool] is_highly_available: Specifies if MYSQL DB System is highly available.
         :param pulumi.Input[str] lifecycle_details: A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param pulumi.Input[str] opsi_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
         :param pulumi.Input[str] parent_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster or DB System ID, depending on which configuration the resource belongs to.
@@ -1132,7 +1170,7 @@ class DatabaseInsight(pulumi.CustomResource):
                ** IMPORTANT **
                Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values. The resource destruction here is basically a soft delete. User cannot create resource using the same EM managed bridge OCID. If resource is in enabled state during destruction, the resource will be disabled automatically before performing delete operation.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
-        :param pulumi.Input[str] time_created: The time the the database insight was first enabled. An RFC3339 formatted datetime string
+        :param pulumi.Input[str] time_created: The time the database insight was first enabled. An RFC3339 formatted datetime string
         :param pulumi.Input[str] time_updated: The time the database insight was updated. An RFC3339 formatted datetime string
         """
         opts = pulumi.ResourceOptions.merge(opts, pulumi.ResourceOptions(id=id))
@@ -1162,6 +1200,8 @@ class DatabaseInsight(pulumi.CustomResource):
         __props__.__dict__["entity_source"] = entity_source
         __props__.__dict__["exadata_insight_id"] = exadata_insight_id
         __props__.__dict__["freeform_tags"] = freeform_tags
+        __props__.__dict__["is_heat_wave_cluster_attached"] = is_heat_wave_cluster_attached
+        __props__.__dict__["is_highly_available"] = is_highly_available
         __props__.__dict__["lifecycle_details"] = lifecycle_details
         __props__.__dict__["opsi_private_endpoint_id"] = opsi_private_endpoint_id
         __props__.__dict__["parent_id"] = parent_id
@@ -1203,7 +1243,7 @@ class DatabaseInsight(pulumi.CustomResource):
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> pulumi.Output[Optional['outputs.DatabaseInsightCredentialDetails']]:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
@@ -1251,7 +1291,7 @@ class DatabaseInsight(pulumi.CustomResource):
     @pulumi.getter(name="databaseType")
     def database_type(self) -> pulumi.Output[str]:
         """
-        Operations Insights internal representation of the database type.
+        Ops Insights internal representation of the database type.
         """
         return pulumi.get(self, "database_type")
 
@@ -1360,6 +1400,22 @@ class DatabaseInsight(pulumi.CustomResource):
         return pulumi.get(self, "freeform_tags")
 
     @property
+    @pulumi.getter(name="isHeatWaveClusterAttached")
+    def is_heat_wave_cluster_attached(self) -> pulumi.Output[bool]:
+        """
+        Specifies if MYSQL DB System has heatwave cluster attached.
+        """
+        return pulumi.get(self, "is_heat_wave_cluster_attached")
+
+    @property
+    @pulumi.getter(name="isHighlyAvailable")
+    def is_highly_available(self) -> pulumi.Output[bool]:
+        """
+        Specifies if MYSQL DB System is highly available.
+        """
+        return pulumi.get(self, "is_highly_available")
+
+    @property
     @pulumi.getter(name="lifecycleDetails")
     def lifecycle_details(self) -> pulumi.Output[str]:
         """
@@ -1438,7 +1494,7 @@ class DatabaseInsight(pulumi.CustomResource):
     @pulumi.getter(name="timeCreated")
     def time_created(self) -> pulumi.Output[str]:
         """
-        The time the the database insight was first enabled. An RFC3339 formatted datetime string
+        The time the database insight was first enabled. An RFC3339 formatted datetime string
         """
         return pulumi.get(self, "time_created")
 

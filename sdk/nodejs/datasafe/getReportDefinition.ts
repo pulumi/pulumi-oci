@@ -118,7 +118,7 @@ export interface GetReportDefinitionResult {
      */
     readonly scheduledReportCompartmentId: string;
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      */
     readonly scheduledReportMimeType: string;
     /**

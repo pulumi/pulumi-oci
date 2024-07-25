@@ -30,7 +30,7 @@ type DatabaseInsight struct {
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsOutput `pulumi:"connectionCredentialDetails"`
 	// Connection details of the private endpoints.
 	ConnectionDetails DatabaseInsightConnectionDetailsOutput `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrOutput `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringOutput `pulumi:"databaseConnectionStatusDetails"`
@@ -42,7 +42,7 @@ type DatabaseInsight struct {
 	DatabaseName pulumi.StringOutput `pulumi:"databaseName"`
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType pulumi.StringOutput `pulumi:"databaseResourceType"`
-	// Operations Insights internal representation of the database type.
+	// Ops Insights internal representation of the database type.
 	DatabaseType pulumi.StringOutput `pulumi:"databaseType"`
 	// The version of the database.
 	DatabaseVersion pulumi.StringOutput `pulumi:"databaseVersion"`
@@ -70,6 +70,10 @@ type DatabaseInsight struct {
 	ExadataInsightId pulumi.StringOutput `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
+	// Specifies if MYSQL DB System has heatwave cluster attached.
+	IsHeatWaveClusterAttached pulumi.BoolOutput `pulumi:"isHeatWaveClusterAttached"`
+	// Specifies if MYSQL DB System is highly available.
+	IsHighlyAvailable pulumi.BoolOutput `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -91,7 +95,7 @@ type DatabaseInsight struct {
 	Status pulumi.StringOutput `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
-	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
+	// The time the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringOutput `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringOutput `pulumi:"timeUpdated"`
@@ -139,7 +143,7 @@ type databaseInsightState struct {
 	ConnectionCredentialDetails *DatabaseInsightConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
 	// Connection details of the private endpoints.
 	ConnectionDetails *DatabaseInsightConnectionDetails `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails *string `pulumi:"databaseConnectionStatusDetails"`
@@ -151,7 +155,7 @@ type databaseInsightState struct {
 	DatabaseName *string `pulumi:"databaseName"`
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType *string `pulumi:"databaseResourceType"`
-	// Operations Insights internal representation of the database type.
+	// Ops Insights internal representation of the database type.
 	DatabaseType *string `pulumi:"databaseType"`
 	// The version of the database.
 	DatabaseVersion *string `pulumi:"databaseVersion"`
@@ -179,6 +183,10 @@ type databaseInsightState struct {
 	ExadataInsightId *string `pulumi:"exadataInsightId"`
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// Specifies if MYSQL DB System has heatwave cluster attached.
+	IsHeatWaveClusterAttached *bool `pulumi:"isHeatWaveClusterAttached"`
+	// Specifies if MYSQL DB System is highly available.
+	IsHighlyAvailable *bool `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -200,7 +208,7 @@ type databaseInsightState struct {
 	Status *string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
-	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
+	// The time the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated *string `pulumi:"timeCreated"`
 	// The time the database insight was updated. An RFC3339 formatted datetime string
 	TimeUpdated *string `pulumi:"timeUpdated"`
@@ -213,7 +221,7 @@ type DatabaseInsightState struct {
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsPtrInput
 	// Connection details of the private endpoints.
 	ConnectionDetails DatabaseInsightConnectionDetailsPtrInput
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringPtrInput
@@ -225,7 +233,7 @@ type DatabaseInsightState struct {
 	DatabaseName pulumi.StringPtrInput
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType pulumi.StringPtrInput
-	// Operations Insights internal representation of the database type.
+	// Ops Insights internal representation of the database type.
 	DatabaseType pulumi.StringPtrInput
 	// The version of the database.
 	DatabaseVersion pulumi.StringPtrInput
@@ -253,6 +261,10 @@ type DatabaseInsightState struct {
 	ExadataInsightId pulumi.StringPtrInput
 	// (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
 	FreeformTags pulumi.MapInput
+	// Specifies if MYSQL DB System has heatwave cluster attached.
+	IsHeatWaveClusterAttached pulumi.BoolPtrInput
+	// Specifies if MYSQL DB System is highly available.
+	IsHighlyAvailable pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -274,7 +286,7 @@ type DatabaseInsightState struct {
 	Status pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
-	// The time the the database insight was first enabled. An RFC3339 formatted datetime string
+	// The time the database insight was first enabled. An RFC3339 formatted datetime string
 	TimeCreated pulumi.StringPtrInput
 	// The time the database insight was updated. An RFC3339 formatted datetime string
 	TimeUpdated pulumi.StringPtrInput
@@ -291,7 +303,7 @@ type databaseInsightArgs struct {
 	ConnectionCredentialDetails *DatabaseInsightConnectionCredentialDetails `pulumi:"connectionCredentialDetails"`
 	// Connection details of the private endpoints.
 	ConnectionDetails *DatabaseInsightConnectionDetails `pulumi:"connectionDetails"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails *DatabaseInsightCredentialDetails `pulumi:"credentialDetails"`
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails *string `pulumi:"databaseConnectionStatusDetails"`
@@ -336,7 +348,7 @@ type DatabaseInsightArgs struct {
 	ConnectionCredentialDetails DatabaseInsightConnectionCredentialDetailsPtrInput
 	// Connection details of the private endpoints.
 	ConnectionDetails DatabaseInsightConnectionDetailsPtrInput
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	CredentialDetails DatabaseInsightCredentialDetailsPtrInput
 	// A message describing the status of the database connection of this resource. For example, it can be used to provide actionable information about the permission and content validity of the database connection.
 	DatabaseConnectionStatusDetails pulumi.StringPtrInput
@@ -477,7 +489,7 @@ func (o DatabaseInsightOutput) ConnectionDetails() DatabaseInsightConnectionDeta
 	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightConnectionDetailsOutput { return v.ConnectionDetails }).(DatabaseInsightConnectionDetailsOutput)
 }
 
-// User credential details to connect to the database. This is supplied via the External Database Service.
+// User credential details to connect to the database.
 func (o DatabaseInsightOutput) CredentialDetails() DatabaseInsightCredentialDetailsPtrOutput {
 	return o.ApplyT(func(v *DatabaseInsight) DatabaseInsightCredentialDetailsPtrOutput { return v.CredentialDetails }).(DatabaseInsightCredentialDetailsPtrOutput)
 }
@@ -507,7 +519,7 @@ func (o DatabaseInsightOutput) DatabaseResourceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.DatabaseResourceType }).(pulumi.StringOutput)
 }
 
-// Operations Insights internal representation of the database type.
+// Ops Insights internal representation of the database type.
 func (o DatabaseInsightOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.DatabaseType }).(pulumi.StringOutput)
 }
@@ -577,6 +589,16 @@ func (o DatabaseInsightOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
+// Specifies if MYSQL DB System has heatwave cluster attached.
+func (o DatabaseInsightOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.BoolOutput { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
+}
+
+// Specifies if MYSQL DB System is highly available.
+func (o DatabaseInsightOutput) IsHighlyAvailable() pulumi.BoolOutput {
+	return o.ApplyT(func(v *DatabaseInsight) pulumi.BoolOutput { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
+}
+
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 func (o DatabaseInsightOutput) LifecycleDetails() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
@@ -625,7 +647,7 @@ func (o DatabaseInsightOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
 }
 
-// The time the the database insight was first enabled. An RFC3339 formatted datetime string
+// The time the database insight was first enabled. An RFC3339 formatted datetime string
 func (o DatabaseInsightOutput) TimeCreated() pulumi.StringOutput {
 	return o.ApplyT(func(v *DatabaseInsight) pulumi.StringOutput { return v.TimeCreated }).(pulumi.StringOutput)
 }

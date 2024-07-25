@@ -224,7 +224,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string Id;
         /// <summary>
-        /// The flag is to identify if private endpoint is used for rac database or not
+        /// The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
         /// </summary>
         public readonly bool? IsUsedForRacDbs;
         /// <summary>

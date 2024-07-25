@@ -132,6 +132,12 @@ namespace Pulumi.Oci.Database.Inputs
         public Input<string>? Id { get; set; }
 
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        [Input("keyStoreId")]
+        public Input<string>? KeyStoreId { get; set; }
+
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         [Input("kmsKeyId")]

@@ -12,7 +12,8 @@ namespace Pulumi.Oci.DataSafe
     /// <summary>
     /// This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
     /// 
-    /// Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+    /// Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+    /// If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
     /// Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
     /// 
     /// ## Example Usage
@@ -28,6 +29,7 @@ namespace Pulumi.Oci.DataSafe
     ///     var testUnsetSecurityAssessmentBaseline = new Oci.DataSafe.UnsetSecurityAssessmentBaseline("test_unset_security_assessment_baseline", new()
     ///     {
     ///         SecurityAssessmentId = testSecurityAssessment.Id,
+    ///         TargetIds = unsetSecurityAssessmentBaselineTargetIds,
     ///     });
     /// 
     /// });
@@ -46,13 +48,19 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The OCID of the security assessment.
+        /// </summary>
+        [Output("securityAssessmentId")]
+        public Output<string> SecurityAssessmentId { get; private set; } = null!;
+
+        /// <summary>
+        /// The list of database target OCIDs for which the user intends to unset the baseline.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Output("securityAssessmentId")]
-        public Output<string> SecurityAssessmentId { get; private set; } = null!;
+        [Output("targetIds")]
+        public Output<ImmutableArray<string>> TargetIds { get; private set; } = null!;
 
 
         /// <summary>
@@ -102,13 +110,25 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The OCID of the security assessment.
+        /// </summary>
+        [Input("securityAssessmentId", required: true)]
+        public Input<string> SecurityAssessmentId { get; set; } = null!;
+
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+
+        /// <summary>
+        /// The list of database target OCIDs for which the user intends to unset the baseline.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("securityAssessmentId", required: true)]
-        public Input<string> SecurityAssessmentId { get; set; } = null!;
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
+        }
 
         public UnsetSecurityAssessmentBaselineArgs()
         {
@@ -120,13 +140,25 @@ namespace Pulumi.Oci.DataSafe
     {
         /// <summary>
         /// The OCID of the security assessment.
+        /// </summary>
+        [Input("securityAssessmentId")]
+        public Input<string>? SecurityAssessmentId { get; set; }
+
+        [Input("targetIds")]
+        private InputList<string>? _targetIds;
+
+        /// <summary>
+        /// The list of database target OCIDs for which the user intends to unset the baseline.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("securityAssessmentId")]
-        public Input<string>? SecurityAssessmentId { get; set; }
+        public InputList<string> TargetIds
+        {
+            get => _targetIds ?? (_targetIds = new InputList<string>());
+            set => _targetIds = value;
+        }
 
         public UnsetSecurityAssessmentBaselineState()
         {

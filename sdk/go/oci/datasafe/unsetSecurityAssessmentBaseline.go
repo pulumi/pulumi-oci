@@ -14,7 +14,8 @@ import (
 
 // This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
 //
-// Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+// Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+// If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
 // Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
 //
 // ## Example Usage
@@ -33,6 +34,7 @@ import (
 //		pulumi.Run(func(ctx *pulumi.Context) error {
 //			_, err := DataSafe.NewUnsetSecurityAssessmentBaseline(ctx, "test_unset_security_assessment_baseline", &DataSafe.UnsetSecurityAssessmentBaselineArgs{
 //				SecurityAssessmentId: pulumi.Any(testSecurityAssessment.Id),
+//				TargetIds:            pulumi.Any(unsetSecurityAssessmentBaselineTargetIds),
 //			})
 //			if err != nil {
 //				return err
@@ -54,10 +56,12 @@ type UnsetSecurityAssessmentBaseline struct {
 	pulumi.CustomResourceState
 
 	// The OCID of the security assessment.
+	SecurityAssessmentId pulumi.StringOutput `pulumi:"securityAssessmentId"`
+	// The list of database target OCIDs for which the user intends to unset the baseline.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecurityAssessmentId pulumi.StringOutput `pulumi:"securityAssessmentId"`
+	TargetIds pulumi.StringArrayOutput `pulumi:"targetIds"`
 }
 
 // NewUnsetSecurityAssessmentBaseline registers a new resource with the given unique name, arguments, and options.
@@ -94,18 +98,22 @@ func GetUnsetSecurityAssessmentBaseline(ctx *pulumi.Context,
 // Input properties used for looking up and filtering UnsetSecurityAssessmentBaseline resources.
 type unsetSecurityAssessmentBaselineState struct {
 	// The OCID of the security assessment.
+	SecurityAssessmentId *string `pulumi:"securityAssessmentId"`
+	// The list of database target OCIDs for which the user intends to unset the baseline.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecurityAssessmentId *string `pulumi:"securityAssessmentId"`
+	TargetIds []string `pulumi:"targetIds"`
 }
 
 type UnsetSecurityAssessmentBaselineState struct {
 	// The OCID of the security assessment.
+	SecurityAssessmentId pulumi.StringPtrInput
+	// The list of database target OCIDs for which the user intends to unset the baseline.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecurityAssessmentId pulumi.StringPtrInput
+	TargetIds pulumi.StringArrayInput
 }
 
 func (UnsetSecurityAssessmentBaselineState) ElementType() reflect.Type {
@@ -114,19 +122,23 @@ func (UnsetSecurityAssessmentBaselineState) ElementType() reflect.Type {
 
 type unsetSecurityAssessmentBaselineArgs struct {
 	// The OCID of the security assessment.
+	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
+	// The list of database target OCIDs for which the user intends to unset the baseline.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecurityAssessmentId string `pulumi:"securityAssessmentId"`
+	TargetIds []string `pulumi:"targetIds"`
 }
 
 // The set of arguments for constructing a UnsetSecurityAssessmentBaseline resource.
 type UnsetSecurityAssessmentBaselineArgs struct {
 	// The OCID of the security assessment.
+	SecurityAssessmentId pulumi.StringInput
+	// The list of database target OCIDs for which the user intends to unset the baseline.
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-	SecurityAssessmentId pulumi.StringInput
+	TargetIds pulumi.StringArrayInput
 }
 
 func (UnsetSecurityAssessmentBaselineArgs) ElementType() reflect.Type {
@@ -217,11 +229,16 @@ func (o UnsetSecurityAssessmentBaselineOutput) ToUnsetSecurityAssessmentBaseline
 }
 
 // The OCID of the security assessment.
+func (o UnsetSecurityAssessmentBaselineOutput) SecurityAssessmentId() pulumi.StringOutput {
+	return o.ApplyT(func(v *UnsetSecurityAssessmentBaseline) pulumi.StringOutput { return v.SecurityAssessmentId }).(pulumi.StringOutput)
+}
+
+// The list of database target OCIDs for which the user intends to unset the baseline.
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-func (o UnsetSecurityAssessmentBaselineOutput) SecurityAssessmentId() pulumi.StringOutput {
-	return o.ApplyT(func(v *UnsetSecurityAssessmentBaseline) pulumi.StringOutput { return v.SecurityAssessmentId }).(pulumi.StringOutput)
+func (o UnsetSecurityAssessmentBaselineOutput) TargetIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *UnsetSecurityAssessmentBaseline) pulumi.StringArrayOutput { return v.TargetIds }).(pulumi.StringArrayOutput)
 }
 
 type UnsetSecurityAssessmentBaselineArrayOutput struct{ *pulumi.OutputState }

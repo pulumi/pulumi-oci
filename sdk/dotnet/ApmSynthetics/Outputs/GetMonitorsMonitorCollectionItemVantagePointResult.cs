@@ -21,15 +21,22 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// Name of the vantage point.
         /// </summary>
         public readonly string Name;
+        /// <summary>
+        /// List of workers running the assigned monitor.
+        /// </summary>
+        public readonly ImmutableArray<string> WorkerLists;
 
         [OutputConstructor]
         private GetMonitorsMonitorCollectionItemVantagePointResult(
             string displayName,
 
-            string name)
+            string name,
+
+            ImmutableArray<string> workerLists)
         {
             DisplayName = displayName;
             Name = name;
+            WorkerLists = workerLists;
         }
     }
 }

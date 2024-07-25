@@ -125,6 +125,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorConfigurationResult> Configurations;
         /// <summary>
+        /// Name of the user that created the monitor.
+        /// </summary>
+        public readonly string CreatedBy;
+        /// <summary>
         /// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
@@ -141,6 +145,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string Id;
         /// <summary>
+        /// If enabled, domain name will resolve to an IPv6 address.
+        /// </summary>
+        public readonly bool IsIpv6;
+        /// <summary>
         /// If isRunNow is enabled, then the monitor will run immediately.
         /// </summary>
         public readonly bool IsRunNow;
@@ -148,6 +156,10 @@ namespace Pulumi.Oci.ApmSynthetics
         /// If runOnce is enabled, then the monitor will run once.
         /// </summary>
         public readonly bool IsRunOnce;
+        /// <summary>
+        /// Name of the user that recently updated the monitor.
+        /// </summary>
+        public readonly string LastUpdatedBy;
         /// <summary>
         /// Details required to schedule maintenance window.
         /// </summary>
@@ -182,7 +194,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly string Status;
         /// <summary>
-        /// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+        /// Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
         /// </summary>
         public readonly string Target;
         /// <summary>
@@ -202,7 +214,7 @@ namespace Pulumi.Oci.ApmSynthetics
         /// </summary>
         public readonly int VantagePointCount;
         /// <summary>
-        /// List of public and dedicated vantage points where the monitor is running.
+        /// List of public, dedicated and onPremise vantage points where the monitor is running.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetMonitorVantagePointResult> VantagePoints;
 
@@ -216,6 +228,8 @@ namespace Pulumi.Oci.ApmSynthetics
 
             ImmutableArray<Outputs.GetMonitorConfigurationResult> configurations,
 
+            string createdBy,
+
             ImmutableDictionary<string, object> definedTags,
 
             string displayName,
@@ -224,9 +238,13 @@ namespace Pulumi.Oci.ApmSynthetics
 
             string id,
 
+            bool isIpv6,
+
             bool isRunNow,
 
             bool isRunOnce,
+
+            string lastUpdatedBy,
 
             ImmutableArray<Outputs.GetMonitorMaintenanceWindowScheduleResult> maintenanceWindowSchedules,
 
@@ -262,12 +280,15 @@ namespace Pulumi.Oci.ApmSynthetics
             AvailabilityConfigurations = availabilityConfigurations;
             BatchIntervalInSeconds = batchIntervalInSeconds;
             Configurations = configurations;
+            CreatedBy = createdBy;
             DefinedTags = definedTags;
             DisplayName = displayName;
             FreeformTags = freeformTags;
             Id = id;
+            IsIpv6 = isIpv6;
             IsRunNow = isRunNow;
             IsRunOnce = isRunOnce;
+            LastUpdatedBy = lastUpdatedBy;
             MaintenanceWindowSchedules = maintenanceWindowSchedules;
             MonitorId = monitorId;
             MonitorType = monitorType;

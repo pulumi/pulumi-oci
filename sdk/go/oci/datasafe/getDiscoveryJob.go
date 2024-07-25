@@ -89,6 +89,8 @@ type GetDiscoveryJobResult struct {
 	State string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// The data discovery jobs will scan the tables specified here, including both schemas and tables.
+	TablesForDiscoveries []GetDiscoveryJobTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// The OCID of the target database associated with the discovery job.
 	TargetId string `pulumi:"targetId"`
 	// The date and time the discovery job finished, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339)..
@@ -224,6 +226,11 @@ func (o GetDiscoveryJobResultOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o GetDiscoveryJobResultOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetDiscoveryJobResult) map[string]interface{} { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// The data discovery jobs will scan the tables specified here, including both schemas and tables.
+func (o GetDiscoveryJobResultOutput) TablesForDiscoveries() GetDiscoveryJobTablesForDiscoveryArrayOutput {
+	return o.ApplyT(func(v GetDiscoveryJobResult) []GetDiscoveryJobTablesForDiscovery { return v.TablesForDiscoveries }).(GetDiscoveryJobTablesForDiscoveryArrayOutput)
 }
 
 // The OCID of the target database associated with the discovery job.

@@ -24,6 +24,18 @@ namespace Pulumi.Oci.ApmSynthetics.Inputs
         [Input("name", required: true)]
         public Input<string> Name { get; set; } = null!;
 
+        [Input("workerLists")]
+        private InputList<string>? _workerLists;
+
+        /// <summary>
+        /// List of workers running the assigned monitor.
+        /// </summary>
+        public InputList<string> WorkerLists
+        {
+            get => _workerLists ?? (_workerLists = new InputList<string>());
+            set => _workerLists = value;
+        }
+
         public ConfigVantagePointArgs()
         {
         }

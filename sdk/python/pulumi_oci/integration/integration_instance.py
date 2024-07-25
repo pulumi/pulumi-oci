@@ -46,15 +46,12 @@ class IntegrationInstanceArgs:
         :param pulumi.Input['IntegrationInstanceCustomEndpointArgs'] custom_endpoint: (Updatable) Details for a custom endpoint for the integration instance (update).
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-               ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[bool] is_file_server_enabled: (Updatable) The file server is enabled or not.
         :param pulumi.Input[bool] is_visual_builder_enabled: (Updatable) Visual Builder is enabled or not.
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
-               >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
                
@@ -216,10 +213,6 @@ class IntegrationInstanceArgs:
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @enable_process_automation_trigger.setter
@@ -291,7 +284,6 @@ class IntegrationInstanceArgs:
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
         Shape
-        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 
@@ -354,8 +346,6 @@ class _IntegrationInstanceState:
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-               ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstanceIdcsInfoArgs']]] idcs_infos: Information for IDCS access
@@ -368,7 +358,6 @@ class _IntegrationInstanceState:
         :param pulumi.Input['IntegrationInstanceNetworkEndpointDetailsArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param pulumi.Input[str] shape: Shape
-               >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
                
@@ -528,10 +517,6 @@ class _IntegrationInstanceState:
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> Optional[pulumi.Input[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @enable_process_automation_trigger.setter
@@ -675,7 +660,6 @@ class _IntegrationInstanceState:
     def shape(self) -> Optional[pulumi.Input[str]]:
         """
         Shape
-        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 
@@ -826,8 +810,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-               ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[str] integration_instance_type: (Updatable) Standard or Enterprise type,  Oracle Integration Generation 2 uses ENTERPRISE and STANDARD,  Oracle Integration 3 uses ENTERPRISEX and STANDARDX
@@ -837,7 +819,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[int] message_packs: (Updatable) The number of configured message packs
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[str] shape: Shape
-               >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
                
@@ -1036,8 +1017,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] defined_tags: (Updatable) Usage of predefined tag keys. These predefined keys are scoped to namespaces. Example: `{"foo-namespace.bar-key": "value"}`
         :param pulumi.Input[str] display_name: (Updatable) Integration Instance Identifier.
         :param pulumi.Input[str] domain_id: The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
-        :param pulumi.Input[int] enable_process_automation_trigger: (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-               ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
         :param pulumi.Input[str] idcs_at: (Updatable) IDCS Authentication token. This is required for all realms with IDCS. Its optional as its not required for non IDCS realms.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstanceIdcsInfoArgs']]]] idcs_infos: Information for IDCS access
@@ -1050,7 +1029,6 @@ class IntegrationInstance(pulumi.CustomResource):
         :param pulumi.Input[pulumi.InputType['IntegrationInstanceNetworkEndpointDetailsArgs']] network_endpoint_details: Base representation of a network endpoint.
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['IntegrationInstancePrivateEndpointOutboundConnectionArgs']]]] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param pulumi.Input[str] shape: Shape
-               >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param pulumi.Input[str] state: (Updatable) The target state for the instance. Could be set to ACTIVE or INACTIVE
                
                
@@ -1158,10 +1136,6 @@ class IntegrationInstance(pulumi.CustomResource):
     @property
     @pulumi.getter(name="enableProcessAutomationTrigger")
     def enable_process_automation_trigger(self) -> pulumi.Output[Optional[int]]:
-        """
-        (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-        ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-        """
         return pulumi.get(self, "enable_process_automation_trigger")
 
     @property
@@ -1257,7 +1231,6 @@ class IntegrationInstance(pulumi.CustomResource):
     def shape(self) -> pulumi.Output[str]:
         """
         Shape
-        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 

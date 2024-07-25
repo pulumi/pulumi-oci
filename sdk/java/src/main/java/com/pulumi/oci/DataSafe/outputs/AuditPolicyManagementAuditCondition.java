@@ -29,6 +29,10 @@ public final class AuditPolicyManagementAuditCondition {
      * 
      */
     private @Nullable Boolean isDataSafeServiceAccountAudited;
+    /**
+     * @return Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+     * 
+     */
     private @Nullable Boolean isEnabled;
     /**
      * @return Indicates whether the privileged user list is managed by Data Safe.
@@ -61,6 +65,10 @@ public final class AuditPolicyManagementAuditCondition {
     public Optional<Boolean> isDataSafeServiceAccountAudited() {
         return Optional.ofNullable(this.isDataSafeServiceAccountAudited);
     }
+    /**
+     * @return Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+     * 
+     */
     public Optional<Boolean> isEnabled() {
         return Optional.ofNullable(this.isEnabled);
     }

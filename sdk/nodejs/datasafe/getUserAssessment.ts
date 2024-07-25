@@ -77,6 +77,10 @@ export interface GetUserAssessmentResult {
      */
     readonly ignoredTargets: outputs.DataSafe.GetUserAssessmentIgnoredTarget[];
     /**
+     * Indicates whether the assessment is scheduled to run.
+     */
+    readonly isAssessmentScheduled: boolean;
+    /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      */
     readonly isBaseline: boolean;

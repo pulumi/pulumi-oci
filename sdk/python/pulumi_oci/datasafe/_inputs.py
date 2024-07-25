@@ -21,6 +21,7 @@ __all__ = [
     'DatabaseSecurityConfigManagementSqlFirewallConfigArgs',
     'DatabaseSecurityConfigSqlFirewallConfigArgs',
     'DiscoveryJobsResultModifiedAttributeArgs',
+    'DiscoveryModTablesForDiscoveryArgs',
     'LibraryMasingFormatFormatEntryArgs',
     'MaskingPoliciesMaskingColumnMaskingFormatArgs',
     'MaskingPoliciesMaskingColumnMaskingFormatFormatEntryArgs',
@@ -37,6 +38,7 @@ __all__ = [
     'SecurityAssessmentStatisticLowRiskArgs',
     'SecurityAssessmentStatisticMediumRiskArgs',
     'SecurityAssessmentStatisticPassArgs',
+    'SensitiveDataModelTablesForDiscoveryArgs',
     'TargetDatabaseConnectionOptionArgs',
     'TargetDatabaseCredentialsArgs',
     'TargetDatabaseDatabaseDetailsArgs',
@@ -94,6 +96,7 @@ __all__ = [
     'GetSecurityPolicyReportsFilterArgs',
     'GetSensitiveDataModelSensitiveObjectsFilterArgs',
     'GetSensitiveDataModelSensitiveSchemasFilterArgs',
+    'GetSensitiveDataModelSensitiveTypesFilterArgs',
     'GetSensitiveDataModelsFilterArgs',
     'GetSensitiveDataModelsSensitiveColumnsFilterArgs',
     'GetSensitiveTypesFilterArgs',
@@ -450,6 +453,7 @@ class AuditPolicyManagementAuditConditionArgs:
         :param pulumi.Input[str] audit_policy_name: Indicates the audit policy name. Refer to the [documentation](https://docs.oracle.com/en/cloud/paas/data-safe/udscs/audit-policies.html#GUID-361A9A9A-7C21-4F5A-8945-9B3A0C472827) for seeded audit policy names. For custom policies, refer to the user-defined policy name created in the target database.
         :param pulumi.Input[Sequence[pulumi.Input['AuditPolicyManagementAuditConditionEnableConditionArgs']]] enable_conditions: Indicates the users/roles in the target database for which the audit policy is enforced, and the success/failure event condition to generate the audit event..
         :param pulumi.Input[bool] is_data_safe_service_account_audited: Indicates whether the Data Safe user activity on the target database will be audited by the policy.
+        :param pulumi.Input[bool] is_enabled: Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
         :param pulumi.Input[bool] is_priv_users_managed_by_data_safe: Indicates whether the privileged user list is managed by Data Safe.
                
                
@@ -506,6 +510,9 @@ class AuditPolicyManagementAuditConditionArgs:
     @property
     @pulumi.getter(name="isEnabled")
     def is_enabled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+        """
         return pulumi.get(self, "is_enabled")
 
     @is_enabled.setter
@@ -1390,6 +1397,52 @@ class DiscoveryJobsResultModifiedAttributeArgs:
     @db_defined_child_column_keys.setter
     def db_defined_child_column_keys(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
         pulumi.set(self, "db_defined_child_column_keys", value)
+
+
+@pulumi.input_type
+class DiscoveryModTablesForDiscoveryArgs:
+    def __init__(__self__, *,
+                 schema_name: pulumi.Input[str],
+                 table_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] schema_name: This contains the name of the schema.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] table_names: This contains an optional list of the table names.
+               
+               
+               ** IMPORTANT **
+               Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        if table_names is not None:
+            pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> pulumi.Input[str]:
+        """
+        This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @schema_name.setter
+    def schema_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "schema_name", value)
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        This contains an optional list of the table names.
+
+
+        ** IMPORTANT **
+        Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        """
+        return pulumi.get(self, "table_names")
+
+    @table_names.setter
+    def table_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "table_names", value)
 
 
 @pulumi.input_type
@@ -3700,6 +3753,44 @@ class SecurityAssessmentStatisticPassArgs:
     @user_accounts_findings_count.setter
     def user_accounts_findings_count(self, value: Optional[pulumi.Input[int]]):
         pulumi.set(self, "user_accounts_findings_count", value)
+
+
+@pulumi.input_type
+class SensitiveDataModelTablesForDiscoveryArgs:
+    def __init__(__self__, *,
+                 schema_name: pulumi.Input[str],
+                 table_names: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
+        """
+        :param pulumi.Input[str] schema_name: (Updatable) This contains the name of the schema.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] table_names: (Updatable) This contains an optional list of the table names.
+        """
+        pulumi.set(__self__, "schema_name", schema_name)
+        if table_names is not None:
+            pulumi.set(__self__, "table_names", table_names)
+
+    @property
+    @pulumi.getter(name="schemaName")
+    def schema_name(self) -> pulumi.Input[str]:
+        """
+        (Updatable) This contains the name of the schema.
+        """
+        return pulumi.get(self, "schema_name")
+
+    @schema_name.setter
+    def schema_name(self, value: pulumi.Input[str]):
+        pulumi.set(self, "schema_name", value)
+
+    @property
+    @pulumi.getter(name="tableNames")
+    def table_names(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        (Updatable) This contains an optional list of the table names.
+        """
+        return pulumi.get(self, "table_names")
+
+    @table_names.setter
+    def table_names(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "table_names", value)
 
 
 @pulumi.input_type
@@ -6717,6 +6808,45 @@ class GetSensitiveDataModelSensitiveObjectsFilterArgs:
 
 @pulumi.input_type
 class GetSensitiveDataModelSensitiveSchemasFilterArgs:
+    def __init__(__self__, *,
+                 name: str,
+                 values: Sequence[str],
+                 regex: Optional[bool] = None):
+        pulumi.set(__self__, "name", name)
+        pulumi.set(__self__, "values", values)
+        if regex is not None:
+            pulumi.set(__self__, "regex", regex)
+
+    @property
+    @pulumi.getter
+    def name(self) -> str:
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: str):
+        pulumi.set(self, "name", value)
+
+    @property
+    @pulumi.getter
+    def values(self) -> Sequence[str]:
+        return pulumi.get(self, "values")
+
+    @values.setter
+    def values(self, value: Sequence[str]):
+        pulumi.set(self, "values", value)
+
+    @property
+    @pulumi.getter
+    def regex(self) -> Optional[bool]:
+        return pulumi.get(self, "regex")
+
+    @regex.setter
+    def regex(self, value: Optional[bool]):
+        pulumi.set(self, "regex", value)
+
+
+@pulumi.input_type
+class GetSensitiveDataModelSensitiveTypesFilterArgs:
     def __init__(__self__, *,
                  name: str,
                  values: Sequence[str],

@@ -61,7 +61,7 @@ type GetNewsReportsArgs struct {
 	// A flag to search all resources within a given compartment and all sub-compartments.
 	CompartmentIdInSubtree *bool                  `pulumi:"compartmentIdInSubtree"`
 	Filters                []GetNewsReportsFilter `pulumi:"filters"`
-	// Unique Operations Insights news report identifier
+	// Unique Ops Insights news report identifier
 	NewsReportId *string `pulumi:"newsReportId"`
 	// Lifecycle states
 	States []string `pulumi:"states"`
@@ -82,7 +82,7 @@ type GetNewsReportsResult struct {
 	NewsReportId          *string                              `pulumi:"newsReportId"`
 	// The current state of the news report.
 	States []string `pulumi:"states"`
-	// Indicates the status of a news report in Operations Insights.
+	// Indicates the status of a news report in Ops Insights.
 	Statuses []string `pulumi:"statuses"`
 }
 
@@ -106,7 +106,7 @@ type GetNewsReportsOutputArgs struct {
 	// A flag to search all resources within a given compartment and all sub-compartments.
 	CompartmentIdInSubtree pulumi.BoolPtrInput            `pulumi:"compartmentIdInSubtree"`
 	Filters                GetNewsReportsFilterArrayInput `pulumi:"filters"`
-	// Unique Operations Insights news report identifier
+	// Unique Ops Insights news report identifier
 	NewsReportId pulumi.StringPtrInput `pulumi:"newsReportId"`
 	// Lifecycle states
 	States pulumi.StringArrayInput `pulumi:"states"`
@@ -165,7 +165,7 @@ func (o GetNewsReportsResultOutput) States() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNewsReportsResult) []string { return v.States }).(pulumi.StringArrayOutput)
 }
 
-// Indicates the status of a news report in Operations Insights.
+// Indicates the status of a news report in Ops Insights.
 func (o GetNewsReportsResultOutput) Statuses() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNewsReportsResult) []string { return v.Statuses }).(pulumi.StringArrayOutput)
 }

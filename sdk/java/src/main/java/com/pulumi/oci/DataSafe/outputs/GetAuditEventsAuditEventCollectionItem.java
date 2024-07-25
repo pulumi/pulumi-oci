@@ -20,6 +20,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String actionTaken;
     /**
+     * @return Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=&lt;value&gt;) format.
+     * 
+     */
+    private String applicationContexts;
+    /**
      * @return The time that the audit event occurs in the target database.
      * 
      */
@@ -123,6 +128,11 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     private String extendedEventAttributes;
     /**
+     * @return Fine-grained auditing (FGA) policy name that generated this audit record.
+     * 
+     */
+    private String fgaPolicyName;
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -210,6 +220,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
      */
     public String actionTaken() {
         return this.actionTaken;
+    }
+    /**
+     * @return Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=&lt;value&gt;) format.
+     * 
+     */
+    public String applicationContexts() {
+        return this.applicationContexts;
     }
     /**
      * @return The time that the audit event occurs in the target database.
@@ -355,6 +372,13 @@ public final class GetAuditEventsAuditEventCollectionItem {
         return this.extendedEventAttributes;
     }
     /**
+     * @return Fine-grained auditing (FGA) policy name that generated this audit record.
+     * 
+     */
+    public String fgaPolicyName() {
+        return this.fgaPolicyName;
+    }
+    /**
      * @return Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{&#34;Department&#34;: &#34;Finance&#34;}`
      * 
      */
@@ -477,6 +501,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
     @CustomType.Builder
     public static final class Builder {
         private String actionTaken;
+        private String applicationContexts;
         private String auditEventTime;
         private String auditLocation;
         private String auditPolicies;
@@ -497,6 +522,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         private String errorMessage;
         private String eventName;
         private String extendedEventAttributes;
+        private String fgaPolicyName;
         private Map<String,Object> freeformTags;
         private String id;
         private Boolean isAlerted;
@@ -517,6 +543,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         public Builder(GetAuditEventsAuditEventCollectionItem defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.actionTaken = defaults.actionTaken;
+    	      this.applicationContexts = defaults.applicationContexts;
     	      this.auditEventTime = defaults.auditEventTime;
     	      this.auditLocation = defaults.auditLocation;
     	      this.auditPolicies = defaults.auditPolicies;
@@ -537,6 +564,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
     	      this.errorMessage = defaults.errorMessage;
     	      this.eventName = defaults.eventName;
     	      this.extendedEventAttributes = defaults.extendedEventAttributes;
+    	      this.fgaPolicyName = defaults.fgaPolicyName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
     	      this.isAlerted = defaults.isAlerted;
@@ -561,6 +589,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
               throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "actionTaken");
             }
             this.actionTaken = actionTaken;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder applicationContexts(String applicationContexts) {
+            if (applicationContexts == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "applicationContexts");
+            }
+            this.applicationContexts = applicationContexts;
             return this;
         }
         @CustomType.Setter
@@ -724,6 +760,14 @@ public final class GetAuditEventsAuditEventCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder fgaPolicyName(String fgaPolicyName) {
+            if (fgaPolicyName == null) {
+              throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "fgaPolicyName");
+            }
+            this.fgaPolicyName = fgaPolicyName;
+            return this;
+        }
+        @CustomType.Setter
         public Builder freeformTags(Map<String,Object> freeformTags) {
             if (freeformTags == null) {
               throw new MissingRequiredPropertyException("GetAuditEventsAuditEventCollectionItem", "freeformTags");
@@ -854,6 +898,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
         public GetAuditEventsAuditEventCollectionItem build() {
             final var _resultValue = new GetAuditEventsAuditEventCollectionItem();
             _resultValue.actionTaken = actionTaken;
+            _resultValue.applicationContexts = applicationContexts;
             _resultValue.auditEventTime = auditEventTime;
             _resultValue.auditLocation = auditLocation;
             _resultValue.auditPolicies = auditPolicies;
@@ -874,6 +919,7 @@ public final class GetAuditEventsAuditEventCollectionItem {
             _resultValue.errorMessage = errorMessage;
             _resultValue.eventName = eventName;
             _resultValue.extendedEventAttributes = extendedEventAttributes;
+            _resultValue.fgaPolicyName = fgaPolicyName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
             _resultValue.isAlerted = isAlerted;

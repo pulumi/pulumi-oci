@@ -174,8 +174,30 @@ type ConfigConfiguration struct {
 	ClientCertificateDetails *ConfigConfigurationClientCertificateDetails `pulumi:"clientCertificateDetails"`
 	// (Updatable) Type of configuration.
 	ConfigType *string `pulumi:"configType"`
+	// (Updatable) Database connection string.
+	ConnectionString *string `pulumi:"connectionString"`
+	// (Updatable) Details for basic authentication.
+	DatabaseAuthenticationDetails *ConfigConfigurationDatabaseAuthenticationDetails `pulumi:"databaseAuthenticationDetails"`
+	// (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+	DatabaseConnectionType *string `pulumi:"databaseConnectionType"`
+	// (Updatable) Database role.
+	DatabaseRole *string `pulumi:"databaseRole"`
+	// (Updatable) Database type.
+	DatabaseType *string `pulumi:"databaseType"`
+	// (Updatable) Details for database wallet.
+	DatabaseWalletDetails *ConfigConfigurationDatabaseWalletDetails `pulumi:"databaseWalletDetails"`
 	// (Updatable) Information about the DNS settings.
 	DnsConfiguration *ConfigConfigurationDnsConfiguration `pulumi:"dnsConfiguration"`
+	// (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+	DownloadSizeLimitInBytes *int `pulumi:"downloadSizeLimitInBytes"`
+	// (Updatable) Details for basic authentication.
+	FtpBasicAuthenticationDetails *ConfigConfigurationFtpBasicAuthenticationDetails `pulumi:"ftpBasicAuthenticationDetails"`
+	// (Updatable) FTP protocol type.
+	FtpProtocol *string `pulumi:"ftpProtocol"`
+	// (Updatable) FTP monitor request type.
+	FtpRequestType *string `pulumi:"ftpRequestType"`
+	// (Updatable) If enabled, Active mode will be used for the FTP connection.
+	IsActiveMode *bool `pulumi:"isActiveMode"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled *bool `pulumi:"isCertificateValidationEnabled"`
 	// (Updatable) If disabled, auto snapshots are not collected.
@@ -192,6 +214,8 @@ type ConfigConfiguration struct {
 	NetworkConfiguration *ConfigConfigurationNetworkConfiguration `pulumi:"networkConfiguration"`
 	// (Updatable) Type of protocol.
 	Protocol *string `pulumi:"protocol"`
+	// (Updatable) SQL query to be executed.
+	Query *string `pulumi:"query"`
 	// (Updatable) DNS record type.
 	RecordType *string `pulumi:"recordType"`
 	// (Updatable) Details for request HTTP authentication.
@@ -206,6 +230,8 @@ type ConfigConfiguration struct {
 	RequestPostBody *string `pulumi:"requestPostBody"`
 	// (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams []ConfigConfigurationRequestQueryParam `pulumi:"requestQueryParams"`
+	// (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+	UploadFileSizeInBytes *int `pulumi:"uploadFileSizeInBytes"`
 	// (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
@@ -230,8 +256,30 @@ type ConfigConfigurationArgs struct {
 	ClientCertificateDetails ConfigConfigurationClientCertificateDetailsPtrInput `pulumi:"clientCertificateDetails"`
 	// (Updatable) Type of configuration.
 	ConfigType pulumi.StringPtrInput `pulumi:"configType"`
+	// (Updatable) Database connection string.
+	ConnectionString pulumi.StringPtrInput `pulumi:"connectionString"`
+	// (Updatable) Details for basic authentication.
+	DatabaseAuthenticationDetails ConfigConfigurationDatabaseAuthenticationDetailsPtrInput `pulumi:"databaseAuthenticationDetails"`
+	// (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+	DatabaseConnectionType pulumi.StringPtrInput `pulumi:"databaseConnectionType"`
+	// (Updatable) Database role.
+	DatabaseRole pulumi.StringPtrInput `pulumi:"databaseRole"`
+	// (Updatable) Database type.
+	DatabaseType pulumi.StringPtrInput `pulumi:"databaseType"`
+	// (Updatable) Details for database wallet.
+	DatabaseWalletDetails ConfigConfigurationDatabaseWalletDetailsPtrInput `pulumi:"databaseWalletDetails"`
 	// (Updatable) Information about the DNS settings.
 	DnsConfiguration ConfigConfigurationDnsConfigurationPtrInput `pulumi:"dnsConfiguration"`
+	// (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+	DownloadSizeLimitInBytes pulumi.IntPtrInput `pulumi:"downloadSizeLimitInBytes"`
+	// (Updatable) Details for basic authentication.
+	FtpBasicAuthenticationDetails ConfigConfigurationFtpBasicAuthenticationDetailsPtrInput `pulumi:"ftpBasicAuthenticationDetails"`
+	// (Updatable) FTP protocol type.
+	FtpProtocol pulumi.StringPtrInput `pulumi:"ftpProtocol"`
+	// (Updatable) FTP monitor request type.
+	FtpRequestType pulumi.StringPtrInput `pulumi:"ftpRequestType"`
+	// (Updatable) If enabled, Active mode will be used for the FTP connection.
+	IsActiveMode pulumi.BoolPtrInput `pulumi:"isActiveMode"`
 	// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolPtrInput `pulumi:"isCertificateValidationEnabled"`
 	// (Updatable) If disabled, auto snapshots are not collected.
@@ -248,6 +296,8 @@ type ConfigConfigurationArgs struct {
 	NetworkConfiguration ConfigConfigurationNetworkConfigurationPtrInput `pulumi:"networkConfiguration"`
 	// (Updatable) Type of protocol.
 	Protocol pulumi.StringPtrInput `pulumi:"protocol"`
+	// (Updatable) SQL query to be executed.
+	Query pulumi.StringPtrInput `pulumi:"query"`
 	// (Updatable) DNS record type.
 	RecordType pulumi.StringPtrInput `pulumi:"recordType"`
 	// (Updatable) Details for request HTTP authentication.
@@ -262,6 +312,8 @@ type ConfigConfigurationArgs struct {
 	RequestPostBody pulumi.StringPtrInput `pulumi:"requestPostBody"`
 	// (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams ConfigConfigurationRequestQueryParamArrayInput `pulumi:"requestQueryParams"`
+	// (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+	UploadFileSizeInBytes pulumi.IntPtrInput `pulumi:"uploadFileSizeInBytes"`
 	// (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
@@ -359,9 +411,68 @@ func (o ConfigConfigurationOutput) ConfigType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.ConfigType }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Database connection string.
+func (o ConfigConfigurationOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.ConnectionString }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for basic authentication.
+func (o ConfigConfigurationOutput) DatabaseAuthenticationDetails() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationDatabaseAuthenticationDetails {
+		return v.DatabaseAuthenticationDetails
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput)
+}
+
+// (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+func (o ConfigConfigurationOutput) DatabaseConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.DatabaseConnectionType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database role.
+func (o ConfigConfigurationOutput) DatabaseRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.DatabaseRole }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database type.
+func (o ConfigConfigurationOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.DatabaseType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for database wallet.
+func (o ConfigConfigurationOutput) DatabaseWalletDetails() ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationDatabaseWalletDetails { return v.DatabaseWalletDetails }).(ConfigConfigurationDatabaseWalletDetailsPtrOutput)
+}
+
 // (Updatable) Information about the DNS settings.
 func (o ConfigConfigurationOutput) DnsConfiguration() ConfigConfigurationDnsConfigurationPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationDnsConfiguration { return v.DnsConfiguration }).(ConfigConfigurationDnsConfigurationPtrOutput)
+}
+
+// (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+func (o ConfigConfigurationOutput) DownloadSizeLimitInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *int { return v.DownloadSizeLimitInBytes }).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Details for basic authentication.
+func (o ConfigConfigurationOutput) FtpBasicAuthenticationDetails() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *ConfigConfigurationFtpBasicAuthenticationDetails {
+		return v.FtpBasicAuthenticationDetails
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput)
+}
+
+// (Updatable) FTP protocol type.
+func (o ConfigConfigurationOutput) FtpProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.FtpProtocol }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) FTP monitor request type.
+func (o ConfigConfigurationOutput) FtpRequestType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.FtpRequestType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If enabled, Active mode will be used for the FTP connection.
+func (o ConfigConfigurationOutput) IsActiveMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *bool { return v.IsActiveMode }).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -404,6 +515,11 @@ func (o ConfigConfigurationOutput) Protocol() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.Protocol }).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) SQL query to be executed.
+func (o ConfigConfigurationOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *string { return v.Query }).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) DNS record type.
 func (o ConfigConfigurationOutput) RecordType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ConfigConfiguration) *string { return v.RecordType }).(pulumi.StringPtrOutput)
@@ -439,6 +555,11 @@ func (o ConfigConfigurationOutput) RequestPostBody() pulumi.StringPtrOutput {
 // (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 func (o ConfigConfigurationOutput) RequestQueryParams() ConfigConfigurationRequestQueryParamArrayOutput {
 	return o.ApplyT(func(v ConfigConfiguration) []ConfigConfigurationRequestQueryParam { return v.RequestQueryParams }).(ConfigConfigurationRequestQueryParamArrayOutput)
+}
+
+// (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+func (o ConfigConfigurationOutput) UploadFileSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ConfigConfiguration) *int { return v.UploadFileSizeInBytes }).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
@@ -500,6 +621,66 @@ func (o ConfigConfigurationPtrOutput) ConfigType() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) Database connection string.
+func (o ConfigConfigurationPtrOutput) ConnectionString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ConnectionString
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for basic authentication.
+func (o ConfigConfigurationPtrOutput) DatabaseAuthenticationDetails() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationDatabaseAuthenticationDetails {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseAuthenticationDetails
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput)
+}
+
+// (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+func (o ConfigConfigurationPtrOutput) DatabaseConnectionType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseConnectionType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database role.
+func (o ConfigConfigurationPtrOutput) DatabaseRole() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseRole
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Database type.
+func (o ConfigConfigurationPtrOutput) DatabaseType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Details for database wallet.
+func (o ConfigConfigurationPtrOutput) DatabaseWalletDetails() ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationDatabaseWalletDetails {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseWalletDetails
+	}).(ConfigConfigurationDatabaseWalletDetailsPtrOutput)
+}
+
 // (Updatable) Information about the DNS settings.
 func (o ConfigConfigurationPtrOutput) DnsConfiguration() ConfigConfigurationDnsConfigurationPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationDnsConfiguration {
@@ -508,6 +689,56 @@ func (o ConfigConfigurationPtrOutput) DnsConfiguration() ConfigConfigurationDnsC
 		}
 		return v.DnsConfiguration
 	}).(ConfigConfigurationDnsConfigurationPtrOutput)
+}
+
+// (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+func (o ConfigConfigurationPtrOutput) DownloadSizeLimitInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.DownloadSizeLimitInBytes
+	}).(pulumi.IntPtrOutput)
+}
+
+// (Updatable) Details for basic authentication.
+func (o ConfigConfigurationPtrOutput) FtpBasicAuthenticationDetails() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *ConfigConfigurationFtpBasicAuthenticationDetails {
+		if v == nil {
+			return nil
+		}
+		return v.FtpBasicAuthenticationDetails
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput)
+}
+
+// (Updatable) FTP protocol type.
+func (o ConfigConfigurationPtrOutput) FtpProtocol() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FtpProtocol
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) FTP monitor request type.
+func (o ConfigConfigurationPtrOutput) FtpRequestType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FtpRequestType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) If enabled, Active mode will be used for the FTP connection.
+func (o ConfigConfigurationPtrOutput) IsActiveMode() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.IsActiveMode
+	}).(pulumi.BoolPtrOutput)
 }
 
 // (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -590,6 +821,16 @@ func (o ConfigConfigurationPtrOutput) Protocol() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+// (Updatable) SQL query to be executed.
+func (o ConfigConfigurationPtrOutput) Query() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Query
+	}).(pulumi.StringPtrOutput)
+}
+
 // (Updatable) DNS record type.
 func (o ConfigConfigurationPtrOutput) RecordType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *ConfigConfiguration) *string {
@@ -658,6 +899,16 @@ func (o ConfigConfigurationPtrOutput) RequestQueryParams() ConfigConfigurationRe
 		}
 		return v.RequestQueryParams
 	}).(ConfigConfigurationRequestQueryParamArrayOutput)
+}
+
+// (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+func (o ConfigConfigurationPtrOutput) UploadFileSizeInBytes() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ConfigConfiguration) *int {
+		if v == nil {
+			return nil
+		}
+		return v.UploadFileSizeInBytes
+	}).(pulumi.IntPtrOutput)
 }
 
 // (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
@@ -1162,6 +1413,495 @@ func (o ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput) FileName
 	}).(pulumi.StringPtrOutput)
 }
 
+type ConfigConfigurationDatabaseAuthenticationDetails struct {
+	// (Updatable) Password.
+	Password *ConfigConfigurationDatabaseAuthenticationDetailsPassword `pulumi:"password"`
+	// (Updatable) Username for authentication.
+	Username *string `pulumi:"username"`
+}
+
+// ConfigConfigurationDatabaseAuthenticationDetailsInput is an input type that accepts ConfigConfigurationDatabaseAuthenticationDetailsArgs and ConfigConfigurationDatabaseAuthenticationDetailsOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDatabaseAuthenticationDetailsInput` via:
+//
+//	ConfigConfigurationDatabaseAuthenticationDetailsArgs{...}
+type ConfigConfigurationDatabaseAuthenticationDetailsInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDatabaseAuthenticationDetailsOutput() ConfigConfigurationDatabaseAuthenticationDetailsOutput
+	ToConfigConfigurationDatabaseAuthenticationDetailsOutputWithContext(context.Context) ConfigConfigurationDatabaseAuthenticationDetailsOutput
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsArgs struct {
+	// (Updatable) Password.
+	Password ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrInput `pulumi:"password"`
+	// (Updatable) Username for authentication.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ConfigConfigurationDatabaseAuthenticationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetails)(nil)).Elem()
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsArgs) ToConfigConfigurationDatabaseAuthenticationDetailsOutput() ConfigConfigurationDatabaseAuthenticationDetailsOutput {
+	return i.ToConfigConfigurationDatabaseAuthenticationDetailsOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsArgs) ToConfigConfigurationDatabaseAuthenticationDetailsOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseAuthenticationDetailsOutput)
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsArgs) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return i.ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsArgs) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseAuthenticationDetailsOutput).ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationDatabaseAuthenticationDetailsPtrInput is an input type that accepts ConfigConfigurationDatabaseAuthenticationDetailsArgs, ConfigConfigurationDatabaseAuthenticationDetailsPtr and ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDatabaseAuthenticationDetailsPtrInput` via:
+//
+//	        ConfigConfigurationDatabaseAuthenticationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationDatabaseAuthenticationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput
+	ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput
+}
+
+type configConfigurationDatabaseAuthenticationDetailsPtrType ConfigConfigurationDatabaseAuthenticationDetailsArgs
+
+func ConfigConfigurationDatabaseAuthenticationDetailsPtr(v *ConfigConfigurationDatabaseAuthenticationDetailsArgs) ConfigConfigurationDatabaseAuthenticationDetailsPtrInput {
+	return (*configConfigurationDatabaseAuthenticationDetailsPtrType)(v)
+}
+
+func (*configConfigurationDatabaseAuthenticationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDatabaseAuthenticationDetails)(nil)).Elem()
+}
+
+func (i *configConfigurationDatabaseAuthenticationDetailsPtrType) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return i.ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationDatabaseAuthenticationDetailsPtrType) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput)
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDatabaseAuthenticationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsOutput) ToConfigConfigurationDatabaseAuthenticationDetailsOutput() ConfigConfigurationDatabaseAuthenticationDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsOutput) ToConfigConfigurationDatabaseAuthenticationDetailsOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return o.ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationDatabaseAuthenticationDetails) *ConfigConfigurationDatabaseAuthenticationDetails {
+		return &v
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsOutput) Password() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseAuthenticationDetails) *ConfigConfigurationDatabaseAuthenticationDetailsPassword {
+		return v.Password
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput)
+}
+
+// (Updatable) Username for authentication.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseAuthenticationDetails) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDatabaseAuthenticationDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput) Elem() ConfigConfigurationDatabaseAuthenticationDetailsOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetails) ConfigConfigurationDatabaseAuthenticationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationDatabaseAuthenticationDetails
+		return ret
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput) Password() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetails) *ConfigConfigurationDatabaseAuthenticationDetailsPassword {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput)
+}
+
+// (Updatable) Username for authentication.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsPassword struct {
+	// (Updatable) Password.
+	Password *string `pulumi:"password"`
+	// (Updatable) Type of method to pass password.
+	PasswordType *string `pulumi:"passwordType"`
+	// (Updatable) Vault secret OCID.
+	VaultSecretId *string `pulumi:"vaultSecretId"`
+}
+
+// ConfigConfigurationDatabaseAuthenticationDetailsPasswordInput is an input type that accepts ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs and ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDatabaseAuthenticationDetailsPasswordInput` via:
+//
+//	ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs{...}
+type ConfigConfigurationDatabaseAuthenticationDetailsPasswordInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput
+	ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutputWithContext(context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs struct {
+	// (Updatable) Password.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// (Updatable) Type of method to pass password.
+	PasswordType pulumi.StringPtrInput `pulumi:"passwordType"`
+	// (Updatable) Vault secret OCID.
+	VaultSecretId pulumi.StringPtrInput `pulumi:"vaultSecretId"`
+}
+
+func (ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput {
+	return i.ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput)
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return i.ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput).ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrInput is an input type that accepts ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs, ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtr and ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrInput` via:
+//
+//	        ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput
+	ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput
+}
+
+type configConfigurationDatabaseAuthenticationDetailsPasswordPtrType ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs
+
+func ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtr(v *ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs) ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrInput {
+	return (*configConfigurationDatabaseAuthenticationDetailsPasswordPtrType)(v)
+}
+
+func (*configConfigurationDatabaseAuthenticationDetailsPasswordPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDatabaseAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (i *configConfigurationDatabaseAuthenticationDetailsPasswordPtrType) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return i.ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationDatabaseAuthenticationDetailsPasswordPtrType) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput)
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return o.ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationDatabaseAuthenticationDetailsPassword) *ConfigConfigurationDatabaseAuthenticationDetailsPassword {
+		return &v
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseAuthenticationDetailsPassword) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of method to pass password.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) PasswordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseAuthenticationDetailsPassword) *string { return v.PasswordType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Vault secret OCID.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseAuthenticationDetailsPassword) *string { return v.VaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDatabaseAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) ToConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) Elem() ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetailsPassword) ConfigConfigurationDatabaseAuthenticationDetailsPassword {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationDatabaseAuthenticationDetailsPassword
+		return ret
+	}).(ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetailsPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of method to pass password.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) PasswordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetailsPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Vault secret OCID.
+func (o ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseAuthenticationDetailsPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultSecretId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationDatabaseWalletDetails struct {
+	// (Updatable) The database wallet configuration zip file.
+	DatabaseWallet *string `pulumi:"databaseWallet"`
+	// (Updatable) Service name of the database.
+	ServiceName *string `pulumi:"serviceName"`
+}
+
+// ConfigConfigurationDatabaseWalletDetailsInput is an input type that accepts ConfigConfigurationDatabaseWalletDetailsArgs and ConfigConfigurationDatabaseWalletDetailsOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDatabaseWalletDetailsInput` via:
+//
+//	ConfigConfigurationDatabaseWalletDetailsArgs{...}
+type ConfigConfigurationDatabaseWalletDetailsInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDatabaseWalletDetailsOutput() ConfigConfigurationDatabaseWalletDetailsOutput
+	ToConfigConfigurationDatabaseWalletDetailsOutputWithContext(context.Context) ConfigConfigurationDatabaseWalletDetailsOutput
+}
+
+type ConfigConfigurationDatabaseWalletDetailsArgs struct {
+	// (Updatable) The database wallet configuration zip file.
+	DatabaseWallet pulumi.StringPtrInput `pulumi:"databaseWallet"`
+	// (Updatable) Service name of the database.
+	ServiceName pulumi.StringPtrInput `pulumi:"serviceName"`
+}
+
+func (ConfigConfigurationDatabaseWalletDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDatabaseWalletDetails)(nil)).Elem()
+}
+
+func (i ConfigConfigurationDatabaseWalletDetailsArgs) ToConfigConfigurationDatabaseWalletDetailsOutput() ConfigConfigurationDatabaseWalletDetailsOutput {
+	return i.ToConfigConfigurationDatabaseWalletDetailsOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDatabaseWalletDetailsArgs) ToConfigConfigurationDatabaseWalletDetailsOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseWalletDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseWalletDetailsOutput)
+}
+
+func (i ConfigConfigurationDatabaseWalletDetailsArgs) ToConfigConfigurationDatabaseWalletDetailsPtrOutput() ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return i.ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationDatabaseWalletDetailsArgs) ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseWalletDetailsOutput).ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationDatabaseWalletDetailsPtrInput is an input type that accepts ConfigConfigurationDatabaseWalletDetailsArgs, ConfigConfigurationDatabaseWalletDetailsPtr and ConfigConfigurationDatabaseWalletDetailsPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationDatabaseWalletDetailsPtrInput` via:
+//
+//	        ConfigConfigurationDatabaseWalletDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationDatabaseWalletDetailsPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationDatabaseWalletDetailsPtrOutput() ConfigConfigurationDatabaseWalletDetailsPtrOutput
+	ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(context.Context) ConfigConfigurationDatabaseWalletDetailsPtrOutput
+}
+
+type configConfigurationDatabaseWalletDetailsPtrType ConfigConfigurationDatabaseWalletDetailsArgs
+
+func ConfigConfigurationDatabaseWalletDetailsPtr(v *ConfigConfigurationDatabaseWalletDetailsArgs) ConfigConfigurationDatabaseWalletDetailsPtrInput {
+	return (*configConfigurationDatabaseWalletDetailsPtrType)(v)
+}
+
+func (*configConfigurationDatabaseWalletDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDatabaseWalletDetails)(nil)).Elem()
+}
+
+func (i *configConfigurationDatabaseWalletDetailsPtrType) ToConfigConfigurationDatabaseWalletDetailsPtrOutput() ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return i.ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationDatabaseWalletDetailsPtrType) ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationDatabaseWalletDetailsPtrOutput)
+}
+
+type ConfigConfigurationDatabaseWalletDetailsOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDatabaseWalletDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationDatabaseWalletDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsOutput) ToConfigConfigurationDatabaseWalletDetailsOutput() ConfigConfigurationDatabaseWalletDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsOutput) ToConfigConfigurationDatabaseWalletDetailsOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseWalletDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsOutput) ToConfigConfigurationDatabaseWalletDetailsPtrOutput() ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return o.ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsOutput) ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationDatabaseWalletDetails) *ConfigConfigurationDatabaseWalletDetails {
+		return &v
+	}).(ConfigConfigurationDatabaseWalletDetailsPtrOutput)
+}
+
+// (Updatable) The database wallet configuration zip file.
+func (o ConfigConfigurationDatabaseWalletDetailsOutput) DatabaseWallet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseWalletDetails) *string { return v.DatabaseWallet }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Service name of the database.
+func (o ConfigConfigurationDatabaseWalletDetailsOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationDatabaseWalletDetails) *string { return v.ServiceName }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationDatabaseWalletDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationDatabaseWalletDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationDatabaseWalletDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsPtrOutput) ToConfigConfigurationDatabaseWalletDetailsPtrOutput() ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsPtrOutput) ToConfigConfigurationDatabaseWalletDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationDatabaseWalletDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationDatabaseWalletDetailsPtrOutput) Elem() ConfigConfigurationDatabaseWalletDetailsOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseWalletDetails) ConfigConfigurationDatabaseWalletDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationDatabaseWalletDetails
+		return ret
+	}).(ConfigConfigurationDatabaseWalletDetailsOutput)
+}
+
+// (Updatable) The database wallet configuration zip file.
+func (o ConfigConfigurationDatabaseWalletDetailsPtrOutput) DatabaseWallet() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseWalletDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DatabaseWallet
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Service name of the database.
+func (o ConfigConfigurationDatabaseWalletDetailsPtrOutput) ServiceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationDatabaseWalletDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceName
+	}).(pulumi.StringPtrOutput)
+}
+
 type ConfigConfigurationDnsConfiguration struct {
 	// (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns *bool `pulumi:"isOverrideDns"`
@@ -1315,6 +2055,339 @@ func (o ConfigConfigurationDnsConfigurationPtrOutput) OverrideDnsIp() pulumi.Str
 			return nil
 		}
 		return v.OverrideDnsIp
+	}).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetails struct {
+	// (Updatable) Password.
+	Password *ConfigConfigurationFtpBasicAuthenticationDetailsPassword `pulumi:"password"`
+	// (Updatable) Username for authentication.
+	Username *string `pulumi:"username"`
+}
+
+// ConfigConfigurationFtpBasicAuthenticationDetailsInput is an input type that accepts ConfigConfigurationFtpBasicAuthenticationDetailsArgs and ConfigConfigurationFtpBasicAuthenticationDetailsOutput values.
+// You can construct a concrete instance of `ConfigConfigurationFtpBasicAuthenticationDetailsInput` via:
+//
+//	ConfigConfigurationFtpBasicAuthenticationDetailsArgs{...}
+type ConfigConfigurationFtpBasicAuthenticationDetailsInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationFtpBasicAuthenticationDetailsOutput() ConfigConfigurationFtpBasicAuthenticationDetailsOutput
+	ToConfigConfigurationFtpBasicAuthenticationDetailsOutputWithContext(context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsOutput
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsArgs struct {
+	// (Updatable) Password.
+	Password ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrInput `pulumi:"password"`
+	// (Updatable) Username for authentication.
+	Username pulumi.StringPtrInput `pulumi:"username"`
+}
+
+func (ConfigConfigurationFtpBasicAuthenticationDetailsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetails)(nil)).Elem()
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsOutput() ConfigConfigurationFtpBasicAuthenticationDetailsOutput {
+	return i.ToConfigConfigurationFtpBasicAuthenticationDetailsOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationFtpBasicAuthenticationDetailsOutput)
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return i.ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationFtpBasicAuthenticationDetailsOutput).ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationFtpBasicAuthenticationDetailsPtrInput is an input type that accepts ConfigConfigurationFtpBasicAuthenticationDetailsArgs, ConfigConfigurationFtpBasicAuthenticationDetailsPtr and ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationFtpBasicAuthenticationDetailsPtrInput` via:
+//
+//	        ConfigConfigurationFtpBasicAuthenticationDetailsArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationFtpBasicAuthenticationDetailsPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput
+	ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput
+}
+
+type configConfigurationFtpBasicAuthenticationDetailsPtrType ConfigConfigurationFtpBasicAuthenticationDetailsArgs
+
+func ConfigConfigurationFtpBasicAuthenticationDetailsPtr(v *ConfigConfigurationFtpBasicAuthenticationDetailsArgs) ConfigConfigurationFtpBasicAuthenticationDetailsPtrInput {
+	return (*configConfigurationFtpBasicAuthenticationDetailsPtrType)(v)
+}
+
+func (*configConfigurationFtpBasicAuthenticationDetailsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationFtpBasicAuthenticationDetails)(nil)).Elem()
+}
+
+func (i *configConfigurationFtpBasicAuthenticationDetailsPtrType) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return i.ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationFtpBasicAuthenticationDetailsPtrType) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput)
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationFtpBasicAuthenticationDetailsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsOutput() ConfigConfigurationFtpBasicAuthenticationDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return o.ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationFtpBasicAuthenticationDetails) *ConfigConfigurationFtpBasicAuthenticationDetails {
+		return &v
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsOutput) Password() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationFtpBasicAuthenticationDetails) *ConfigConfigurationFtpBasicAuthenticationDetailsPassword {
+		return v.Password
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput)
+}
+
+// (Updatable) Username for authentication.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationFtpBasicAuthenticationDetails) *string { return v.Username }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationFtpBasicAuthenticationDetails)(nil)).Elem()
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput) Elem() ConfigConfigurationFtpBasicAuthenticationDetailsOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetails) ConfigConfigurationFtpBasicAuthenticationDetails {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationFtpBasicAuthenticationDetails
+		return ret
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput) Password() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetails) *ConfigConfigurationFtpBasicAuthenticationDetailsPassword {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput)
+}
+
+// (Updatable) Username for authentication.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput) Username() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetails) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Username
+	}).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsPassword struct {
+	// (Updatable) Password.
+	Password *string `pulumi:"password"`
+	// (Updatable) Type of method to pass password.
+	PasswordType *string `pulumi:"passwordType"`
+	// (Updatable) Vault secret OCID.
+	VaultSecretId *string `pulumi:"vaultSecretId"`
+}
+
+// ConfigConfigurationFtpBasicAuthenticationDetailsPasswordInput is an input type that accepts ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs and ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput values.
+// You can construct a concrete instance of `ConfigConfigurationFtpBasicAuthenticationDetailsPasswordInput` via:
+//
+//	ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs{...}
+type ConfigConfigurationFtpBasicAuthenticationDetailsPasswordInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput
+	ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutputWithContext(context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs struct {
+	// (Updatable) Password.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// (Updatable) Type of method to pass password.
+	PasswordType pulumi.StringPtrInput `pulumi:"passwordType"`
+	// (Updatable) Vault secret OCID.
+	VaultSecretId pulumi.StringPtrInput `pulumi:"vaultSecretId"`
+}
+
+func (ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput {
+	return i.ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput)
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return i.ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput).ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(ctx)
+}
+
+// ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrInput is an input type that accepts ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs, ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtr and ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput values.
+// You can construct a concrete instance of `ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrInput` via:
+//
+//	        ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs{...}
+//
+//	or:
+//
+//	        nil
+type ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrInput interface {
+	pulumi.Input
+
+	ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput
+	ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput
+}
+
+type configConfigurationFtpBasicAuthenticationDetailsPasswordPtrType ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs
+
+func ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtr(v *ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrInput {
+	return (*configConfigurationFtpBasicAuthenticationDetailsPasswordPtrType)(v)
+}
+
+func (*configConfigurationFtpBasicAuthenticationDetailsPasswordPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationFtpBasicAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (i *configConfigurationFtpBasicAuthenticationDetailsPasswordPtrType) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return i.ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(context.Background())
+}
+
+func (i *configConfigurationFtpBasicAuthenticationDetailsPasswordPtrType) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput)
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return o.ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(context.Background())
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *ConfigConfigurationFtpBasicAuthenticationDetailsPassword {
+		return &v
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of method to pass password.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) PasswordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *string { return v.PasswordType }).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Vault secret OCID.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *string { return v.VaultSecretId }).(pulumi.StringPtrOutput)
+}
+
+type ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput struct{ *pulumi.OutputState }
+
+func (ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ConfigConfigurationFtpBasicAuthenticationDetailsPassword)(nil)).Elem()
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) ToConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutputWithContext(ctx context.Context) ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput {
+	return o
+}
+
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) Elem() ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetailsPassword) ConfigConfigurationFtpBasicAuthenticationDetailsPassword {
+		if v != nil {
+			return *v
+		}
+		var ret ConfigConfigurationFtpBasicAuthenticationDetailsPassword
+		return ret
+	}).(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput)
+}
+
+// (Updatable) Password.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Type of method to pass password.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) PasswordType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PasswordType
+	}).(pulumi.StringPtrOutput)
+}
+
+// (Updatable) Vault secret OCID.
+func (o ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput) VaultSecretId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ConfigConfigurationFtpBasicAuthenticationDetailsPassword) *string {
+		if v == nil {
+			return nil
+		}
+		return v.VaultSecretId
 	}).(pulumi.StringPtrOutput)
 }
 
@@ -2620,6 +3693,8 @@ type ConfigVantagePoint struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Name of the vantage point.
 	Name string `pulumi:"name"`
+	// List of workers running the assigned monitor.
+	WorkerLists []string `pulumi:"workerLists"`
 }
 
 // ConfigVantagePointInput is an input type that accepts ConfigVantagePointArgs and ConfigVantagePointOutput values.
@@ -2638,6 +3713,8 @@ type ConfigVantagePointArgs struct {
 	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
 	// Name of the vantage point.
 	Name pulumi.StringInput `pulumi:"name"`
+	// List of workers running the assigned monitor.
+	WorkerLists pulumi.StringArrayInput `pulumi:"workerLists"`
 }
 
 func (ConfigVantagePointArgs) ElementType() reflect.Type {
@@ -2699,6 +3776,11 @@ func (o ConfigVantagePointOutput) DisplayName() pulumi.StringPtrOutput {
 // Name of the vantage point.
 func (o ConfigVantagePointOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v ConfigVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of workers running the assigned monitor.
+func (o ConfigVantagePointOutput) WorkerLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ConfigVantagePoint) []string { return v.WorkerLists }).(pulumi.StringArrayOutput)
 }
 
 type ConfigVantagePointArrayOutput struct{ *pulumi.OutputState }
@@ -5067,8 +6149,30 @@ type GetMonitorConfiguration struct {
 	ClientCertificateDetails []GetMonitorConfigurationClientCertificateDetail `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
+	// Database connection string.
+	ConnectionString string `pulumi:"connectionString"`
+	// Details for basic authentication.
+	DatabaseAuthenticationDetails []GetMonitorConfigurationDatabaseAuthenticationDetail `pulumi:"databaseAuthenticationDetails"`
+	// Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+	DatabaseConnectionType string `pulumi:"databaseConnectionType"`
+	// Database role.
+	DatabaseRole string `pulumi:"databaseRole"`
+	// Database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// Details for database wallet.
+	DatabaseWalletDetails []GetMonitorConfigurationDatabaseWalletDetail `pulumi:"databaseWalletDetails"`
 	// Information about the DNS settings.
 	DnsConfigurations []GetMonitorConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
+	// Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+	DownloadSizeLimitInBytes int `pulumi:"downloadSizeLimitInBytes"`
+	// Details for basic authentication.
+	FtpBasicAuthenticationDetails []GetMonitorConfigurationFtpBasicAuthenticationDetail `pulumi:"ftpBasicAuthenticationDetails"`
+	// FTP protocol type.
+	FtpProtocol string `pulumi:"ftpProtocol"`
+	// FTP monitor request type.
+	FtpRequestType string `pulumi:"ftpRequestType"`
+	// If enabled, Active mode will be used for the FTP connection.
+	IsActiveMode bool `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
@@ -5085,6 +6189,8 @@ type GetMonitorConfiguration struct {
 	NetworkConfigurations []GetMonitorConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Type of protocol.
 	Protocol string `pulumi:"protocol"`
+	// SQL query to be executed.
+	Query string `pulumi:"query"`
 	// DNS record type.
 	RecordType string `pulumi:"recordType"`
 	// Details for request HTTP authentication.
@@ -5099,6 +6205,8 @@ type GetMonitorConfiguration struct {
 	RequestPostBody string `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams []GetMonitorConfigurationRequestQueryParam `pulumi:"requestQueryParams"`
+	// File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+	UploadFileSizeInBytes int `pulumi:"uploadFileSizeInBytes"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
@@ -5123,8 +6231,30 @@ type GetMonitorConfigurationArgs struct {
 	ClientCertificateDetails GetMonitorConfigurationClientCertificateDetailArrayInput `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// Database connection string.
+	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
+	// Details for basic authentication.
+	DatabaseAuthenticationDetails GetMonitorConfigurationDatabaseAuthenticationDetailArrayInput `pulumi:"databaseAuthenticationDetails"`
+	// Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+	DatabaseConnectionType pulumi.StringInput `pulumi:"databaseConnectionType"`
+	// Database role.
+	DatabaseRole pulumi.StringInput `pulumi:"databaseRole"`
+	// Database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// Details for database wallet.
+	DatabaseWalletDetails GetMonitorConfigurationDatabaseWalletDetailArrayInput `pulumi:"databaseWalletDetails"`
 	// Information about the DNS settings.
 	DnsConfigurations GetMonitorConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
+	// Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+	DownloadSizeLimitInBytes pulumi.IntInput `pulumi:"downloadSizeLimitInBytes"`
+	// Details for basic authentication.
+	FtpBasicAuthenticationDetails GetMonitorConfigurationFtpBasicAuthenticationDetailArrayInput `pulumi:"ftpBasicAuthenticationDetails"`
+	// FTP protocol type.
+	FtpProtocol pulumi.StringInput `pulumi:"ftpProtocol"`
+	// FTP monitor request type.
+	FtpRequestType pulumi.StringInput `pulumi:"ftpRequestType"`
+	// If enabled, Active mode will be used for the FTP connection.
+	IsActiveMode pulumi.BoolInput `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
@@ -5141,6 +6271,8 @@ type GetMonitorConfigurationArgs struct {
 	NetworkConfigurations GetMonitorConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Type of protocol.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// SQL query to be executed.
+	Query pulumi.StringInput `pulumi:"query"`
 	// DNS record type.
 	RecordType pulumi.StringInput `pulumi:"recordType"`
 	// Details for request HTTP authentication.
@@ -5155,6 +6287,8 @@ type GetMonitorConfigurationArgs struct {
 	RequestPostBody pulumi.StringInput `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams GetMonitorConfigurationRequestQueryParamArrayInput `pulumi:"requestQueryParams"`
+	// File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+	UploadFileSizeInBytes pulumi.IntInput `pulumi:"uploadFileSizeInBytes"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
@@ -5226,9 +6360,70 @@ func (o GetMonitorConfigurationOutput) ConfigType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
+// Database connection string.
+func (o GetMonitorConfigurationOutput) ConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.ConnectionString }).(pulumi.StringOutput)
+}
+
+// Details for basic authentication.
+func (o GetMonitorConfigurationOutput) DatabaseAuthenticationDetails() GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationDatabaseAuthenticationDetail {
+		return v.DatabaseAuthenticationDetails
+	}).(GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput)
+}
+
+// Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+func (o GetMonitorConfigurationOutput) DatabaseConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.DatabaseConnectionType }).(pulumi.StringOutput)
+}
+
+// Database role.
+func (o GetMonitorConfigurationOutput) DatabaseRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.DatabaseRole }).(pulumi.StringOutput)
+}
+
+// Database type.
+func (o GetMonitorConfigurationOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// Details for database wallet.
+func (o GetMonitorConfigurationOutput) DatabaseWalletDetails() GetMonitorConfigurationDatabaseWalletDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationDatabaseWalletDetail {
+		return v.DatabaseWalletDetails
+	}).(GetMonitorConfigurationDatabaseWalletDetailArrayOutput)
+}
+
 // Information about the DNS settings.
 func (o GetMonitorConfigurationOutput) DnsConfigurations() GetMonitorConfigurationDnsConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationDnsConfiguration { return v.DnsConfigurations }).(GetMonitorConfigurationDnsConfigurationArrayOutput)
+}
+
+// Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+func (o GetMonitorConfigurationOutput) DownloadSizeLimitInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) int { return v.DownloadSizeLimitInBytes }).(pulumi.IntOutput)
+}
+
+// Details for basic authentication.
+func (o GetMonitorConfigurationOutput) FtpBasicAuthenticationDetails() GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationFtpBasicAuthenticationDetail {
+		return v.FtpBasicAuthenticationDetails
+	}).(GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput)
+}
+
+// FTP protocol type.
+func (o GetMonitorConfigurationOutput) FtpProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.FtpProtocol }).(pulumi.StringOutput)
+}
+
+// FTP monitor request type.
+func (o GetMonitorConfigurationOutput) FtpRequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.FtpRequestType }).(pulumi.StringOutput)
+}
+
+// If enabled, Active mode will be used for the FTP connection.
+func (o GetMonitorConfigurationOutput) IsActiveMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) bool { return v.IsActiveMode }).(pulumi.BoolOutput)
 }
 
 // If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -5273,6 +6468,11 @@ func (o GetMonitorConfigurationOutput) Protocol() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
+// SQL query to be executed.
+func (o GetMonitorConfigurationOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.Query }).(pulumi.StringOutput)
+}
+
 // DNS record type.
 func (o GetMonitorConfigurationOutput) RecordType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorConfiguration) string { return v.RecordType }).(pulumi.StringOutput)
@@ -5310,6 +6510,11 @@ func (o GetMonitorConfigurationOutput) RequestQueryParams() GetMonitorConfigurat
 	return o.ApplyT(func(v GetMonitorConfiguration) []GetMonitorConfigurationRequestQueryParam {
 		return v.RequestQueryParams
 	}).(GetMonitorConfigurationRequestQueryParamArrayOutput)
+}
+
+// File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+func (o GetMonitorConfigurationOutput) UploadFileSizeInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorConfiguration) int { return v.UploadFileSizeInBytes }).(pulumi.IntOutput)
 }
 
 // Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
@@ -5669,6 +6874,335 @@ func (o GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput) Ind
 	}).(GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput)
 }
 
+type GetMonitorConfigurationDatabaseAuthenticationDetail struct {
+	// Password.
+	Passwords []GetMonitorConfigurationDatabaseAuthenticationDetailPassword `pulumi:"passwords"`
+	// Username for authentication.
+	Username string `pulumi:"username"`
+}
+
+// GetMonitorConfigurationDatabaseAuthenticationDetailInput is an input type that accepts GetMonitorConfigurationDatabaseAuthenticationDetailArgs and GetMonitorConfigurationDatabaseAuthenticationDetailOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDatabaseAuthenticationDetailInput` via:
+//
+//	GetMonitorConfigurationDatabaseAuthenticationDetailArgs{...}
+type GetMonitorConfigurationDatabaseAuthenticationDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailOutput() GetMonitorConfigurationDatabaseAuthenticationDetailOutput
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailOutputWithContext(context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailOutput
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailArgs struct {
+	// Password.
+	Passwords GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayInput `pulumi:"passwords"`
+	// Username for authentication.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailArgs) ToGetMonitorConfigurationDatabaseAuthenticationDetailOutput() GetMonitorConfigurationDatabaseAuthenticationDetailOutput {
+	return i.ToGetMonitorConfigurationDatabaseAuthenticationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailArgs) ToGetMonitorConfigurationDatabaseAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDatabaseAuthenticationDetailOutput)
+}
+
+// GetMonitorConfigurationDatabaseAuthenticationDetailArrayInput is an input type that accepts GetMonitorConfigurationDatabaseAuthenticationDetailArray and GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDatabaseAuthenticationDetailArrayInput` via:
+//
+//	GetMonitorConfigurationDatabaseAuthenticationDetailArray{ GetMonitorConfigurationDatabaseAuthenticationDetailArgs{...} }
+type GetMonitorConfigurationDatabaseAuthenticationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput() GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailArray []GetMonitorConfigurationDatabaseAuthenticationDetailInput
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailArray) ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput() GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return i.ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailArray) ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput)
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailOutput() GetMonitorConfigurationDatabaseAuthenticationDetailOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailOutput) Passwords() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseAuthenticationDetail) []GetMonitorConfigurationDatabaseAuthenticationDetailPassword {
+		return v.Passwords
+	}).(GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput)
+}
+
+// Username for authentication.
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseAuthenticationDetail) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput() GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationDatabaseAuthenticationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationDatabaseAuthenticationDetail {
+		return vs[0].([]GetMonitorConfigurationDatabaseAuthenticationDetail)[vs[1].(int)]
+	}).(GetMonitorConfigurationDatabaseAuthenticationDetailOutput)
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailPassword struct {
+	// Password.
+	Password string `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType string `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetMonitorConfigurationDatabaseAuthenticationDetailPasswordInput is an input type that accepts GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs and GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDatabaseAuthenticationDetailPasswordInput` via:
+//
+//	GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs{...}
+type GetMonitorConfigurationDatabaseAuthenticationDetailPasswordInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs struct {
+	// Password.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return i.ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput)
+}
+
+// GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayInput is an input type that accepts GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray and GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayInput` via:
+//
+//	GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray{ GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs{...} }
+type GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput
+	ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray []GetMonitorConfigurationDatabaseAuthenticationDetailPasswordInput
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return i.ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput)
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseAuthenticationDetailPassword) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Type of method to pass password.
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseAuthenticationDetailPassword) string { return v.PasswordType }).(pulumi.StringOutput)
+}
+
+// Vault secret OCID.
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseAuthenticationDetailPassword) string { return v.VaultSecretId }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput() GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) ToGetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationDatabaseAuthenticationDetailPassword {
+		return vs[0].([]GetMonitorConfigurationDatabaseAuthenticationDetailPassword)[vs[1].(int)]
+	}).(GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput)
+}
+
+type GetMonitorConfigurationDatabaseWalletDetail struct {
+	// The database wallet configuration zip file.
+	DatabaseWallet string `pulumi:"databaseWallet"`
+	// Service name of the database.
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetMonitorConfigurationDatabaseWalletDetailInput is an input type that accepts GetMonitorConfigurationDatabaseWalletDetailArgs and GetMonitorConfigurationDatabaseWalletDetailOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDatabaseWalletDetailInput` via:
+//
+//	GetMonitorConfigurationDatabaseWalletDetailArgs{...}
+type GetMonitorConfigurationDatabaseWalletDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDatabaseWalletDetailOutput() GetMonitorConfigurationDatabaseWalletDetailOutput
+	ToGetMonitorConfigurationDatabaseWalletDetailOutputWithContext(context.Context) GetMonitorConfigurationDatabaseWalletDetailOutput
+}
+
+type GetMonitorConfigurationDatabaseWalletDetailArgs struct {
+	// The database wallet configuration zip file.
+	DatabaseWallet pulumi.StringInput `pulumi:"databaseWallet"`
+	// Service name of the database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetMonitorConfigurationDatabaseWalletDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDatabaseWalletDetailArgs) ToGetMonitorConfigurationDatabaseWalletDetailOutput() GetMonitorConfigurationDatabaseWalletDetailOutput {
+	return i.ToGetMonitorConfigurationDatabaseWalletDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDatabaseWalletDetailArgs) ToGetMonitorConfigurationDatabaseWalletDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseWalletDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDatabaseWalletDetailOutput)
+}
+
+// GetMonitorConfigurationDatabaseWalletDetailArrayInput is an input type that accepts GetMonitorConfigurationDatabaseWalletDetailArray and GetMonitorConfigurationDatabaseWalletDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationDatabaseWalletDetailArrayInput` via:
+//
+//	GetMonitorConfigurationDatabaseWalletDetailArray{ GetMonitorConfigurationDatabaseWalletDetailArgs{...} }
+type GetMonitorConfigurationDatabaseWalletDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationDatabaseWalletDetailArrayOutput() GetMonitorConfigurationDatabaseWalletDetailArrayOutput
+	ToGetMonitorConfigurationDatabaseWalletDetailArrayOutputWithContext(context.Context) GetMonitorConfigurationDatabaseWalletDetailArrayOutput
+}
+
+type GetMonitorConfigurationDatabaseWalletDetailArray []GetMonitorConfigurationDatabaseWalletDetailInput
+
+func (GetMonitorConfigurationDatabaseWalletDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationDatabaseWalletDetailArray) ToGetMonitorConfigurationDatabaseWalletDetailArrayOutput() GetMonitorConfigurationDatabaseWalletDetailArrayOutput {
+	return i.ToGetMonitorConfigurationDatabaseWalletDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationDatabaseWalletDetailArray) ToGetMonitorConfigurationDatabaseWalletDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseWalletDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationDatabaseWalletDetailArrayOutput)
+}
+
+type GetMonitorConfigurationDatabaseWalletDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDatabaseWalletDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDatabaseWalletDetailOutput) ToGetMonitorConfigurationDatabaseWalletDetailOutput() GetMonitorConfigurationDatabaseWalletDetailOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseWalletDetailOutput) ToGetMonitorConfigurationDatabaseWalletDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseWalletDetailOutput {
+	return o
+}
+
+// The database wallet configuration zip file.
+func (o GetMonitorConfigurationDatabaseWalletDetailOutput) DatabaseWallet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseWalletDetail) string { return v.DatabaseWallet }).(pulumi.StringOutput)
+}
+
+// Service name of the database.
+func (o GetMonitorConfigurationDatabaseWalletDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationDatabaseWalletDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationDatabaseWalletDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationDatabaseWalletDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationDatabaseWalletDetailArrayOutput) ToGetMonitorConfigurationDatabaseWalletDetailArrayOutput() GetMonitorConfigurationDatabaseWalletDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseWalletDetailArrayOutput) ToGetMonitorConfigurationDatabaseWalletDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationDatabaseWalletDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationDatabaseWalletDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationDatabaseWalletDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationDatabaseWalletDetail {
+		return vs[0].([]GetMonitorConfigurationDatabaseWalletDetail)[vs[1].(int)]
+	}).(GetMonitorConfigurationDatabaseWalletDetailOutput)
+}
+
 type GetMonitorConfigurationDnsConfiguration struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns bool `pulumi:"isOverrideDns"`
@@ -5773,6 +7307,229 @@ func (o GetMonitorConfigurationDnsConfigurationArrayOutput) Index(i pulumi.IntIn
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationDnsConfiguration {
 		return vs[0].([]GetMonitorConfigurationDnsConfiguration)[vs[1].(int)]
 	}).(GetMonitorConfigurationDnsConfigurationOutput)
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetail struct {
+	// Password.
+	Passwords []GetMonitorConfigurationFtpBasicAuthenticationDetailPassword `pulumi:"passwords"`
+	// Username for authentication.
+	Username string `pulumi:"username"`
+}
+
+// GetMonitorConfigurationFtpBasicAuthenticationDetailInput is an input type that accepts GetMonitorConfigurationFtpBasicAuthenticationDetailArgs and GetMonitorConfigurationFtpBasicAuthenticationDetailOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationFtpBasicAuthenticationDetailInput` via:
+//
+//	GetMonitorConfigurationFtpBasicAuthenticationDetailArgs{...}
+type GetMonitorConfigurationFtpBasicAuthenticationDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailOutput
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutputWithContext(context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailOutput
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailArgs struct {
+	// Password.
+	Passwords GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayInput `pulumi:"passwords"`
+	// Username for authentication.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailArgs) ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailOutput {
+	return i.ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailArgs) ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationFtpBasicAuthenticationDetailOutput)
+}
+
+// GetMonitorConfigurationFtpBasicAuthenticationDetailArrayInput is an input type that accepts GetMonitorConfigurationFtpBasicAuthenticationDetailArray and GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationFtpBasicAuthenticationDetailArrayInput` via:
+//
+//	GetMonitorConfigurationFtpBasicAuthenticationDetailArray{ GetMonitorConfigurationFtpBasicAuthenticationDetailArgs{...} }
+type GetMonitorConfigurationFtpBasicAuthenticationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailArray []GetMonitorConfigurationFtpBasicAuthenticationDetailInput
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailArray) ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return i.ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailArray) ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput)
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailOutput) Passwords() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationFtpBasicAuthenticationDetail) []GetMonitorConfigurationFtpBasicAuthenticationDetailPassword {
+		return v.Passwords
+	}).(GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput)
+}
+
+// Username for authentication.
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationFtpBasicAuthenticationDetail) string { return v.Username }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationFtpBasicAuthenticationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationFtpBasicAuthenticationDetail {
+		return vs[0].([]GetMonitorConfigurationFtpBasicAuthenticationDetail)[vs[1].(int)]
+	}).(GetMonitorConfigurationFtpBasicAuthenticationDetailOutput)
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPassword struct {
+	// Password.
+	Password string `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType string `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordInput is an input type that accepts GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs and GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordInput` via:
+//
+//	GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs{...}
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs struct {
+	// Password.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return i.ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput)
+}
+
+// GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayInput is an input type that accepts GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray and GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput values.
+// You can construct a concrete instance of `GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayInput` via:
+//
+//	GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray{ GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs{...} }
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput
+	ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray []GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordInput
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return i.ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput)
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationFtpBasicAuthenticationDetailPassword) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Type of method to pass password.
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationFtpBasicAuthenticationDetailPassword) string { return v.PasswordType }).(pulumi.StringOutput)
+}
+
+// Vault secret OCID.
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorConfigurationFtpBasicAuthenticationDetailPassword) string { return v.VaultSecretId }).(pulumi.StringOutput)
+}
+
+type GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput() GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) ToGetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) Index(i pulumi.IntInput) GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorConfigurationFtpBasicAuthenticationDetailPassword {
+		return vs[0].([]GetMonitorConfigurationFtpBasicAuthenticationDetailPassword)[vs[1].(int)]
+	}).(GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput)
 }
 
 type GetMonitorConfigurationNetworkConfiguration struct {
@@ -6837,6 +8594,8 @@ type GetMonitorVantagePoint struct {
 	DisplayName string `pulumi:"displayName"`
 	// Name of the vantage point.
 	Name string `pulumi:"name"`
+	// List of workers running the assigned monitor.
+	WorkerLists []string `pulumi:"workerLists"`
 }
 
 // GetMonitorVantagePointInput is an input type that accepts GetMonitorVantagePointArgs and GetMonitorVantagePointOutput values.
@@ -6855,6 +8614,8 @@ type GetMonitorVantagePointArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Name of the vantage point.
 	Name pulumi.StringInput `pulumi:"name"`
+	// List of workers running the assigned monitor.
+	WorkerLists pulumi.StringArrayInput `pulumi:"workerLists"`
 }
 
 func (GetMonitorVantagePointArgs) ElementType() reflect.Type {
@@ -6916,6 +8677,11 @@ func (o GetMonitorVantagePointOutput) DisplayName() pulumi.StringOutput {
 // Name of the vantage point.
 func (o GetMonitorVantagePointOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of workers running the assigned monitor.
+func (o GetMonitorVantagePointOutput) WorkerLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitorVantagePoint) []string { return v.WorkerLists }).(pulumi.StringArrayOutput)
 }
 
 type GetMonitorVantagePointArrayOutput struct{ *pulumi.OutputState }
@@ -7150,6 +8916,8 @@ type GetMonitorsMonitorCollectionItem struct {
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorsMonitorCollectionItemConfiguration `pulumi:"configurations"`
+	// Name of the user that created the monitor.
+	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
@@ -7158,13 +8926,17 @@ type GetMonitorsMonitorCollectionItem struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
+	// If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 bool `pulumi:"isIpv6"`
 	// If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool `pulumi:"isRunOnce"`
+	// Name of the user that recently updated the monitor.
+	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
-	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
 	MonitorType string `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds int `pulumi:"repeatIntervalInSeconds"`
@@ -7178,7 +8950,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	ScriptParameters []GetMonitorsMonitorCollectionItemScriptParameter `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
 	Status string `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
@@ -7188,7 +8960,7 @@ type GetMonitorsMonitorCollectionItem struct {
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
-	// List of public and dedicated vantage points where the monitor is running.
+	// List of public, dedicated and onPremise vantage points where the monitor is running.
 	VantagePoints []GetMonitorsMonitorCollectionItemVantagePoint `pulumi:"vantagePoints"`
 }
 
@@ -7212,6 +8984,8 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	BatchIntervalInSeconds pulumi.IntInput `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations GetMonitorsMonitorCollectionItemConfigurationArrayInput `pulumi:"configurations"`
+	// Name of the user that created the monitor.
+	CreatedBy pulumi.StringInput `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput `pulumi:"definedTags"`
 	// A filter to return only the resources that match the entire display name.
@@ -7220,13 +8994,17 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	FreeformTags pulumi.MapInput `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id pulumi.StringInput `pulumi:"id"`
+	// If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 pulumi.BoolInput `pulumi:"isIpv6"`
 	// If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow pulumi.BoolInput `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce pulumi.BoolInput `pulumi:"isRunOnce"`
+	// Name of the user that recently updated the monitor.
+	LastUpdatedBy pulumi.StringInput `pulumi:"lastUpdatedBy"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayInput `pulumi:"maintenanceWindowSchedules"`
-	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
 	MonitorType pulumi.StringInput `pulumi:"monitorType"`
 	// Interval in seconds after the start time when the job should be repeated. Minimum repeatIntervalInSeconds should be 300 seconds for Scripted REST, Scripted Browser and Browser monitors, and 60 seconds for REST monitor.
 	RepeatIntervalInSeconds pulumi.IntInput `pulumi:"repeatIntervalInSeconds"`
@@ -7240,7 +9018,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	ScriptParameters GetMonitorsMonitorCollectionItemScriptParameterArrayInput `pulumi:"scriptParameters"`
 	// A filter to return only monitors that match the status given.
 	Status pulumi.StringInput `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target pulumi.StringInput `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated pulumi.StringInput `pulumi:"timeCreated"`
@@ -7250,7 +9028,7 @@ type GetMonitorsMonitorCollectionItemArgs struct {
 	TimeoutInSeconds pulumi.IntInput `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount pulumi.IntInput `pulumi:"vantagePointCount"`
-	// List of public and dedicated vantage points where the monitor is running.
+	// List of public, dedicated and onPremise vantage points where the monitor is running.
 	VantagePoints GetMonitorsMonitorCollectionItemVantagePointArrayInput `pulumi:"vantagePoints"`
 }
 
@@ -7329,6 +9107,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) Configurations() GetMonitorsMoni
 	}).(GetMonitorsMonitorCollectionItemConfigurationArrayOutput)
 }
 
+// Name of the user that created the monitor.
+func (o GetMonitorsMonitorCollectionItemOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMonitorsMonitorCollectionItemOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -7349,6 +9132,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// If enabled, domain name will resolve to an IPv6 address.
+func (o GetMonitorsMonitorCollectionItemOutput) IsIpv6() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsIpv6 }).(pulumi.BoolOutput)
+}
+
 // If isRunNow is enabled, then the monitor will run immediately.
 func (o GetMonitorsMonitorCollectionItemOutput) IsRunNow() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunNow }).(pulumi.BoolOutput)
@@ -7359,6 +9147,11 @@ func (o GetMonitorsMonitorCollectionItemOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
 }
 
+// Name of the user that recently updated the monitor.
+func (o GetMonitorsMonitorCollectionItemOutput) LastUpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
+}
+
 // Details required to schedule maintenance window.
 func (o GetMonitorsMonitorCollectionItemOutput) MaintenanceWindowSchedules() GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule {
@@ -7366,7 +9159,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) MaintenanceWindowSchedules() Get
 	}).(GetMonitorsMonitorCollectionItemMaintenanceWindowScheduleArrayOutput)
 }
 
-// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
 func (o GetMonitorsMonitorCollectionItemOutput) MonitorType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.MonitorType }).(pulumi.StringOutput)
 }
@@ -7403,7 +9196,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+// Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 func (o GetMonitorsMonitorCollectionItemOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) string { return v.Target }).(pulumi.StringOutput)
 }
@@ -7428,7 +9221,7 @@ func (o GetMonitorsMonitorCollectionItemOutput) VantagePointCount() pulumi.IntOu
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) int { return v.VantagePointCount }).(pulumi.IntOutput)
 }
 
-// List of public and dedicated vantage points where the monitor is running.
+// List of public, dedicated and onPremise vantage points where the monitor is running.
 func (o GetMonitorsMonitorCollectionItemOutput) VantagePoints() GetMonitorsMonitorCollectionItemVantagePointArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItem) []GetMonitorsMonitorCollectionItemVantagePoint {
 		return v.VantagePoints
@@ -7570,8 +9363,30 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	ClientCertificateDetails []GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetail `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType string `pulumi:"configType"`
+	// Database connection string.
+	ConnectionString string `pulumi:"connectionString"`
+	// Details for basic authentication.
+	DatabaseAuthenticationDetails []GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail `pulumi:"databaseAuthenticationDetails"`
+	// Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+	DatabaseConnectionType string `pulumi:"databaseConnectionType"`
+	// Database role.
+	DatabaseRole string `pulumi:"databaseRole"`
+	// Database type.
+	DatabaseType string `pulumi:"databaseType"`
+	// Details for database wallet.
+	DatabaseWalletDetails []GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail `pulumi:"databaseWalletDetails"`
 	// Information about the DNS settings.
 	DnsConfigurations []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration `pulumi:"dnsConfigurations"`
+	// Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+	DownloadSizeLimitInBytes int `pulumi:"downloadSizeLimitInBytes"`
+	// Details for basic authentication.
+	FtpBasicAuthenticationDetails []GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail `pulumi:"ftpBasicAuthenticationDetails"`
+	// FTP protocol type.
+	FtpProtocol string `pulumi:"ftpProtocol"`
+	// FTP monitor request type.
+	FtpRequestType string `pulumi:"ftpRequestType"`
+	// If enabled, Active mode will be used for the FTP connection.
+	IsActiveMode bool `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled bool `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
@@ -7588,6 +9403,8 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	NetworkConfigurations []GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration `pulumi:"networkConfigurations"`
 	// Type of protocol.
 	Protocol string `pulumi:"protocol"`
+	// SQL query to be executed.
+	Query string `pulumi:"query"`
 	// DNS record type.
 	RecordType string `pulumi:"recordType"`
 	// Details for request HTTP authentication.
@@ -7602,6 +9419,8 @@ type GetMonitorsMonitorCollectionItemConfiguration struct {
 	RequestPostBody string `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams []GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam `pulumi:"requestQueryParams"`
+	// File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+	UploadFileSizeInBytes int `pulumi:"uploadFileSizeInBytes"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes []string `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
@@ -7626,8 +9445,30 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	ClientCertificateDetails GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailArrayInput `pulumi:"clientCertificateDetails"`
 	// Type of configuration.
 	ConfigType pulumi.StringInput `pulumi:"configType"`
+	// Database connection string.
+	ConnectionString pulumi.StringInput `pulumi:"connectionString"`
+	// Details for basic authentication.
+	DatabaseAuthenticationDetails GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayInput `pulumi:"databaseAuthenticationDetails"`
+	// Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+	DatabaseConnectionType pulumi.StringInput `pulumi:"databaseConnectionType"`
+	// Database role.
+	DatabaseRole pulumi.StringInput `pulumi:"databaseRole"`
+	// Database type.
+	DatabaseType pulumi.StringInput `pulumi:"databaseType"`
+	// Details for database wallet.
+	DatabaseWalletDetails GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayInput `pulumi:"databaseWalletDetails"`
 	// Information about the DNS settings.
 	DnsConfigurations GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput `pulumi:"dnsConfigurations"`
+	// Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+	DownloadSizeLimitInBytes pulumi.IntInput `pulumi:"downloadSizeLimitInBytes"`
+	// Details for basic authentication.
+	FtpBasicAuthenticationDetails GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayInput `pulumi:"ftpBasicAuthenticationDetails"`
+	// FTP protocol type.
+	FtpProtocol pulumi.StringInput `pulumi:"ftpProtocol"`
+	// FTP monitor request type.
+	FtpRequestType pulumi.StringInput `pulumi:"ftpRequestType"`
+	// If enabled, Active mode will be used for the FTP connection.
+	IsActiveMode pulumi.BoolInput `pulumi:"isActiveMode"`
 	// If certificate validation is enabled, then the call will fail in case of certification errors.
 	IsCertificateValidationEnabled pulumi.BoolInput `pulumi:"isCertificateValidationEnabled"`
 	// If disabled, auto snapshots are not collected.
@@ -7644,6 +9485,8 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	NetworkConfigurations GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput `pulumi:"networkConfigurations"`
 	// Type of protocol.
 	Protocol pulumi.StringInput `pulumi:"protocol"`
+	// SQL query to be executed.
+	Query pulumi.StringInput `pulumi:"query"`
 	// DNS record type.
 	RecordType pulumi.StringInput `pulumi:"recordType"`
 	// Details for request HTTP authentication.
@@ -7658,6 +9501,8 @@ type GetMonitorsMonitorCollectionItemConfigurationArgs struct {
 	RequestPostBody pulumi.StringInput `pulumi:"requestPostBody"`
 	// List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
 	RequestQueryParams GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayInput `pulumi:"requestQueryParams"`
+	// File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+	UploadFileSizeInBytes pulumi.IntInput `pulumi:"uploadFileSizeInBytes"`
 	// Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
 	VerifyResponseCodes pulumi.StringArrayInput `pulumi:"verifyResponseCodes"`
 	// Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
@@ -7729,11 +9574,72 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ConfigType() pulumi
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ConfigType }).(pulumi.StringOutput)
 }
 
+// Database connection string.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) ConnectionString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.ConnectionString }).(pulumi.StringOutput)
+}
+
+// Details for basic authentication.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DatabaseAuthenticationDetails() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail {
+		return v.DatabaseAuthenticationDetails
+	}).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput)
+}
+
+// Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DatabaseConnectionType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.DatabaseConnectionType }).(pulumi.StringOutput)
+}
+
+// Database role.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DatabaseRole() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.DatabaseRole }).(pulumi.StringOutput)
+}
+
+// Database type.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DatabaseType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.DatabaseType }).(pulumi.StringOutput)
+}
+
+// Details for database wallet.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DatabaseWalletDetails() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail {
+		return v.DatabaseWalletDetails
+	}).(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput)
+}
+
 // Information about the DNS settings.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DnsConfigurations() GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
 		return v.DnsConfigurations
 	}).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput)
+}
+
+// Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) DownloadSizeLimitInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) int { return v.DownloadSizeLimitInBytes }).(pulumi.IntOutput)
+}
+
+// Details for basic authentication.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) FtpBasicAuthenticationDetails() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail {
+		return v.FtpBasicAuthenticationDetails
+	}).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput)
+}
+
+// FTP protocol type.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) FtpProtocol() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.FtpProtocol }).(pulumi.StringOutput)
+}
+
+// FTP monitor request type.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) FtpRequestType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.FtpRequestType }).(pulumi.StringOutput)
+}
+
+// If enabled, Active mode will be used for the FTP connection.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) IsActiveMode() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) bool { return v.IsActiveMode }).(pulumi.BoolOutput)
 }
 
 // If certificate validation is enabled, then the call will fail in case of certification errors.
@@ -7778,6 +9684,11 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) Protocol() pulumi.S
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.Protocol }).(pulumi.StringOutput)
 }
 
+// SQL query to be executed.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) Query() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.Query }).(pulumi.StringOutput)
+}
+
 // DNS record type.
 func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RecordType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) string { return v.RecordType }).(pulumi.StringOutput)
@@ -7817,6 +9728,11 @@ func (o GetMonitorsMonitorCollectionItemConfigurationOutput) RequestQueryParams(
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) []GetMonitorsMonitorCollectionItemConfigurationRequestQueryParam {
 		return v.RequestQueryParams
 	}).(GetMonitorsMonitorCollectionItemConfigurationRequestQueryParamArrayOutput)
+}
+
+// File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+func (o GetMonitorsMonitorCollectionItemConfigurationOutput) UploadFileSizeInBytes() pulumi.IntOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfiguration) int { return v.UploadFileSizeInBytes }).(pulumi.IntOutput)
 }
 
 // Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
@@ -8186,6 +10102,345 @@ func (o GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPriv
 	}).(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput)
 }
 
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail struct {
+	// Password.
+	Passwords []GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword `pulumi:"passwords"`
+	// Username for authentication.
+	Username string `pulumi:"username"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs and GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs struct {
+	// Password.
+	Passwords GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayInput `pulumi:"passwords"`
+	// Username for authentication.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray and GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray{ GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray []GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput) Passwords() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail) []GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword {
+		return v.Passwords
+	}).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput)
+}
+
+// Username for authentication.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetail)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword struct {
+	// Password.
+	Password string `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType string `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs and GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs struct {
+	// Password.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray and GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray{ GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray []GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// Type of method to pass password.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword) string {
+		return v.PasswordType
+	}).(pulumi.StringOutput)
+}
+
+// Vault secret OCID.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPassword)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail struct {
+	// The database wallet configuration zip file.
+	DatabaseWallet string `pulumi:"databaseWallet"`
+	// Service name of the database.
+	ServiceName string `pulumi:"serviceName"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs and GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs struct {
+	// The database wallet configuration zip file.
+	DatabaseWallet pulumi.StringInput `pulumi:"databaseWallet"`
+	// Service name of the database.
+	ServiceName pulumi.StringInput `pulumi:"serviceName"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray and GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray{ GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray []GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput {
+	return o
+}
+
+// The database wallet configuration zip file.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput) DatabaseWallet() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail) string {
+		return v.DatabaseWallet
+	}).(pulumi.StringOutput)
+}
+
+// Service name of the database.
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput) ServiceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail) string { return v.ServiceName }).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetail)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput)
+}
+
 type GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration struct {
 	// If isOverrideDns is true, then DNS settings will be overridden.
 	IsOverrideDns bool `pulumi:"isOverrideDns"`
@@ -8290,6 +10545,237 @@ func (o GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration {
 		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationDnsConfiguration)[vs[1].(int)]
 	}).(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail struct {
+	// Password.
+	Passwords []GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword `pulumi:"passwords"`
+	// Username for authentication.
+	Username string `pulumi:"username"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs and GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs struct {
+	// Password.
+	Passwords GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayInput `pulumi:"passwords"`
+	// Username for authentication.
+	Username pulumi.StringInput `pulumi:"username"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray and GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray{ GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray []GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput) Passwords() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail) []GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword {
+		return v.Passwords
+	}).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput)
+}
+
+// Username for authentication.
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput) Username() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail) string {
+		return v.Username
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetail)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword struct {
+	// Password.
+	Password string `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType string `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId string `pulumi:"vaultSecretId"`
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs and GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs{...}
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs struct {
+	// Password.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Type of method to pass password.
+	PasswordType pulumi.StringInput `pulumi:"passwordType"`
+	// Vault secret OCID.
+	VaultSecretId pulumi.StringInput `pulumi:"vaultSecretId"`
+}
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput)
+}
+
+// GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayInput is an input type that accepts GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray and GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput values.
+// You can construct a concrete instance of `GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayInput` via:
+//
+//	GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray{ GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs{...} }
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayInput interface {
+	pulumi.Input
+
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput
+	ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray []GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordInput
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return i.ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(context.Background())
+}
+
+func (i GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return o
+}
+
+// Password.
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword) string {
+		return v.Password
+	}).(pulumi.StringOutput)
+}
+
+// Type of method to pass password.
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput) PasswordType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword) string {
+		return v.PasswordType
+	}).(pulumi.StringOutput)
+}
+
+// Vault secret OCID.
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput) VaultSecretId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword) string {
+		return v.VaultSecretId
+	}).(pulumi.StringOutput)
+}
+
+type GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput struct{ *pulumi.OutputState }
+
+func (GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword)(nil)).Elem()
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput() GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) ToGetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutputWithContext(ctx context.Context) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput {
+	return o
+}
+
+func (o GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput) Index(i pulumi.IntInput) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword {
+		return vs[0].([]GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPassword)[vs[1].(int)]
+	}).(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput)
 }
 
 type GetMonitorsMonitorCollectionItemConfigurationNetworkConfiguration struct {
@@ -9376,6 +11862,8 @@ type GetMonitorsMonitorCollectionItemVantagePoint struct {
 	DisplayName string `pulumi:"displayName"`
 	// Name of the vantage point.
 	Name string `pulumi:"name"`
+	// List of workers running the assigned monitor.
+	WorkerLists []string `pulumi:"workerLists"`
 }
 
 // GetMonitorsMonitorCollectionItemVantagePointInput is an input type that accepts GetMonitorsMonitorCollectionItemVantagePointArgs and GetMonitorsMonitorCollectionItemVantagePointOutput values.
@@ -9394,6 +11882,8 @@ type GetMonitorsMonitorCollectionItemVantagePointArgs struct {
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
 	// Name of the vantage point.
 	Name pulumi.StringInput `pulumi:"name"`
+	// List of workers running the assigned monitor.
+	WorkerLists pulumi.StringArrayInput `pulumi:"workerLists"`
 }
 
 func (GetMonitorsMonitorCollectionItemVantagePointArgs) ElementType() reflect.Type {
@@ -9455,6 +11945,11 @@ func (o GetMonitorsMonitorCollectionItemVantagePointOutput) DisplayName() pulumi
 // Name of the vantage point.
 func (o GetMonitorsMonitorCollectionItemVantagePointOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// List of workers running the assigned monitor.
+func (o GetMonitorsMonitorCollectionItemVantagePointOutput) WorkerLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetMonitorsMonitorCollectionItemVantagePoint) []string { return v.WorkerLists }).(pulumi.StringArrayOutput)
 }
 
 type GetMonitorsMonitorCollectionItemVantagePointArrayOutput struct{ *pulumi.OutputState }
@@ -13649,8 +16144,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsClientCertificatePtrInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsClientCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPrivateKeyInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationClientCertificateDetailsPrivateKeyPtrInput)(nil)).Elem(), ConfigConfigurationClientCertificateDetailsPrivateKeyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetailsInput)(nil)).Elem(), ConfigConfigurationDatabaseAuthenticationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetailsPtrInput)(nil)).Elem(), ConfigConfigurationDatabaseAuthenticationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetailsPasswordInput)(nil)).Elem(), ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrInput)(nil)).Elem(), ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDatabaseWalletDetailsInput)(nil)).Elem(), ConfigConfigurationDatabaseWalletDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDatabaseWalletDetailsPtrInput)(nil)).Elem(), ConfigConfigurationDatabaseWalletDetailsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationDnsConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationDnsConfigurationArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetailsInput)(nil)).Elem(), ConfigConfigurationFtpBasicAuthenticationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetailsPtrInput)(nil)).Elem(), ConfigConfigurationFtpBasicAuthenticationDetailsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetailsPasswordInput)(nil)).Elem(), ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrInput)(nil)).Elem(), ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationNetworkConfigurationInput)(nil)).Elem(), ConfigConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationNetworkConfigurationPtrInput)(nil)).Elem(), ConfigConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ConfigConfigurationReqAuthenticationDetailsInput)(nil)).Elem(), ConfigConfigurationReqAuthenticationDetailsArgs{})
@@ -13715,8 +16220,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailClientCertificateArrayInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailClientCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailPrivateKeyInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailPrivateKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayInput)(nil)).Elem(), GetMonitorConfigurationClientCertificateDetailPrivateKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetailInput)(nil)).Elem(), GetMonitorConfigurationDatabaseAuthenticationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetailArrayInput)(nil)).Elem(), GetMonitorConfigurationDatabaseAuthenticationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetailPasswordInput)(nil)).Elem(), GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayInput)(nil)).Elem(), GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDatabaseWalletDetailInput)(nil)).Elem(), GetMonitorConfigurationDatabaseWalletDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDatabaseWalletDetailArrayInput)(nil)).Elem(), GetMonitorConfigurationDatabaseWalletDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationDnsConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationDnsConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetailInput)(nil)).Elem(), GetMonitorConfigurationFtpBasicAuthenticationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetailArrayInput)(nil)).Elem(), GetMonitorConfigurationFtpBasicAuthenticationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordInput)(nil)).Elem(), GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayInput)(nil)).Elem(), GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetMonitorConfigurationNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorConfigurationReqAuthenticationDetailInput)(nil)).Elem(), GetMonitorConfigurationReqAuthenticationDetailArgs{})
@@ -13753,8 +16268,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailInput)(nil)).Elem(), GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailArgs{})
@@ -13849,8 +16374,18 @@ func init() {
 	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsClientCertificatePtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsPrivateKeyOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationClientCertificateDetailsPrivateKeyPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDatabaseAuthenticationDetailsOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDatabaseAuthenticationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDatabaseAuthenticationDetailsPasswordOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDatabaseAuthenticationDetailsPasswordPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDatabaseWalletDetailsOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationDatabaseWalletDetailsPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationDnsConfigurationPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationFtpBasicAuthenticationDetailsOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationFtpBasicAuthenticationDetailsPtrOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordOutput{})
+	pulumi.RegisterOutputType(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationNetworkConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(ConfigConfigurationReqAuthenticationDetailsOutput{})
@@ -13915,8 +16450,18 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailClientCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailPrivateKeyOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationClientCertificateDetailPrivateKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDatabaseAuthenticationDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDatabaseAuthenticationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDatabaseAuthenticationDetailPasswordOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDatabaseAuthenticationDetailPasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDatabaseWalletDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationDatabaseWalletDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationDnsConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationFtpBasicAuthenticationDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationFtpBasicAuthenticationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordOutput{})
+	pulumi.RegisterOutputType(GetMonitorConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorConfigurationReqAuthenticationDetailOutput{})
@@ -13953,8 +16498,18 @@ func init() {
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailClientCertificateArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationClientCertificateDetailPrivateKeyArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDatabaseAuthenticationDetailPasswordArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDatabaseWalletDetailArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationDnsConfigurationArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailArrayOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordOutput{})
+	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationFtpBasicAuthenticationDetailPasswordArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationNetworkConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetMonitorsMonitorCollectionItemConfigurationReqAuthenticationDetailOutput{})

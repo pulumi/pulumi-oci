@@ -5,6 +5,7 @@ package com.pulumi.oci.DataSafe.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import com.pulumi.oci.DataSafe.outputs.GetDiscoveryJobTablesForDiscovery;
 import java.lang.Boolean;
 import java.lang.Object;
 import java.lang.String;
@@ -90,6 +91,11 @@ public final class GetDiscoveryJobResult {
      * 
      */
     private Map<String,Object> systemTags;
+    /**
+     * @return The data discovery jobs will scan the tables specified here, including both schemas and tables.
+     * 
+     */
+    private List<GetDiscoveryJobTablesForDiscovery> tablesForDiscoveries;
     /**
      * @return The OCID of the target database associated with the discovery job.
      * 
@@ -246,6 +252,13 @@ public final class GetDiscoveryJobResult {
         return this.systemTags;
     }
     /**
+     * @return The data discovery jobs will scan the tables specified here, including both schemas and tables.
+     * 
+     */
+    public List<GetDiscoveryJobTablesForDiscovery> tablesForDiscoveries() {
+        return this.tablesForDiscoveries;
+    }
+    /**
      * @return The OCID of the target database associated with the discovery job.
      * 
      */
@@ -334,6 +347,7 @@ public final class GetDiscoveryJobResult {
         private List<String> sensitiveTypeIdsForDiscoveries;
         private String state;
         private Map<String,Object> systemTags;
+        private List<GetDiscoveryJobTablesForDiscovery> tablesForDiscoveries;
         private String targetId;
         private String timeFinished;
         private String timeStarted;
@@ -362,6 +376,7 @@ public final class GetDiscoveryJobResult {
     	      this.sensitiveTypeIdsForDiscoveries = defaults.sensitiveTypeIdsForDiscoveries;
     	      this.state = defaults.state;
     	      this.systemTags = defaults.systemTags;
+    	      this.tablesForDiscoveries = defaults.tablesForDiscoveries;
     	      this.targetId = defaults.targetId;
     	      this.timeFinished = defaults.timeFinished;
     	      this.timeStarted = defaults.timeStarted;
@@ -508,6 +523,17 @@ public final class GetDiscoveryJobResult {
             return this;
         }
         @CustomType.Setter
+        public Builder tablesForDiscoveries(List<GetDiscoveryJobTablesForDiscovery> tablesForDiscoveries) {
+            if (tablesForDiscoveries == null) {
+              throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "tablesForDiscoveries");
+            }
+            this.tablesForDiscoveries = tablesForDiscoveries;
+            return this;
+        }
+        public Builder tablesForDiscoveries(GetDiscoveryJobTablesForDiscovery... tablesForDiscoveries) {
+            return tablesForDiscoveries(List.of(tablesForDiscoveries));
+        }
+        @CustomType.Setter
         public Builder targetId(String targetId) {
             if (targetId == null) {
               throw new MissingRequiredPropertyException("GetDiscoveryJobResult", "targetId");
@@ -597,6 +623,7 @@ public final class GetDiscoveryJobResult {
             _resultValue.sensitiveTypeIdsForDiscoveries = sensitiveTypeIdsForDiscoveries;
             _resultValue.state = state;
             _resultValue.systemTags = systemTags;
+            _resultValue.tablesForDiscoveries = tablesForDiscoveries;
             _resultValue.targetId = targetId;
             _resultValue.timeFinished = timeFinished;
             _resultValue.timeStarted = timeStarted;

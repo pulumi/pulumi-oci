@@ -7,7 +7,8 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
  *
- * Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+ * Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+ * If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
  * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
  *
  * ## Example Usage
@@ -16,7 +17,10 @@ import * as utilities from "../utilities";
  * import * as pulumi from "@pulumi/pulumi";
  * import * as oci from "@pulumi/oci";
  *
- * const testUnsetUserAssessmentBaseline = new oci.datasafe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", {userAssessmentId: testUserAssessment.id});
+ * const testUnsetUserAssessmentBaseline = new oci.datasafe.UnsetUserAssessmentBaseline("test_unset_user_assessment_baseline", {
+ *     userAssessmentId: testUserAssessment.id,
+ *     targetIds: unsetUserAssessmentBaselineTargetIds,
+ * });
  * ```
  *
  * ## Import
@@ -56,6 +60,10 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
     }
 
     /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     */
+    public readonly targetIds!: pulumi.Output<string[]>;
+    /**
      * The OCID of the user assessment.
      *
      *
@@ -77,12 +85,14 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
         opts = opts || {};
         if (opts.id) {
             const state = argsOrState as UnsetUserAssessmentBaselineState | undefined;
+            resourceInputs["targetIds"] = state ? state.targetIds : undefined;
             resourceInputs["userAssessmentId"] = state ? state.userAssessmentId : undefined;
         } else {
             const args = argsOrState as UnsetUserAssessmentBaselineArgs | undefined;
             if ((!args || args.userAssessmentId === undefined) && !opts.urn) {
                 throw new Error("Missing required property 'userAssessmentId'");
             }
+            resourceInputs["targetIds"] = args ? args.targetIds : undefined;
             resourceInputs["userAssessmentId"] = args ? args.userAssessmentId : undefined;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -94,6 +104,10 @@ export class UnsetUserAssessmentBaseline extends pulumi.CustomResource {
  * Input properties used for looking up and filtering UnsetUserAssessmentBaseline resources.
  */
 export interface UnsetUserAssessmentBaselineState {
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     */
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCID of the user assessment.
      *
@@ -108,6 +122,10 @@ export interface UnsetUserAssessmentBaselineState {
  * The set of arguments for constructing a UnsetUserAssessmentBaseline resource.
  */
 export interface UnsetUserAssessmentBaselineArgs {
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     */
+    targetIds?: pulumi.Input<pulumi.Input<string>[]>;
     /**
      * The OCID of the user assessment.
      *

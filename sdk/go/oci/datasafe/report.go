@@ -36,7 +36,7 @@ type Report struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapOutput `pulumi:"freeformTags"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringOutput `pulumi:"mimeType"`
 	// The OCID of the report definition.
 	ReportDefinitionId pulumi.StringOutput `pulumi:"reportDefinitionId"`
@@ -98,7 +98,7 @@ type reportState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType *string `pulumi:"mimeType"`
 	// The OCID of the report definition.
 	ReportDefinitionId *string `pulumi:"reportDefinitionId"`
@@ -128,7 +128,7 @@ type ReportState struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
-	// Specifies the format of report to be excel or pdf
+	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType pulumi.StringPtrInput
 	// The OCID of the report definition.
 	ReportDefinitionId pulumi.StringPtrInput
@@ -292,7 +292,7 @@ func (o ReportOutput) FreeformTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *Report) pulumi.MapOutput { return v.FreeformTags }).(pulumi.MapOutput)
 }
 
-// Specifies the format of report to be excel or pdf
+// Specifies the format of report to be .xls or .pdf or .json
 func (o ReportOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Report) pulumi.StringOutput { return v.MimeType }).(pulumi.StringOutput)
 }

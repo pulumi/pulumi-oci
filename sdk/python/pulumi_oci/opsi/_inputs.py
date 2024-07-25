@@ -53,7 +53,7 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
         :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[str] role: database user role.
         :param pulumi.Input[str] user_name: database user name.
-        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         if credential_source_name is not None:
             pulumi.set(__self__, "credential_source_name", credential_source_name)
@@ -132,7 +132,7 @@ class DatabaseInsightConnectionCredentialDetailsArgs:
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
@@ -282,7 +282,7 @@ class DatabaseInsightCredentialDetailsArgs:
         :param pulumi.Input[str] password_secret_id: The secret [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) mapping to the database credentials.
         :param pulumi.Input[str] role: database user role.
         :param pulumi.Input[str] user_name: database user name.
-        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        :param pulumi.Input[str] wallet_secret_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         pulumi.set(__self__, "credential_type", credential_type)
         if credential_source_name is not None:
@@ -360,7 +360,7 @@ class DatabaseInsightCredentialDetailsArgs:
     @pulumi.getter(name="walletSecretId")
     def wallet_secret_id(self) -> Optional[pulumi.Input[str]]:
         """
-        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
         """
         return pulumi.get(self, "wallet_secret_id")
 
@@ -475,7 +475,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
         """
         :param pulumi.Input[str] compartment_id: (Updatable) Compartment Identifier of database
         :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetailsArgs'] connection_details: Connection details of the private endpoints.
-        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs'] credential_details: User credential details to connect to the database. This is supplied via the External Database Service.
+        :param pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs'] credential_details: User credential details to connect to the database.
         :param pulumi.Input[str] database_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the database.
         :param pulumi.Input[str] database_resource_type: Oracle Cloud Infrastructure database resource type
         :param pulumi.Input[str] dbm_private_endpoint_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Management private endpoint
@@ -542,7 +542,7 @@ class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs:
     @pulumi.getter(name="credentialDetails")
     def credential_details(self) -> Optional[pulumi.Input['ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs']]:
         """
-        User credential details to connect to the database. This is supplied via the External Database Service.
+        User credential details to connect to the database.
         """
         return pulumi.get(self, "credential_details")
 
@@ -1671,7 +1671,7 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
                  values: Sequence[str],
                  regex: Optional[bool] = None):
         """
-        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        :param str name: Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "values", values)
@@ -1682,7 +1682,7 @@ class GetOperationsInsightsWarehouseUsersFilterArgs:
     @pulumi.getter
     def name(self) -> str:
         """
-        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         """
         return pulumi.get(self, "name")
 

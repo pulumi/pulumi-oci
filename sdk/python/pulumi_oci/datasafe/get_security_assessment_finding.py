@@ -23,7 +23,7 @@ class GetSecurityAssessmentFindingResult:
     """
     A collection of values returned by getSecurityAssessmentFinding.
     """
-    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, security_assessment_id=None, severity=None, state=None):
+    def __init__(__self__, access_level=None, compartment_id_in_subtree=None, filters=None, finding_key=None, findings=None, id=None, is_top_finding=None, references=None, security_assessment_id=None, severity=None, state=None, target_id=None):
         if access_level and not isinstance(access_level, str):
             raise TypeError("Expected argument 'access_level' to be a str")
         pulumi.set(__self__, "access_level", access_level)
@@ -57,6 +57,9 @@ class GetSecurityAssessmentFindingResult:
         if state and not isinstance(state, str):
             raise TypeError("Expected argument 'state' to be a str")
         pulumi.set(__self__, "state", state)
+        if target_id and not isinstance(target_id, str):
+            raise TypeError("Expected argument 'target_id' to be a str")
+        pulumi.set(__self__, "target_id", target_id)
 
     @property
     @pulumi.getter(name="accessLevel")
@@ -116,6 +119,11 @@ class GetSecurityAssessmentFindingResult:
     def state(self) -> Optional[str]:
         return pulumi.get(self, "state")
 
+    @property
+    @pulumi.getter(name="targetId")
+    def target_id(self) -> Optional[str]:
+        return pulumi.get(self, "target_id")
+
 
 class AwaitableGetSecurityAssessmentFindingResult(GetSecurityAssessmentFindingResult):
     # pylint: disable=using-constant-test
@@ -133,7 +141,8 @@ class AwaitableGetSecurityAssessmentFindingResult(GetSecurityAssessmentFindingRe
             references=self.references,
             security_assessment_id=self.security_assessment_id,
             severity=self.severity,
-            state=self.state)
+            state=self.state,
+            target_id=self.target_id)
 
 
 def get_security_assessment_finding(access_level: Optional[str] = None,
@@ -145,6 +154,7 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
                                     security_assessment_id: Optional[str] = None,
                                     severity: Optional[str] = None,
                                     state: Optional[str] = None,
+                                    target_id: Optional[str] = None,
                                     opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetSecurityAssessmentFindingResult:
     """
     Use this data source to access information about an existing resource.
@@ -159,6 +169,7 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
     __args__['securityAssessmentId'] = security_assessment_id
     __args__['severity'] = severity
     __args__['state'] = state
+    __args__['targetId'] = target_id
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
     __ret__ = pulumi.runtime.invoke('oci:DataSafe/getSecurityAssessmentFinding:getSecurityAssessmentFinding', __args__, opts=opts, typ=GetSecurityAssessmentFindingResult).value
 
@@ -173,7 +184,8 @@ def get_security_assessment_finding(access_level: Optional[str] = None,
         references=pulumi.get(__ret__, 'references'),
         security_assessment_id=pulumi.get(__ret__, 'security_assessment_id'),
         severity=pulumi.get(__ret__, 'severity'),
-        state=pulumi.get(__ret__, 'state'))
+        state=pulumi.get(__ret__, 'state'),
+        target_id=pulumi.get(__ret__, 'target_id'))
 
 
 @_utilities.lift_output_func(get_security_assessment_finding)
@@ -186,6 +198,7 @@ def get_security_assessment_finding_output(access_level: Optional[pulumi.Input[O
                                            security_assessment_id: Optional[pulumi.Input[str]] = None,
                                            severity: Optional[pulumi.Input[Optional[str]]] = None,
                                            state: Optional[pulumi.Input[Optional[str]]] = None,
+                                           target_id: Optional[pulumi.Input[Optional[str]]] = None,
                                            opts: Optional[pulumi.InvokeOptions] = None) -> pulumi.Output[GetSecurityAssessmentFindingResult]:
     """
     Use this data source to access information about an existing resource.

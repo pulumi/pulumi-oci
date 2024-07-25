@@ -49,6 +49,7 @@ public final class GetDbHomesDbHomeDatabase {
      * 
      */
     private String id;
+    private String keyStoreId;
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -146,6 +147,9 @@ public final class GetDbHomesDbHomeDatabase {
     public String id() {
         return this.id;
     }
+    public String keyStoreId() {
+        return this.keyStoreId;
+    }
     /**
      * @return The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
      * 
@@ -229,6 +233,7 @@ public final class GetDbHomesDbHomeDatabase {
         private Map<String,Object> definedTags;
         private Map<String,Object> freeformTags;
         private String id;
+        private String keyStoreId;
         private String kmsKeyId;
         private String kmsKeyVersionId;
         private String lifecycleDetails;
@@ -259,6 +264,7 @@ public final class GetDbHomesDbHomeDatabase {
     	      this.definedTags = defaults.definedTags;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.keyStoreId = defaults.keyStoreId;
     	      this.kmsKeyId = defaults.kmsKeyId;
     	      this.kmsKeyVersionId = defaults.kmsKeyVersionId;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
@@ -393,6 +399,14 @@ public final class GetDbHomesDbHomeDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder keyStoreId(String keyStoreId) {
+            if (keyStoreId == null) {
+              throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "keyStoreId");
+            }
+            this.keyStoreId = keyStoreId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder kmsKeyId(String kmsKeyId) {
             if (kmsKeyId == null) {
               throw new MissingRequiredPropertyException("GetDbHomesDbHomeDatabase", "kmsKeyId");
@@ -518,6 +532,7 @@ public final class GetDbHomesDbHomeDatabase {
             _resultValue.definedTags = definedTags;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.keyStoreId = keyStoreId;
             _resultValue.kmsKeyId = kmsKeyId;
             _resultValue.kmsKeyVersionId = kmsKeyVersionId;
             _resultValue.lifecycleDetails = lifecycleDetails;

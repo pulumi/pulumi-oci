@@ -3723,9 +3723,53 @@ export namespace ApmSynthetics {
          */
         configType?: pulumi.Input<string>;
         /**
+         * (Updatable) Database connection string.
+         */
+        connectionString?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details for basic authentication.
+         */
+        databaseAuthenticationDetails?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationDatabaseAuthenticationDetails>;
+        /**
+         * (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+         */
+        databaseConnectionType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Database role.
+         */
+        databaseRole?: pulumi.Input<string>;
+        /**
+         * (Updatable) Database type.
+         */
+        databaseType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Details for database wallet.
+         */
+        databaseWalletDetails?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationDatabaseWalletDetails>;
+        /**
          * (Updatable) Information about the DNS settings.
          */
         dnsConfiguration?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationDnsConfiguration>;
+        /**
+         * (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+         */
+        downloadSizeLimitInBytes?: pulumi.Input<number>;
+        /**
+         * (Updatable) Details for basic authentication.
+         */
+        ftpBasicAuthenticationDetails?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationFtpBasicAuthenticationDetails>;
+        /**
+         * (Updatable) FTP protocol type.
+         */
+        ftpProtocol?: pulumi.Input<string>;
+        /**
+         * (Updatable) FTP monitor request type.
+         */
+        ftpRequestType?: pulumi.Input<string>;
+        /**
+         * (Updatable) If enabled, Active mode will be used for the FTP connection.
+         */
+        isActiveMode?: pulumi.Input<boolean>;
         /**
          * (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
          */
@@ -3759,6 +3803,10 @@ export namespace ApmSynthetics {
          */
         protocol?: pulumi.Input<string>;
         /**
+         * (Updatable) SQL query to be executed.
+         */
+        query?: pulumi.Input<string>;
+        /**
          * (Updatable) DNS record type.
          */
         recordType?: pulumi.Input<string>;
@@ -3786,6 +3834,10 @@ export namespace ApmSynthetics {
          * (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
          */
         requestQueryParams?: pulumi.Input<pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationRequestQueryParam>[]>;
+        /**
+         * (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+         */
+        uploadFileSizeInBytes?: pulumi.Input<number>;
         /**
          * (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
          */
@@ -3833,6 +3885,43 @@ export namespace ApmSynthetics {
         fileName?: pulumi.Input<string>;
     }
 
+    export interface ConfigConfigurationDatabaseAuthenticationDetails {
+        /**
+         * (Updatable) Password.
+         */
+        password?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationDatabaseAuthenticationDetailsPassword>;
+        /**
+         * (Updatable) Username for authentication.
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface ConfigConfigurationDatabaseAuthenticationDetailsPassword {
+        /**
+         * (Updatable) Password.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of method to pass password.
+         */
+        passwordType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Vault secret OCID.
+         */
+        vaultSecretId?: pulumi.Input<string>;
+    }
+
+    export interface ConfigConfigurationDatabaseWalletDetails {
+        /**
+         * (Updatable) The database wallet configuration zip file.
+         */
+        databaseWallet?: pulumi.Input<string>;
+        /**
+         * (Updatable) Service name of the database.
+         */
+        serviceName?: pulumi.Input<string>;
+    }
+
     export interface ConfigConfigurationDnsConfiguration {
         /**
          * (Updatable) If isOverrideDns is true, then DNS settings will be overridden.
@@ -3842,6 +3931,32 @@ export namespace ApmSynthetics {
          * (Updatable) Attribute to override the DNS IP value. This value will be honored only if isOverrideDns is set to true.
          */
         overrideDnsIp?: pulumi.Input<string>;
+    }
+
+    export interface ConfigConfigurationFtpBasicAuthenticationDetails {
+        /**
+         * (Updatable) Password.
+         */
+        password?: pulumi.Input<inputs.ApmSynthetics.ConfigConfigurationFtpBasicAuthenticationDetailsPassword>;
+        /**
+         * (Updatable) Username for authentication.
+         */
+        username?: pulumi.Input<string>;
+    }
+
+    export interface ConfigConfigurationFtpBasicAuthenticationDetailsPassword {
+        /**
+         * (Updatable) Password.
+         */
+        password?: pulumi.Input<string>;
+        /**
+         * (Updatable) Type of method to pass password.
+         */
+        passwordType?: pulumi.Input<string>;
+        /**
+         * (Updatable) Vault secret OCID.
+         */
+        vaultSecretId?: pulumi.Input<string>;
     }
 
     export interface ConfigConfigurationNetworkConfiguration {
@@ -3996,6 +4111,10 @@ export namespace ApmSynthetics {
          * Name of the vantage point.
          */
         name: pulumi.Input<string>;
+        /**
+         * List of workers running the assigned monitor.
+         */
+        workerLists?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface DedicatedVantagePointDvpStackDetails {
@@ -12003,10 +12122,12 @@ export namespace Core {
         /**
          * (Updatable) The HPC cluster configuration requested when launching instances in a compute capacity reservation.
          *
-         * <<<<<<< HEAD
          * If the parameter is provided, the reservation is created with the HPC island and a list of HPC blocks that you specify. If a list of HPC blocks are missing or not provided, the reservation is created with any HPC blocks in the HPC island that you specify. If the values of HPC island or HPC block that you provide are not valid, an error is returned.
          */
         clusterConfig?: pulumi.Input<inputs.Core.ComputeCapacityReservationInstanceReservationConfigClusterConfig>;
+        /**
+         * (Updatable) The OCID of the cluster placement group for this instance reservation capacity configuration.
+         */
         clusterPlacementGroupId?: pulumi.Input<string>;
         /**
          * (Updatable) The fault domain to use for instances created using this capacity configuration. For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault). If you do not specify the fault domain, the capacity is available for an instance that does not specify a fault domain. To change the fault domain for a reservation, delete the reservation and create a new one in the preferred fault domain.
@@ -15322,10 +15443,12 @@ export namespace Core {
          *
          * To get a list of fault domains, use the [ListFaultDomains](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/FaultDomain/ListFaultDomains) operation in the Identity and Access Management Service API.
          *
-         * <<<<<<< HEAD
          * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          */
         faultDomains?: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the primary subnet to place instances. This field is deprecated. Use `primaryVnicSubnets` instead to set VNIC data for instances in the pool.
+         */
         primarySubnetId?: pulumi.Input<string>;
         /**
          * (Updatable) Details about the IPv6 primary subnet.
@@ -15348,8 +15471,6 @@ export namespace Core {
         isAssignIpv6ip?: pulumi.Input<boolean>;
         /**
          * (Updatable) The subnet [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the secondary VNIC.
-         * =======
-         * Example: `[FAULT-DOMAIN-1, FAULT-DOMAIN-2, FAULT-DOMAIN-3]`
          */
         subnetId: pulumi.Input<string>;
     }
@@ -19892,6 +20013,9 @@ export namespace DataSafe {
          * Indicates whether the Data Safe user activity on the target database will be audited by the policy.
          */
         isDataSafeServiceAccountAudited?: pulumi.Input<boolean>;
+        /**
+         * Indicates whether the policy has to be enabled or disabled in the target database. Set this to true if you want the audit policy to be enabled in the target database. If the seeded audit policy is not already created in the database, the provisioning creates and enables them. If this is set to false, the policy will be disabled in the target database.
+         */
         isEnabled?: pulumi.Input<boolean>;
         /**
          * Indicates whether the privileged user list is managed by Data Safe.
@@ -20118,6 +20242,21 @@ export namespace DataSafe {
          * Unique keys identifying the columns that are database-level (dictionary-defined) children of the sensitive column.
          */
         dbDefinedChildColumnKeys?: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface DiscoveryModTablesForDiscovery {
+        /**
+         * This contains the name of the schema.
+         */
+        schemaName: pulumi.Input<string>;
+        /**
+         * This contains an optional list of the table names.
+         *
+         *
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         */
+        tableNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface GetAlertPoliciesFilter {
@@ -20661,6 +20800,18 @@ export namespace DataSafe {
     }
 
     export interface GetSensitiveDataModelSensitiveSchemasFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetSensitiveDataModelSensitiveTypesFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetSensitiveDataModelSensitiveTypesFilterArgs {
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;
         values: pulumi.Input<pulumi.Input<string>[]>;
@@ -21476,6 +21627,17 @@ export namespace DataSafe {
          * The number of findings in the User Accounts category.
          */
         userAccountsFindingsCount?: pulumi.Input<number>;
+    }
+
+    export interface SensitiveDataModelTablesForDiscovery {
+        /**
+         * (Updatable) This contains the name of the schema.
+         */
+        schemaName: pulumi.Input<string>;
+        /**
+         * (Updatable) This contains an optional list of the table names.
+         */
+        tableNames?: pulumi.Input<pulumi.Input<string>[]>;
     }
 
     export interface TargetDatabaseConnectionOption {
@@ -24644,6 +24806,10 @@ export namespace Database {
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
          */
         id?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+         */
+        keyStoreId?: pulumi.Input<string>;
         /**
          * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
          */
@@ -34037,6 +34203,275 @@ export namespace GenerativeAi {
          * The type of the model metrics. Each type of model can expect a different set of model metrics.
          */
         modelMetricsType?: pulumi.Input<string>;
+    }
+}
+
+export namespace GloballyDistributedDatabase {
+    export interface GetPrivateEndpointsFilter {
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetPrivateEndpointsFilterArgs {
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface GetShardedDatabasesFilter {
+        /**
+         * Name of the shard.
+         */
+        name: string;
+        regex?: boolean;
+        values: string[];
+    }
+
+    export interface GetShardedDatabasesFilterArgs {
+        /**
+         * Name of the shard.
+         */
+        name: pulumi.Input<string>;
+        regex?: pulumi.Input<boolean>;
+        values: pulumi.Input<pulumi.Input<string>[]>;
+    }
+
+    export interface ShardedDatabaseCatalogDetail {
+        /**
+         * Admin password for the catalog database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the catalog database. It has to be in multiple of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * Identifier of the underlying container database.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying container database parent.
+         */
+        containerDatabaseParentId?: pulumi.Input<string>;
+        /**
+         * The data disk group size to be allocated in GBs for the catalog database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
+         */
+        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseCatalogDetailEncryptionKeyDetails>;
+        /**
+         * Determines the auto-scaling mode for the catalog database.
+         */
+        isAutoScalingEnabled: pulumi.Input<boolean>;
+        /**
+         * Additional metadata related to shard's underlying supporting resource.
+         */
+        metadata?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         */
+        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+        /**
+         * Name of the shard-group to which the shard belongs.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseCatalogDetailEncryptionKeyDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
+         */
+        kmsKeyId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
+         */
+        vaultId: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseConnectionString {
+        /**
+         * Collection of connection strings.
+         */
+        allConnectionStrings?: pulumi.Input<{[key: string]: any}>;
+    }
+
+    export interface ShardedDatabaseGsm {
+        /**
+         * The compute amount available to the underlying autonomous database associated with shard.
+         */
+        computeCount?: pulumi.Input<number>;
+        /**
+         * The data disk group size to be allocated in GBs.
+         */
+        dataStorageSizeInGbs?: pulumi.Input<number>;
+        /**
+         * Additional metadata related to shard's underlying supporting resource.
+         */
+        metadata?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabasePatchOperation {
+        /**
+         * (Updatable) The operation can be one of these values: `INSERT`, `MERGE`, `REMOVE`
+         */
+        operation: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        selection: pulumi.Input<string>;
+        /**
+         * (Updatable)
+         */
+        value: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseShardDetail {
+        /**
+         * Admin password for shard database.
+         */
+        adminPassword: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cloud Autonomous Exadata VM Cluster.
+         */
+        cloudAutonomousVmClusterId: pulumi.Input<string>;
+        /**
+         * The compute count for the shard database. It has to be in multiples of 2.
+         */
+        computeCount: pulumi.Input<number>;
+        /**
+         * Identifier of the underlying container database.
+         */
+        containerDatabaseId?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying container database parent.
+         */
+        containerDatabaseParentId?: pulumi.Input<string>;
+        /**
+         * The data disk group size to be allocated in GBs for the shard database.
+         */
+        dataStorageSizeInGbs: pulumi.Input<number>;
+        /**
+         * Details of encryption key to be used to encrypt data for shards and catalog for sharded database. For system-defined sharding type, all shards have to use same encryptionKeyDetails. For system-defined sharding, if encryptionKeyDetails are not specified for catalog, then Oracle managed key will be used for catalog. For user-defined sharding type, if encryptionKeyDetails are not provided for any shard or catalog, then Oracle managed key will be used for such shard or catalog. For system-defined or user-defined sharding type, if the shard or catalog has a peer in region other than primary shard or catalog region, then make sure to provide virtual vault for such shard or catalog, which is also replicated to peer region (the region where peer or standby shard or catalog exists).
+         */
+        encryptionKeyDetails?: pulumi.Input<inputs.GloballyDistributedDatabase.ShardedDatabaseShardDetailEncryptionKeyDetails>;
+        /**
+         * Determines the auto-scaling mode for the shard database.
+         */
+        isAutoScalingEnabled: pulumi.Input<boolean>;
+        /**
+         * Additional metadata related to shard's underlying supporting resource.
+         */
+        metadata?: pulumi.Input<{[key: string]: any}>;
+        /**
+         * Name of the shard.
+         */
+        name?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the peer cloud Autonomous Exadata VM Cluster.
+         */
+        peerCloudAutonomousVmClusterId?: pulumi.Input<string>;
+        /**
+         * Name of the shard-group to which the shard belongs.
+         */
+        shardGroup?: pulumi.Input<string>;
+        /**
+         * The shard space name for the shard database. Shard space for existing shard cannot be changed, once shard is created. Shard space name shall be used while creation of new shards. For User defined sharding, every shard must have a unique shard space name. For system defined sharding, shard space name is not required.
+         */
+        shardSpace?: pulumi.Input<string>;
+        /**
+         * Status of shard or catalog or gsm for the sharded database.
+         */
+        status?: pulumi.Input<string>;
+        /**
+         * Identifier of the underlying supporting resource.
+         */
+        supportingResourceId?: pulumi.Input<string>;
+        /**
+         * The time the the Sharded Database was created. An RFC3339 formatted datetime string
+         */
+        timeCreated?: pulumi.Input<string>;
+        /**
+         * The time the ssl certificate associated with shard expires. An RFC3339 formatted datetime string
+         */
+        timeSslCertificateExpires?: pulumi.Input<string>;
+        /**
+         * The time the Sharded Database was last updated. An RFC3339 formatted datetime string
+         */
+        timeUpdated?: pulumi.Input<string>;
+    }
+
+    export interface ShardedDatabaseShardDetailEncryptionKeyDetails {
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key in vault identified by vaultId in customer tenancy  that is used as the master encryption key.
+         */
+        kmsKeyId: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the KMS key version for key identified by kmsKeyId that is used in data encryption (TDE) operations.
+         */
+        kmsKeyVersionId?: pulumi.Input<string>;
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the vault in customer tenancy where KMS key is present. For shard or catalog with cross-region data guard enabled, user needs to make sure to provide virtual private vault only, which is also replicated in the region of standby shard.
+         */
+        vaultId: pulumi.Input<string>;
     }
 }
 
@@ -61896,7 +62331,6 @@ export namespace Integration {
         allowlistedHttpVcns?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn>[]>;
         /**
          * The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-         * <<<<<<< HEAD
          */
         isIntegrationVcnAllowlisted?: pulumi.Input<boolean>;
         /**
@@ -70223,7 +70657,7 @@ export namespace Opsi {
          */
         userName?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
          */
         walletSecretId?: pulumi.Input<string>;
     }
@@ -70284,7 +70718,7 @@ export namespace Opsi {
          */
         userName?: pulumi.Input<string>;
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
          */
         walletSecretId?: pulumi.Input<string>;
     }
@@ -70322,7 +70756,7 @@ export namespace Opsi {
          */
         connectionDetails?: pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailConnectionDetails>;
         /**
-         * User credential details to connect to the database. This is supplied via the External Database Service.
+         * User credential details to connect to the database.
          */
         credentialDetails?: pulumi.Input<inputs.Opsi.ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetails>;
         /**
@@ -70542,7 +70976,7 @@ export namespace Opsi {
 
     export interface GetOperationsInsightsWarehouseUsersFilter {
         /**
-         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          */
         name: string;
         regex?: boolean;
@@ -70551,7 +70985,7 @@ export namespace Opsi {
 
     export interface GetOperationsInsightsWarehouseUsersFilterArgs {
         /**
-         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          */
         name: pulumi.Input<string>;
         regex?: pulumi.Input<boolean>;

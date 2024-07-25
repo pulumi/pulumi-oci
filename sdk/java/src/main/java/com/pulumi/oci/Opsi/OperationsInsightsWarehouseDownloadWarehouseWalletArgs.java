@@ -15,14 +15,14 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
     public static final OperationsInsightsWarehouseDownloadWarehouseWalletArgs Empty = new OperationsInsightsWarehouseDownloadWarehouseWalletArgs();
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      * 
      */
     @Import(name="operationsInsightsWarehouseId", required=true)
     private Output<String> operationsInsightsWarehouseId;
 
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      */
     public Output<String> operationsInsightsWarehouseId() {
@@ -30,7 +30,7 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
     }
 
     /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * User provided ADW wallet password for the Ops Insights Warehouse.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -40,7 +40,7 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
     private Output<String> operationsInsightsWarehouseWalletPassword;
 
     /**
-     * @return User provided ADW wallet password for the Operations Insights Warehouse.
+     * @return User provided ADW wallet password for the Ops Insights Warehouse.
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -76,7 +76,7 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
         }
 
         /**
-         * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * @param operationsInsightsWarehouseId Unique Ops Insights Warehouse identifier
          * 
          * @return builder
          * 
@@ -87,7 +87,7 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
         }
 
         /**
-         * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * @param operationsInsightsWarehouseId Unique Ops Insights Warehouse identifier
          * 
          * @return builder
          * 
@@ -97,7 +97,7 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
         }
 
         /**
-         * @param operationsInsightsWarehouseWalletPassword User provided ADW wallet password for the Operations Insights Warehouse.
+         * @param operationsInsightsWarehouseWalletPassword User provided ADW wallet password for the Ops Insights Warehouse.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -111,7 +111,7 @@ public final class OperationsInsightsWarehouseDownloadWarehouseWalletArgs extend
         }
 
         /**
-         * @param operationsInsightsWarehouseWalletPassword User provided ADW wallet password for the Operations Insights Warehouse.
+         * @param operationsInsightsWarehouseWalletPassword User provided ADW wallet password for the Ops Insights Warehouse.
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

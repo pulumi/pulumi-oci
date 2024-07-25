@@ -612,7 +612,6 @@ type IntegrationInstanceNetworkEndpointDetails struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns []IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcn `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-	// <<<<<<< HEAD
 	IsIntegrationVcnAllowlisted *bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
@@ -635,7 +634,6 @@ type IntegrationInstanceNetworkEndpointDetailsArgs struct {
 	// Virtual Cloud Networks allowed to access this network endpoint.
 	AllowlistedHttpVcns IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArrayInput `pulumi:"allowlistedHttpVcns"`
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-	// <<<<<<< HEAD
 	IsIntegrationVcnAllowlisted pulumi.BoolPtrInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
@@ -731,7 +729,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsOutput) AllowlistedHttpVcns() I
 }
 
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-// <<<<<<< HEAD
 func (o IntegrationInstanceNetworkEndpointDetailsOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v IntegrationInstanceNetworkEndpointDetails) *bool { return v.IsIntegrationVcnAllowlisted }).(pulumi.BoolPtrOutput)
 }
@@ -786,7 +783,6 @@ func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) AllowlistedHttpVcns(
 }
 
 // The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-// <<<<<<< HEAD
 func (o IntegrationInstanceNetworkEndpointDetailsPtrOutput) IsIntegrationVcnAllowlisted() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *IntegrationInstanceNetworkEndpointDetails) *bool {
 		if v == nil {
@@ -1558,7 +1554,6 @@ type GetIntegrationInstanceNetworkEndpointDetail struct {
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	// <<<<<<< HEAD
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 }
 
@@ -1581,7 +1576,6 @@ type GetIntegrationInstanceNetworkEndpointDetailArgs struct {
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	// <<<<<<< HEAD
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 }
 
@@ -1654,7 +1648,6 @@ func (o GetIntegrationInstanceNetworkEndpointDetailOutput) IsIntegrationVcnAllow
 }
 
 // The type of network endpoint.
-// <<<<<<< HEAD
 func (o GetIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstanceNetworkEndpointDetail) string { return v.NetworkEndpointType }).(pulumi.StringOutput)
 }
@@ -2051,7 +2044,6 @@ type GetIntegrationInstancesIntegrationInstance struct {
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections []GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnection `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape string `pulumi:"shape"`
 	// Life cycle state to query on.
 	State string `pulumi:"state"`
@@ -2115,7 +2107,6 @@ type GetIntegrationInstancesIntegrationInstanceArgs struct {
 	// Base representation for Outbound Connection (Reverse Connection).
 	PrivateEndpointOutboundConnections GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArrayInput `pulumi:"privateEndpointOutboundConnections"`
 	// Shape
-	// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 	Shape pulumi.StringInput `pulumi:"shape"`
 	// Life cycle state to query on.
 	State pulumi.StringInput `pulumi:"state"`
@@ -2293,7 +2284,6 @@ func (o GetIntegrationInstancesIntegrationInstanceOutput) PrivateEndpointOutboun
 }
 
 // Shape
-// > > > > > > > c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
 func (o GetIntegrationInstancesIntegrationInstanceOutput) Shape() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstance) string { return v.Shape }).(pulumi.StringOutput)
 }
@@ -2875,7 +2865,6 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail struct {
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted bool `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	// <<<<<<< HEAD
 	NetworkEndpointType string `pulumi:"networkEndpointType"`
 }
 
@@ -2898,7 +2887,6 @@ type GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs struct 
 	// The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
 	IsIntegrationVcnAllowlisted pulumi.BoolInput `pulumi:"isIntegrationVcnAllowlisted"`
 	// The type of network endpoint.
-	// <<<<<<< HEAD
 	NetworkEndpointType pulumi.StringInput `pulumi:"networkEndpointType"`
 }
 
@@ -2975,7 +2963,6 @@ func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) I
 }
 
 // The type of network endpoint.
-// <<<<<<< HEAD
 func (o GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailOutput) NetworkEndpointType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetail) string {
 		return v.NetworkEndpointType

@@ -15,7 +15,12 @@ __all__ = [
     'ConfigConfigurationClientCertificateDetailsArgs',
     'ConfigConfigurationClientCertificateDetailsClientCertificateArgs',
     'ConfigConfigurationClientCertificateDetailsPrivateKeyArgs',
+    'ConfigConfigurationDatabaseAuthenticationDetailsArgs',
+    'ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs',
+    'ConfigConfigurationDatabaseWalletDetailsArgs',
     'ConfigConfigurationDnsConfigurationArgs',
+    'ConfigConfigurationFtpBasicAuthenticationDetailsArgs',
+    'ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs',
     'ConfigConfigurationNetworkConfigurationArgs',
     'ConfigConfigurationReqAuthenticationDetailsArgs',
     'ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs',
@@ -88,7 +93,18 @@ class ConfigConfigurationArgs:
     def __init__(__self__, *,
                  client_certificate_details: Optional[pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs']] = None,
                  config_type: Optional[pulumi.Input[str]] = None,
+                 connection_string: Optional[pulumi.Input[str]] = None,
+                 database_authentication_details: Optional[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsArgs']] = None,
+                 database_connection_type: Optional[pulumi.Input[str]] = None,
+                 database_role: Optional[pulumi.Input[str]] = None,
+                 database_type: Optional[pulumi.Input[str]] = None,
+                 database_wallet_details: Optional[pulumi.Input['ConfigConfigurationDatabaseWalletDetailsArgs']] = None,
                  dns_configuration: Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']] = None,
+                 download_size_limit_in_bytes: Optional[pulumi.Input[int]] = None,
+                 ftp_basic_authentication_details: Optional[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgs']] = None,
+                 ftp_protocol: Optional[pulumi.Input[str]] = None,
+                 ftp_request_type: Optional[pulumi.Input[str]] = None,
+                 is_active_mode: Optional[pulumi.Input[bool]] = None,
                  is_certificate_validation_enabled: Optional[pulumi.Input[bool]] = None,
                  is_default_snapshot_enabled: Optional[pulumi.Input[bool]] = None,
                  is_failure_retried: Optional[pulumi.Input[bool]] = None,
@@ -97,6 +113,7 @@ class ConfigConfigurationArgs:
                  name_server: Optional[pulumi.Input[str]] = None,
                  network_configuration: Optional[pulumi.Input['ConfigConfigurationNetworkConfigurationArgs']] = None,
                  protocol: Optional[pulumi.Input[str]] = None,
+                 query: Optional[pulumi.Input[str]] = None,
                  record_type: Optional[pulumi.Input[str]] = None,
                  req_authentication_details: Optional[pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgs']] = None,
                  req_authentication_scheme: Optional[pulumi.Input[str]] = None,
@@ -104,13 +121,25 @@ class ConfigConfigurationArgs:
                  request_method: Optional[pulumi.Input[str]] = None,
                  request_post_body: Optional[pulumi.Input[str]] = None,
                  request_query_params: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgs']]]] = None,
+                 upload_file_size_in_bytes: Optional[pulumi.Input[int]] = None,
                  verify_response_codes: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  verify_response_content: Optional[pulumi.Input[str]] = None,
                  verify_texts: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]]] = None):
         """
         :param pulumi.Input['ConfigConfigurationClientCertificateDetailsArgs'] client_certificate_details: (Updatable) Details for client certificate.
         :param pulumi.Input[str] config_type: (Updatable) Type of configuration.
+        :param pulumi.Input[str] connection_string: (Updatable) Database connection string.
+        :param pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsArgs'] database_authentication_details: (Updatable) Details for basic authentication.
+        :param pulumi.Input[str] database_connection_type: (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        :param pulumi.Input[str] database_role: (Updatable) Database role.
+        :param pulumi.Input[str] database_type: (Updatable) Database type.
+        :param pulumi.Input['ConfigConfigurationDatabaseWalletDetailsArgs'] database_wallet_details: (Updatable) Details for database wallet.
         :param pulumi.Input['ConfigConfigurationDnsConfigurationArgs'] dns_configuration: (Updatable) Information about the DNS settings.
+        :param pulumi.Input[int] download_size_limit_in_bytes: (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        :param pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgs'] ftp_basic_authentication_details: (Updatable) Details for basic authentication.
+        :param pulumi.Input[str] ftp_protocol: (Updatable) FTP protocol type.
+        :param pulumi.Input[str] ftp_request_type: (Updatable) FTP monitor request type.
+        :param pulumi.Input[bool] is_active_mode: (Updatable) If enabled, Active mode will be used for the FTP connection.
         :param pulumi.Input[bool] is_certificate_validation_enabled: (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         :param pulumi.Input[bool] is_default_snapshot_enabled: (Updatable) If disabled, auto snapshots are not collected.
         :param pulumi.Input[bool] is_failure_retried: (Updatable) If isFailureRetried is enabled, then a failed call will be retried.
@@ -119,6 +148,7 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[str] name_server: (Updatable) Name of the server that will be used to perform DNS lookup.
         :param pulumi.Input['ConfigConfigurationNetworkConfigurationArgs'] network_configuration: (Updatable) Details of the network configuration. For NETWORK monitor type, NetworkConfiguration is mandatory.
         :param pulumi.Input[str] protocol: (Updatable) Type of protocol.
+        :param pulumi.Input[str] query: (Updatable) SQL query to be executed.
         :param pulumi.Input[str] record_type: (Updatable) DNS record type.
         :param pulumi.Input['ConfigConfigurationReqAuthenticationDetailsArgs'] req_authentication_details: (Updatable) Details for request HTTP authentication.
         :param pulumi.Input[str] req_authentication_scheme: (Updatable) Request HTTP authentication scheme.
@@ -126,6 +156,7 @@ class ConfigConfigurationArgs:
         :param pulumi.Input[str] request_method: (Updatable) Request HTTP method.
         :param pulumi.Input[str] request_post_body: (Updatable) Request post body content.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgs']]] request_query_params: (Updatable) List of request query params. Example: `[{"paramName": "sortOrder", "paramValue": "asc"}]`
+        :param pulumi.Input[int] upload_file_size_in_bytes: (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] verify_response_codes: (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         :param pulumi.Input[str] verify_response_content: (Updatable) Verify response content against regular expression based string. If response content does not match the verifyResponseContent value, then it will be considered a failure.
         :param pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationVerifyTextArgs']]] verify_texts: (Updatable) Verifies all the search strings present in the response. If any search string is not present in the response, then it will be considered as a failure.
@@ -134,8 +165,30 @@ class ConfigConfigurationArgs:
             pulumi.set(__self__, "client_certificate_details", client_certificate_details)
         if config_type is not None:
             pulumi.set(__self__, "config_type", config_type)
+        if connection_string is not None:
+            pulumi.set(__self__, "connection_string", connection_string)
+        if database_authentication_details is not None:
+            pulumi.set(__self__, "database_authentication_details", database_authentication_details)
+        if database_connection_type is not None:
+            pulumi.set(__self__, "database_connection_type", database_connection_type)
+        if database_role is not None:
+            pulumi.set(__self__, "database_role", database_role)
+        if database_type is not None:
+            pulumi.set(__self__, "database_type", database_type)
+        if database_wallet_details is not None:
+            pulumi.set(__self__, "database_wallet_details", database_wallet_details)
         if dns_configuration is not None:
             pulumi.set(__self__, "dns_configuration", dns_configuration)
+        if download_size_limit_in_bytes is not None:
+            pulumi.set(__self__, "download_size_limit_in_bytes", download_size_limit_in_bytes)
+        if ftp_basic_authentication_details is not None:
+            pulumi.set(__self__, "ftp_basic_authentication_details", ftp_basic_authentication_details)
+        if ftp_protocol is not None:
+            pulumi.set(__self__, "ftp_protocol", ftp_protocol)
+        if ftp_request_type is not None:
+            pulumi.set(__self__, "ftp_request_type", ftp_request_type)
+        if is_active_mode is not None:
+            pulumi.set(__self__, "is_active_mode", is_active_mode)
         if is_certificate_validation_enabled is not None:
             pulumi.set(__self__, "is_certificate_validation_enabled", is_certificate_validation_enabled)
         if is_default_snapshot_enabled is not None:
@@ -152,6 +205,8 @@ class ConfigConfigurationArgs:
             pulumi.set(__self__, "network_configuration", network_configuration)
         if protocol is not None:
             pulumi.set(__self__, "protocol", protocol)
+        if query is not None:
+            pulumi.set(__self__, "query", query)
         if record_type is not None:
             pulumi.set(__self__, "record_type", record_type)
         if req_authentication_details is not None:
@@ -166,6 +221,8 @@ class ConfigConfigurationArgs:
             pulumi.set(__self__, "request_post_body", request_post_body)
         if request_query_params is not None:
             pulumi.set(__self__, "request_query_params", request_query_params)
+        if upload_file_size_in_bytes is not None:
+            pulumi.set(__self__, "upload_file_size_in_bytes", upload_file_size_in_bytes)
         if verify_response_codes is not None:
             pulumi.set(__self__, "verify_response_codes", verify_response_codes)
         if verify_response_content is not None:
@@ -198,6 +255,78 @@ class ConfigConfigurationArgs:
         pulumi.set(self, "config_type", value)
 
     @property
+    @pulumi.getter(name="connectionString")
+    def connection_string(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Database connection string.
+        """
+        return pulumi.get(self, "connection_string")
+
+    @connection_string.setter
+    def connection_string(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "connection_string", value)
+
+    @property
+    @pulumi.getter(name="databaseAuthenticationDetails")
+    def database_authentication_details(self) -> Optional[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsArgs']]:
+        """
+        (Updatable) Details for basic authentication.
+        """
+        return pulumi.get(self, "database_authentication_details")
+
+    @database_authentication_details.setter
+    def database_authentication_details(self, value: Optional[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsArgs']]):
+        pulumi.set(self, "database_authentication_details", value)
+
+    @property
+    @pulumi.getter(name="databaseConnectionType")
+    def database_connection_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        """
+        return pulumi.get(self, "database_connection_type")
+
+    @database_connection_type.setter
+    def database_connection_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_connection_type", value)
+
+    @property
+    @pulumi.getter(name="databaseRole")
+    def database_role(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Database role.
+        """
+        return pulumi.get(self, "database_role")
+
+    @database_role.setter
+    def database_role(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_role", value)
+
+    @property
+    @pulumi.getter(name="databaseType")
+    def database_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Database type.
+        """
+        return pulumi.get(self, "database_type")
+
+    @database_type.setter
+    def database_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_type", value)
+
+    @property
+    @pulumi.getter(name="databaseWalletDetails")
+    def database_wallet_details(self) -> Optional[pulumi.Input['ConfigConfigurationDatabaseWalletDetailsArgs']]:
+        """
+        (Updatable) Details for database wallet.
+        """
+        return pulumi.get(self, "database_wallet_details")
+
+    @database_wallet_details.setter
+    def database_wallet_details(self, value: Optional[pulumi.Input['ConfigConfigurationDatabaseWalletDetailsArgs']]):
+        pulumi.set(self, "database_wallet_details", value)
+
+    @property
     @pulumi.getter(name="dnsConfiguration")
     def dns_configuration(self) -> Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']]:
         """
@@ -208,6 +337,66 @@ class ConfigConfigurationArgs:
     @dns_configuration.setter
     def dns_configuration(self, value: Optional[pulumi.Input['ConfigConfigurationDnsConfigurationArgs']]):
         pulumi.set(self, "dns_configuration", value)
+
+    @property
+    @pulumi.getter(name="downloadSizeLimitInBytes")
+    def download_size_limit_in_bytes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        """
+        return pulumi.get(self, "download_size_limit_in_bytes")
+
+    @download_size_limit_in_bytes.setter
+    def download_size_limit_in_bytes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "download_size_limit_in_bytes", value)
+
+    @property
+    @pulumi.getter(name="ftpBasicAuthenticationDetails")
+    def ftp_basic_authentication_details(self) -> Optional[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgs']]:
+        """
+        (Updatable) Details for basic authentication.
+        """
+        return pulumi.get(self, "ftp_basic_authentication_details")
+
+    @ftp_basic_authentication_details.setter
+    def ftp_basic_authentication_details(self, value: Optional[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsArgs']]):
+        pulumi.set(self, "ftp_basic_authentication_details", value)
+
+    @property
+    @pulumi.getter(name="ftpProtocol")
+    def ftp_protocol(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) FTP protocol type.
+        """
+        return pulumi.get(self, "ftp_protocol")
+
+    @ftp_protocol.setter
+    def ftp_protocol(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ftp_protocol", value)
+
+    @property
+    @pulumi.getter(name="ftpRequestType")
+    def ftp_request_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) FTP monitor request type.
+        """
+        return pulumi.get(self, "ftp_request_type")
+
+    @ftp_request_type.setter
+    def ftp_request_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "ftp_request_type", value)
+
+    @property
+    @pulumi.getter(name="isActiveMode")
+    def is_active_mode(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) If enabled, Active mode will be used for the FTP connection.
+        """
+        return pulumi.get(self, "is_active_mode")
+
+    @is_active_mode.setter
+    def is_active_mode(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_active_mode", value)
 
     @property
     @pulumi.getter(name="isCertificateValidationEnabled")
@@ -306,6 +495,18 @@ class ConfigConfigurationArgs:
         pulumi.set(self, "protocol", value)
 
     @property
+    @pulumi.getter
+    def query(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) SQL query to be executed.
+        """
+        return pulumi.get(self, "query")
+
+    @query.setter
+    def query(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "query", value)
+
+    @property
     @pulumi.getter(name="recordType")
     def record_type(self) -> Optional[pulumi.Input[str]]:
         """
@@ -388,6 +589,18 @@ class ConfigConfigurationArgs:
     @request_query_params.setter
     def request_query_params(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['ConfigConfigurationRequestQueryParamArgs']]]]):
         pulumi.set(self, "request_query_params", value)
+
+    @property
+    @pulumi.getter(name="uploadFileSizeInBytes")
+    def upload_file_size_in_bytes(self) -> Optional[pulumi.Input[int]]:
+        """
+        (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+        """
+        return pulumi.get(self, "upload_file_size_in_bytes")
+
+    @upload_file_size_in_bytes.setter
+    def upload_file_size_in_bytes(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "upload_file_size_in_bytes", value)
 
     @property
     @pulumi.getter(name="verifyResponseCodes")
@@ -544,6 +757,139 @@ class ConfigConfigurationClientCertificateDetailsPrivateKeyArgs:
 
 
 @pulumi.input_type
+class ConfigConfigurationDatabaseAuthenticationDetailsArgs:
+    def __init__(__self__, *,
+                 password: Optional[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs']] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs'] password: (Updatable) Password.
+        :param pulumi.Input[str] username: (Updatable) Username for authentication.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs']]:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input['ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs']]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs:
+    def __init__(__self__, *,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_type: Optional[pulumi.Input[str]] = None,
+                 vault_secret_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] password: (Updatable) Password.
+        :param pulumi.Input[str] password_type: (Updatable) Type of method to pass password.
+        :param pulumi.Input[str] vault_secret_id: (Updatable) Vault secret OCID.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_type is not None:
+            pulumi.set(__self__, "password_type", password_type)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @password_type.setter
+    def password_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_type", value)
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @vault_secret_id.setter
+    def vault_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_secret_id", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationDatabaseWalletDetailsArgs:
+    def __init__(__self__, *,
+                 database_wallet: Optional[pulumi.Input[str]] = None,
+                 service_name: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] database_wallet: (Updatable) The database wallet configuration zip file.
+        :param pulumi.Input[str] service_name: (Updatable) Service name of the database.
+        """
+        if database_wallet is not None:
+            pulumi.set(__self__, "database_wallet", database_wallet)
+        if service_name is not None:
+            pulumi.set(__self__, "service_name", service_name)
+
+    @property
+    @pulumi.getter(name="databaseWallet")
+    def database_wallet(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) The database wallet configuration zip file.
+        """
+        return pulumi.get(self, "database_wallet")
+
+    @database_wallet.setter
+    def database_wallet(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "database_wallet", value)
+
+    @property
+    @pulumi.getter(name="serviceName")
+    def service_name(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Service name of the database.
+        """
+        return pulumi.get(self, "service_name")
+
+    @service_name.setter
+    def service_name(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "service_name", value)
+
+
+@pulumi.input_type
 class ConfigConfigurationDnsConfigurationArgs:
     def __init__(__self__, *,
                  is_override_dns: Optional[pulumi.Input[bool]] = None,
@@ -580,6 +926,100 @@ class ConfigConfigurationDnsConfigurationArgs:
     @override_dns_ip.setter
     def override_dns_ip(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "override_dns_ip", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationFtpBasicAuthenticationDetailsArgs:
+    def __init__(__self__, *,
+                 password: Optional[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs']] = None,
+                 username: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs'] password: (Updatable) Password.
+        :param pulumi.Input[str] username: (Updatable) Username for authentication.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if username is not None:
+            pulumi.set(__self__, "username", username)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs']]:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input['ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs']]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter
+    def username(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Username for authentication.
+        """
+        return pulumi.get(self, "username")
+
+    @username.setter
+    def username(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "username", value)
+
+
+@pulumi.input_type
+class ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs:
+    def __init__(__self__, *,
+                 password: Optional[pulumi.Input[str]] = None,
+                 password_type: Optional[pulumi.Input[str]] = None,
+                 vault_secret_id: Optional[pulumi.Input[str]] = None):
+        """
+        :param pulumi.Input[str] password: (Updatable) Password.
+        :param pulumi.Input[str] password_type: (Updatable) Type of method to pass password.
+        :param pulumi.Input[str] vault_secret_id: (Updatable) Vault secret OCID.
+        """
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if password_type is not None:
+            pulumi.set(__self__, "password_type", password_type)
+        if vault_secret_id is not None:
+            pulumi.set(__self__, "vault_secret_id", vault_secret_id)
+
+    @property
+    @pulumi.getter
+    def password(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Password.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password", value)
+
+    @property
+    @pulumi.getter(name="passwordType")
+    def password_type(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Type of method to pass password.
+        """
+        return pulumi.get(self, "password_type")
+
+    @password_type.setter
+    def password_type(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "password_type", value)
+
+    @property
+    @pulumi.getter(name="vaultSecretId")
+    def vault_secret_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        (Updatable) Vault secret OCID.
+        """
+        return pulumi.get(self, "vault_secret_id")
+
+    @vault_secret_id.setter
+    def vault_secret_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "vault_secret_id", value)
 
 
 @pulumi.input_type
@@ -1111,14 +1551,18 @@ class ConfigScriptParameterMonitorScriptParameterArgs:
 class ConfigVantagePointArgs:
     def __init__(__self__, *,
                  name: pulumi.Input[str],
-                 display_name: Optional[pulumi.Input[str]] = None):
+                 display_name: Optional[pulumi.Input[str]] = None,
+                 worker_lists: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None):
         """
         :param pulumi.Input[str] name: Name of the vantage point.
         :param pulumi.Input[str] display_name: Unique name that can be edited. The name should not contain any confidential information.
+        :param pulumi.Input[Sequence[pulumi.Input[str]]] worker_lists: List of workers running the assigned monitor.
         """
         pulumi.set(__self__, "name", name)
         if display_name is not None:
             pulumi.set(__self__, "display_name", display_name)
+        if worker_lists is not None:
+            pulumi.set(__self__, "worker_lists", worker_lists)
 
     @property
     @pulumi.getter
@@ -1143,6 +1587,18 @@ class ConfigVantagePointArgs:
     @display_name.setter
     def display_name(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "display_name", value)
+
+    @property
+    @pulumi.getter(name="workerLists")
+    def worker_lists(self) -> Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]:
+        """
+        List of workers running the assigned monitor.
+        """
+        return pulumi.get(self, "worker_lists")
+
+    @worker_lists.setter
+    def worker_lists(self, value: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]]):
+        pulumi.set(self, "worker_lists", value)
 
 
 @pulumi.input_type

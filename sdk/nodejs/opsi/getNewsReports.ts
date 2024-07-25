@@ -54,7 +54,7 @@ export interface GetNewsReportsArgs {
     compartmentIdInSubtree?: boolean;
     filters?: inputs.Opsi.GetNewsReportsFilter[];
     /**
-     * Unique Operations Insights news report identifier
+     * Unique Ops Insights news report identifier
      */
     newsReportId?: string;
     /**
@@ -91,7 +91,7 @@ export interface GetNewsReportsResult {
      */
     readonly states?: string[];
     /**
-     * Indicates the status of a news report in Operations Insights.
+     * Indicates the status of a news report in Ops Insights.
      */
     readonly statuses?: string[];
 }
@@ -133,7 +133,7 @@ export interface GetNewsReportsOutputArgs {
     compartmentIdInSubtree?: pulumi.Input<boolean>;
     filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetNewsReportsFilterArgs>[]>;
     /**
-     * Unique Operations Insights news report identifier
+     * Unique Ops Insights news report identifier
      */
     newsReportId?: pulumi.Input<string>;
     /**

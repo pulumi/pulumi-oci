@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Database.inputs.KeyStoreAssociatedDatabaseArgs;
 import com.pulumi.oci.Database.inputs.KeyStoreTypeDetailsArgs;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -48,6 +49,13 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> compartmentId() {
         return Optional.ofNullable(this.compartmentId);
+    }
+
+    @Import(name="confirmDetailsTrigger")
+    private @Nullable Output<Integer> confirmDetailsTrigger;
+
+    public Optional<Output<Integer>> confirmDetailsTrigger() {
+        return Optional.ofNullable(this.confirmDetailsTrigger);
     }
 
     /**
@@ -160,6 +168,7 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
     private KeyStoreState(KeyStoreState $) {
         this.associatedDatabases = $.associatedDatabases;
         this.compartmentId = $.compartmentId;
+        this.confirmDetailsTrigger = $.confirmDetailsTrigger;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
@@ -237,6 +246,15 @@ public final class KeyStoreState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder compartmentId(String compartmentId) {
             return compartmentId(Output.of(compartmentId));
+        }
+
+        public Builder confirmDetailsTrigger(@Nullable Output<Integer> confirmDetailsTrigger) {
+            $.confirmDetailsTrigger = confirmDetailsTrigger;
+            return this;
+        }
+
+        public Builder confirmDetailsTrigger(Integer confirmDetailsTrigger) {
+            return confirmDetailsTrigger(Output.of(confirmDetailsTrigger));
         }
 
         /**

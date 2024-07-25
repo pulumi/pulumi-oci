@@ -56,6 +56,11 @@ public final class GetSecurityAssessmentResult {
      */
     private List<String> ignoredTargets;
     /**
+     * @return Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    private Boolean isAssessmentScheduled;
+    /**
      * @return Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      * 
      */
@@ -201,6 +206,13 @@ public final class GetSecurityAssessmentResult {
         return this.ignoredTargets;
     }
     /**
+     * @return Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    public Boolean isAssessmentScheduled() {
+        return this.isAssessmentScheduled;
+    }
+    /**
      * @return Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
      * 
      */
@@ -343,6 +355,7 @@ public final class GetSecurityAssessmentResult {
         private String id;
         private List<String> ignoredAssessmentIds;
         private List<String> ignoredTargets;
+        private Boolean isAssessmentScheduled;
         private Boolean isBaseline;
         private Boolean isDeviatedFromBaseline;
         private String lastComparedBaselineId;
@@ -373,6 +386,7 @@ public final class GetSecurityAssessmentResult {
     	      this.id = defaults.id;
     	      this.ignoredAssessmentIds = defaults.ignoredAssessmentIds;
     	      this.ignoredTargets = defaults.ignoredTargets;
+    	      this.isAssessmentScheduled = defaults.isAssessmentScheduled;
     	      this.isBaseline = defaults.isBaseline;
     	      this.isDeviatedFromBaseline = defaults.isDeviatedFromBaseline;
     	      this.lastComparedBaselineId = defaults.lastComparedBaselineId;
@@ -463,6 +477,14 @@ public final class GetSecurityAssessmentResult {
         }
         public Builder ignoredTargets(String... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
+        }
+        @CustomType.Setter
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            if (isAssessmentScheduled == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentResult", "isAssessmentScheduled");
+            }
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            return this;
         }
         @CustomType.Setter
         public Builder isBaseline(Boolean isBaseline) {
@@ -632,6 +654,7 @@ public final class GetSecurityAssessmentResult {
             _resultValue.id = id;
             _resultValue.ignoredAssessmentIds = ignoredAssessmentIds;
             _resultValue.ignoredTargets = ignoredTargets;
+            _resultValue.isAssessmentScheduled = isAssessmentScheduled;
             _resultValue.isBaseline = isBaseline;
             _resultValue.isDeviatedFromBaseline = isDeviatedFromBaseline;
             _resultValue.lastComparedBaselineId = lastComparedBaselineId;

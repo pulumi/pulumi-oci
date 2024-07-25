@@ -26,8 +26,7 @@ namespace Pulumi.Oci.Integration.Outputs
         /// </summary>
         public readonly bool IsIntegrationVcnAllowlisted;
         /// <summary>
-        /// The type of network endpoint. 
-        /// &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+        /// The type of network endpoint.
         /// </summary>
         public readonly string NetworkEndpointType;
 

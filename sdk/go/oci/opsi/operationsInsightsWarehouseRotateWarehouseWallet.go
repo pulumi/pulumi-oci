@@ -52,7 +52,7 @@ import (
 type OperationsInsightsWarehouseRotateWarehouseWallet struct {
 	pulumi.CustomResourceState
 
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -92,7 +92,7 @@ func GetOperationsInsightsWarehouseRotateWarehouseWallet(ctx *pulumi.Context,
 
 // Input properties used for looking up and filtering OperationsInsightsWarehouseRotateWarehouseWallet resources.
 type operationsInsightsWarehouseRotateWarehouseWalletState struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -100,7 +100,7 @@ type operationsInsightsWarehouseRotateWarehouseWalletState struct {
 }
 
 type OperationsInsightsWarehouseRotateWarehouseWalletState struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -112,7 +112,7 @@ func (OperationsInsightsWarehouseRotateWarehouseWalletState) ElementType() refle
 }
 
 type operationsInsightsWarehouseRotateWarehouseWalletArgs struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -121,7 +121,7 @@ type operationsInsightsWarehouseRotateWarehouseWalletArgs struct {
 
 // The set of arguments for constructing a OperationsInsightsWarehouseRotateWarehouseWallet resource.
 type OperationsInsightsWarehouseRotateWarehouseWalletArgs struct {
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	//
 	// ** IMPORTANT **
 	// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -215,7 +215,7 @@ func (o OperationsInsightsWarehouseRotateWarehouseWalletOutput) ToOperationsInsi
 	return o
 }
 
-// Unique Operations Insights Warehouse identifier
+// Unique Ops Insights Warehouse identifier
 //
 // ** IMPORTANT **
 // Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

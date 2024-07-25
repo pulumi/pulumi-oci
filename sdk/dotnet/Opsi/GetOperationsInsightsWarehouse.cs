@@ -14,7 +14,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets details of an Operations Insights Warehouse.
+        /// Gets details of an Ops Insights Warehouse.
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
         /// 
@@ -42,7 +42,7 @@ namespace Pulumi.Oci.Opsi
         /// <summary>
         /// This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
         /// 
-        /// Gets details of an Operations Insights Warehouse.
+        /// Gets details of an Ops Insights Warehouse.
         /// There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
         /// 
         /// 
@@ -72,7 +72,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class GetOperationsInsightsWarehouseArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Input("operationsInsightsWarehouseId", required: true)]
         public string OperationsInsightsWarehouseId { get; set; } = null!;
@@ -86,7 +86,7 @@ namespace Pulumi.Oci.Opsi
     public sealed class GetOperationsInsightsWarehouseInvokeArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Unique Operations Insights Warehouse identifier
+        /// Unique Ops Insights Warehouse identifier
         /// </summary>
         [Input("operationsInsightsWarehouseId", required: true)]
         public Input<string> OperationsInsightsWarehouseId { get; set; } = null!;
@@ -118,7 +118,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly ImmutableDictionary<string, object> DefinedTags;
         /// <summary>
-        /// User-friedly name of Operations Insights Warehouse that does not have to be unique.
+        /// User-friedly name of Ops Insights Warehouse that does not have to be unique.
         /// </summary>
         public readonly string DisplayName;
         /// <summary>
@@ -138,7 +138,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Tenancy Identifier of Operations Insights service
+        /// Tenancy Identifier of Ops Insights service
         /// </summary>
         public readonly string OperationsInsightsTenancyId;
         public readonly string OperationsInsightsWarehouseId;
@@ -163,7 +163,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly string TimeCreated;
         /// <summary>
-        /// The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+        /// The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
         /// </summary>
         public readonly string TimeLastWalletRotated;
         /// <summary>

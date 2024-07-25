@@ -51,7 +51,6 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
 
     /**
      * The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     @Import(name="isIntegrationVcnAllowlisted")
@@ -59,7 +58,6 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
 
     /**
      * @return The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
-     * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
      * 
      */
     public Optional<Output<Boolean>> isIntegrationVcnAllowlisted() {
@@ -172,7 +170,6 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
 
         /**
          * @param isIntegrationVcnAllowlisted The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
          * 
          * @return builder
          * 
@@ -184,7 +181,6 @@ public final class IntegrationInstanceNetworkEndpointDetailsArgs extends com.pul
 
         /**
          * @param isIntegrationVcnAllowlisted The Integration service&#39;s VCN is allow-listed to allow integrations to call back into other integrations
-         * &lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
          * 
          * @return builder
          * 

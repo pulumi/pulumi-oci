@@ -19,6 +19,7 @@ class KeyStoreArgs:
                  compartment_id: pulumi.Input[str],
                  display_name: pulumi.Input[str],
                  type_details: pulumi.Input['KeyStoreTypeDetailsArgs'],
+                 confirm_details_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None):
         """
@@ -32,6 +33,8 @@ class KeyStoreArgs:
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "type_details", type_details)
+        if confirm_details_trigger is not None:
+            pulumi.set(__self__, "confirm_details_trigger", confirm_details_trigger)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if freeform_tags is not None:
@@ -74,6 +77,15 @@ class KeyStoreArgs:
         pulumi.set(self, "type_details", value)
 
     @property
+    @pulumi.getter(name="confirmDetailsTrigger")
+    def confirm_details_trigger(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "confirm_details_trigger")
+
+    @confirm_details_trigger.setter
+    def confirm_details_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "confirm_details_trigger", value)
+
+    @property
     @pulumi.getter(name="definedTags")
     def defined_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -103,6 +115,7 @@ class _KeyStoreState:
     def __init__(__self__, *,
                  associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input['KeyStoreAssociatedDatabaseArgs']]]] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 confirm_details_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -126,6 +139,8 @@ class _KeyStoreState:
             pulumi.set(__self__, "associated_databases", associated_databases)
         if compartment_id is not None:
             pulumi.set(__self__, "compartment_id", compartment_id)
+        if confirm_details_trigger is not None:
+            pulumi.set(__self__, "confirm_details_trigger", confirm_details_trigger)
         if defined_tags is not None:
             pulumi.set(__self__, "defined_tags", defined_tags)
         if display_name is not None:
@@ -164,6 +179,15 @@ class _KeyStoreState:
     @compartment_id.setter
     def compartment_id(self, value: Optional[pulumi.Input[str]]):
         pulumi.set(self, "compartment_id", value)
+
+    @property
+    @pulumi.getter(name="confirmDetailsTrigger")
+    def confirm_details_trigger(self) -> Optional[pulumi.Input[int]]:
+        return pulumi.get(self, "confirm_details_trigger")
+
+    @confirm_details_trigger.setter
+    def confirm_details_trigger(self, value: Optional[pulumi.Input[int]]):
+        pulumi.set(self, "confirm_details_trigger", value)
 
     @property
     @pulumi.getter(name="definedTags")
@@ -256,6 +280,7 @@ class KeyStore(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 confirm_details_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -361,6 +386,7 @@ class KeyStore(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  compartment_id: Optional[pulumi.Input[str]] = None,
+                 confirm_details_trigger: Optional[pulumi.Input[int]] = None,
                  defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -377,6 +403,7 @@ class KeyStore(pulumi.CustomResource):
             if compartment_id is None and not opts.urn:
                 raise TypeError("Missing required property 'compartment_id'")
             __props__.__dict__["compartment_id"] = compartment_id
+            __props__.__dict__["confirm_details_trigger"] = confirm_details_trigger
             __props__.__dict__["defined_tags"] = defined_tags
             if display_name is None and not opts.urn:
                 raise TypeError("Missing required property 'display_name'")
@@ -401,6 +428,7 @@ class KeyStore(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             associated_databases: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['KeyStoreAssociatedDatabaseArgs']]]]] = None,
             compartment_id: Optional[pulumi.Input[str]] = None,
+            confirm_details_trigger: Optional[pulumi.Input[int]] = None,
             defined_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             display_name: Optional[pulumi.Input[str]] = None,
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
@@ -431,6 +459,7 @@ class KeyStore(pulumi.CustomResource):
 
         __props__.__dict__["associated_databases"] = associated_databases
         __props__.__dict__["compartment_id"] = compartment_id
+        __props__.__dict__["confirm_details_trigger"] = confirm_details_trigger
         __props__.__dict__["defined_tags"] = defined_tags
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["freeform_tags"] = freeform_tags
@@ -455,6 +484,11 @@ class KeyStore(pulumi.CustomResource):
         (Updatable) The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="confirmDetailsTrigger")
+    def confirm_details_trigger(self) -> pulumi.Output[Optional[int]]:
+        return pulumi.get(self, "confirm_details_trigger")
 
     @property
     @pulumi.getter(name="definedTags")

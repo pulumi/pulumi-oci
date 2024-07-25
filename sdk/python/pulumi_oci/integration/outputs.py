@@ -407,7 +407,6 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
         :param Sequence[str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['IntegrationInstanceNetworkEndpointDetailsAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-               <<<<<<< HEAD
         """
         pulumi.set(__self__, "network_endpoint_type", network_endpoint_type)
         if allowlisted_http_ips is not None:
@@ -446,7 +445,6 @@ class IntegrationInstanceNetworkEndpointDetails(dict):
     def is_integration_vcn_allowlisted(self) -> Optional[bool]:
         """
         The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-        <<<<<<< HEAD
         """
         return pulumi.get(self, "is_integration_vcn_allowlisted")
 
@@ -805,8 +803,7 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
         :param Sequence[str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['GetIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-        :param str network_endpoint_type: The type of network endpoint. 
-               <<<<<<< HEAD
+        :param str network_endpoint_type: The type of network endpoint.
         """
         pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
@@ -841,8 +838,7 @@ class GetIntegrationInstanceNetworkEndpointDetailResult(dict):
     @pulumi.getter(name="networkEndpointType")
     def network_endpoint_type(self) -> str:
         """
-        The type of network endpoint. 
-        <<<<<<< HEAD
+        The type of network endpoint.
         """
         return pulumi.get(self, "network_endpoint_type")
 
@@ -992,7 +988,6 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailArgs'] network_endpoint_details: Base representation of a network endpoint.
         :param Sequence['GetIntegrationInstancesIntegrationInstancePrivateEndpointOutboundConnectionArgs'] private_endpoint_outbound_connections: Base representation for Outbound Connection (Reverse Connection).
         :param str shape: Shape
-               >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         :param str state: Life cycle state to query on.
         :param str state_message: An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
         :param str time_created: The time the the Integration Instance was created. An RFC3339 formatted datetime string.
@@ -1189,7 +1184,6 @@ class GetIntegrationInstancesIntegrationInstanceResult(dict):
     def shape(self) -> str:
         """
         Shape
-        >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
         """
         return pulumi.get(self, "shape")
 
@@ -1469,8 +1463,7 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
         :param Sequence[str] allowlisted_http_ips: Source IP addresses or IP address ranges ingress rules. (ex: "168.122.59.5", "10.20.30.0/26") An invalid IP or CIDR block will result in a 400 response.
         :param Sequence['GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailAllowlistedHttpVcnArgs'] allowlisted_http_vcns: Virtual Cloud Networks allowed to access this network endpoint.
         :param bool is_integration_vcn_allowlisted: The Integration service's VCN is allow-listed to allow integrations to call back into other integrations
-        :param str network_endpoint_type: The type of network endpoint. 
-               <<<<<<< HEAD
+        :param str network_endpoint_type: The type of network endpoint.
         """
         pulumi.set(__self__, "allowlisted_http_ips", allowlisted_http_ips)
         pulumi.set(__self__, "allowlisted_http_vcns", allowlisted_http_vcns)
@@ -1505,8 +1498,7 @@ class GetIntegrationInstancesIntegrationInstanceNetworkEndpointDetailResult(dict
     @pulumi.getter(name="networkEndpointType")
     def network_endpoint_type(self) -> str:
         """
-        The type of network endpoint. 
-        <<<<<<< HEAD
+        The type of network endpoint.
         """
         return pulumi.get(self, "network_endpoint_type")
 

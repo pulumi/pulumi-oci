@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
  *
- * Gets details of an Operations Insights Warehouse.
+ * Gets details of an Ops Insights Warehouse.
  * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
  *
  * ## Example Usage
@@ -34,7 +34,7 @@ export function getOperationsInsightsWarehouse(args: GetOperationsInsightsWareho
  */
 export interface GetOperationsInsightsWarehouseArgs {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     operationsInsightsWarehouseId: string;
 }
@@ -60,7 +60,7 @@ export interface GetOperationsInsightsWarehouseResult {
      */
     readonly definedTags: {[key: string]: any};
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      */
     readonly displayName: string;
     /**
@@ -80,7 +80,7 @@ export interface GetOperationsInsightsWarehouseResult {
      */
     readonly lifecycleDetails: string;
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      */
     readonly operationsInsightsTenancyId: string;
     readonly operationsInsightsWarehouseId: string;
@@ -105,7 +105,7 @@ export interface GetOperationsInsightsWarehouseResult {
      */
     readonly timeCreated: string;
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      */
     readonly timeLastWalletRotated: string;
     /**
@@ -116,7 +116,7 @@ export interface GetOperationsInsightsWarehouseResult {
 /**
  * This data source provides details about a specific Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
  *
- * Gets details of an Operations Insights Warehouse.
+ * Gets details of an Ops Insights Warehouse.
  * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
  *
  * ## Example Usage
@@ -139,7 +139,7 @@ export function getOperationsInsightsWarehouseOutput(args: GetOperationsInsights
  */
 export interface GetOperationsInsightsWarehouseOutputArgs {
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     operationsInsightsWarehouseId: pulumi.Input<string>;
 }

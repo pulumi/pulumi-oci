@@ -22,13 +22,16 @@ class GetKeyStoreResult:
     """
     A collection of values returned by getKeyStore.
     """
-    def __init__(__self__, associated_databases=None, compartment_id=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, time_created=None, type_details=None):
+    def __init__(__self__, associated_databases=None, compartment_id=None, confirm_details_trigger=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, key_store_id=None, lifecycle_details=None, state=None, time_created=None, type_details=None):
         if associated_databases and not isinstance(associated_databases, list):
             raise TypeError("Expected argument 'associated_databases' to be a list")
         pulumi.set(__self__, "associated_databases", associated_databases)
         if compartment_id and not isinstance(compartment_id, str):
             raise TypeError("Expected argument 'compartment_id' to be a str")
         pulumi.set(__self__, "compartment_id", compartment_id)
+        if confirm_details_trigger and not isinstance(confirm_details_trigger, int):
+            raise TypeError("Expected argument 'confirm_details_trigger' to be a int")
+        pulumi.set(__self__, "confirm_details_trigger", confirm_details_trigger)
         if defined_tags and not isinstance(defined_tags, dict):
             raise TypeError("Expected argument 'defined_tags' to be a dict")
         pulumi.set(__self__, "defined_tags", defined_tags)
@@ -72,6 +75,11 @@ class GetKeyStoreResult:
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="confirmDetailsTrigger")
+    def confirm_details_trigger(self) -> int:
+        return pulumi.get(self, "confirm_details_trigger")
 
     @property
     @pulumi.getter(name="definedTags")
@@ -151,6 +159,7 @@ class AwaitableGetKeyStoreResult(GetKeyStoreResult):
         return GetKeyStoreResult(
             associated_databases=self.associated_databases,
             compartment_id=self.compartment_id,
+            confirm_details_trigger=self.confirm_details_trigger,
             defined_tags=self.defined_tags,
             display_name=self.display_name,
             freeform_tags=self.freeform_tags,
@@ -189,6 +198,7 @@ def get_key_store(key_store_id: Optional[str] = None,
     return AwaitableGetKeyStoreResult(
         associated_databases=pulumi.get(__ret__, 'associated_databases'),
         compartment_id=pulumi.get(__ret__, 'compartment_id'),
+        confirm_details_trigger=pulumi.get(__ret__, 'confirm_details_trigger'),
         defined_tags=pulumi.get(__ret__, 'defined_tags'),
         display_name=pulumi.get(__ret__, 'display_name'),
         freeform_tags=pulumi.get(__ret__, 'freeform_tags'),

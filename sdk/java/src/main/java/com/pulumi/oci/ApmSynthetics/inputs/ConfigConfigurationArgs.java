@@ -6,13 +6,17 @@ package com.pulumi.oci.ApmSynthetics.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDatabaseAuthenticationDetailsArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDatabaseWalletDetailsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
+import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationFtpBasicAuthenticationDetailsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationRequestHeaderArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationRequestQueryParamArgs;
 import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationVerifyTextArgs;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.List;
 import java.util.Objects;
@@ -55,6 +59,96 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) Database connection string.
+     * 
+     */
+    @Import(name="connectionString")
+    private @Nullable Output<String> connectionString;
+
+    /**
+     * @return (Updatable) Database connection string.
+     * 
+     */
+    public Optional<Output<String>> connectionString() {
+        return Optional.ofNullable(this.connectionString);
+    }
+
+    /**
+     * (Updatable) Details for basic authentication.
+     * 
+     */
+    @Import(name="databaseAuthenticationDetails")
+    private @Nullable Output<ConfigConfigurationDatabaseAuthenticationDetailsArgs> databaseAuthenticationDetails;
+
+    /**
+     * @return (Updatable) Details for basic authentication.
+     * 
+     */
+    public Optional<Output<ConfigConfigurationDatabaseAuthenticationDetailsArgs>> databaseAuthenticationDetails() {
+        return Optional.ofNullable(this.databaseAuthenticationDetails);
+    }
+
+    /**
+     * (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     * 
+     */
+    @Import(name="databaseConnectionType")
+    private @Nullable Output<String> databaseConnectionType;
+
+    /**
+     * @return (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+     * 
+     */
+    public Optional<Output<String>> databaseConnectionType() {
+        return Optional.ofNullable(this.databaseConnectionType);
+    }
+
+    /**
+     * (Updatable) Database role.
+     * 
+     */
+    @Import(name="databaseRole")
+    private @Nullable Output<String> databaseRole;
+
+    /**
+     * @return (Updatable) Database role.
+     * 
+     */
+    public Optional<Output<String>> databaseRole() {
+        return Optional.ofNullable(this.databaseRole);
+    }
+
+    /**
+     * (Updatable) Database type.
+     * 
+     */
+    @Import(name="databaseType")
+    private @Nullable Output<String> databaseType;
+
+    /**
+     * @return (Updatable) Database type.
+     * 
+     */
+    public Optional<Output<String>> databaseType() {
+        return Optional.ofNullable(this.databaseType);
+    }
+
+    /**
+     * (Updatable) Details for database wallet.
+     * 
+     */
+    @Import(name="databaseWalletDetails")
+    private @Nullable Output<ConfigConfigurationDatabaseWalletDetailsArgs> databaseWalletDetails;
+
+    /**
+     * @return (Updatable) Details for database wallet.
+     * 
+     */
+    public Optional<Output<ConfigConfigurationDatabaseWalletDetailsArgs>> databaseWalletDetails() {
+        return Optional.ofNullable(this.databaseWalletDetails);
+    }
+
+    /**
      * (Updatable) Information about the DNS settings.
      * 
      */
@@ -67,6 +161,81 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
      */
     public Optional<Output<ConfigConfigurationDnsConfigurationArgs>> dnsConfiguration() {
         return Optional.ofNullable(this.dnsConfiguration);
+    }
+
+    /**
+     * (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+     * 
+     */
+    @Import(name="downloadSizeLimitInBytes")
+    private @Nullable Output<Integer> downloadSizeLimitInBytes;
+
+    /**
+     * @return (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+     * 
+     */
+    public Optional<Output<Integer>> downloadSizeLimitInBytes() {
+        return Optional.ofNullable(this.downloadSizeLimitInBytes);
+    }
+
+    /**
+     * (Updatable) Details for basic authentication.
+     * 
+     */
+    @Import(name="ftpBasicAuthenticationDetails")
+    private @Nullable Output<ConfigConfigurationFtpBasicAuthenticationDetailsArgs> ftpBasicAuthenticationDetails;
+
+    /**
+     * @return (Updatable) Details for basic authentication.
+     * 
+     */
+    public Optional<Output<ConfigConfigurationFtpBasicAuthenticationDetailsArgs>> ftpBasicAuthenticationDetails() {
+        return Optional.ofNullable(this.ftpBasicAuthenticationDetails);
+    }
+
+    /**
+     * (Updatable) FTP protocol type.
+     * 
+     */
+    @Import(name="ftpProtocol")
+    private @Nullable Output<String> ftpProtocol;
+
+    /**
+     * @return (Updatable) FTP protocol type.
+     * 
+     */
+    public Optional<Output<String>> ftpProtocol() {
+        return Optional.ofNullable(this.ftpProtocol);
+    }
+
+    /**
+     * (Updatable) FTP monitor request type.
+     * 
+     */
+    @Import(name="ftpRequestType")
+    private @Nullable Output<String> ftpRequestType;
+
+    /**
+     * @return (Updatable) FTP monitor request type.
+     * 
+     */
+    public Optional<Output<String>> ftpRequestType() {
+        return Optional.ofNullable(this.ftpRequestType);
+    }
+
+    /**
+     * (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * 
+     */
+    @Import(name="isActiveMode")
+    private @Nullable Output<Boolean> isActiveMode;
+
+    /**
+     * @return (Updatable) If enabled, Active mode will be used for the FTP connection.
+     * 
+     */
+    public Optional<Output<Boolean>> isActiveMode() {
+        return Optional.ofNullable(this.isActiveMode);
     }
 
     /**
@@ -190,6 +359,21 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) SQL query to be executed.
+     * 
+     */
+    @Import(name="query")
+    private @Nullable Output<String> query;
+
+    /**
+     * @return (Updatable) SQL query to be executed.
+     * 
+     */
+    public Optional<Output<String>> query() {
+        return Optional.ofNullable(this.query);
+    }
+
+    /**
      * (Updatable) DNS record type.
      * 
      */
@@ -295,6 +479,21 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     }
 
     /**
+     * (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+     * 
+     */
+    @Import(name="uploadFileSizeInBytes")
+    private @Nullable Output<Integer> uploadFileSizeInBytes;
+
+    /**
+     * @return (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+     * 
+     */
+    public Optional<Output<Integer>> uploadFileSizeInBytes() {
+        return Optional.ofNullable(this.uploadFileSizeInBytes);
+    }
+
+    /**
      * (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
      * 
      */
@@ -344,7 +543,18 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
     private ConfigConfigurationArgs(ConfigConfigurationArgs $) {
         this.clientCertificateDetails = $.clientCertificateDetails;
         this.configType = $.configType;
+        this.connectionString = $.connectionString;
+        this.databaseAuthenticationDetails = $.databaseAuthenticationDetails;
+        this.databaseConnectionType = $.databaseConnectionType;
+        this.databaseRole = $.databaseRole;
+        this.databaseType = $.databaseType;
+        this.databaseWalletDetails = $.databaseWalletDetails;
         this.dnsConfiguration = $.dnsConfiguration;
+        this.downloadSizeLimitInBytes = $.downloadSizeLimitInBytes;
+        this.ftpBasicAuthenticationDetails = $.ftpBasicAuthenticationDetails;
+        this.ftpProtocol = $.ftpProtocol;
+        this.ftpRequestType = $.ftpRequestType;
+        this.isActiveMode = $.isActiveMode;
         this.isCertificateValidationEnabled = $.isCertificateValidationEnabled;
         this.isDefaultSnapshotEnabled = $.isDefaultSnapshotEnabled;
         this.isFailureRetried = $.isFailureRetried;
@@ -353,6 +563,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         this.nameServer = $.nameServer;
         this.networkConfiguration = $.networkConfiguration;
         this.protocol = $.protocol;
+        this.query = $.query;
         this.recordType = $.recordType;
         this.reqAuthenticationDetails = $.reqAuthenticationDetails;
         this.reqAuthenticationScheme = $.reqAuthenticationScheme;
@@ -360,6 +571,7 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         this.requestMethod = $.requestMethod;
         this.requestPostBody = $.requestPostBody;
         this.requestQueryParams = $.requestQueryParams;
+        this.uploadFileSizeInBytes = $.uploadFileSizeInBytes;
         this.verifyResponseCodes = $.verifyResponseCodes;
         this.verifyResponseContent = $.verifyResponseContent;
         this.verifyTexts = $.verifyTexts;
@@ -426,6 +638,132 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param connectionString (Updatable) Database connection string.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionString(@Nullable Output<String> connectionString) {
+            $.connectionString = connectionString;
+            return this;
+        }
+
+        /**
+         * @param connectionString (Updatable) Database connection string.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder connectionString(String connectionString) {
+            return connectionString(Output.of(connectionString));
+        }
+
+        /**
+         * @param databaseAuthenticationDetails (Updatable) Details for basic authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseAuthenticationDetails(@Nullable Output<ConfigConfigurationDatabaseAuthenticationDetailsArgs> databaseAuthenticationDetails) {
+            $.databaseAuthenticationDetails = databaseAuthenticationDetails;
+            return this;
+        }
+
+        /**
+         * @param databaseAuthenticationDetails (Updatable) Details for basic authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseAuthenticationDetails(ConfigConfigurationDatabaseAuthenticationDetailsArgs databaseAuthenticationDetails) {
+            return databaseAuthenticationDetails(Output.of(databaseAuthenticationDetails));
+        }
+
+        /**
+         * @param databaseConnectionType (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConnectionType(@Nullable Output<String> databaseConnectionType) {
+            $.databaseConnectionType = databaseConnectionType;
+            return this;
+        }
+
+        /**
+         * @param databaseConnectionType (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseConnectionType(String databaseConnectionType) {
+            return databaseConnectionType(Output.of(databaseConnectionType));
+        }
+
+        /**
+         * @param databaseRole (Updatable) Database role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseRole(@Nullable Output<String> databaseRole) {
+            $.databaseRole = databaseRole;
+            return this;
+        }
+
+        /**
+         * @param databaseRole (Updatable) Database role.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseRole(String databaseRole) {
+            return databaseRole(Output.of(databaseRole));
+        }
+
+        /**
+         * @param databaseType (Updatable) Database type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseType(@Nullable Output<String> databaseType) {
+            $.databaseType = databaseType;
+            return this;
+        }
+
+        /**
+         * @param databaseType (Updatable) Database type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseType(String databaseType) {
+            return databaseType(Output.of(databaseType));
+        }
+
+        /**
+         * @param databaseWalletDetails (Updatable) Details for database wallet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseWalletDetails(@Nullable Output<ConfigConfigurationDatabaseWalletDetailsArgs> databaseWalletDetails) {
+            $.databaseWalletDetails = databaseWalletDetails;
+            return this;
+        }
+
+        /**
+         * @param databaseWalletDetails (Updatable) Details for database wallet.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder databaseWalletDetails(ConfigConfigurationDatabaseWalletDetailsArgs databaseWalletDetails) {
+            return databaseWalletDetails(Output.of(databaseWalletDetails));
+        }
+
+        /**
          * @param dnsConfiguration (Updatable) Information about the DNS settings.
          * 
          * @return builder
@@ -444,6 +782,111 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
          */
         public Builder dnsConfiguration(ConfigConfigurationDnsConfigurationArgs dnsConfiguration) {
             return dnsConfiguration(Output.of(dnsConfiguration));
+        }
+
+        /**
+         * @param downloadSizeLimitInBytes (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder downloadSizeLimitInBytes(@Nullable Output<Integer> downloadSizeLimitInBytes) {
+            $.downloadSizeLimitInBytes = downloadSizeLimitInBytes;
+            return this;
+        }
+
+        /**
+         * @param downloadSizeLimitInBytes (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder downloadSizeLimitInBytes(Integer downloadSizeLimitInBytes) {
+            return downloadSizeLimitInBytes(Output.of(downloadSizeLimitInBytes));
+        }
+
+        /**
+         * @param ftpBasicAuthenticationDetails (Updatable) Details for basic authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ftpBasicAuthenticationDetails(@Nullable Output<ConfigConfigurationFtpBasicAuthenticationDetailsArgs> ftpBasicAuthenticationDetails) {
+            $.ftpBasicAuthenticationDetails = ftpBasicAuthenticationDetails;
+            return this;
+        }
+
+        /**
+         * @param ftpBasicAuthenticationDetails (Updatable) Details for basic authentication.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ftpBasicAuthenticationDetails(ConfigConfigurationFtpBasicAuthenticationDetailsArgs ftpBasicAuthenticationDetails) {
+            return ftpBasicAuthenticationDetails(Output.of(ftpBasicAuthenticationDetails));
+        }
+
+        /**
+         * @param ftpProtocol (Updatable) FTP protocol type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ftpProtocol(@Nullable Output<String> ftpProtocol) {
+            $.ftpProtocol = ftpProtocol;
+            return this;
+        }
+
+        /**
+         * @param ftpProtocol (Updatable) FTP protocol type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ftpProtocol(String ftpProtocol) {
+            return ftpProtocol(Output.of(ftpProtocol));
+        }
+
+        /**
+         * @param ftpRequestType (Updatable) FTP monitor request type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ftpRequestType(@Nullable Output<String> ftpRequestType) {
+            $.ftpRequestType = ftpRequestType;
+            return this;
+        }
+
+        /**
+         * @param ftpRequestType (Updatable) FTP monitor request type.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ftpRequestType(String ftpRequestType) {
+            return ftpRequestType(Output.of(ftpRequestType));
+        }
+
+        /**
+         * @param isActiveMode (Updatable) If enabled, Active mode will be used for the FTP connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isActiveMode(@Nullable Output<Boolean> isActiveMode) {
+            $.isActiveMode = isActiveMode;
+            return this;
+        }
+
+        /**
+         * @param isActiveMode (Updatable) If enabled, Active mode will be used for the FTP connection.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isActiveMode(Boolean isActiveMode) {
+            return isActiveMode(Output.of(isActiveMode));
         }
 
         /**
@@ -615,6 +1058,27 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
         }
 
         /**
+         * @param query (Updatable) SQL query to be executed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder query(@Nullable Output<String> query) {
+            $.query = query;
+            return this;
+        }
+
+        /**
+         * @param query (Updatable) SQL query to be executed.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder query(String query) {
+            return query(Output.of(query));
+        }
+
+        /**
          * @param recordType (Updatable) DNS record type.
          * 
          * @return builder
@@ -779,6 +1243,27 @@ public final class ConfigConfigurationArgs extends com.pulumi.resources.Resource
          */
         public Builder requestQueryParams(ConfigConfigurationRequestQueryParamArgs... requestQueryParams) {
             return requestQueryParams(List.of(requestQueryParams));
+        }
+
+        /**
+         * @param uploadFileSizeInBytes (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder uploadFileSizeInBytes(@Nullable Output<Integer> uploadFileSizeInBytes) {
+            $.uploadFileSizeInBytes = uploadFileSizeInBytes;
+            return this;
+        }
+
+        /**
+         * @param uploadFileSizeInBytes (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder uploadFileSizeInBytes(Integer uploadFileSizeInBytes) {
+            return uploadFileSizeInBytes(Output.of(uploadFileSizeInBytes));
         }
 
         /**

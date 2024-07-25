@@ -88,6 +88,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      * 
      */
     private Integer backupRetentionPeriodInDays;
+    private Double byolComputeCountLimit;
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      * 
@@ -525,6 +526,11 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     private String subnetId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
@@ -730,6 +736,9 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
      */
     public Integer backupRetentionPeriodInDays() {
         return this.backupRetentionPeriodInDays;
+    }
+    public Double byolComputeCountLimit() {
+        return this.byolComputeCountLimit;
     }
     /**
      * @return The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
@@ -1354,6 +1363,13 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         return this.subnetId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      * 
      */
@@ -1550,6 +1566,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private List<String> availableUpgradeVersions;
         private List<GetAutonomousDatabasesAutonomousDatabaseBackupConfig> backupConfigs;
         private Integer backupRetentionPeriodInDays;
+        private Double byolComputeCountLimit;
         private String characterSet;
         private String cloneType;
         private String compartmentId;
@@ -1643,6 +1660,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
         private List<String> standbyWhitelistedIps;
         private String state;
         private String subnetId;
+        private String subscriptionId;
         private List<String> supportedRegionsToCloneTos;
         private String switchoverTo;
         private String switchoverToRemotePeerId;
@@ -1687,6 +1705,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.availableUpgradeVersions = defaults.availableUpgradeVersions;
     	      this.backupConfigs = defaults.backupConfigs;
     	      this.backupRetentionPeriodInDays = defaults.backupRetentionPeriodInDays;
+    	      this.byolComputeCountLimit = defaults.byolComputeCountLimit;
     	      this.characterSet = defaults.characterSet;
     	      this.cloneType = defaults.cloneType;
     	      this.compartmentId = defaults.compartmentId;
@@ -1780,6 +1799,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
     	      this.standbyWhitelistedIps = defaults.standbyWhitelistedIps;
     	      this.state = defaults.state;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.supportedRegionsToCloneTos = defaults.supportedRegionsToCloneTos;
     	      this.switchoverTo = defaults.switchoverTo;
     	      this.switchoverToRemotePeerId = defaults.switchoverToRemotePeerId;
@@ -1928,6 +1948,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "backupRetentionPeriodInDays");
             }
             this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder byolComputeCountLimit(Double byolComputeCountLimit) {
+            if (byolComputeCountLimit == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "byolComputeCountLimit");
+            }
+            this.byolComputeCountLimit = byolComputeCountLimit;
             return this;
         }
         @CustomType.Setter
@@ -2723,6 +2751,14 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder supportedRegionsToCloneTos(List<String> supportedRegionsToCloneTos) {
             if (supportedRegionsToCloneTos == null) {
               throw new MissingRequiredPropertyException("GetAutonomousDatabasesAutonomousDatabase", "supportedRegionsToCloneTos");
@@ -2960,6 +2996,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.availableUpgradeVersions = availableUpgradeVersions;
             _resultValue.backupConfigs = backupConfigs;
             _resultValue.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
+            _resultValue.byolComputeCountLimit = byolComputeCountLimit;
             _resultValue.characterSet = characterSet;
             _resultValue.cloneType = cloneType;
             _resultValue.compartmentId = compartmentId;
@@ -3053,6 +3090,7 @@ public final class GetAutonomousDatabasesAutonomousDatabase {
             _resultValue.standbyWhitelistedIps = standbyWhitelistedIps;
             _resultValue.state = state;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.supportedRegionsToCloneTos = supportedRegionsToCloneTos;
             _resultValue.switchoverTo = switchoverTo;
             _resultValue.switchoverToRemotePeerId = switchoverToRemotePeerId;

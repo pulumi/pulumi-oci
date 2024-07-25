@@ -9,6 +9,7 @@ import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import com.pulumi.oci.DataSafe.DiscoveryModArgs;
 import com.pulumi.oci.DataSafe.inputs.DiscoveryModState;
+import com.pulumi.oci.DataSafe.outputs.DiscoveryModTablesForDiscovery;
 import com.pulumi.oci.Utilities;
 import java.lang.Boolean;
 import java.lang.Object;
@@ -38,6 +39,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.core.Output;
  * import com.pulumi.oci.DataSafe.DiscoveryMod;
  * import com.pulumi.oci.DataSafe.DiscoveryModArgs;
+ * import com.pulumi.oci.DataSafe.inputs.DiscoveryModTablesForDiscoveryArgs;
  * import java.util.List;
  * import java.util.ArrayList;
  * import java.util.Map;
@@ -64,6 +66,10 @@ import javax.annotation.Nullable;
  *             .isSampleDataCollectionEnabled(discoveryJobIsSampleDataCollectionEnabled)
  *             .schemasForDiscoveries(discoveryJobSchemasForDiscovery)
  *             .sensitiveTypeIdsForDiscoveries(discoveryJobSensitiveTypeIdsForDiscovery)
+ *             .tablesForDiscoveries(DiscoveryModTablesForDiscoveryArgs.builder()
+ *                 .schemaName(discoveryJobTablesForDiscoverySchemaName)
+ *                 .tableNames(discoveryJobTablesForDiscoveryTableNames)
+ *                 .build())
  *             .build());
  * 
  *     }
@@ -240,18 +246,12 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
     /**
      * The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="sensitiveTypeIdsForDiscoveries", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> sensitiveTypeIdsForDiscoveries;
 
     /**
      * @return The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
-     * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
     public Output<List<String>> sensitiveTypeIdsForDiscoveries() {
@@ -284,6 +284,20 @@ public class DiscoveryMod extends com.pulumi.resources.CustomResource {
      */
     public Output<Map<String,Object>> systemTags() {
         return this.systemTags;
+    }
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     * 
+     */
+    @Export(name="tablesForDiscoveries", refs={List.class,DiscoveryModTablesForDiscovery.class}, tree="[0,1]")
+    private Output<List<DiscoveryModTablesForDiscovery>> tablesForDiscoveries;
+
+    /**
+     * @return The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+     * 
+     */
+    public Output<List<DiscoveryModTablesForDiscovery>> tablesForDiscoveries() {
+        return this.tablesForDiscoveries;
     }
     /**
      * The OCID of the target database associated with the discovery job.

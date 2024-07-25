@@ -121,7 +121,7 @@ namespace Pulumi.Oci.Opsi
         private List<string>? _hostTypes;
 
         /// <summary>
-        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
         /// </summary>
         public List<string> HostTypes
         {
@@ -203,7 +203,7 @@ namespace Pulumi.Oci.Opsi
         private InputList<string>? _hostTypes;
 
         /// <summary>
-        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+        /// Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
         /// </summary>
         public InputList<string> HostTypes
         {
@@ -270,7 +270,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly ImmutableArray<Outputs.GetHostInsightsHostInsightSummaryCollectionResult> HostInsightSummaryCollections;
         /// <summary>
-        /// Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+        /// Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
         /// </summary>
         public readonly ImmutableArray<string> HostTypes;
         /// <summary>

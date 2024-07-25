@@ -70,6 +70,7 @@ namespace Pulumi.Oci.Database
     ///             WeeksOfMonths = cloudExadataInfrastructureMaintenanceWindowWeeksOfMonth,
     ///         },
     ///         StorageCount = cloudExadataInfrastructureStorageCount,
+    ///         SubscriptionId = tenantSubscriptionId,
     ///     });
     /// 
     /// });
@@ -262,10 +263,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Output("storageCount")]
         public Output<int> StorageCount { get; private set; } = null!;
@@ -275,6 +272,16 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("storageServerVersion")]
         public Output<string> StorageServerVersion { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -420,13 +427,19 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
+        /// </summary>
+        [Input("storageCount")]
+        public Input<int>? StorageCount { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         /// 
         /// 
         /// ** IMPORTANT **
         /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
-        [Input("storageCount")]
-        public Input<int>? StorageCount { get; set; }
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         public CloudExadataInfrastructureArgs()
         {
@@ -636,10 +649,6 @@ namespace Pulumi.Oci.Database
 
         /// <summary>
         /// (Updatable) The number of storage servers for the cloud Exadata infrastructure.
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
         /// </summary>
         [Input("storageCount")]
         public Input<int>? StorageCount { get; set; }
@@ -649,6 +658,16 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("storageServerVersion")]
         public Input<string>? StorageServerVersion { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// 
+        /// 
+        /// ** IMPORTANT **
+        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<object>? _systemTags;

@@ -17,7 +17,7 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
                  operations_insights_warehouse_id: pulumi.Input[str]):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseRotateWarehouseWallet resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
                
                ** IMPORTANT **
@@ -29,7 +29,7 @@ class OperationsInsightsWarehouseRotateWarehouseWalletArgs:
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
 
 
         ** IMPORTANT **
@@ -48,7 +48,7 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
                  operations_insights_warehouse_id: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseRotateWarehouseWallet resources.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
                
                ** IMPORTANT **
@@ -61,7 +61,7 @@ class _OperationsInsightsWarehouseRotateWarehouseWalletState:
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
 
 
         ** IMPORTANT **
@@ -105,7 +105,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
                
                ** IMPORTANT **
@@ -185,7 +185,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
                
                
                ** IMPORTANT **
@@ -202,7 +202,7 @@ class OperationsInsightsWarehouseRotateWarehouseWallet(pulumi.CustomResource):
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
 
 
         ** IMPORTANT **

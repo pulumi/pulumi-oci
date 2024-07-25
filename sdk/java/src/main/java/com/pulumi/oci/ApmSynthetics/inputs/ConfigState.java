@@ -86,6 +86,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Name of the user that created the monitor.
+     * 
+     */
+    @Import(name="createdBy")
+    private @Nullable Output<String> createdBy;
+
+    /**
+     * @return Name of the user that created the monitor.
+     * 
+     */
+    public Optional<Output<String>> createdBy() {
+        return Optional.ofNullable(this.createdBy);
+    }
+
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -131,6 +146,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * (Updatable) If enabled, domain name will resolve to an IPv6 address.
+     * 
+     */
+    @Import(name="isIpv6")
+    private @Nullable Output<Boolean> isIpv6;
+
+    /**
+     * @return (Updatable) If enabled, domain name will resolve to an IPv6 address.
+     * 
+     */
+    public Optional<Output<Boolean>> isIpv6() {
+        return Optional.ofNullable(this.isIpv6);
+    }
+
+    /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
@@ -158,6 +188,21 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> isRunOnce() {
         return Optional.ofNullable(this.isRunOnce);
+    }
+
+    /**
+     * Name of the user that recently updated the monitor.
+     * 
+     */
+    @Import(name="lastUpdatedBy")
+    private @Nullable Output<String> lastUpdatedBy;
+
+    /**
+     * @return Name of the user that recently updated the monitor.
+     * 
+     */
+    public Optional<Output<String>> lastUpdatedBy() {
+        return Optional.ofNullable(this.lastUpdatedBy);
     }
 
     /**
@@ -281,14 +326,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      * 
      */
     @Import(name="target")
     private @Nullable Output<String> target;
 
     /**
-     * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      * 
      */
     public Optional<Output<String>> target() {
@@ -383,11 +428,14 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         this.availabilityConfiguration = $.availabilityConfiguration;
         this.batchIntervalInSeconds = $.batchIntervalInSeconds;
         this.configuration = $.configuration;
+        this.createdBy = $.createdBy;
         this.definedTags = $.definedTags;
         this.displayName = $.displayName;
         this.freeformTags = $.freeformTags;
+        this.isIpv6 = $.isIpv6;
         this.isRunNow = $.isRunNow;
         this.isRunOnce = $.isRunOnce;
+        this.lastUpdatedBy = $.lastUpdatedBy;
         this.maintenanceWindowSchedule = $.maintenanceWindowSchedule;
         this.monitorType = $.monitorType;
         this.repeatIntervalInSeconds = $.repeatIntervalInSeconds;
@@ -507,6 +555,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param createdBy Name of the user that created the monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdBy(@Nullable Output<String> createdBy) {
+            $.createdBy = createdBy;
+            return this;
+        }
+
+        /**
+         * @param createdBy Name of the user that created the monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder createdBy(String createdBy) {
+            return createdBy(Output.of(createdBy));
+        }
+
+        /**
          * @param definedTags (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
          * 
          * @return builder
@@ -570,6 +639,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param isIpv6 (Updatable) If enabled, domain name will resolve to an IPv6 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6(@Nullable Output<Boolean> isIpv6) {
+            $.isIpv6 = isIpv6;
+            return this;
+        }
+
+        /**
+         * @param isIpv6 (Updatable) If enabled, domain name will resolve to an IPv6 address.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isIpv6(Boolean isIpv6) {
+            return isIpv6(Output.of(isIpv6));
+        }
+
+        /**
          * @param isRunNow (Updatable) If isRunNow is enabled, then the monitor will run immediately.
          * 
          * @return builder
@@ -609,6 +699,27 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder isRunOnce(Boolean isRunOnce) {
             return isRunOnce(Output.of(isRunOnce));
+        }
+
+        /**
+         * @param lastUpdatedBy Name of the user that recently updated the monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastUpdatedBy(@Nullable Output<String> lastUpdatedBy) {
+            $.lastUpdatedBy = lastUpdatedBy;
+            return this;
+        }
+
+        /**
+         * @param lastUpdatedBy Name of the user that recently updated the monitor.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder lastUpdatedBy(String lastUpdatedBy) {
+            return lastUpdatedBy(Output.of(lastUpdatedBy));
         }
 
         /**
@@ -790,7 +901,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param target (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+         * @param target (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
          * 
          * @return builder
          * 
@@ -801,7 +912,7 @@ public final class ConfigState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param target (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+         * @param target (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
          * 
          * @return builder
          * 

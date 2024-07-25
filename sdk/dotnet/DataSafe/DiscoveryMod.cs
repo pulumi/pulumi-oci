@@ -48,6 +48,14 @@ namespace Pulumi.Oci.DataSafe
     ///         IsSampleDataCollectionEnabled = discoveryJobIsSampleDataCollectionEnabled,
     ///         SchemasForDiscoveries = discoveryJobSchemasForDiscovery,
     ///         SensitiveTypeIdsForDiscoveries = discoveryJobSensitiveTypeIdsForDiscovery,
+    ///         TablesForDiscoveries = new[]
+    ///         {
+    ///             new Oci.DataSafe.Inputs.DiscoveryModTablesForDiscoveryArgs
+    ///             {
+    ///                 SchemaName = discoveryJobTablesForDiscoverySchemaName,
+    ///                 TableNames = discoveryJobTablesForDiscoveryTableNames,
+    ///             },
+    ///         },
     ///     });
     /// 
     /// });
@@ -131,11 +139,7 @@ namespace Pulumi.Oci.DataSafe
         public Output<string> SensitiveDataModelId { get; private set; } = null!;
 
         /// <summary>
-        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         /// </summary>
         [Output("sensitiveTypeIdsForDiscoveries")]
         public Output<ImmutableArray<string>> SensitiveTypeIdsForDiscoveries { get; private set; } = null!;
@@ -151,6 +155,12 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Output("systemTags")]
         public Output<ImmutableDictionary<string, object>> SystemTags { get; private set; } = null!;
+
+        /// <summary>
+        /// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        /// </summary>
+        [Output("tablesForDiscoveries")]
+        public Output<ImmutableArray<Outputs.DiscoveryModTablesForDiscovery>> TablesForDiscoveries { get; private set; } = null!;
 
         /// <summary>
         /// The OCID of the target database associated with the discovery job.
@@ -340,16 +350,24 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _sensitiveTypeIdsForDiscoveries;
 
         /// <summary>
-        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         /// </summary>
         public InputList<string> SensitiveTypeIdsForDiscoveries
         {
             get => _sensitiveTypeIdsForDiscoveries ?? (_sensitiveTypeIdsForDiscoveries = new InputList<string>());
             set => _sensitiveTypeIdsForDiscoveries = value;
+        }
+
+        [Input("tablesForDiscoveries")]
+        private InputList<Inputs.DiscoveryModTablesForDiscoveryArgs>? _tablesForDiscoveries;
+
+        /// <summary>
+        /// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        /// </summary>
+        public InputList<Inputs.DiscoveryModTablesForDiscoveryArgs> TablesForDiscoveries
+        {
+            get => _tablesForDiscoveries ?? (_tablesForDiscoveries = new InputList<Inputs.DiscoveryModTablesForDiscoveryArgs>());
+            set => _tablesForDiscoveries = value;
         }
 
         public DiscoveryModArgs()
@@ -448,11 +466,7 @@ namespace Pulumi.Oci.DataSafe
         private InputList<string>? _sensitiveTypeIdsForDiscoveries;
 
         /// <summary>
-        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types. 
-        /// 
-        /// 
-        /// ** IMPORTANT **
-        /// Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+        /// The OCIDs of the sensitive types to be used by the discovery job. If not provided, the sensitiveTypeIdsForDiscovery attribute of the sensitive data model is used to get the list of sensitive types.
         /// </summary>
         public InputList<string> SensitiveTypeIdsForDiscoveries
         {
@@ -476,6 +490,18 @@ namespace Pulumi.Oci.DataSafe
         {
             get => _systemTags ?? (_systemTags = new InputMap<object>());
             set => _systemTags = value;
+        }
+
+        [Input("tablesForDiscoveries")]
+        private InputList<Inputs.DiscoveryModTablesForDiscoveryGetArgs>? _tablesForDiscoveries;
+
+        /// <summary>
+        /// The data discovery jobs will scan the tables specified here, including both schemas and tables. In the absence  of explicit input, the list of tables is obtained from the tablesForDiscovery attribute of the sensitive data model.
+        /// </summary>
+        public InputList<Inputs.DiscoveryModTablesForDiscoveryGetArgs> TablesForDiscoveries
+        {
+            get => _tablesForDiscoveries ?? (_tablesForDiscoveries = new InputList<Inputs.DiscoveryModTablesForDiscoveryGetArgs>());
+            set => _tablesForDiscoveries = value;
         }
 
         /// <summary>

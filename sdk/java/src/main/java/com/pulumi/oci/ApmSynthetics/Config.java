@@ -46,7 +46,12 @@ import javax.annotation.Nullable;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsClientCertificateArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationClientCertificateDetailsPrivateKeyArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDatabaseAuthenticationDetailsArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDatabaseWalletDetailsArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationDnsConfigurationArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationFtpBasicAuthenticationDetailsArgs;
+ * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationNetworkConfigurationArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigConfigurationReqAuthenticationDetailsArgs;
  * import com.pulumi.oci.ApmSynthetics.inputs.ConfigMaintenanceWindowScheduleArgs;
@@ -90,10 +95,38 @@ import javax.annotation.Nullable;
  *                         .build())
  *                     .build())
  *                 .configType(monitorConfigurationConfigType)
+ *                 .connectionString(monitorConfigurationConnectionString)
+ *                 .databaseAuthenticationDetails(ConfigConfigurationDatabaseAuthenticationDetailsArgs.builder()
+ *                     .password(ConfigConfigurationDatabaseAuthenticationDetailsPasswordArgs.builder()
+ *                         .password(monitorConfigurationDatabaseAuthenticationDetailsPasswordPassword)
+ *                         .passwordType(monitorConfigurationDatabaseAuthenticationDetailsPasswordPasswordType)
+ *                         .vaultSecretId(testSecret.id())
+ *                         .build())
+ *                     .username(monitorConfigurationDatabaseAuthenticationDetailsUsername)
+ *                     .build())
+ *                 .databaseConnectionType(monitorConfigurationDatabaseConnectionType)
+ *                 .databaseRole(monitorConfigurationDatabaseRole)
+ *                 .databaseType(monitorConfigurationDatabaseType)
+ *                 .databaseWalletDetails(ConfigConfigurationDatabaseWalletDetailsArgs.builder()
+ *                     .databaseWallet(monitorConfigurationDatabaseWalletDetailsDatabaseWallet)
+ *                     .serviceName(testService.name())
+ *                     .build())
  *                 .dnsConfiguration(ConfigConfigurationDnsConfigurationArgs.builder()
  *                     .isOverrideDns(monitorConfigurationDnsConfigurationIsOverrideDns)
  *                     .overrideDnsIp(monitorConfigurationDnsConfigurationOverrideDnsIp)
  *                     .build())
+ *                 .downloadSizeLimitInBytes(monitorConfigurationDownloadSizeLimitInBytes)
+ *                 .ftpBasicAuthenticationDetails(ConfigConfigurationFtpBasicAuthenticationDetailsArgs.builder()
+ *                     .password(ConfigConfigurationFtpBasicAuthenticationDetailsPasswordArgs.builder()
+ *                         .password(monitorConfigurationFtpBasicAuthenticationDetailsPasswordPassword)
+ *                         .passwordType(monitorConfigurationFtpBasicAuthenticationDetailsPasswordPasswordType)
+ *                         .vaultSecretId(testSecret.id())
+ *                         .build())
+ *                     .username(monitorConfigurationFtpBasicAuthenticationDetailsUsername)
+ *                     .build())
+ *                 .ftpProtocol(monitorConfigurationFtpProtocol)
+ *                 .ftpRequestType(monitorConfigurationFtpRequestType)
+ *                 .isActiveMode(monitorConfigurationIsActiveMode)
  *                 .isCertificateValidationEnabled(monitorConfigurationIsCertificateValidationEnabled)
  *                 .isDefaultSnapshotEnabled(monitorConfigurationIsDefaultSnapshotEnabled)
  *                 .isFailureRetried(monitorConfigurationIsFailureRetried)
@@ -108,6 +141,7 @@ import javax.annotation.Nullable;
  *                     .transmissionRate(monitorConfigurationNetworkConfigurationTransmissionRate)
  *                     .build())
  *                 .protocol(monitorConfigurationProtocol)
+ *                 .query(monitorConfigurationQuery)
  *                 .recordType(monitorConfigurationRecordType)
  *                 .reqAuthenticationDetails(ConfigConfigurationReqAuthenticationDetailsArgs.builder()
  *                     .authHeaders(ConfigConfigurationReqAuthenticationDetailsAuthHeaderArgs.builder()
@@ -133,6 +167,7 @@ import javax.annotation.Nullable;
  *                     .paramName(monitorConfigurationRequestQueryParamsParamName)
  *                     .paramValue(monitorConfigurationRequestQueryParamsParamValue)
  *                     .build())
+ *                 .uploadFileSizeInBytes(monitorConfigurationUploadFileSizeInBytes)
  *                 .verifyResponseCodes(monitorConfigurationVerifyResponseCodes)
  *                 .verifyResponseContent(monitorConfigurationVerifyResponseContent)
  *                 .verifyTexts(ConfigConfigurationVerifyTextArgs.builder()
@@ -141,6 +176,7 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .definedTags(Map.of("foo-namespace.bar-key", "value"))
  *             .freeformTags(Map.of("bar-key", "value"))
+ *             .isIpv6(monitorIsIpv6)
  *             .isRunNow(monitorIsRunNow)
  *             .isRunOnce(monitorIsRunOnce)
  *             .maintenanceWindowSchedule(ConfigMaintenanceWindowScheduleArgs.builder()
@@ -232,6 +268,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.configuration;
     }
     /**
+     * Name of the user that created the monitor.
+     * 
+     */
+    @Export(name="createdBy", refs={String.class}, tree="[0]")
+    private Output<String> createdBy;
+
+    /**
+     * @return Name of the user that created the monitor.
+     * 
+     */
+    public Output<String> createdBy() {
+        return this.createdBy;
+    }
+    /**
      * (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -274,6 +324,20 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.freeformTags;
     }
     /**
+     * (Updatable) If enabled, domain name will resolve to an IPv6 address.
+     * 
+     */
+    @Export(name="isIpv6", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> isIpv6;
+
+    /**
+     * @return (Updatable) If enabled, domain name will resolve to an IPv6 address.
+     * 
+     */
+    public Output<Boolean> isIpv6() {
+        return this.isIpv6;
+    }
+    /**
      * (Updatable) If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
@@ -300,6 +364,20 @@ public class Config extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> isRunOnce() {
         return this.isRunOnce;
+    }
+    /**
+     * Name of the user that recently updated the monitor.
+     * 
+     */
+    @Export(name="lastUpdatedBy", refs={String.class}, tree="[0]")
+    private Output<String> lastUpdatedBy;
+
+    /**
+     * @return Name of the user that recently updated the monitor.
+     * 
+     */
+    public Output<String> lastUpdatedBy() {
+        return this.lastUpdatedBy;
     }
     /**
      * (Updatable) Details required to schedule maintenance window.
@@ -414,14 +492,14 @@ public class Config extends com.pulumi.resources.CustomResource {
         return this.status;
     }
     /**
-     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      * 
      */
     @Export(name="target", refs={String.class}, tree="[0]")
     private Output<String> target;
 
     /**
-     * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * @return (Updatable) Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      * 
      */
     public Output<String> target() {

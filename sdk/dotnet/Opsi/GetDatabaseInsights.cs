@@ -331,7 +331,7 @@ namespace Pulumi.Oci.Opsi
         /// </summary>
         public readonly ImmutableArray<Outputs.GetDatabaseInsightsDatabaseInsightsCollectionResult> DatabaseInsightsCollections;
         /// <summary>
-        /// Operations Insights internal representation of the database type.
+        /// Ops Insights internal representation of the database type.
         /// </summary>
         public readonly ImmutableArray<string> DatabaseTypes;
         /// <summary>

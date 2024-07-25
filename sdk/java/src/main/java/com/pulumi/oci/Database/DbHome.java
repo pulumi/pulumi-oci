@@ -73,6 +73,7 @@ import javax.annotation.Nullable;
  *                 .dbWorkload(dbHomeDatabaseDbWorkload)
  *                 .definedTags(dbHomeDatabaseDefinedTags)
  *                 .freeformTags(dbHomeDatabaseFreeformTags)
+ *                 .keyStoreId(testKeyStore.id())
  *                 .kmsKeyId(testKey.id())
  *                 .kmsKeyVersionId(testKeyVersion.id())
  *                 .ncharacterSet(dbHomeDatabaseNcharacterSet)

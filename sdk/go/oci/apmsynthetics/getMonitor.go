@@ -68,6 +68,8 @@ type GetMonitorResult struct {
 	BatchIntervalInSeconds int `pulumi:"batchIntervalInSeconds"`
 	// Details of monitor configuration.
 	Configurations []GetMonitorConfiguration `pulumi:"configurations"`
+	// Name of the user that created the monitor.
+	CreatedBy string `pulumi:"createdBy"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// Unique name that can be edited. The name should not contain any confidential information.
@@ -76,10 +78,14 @@ type GetMonitorResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the monitor.
 	Id string `pulumi:"id"`
+	// If enabled, domain name will resolve to an IPv6 address.
+	IsIpv6 bool `pulumi:"isIpv6"`
 	// If isRunNow is enabled, then the monitor will run immediately.
 	IsRunNow bool `pulumi:"isRunNow"`
 	// If runOnce is enabled, then the monitor will run once.
 	IsRunOnce bool `pulumi:"isRunOnce"`
+	// Name of the user that recently updated the monitor.
+	LastUpdatedBy string `pulumi:"lastUpdatedBy"`
 	// Details required to schedule maintenance window.
 	MaintenanceWindowSchedules []GetMonitorMaintenanceWindowSchedule `pulumi:"maintenanceWindowSchedules"`
 	MonitorId                  string                                `pulumi:"monitorId"`
@@ -97,7 +103,7 @@ type GetMonitorResult struct {
 	ScriptParameters []GetMonitorScriptParameter `pulumi:"scriptParameters"`
 	// Enables or disables the monitor.
 	Status string `pulumi:"status"`
-	// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+	// Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 	Target string `pulumi:"target"`
 	// The time the resource was created, expressed in [RFC 3339](https://tools.ietf.org/html/rfc3339) timestamp format. Example: `2020-02-12T22:47:12.613Z`
 	TimeCreated string `pulumi:"timeCreated"`
@@ -107,7 +113,7 @@ type GetMonitorResult struct {
 	TimeoutInSeconds int `pulumi:"timeoutInSeconds"`
 	// Number of vantage points where monitor is running.
 	VantagePointCount int `pulumi:"vantagePointCount"`
-	// List of public and dedicated vantage points where the monitor is running.
+	// List of public, dedicated and onPremise vantage points where the monitor is running.
 	VantagePoints []GetMonitorVantagePoint `pulumi:"vantagePoints"`
 }
 
@@ -170,6 +176,11 @@ func (o GetMonitorResultOutput) Configurations() GetMonitorConfigurationArrayOut
 	return o.ApplyT(func(v GetMonitorResult) []GetMonitorConfiguration { return v.Configurations }).(GetMonitorConfigurationArrayOutput)
 }
 
+// Name of the user that created the monitor.
+func (o GetMonitorResultOutput) CreatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorResult) string { return v.CreatedBy }).(pulumi.StringOutput)
+}
+
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 func (o GetMonitorResultOutput) DefinedTags() pulumi.MapOutput {
 	return o.ApplyT(func(v GetMonitorResult) map[string]interface{} { return v.DefinedTags }).(pulumi.MapOutput)
@@ -190,6 +201,11 @@ func (o GetMonitorResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
+// If enabled, domain name will resolve to an IPv6 address.
+func (o GetMonitorResultOutput) IsIpv6() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsIpv6 }).(pulumi.BoolOutput)
+}
+
 // If isRunNow is enabled, then the monitor will run immediately.
 func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunNow }).(pulumi.BoolOutput)
@@ -198,6 +214,11 @@ func (o GetMonitorResultOutput) IsRunNow() pulumi.BoolOutput {
 // If runOnce is enabled, then the monitor will run once.
 func (o GetMonitorResultOutput) IsRunOnce() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetMonitorResult) bool { return v.IsRunOnce }).(pulumi.BoolOutput)
+}
+
+// Name of the user that recently updated the monitor.
+func (o GetMonitorResultOutput) LastUpdatedBy() pulumi.StringOutput {
+	return o.ApplyT(func(v GetMonitorResult) string { return v.LastUpdatedBy }).(pulumi.StringOutput)
 }
 
 // Details required to schedule maintenance window.
@@ -244,7 +265,7 @@ func (o GetMonitorResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.Status }).(pulumi.StringOutput)
 }
 
-// Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+// Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
 func (o GetMonitorResultOutput) Target() pulumi.StringOutput {
 	return o.ApplyT(func(v GetMonitorResult) string { return v.Target }).(pulumi.StringOutput)
 }
@@ -269,7 +290,7 @@ func (o GetMonitorResultOutput) VantagePointCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetMonitorResult) int { return v.VantagePointCount }).(pulumi.IntOutput)
 }
 
-// List of public and dedicated vantage points where the monitor is running.
+// List of public, dedicated and onPremise vantage points where the monitor is running.
 func (o GetMonitorResultOutput) VantagePoints() GetMonitorVantagePointArrayOutput {
 	return o.ApplyT(func(v GetMonitorResult) []GetMonitorVantagePoint { return v.VantagePoints }).(GetMonitorVantagePointArrayOutput)
 }

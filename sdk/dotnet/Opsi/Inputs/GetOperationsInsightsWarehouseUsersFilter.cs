@@ -13,7 +13,7 @@ namespace Pulumi.Oci.Opsi.Inputs
     public sealed class GetOperationsInsightsWarehouseUsersFilterArgs : global::Pulumi.InvokeArgs
     {
         /// <summary>
-        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         [Input("name", required: true)]
         public string Name { get; set; } = null!;

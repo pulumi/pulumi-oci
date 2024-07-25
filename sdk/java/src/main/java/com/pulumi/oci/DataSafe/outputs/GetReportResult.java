@@ -43,7 +43,7 @@ public final class GetReportResult {
      */
     private String id;
     /**
-     * @return Specifies the format of report to be .xls or .pdf
+     * @return Specifies the format of report to be .xls or .pdf or .json
      * 
      */
     private String mimeType;
@@ -118,7 +118,7 @@ public final class GetReportResult {
         return this.id;
     }
     /**
-     * @return Specifies the format of report to be .xls or .pdf
+     * @return Specifies the format of report to be .xls or .pdf or .json
      * 
      */
     public String mimeType() {

@@ -211,6 +211,7 @@ var mappedMods = map[string]string{
 	"generative_ai":                  "GenerativeAi",
 	"generic_artifacts_content":      genericArtifactsContentMod,
 	"golden_gate":                    goldenGateMod,
+	"globally_distributed_database":  "GloballyDistributedDatabase",
 	"health_checks":                  healthChecksMod,
 	"identity":                       identityMod,
 	"identity_data_plane":            identityDataPlaneMod,

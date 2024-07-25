@@ -93,7 +93,7 @@ class GetOperationsInsightsPrivateEndpointsResult:
     @pulumi.getter(name="isUsedForRacDbs")
     def is_used_for_rac_dbs(self) -> Optional[bool]:
         """
-        The flag is to identify if private endpoint is used for rac database or not
+        The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
         """
         return pulumi.get(self, "is_used_for_rac_dbs")
 

@@ -13,7 +13,7 @@ import (
 
 // This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
 //
-// Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+// Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
 // There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
 //
 // ## Example Usage
@@ -61,7 +61,7 @@ type GetOperationsInsightsWarehousesArgs struct {
 	// A filter to return only resources that match the entire display name.
 	DisplayName *string                                 `pulumi:"displayName"`
 	Filters     []GetOperationsInsightsWarehousesFilter `pulumi:"filters"`
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	Id *string `pulumi:"id"`
 	// Lifecycle states
 	States []string `pulumi:"states"`
@@ -71,7 +71,7 @@ type GetOperationsInsightsWarehousesArgs struct {
 type GetOperationsInsightsWarehousesResult struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// User-friedly name of Operations Insights Warehouse that does not have to be unique.
+	// User-friedly name of Ops Insights Warehouse that does not have to be unique.
 	DisplayName *string                                 `pulumi:"displayName"`
 	Filters     []GetOperationsInsightsWarehousesFilter `pulumi:"filters"`
 	// OPSI Warehouse OCID
@@ -102,7 +102,7 @@ type GetOperationsInsightsWarehousesOutputArgs struct {
 	// A filter to return only resources that match the entire display name.
 	DisplayName pulumi.StringPtrInput                           `pulumi:"displayName"`
 	Filters     GetOperationsInsightsWarehousesFilterArrayInput `pulumi:"filters"`
-	// Unique Operations Insights Warehouse identifier
+	// Unique Ops Insights Warehouse identifier
 	Id pulumi.StringPtrInput `pulumi:"id"`
 	// Lifecycle states
 	States pulumi.StringArrayInput `pulumi:"states"`
@@ -132,7 +132,7 @@ func (o GetOperationsInsightsWarehousesResultOutput) CompartmentId() pulumi.Stri
 	return o.ApplyT(func(v GetOperationsInsightsWarehousesResult) *string { return v.CompartmentId }).(pulumi.StringPtrOutput)
 }
 
-// User-friedly name of Operations Insights Warehouse that does not have to be unique.
+// User-friedly name of Ops Insights Warehouse that does not have to be unique.
 func (o GetOperationsInsightsWarehousesResultOutput) DisplayName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetOperationsInsightsWarehousesResult) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
 }

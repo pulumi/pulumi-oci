@@ -97,7 +97,7 @@ class GetDatabaseInsightsResult:
     @pulumi.getter(name="databaseTypes")
     def database_types(self) -> Optional[Sequence[str]]:
         """
-        Operations Insights internal representation of the database type.
+        Ops Insights internal representation of the database type.
         """
         return pulumi.get(self, "database_types")
 

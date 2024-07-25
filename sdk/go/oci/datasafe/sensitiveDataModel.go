@@ -50,6 +50,12 @@ import (
 //				IsSampleDataCollectionEnabled:        pulumi.Any(sensitiveDataModelIsSampleDataCollectionEnabled),
 //				SchemasForDiscoveries:                pulumi.Any(sensitiveDataModelSchemasForDiscovery),
 //				SensitiveTypeIdsForDiscoveries:       pulumi.Any(sensitiveDataModelSensitiveTypeIdsForDiscovery),
+//				TablesForDiscoveries: datasafe.SensitiveDataModelTablesForDiscoveryArray{
+//					&datasafe.SensitiveDataModelTablesForDiscoveryArgs{
+//						SchemaName: pulumi.Any(sensitiveDataModelTablesForDiscoverySchemaName),
+//						TableNames: pulumi.Any(sensitiveDataModelTablesForDiscoveryTableNames),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -98,6 +104,8 @@ type SensitiveDataModel struct {
 	State pulumi.StringOutput `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapOutput `pulumi:"systemTags"`
+	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+	TablesForDiscoveries SensitiveDataModelTablesForDiscoveryArrayOutput `pulumi:"tablesForDiscoveries"`
 	// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 	//
 	// ** IMPORTANT **
@@ -173,6 +181,8 @@ type sensitiveDataModelState struct {
 	State *string `pulumi:"state"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
+	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+	TablesForDiscoveries []SensitiveDataModelTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 	//
 	// ** IMPORTANT **
@@ -213,6 +223,8 @@ type SensitiveDataModelState struct {
 	State pulumi.StringPtrInput
 	// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags pulumi.MapInput
+	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+	TablesForDiscoveries SensitiveDataModelTablesForDiscoveryArrayInput
 	// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 	//
 	// ** IMPORTANT **
@@ -253,6 +265,8 @@ type sensitiveDataModelArgs struct {
 	SchemasForDiscoveries []string `pulumi:"schemasForDiscoveries"`
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries []string `pulumi:"sensitiveTypeIdsForDiscoveries"`
+	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+	TablesForDiscoveries []SensitiveDataModelTablesForDiscovery `pulumi:"tablesForDiscoveries"`
 	// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 	//
 	// ** IMPORTANT **
@@ -286,6 +300,8 @@ type SensitiveDataModelArgs struct {
 	SchemasForDiscoveries pulumi.StringArrayInput
 	// (Updatable) The OCIDs of the sensitive types to be used by data discovery jobs. If OCID of a sensitive category is provided, all its child sensitive types are used for data discovery.
 	SensitiveTypeIdsForDiscoveries pulumi.StringArrayInput
+	// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+	TablesForDiscoveries SensitiveDataModelTablesForDiscoveryArrayInput
 	// (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.
 	//
 	// ** IMPORTANT **
@@ -448,6 +464,13 @@ func (o SensitiveDataModelOutput) State() pulumi.StringOutput {
 // System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see Resource Tags. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 func (o SensitiveDataModelOutput) SystemTags() pulumi.MapOutput {
 	return o.ApplyT(func(v *SensitiveDataModel) pulumi.MapOutput { return v.SystemTags }).(pulumi.MapOutput)
+}
+
+// (Updatable) The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+func (o SensitiveDataModelOutput) TablesForDiscoveries() SensitiveDataModelTablesForDiscoveryArrayOutput {
+	return o.ApplyT(func(v *SensitiveDataModel) SensitiveDataModelTablesForDiscoveryArrayOutput {
+		return v.TablesForDiscoveries
+	}).(SensitiveDataModelTablesForDiscoveryArrayOutput)
 }
 
 // (Updatable) The OCID of the reference target database to be associated with the sensitive data model. All operations such as performing data discovery and adding columns manually are done in the context of the associated target database.

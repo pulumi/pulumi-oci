@@ -18,7 +18,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string CompartmentId;
         /// <summary>
-        /// User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         public readonly string ConnectionPassword;
         /// <summary>
@@ -50,7 +50,7 @@ namespace Pulumi.Oci.Opsi.Outputs
         /// </summary>
         public readonly string LifecycleDetails;
         /// <summary>
-        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+        /// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
         /// </summary>
         public readonly string Name;
         /// <summary>

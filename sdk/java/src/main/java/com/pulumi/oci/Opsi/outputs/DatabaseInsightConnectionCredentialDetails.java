@@ -37,7 +37,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
      */
     private @Nullable String userName;
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
      * 
      */
     private @Nullable String walletSecretId;
@@ -79,7 +79,7 @@ public final class DatabaseInsightConnectionCredentialDetails {
         return Optional.ofNullable(this.userName);
     }
     /**
-     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored.
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the database keystore contents are stored. This is used for TCPS support in BM/VM/ExaCS cases.
      * 
      */
     public Optional<String> walletSecretId() {

@@ -22,6 +22,7 @@ class UserAssessmentArgs:
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
                  schedule: Optional[pulumi.Input[str]] = None):
         """
         The set of arguments for constructing a UserAssessment resource.
@@ -35,6 +36,7 @@ class UserAssessmentArgs:
         :param pulumi.Input[str] description: (Updatable) The description of the user assessment.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the user assessment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -49,6 +51,8 @@ class UserAssessmentArgs:
             pulumi.set(__self__, "display_name", display_name)
         if freeform_tags is not None:
             pulumi.set(__self__, "freeform_tags", freeform_tags)
+        if is_assessment_scheduled is not None:
+            pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         if schedule is not None:
             pulumi.set(__self__, "schedule", schedule)
 
@@ -129,6 +133,18 @@ class UserAssessmentArgs:
         pulumi.set(self, "freeform_tags", value)
 
     @property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the assessment is scheduled to run.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
+
+    @is_assessment_scheduled.setter
+    def is_assessment_scheduled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assessment_scheduled", value)
+
+    @property
     @pulumi.getter
     def schedule(self) -> Optional[pulumi.Input[str]]:
         """
@@ -153,6 +169,7 @@ class _UserAssessmentState:
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  ignored_assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  ignored_targets: Optional[pulumi.Input[Sequence[pulumi.Input['UserAssessmentIgnoredTargetArgs']]]] = None,
+                 is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
                  is_baseline: Optional[pulumi.Input[bool]] = None,
                  is_deviated_from_baseline: Optional[pulumi.Input[bool]] = None,
                  last_compared_baseline_id: Optional[pulumi.Input[str]] = None,
@@ -178,6 +195,7 @@ class _UserAssessmentState:
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param pulumi.Input[Sequence[pulumi.Input['UserAssessmentIgnoredTargetArgs']]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param pulumi.Input[bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[bool] is_baseline: Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
         :param pulumi.Input[bool] is_deviated_from_baseline: Indicates if the user assessment deviates from the baseline.
         :param pulumi.Input[str] last_compared_baseline_id: The OCID of the last user assessment baseline against which the latest assessment was compared.
@@ -215,6 +233,8 @@ class _UserAssessmentState:
             pulumi.set(__self__, "ignored_assessment_ids", ignored_assessment_ids)
         if ignored_targets is not None:
             pulumi.set(__self__, "ignored_targets", ignored_targets)
+        if is_assessment_scheduled is not None:
+            pulumi.set(__self__, "is_assessment_scheduled", is_assessment_scheduled)
         if is_baseline is not None:
             pulumi.set(__self__, "is_baseline", is_baseline)
         if is_deviated_from_baseline is not None:
@@ -331,6 +351,18 @@ class _UserAssessmentState:
     @ignored_targets.setter
     def ignored_targets(self, value: Optional[pulumi.Input[Sequence[pulumi.Input['UserAssessmentIgnoredTargetArgs']]]]):
         pulumi.set(self, "ignored_targets", value)
+
+    @property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> Optional[pulumi.Input[bool]]:
+        """
+        (Updatable) Indicates whether the assessment is scheduled to run.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
+
+    @is_assessment_scheduled.setter
+    def is_assessment_scheduled(self, value: Optional[pulumi.Input[bool]]):
+        pulumi.set(self, "is_assessment_scheduled", value)
 
     @property
     @pulumi.getter(name="isBaseline")
@@ -541,6 +573,7 @@ class UserAssessment(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
                  schedule: Optional[pulumi.Input[str]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -568,6 +601,7 @@ class UserAssessment(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_assessment_scheduled=user_assessment_is_assessment_scheduled,
             schedule=user_assessment_schedule)
         ```
 
@@ -586,6 +620,7 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[str] description: (Updatable) The description of the user assessment.
         :param pulumi.Input[str] display_name: (Updatable) The display name of the user assessment.
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
+        :param pulumi.Input[bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[str] schedule: (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
                
                Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -625,6 +660,7 @@ class UserAssessment(pulumi.CustomResource):
             freeform_tags={
                 "Department": "Finance",
             },
+            is_assessment_scheduled=user_assessment_is_assessment_scheduled,
             schedule=user_assessment_schedule)
         ```
 
@@ -656,6 +692,7 @@ class UserAssessment(pulumi.CustomResource):
                  description: Optional[pulumi.Input[str]] = None,
                  display_name: Optional[pulumi.Input[str]] = None,
                  freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
+                 is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
                  schedule: Optional[pulumi.Input[str]] = None,
                  target_id: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -674,6 +711,7 @@ class UserAssessment(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["freeform_tags"] = freeform_tags
+            __props__.__dict__["is_assessment_scheduled"] = is_assessment_scheduled
             __props__.__dict__["schedule"] = schedule
             if target_id is None and not opts.urn:
                 raise TypeError("Missing required property 'target_id'")
@@ -711,6 +749,7 @@ class UserAssessment(pulumi.CustomResource):
             freeform_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             ignored_assessment_ids: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
             ignored_targets: Optional[pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserAssessmentIgnoredTargetArgs']]]]] = None,
+            is_assessment_scheduled: Optional[pulumi.Input[bool]] = None,
             is_baseline: Optional[pulumi.Input[bool]] = None,
             is_deviated_from_baseline: Optional[pulumi.Input[bool]] = None,
             last_compared_baseline_id: Optional[pulumi.Input[str]] = None,
@@ -741,6 +780,7 @@ class UserAssessment(pulumi.CustomResource):
         :param pulumi.Input[Mapping[str, Any]] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ignored_assessment_ids: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         :param pulumi.Input[Sequence[pulumi.Input[pulumi.InputType['UserAssessmentIgnoredTargetArgs']]]] ignored_targets: List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
+        :param pulumi.Input[bool] is_assessment_scheduled: (Updatable) Indicates whether the assessment is scheduled to run.
         :param pulumi.Input[bool] is_baseline: Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
         :param pulumi.Input[bool] is_deviated_from_baseline: Indicates if the user assessment deviates from the baseline.
         :param pulumi.Input[str] last_compared_baseline_id: The OCID of the last user assessment baseline against which the latest assessment was compared.
@@ -775,6 +815,7 @@ class UserAssessment(pulumi.CustomResource):
         __props__.__dict__["freeform_tags"] = freeform_tags
         __props__.__dict__["ignored_assessment_ids"] = ignored_assessment_ids
         __props__.__dict__["ignored_targets"] = ignored_targets
+        __props__.__dict__["is_assessment_scheduled"] = is_assessment_scheduled
         __props__.__dict__["is_baseline"] = is_baseline
         __props__.__dict__["is_deviated_from_baseline"] = is_deviated_from_baseline
         __props__.__dict__["last_compared_baseline_id"] = last_compared_baseline_id
@@ -848,6 +889,14 @@ class UserAssessment(pulumi.CustomResource):
         List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
         """
         return pulumi.get(self, "ignored_targets")
+
+    @property
+    @pulumi.getter(name="isAssessmentScheduled")
+    def is_assessment_scheduled(self) -> pulumi.Output[bool]:
+        """
+        (Updatable) Indicates whether the assessment is scheduled to run.
+        """
+        return pulumi.get(self, "is_assessment_scheduled")
 
     @property
     @pulumi.getter(name="isBaseline")

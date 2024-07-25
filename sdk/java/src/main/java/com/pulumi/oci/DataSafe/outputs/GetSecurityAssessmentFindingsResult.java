@@ -51,6 +51,11 @@ public final class GetSecurityAssessmentFindingsResult {
      * 
      */
     private @Nullable String state;
+    /**
+     * @return The OCID of the target database.
+     * 
+     */
+    private @Nullable String targetId;
 
     private GetSecurityAssessmentFindingsResult() {}
     public Optional<String> accessLevel() {
@@ -110,6 +115,13 @@ public final class GetSecurityAssessmentFindingsResult {
     public Optional<String> state() {
         return Optional.ofNullable(this.state);
     }
+    /**
+     * @return The OCID of the target database.
+     * 
+     */
+    public Optional<String> targetId() {
+        return Optional.ofNullable(this.targetId);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -131,6 +143,7 @@ public final class GetSecurityAssessmentFindingsResult {
         private String securityAssessmentId;
         private @Nullable String severity;
         private @Nullable String state;
+        private @Nullable String targetId;
         public Builder() {}
         public Builder(GetSecurityAssessmentFindingsResult defaults) {
     	      Objects.requireNonNull(defaults);
@@ -145,6 +158,7 @@ public final class GetSecurityAssessmentFindingsResult {
     	      this.securityAssessmentId = defaults.securityAssessmentId;
     	      this.severity = defaults.severity;
     	      this.state = defaults.state;
+    	      this.targetId = defaults.targetId;
         }
 
         @CustomType.Setter
@@ -225,6 +239,12 @@ public final class GetSecurityAssessmentFindingsResult {
             this.state = state;
             return this;
         }
+        @CustomType.Setter
+        public Builder targetId(@Nullable String targetId) {
+
+            this.targetId = targetId;
+            return this;
+        }
         public GetSecurityAssessmentFindingsResult build() {
             final var _resultValue = new GetSecurityAssessmentFindingsResult();
             _resultValue.accessLevel = accessLevel;
@@ -238,6 +258,7 @@ public final class GetSecurityAssessmentFindingsResult {
             _resultValue.securityAssessmentId = securityAssessmentId;
             _resultValue.severity = severity;
             _resultValue.state = state;
+            _resultValue.targetId = targetId;
             return _resultValue;
         }
     }

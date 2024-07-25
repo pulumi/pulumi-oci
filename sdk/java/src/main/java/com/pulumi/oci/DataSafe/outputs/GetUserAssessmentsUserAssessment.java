@@ -56,6 +56,11 @@ public final class GetUserAssessmentsUserAssessment {
      */
     private List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets;
     /**
+     * @return Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    private Boolean isAssessmentScheduled;
+    /**
      * @return A filter to return only user assessments that are set as baseline.
      * 
      */
@@ -194,6 +199,13 @@ public final class GetUserAssessmentsUserAssessment {
         return this.ignoredTargets;
     }
     /**
+     * @return Indicates whether the assessment is scheduled to run.
+     * 
+     */
+    public Boolean isAssessmentScheduled() {
+        return this.isAssessmentScheduled;
+    }
+    /**
      * @return A filter to return only user assessments that are set as baseline.
      * 
      */
@@ -323,6 +335,7 @@ public final class GetUserAssessmentsUserAssessment {
         private String id;
         private List<String> ignoredAssessmentIds;
         private List<GetUserAssessmentsUserAssessmentIgnoredTarget> ignoredTargets;
+        private Boolean isAssessmentScheduled;
         private Boolean isBaseline;
         private Boolean isDeviatedFromBaseline;
         private String lastComparedBaselineId;
@@ -350,6 +363,7 @@ public final class GetUserAssessmentsUserAssessment {
     	      this.id = defaults.id;
     	      this.ignoredAssessmentIds = defaults.ignoredAssessmentIds;
     	      this.ignoredTargets = defaults.ignoredTargets;
+    	      this.isAssessmentScheduled = defaults.isAssessmentScheduled;
     	      this.isBaseline = defaults.isBaseline;
     	      this.isDeviatedFromBaseline = defaults.isDeviatedFromBaseline;
     	      this.lastComparedBaselineId = defaults.lastComparedBaselineId;
@@ -437,6 +451,14 @@ public final class GetUserAssessmentsUserAssessment {
         }
         public Builder ignoredTargets(GetUserAssessmentsUserAssessmentIgnoredTarget... ignoredTargets) {
             return ignoredTargets(List.of(ignoredTargets));
+        }
+        @CustomType.Setter
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            if (isAssessmentScheduled == null) {
+              throw new MissingRequiredPropertyException("GetUserAssessmentsUserAssessment", "isAssessmentScheduled");
+            }
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            return this;
         }
         @CustomType.Setter
         public Builder isBaseline(Boolean isBaseline) {
@@ -579,6 +601,7 @@ public final class GetUserAssessmentsUserAssessment {
             _resultValue.id = id;
             _resultValue.ignoredAssessmentIds = ignoredAssessmentIds;
             _resultValue.ignoredTargets = ignoredTargets;
+            _resultValue.isAssessmentScheduled = isAssessmentScheduled;
             _resultValue.isBaseline = isBaseline;
             _resultValue.isDeviatedFromBaseline = isDeviatedFromBaseline;
             _resultValue.lastComparedBaselineId = lastComparedBaselineId;

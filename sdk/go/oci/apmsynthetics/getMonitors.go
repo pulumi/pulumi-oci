@@ -68,7 +68,7 @@ type GetMonitorsArgs struct {
 	IsMaintenanceWindowActive *bool `pulumi:"isMaintenanceWindowActive"`
 	// A filter to return the monitors whose maintenance window is set.
 	IsMaintenanceWindowSet *bool `pulumi:"isMaintenanceWindowSet"`
-	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
 	MonitorType *string `pulumi:"monitorType"`
 	// A filter to return only monitors using scriptId.
 	ScriptId *string `pulumi:"scriptId"`
@@ -123,7 +123,7 @@ type GetMonitorsOutputArgs struct {
 	IsMaintenanceWindowActive pulumi.BoolPtrInput `pulumi:"isMaintenanceWindowActive"`
 	// A filter to return the monitors whose maintenance window is set.
 	IsMaintenanceWindowSet pulumi.BoolPtrInput `pulumi:"isMaintenanceWindowSet"`
-	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+	// A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
 	MonitorType pulumi.StringPtrInput `pulumi:"monitorType"`
 	// A filter to return only monitors using scriptId.
 	ScriptId pulumi.StringPtrInput `pulumi:"scriptId"`

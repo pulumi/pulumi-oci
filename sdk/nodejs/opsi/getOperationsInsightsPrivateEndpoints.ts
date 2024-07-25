@@ -98,7 +98,7 @@ export interface GetOperationsInsightsPrivateEndpointsResult {
      */
     readonly id: string;
     /**
-     * The flag is to identify if private endpoint is used for rac database or not
+     * The flag is to identify if private endpoint is used for rac database or not. This flag is deprecated and no longer is used.
      */
     readonly isUsedForRacDbs?: boolean;
     /**

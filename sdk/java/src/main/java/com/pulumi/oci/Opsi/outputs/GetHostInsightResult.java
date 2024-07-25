@@ -85,7 +85,7 @@ public final class GetHostInsightResult {
      */
     private String hostName;
     /**
-     * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * @return Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     private String hostType;
@@ -119,10 +119,6 @@ public final class GetHostInsightResult {
      * 
      */
     private String platformVersion;
-    /**
-     * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-     * 
-     */
     private Integer processorCount;
     /**
      * @return The current state of the host.
@@ -253,7 +249,7 @@ public final class GetHostInsightResult {
         return this.hostName;
     }
     /**
-     * @return Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * @return Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * 
      */
     public String hostType() {
@@ -301,10 +297,6 @@ public final class GetHostInsightResult {
     public String platformVersion() {
         return this.platformVersion;
     }
-    /**
-     * @return Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-     * 
-     */
     public Integer processorCount() {
         return this.processorCount;
     }

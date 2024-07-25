@@ -21,6 +21,7 @@ public final class GetSecurityAssessmentFindingFinding {
     private String justification;
     private String key;
     private String lifecycleDetails;
+    private String oneline;
     private String oracleDefinedSeverity;
     private List<GetSecurityAssessmentFindingFindingReference> references;
     private String remarks;
@@ -56,6 +57,9 @@ public final class GetSecurityAssessmentFindingFinding {
     }
     public String lifecycleDetails() {
         return this.lifecycleDetails;
+    }
+    public String oneline() {
+        return this.oneline;
     }
     public String oracleDefinedSeverity() {
         return this.oracleDefinedSeverity;
@@ -105,6 +109,7 @@ public final class GetSecurityAssessmentFindingFinding {
         private String justification;
         private String key;
         private String lifecycleDetails;
+        private String oneline;
         private String oracleDefinedSeverity;
         private List<GetSecurityAssessmentFindingFindingReference> references;
         private String remarks;
@@ -126,6 +131,7 @@ public final class GetSecurityAssessmentFindingFinding {
     	      this.justification = defaults.justification;
     	      this.key = defaults.key;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.oneline = defaults.oneline;
     	      this.oracleDefinedSeverity = defaults.oracleDefinedSeverity;
     	      this.references = defaults.references;
     	      this.remarks = defaults.remarks;
@@ -203,6 +209,14 @@ public final class GetSecurityAssessmentFindingFinding {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oneline(String oneline) {
+            if (oneline == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingFinding", "oneline");
+            }
+            this.oneline = oneline;
             return this;
         }
         @CustomType.Setter
@@ -298,6 +312,7 @@ public final class GetSecurityAssessmentFindingFinding {
             _resultValue.justification = justification;
             _resultValue.key = key;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.oneline = oneline;
             _resultValue.oracleDefinedSeverity = oracleDefinedSeverity;
             _resultValue.references = references;
             _resultValue.remarks = remarks;

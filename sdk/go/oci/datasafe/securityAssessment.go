@@ -43,7 +43,8 @@ import (
 //				FreeformTags: pulumi.Map{
 //					"Department": pulumi.Any("Finance"),
 //				},
-//				Schedule: pulumi.Any(securityAssessmentSchedule),
+//				IsAssessmentScheduled: pulumi.Any(securityAssessmentIsAssessmentScheduled),
+//				Schedule:              pulumi.Any(securityAssessmentSchedule),
 //			})
 //			if err != nil {
 //				return err
@@ -78,6 +79,8 @@ type SecurityAssessment struct {
 	IgnoredAssessmentIds pulumi.StringArrayOutput `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets pulumi.StringArrayOutput `pulumi:"ignoredTargets"`
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled pulumi.BoolOutput `pulumi:"isAssessmentScheduled"`
 	// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
 	IsBaseline pulumi.BoolOutput `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
@@ -171,6 +174,8 @@ type securityAssessmentState struct {
 	IgnoredAssessmentIds []string `pulumi:"ignoredAssessmentIds"`
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets []string `pulumi:"ignoredTargets"`
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled *bool `pulumi:"isAssessmentScheduled"`
 	// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
 	IsBaseline *bool `pulumi:"isBaseline"`
 	// Indicates whether or not the security assessment deviates from the baseline.
@@ -229,6 +234,8 @@ type SecurityAssessmentState struct {
 	IgnoredAssessmentIds pulumi.StringArrayInput
 	// List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 	IgnoredTargets pulumi.StringArrayInput
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled pulumi.BoolPtrInput
 	// Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.
 	IsBaseline pulumi.BoolPtrInput
 	// Indicates whether or not the security assessment deviates from the baseline.
@@ -287,6 +294,8 @@ type securityAssessmentArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled *bool `pulumi:"isAssessmentScheduled"`
 	// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -310,6 +319,8 @@ type SecurityAssessmentArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
 	FreeformTags pulumi.MapInput
+	// (Updatable) Indicates whether the assessment is scheduled to run.
+	IsAssessmentScheduled pulumi.BoolPtrInput
 	// (Updatable) To schedule the assessment for running periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
 	//
 	// Allowed version strings - "v1" v1's version specific schedule -<ss> <mm> <hh> <day-of-week> <day-of-month> Each of the above fields potentially introduce constraints. A workrequest is created only when clock time satisfies all the constraints. Constraints introduced: 1. seconds = <ss> (So, the allowed range for <ss> is [0, 59]) 2. minutes = <mm> (So, the allowed range for <mm> is [0, 59]) 3. hours = <hh> (So, the allowed range for <hh> is [0, 23]) <day-of-week> can be either '*' (without quotes or a number between 1(Monday) and 7(Sunday)) 4. No constraint introduced when it is '*'. When not, day of week must equal the given value <day-of-month> can be either '*' (without quotes or a number between 1 and 28) 5. No constraint introduced when it is '*'. When not, day of month must equal the given value
@@ -441,6 +452,11 @@ func (o SecurityAssessmentOutput) IgnoredAssessmentIds() pulumi.StringArrayOutpu
 // List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
 func (o SecurityAssessmentOutput) IgnoredTargets() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *SecurityAssessment) pulumi.StringArrayOutput { return v.IgnoredTargets }).(pulumi.StringArrayOutput)
+}
+
+// (Updatable) Indicates whether the assessment is scheduled to run.
+func (o SecurityAssessmentOutput) IsAssessmentScheduled() pulumi.BoolOutput {
+	return o.ApplyT(func(v *SecurityAssessment) pulumi.BoolOutput { return v.IsAssessmentScheduled }).(pulumi.BoolOutput)
 }
 
 // Indicates whether or not the security assessment is set as a baseline. This is applicable only for saved security assessments.

@@ -22,7 +22,7 @@ class GetCloudExadataInfrastructureResult:
     """
     A collection of values returned by getCloudExadataInfrastructure.
     """
-    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
+    def __init__(__self__, activated_storage_count=None, additional_storage_count=None, availability_domain=None, available_storage_size_in_gbs=None, cloud_exadata_infrastructure_id=None, cluster_placement_group_id=None, compartment_id=None, compute_count=None, cpu_count=None, customer_contacts=None, data_storage_size_in_tbs=None, db_node_storage_size_in_gbs=None, db_server_version=None, defined_file_system_configurations=None, defined_tags=None, display_name=None, freeform_tags=None, id=None, last_maintenance_run_id=None, lifecycle_details=None, maintenance_windows=None, max_cpu_count=None, max_data_storage_in_tbs=None, max_db_node_storage_in_gbs=None, max_memory_in_gbs=None, memory_size_in_gbs=None, monthly_db_server_version=None, monthly_storage_server_version=None, next_maintenance_run_id=None, shape=None, state=None, storage_count=None, storage_server_version=None, subscription_id=None, system_tags=None, time_created=None, total_storage_size_in_gbs=None):
         if activated_storage_count and not isinstance(activated_storage_count, int):
             raise TypeError("Expected argument 'activated_storage_count' to be a int")
         pulumi.set(__self__, "activated_storage_count", activated_storage_count)
@@ -122,6 +122,9 @@ class GetCloudExadataInfrastructureResult:
         if storage_server_version and not isinstance(storage_server_version, str):
             raise TypeError("Expected argument 'storage_server_version' to be a str")
         pulumi.set(__self__, "storage_server_version", storage_server_version)
+        if subscription_id and not isinstance(subscription_id, str):
+            raise TypeError("Expected argument 'subscription_id' to be a str")
+        pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
@@ -394,6 +397,14 @@ class GetCloudExadataInfrastructureResult:
         return pulumi.get(self, "storage_server_version")
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Mapping[str, Any]:
         """
@@ -457,6 +468,7 @@ class AwaitableGetCloudExadataInfrastructureResult(GetCloudExadataInfrastructure
             state=self.state,
             storage_count=self.storage_count,
             storage_server_version=self.storage_server_version,
+            subscription_id=self.subscription_id,
             system_tags=self.system_tags,
             time_created=self.time_created,
             total_storage_size_in_gbs=self.total_storage_size_in_gbs)
@@ -520,6 +532,7 @@ def get_cloud_exadata_infrastructure(cloud_exadata_infrastructure_id: Optional[s
         state=pulumi.get(__ret__, 'state'),
         storage_count=pulumi.get(__ret__, 'storage_count'),
         storage_server_version=pulumi.get(__ret__, 'storage_server_version'),
+        subscription_id=pulumi.get(__ret__, 'subscription_id'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
         time_created=pulumi.get(__ret__, 'time_created'),
         total_storage_size_in_gbs=pulumi.get(__ret__, 'total_storage_size_in_gbs'))

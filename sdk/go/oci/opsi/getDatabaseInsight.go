@@ -60,7 +60,7 @@ type LookupDatabaseInsightArgs struct {
 type LookupDatabaseInsightResult struct {
 	// Compartment identifier of the database
 	CompartmentId string `pulumi:"compartmentId"`
-	// User credential details to connect to the database. This is supplied via the External Database Service.
+	// User credential details to connect to the database.
 	ConnectionCredentialDetails []GetDatabaseInsightConnectionCredentialDetail `pulumi:"connectionCredentialDetails"`
 	// Connection details to connect to the database. HostName, protocol, and port should be specified.
 	ConnectionDetails []GetDatabaseInsightConnectionDetail `pulumi:"connectionDetails"`
@@ -77,7 +77,7 @@ type LookupDatabaseInsightResult struct {
 	DatabaseName string `pulumi:"databaseName"`
 	// Oracle Cloud Infrastructure database resource type
 	DatabaseResourceType string `pulumi:"databaseResourceType"`
-	// Operations Insights internal representation of the database type.
+	// Ops Insights internal representation of the database type.
 	DatabaseType string `pulumi:"databaseType"`
 	// The version of the database.
 	DatabaseVersion      string `pulumi:"databaseVersion"`
@@ -105,6 +105,10 @@ type LookupDatabaseInsightResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// Database insight identifier
 	Id string `pulumi:"id"`
+	// Specifies if MYSQL DB System has heatwave cluster attached.
+	IsHeatWaveClusterAttached bool `pulumi:"isHeatWaveClusterAttached"`
+	// Specifies if MYSQL DB System is highly available.
+	IsHighlyAvailable bool `pulumi:"isHighlyAvailable"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails string `pulumi:"lifecycleDetails"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the OPSI private endpoint
@@ -172,7 +176,7 @@ func (o LookupDatabaseInsightResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// User credential details to connect to the database. This is supplied via the External Database Service.
+// User credential details to connect to the database.
 func (o LookupDatabaseInsightResultOutput) ConnectionCredentialDetails() GetDatabaseInsightConnectionCredentialDetailArrayOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) []GetDatabaseInsightConnectionCredentialDetail {
 		return v.ConnectionCredentialDetails
@@ -218,7 +222,7 @@ func (o LookupDatabaseInsightResultOutput) DatabaseResourceType() pulumi.StringO
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseResourceType }).(pulumi.StringOutput)
 }
 
-// Operations Insights internal representation of the database type.
+// Ops Insights internal representation of the database type.
 func (o LookupDatabaseInsightResultOutput) DatabaseType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.DatabaseType }).(pulumi.StringOutput)
 }
@@ -289,6 +293,16 @@ func (o LookupDatabaseInsightResultOutput) FreeformTags() pulumi.MapOutput {
 // Database insight identifier
 func (o LookupDatabaseInsightResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupDatabaseInsightResult) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Specifies if MYSQL DB System has heatwave cluster attached.
+func (o LookupDatabaseInsightResultOutput) IsHeatWaveClusterAttached() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) bool { return v.IsHeatWaveClusterAttached }).(pulumi.BoolOutput)
+}
+
+// Specifies if MYSQL DB System is highly available.
+func (o LookupDatabaseInsightResultOutput) IsHighlyAvailable() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupDatabaseInsightResult) bool { return v.IsHighlyAvailable }).(pulumi.BoolOutput)
 }
 
 // A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.

@@ -19,7 +19,7 @@ import javax.annotation.Nullable;
 /**
  * This resource provides the Operations Insights Warehouse resource in Oracle Cloud Infrastructure Opsi service.
  * 
- * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+ * Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
  * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the &#39;opsi-warehouse-type&#39;
  * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
  * 
@@ -131,14 +131,14 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
         return this.definedTags;
     }
     /**
-     * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
-     * @return (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * @return (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     public Output<String> displayName() {
@@ -187,14 +187,14 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
         return this.lifecycleDetails;
     }
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      * 
      */
     @Export(name="operationsInsightsTenancyId", refs={String.class}, tree="[0]")
     private Output<String> operationsInsightsTenancyId;
 
     /**
-     * @return Tenancy Identifier of Operations Insights service
+     * @return Tenancy Identifier of Ops Insights service
      * 
      */
     public Output<String> operationsInsightsTenancyId() {
@@ -277,14 +277,14 @@ public class OperationsInsightsWarehouse extends com.pulumi.resources.CustomReso
         return this.timeCreated;
     }
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
     @Export(name="timeLastWalletRotated", refs={String.class}, tree="[0]")
     private Output<String> timeLastWalletRotated;
 
     /**
-     * @return The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * @return The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
     public Output<String> timeLastWalletRotated() {

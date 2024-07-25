@@ -11,12 +11,14 @@ import com.pulumi.oci.DataSafe.UnsetUserAssessmentBaselineArgs;
 import com.pulumi.oci.DataSafe.inputs.UnsetUserAssessmentBaselineState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Unset User Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+ * Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+ * If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
  * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
  * 
  * ## Example Usage
@@ -46,6 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUnsetUserAssessmentBaseline = new UnsetUserAssessmentBaseline("testUnsetUserAssessmentBaseline", UnsetUserAssessmentBaselineArgs.builder()
  *             .userAssessmentId(testUserAssessment.id())
+ *             .targetIds(unsetUserAssessmentBaselineTargetIds)
  *             .build());
  * 
  *     }
@@ -65,6 +68,20 @@ import javax.annotation.Nullable;
  */
 @ResourceType(type="oci:DataSafe/unsetUserAssessmentBaseline:UnsetUserAssessmentBaseline")
 public class UnsetUserAssessmentBaseline extends com.pulumi.resources.CustomResource {
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
+     */
+    @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> targetIds;
+
+    /**
+     * @return The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
+     */
+    public Output<List<String>> targetIds() {
+        return this.targetIds;
+    }
     /**
      * The OCID of the user assessment.
      * 

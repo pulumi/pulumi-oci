@@ -11,12 +11,14 @@ import com.pulumi.oci.DataSafe.UnsetSecurityAssessmentBaselineArgs;
 import com.pulumi.oci.DataSafe.inputs.UnsetSecurityAssessmentBaselineState;
 import com.pulumi.oci.Utilities;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
  * This resource provides the Unset Security Assessment Baseline resource in Oracle Cloud Infrastructure Data Safe service.
  * 
- * Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+ * Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+ * If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
  * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
  * 
  * ## Example Usage
@@ -46,6 +48,7 @@ import javax.annotation.Nullable;
  *     public static void stack(Context ctx) {
  *         var testUnsetSecurityAssessmentBaseline = new UnsetSecurityAssessmentBaseline("testUnsetSecurityAssessmentBaseline", UnsetSecurityAssessmentBaselineArgs.builder()
  *             .securityAssessmentId(testSecurityAssessment.id())
+ *             .targetIds(unsetSecurityAssessmentBaselineTargetIds)
  *             .build());
  * 
  *     }
@@ -68,9 +71,6 @@ public class UnsetSecurityAssessmentBaseline extends com.pulumi.resources.Custom
     /**
      * The OCID of the security assessment.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Export(name="securityAssessmentId", refs={String.class}, tree="[0]")
     private Output<String> securityAssessmentId;
@@ -78,12 +78,29 @@ public class UnsetSecurityAssessmentBaseline extends com.pulumi.resources.Custom
     /**
      * @return The OCID of the security assessment.
      * 
+     */
+    public Output<String> securityAssessmentId() {
+        return this.securityAssessmentId;
+    }
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Output<String> securityAssessmentId() {
-        return this.securityAssessmentId;
+    @Export(name="targetIds", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> targetIds;
+
+    /**
+     * @return The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Output<List<String>> targetIds() {
+        return this.targetIds;
     }
 
     /**

@@ -22,9 +22,53 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string? ConfigType;
         /// <summary>
+        /// (Updatable) Database connection string.
+        /// </summary>
+        public readonly string? ConnectionString;
+        /// <summary>
+        /// (Updatable) Details for basic authentication.
+        /// </summary>
+        public readonly Outputs.ConfigConfigurationDatabaseAuthenticationDetails? DatabaseAuthenticationDetails;
+        /// <summary>
+        /// (Updatable) Database connection type. Only CUSTOM_JDBC is supported for MYSQL database type.
+        /// </summary>
+        public readonly string? DatabaseConnectionType;
+        /// <summary>
+        /// (Updatable) Database role.
+        /// </summary>
+        public readonly string? DatabaseRole;
+        /// <summary>
+        /// (Updatable) Database type.
+        /// </summary>
+        public readonly string? DatabaseType;
+        /// <summary>
+        /// (Updatable) Details for database wallet.
+        /// </summary>
+        public readonly Outputs.ConfigConfigurationDatabaseWalletDetails? DatabaseWalletDetails;
+        /// <summary>
         /// (Updatable) Information about the DNS settings.
         /// </summary>
         public readonly Outputs.ConfigConfigurationDnsConfiguration? DnsConfiguration;
+        /// <summary>
+        /// (Updatable) Download size limit in Bytes, at which to stop the transfer. Maximum download size limit is 5 MiB.
+        /// </summary>
+        public readonly int? DownloadSizeLimitInBytes;
+        /// <summary>
+        /// (Updatable) Details for basic authentication.
+        /// </summary>
+        public readonly Outputs.ConfigConfigurationFtpBasicAuthenticationDetails? FtpBasicAuthenticationDetails;
+        /// <summary>
+        /// (Updatable) FTP protocol type.
+        /// </summary>
+        public readonly string? FtpProtocol;
+        /// <summary>
+        /// (Updatable) FTP monitor request type.
+        /// </summary>
+        public readonly string? FtpRequestType;
+        /// <summary>
+        /// (Updatable) If enabled, Active mode will be used for the FTP connection.
+        /// </summary>
+        public readonly bool? IsActiveMode;
         /// <summary>
         /// (Updatable) If certificate validation is enabled, then the call will fail in case of certification errors.
         /// </summary>
@@ -58,6 +102,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly string? Protocol;
         /// <summary>
+        /// (Updatable) SQL query to be executed.
+        /// </summary>
+        public readonly string? Query;
+        /// <summary>
         /// (Updatable) DNS record type.
         /// </summary>
         public readonly string? RecordType;
@@ -86,6 +134,10 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         /// </summary>
         public readonly ImmutableArray<Outputs.ConfigConfigurationRequestQueryParam> RequestQueryParams;
         /// <summary>
+        /// (Updatable) File upload size in Bytes, at which to stop the transfer. Maximum upload size is 5 MiB.
+        /// </summary>
+        public readonly int? UploadFileSizeInBytes;
+        /// <summary>
         /// (Updatable) Expected HTTP response codes. For status code range, set values such as 2xx, 3xx.
         /// </summary>
         public readonly ImmutableArray<string> VerifyResponseCodes;
@@ -104,7 +156,29 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             string? configType,
 
+            string? connectionString,
+
+            Outputs.ConfigConfigurationDatabaseAuthenticationDetails? databaseAuthenticationDetails,
+
+            string? databaseConnectionType,
+
+            string? databaseRole,
+
+            string? databaseType,
+
+            Outputs.ConfigConfigurationDatabaseWalletDetails? databaseWalletDetails,
+
             Outputs.ConfigConfigurationDnsConfiguration? dnsConfiguration,
+
+            int? downloadSizeLimitInBytes,
+
+            Outputs.ConfigConfigurationFtpBasicAuthenticationDetails? ftpBasicAuthenticationDetails,
+
+            string? ftpProtocol,
+
+            string? ftpRequestType,
+
+            bool? isActiveMode,
 
             bool? isCertificateValidationEnabled,
 
@@ -122,6 +196,8 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             string? protocol,
 
+            string? query,
+
             string? recordType,
 
             Outputs.ConfigConfigurationReqAuthenticationDetails? reqAuthenticationDetails,
@@ -136,6 +212,8 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
 
             ImmutableArray<Outputs.ConfigConfigurationRequestQueryParam> requestQueryParams,
 
+            int? uploadFileSizeInBytes,
+
             ImmutableArray<string> verifyResponseCodes,
 
             string? verifyResponseContent,
@@ -144,7 +222,18 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
         {
             ClientCertificateDetails = clientCertificateDetails;
             ConfigType = configType;
+            ConnectionString = connectionString;
+            DatabaseAuthenticationDetails = databaseAuthenticationDetails;
+            DatabaseConnectionType = databaseConnectionType;
+            DatabaseRole = databaseRole;
+            DatabaseType = databaseType;
+            DatabaseWalletDetails = databaseWalletDetails;
             DnsConfiguration = dnsConfiguration;
+            DownloadSizeLimitInBytes = downloadSizeLimitInBytes;
+            FtpBasicAuthenticationDetails = ftpBasicAuthenticationDetails;
+            FtpProtocol = ftpProtocol;
+            FtpRequestType = ftpRequestType;
+            IsActiveMode = isActiveMode;
             IsCertificateValidationEnabled = isCertificateValidationEnabled;
             IsDefaultSnapshotEnabled = isDefaultSnapshotEnabled;
             IsFailureRetried = isFailureRetried;
@@ -153,6 +242,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             NameServer = nameServer;
             NetworkConfiguration = networkConfiguration;
             Protocol = protocol;
+            Query = query;
             RecordType = recordType;
             ReqAuthenticationDetails = reqAuthenticationDetails;
             ReqAuthenticationScheme = reqAuthenticationScheme;
@@ -160,6 +250,7 @@ namespace Pulumi.Oci.ApmSynthetics.Outputs
             RequestMethod = requestMethod;
             RequestPostBody = requestPostBody;
             RequestQueryParams = requestQueryParams;
+            UploadFileSizeInBytes = uploadFileSizeInBytes;
             VerifyResponseCodes = verifyResponseCodes;
             VerifyResponseContent = verifyResponseContent;
             VerifyTexts = verifyTexts;

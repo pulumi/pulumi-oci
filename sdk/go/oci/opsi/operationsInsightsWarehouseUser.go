@@ -67,7 +67,7 @@ type OperationsInsightsWarehouseUser struct {
 
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringOutput `pulumi:"compartmentId"`
-	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringOutput `pulumi:"connectionPassword"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapOutput `pulumi:"definedTags"`
@@ -81,7 +81,7 @@ type OperationsInsightsWarehouseUser struct {
 	IsOpsiDataAccess pulumi.BoolOutput `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringOutput `pulumi:"lifecycleDetails"`
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name pulumi.StringOutput `pulumi:"name"`
 	// OPSI Warehouse OCID
 	//
@@ -149,7 +149,7 @@ func GetOperationsInsightsWarehouseUser(ctx *pulumi.Context,
 type operationsInsightsWarehouseUserState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId *string `pulumi:"compartmentId"`
-	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword *string `pulumi:"connectionPassword"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -163,7 +163,7 @@ type operationsInsightsWarehouseUserState struct {
 	IsOpsiDataAccess *bool `pulumi:"isOpsiDataAccess"`
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails *string `pulumi:"lifecycleDetails"`
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name *string `pulumi:"name"`
 	// OPSI Warehouse OCID
 	//
@@ -183,7 +183,7 @@ type operationsInsightsWarehouseUserState struct {
 type OperationsInsightsWarehouseUserState struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringPtrInput
-	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringPtrInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -197,7 +197,7 @@ type OperationsInsightsWarehouseUserState struct {
 	IsOpsiDataAccess pulumi.BoolPtrInput
 	// A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
 	LifecycleDetails pulumi.StringPtrInput
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name pulumi.StringPtrInput
 	// OPSI Warehouse OCID
 	//
@@ -221,7 +221,7 @@ func (OperationsInsightsWarehouseUserState) ElementType() reflect.Type {
 type operationsInsightsWarehouseUserArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId string `pulumi:"compartmentId"`
-	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword string `pulumi:"connectionPassword"`
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
@@ -233,7 +233,7 @@ type operationsInsightsWarehouseUserArgs struct {
 	IsEmDataAccess *bool `pulumi:"isEmDataAccess"`
 	// (Updatable) Indicate whether user has access to OPSI data.
 	IsOpsiDataAccess *bool `pulumi:"isOpsiDataAccess"`
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name *string `pulumi:"name"`
 	// OPSI Warehouse OCID
 	//
@@ -246,7 +246,7 @@ type operationsInsightsWarehouseUserArgs struct {
 type OperationsInsightsWarehouseUserArgs struct {
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 	CompartmentId pulumi.StringInput
-	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	ConnectionPassword pulumi.StringInput
 	// (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"foo-namespace.bar-key": "value"}`
 	DefinedTags pulumi.MapInput
@@ -258,7 +258,7 @@ type OperationsInsightsWarehouseUserArgs struct {
 	IsEmDataAccess pulumi.BoolPtrInput
 	// (Updatable) Indicate whether user has access to OPSI data.
 	IsOpsiDataAccess pulumi.BoolPtrInput
-	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+	// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 	Name pulumi.StringPtrInput
 	// OPSI Warehouse OCID
 	//
@@ -359,7 +359,7 @@ func (o OperationsInsightsWarehouseUserOutput) CompartmentId() pulumi.StringOutp
 	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.CompartmentId }).(pulumi.StringOutput)
 }
 
-// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o OperationsInsightsWarehouseUserOutput) ConnectionPassword() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.ConnectionPassword }).(pulumi.StringOutput)
 }
@@ -394,7 +394,7 @@ func (o OperationsInsightsWarehouseUserOutput) LifecycleDetails() pulumi.StringO
 	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.LifecycleDetails }).(pulumi.StringOutput)
 }
 
-// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+// Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
 func (o OperationsInsightsWarehouseUserOutput) Name() pulumi.StringOutput {
 	return o.ApplyT(func(v *OperationsInsightsWarehouseUser) pulumi.StringOutput { return v.Name }).(pulumi.StringOutput)
 }

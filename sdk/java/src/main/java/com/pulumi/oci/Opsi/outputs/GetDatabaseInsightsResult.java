@@ -33,7 +33,7 @@ public final class GetDatabaseInsightsResult {
      */
     private List<GetDatabaseInsightsDatabaseInsightsCollection> databaseInsightsCollections;
     /**
-     * @return Operations Insights internal representation of the database type.
+     * @return Ops Insights internal representation of the database type.
      * 
      */
     private @Nullable List<String> databaseTypes;
@@ -96,7 +96,7 @@ public final class GetDatabaseInsightsResult {
         return this.databaseInsightsCollections;
     }
     /**
-     * @return Operations Insights internal representation of the database type.
+     * @return Ops Insights internal representation of the database type.
      * 
      */
     public List<String> databaseTypes() {

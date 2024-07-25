@@ -54,6 +54,11 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     private String lifecycleDetails;
     /**
+     * @return Provides a recommended approach to take to remediate the finding reported.
+     * 
+     */
+    private String oneline;
+    /**
      * @return The severity of the finding as determined by security assessment. This cannot be modified by user.
      * 
      */
@@ -84,7 +89,7 @@ public final class GetSecurityAssessmentFindingsFinding {
      */
     private String summary;
     /**
-     * @return The OCID of the target database.
+     * @return A filter to return only items related to a specific target OCID.
      * 
      */
     private String targetId;
@@ -162,6 +167,13 @@ public final class GetSecurityAssessmentFindingsFinding {
         return this.lifecycleDetails;
     }
     /**
+     * @return Provides a recommended approach to take to remediate the finding reported.
+     * 
+     */
+    public String oneline() {
+        return this.oneline;
+    }
+    /**
      * @return The severity of the finding as determined by security assessment. This cannot be modified by user.
      * 
      */
@@ -204,7 +216,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         return this.summary;
     }
     /**
-     * @return The OCID of the target database.
+     * @return A filter to return only items related to a specific target OCID.
      * 
      */
     public String targetId() {
@@ -249,6 +261,7 @@ public final class GetSecurityAssessmentFindingsFinding {
         private String justification;
         private String key;
         private String lifecycleDetails;
+        private String oneline;
         private String oracleDefinedSeverity;
         private List<GetSecurityAssessmentFindingsFindingReference> references;
         private String remarks;
@@ -270,6 +283,7 @@ public final class GetSecurityAssessmentFindingsFinding {
     	      this.justification = defaults.justification;
     	      this.key = defaults.key;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
+    	      this.oneline = defaults.oneline;
     	      this.oracleDefinedSeverity = defaults.oracleDefinedSeverity;
     	      this.references = defaults.references;
     	      this.remarks = defaults.remarks;
@@ -347,6 +361,14 @@ public final class GetSecurityAssessmentFindingsFinding {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsFinding", "lifecycleDetails");
             }
             this.lifecycleDetails = lifecycleDetails;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder oneline(String oneline) {
+            if (oneline == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentFindingsFinding", "oneline");
+            }
+            this.oneline = oneline;
             return this;
         }
         @CustomType.Setter
@@ -442,6 +464,7 @@ public final class GetSecurityAssessmentFindingsFinding {
             _resultValue.justification = justification;
             _resultValue.key = key;
             _resultValue.lifecycleDetails = lifecycleDetails;
+            _resultValue.oneline = oneline;
             _resultValue.oracleDefinedSeverity = oracleDefinedSeverity;
             _resultValue.references = references;
             _resultValue.remarks = remarks;

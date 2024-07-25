@@ -87,14 +87,14 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
     }
 
     /**
-     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+     * A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      * 
      */
     @Import(name="monitorType")
     private @Nullable Output<String> monitorType;
 
     /**
-     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      * 
      */
     public Optional<Output<String>> monitorType() {
@@ -276,7 +276,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
          * 
          * @return builder
          * 
@@ -287,7 +287,7 @@ public final class GetMonitorsArgs extends com.pulumi.resources.InvokeArgs {
         }
 
         /**
-         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+         * @param monitorType A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
          * 
          * @return builder
          * 

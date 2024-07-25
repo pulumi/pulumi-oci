@@ -124,10 +124,6 @@ export class IntegrationInstance extends pulumi.CustomResource {
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
     public readonly domainId!: pulumi.Output<string | undefined>;
-    /**
-     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-     */
     public readonly enableProcessAutomationTrigger!: pulumi.Output<number | undefined>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -175,7 +171,6 @@ export class IntegrationInstance extends pulumi.CustomResource {
     public /*out*/ readonly privateEndpointOutboundConnections!: pulumi.Output<outputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection[]>;
     /**
      * Shape
-     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     public readonly shape!: pulumi.Output<string>;
     /**
@@ -323,10 +318,6 @@ export interface IntegrationInstanceState {
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
     domainId?: pulumi.Input<string>;
-    /**
-     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-     */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -374,7 +365,6 @@ export interface IntegrationInstanceState {
     privateEndpointOutboundConnections?: pulumi.Input<pulumi.Input<inputs.Integration.IntegrationInstancePrivateEndpointOutboundConnection>[]>;
     /**
      * Shape
-     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     shape?: pulumi.Input<string>;
     /**
@@ -431,10 +421,6 @@ export interface IntegrationInstanceArgs {
      * The OCID of the identity domain, that will be used to determine the  corresponding Idcs Stripe and create an Idcs application within the stripe.  This parameter is mutually exclusive with parameter: idcsAt, i.e only one of  two parameters should be specified.
      */
     domainId?: pulumi.Input<string>;
-    /**
-     * (Updatable) An optional property when incremented triggers Enable Process Automation. Could be set to any integer value.
-     * ||||||| parent of c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
-     */
     enableProcessAutomationTrigger?: pulumi.Input<number>;
     /**
      * (Updatable) Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only. Example: `{"bar-key": "value"}`
@@ -470,7 +456,6 @@ export interface IntegrationInstanceArgs {
     networkEndpointDetails?: pulumi.Input<inputs.Integration.IntegrationInstanceNetworkEndpointDetails>;
     /**
      * Shape
-     * >>>>>>> c689349fc7 (Added - Support for Enabling outbound private access using PE RCE for OIC Gen3 customers)
      */
     shape?: pulumi.Input<string>;
     /**

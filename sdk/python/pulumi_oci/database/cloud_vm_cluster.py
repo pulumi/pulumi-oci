@@ -46,6 +46,7 @@ class CloudVmClusterArgs:
                  private_zone_id: Optional[pulumi.Input[str]] = None,
                  scan_listener_port_tcp: Optional[pulumi.Input[int]] = None,
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None):
         """
@@ -91,6 +92,7 @@ class CloudVmClusterArgs:
         :param pulumi.Input[str] private_zone_id: The private zone id in which DNS records need to be created.
         :param pulumi.Input[int] scan_listener_port_tcp: The TCP Single Client Access Name (SCAN) port. The default port is 1521.
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
@@ -149,6 +151,8 @@ class CloudVmClusterArgs:
             pulumi.set(__self__, "scan_listener_port_tcp", scan_listener_port_tcp)
         if scan_listener_port_tcp_ssl is not None:
             pulumi.set(__self__, "scan_listener_port_tcp_ssl", scan_listener_port_tcp_ssl)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_version is not None:
             pulumi.set(__self__, "system_version", system_version)
         if time_zone is not None:
@@ -524,6 +528,18 @@ class CloudVmClusterArgs:
         pulumi.set(self, "scan_listener_port_tcp_ssl", value)
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @property
     @pulumi.getter(name="systemVersion")
     def system_version(self) -> Optional[pulumi.Input[str]]:
         """
@@ -598,6 +614,7 @@ class _CloudVmClusterState:
                  state: Optional[pulumi.Input[str]] = None,
                  storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_created: Optional[pulumi.Input[str]] = None,
@@ -660,6 +677,7 @@ class _CloudVmClusterState:
         :param pulumi.Input[str] state: The current state of the cloud VM cluster.
         :param pulumi.Input[int] storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the cloud VM cluster was created.
@@ -757,6 +775,8 @@ class _CloudVmClusterState:
             pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
         if subnet_id is not None:
             pulumi.set(__self__, "subnet_id", subnet_id)
+        if subscription_id is not None:
+            pulumi.set(__self__, "subscription_id", subscription_id)
         if system_tags is not None:
             pulumi.set(__self__, "system_tags", system_tags)
         if system_version is not None:
@@ -1296,6 +1316,18 @@ class _CloudVmClusterState:
         pulumi.set(self, "subnet_id", value)
 
     @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> Optional[pulumi.Input[str]]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
+
+    @subscription_id.setter
+    def subscription_id(self, value: Optional[pulumi.Input[str]]):
+        pulumi.set(self, "subscription_id", value)
+
+    @property
     @pulumi.getter(name="systemTags")
     def system_tags(self) -> Optional[pulumi.Input[Mapping[str, Any]]]:
         """
@@ -1407,6 +1439,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1460,6 +1493,7 @@ class CloudVmCluster(pulumi.CustomResource):
             private_zone_id=test_zone["id"],
             scan_listener_port_tcp=cloud_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=cloud_vm_cluster_scan_listener_port_tcp_ssl,
+            subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone)
         ```
@@ -1515,6 +1549,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[int] scan_listener_port_tcp_ssl: The TCPS Single Client Access Name (SCAN) port. The default port is 2484.
         :param pulumi.Input[Sequence[pulumi.Input[str]]] ssh_public_keys: (Updatable) The public key portion of one or more key pairs used for SSH access to the cloud VM cluster.
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_zone: The time zone to use for the cloud VM cluster. For details, see [Time Zones](https://docs.cloud.oracle.com/iaas/Content/Database/References/timezones.htm). 
                
@@ -1578,6 +1613,7 @@ class CloudVmCluster(pulumi.CustomResource):
             private_zone_id=test_zone["id"],
             scan_listener_port_tcp=cloud_vm_cluster_scan_listener_port_tcp,
             scan_listener_port_tcp_ssl=cloud_vm_cluster_scan_listener_port_tcp_ssl,
+            subscription_id=tenant_subscription_id,
             system_version=cloud_vm_cluster_system_version,
             time_zone=cloud_vm_cluster_time_zone)
         ```
@@ -1635,6 +1671,7 @@ class CloudVmCluster(pulumi.CustomResource):
                  scan_listener_port_tcp_ssl: Optional[pulumi.Input[int]] = None,
                  ssh_public_keys: Optional[pulumi.Input[Sequence[pulumi.Input[str]]]] = None,
                  subnet_id: Optional[pulumi.Input[str]] = None,
+                 subscription_id: Optional[pulumi.Input[str]] = None,
                  system_version: Optional[pulumi.Input[str]] = None,
                  time_zone: Optional[pulumi.Input[str]] = None,
                  __props__=None):
@@ -1694,6 +1731,7 @@ class CloudVmCluster(pulumi.CustomResource):
             if subnet_id is None and not opts.urn:
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
+            __props__.__dict__["subscription_id"] = subscription_id
             __props__.__dict__["system_version"] = system_version
             __props__.__dict__["time_zone"] = time_zone
             __props__.__dict__["availability_domain"] = None
@@ -1766,6 +1804,7 @@ class CloudVmCluster(pulumi.CustomResource):
             state: Optional[pulumi.Input[str]] = None,
             storage_size_in_gbs: Optional[pulumi.Input[int]] = None,
             subnet_id: Optional[pulumi.Input[str]] = None,
+            subscription_id: Optional[pulumi.Input[str]] = None,
             system_tags: Optional[pulumi.Input[Mapping[str, Any]]] = None,
             system_version: Optional[pulumi.Input[str]] = None,
             time_created: Optional[pulumi.Input[str]] = None,
@@ -1833,6 +1872,7 @@ class CloudVmCluster(pulumi.CustomResource):
         :param pulumi.Input[str] state: The current state of the cloud VM cluster.
         :param pulumi.Input[int] storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param pulumi.Input[str] subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+        :param pulumi.Input[str] subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param pulumi.Input[Mapping[str, Any]] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param pulumi.Input[str] system_version: Operating system version of the image.
         :param pulumi.Input[str] time_created: The date and time that the cloud VM cluster was created.
@@ -1891,6 +1931,7 @@ class CloudVmCluster(pulumi.CustomResource):
         __props__.__dict__["state"] = state
         __props__.__dict__["storage_size_in_gbs"] = storage_size_in_gbs
         __props__.__dict__["subnet_id"] = subnet_id
+        __props__.__dict__["subscription_id"] = subscription_id
         __props__.__dict__["system_tags"] = system_tags
         __props__.__dict__["system_version"] = system_version
         __props__.__dict__["time_created"] = time_created
@@ -2251,6 +2292,14 @@ class CloudVmCluster(pulumi.CustomResource):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> pulumi.Output[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")

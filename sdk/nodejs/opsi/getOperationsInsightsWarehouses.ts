@@ -9,7 +9,7 @@ import * as utilities from "../utilities";
 /**
  * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
  *
- * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+ * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
  * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
  *
  * ## Example Usage
@@ -53,7 +53,7 @@ export interface GetOperationsInsightsWarehousesArgs {
     displayName?: string;
     filters?: inputs.Opsi.GetOperationsInsightsWarehousesFilter[];
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     id?: string;
     /**
@@ -71,7 +71,7 @@ export interface GetOperationsInsightsWarehousesResult {
      */
     readonly compartmentId?: string;
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      */
     readonly displayName?: string;
     readonly filters?: outputs.Opsi.GetOperationsInsightsWarehousesFilter[];
@@ -91,7 +91,7 @@ export interface GetOperationsInsightsWarehousesResult {
 /**
  * This data source provides the list of Operations Insights Warehouses in Oracle Cloud Infrastructure Opsi service.
  *
- * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+ * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
  * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
  *
  * ## Example Usage
@@ -126,7 +126,7 @@ export interface GetOperationsInsightsWarehousesOutputArgs {
     displayName?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetOperationsInsightsWarehousesFilterArgs>[]>;
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     id?: pulumi.Input<string>;
     /**

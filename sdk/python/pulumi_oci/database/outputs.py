@@ -6189,6 +6189,8 @@ class DbHomeDatabase(dict):
             suggest = "defined_tags"
         elif key == "freeformTags":
             suggest = "freeform_tags"
+        elif key == "keyStoreId":
+            suggest = "key_store_id"
         elif key == "kmsKeyId":
             suggest = "kms_key_id"
         elif key == "kmsKeyVersionId":
@@ -6240,6 +6242,7 @@ class DbHomeDatabase(dict):
                  defined_tags: Optional[Mapping[str, Any]] = None,
                  freeform_tags: Optional[Mapping[str, Any]] = None,
                  id: Optional[str] = None,
+                 key_store_id: Optional[str] = None,
                  kms_key_id: Optional[str] = None,
                  kms_key_version_id: Optional[str] = None,
                  lifecycle_details: Optional[str] = None,
@@ -6270,6 +6273,7 @@ class DbHomeDatabase(dict):
         :param Mapping[str, Any] defined_tags: (Updatable) Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param Mapping[str, Any] freeform_tags: (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).  Example: `{"Department": "Finance"}`
         :param str id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
+        :param str key_store_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
         :param str kms_key_id: The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         :param str kms_key_version_id: The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation.
         :param str lifecycle_details: Additional information about the current lifecycle state.
@@ -6311,6 +6315,8 @@ class DbHomeDatabase(dict):
             pulumi.set(__self__, "freeform_tags", freeform_tags)
         if id is not None:
             pulumi.set(__self__, "id", id)
+        if key_store_id is not None:
+            pulumi.set(__self__, "key_store_id", key_store_id)
         if kms_key_id is not None:
             pulumi.set(__self__, "kms_key_id", kms_key_id)
         if kms_key_version_id is not None:
@@ -6447,6 +6453,14 @@ class DbHomeDatabase(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> Optional[str]:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        """
+        return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -17032,6 +17046,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesAutonomousDatabaseBackupConfigResult'],
                  backup_retention_period_in_days: int,
+                 byol_compute_count_limit: float,
                  character_set: str,
                  clone_type: str,
                  compartment_id: str,
@@ -17125,6 +17140,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
                  standby_whitelisted_ips: Sequence[str],
                  state: str,
                  subnet_id: str,
+                 subscription_id: str,
                  supported_regions_to_clone_tos: Sequence[str],
                  switchover_to: str,
                  switchover_to_remote_peer_id: str,
@@ -17249,6 +17265,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+        :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the Autonomous Database was created.
@@ -17287,6 +17304,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+        pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "clone_type", clone_type)
         pulumi.set(__self__, "compartment_id", compartment_id)
@@ -17380,6 +17398,7 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "standby_whitelisted_ips", standby_whitelisted_ips)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "supported_regions_to_clone_tos", supported_regions_to_clone_tos)
         pulumi.set(__self__, "switchover_to", switchover_to)
         pulumi.set(__self__, "switchover_to_remote_peer_id", switchover_to_remote_peer_id)
@@ -17510,6 +17529,11 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="byolComputeCountLimit")
+    def byol_compute_count_limit(self) -> float:
+        return pulumi.get(self, "byol_compute_count_limit")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -18229,6 +18253,14 @@ class GetAutonomousDatabasesAutonomousDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="supportedRegionsToCloneTos")
@@ -19301,6 +19333,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  available_upgrade_versions: Sequence[str],
                  backup_configs: Sequence['outputs.GetAutonomousDatabasesClonesAutonomousDatabaseBackupConfigResult'],
                  backup_retention_period_in_days: int,
+                 byol_compute_count_limit: float,
                  character_set: str,
                  compartment_id: str,
                  compute_count: float,
@@ -19381,6 +19414,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
                  standby_whitelisted_ips: Sequence[str],
                  state: str,
                  subnet_id: str,
+                 subscription_id: str,
                  supported_regions_to_clone_tos: Sequence[str],
                  system_tags: Mapping[str, Any],
                  time_created: str,
@@ -19501,6 +19535,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         :param Sequence[str] standby_whitelisted_ips: The client IP access control list (ACL). This feature is available for [Autonomous Database Serverless] (https://docs.oracle.com/en/cloud/paas/autonomous-database/index.html) and on Exadata Cloud@Customer. Only clients connecting from an IP address included in the ACL may access the Autonomous Database instance. If `arePrimaryWhitelistedIpsUsed` is 'TRUE' then Autonomous Database uses this primary's IP access control list (ACL) for the disaster recovery peer called `standbywhitelistedips`.
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+        :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Sequence[str] supported_regions_to_clone_tos: The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the Autonomous Database was created.
@@ -19535,6 +19570,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "available_upgrade_versions", available_upgrade_versions)
         pulumi.set(__self__, "backup_configs", backup_configs)
         pulumi.set(__self__, "backup_retention_period_in_days", backup_retention_period_in_days)
+        pulumi.set(__self__, "byol_compute_count_limit", byol_compute_count_limit)
         pulumi.set(__self__, "character_set", character_set)
         pulumi.set(__self__, "compartment_id", compartment_id)
         pulumi.set(__self__, "compute_count", compute_count)
@@ -19615,6 +19651,7 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         pulumi.set(__self__, "standby_whitelisted_ips", standby_whitelisted_ips)
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "supported_regions_to_clone_tos", supported_regions_to_clone_tos)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
@@ -19726,6 +19763,11 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         Retention period, in days, for backups.
         """
         return pulumi.get(self, "backup_retention_period_in_days")
+
+    @property
+    @pulumi.getter(name="byolComputeCountLimit")
+    def byol_compute_count_limit(self) -> float:
+        return pulumi.get(self, "byol_compute_count_limit")
 
     @property
     @pulumi.getter(name="characterSet")
@@ -20371,6 +20413,14 @@ class GetAutonomousDatabasesClonesAutonomousDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="supportedRegionsToCloneTos")
@@ -27151,6 +27201,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
                  state: str,
                  storage_count: int,
                  storage_server_version: str,
+                 subscription_id: str,
                  system_tags: Mapping[str, Any],
                  time_created: str,
                  total_storage_size_in_gbs: int):
@@ -27187,6 +27238,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         :param str state: A filter to return only resources that match the given lifecycle state exactly.
         :param int storage_count: The number of storage servers for the cloud Exadata infrastructure.
         :param str storage_server_version: The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
+        :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str time_created: The date and time the cloud Exadata infrastructure resource was created.
         :param int total_storage_size_in_gbs: The total storage allocated to the cloud Exadata infrastructure resource, in gigabytes (GB).
@@ -27223,6 +27275,7 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_count", storage_count)
         pulumi.set(__self__, "storage_server_version", storage_server_version)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "time_created", time_created)
         pulumi.set(__self__, "total_storage_size_in_gbs", total_storage_size_in_gbs)
@@ -27482,6 +27535,14 @@ class GetCloudExadataInfrastructuresCloudExadataInfrastructureResult(dict):
         The software version of the storage servers (cells) in the cloud Exadata infrastructure. Example: 20.1.15
         """
         return pulumi.get(self, "storage_server_version")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -28019,6 +28080,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
                  state: str,
                  storage_size_in_gbs: int,
                  subnet_id: str,
+                 subscription_id: str,
                  system_tags: Mapping[str, Any],
                  system_version: str,
                  time_created: str,
@@ -28068,6 +28130,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         :param str state: A filter to return only cloud VM clusters that match the given lifecycle state exactly.
         :param int storage_size_in_gbs: The storage allocation for the disk group, in gigabytes (GB).
         :param str subnet_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
+        :param str subscription_id: The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
         :param Mapping[str, Any] system_tags: System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
         :param str system_version: Operating system version of the image.
         :param str time_created: The date and time that the cloud VM cluster was created.
@@ -28119,6 +28182,7 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         pulumi.set(__self__, "state", state)
         pulumi.set(__self__, "storage_size_in_gbs", storage_size_in_gbs)
         pulumi.set(__self__, "subnet_id", subnet_id)
+        pulumi.set(__self__, "subscription_id", subscription_id)
         pulumi.set(__self__, "system_tags", system_tags)
         pulumi.set(__self__, "system_version", system_version)
         pulumi.set(__self__, "time_created", time_created)
@@ -28469,6 +28533,14 @@ class GetCloudVmClustersCloudVmClusterResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet associated with the cloud VM cluster.
         """
         return pulumi.get(self, "subnet_id")
+
+    @property
+    @pulumi.getter(name="subscriptionId")
+    def subscription_id(self) -> str:
+        """
+        The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        """
+        return pulumi.get(self, "subscription_id")
 
     @property
     @pulumi.getter(name="systemTags")
@@ -32226,6 +32298,7 @@ class GetDbHomeDatabaseResult(dict):
                  defined_tags: Mapping[str, Any],
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 key_store_id: str,
                  kms_key_id: str,
                  kms_key_version_id: str,
                  lifecycle_details: str,
@@ -32264,6 +32337,7 @@ class GetDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -32359,6 +32433,11 @@ class GetDbHomeDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> str:
+        return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -33046,6 +33125,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
                  defined_tags: Mapping[str, Any],
                  freeform_tags: Mapping[str, Any],
                  id: str,
+                 key_store_id: str,
                  kms_key_id: str,
                  kms_key_version_id: str,
                  lifecycle_details: str,
@@ -33085,6 +33165,7 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
         pulumi.set(__self__, "id", id)
+        pulumi.set(__self__, "key_store_id", key_store_id)
         pulumi.set(__self__, "kms_key_id", kms_key_id)
         pulumi.set(__self__, "kms_key_version_id", kms_key_version_id)
         pulumi.set(__self__, "lifecycle_details", lifecycle_details)
@@ -33183,6 +33264,11 @@ class GetDbHomesDbHomeDatabaseResult(dict):
         The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Database Home.
         """
         return pulumi.get(self, "id")
+
+    @property
+    @pulumi.getter(name="keyStoreId")
+    def key_store_id(self) -> str:
+        return pulumi.get(self, "key_store_id")
 
     @property
     @pulumi.getter(name="kmsKeyId")
@@ -41932,6 +42018,7 @@ class GetKeyStoresKeyStoreResult(dict):
     def __init__(__self__, *,
                  associated_databases: Sequence['outputs.GetKeyStoresKeyStoreAssociatedDatabaseResult'],
                  compartment_id: str,
+                 confirm_details_trigger: int,
                  defined_tags: Mapping[str, Any],
                  display_name: str,
                  freeform_tags: Mapping[str, Any],
@@ -41954,6 +42041,7 @@ class GetKeyStoresKeyStoreResult(dict):
         """
         pulumi.set(__self__, "associated_databases", associated_databases)
         pulumi.set(__self__, "compartment_id", compartment_id)
+        pulumi.set(__self__, "confirm_details_trigger", confirm_details_trigger)
         pulumi.set(__self__, "defined_tags", defined_tags)
         pulumi.set(__self__, "display_name", display_name)
         pulumi.set(__self__, "freeform_tags", freeform_tags)
@@ -41978,6 +42066,11 @@ class GetKeyStoresKeyStoreResult(dict):
         The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
         """
         return pulumi.get(self, "compartment_id")
+
+    @property
+    @pulumi.getter(name="confirmDetailsTrigger")
+    def confirm_details_trigger(self) -> int:
+        return pulumi.get(self, "confirm_details_trigger")
 
     @property
     @pulumi.getter(name="definedTags")

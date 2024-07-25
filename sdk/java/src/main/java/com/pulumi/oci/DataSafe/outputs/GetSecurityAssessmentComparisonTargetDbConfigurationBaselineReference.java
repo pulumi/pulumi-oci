@@ -21,6 +21,11 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
      */
     private String gdpr;
     /**
+     * @return Relevant section from OBP.
+     * 
+     */
+    private String obp;
+    /**
      * @return Relevant section from STIG.
      * 
      */
@@ -42,6 +47,13 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
         return this.gdpr;
     }
     /**
+     * @return Relevant section from OBP.
+     * 
+     */
+    public String obp() {
+        return this.obp;
+    }
+    /**
      * @return Relevant section from STIG.
      * 
      */
@@ -60,12 +72,14 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
     public static final class Builder {
         private String cis;
         private String gdpr;
+        private String obp;
         private String stig;
         public Builder() {}
         public Builder(GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.cis = defaults.cis;
     	      this.gdpr = defaults.gdpr;
+    	      this.obp = defaults.obp;
     	      this.stig = defaults.stig;
         }
 
@@ -86,6 +100,14 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
             return this;
         }
         @CustomType.Setter
+        public Builder obp(String obp) {
+            if (obp == null) {
+              throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference", "obp");
+            }
+            this.obp = obp;
+            return this;
+        }
+        @CustomType.Setter
         public Builder stig(String stig) {
             if (stig == null) {
               throw new MissingRequiredPropertyException("GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference", "stig");
@@ -97,6 +119,7 @@ public final class GetSecurityAssessmentComparisonTargetDbConfigurationBaselineR
             final var _resultValue = new GetSecurityAssessmentComparisonTargetDbConfigurationBaselineReference();
             _resultValue.cis = cis;
             _resultValue.gdpr = gdpr;
+            _resultValue.obp = obp;
             _resultValue.stig = stig;
             return _resultValue;
         }

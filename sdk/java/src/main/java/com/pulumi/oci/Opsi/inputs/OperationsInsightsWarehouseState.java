@@ -79,14 +79,14 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
     }
 
     /**
-     * (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
-     * @return (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * @return (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     public Optional<Output<String>> displayName() {
@@ -139,14 +139,14 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
     }
 
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      * 
      */
     @Import(name="operationsInsightsTenancyId")
     private @Nullable Output<String> operationsInsightsTenancyId;
 
     /**
-     * @return Tenancy Identifier of Operations Insights service
+     * @return Tenancy Identifier of Ops Insights service
      * 
      */
     public Optional<Output<String>> operationsInsightsTenancyId() {
@@ -235,14 +235,14 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
     }
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
     @Import(name="timeLastWalletRotated")
     private @Nullable Output<String> timeLastWalletRotated;
 
     /**
-     * @return The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * @return The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * 
      */
     public Optional<Output<String>> timeLastWalletRotated() {
@@ -388,7 +388,7 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * @param displayName (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
          * 
          * @return builder
          * 
@@ -399,7 +399,7 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         }
 
         /**
-         * @param displayName (Updatable) User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * @param displayName (Updatable) User-friedly name of Ops Insights Warehouse that does not have to be unique.
          * 
          * @return builder
          * 
@@ -472,7 +472,7 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         }
 
         /**
-         * @param operationsInsightsTenancyId Tenancy Identifier of Operations Insights service
+         * @param operationsInsightsTenancyId Tenancy Identifier of Ops Insights service
          * 
          * @return builder
          * 
@@ -483,7 +483,7 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         }
 
         /**
-         * @param operationsInsightsTenancyId Tenancy Identifier of Operations Insights service
+         * @param operationsInsightsTenancyId Tenancy Identifier of Ops Insights service
          * 
          * @return builder
          * 
@@ -604,7 +604,7 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         }
 
         /**
-         * @param timeLastWalletRotated The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+         * @param timeLastWalletRotated The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -615,7 +615,7 @@ public final class OperationsInsightsWarehouseState extends com.pulumi.resources
         }
 
         /**
-         * @param timeLastWalletRotated The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+         * @param timeLastWalletRotated The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 

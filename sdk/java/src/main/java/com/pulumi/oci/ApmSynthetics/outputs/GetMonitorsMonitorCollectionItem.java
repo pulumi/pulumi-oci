@@ -41,6 +41,11 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
     /**
+     * @return Name of the user that created the monitor.
+     * 
+     */
+    private String createdBy;
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -61,6 +66,11 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private String id;
     /**
+     * @return If enabled, domain name will resolve to an IPv6 address.
+     * 
+     */
+    private Boolean isIpv6;
+    /**
      * @return If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
@@ -71,12 +81,17 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private Boolean isRunOnce;
     /**
+     * @return Name of the user that recently updated the monitor.
+     * 
+     */
+    private String lastUpdatedBy;
+    /**
      * @return Details required to schedule maintenance window.
      * 
      */
     private List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules;
     /**
-     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      * 
      */
     private String monitorType;
@@ -111,7 +126,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private String status;
     /**
-     * @return Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * @return Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      * 
      */
     private String target;
@@ -136,7 +151,7 @@ public final class GetMonitorsMonitorCollectionItem {
      */
     private Integer vantagePointCount;
     /**
-     * @return List of public and dedicated vantage points where the monitor is running.
+     * @return List of public, dedicated and onPremise vantage points where the monitor is running.
      * 
      */
     private List<GetMonitorsMonitorCollectionItemVantagePoint> vantagePoints;
@@ -171,6 +186,13 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.configurations;
     }
     /**
+     * @return Name of the user that created the monitor.
+     * 
+     */
+    public String createdBy() {
+        return this.createdBy;
+    }
+    /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. Example: `{&#34;foo-namespace.bar-key&#34;: &#34;value&#34;}`
      * 
      */
@@ -199,6 +221,13 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.id;
     }
     /**
+     * @return If enabled, domain name will resolve to an IPv6 address.
+     * 
+     */
+    public Boolean isIpv6() {
+        return this.isIpv6;
+    }
+    /**
      * @return If isRunNow is enabled, then the monitor will run immediately.
      * 
      */
@@ -213,6 +242,13 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.isRunOnce;
     }
     /**
+     * @return Name of the user that recently updated the monitor.
+     * 
+     */
+    public String lastUpdatedBy() {
+        return this.lastUpdatedBy;
+    }
+    /**
      * @return Details required to schedule maintenance window.
      * 
      */
@@ -220,7 +256,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.maintenanceWindowSchedules;
     }
     /**
-     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+     * @return A filter to return only monitors that match the given monitor type. Supported values are SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      * 
      */
     public String monitorType() {
@@ -269,7 +305,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.status;
     }
     /**
-     * @return Specify the endpoint on which to run the monitor. For BROWSER, REST and NETWORK monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * @return Specify the endpoint on which to run the monitor. For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory. If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint. If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is. For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      * 
      */
     public String target() {
@@ -304,7 +340,7 @@ public final class GetMonitorsMonitorCollectionItem {
         return this.vantagePointCount;
     }
     /**
-     * @return List of public and dedicated vantage points where the monitor is running.
+     * @return List of public, dedicated and onPremise vantage points where the monitor is running.
      * 
      */
     public List<GetMonitorsMonitorCollectionItemVantagePoint> vantagePoints() {
@@ -324,12 +360,15 @@ public final class GetMonitorsMonitorCollectionItem {
         private List<GetMonitorsMonitorCollectionItemAvailabilityConfiguration> availabilityConfigurations;
         private Integer batchIntervalInSeconds;
         private List<GetMonitorsMonitorCollectionItemConfiguration> configurations;
+        private String createdBy;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isIpv6;
         private Boolean isRunNow;
         private Boolean isRunOnce;
+        private String lastUpdatedBy;
         private List<GetMonitorsMonitorCollectionItemMaintenanceWindowSchedule> maintenanceWindowSchedules;
         private String monitorType;
         private Integer repeatIntervalInSeconds;
@@ -351,12 +390,15 @@ public final class GetMonitorsMonitorCollectionItem {
     	      this.availabilityConfigurations = defaults.availabilityConfigurations;
     	      this.batchIntervalInSeconds = defaults.batchIntervalInSeconds;
     	      this.configurations = defaults.configurations;
+    	      this.createdBy = defaults.createdBy;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isIpv6 = defaults.isIpv6;
     	      this.isRunNow = defaults.isRunNow;
     	      this.isRunOnce = defaults.isRunOnce;
+    	      this.lastUpdatedBy = defaults.lastUpdatedBy;
     	      this.maintenanceWindowSchedules = defaults.maintenanceWindowSchedules;
     	      this.monitorType = defaults.monitorType;
     	      this.repeatIntervalInSeconds = defaults.repeatIntervalInSeconds;
@@ -412,6 +454,14 @@ public final class GetMonitorsMonitorCollectionItem {
             return configurations(List.of(configurations));
         }
         @CustomType.Setter
+        public Builder createdBy(String createdBy) {
+            if (createdBy == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "createdBy");
+            }
+            this.createdBy = createdBy;
+            return this;
+        }
+        @CustomType.Setter
         public Builder definedTags(Map<String,Object> definedTags) {
             if (definedTags == null) {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "definedTags");
@@ -444,6 +494,14 @@ public final class GetMonitorsMonitorCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isIpv6(Boolean isIpv6) {
+            if (isIpv6 == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "isIpv6");
+            }
+            this.isIpv6 = isIpv6;
+            return this;
+        }
+        @CustomType.Setter
         public Builder isRunNow(Boolean isRunNow) {
             if (isRunNow == null) {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "isRunNow");
@@ -457,6 +515,14 @@ public final class GetMonitorsMonitorCollectionItem {
               throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "isRunOnce");
             }
             this.isRunOnce = isRunOnce;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder lastUpdatedBy(String lastUpdatedBy) {
+            if (lastUpdatedBy == null) {
+              throw new MissingRequiredPropertyException("GetMonitorsMonitorCollectionItem", "lastUpdatedBy");
+            }
+            this.lastUpdatedBy = lastUpdatedBy;
             return this;
         }
         @CustomType.Setter
@@ -586,12 +652,15 @@ public final class GetMonitorsMonitorCollectionItem {
             _resultValue.availabilityConfigurations = availabilityConfigurations;
             _resultValue.batchIntervalInSeconds = batchIntervalInSeconds;
             _resultValue.configurations = configurations;
+            _resultValue.createdBy = createdBy;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isIpv6 = isIpv6;
             _resultValue.isRunNow = isRunNow;
             _resultValue.isRunOnce = isRunOnce;
+            _resultValue.lastUpdatedBy = lastUpdatedBy;
             _resultValue.maintenanceWindowSchedules = maintenanceWindowSchedules;
             _resultValue.monitorType = monitorType;
             _resultValue.repeatIntervalInSeconds = repeatIntervalInSeconds;

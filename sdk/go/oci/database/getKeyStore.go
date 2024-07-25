@@ -61,7 +61,8 @@ type LookupKeyStoreResult struct {
 	// List of databases associated with the key store.
 	AssociatedDatabases []GetKeyStoreAssociatedDatabase `pulumi:"associatedDatabases"`
 	// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
-	CompartmentId string `pulumi:"compartmentId"`
+	CompartmentId         string `pulumi:"compartmentId"`
+	ConfirmDetailsTrigger int    `pulumi:"confirmDetailsTrigger"`
 	// Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
 	DefinedTags map[string]interface{} `pulumi:"definedTags"`
 	// The user-friendly name for the key store. The name does not need to be unique.
@@ -127,6 +128,10 @@ func (o LookupKeyStoreResultOutput) AssociatedDatabases() GetKeyStoreAssociatedD
 // The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
 func (o LookupKeyStoreResultOutput) CompartmentId() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupKeyStoreResult) string { return v.CompartmentId }).(pulumi.StringOutput)
+}
+
+func (o LookupKeyStoreResultOutput) ConfirmDetailsTrigger() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupKeyStoreResult) int { return v.ConfirmDetailsTrigger }).(pulumi.IntOutput)
 }
 
 // Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

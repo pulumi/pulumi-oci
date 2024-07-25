@@ -244,10 +244,10 @@ github.com/mitchellh/reflectwalk v1.0.2/go.mod h1:mSTlrgnPZtwu0c4WaC2kGObEpuNDbx
 github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e/go.mod h1:zD1mROLANZcx1PVRCS0qkT7pwLkGfwJo4zjcN/Tysno=
 github.com/oklog/run v1.1.0 h1:GEenZ1cK0+q0+wsJew9qUg/DyD8k3JzYsZAi5gYi2mA=
 github.com/oklog/run v1.1.0/go.mod h1:sVPdnTZT1zYwAJeCMu2Th4T21pA3FPOQRfWjQlk7DVU=
-github.com/oracle/oci-go-sdk/v65 v65.69.2 h1:lROMJ8/VakGOGObAWUxTVY2AX1wQCUIzVqfL4Fb2Ay8=
-github.com/oracle/oci-go-sdk/v65 v65.69.2/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20240716231450-f7bee92c43ce h1:GT9iVulHDVptYKLTYQzrbMs7Ivi3L1WTFxlLmpRkNhY=
-github.com/oracle/terraform-provider-oci v1.0.19-0.20240716231450-f7bee92c43ce/go.mod h1:6EEJeKEq6XVKqykyITWKBoNfR47gqV43iJpLnEyEzNI=
+github.com/oracle/oci-go-sdk/v65 v65.69.3 h1:CFpvgj+0k131osppFg8GlDZW9J5GBvZOVQoBJySJP+8=
+github.com/oracle/oci-go-sdk/v65 v65.69.3/go.mod h1:IBEV9l1qBzUpo7zgGaRUhbB05BVfcDGYRFBCPlTcPp0=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20240724105109-706150331ce2 h1:OpVdcxmihHE2I7WpI4FyY4xauC5KqnygMeOQRF0tv+0=
+github.com/oracle/terraform-provider-oci v1.0.19-0.20240724105109-706150331ce2/go.mod h1:q8KNT0h8VxpbXpDYsF1wm5ZKtirF2AQLdYG6ZlPEO/k=
 github.com/pjbgf/sha1cd v0.3.0 h1:4D5XXmUUBUl/xQ6IjCkEAbqXskkq/4O7LmGn0AqMDs4=
 github.com/pjbgf/sha1cd v0.3.0/go.mod h1:nZ1rrWOcGJ5uZgEEVL1VUM9iRQiZvWdbZjkKyFzPPsI=
 github.com/pkg/errors v0.8.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=

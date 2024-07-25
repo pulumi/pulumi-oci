@@ -248,6 +248,12 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
     public Output<Integer> backupRetentionPeriodInDays() {
         return this.backupRetentionPeriodInDays;
     }
+    @Export(name="byolComputeCountLimit", refs={Double.class}, tree="[0]")
+    private Output<Double> byolComputeCountLimit;
+
+    public Output<Double> byolComputeCountLimit() {
+        return this.byolComputeCountLimit;
+    }
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values for an Autonomous Database on Serverless infrastructure as returned by [List Autonomous Database Character Sets](https://www.terraform.io/autonomousDatabaseCharacterSets)
      * 
@@ -1658,8 +1664,6 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
      * * For Autonomous Database, setting this will disable public secure access to the database.
      * 
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-     * 
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
@@ -1672,11 +1676,25 @@ public class AutonomousDatabase extends com.pulumi.resources.CustomResource {
      * * For Exadata and virtual machine 2-node RAC systems, do not use a subnet that overlaps with 192.168.128.0/20.
      * * For Autonomous Database, setting this will disable public secure access to the database.
      * 
-     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
-     * 
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.

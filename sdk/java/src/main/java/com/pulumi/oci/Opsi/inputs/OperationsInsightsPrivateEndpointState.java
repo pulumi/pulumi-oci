@@ -95,14 +95,14 @@ public final class OperationsInsightsPrivateEndpointState extends com.pulumi.res
     }
 
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      * 
      */
     @Import(name="isUsedForRacDbs")
     private @Nullable Output<Boolean> isUsedForRacDbs;
 
     /**
-     * @return The flag to identify if private endpoint is used for rac database or not
+     * @return This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      * 
      */
     public Optional<Output<Boolean>> isUsedForRacDbs() {
@@ -394,7 +394,7 @@ public final class OperationsInsightsPrivateEndpointState extends com.pulumi.res
         }
 
         /**
-         * @param isUsedForRacDbs The flag to identify if private endpoint is used for rac database or not
+         * @param isUsedForRacDbs This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
          * 
          * @return builder
          * 
@@ -405,7 +405,7 @@ public final class OperationsInsightsPrivateEndpointState extends com.pulumi.res
         }
 
         /**
-         * @param isUsedForRacDbs The flag to identify if private endpoint is used for rac database or not
+         * @param isUsedForRacDbs This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
          * 
          * @return builder
          * 

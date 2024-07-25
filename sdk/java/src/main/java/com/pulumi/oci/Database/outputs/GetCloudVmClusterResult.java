@@ -234,6 +234,11 @@ public final class GetCloudVmClusterResult {
      */
     private String subnetId;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -570,6 +575,13 @@ public final class GetCloudVmClusterResult {
         return this.subnetId;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -666,6 +678,7 @@ public final class GetCloudVmClusterResult {
         private String state;
         private Integer storageSizeInGbs;
         private String subnetId;
+        private String subscriptionId;
         private Map<String,Object> systemTags;
         private String systemVersion;
         private String timeCreated;
@@ -720,6 +733,7 @@ public final class GetCloudVmClusterResult {
     	      this.state = defaults.state;
     	      this.storageSizeInGbs = defaults.storageSizeInGbs;
     	      this.subnetId = defaults.subnetId;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.systemVersion = defaults.systemVersion;
     	      this.timeCreated = defaults.timeCreated;
@@ -1113,6 +1127,14 @@ public final class GetCloudVmClusterResult {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetCloudVmClusterResult", "systemTags");
@@ -1210,6 +1232,7 @@ public final class GetCloudVmClusterResult {
             _resultValue.state = state;
             _resultValue.storageSizeInGbs = storageSizeInGbs;
             _resultValue.subnetId = subnetId;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.systemVersion = systemVersion;
             _resultValue.timeCreated = timeCreated;

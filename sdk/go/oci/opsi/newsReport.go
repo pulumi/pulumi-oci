@@ -14,7 +14,7 @@ import (
 
 // This resource provides the News Report resource in Oracle Cloud Infrastructure Opsi service.
 //
-// Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
+// Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
 //
 // ## Example Usage
 //

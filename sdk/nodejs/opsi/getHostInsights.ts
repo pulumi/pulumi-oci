@@ -69,7 +69,7 @@ export interface GetHostInsightsArgs {
     exadataInsightId?: string;
     filters?: inputs.Opsi.GetHostInsightsFilter[];
     /**
-     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      */
     hostTypes?: string[];
     /**
@@ -109,7 +109,7 @@ export interface GetHostInsightsResult {
      */
     readonly hostInsightSummaryCollections: outputs.Opsi.GetHostInsightsHostInsightSummaryCollection[];
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
     readonly hostTypes?: string[];
     /**
@@ -175,7 +175,7 @@ export interface GetHostInsightsOutputArgs {
     exadataInsightId?: pulumi.Input<string>;
     filters?: pulumi.Input<pulumi.Input<inputs.Opsi.GetHostInsightsFilterArgs>[]>;
     /**
-     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST
+     * Filter by one or more host types. Possible values are CLOUD-HOST, EXTERNAL-HOST, COMANAGED-VM-HOST, COMANAGED-BM-HOST, COMANAGED-EXACS-HOST
      */
     hostTypes?: pulumi.Input<pulumi.Input<string>[]>;
     /**

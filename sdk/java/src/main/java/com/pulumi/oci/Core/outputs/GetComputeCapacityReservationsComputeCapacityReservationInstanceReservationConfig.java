@@ -18,6 +18,10 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
      * 
      */
     private List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs;
+    /**
+     * @return The OCID of the cluster placement group for this instance reservation capacity configuration.
+     * 
+     */
     private String clusterPlacementGroupId;
     /**
      * @return The fault domain of this capacity configuration. If a value is not supplied, this capacity configuration is applicable to all fault domains in the specified availability domain. For more information, see [Capacity Reservations](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
@@ -53,6 +57,10 @@ public final class GetComputeCapacityReservationsComputeCapacityReservationInsta
     public List<GetComputeCapacityReservationsComputeCapacityReservationInstanceReservationConfigClusterConfig> clusterConfigs() {
         return this.clusterConfigs;
     }
+    /**
+     * @return The OCID of the cluster placement group for this instance reservation capacity configuration.
+     * 
+     */
     public String clusterPlacementGroupId() {
         return this.clusterPlacementGroupId;
     }

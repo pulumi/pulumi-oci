@@ -34,6 +34,8 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = reportDisplayName,
         ///         ReportDefinitionId = testReportDefinition.Id,
         ///         State = reportState,
+        ///         TimeGeneratedGreaterThanOrEqualTo = reportTimeGeneratedGreaterThanOrEqualTo,
+        ///         TimeGeneratedLessThan = reportTimeGeneratedLessThan,
         ///         Type = reportType,
         ///     });
         /// 
@@ -66,6 +68,8 @@ namespace Pulumi.Oci.DataSafe
         ///         DisplayName = reportDisplayName,
         ///         ReportDefinitionId = testReportDefinition.Id,
         ///         State = reportState,
+        ///         TimeGeneratedGreaterThanOrEqualTo = reportTimeGeneratedGreaterThanOrEqualTo,
+        ///         TimeGeneratedLessThan = reportTimeGeneratedLessThan,
         ///         Type = reportType,
         ///     });
         /// 
@@ -122,6 +126,22 @@ namespace Pulumi.Oci.DataSafe
         /// </summary>
         [Input("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timeGeneratedGreaterThanOrEqualTo")]
+        public string? TimeGeneratedGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timeGeneratedLessThan")]
+        public string? TimeGeneratedLessThan { get; set; }
 
         /// <summary>
         /// An optional filter to return only resources that match the specified type.
@@ -182,6 +202,22 @@ namespace Pulumi.Oci.DataSafe
         public Input<string>? State { get; set; }
 
         /// <summary>
+        /// A filter to return only the resources that were generated after the specified date and time, as defined by [RFC3339](https://tools.ietf.org/html/rfc3339). Using TimeGeneratedGreaterThanOrEqualToQueryParam parameter retrieves all resources generated after that date.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timeGeneratedGreaterThanOrEqualTo")]
+        public Input<string>? TimeGeneratedGreaterThanOrEqualTo { get; set; }
+
+        /// <summary>
+        /// Search for resources that were generated before a specific date. Specifying this parameter corresponding `timeGeneratedLessThan` parameter will retrieve all resources generated before the specified generated date, in "YYYY-MM-ddThh:mmZ" format with a Z offset, as defined by RFC 3339.
+        /// 
+        /// **Example:** 2016-12-19T16:39:57.600Z
+        /// </summary>
+        [Input("timeGeneratedLessThan")]
+        public Input<string>? TimeGeneratedLessThan { get; set; }
+
+        /// <summary>
         /// An optional filter to return only resources that match the specified type.
         /// </summary>
         [Input("type")]
@@ -224,6 +260,8 @@ namespace Pulumi.Oci.DataSafe
         /// The current state of the audit report.
         /// </summary>
         public readonly string? State;
+        public readonly string? TimeGeneratedGreaterThanOrEqualTo;
+        public readonly string? TimeGeneratedLessThan;
         /// <summary>
         /// The type of the audit report.
         /// </summary>
@@ -249,6 +287,10 @@ namespace Pulumi.Oci.DataSafe
 
             string? state,
 
+            string? timeGeneratedGreaterThanOrEqualTo,
+
+            string? timeGeneratedLessThan,
+
             string? type)
         {
             AccessLevel = accessLevel;
@@ -260,6 +302,8 @@ namespace Pulumi.Oci.DataSafe
             ReportCollections = reportCollections;
             ReportDefinitionId = reportDefinitionId;
             State = state;
+            TimeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
+            TimeGeneratedLessThan = timeGeneratedLessThan;
             Type = type;
         }
     }

@@ -92,6 +92,7 @@ import javax.annotation.Nullable;
  *             .privateZoneId(testZone.id())
  *             .scanListenerPortTcp(cloudVmClusterScanListenerPortTcp)
  *             .scanListenerPortTcpSsl(cloudVmClusterScanListenerPortTcpSsl)
+ *             .subscriptionId(tenantSubscriptionId)
  *             .systemVersion(cloudVmClusterSystemVersion)
  *             .timeZone(cloudVmClusterTimeZone)
  *             .build());
@@ -730,6 +731,20 @@ public class CloudVmCluster extends com.pulumi.resources.CustomResource {
      */
     public Output<String> subnetId() {
         return this.subnetId;
+    }
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    @Export(name="subscriptionId", refs={String.class}, tree="[0]")
+    private Output<String> subscriptionId;
+
+    /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public Output<String> subscriptionId() {
+        return this.subscriptionId;
     }
     /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).

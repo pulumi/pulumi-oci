@@ -21,7 +21,7 @@ public final class GetOperationsInsightsWarehousesResult {
      */
     private @Nullable String compartmentId;
     /**
-     * @return User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * @return User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     private @Nullable String displayName;
@@ -51,7 +51,7 @@ public final class GetOperationsInsightsWarehousesResult {
         return Optional.ofNullable(this.compartmentId);
     }
     /**
-     * @return User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * @return User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * 
      */
     public Optional<String> displayName() {

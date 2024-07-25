@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Database.outputs.GetKeyStoreAssociatedDatabase;
 import com.pulumi.oci.Database.outputs.GetKeyStoreTypeDetail;
+import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
 import java.util.List;
@@ -25,6 +26,7 @@ public final class GetKeyStoreResult {
      * 
      */
     private String compartmentId;
+    private Integer confirmDetailsTrigger;
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
@@ -81,6 +83,9 @@ public final class GetKeyStoreResult {
      */
     public String compartmentId() {
         return this.compartmentId;
+    }
+    public Integer confirmDetailsTrigger() {
+        return this.confirmDetailsTrigger;
     }
     /**
      * @return Defined tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -153,6 +158,7 @@ public final class GetKeyStoreResult {
     public static final class Builder {
         private List<GetKeyStoreAssociatedDatabase> associatedDatabases;
         private String compartmentId;
+        private Integer confirmDetailsTrigger;
         private Map<String,Object> definedTags;
         private String displayName;
         private Map<String,Object> freeformTags;
@@ -167,6 +173,7 @@ public final class GetKeyStoreResult {
     	      Objects.requireNonNull(defaults);
     	      this.associatedDatabases = defaults.associatedDatabases;
     	      this.compartmentId = defaults.compartmentId;
+    	      this.confirmDetailsTrigger = defaults.confirmDetailsTrigger;
     	      this.definedTags = defaults.definedTags;
     	      this.displayName = defaults.displayName;
     	      this.freeformTags = defaults.freeformTags;
@@ -195,6 +202,14 @@ public final class GetKeyStoreResult {
               throw new MissingRequiredPropertyException("GetKeyStoreResult", "compartmentId");
             }
             this.compartmentId = compartmentId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder confirmDetailsTrigger(Integer confirmDetailsTrigger) {
+            if (confirmDetailsTrigger == null) {
+              throw new MissingRequiredPropertyException("GetKeyStoreResult", "confirmDetailsTrigger");
+            }
+            this.confirmDetailsTrigger = confirmDetailsTrigger;
             return this;
         }
         @CustomType.Setter
@@ -276,6 +291,7 @@ public final class GetKeyStoreResult {
             final var _resultValue = new GetKeyStoreResult();
             _resultValue.associatedDatabases = associatedDatabases;
             _resultValue.compartmentId = compartmentId;
+            _resultValue.confirmDetailsTrigger = confirmDetailsTrigger;
             _resultValue.definedTags = definedTags;
             _resultValue.displayName = displayName;
             _resultValue.freeformTags = freeformTags;

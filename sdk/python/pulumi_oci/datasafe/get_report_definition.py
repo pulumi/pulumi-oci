@@ -261,7 +261,7 @@ class GetReportDefinitionResult:
     @pulumi.getter(name="scheduledReportMimeType")
     def scheduled_report_mime_type(self) -> str:
         """
-        Specifies the format of the report ( either .xls or .pdf )
+        Specifies the format of the report ( either .xls or .pdf or .json)
         """
         return pulumi.get(self, "scheduled_report_mime_type")
 

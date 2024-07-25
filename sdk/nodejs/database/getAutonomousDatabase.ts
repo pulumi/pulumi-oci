@@ -91,6 +91,7 @@ export interface GetAutonomousDatabaseResult {
      * Retention period, in days, for backups.
      */
     readonly backupRetentionPeriodInDays: number;
+    readonly byolComputeCountLimit: number;
     /**
      * The character set for the autonomous database.  The default is AL32UTF8. Allowed values are:
      */
@@ -444,6 +445,11 @@ export interface GetAutonomousDatabaseResult {
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      */
     readonly subnetId: string;
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * These subnets are used by the Oracle Clusterware private interconnect on the database instance. Specifying an overlapping subnet will cause the private interconnect to malfunction. This restriction applies to both the client subnet and the backup subnet.
+     */
+    readonly subscriptionId: string;
     /**
      * The list of regions that support the creation of an Autonomous Database clone or an Autonomous Data Guard standby database.
      */

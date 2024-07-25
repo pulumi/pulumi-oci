@@ -18,8 +18,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
                  operations_insights_warehouse_wallet_password: pulumi.Input[str]):
         """
         The set of arguments for constructing a OperationsInsightsWarehouseDownloadWarehouseWallet resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Ops Insights Warehouse.
                
                
                ** IMPORTANT **
@@ -32,7 +32,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Input[str]:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
@@ -44,7 +44,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWalletArgs:
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
     def operations_insights_warehouse_wallet_password(self) -> pulumi.Input[str]:
         """
-        User provided ADW wallet password for the Operations Insights Warehouse.
+        User provided ADW wallet password for the Ops Insights Warehouse.
 
 
         ** IMPORTANT **
@@ -64,8 +64,8 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
                  operations_insights_warehouse_wallet_password: Optional[pulumi.Input[str]] = None):
         """
         Input properties used for looking up and filtering OperationsInsightsWarehouseDownloadWarehouseWallet resources.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Ops Insights Warehouse.
                
                
                ** IMPORTANT **
@@ -80,7 +80,7 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> Optional[pulumi.Input[str]]:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
@@ -92,7 +92,7 @@ class _OperationsInsightsWarehouseDownloadWarehouseWalletState:
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
     def operations_insights_warehouse_wallet_password(self) -> Optional[pulumi.Input[str]]:
         """
-        User provided ADW wallet password for the Operations Insights Warehouse.
+        User provided ADW wallet password for the Ops Insights Warehouse.
 
 
         ** IMPORTANT **
@@ -139,8 +139,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Ops Insights Warehouse.
                
                
                ** IMPORTANT **
@@ -229,8 +229,8 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
         :param str resource_name: The unique name of the resulting resource.
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Operations Insights Warehouse identifier
-        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Operations Insights Warehouse.
+        :param pulumi.Input[str] operations_insights_warehouse_id: Unique Ops Insights Warehouse identifier
+        :param pulumi.Input[str] operations_insights_warehouse_wallet_password: User provided ADW wallet password for the Ops Insights Warehouse.
                
                
                ** IMPORTANT **
@@ -248,7 +248,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     @pulumi.getter(name="operationsInsightsWarehouseId")
     def operations_insights_warehouse_id(self) -> pulumi.Output[str]:
         """
-        Unique Operations Insights Warehouse identifier
+        Unique Ops Insights Warehouse identifier
         """
         return pulumi.get(self, "operations_insights_warehouse_id")
 
@@ -256,7 +256,7 @@ class OperationsInsightsWarehouseDownloadWarehouseWallet(pulumi.CustomResource):
     @pulumi.getter(name="operationsInsightsWarehouseWalletPassword")
     def operations_insights_warehouse_wallet_password(self) -> pulumi.Output[str]:
         """
-        User provided ADW wallet password for the Operations Insights Warehouse.
+        User provided ADW wallet password for the Ops Insights Warehouse.
 
 
         ** IMPORTANT **

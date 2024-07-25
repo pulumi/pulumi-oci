@@ -53,6 +53,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("state")]
         public string? State { get; set; }
 
+        [Input("targetId")]
+        public string? TargetId { get; set; }
+
         public GetSecurityAssessmentFindingArgs()
         {
         }
@@ -93,6 +96,9 @@ namespace Pulumi.Oci.DataSafe
         [Input("state")]
         public Input<string>? State { get; set; }
 
+        [Input("targetId")]
+        public Input<string>? TargetId { get; set; }
+
         public GetSecurityAssessmentFindingInvokeArgs()
         {
         }
@@ -117,6 +123,7 @@ namespace Pulumi.Oci.DataSafe
         public readonly string SecurityAssessmentId;
         public readonly string? Severity;
         public readonly string? State;
+        public readonly string? TargetId;
 
         [OutputConstructor]
         private GetSecurityAssessmentFindingResult(
@@ -140,7 +147,9 @@ namespace Pulumi.Oci.DataSafe
 
             string? severity,
 
-            string? state)
+            string? state,
+
+            string? targetId)
         {
             AccessLevel = accessLevel;
             CompartmentIdInSubtree = compartmentIdInSubtree;
@@ -153,6 +162,7 @@ namespace Pulumi.Oci.DataSafe
             SecurityAssessmentId = securityAssessmentId;
             Severity = severity;
             State = state;
+            TargetId = targetId;
         }
     }
 }

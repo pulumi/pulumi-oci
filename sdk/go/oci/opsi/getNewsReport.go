@@ -87,7 +87,7 @@ type LookupNewsReportResult struct {
 	OnsTopicId string `pulumi:"onsTopicId"`
 	// The current state of the news report.
 	State string `pulumi:"state"`
-	// Indicates the status of a news report in Operations Insights.
+	// Indicates the status of a news report in Ops Insights.
 	Status string `pulumi:"status"`
 	// System tags for this resource. Each key is predefined and scoped to a namespace. Example: `{"orcl-cloud.free-tier-retained": "true"}`
 	SystemTags map[string]interface{} `pulumi:"systemTags"`
@@ -209,7 +209,7 @@ func (o LookupNewsReportResultOutput) State() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) string { return v.State }).(pulumi.StringOutput)
 }
 
-// Indicates the status of a news report in Operations Insights.
+// Indicates the status of a news report in Ops Insights.
 func (o LookupNewsReportResultOutput) Status() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupNewsReportResult) string { return v.Status }).(pulumi.StringOutput)
 }

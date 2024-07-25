@@ -97,7 +97,7 @@ type GetDatabaseInsightsResult struct {
 	DatabaseIds []string `pulumi:"databaseIds"`
 	// The list of database_insights_collection.
 	DatabaseInsightsCollections []GetDatabaseInsightsDatabaseInsightsCollection `pulumi:"databaseInsightsCollections"`
-	// Operations Insights internal representation of the database type.
+	// Ops Insights internal representation of the database type.
 	DatabaseTypes []string `pulumi:"databaseTypes"`
 	// OPSI Enterprise Manager Bridge OCID
 	EnterpriseManagerBridgeId *string `pulumi:"enterpriseManagerBridgeId"`
@@ -195,7 +195,7 @@ func (o GetDatabaseInsightsResultOutput) DatabaseInsightsCollections() GetDataba
 	}).(GetDatabaseInsightsDatabaseInsightsCollectionArrayOutput)
 }
 
-// Operations Insights internal representation of the database type.
+// Ops Insights internal representation of the database type.
 func (o GetDatabaseInsightsResultOutput) DatabaseTypes() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetDatabaseInsightsResult) []string { return v.DatabaseTypes }).(pulumi.StringArrayOutput)
 }

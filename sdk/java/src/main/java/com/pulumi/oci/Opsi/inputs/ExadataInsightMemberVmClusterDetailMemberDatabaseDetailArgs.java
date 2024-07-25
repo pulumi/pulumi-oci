@@ -50,14 +50,14 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
     }
 
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      * 
      */
     @Import(name="credentialDetails")
     private @Nullable Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs> credentialDetails;
 
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Optional<Output<ExadataInsightMemberVmClusterDetailMemberDatabaseDetailCredentialDetailsArgs>> credentialDetails() {
@@ -293,7 +293,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param credentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 
@@ -304,7 +304,7 @@ public final class ExadataInsightMemberVmClusterDetailMemberDatabaseDetailArgs e
         }
 
         /**
-         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param credentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 

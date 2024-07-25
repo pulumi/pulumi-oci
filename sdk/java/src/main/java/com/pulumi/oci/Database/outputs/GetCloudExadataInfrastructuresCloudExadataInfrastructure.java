@@ -179,6 +179,11 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
      */
     private String storageServerVersion;
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    private String subscriptionId;
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -420,6 +425,13 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         return this.storageServerVersion;
     }
     /**
+     * @return The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * 
+     */
+    public String subscriptionId() {
+        return this.subscriptionId;
+    }
+    /**
      * @return System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * 
      */
@@ -482,6 +494,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
         private String state;
         private Integer storageCount;
         private String storageServerVersion;
+        private String subscriptionId;
         private Map<String,Object> systemTags;
         private String timeCreated;
         private Integer totalStorageSizeInGbs;
@@ -520,6 +533,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
     	      this.state = defaults.state;
     	      this.storageCount = defaults.storageCount;
     	      this.storageServerVersion = defaults.storageServerVersion;
+    	      this.subscriptionId = defaults.subscriptionId;
     	      this.systemTags = defaults.systemTags;
     	      this.timeCreated = defaults.timeCreated;
     	      this.totalStorageSizeInGbs = defaults.totalStorageSizeInGbs;
@@ -791,6 +805,14 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             return this;
         }
         @CustomType.Setter
+        public Builder subscriptionId(String subscriptionId) {
+            if (subscriptionId == null) {
+              throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "subscriptionId");
+            }
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder systemTags(Map<String,Object> systemTags) {
             if (systemTags == null) {
               throw new MissingRequiredPropertyException("GetCloudExadataInfrastructuresCloudExadataInfrastructure", "systemTags");
@@ -848,6 +870,7 @@ public final class GetCloudExadataInfrastructuresCloudExadataInfrastructure {
             _resultValue.state = state;
             _resultValue.storageCount = storageCount;
             _resultValue.storageServerVersion = storageServerVersion;
+            _resultValue.subscriptionId = subscriptionId;
             _resultValue.systemTags = systemTags;
             _resultValue.timeCreated = timeCreated;
             _resultValue.totalStorageSizeInGbs = totalStorageSizeInGbs;

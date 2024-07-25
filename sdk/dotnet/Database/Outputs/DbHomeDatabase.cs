@@ -68,6 +68,10 @@ namespace Pulumi.Oci.Database.Outputs
         /// </summary>
         public readonly string? Id;
         /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the key store of Oracle Vault.
+        /// </summary>
+        public readonly string? KeyStoreId;
+        /// <summary>
         /// The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
         /// </summary>
         public readonly string? KmsKeyId;
@@ -150,6 +154,8 @@ namespace Pulumi.Oci.Database.Outputs
 
             string? id,
 
+            string? keyStoreId,
+
             string? kmsKeyId,
 
             string? kmsKeyVersionId,
@@ -190,6 +196,7 @@ namespace Pulumi.Oci.Database.Outputs
             DefinedTags = definedTags;
             FreeformTags = freeformTags;
             Id = id;
+            KeyStoreId = keyStoreId;
             KmsKeyId = kmsKeyId;
             KmsKeyVersionId = kmsKeyVersionId;
             LifecycleDetails = lifecycleDetails;

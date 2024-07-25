@@ -8,6 +8,7 @@ import pulumi
 import pulumi.runtime
 from typing import Any, Mapping, Optional, Sequence, Union, overload
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetSensitiveDataModelResult',
@@ -21,7 +22,7 @@ class GetSensitiveDataModelResult:
     """
     A collection of values returned by getSensitiveDataModel.
     """
-    def __init__(__self__, app_suite_name=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, target_id=None, time_created=None, time_updated=None):
+    def __init__(__self__, app_suite_name=None, compartment_id=None, defined_tags=None, description=None, display_name=None, freeform_tags=None, id=None, is_app_defined_relation_discovery_enabled=None, is_include_all_schemas=None, is_include_all_sensitive_types=None, is_sample_data_collection_enabled=None, schemas_for_discoveries=None, sensitive_data_model_id=None, sensitive_type_ids_for_discoveries=None, state=None, system_tags=None, tables_for_discoveries=None, target_id=None, time_created=None, time_updated=None):
         if app_suite_name and not isinstance(app_suite_name, str):
             raise TypeError("Expected argument 'app_suite_name' to be a str")
         pulumi.set(__self__, "app_suite_name", app_suite_name)
@@ -70,6 +71,9 @@ class GetSensitiveDataModelResult:
         if system_tags and not isinstance(system_tags, dict):
             raise TypeError("Expected argument 'system_tags' to be a dict")
         pulumi.set(__self__, "system_tags", system_tags)
+        if tables_for_discoveries and not isinstance(tables_for_discoveries, list):
+            raise TypeError("Expected argument 'tables_for_discoveries' to be a list")
+        pulumi.set(__self__, "tables_for_discoveries", tables_for_discoveries)
         if target_id and not isinstance(target_id, str):
             raise TypeError("Expected argument 'target_id' to be a str")
         pulumi.set(__self__, "target_id", target_id)
@@ -206,6 +210,14 @@ class GetSensitiveDataModelResult:
         return pulumi.get(self, "system_tags")
 
     @property
+    @pulumi.getter(name="tablesForDiscoveries")
+    def tables_for_discoveries(self) -> Sequence['outputs.GetSensitiveDataModelTablesForDiscoveryResult']:
+        """
+        The data discovery jobs will scan the tables specified here, including both schemas and tables. For instance, the input could be in the format: [{schemaName: "HR", tableName: ["T1", "T2"]}, {schemaName:  "OE", tableName : ["T3", "T4"]}].
+        """
+        return pulumi.get(self, "tables_for_discoveries")
+
+    @property
     @pulumi.getter(name="targetId")
     def target_id(self) -> str:
         """
@@ -252,6 +264,7 @@ class AwaitableGetSensitiveDataModelResult(GetSensitiveDataModelResult):
             sensitive_type_ids_for_discoveries=self.sensitive_type_ids_for_discoveries,
             state=self.state,
             system_tags=self.system_tags,
+            tables_for_discoveries=self.tables_for_discoveries,
             target_id=self.target_id,
             time_created=self.time_created,
             time_updated=self.time_updated)
@@ -298,6 +311,7 @@ def get_sensitive_data_model(sensitive_data_model_id: Optional[str] = None,
         sensitive_type_ids_for_discoveries=pulumi.get(__ret__, 'sensitive_type_ids_for_discoveries'),
         state=pulumi.get(__ret__, 'state'),
         system_tags=pulumi.get(__ret__, 'system_tags'),
+        tables_for_discoveries=pulumi.get(__ret__, 'tables_for_discoveries'),
         target_id=pulumi.get(__ret__, 'target_id'),
         time_created=pulumi.get(__ret__, 'time_created'),
         time_updated=pulumi.get(__ret__, 'time_updated'))

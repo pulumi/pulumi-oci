@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Operations Insights Private Endpoint resource in Oracle Cloud Infrastructure Opsi service.
  *
- * Create a private endpoint resource for the tenant in Operations Insights.
+ * Create a private endpoint resource for the tenant in Ops Insights.
  * This resource will be created in customer compartment.
  *
  * ## Example Usage
@@ -90,7 +90,7 @@ export class OperationsInsightsPrivateEndpoint extends pulumi.CustomResource {
      */
     public readonly freeformTags!: pulumi.Output<{[key: string]: any}>;
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      */
     public readonly isUsedForRacDbs!: pulumi.Output<boolean>;
     /**
@@ -225,7 +225,7 @@ export interface OperationsInsightsPrivateEndpointState {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      */
     isUsedForRacDbs?: pulumi.Input<boolean>;
     /**
@@ -295,7 +295,7 @@ export interface OperationsInsightsPrivateEndpointArgs {
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to true will now create a private endpoint with a DNS proxy causing `isProxyEnabled` flag to be true; this is used exclusively for full feature support for dedicated Autonomous Databases.
      */
     isUsedForRacDbs: pulumi.Input<boolean>;
     /**

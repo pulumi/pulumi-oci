@@ -530,6 +530,11 @@ export const getSensitiveDataModelSensitiveSchemas: typeof import("./getSensitiv
 export const getSensitiveDataModelSensitiveSchemasOutput: typeof import("./getSensitiveDataModelSensitiveSchemas").getSensitiveDataModelSensitiveSchemasOutput = null as any;
 utilities.lazyLoad(exports, ["getSensitiveDataModelSensitiveSchemas","getSensitiveDataModelSensitiveSchemasOutput"], () => require("./getSensitiveDataModelSensitiveSchemas"));
 
+export { GetSensitiveDataModelSensitiveTypesArgs, GetSensitiveDataModelSensitiveTypesResult, GetSensitiveDataModelSensitiveTypesOutputArgs } from "./getSensitiveDataModelSensitiveTypes";
+export const getSensitiveDataModelSensitiveTypes: typeof import("./getSensitiveDataModelSensitiveTypes").getSensitiveDataModelSensitiveTypes = null as any;
+export const getSensitiveDataModelSensitiveTypesOutput: typeof import("./getSensitiveDataModelSensitiveTypes").getSensitiveDataModelSensitiveTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getSensitiveDataModelSensitiveTypes","getSensitiveDataModelSensitiveTypesOutput"], () => require("./getSensitiveDataModelSensitiveTypes"));
+
 export { GetSensitiveDataModelsArgs, GetSensitiveDataModelsResult, GetSensitiveDataModelsOutputArgs } from "./getSensitiveDataModels";
 export const getSensitiveDataModels: typeof import("./getSensitiveDataModels").getSensitiveDataModels = null as any;
 export const getSensitiveDataModelsOutput: typeof import("./getSensitiveDataModels").getSensitiveDataModelsOutput = null as any;

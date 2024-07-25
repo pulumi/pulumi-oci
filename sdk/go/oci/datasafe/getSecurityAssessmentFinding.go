@@ -32,6 +32,7 @@ type GetSecurityAssessmentFindingArgs struct {
 	SecurityAssessmentId   string                               `pulumi:"securityAssessmentId"`
 	Severity               *string                              `pulumi:"severity"`
 	State                  *string                              `pulumi:"state"`
+	TargetId               *string                              `pulumi:"targetId"`
 }
 
 // A collection of values returned by getSecurityAssessmentFinding.
@@ -48,6 +49,7 @@ type GetSecurityAssessmentFindingResult struct {
 	SecurityAssessmentId string  `pulumi:"securityAssessmentId"`
 	Severity             *string `pulumi:"severity"`
 	State                *string `pulumi:"state"`
+	TargetId             *string `pulumi:"targetId"`
 }
 
 func GetSecurityAssessmentFindingOutput(ctx *pulumi.Context, args GetSecurityAssessmentFindingOutputArgs, opts ...pulumi.InvokeOption) GetSecurityAssessmentFindingResultOutput {
@@ -74,6 +76,7 @@ type GetSecurityAssessmentFindingOutputArgs struct {
 	SecurityAssessmentId   pulumi.StringInput                           `pulumi:"securityAssessmentId"`
 	Severity               pulumi.StringPtrInput                        `pulumi:"severity"`
 	State                  pulumi.StringPtrInput                        `pulumi:"state"`
+	TargetId               pulumi.StringPtrInput                        `pulumi:"targetId"`
 }
 
 func (GetSecurityAssessmentFindingOutputArgs) ElementType() reflect.Type {
@@ -138,6 +141,10 @@ func (o GetSecurityAssessmentFindingResultOutput) Severity() pulumi.StringPtrOut
 
 func (o GetSecurityAssessmentFindingResultOutput) State() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.State }).(pulumi.StringPtrOutput)
+}
+
+func (o GetSecurityAssessmentFindingResultOutput) TargetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GetSecurityAssessmentFindingResult) *string { return v.TargetId }).(pulumi.StringPtrOutput)
 }
 
 func init() {

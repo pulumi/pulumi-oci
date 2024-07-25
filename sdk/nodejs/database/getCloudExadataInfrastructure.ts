@@ -174,6 +174,10 @@ export interface GetCloudExadataInfrastructureResult {
      */
     readonly storageServerVersion: string;
     /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     */
+    readonly subscriptionId: string;
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      */
     readonly systemTags: {[key: string]: any};

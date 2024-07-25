@@ -67,14 +67,14 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
     }
 
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      * 
      */
     @Import(name="credentialDetails")
     private @Nullable Output<DatabaseInsightCredentialDetailsArgs> credentialDetails;
 
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Optional<Output<DatabaseInsightCredentialDetailsArgs>> credentialDetails() {
@@ -418,7 +418,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param credentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 
@@ -429,7 +429,7 @@ public final class DatabaseInsightArgs extends com.pulumi.resources.ResourceArgs
         }
 
         /**
-         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param credentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 

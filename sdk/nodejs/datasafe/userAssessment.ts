@@ -30,6 +30,7 @@ import * as utilities from "../utilities";
  *     freeformTags: {
  *         Department: "Finance",
  *     },
+ *     isAssessmentScheduled: userAssessmentIsAssessmentScheduled,
  *     schedule: userAssessmentSchedule,
  * });
  * ```
@@ -98,6 +99,10 @@ export class UserAssessment extends pulumi.CustomResource {
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
     public /*out*/ readonly ignoredTargets!: pulumi.Output<outputs.DataSafe.UserAssessmentIgnoredTarget[]>;
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     */
+    public readonly isAssessmentScheduled!: pulumi.Output<boolean>;
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      */
@@ -189,6 +194,7 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["freeformTags"] = state ? state.freeformTags : undefined;
             resourceInputs["ignoredAssessmentIds"] = state ? state.ignoredAssessmentIds : undefined;
             resourceInputs["ignoredTargets"] = state ? state.ignoredTargets : undefined;
+            resourceInputs["isAssessmentScheduled"] = state ? state.isAssessmentScheduled : undefined;
             resourceInputs["isBaseline"] = state ? state.isBaseline : undefined;
             resourceInputs["isDeviatedFromBaseline"] = state ? state.isDeviatedFromBaseline : undefined;
             resourceInputs["lastComparedBaselineId"] = state ? state.lastComparedBaselineId : undefined;
@@ -218,6 +224,7 @@ export class UserAssessment extends pulumi.CustomResource {
             resourceInputs["description"] = args ? args.description : undefined;
             resourceInputs["displayName"] = args ? args.displayName : undefined;
             resourceInputs["freeformTags"] = args ? args.freeformTags : undefined;
+            resourceInputs["isAssessmentScheduled"] = args ? args.isAssessmentScheduled : undefined;
             resourceInputs["schedule"] = args ? args.schedule : undefined;
             resourceInputs["targetId"] = args ? args.targetId : undefined;
             resourceInputs["ignoredAssessmentIds"] = undefined /*out*/;
@@ -274,6 +281,10 @@ export interface UserAssessmentState {
      * List containing maps as values. Example: `{"Operations": [ {"CostCenter": "42"} ] }`
      */
     ignoredTargets?: pulumi.Input<pulumi.Input<inputs.DataSafe.UserAssessmentIgnoredTarget>[]>;
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     */
+    isAssessmentScheduled?: pulumi.Input<boolean>;
     /**
      * Indicates if the user assessment is set as a baseline. This is applicable only to saved user assessments.
      */
@@ -370,6 +381,10 @@ export interface UserAssessmentArgs {
      * (Updatable) Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)  Example: `{"Department": "Finance"}`
      */
     freeformTags?: pulumi.Input<{[key: string]: any}>;
+    /**
+     * (Updatable) Indicates whether the assessment is scheduled to run.
+     */
+    isAssessmentScheduled?: pulumi.Input<boolean>;
     /**
      * (Updatable) To schedule the assessment for saving periodically, specify the schedule in this attribute. Create or schedule one assessment per compartment. If not defined, the assessment runs immediately. Format - <version-string>;<version-specific-schedule>
      *

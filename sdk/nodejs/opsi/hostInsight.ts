@@ -7,7 +7,7 @@ import * as utilities from "../utilities";
 /**
  * This resource provides the Host Insight resource in Oracle Cloud Infrastructure Opsi service.
  *
- * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+ * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
  *
  * ## Example Usage
  *
@@ -127,7 +127,7 @@ export class HostInsight extends pulumi.CustomResource {
      */
     public /*out*/ readonly hostName!: pulumi.Output<string>;
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
     public /*out*/ readonly hostType!: pulumi.Output<string>;
     /**
@@ -154,9 +154,6 @@ export class HostInsight extends pulumi.CustomResource {
      * Platform version.
      */
     public /*out*/ readonly platformVersion!: pulumi.Output<string>;
-    /**
-     * Processor count.
-     */
     public /*out*/ readonly processorCount!: pulumi.Output<number>;
     /**
      * The current state of the host.
@@ -319,7 +316,7 @@ export interface HostInsightState {
      */
     hostName?: pulumi.Input<string>;
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
     hostType?: pulumi.Input<string>;
     /**
@@ -346,9 +343,6 @@ export interface HostInsightState {
      * Platform version.
      */
     platformVersion?: pulumi.Input<string>;
-    /**
-     * Processor count.
-     */
     processorCount?: pulumi.Input<number>;
     /**
      * The current state of the host.

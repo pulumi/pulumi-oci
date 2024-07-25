@@ -15,7 +15,7 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletArgs extends 
     public static final OperationsInsightsWarehouseRotateWarehouseWalletArgs Empty = new OperationsInsightsWarehouseRotateWarehouseWalletArgs();
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -25,7 +25,7 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletArgs extends 
     private Output<String> operationsInsightsWarehouseId;
 
     /**
-     * @return Unique Operations Insights Warehouse identifier
+     * @return Unique Ops Insights Warehouse identifier
      * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -60,7 +60,7 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletArgs extends 
         }
 
         /**
-         * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * @param operationsInsightsWarehouseId Unique Ops Insights Warehouse identifier
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
@@ -74,7 +74,7 @@ public final class OperationsInsightsWarehouseRotateWarehouseWalletArgs extends 
         }
 
         /**
-         * @param operationsInsightsWarehouseId Unique Operations Insights Warehouse identifier
+         * @param operationsInsightsWarehouseId Unique Ops Insights Warehouse identifier
          * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values

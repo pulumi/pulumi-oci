@@ -100,7 +100,7 @@ export interface GetHostInsightResult {
      */
     readonly hostName: string;
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      */
     readonly hostType: string;
     /**
@@ -127,9 +127,6 @@ export interface GetHostInsightResult {
      * Platform version.
      */
     readonly platformVersion: string;
-    /**
-     * Processor count. This is the OCPU count for Autonomous Database and CPU core count for other database types.
-     */
     readonly processorCount: number;
     /**
      * The current state of the host.

@@ -74,7 +74,7 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
      */
     public readonly compartmentId!: pulumi.Output<string>;
     /**
-     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
     public readonly connectionPassword!: pulumi.Output<string>;
     /**
@@ -102,7 +102,7 @@ export class OperationsInsightsWarehouseUser extends pulumi.CustomResource {
      */
     public /*out*/ readonly lifecycleDetails!: pulumi.Output<string>;
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
     public readonly name!: pulumi.Output<string>;
     /**
@@ -202,7 +202,7 @@ export interface OperationsInsightsWarehouseUserState {
      */
     compartmentId?: pulumi.Input<string>;
     /**
-     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
     connectionPassword?: pulumi.Input<string>;
     /**
@@ -230,7 +230,7 @@ export interface OperationsInsightsWarehouseUserState {
      */
     lifecycleDetails?: pulumi.Input<string>;
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
     name?: pulumi.Input<string>;
     /**
@@ -268,7 +268,7 @@ export interface OperationsInsightsWarehouseUserArgs {
      */
     compartmentId: pulumi.Input<string>;
     /**
-     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * (Updatable) User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
     connectionPassword: pulumi.Input<string>;
     /**
@@ -292,7 +292,7 @@ export interface OperationsInsightsWarehouseUserArgs {
      */
     isOpsiDataAccess?: pulumi.Input<boolean>;
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      */
     name?: pulumi.Input<string>;
     /**

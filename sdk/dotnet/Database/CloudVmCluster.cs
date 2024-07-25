@@ -70,6 +70,7 @@ namespace Pulumi.Oci.Database
     ///         PrivateZoneId = testZone.Id,
     ///         ScanListenerPortTcp = cloudVmClusterScanListenerPortTcp,
     ///         ScanListenerPortTcpSsl = cloudVmClusterScanListenerPortTcpSsl,
+    ///         SubscriptionId = tenantSubscriptionId,
     ///         SystemVersion = cloudVmClusterSystemVersion,
     ///         TimeZone = cloudVmClusterTimeZone,
     ///     });
@@ -354,6 +355,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Output("subnetId")]
         public Output<string> SubnetId { get; private set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Output("subscriptionId")]
+        public Output<string> SubscriptionId { get; private set; } = null!;
 
         /// <summary>
         /// System tags for this resource. Each key is predefined and scoped to a namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
@@ -671,6 +678,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId", required: true)]
         public Input<string> SubnetId { get; set; } = null!;
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         /// <summary>
         /// Operating system version of the image.
@@ -1016,6 +1029,12 @@ namespace Pulumi.Oci.Database
         /// </summary>
         [Input("subnetId")]
         public Input<string>? SubnetId { get; set; }
+
+        /// <summary>
+        /// The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+        /// </summary>
+        [Input("subscriptionId")]
+        public Input<string>? SubscriptionId { get; set; }
 
         [Input("systemTags")]
         private InputMap<object>? _systemTags;

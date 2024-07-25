@@ -8,6 +8,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionCredentialDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightConnectionDetailsArgs;
 import com.pulumi.oci.Opsi.inputs.DatabaseInsightCredentialDetailsArgs;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -67,14 +68,14 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * User credential details to connect to the database. This is supplied via the External Database Service.
+     * User credential details to connect to the database.
      * 
      */
     @Import(name="credentialDetails")
     private @Nullable Output<DatabaseInsightCredentialDetailsArgs> credentialDetails;
 
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public Optional<Output<DatabaseInsightCredentialDetailsArgs>> credentialDetails() {
@@ -157,14 +158,14 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      * 
      */
     @Import(name="databaseType")
     private @Nullable Output<String> databaseType;
 
     /**
-     * @return Operations Insights internal representation of the database type.
+     * @return Ops Insights internal representation of the database type.
      * 
      */
     public Optional<Output<String>> databaseType() {
@@ -367,6 +368,36 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     * 
+     */
+    @Import(name="isHeatWaveClusterAttached")
+    private @Nullable Output<Boolean> isHeatWaveClusterAttached;
+
+    /**
+     * @return Specifies if MYSQL DB System has heatwave cluster attached.
+     * 
+     */
+    public Optional<Output<Boolean>> isHeatWaveClusterAttached() {
+        return Optional.ofNullable(this.isHeatWaveClusterAttached);
+    }
+
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     * 
+     */
+    @Import(name="isHighlyAvailable")
+    private @Nullable Output<Boolean> isHighlyAvailable;
+
+    /**
+     * @return Specifies if MYSQL DB System is highly available.
+     * 
+     */
+    public Optional<Output<Boolean>> isHighlyAvailable() {
+        return Optional.ofNullable(this.isHighlyAvailable);
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -508,14 +539,14 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
     }
 
     /**
-     * The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     * The time the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     @Import(name="timeCreated")
     private @Nullable Output<String> timeCreated;
 
     /**
-     * @return The time the the database insight was first enabled. An RFC3339 formatted datetime string
+     * @return The time the database insight was first enabled. An RFC3339 formatted datetime string
      * 
      */
     public Optional<Output<String>> timeCreated() {
@@ -563,6 +594,8 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         this.entitySource = $.entitySource;
         this.exadataInsightId = $.exadataInsightId;
         this.freeformTags = $.freeformTags;
+        this.isHeatWaveClusterAttached = $.isHeatWaveClusterAttached;
+        this.isHighlyAvailable = $.isHighlyAvailable;
         this.lifecycleDetails = $.lifecycleDetails;
         this.opsiPrivateEndpointId = $.opsiPrivateEndpointId;
         this.parentId = $.parentId;
@@ -658,7 +691,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param credentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 
@@ -669,7 +702,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param credentialDetails User credential details to connect to the database. This is supplied via the External Database Service.
+         * @param credentialDetails User credential details to connect to the database.
          * 
          * @return builder
          * 
@@ -784,7 +817,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param databaseType Operations Insights internal representation of the database type.
+         * @param databaseType Ops Insights internal representation of the database type.
          * 
          * @return builder
          * 
@@ -795,7 +828,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param databaseType Operations Insights internal representation of the database type.
+         * @param databaseType Ops Insights internal representation of the database type.
          * 
          * @return builder
          * 
@@ -1078,6 +1111,48 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
+         * @param isHeatWaveClusterAttached Specifies if MYSQL DB System has heatwave cluster attached.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isHeatWaveClusterAttached(@Nullable Output<Boolean> isHeatWaveClusterAttached) {
+            $.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            return this;
+        }
+
+        /**
+         * @param isHeatWaveClusterAttached Specifies if MYSQL DB System has heatwave cluster attached.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
+            return isHeatWaveClusterAttached(Output.of(isHeatWaveClusterAttached));
+        }
+
+        /**
+         * @param isHighlyAvailable Specifies if MYSQL DB System is highly available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isHighlyAvailable(@Nullable Output<Boolean> isHighlyAvailable) {
+            $.isHighlyAvailable = isHighlyAvailable;
+            return this;
+        }
+
+        /**
+         * @param isHighlyAvailable Specifies if MYSQL DB System is highly available.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            return isHighlyAvailable(Output.of(isHighlyAvailable));
+        }
+
+        /**
          * @param lifecycleDetails A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          * 
          * @return builder
@@ -1273,7 +1348,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The time the the database insight was first enabled. An RFC3339 formatted datetime string
+         * @param timeCreated The time the database insight was first enabled. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 
@@ -1284,7 +1359,7 @@ public final class DatabaseInsightState extends com.pulumi.resources.ResourceArg
         }
 
         /**
-         * @param timeCreated The time the the database insight was first enabled. An RFC3339 formatted datetime string
+         * @param timeCreated The time the database insight was first enabled. An RFC3339 formatted datetime string
          * 
          * @return builder
          * 

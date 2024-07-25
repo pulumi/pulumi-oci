@@ -8,6 +8,7 @@ import com.pulumi.exceptions.MissingRequiredPropertyException;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail;
 import com.pulumi.oci.Opsi.outputs.GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail;
+import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.Object;
 import java.lang.String;
@@ -23,7 +24,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     private String compartmentId;
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails;
@@ -33,7 +34,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     private List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionDetail> connectionDetails;
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     private List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails;
@@ -130,6 +131,16 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
      */
     private String id;
     /**
+     * @return Specifies if MYSQL DB System has heatwave cluster attached.
+     * 
+     */
+    private Boolean isHeatWaveClusterAttached;
+    /**
+     * @return Specifies if MYSQL DB System is highly available.
+     * 
+     */
+    private Boolean isHighlyAvailable;
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -194,7 +205,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         return this.compartmentId;
     }
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemConnectionCredentialDetail> connectionCredentialDetails() {
@@ -208,7 +219,7 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         return this.connectionDetails;
     }
     /**
-     * @return User credential details to connect to the database. This is supplied via the External Database Service.
+     * @return User credential details to connect to the database.
      * 
      */
     public List<GetDatabaseInsightsDatabaseInsightsCollectionItemCredentialDetail> credentialDetails() {
@@ -347,6 +358,20 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         return this.id;
     }
     /**
+     * @return Specifies if MYSQL DB System has heatwave cluster attached.
+     * 
+     */
+    public Boolean isHeatWaveClusterAttached() {
+        return this.isHeatWaveClusterAttached;
+    }
+    /**
+     * @return Specifies if MYSQL DB System is highly available.
+     * 
+     */
+    public Boolean isHighlyAvailable() {
+        return this.isHighlyAvailable;
+    }
+    /**
      * @return A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      * 
      */
@@ -457,6 +482,8 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
         private String exadataInsightId;
         private Map<String,Object> freeformTags;
         private String id;
+        private Boolean isHeatWaveClusterAttached;
+        private Boolean isHighlyAvailable;
         private String lifecycleDetails;
         private String opsiPrivateEndpointId;
         private String parentId;
@@ -495,6 +522,8 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
     	      this.exadataInsightId = defaults.exadataInsightId;
     	      this.freeformTags = defaults.freeformTags;
     	      this.id = defaults.id;
+    	      this.isHeatWaveClusterAttached = defaults.isHeatWaveClusterAttached;
+    	      this.isHighlyAvailable = defaults.isHighlyAvailable;
     	      this.lifecycleDetails = defaults.lifecycleDetails;
     	      this.opsiPrivateEndpointId = defaults.opsiPrivateEndpointId;
     	      this.parentId = defaults.parentId;
@@ -710,6 +739,22 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             return this;
         }
         @CustomType.Setter
+        public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
+            if (isHeatWaveClusterAttached == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "isHeatWaveClusterAttached");
+            }
+            this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            if (isHighlyAvailable == null) {
+              throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "isHighlyAvailable");
+            }
+            this.isHighlyAvailable = isHighlyAvailable;
+            return this;
+        }
+        @CustomType.Setter
         public Builder lifecycleDetails(String lifecycleDetails) {
             if (lifecycleDetails == null) {
               throw new MissingRequiredPropertyException("GetDatabaseInsightsDatabaseInsightsCollectionItem", "lifecycleDetails");
@@ -823,6 +868,8 @@ public final class GetDatabaseInsightsDatabaseInsightsCollectionItem {
             _resultValue.exadataInsightId = exadataInsightId;
             _resultValue.freeformTags = freeformTags;
             _resultValue.id = id;
+            _resultValue.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            _resultValue.isHighlyAvailable = isHighlyAvailable;
             _resultValue.lifecycleDetails = lifecycleDetails;
             _resultValue.opsiPrivateEndpointId = opsiPrivateEndpointId;
             _resultValue.parentId = parentId;

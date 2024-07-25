@@ -6,6 +6,7 @@ package com.pulumi.oci.DataSafe.inputs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -18,9 +19,6 @@ public final class UnsetSecurityAssessmentBaselineState extends com.pulumi.resou
     /**
      * The OCID of the security assessment.
      * 
-     * ** IMPORTANT **
-     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-     * 
      */
     @Import(name="securityAssessmentId")
     private @Nullable Output<String> securityAssessmentId;
@@ -28,18 +26,37 @@ public final class UnsetSecurityAssessmentBaselineState extends com.pulumi.resou
     /**
      * @return The OCID of the security assessment.
      * 
+     */
+    public Optional<Output<String>> securityAssessmentId() {
+        return Optional.ofNullable(this.securityAssessmentId);
+    }
+
+    /**
+     * The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
      * ** IMPORTANT **
      * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
      * 
      */
-    public Optional<Output<String>> securityAssessmentId() {
-        return Optional.ofNullable(this.securityAssessmentId);
+    @Import(name="targetIds")
+    private @Nullable Output<List<String>> targetIds;
+
+    /**
+     * @return The list of database target OCIDs for which the user intends to unset the baseline.
+     * 
+     * ** IMPORTANT **
+     * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+     * 
+     */
+    public Optional<Output<List<String>>> targetIds() {
+        return Optional.ofNullable(this.targetIds);
     }
 
     private UnsetSecurityAssessmentBaselineState() {}
 
     private UnsetSecurityAssessmentBaselineState(UnsetSecurityAssessmentBaselineState $) {
         this.securityAssessmentId = $.securityAssessmentId;
+        this.targetIds = $.targetIds;
     }
 
     public static Builder builder() {
@@ -63,9 +80,6 @@ public final class UnsetSecurityAssessmentBaselineState extends com.pulumi.resou
         /**
          * @param securityAssessmentId The OCID of the security assessment.
          * 
-         * ** IMPORTANT **
-         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
-         * 
          * @return builder
          * 
          */
@@ -77,14 +91,51 @@ public final class UnsetSecurityAssessmentBaselineState extends com.pulumi.resou
         /**
          * @param securityAssessmentId The OCID of the security assessment.
          * 
+         * @return builder
+         * 
+         */
+        public Builder securityAssessmentId(String securityAssessmentId) {
+            return securityAssessmentId(Output.of(securityAssessmentId));
+        }
+
+        /**
+         * @param targetIds The list of database target OCIDs for which the user intends to unset the baseline.
+         * 
          * ** IMPORTANT **
          * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
          * 
          * @return builder
          * 
          */
-        public Builder securityAssessmentId(String securityAssessmentId) {
-            return securityAssessmentId(Output.of(securityAssessmentId));
+        public Builder targetIds(@Nullable Output<List<String>> targetIds) {
+            $.targetIds = targetIds;
+            return this;
+        }
+
+        /**
+         * @param targetIds The list of database target OCIDs for which the user intends to unset the baseline.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(List<String> targetIds) {
+            return targetIds(Output.of(targetIds));
+        }
+
+        /**
+         * @param targetIds The list of database target OCIDs for which the user intends to unset the baseline.
+         * 
+         * ** IMPORTANT **
+         * Any change to a property that does not support update will force the destruction and recreation of the resource with the new property values
+         * 
+         * @return builder
+         * 
+         */
+        public Builder targetIds(String... targetIds) {
+            return targetIds(List.of(targetIds));
         }
 
         public UnsetSecurityAssessmentBaselineState build() {

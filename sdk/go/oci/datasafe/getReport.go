@@ -70,7 +70,7 @@ type LookupReportResult struct {
 	FreeformTags map[string]interface{} `pulumi:"freeformTags"`
 	// The OCID of the report.
 	Id string `pulumi:"id"`
-	// Specifies the format of report to be .xls or .pdf
+	// Specifies the format of report to be .xls or .pdf or .json
 	MimeType string `pulumi:"mimeType"`
 	// The OCID of the report definition.
 	ReportDefinitionId string `pulumi:"reportDefinitionId"`
@@ -153,7 +153,7 @@ func (o LookupReportResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.Id }).(pulumi.StringOutput)
 }
 
-// Specifies the format of report to be .xls or .pdf
+// Specifies the format of report to be .xls or .pdf or .json
 func (o LookupReportResultOutput) MimeType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupReportResult) string { return v.MimeType }).(pulumi.StringOutput)
 }
